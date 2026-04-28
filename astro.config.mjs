@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jason-dongbo-cui-accent.github.io',
-  base: '/ai-daily',
+  site: 'https://aidigest.club',
+  base: '/',
   trailingSlash: 'always',
   integrations: [tailwind(), sitemap()],
   build: {

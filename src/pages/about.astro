@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base title="关于" description="关于 AI Daily Digest">
+  <Header />
+  <main class="flex-1">
+    <section class="bg-accent-ink text-white py-16 lg:py-20">
+      <div class="container-x">
+        <span class="badge bg-accent-purple text-white mb-4">ABOUT</span>
+        <h1 class="text-h1 mb-4">关于本站</h1>
+        <p class="text-lg text-accent-gray-300 max-w-3xl">
+          每日 AI 行业动态摘要——一个 AI 辅助整理、自动每日更新的个人项目。
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20">
+      <div class="container-x max-w-3xl">
+        <div class="prose prose-lg">
+          <h2 class="text-h2 mb-6">📅 内容范围</h2>
+          <p class="mb-6 leading-relaxed">
+            本站每日同步整理过去 24 小时全球 AI 行业重要动态，按四个板块组织：
+          </p>
+          <ul class="space-y-3 mb-10">
+            <li class="flex gap-3"><span class="text-2xl">🔥</span><div><strong>AI 热点新闻</strong> · 重大融资、产品发布、监管动态、突发事件</div></li>
+            <li class="flex gap-3"><span class="text-2xl">🏢</span><div><strong>企业级 AI 实践</strong> · 落地案例、Agent 编排、企业架构演进</div></li>
+            <li class="flex gap-3"><span class="text-2xl">💻</span><div><strong>AI Coding 动态</strong> · 编码模型、IDE 集成、开发者工具</div></li>
+            <li class="flex gap-3"><span class="text-2xl">📊</span><div><strong>深度报告与论文</strong> · 行业研究、学术论文、白皮书</div></li>
+          </ul>
+
+          <h2 class="text-h2 mb-6">🌐 信息源</h2>
+          <p class="mb-4 leading-relaxed">优先采用以下权威源：</p>
+          <ul class="grid grid-cols-2 gap-2 mb-10 text-sm">
+            <li>· Reuters</li><li>· Bloomberg</li><li>· FT</li><li>· The Information</li>
+            <li>· The Verge</li><li>· VentureBeat</li><li>· TechCrunch</li><li>· Wired</li>
+            <li>· OpenAI / Anthropic</li><li>· Google DeepMind</li><li>· NVIDIA Blog</li><li>· arXiv / GitHub</li>
+            <li>· 36 氪 / 机器之心</li><li>· 量子位 / 虎嗅</li><li>· McKinsey / BCG</li><li>· Gartner / IDC</li>
+          </ul>
+
+          <h2 class="text-h2 mb-6">🤖 生成机制</h2>
+          <p class="mb-4 leading-relaxed">每日 9:30（Asia/Shanghai）自动同步：</p>
+          <ol class="space-y-2 mb-10 list-decimal list-inside">
+            <li>AI Agent 联网搜集过去 24 小时各信息源最新内容</li>
+            <li>按四个板块筛选、整合、撰写要点与行业启示</li>
+            <li>同步到本站 + 飞书工作文档</li>
+            <li>自动部署，公开访问</li>
+          </ol>
+
+          <h2 class="text-h2 mb-6">⚖️ 免责声明</h2>
+          <div class="bg-accent-gray-50 p-6 border-l-4 border-accent-purple text-sm leading-relaxed space-y-3">
+            <p>
+              <strong>个人项目声明</strong> · 本站为个人学习项目，与任何机构无关联，亦不代表任何机构观点。
+              视觉风格灵感来源于企业咨询行业的设计语言，但不使用任何机构的官方品牌资产。
+            </p>
+            <p>
+              <strong>内容免责</strong> · 内容由 AI 辅助整理生成，可能存在事实偏差或时效问题。
+              所有内容仅供参考，不构成投资、决策或咨询建议。请以原始信息源为准。
+            </p>
+            <p>
+              <strong>版权声明</strong> · 所有引用的新闻、报告内容版权归原作者所有，本站仅作摘要与链接。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

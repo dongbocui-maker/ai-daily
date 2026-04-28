@@ -1,0 +1,35 @@
+---
+import { listDates, formatDateShort, dayOfWeekZh } from '../lib/data';
+
+const dates = listDates();
+const currentDate = Astro.props.currentDate as string;
+const idx = dates.indexOf(currentDate);
+const prev = idx >= 0 && idx < dates.length - 1 ? dates[idx + 1] : null;
+const next = idx > 0 ? dates[idx - 1] : null;
+const base = import.meta.env.BASE_URL;
+---
+<nav class="border-y border-accent-gray-100">
+  <div class="container-x flex items-center justify-between h-14 text-sm">
+    {prev ? (
+      <a href={`${base}d/${prev}/`} class="flex items-center gap-2 text-accent-gray-700 hover:text-accent-purple transition-colors">
+        <span>←</span>
+        <div class="text-left">
+          <span class="block text-[10px] uppercase tracking-wider text-accent-gray-500">前一日</span>
+          <span class="font-semibold">{formatDateShort(prev)} · {dayOfWeekZh(prev)}</span>
+        </div>
+      </a>
+    ) : <span></span>}
+
+    <span class="text-accent-gray-500 font-mono text-xs">{currentDate}</span>
+
+    {next ? (
+      <a href={`${base}d/${next}/`} class="flex items-center gap-2 text-accent-gray-700 hover:text-accent-purple transition-colors">
+        <div class="text-right">
+          <span class="block text-[10px] uppercase tracking-wider text-accent-gray-500">下一日</span>
+          <span class="font-semibold">{formatDateShort(next)} · {dayOfWeekZh(next)}</span>
+        </div>
+        <span>→</span>
+      </a>
+    ) : <span></span>}
+  </div>
+</nav>

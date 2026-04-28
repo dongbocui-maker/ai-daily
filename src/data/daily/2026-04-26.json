@@ -1,0 +1,179 @@
+{
+  "date": "2026-04-26",
+  "title": "2026-04-26",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "Google 加注 Anthropic：分阶段最高投资 400 亿美元",
+          "body": "继 Amazon 本周向 Anthropic 追加 50 亿美元、并预留至多 200 亿美元后，Google 也披露将先期投入 100 亿美元，并视性能里程碑追加最多 300 亿美元。Anthropic 同时拿到两大云巨头的算力 + 资金双重背书，正式与 OpenAI 形成对位的\"两强格局\"。",
+          "insight": "前沿模型已变成\"国家级算力 + 主权云绑定\"游戏，企业选型需把\"模型 + 云\"作为一张联合采购票考虑。",
+          "source": "The Verge / Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+        },
+        {
+          "title": "OpenAI 推出 GPT-5.5，宣称\"最聪明、最直觉\"模型",
+          "body": "OpenAI 在 ChatGPT 中上线 GPT-5.5，强调推理深度、长上下文一致性和工具调用稳定性进一步提升，并同步收紧免费层费率限制。多家媒体指出\"AI 免费午餐时代结束\"，广告、限速、付费墙正在快速落地。",
+          "insight": "基础模型正进入精细化运营阶段，企业 ChatGPT 部署预算需要重估订阅、按用量与企业版 SLA 结构。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/917612/openai-gpt-5-5-chatgpt"
+        },
+        {
+          "title": "SpaceX 在 IPO 文件中披露：自研 GPU",
+          "body": "SpaceX 在递交的 S-1 中将自研 GPU 列为重大资本支出，目的是降低对 NVIDIA 的依赖、保障 Starlink/Starshield 与 xAI 工作负载。继 Google TPU、Meta MTIA、AWS Trainium 之后，SpaceX 加入\"反 NVIDIA 税\"阵营。",
+          "insight": "超级买家正在从\"客户\"变成\"竞争者\"，硬件供应链格局未来 24 个月将再次重估。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/autos-transportation/spacex-targets-in-house-gpus-it-warns-investors-chip-supply-costs-2026-04-23/"
+        },
+        {
+          "title": "美国司法部加入 xAI 诉讼，挑战 Colorado AI 反歧视法",
+          "body": "DOJ 加入 xAI 起诉 Colorado《消费者 AI 保护法》(将于 6 月 30 日生效)，主张该法以\"算法歧视\"为名对开发者施加\"合理注意义务\"违反《宪法》平等保护条款。这是联邦首次直接介入州级 AI 立法之争。",
+          "insight": "美国 AI 监管碎片化加剧，跨国企业合规策略需要按州 + 联邦双轨准备。",
+          "source": "Bloomberg / The Verge",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-24/doj-joins-musk-s-xai-suit-against-colorado-ai-discrimination-law"
+        },
+        {
+          "title": "OpenAI 关联 PAC 疑似资助\"AI 记者\"假新闻站",
+          "body": "The Verge 等多家媒体报道，OpenAI 旗下超级 PAC 与名为 Acutus Wire 的\"亲 AI\"新闻站存在资金链路，站内多名\"记者\"经查证为 AI 合成人格，正在主动联系 AI 监管派学者进行\"采访\"。",
+          "insight": "AI 公司影响舆论的灰色操作手法升级，企业公关与政府事务团队需建立 AI 内容来源核验流程。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "OpenAI 发布 Workspace Agents：直插 Slack、Salesforce 的\"GPT 接班人\"",
+          "body": "Workspace Agents 被定位为 Custom GPT 的企业版后继者，原生集成 Slack、Salesforce、Microsoft 365 等系统，可读写企业数据并触发业务流。OpenAI 把战场正式从\"对话框\"推到\"业务系统中台\"。",
+          "insight": "企业 AI 入口将从\"独立 Chat\"演化为\"嵌入式 Agent\"，既有 SaaS 厂商和咨询交付方法论都需要重写。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more"
+        },
+        {
+          "title": "Google Deep Research / Deep Research Max：跨\"公网 + 私域\"的研究型 Agent",
+          "body": "基于 Gemini 3.1 Pro，Google 推出可同时检索公网与企业私有数据的研究型 Agent，瞄准金融、生命科学、市场情报等高价值场景，号称把\"传统分析师数小时到数天\"的工作压缩到一次会话内。",
+          "insight": "研究分析、咨询交付、投研团队的工作流需要被\"AI 研究员\"重塑，岗位定位向\"问题定义 + 结果审定\"上移。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/googles-new-deep-research-and-deep-research-max-agents-can-search-the-web-and-your-private-data"
+        },
+        {
+          "title": "Google：可在\"完全离线服务器\"上运行并自毁的 Gemini",
+          "body": "针对国防、政府、金融监管等场景，Google 推出可部署在 air-gapped 服务器、断电即销毁的 Gemini 版本。这是大模型首次以\"机密计算 + 数据主权\"形态对外销售。",
+          "insight": "高合规客户正在成为主流商业战场之一，国内外厂商都需要\"本地化 + 自毁 + 审计可追溯\"三件套。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/googles-gemini-can-now-run-on-a-single-air-gapped-server-and-vanish-when-you-pull-the-plug"
+        },
+        {
+          "title": "Salesforce Agentforce Vibes 2.0：直击企业 Agent 的\"上下文过载\"",
+          "body": "Agentforce Vibes 2.0 推出针对企业 Agent 的上下文管理与\"任务生命周期\"机制，主张\"单一强 Agent + 良好上下文\"往往优于复杂多 Agent 编排，与近期\"Agent Swarm Tax\"讨论呼应。",
+          "insight": "企业 Agent 项目应优先做好上下文工程与可观测性，而非盲目堆叠多 Agent 编排。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/salesforces-agentforce-vibes-2-0-targets-a-hidden-failure-context-overload-in-ai-agents"
+        },
+        {
+          "title": "Microsoft 工程师视角：LLM 行为漂移与拒答模式监控",
+          "body": "微软工程师在 VentureBeat 撰文系统讨论生产环境中 LLM 行为漂移、重试和拒答模式的监控方法，强调传统单元测试范式失效、需要\"统计 SLO + 行为基线\"做闭环监控。",
+          "insight": "企业把 LLM 投产 6 个月以上者，应把\"行为漂移监控\"列入 AI 运维标准动作。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/monitoring-llm-behavior-drift-retries-and-refusal-patterns"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "Google：新代码 75% 由 AI 生成，组建\"突击队\"追赶 Anthropic",
+          "body": "Sundar Pichai 在 Cloud Next 2026 博客披露，Google 内部新代码已有 75% 由 AI 生成（去年秋天还是 50%），并组建\"strike team\"专项追赶 Anthropic 在 Coding Agent 方向的领先；Anthropic 自身代码 70-90% 由 Claude Code 写就。",
+          "insight": "头部公司\"AI 写代码占比\"已成新晋 KPI，企业 IT 团队应建立内部度量并对应调整 SDLC。",
+          "source": "Google Blog / The Verge",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/"
+        },
+        {
+          "title": "RooCode：在 IDE 中部署\"完整 AI 开发团队\"，GitHub 23k Star",
+          "body": "开源项目 Roo-Code 提供 VS Code 插件，可在 IDE 内编排多角色 AI Agent 协同（架构师/工程师/审核），近期登上 GitHub Trending；同类项目 claude-code-templates、free-claude-code 也在快速积累星标。",
+          "insight": "Coding Agent 正在从\"单点写代码\"走向\"团队协同\"，开发者工作流将由\"人 + 助手\"演化为\"人 + 团队 Agent\"。",
+          "source": "GitHub Trending",
+          "url": "https://github.com/RooCodeInc/Roo-Code"
+        },
+        {
+          "title": "Hugging Face 开源 ml-intern：会读论文、训模型、上线模型的 ML 工程师 Agent",
+          "body": "Hugging Face 推出 ml-intern，是一个开源 ML Agent，能自动阅读论文、复现实验、训练并部署 ML 模型，发布几日 GitHub 已破 6k Star，被视为 AutoML/AutoResearch 方向的重要开源选手。",
+          "insight": "数据科学/ML 团队的标准化工作（基线复现、超参搜索、上线打包）将率先被 Agent 接管，团队需要在 Agent 之上建立评审机制。",
+          "source": "GitHub",
+          "url": "https://github.com/huggingface/ml-intern"
+        },
+        {
+          "title": "ComposioHQ：发布 awesome-codex-skills，抢占 Codex 生态心智",
+          "body": "继 Anthropic Skills 之后，ComposioHQ 推出 awesome-codex-skills 仓库，专为 OpenAI Codex CLI/API 整理实战 Skill 集合，呼应\"AI Coding 工程化\"趋势。",
+          "insight": "Skill / Agent Recipe 正成为开发工具竞争的新载体，平台方与企业内部都应建立 Skill 治理机制。",
+          "source": "GitHub",
+          "url": "https://github.com/ComposioHQ/awesome-codex-skills"
+        },
+        {
+          "title": "mattpocock/skills：个人 Claude Skills 仓库爆红 20k Star",
+          "body": "TypeScript 知名教育者 Matt Pocock 把个人 .claude 目录中的 Skills 开源，迅速冲到 20k+ Star。这一现象代表\"个人 AI 工作流公开化\"成为开发者新型作品集形态。",
+          "insight": "开发者品牌正在从\"博客 + 仓库\"扩展到\"AI 工作流 + Skills\"，企业可借此识别并吸引高生产力人才。",
+          "source": "GitHub",
+          "url": "https://github.com/mattpocock/skills"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "FT/MIT：AI 将放大资本与劳动间的不平等（Acemoglu 警告）",
+          "body": "诺贝尔经济学奖得主、MIT 教授 Daron Acemoglu 在 FT 引用的最新调研中明确指出：\"AI 工具民主化只是修辞，实际使用门槛要求受教育程度、抽象 + 量化能力以及编码熟悉度，AI 几乎肯定会扩大资本与劳动间的不平等\"。",
+          "insight": "企业在推 AI 普及时必须搭配\"普惠化技能培训 + 工种转型基金\"，否则将面对内部不平等加剧风险。",
+          "source": "Financial Times",
+          "url": "https://www.ft.com/content/0873e3cb-cb02-4b47-941f-14da74149670"
+        },
+        {
+          "title": "对位观察：Single-Agent vs Agent Swarm，\"Swarm Tax\"成本被低估",
+          "body": "VentureBeat 援引多家厂商实战数据指出，许多场景下单一强 Agent 的可观测性与稳定性优于复杂多 Agent 编排，\"Agent Swarm Tax\"（额外推理、上下文同步、错误传播成本）常被低估，建议默认从单 Agent 起步。",
+          "insight": "咨询和企业架构师在设计 Agent 方案时应建立\"是否真的需要多 Agent\"的入门质询，避免过度工程化。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/are-you-paying-an-ai-swarm-tax-why-single-agents-often-beat-complex-systems"
+        },
+        {
+          "title": "arXiv（2026-04-24）：cs.AI 当日新增 201 篇，Agent 评估与 RL 推理仍是主线",
+          "body": "arXiv cs.AI 类目 4 月 24 日单日新增 201 篇预印本，主要集中在 Agent 评估基准、长程规划、推理 RL（含 RLHF/RLAIF 替代方案）以及多模态 Agent 行为分析等方向，反映学界正在补强\"Agent 工程化所需的评估与训练方法学\"。",
+          "insight": "企业 AI 实验室应把 Agent 评估基准与监控的研究跟进作为 H1 重点，避免与产业实践脱节。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/list/cs.AI/recent"
+        },
+        {
+          "title": "Google \"不交 NVIDIA 税\"：新一代 TPU 的成本拆解",
+          "body": "VentureBeat 拆解 Google 新一代 TPU 在大模型训练 + 推理上的能效与单位 token 成本优势，指出 Google 通过自研 TPU 把\"NVIDIA 税\"内化为云利润，是 Anthropic / Apple / 多家头部客户选择 GCP 的关键经济原因之一。",
+          "insight": "CIO 在大规模 AI 推理选型时需把\"芯片家族 + 云协议折扣\"做联合 TCO 测算，而非单看 GPU 报价。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/google-doesnt-pay-the-nvidia-tax-its-new-tpus-explain-why"
+        },
+        {
+          "title": "Deezer 报告：AI 音乐日均上传量逼近人类创作",
+          "body": "Deezer 与 Spotify 数据显示 AI 生成音乐日均上传量正在追平人类创作量，已倒逼 Spotify 联合 DDEX 推行自愿 AI 标签 (DistroKid 首批接入)。这是内容平台对\"AI Slop\"的首次系统性回应。",
+          "insight": "内容产业的版权、署名与算法分发规则正在重写，零售/快消/品牌内容生态需要提前评估\"AI 内容比例上限\"。",
+          "source": "The Verge / Deezer",
+          "url": "https://www.theverge.com/entertainment/915027/deezer-ai-music-daily-uploads"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "过去 24 小时的核心主题可以浓缩为一句话——\"AI 进入主权 + 工程化阶段\"。一方面，Google 对 Anthropic 加码至 400 亿美元、Amazon 同步追投，叠加 OpenAI 推出 GPT-5.5 与 Workspace Agents，前沿模型彻底变成\"模型 + 主权云 + 资本\"的捆绑游戏；另一方面，SpaceX 自研 GPU、Google TPU \"不交 NVIDIA 税\"、Gemini 在 air-gapped 服务器上自毁等动作，把战场从\"谁的模型更聪明\"前移到\"谁的算力主权与合规可控\"。",
+    "第二条主线是企业级 Agent 真正进入\"工程化深水区\"。OpenAI Workspace Agents 与 Salesforce Agentforce Vibes 2.0 都把战线推进到\"嵌入业务系统、管理上下文与生命周期\"，VentureBeat 与微软工程师同时强调：盲目堆叠多 Agent 反而带来\"Swarm Tax\"，单一强 Agent + 强可观测性 + 行为漂移监控才是企业可落地的姿势。AI Coding 侧也呼应——Google 新代码 75%、Anthropic 70-90% 由 AI 生成，Roo-Code、ml-intern、awesome-codex-skills 等开源项目集中爆发，\"AI 写代码\"正在从能力点演化为标准 KPI。",
+    "第三条主线是社会与合规张力同步升温。FT 引用 Acemoglu 警告 AI 将扩大不平等，DOJ 加入 xAI 起诉 Colorado AI 反歧视法，OpenAI 关联 PAC 被疑资助 AI 假记者站，Spotify 开始上线自愿 AI 标签——监管碎片化、舆论操控与内容真实性风险同步抬头。对企业（尤其埃森哲此类咨询交付方）的建议：把\"模型 + 云 + 合规\"视为一张联合采购票、把 Agent 项目从单点 PoC 升级为\"上下文工程 + 行为监控 + Skills 治理\"的工程体系、并尽早搭建跨州 / 跨国的 AI 合规与公关核验机制。"
+  ]
+}

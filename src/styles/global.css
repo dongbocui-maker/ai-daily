@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Inter 通过 Google Fonts CDN 加载（在 Layout <head> 中引入） */
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-accent-ink font-sans;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+  ::selection {
+    @apply bg-accent-purple text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto max-w-8xl px-6 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-accent-purple text-white
+           font-semibold tracking-tight transition-all
+           hover:bg-accent-purple-deep hover:translate-x-1;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-accent-ink
+           font-medium border-b-2 border-transparent transition-all
+           hover:border-accent-purple hover:text-accent-purple;
+  }
+
+  .card-news {
+    @apply relative bg-white border border-accent-gray-100
+           p-6 transition-all duration-300
+           hover:border-accent-purple hover:shadow-[0_0_0_2px_rgba(161,0,255,0.08)];
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1
+           text-xs font-semibold tracking-wide uppercase;
+  }
+
+  .insight-block {
+    @apply mt-4 pl-4 border-l-2 border-accent-purple text-sm
+           text-accent-gray-700 leading-relaxed;
+  }
+}

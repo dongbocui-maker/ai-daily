@@ -1,0 +1,19 @@
+---
+const paragraphs = Astro.props.paragraphs as string[] | undefined;
+if (!paragraphs?.length) return;
+---
+<section class="py-16 lg:py-24 bg-accent-gray-50">
+  <div class="container-x max-w-5xl">
+    <div class="flex items-baseline gap-4 mb-10">
+      <span class="text-3xl">📝</span>
+      <h2 class="text-h2">本期小结</h2>
+    </div>
+    <div class="space-y-6">
+      {paragraphs.map((p) => (
+        <p class="text-lg leading-relaxed text-accent-ink first-letter:font-bold first-letter:text-accent-purple first-letter:text-2xl">
+          {p}
+        </p>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+name: Daily Sync from Feishu
+
+on:
+  schedule:
+    # 每天 UTC 01:30 = 北京时间 09:30（cron job 9:18 跑完之后）
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Sync from Feishu
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          DOC_TOKEN: ${{ secrets.DOC_TOKEN }}
+          LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: pnpm sync
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain src/data/daily)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/daily
+            git commit -m "chore(data): daily sync $(TZ=Asia/Shanghai date +%F)"
+            git push
+            echo "::notice::Daily content synced and pushed."
+          else
+            echo "::notice::No changes today."
+          fi

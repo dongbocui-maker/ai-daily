@@ -1,0 +1,48 @@
+---
+import { formatDateZh, dayOfWeekZh } from '../lib/data';
+import type { DailyReport } from '../lib/data';
+
+const report = Astro.props.report as DailyReport;
+---
+<section class="relative bg-accent-ink text-white overflow-hidden">
+  <!-- 装饰渐变 -->
+  <div class="absolute inset-0 opacity-60 pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent-purple blur-[120px]"></div>
+    <div class="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-accent-purple-deep blur-[140px] opacity-50"></div>
+  </div>
+
+  <div class="container-x relative py-20 lg:py-28">
+    <div class="flex flex-wrap items-center gap-3 mb-6 text-sm font-medium tracking-wide">
+      <span class="px-3 py-1 bg-accent-purple text-white">DAILY</span>
+      <span class="text-accent-gray-300">{formatDateZh(report.date)}</span>
+      <span class="text-accent-gray-500">·</span>
+      <span class="text-accent-gray-300">{dayOfWeekZh(report.date)}</span>
+    </div>
+
+    <h1 class="text-display max-w-5xl mb-8 text-balance">
+      {report.title}
+    </h1>
+
+    {report.summary && (
+      <p class="text-xl lg:text-2xl text-accent-gray-300 max-w-4xl leading-relaxed">
+        {report.summary}
+      </p>
+    )}
+
+    <div class="mt-12 flex flex-wrap items-center gap-6">
+      {report.sections.map((s) => (
+        <a
+          href={`#${s.key}`}
+          class="flex items-center gap-2 text-sm font-medium text-accent-gray-300
+                 hover:text-white transition-colors group"
+        >
+          <span class="text-lg">{s.emoji}</span>
+          <span class="border-b border-transparent group-hover:border-accent-purple-light pb-0.5">
+            {s.label}
+          </span>
+          <span class="text-xs text-accent-gray-500">{s.items.length}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

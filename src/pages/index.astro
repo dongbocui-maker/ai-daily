@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import SectionBlock from '../components/SectionBlock.astro';
-import Closing from '../components/Closing.astro';
+import Brief from '../components/Brief.astro';
 import DateNav from '../components/DateNav.astro';
 import { loadLatest } from '../lib/data';
 
@@ -18,10 +18,10 @@ if (!latest) {
   <main class="flex-1">
     <Hero report={latest} />
     <DateNav currentDate={latest.date} />
+    <Brief paragraphs={latest.closing} />
     {latest.sections.map((section) => (
       <SectionBlock section={section} />
     ))}
-    <Closing paragraphs={latest.closing} />
   </main>
   <Footer />
 </Base>

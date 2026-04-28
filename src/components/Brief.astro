@@ -1,0 +1,29 @@
+---
+const paragraphs = Astro.props.paragraphs as string[] | undefined;
+if (!paragraphs?.length) return;
+---
+<section class="py-12 lg:py-16 bg-accent-gray-50 border-b border-accent-gray-100">
+  <div class="container-x max-w-6xl">
+    <div class="bg-white border border-accent-gray-200 shadow-sm rounded-sm">
+      <!-- 卡片头部 -->
+      <div class="flex items-center gap-3 px-8 py-5 border-b border-accent-gray-100 bg-gradient-to-r from-accent-purple/5 to-transparent">
+        <span class="text-xl">✨</span>
+        <h2 class="text-xl lg:text-2xl font-extrabold tracking-tight">本期速览</h2>
+        <span class="ml-auto text-xs text-accent-gray-500 uppercase tracking-wider font-medium hidden sm:block">Today's Brief</span>
+      </div>
+      <!-- 卡片正文 -->
+      <div class="px-8 py-7 lg:px-10 lg:py-8 space-y-5">
+        {paragraphs.map((p, i) => (
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-accent-purple/10 text-accent-purple flex items-center justify-center text-sm font-bold">
+              {i + 1}
+            </div>
+            <p class="flex-1 text-base lg:text-[17px] leading-[1.85] text-accent-ink pt-0.5">
+              {p}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

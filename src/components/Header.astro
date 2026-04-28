@@ -1,7 +1,10 @@
 ---
-import { listDates, formatDateShort, dayOfWeekZh } from '../lib/data';
+import { listCurrentMonthDates, listDates, formatDateShort, dayOfWeekZh, currentMonthLabel } from '../lib/data';
 
-const dates = listDates();
+const dates = listCurrentMonthDates();
+const totalDates = listDates().length;
+const monthLabel = currentMonthLabel();
+const hasMore = totalDates > dates.length;
 const currentDate = Astro.props.currentDate as string | undefined;
 const base = import.meta.env.BASE_URL;
 ---
@@ -29,20 +32,30 @@ const base = import.meta.env.BASE_URL;
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </summary>
-        <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-44 max-h-80 overflow-y-auto">
-          {dates.map((d) => (
-            <a
-              href={`${base}d/${d}/`}
-              class={`block px-4 py-2.5 text-sm hover:bg-accent-gray-50 transition-colors ${
-                d === currentDate ? 'bg-accent-purple text-white hover:bg-accent-purple-deep' : ''
-              }`}
-            >
-              <span class="font-semibold">{d}</span>
-              <span class={`ml-2 text-xs ${d === currentDate ? 'text-white/80' : 'text-accent-gray-500'}`}>
-                {dayOfWeekZh(d)}
-              </span>
+        <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-52">
+          <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-accent-gray-500 border-b border-accent-gray-100 bg-accent-gray-50">
+            {monthLabel} · {dates.length} 期
+          </div>
+          <div class="max-h-72 overflow-y-auto">
+            {dates.map((d) => (
+              <a
+                href={`${base}d/${d}/`}
+                class={`block px-4 py-2.5 text-sm hover:bg-accent-gray-50 transition-colors ${
+                  d === currentDate ? 'bg-accent-purple text-white hover:bg-accent-purple-deep' : ''
+                }`}
+              >
+                <span class="font-semibold">{d}</span>
+                <span class={`ml-2 text-xs ${d === currentDate ? 'text-white/80' : 'text-accent-gray-500'}`}>
+                  {dayOfWeekZh(d)}
+                </span>
+              </a>
+            ))}
+          </div>
+          {hasMore && (
+            <a href={`${base}archive/`} class="block px-4 py-2.5 text-sm border-t border-accent-gray-100 text-accent-purple font-medium hover:bg-accent-purple/5 transition-colors">
+              查看完整归档 →
             </a>
-          ))}
+          )}
         </div>
       </details>
     </div>

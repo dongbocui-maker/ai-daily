@@ -68,3 +68,24 @@ export function dayOfWeekZh(date: string): string {
   const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   return days[new Date(date).getDay()];
 }
+
+/** 取当月代号 YYYY-MM（如 "2026-04"） */
+export function getYearMonth(date: string): string {
+  return date.slice(0, 7);
+}
+
+/** 返回"当月"的日期列表（以最新一天为参考） */
+export function listCurrentMonthDates(): string[] {
+  const all = listDates();
+  if (!all.length) return [];
+  const currentMonth = getYearMonth(all[0]);
+  return all.filter((d) => getYearMonth(d) === currentMonth);
+}
+
+/** 返回当月说明（如 "2026 年 4 月"） */
+export function currentMonthLabel(): string {
+  const all = listDates();
+  if (!all.length) return '';
+  const [y, m] = all[0].split('-').map(Number);
+  return `${y} 年 ${m} 月`;
+}

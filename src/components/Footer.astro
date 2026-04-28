@@ -6,12 +6,15 @@ const year = new Date().getFullYear();
   <div class="container-x py-12">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="md:col-span-2">
-        <div class="flex items-center gap-2.5 mb-4">
-          <span class="w-7 h-7 bg-accent-purple flex items-center justify-center">
-            <span class="text-white text-xs font-black tracking-tighter">AI</span>
-          </span>
-          <span class="font-bold text-lg tracking-tight">Daily Digest</span>
-        </div>
+        <a href={base} class="inline-block mb-4" aria-label="aidigest.club home">
+          <img
+            src={`${base}logo-compact.svg`}
+            alt="aidigest.club"
+            class="h-8 w-auto"
+            width="480"
+            height="80"
+          />
+        </a>
         <p class="text-sm text-accent-gray-700 leading-relaxed max-w-md">
           每日 AI 行业动态摘要——覆盖热点新闻、企业级实践、AI Coding 与深度报告。
           内容由 AI 辅助整理，每日 9:30 自动更新。
@@ -35,7 +38,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="mt-10 pt-8 border-t border-accent-gray-300 flex flex-col md:flex-row md:items-center justify-between gap-2">
       <p class="text-xs text-accent-gray-500">
-        © {year} AI Daily Digest · Built with Astro · Hosted on GitHub Pages
+        © {year} aidigest.club · Built with Astro · Hosted on GitHub Pages
       </p>
       <p class="text-xs text-accent-gray-500">
         内容仅供参考，不构成投资建议

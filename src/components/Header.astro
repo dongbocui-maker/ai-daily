@@ -7,11 +7,14 @@ const base = import.meta.env.BASE_URL;
 ---
 <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-accent-gray-100">
   <div class="container-x flex items-center justify-between h-16">
-    <a href={base} class="flex items-center gap-2.5 group">
-      <span class="w-7 h-7 bg-accent-purple flex items-center justify-center transition-transform group-hover:rotate-12">
-        <span class="text-white text-xs font-black tracking-tighter">AI</span>
-      </span>
-      <span class="font-bold text-lg tracking-tight">Daily Digest</span>
+    <a href={base} class="flex items-center group" aria-label="aidigest.club home">
+      <img
+        src={`${base}logo-compact.svg`}
+        alt="aidigest.club"
+        class="h-8 w-auto transition-transform group-hover:scale-[1.02]"
+        width="480"
+        height="80"
+      />
     </a>
     <nav class="hidden md:flex items-center gap-1">
       <a href={base} class="btn-ghost">最新</a>

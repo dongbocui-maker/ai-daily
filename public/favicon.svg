@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#A100FF"/>
-  <text x="16" y="22" font-family="Inter, system-ui" font-size="14" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-0.05em">AI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- favicon: 浓缩版——只保留三条纹 + 紫色背景方块 -->
+  <rect width="64" height="64" rx="12" fill="#A100FF"/>
+  <!-- 三条白色条纹（与 logo 呼应） -->
+  <rect x="14" y="14" width="6" height="36" rx="2" fill="#FFFFFF"/>
+  <rect x="24" y="22" width="6" height="28" rx="2" fill="#FFFFFF" opacity="0.75"/>
+  <rect x="34" y="30" width="6" height="20" rx="2" fill="#FFFFFF" opacity="0.5"/>
+  <!-- 右下角点（脉搏） -->
+  <circle cx="48" cy="46" r="4" fill="#00E676"/>
 </svg>

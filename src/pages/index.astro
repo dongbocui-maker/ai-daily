@@ -13,7 +13,7 @@ if (!latest) {
   return Astro.redirect('/about/');
 }
 ---
-<Base title={`${latest.title} · ${latest.date}`} description={latest.summary}>
+<Base title={`AI 日报 ${latest.date}`} description={latest.summary}>
   <Header currentDate={latest.date} />
   <main class="flex-1">
     <Hero report={latest} />

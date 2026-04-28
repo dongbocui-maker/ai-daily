@@ -3,6 +3,11 @@ import { formatDateZh, dayOfWeekZh } from '../lib/data';
 import type { DailyReport } from '../lib/data';
 
 const report = Astro.props.report as DailyReport;
+// title 如果就是日期本身说明没解析出真正的标题，用静态名代替
+const headline = report.title && report.title !== report.date
+  ? report.title
+  : 'AI 行业每日速览';
+const totalItems = report.sections.reduce((sum, s) => sum + s.items.length, 0);
 ---
 <section class="relative bg-accent-ink text-white overflow-hidden">
   <!-- 装饰渐变 -->
@@ -20,14 +25,12 @@ const report = Astro.props.report as DailyReport;
     </div>
 
     <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight max-w-4xl mb-3 text-balance leading-tight">
-      {report.title}
+      {headline}
     </h1>
 
-    {report.summary && (
-      <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed">
-        {report.summary}
-      </p>
-    )}
+    <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed">
+      {report.summary || `今日收录 ${totalItems} 条资讯，涵盖 ${report.sections.length} 个板块。向下滚动查看本期速览。`}
+    </p>
 
     <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
       {report.sections.map((s) => (

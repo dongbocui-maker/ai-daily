@@ -7,11 +7,12 @@ export interface Props {
 }
 
 const {
-  title = 'AI Daily Digest',
+  title = 'aidigest.club',
   description = '每日 AI 行业动态摘要，覆盖热点新闻、企业级实践、AI Coding、深度报告。',
 } = Astro.props;
 
-const fullTitle = title === 'AI Daily Digest' ? title : `${title} · AI Daily Digest`;
+const SITE_NAME = 'aidigest.club';
+const fullTitle = title === SITE_NAME ? `${SITE_NAME} · 每日 AI 行业速览` : `${title} · ${SITE_NAME}`;
 ---
 <!doctype html>
 <html lang="zh-CN">

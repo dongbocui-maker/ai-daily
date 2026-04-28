@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 const { report } = Astro.props;
 if (!report) throw new Error('Report not found');
 ---
-<Base title={`${report.title} · ${report.date}`} description={report.summary}>
+<Base title={`AI 日报 ${report.date}`} description={report.summary}>
   <Header currentDate={report.date} />
   <main class="flex-1">
     <Hero report={report} />

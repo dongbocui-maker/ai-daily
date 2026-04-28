@@ -102,14 +102,25 @@ export async function sanitizeReport(report: DailyReport, cfg: LLMConfig | null)
 }
 
 function offlineSanitize(item: NewsItem): NewsItem {
+  // 通用兜底替换，按从特定到泛化的顺序
   const replace = (s?: string) =>
     s
+      // 客户名（注意：先处理含品牌组合的，再处理简称）
       ?.replace(/L['']?Or[ée]al|欧莱雅/gi, '某快消客户')
-      ?.replace(/LVMH|路易威登/gi, '某奢侈品客户')
+      ?.replace(/LVMH|路易威登|Louis\s*Vuitton|Dior|Chanel/gi, '某奢侈品客户')
+      // 公司名
       ?.replace(/埃森哲|Accenture/gi, '咨询行业')
-      ?.replace(/\bMD\s*层面需要/g, '决策者需要')
-      ?.replace(/我们应该/g, '企业应当')
-      ?.replace(/咨询方需要|咨询方需在/g, '相关服务商需要');
+      // 内部视角：仅换明显“从咨询公司身份说话”的陈述
+      // 不动作为中性职位描述的 MD/CIO（那些是面向企业读者的中性表述）
+      ?.replace(/\bMD\s*层面需[^，。；！]{0,8}/g, '决策者层面需')
+      ?.replace(/合伙人层面需/g, '决策者需')
+      ?.replace(/咨询(?:方|公司|顾问)(?:需(?:要|在)?|应)/g, '行业服务商应')
+      // “我们”：仅在上下文明显是咨询者口吻时才换（避免误伤引述原文，如 OpenAI “我们的原则”）
+      ?.replace(/我们应(?:该|当)把/g, '企业应把')
+      ?.replace(/我们需要(?:帮|为)客户/g, '服务商需为客户')
+      ?.replace(/我们公司/g, '相关企业')
+      // 客户视角混入
+      ?.replace(/对(?:我方|我们)客户/g, '对企业客户');
   return {
     ...item,
     title: replace(item.title) ?? item.title,

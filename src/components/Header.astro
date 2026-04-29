@@ -19,44 +19,68 @@ const base = import.meta.env.BASE_URL;
         height="80"
       />
     </a>
+
+    {/* 桌面端导航 */}
     <nav class="hidden md:flex items-center gap-1">
       <a href={base} class="btn-ghost">最新</a>
       <a href={`${base}archive/`} class="btn-ghost">归档</a>
       <a href={`${base}learn/`} class="btn-ghost">学习</a>
       <a href={`${base}about/`} class="btn-ghost">关于</a>
     </nav>
-    <div class="relative">
-      <details class="group">
-        <summary class="list-none cursor-pointer btn-ghost">
-          <span>{currentDate ? formatDateShort(currentDate) : '选择日期'}</span>
-          <svg class="w-3 h-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+    <div class="flex items-center gap-1">
+      {/* 日期选择下拉 */}
+      <div class="relative">
+        <details class="group">
+          <summary class="list-none cursor-pointer btn-ghost">
+            <span>{currentDate ? formatDateShort(currentDate) : '选择日期'}</span>
+            <svg class="w-3 h-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-52">
+            <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-accent-gray-500 border-b border-accent-gray-100 bg-accent-gray-50">
+              {monthLabel} · {dates.length} 期
+            </div>
+            <div class="max-h-72 overflow-y-auto">
+              {dates.map((d) => (
+                <a
+                  href={`${base}d/${d}/`}
+                  class={`block px-4 py-2.5 text-sm hover:bg-accent-gray-50 transition-colors ${
+                    d === currentDate ? 'bg-accent-purple text-white hover:bg-accent-purple-deep' : ''
+                  }`}
+                >
+                  <span class="font-semibold">{d}</span>
+                  <span class={`ml-2 text-xs ${d === currentDate ? 'text-white/80' : 'text-accent-gray-500'}`}>
+                    {dayOfWeekZh(d)}
+                  </span>
+                </a>
+              ))}
+            </div>
+            {hasMore && (
+              <a href={`${base}archive/`} class="block px-4 py-2.5 text-sm border-t border-accent-gray-100 text-accent-purple font-medium hover:bg-accent-purple/5 transition-colors">
+                查看完整归档 →
+              </a>
+            )}
+          </div>
+        </details>
+      </div>
+
+      {/* 手机端汉堡菜单 */}
+      <details class="md:hidden relative group">
+        <summary class="list-none cursor-pointer btn-ghost px-2" aria-label="菜单">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"
+              class="group-open:hidden"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+              class="hidden group-open:block"></path>
           </svg>
         </summary>
-        <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-52">
-          <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-accent-gray-500 border-b border-accent-gray-100 bg-accent-gray-50">
-            {monthLabel} · {dates.length} 期
-          </div>
-          <div class="max-h-72 overflow-y-auto">
-            {dates.map((d) => (
-              <a
-                href={`${base}d/${d}/`}
-                class={`block px-4 py-2.5 text-sm hover:bg-accent-gray-50 transition-colors ${
-                  d === currentDate ? 'bg-accent-purple text-white hover:bg-accent-purple-deep' : ''
-                }`}
-              >
-                <span class="font-semibold">{d}</span>
-                <span class={`ml-2 text-xs ${d === currentDate ? 'text-white/80' : 'text-accent-gray-500'}`}>
-                  {dayOfWeekZh(d)}
-                </span>
-              </a>
-            ))}
-          </div>
-          {hasMore && (
-            <a href={`${base}archive/`} class="block px-4 py-2.5 text-sm border-t border-accent-gray-100 text-accent-purple font-medium hover:bg-accent-purple/5 transition-colors">
-              查看完整归档 →
-            </a>
-          )}
+        <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-44">
+          <a href={base} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">最新</a>
+          <a href={`${base}archive/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">归档</a>
+          <a href={`${base}learn/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">学习</a>
+          <a href={`${base}about/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors">关于</a>
         </div>
       </details>
     </div>

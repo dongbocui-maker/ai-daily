@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习中心 · aidigest.club</title>
+<meta name="description" content="AI 相关的学习计划、课程笔记、技术资料汇总">
+<style>
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .header {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: #7c3aed; }
+  .nav { display: flex; gap: 4px; }
+  .nav a {
+    padding: 8px 14px;
+    color: #525252;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .nav a:hover { background: #f5f5f5; color: #1a1a1a; }
+  .nav a.active { color: #7c3aed; }
+
+  .main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .page-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .page-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7c3aed;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .page-desc {
+    font-size: 15px;
+    color: #6b6b6b;
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    border-color: #7c3aed;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.08);
+    transform: translateY(-2px);
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #f3f0ff;
+    color: #7c3aed;
+    align-self: flex-start;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 14px;
+    color: #6b6b6b;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #9b9b9b;
+    margin-top: 4px;
+  }
+  .card-arrow {
+    margin-left: auto;
+    color: #7c3aed;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  .card:hover .card-arrow { transform: translateX(4px); }
+
+  .empty-hint {
+    margin-top: 32px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #6b6b6b;
+    text-align: center;
+  }
+
+  .footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #9b9b9b;
+  }
+  .footer a { color: #6b6b6b; text-decoration: none; }
+  .footer a:hover { color: #7c3aed; }
+
+  @media (max-width: 600px) {
+    .main { padding: 32px 20px 60px; }
+    .page-title { font-size: 28px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">aidigest<span>.club</span></a>
+    <nav class="nav">
+      <a href="/">最新</a>
+      <a href="/archive/">归档</a>
+      <a href="/learn/" class="active">学习</a>
+      <a href="/about/">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-header">
+    <div class="page-eyebrow">Learning Hub</div>
+    <h1 class="page-title">学习中心</h1>
+    <p class="page-desc">AI 相关的学习计划、课程笔记、技术资料汇总。这里的内容独立于每日 AI 资讯主题，更聚焦于深度学习和长期价值。</p>
+  </div>
+
+  <div class="grid">
+    <a href="/learn/anthropic-academy/" class="card">
+      <span class="card-tag">学习计划</span>
+      <h3 class="card-title">Anthropic Academy 五一学习计划</h3>
+      <p class="card-desc">17 门课程，5 天完整规划，从入门到进阶。基于 Jas Wong 的 Builders 路径，结合 AWS 企业背景定制。</p>
+      <div class="card-meta">
+        <span>🗓 May 1–5, 2026</span>
+        <span>·</span>
+        <span>~35 hrs</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="empty-hint">
+    更多学习内容陆续添加中。
+  </div>
+</main>
+
+<footer class="footer">
+  <p>
+    <a href="/">← 返回 aidigest.club 首页</a>
+  </p>
+</footer>
+
+</body>
+</html>

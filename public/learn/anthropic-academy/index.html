@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic Academy · May Holiday Study Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tiempos+Headline:wght@400;500&family=Söhne:wght@300;400;500;600&display=swap');
+
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE7D9;
+    --sand: #D4C9B0;
+    --charcoal: #1A1A1A;
+    --charcoal-mid: #2D2D2D;
+    --charcoal-light: #3D3C3A;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5751;
+    --text-muted: #8A8580;
+    --coral: #CF4500;
+    --coral-light: #E8603A;
+    --coral-pale: #F5DDD5;
+    --teal: #1B6B5A;
+    --teal-light: #2A9678;
+    --teal-pale: #D4EDE6;
+    --amber: #A35C00;
+    --amber-pale: #FDF0DC;
+    --purple: #4A3F8F;
+    --purple-pale: #ECEAF8;
+    --border: rgba(26,26,26,0.12);
+    --border-strong: rgba(26,26,26,0.25);
+    --font-display: 'Georgia', 'Times New Roman', serif;
+    --font-body: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --radius: 6px;
+    --radius-lg: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--charcoal);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-mark svg { width: 16px; height: 16px; }
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .header-tag {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--charcoal);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(207,69,0,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coral-light);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 680px;
+    margin-bottom: 20px;
+  }
+  .hero-title em { font-style: italic; color: var(--coral-light); }
+  .hero-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    max-width: 520px;
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+  }
+  .stat {
+    padding-right: 36px;
+    margin-right: 36px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat:last-child { border-right: none; margin-right: 0; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+
+  /* ── YT Banner ── */
+  .yt-strip {
+    background: var(--charcoal-mid);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .yt-icon {
+    width: 32px; height: 32px;
+    background: var(--purple);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px; color: #fff; font-weight: 500;
+  }
+  .yt-text { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .yt-text strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  /* ── Day Nav ── */
+  .day-nav {
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 56px;
+    z-index: 90;
+  }
+  .day-tab {
+    padding: 16px 20px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: var(--font-body);
+    position: relative;
+  }
+  .day-tab .tab-date { font-size: 10px; color: var(--text-muted); display: block; margin-top: 1px; font-weight: 400; }
+  .day-tab:hover { color: var(--text-primary); }
+  .day-tab.active {
+    color: var(--coral);
+    border-bottom: 2px solid var(--coral);
+  }
+  .day-tab.active .tab-date { color: var(--coral-light); opacity: 0.7; }
+
+  /* ── Main Content ── */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 48px 80px;
+  }
+
+  .day-panel { display: none; }
+  .day-panel.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Day Header ── */
+  .day-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-num {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .day-title-main {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .day-theme-text { font-size: 14px; color: var(--text-secondary); line-height: 1.5; max-width: 480px; }
+  .day-badge {
+    background: var(--charcoal);
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── Course Cards ── */
+  .course-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+
+  .course-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .course-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+  .course-top {
+    padding: 20px 22px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .level-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .dot-beg { background: #2A9678; }
+  .dot-int { background: #7F77DD; }
+  .dot-adv { background: #D4840A; }
+  .dot-skip { background: #B4B2A9; }
+
+  .course-main { flex: 1; min-width: 0; }
+  .course-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .course-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+  .jw-tag {
+    font-size: 10px;
+    background: var(--purple-pale);
+    color: var(--purple);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .skip-tag {
+    font-size: 10px;
+    background: #F0EEE8;
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .course-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+  .course-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .level-badge {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .lb-beg { background: var(--teal-pale); color: var(--teal); }
+  .lb-int { background: var(--purple-pale); color: var(--purple); }
+  .lb-adv { background: var(--amber-pale); color: var(--amber); }
+  .lb-skip { background: #F0EEE8; color: var(--text-muted); }
+  .duration { font-size: 12px; color: var(--text-muted); }
+
+  /* ── Notes Section ── */
+  .notes-section {
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+  .notes-toggle {
+    width: 100%;
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    text-align: left;
+    transition: background 0.15s;
+  }
+  .notes-toggle:hover { background: rgba(0,0,0,0.02); }
+  .notes-toggle-label {
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .notes-toggle-label .icon { font-size: 13px; }
+  .jw-label { color: var(--purple); }
+  .ctx-label { color: var(--text-muted); }
+  .toggle-arrow {
+    font-size: 11px;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+  }
+  .toggle-arrow.open { transform: rotate(90deg); }
+
+  .notes-body {
+    display: none;
+    padding: 4px 22px 18px 22px;
+  }
+  .notes-body.open { display: block; }
+
+  .note-block { margin-bottom: 14px; }
+  .note-block:last-child { margin-bottom: 0; }
+
+  .note-type {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .note-type.pro { color: var(--teal); }
+  .note-type.con { color: #B83A3A; }
+  .note-type.verdict { color: var(--purple); }
+  .note-type.tip { color: var(--amber); }
+  .note-type.ctx { color: var(--text-muted); }
+
+  .note-items { display: flex; flex-direction: column; gap: 4px; }
+  .note-item {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+  }
+  .note-item::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    font-weight: 500;
+  }
+  .note-type.pro ~ .note-items .note-item::before { color: var(--teal); }
+  .note-type.con ~ .note-items .note-item::before { color: #B83A3A; }
+  .note-type.verdict ~ .note-items .note-item::before { color: var(--purple); }
+  .note-type.tip ~ .note-items .note-item::before { color: var(--amber); }
+  .note-type.ctx ~ .note-items .note-item::before { color: var(--text-muted); }
+
+  .note-quote {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    padding: 10px 14px;
+    border-left: 2px solid var(--purple);
+    background: var(--purple-pale);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  /* ── Day Footer Note ── */
+  .day-note {
+    background: var(--cream-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 22px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .day-note strong { color: var(--text-primary); font-weight: 500; }
+  .day-note .note-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--coral);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* ── CCA Box ── */
+  .cca-box {
+    background: #fff;
+    border: 1px solid var(--purple);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    margin-top: 8px;
+  }
+  .cca-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--purple);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .cca-body { font-size: 12.5px; color: var(--text-secondary); line-height: 1.65; }
+  .cca-domains {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .cca-domain {
+    background: var(--purple-pale);
+    border-radius: var(--radius);
+    padding: 8px 12px;
+    font-size: 11px;
+    color: var(--purple);
+  }
+  .cca-domain .pct { font-size: 15px; font-weight: 500; display: block; margin-bottom: 2px; }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    align-items: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .legend-sep { width: 1px; height: 16px; background: var(--border); }
+
+  /* ── Responsive ── */
+  @media(max-width:700px) {
+    .site-header { padding: 0 20px; }
+    .hero { padding: 36px 20px 32px; }
+    .yt-strip { padding: 12px 20px; }
+    .day-nav { padding: 0 20px; overflow-x: auto; }
+    .main { padding: 28px 20px 60px; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; }
+    .stat { border-right: none; margin-right: 0; padding-right: 0; }
+    .day-heading { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo-area">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 2L13 13H3L8 2Z" fill="white"/>
+      </svg>
+    </div>
+    <span class="logo-text">Anthropic Academy</span>
+  </div>
+  <span class="header-tag">May Holiday Study Plan 2026</span>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">May 1 – 5, 2026 · 5-Day Sprint</div>
+  <h1 class="hero-title">Your complete plan for<br><em>Anthropic Academy</em></h1>
+  <p class="hero-subtitle">17 courses. 5 days. Structured from Beginner to Expert — following the Developers + Builders path recommended by Jas Wong, cross-referenced with your AWS enterprise background.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">17</div><div class="stat-lbl">Total Courses</div></div>
+    <div class="stat"><div class="stat-num">~35h</div><div class="stat-lbl">Estimated Time</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-lbl">JW Core Courses</div></div>
+    <div class="stat"><div class="stat-num">Free</div><div class="stat-lbl">All Courses</div></div>
+  </div>
+</div>
+
+<!-- YT Strip -->
+<div class="yt-strip">
+  <div class="yt-icon">JW</div>
+  <div class="yt-text">
+    <strong>Source: Jas Wong — "I Took All 7 Anthropic Courses in One Weekend" (Apr 10 2026 · 113K views)</strong><br>
+    Cybersecurity engineer, IAM &amp; AppSec professional. Completed all 7 core courses in ~12 hrs. Notes marked ★ JW are verbatim from her transcript. Purple bars = her direct quotes.
+  </div>
+</div>
+
+<!-- Day Nav -->
+<nav class="day-nav">
+  <button class="day-tab active" onclick="switchDay(0)">Day 1<span class="tab-date">May 1 · Foundations</span></button>
+  <button class="day-tab" onclick="switchDay(1)">Day 2<span class="tab-date">May 2 · API Mastery</span></button>
+  <button class="day-tab" onclick="switchDay(2)">Day 3<span class="tab-date">May 3 · Claude Code + AWS</span></button>
+  <button class="day-tab" onclick="switchDay(3)">Day 4<span class="tab-date">May 4 · MCP + Agents</span></button>
+  <button class="day-tab" onclick="switchDay(4)">Day 5<span class="tab-date">May 5 · Consolidation</span></button>
+</nav>
+
+<!-- Main -->
+<main class="main">
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#2A9678"></div>Beginner</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#7F77DD"></div>Intermediate</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#D4840A"></div>Advanced</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#B4B2A9"></div>Skip / Optional</div>
+  <div class="legend-sep"></div>
+  <div class="legend-item" style="font-size:11px;"><span style="color:#7F77DD;font-weight:500;">★ JW</span> = Jas Wong recommended · Purple note = verbatim transcript</div>
+</div>
+
+<!-- ═══════════════════════════════ DAY 1 ═══════════════════════════════ -->
+<div class="day-panel active" id="day-0">
+  <div class="day-heading">
+    <div>
+      <div class="day-num">Day 1 · May 1, 2026</div>
+      <h2 class="day-title-main">Foundations &amp; Claude Orientation</h2>
+      <p class="day-theme-text">JW's mandatory starting block for all paths — build mental models before touching the API</p>
+    </div>
+    <div class="day-badge">~5.5–7 hrs</div>
+  </div>
+
+  <div class="course-list">
+
+    <!-- Course: AI Capabilities -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-beg"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">AI Capabilities and Limitations</span>
+          </div>
+          <p class="course-desc">Mental model of token prediction, knowledge, memory, and steerability. Conceptual warm-up before AI Fluency.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-beg">Beginner</span>
+          <span class="duration">~1 hr</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-type ctx">Context (not in JW's 7 courses)</div>
+            <div class="note-items">
+              <div class="note-item">Not covered by Jas Wong — this course launched alongside newer Academy additions. Treat it as a 1-hour primer explaining <em>why</em> Claude behaves as it does, which makes the AI Fluency course land harder.</div>
+              <div class="note-item">Particularly useful before Day 2's API work: understanding hallucination mechanics and knowledge cutoffs reduces frustration during hands-on exercises.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course: Claude 101 -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-beg"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Claude 101</span>
+            <span class="jw-tag">★ JW #1</span>
+          </div>
+          <p class="course-desc">High-level overview of Claude features, prompting basics, skills, and connectors. JW reviewed at timestamp 0:49.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-beg">Beginner</span>
+          <span class="duration">~2 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (0:49–1:44)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"A solid orientation to everything that Claude can do in one place, and useful as a reference for skills and connectors specifically."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"Heavy on the reading and light on actually doing and exercises, and a lot of features they discuss are for paid users. If you're on a free tier, this is not going to feel very applicable."</div>
+              <div class="note-item">"If you just go into Claude and play with the features yourself, you can learn a lot of this on your own."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"Recommended for someone who just signed up for Claude and wants a structured overview — but you can skip it if you're already using Claude regularly. Maybe bookmark it for the skills and connector section."</div>
+            </div>
+          </div>
+          <div class="note-quote">JW Builders path (9:21): "You can skim it or skip it if you're already using Claude daily."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course: AI Fluency -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-beg"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">AI Fluency: Framework &amp; Foundations</span>
+            <span class="jw-tag">★ JW #2</span>
+          </div>
+          <p class="course-desc">4D Framework — Delegation, Description, Discernment, Diligence. Co-developed with Ringling College &amp; UCC. Certificate included. JW reviewed at 1:45.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-beg">Beginner</span>
+          <span class="duration">~2.5 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (1:45–2:57)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"This course is actually very different from all the other ones. It's not about Claude's technology. Rather, it's about how humans actually interact with AI."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"Exercise-heavy so that you can actually apply what you're learning on the go."</div>
+              <div class="note-item">"The section on diligence as part of the AI fluency framework is genuinely underrated and something I haven't seen covered this well anywhere else."</div>
+              <div class="note-item">"Because it's not Claude-specific, the concepts apply to any AI tools that you use."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"Very text-heavy, especially with the exercises. The prompt engineering section overlaps with other courses — you're going to see some of that content again."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"It is one of the best courses in the entire lineup, so don't skip this one regardless of your background."</div>
+              <div class="note-item">"Especially valuable for security practitioners and non-technical users."</div>
+            </div>
+          </div>
+          <div class="note-quote">JW Builders path (9:21): "Prompting foundations matter — especially for developers."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course: Cowork -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-beg"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Introduction to Claude Cowork</span>
+          </div>
+          <p class="course-desc">Agentic desktop mode — task loop, plugins, file &amp; research workflows, multi-step steering. New in Claude 4.x era.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-beg">Beg–Int</span>
+          <span class="duration">~1.5 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-type ctx">Context (not in JW's 7 courses)</div>
+            <div class="note-items">
+              <div class="note-item">Not reviewed by Jas Wong — Cowork launched after her sprint. Architecturally distinct from the API: Claude operates on local files and apps rather than as a remote service.</div>
+              <div class="note-item">Relevant for enterprise desktop automation evaluation. Treat as a lighter afternoon read after the heavier AI Fluency course.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /course-list -->
+
+  <div class="day-note">
+    <span class="note-label">JW — Day Sequencing Note</span>
+    <strong>"If you're a beginner, I would skip everything else until you've been using Claude consistently for a few weeks because the technical courses won't really land unless you have context for why they matter."</strong> (8:59) — For your profile (already technical), Day 1 sets mental models so Day 2's API depth has proper context.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DAY 2 ═══════════════════════════════ -->
+<div class="day-panel" id="day-1">
+  <div class="day-heading">
+    <div>
+      <div class="day-num">Day 2 · May 2, 2026</div>
+      <h2 class="day-title-main">API Mastery</h2>
+      <p class="day-theme-text">JW's #3 in Builders path — the most comprehensive technical course in the entire lineup, 8 hours, dedicate the full day</p>
+    </div>
+    <div class="day-badge">~6–8 hrs</div>
+  </div>
+
+  <div class="course-list">
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Building with the Claude API</span>
+            <span class="jw-tag">★ JW #6 reviewed / #3 in path</span>
+          </div>
+          <p class="course-desc">8 hrs: multi-turn conversations, tool use, RAG, text embeddings, prompt caching, extended thinking, workflows and agents. JW reviewed at 6:29 — note she reviewed it 6th but positions it 3rd in the Builders path.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Int–Adv</span>
+          <span class="duration">~6–8 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (6:29–8:01)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"Probably the most comprehensive technical course in the lineup. 8 hours long and covers setup of Claude, Claude models, temperature, streaming, prompt engineering, tool use, RAG, text embeddings, prompt caching, extended thinking, workflows, and agents."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"Gives you really good, solid foundational knowledge on building with Claude and is actually more in-depth and more clear than some of the concepts and tools covered in the other courses."</div>
+              <div class="note-item">"Covers Claude-specific features such as prompt caching and extended thinking that I think are worth knowing about."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"Definitely for technical users. If you already took the AI Fluency course, you can skip the prompt engineering section here."</div>
+              <div class="note-item">"If you can already read code, watching someone walk through it in video format doesn't add much. I found myself skipping any part where they were just doing exercises and reading through code because you can easily understand that just by reading it."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"Very worth it if you're building with Claude or just building with AI in general."</div>
+              <div class="note-item">"Also useful for power users who want to understand the concepts even if they're not writing the code themselves, so that you can explain it to someone if they ask you."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type tip">⚡ Practical Tip</div>
+            <div class="note-items">
+              <div class="note-item">Skip the prompt engineering section (already covered Day 1 AI Fluency) and skip exercise video walkthroughs — read the code directly. JW's skip advice saves ~1.5–2 hrs, redirecting time to RAG, Prompt Caching, and Extended Thinking modules which she flags as most Claude-specific.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-note">
+    <span class="note-label">Day 2 Planning Note</span>
+    Block the full day. JW's skip instructions (prompt engineering section, code exercise walkthroughs) realistically recover 1.5–2 hrs — use that time for the RAG, Prompt Caching, and Extended Thinking modules, which she flags as the most Claude-specific content and hardest to find elsewhere.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DAY 3 ═══════════════════════════════ -->
+<div class="day-panel" id="day-2">
+  <div class="day-heading">
+    <div>
+      <div class="day-num">Day 3 · May 3, 2026</div>
+      <h2 class="day-title-main">Claude Code + AWS Bedrock</h2>
+      <p class="day-theme-text">JW's #4 and #5 in path — practical dev tooling, plus the AWS Bedrock course for your enterprise cloud context</p>
+    </div>
+    <div class="day-badge">~7–9 hrs</div>
+  </div>
+
+  <div class="course-list">
+
+    <!-- Claude Code 101 -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Claude Code 101</span>
+          </div>
+          <p class="course-desc">Agentic coding loop, CLAUDE.md persistent memory, subagents, MCP integration, hooks and custom commands. Prerequisite before Claude Code in Action.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Intermediate</span>
+          <span class="duration">~2–3 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-type ctx">Context (not in JW's 7 courses — newer addition)</div>
+            <div class="note-items">
+              <div class="note-item">Not reviewed by Jas Wong — this was not available during her weekend sprint. It is the structured onboarding prerequisite before "Claude Code in Action" which she did review.</div>
+              <div class="note-item">JW's implicit advice applies: CLAUDE.md and hooks content here is exactly what she later describes as critical in Claude Code in Action. Do this first to get the most from her reviewed course.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Claude Code in Action -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Claude Code in Action</span>
+            <span class="jw-tag">★ JW #5 reviewed / #4 in path</span>
+          </div>
+          <p class="course-desc">How coding assistants work under the hood via tool use, Claude inside GitHub Actions, Claude SDK, practical commands and real workflows. JW reviewed at 5:32.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Intermediate</span>
+          <span class="duration">~2–3 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (5:32–6:28)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"Covers how coding assistants actually work under the hood through something called tool use, how to use Claude inside GitHub Actions, commands, Claude SDKs, and practical tips for coding more efficiently with Claude."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"Specific and practical with real commands and real workflows, and files are provided for you to follow along in your own environment."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"Definitely requires coding knowledge, so it's not very beginner-friendly unless you are already intending to build with Claude."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type tip">⚡ Security Angle</div>
+            <div class="note-items">
+              <div class="note-item">"If you're a security practitioner, there are some things that they mention that I think are worth highlighting and knowing about as a user." — Pay attention to GitHub Actions permissions, SDK credential handling, and MCP server trust boundaries.</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"Essential for developers, but you can skip it if you don't intend to use Claude Code — which if you are a developer, I highly suggest you try to code with an AI tool if you haven't already."</div>
+            </div>
+          </div>
+          <div class="note-quote">JW Builders path (9:49): She formally places Claude Code in Action after MCP in her path. Reordered here so you understand the dev environment before Day 4's MCP implementation work.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bedrock -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-adv"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Claude with Amazon Bedrock</span>
+          </div>
+          <p class="course-desc">Full Claude on Bedrock: API via boto3, tool use, RAG, agents, extended thinking, prompt caching. AWS-specific auth, IAM, and guardrails.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-adv">Int–Adv</span>
+          <span class="duration">~2–3 hrs*</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note (added for your AWS profile)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">JW (10:20): "There are six more courses on Anthropic Academy that I didn't cover today. I skipped them because they're built for specific audiences — but if you fall into one of these groups, they're probably worth checking out."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type tip">⚡ Fast-Track Strategy</div>
+            <div class="note-items">
+              <div class="note-item">~40% overlaps with Day 2 API course — skip multi-turn basics, prompt engineering, and RAG fundamentals already covered. Focus exclusively on boto3 invocation patterns, IAM/resource-based policies for Bedrock, model access workflow, and Bedrock-specific guardrails.</div>
+              <div class="note-item">*Estimated 2–3 hrs assumes aggressive skipping of overlapping modules.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-note">
+    <span class="note-label">Day 3 Sequencing Note</span>
+    JW formally places Claude Code in Action after MCP in her Builders path. The reordering here (Claude Code before MCP) is deliberate — understanding the agentic dev environment first makes Day 4's deep MCP implementation work more concrete, which directly addresses her warning that MCP Advanced Topics "probably only makes sense if you're actively building with it."
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DAY 4 ═══════════════════════════════ -->
+<div class="day-panel" id="day-3">
+  <div class="day-heading">
+    <div>
+      <div class="day-num">Day 4 · May 4, 2026</div>
+      <h2 class="day-title-main">Full MCP Track + Agent Skills</h2>
+      <p class="day-theme-text">JW's #3, #4, and #7 — the technical peak of the sprint. Do Intro first, build something, then take Advanced Topics</p>
+    </div>
+    <div class="day-badge">~5.5–7 hrs</div>
+  </div>
+
+  <div class="course-list">
+
+    <!-- MCP Intro -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Introduction to Model Context Protocol</span>
+            <span class="jw-tag">★ JW #3 reviewed / #5 in path</span>
+          </div>
+          <p class="course-desc">Build MCP servers + clients in Python from scratch — tools, resources, prompts primitives, MCP SDK, Inspector. JW reviewed at 2:59.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Intermediate</span>
+          <span class="duration">~2–3 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (2:59–4:18)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"A very beginner-friendly breakdown of what MCP actually is, how it works, and how to implement a server, MCP client, and MCP resources. Also covers the MCP SDK."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"Genuinely accessible even if MCP feels intimidating. Prior to taking this course, I didn't have a really good understanding of what MCP was. I tried several times to watch YouTube tutorials and read their official documentation, but I wasn't really understanding it."</div>
+              <div class="note-item">"Files are provided so that you can follow along what they're talking about in the videos, and it gives you a solid foundation before moving on to the next course."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"You do need to have some coding knowledge to follow along — they're very transparent about this up front. If you're already using MCP regularly, this is going to feel very surface level."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"You should watch this if you're building with AI because MCP does not just apply to Claude, it applies to any AI system that you use."</div>
+              <div class="note-item">"For anyone who uses MCP but doesn't fully understand what's happening under the hood, or developers who want to start building with it from scratch."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MCP Advanced -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-adv"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Model Context Protocol: Advanced Topics</span>
+            <span class="jw-tag">★ JW #4 reviewed / #6 in path</span>
+          </div>
+          <p class="course-desc">Sampling, progress/log notifications, roots/file access, JSON message architecture, STDIO + StreamableHTTP transports, production scaling. JW reviewed at 4:19.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-adv">Advanced</span>
+          <span class="duration">~2–3 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (4:19–5:31)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"Goes a lot deeper into MCP, including sampling, MCP transport and communications such as streamable HTTP, message types, and file system access."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"The interactive modules that you can follow along all the code — this is definitely the best across all the seven courses."</div>
+              <div class="note-item">"The technical depth on transport and communication patterns is genuinely useful for me because I am a builder."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"Very technical and dense. I'll be honest, I was falling asleep at some points — not because it's bad, but this content probably only makes sense if you're actively building with it. If you're just passively watching to learn, I don't think the information is going to stick because there's a lot."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"You shouldn't just jump into this course. Do the intro course first, then get some hands-on experience with MCP, then come back to this course."</div>
+              <div class="note-item">"For developers or builders actively building or planning to build MCP servers, and for security practitioners that want to understand MCP attack surfaces."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type tip">⚡ Critical Tip from JW</div>
+            <div class="note-items">
+              <div class="note-item">Build at least a minimal MCP server with one tool between the morning Intro session and afternoon Advanced Topics session. JW's warning about passive watching is the most actionable advice in her entire review — this is the one course where doing matters more than watching.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agent Skills -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Introduction to Agent Skills</span>
+            <span class="jw-tag">★ JW #7 in path</span>
+          </div>
+          <p class="course-desc">What agent skills are, writing SKILL.md, trigger configuration, team distribution, enterprise deployment, troubleshooting. JW reviewed at 8:01.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Intermediate</span>
+          <span class="duration">~1–1.5 hrs</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> Jas Wong Notes (8:01–8:49)</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"A very quick course that covers what agent skills are, how to use them, how to write them, and how to troubleshoot them."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type pro">✓ Pro</div>
+            <div class="note-items">
+              <div class="note-item">"Very concise and focused, and the troubleshooting coverage is actually very useful if you're building with skills."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type con">✗ Con</div>
+            <div class="note-items">
+              <div class="note-item">"No exercises, so it's completely just asynchronous videos. Definitely a lot lighter in format compared to the other courses."</div>
+            </div>
+          </div>
+          <div class="note-block">
+            <div class="note-type verdict">◆ Verdict</div>
+            <div class="note-items">
+              <div class="note-item">"Short enough to watch regardless of your level — just don't expect to do anything hands-on during it."</div>
+              <div class="note-item">"For anyone building with Claude Code who wants to understand how to use and distribute skills properly."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subagents -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-int"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Introduction to Subagents</span>
+          </div>
+          <p class="course-desc">Context isolation, task delegation, subagent design patterns, anti-patterns, structured output formats in Claude Code.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-int">Intermediate</span>
+          <span class="duration">~1 hr</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-type ctx">Context (not in JW's 7 courses)</div>
+            <div class="note-items">
+              <div class="note-item">Not covered by Jas Wong. Short companion to Agent Skills — covers the runtime delegation side (subagents) to complement Agent Skills' configuration side (SKILL.md). Take it directly after Agent Skills as a 1-hour extension.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-note">
+    <span class="note-label">JW — Critical Sequencing Warning</span>
+    <strong>"You shouldn't just jump into MCP Advanced Topics. Do the intro course first, then get some hands-on experience with MCP, then come back to this course."</strong> — Build at least a minimal MCP server between the morning and afternoon sessions. This is the single most actionable piece of scheduling advice in Jas Wong's entire review.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DAY 5 ═══════════════════════════════ -->
+<div class="day-panel" id="day-4">
+  <div class="day-heading">
+    <div>
+      <div class="day-num">Day 5 · May 5, 2026</div>
+      <h2 class="day-title-main">Vertex AI + Consolidation</h2>
+      <p class="day-theme-text">Platform variant, certificate collection, and optional elective content — flex day to consolidate and review</p>
+    </div>
+    <div class="day-badge">~4–6 hrs core</div>
+  </div>
+
+  <div class="course-list">
+
+    <!-- Vertex -->
+    <div class="course-card">
+      <div class="course-top">
+        <div class="level-dot dot-adv"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">Claude with Google Cloud's Vertex AI</span>
+          </div>
+          <p class="course-desc">Full Claude on Vertex AI — same scope as Bedrock but GCP-specific auth, model garden, Vertex pipelines and SDK differences.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-adv">Int–Adv</span>
+          <span class="duration">~2 hrs*</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label ctx-label"><span class="icon">ℹ</span> Context Note</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">JW (10:20): "There are six more courses I didn't cover — built for specific audiences, but if you fall into one of these groups, they're probably worth checking out."</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type tip">⚡ Fast-Track Strategy</div>
+            <div class="note-items">
+              <div class="note-item">~60% overlap with Day 2 API course + Day 3 Bedrock. Fast-track aggressively — focus only on GCP auth, Vertex-specific SDK differences, and model garden access patterns.</div>
+              <div class="note-item">Lower priority than Bedrock given your AWS enterprise context. *Estimated 2 hrs assumes heavy skipping of overlapping content.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skip block -->
+    <div class="course-card" style="opacity:0.5;">
+      <div class="course-top">
+        <div class="level-dot dot-skip"></div>
+        <div class="course-main">
+          <div class="course-title-row">
+            <span class="course-name">AI Fluency for Students / Nonprofits / Educators / Teaching AI Fluency</span>
+            <span class="skip-tag">Skip</span>
+          </div>
+          <p class="course-desc">Audience-specific variants of the AI Fluency framework. Out of scope for your profile.</p>
+        </div>
+        <div class="course-meta">
+          <span class="level-badge lb-skip">Skip</span>
+          <span class="duration">—</span>
+        </div>
+      </div>
+      <div class="notes-section">
+        <button class="notes-toggle" onclick="toggleNote(this)">
+          <span class="notes-toggle-label jw-label"><span class="icon">★</span> JW on Skipped Courses</span>
+          <span class="toggle-arrow">▶</span>
+        </button>
+        <div class="notes-body">
+          <div class="note-block">
+            <div class="note-quote">"There are six more courses on Anthropic Academy that I didn't cover today. I skipped them because they're built for specific audiences — but if you fall into one of these groups, then they're probably worth checking out." (10:38)</div>
+          </div>
+          <div class="note-block">
+            <div class="note-type ctx">Recommendation</div>
+            <div class="note-items">
+              <div class="note-item">For your profile (business strategy + engineering + enterprise cloud): skip all four. The Framework &amp; Foundations course completed on Day 1 already covers all relevant concepts.</div>
+              <div class="note-item">Exception: Teaching AI Fluency is worth taking if you run internal AI enablement programs for your org.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-note">
+    <span class="note-label">Day 5 — Afternoon Block</span>
+    Use the afternoon to collect certificates across all completed courses and update your LinkedIn profile. Also explore Anthropic's free Jupyter Notebook courses on GitHub (API Fundamentals, Prompt Engineering Tutorial, Tool Use) — these are hands-on code complements to the video courses, particularly useful for consolidating Day 2's API content.
+  </div>
+
+  <div class="cca-box">
+    <div class="cca-title">🎓 Bonus: Claude Certified Architect (CCA) Foundations Exam</div>
+    <div class="cca-body">Launched March 12, 2026. 60 proctored questions across 5 domains — separate from Academy courses but this 5-day plan covers all five directly. Not mentioned by Jas Wong (launched after her video).</div>
+    <div class="cca-domains">
+      <div class="cca-domain"><span class="pct">27%</span>Agentic Architecture</div>
+      <div class="cca-domain"><span class="pct">20%</span>Claude Code Config</div>
+      <div class="cca-domain"><span class="pct">20%</span>Prompt Engineering</div>
+      <div class="cca-domain"><span class="pct">18%</span>Tool Design &amp; MCP</div>
+      <div class="cca-domain"><span class="pct">15%</span>Context Management</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+function switchDay(idx) {
+  document.querySelectorAll('.day-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.day-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+  window.scrollTo({ top: document.querySelector('.day-nav').offsetTop - 56, behavior: 'smooth' });
+}
+
+function toggleNote(btn) {
+  const body = btn.nextElementSibling;
+  const arrow = btn.querySelector('.toggle-arrow');
+  const open = body.classList.contains('open');
+  body.classList.toggle('open', !open);
+  arrow.classList.toggle('open', !open);
+}
+</script>
+
+</body>
+</html>

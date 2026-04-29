@@ -2,8 +2,10 @@ name: Daily Sync from Feishu
 
 on:
   schedule:
-    # 每天 UTC 01:30 = 北京时间 09:30（cron job 9:18 跑完之后）
-    - cron: '30 1 * * *'
+    # 兜底用：本地 VM cron（09:30 北京时间）失败时 GitHub 这边再补两次
+    # GitHub cron 经常延迟 5–15 分钟，所以多跑几次幂等无害
+    - cron: '0 4 * * *'    # UTC 04:00 = 北京 12:00（本地 cron 失败兜底）
+    - cron: '0 9 * * *'    # UTC 09:00 = 北京 17:00（再次兜底）
   workflow_dispatch:
 
 permissions:

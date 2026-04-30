@@ -1,0 +1,179 @@
+{
+  "date": "2026-04-30",
+  "title": "2026-04-30",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "微软与 OpenAI 拆解独家协议，OpenAI 可上 AWS 与 Google Cloud",
+          "body": "微软与 OpenAI 周一宣布对核心商业合作进行重大改写：取消 Azure 上 OpenAI 模型的收入分成、IP 授权改为非独家，且 OpenAI 终于可以将其全部产品上架 AWS、Google Cloud。这是自 2019 年微软首笔 10 亿美元投资以来最大幅度的关系重构。",
+          "insight": "OpenAI 与超大规模云供应商的\"婚姻\"正式松绑，企业客户在多云部署 GPT 系列时的议价空间和合规弹性显著提升。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/microsoft-and-openai-gut-their-exclusive-deal-freeing-openai-to-sell-on-aws-and-google-cloud/"
+        },
+        {
+          "title": "Google 强势回应国防部 AI 合同员工抗议，季度 AI 订阅创新高",
+          "body": "Pichai 在最新沟通中强调\"AI 须服务于民主国家国家安全\"，并披露 Google 消费级 AI 订阅取得\"史上最强单季\"。同期 Alphabet 全球事务总裁 Kent Walker 公开为 Pentagon 涉密 AI 合同辩护。",
+          "insight": "科技巨头与政府国安业务的边界进一步模糊，企业采购 AI 时合规与伦理审查议题将更受关注。",
+          "source": "The Verge / Financial Times",
+          "url": "https://www.theverge.com/ai-artificial-intelligence"
+        },
+        {
+          "title": "马斯克出庭作证 OpenAI 案，安全记录受质疑",
+          "body": "xAI 创始人马斯克本周就 OpenAI 转为营利诉讼出庭，原告律师围绕 Grok\"机械希特勒\"事件、Colorado 反算法歧视法等向其追问 AI 安全承诺与商业利益之间的张力。",
+          "insight": "AI 头部企业的治理结构与安全宣称正进入司法审视阶段，对客户合规风险评估提供新案例。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence"
+        },
+        {
+          "title": "【🇨🇳 中文源】小红书内部信：成立 AI 一级部门 \"Dots\" 与企业智能部，柯南任总裁",
+          "body": "小红书 4 月 30 日宣布新一轮组织升级，新设 AI 一级部门 Dots 和企业智能部，从产品技术与组织两端加大 AI 投入；任命柯南为总裁全面整合社区、电商、商业化业务，向 CEO 星矢汇报。",
+          "insight": "内容/电商平台把 AI 列为一级组织，是国内互联网公司\"AI Native\"组织重塑的最新信号。",
+          "source": "钛媒体",
+          "url": "https://www.tmtpost.com/nictation"
+        },
+        {
+          "title": "【🇨🇳 中文源】DeepSeek 适配国产芯片，半导体板块大涨",
+          "body": "4 月 30 日港股市场，DeepSeek 完成与多家国产芯片的适配消息发酵，半导体芯片股集体走强，中芯国际盘中涨超 6%。",
+          "insight": "国产大模型 + 国产算力闭环逐步成型，企业 IT 采购在合规与供应链安全维度有了更可落地的国产替代路径。",
+          "source": "钛媒体",
+          "url": "https://www.tmtpost.com/nictation"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "Mistral 发布 Workflows 编排引擎，日均执行已达数百万级",
+          "body": "法国 Mistral AI（估值 137 亿美元）推出 Workflows 公测版，是基于 Temporal 构建的生产级编排层，目标是把企业 AI 项目从 PoC 推向核心业务流程。Gartner 预测 40% 以上 Agentic AI 项目将在 2027 年前被砍掉，痛点正是\"模型之外的运行基础设施\"。",
+          "insight": "企业 Agent 落地的瓶颈已不在模型本身，而在状态管理、可观测、与 SOP 编排——CIO 选型应把\"orchestration layer\"当作独立采购项。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions"
+        },
+        {
+          "title": "小米开源 MiMo-V2.5 / V2.5-Pro，Agent 任务效率领先",
+          "body": "小米连续放出 MIT 协议开源新模型，主打 Agentic 任务的 token 效率：Pro 版在 ClawEval 上 63.8% 成功率、单 trajectory 仅 ~70K tokens，比 Claude Opus 4.6、Gemini 3.1 Pro、GPT-5.4 节省 40-60% token，原生 100 万上下文。",
+          "insight": "中国厂商在\"开源 + Agent 经济性\"赛道再下一城，企业 Agent 选型需重新审视开源 + 私有部署 TCO。",
+          "source": "VentureBeat / Xiaomi",
+          "url": "https://venturebeat.com/technology/open-source-xiaomi-mimo-v2-5-and-v2-5-pro-are-among-the-most-efficient-and-affordable-at-agentic-claw-tasks"
+        },
+        {
+          "title": "Figure 完成人形机器人量产过渡：从\"日产 1 台\"到\"时产 1 台\"",
+          "body": "Figure 创始人 Brett Adcock 披露 120 天内将产能扩大 24 倍——从每天 1 台到每小时 1 台，本周将生产 55 台机器人；机器人越多，为人形 AI 模型 Helix 生成的训练数据也越多，形成数据飞轮。",
+          "insight": "具身智能进入数据驱动的规模化阶段，工业、零售场景的 Pilot 部署窗口正在打开。",
+          "source": "The Verge / Brett Adcock @ X",
+          "url": "https://www.theverge.com/ai-artificial-intelligence"
+        },
+        {
+          "title": "【🇨🇳 中文源】地平线增资至 25 亿美元（+67%），AI 芯片本土生态加注",
+          "body": "天眼查显示，4 月 28 日北京地平线信息技术有限公司注册资本由 15 亿美元增至 25 亿美元，增幅约 67%，余凯仍任法定代表人。该公司面向 AI 芯片软硬件、智能驾驶等业务。",
+          "insight": "智驾与端侧 AI 推理芯片国产化在 2026 年继续获得资本加注，对应车企 + 互联网客户在边缘 AI 部署可获得更稳的供应链。",
+          "source": "钛媒体 / 天眼查",
+          "url": "https://www.tmtpost.com/nictation"
+        },
+        {
+          "title": "【🇨🇳 中文源】极越汽车获准合并重整，AI 智能汽车赛道迎洗牌",
+          "body": "极越汽车关联企业近日获法院重整申请受理，正式从预重整转入司法重整程序，意在引入新投资人、保障用户售后与盘活资产。",
+          "insight": "高 AI 智能化标签的造车新势力进入出清阶段，B 端供应商需重新评估 ADAS / 智能座舱合作组合。",
+          "source": "钛媒体 / 36氪",
+          "url": "https://www.tmtpost.com/nictation"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "Poolside 发布 Laguna 系列开源模型，主打本地 Agent 编码",
+          "body": "旧金山 Poolside 一次发布 Laguna M.1（225B MoE / 23B 激活，专有，面向高敏感企业 / 政府）与 Laguna XS.2（33B MoE / 3B 激活，Apache 2.0），并配套 \"pool\" 编码 Agent 框架与移动端编码环境 \"shimmer\"。XS.2 可单卡本地跑 Agent。",
+          "insight": "美国厂商在开源 Coding Agent 上正面回应 DeepSeek/小米路线，企业可据此构建私有化的\"本地 Copilot\"基线。",
+          "source": "VentureBeat / Poolside",
+          "url": "https://venturebeat.com/technology/american-ai-startup-poolside-launches-free-high-performing-open-model-laguna-xs-2-for-local-agentic-coding"
+        },
+        {
+          "title": "GitHub Copilot 全面转向 Usage-based Billing",
+          "body": "随小米 MiMo 报道点出的趋势：GitHub Copilot 正逐步从订阅制转向按 token 计费。这与 Anthropic 的限速策略、OpenAI 的\"自助餐\"订阅形成三种不同范式。",
+          "insight": "CFO 与 IT 在采购 AI 编码工具时需建立 token 用量预测与异常熔断机制，以免用量失控。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/open-source-xiaomi-mimo-v2-5-and-v2-5-pro-are-among-the-most-efficient-and-affordable-at-agentic-claw-tasks"
+        },
+        {
+          "title": "Mistral Workflows 进军 Agent 编排，挑战 LangGraph / Temporal 生态",
+          "body": "Workflows 把\"agentic 推理\"和\"确定性业务规则\"编排到同一个 stateful runtime 中，已实现日均百万级执行——直接对标 LangGraph、AWS Step Functions for Agents。",
+          "insight": "Agent Coding 的\"软件工程范式\"正在从原型脚本进化到企业级 BPM-on-LLM，开发组织需要新的 SDLC 实践。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions"
+        },
+        {
+          "title": "【🇨🇳 中文源】DeepSeek 适配国产芯片，国产 Coding Agent 闭环成型",
+          "body": "DeepSeek 完成与多家国产 AI 芯片适配，叠加此前 V4 / Coder 系列开源，形成\"国产模型 + 国产算力 + 国产 IDE 插件\"完整链路。",
+          "insight": "对于央国企客户，AI Coding 工具链有了完整的国产化替代答案，可启动从 Copilot 到自研 Agent 平台的 PoC。",
+          "source": "钛媒体",
+          "url": "https://www.tmtpost.com/nictation"
+        },
+        {
+          "title": "GitHub Trending：Agentic 编码框架持续霸榜",
+          "body": "本周 GitHub Trending 上 OpenClaw、Claude Code 衍生项目、Mistral 官方 Workflows 示例项目持续位于 Daily 前列；多语言模板、MCP 适配器、IDE 集成项目获得大量 fork。",
+          "insight": "开源 Agent IDE 生态已从\"实验性玩具\"进入\"团队工具链\"阶段，可纳入企业 DevTools 标准评估。",
+          "source": "GitHub Trending",
+          "url": "https://github.com/trending"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "ASI-EVOLVE：AI 自主优化 AI 训练数据 / 架构 / 算法，刷新人类基线",
+          "body": "SII-GAIR 研究团队提出 ASI-EVOLVE 框架，作为\"AI for AI\"的 Agent 系统，运行\"learn-design-experiment-analyze\"持续闭环。实验中自主发现的新架构在预训练数据流水线上提升基准分超过 18 分，并设计出更高效 RL 算法。",
+          "insight": "AI 自我研究范式逼近\"持续自我改进\"，企业 AI 团队应思考如何把 AutoML / AutoArchSearch 纳入长期 R&D 规划。",
+          "source": "VentureBeat / arXiv 2603.29640",
+          "url": "https://venturebeat.com/orchestration/new-ai-framework-autonomously-optimizes-training-data-architectures-and-algorithms-outperforming-human-baselines"
+        },
+        {
+          "title": "【🇨🇳 中文研究】京东等机构 RLSD 训练范式：少量算力造定制推理模型",
+          "body": "京东与多家高校提出 RLSD（Reinforcement Learning with Verifiable Rewards with Self-Distillation），融合可验证奖励 RL 的稳定性与自蒸馏的密集反馈，解决标准 GRPO \"千 token 仅一个 0/1 奖励\"的稀疏问题，实验中超越经典 distillation 与 RL 算法。",
+          "insight": "中型企业可用更少算力训练专属推理模型，对企业知识库 + 业务规则定制化推理是低成本路径。",
+          "source": "VentureBeat / arXiv 2604.03128",
+          "url": "https://venturebeat.com/orchestration/how-to-build-custom-reasoning-agents-with-a-fraction-of-the-compute"
+        },
+        {
+          "title": "Gartner：超 40% Agentic AI 项目将于 2027 年前被砍",
+          "body": "Gartner 调研指出 Agentic AI 市场规模从 2026 年 109 亿美元将增至 2034 年 1990 亿美元，但同期 40%+ 项目会因成本高、价值不清、复杂度高被终止。",
+          "insight": "Agent 项目治理需在 Day 0 就建立 ROI 度量、退出标准、运行成本上限——咨询交付场景应纳入\"PoC kill-switch\"设计。",
+          "source": "Reuters / Gartner",
+          "url": "https://www.reuters.com/business/over-40-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says-2025-06-25/"
+        },
+        {
+          "title": "Monitoring LLM Behavior：Drift / Retries / Refusal Patterns 监控成为新刚需",
+          "body": "微软研究员撰文指出，传统软件 A+B=C 确定性测试不再适用；生成式 AI 的随机性使行为漂移、重试模式、拒绝率成为生产环境必须监控的关键指标。",
+          "insight": "MLOps 团队需把 \"behavior monitoring\" 加入可观测性栈，与 APM、安全审计同等优先。",
+          "source": "VentureBeat / Microsoft",
+          "url": "https://venturebeat.com/infrastructure/monitoring-llm-behavior-drift-retries-and-refusal-patterns"
+        },
+        {
+          "title": "【🇨🇳 中文源】中文报道：DeepSeek 国产芯片适配引半导体板块大涨",
+          "body": "钛媒体 4 月 30 日报道，DeepSeek 适配国产芯片消息直接推动港股半导体板块走强，中芯国际盘中涨超 6%，反映资本市场对\"中国 AI 全栈自主\"叙事的强烈预期。",
+          "insight": "国产 AI 全栈成为资本与产业双重定价因子，咨询机构在客户战略沟通中应把\"国产化路线评估\"列为标准选项。",
+          "source": "钛媒体",
+          "url": "https://www.tmtpost.com/nictation"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日核心趋势可凝练为三条主线。第一，AI 商业格局重构：微软 - OpenAI 拆解独家协议、OpenAI 全面登陆 AWS / GCP，标志着\"超大规模云 + 单一模型方\"的初代联盟模式终结，企业多云 AI 部署的议价空间显著扩大；同时 Google 国防 AI 合同与马斯克 OpenAI 案进入司法审视，AI 治理与合规成本继续上行。",
+    "第二，中国 AI 全栈自主链路成型：DeepSeek 适配国产芯片、地平线增资至 25 亿美元、小红书新设 AI 一级部门、小米 MiMo 开源问鼎 Agent 经济性榜单、京东提出 RLSD 训练范式——从模型、芯片、应用、研究四层都看到中国玩家的密集动作。对央国企与跨国客户的中国区，\"国产化 PoC\"已经从可选项变为必选项。",
+    "第三，企业 Agent 进入\"基础设施\"阶段：Mistral Workflows 日均百万级执行、Figure 时产 1 台机器人形成数据飞轮、Gartner 警告 40%+ Agent 项目将被砍。对企业客户的关键启示是——Agent 项目成功不再取决于模型本身，而取决于 orchestration、observability、ROI 治理这三件\"非 AI\"的事；CIO 与咨询合作伙伴应在 Day 0 就把这三块作为方案核心。"
+  ]
+}

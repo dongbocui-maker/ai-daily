@@ -33,6 +33,20 @@ const langColor = repo.language ? languageColors[repo.language] ?? '#888' : null
     </p>
   )}
 
+  {repo.features && repo.features.length > 0 && (
+    <div class="mb-3 pl-3 border-l-2 border-accent-purple/30">
+      <div class="text-[10px] font-bold uppercase tracking-wider text-accent-purple mb-1.5">核心功能</div>
+      <ul class="space-y-1">
+        {repo.features.map((f) => (
+          <li class="text-xs lg:text-[13px] text-accent-ink leading-relaxed flex gap-1.5">
+            <span class="text-accent-purple flex-shrink-0">▪</span>
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
   <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-accent-gray-500">
     {repo.language && (
       <span class="flex items-center gap-1.5">

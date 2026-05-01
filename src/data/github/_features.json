@@ -1,0 +1,141 @@
+{
+  "warpdotdev/warp": {
+    "features": [
+      "基于终端打造的 agentic 开发环境，内置编码 agent",
+      "支持接入 Claude Code、Codex、Gemini CLI 等第三方 CLI agent",
+      "提供 build.warp.dev 仪表板，实时观察 Oz agents 处理 issue 与 PR",
+      "UI 框架采用 MIT 协议，其余代码采用 AGPL v3 开源"
+    ],
+    "sourceHash": "cd1caed",
+    "ts": 1777623928274
+  },
+  "TauricResearch/TradingAgents": {
+    "features": [
+      "多 agent LLM 金融交易框架，模拟真实交易团队协作决策",
+      "支持 GPT、Gemini、Claude、Grok、DeepSeek、Qwen、GLM 等多种 LLM provider",
+      "基于 LangGraph 实现 checkpoint 断点恢复与持久化决策日志",
+      "提供结构化输出的 Research Manager、Trader、Portfolio Manager 等 agent",
+      "支持回测、五级评级、Docker 部署及跨平台稳定性"
+    ],
+    "sourceHash": "5864445c",
+    "ts": 1777623935513
+  },
+  "mattpocock/skills": {
+    "features": [
+      "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+      "通过 skills.sh 一键安装并配置到各类 coding agent",
+      "支持 GitHub、Linear 或本地文件作为 issue tracker",
+      "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+      "基于 /triage 标签实现工单分类管理"
+    ],
+    "sourceHash": "-70b24806",
+    "ts": 1777623940772
+  },
+  "obra/superpowers": {
+    "features": [
+      "从需求对话中提炼 spec 并分块呈现，供用户审阅确认",
+      "生成强调 TDD、YAGNI、DRY 原则的清晰实现计划",
+      "通过 subagent-driven-development 让 agent 自主执行任务并互相审查",
+      "支持 Claude Code、Codex CLI、Cursor、OpenCode 等多平台一键安装",
+      "技能自动触发，无需额外操作即可赋能 coding agent"
+    ],
+    "sourceHash": "740d6560",
+    "ts": 1777623945518
+  },
+  "lukilabs/craft-agents-oss": {
+    "features": [
+      "基于 Claude Agent SDK 和 Pi SDK 构建的 Agent Native 桌面应用",
+      "通过自然语言连接任意 API、MCP server 或服务，无需配置文件",
+      "支持本地 stdio MCP server 作为子进程运行",
+      "可粘贴 OpenAPI spec、文档截图等自动接入自定义 API",
+      "支持从 Claude Code 一键导入 skills 和 MCPs"
+    ],
+    "sourceHash": "2f720495",
+    "ts": 1777623951686
+  },
+  "public-apis/public-apis": {
+    "features": [
+      "社区维护的多领域免费 public API 大全合集",
+      "按分类整理 API，涵盖天气、金融、IP 定位等场景",
+      "提供 Postman 一键 fork 集合，便于快速调用测试",
+      "收录 APILayer 旗下 IPstack、Marketstack 等热门 API"
+    ],
+    "sourceHash": "-44ca8286",
+    "ts": 1777623963761
+  },
+  "1jehuang/jcode": {
+    "features": [
+      "面向多会话工作流的下一代 coding agent harness",
+      "跨平台支持 Linux、macOS 和 Windows，提供一键安装脚本",
+      "极致优化 RAM 占用与启动性能，适合大规模多会话场景",
+      "支持本地 embedding，可灵活开关以控制资源消耗",
+      "高度可定制化，适配不同 provider 与工作流配置"
+    ],
+    "sourceHash": "-2c2fed2c",
+    "ts": 1777623971339
+  },
+  "soxoj/maigret": {
+    "features": [
+      "仅凭 username 在 3000+ 站点搜集个人 dossier，无需 API key",
+      "可作为 Python 库嵌入项目，编程式调用搜索功能",
+      "从主页与站点 API 提取账户信息，并递归搜索发现的新 username",
+      "支持按 tag（站点分类、国家）过滤，检测并部分绕过封锁与 CAPTCHA",
+      "支持 Tor 与 I2P，每日自动更新站点数据库并提供离线回退"
+    ],
+    "sourceHash": "1345c8af",
+    "ts": 1777623978505
+  },
+  "HunxByts/GhostTrack": {
+    "features": [
+      "IP Tracker：通过 IP 地址追踪定位目标位置信息",
+      "Phone Tracker：根据手机号码查询关联信息",
+      "Username Tracker：在社交媒体平台搜索目标用户名信息",
+      "支持 Linux 与 Termux 环境部署运行",
+      "可与 Seeker 工具组合使用以获取目标 IP"
+    ],
+    "sourceHash": "-69d5b5b6",
+    "ts": 1777623983202
+  },
+  "iamgio/quarkdown": {
+    "features": [
+      "基于 Markdown 的排版语言，支持函数、变量、循环等编程能力",
+      "支持输出 HTML、PDF、幻灯片、分页文档等多种目标格式",
+      "提供 CLI 工具与 VS Code 扩展，便于项目创建与编译",
+      "内置丰富的函数库，可实现复杂排版与动态内容生成"
+    ],
+    "sourceHash": "262e6a20",
+    "ts": 1777623988415
+  },
+  "ghostty-org/ghostty": {
+    "features": [
+      "快速、原生、功能丰富的终端模拟器，集速度、特性与原生 UI 于一身",
+      "提供 `libghostty` 跨平台零依赖 C 和 Zig 库，可嵌入终端功能至任意应用",
+      "支持标准兼容的终端模拟，可运行所有主流终端程序",
+      "提供多窗口、标签页、分屏等丰富窗口管理特性",
+      "具备原生平台体验，深度适配各操作系统"
+    ],
+    "sourceHash": "-55d8e231",
+    "ts": 1777623992533
+  },
+  "ForrestKnight/open-source-cs": {
+    "features": [
+      "精选 MIT、Stanford、Princeton 等名校免费课程，构成开源计算机科学学位体系",
+      "涵盖计算机基础、编程、数学、系统、理论等核心 CS 课程模块",
+      "每门课程标注开课学校、时长、每周学时、开课频率与先修要求",
+      "课程内容对标本科 CS 学位要求（不含通识教育部分）"
+    ],
+    "sourceHash": "-4947fdb5",
+    "ts": 1777623997549
+  },
+  "browserbase/skills": {
+    "features": [
+      "通过 CLI 命令自动化浏览器交互，支持远程 Browserbase session、反爬隐身、验证码破解和住宅代理",
+      "集成官方 bb CLI，管理 Browserbase Functions、sessions、projects、contexts 等平台 API 工作流",
+      "AI 驱动的对抗式 UI 测试，分析 git diff 或探索应用以发现 bug",
+      "诊断浏览器自动化失败问题，分析 bot 检测、选择器、时序、认证并生成站点 playbook",
+      "捕获完整 DevTools CDP trace、截图和 DOM 快照，并按页面拆分为可搜索片段"
+    ],
+    "sourceHash": "-789ee5e7",
+    "ts": 1777624004840
+  }
+}

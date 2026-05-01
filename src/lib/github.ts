@@ -6,6 +6,7 @@ export interface GitHubRepo {
   url: string;
   description: string;
   description_zh?: string;
+  features?: string[];
   language?: string;
   stars: number;
   stars_period?: number;

@@ -6,9 +6,9 @@
       "url": "https://github.com/warpdotdev/warp",
       "description": "Warp is an agentic development environment, born out of the terminal.",
       "language": "Rust",
-      "stars": 50109,
+      "stars": 50198,
       "stars_period": 8399,
-      "forks": 3298,
+      "forks": 3313,
       "topics": [
         "bash",
         "linux",
@@ -19,9 +19,15 @@
         "wasm",
         "zsh"
       ],
-      "pushed_at": "2026-05-01T07:09:48Z",
+      "pushed_at": "2026-05-01T08:19:41Z",
       "created_at": "2021-07-08T18:48:08Z",
-      "description_zh": "Warp 是一款源自终端的智能体开发环境。"
+      "description_zh": "Warp 是一款源自终端的智能体开发环境。",
+      "features": [
+        "基于终端打造的 agentic 开发环境，内置编码 agent",
+        "支持接入 Claude Code、Codex、Gemini CLI 等第三方 CLI agent",
+        "提供 build.warp.dev 仪表板，实时观察 Oz agents 处理 issue 与 PR",
+        "UI 框架采用 MIT 协议，其余代码采用 AGPL v3 开源"
+      ]
     },
     {
       "rank": 2,
@@ -29,10 +35,26 @@
       "url": "https://github.com/TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "language": "Python",
-      "stars": 58292,
+      "stars": 58327,
       "stars_period": 2023,
-      "forks": 11120,
-      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架"
+      "forks": 11129,
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "pushed_at": "2026-04-25T22:17:55Z",
+      "created_at": "2024-12-28T03:31:08Z",
+      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架",
+      "features": [
+        "多 agent LLM 金融交易框架，模拟真实交易团队协作决策",
+        "支持 GPT、Gemini、Claude、Grok、DeepSeek、Qwen、GLM 等多种 LLM provider",
+        "基于 LangGraph 实现 checkpoint 断点恢复与持久化决策日志",
+        "提供结构化输出的 Research Manager、Trader、Portfolio Manager 等 agent",
+        "支持回测、五级评级、Docker 部署及跨平台稳定性"
+      ]
     },
     {
       "rank": 3,
@@ -40,13 +62,20 @@
       "url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .claude directory.",
       "language": "Shell",
-      "stars": 50423,
+      "stars": 50503,
       "stars_period": 6187,
-      "forks": 4151,
+      "forks": 4162,
       "topics": [],
       "pushed_at": "2026-04-30T11:38:13Z",
       "created_at": "2026-02-03T11:15:53Z",
-      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。"
+      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。",
+      "features": [
+        "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+        "通过 skills.sh 一键安装并配置到各类 coding agent",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+        "基于 /triage 标签实现工单分类管理"
+      ]
     },
     {
       "rank": 4,
@@ -54,13 +83,20 @@
       "url": "https://github.com/obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "language": "Shell",
-      "stars": 174916,
+      "stars": 174935,
       "stars_period": 1632,
-      "forks": 15434,
+      "forks": 15439,
       "topics": [],
       "pushed_at": "2026-04-30T22:17:14Z",
       "created_at": "2025-10-09T19:45:18Z",
-      "description_zh": "一套行之有效的 agentic skills 框架与软件开发方法论。"
+      "description_zh": "一套行之有效的 agentic skills 框架与软件开发方法论。",
+      "features": [
+        "从需求对话中提炼 spec 并分块呈现，供用户审阅确认",
+        "生成强调 TDD、YAGNI、DRY 原则的清晰实现计划",
+        "通过 subagent-driven-development 让 agent 自主执行任务并互相审查",
+        "支持 Claude Code、Codex CLI、Cursor、OpenCode 等多平台一键安装",
+        "技能自动触发，无需额外操作即可赋能 coding agent"
+      ]
     },
     {
       "rank": 5,
@@ -68,12 +104,19 @@
       "url": "https://github.com/lukilabs/craft-agents-oss",
       "description": "",
       "language": "TypeScript",
-      "stars": 5625,
+      "stars": 5629,
       "stars_period": 319,
-      "forks": 746,
+      "forks": 748,
       "topics": [],
       "pushed_at": "2026-04-30T21:40:49Z",
-      "created_at": "2026-01-19T10:35:59Z"
+      "created_at": "2026-01-19T10:35:59Z",
+      "features": [
+        "基于 Claude Agent SDK 和 Pi SDK 构建的 Agent Native 桌面应用",
+        "通过自然语言连接任意 API、MCP server 或服务，无需配置文件",
+        "支持本地 stdio MCP server 作为子进程运行",
+        "可粘贴 OpenAPI spec、文档截图等自动接入自定义 API",
+        "支持从 Claude Code 一键导入 skills 和 MCPs"
+      ]
     },
     {
       "rank": 6,
@@ -81,10 +124,33 @@
       "url": "https://github.com/public-apis/public-apis",
       "description": "A collective list of free APIs",
       "language": "Python",
-      "stars": 429770,
+      "stars": 429787,
       "stars_period": 322,
-      "forks": 46890,
-      "description_zh": "免费 API 集合列表"
+      "forks": 46894,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "pushed_at": "2026-03-18T16:28:22Z",
+      "created_at": "2016-03-20T23:49:42Z",
+      "description_zh": "免费 API 集合列表",
+      "features": [
+        "社区维护的多领域免费 public API 大全合集",
+        "按分类整理 API，涵盖天气、金融、IP 定位等场景",
+        "提供 Postman 一键 fork 集合，便于快速调用测试",
+        "收录 APILayer 旗下 IPstack、Marketstack 等热门 API"
+      ]
     },
     {
       "rank": 7,
@@ -92,10 +158,31 @@
       "url": "https://github.com/1jehuang/jcode",
       "description": "Coding Agent Harness",
       "language": "Rust",
-      "stars": 2001,
+      "stars": 2009,
       "stars_period": 675,
-      "forks": 182,
-      "description_zh": "编程 Agent 框架"
+      "forks": 184,
+      "topics": [
+        "ai",
+        "claude",
+        "cli",
+        "coding-agent",
+        "llm",
+        "mcp",
+        "openai",
+        "rust",
+        "terminal",
+        "tui"
+      ],
+      "pushed_at": "2026-04-30T20:21:35Z",
+      "created_at": "2026-01-05T09:43:36Z",
+      "description_zh": "编程 Agent 框架",
+      "features": [
+        "面向多会话工作流的下一代 coding agent harness",
+        "跨平台支持 Linux、macOS 和 Windows，提供一键安装脚本",
+        "极致优化 RAM 占用与启动性能，适合大规模多会话场景",
+        "支持本地 embedding，可灵活开关以控制资源消耗",
+        "高度可定制化，适配不同 provider 与工作流配置"
+      ]
     },
     {
       "rank": 8,
@@ -103,10 +190,41 @@
       "url": "https://github.com/soxoj/maigret",
       "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
       "language": "Python",
-      "stars": 20985,
+      "stars": 21001,
       "stars_period": 730,
-      "forks": 1457,
-      "description_zh": "🕵️‍♂️ 通过用户名从 3000+ 网站收集个人档案"
+      "forks": 1458,
+      "topics": [
+        "blueteam",
+        "cli",
+        "cybersecurity",
+        "identification",
+        "infosec",
+        "investigation",
+        "namechecker",
+        "open-source",
+        "osint",
+        "osint-framework",
+        "osint-python",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "scraping",
+        "sherlock",
+        "social-network",
+        "socmint"
+      ],
+      "pushed_at": "2026-04-30T22:14:41Z",
+      "created_at": "2020-06-27T14:16:42Z",
+      "description_zh": "🕵️‍♂️ 通过用户名从 3000+ 网站收集个人档案",
+      "features": [
+        "仅凭 username 在 3000+ 站点搜集个人 dossier，无需 API key",
+        "可作为 Python 库嵌入项目，编程式调用搜索功能",
+        "从主页与站点 API 提取账户信息，并递归搜索发现的新 username",
+        "支持按 tag（站点分类、国家）过滤，检测并部分绕过封锁与 CAPTCHA",
+        "支持 Tor 与 I2P，每日自动更新站点数据库并提供离线回退"
+      ]
     },
     {
       "rank": 9,
@@ -114,10 +232,40 @@
       "url": "https://github.com/HunxByts/GhostTrack",
       "description": "Useful tool to track location or mobile number",
       "language": "Python",
-      "stars": 12293,
+      "stars": 12303,
       "stars_period": 841,
-      "forks": 1640,
-      "description_zh": "用于追踪位置或手机号码的实用工具"
+      "forks": 1641,
+      "topics": [
+        "cybersecurity",
+        "fyp",
+        "hacking",
+        "hacking-tool",
+        "indonesia",
+        "information",
+        "information-gathering",
+        "ip-geolocation",
+        "linux",
+        "osint",
+        "osint-python",
+        "osint-tool",
+        "pentesting",
+        "phone-number",
+        "python",
+        "python-hacking",
+        "termux",
+        "termux-hacks",
+        "termux-tool"
+      ],
+      "pushed_at": "2024-01-11T15:36:46Z",
+      "created_at": "2023-04-15T07:20:47Z",
+      "description_zh": "用于追踪位置或手机号码的实用工具",
+      "features": [
+        "IP Tracker：通过 IP 地址追踪定位目标位置信息",
+        "Phone Tracker：根据手机号码查询关联信息",
+        "Username Tracker：在社交媒体平台搜索目标用户名信息",
+        "支持 Linux 与 Termux 环境部署运行",
+        "可与 Seeker 工具组合使用以获取目标 IP"
+      ]
     },
     {
       "rank": 10,
@@ -125,10 +273,35 @@
       "url": "https://github.com/iamgio/quarkdown",
       "description": "🪐 Markdown with superpowers: from ideas to papers, presentations, websites, books, and knowledge bases.",
       "language": "Kotlin",
-      "stars": 13255,
+      "stars": 13268,
       "stars_period": 177,
-      "forks": 362,
-      "description_zh": "🪐 超能力 Markdown：从创意到论文、演示、网站、书籍和知识库。"
+      "forks": 364,
+      "topics": [
+        "compiler",
+        "documentation",
+        "knowledge-management",
+        "markdown",
+        "markup",
+        "markup-language",
+        "paper",
+        "pdf",
+        "presentations",
+        "scripting-language",
+        "slides",
+        "static-site-generator",
+        "typesetting",
+        "typesetting-system",
+        "wiki"
+      ],
+      "pushed_at": "2026-04-30T06:50:18Z",
+      "created_at": "2024-01-30T21:13:04Z",
+      "description_zh": "🪐 超能力 Markdown：从创意到论文、演示、网站、书籍和知识库。",
+      "features": [
+        "基于 Markdown 的排版语言，支持函数、变量、循环等编程能力",
+        "支持输出 HTML、PDF、幻灯片、分页文档等多种目标格式",
+        "提供 CLI 工具与 VS Code 扩展，便于项目创建与编译",
+        "内置丰富的函数库，可实现复杂排版与动态内容生成"
+      ]
     },
     {
       "rank": 11,
@@ -136,20 +309,41 @@
       "url": "https://github.com/ghostty-org/ghostty",
       "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
       "language": "Zig",
-      "stars": 53023,
+      "stars": 53034,
       "stars_period": 341,
-      "forks": 2574,
-      "description_zh": "👻 Ghostty 是一款快速、功能丰富、跨平台的终端模拟器，采用平台原生 UI 和 GPU 加速。"
+      "forks": 2575,
+      "topics": [],
+      "pushed_at": "2026-04-30T14:16:36Z",
+      "created_at": "2022-03-29T17:38:26Z",
+      "description_zh": "👻 Ghostty 是一款快速、功能丰富、跨平台的终端模拟器，采用平台原生 UI 和 GPU 加速。",
+      "features": [
+        "快速、原生、功能丰富的终端模拟器，集速度、特性与原生 UI 于一身",
+        "提供 `libghostty` 跨平台零依赖 C 和 Zig 库，可嵌入终端功能至任意应用",
+        "支持标准兼容的终端模拟，可运行所有主流终端程序",
+        "提供多窗口、标签页、分屏等丰富窗口管理特性",
+        "具备原生平台体验，深度适配各操作系统"
+      ]
     },
     {
       "rank": 12,
       "name": "ForrestKnight/open-source-cs",
       "url": "https://github.com/ForrestKnight/open-source-cs",
       "description": "Video discussing this curriculum:",
-      "stars": 22445,
+      "stars": 22447,
       "stars_period": 140,
       "forks": 3220,
-      "description_zh": "讨论本课程的视频："
+      "topics": [
+        "computer-science"
+      ],
+      "pushed_at": "2025-06-11T17:09:07Z",
+      "created_at": "2019-01-19T04:11:33Z",
+      "description_zh": "讨论本课程的视频：",
+      "features": [
+        "精选 MIT、Stanford、Princeton 等名校免费课程，构成开源计算机科学学位体系",
+        "涵盖计算机基础、编程、数学、系统、理论等核心 CS 课程模块",
+        "每门课程标注开课学校、时长、每周学时、开课频率与先修要求",
+        "课程内容对标本科 CS 学位要求（不含通识教育部分）"
+      ]
     },
     {
       "rank": 13,
@@ -157,10 +351,20 @@
       "url": "https://github.com/browserbase/skills",
       "description": "Claude Agent SDK with a web browsing tool",
       "language": "JavaScript",
-      "stars": 935,
+      "stars": 940,
       "stars_period": 69,
-      "forks": 68,
-      "description_zh": "带网页浏览工具的 Claude Agent SDK"
+      "forks": 69,
+      "topics": [],
+      "pushed_at": "2026-04-30T00:54:53Z",
+      "created_at": "2025-10-12T08:44:05Z",
+      "description_zh": "带网页浏览工具的 Claude Agent SDK",
+      "features": [
+        "通过 CLI 命令自动化浏览器交互，支持远程 Browserbase session、反爬隐身、验证码破解和住宅代理",
+        "集成官方 bb CLI，管理 Browserbase Functions、sessions、projects、contexts 等平台 API 工作流",
+        "AI 驱动的对抗式 UI 测试，分析 git diff 或探索应用以发现 bug",
+        "诊断浏览器自动化失败问题，分析 bot 检测、选择器、时序、认证并生成站点 playbook",
+        "捕获完整 DevTools CDP trace、截图和 DOM 快照，并按页面拆分为可搜索片段"
+      ]
     }
   ],
   "ai": [
@@ -170,10 +374,26 @@
       "url": "https://github.com/TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "language": "Python",
-      "stars": 58292,
+      "stars": 58327,
       "stars_period": 2023,
-      "forks": 11120,
-      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架"
+      "forks": 11129,
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "pushed_at": "2026-04-25T22:17:55Z",
+      "created_at": "2024-12-28T03:31:08Z",
+      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架",
+      "features": [
+        "多 agent LLM 金融交易框架，模拟真实交易团队协作决策",
+        "支持 GPT、Gemini、Claude、Grok、DeepSeek、Qwen、GLM 等多种 LLM provider",
+        "基于 LangGraph 实现 checkpoint 断点恢复与持久化决策日志",
+        "提供结构化输出的 Research Manager、Trader、Portfolio Manager 等 agent",
+        "支持回测、五级评级、Docker 部署及跨平台稳定性"
+      ]
     },
     {
       "rank": 5,
@@ -181,12 +401,19 @@
       "url": "https://github.com/lukilabs/craft-agents-oss",
       "description": "",
       "language": "TypeScript",
-      "stars": 5625,
+      "stars": 5629,
       "stars_period": 319,
-      "forks": 746,
+      "forks": 748,
       "topics": [],
       "pushed_at": "2026-04-30T21:40:49Z",
-      "created_at": "2026-01-19T10:35:59Z"
+      "created_at": "2026-01-19T10:35:59Z",
+      "features": [
+        "基于 Claude Agent SDK 和 Pi SDK 构建的 Agent Native 桌面应用",
+        "通过自然语言连接任意 API、MCP server 或服务，无需配置文件",
+        "支持本地 stdio MCP server 作为子进程运行",
+        "可粘贴 OpenAPI spec、文档截图等自动接入自定义 API",
+        "支持从 Claude Code 一键导入 skills 和 MCPs"
+      ]
     },
     {
       "rank": 7,
@@ -194,10 +421,31 @@
       "url": "https://github.com/1jehuang/jcode",
       "description": "Coding Agent Harness",
       "language": "Rust",
-      "stars": 2001,
+      "stars": 2009,
       "stars_period": 675,
-      "forks": 182,
-      "description_zh": "编程 Agent 框架"
+      "forks": 184,
+      "topics": [
+        "ai",
+        "claude",
+        "cli",
+        "coding-agent",
+        "llm",
+        "mcp",
+        "openai",
+        "rust",
+        "terminal",
+        "tui"
+      ],
+      "pushed_at": "2026-04-30T20:21:35Z",
+      "created_at": "2026-01-05T09:43:36Z",
+      "description_zh": "编程 Agent 框架",
+      "features": [
+        "面向多会话工作流的下一代 coding agent harness",
+        "跨平台支持 Linux、macOS 和 Windows，提供一键安装脚本",
+        "极致优化 RAM 占用与启动性能，适合大规模多会话场景",
+        "支持本地 embedding，可灵活开关以控制资源消耗",
+        "高度可定制化，适配不同 provider 与工作流配置"
+      ]
     },
     {
       "rank": 13,
@@ -205,10 +453,20 @@
       "url": "https://github.com/browserbase/skills",
       "description": "Claude Agent SDK with a web browsing tool",
       "language": "JavaScript",
-      "stars": 935,
+      "stars": 940,
       "stars_period": 69,
-      "forks": 68,
-      "description_zh": "带网页浏览工具的 Claude Agent SDK"
+      "forks": 69,
+      "topics": [],
+      "pushed_at": "2026-04-30T00:54:53Z",
+      "created_at": "2025-10-12T08:44:05Z",
+      "description_zh": "带网页浏览工具的 Claude Agent SDK",
+      "features": [
+        "通过 CLI 命令自动化浏览器交互，支持远程 Browserbase session、反爬隐身、验证码破解和住宅代理",
+        "集成官方 bb CLI，管理 Browserbase Functions、sessions、projects、contexts 等平台 API 工作流",
+        "AI 驱动的对抗式 UI 测试，分析 git diff 或探索应用以发现 bug",
+        "诊断浏览器自动化失败问题，分析 bot 检测、选择器、时序、认证并生成站点 playbook",
+        "捕获完整 DevTools CDP trace、截图和 DOM 快照，并按页面拆分为可搜索片段"
+      ]
     }
   ]
 }

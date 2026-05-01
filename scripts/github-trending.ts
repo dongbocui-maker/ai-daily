@@ -25,6 +25,7 @@ export interface GitHubRepo {
   url: string;
   description: string;     // 原文（英文居多）
   description_zh?: string; // 翻译后中文
+  features?: string[];     // 核心功能清单（AI 从 README 抽取）
   language?: string;
   stars: number;           // 当前 stars 总数
   stars_period?: number;   // 本期增量（trending 才有）
@@ -194,6 +195,126 @@ async function enrichBatch(repos: GitHubRepo[], concurrency = 5): Promise<GitHub
   return out;
 }
 
+// ============ README 与 Features 抽取 ============
+
+const READMES_DIR = resolve(__dirname, '../src/data/github/_readmes');
+
+async function fetchReadme(repoName: string): Promise<string | null> {
+  const safe = repoName.replace('/', '__');
+  const cachePath = `${READMES_DIR}/${safe}.md`;
+
+  // 缓存检查（1 周内不重复拓）
+  if (existsSync(cachePath)) {
+    const stat = require('node:fs').statSync(cachePath);
+    const ageMs = Date.now() - stat.mtimeMs;
+    if (ageMs < 7 * 24 * 60 * 60 * 1000) {
+      return readFileSync(cachePath, 'utf-8');
+    }
+  }
+
+  const headers: Record<string, string> = {
+    'Accept': 'application/vnd.github.raw',
+    'User-Agent': 'ai-daily/1.0',
+  };
+  if (process.env.GITHUB_TOKEN) {
+    headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${repoName}/readme`, { headers });
+    if (!res.ok) return null;
+    const text = await res.text();
+    mkdirSync(READMES_DIR, { recursive: true });
+    writeFileSync(cachePath, text);
+    return text;
+  } catch (err) {
+    console.warn(`[readme] fail ${repoName}:`, err);
+    return null;
+  }
+}
+
+const FEATURES_CACHE_PATH = resolve(__dirname, '../src/data/github/_features.json');
+
+interface FeaturesCache {
+  // key: owner/repo, value: { features, sourceHash, ts }
+  [repoName: string]: { features: string[]; sourceHash: string; ts: number };
+}
+
+function loadFeaturesCache(): FeaturesCache {
+  if (!existsSync(FEATURES_CACHE_PATH)) return {};
+  try { return JSON.parse(readFileSync(FEATURES_CACHE_PATH, 'utf-8')); } catch { return {}; }
+}
+
+function saveFeaturesCache(cache: FeaturesCache) {
+  mkdirSync(dirname(FEATURES_CACHE_PATH), { recursive: true });
+  writeFileSync(FEATURES_CACHE_PATH, JSON.stringify(cache, null, 2));
+}
+
+function simpleHash(s: string): string {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) {
+    h = (h << 5) - h + s.charCodeAt(i);
+    h |= 0;
+  }
+  return h.toString(16);
+}
+
+const FEATURES_PROMPT = `你是一名 GitHub 项目分析师。基于下面的 README 摘要，抽取这个项目的 3-5 条核心功能 / 特性（features）。
+
+要求：
+1. 每条 1 句话，简洁有力，15-30 字
+2. 保留专业术语英文（API、SDK、CLI、LLM、agent、framework 等）
+3. 只列「真实存在」的功能，不要编造
+4. 输出严格 JSON 数组，如 ["feature1", "feature2", ...]，不要任何前缀 / 后缀 / 代码块包裹
+5. 如果 README 信息不足，返回你能确认的那几条，宁少勿编
+6. 如果 README 是净贡献指南、安装说明主导，返回空数组 []
+
+README 摘要：`;
+
+async function extractFeatures(
+  repoName: string,
+  readme: string,
+  cache: FeaturesCache,
+  llm: LLMConfig | null,
+): Promise<string[]> {
+  if (!readme.trim()) return [];
+  if (!llm) return [];
+
+  const truncated = readme.slice(0, 3000); // 控制 input token
+  const sourceHash = simpleHash(truncated);
+
+  // 缓存命中：同一项目 README 未变则不重抽
+  const cached = cache[repoName];
+  if (cached && cached.sourceHash === sourceHash) {
+    return cached.features;
+  }
+
+  try {
+    const fullPrompt = FEATURES_PROMPT + truncated;
+    const raw = llm.protocol === 'anthropic'
+      ? await callAnthropic({ ...llm }, fullPrompt, 500)
+      : await callOpenAI({ ...llm }, fullPrompt, 500);
+    // 尝试解析 JSON 数组
+    const trimmed = raw.trim().replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    let features: string[] = [];
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (Array.isArray(parsed)) features = parsed.filter((x) => typeof x === 'string');
+    } catch {
+      // fallback: split bullet points
+      features = trimmed
+        .split('\n')
+        .map((l) => l.replace(/^[-*\d.\s]+/, '').trim())
+        .filter((l) => l.length > 5 && l.length < 100);
+    }
+    cache[repoName] = { features, sourceHash, ts: Date.now() };
+    return features;
+  } catch (err) {
+    console.warn(`[features] fail ${repoName}:`, err instanceof Error ? err.message : err);
+    return [];
+  }
+}
+
 // ============ 翻译缓存 ============
 
 const TRANSLATION_CACHE_PATH = resolve(__dirname, '../src/data/github/_translations.json');
@@ -227,7 +348,7 @@ interface LLMConfig {
 
 const SYSTEM_PROMPT = '你是一名英中翻译。把给定的 GitHub 仓库 description 翻译成中文。规则：\n1. 简洁自然，不超过原文长度\n2. 保留专业术语英文（API、SDK、CLI、LLM、RAG 等）\n3. 不加任何解释或前缀\n4. 直接输出中文译文';
 
-async function callOpenAI(llm: LLMConfig, text: string): Promise<string> {
+async function callOpenAI(llm: LLMConfig, text: string, maxTokens = 200): Promise<string> {
   const res = await fetch(`${llm.apiBase.replace(/\/$/, '')}/chat/completions`, {
     method: 'POST',
     headers: {
@@ -237,6 +358,7 @@ async function callOpenAI(llm: LLMConfig, text: string): Promise<string> {
     body: JSON.stringify({
       model: llm.model,
       temperature: 0.1,
+      max_tokens: maxTokens,
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: text },
@@ -248,7 +370,7 @@ async function callOpenAI(llm: LLMConfig, text: string): Promise<string> {
   return (data.choices?.[0]?.message?.content ?? '').trim();
 }
 
-async function callAnthropic(llm: LLMConfig, text: string): Promise<string> {
+async function callAnthropic(llm: LLMConfig, text: string, maxTokens = 200): Promise<string> {
   const res = await fetch(`${llm.apiBase.replace(/\/$/, '')}/messages`, {
     method: 'POST',
     headers: {
@@ -259,7 +381,7 @@ async function callAnthropic(llm: LLMConfig, text: string): Promise<string> {
     },
     body: JSON.stringify({
       model: llm.model,
-      max_tokens: 200,
+      max_tokens: maxTokens,
       system: SYSTEM_PROMPT,
       messages: [{ role: 'user', content: text }],
     }),
@@ -302,6 +424,29 @@ async function translateBoard(
     if (repo.description) {
       repo.description_zh = await translateText(repo.description, cache, llm);
     }
+  }
+  return repos;
+}
+
+async function enrichFeaturesBoard(
+  repos: GitHubRepo[],
+  cache: FeaturesCache,
+  llm: LLMConfig | null,
+): Promise<GitHubRepo[]> {
+  // 串行不多并发调用避免 Azure rate limit
+  for (const repo of repos) {
+    const cachedEntry = cache[repo.name];
+    // 缓存还在且不超过 30 天：直接复用
+    if (cachedEntry && Date.now() - cachedEntry.ts < 30 * 24 * 60 * 60 * 1000) {
+      repo.features = cachedEntry.features;
+      continue;
+    }
+    const readme = await fetchReadme(repo.name);
+    if (!readme) {
+      repo.features = [];
+      continue;
+    }
+    repo.features = await extractFeatures(repo.name, readme, cache, llm);
   }
   return repos;
 }
@@ -367,15 +512,18 @@ async function main() {
       }
     : null;
 
+  const skipFeatures = args.includes('--no-features');
+
   if (skipTranslate) {
     console.log('[main] --no-translate: 跳过翻译');
   } else if (!llm) {
     console.log('[main] LLM 未配置 (.env 缺 LLM_API_KEY)，跳过翻译');
   } else {
-    console.log(`[main] 使用 ${llm.model} (${llm.protocol}) 翻译，cache 路径 ${TRANSLATION_CACHE_PATH}`);
+    console.log(`[main] 使用 ${llm.model} (${llm.protocol}) 翻译+features，cache 路径 ${TRANSLATION_CACHE_PATH}`);
   }
 
   const cache = loadTranslationCache();
+  const featuresCache = loadFeaturesCache();
   const info = getDateInfo();
   const dataRoot = resolve(__dirname, '../src/data/github');
 
@@ -385,6 +533,7 @@ async function main() {
   console.log(`[daily] got ${dailyRaw.length} repos, enriching...`);
   const daily = await enrichBatch(dailyRaw);
   if (llm && !skipTranslate) await translateBoard(daily, cache, llm);
+  if (llm && !skipFeatures) await enrichFeaturesBoard(daily, featuresCache, llm);
   writeJson(`${dataRoot}/daily/${info.date}.json`, buildBoard(daily));
   console.log(`[daily] saved → daily/${info.date}.json (general=${daily.length}, ai=${daily.filter(isAIRelated).length})`);
 
@@ -394,6 +543,7 @@ async function main() {
     const weeklyRaw = await fetchTrending('weekly');
     const weekly = await enrichBatch(weeklyRaw);
     if (llm && !skipTranslate) await translateBoard(weekly, cache, llm);
+    if (llm && !skipFeatures) await enrichFeaturesBoard(weekly, featuresCache, llm);
     writeJson(`${dataRoot}/weekly/${info.yearWeek}.json`, buildBoard(weekly));
     console.log(`[weekly] saved → weekly/${info.yearWeek}.json`);
 
@@ -402,6 +552,7 @@ async function main() {
     const monthlyRaw = await fetchTrending('monthly');
     const monthly = await enrichBatch(monthlyRaw);
     if (llm && !skipTranslate) await translateBoard(monthly, cache, llm);
+    if (llm && !skipFeatures) await enrichFeaturesBoard(monthly, featuresCache, llm);
     writeJson(`${dataRoot}/monthly/${info.yearMonth}.json`, buildBoard(monthly));
     console.log(`[monthly] saved → monthly/${info.yearMonth}.json`);
 
@@ -409,11 +560,12 @@ async function main() {
     console.log('[yearly] fetching newborn...');
     const newborn = await fetchSearch(`created:>${info.year}-01-01 stars:>500`, 50);
     if (llm && !skipTranslate) await translateBoard(newborn, cache, llm);
+    if (llm && !skipFeatures) await enrichFeaturesBoard(newborn, featuresCache, llm);
 
     console.log('[yearly] fetching fastest growing...');
-    // 用 pushed 最近 + stars 高 作为「今年活跃 + 高热度」近似
     const fastest = await fetchSearch(`pushed:>${info.year}-01-01 stars:>10000`, 50);
     if (llm && !skipTranslate) await translateBoard(fastest, cache, llm);
+    if (llm && !skipFeatures) await enrichFeaturesBoard(fastest, featuresCache, llm);
 
     writeJson(`${dataRoot}/yearly/${info.year}.json`, {
       newborn: buildBoard(newborn),
@@ -423,7 +575,8 @@ async function main() {
   }
 
   saveTranslationCache(cache);
-  console.log(`[done] cache size: ${Object.keys(cache).length}`);
+  saveFeaturesCache(featuresCache);
+  console.log(`[done] translations=${Object.keys(cache).length}, features=${Object.keys(featuresCache).length}`);
 }
 
 main().catch((err) => {

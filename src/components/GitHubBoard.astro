@@ -1,0 +1,50 @@
+---
+import GitHubRepoCard from './GitHubRepoCard.astro';
+import type { BoardData } from '../lib/github';
+
+interface Props {
+  data: BoardData;
+  scopeId: string;       // 用于 tab 命名空间唯一化
+  showPeriodStars?: boolean;
+}
+
+const { data, scopeId, showPeriodStars = true } = Astro.props;
+const generalCount = data.general.length;
+const aiCount = data.ai.length;
+---
+<div data-subtabs={scopeId}>
+  <div class="inline-flex bg-accent-gray-50 p-1 rounded mb-6 gap-1">
+    <button
+      type="button"
+      data-subtab={`${scopeId}-general`}
+      aria-selected="true"
+      class="px-4 py-1.5 text-sm font-medium bg-accent-purple text-white rounded transition-colors"
+    >
+      综合榜
+      <span class="ml-1 text-xs opacity-80">({generalCount})</span>
+    </button>
+    <button
+      type="button"
+      data-subtab={`${scopeId}-ai`}
+      aria-selected="false"
+      class="px-4 py-1.5 text-sm font-medium text-accent-gray-600 rounded hover:bg-accent-gray-100 transition-colors"
+    >
+      🤖 AI 专题
+      <span class="ml-1 text-xs opacity-80">({aiCount})</span>
+    </button>
+  </div>
+</div>
+
+<div data-subpanel={`${scopeId}-general`} class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {data.general.map((r) => <GitHubRepoCard repo={r} showPeriodStars={showPeriodStars} />)}
+</div>
+
+<div data-subpanel={`${scopeId}-ai`} class="hidden grid-cols-1 md:grid-cols-2 gap-4">
+  {data.ai.length === 0 ? (
+    <p class="text-accent-gray-500 text-center py-8 col-span-2">本期无 AI 专题项目</p>
+  ) : (
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-2">
+      {data.ai.map((r) => <GitHubRepoCard repo={r} showPeriodStars={showPeriodStars} />)}
+    </div>
+  )}
+</div>

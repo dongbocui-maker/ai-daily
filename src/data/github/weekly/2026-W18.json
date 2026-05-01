@@ -6,10 +6,20 @@
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
       "language": "Python",
-      "stars": 19342,
+      "stars": 19363,
       "stars_period": 14666,
-      "forks": 2748,
-      "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）"
+      "forks": 2749,
+      "topics": [],
+      "pushed_at": "2026-05-01T05:01:41Z",
+      "created_at": "2026-01-28T19:02:30Z",
+      "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）",
+      "features": [
+        "将 Claude Code 的 Anthropic Messages API 流量代理到多种后端模型",
+        "支持 NVIDIA NIM、OpenRouter、DeepSeek、LM Studio、llama.cpp、Ollama 六种 provider",
+        "支持按模型路由：Opus、Sonnet、Haiku 可分发至不同 provider",
+        "原生支持 Claude Code 的 /model 选择器及 /v1/models 端点",
+        "可选 Discord/Telegram bot 封装与本地 Whisper 语音转录"
+      ]
     },
     {
       "rank": 2,
@@ -17,10 +27,20 @@
       "url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .claude directory.",
       "language": "Shell",
-      "stars": 50423,
+      "stars": 50529,
       "stars_period": 30945,
-      "forks": 4151,
-      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。"
+      "forks": 4165,
+      "topics": [],
+      "pushed_at": "2026-04-30T11:38:13Z",
+      "created_at": "2026-02-03T11:15:53Z",
+      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。",
+      "features": [
+        "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+        "通过 skills.sh 一键安装并配置到各类 coding agent",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+        "基于 /triage 标签实现工单分类管理"
+      ]
     },
     {
       "rank": 3,
@@ -28,10 +48,20 @@
       "url": "https://github.com/huggingface/ml-intern",
       "description": "🤗 ml-intern: an open-source ML engineer that reads papers, trains models, and ships ML models",
       "language": "Python",
-      "stars": 7754,
+      "stars": 7758,
       "stars_period": 5665,
       "forks": 751,
-      "description_zh": "🤗 ml-intern：一个开源 ML 工程师，能阅读论文、训练模型并交付 ML 模型"
+      "topics": [],
+      "pushed_at": "2026-04-30T15:18:31Z",
+      "created_at": "2025-10-30T13:43:09Z",
+      "description_zh": "🤗 ml-intern：一个开源 ML 工程师，能阅读论文、训练模型并交付 ML 模型",
+      "features": [
+        "基于 Hugging Face 生态自主研究、编写并部署 ML 代码的 agent",
+        "支持 Anthropic、OpenAI 等多种 LLM 模型可切换",
+        "提供交互式与 headless 单次 prompt 两种 CLI 使用模式",
+        "深度集成 docs、论文、数据集与云端算力访问",
+        "支持 Slack 通知 gateway，推送审批、错误与任务完成事件"
+      ]
     },
     {
       "rank": 4,
@@ -39,10 +69,34 @@
       "url": "https://github.com/Z4nzu/hackingtool",
       "description": "ALL IN ONE Hacking Tool For Hackers",
       "language": "Python",
-      "stars": 69455,
+      "stars": 69469,
       "stars_period": 8714,
       "forks": 7824,
-      "description_zh": "黑客一站式渗透工具"
+      "topics": [
+        "allinonehackingtool",
+        "besthackingtool",
+        "ctf-tools",
+        "ddos-attack-tool",
+        "hacker",
+        "hacking",
+        "linux",
+        "password-attack",
+        "steganography",
+        "web-attack",
+        "wireless-attack",
+        "xss-attacks",
+        "xss-detection"
+      ],
+      "pushed_at": "2026-03-15T14:33:08Z",
+      "created_at": "2020-04-11T09:21:31Z",
+      "description_zh": "黑客一站式渗透工具",
+      "features": [
+        "集成 185+ 安全工具，分 20 大类，覆盖渗透测试与安全研究",
+        "支持搜索、19 个标签过滤及智能推荐工具",
+        "显示工具安装状态，支持一键批量安装与智能更新",
+        "OS 感知菜单，macOS 上自动隐藏 Linux 专用工具",
+        "支持 Docker 本地构建，兼容 Linux、Kali、Parrot、macOS"
+      ]
     },
     {
       "rank": 5,
@@ -50,20 +104,55 @@
       "url": "https://github.com/CJackHwang/ds2api",
       "description": "Deepseek to API: A lightweight, high-performance full-stack middleware converting client protocols to universal APIs. Supports multi-account rotation, compiled binaries, Vercel Serverless, and Docker. Compatible with Google, Claude, and OpenAI API formats.",
       "language": "Go",
-      "stars": 2981,
+      "stars": 2989,
       "stars_period": 1726,
-      "forks": 783,
-      "description_zh": "Deepseek to API：轻量高性能全栈中间件，将客户端协议转换为通用 API。支持多账号轮询、编译二进制、Vercel Serverless 及 Docker，兼容 Google、Claude 和 OpenAI API 格式。"
+      "forks": 786,
+      "topics": [
+        "api",
+        "claude-api",
+        "deepseek",
+        "deepseek-api",
+        "docker",
+        "freeapi",
+        "go",
+        "openai-api",
+        "proxy",
+        "proxy-server",
+        "react",
+        "vercel",
+        "vercel-deployment",
+        "zeabur"
+      ],
+      "pushed_at": "2026-05-01T08:35:19Z",
+      "created_at": "2026-01-21T15:14:40Z",
+      "description_zh": "Deepseek to API：轻量高性能全栈中间件，将客户端协议转换为通用 API。支持多账号轮询、编译二进制、Vercel Serverless 及 Docker，兼容 Google、Claude 和 OpenAI API 格式。",
+      "features": [
+        "将 DeepSeek Web 对话转换为 OpenAI、Claude、Gemini 兼容 API",
+        "Go 后端 + React WebUI 管理台，支持账号与配置可视化管理",
+        "支持流式响应、Tool Call 适配与统一工具调用语义",
+        "提供 Docker、Vercel、Zeabur 多种一键部署方式",
+        "内置 PromptCompat 内核，将 API 请求转换为网页纯文本上下文"
+      ]
     },
     {
       "rank": 6,
       "name": "forrestchang/andrej-karpathy-skills",
       "url": "https://github.com/forrestchang/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-      "stars": 103617,
+      "stars": 103683,
       "stars_period": 23062,
-      "forks": 10196,
-      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+      "forks": 10205,
+      "topics": [],
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "created_at": "2026-01-27T03:53:13Z",
+      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+      "features": [
+        "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+        "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+        "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+        "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+        "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+      ]
     },
     {
       "rank": 7,
@@ -71,10 +160,26 @@
       "url": "https://github.com/AIDC-AI/Pixelle-Video",
       "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
       "language": "Python",
-      "stars": 8513,
+      "stars": 8521,
       "stars_period": 2064,
-      "forks": 1371,
-      "description_zh": "🚀 AI 全自动短视频引擎"
+      "forks": 1372,
+      "topics": [
+        "aigc",
+        "comfyui",
+        "image-generation",
+        "tts",
+        "video-generation"
+      ],
+      "pushed_at": "2026-04-13T03:29:09Z",
+      "created_at": "2025-11-07T06:34:27Z",
+      "description_zh": "🚀 AI 全自动短视频引擎",
+      "features": [
+        "输入主题即可全自动生成完整短视频，含文案/配图/语音/BGM/合成",
+        "支持 GPT、通义千问、DeepSeek、Ollama 等多种 LLM 智能创作解说词",
+        "基于 ComfyUI 架构，支持 WAN 2.1、FLUX 等 AI 图像/视频模型自定义组合",
+        "集成 Edge-TTS、Index-TTS 等多语言 TTS 方案及数字人口播功能",
+        "支持自定义素材上传、动作迁移、图生视频等多种生成流水线"
+      ]
     },
     {
       "rank": 8,
@@ -82,10 +187,39 @@
       "url": "https://github.com/trycua/cua",
       "description": "Open-source infrastructure for Computer-Use Agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops (macOS, Linux, Windows).",
       "language": "HTML",
-      "stars": 15441,
+      "stars": 15443,
       "stars_period": 1842,
       "forks": 953,
-      "description_zh": "Computer-Use Agents 的开源基础设施。提供沙箱、SDK 和基准测试，用于训练和评估可控制完整桌面（macOS、Linux、Windows）的 AI 智能体。"
+      "topics": [
+        "agent",
+        "ai-agent",
+        "apple",
+        "computer-use",
+        "computer-use-agent",
+        "containerization",
+        "cua",
+        "desktop-automation",
+        "hacktoberfest",
+        "lume",
+        "macos",
+        "manus",
+        "operator",
+        "swift",
+        "virtualization",
+        "virtualization-framework",
+        "windows",
+        "windows-sandbox"
+      ],
+      "pushed_at": "2026-05-01T06:18:48Z",
+      "created_at": "2025-01-31T15:02:49Z",
+      "description_zh": "Computer-Use Agents 的开源基础设施。提供沙箱、SDK 和基准测试，用于训练和评估可控制完整桌面（macOS、Linux、Windows）的 AI 智能体。",
+      "features": [
+        "macOS 后台 computer-use agent，不抢占光标、焦点或 Space",
+        "支持 Chromium、Canvas 类应用（Blender、Figma、DAW）等非 AX 界面",
+        "提供 CLI 与 MCP server，集成 Claude Code、Cursor 等客户端",
+        "每次会话录制为可回放的 trajectory",
+        "包含 Cua Sandbox、Cua Bench 基准测试与 Lume macOS 虚拟化"
+      ]
     },
     {
       "rank": 9,
@@ -93,10 +227,41 @@
       "url": "https://github.com/Anil-matcha/Open-Generative-AI",
       "description": "Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI — Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
       "language": "JavaScript",
-      "stars": 10500,
+      "stars": 10510,
       "stars_period": 3799,
       "forks": 1834,
-      "description_zh": "无审查、开源的 Higgsfield AI、Freepik AI、Krea AI、Openart AI 替代品——免费、无限制的 AI 图像与视频生成工作室，集成 200+ 模型（Flux、Midjourney、Kling、Sora、Veo）。无内容过滤。可自托管，MIT 协议。"
+      "topics": [
+        "ai-art-generator",
+        "ai-image-generation",
+        "ai-video-generation",
+        "creative-tools",
+        "flux-1",
+        "generative-ai",
+        "higgsfield",
+        "higgsfield-ai",
+        "higgsfield-alternative",
+        "image-to-video",
+        "javascript",
+        "kling-ai",
+        "midjourney-alternative",
+        "muapi",
+        "open-source",
+        "sora-alternative",
+        "text-to-video",
+        "uncensored",
+        "unrestricted",
+        "wan-video"
+      ],
+      "pushed_at": "2026-05-01T05:16:57Z",
+      "created_at": "2023-05-09T14:12:37Z",
+      "description_zh": "无审查、开源的 Higgsfield AI、Freepik AI、Krea AI、Openart AI 替代品——免费、无限制的 AI 图像与视频生成工作室，集成 200+ 模型（Flux、Midjourney、Kling、Sora、Veo）。无内容过滤。可自托管，MIT 协议。",
+      "features": [
+        "开源无审查 AI 图像与视频生成工具，对标 Higgsfield、Freepik、Krea、Openart",
+        "集成 200+ 顶尖图像与视频模型，无内容过滤、无订阅费",
+        "提供 Image、Video、Lip Sync、Cinema 四大 Studio 在线使用",
+        "支持 Claude Code、Codex 等 AI 编码 agent 自动化驱动媒体生成流水线",
+        "提供 macOS、Windows、Linux 一键桌面安装包，免 Node.js 配置"
+      ]
     },
     {
       "rank": 10,
@@ -104,10 +269,36 @@
       "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
       "language": "Python",
-      "stars": 18435,
+      "stars": 18446,
       "stars_period": 4505,
       "forks": 2467,
-      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。"
+      "topics": [
+        "ai-agents",
+        "algorithmic-trading",
+        "bloomberg-terminal",
+        "cpp",
+        "finance",
+        "financial-markets",
+        "fintech",
+        "good-first-issue",
+        "investment",
+        "investment-research",
+        "machine-learning",
+        "opensource",
+        "python",
+        "qt",
+        "quantitative-finance",
+        "stock-market",
+        "trading"
+      ],
+      "pushed_at": "2026-04-30T09:36:07Z",
+      "created_at": "2024-08-29T14:38:08Z",
+      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。",
+      "features": [
+        "基于 C++20 与 Qt6 构建的高性能金融终端桌面应用",
+        "集成 Python 3.11+ 用于金融数据分析与处理",
+        "提供全面的金融市场情报与数据访问功能"
+      ]
     },
     {
       "rank": 11,
@@ -115,10 +306,40 @@
       "url": "https://github.com/zilliztech/claude-context",
       "description": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
       "language": "TypeScript",
-      "stars": 10476,
+      "stars": 10480,
       "stars_period": 2330,
       "forks": 770,
-      "description_zh": "面向 Claude Code 的代码搜索 MCP，让整个代码库成为任意编码 agent 的上下文。"
+      "topics": [
+        "agent",
+        "agentic-rag",
+        "ai-coding",
+        "claude-code",
+        "code-generation",
+        "code-search",
+        "cursor",
+        "embedding",
+        "gemini-cli",
+        "mcp",
+        "merkle-tree",
+        "nodejs",
+        "openai",
+        "rag",
+        "semantic-search",
+        "typescript",
+        "vector-database",
+        "vibe-coding",
+        "voyage-ai",
+        "vscode-extension"
+      ],
+      "pushed_at": "2026-05-01T01:04:40Z",
+      "created_at": "2025-06-06T02:12:47Z",
+      "description_zh": "面向 Claude Code 的代码搜索 MCP，让整个代码库成为任意编码 agent 的上下文。",
+      "features": [
+        "为 Claude Code 等 AI 编码 agent 提供整个代码库的语义搜索 MCP 插件",
+        "通过向量数据库存储代码库，仅注入相关代码到 context，降低 LLM 成本",
+        "支持百万行代码级别的语义检索，无需多轮探索即可定位相关代码",
+        "提供 VS Code 扩展及 @zilliz/claude-context-core、claude-context-mcp npm 包"
+      ]
     },
     {
       "rank": 12,
@@ -126,10 +347,36 @@
       "url": "https://github.com/lsdefine/GenericAgent",
       "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
       "language": "Python",
-      "stars": 8541,
+      "stars": 8544,
       "stars_period": 2350,
       "forks": 976,
-      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制"
+      "topics": [
+        "ai-agent",
+        "automation",
+        "autonomous-agent",
+        "browser-automation",
+        "claude",
+        "computer-control",
+        "desktop-automation",
+        "gemini",
+        "lightweight",
+        "llm-agent",
+        "memory-system",
+        "python",
+        "self-evolving",
+        "skill-tree",
+        "task-automation"
+      ],
+      "pushed_at": "2026-05-01T02:49:20Z",
+      "created_at": "2026-01-16T15:45:24Z",
+      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制",
+      "features": [
+        "仅约 3K 行核心代码的极简自主 agent 框架，含 9 个原子工具和约 100 行 Agent Loop",
+        "自进化能力：将每次任务执行路径自动固化为可复用 skill，形成个人技能树",
+        "通过注入真实浏览器、终端、文件系统、键鼠、视觉及 ADB 实现系统级控制",
+        "兼容 Claude / Gemini / Kimi / MiniMax 等主流 LLM，跨平台运行",
+        "上下文窗口低于 30K，分层记忆机制降低 token 消耗与幻觉率"
+      ]
     }
   ],
   "ai": [
@@ -138,10 +385,20 @@
       "name": "forrestchang/andrej-karpathy-skills",
       "url": "https://github.com/forrestchang/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-      "stars": 103617,
+      "stars": 103683,
       "stars_period": 23062,
-      "forks": 10196,
-      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+      "forks": 10205,
+      "topics": [],
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "created_at": "2026-01-27T03:53:13Z",
+      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+      "features": [
+        "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+        "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+        "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+        "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+        "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+      ]
     },
     {
       "rank": 7,
@@ -149,10 +406,26 @@
       "url": "https://github.com/AIDC-AI/Pixelle-Video",
       "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
       "language": "Python",
-      "stars": 8513,
+      "stars": 8521,
       "stars_period": 2064,
-      "forks": 1371,
-      "description_zh": "🚀 AI 全自动短视频引擎"
+      "forks": 1372,
+      "topics": [
+        "aigc",
+        "comfyui",
+        "image-generation",
+        "tts",
+        "video-generation"
+      ],
+      "pushed_at": "2026-04-13T03:29:09Z",
+      "created_at": "2025-11-07T06:34:27Z",
+      "description_zh": "🚀 AI 全自动短视频引擎",
+      "features": [
+        "输入主题即可全自动生成完整短视频，含文案/配图/语音/BGM/合成",
+        "支持 GPT、通义千问、DeepSeek、Ollama 等多种 LLM 智能创作解说词",
+        "基于 ComfyUI 架构，支持 WAN 2.1、FLUX 等 AI 图像/视频模型自定义组合",
+        "集成 Edge-TTS、Index-TTS 等多语言 TTS 方案及数字人口播功能",
+        "支持自定义素材上传、动作迁移、图生视频等多种生成流水线"
+      ]
     },
     {
       "rank": 8,
@@ -160,10 +433,39 @@
       "url": "https://github.com/trycua/cua",
       "description": "Open-source infrastructure for Computer-Use Agents. Sandboxes, SDKs, and benchmarks to train and evaluate AI agents that can control full desktops (macOS, Linux, Windows).",
       "language": "HTML",
-      "stars": 15441,
+      "stars": 15443,
       "stars_period": 1842,
       "forks": 953,
-      "description_zh": "Computer-Use Agents 的开源基础设施。提供沙箱、SDK 和基准测试，用于训练和评估可控制完整桌面（macOS、Linux、Windows）的 AI 智能体。"
+      "topics": [
+        "agent",
+        "ai-agent",
+        "apple",
+        "computer-use",
+        "computer-use-agent",
+        "containerization",
+        "cua",
+        "desktop-automation",
+        "hacktoberfest",
+        "lume",
+        "macos",
+        "manus",
+        "operator",
+        "swift",
+        "virtualization",
+        "virtualization-framework",
+        "windows",
+        "windows-sandbox"
+      ],
+      "pushed_at": "2026-05-01T06:18:48Z",
+      "created_at": "2025-01-31T15:02:49Z",
+      "description_zh": "Computer-Use Agents 的开源基础设施。提供沙箱、SDK 和基准测试，用于训练和评估可控制完整桌面（macOS、Linux、Windows）的 AI 智能体。",
+      "features": [
+        "macOS 后台 computer-use agent，不抢占光标、焦点或 Space",
+        "支持 Chromium、Canvas 类应用（Blender、Figma、DAW）等非 AX 界面",
+        "提供 CLI 与 MCP server，集成 Claude Code、Cursor 等客户端",
+        "每次会话录制为可回放的 trajectory",
+        "包含 Cua Sandbox、Cua Bench 基准测试与 Lume macOS 虚拟化"
+      ]
     },
     {
       "rank": 9,
@@ -171,10 +473,78 @@
       "url": "https://github.com/Anil-matcha/Open-Generative-AI",
       "description": "Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI — Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
       "language": "JavaScript",
-      "stars": 10500,
+      "stars": 10510,
       "stars_period": 3799,
       "forks": 1834,
-      "description_zh": "无审查、开源的 Higgsfield AI、Freepik AI、Krea AI、Openart AI 替代品——免费、无限制的 AI 图像与视频生成工作室，集成 200+ 模型（Flux、Midjourney、Kling、Sora、Veo）。无内容过滤。可自托管，MIT 协议。"
+      "topics": [
+        "ai-art-generator",
+        "ai-image-generation",
+        "ai-video-generation",
+        "creative-tools",
+        "flux-1",
+        "generative-ai",
+        "higgsfield",
+        "higgsfield-ai",
+        "higgsfield-alternative",
+        "image-to-video",
+        "javascript",
+        "kling-ai",
+        "midjourney-alternative",
+        "muapi",
+        "open-source",
+        "sora-alternative",
+        "text-to-video",
+        "uncensored",
+        "unrestricted",
+        "wan-video"
+      ],
+      "pushed_at": "2026-05-01T05:16:57Z",
+      "created_at": "2023-05-09T14:12:37Z",
+      "description_zh": "无审查、开源的 Higgsfield AI、Freepik AI、Krea AI、Openart AI 替代品——免费、无限制的 AI 图像与视频生成工作室，集成 200+ 模型（Flux、Midjourney、Kling、Sora、Veo）。无内容过滤。可自托管，MIT 协议。",
+      "features": [
+        "开源无审查 AI 图像与视频生成工具，对标 Higgsfield、Freepik、Krea、Openart",
+        "集成 200+ 顶尖图像与视频模型，无内容过滤、无订阅费",
+        "提供 Image、Video、Lip Sync、Cinema 四大 Studio 在线使用",
+        "支持 Claude Code、Codex 等 AI 编码 agent 自动化驱动媒体生成流水线",
+        "提供 macOS、Windows、Linux 一键桌面安装包，免 Node.js 配置"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "Fincept-Corporation/FinceptTerminal",
+      "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "language": "Python",
+      "stars": 18446,
+      "stars_period": 4505,
+      "forks": 2467,
+      "topics": [
+        "ai-agents",
+        "algorithmic-trading",
+        "bloomberg-terminal",
+        "cpp",
+        "finance",
+        "financial-markets",
+        "fintech",
+        "good-first-issue",
+        "investment",
+        "investment-research",
+        "machine-learning",
+        "opensource",
+        "python",
+        "qt",
+        "quantitative-finance",
+        "stock-market",
+        "trading"
+      ],
+      "pushed_at": "2026-04-30T09:36:07Z",
+      "created_at": "2024-08-29T14:38:08Z",
+      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。",
+      "features": [
+        "基于 C++20 与 Qt6 构建的高性能金融终端桌面应用",
+        "集成 Python 3.11+ 用于金融数据分析与处理",
+        "提供全面的金融市场情报与数据访问功能"
+      ]
     },
     {
       "rank": 11,
@@ -182,10 +552,40 @@
       "url": "https://github.com/zilliztech/claude-context",
       "description": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
       "language": "TypeScript",
-      "stars": 10476,
+      "stars": 10480,
       "stars_period": 2330,
       "forks": 770,
-      "description_zh": "面向 Claude Code 的代码搜索 MCP，让整个代码库成为任意编码 agent 的上下文。"
+      "topics": [
+        "agent",
+        "agentic-rag",
+        "ai-coding",
+        "claude-code",
+        "code-generation",
+        "code-search",
+        "cursor",
+        "embedding",
+        "gemini-cli",
+        "mcp",
+        "merkle-tree",
+        "nodejs",
+        "openai",
+        "rag",
+        "semantic-search",
+        "typescript",
+        "vector-database",
+        "vibe-coding",
+        "voyage-ai",
+        "vscode-extension"
+      ],
+      "pushed_at": "2026-05-01T01:04:40Z",
+      "created_at": "2025-06-06T02:12:47Z",
+      "description_zh": "面向 Claude Code 的代码搜索 MCP，让整个代码库成为任意编码 agent 的上下文。",
+      "features": [
+        "为 Claude Code 等 AI 编码 agent 提供整个代码库的语义搜索 MCP 插件",
+        "通过向量数据库存储代码库，仅注入相关代码到 context，降低 LLM 成本",
+        "支持百万行代码级别的语义检索，无需多轮探索即可定位相关代码",
+        "提供 VS Code 扩展及 @zilliz/claude-context-core、claude-context-mcp npm 包"
+      ]
     },
     {
       "rank": 12,
@@ -193,10 +593,36 @@
       "url": "https://github.com/lsdefine/GenericAgent",
       "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
       "language": "Python",
-      "stars": 8541,
+      "stars": 8544,
       "stars_period": 2350,
       "forks": 976,
-      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制"
+      "topics": [
+        "ai-agent",
+        "automation",
+        "autonomous-agent",
+        "browser-automation",
+        "claude",
+        "computer-control",
+        "desktop-automation",
+        "gemini",
+        "lightweight",
+        "llm-agent",
+        "memory-system",
+        "python",
+        "self-evolving",
+        "skill-tree",
+        "task-automation"
+      ],
+      "pushed_at": "2026-05-01T02:49:20Z",
+      "created_at": "2026-01-16T15:45:24Z",
+      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制",
+      "features": [
+        "仅约 3K 行核心代码的极简自主 agent 框架，含 9 个原子工具和约 100 行 Agent Loop",
+        "自进化能力：将每次任务执行路径自动固化为可复用 skill，形成个人技能树",
+        "通过注入真实浏览器、终端、文件系统、键鼠、视觉及 ADB 实现系统级控制",
+        "兼容 Claude / Gemini / Kimi / MiniMax 等主流 LLM，跨平台运行",
+        "上下文窗口低于 30K，分层记忆机制降低 token 消耗与幻觉率"
+      ]
     }
   ]
 }

@@ -495,7 +495,17 @@ function writeJson(path: string, data: unknown) {
 
 async function main() {
   const args = process.argv.slice(2);
+  // 独立选项：--daily-only / --weekly-only / --monthly-only / --yearly-only
+  // 默认（不带选项）同时跑 4 个
   const onlyDaily = args.includes('--daily-only');
+  const onlyWeekly = args.includes('--weekly-only');
+  const onlyMonthly = args.includes('--monthly-only');
+  const onlyYearly = args.includes('--yearly-only');
+  const hasOnlyFlag = onlyDaily || onlyWeekly || onlyMonthly || onlyYearly;
+  const runDaily = !hasOnlyFlag || onlyDaily;
+  const runWeekly = !hasOnlyFlag || onlyWeekly;
+  const runMonthly = !hasOnlyFlag || onlyMonthly;
+  const runYearly = !hasOnlyFlag || onlyYearly;
   const skipTranslate = args.includes('--no-translate');
 
   // Auto-detect protocol: if LLM_PROTOCOL is set, use it; otherwise infer from URL
@@ -528,17 +538,19 @@ async function main() {
   const dataRoot = resolve(__dirname, '../src/data/github');
 
   // === 日榜 ===
-  console.log('[daily] fetching trending...');
-  const dailyRaw = await fetchTrending('daily');
-  console.log(`[daily] got ${dailyRaw.length} repos, enriching...`);
-  const daily = await enrichBatch(dailyRaw);
-  if (llm && !skipTranslate) await translateBoard(daily, cache, llm);
-  if (llm && !skipFeatures) await enrichFeaturesBoard(daily, featuresCache, llm);
-  writeJson(`${dataRoot}/daily/${info.date}.json`, buildBoard(daily));
-  console.log(`[daily] saved → daily/${info.date}.json (general=${daily.length}, ai=${daily.filter(isAIRelated).length})`);
+  if (runDaily) {
+    console.log('[daily] fetching trending...');
+    const dailyRaw = await fetchTrending('daily');
+    console.log(`[daily] got ${dailyRaw.length} repos, enriching...`);
+    const daily = await enrichBatch(dailyRaw);
+    if (llm && !skipTranslate) await translateBoard(daily, cache, llm);
+    if (llm && !skipFeatures) await enrichFeaturesBoard(daily, featuresCache, llm);
+    writeJson(`${dataRoot}/daily/${info.date}.json`, buildBoard(daily));
+    console.log(`[daily] saved → daily/${info.date}.json (general=${daily.length}, ai=${daily.filter(isAIRelated).length})`);
+  }
 
-  if (!onlyDaily) {
-    // === 周榜 ===
+  // === 周榜 ===
+  if (runWeekly) {
     console.log('[weekly] fetching...');
     const weeklyRaw = await fetchTrending('weekly');
     const weekly = await enrichBatch(weeklyRaw);
@@ -546,8 +558,10 @@ async function main() {
     if (llm && !skipFeatures) await enrichFeaturesBoard(weekly, featuresCache, llm);
     writeJson(`${dataRoot}/weekly/${info.yearWeek}.json`, buildBoard(weekly));
     console.log(`[weekly] saved → weekly/${info.yearWeek}.json`);
+  }
 
-    // === 月榜 ===
+  // === 月榜 ===
+  if (runMonthly) {
     console.log('[monthly] fetching...');
     const monthlyRaw = await fetchTrending('monthly');
     const monthly = await enrichBatch(monthlyRaw);
@@ -555,8 +569,10 @@ async function main() {
     if (llm && !skipFeatures) await enrichFeaturesBoard(monthly, featuresCache, llm);
     writeJson(`${dataRoot}/monthly/${info.yearMonth}.json`, buildBoard(monthly));
     console.log(`[monthly] saved → monthly/${info.yearMonth}.json`);
+  }
 
-    // === 年榜：双 tab ===
+  // === 年榜：双 tab ===
+  if (runYearly) {
     console.log('[yearly] fetching newborn...');
     const newborn = await fetchSearch(`created:>${info.year}-01-01 stars:>500`, 50);
     if (llm && !skipTranslate) await translateBoard(newborn, cache, llm);

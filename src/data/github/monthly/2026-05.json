@@ -5,10 +5,20 @@
       "name": "forrestchang/andrej-karpathy-skills",
       "url": "https://github.com/forrestchang/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-      "stars": 103617,
+      "stars": 103685,
       "stars_period": 94646,
-      "forks": 10196,
-      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+      "forks": 10205,
+      "topics": [],
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "created_at": "2026-01-27T03:53:13Z",
+      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+      "features": [
+        "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+        "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+        "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+        "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+        "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+      ]
     },
     {
       "rank": 2,
@@ -16,10 +26,38 @@
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "language": "Python",
-      "stars": 127181,
+      "stars": 127223,
       "stars_period": 107384,
-      "forks": 19076,
-      "description_zh": "与你共同成长的智能体"
+      "forks": 19084,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "clawdbot",
+        "codex",
+        "hermes",
+        "hermes-agent",
+        "llm",
+        "moltbot",
+        "nous-research",
+        "openai",
+        "openclaw"
+      ],
+      "pushed_at": "2026-05-01T06:57:56Z",
+      "created_at": "2025-07-22T22:22:28Z",
+      "description_zh": "与你共同成长的智能体",
+      "features": [
+        "内置学习循环，从经验中创建并自我改进 skills",
+        "支持 Telegram、Discord、Slack 等多平台统一网关接入",
+        "兼容 Nous Portal、OpenRouter、OpenAI 等任意 LLM，一键切换",
+        "FTS5 会话搜索 + LLM 摘要，实现跨会话记忆召回",
+        "内置 cron 调度器，自然语言驱动定时自动化任务",
+        "支持子 agent 并行委派与 RPC 工具调用"
+      ]
     },
     {
       "rank": 3,
@@ -27,10 +65,20 @@
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
       "language": "Python",
-      "stars": 19343,
+      "stars": 19363,
       "stars_period": 17760,
-      "forks": 2748,
-      "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）"
+      "forks": 2749,
+      "topics": [],
+      "pushed_at": "2026-05-01T05:01:41Z",
+      "created_at": "2026-01-28T19:02:30Z",
+      "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）",
+      "features": [
+        "将 Claude Code 的 Anthropic Messages API 流量代理到多种后端模型",
+        "支持 NVIDIA NIM、OpenRouter、DeepSeek、LM Studio、llama.cpp、Ollama 六种 provider",
+        "支持按模型路由：Opus、Sonnet、Haiku 可分发至不同 provider",
+        "原生支持 Claude Code 的 /model 选择器及 /v1/models 端点",
+        "可选 Discord/Telegram bot 封装与本地 Whisper 语音转录"
+      ]
     },
     {
       "rank": 4,
@@ -38,10 +86,36 @@
       "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
       "language": "Python",
-      "stars": 18435,
+      "stars": 18446,
       "stars_period": 15326,
       "forks": 2467,
-      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。"
+      "topics": [
+        "ai-agents",
+        "algorithmic-trading",
+        "bloomberg-terminal",
+        "cpp",
+        "finance",
+        "financial-markets",
+        "fintech",
+        "good-first-issue",
+        "investment",
+        "investment-research",
+        "machine-learning",
+        "opensource",
+        "python",
+        "qt",
+        "quantitative-finance",
+        "stock-market",
+        "trading"
+      ],
+      "pushed_at": "2026-04-30T09:36:07Z",
+      "created_at": "2024-08-29T14:38:08Z",
+      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。",
+      "features": [
+        "基于 C++20 与 Qt6 构建的高性能金融终端桌面应用",
+        "集成 Python 3.11+ 用于金融数据分析与处理",
+        "提供全面的金融市场情报与数据访问功能"
+      ]
     },
     {
       "rank": 5,
@@ -49,10 +123,20 @@
       "url": "https://github.com/shiyu-coder/Kronos",
       "description": "Kronos: A Foundation Model for the Language of Financial Markets",
       "language": "Python",
-      "stars": 22304,
+      "stars": 22306,
       "stars_period": 10927,
-      "forks": 3924,
-      "description_zh": "Kronos：金融市场语言的基础模型"
+      "forks": 3925,
+      "topics": [],
+      "pushed_at": "2026-04-13T12:38:49Z",
+      "created_at": "2025-07-01T02:54:32Z",
+      "description_zh": "Kronos：金融市场语言的基础模型",
+      "features": [
+        "面向金融 K 线数据预训练的首个开源 decoder-only 基础模型",
+        "通过专用 tokenizer 将 OHLCV 数据量化为分层离散 token",
+        "基于全球 45+ 交易所数据预训练的自回归 Transformer 模型",
+        "提供微调脚本，可适配自定义量化任务",
+        "支持 Hugging Face 模型加载与在线 Demo 体验"
+      ]
     },
     {
       "rank": 6,
@@ -60,10 +144,30 @@
       "url": "https://github.com/HKUDS/DeepTutor",
       "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
       "language": "Python",
-      "stars": 22757,
+      "stars": 22761,
       "stars_period": 11891,
       "forks": 3041,
-      "description_zh": "DeepTutor：智能体原生的个性化学习助手"
+      "topics": [
+        "ai-agents",
+        "ai-tutor",
+        "clawdbot",
+        "cli-tool",
+        "deepresearch",
+        "interactive-learning",
+        "large-language-models",
+        "multi-agent-systems",
+        "rag"
+      ],
+      "pushed_at": "2026-05-01T05:52:09Z",
+      "created_at": "2025-12-28T15:35:54Z",
+      "description_zh": "DeepTutor：智能体原生的个性化学习助手",
+      "features": [
+        "Agent-native 个性化辅导平台，提供持久化自主 AI tutor (TutorBot)",
+        "支持 RAG 文档抽取与重建索引，具备增强的容错能力",
+        "集成 NVIDIA NIM 与 Gemini embedding，支持统一 Space 上下文管理",
+        "提供 DeepTutor CLI，实现 agent-native 交互界面",
+        "支持书页聊天持久化、会话快照与 chat-to-book 引用"
+      ]
     },
     {
       "rank": 7,
@@ -71,10 +175,20 @@
       "url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .claude directory.",
       "language": "Shell",
-      "stars": 50424,
+      "stars": 50532,
       "stars_period": 36944,
-      "forks": 4151,
-      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。"
+      "forks": 4165,
+      "topics": [],
+      "pushed_at": "2026-04-30T11:38:13Z",
+      "created_at": "2026-02-03T11:15:53Z",
+      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。",
+      "features": [
+        "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+        "通过 skills.sh 一键安装并配置到各类 coding agent",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+        "基于 /triage 标签实现工单分类管理"
+      ]
     },
     {
       "rank": 8,
@@ -82,10 +196,19 @@
       "url": "https://github.com/google-ai-edge/gallery",
       "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
       "language": "Kotlin",
-      "stars": 22371,
+      "stars": 22375,
       "stars_period": 6925,
-      "forks": 2205,
-      "description_zh": "一个展示端侧 ML/GenAI 用例的图库，让用户可以在本地试用各种模型。"
+      "forks": 2206,
+      "topics": [],
+      "pushed_at": "2026-05-01T07:09:20Z",
+      "created_at": "2025-03-31T17:47:28Z",
+      "description_zh": "一个展示端侧 ML/GenAI 用例的图库，让用户可以在本地试用各种模型。",
+      "features": [
+        "在移动设备上完全离线运行开源 LLM，保护隐私且响应迅速",
+        "官方支持最新 Gemma 4 模型，体验端侧高级推理与创造能力",
+        "通过 Agent Skills 集成 Wikipedia 等工具，让 LLM 成为主动助手",
+        "提供 Google Play、App Store 及 APK 多种安装方式"
+      ]
     },
     {
       "rank": 9,
@@ -93,10 +216,31 @@
       "url": "https://github.com/coleam00/Archon",
       "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
       "language": "TypeScript",
-      "stars": 20386,
+      "stars": 20388,
       "stars_period": 6553,
       "forks": 3118,
-      "description_zh": "首个面向 AI 编程的开源 harness 构建工具。让 AI 编程具备确定性和可重复性。"
+      "topics": [
+        "ai",
+        "automation",
+        "bun",
+        "claude",
+        "cli",
+        "coding-assistant",
+        "developer-tools",
+        "typescript",
+        "workflow-engine",
+        "yaml"
+      ],
+      "pushed_at": "2026-05-01T06:47:07Z",
+      "created_at": "2025-02-07T21:04:12Z",
+      "description_zh": "首个面向 AI 编程的开源 harness 构建工具。让 AI 编程具备确定性和可重复性。",
+      "features": [
+        "将开发流程定义为 YAML workflow，使 AI coding agent 运行可重复确定",
+        "每次 workflow 运行使用独立 git worktree，支持并行无冲突执行",
+        "可组合确定性节点（脚本、测试、git）与 AI 节点（规划、生成、评审）",
+        "支持 AI loop，循环迭代直至任务全部完成",
+        "workflow 可在 CLI、Web UI、Slack、Telegram、GitHub 多端运行"
+      ]
     },
     {
       "rank": 10,
@@ -104,10 +248,28 @@
       "url": "https://github.com/microsoft/markitdown",
       "description": "Python tool for converting files and office documents to Markdown.",
       "language": "Python",
-      "stars": 119088,
+      "stars": 119091,
       "stars_period": 26422,
       "forks": 7876,
-      "description_zh": "用于将文件和 office 文档转换为 Markdown 的 Python 工具。"
+      "topics": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "openai",
+        "pdf"
+      ],
+      "pushed_at": "2026-04-20T17:52:20Z",
+      "created_at": "2024-11-13T19:56:40Z",
+      "description_zh": "用于将文件和 office 文档转换为 Markdown 的 Python 工具。",
+      "features": [
+        "将 PDF、Office、图像、音频等多种文件格式转换为 Markdown",
+        "保留标题、列表、表格、链接等文档结构信息",
+        "支持图像 OCR 与 EXIF 元数据提取，以及音频语音转录",
+        "支持 ZIP、YouTube URL、EPub 等特殊来源的内容解析",
+        "输出针对 LLM 与文本分析管道优化，token 利用高效"
+      ]
     },
     {
       "rank": 11,
@@ -115,10 +277,36 @@
       "url": "https://github.com/lsdefine/GenericAgent",
       "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
       "language": "Python",
-      "stars": 8541,
+      "stars": 8544,
       "stars_period": 7653,
       "forks": 976,
-      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制"
+      "topics": [
+        "ai-agent",
+        "automation",
+        "autonomous-agent",
+        "browser-automation",
+        "claude",
+        "computer-control",
+        "desktop-automation",
+        "gemini",
+        "lightweight",
+        "llm-agent",
+        "memory-system",
+        "python",
+        "self-evolving",
+        "skill-tree",
+        "task-automation"
+      ],
+      "pushed_at": "2026-05-01T02:49:20Z",
+      "created_at": "2026-01-16T15:45:24Z",
+      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制",
+      "features": [
+        "仅约 3K 行核心代码的极简自主 agent 框架，含 9 个原子工具和约 100 行 Agent Loop",
+        "自进化能力：将每次任务执行路径自动固化为可复用 skill，形成个人技能树",
+        "通过注入真实浏览器、终端、文件系统、键鼠、视觉及 ADB 实现系统级控制",
+        "兼容 Claude / Gemini / Kimi / MiniMax 等主流 LLM，跨平台运行",
+        "上下文窗口低于 30K，分层记忆机制降低 token 消耗与幻觉率"
+      ]
     },
     {
       "rank": 12,
@@ -126,9 +314,19 @@
       "url": "https://github.com/google-ai-edge/LiteRT-LM",
       "description": "",
       "language": "C++",
-      "stars": 4590,
+      "stars": 4595,
       "stars_period": 3578,
-      "forks": 449
+      "forks": 449,
+      "topics": [],
+      "pushed_at": "2026-05-01T06:15:51Z",
+      "created_at": "2025-04-14T21:00:20Z",
+      "features": [
+        "跨平台支持 Android、iOS、Web、Desktop 及 IoT 设备的 LLM 部署",
+        "通过 GPU 和 NPU 加速器实现硬件加速以达到峰值性能",
+        "支持视觉和音频输入的多模态推理",
+        "支持 function calling，适用于 agentic workflows",
+        "广泛兼容 Gemma、Llama、Phi-4、Qwen 等主流模型"
+      ]
     },
     {
       "rank": 13,
@@ -136,10 +334,26 @@
       "url": "https://github.com/siddharthvaddem/openscreen",
       "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
       "language": "TypeScript",
-      "stars": 33898,
+      "stars": 33902,
       "stars_period": 24903,
       "forks": 2279,
-      "description_zh": "免费打造惊艳演示。开源、无订阅、无水印，可免费商用。Screen Studio 的替代方案。"
+      "topics": [
+        "electron",
+        "open-source",
+        "pixijs",
+        "screen-capture",
+        "screen-recorder"
+      ],
+      "pushed_at": "2026-04-30T04:33:18Z",
+      "created_at": "2025-10-10T05:36:55Z",
+      "description_zh": "免费打造惊艳演示。开源、无订阅、无水印，可免费商用。Screen Studio 的替代方案。",
+      "features": [
+        "录制指定窗口或整个屏幕，支持麦克风和系统音频",
+        "支持自动或手动缩放，可调节深度、时长和位置",
+        "可添加文字、箭头、图片等标注，并裁剪视频画面",
+        "提供壁纸、纯色、渐变或自定义背景，带动作模糊效果",
+        "支持片段剪辑、变速及多种宽高比和分辨率导出"
+      ]
     },
     {
       "rank": 14,
@@ -147,10 +361,34 @@
       "url": "https://github.com/Z4nzu/hackingtool",
       "description": "ALL IN ONE Hacking Tool For Hackers",
       "language": "Python",
-      "stars": 69457,
+      "stars": 69469,
       "stars_period": 12342,
       "forks": 7824,
-      "description_zh": "黑客一站式渗透工具"
+      "topics": [
+        "allinonehackingtool",
+        "besthackingtool",
+        "ctf-tools",
+        "ddos-attack-tool",
+        "hacker",
+        "hacking",
+        "linux",
+        "password-attack",
+        "steganography",
+        "web-attack",
+        "wireless-attack",
+        "xss-attacks",
+        "xss-detection"
+      ],
+      "pushed_at": "2026-03-15T14:33:08Z",
+      "created_at": "2020-04-11T09:21:31Z",
+      "description_zh": "黑客一站式渗透工具",
+      "features": [
+        "集成 185+ 安全工具，分 20 大类，覆盖渗透测试与安全研究",
+        "支持搜索、19 个标签过滤及智能推荐工具",
+        "显示工具安装状态，支持一键批量安装与智能更新",
+        "OS 感知菜单，macOS 上自动隐藏 Linux 专用工具",
+        "支持 Docker 本地构建，兼容 Linux、Kali、Parrot、macOS"
+      ]
     },
     {
       "rank": 15,
@@ -158,10 +396,31 @@
       "url": "https://github.com/hugohe3/ppt-master",
       "description": "AI generates natively editable PPTX from any document — real PowerPoint shapes with native animations, not images · by Hugo He",
       "language": "Python",
-      "stars": 10189,
+      "stars": 10200,
       "stars_period": 6546,
-      "forks": 1083,
-      "description_zh": "AI 从任意文档生成原生可编辑的 PPTX —— 真正的 PowerPoint 形状与原生动画，而非图片 · 作者 Hugo He"
+      "forks": 1084,
+      "topics": [
+        "ai-agent",
+        "aippt",
+        "office",
+        "powerpoint",
+        "powerpoint-generation",
+        "ppt",
+        "pptx",
+        "presentation",
+        "slide",
+        "slides"
+      ],
+      "pushed_at": "2026-05-01T08:37:13Z",
+      "created_at": "2025-12-10T06:54:33Z",
+      "description_zh": "AI 从任意文档生成原生可编辑的 PPTX —— 真正的 PowerPoint 形状与原生动画，而非图片 · 作者 Hugo He",
+      "features": [
+        "从 PDF/DOCX/URL/Markdown 一键生成原生可编辑的 PPTX 文件",
+        "形状、文本框和图表均为真实元素，可在 PowerPoint 中点击编辑",
+        "支持以原生 OOXML 实现的页面切换和元素入场动画",
+        "基于演讲者备注生成逐页语音旁白，支持 90+ 语言（edge-tts）",
+        "可在 PowerPoint 和 Keynote 中原生播放，无需额外工具"
+      ]
     },
     {
       "rank": 16,
@@ -169,10 +428,40 @@
       "url": "https://github.com/thedotmack/claude-mem",
       "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
       "language": "TypeScript",
-      "stars": 70484,
+      "stars": 70498,
       "stars_period": 26754,
       "forks": 6027,
-      "description_zh": "一款 Claude Code 插件，自动记录 Claude 在编码会话中的所有操作，使用 AI（基于 Claude 的 agent-sdk）进行压缩，并将相关上下文注入到后续会话中。"
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "pushed_at": "2026-05-01T08:37:39Z",
+      "created_at": "2025-08-31T20:50:03Z",
+      "description_zh": "一款 Claude Code 插件，自动记录 Claude 在编码会话中的所有操作，使用 AI（基于 Claude 的 agent-sdk）进行压缩，并将相关上下文注入到后续会话中。",
+      "features": [
+        "为 Claude Code 提供持久化记忆压缩系统，跨会话保留上下文",
+        "自动压缩对话历史，节省 token 占用",
+        "支持多语言文档，覆盖 30+ 种语言",
+        "基于 Node.js 18+ 的 CLI 工具，易于集成"
+      ]
     },
     {
       "rank": 17,
@@ -180,10 +469,33 @@
       "url": "https://github.com/rtk-ai/rtk",
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
       "language": "Rust",
-      "stars": 39098,
+      "stars": 39111,
       "stars_period": 23051,
-      "forks": 2374,
-      "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖"
+      "forks": 2376,
+      "topics": [
+        "agentic-coding",
+        "ai-coding",
+        "anthropic",
+        "claude-code",
+        "cli",
+        "command-line-tool",
+        "cost-reduction",
+        "developer-tools",
+        "llm",
+        "open-source",
+        "productivity",
+        "rust",
+        "token-optimization"
+      ],
+      "pushed_at": "2026-05-01T04:22:45Z",
+      "created_at": "2026-01-22T16:54:16Z",
+      "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖",
+      "features": [
+        "过滤压缩命令输出，将 LLM token 消耗降低 60-90%",
+        "单一 Rust 二进制 CLI 代理，开销低于 10ms",
+        "支持 100+ 常见命令，包括 git、cargo、pytest、docker 等",
+        "针对 Claude Code 等 LLM 编码会话优化 context 占用"
+      ]
     },
     {
       "rank": 18,
@@ -191,10 +503,33 @@
       "url": "https://github.com/ComposioHQ/awesome-codex-skills",
       "description": "A curated list of practical Codex skills for automating workflows across the Codex CLI and API.",
       "language": "Python",
-      "stars": 5257,
+      "stars": 5264,
       "stars_period": 4562,
-      "forks": 330,
-      "description_zh": "精选实用 Codex skills 列表，用于在 Codex CLI 和 API 之间自动化工作流。"
+      "forks": 332,
+      "topics": [
+        "awesome",
+        "awesome-lists",
+        "awesome-resources",
+        "codex",
+        "codex-cli",
+        "codex-skills",
+        "coding-agent-skills",
+        "coding-agents",
+        "gpt-5-1-codex",
+        "gpt-5-codex",
+        "llm",
+        "skills"
+      ],
+      "pushed_at": "2026-04-28T07:25:44Z",
+      "created_at": "2026-01-12T11:58:21Z",
+      "description_zh": "精选实用 Codex skills 列表，用于在 Codex CLI 和 API 之间自动化工作流。",
+      "features": [
+        "精选 Codex CLI 与 API 实用 skills 列表，覆盖工作流自动化",
+        "提供 Skill Installer 脚本，一键从 GitHub 仓库安装 skills 到本地",
+        "通过 description frontmatter 自动匹配并触发对应 skill",
+        "集成 Composio，可连接 1000+ 应用执行邮件、Slack、Issue 等操作",
+        "按开发、协作、写作、数据分析等场景分类整理 skills"
+      ]
     }
   ],
   "ai": [
@@ -203,10 +538,20 @@
       "name": "forrestchang/andrej-karpathy-skills",
       "url": "https://github.com/forrestchang/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-      "stars": 103617,
+      "stars": 103685,
       "stars_period": 94646,
-      "forks": 10196,
-      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+      "forks": 10205,
+      "topics": [],
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "created_at": "2026-01-27T03:53:13Z",
+      "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+      "features": [
+        "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+        "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+        "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+        "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+        "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+      ]
     },
     {
       "rank": 2,
@@ -214,10 +559,75 @@
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "language": "Python",
-      "stars": 127181,
+      "stars": 127223,
       "stars_period": 107384,
-      "forks": 19076,
-      "description_zh": "与你共同成长的智能体"
+      "forks": 19084,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "clawdbot",
+        "codex",
+        "hermes",
+        "hermes-agent",
+        "llm",
+        "moltbot",
+        "nous-research",
+        "openai",
+        "openclaw"
+      ],
+      "pushed_at": "2026-05-01T06:57:56Z",
+      "created_at": "2025-07-22T22:22:28Z",
+      "description_zh": "与你共同成长的智能体",
+      "features": [
+        "内置学习循环，从经验中创建并自我改进 skills",
+        "支持 Telegram、Discord、Slack 等多平台统一网关接入",
+        "兼容 Nous Portal、OpenRouter、OpenAI 等任意 LLM，一键切换",
+        "FTS5 会话搜索 + LLM 摘要，实现跨会话记忆召回",
+        "内置 cron 调度器，自然语言驱动定时自动化任务",
+        "支持子 agent 并行委派与 RPC 工具调用"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "Fincept-Corporation/FinceptTerminal",
+      "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "language": "Python",
+      "stars": 18446,
+      "stars_period": 15326,
+      "forks": 2467,
+      "topics": [
+        "ai-agents",
+        "algorithmic-trading",
+        "bloomberg-terminal",
+        "cpp",
+        "finance",
+        "financial-markets",
+        "fintech",
+        "good-first-issue",
+        "investment",
+        "investment-research",
+        "machine-learning",
+        "opensource",
+        "python",
+        "qt",
+        "quantitative-finance",
+        "stock-market",
+        "trading"
+      ],
+      "pushed_at": "2026-04-30T09:36:07Z",
+      "created_at": "2024-08-29T14:38:08Z",
+      "description_zh": "FinceptTerminal 是一款现代金融应用，提供高级市场分析、投资研究和经济数据工具，专为交互式探索和数据驱动决策而设计，操作界面友好。",
+      "features": [
+        "基于 C++20 与 Qt6 构建的高性能金融终端桌面应用",
+        "集成 Python 3.11+ 用于金融数据分析与处理",
+        "提供全面的金融市场情报与数据访问功能"
+      ]
     },
     {
       "rank": 6,
@@ -225,10 +635,30 @@
       "url": "https://github.com/HKUDS/DeepTutor",
       "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
       "language": "Python",
-      "stars": 22757,
+      "stars": 22761,
       "stars_period": 11891,
       "forks": 3041,
-      "description_zh": "DeepTutor：智能体原生的个性化学习助手"
+      "topics": [
+        "ai-agents",
+        "ai-tutor",
+        "clawdbot",
+        "cli-tool",
+        "deepresearch",
+        "interactive-learning",
+        "large-language-models",
+        "multi-agent-systems",
+        "rag"
+      ],
+      "pushed_at": "2026-05-01T05:52:09Z",
+      "created_at": "2025-12-28T15:35:54Z",
+      "description_zh": "DeepTutor：智能体原生的个性化学习助手",
+      "features": [
+        "Agent-native 个性化辅导平台，提供持久化自主 AI tutor (TutorBot)",
+        "支持 RAG 文档抽取与重建索引，具备增强的容错能力",
+        "集成 NVIDIA NIM 与 Gemini embedding，支持统一 Space 上下文管理",
+        "提供 DeepTutor CLI，实现 agent-native 交互界面",
+        "支持书页聊天持久化、会话快照与 chat-to-book 引用"
+      ]
     },
     {
       "rank": 8,
@@ -236,10 +666,19 @@
       "url": "https://github.com/google-ai-edge/gallery",
       "description": "A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
       "language": "Kotlin",
-      "stars": 22371,
+      "stars": 22375,
       "stars_period": 6925,
-      "forks": 2205,
-      "description_zh": "一个展示端侧 ML/GenAI 用例的图库，让用户可以在本地试用各种模型。"
+      "forks": 2206,
+      "topics": [],
+      "pushed_at": "2026-05-01T07:09:20Z",
+      "created_at": "2025-03-31T17:47:28Z",
+      "description_zh": "一个展示端侧 ML/GenAI 用例的图库，让用户可以在本地试用各种模型。",
+      "features": [
+        "在移动设备上完全离线运行开源 LLM，保护隐私且响应迅速",
+        "官方支持最新 Gemma 4 模型，体验端侧高级推理与创造能力",
+        "通过 Agent Skills 集成 Wikipedia 等工具，让 LLM 成为主动助手",
+        "提供 Google Play、App Store 及 APK 多种安装方式"
+      ]
     },
     {
       "rank": 9,
@@ -247,10 +686,60 @@
       "url": "https://github.com/coleam00/Archon",
       "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
       "language": "TypeScript",
-      "stars": 20386,
+      "stars": 20388,
       "stars_period": 6553,
       "forks": 3118,
-      "description_zh": "首个面向 AI 编程的开源 harness 构建工具。让 AI 编程具备确定性和可重复性。"
+      "topics": [
+        "ai",
+        "automation",
+        "bun",
+        "claude",
+        "cli",
+        "coding-assistant",
+        "developer-tools",
+        "typescript",
+        "workflow-engine",
+        "yaml"
+      ],
+      "pushed_at": "2026-05-01T06:47:07Z",
+      "created_at": "2025-02-07T21:04:12Z",
+      "description_zh": "首个面向 AI 编程的开源 harness 构建工具。让 AI 编程具备确定性和可重复性。",
+      "features": [
+        "将开发流程定义为 YAML workflow，使 AI coding agent 运行可重复确定",
+        "每次 workflow 运行使用独立 git worktree，支持并行无冲突执行",
+        "可组合确定性节点（脚本、测试、git）与 AI 节点（规划、生成、评审）",
+        "支持 AI loop，循环迭代直至任务全部完成",
+        "workflow 可在 CLI、Web UI、Slack、Telegram、GitHub 多端运行"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "microsoft/markitdown",
+      "url": "https://github.com/microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "language": "Python",
+      "stars": 119091,
+      "stars_period": 26422,
+      "forks": 7876,
+      "topics": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "openai",
+        "pdf"
+      ],
+      "pushed_at": "2026-04-20T17:52:20Z",
+      "created_at": "2024-11-13T19:56:40Z",
+      "description_zh": "用于将文件和 office 文档转换为 Markdown 的 Python 工具。",
+      "features": [
+        "将 PDF、Office、图像、音频等多种文件格式转换为 Markdown",
+        "保留标题、列表、表格、链接等文档结构信息",
+        "支持图像 OCR 与 EXIF 元数据提取，以及音频语音转录",
+        "支持 ZIP、YouTube URL、EPub 等特殊来源的内容解析",
+        "输出针对 LLM 与文本分析管道优化，token 利用高效"
+      ]
     },
     {
       "rank": 11,
@@ -258,10 +747,36 @@
       "url": "https://github.com/lsdefine/GenericAgent",
       "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
       "language": "Python",
-      "stars": 8541,
+      "stars": 8544,
       "stars_period": 7653,
       "forks": 976,
-      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制"
+      "topics": [
+        "ai-agent",
+        "automation",
+        "autonomous-agent",
+        "browser-automation",
+        "claude",
+        "computer-control",
+        "desktop-automation",
+        "gemini",
+        "lightweight",
+        "llm-agent",
+        "memory-system",
+        "python",
+        "self-evolving",
+        "skill-tree",
+        "task-automation"
+      ],
+      "pushed_at": "2026-05-01T02:49:20Z",
+      "created_at": "2026-01-16T15:45:24Z",
+      "description_zh": "自进化 agent：从 3.3K 行种子代码生长技能树，token 消耗减少 6 倍即可实现完整系统控制",
+      "features": [
+        "仅约 3K 行核心代码的极简自主 agent 框架，含 9 个原子工具和约 100 行 Agent Loop",
+        "自进化能力：将每次任务执行路径自动固化为可复用 skill，形成个人技能树",
+        "通过注入真实浏览器、终端、文件系统、键鼠、视觉及 ADB 实现系统级控制",
+        "兼容 Claude / Gemini / Kimi / MiniMax 等主流 LLM，跨平台运行",
+        "上下文窗口低于 30K，分层记忆机制降低 token 消耗与幻觉率"
+      ]
     },
     {
       "rank": 12,
@@ -269,9 +784,19 @@
       "url": "https://github.com/google-ai-edge/LiteRT-LM",
       "description": "",
       "language": "C++",
-      "stars": 4590,
+      "stars": 4595,
       "stars_period": 3578,
-      "forks": 449
+      "forks": 449,
+      "topics": [],
+      "pushed_at": "2026-05-01T06:15:51Z",
+      "created_at": "2025-04-14T21:00:20Z",
+      "features": [
+        "跨平台支持 Android、iOS、Web、Desktop 及 IoT 设备的 LLM 部署",
+        "通过 GPU 和 NPU 加速器实现硬件加速以达到峰值性能",
+        "支持视觉和音频输入的多模态推理",
+        "支持 function calling，适用于 agentic workflows",
+        "广泛兼容 Gemma、Llama、Phi-4、Qwen 等主流模型"
+      ]
     },
     {
       "rank": 15,
@@ -279,10 +804,31 @@
       "url": "https://github.com/hugohe3/ppt-master",
       "description": "AI generates natively editable PPTX from any document — real PowerPoint shapes with native animations, not images · by Hugo He",
       "language": "Python",
-      "stars": 10189,
+      "stars": 10200,
       "stars_period": 6546,
-      "forks": 1083,
-      "description_zh": "AI 从任意文档生成原生可编辑的 PPTX —— 真正的 PowerPoint 形状与原生动画，而非图片 · 作者 Hugo He"
+      "forks": 1084,
+      "topics": [
+        "ai-agent",
+        "aippt",
+        "office",
+        "powerpoint",
+        "powerpoint-generation",
+        "ppt",
+        "pptx",
+        "presentation",
+        "slide",
+        "slides"
+      ],
+      "pushed_at": "2026-05-01T08:37:13Z",
+      "created_at": "2025-12-10T06:54:33Z",
+      "description_zh": "AI 从任意文档生成原生可编辑的 PPTX —— 真正的 PowerPoint 形状与原生动画，而非图片 · 作者 Hugo He",
+      "features": [
+        "从 PDF/DOCX/URL/Markdown 一键生成原生可编辑的 PPTX 文件",
+        "形状、文本框和图表均为真实元素，可在 PowerPoint 中点击编辑",
+        "支持以原生 OOXML 实现的页面切换和元素入场动画",
+        "基于演讲者备注生成逐页语音旁白，支持 90+ 语言（edge-tts）",
+        "可在 PowerPoint 和 Keynote 中原生播放，无需额外工具"
+      ]
     },
     {
       "rank": 16,
@@ -290,10 +836,40 @@
       "url": "https://github.com/thedotmack/claude-mem",
       "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
       "language": "TypeScript",
-      "stars": 70484,
+      "stars": 70498,
       "stars_period": 26754,
       "forks": 6027,
-      "description_zh": "一款 Claude Code 插件，自动记录 Claude 在编码会话中的所有操作，使用 AI（基于 Claude 的 agent-sdk）进行压缩，并将相关上下文注入到后续会话中。"
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "pushed_at": "2026-05-01T08:37:39Z",
+      "created_at": "2025-08-31T20:50:03Z",
+      "description_zh": "一款 Claude Code 插件，自动记录 Claude 在编码会话中的所有操作，使用 AI（基于 Claude 的 agent-sdk）进行压缩，并将相关上下文注入到后续会话中。",
+      "features": [
+        "为 Claude Code 提供持久化记忆压缩系统，跨会话保留上下文",
+        "自动压缩对话历史，节省 token 占用",
+        "支持多语言文档，覆盖 30+ 种语言",
+        "基于 Node.js 18+ 的 CLI 工具，易于集成"
+      ]
     },
     {
       "rank": 17,
@@ -301,10 +877,67 @@
       "url": "https://github.com/rtk-ai/rtk",
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
       "language": "Rust",
-      "stars": 39098,
+      "stars": 39111,
       "stars_period": 23051,
-      "forks": 2374,
-      "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖"
+      "forks": 2376,
+      "topics": [
+        "agentic-coding",
+        "ai-coding",
+        "anthropic",
+        "claude-code",
+        "cli",
+        "command-line-tool",
+        "cost-reduction",
+        "developer-tools",
+        "llm",
+        "open-source",
+        "productivity",
+        "rust",
+        "token-optimization"
+      ],
+      "pushed_at": "2026-05-01T04:22:45Z",
+      "created_at": "2026-01-22T16:54:16Z",
+      "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖",
+      "features": [
+        "过滤压缩命令输出，将 LLM token 消耗降低 60-90%",
+        "单一 Rust 二进制 CLI 代理，开销低于 10ms",
+        "支持 100+ 常见命令，包括 git、cargo、pytest、docker 等",
+        "针对 Claude Code 等 LLM 编码会话优化 context 占用"
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "ComposioHQ/awesome-codex-skills",
+      "url": "https://github.com/ComposioHQ/awesome-codex-skills",
+      "description": "A curated list of practical Codex skills for automating workflows across the Codex CLI and API.",
+      "language": "Python",
+      "stars": 5264,
+      "stars_period": 4562,
+      "forks": 332,
+      "topics": [
+        "awesome",
+        "awesome-lists",
+        "awesome-resources",
+        "codex",
+        "codex-cli",
+        "codex-skills",
+        "coding-agent-skills",
+        "coding-agents",
+        "gpt-5-1-codex",
+        "gpt-5-codex",
+        "llm",
+        "skills"
+      ],
+      "pushed_at": "2026-04-28T07:25:44Z",
+      "created_at": "2026-01-12T11:58:21Z",
+      "description_zh": "精选实用 Codex skills 列表，用于在 Codex CLI 和 API 之间自动化工作流。",
+      "features": [
+        "精选 Codex CLI 与 API 实用 skills 列表，覆盖工作流自动化",
+        "提供 Skill Installer 脚本，一键从 GitHub 仓库安装 skills 到本地",
+        "通过 description frontmatter 自动匹配并触发对应 skill",
+        "集成 Composio，可连接 1000+ 应用执行邮件、Slack、Issue 等操作",
+        "按开发、协作、写作、数据分析等场景分类整理 skills"
+      ]
     }
   ]
 }

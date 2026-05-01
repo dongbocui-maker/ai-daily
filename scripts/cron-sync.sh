@@ -26,16 +26,13 @@ cd "$REPO"
   git reset --hard origin/main --quiet
 
   # Run the sync (飞书 → src/data/daily)
+  # GitHub Trending 独立 cron 走 cron-github.sh
   pnpm sync
 
-  # Run GitHub trending sync (4 档 → src/data/github)
-  echo "[cron] running github-trending sync"
-  npx tsx scripts/github-trending.ts || echo "[cron] github sync failed (非致命)"
-
   # Commit & push if anything changed
-  if [[ -n "$(git status --porcelain src/data/)" ]]; then
+  if [[ -n "$(git status --porcelain src/data/daily)" ]]; then
     git -c user.name="ai-daily-cron" -c user.email="cron@local" \
-        add src/data/
+        add src/data/daily
     git -c user.name="ai-daily-cron" -c user.email="cron@local" \
         commit -m "chore(data): daily sync $(TZ=Asia/Shanghai date +%F) (local cron)"
 

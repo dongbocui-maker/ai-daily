@@ -7,12 +7,18 @@
         "url": "https://github.com/ultraworkers/claw-code",
         "description": "The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.",
         "language": "Rust",
-        "stars": 189453,
-        "forks": 109565,
+        "stars": 189460,
+        "forks": 109567,
         "topics": [],
         "pushed_at": "2026-04-30T21:49:51Z",
         "created_at": "2026-03-31T08:58:08Z",
-        "description_zh": "仓库终于解锁了，尽情狂欢吧！史上最快突破 100K star 的项目 ⭐。加入 Discord：https://discord.gg/5TUQKqFWd 使用 oh-my-codex 以 Rust 构建。"
+        "description_zh": "仓库终于解锁了，尽情狂欢吧！史上最快突破 100K star 的项目 ⭐。加入 Discord：https://discord.gg/5TUQKqFWd 使用 oh-my-codex 以 Rust 构建。",
+        "features": [
+          "Rust 实现的 `claw` CLI agent harness",
+          "提供 `claw doctor` 健康检查及会话管理工作流",
+          "支持容器优先（container-first）的运行流程",
+          "包含 parity-harness 用于跟踪 Rust 移植对齐状态"
+        ]
       },
       {
         "rank": 2,
@@ -20,8 +26,8 @@
         "url": "https://github.com/affaan-m/everything-claude-code",
         "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
         "language": "JavaScript",
-        "stars": 171127,
-        "forks": 26524,
+        "stars": 171150,
+        "forks": 26528,
         "topics": [
           "ai-agents",
           "anthropic",
@@ -34,19 +40,33 @@
         ],
         "pushed_at": "2026-04-30T16:25:17Z",
         "created_at": "2026-01-18T00:51:51Z",
-        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。"
+        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。",
+        "features": [
+          "面向 AI agent harness 的性能优化系统，含 skills、hooks、rules 与 MCP 配置",
+          "跨 Claude Code、Codex、Cursor、OpenCode、Gemini 等多种 AI agent harness 通用",
+          "提供 ecc-universal 与 ecc-agentshield 两款 npm 包，并配套 GitHub App",
+          "内置安全扫描、记忆优化与持续学习能力，支持 research-first 开发流程",
+          "提供生产级 agents、skills 及遗留命令 shim，多语言生态覆盖 12+ 种"
+        ]
       },
       {
         "rank": 3,
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
         "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-        "stars": 103617,
-        "forks": 10196,
+        "stars": 103686,
+        "forks": 10205,
         "topics": [],
         "pushed_at": "2026-04-20T10:05:04Z",
         "created_at": "2026-01-27T03:53:13Z",
-        "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+        "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+        "features": [
+          "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+          "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+          "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+          "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+          "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+        ]
       },
       {
         "rank": 4,
@@ -54,12 +74,19 @@
         "url": "https://github.com/garrytan/gstack",
         "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
         "language": "TypeScript",
-        "stars": 87495,
+        "stars": 87513,
         "forks": 12848,
         "topics": [],
         "pushed_at": "2026-05-01T06:06:17Z",
         "created_at": "2026-03-11T21:22:45Z",
-        "description_zh": "采用 Garry Tan 的 Claude Code 配置：23 个精选工具，分别担任 CEO、设计师、工程经理、发布经理、文档工程师和 QA 角色"
+        "description_zh": "采用 Garry Tan 的 Claude Code 配置：23 个精选工具，分别担任 CEO、设计师、工程经理、发布经理、文档工程师和 QA 角色",
+        "features": [
+          "将 Claude Code 转化为虚拟工程团队，包含 23 个专家角色和 8 个强力工具",
+          "通过 slash commands 调用 CEO、工程经理、设计师、reviewer、QA 等 AI agent 角色",
+          "内置 OWASP + STRIDE 安全审计，自动发现生产环境 bug",
+          "全部基于 Markdown 编写，MIT 协议免费开源",
+          "支持 QA agent 启动真实浏览器测试，并由 release engineer 自动发起 PR"
+        ]
       },
       {
         "rank": 5,
@@ -67,20 +94,27 @@
         "url": "https://github.com/karpathy/autoresearch",
         "description": "AI agents running research on single-GPU nanochat training automatically",
         "language": "Python",
-        "stars": 78189,
-        "forks": 11403,
+        "stars": 78201,
+        "forks": 11405,
         "topics": [],
         "pushed_at": "2026-03-26T00:07:37Z",
         "created_at": "2026-03-06T22:00:43Z",
-        "description_zh": "AI 智能体自动在单 GPU 上运行 nanochat 训练研究"
+        "description_zh": "AI 智能体自动在单 GPU 上运行 nanochat 训练研究",
+        "features": [
+          "让 AI agent 自主修改训练代码并迭代实验的 LLM 研究框架",
+          "基于 nanochat 简化版的单 GPU LLM 训练实现",
+          "通过编辑 program.md 而非 Python 文件来配置 agent 行为",
+          "固定 5 分钟训练预算，以 val_bpb 作为统一评估指标",
+          "train.py 全开放：架构、优化器、超参数均可由 agent 修改"
+        ]
       },
       {
         "rank": 6,
         "name": "VoltAgent/awesome-design-md",
         "url": "https://github.com/VoltAgent/awesome-design-md",
         "description": "A collection of DESIGN.md files inspired by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
-        "stars": 68909,
-        "forks": 8469,
+        "stars": 68923,
+        "forks": 8472,
         "topics": [
           "awesome-list",
           "design-md",
@@ -94,7 +128,13 @@
         ],
         "pushed_at": "2026-04-19T14:39:52Z",
         "created_at": "2026-03-31T16:37:01Z",
-        "description_zh": "一组受热门品牌设计系统启发的 DESIGN.md 文件。放入项目中即可让编码 agent 生成风格匹配的 UI。"
+        "description_zh": "一组受热门品牌设计系统启发的 DESIGN.md 文件。放入项目中即可让编码 agent 生成风格匹配的 UI。",
+        "features": [
+          "收录 69+ 个真实网站提取的 DESIGN.md 文件，供 AI agent 直接使用",
+          "提供 plain-text 设计系统文档，让 AI agent 生成一致的 UI",
+          "支持按需求请求特定网站的 DESIGN.md，含私有定制",
+          "覆盖 AI、LLM 等多类开发者导向网站的设计规范集合"
+        ]
       },
       {
         "rank": 7,
@@ -102,12 +142,19 @@
         "url": "https://github.com/paperclipai/paperclip",
         "description": "Open-source orchestration for zero-human companies",
         "language": "TypeScript",
-        "stars": 61134,
-        "forks": 10771,
+        "stars": 61138,
+        "forks": 10772,
         "topics": [],
         "pushed_at": "2026-05-01T05:43:24Z",
         "created_at": "2026-03-02T15:01:51Z",
-        "description_zh": "面向无人公司的开源编排平台"
+        "description_zh": "面向无人公司的开源编排平台",
+        "features": [
+          "编排 AI agent 团队运营公司的开源 Node.js 服务器与 React UI",
+          "支持自带 agent，兼容 OpenClaw、Claude Code、Codex、Cursor 等多种 provider",
+          "通过统一 dashboard 跟踪 agent 的工作进度与成本开销",
+          "提供组织架构、预算管理、治理与目标对齐等业务级编排能力",
+          "Clipmart 即将推出，可一键下载并运行预构建的公司模板"
+        ]
       },
       {
         "rank": 8,
@@ -115,8 +162,8 @@
         "url": "https://github.com/koala73/worldmonitor",
         "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
         "language": "TypeScript",
-        "stars": 53129,
-        "forks": 8522,
+        "stars": 53133,
+        "forks": 8521,
         "topics": [
           "ai",
           "dashboard",
@@ -128,9 +175,15 @@
           "palantir",
           "situation"
         ],
-        "pushed_at": "2026-05-01T07:56:40Z",
+        "pushed_at": "2026-05-01T08:29:34Z",
         "created_at": "2026-01-08T17:26:06Z",
-        "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面"
+        "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面",
+        "features": [
+          "AI 驱动的实时全球新闻聚合与情报监控",
+          "地缘政治动态与基础设施追踪一体化态势感知界面",
+          "提供 Tech、Finance、Commodity 等多个垂直领域变体",
+          "支持 Windows、macOS、Linux 跨平台桌面客户端"
+        ]
       },
       {
         "rank": 9,
@@ -138,7 +191,7 @@
         "url": "https://github.com/JuliusBrussee/caveman",
         "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
         "language": "Python",
-        "stars": 51552,
+        "stars": 51561,
         "forks": 2744,
         "topics": [
           "ai",
@@ -154,7 +207,14 @@
         ],
         "pushed_at": "2026-05-01T00:31:28Z",
         "created_at": "2026-04-04T10:03:00Z",
-        "description_zh": "🪨 何必多 token，少 token 即可——像原始人一样说话，节省 65% token 的 Claude Code skill"
+        "description_zh": "🪨 何必多 token，少 token 即可——像原始人一样说话，节省 65% token 的 Claude Code skill",
+        "features": [
+          "让 Claude Code/Codex agent 以 caveman 风格输出，节省约 75% token",
+          "支持多档强度级别（Lite 等）调节简洁程度",
+          "内置文言文模式，进一步压缩输出 token",
+          "提供 terse commits、一行 review、终身统计等 caveman skills",
+          "压缩工具可削减约 46% 输入 token"
+        ]
       },
       {
         "rank": 10,
@@ -162,8 +222,8 @@
         "url": "https://github.com/MemPalace/mempalace",
         "description": "The best-benchmarked open-source AI memory system. And it's free.",
         "language": "Python",
-        "stars": 50577,
-        "forks": 6646,
+        "stars": 50582,
+        "forks": 6647,
         "topics": [
           "ai",
           "chromadb",
@@ -174,7 +234,14 @@
         ],
         "pushed_at": "2026-05-01T03:59:06Z",
         "created_at": "2026-04-05T01:12:07Z",
-        "description_zh": "性能最佳的开源 AI 记忆系统，且完全免费。"
+        "description_zh": "性能最佳的开源 AI 记忆系统，且完全免费。",
+        "features": [
+          "以本地优先方式逐字存储对话历史，并通过语义搜索检索，无需 API 调用",
+          "可插拔检索后端，默认使用 ChromaDB，支持自定义 backend 接入",
+          "结构化索引：以 wings、rooms、drawers 组织人物、项目和内容，实现作用域搜索",
+          "提供 CLI 工具支持挖掘项目文件、Claude Code 会话并加载上下文",
+          "在 LongMemEval 基准上取得 96.6% R@5 原始召回率，hybrid 模式达 98.4%"
+        ]
       },
       {
         "rank": 11,
@@ -182,12 +249,19 @@
         "url": "https://github.com/mattpocock/skills",
         "description": "Skills for Real Engineers. Straight from my .claude directory.",
         "language": "Shell",
-        "stars": 50425,
-        "forks": 4151,
+        "stars": 50535,
+        "forks": 4165,
         "topics": [],
         "pushed_at": "2026-04-30T11:38:13Z",
         "created_at": "2026-02-03T11:15:53Z",
-        "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。"
+        "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。",
+        "features": [
+          "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+          "通过 skills.sh 一键安装并配置到各类 coding agent",
+          "支持 GitHub、Linear 或本地文件作为 issue tracker",
+          "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+          "基于 /triage 标签实现工单分类管理"
+        ]
       },
       {
         "rank": 12,
@@ -212,7 +286,13 @@
         ],
         "pushed_at": "2026-04-20T06:41:09Z",
         "created_at": "2026-01-25T09:22:32Z",
-        "description_zh": "精选 OpenClaw 技能集合。从官方 OpenClaw Skills Registry 中筛选并分类的 5400+ 技能。🦞"
+        "description_zh": "精选 OpenClaw 技能集合。从官方 OpenClaw Skills Registry 中筛选并分类的 5400+ 技能。🦞",
+        "features": [
+          "按类别整理 5200+ 社区构建的 OpenClaw skills 集合",
+          "支持通过 ClawHub CLI 一键安装 skills",
+          "提供全局与工作区两种 skill 手动安装路径",
+          "可直接粘贴 GitHub 仓库链接让 assistant 自动配置 skill"
+        ]
       },
       {
         "rank": 13,
@@ -220,12 +300,19 @@
         "url": "https://github.com/chenglou/pretext",
         "description": "Fast, accurate & comprehensive text measurement & layout",
         "language": "TypeScript",
-        "stars": 45927,
+        "stars": 45929,
         "forks": 2539,
         "topics": [],
         "pushed_at": "2026-04-22T17:16:19Z",
         "created_at": "2026-03-07T21:06:28Z",
-        "description_zh": "快速、准确、全面的文本测量与布局"
+        "description_zh": "快速、准确、全面的文本测量与布局",
+        "features": [
+          "纯 JavaScript/TypeScript 多行文本测量与布局库，无需 DOM reflow",
+          "绕过 getBoundingClientRect 等 DOM 测量，自实现文本测量逻辑",
+          "支持 DOM、Canvas、SVG 渲染，未来支持服务端",
+          "prepare 预计算 + layout 纯算术热路径，resize 时仅重跑 layout",
+          "支持 pre-wrap、word-break、letter-spacing 等 CSS 风格选项"
+        ]
       },
       {
         "rank": 14,
@@ -233,7 +320,7 @@
         "url": "https://github.com/HKUDS/nanobot",
         "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Agent\"",
         "language": "Python",
-        "stars": 41415,
+        "stars": 41417,
         "forks": 7274,
         "topics": [
           "ai",
@@ -251,7 +338,14 @@
         ],
         "pushed_at": "2026-04-30T19:45:30Z",
         "created_at": "2026-02-01T07:16:15Z",
-        "description_zh": "🐈 nanobot：超轻量级个人 AI 智能体"
+        "description_zh": "🐈 nanobot：超轻量级个人 AI 智能体",
+        "features": [
+          "超轻量开源 AI agent，核心循环精简易读",
+          "支持 Feishu、Discord、Slack、Teams 等多平台聊天通道",
+          "集成 MCP、记忆系统与多种 LLM provider（如 DeepSeek、Hugging Face）",
+          "提供 Olostep 网页搜索与自然语言 cron 提醒等实用工具",
+          "支持从本地部署到长期运行的个人 agent 全流程"
+        ]
       },
       {
         "rank": 15,
@@ -259,8 +353,8 @@
         "url": "https://github.com/santifer/career-ops",
         "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
         "language": "JavaScript",
-        "stars": 41394,
-        "forks": 8584,
+        "stars": 41402,
+        "forks": 8587,
         "topics": [
           "ai-agent",
           "anthropic",
@@ -277,7 +371,14 @@
         ],
         "pushed_at": "2026-04-30T18:21:46Z",
         "created_at": "2026-04-04T18:21:18Z",
-        "description_zh": "基于 Claude Code 构建的 AI 求职系统。包含 14 种技能模式、Go 仪表板、PDF 生成与批量处理。"
+        "description_zh": "基于 Claude Code 构建的 AI 求职系统。包含 14 种技能模式、Go 仪表板、PDF 生成与批量处理。",
+        "features": [
+          "将 AI coding CLI 转化为求职指挥中心，自动化整个申请流程",
+          "基于多 agent 系统智能评估职位匹配度，筛选合适的 offer",
+          "为每个职位生成个性化 CV 与申请材料",
+          "支持 Claude Code、OpenCode、Gemini CLI 等多种 AI CLI",
+          "使用 Playwright 自动抓取职位列表，替代手动表格追踪"
+        ]
       },
       {
         "rank": 16,
@@ -285,8 +386,8 @@
         "url": "https://github.com/safishamsi/graphify",
         "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, GitHub Copilot CLI, OpenClaw, Factory Droid, Trae, Google Antigravity). Turn any folder of code, docs, papers, images, or videos into a queryable knowledge graph",
         "language": "Python",
-        "stars": 39232,
-        "forks": 4331,
+        "stars": 39250,
+        "forks": 4332,
         "topics": [
           "antigravity",
           "claude-code",
@@ -299,7 +400,8 @@
         ],
         "pushed_at": "2026-04-30T21:36:30Z",
         "created_at": "2026-04-03T15:49:07Z",
-        "description_zh": "AI 编码助手技能（Claude Code、Codex、OpenCode、Cursor、Gemini CLI、GitHub Copilot CLI、OpenClaw、Factory Droid、Trae、Google Antigravity）。将任意代码、文档、论文、图片或视频文件夹转化为可查询的知识图谱"
+        "description_zh": "AI 编码助手技能（Claude Code、Codex、OpenCode、Cursor、Gemini CLI、GitHub Copilot CLI、OpenClaw、Factory Droid、Trae、Google Antigravity）。将任意代码、文档、论文、图片或视频文件夹转化为可查询的知识图谱",
+        "features": []
       },
       {
         "rank": 17,
@@ -307,8 +409,8 @@
         "url": "https://github.com/rtk-ai/rtk",
         "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
         "language": "Rust",
-        "stars": 39098,
-        "forks": 2374,
+        "stars": 39111,
+        "forks": 2376,
         "topics": [
           "agentic-coding",
           "ai-coding",
@@ -326,7 +428,13 @@
         ],
         "pushed_at": "2026-05-01T04:22:45Z",
         "created_at": "2026-01-22T16:54:16Z",
-        "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖"
+        "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖",
+        "features": [
+          "过滤压缩命令输出，将 LLM token 消耗降低 60-90%",
+          "单一 Rust 二进制 CLI 代理，开销低于 10ms",
+          "支持 100+ 常见命令，包括 git、cargo、pytest、docker 等",
+          "针对 Claude Code 等 LLM 编码会话优化 context 占用"
+        ]
       },
       {
         "rank": 18,
@@ -334,7 +442,7 @@
         "url": "https://github.com/sickn33/antigravity-awesome-skills",
         "description": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
         "language": "Python",
-        "stars": 35895,
+        "stars": 35899,
         "forks": 5885,
         "topics": [
           "agent-skills",
@@ -360,7 +468,14 @@
         ],
         "pushed_at": "2026-05-01T06:57:25Z",
         "created_at": "2026-01-14T17:48:09Z",
-        "description_zh": "可安装的 GitHub 库，包含 1,400+ 个 agentic 技能，适用于 Claude Code、Cursor、Codex CLI、Gemini CLI、Antigravity 等。包含安装器 CLI、捆绑包、工作流以及官方/社区技能集合。"
+        "description_zh": "可安装的 GitHub 库，包含 1,400+ 个 agentic 技能，适用于 Claude Code、Cursor、Codex CLI、Gemini CLI、Antigravity 等。包含安装器 CLI、捆绑包、工作流以及官方/社区技能集合。",
+        "features": [
+          "提供 1441+ 可安装的 agentic SKILL.md playbook 库",
+          "支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手",
+          "通过 npx 一键安装，可搜索的技能与 bundle 目录",
+          "提供基于角色的 bundle 和工作流驱动的执行模式",
+          "涵盖规划、编码、调试、测试、安全审查、基础设施等场景"
+        ]
       },
       {
         "rank": 19,
@@ -368,8 +483,8 @@
         "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
         "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
         "language": "Python",
-        "stars": 33494,
-        "forks": 33278,
+        "stars": 33498,
+        "forks": 33283,
         "topics": [
           "agent",
           "ai",
@@ -383,7 +498,15 @@
         ],
         "pushed_at": "2026-05-01T07:14:38Z",
         "created_at": "2026-01-10T06:43:20Z",
-        "description_zh": "LLM 驱动的 A股/港股/美股智能分析器：多数据源行情 + 实时新闻 + LLM 决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖。面向 A股/港股/美股的 LLM 股票分析系统。"
+        "description_zh": "LLM 驱动的 A股/港股/美股智能分析器：多数据源行情 + 实时新闻 + LLM 决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖。面向 A股/港股/美股的 LLM 股票分析系统。",
+        "features": [
+          "AI 大模型驱动的 A股/港股/美股自选股每日智能分析与决策仪表盘",
+          "聚合技术面、行情、筹码、新闻舆情、公告、资金流与基本面的多维度分析",
+          "内置均线、缠论、波浪、情绪周期等策略，支持 Agent 多轮策略问答",
+          "支持企业微信、飞书、Telegram、Discord、Slack、邮件等多渠道推送",
+          "提供 Web 工作台、AI 回测验证、历史报告与持仓管理",
+          "支持 GitHub Actions、Docker、定时任务与 FastAPI 服务部署"
+        ]
       },
       {
         "rank": 20,
@@ -391,12 +514,19 @@
         "url": "https://github.com/HKUDS/CLI-Anything",
         "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
         "language": "Python",
-        "stars": 33131,
-        "forks": 3227,
+        "stars": 33135,
+        "forks": 3228,
         "topics": [],
         "pushed_at": "2026-04-30T07:00:28Z",
         "created_at": "2026-03-08T13:52:57Z",
-        "description_zh": "\"CLI-Anything：让所有软件 Agent 原生化\" —— CLI-Hub：https://clianything.cc/"
+        "description_zh": "\"CLI-Anything：让所有软件 Agent 原生化\" —— CLI-Hub：https://clianything.cc/",
+        "features": [
+          "通过 CLI 让任意软件具备 agent-native 能力，适配 Cursor、Claude Code 等 agent",
+          "提供 CLI-Hub，可一键浏览、安装和管理社区构建的 CLI",
+          "支持生成 CLI 配合 preview、live preview 和 trajectory loop 产出实际产物",
+          "覆盖 CAD、3D 场景、图表、游戏、字幕等 18 类应用 demo",
+          "内置 2,269 项测试，支持 JSON 与人类可读双输出格式"
+        ]
       },
       {
         "rank": 21,
@@ -404,7 +534,7 @@
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
         "description": "Teams-first Multi-agent orchestration for Claude Code",
         "language": "TypeScript",
-        "stars": 32125,
+        "stars": 32128,
         "forks": 2981,
         "topics": [
           "agentic-coding",
@@ -420,7 +550,14 @@
         ],
         "pushed_at": "2026-04-30T16:58:34Z",
         "created_at": "2026-01-09T03:36:29Z",
-        "description_zh": "面向 Claude Code 的团队优先多智能体编排"
+        "description_zh": "面向 Claude Code 的团队优先多智能体编排",
+        "features": [
+          "为 Claude Code 提供零学习曲线的多 agent 编排能力",
+          "支持 marketplace/plugin 与 npm CLI 两种安装方式",
+          "提供 /setup、/omc-setup 等 slash 命令一键配置工作流",
+          "内置 omc 命令行工具，便于终端调用与管理",
+          "多语言文档支持（英、中、韩、日、西、越、葡）"
+        ]
       },
       {
         "rank": 22,
@@ -428,12 +565,19 @@
         "url": "https://github.com/vercel-labs/agent-browser",
         "description": "Browser automation CLI for AI agents",
         "language": "Rust",
-        "stars": 31216,
+        "stars": 31217,
         "forks": 1910,
         "topics": [],
         "pushed_at": "2026-04-29T15:39:13Z",
         "created_at": "2026-01-11T05:38:15Z",
-        "description_zh": "面向 AI agent 的浏览器自动化 CLI"
+        "description_zh": "面向 AI agent 的浏览器自动化 CLI",
+        "features": [
+          "AI agent 专用浏览器自动化 CLI，基于原生 Rust 构建，速度快",
+          "通过 accessibility tree 快照获取元素 ref，支持按 ref 点击、填充、读取",
+          "兼容传统 CSS selector 与 role/name 等定位方式",
+          "自动下载并管理 Chrome for Testing，无需 Playwright 或 Node.js",
+          "支持 npm、Homebrew、Cargo 多种安装方式，并提供一键升级"
+        ]
       },
       {
         "rank": 23,
@@ -441,8 +585,8 @@
         "url": "https://github.com/zeroclaw-labs/zeroclaw",
         "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
         "language": "Rust",
-        "stars": 30861,
-        "forks": 4526,
+        "stars": 30862,
+        "forks": 4525,
         "topics": [
           "agent",
           "agentic",
@@ -455,14 +599,21 @@
         ],
         "pushed_at": "2026-05-01T06:12:03Z",
         "created_at": "2026-02-13T08:56:04Z",
-        "description_zh": "快速、小巧、完全自主的 AI 个人助手基础设施，支持任意操作系统、任意平台——随处部署，自由替换 🦀"
+        "description_zh": "快速、小巧、完全自主的 AI 个人助手基础设施，支持任意操作系统、任意平台——随处部署，自由替换 🦀",
+        "features": [
+          "单一 Rust 二进制的 agent runtime，本地运行并自管数据与密钥",
+          "支持 Anthropic、OpenAI、Ollama 等 20+ LLM provider 接入",
+          "集成 Discord、Telegram、Matrix、邮件、语音、Webhook 等 30+ 通道",
+          "通过 shell、浏览器、HTTP、硬件及自定义 MCP server 调用工具",
+          "提供一键安装脚本，支持预编译二进制或源码自定义 feature 构建"
+        ]
       },
       {
         "rank": 24,
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
         "description": "A community collection of OpenClaw use cases for making life easier.",
-        "stars": 30638,
+        "stars": 30641,
         "forks": 2631,
         "topics": [
           "awesome-list",
@@ -476,7 +627,13 @@
         ],
         "pushed_at": "2026-03-24T14:54:56Z",
         "created_at": "2026-02-08T22:08:17Z",
-        "description_zh": "一个社区收集的 OpenClaw 使用案例，让生活更轻松。"
+        "description_zh": "一个社区收集的 OpenClaw 使用案例，让生活更轻松。",
+        "features": [
+          "社区收集的 OpenClaw 真实使用案例集合",
+          "按社交媒体、创意构建等场景分类整理 use cases",
+          "包含 Reddit/YouTube/X 等平台的内容摘要与自动化案例",
+          "涵盖多 agent 内容工厂与自主任务执行示例"
+        ]
       },
       {
         "rank": 25,
@@ -489,7 +646,13 @@
         "topics": [],
         "pushed_at": "2026-05-01T01:16:47Z",
         "created_at": "2026-02-04T12:32:35Z",
-        "description_zh": "小巧、快速、随处部署 —— 自动化繁琐任务，释放你的创造力"
+        "description_zh": "小巧、快速、随处部署 —— 自动化繁琐任务，释放你的创造力",
+        "features": [
+          "基于 Go 从零构建的超轻量级个人 AI 助手，内存占用 <10MB",
+          "支持 x86_64、ARM64、MIPS、RISC-V、LoongArch 多种硬件架构",
+          "可在仅 $10 的低成本硬件上运行，毫秒级启动",
+          "通过 AI Agent 自举驱动完成架构迁移与代码优化"
+        ]
       },
       {
         "rank": 26,
@@ -498,7 +661,7 @@
         "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
         "language": "TypeScript",
         "stars": 28447,
-        "forks": 12734,
+        "forks": 12737,
         "topics": [
           "ai-agents",
           "ai-assistant",
@@ -508,14 +671,21 @@
         ],
         "pushed_at": "2026-05-01T04:52:50Z",
         "created_at": "2026-01-31T15:47:22Z",
-        "description_zh": "OpenClaw 的轻量替代方案，在容器中运行以保障安全。可连接 WhatsApp、Telegram、Slack、Discord、Gmail 等消息应用，支持记忆与定时任务，直接基于 Anthropic 的 Agents SDK 运行。"
+        "description_zh": "OpenClaw 的轻量替代方案，在容器中运行以保障安全。可连接 WhatsApp、Telegram、Slack、Discord、Gmail 等消息应用，支持记忆与定时任务，直接基于 Anthropic 的 Agents SDK 运行。",
+        "features": [
+          "在独立 Linux 容器中安全运行 Claude agent，实现 OS 级文件系统隔离",
+          "代码库精简至单进程少量文件，易于理解和完全自定义",
+          "一键脚本自动安装依赖、注册凭证、构建容器并配对首个频道",
+          "支持 Telegram、Discord、WhatsApp 及本地 CLI 多渠道接入",
+          "安装失败时自动调用 Claude Code 诊断并从断点恢复"
+        ]
       },
       {
         "rank": 27,
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
         "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
-        "stars": 27937,
+        "stars": 27943,
         "forks": 1847,
         "topics": [
           "claude",
@@ -530,7 +700,14 @@
         ],
         "pushed_at": "2026-04-02T17:21:56Z",
         "created_at": "2026-01-02T21:45:11Z",
-        "description_zh": "适用于 Obsidian 的 Agent skills，教你的 agent 使用 Markdown、Bases、JSON Canvas 和 CLI。"
+        "description_zh": "适用于 Obsidian 的 Agent skills，教你的 agent 使用 Markdown、Bases、JSON Canvas 和 CLI。",
+        "features": [
+          "遵循 Agent Skills 规范，兼容 Claude Code、Codex CLI 等 agent",
+          "obsidian-markdown skill：创建和编辑 Obsidian Flavored Markdown 文件",
+          "obsidian-bases skill：管理 .base 文件的视图、过滤器与公式",
+          "json-canvas skill：编辑 .canvas 文件的节点、边和分组",
+          "obsidian-cli skill：通过 CLI 操作 vault 并支持插件主题开发"
+        ]
       },
       {
         "rank": 28,
@@ -538,12 +715,19 @@
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
         "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
         "language": "TypeScript",
-        "stars": 27087,
+        "stars": 27093,
         "forks": 2197,
         "topics": [],
         "pushed_at": "2026-04-30T23:40:47Z",
         "created_at": "2026-02-02T14:21:18Z",
-        "description_zh": "OmX - Oh My codeX：你的 codex 不再孤单。添加 hooks、agent 团队、HUDs 等众多功能。"
+        "description_zh": "OmX - Oh My codeX：你的 codex 不再孤单。添加 hooks、agent 团队、HUDs 等众多功能。",
+        "features": [
+          "为 OpenAI Codex CLI 提供工作流层，增强默认会话体验",
+          "通过 `$deep-interview`、`$ralplan`、`$team`、`$ralph` 调用标准化 skills",
+          "从澄清到完成贯穿一致的工作流执行",
+          "在 `.omx/` 中统一管理项目指南、计划、日志与状态",
+          "提供 `omx setup`、`omx update` 等 CLI 命令进行配置与升级"
+        ]
       },
       {
         "rank": 29,
@@ -551,7 +735,7 @@
         "url": "https://github.com/addyosmani/agent-skills",
         "description": "Production-grade engineering skills for AI coding agents.",
         "language": "Shell",
-        "stars": 26801,
+        "stars": 26820,
         "forks": 3322,
         "topics": [
           "agent-skills",
@@ -563,7 +747,14 @@
         ],
         "pushed_at": "2026-04-28T04:35:03Z",
         "created_at": "2026-02-15T20:20:26Z",
-        "description_zh": "面向 AI 编码代理的生产级工程技能。"
+        "description_zh": "面向 AI 编码代理的生产级工程技能。",
+        "features": [
+          "7 个 slash 命令覆盖完整开发生命周期：spec、plan、build、test、review、ship",
+          "skills 根据上下文自动激活，如设计 API 触发 api-and-interface-design",
+          "通过 Claude Code marketplace 一键安装并集成 plugin",
+          "支持 Cursor、Gemini CLI、Windsurf 等多种 AI coding agent 工具",
+          "封装资深工程师的工作流、质量门禁与最佳实践，确保 agent 一致执行"
+        ]
       },
       {
         "rank": 30,
@@ -571,8 +762,8 @@
         "url": "https://github.com/coreyhaines31/marketingskills",
         "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
         "language": "JavaScript",
-        "stars": 25897,
-        "forks": 4111,
+        "stars": 25902,
+        "forks": 4112,
         "topics": [
           "claude",
           "codex",
@@ -580,7 +771,14 @@
         ],
         "pushed_at": "2026-04-25T20:58:51Z",
         "created_at": "2026-01-15T19:45:23Z",
-        "description_zh": "面向 Claude Code 和 AI agent 的营销技能集，涵盖 CRO、文案撰写、SEO、数据分析与增长工程。"
+        "description_zh": "面向 Claude Code 和 AI agent 的营销技能集，涵盖 CRO、文案撰写、SEO、数据分析与增长工程。",
+        "features": [
+          "为 AI agent 提供营销任务的 Skills 集合，覆盖 CRO、文案、SEO、分析与增长工程",
+          "兼容 Claude Code、OpenAI Codex、Cursor、Windsurf 等支持 Agent Skills 规范的 agent",
+          "以 product-marketing-context 为核心 skill，所有其他 skill 优先读取该上下文",
+          "按 SEO、CRO、Copy、Paid、Growth、Sales、Strategy 等领域分类组织 skill",
+          "通过 Markdown 文件为 agent 注入营销专业知识与工作流"
+        ]
       },
       {
         "rank": 31,
@@ -588,7 +786,7 @@
         "url": "https://github.com/googleworkspace/cli",
         "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
         "language": "Rust",
-        "stars": 25604,
+        "stars": 25606,
         "forks": 1316,
         "topics": [
           "agent-skills",
@@ -610,7 +808,14 @@
         ],
         "pushed_at": "2026-04-29T21:26:20Z",
         "created_at": "2026-03-02T19:46:06Z",
-        "description_zh": "Google Workspace CLI — 用一个命令行工具管理 Drive、Gmail、Calendar、Sheets、Docs、Chat、Admin 等服务。基于 Google Discovery Service 动态构建，内置 AI agent skills。"
+        "description_zh": "Google Workspace CLI — 用一个命令行工具管理 Drive、Gmail、Calendar、Sheets、Docs、Chat、Admin 等服务。基于 Google Discovery Service 动态构建，内置 AI agent skills。",
+        "features": [
+          "统一 CLI 访问 Google Workspace 全部 API，包括 Drive、Gmail、Calendar 等",
+          "运行时读取 Google Discovery Service，动态生成命令，新 API 自动支持",
+          "结构化 JSON 输出，专为 AI agent 与脚本调用设计",
+          "内置 40+ agent skills，开箱即用",
+          "提供预编译二进制、npm、Cargo、Nix flake 多种安装方式"
+        ]
       },
       {
         "rank": 32,
@@ -618,8 +823,8 @@
         "url": "https://github.com/Gitlawb/openclaude",
         "description": "runs anywhere. uses anything",
         "language": "TypeScript",
-        "stars": 25266,
-        "forks": 8178,
+        "stars": 25267,
+        "forks": 8179,
         "topics": [
           "ai",
           "ai-agent",
@@ -629,7 +834,14 @@
         ],
         "pushed_at": "2026-04-30T14:18:43Z",
         "created_at": "2026-04-01T03:15:49Z",
-        "description_zh": "随处运行，万物兼容"
+        "description_zh": "随处运行，万物兼容",
+        "features": [
+          "跨云端 API 与本地模型后端的统一 coding-agent CLI",
+          "支持 OpenAI 兼容 API、Gemini、GitHub Models、Codex、Ollama 等多种 provider",
+          "通过 /provider 斜杠命令在应用内保存和切换 provider 配置",
+          "集成 bash、文件操作、grep、glob、agent、MCP 与 web 工具链",
+          "附带 VS Code 扩展，支持启动集成与主题适配"
+        ]
       },
       {
         "rank": 33,
@@ -637,7 +849,7 @@
         "url": "https://github.com/AlexsJones/llmfit",
         "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
         "language": "Rust",
-        "stars": 24953,
+        "stars": 24955,
         "forks": 1485,
         "topics": [
           "gguf",
@@ -649,7 +861,15 @@
         ],
         "pushed_at": "2026-04-30T20:34:04Z",
         "created_at": "2026-02-15T16:11:31Z",
-        "description_zh": "数百种模型和服务商。一条命令找出适合你硬件运行的方案。"
+        "description_zh": "数百种模型和服务商。一条命令找出适合你硬件运行的方案。",
+        "features": [
+          "根据系统 RAM、CPU、GPU 自动匹配适合本地运行的 LLM 模型",
+          "从质量、速度、契合度、上下文多维度对模型进行评分排序",
+          "提供交互式 TUI（默认）与传统 CLI 两种模式",
+          "支持多 GPU、MoE 架构、动态量化选择与速度估算",
+          "集成 Ollama、llama.cpp、MLX、Docker Model Runner、LM Studio 等本地 runtime",
+          "内置社区基准、下载管理器与硬件模拟功能"
+        ]
       },
       {
         "rank": 34,
@@ -657,8 +877,8 @@
         "url": "https://github.com/mvanhorn/last30days-skill",
         "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
         "language": "Python",
-        "stars": 24462,
-        "forks": 2049,
+        "stars": 24468,
+        "forks": 2050,
         "topics": [
           "ai-prompts",
           "ai-skill",
@@ -683,7 +903,14 @@
         ],
         "pushed_at": "2026-04-26T21:16:14Z",
         "created_at": "2026-01-23T20:37:37Z",
-        "description_zh": "AI agent 技能，跨 Reddit、X、YouTube、HN、Polymarket 和网络研究任意主题，并合成有据可依的摘要"
+        "description_zh": "AI agent 技能，跨 Reddit、X、YouTube、HN、Polymarket 和网络研究任意主题，并合成有据可依的摘要",
+        "features": [
+          "跨 Reddit、X、YouTube、TikTok、Polymarket、GitHub 等平台并行 AI agent 搜索",
+          "按真实用户互动数据(点赞、投票、押注金额)对结果评分排序",
+          "AI agent judge 自动综合多源信息生成统一简报",
+          "零配置开箱即用，支持 BYOK 密钥扩展更多平台",
+          "以 skill 形式集成 Claude Code、OpenClaw、Hermes 等运行时"
+        ]
       },
       {
         "rank": 35,
@@ -691,7 +918,7 @@
         "url": "https://github.com/jamiepine/voicebox",
         "description": "The open-source AI voice studio. Clone, dictate, create.",
         "language": "TypeScript",
-        "stars": 24188,
+        "stars": 24189,
         "forks": 2892,
         "topics": [
           "ai",
@@ -705,7 +932,14 @@
         ],
         "pushed_at": "2026-04-26T20:29:17Z",
         "created_at": "2026-01-25T12:27:03Z",
-        "description_zh": "开源 AI 语音工作室。克隆、转写、创作。"
+        "description_zh": "开源 AI 语音工作室。克隆、转写、创作。",
+        "features": [
+          "从几秒音频克隆语音，覆盖 23 种语言和 7 个 TTS 引擎",
+          "通过全局热键在任意文本框中实现语音听写",
+          "为支持 MCP 的 AI agent 赋予自选语音",
+          "本地优先运行，开源替代 ElevenLabs 与 WisprFlow",
+          "内置本地 LLM 用于文本润色和按 profile 定制 persona"
+        ]
       },
       {
         "rank": 36,
@@ -713,7 +947,7 @@
         "url": "https://github.com/volcengine/OpenViking",
         "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
         "language": "Python",
-        "stars": 23308,
+        "stars": 23309,
         "forks": 1719,
         "topics": [
           "agent",
@@ -730,9 +964,16 @@
           "rag",
           "skill"
         ],
-        "pushed_at": "2026-05-01T05:49:16Z",
+        "pushed_at": "2026-05-01T08:39:32Z",
         "created_at": "2026-01-05T07:11:17Z",
-        "description_zh": "OpenViking 是一个专为 AI Agent（如 openclaw）设计的开源上下文数据库。OpenViking 通过文件系统范式统一管理 Agent 所需的上下文（记忆、资源与技能），实现分层上下文传递与自我进化。"
+        "description_zh": "OpenViking 是一个专为 AI Agent（如 openclaw）设计的开源上下文数据库。OpenViking 通过文件系统范式统一管理 Agent 所需的上下文（记忆、资源与技能），实现分层上下文传递与自我进化。",
+        "features": [
+          "统一管理 AI Agent 的 memory、resource 和 skill 等碎片化 context",
+          "面向 Agent 长任务场景，避免简单截断或压缩造成的信息丢失",
+          "突破传统 RAG 扁平存储，提供具备全局视图的上下文检索",
+          "可观测的 context 检索链路，告别 RAG 黑盒便于调试",
+          "支持 Agent 任务相关 memory，超越用户交互记录"
+        ]
       },
       {
         "rank": 37,
@@ -740,12 +981,19 @@
         "url": "https://github.com/multica-ai/multica",
         "description": "The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
         "language": "TypeScript",
-        "stars": 23294,
-        "forks": 2866,
+        "stars": 23304,
+        "forks": 2865,
         "topics": [],
         "pushed_at": "2026-05-01T07:49:17Z",
         "created_at": "2026-01-13T17:59:46Z",
-        "description_zh": "开源的托管 agents 平台。把编码 agents 变成真正的团队成员——分配任务、跟踪进度、积累技能。"
+        "description_zh": "开源的托管 agents 平台。把编码 agents 变成真正的团队成员——分配任务、跟踪进度、积累技能。",
+        "features": [
+          "将 coding agent 转化为可分配任务的团队成员，自主写码与汇报",
+          "支持 Claude Code、Codex、Cursor Agent、Gemini、Kimi 等多种 agent",
+          "开源、厂商中立、可自托管的 managed agents 基础设施",
+          "面向人类与 AI 协作的看板视图、活动时间线与任务生命周期管理",
+          "agents 可参与对话、报告阻塞并随时间沉淀可复用技能"
+        ]
       },
       {
         "rank": 38,
@@ -753,7 +1001,7 @@
         "url": "https://github.com/jarrodwatts/claude-hud",
         "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
         "language": "JavaScript",
-        "stars": 21344,
+        "stars": 21348,
         "forks": 943,
         "topics": [
           "anthropic",
@@ -766,19 +1014,31 @@
         ],
         "pushed_at": "2026-04-29T23:06:55Z",
         "created_at": "2026-01-02T01:35:07Z",
-        "description_zh": "一个 Claude Code 插件，可显示运行状态——上下文使用情况、活跃工具、运行中的代理及待办进度"
+        "description_zh": "一个 Claude Code 插件，可显示运行状态——上下文使用情况、活跃工具、运行中的代理及待办进度",
+        "features": [
+          "Claude Code 插件，实时显示 context 使用、工具活动、运行中 agent 和 todo 进度",
+          "可视化 context 健康度，通过颜色条预警上下文窗口占用情况",
+          "追踪 subagent 运行状态和实时 todo 任务完成进度",
+          "通过 /claude-hud:setup 一键配置 statusline，支持多平台"
+        ]
       },
       {
         "rank": 39,
         "name": "Leey21/awesome-ai-research-writing",
         "url": "https://github.com/Leey21/awesome-ai-research-writing",
         "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
-        "stars": 20672,
-        "forks": 1664,
+        "stars": 20686,
+        "forks": 1666,
         "topics": [],
         "pushed_at": "2026-03-25T03:20:28Z",
         "created_at": "2026-01-30T07:59:30Z",
-        "description_zh": "提升 AI 研究写作效率，告别繁琐润色 ✨"
+        "description_zh": "提升 AI 研究写作效率，告别繁琐润色 ✨",
+        "features": [
+          "收录顶尖科研机构的论文写作实战 prompt 模板库",
+          "提供翻译、润色、扩缩写、去 AI 味等多场景 prompt",
+          "集成论文写作相关的 agent skills 教程与配置指南",
+          "包含从 LaTeX 源码翻译并编译 ArXiv 论文的 skill"
+        ]
       },
       {
         "rank": 40,
@@ -786,12 +1046,19 @@
         "url": "https://github.com/openai/symphony",
         "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
         "language": "Elixir",
-        "stars": 20185,
-        "forks": 1727,
+        "stars": 20199,
+        "forks": 1728,
         "topics": [],
         "pushed_at": "2026-04-27T22:09:32Z",
         "created_at": "2026-02-26T21:54:00Z",
-        "description_zh": "Symphony 将项目任务转化为隔离、自主的实现流程，让团队管理工作而非监督编码 agent。"
+        "description_zh": "Symphony 将项目任务转化为隔离、自主的实现流程，让团队管理工作而非监督编码 agent。",
+        "features": [
+          "将项目工作转化为隔离的自主实现任务，团队只需管理工作而非监督 coding agent",
+          "监控 Linear 看板并自动派发 agent 处理任务",
+          "agent 提供工作成果证明：CI 状态、PR 评审反馈、复杂度分析与演示视频",
+          "任务被接受后由 agent 安全地合并 PR，无需人工监督",
+          "提供基于 Elixir 的实验性参考实现及完整 SPEC 规范"
+        ]
       },
       {
         "rank": 41,
@@ -799,7 +1066,7 @@
         "url": "https://github.com/OthmanAdi/planning-with-files",
         "description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
         "language": "Python",
-        "stars": 20011,
+        "stars": 20015,
         "forks": 1799,
         "topics": [
           "adal",
@@ -824,7 +1091,13 @@
         ],
         "pushed_at": "2026-04-29T19:49:55Z",
         "created_at": "2026-01-03T07:37:28Z",
-        "description_zh": "Claude Code skill，实现 Manus 风格的持久化 markdown 规划——价值 20 亿美元收购背后的工作流模式。"
+        "description_zh": "Claude Code skill，实现 Manus 风格的持久化 markdown 规划——价值 20 亿美元收购背后的工作流模式。",
+        "features": [
+          "以文件驱动的规划方式工作，复刻 Manus AI agent 的工作流",
+          "在基准测试中达到 96.7% 通过率，并通过 A/B 盲测三战全胜",
+          "通过 SkillCheck 认证并完成安全审计 (v2.21.0)",
+          "开源社区已衍生多个 fork，支持多项目、多 agent 协作等扩展"
+        ]
       },
       {
         "rank": 42,
@@ -835,9 +1108,15 @@
         "stars": 20008,
         "forks": 2548,
         "topics": [],
-        "pushed_at": "2026-05-01T07:56:42Z",
+        "pushed_at": "2026-05-01T08:38:34Z",
         "created_at": "2026-03-15T17:04:09Z",
-        "description_zh": "在 NVIDIA OpenShell 中通过托管推理更安全地运行 OpenClaw"
+        "description_zh": "在 NVIDIA OpenShell 中通过托管推理更安全地运行 OpenClaw",
+        "features": [
+          "在 NVIDIA OpenShell runtime 上安全运行 OpenClaw 常驻 assistant 的开源参考栈",
+          "为自主 agent 提供沙箱化执行环境与分层安全防护",
+          "内置加固 blueprint、状态管理与引导式 onboarding 流程",
+          "集成 OpenShell 托管的通道消息传递与路由推理能力"
+        ]
       },
       {
         "rank": 43,
@@ -845,12 +1124,19 @@
         "url": "https://github.com/Alishahryar1/free-claude-code",
         "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
         "language": "Python",
-        "stars": 19343,
-        "forks": 2748,
+        "stars": 19364,
+        "forks": 2749,
         "topics": [],
         "pushed_at": "2026-05-01T05:01:41Z",
         "created_at": "2026-01-28T19:02:30Z",
-        "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）"
+        "description_zh": "在终端、VSCode 扩展或类似 OpenClaw 的 Discord 中免费使用 claude-code（支持语音）",
+        "features": [
+          "将 Claude Code 的 Anthropic Messages API 流量代理到多种后端模型",
+          "支持 NVIDIA NIM、OpenRouter、DeepSeek、LM Studio、llama.cpp、Ollama 六种 provider",
+          "支持按模型路由：Opus、Sonnet、Haiku 可分发至不同 provider",
+          "原生支持 Claude Code 的 /model 选择器及 /v1/models 端点",
+          "可选 Discord/Telegram bot 封装与本地 Whisper 语音转录"
+        ]
       },
       {
         "rank": 44,
@@ -858,12 +1144,19 @@
         "url": "https://github.com/NawfalMotii79/PLFM_RADAR",
         "description": "Open-source, low-cost 10.5 GHz PLFM phased array RADAR system",
         "language": "PLSQL",
-        "stars": 18842,
+        "stars": 18844,
         "forks": 4510,
         "topics": [],
         "pushed_at": "2026-04-30T04:25:17Z",
         "created_at": "2026-03-08T23:20:58Z",
-        "description_zh": "开源、低成本 10.5 GHz PLFM 相控阵雷达系统"
+        "description_zh": "开源、低成本 10.5 GHz PLFM 相控阵雷达系统",
+        "features": [
+          "10.5GHz 开源低成本 Pulse LFM 相控阵雷达硬件系统",
+          "提供 3km 和 20km 两个版本，分别采用贴片阵列和波导阵列",
+          "方位与俯仰方向 ±45° 全电子波束扫描",
+          "FPGA 板载实现脉冲压缩、Doppler FFT、MTI 与 CFAR 处理",
+          "集成 GPS/IMU 实时位姿校正与 Python GUI 地图界面"
+        ]
       },
       {
         "rank": 45,
@@ -871,7 +1164,7 @@
         "url": "https://github.com/Panniantong/Agent-Reach",
         "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
         "language": "Python",
-        "stars": 18572,
+        "stars": 18573,
         "forks": 1630,
         "topics": [
           "agent-infrastructure",
@@ -894,7 +1187,14 @@
         ],
         "pushed_at": "2026-04-13T09:46:13Z",
         "created_at": "2026-02-24T02:10:24Z",
-        "description_zh": "让你的 AI agent 拥有洞察整个互联网的双眼。读取并搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书——一个 CLI，零 API 费用。"
+        "description_zh": "让你的 AI agent 拥有洞察整个互联网的双眼。读取并搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书——一个 CLI，零 API 费用。",
+        "features": [
+          "一键为 AI Agent 集成多平台互联网访问能力，无需手动配置",
+          "支持 YouTube、Twitter、Reddit、小红书、B站、抖音等十余个平台的内容抓取",
+          "内置 agent-reach doctor 诊断命令，快速排查各渠道连通状态",
+          "Cookie 本地存储，完全开源免费，兼容 Claude Code、Cursor 等任意 Agent",
+          "底层工具（yt-dlp、twitter-cli、Jina Reader 等）持续追踪更新"
+        ]
       },
       {
         "rank": 46,
@@ -902,7 +1202,7 @@
         "url": "https://github.com/jackwener/OpenCLI",
         "description": "Make Any Website & Tool Your CLI. A universal CLI Hub and AI-native runtime. Transform any website, Electron app, or local binary into a standardized command-line interface. Built for AI Agents to discover, learn, and execute tools seamlessly via a unified AGENT.md integration.",
         "language": "JavaScript",
-        "stars": 18369,
+        "stars": 18373,
         "forks": 1808,
         "topics": [
           "ai-agent",
@@ -912,7 +1212,15 @@
         ],
         "pushed_at": "2026-04-30T04:20:39Z",
         "created_at": "2026-03-14T22:10:23Z",
-        "description_zh": "让任意网站与工具皆可 CLI 化。一个通用 CLI Hub 与 AI 原生运行时，将任何网站、Electron 应用或本地二进制转化为标准化命令行接口。专为 AI Agent 设计，通过统一的 AGENT.md 集成实现工具的无缝发现、学习与调用。"
+        "description_zh": "让任意网站与工具皆可 CLI 化。一个通用 CLI Hub 与 AI 原生运行时，将任何网站、Electron 应用或本地二进制转化为标准化命令行接口。专为 AI Agent 设计，通过统一的 AGENT.md 集成实现工具的无缝发现、学习与调用。",
+        "features": [
+          "内置 90+ 适配器，将 Bilibili、Zhihu、Reddit 等网站转为确定性 CLI",
+          "通过 CDP 复用已登录的 Chrome 会话，凭据不离开浏览器，账号安全",
+          "提供 opencli-adapter-author skill，让 AI agent 操作任意网站并编写新适配器",
+          "支持驱动 Cursor、ChatGPT、Notion 等 Electron 桌面应用",
+          "作为 CLI Hub 统一发现、安装并透传 gh、docker 等外部命令",
+          "运行时零 LLM token 消耗，输出确定性 schema，可脚本化与 CI 集成"
+        ]
       },
       {
         "rank": 47,
@@ -920,12 +1228,19 @@
         "url": "https://github.com/snarktank/ralph",
         "description": "Ralph is an autonomous AI agent loop that runs repeatedly until all PRD items are complete. ",
         "language": "TypeScript",
-        "stars": 18251,
-        "forks": 1808,
+        "stars": 18253,
+        "forks": 1809,
         "topics": [],
         "pushed_at": "2026-02-02T01:46:21Z",
         "created_at": "2026-01-07T14:45:10Z",
-        "description_zh": "Ralph 是一个自主 AI 智能体循环，反复运行直至完成所有 PRD 项目。"
+        "description_zh": "Ralph 是一个自主 AI 智能体循环，反复运行直至完成所有 PRD 项目。",
+        "features": [
+          "运行 Amp 或 Claude Code 等 AI 编码工具的自主 agent 循环，直至完成所有 PRD 项",
+          "通过 git history、progress.txt 和 prd.json 在迭代间持久化记忆",
+          "提供 PRD skill，根据功能描述生成详细需求文档",
+          "提供 Ralph skill，将 markdown PRD 转换为可自主执行的 prd.json 格式",
+          "支持作为 Claude Code Marketplace 插件安装，提供 /prd 与 /ralph 命令"
+        ]
       },
       {
         "rank": 48,
@@ -933,12 +1248,19 @@
         "url": "https://github.com/claude-code-best/claude-code",
         "description": "原汁原昧 Claude Code 可运行,可构建, 可调试版; Typescript 类型全修复; 企业级可靠性; 安全无毒, lock 文件保真, 可直接 bun i; bun run dev 启动",
         "language": "TypeScript",
-        "stars": 17344,
+        "stars": 17345,
         "forks": 15590,
         "topics": [],
         "pushed_at": "2026-05-01T01:21:44Z",
         "created_at": "2026-03-31T13:33:21Z",
-        "description_zh": "原汁原味 Claude Code 可运行、可构建、可调试版；TypeScript 类型全修复；企业级可靠性；安全无毒，lock 文件保真，可直接 bun i；bun run dev 启动"
+        "description_zh": "原汁原味 Claude Code 可运行、可构建、可调试版；TypeScript 类型全修复；企业级可靠性；安全无毒，lock 文件保真，可直接 bun i；bun run dev 启动",
+        "features": [
+          "开源逆向还原 Anthropic 官方 Claude Code CLI，复现核心功能",
+          "Pipe IPC 多实例协作，支持本机及 LAN 跨机器零配置发现通讯",
+          "一等支持 ACP 协议，可接入 Zed、Cursor 等 IDE",
+          "支持 Docker 自托管 Remote Control，手机端远程查看 Claude Code",
+          "实现企业版及需登录账号的高级特性，技术普惠"
+        ]
       },
       {
         "rank": 49,
@@ -960,7 +1282,14 @@
         ],
         "pushed_at": "2026-04-30T08:27:52Z",
         "created_at": "2026-02-24T23:12:38Z",
-        "description_zh": "开源 Agent 操作系统"
+        "description_zh": "开源 Agent 操作系统",
+        "features": [
+          "Rust 构建的开源 Agent 操作系统，编译为单个 ~32MB 二进制文件",
+          "Hands 自治能力包：定时无人值守运行，主动为用户工作",
+          "内置 Dashboard，本地 http://localhost:4200 实时查看 agent 状态",
+          "137K LOC、14 crates、2,517+ 测试，零 clippy 警告的工程质量",
+          "一行命令安装启动：openfang init && openfang start"
+        ]
       },
       {
         "rank": 50,
@@ -968,12 +1297,18 @@
         "url": "https://github.com/titanwings/colleague-skill",
         "description": "将冰冷的离别化为温暖的 Skill，欢迎加入数字生命1.0！Transforming cold farewells into warm skills? It's giving rebirth era. Welcome to Digital Life 1.0. 🫶",
         "language": "Python",
-        "stars": 17077,
-        "forks": 1725,
+        "stars": 17081,
+        "forks": 1726,
         "topics": [],
         "pushed_at": "2026-04-29T11:29:37Z",
         "created_at": "2026-03-30T05:22:23Z",
-        "description_zh": "将冰冷的离别化为温暖的 Skill，欢迎加入数字生命 1.0！Transforming cold farewells into warm skills? It's giving rebirth era. Welcome to Digital Life 1.0. 🫶"
+        "description_zh": "将冰冷的离别化为温暖的 Skill，欢迎加入数字生命 1.0！Transforming cold farewells into warm skills? It's giving rebirth era. Welcome to Digital Life 1.0. 🫶",
+        "features": [
+          "将同事、亲友、偶像等任意人物蒸馏为可思考、可对话的 AI Skill",
+          "支持多种素材源输入，结合用户描述生成专属 Skill",
+          "兼容 Claude Code、Hermes、OpenClaw、Codex 等多种 Skill 平台",
+          "让 AI 以目标人物的思维框架与语气进行表达"
+        ]
       }
     ],
     "ai": [
@@ -983,8 +1318,8 @@
         "url": "https://github.com/affaan-m/everything-claude-code",
         "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
         "language": "JavaScript",
-        "stars": 171127,
-        "forks": 26524,
+        "stars": 171150,
+        "forks": 26528,
         "topics": [
           "ai-agents",
           "anthropic",
@@ -997,19 +1332,33 @@
         ],
         "pushed_at": "2026-04-30T16:25:17Z",
         "created_at": "2026-01-18T00:51:51Z",
-        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。"
+        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。",
+        "features": [
+          "面向 AI agent harness 的性能优化系统，含 skills、hooks、rules 与 MCP 配置",
+          "跨 Claude Code、Codex、Cursor、OpenCode、Gemini 等多种 AI agent harness 通用",
+          "提供 ecc-universal 与 ecc-agentshield 两款 npm 包，并配套 GitHub App",
+          "内置安全扫描、记忆优化与持续学习能力，支持 research-first 开发流程",
+          "提供生产级 agents、skills 及遗留命令 shim，多语言生态覆盖 12+ 种"
+        ]
       },
       {
         "rank": 3,
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
         "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-        "stars": 103617,
-        "forks": 10196,
+        "stars": 103686,
+        "forks": 10205,
         "topics": [],
         "pushed_at": "2026-04-20T10:05:04Z",
         "created_at": "2026-01-27T03:53:13Z",
-        "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。"
+        "description_zh": "单个 CLAUDE.md 文件，用于改进 Claude Code 的表现，源自 Andrej Karpathy 对 LLM 编码常见问题的观察。",
+        "features": [
+          "提供单个 CLAUDE.md 文件以改进 Claude Code 行为表现",
+          "遵循「编码前思考」原则，要求显式声明假设并主动澄清歧义",
+          "贯彻「简洁优先」原则，杜绝过度工程化与冗余抽象",
+          "坚持「外科手术式修改」，只动必要代码，避免无关改动",
+          "基于 Andrej Karpathy 对 LLM 编码缺陷的观察总结提炼"
+        ]
       },
       {
         "rank": 5,
@@ -1017,20 +1366,27 @@
         "url": "https://github.com/karpathy/autoresearch",
         "description": "AI agents running research on single-GPU nanochat training automatically",
         "language": "Python",
-        "stars": 78189,
-        "forks": 11403,
+        "stars": 78201,
+        "forks": 11405,
         "topics": [],
         "pushed_at": "2026-03-26T00:07:37Z",
         "created_at": "2026-03-06T22:00:43Z",
-        "description_zh": "AI 智能体自动在单 GPU 上运行 nanochat 训练研究"
+        "description_zh": "AI 智能体自动在单 GPU 上运行 nanochat 训练研究",
+        "features": [
+          "让 AI agent 自主修改训练代码并迭代实验的 LLM 研究框架",
+          "基于 nanochat 简化版的单 GPU LLM 训练实现",
+          "通过编辑 program.md 而非 Python 文件来配置 agent 行为",
+          "固定 5 分钟训练预算，以 val_bpb 作为统一评估指标",
+          "train.py 全开放：架构、优化器、超参数均可由 agent 修改"
+        ]
       },
       {
         "rank": 6,
         "name": "VoltAgent/awesome-design-md",
         "url": "https://github.com/VoltAgent/awesome-design-md",
         "description": "A collection of DESIGN.md files inspired by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
-        "stars": 68909,
-        "forks": 8469,
+        "stars": 68923,
+        "forks": 8472,
         "topics": [
           "awesome-list",
           "design-md",
@@ -1044,7 +1400,13 @@
         ],
         "pushed_at": "2026-04-19T14:39:52Z",
         "created_at": "2026-03-31T16:37:01Z",
-        "description_zh": "一组受热门品牌设计系统启发的 DESIGN.md 文件。放入项目中即可让编码 agent 生成风格匹配的 UI。"
+        "description_zh": "一组受热门品牌设计系统启发的 DESIGN.md 文件。放入项目中即可让编码 agent 生成风格匹配的 UI。",
+        "features": [
+          "收录 69+ 个真实网站提取的 DESIGN.md 文件，供 AI agent 直接使用",
+          "提供 plain-text 设计系统文档，让 AI agent 生成一致的 UI",
+          "支持按需求请求特定网站的 DESIGN.md，含私有定制",
+          "覆盖 AI、LLM 等多类开发者导向网站的设计规范集合"
+        ]
       },
       {
         "rank": 8,
@@ -1052,8 +1414,8 @@
         "url": "https://github.com/koala73/worldmonitor",
         "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
         "language": "TypeScript",
-        "stars": 53129,
-        "forks": 8522,
+        "stars": 53133,
+        "forks": 8521,
         "topics": [
           "ai",
           "dashboard",
@@ -1065,9 +1427,15 @@
           "palantir",
           "situation"
         ],
-        "pushed_at": "2026-05-01T07:56:40Z",
+        "pushed_at": "2026-05-01T08:29:34Z",
         "created_at": "2026-01-08T17:26:06Z",
-        "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面"
+        "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面",
+        "features": [
+          "AI 驱动的实时全球新闻聚合与情报监控",
+          "地缘政治动态与基础设施追踪一体化态势感知界面",
+          "提供 Tech、Finance、Commodity 等多个垂直领域变体",
+          "支持 Windows、macOS、Linux 跨平台桌面客户端"
+        ]
       },
       {
         "rank": 9,
@@ -1075,7 +1443,7 @@
         "url": "https://github.com/JuliusBrussee/caveman",
         "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
         "language": "Python",
-        "stars": 51552,
+        "stars": 51561,
         "forks": 2744,
         "topics": [
           "ai",
@@ -1091,7 +1459,14 @@
         ],
         "pushed_at": "2026-05-01T00:31:28Z",
         "created_at": "2026-04-04T10:03:00Z",
-        "description_zh": "🪨 何必多 token，少 token 即可——像原始人一样说话，节省 65% token 的 Claude Code skill"
+        "description_zh": "🪨 何必多 token，少 token 即可——像原始人一样说话，节省 65% token 的 Claude Code skill",
+        "features": [
+          "让 Claude Code/Codex agent 以 caveman 风格输出，节省约 75% token",
+          "支持多档强度级别（Lite 等）调节简洁程度",
+          "内置文言文模式，进一步压缩输出 token",
+          "提供 terse commits、一行 review、终身统计等 caveman skills",
+          "压缩工具可削减约 46% 输入 token"
+        ]
       },
       {
         "rank": 10,
@@ -1099,8 +1474,8 @@
         "url": "https://github.com/MemPalace/mempalace",
         "description": "The best-benchmarked open-source AI memory system. And it's free.",
         "language": "Python",
-        "stars": 50577,
-        "forks": 6646,
+        "stars": 50582,
+        "forks": 6647,
         "topics": [
           "ai",
           "chromadb",
@@ -1111,7 +1486,14 @@
         ],
         "pushed_at": "2026-05-01T03:59:06Z",
         "created_at": "2026-04-05T01:12:07Z",
-        "description_zh": "性能最佳的开源 AI 记忆系统，且完全免费。"
+        "description_zh": "性能最佳的开源 AI 记忆系统，且完全免费。",
+        "features": [
+          "以本地优先方式逐字存储对话历史，并通过语义搜索检索，无需 API 调用",
+          "可插拔检索后端，默认使用 ChromaDB，支持自定义 backend 接入",
+          "结构化索引：以 wings、rooms、drawers 组织人物、项目和内容，实现作用域搜索",
+          "提供 CLI 工具支持挖掘项目文件、Claude Code 会话并加载上下文",
+          "在 LongMemEval 基准上取得 96.6% R@5 原始召回率，hybrid 模式达 98.4%"
+        ]
       },
       {
         "rank": 14,
@@ -1119,7 +1501,7 @@
         "url": "https://github.com/HKUDS/nanobot",
         "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Agent\"",
         "language": "Python",
-        "stars": 41415,
+        "stars": 41417,
         "forks": 7274,
         "topics": [
           "ai",
@@ -1137,7 +1519,14 @@
         ],
         "pushed_at": "2026-04-30T19:45:30Z",
         "created_at": "2026-02-01T07:16:15Z",
-        "description_zh": "🐈 nanobot：超轻量级个人 AI 智能体"
+        "description_zh": "🐈 nanobot：超轻量级个人 AI 智能体",
+        "features": [
+          "超轻量开源 AI agent，核心循环精简易读",
+          "支持 Feishu、Discord、Slack、Teams 等多平台聊天通道",
+          "集成 MCP、记忆系统与多种 LLM provider（如 DeepSeek、Hugging Face）",
+          "提供 Olostep 网页搜索与自然语言 cron 提醒等实用工具",
+          "支持从本地部署到长期运行的个人 agent 全流程"
+        ]
       },
       {
         "rank": 15,
@@ -1145,8 +1534,8 @@
         "url": "https://github.com/santifer/career-ops",
         "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
         "language": "JavaScript",
-        "stars": 41394,
-        "forks": 8584,
+        "stars": 41402,
+        "forks": 8587,
         "topics": [
           "ai-agent",
           "anthropic",
@@ -1163,7 +1552,14 @@
         ],
         "pushed_at": "2026-04-30T18:21:46Z",
         "created_at": "2026-04-04T18:21:18Z",
-        "description_zh": "基于 Claude Code 构建的 AI 求职系统。包含 14 种技能模式、Go 仪表板、PDF 生成与批量处理。"
+        "description_zh": "基于 Claude Code 构建的 AI 求职系统。包含 14 种技能模式、Go 仪表板、PDF 生成与批量处理。",
+        "features": [
+          "将 AI coding CLI 转化为求职指挥中心，自动化整个申请流程",
+          "基于多 agent 系统智能评估职位匹配度，筛选合适的 offer",
+          "为每个职位生成个性化 CV 与申请材料",
+          "支持 Claude Code、OpenCode、Gemini CLI 等多种 AI CLI",
+          "使用 Playwright 自动抓取职位列表，替代手动表格追踪"
+        ]
       },
       {
         "rank": 16,
@@ -1171,8 +1567,8 @@
         "url": "https://github.com/safishamsi/graphify",
         "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, GitHub Copilot CLI, OpenClaw, Factory Droid, Trae, Google Antigravity). Turn any folder of code, docs, papers, images, or videos into a queryable knowledge graph",
         "language": "Python",
-        "stars": 39232,
-        "forks": 4331,
+        "stars": 39250,
+        "forks": 4332,
         "topics": [
           "antigravity",
           "claude-code",
@@ -1185,7 +1581,8 @@
         ],
         "pushed_at": "2026-04-30T21:36:30Z",
         "created_at": "2026-04-03T15:49:07Z",
-        "description_zh": "AI 编码助手技能（Claude Code、Codex、OpenCode、Cursor、Gemini CLI、GitHub Copilot CLI、OpenClaw、Factory Droid、Trae、Google Antigravity）。将任意代码、文档、论文、图片或视频文件夹转化为可查询的知识图谱"
+        "description_zh": "AI 编码助手技能（Claude Code、Codex、OpenCode、Cursor、Gemini CLI、GitHub Copilot CLI、OpenClaw、Factory Droid、Trae、Google Antigravity）。将任意代码、文档、论文、图片或视频文件夹转化为可查询的知识图谱",
+        "features": []
       },
       {
         "rank": 17,
@@ -1193,8 +1590,8 @@
         "url": "https://github.com/rtk-ai/rtk",
         "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
         "language": "Rust",
-        "stars": 39098,
-        "forks": 2374,
+        "stars": 39111,
+        "forks": 2376,
         "topics": [
           "agentic-coding",
           "ai-coding",
@@ -1212,7 +1609,13 @@
         ],
         "pushed_at": "2026-05-01T04:22:45Z",
         "created_at": "2026-01-22T16:54:16Z",
-        "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖"
+        "description_zh": "通过代理常用开发命令将 LLM token 消耗降低 60-90% 的 CLI 工具。单一 Rust 二进制文件，零依赖",
+        "features": [
+          "过滤压缩命令输出，将 LLM token 消耗降低 60-90%",
+          "单一 Rust 二进制 CLI 代理，开销低于 10ms",
+          "支持 100+ 常见命令，包括 git、cargo、pytest、docker 等",
+          "针对 Claude Code 等 LLM 编码会话优化 context 占用"
+        ]
       },
       {
         "rank": 18,
@@ -1220,7 +1623,7 @@
         "url": "https://github.com/sickn33/antigravity-awesome-skills",
         "description": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
         "language": "Python",
-        "stars": 35895,
+        "stars": 35899,
         "forks": 5885,
         "topics": [
           "agent-skills",
@@ -1246,7 +1649,14 @@
         ],
         "pushed_at": "2026-05-01T06:57:25Z",
         "created_at": "2026-01-14T17:48:09Z",
-        "description_zh": "可安装的 GitHub 库，包含 1,400+ 个 agentic 技能，适用于 Claude Code、Cursor、Codex CLI、Gemini CLI、Antigravity 等。包含安装器 CLI、捆绑包、工作流以及官方/社区技能集合。"
+        "description_zh": "可安装的 GitHub 库，包含 1,400+ 个 agentic 技能，适用于 Claude Code、Cursor、Codex CLI、Gemini CLI、Antigravity 等。包含安装器 CLI、捆绑包、工作流以及官方/社区技能集合。",
+        "features": [
+          "提供 1441+ 可安装的 agentic SKILL.md playbook 库",
+          "支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手",
+          "通过 npx 一键安装，可搜索的技能与 bundle 目录",
+          "提供基于角色的 bundle 和工作流驱动的执行模式",
+          "涵盖规划、编码、调试、测试、安全审查、基础设施等场景"
+        ]
       },
       {
         "rank": 19,
@@ -1254,8 +1664,8 @@
         "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
         "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
         "language": "Python",
-        "stars": 33494,
-        "forks": 33278,
+        "stars": 33498,
+        "forks": 33283,
         "topics": [
           "agent",
           "ai",
@@ -1269,7 +1679,15 @@
         ],
         "pushed_at": "2026-05-01T07:14:38Z",
         "created_at": "2026-01-10T06:43:20Z",
-        "description_zh": "LLM 驱动的 A股/港股/美股智能分析器：多数据源行情 + 实时新闻 + LLM 决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖。面向 A股/港股/美股的 LLM 股票分析系统。"
+        "description_zh": "LLM 驱动的 A股/港股/美股智能分析器：多数据源行情 + 实时新闻 + LLM 决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖。面向 A股/港股/美股的 LLM 股票分析系统。",
+        "features": [
+          "AI 大模型驱动的 A股/港股/美股自选股每日智能分析与决策仪表盘",
+          "聚合技术面、行情、筹码、新闻舆情、公告、资金流与基本面的多维度分析",
+          "内置均线、缠论、波浪、情绪周期等策略，支持 Agent 多轮策略问答",
+          "支持企业微信、飞书、Telegram、Discord、Slack、邮件等多渠道推送",
+          "提供 Web 工作台、AI 回测验证、历史报告与持仓管理",
+          "支持 GitHub Actions、Docker、定时任务与 FastAPI 服务部署"
+        ]
       },
       {
         "rank": 20,
@@ -1277,12 +1695,19 @@
         "url": "https://github.com/HKUDS/CLI-Anything",
         "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
         "language": "Python",
-        "stars": 33131,
-        "forks": 3227,
+        "stars": 33135,
+        "forks": 3228,
         "topics": [],
         "pushed_at": "2026-04-30T07:00:28Z",
         "created_at": "2026-03-08T13:52:57Z",
-        "description_zh": "\"CLI-Anything：让所有软件 Agent 原生化\" —— CLI-Hub：https://clianything.cc/"
+        "description_zh": "\"CLI-Anything：让所有软件 Agent 原生化\" —— CLI-Hub：https://clianything.cc/",
+        "features": [
+          "通过 CLI 让任意软件具备 agent-native 能力，适配 Cursor、Claude Code 等 agent",
+          "提供 CLI-Hub，可一键浏览、安装和管理社区构建的 CLI",
+          "支持生成 CLI 配合 preview、live preview 和 trajectory loop 产出实际产物",
+          "覆盖 CAD、3D 场景、图表、游戏、字幕等 18 类应用 demo",
+          "内置 2,269 项测试，支持 JSON 与人类可读双输出格式"
+        ]
       },
       {
         "rank": 21,
@@ -1290,7 +1715,7 @@
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
         "description": "Teams-first Multi-agent orchestration for Claude Code",
         "language": "TypeScript",
-        "stars": 32125,
+        "stars": 32128,
         "forks": 2981,
         "topics": [
           "agentic-coding",
@@ -1306,7 +1731,14 @@
         ],
         "pushed_at": "2026-04-30T16:58:34Z",
         "created_at": "2026-01-09T03:36:29Z",
-        "description_zh": "面向 Claude Code 的团队优先多智能体编排"
+        "description_zh": "面向 Claude Code 的团队优先多智能体编排",
+        "features": [
+          "为 Claude Code 提供零学习曲线的多 agent 编排能力",
+          "支持 marketplace/plugin 与 npm CLI 两种安装方式",
+          "提供 /setup、/omc-setup 等 slash 命令一键配置工作流",
+          "内置 omc 命令行工具，便于终端调用与管理",
+          "多语言文档支持（英、中、韩、日、西、越、葡）"
+        ]
       },
       {
         "rank": 22,
@@ -1314,12 +1746,19 @@
         "url": "https://github.com/vercel-labs/agent-browser",
         "description": "Browser automation CLI for AI agents",
         "language": "Rust",
-        "stars": 31216,
+        "stars": 31217,
         "forks": 1910,
         "topics": [],
         "pushed_at": "2026-04-29T15:39:13Z",
         "created_at": "2026-01-11T05:38:15Z",
-        "description_zh": "面向 AI agent 的浏览器自动化 CLI"
+        "description_zh": "面向 AI agent 的浏览器自动化 CLI",
+        "features": [
+          "AI agent 专用浏览器自动化 CLI，基于原生 Rust 构建，速度快",
+          "通过 accessibility tree 快照获取元素 ref，支持按 ref 点击、填充、读取",
+          "兼容传统 CSS selector 与 role/name 等定位方式",
+          "自动下载并管理 Chrome for Testing，无需 Playwright 或 Node.js",
+          "支持 npm、Homebrew、Cargo 多种安装方式，并提供一键升级"
+        ]
       },
       {
         "rank": 23,
@@ -1327,8 +1766,8 @@
         "url": "https://github.com/zeroclaw-labs/zeroclaw",
         "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
         "language": "Rust",
-        "stars": 30861,
-        "forks": 4526,
+        "stars": 30862,
+        "forks": 4525,
         "topics": [
           "agent",
           "agentic",
@@ -1341,7 +1780,14 @@
         ],
         "pushed_at": "2026-05-01T06:12:03Z",
         "created_at": "2026-02-13T08:56:04Z",
-        "description_zh": "快速、小巧、完全自主的 AI 个人助手基础设施，支持任意操作系统、任意平台——随处部署，自由替换 🦀"
+        "description_zh": "快速、小巧、完全自主的 AI 个人助手基础设施，支持任意操作系统、任意平台——随处部署，自由替换 🦀",
+        "features": [
+          "单一 Rust 二进制的 agent runtime，本地运行并自管数据与密钥",
+          "支持 Anthropic、OpenAI、Ollama 等 20+ LLM provider 接入",
+          "集成 Discord、Telegram、Matrix、邮件、语音、Webhook 等 30+ 通道",
+          "通过 shell、浏览器、HTTP、硬件及自定义 MCP server 调用工具",
+          "提供一键安装脚本，支持预编译二进制或源码自定义 feature 构建"
+        ]
       },
       {
         "rank": 26,
@@ -1350,7 +1796,7 @@
         "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
         "language": "TypeScript",
         "stars": 28447,
-        "forks": 12734,
+        "forks": 12737,
         "topics": [
           "ai-agents",
           "ai-assistant",
@@ -1360,14 +1806,21 @@
         ],
         "pushed_at": "2026-05-01T04:52:50Z",
         "created_at": "2026-01-31T15:47:22Z",
-        "description_zh": "OpenClaw 的轻量替代方案，在容器中运行以保障安全。可连接 WhatsApp、Telegram、Slack、Discord、Gmail 等消息应用，支持记忆与定时任务，直接基于 Anthropic 的 Agents SDK 运行。"
+        "description_zh": "OpenClaw 的轻量替代方案，在容器中运行以保障安全。可连接 WhatsApp、Telegram、Slack、Discord、Gmail 等消息应用，支持记忆与定时任务，直接基于 Anthropic 的 Agents SDK 运行。",
+        "features": [
+          "在独立 Linux 容器中安全运行 Claude agent，实现 OS 级文件系统隔离",
+          "代码库精简至单进程少量文件，易于理解和完全自定义",
+          "一键脚本自动安装依赖、注册凭证、构建容器并配对首个频道",
+          "支持 Telegram、Discord、WhatsApp 及本地 CLI 多渠道接入",
+          "安装失败时自动调用 Claude Code 诊断并从断点恢复"
+        ]
       },
       {
         "rank": 27,
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
         "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
-        "stars": 27937,
+        "stars": 27943,
         "forks": 1847,
         "topics": [
           "claude",
@@ -1382,7 +1835,14 @@
         ],
         "pushed_at": "2026-04-02T17:21:56Z",
         "created_at": "2026-01-02T21:45:11Z",
-        "description_zh": "适用于 Obsidian 的 Agent skills，教你的 agent 使用 Markdown、Bases、JSON Canvas 和 CLI。"
+        "description_zh": "适用于 Obsidian 的 Agent skills，教你的 agent 使用 Markdown、Bases、JSON Canvas 和 CLI。",
+        "features": [
+          "遵循 Agent Skills 规范，兼容 Claude Code、Codex CLI 等 agent",
+          "obsidian-markdown skill：创建和编辑 Obsidian Flavored Markdown 文件",
+          "obsidian-bases skill：管理 .base 文件的视图、过滤器与公式",
+          "json-canvas skill：编辑 .canvas 文件的节点、边和分组",
+          "obsidian-cli skill：通过 CLI 操作 vault 并支持插件主题开发"
+        ]
       },
       {
         "rank": 28,
@@ -1390,12 +1850,19 @@
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
         "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
         "language": "TypeScript",
-        "stars": 27087,
+        "stars": 27093,
         "forks": 2197,
         "topics": [],
         "pushed_at": "2026-04-30T23:40:47Z",
         "created_at": "2026-02-02T14:21:18Z",
-        "description_zh": "OmX - Oh My codeX：你的 codex 不再孤单。添加 hooks、agent 团队、HUDs 等众多功能。"
+        "description_zh": "OmX - Oh My codeX：你的 codex 不再孤单。添加 hooks、agent 团队、HUDs 等众多功能。",
+        "features": [
+          "为 OpenAI Codex CLI 提供工作流层，增强默认会话体验",
+          "通过 `$deep-interview`、`$ralplan`、`$team`、`$ralph` 调用标准化 skills",
+          "从澄清到完成贯穿一致的工作流执行",
+          "在 `.omx/` 中统一管理项目指南、计划、日志与状态",
+          "提供 `omx setup`、`omx update` 等 CLI 命令进行配置与升级"
+        ]
       },
       {
         "rank": 29,
@@ -1403,7 +1870,7 @@
         "url": "https://github.com/addyosmani/agent-skills",
         "description": "Production-grade engineering skills for AI coding agents.",
         "language": "Shell",
-        "stars": 26801,
+        "stars": 26820,
         "forks": 3322,
         "topics": [
           "agent-skills",
@@ -1415,7 +1882,14 @@
         ],
         "pushed_at": "2026-04-28T04:35:03Z",
         "created_at": "2026-02-15T20:20:26Z",
-        "description_zh": "面向 AI 编码代理的生产级工程技能。"
+        "description_zh": "面向 AI 编码代理的生产级工程技能。",
+        "features": [
+          "7 个 slash 命令覆盖完整开发生命周期：spec、plan、build、test、review、ship",
+          "skills 根据上下文自动激活，如设计 API 触发 api-and-interface-design",
+          "通过 Claude Code marketplace 一键安装并集成 plugin",
+          "支持 Cursor、Gemini CLI、Windsurf 等多种 AI coding agent 工具",
+          "封装资深工程师的工作流、质量门禁与最佳实践，确保 agent 一致执行"
+        ]
       },
       {
         "rank": 30,
@@ -1423,8 +1897,8 @@
         "url": "https://github.com/coreyhaines31/marketingskills",
         "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
         "language": "JavaScript",
-        "stars": 25897,
-        "forks": 4111,
+        "stars": 25902,
+        "forks": 4112,
         "topics": [
           "claude",
           "codex",
@@ -1432,7 +1906,14 @@
         ],
         "pushed_at": "2026-04-25T20:58:51Z",
         "created_at": "2026-01-15T19:45:23Z",
-        "description_zh": "面向 Claude Code 和 AI agent 的营销技能集，涵盖 CRO、文案撰写、SEO、数据分析与增长工程。"
+        "description_zh": "面向 Claude Code 和 AI agent 的营销技能集，涵盖 CRO、文案撰写、SEO、数据分析与增长工程。",
+        "features": [
+          "为 AI agent 提供营销任务的 Skills 集合，覆盖 CRO、文案、SEO、分析与增长工程",
+          "兼容 Claude Code、OpenAI Codex、Cursor、Windsurf 等支持 Agent Skills 规范的 agent",
+          "以 product-marketing-context 为核心 skill，所有其他 skill 优先读取该上下文",
+          "按 SEO、CRO、Copy、Paid、Growth、Sales、Strategy 等领域分类组织 skill",
+          "通过 Markdown 文件为 agent 注入营销专业知识与工作流"
+        ]
       },
       {
         "rank": 31,
@@ -1440,7 +1921,7 @@
         "url": "https://github.com/googleworkspace/cli",
         "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
         "language": "Rust",
-        "stars": 25604,
+        "stars": 25606,
         "forks": 1316,
         "topics": [
           "agent-skills",
@@ -1462,7 +1943,14 @@
         ],
         "pushed_at": "2026-04-29T21:26:20Z",
         "created_at": "2026-03-02T19:46:06Z",
-        "description_zh": "Google Workspace CLI — 用一个命令行工具管理 Drive、Gmail、Calendar、Sheets、Docs、Chat、Admin 等服务。基于 Google Discovery Service 动态构建，内置 AI agent skills。"
+        "description_zh": "Google Workspace CLI — 用一个命令行工具管理 Drive、Gmail、Calendar、Sheets、Docs、Chat、Admin 等服务。基于 Google Discovery Service 动态构建，内置 AI agent skills。",
+        "features": [
+          "统一 CLI 访问 Google Workspace 全部 API，包括 Drive、Gmail、Calendar 等",
+          "运行时读取 Google Discovery Service，动态生成命令，新 API 自动支持",
+          "结构化 JSON 输出，专为 AI agent 与脚本调用设计",
+          "内置 40+ agent skills，开箱即用",
+          "提供预编译二进制、npm、Cargo、Nix flake 多种安装方式"
+        ]
       },
       {
         "rank": 32,
@@ -1470,8 +1958,8 @@
         "url": "https://github.com/Gitlawb/openclaude",
         "description": "runs anywhere. uses anything",
         "language": "TypeScript",
-        "stars": 25266,
-        "forks": 8178,
+        "stars": 25267,
+        "forks": 8179,
         "topics": [
           "ai",
           "ai-agent",
@@ -1481,7 +1969,14 @@
         ],
         "pushed_at": "2026-04-30T14:18:43Z",
         "created_at": "2026-04-01T03:15:49Z",
-        "description_zh": "随处运行，万物兼容"
+        "description_zh": "随处运行，万物兼容",
+        "features": [
+          "跨云端 API 与本地模型后端的统一 coding-agent CLI",
+          "支持 OpenAI 兼容 API、Gemini、GitHub Models、Codex、Ollama 等多种 provider",
+          "通过 /provider 斜杠命令在应用内保存和切换 provider 配置",
+          "集成 bash、文件操作、grep、glob、agent、MCP 与 web 工具链",
+          "附带 VS Code 扩展，支持启动集成与主题适配"
+        ]
       },
       {
         "rank": 33,
@@ -1489,7 +1984,7 @@
         "url": "https://github.com/AlexsJones/llmfit",
         "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
         "language": "Rust",
-        "stars": 24953,
+        "stars": 24955,
         "forks": 1485,
         "topics": [
           "gguf",
@@ -1501,7 +1996,15 @@
         ],
         "pushed_at": "2026-04-30T20:34:04Z",
         "created_at": "2026-02-15T16:11:31Z",
-        "description_zh": "数百种模型和服务商。一条命令找出适合你硬件运行的方案。"
+        "description_zh": "数百种模型和服务商。一条命令找出适合你硬件运行的方案。",
+        "features": [
+          "根据系统 RAM、CPU、GPU 自动匹配适合本地运行的 LLM 模型",
+          "从质量、速度、契合度、上下文多维度对模型进行评分排序",
+          "提供交互式 TUI（默认）与传统 CLI 两种模式",
+          "支持多 GPU、MoE 架构、动态量化选择与速度估算",
+          "集成 Ollama、llama.cpp、MLX、Docker Model Runner、LM Studio 等本地 runtime",
+          "内置社区基准、下载管理器与硬件模拟功能"
+        ]
       },
       {
         "rank": 34,
@@ -1509,8 +2012,8 @@
         "url": "https://github.com/mvanhorn/last30days-skill",
         "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
         "language": "Python",
-        "stars": 24462,
-        "forks": 2049,
+        "stars": 24468,
+        "forks": 2050,
         "topics": [
           "ai-prompts",
           "ai-skill",
@@ -1535,7 +2038,14 @@
         ],
         "pushed_at": "2026-04-26T21:16:14Z",
         "created_at": "2026-01-23T20:37:37Z",
-        "description_zh": "AI agent 技能，跨 Reddit、X、YouTube、HN、Polymarket 和网络研究任意主题，并合成有据可依的摘要"
+        "description_zh": "AI agent 技能，跨 Reddit、X、YouTube、HN、Polymarket 和网络研究任意主题，并合成有据可依的摘要",
+        "features": [
+          "跨 Reddit、X、YouTube、TikTok、Polymarket、GitHub 等平台并行 AI agent 搜索",
+          "按真实用户互动数据(点赞、投票、押注金额)对结果评分排序",
+          "AI agent judge 自动综合多源信息生成统一简报",
+          "零配置开箱即用，支持 BYOK 密钥扩展更多平台",
+          "以 skill 形式集成 Claude Code、OpenClaw、Hermes 等运行时"
+        ]
       },
       {
         "rank": 35,
@@ -1543,7 +2053,7 @@
         "url": "https://github.com/jamiepine/voicebox",
         "description": "The open-source AI voice studio. Clone, dictate, create.",
         "language": "TypeScript",
-        "stars": 24188,
+        "stars": 24189,
         "forks": 2892,
         "topics": [
           "ai",
@@ -1557,7 +2067,14 @@
         ],
         "pushed_at": "2026-04-26T20:29:17Z",
         "created_at": "2026-01-25T12:27:03Z",
-        "description_zh": "开源 AI 语音工作室。克隆、转写、创作。"
+        "description_zh": "开源 AI 语音工作室。克隆、转写、创作。",
+        "features": [
+          "从几秒音频克隆语音，覆盖 23 种语言和 7 个 TTS 引擎",
+          "通过全局热键在任意文本框中实现语音听写",
+          "为支持 MCP 的 AI agent 赋予自选语音",
+          "本地优先运行，开源替代 ElevenLabs 与 WisprFlow",
+          "内置本地 LLM 用于文本润色和按 profile 定制 persona"
+        ]
       },
       {
         "rank": 36,
@@ -1565,7 +2082,7 @@
         "url": "https://github.com/volcengine/OpenViking",
         "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
         "language": "Python",
-        "stars": 23308,
+        "stars": 23309,
         "forks": 1719,
         "topics": [
           "agent",
@@ -1582,9 +2099,16 @@
           "rag",
           "skill"
         ],
-        "pushed_at": "2026-05-01T05:49:16Z",
+        "pushed_at": "2026-05-01T08:39:32Z",
         "created_at": "2026-01-05T07:11:17Z",
-        "description_zh": "OpenViking 是一个专为 AI Agent（如 openclaw）设计的开源上下文数据库。OpenViking 通过文件系统范式统一管理 Agent 所需的上下文（记忆、资源与技能），实现分层上下文传递与自我进化。"
+        "description_zh": "OpenViking 是一个专为 AI Agent（如 openclaw）设计的开源上下文数据库。OpenViking 通过文件系统范式统一管理 Agent 所需的上下文（记忆、资源与技能），实现分层上下文传递与自我进化。",
+        "features": [
+          "统一管理 AI Agent 的 memory、resource 和 skill 等碎片化 context",
+          "面向 Agent 长任务场景，避免简单截断或压缩造成的信息丢失",
+          "突破传统 RAG 扁平存储，提供具备全局视图的上下文检索",
+          "可观测的 context 检索链路，告别 RAG 黑盒便于调试",
+          "支持 Agent 任务相关 memory，超越用户交互记录"
+        ]
       },
       {
         "rank": 37,
@@ -1592,12 +2116,19 @@
         "url": "https://github.com/multica-ai/multica",
         "description": "The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
         "language": "TypeScript",
-        "stars": 23294,
-        "forks": 2866,
+        "stars": 23304,
+        "forks": 2865,
         "topics": [],
         "pushed_at": "2026-05-01T07:49:17Z",
         "created_at": "2026-01-13T17:59:46Z",
-        "description_zh": "开源的托管 agents 平台。把编码 agents 变成真正的团队成员——分配任务、跟踪进度、积累技能。"
+        "description_zh": "开源的托管 agents 平台。把编码 agents 变成真正的团队成员——分配任务、跟踪进度、积累技能。",
+        "features": [
+          "将 coding agent 转化为可分配任务的团队成员，自主写码与汇报",
+          "支持 Claude Code、Codex、Cursor Agent、Gemini、Kimi 等多种 agent",
+          "开源、厂商中立、可自托管的 managed agents 基础设施",
+          "面向人类与 AI 协作的看板视图、活动时间线与任务生命周期管理",
+          "agents 可参与对话、报告阻塞并随时间沉淀可复用技能"
+        ]
       },
       {
         "rank": 38,
@@ -1605,7 +2136,7 @@
         "url": "https://github.com/jarrodwatts/claude-hud",
         "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
         "language": "JavaScript",
-        "stars": 21344,
+        "stars": 21348,
         "forks": 943,
         "topics": [
           "anthropic",
@@ -1618,19 +2149,31 @@
         ],
         "pushed_at": "2026-04-29T23:06:55Z",
         "created_at": "2026-01-02T01:35:07Z",
-        "description_zh": "一个 Claude Code 插件，可显示运行状态——上下文使用情况、活跃工具、运行中的代理及待办进度"
+        "description_zh": "一个 Claude Code 插件，可显示运行状态——上下文使用情况、活跃工具、运行中的代理及待办进度",
+        "features": [
+          "Claude Code 插件，实时显示 context 使用、工具活动、运行中 agent 和 todo 进度",
+          "可视化 context 健康度，通过颜色条预警上下文窗口占用情况",
+          "追踪 subagent 运行状态和实时 todo 任务完成进度",
+          "通过 /claude-hud:setup 一键配置 statusline，支持多平台"
+        ]
       },
       {
         "rank": 39,
         "name": "Leey21/awesome-ai-research-writing",
         "url": "https://github.com/Leey21/awesome-ai-research-writing",
         "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
-        "stars": 20672,
-        "forks": 1664,
+        "stars": 20686,
+        "forks": 1666,
         "topics": [],
         "pushed_at": "2026-03-25T03:20:28Z",
         "created_at": "2026-01-30T07:59:30Z",
-        "description_zh": "提升 AI 研究写作效率，告别繁琐润色 ✨"
+        "description_zh": "提升 AI 研究写作效率，告别繁琐润色 ✨",
+        "features": [
+          "收录顶尖科研机构的论文写作实战 prompt 模板库",
+          "提供翻译、润色、扩缩写、去 AI 味等多场景 prompt",
+          "集成论文写作相关的 agent skills 教程与配置指南",
+          "包含从 LaTeX 源码翻译并编译 ArXiv 论文的 skill"
+        ]
       },
       {
         "rank": 40,
@@ -1638,12 +2181,19 @@
         "url": "https://github.com/openai/symphony",
         "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
         "language": "Elixir",
-        "stars": 20185,
-        "forks": 1727,
+        "stars": 20199,
+        "forks": 1728,
         "topics": [],
         "pushed_at": "2026-04-27T22:09:32Z",
         "created_at": "2026-02-26T21:54:00Z",
-        "description_zh": "Symphony 将项目任务转化为隔离、自主的实现流程，让团队管理工作而非监督编码 agent。"
+        "description_zh": "Symphony 将项目任务转化为隔离、自主的实现流程，让团队管理工作而非监督编码 agent。",
+        "features": [
+          "将项目工作转化为隔离的自主实现任务，团队只需管理工作而非监督 coding agent",
+          "监控 Linear 看板并自动派发 agent 处理任务",
+          "agent 提供工作成果证明：CI 状态、PR 评审反馈、复杂度分析与演示视频",
+          "任务被接受后由 agent 安全地合并 PR，无需人工监督",
+          "提供基于 Elixir 的实验性参考实现及完整 SPEC 规范"
+        ]
       },
       {
         "rank": 41,
@@ -1651,7 +2201,7 @@
         "url": "https://github.com/OthmanAdi/planning-with-files",
         "description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
         "language": "Python",
-        "stars": 20011,
+        "stars": 20015,
         "forks": 1799,
         "topics": [
           "adal",
@@ -1676,7 +2226,13 @@
         ],
         "pushed_at": "2026-04-29T19:49:55Z",
         "created_at": "2026-01-03T07:37:28Z",
-        "description_zh": "Claude Code skill，实现 Manus 风格的持久化 markdown 规划——价值 20 亿美元收购背后的工作流模式。"
+        "description_zh": "Claude Code skill，实现 Manus 风格的持久化 markdown 规划——价值 20 亿美元收购背后的工作流模式。",
+        "features": [
+          "以文件驱动的规划方式工作，复刻 Manus AI agent 的工作流",
+          "在基准测试中达到 96.7% 通过率，并通过 A/B 盲测三战全胜",
+          "通过 SkillCheck 认证并完成安全审计 (v2.21.0)",
+          "开源社区已衍生多个 fork，支持多项目、多 agent 协作等扩展"
+        ]
       },
       {
         "rank": 45,
@@ -1684,7 +2240,7 @@
         "url": "https://github.com/Panniantong/Agent-Reach",
         "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
         "language": "Python",
-        "stars": 18572,
+        "stars": 18573,
         "forks": 1630,
         "topics": [
           "agent-infrastructure",
@@ -1707,7 +2263,14 @@
         ],
         "pushed_at": "2026-04-13T09:46:13Z",
         "created_at": "2026-02-24T02:10:24Z",
-        "description_zh": "让你的 AI agent 拥有洞察整个互联网的双眼。读取并搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书——一个 CLI，零 API 费用。"
+        "description_zh": "让你的 AI agent 拥有洞察整个互联网的双眼。读取并搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书——一个 CLI，零 API 费用。",
+        "features": [
+          "一键为 AI Agent 集成多平台互联网访问能力，无需手动配置",
+          "支持 YouTube、Twitter、Reddit、小红书、B站、抖音等十余个平台的内容抓取",
+          "内置 agent-reach doctor 诊断命令，快速排查各渠道连通状态",
+          "Cookie 本地存储，完全开源免费，兼容 Claude Code、Cursor 等任意 Agent",
+          "底层工具（yt-dlp、twitter-cli、Jina Reader 等）持续追踪更新"
+        ]
       },
       {
         "rank": 46,
@@ -1715,7 +2278,7 @@
         "url": "https://github.com/jackwener/OpenCLI",
         "description": "Make Any Website & Tool Your CLI. A universal CLI Hub and AI-native runtime. Transform any website, Electron app, or local binary into a standardized command-line interface. Built for AI Agents to discover, learn, and execute tools seamlessly via a unified AGENT.md integration.",
         "language": "JavaScript",
-        "stars": 18369,
+        "stars": 18373,
         "forks": 1808,
         "topics": [
           "ai-agent",
@@ -1725,7 +2288,15 @@
         ],
         "pushed_at": "2026-04-30T04:20:39Z",
         "created_at": "2026-03-14T22:10:23Z",
-        "description_zh": "让任意网站与工具皆可 CLI 化。一个通用 CLI Hub 与 AI 原生运行时，将任何网站、Electron 应用或本地二进制转化为标准化命令行接口。专为 AI Agent 设计，通过统一的 AGENT.md 集成实现工具的无缝发现、学习与调用。"
+        "description_zh": "让任意网站与工具皆可 CLI 化。一个通用 CLI Hub 与 AI 原生运行时，将任何网站、Electron 应用或本地二进制转化为标准化命令行接口。专为 AI Agent 设计，通过统一的 AGENT.md 集成实现工具的无缝发现、学习与调用。",
+        "features": [
+          "内置 90+ 适配器，将 Bilibili、Zhihu、Reddit 等网站转为确定性 CLI",
+          "通过 CDP 复用已登录的 Chrome 会话，凭据不离开浏览器，账号安全",
+          "提供 opencli-adapter-author skill，让 AI agent 操作任意网站并编写新适配器",
+          "支持驱动 Cursor、ChatGPT、Notion 等 Electron 桌面应用",
+          "作为 CLI Hub 统一发现、安装并透传 gh、docker 等外部命令",
+          "运行时零 LLM token 消耗，输出确定性 schema，可脚本化与 CI 集成"
+        ]
       },
       {
         "rank": 47,
@@ -1733,12 +2304,19 @@
         "url": "https://github.com/snarktank/ralph",
         "description": "Ralph is an autonomous AI agent loop that runs repeatedly until all PRD items are complete. ",
         "language": "TypeScript",
-        "stars": 18251,
-        "forks": 1808,
+        "stars": 18253,
+        "forks": 1809,
         "topics": [],
         "pushed_at": "2026-02-02T01:46:21Z",
         "created_at": "2026-01-07T14:45:10Z",
-        "description_zh": "Ralph 是一个自主 AI 智能体循环，反复运行直至完成所有 PRD 项目。"
+        "description_zh": "Ralph 是一个自主 AI 智能体循环，反复运行直至完成所有 PRD 项目。",
+        "features": [
+          "运行 Amp 或 Claude Code 等 AI 编码工具的自主 agent 循环，直至完成所有 PRD 项",
+          "通过 git history、progress.txt 和 prd.json 在迭代间持久化记忆",
+          "提供 PRD skill，根据功能描述生成详细需求文档",
+          "提供 Ralph skill，将 markdown PRD 转换为可自主执行的 prd.json 格式",
+          "支持作为 Claude Code Marketplace 插件安装，提供 /prd 与 /ralph 命令"
+        ]
       },
       {
         "rank": 49,
@@ -1760,7 +2338,14 @@
         ],
         "pushed_at": "2026-04-30T08:27:52Z",
         "created_at": "2026-02-24T23:12:38Z",
-        "description_zh": "开源 Agent 操作系统"
+        "description_zh": "开源 Agent 操作系统",
+        "features": [
+          "Rust 构建的开源 Agent 操作系统，编译为单个 ~32MB 二进制文件",
+          "Hands 自治能力包：定时无人值守运行，主动为用户工作",
+          "内置 Dashboard，本地 http://localhost:4200 实时查看 agent 状态",
+          "137K LOC、14 crates、2,517+ 测试，零 clippy 警告的工程质量",
+          "一行命令安装启动：openfang init && openfang start"
+        ]
       }
     ]
   },
@@ -1772,8 +2357,8 @@
         "url": "https://github.com/codecrafters-io/build-your-own-x",
         "description": "Master programming by recreating your favorite technologies from scratch.",
         "language": "Markdown",
-        "stars": 498354,
-        "forks": 47231,
+        "stars": 498358,
+        "forks": 47232,
         "topics": [
           "awesome-list",
           "free",
@@ -1784,14 +2369,20 @@
         ],
         "pushed_at": "2026-02-21T09:34:54Z",
         "created_at": "2018-05-09T12:03:18Z",
-        "description_zh": "通过从零重建你喜爱的技术来精通编程。"
+        "description_zh": "通过从零重建你喜爱的技术来精通编程。",
+        "features": [
+          "汇集从零构建主流技术的高质量分步教程合集",
+          "涵盖 3D 渲染器、数据库、操作系统、编译器等 30+ 主题",
+          "按技术类别和编程语言分类组织，便于查找",
+          "收录 BitTorrent、Docker、Git、Shell 等经典项目实现指南"
+        ]
       },
       {
         "rank": 2,
         "name": "sindresorhus/awesome",
         "url": "https://github.com/sindresorhus/awesome",
         "description": "😎 Awesome lists about all kinds of interesting topics",
-        "stars": 460766,
+        "stars": 460782,
         "forks": 34569,
         "topics": [
           "awesome",
@@ -1802,7 +2393,8 @@
         ],
         "pushed_at": "2026-04-19T17:04:38Z",
         "created_at": "2014-07-11T13:42:37Z",
-        "description_zh": "😎 关于各类有趣主题的优质资源列表"
+        "description_zh": "😎 关于各类有趣主题的优质资源列表",
+        "features": []
       },
       {
         "rank": 3,
@@ -1810,7 +2402,7 @@
         "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
         "language": "TypeScript",
-        "stars": 443954,
+        "stars": 443956,
         "forks": 44437,
         "topics": [
           "careers",
@@ -1831,7 +2423,14 @@
         ],
         "pushed_at": "2026-05-01T06:55:46Z",
         "created_at": "2014-12-24T17:49:19Z",
-        "description_zh": "freeCodeCamp.org 的开源代码库和课程。免费学习数学、编程和计算机科学。"
+        "description_zh": "freeCodeCamp.org 的开源代码库和课程。免费学习数学、编程和计算机科学。",
+        "features": [
+          "提供免费的全栈 Web 开发与机器学习自学课程",
+          "包含数千道交互式编程挑战与实战项目",
+          "提供响应式 Web、JavaScript、Python 等多项开发者认证",
+          "提供面向开发者的多语言（英语、西班牙语）能力认证",
+          "由非营利组织运营的开源学习平台与课程代码库"
+        ]
       },
       {
         "rank": 4,
@@ -1839,8 +2438,8 @@
         "url": "https://github.com/public-apis/public-apis",
         "description": "A collective list of free APIs",
         "language": "Python",
-        "stars": 429775,
-        "forks": 46890,
+        "stars": 429795,
+        "forks": 46895,
         "topics": [
           "api",
           "apis",
@@ -1858,7 +2457,13 @@
         ],
         "pushed_at": "2026-03-18T16:28:22Z",
         "created_at": "2016-03-20T23:49:42Z",
-        "description_zh": "免费 API 集合列表"
+        "description_zh": "免费 API 集合列表",
+        "features": [
+          "社区维护的多领域免费 public API 大全合集",
+          "按分类整理 API，涵盖天气、金融、IP 定位等场景",
+          "提供 Postman 一键 fork 集合，便于快速调用测试",
+          "收录 APILayer 旗下 IPstack、Marketstack 等热门 API"
+        ]
       },
       {
         "rank": 5,
@@ -1866,7 +2471,7 @@
         "url": "https://github.com/EbookFoundation/free-programming-books",
         "description": ":books: Freely available programming books",
         "language": "Python",
-        "stars": 387445,
+        "stars": 387447,
         "forks": 66208,
         "topics": [
           "books",
@@ -1877,7 +2482,13 @@
         ],
         "pushed_at": "2026-04-24T13:32:32Z",
         "created_at": "2013-10-11T06:50:37Z",
-        "description_zh": ":books: 免费的编程书籍"
+        "description_zh": ":books: 免费的编程书籍",
+        "features": [
+          "收录多语言免费编程书籍、课程与学习资源清单",
+          "提供静态站点与动态搜索站，支持按书名或作者检索",
+          "内容覆盖编程书籍、交互式教程、播客、课程及编程游乐场等多种形式",
+          "通过 GitHub 协作方式持续更新维护，社区贡献开放"
+        ]
       },
       {
         "rank": 6,
@@ -1885,8 +2496,8 @@
         "url": "https://github.com/openclaw/openclaw",
         "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
         "language": "TypeScript",
-        "stars": 366904,
-        "forks": 75389,
+        "stars": 366919,
+        "forks": 75392,
         "topics": [
           "ai",
           "assistant",
@@ -1896,9 +2507,16 @@
           "own-your-data",
           "personal"
         ],
-        "pushed_at": "2026-05-01T07:56:29Z",
+        "pushed_at": "2026-05-01T08:45:01Z",
         "created_at": "2025-11-24T10:16:47Z",
-        "description_zh": "你的专属 AI 个人助手。任意系统，任意平台。lobster 之道。🦞"
+        "description_zh": "你的专属 AI 个人助手。任意系统，任意平台。lobster 之道。🦞",
+        "features": [
+          "在自有设备上运行的个人 AI 助手，支持本地化、快速、常驻服务",
+          "支持 WhatsApp、Telegram、Slack、Discord、iMessage、微信等 20+ 通讯渠道",
+          "在 macOS/iOS/Android 上支持语音听说，并可渲染实时 Canvas",
+          "通过 `openclaw onboard` CLI 引导式配置 gateway、workspace、channels 和 skills",
+          "跨平台支持 macOS、Linux 和 Windows（WSL2），兼容 npm、pnpm、bun"
+        ]
       },
       {
         "rank": 7,
@@ -1906,7 +2524,7 @@
         "url": "https://github.com/nilbuild/developer-roadmap",
         "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
         "language": "TypeScript",
-        "stars": 353967,
+        "stars": 353968,
         "forks": 43982,
         "topics": [
           "angular-roadmap",
@@ -1930,7 +2548,14 @@
         ],
         "pushed_at": "2026-04-29T07:43:21Z",
         "created_at": "2017-03-15T13:45:52Z",
-        "description_zh": "交互式路线图、指南和其他教育内容，助力开发者职业成长。"
+        "description_zh": "交互式路线图、指南和其他教育内容，助力开发者职业成长。",
+        "features": [
+          "提供面向开发者的交互式学习路线图，可点击节点查看详情",
+          "覆盖 Frontend、Backend、DevOps、AI Engineer 等数十个技术方向",
+          "汇集各领域的 Best Practices 最佳实践指南",
+          "提供技术相关的 Questions 题库供自测与学习",
+          "由社区驱动维护文章与学习资源"
+        ]
       },
       {
         "rank": 8,
@@ -1938,8 +2563,8 @@
         "url": "https://github.com/donnemartin/system-design-primer",
         "description": "Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.",
         "language": "Python",
-        "stars": 346495,
-        "forks": 55908,
+        "stars": 346502,
+        "forks": 55910,
         "topics": [
           "design",
           "design-patterns",
@@ -1957,7 +2582,14 @@
         ],
         "pushed_at": "2026-03-20T01:52:19Z",
         "created_at": "2017-02-26T16:15:28Z",
-        "description_zh": "学习设计大规模系统，备战系统设计面试。包含 Anki 闪卡。"
+        "description_zh": "学习设计大规模系统，备战系统设计面试。包含 Anki 闪卡。",
+        "features": [
+          "系统化整理大规模系统设计的学习资源与原则",
+          "提供常见 system design 面试题及示例解答、图示与讨论",
+          "包含面向对象设计面试题及配套解决方案",
+          "提供系统设计面试的学习指南与解题思路",
+          "开源协作项目，支持多语言翻译与社区贡献"
+        ]
       },
       {
         "rank": 9,
@@ -1965,8 +2597,8 @@
         "url": "https://github.com/vinta/awesome-python",
         "description": "An opinionated list of Python frameworks, libraries, tools, and resources",
         "language": "Python",
-        "stars": 295331,
-        "forks": 27796,
+        "stars": 295342,
+        "forks": 27795,
         "topics": [
           "awesome",
           "collections",
@@ -1977,15 +2609,21 @@
         ],
         "pushed_at": "2026-04-27T15:58:22Z",
         "created_at": "2014-06-27T21:00:06Z",
-        "description_zh": "精选 Python 框架、库、工具与资源清单"
+        "description_zh": "精选 Python 框架、库、工具与资源清单",
+        "features": [
+          "精选 Python 框架、库、工具与资源的分类列表",
+          "覆盖 AI/ML、Web 开发、数据科学等数十个领域",
+          "包含 CLI、GUI、DevOps、测试与调试等开发工具",
+          "汇总 Python 工具链：环境管理、包管理与构建工具"
+        ]
       },
       {
         "rank": 10,
         "name": "awesome-selfhosted/awesome-selfhosted",
         "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
         "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
-        "stars": 289274,
-        "forks": 13333,
+        "stars": 289286,
+        "forks": 13334,
         "topics": [
           "awesome",
           "awesome-list",
@@ -1998,7 +2636,14 @@
         ],
         "pushed_at": "2026-04-30T18:13:33Z",
         "created_at": "2015-06-01T02:33:17Z",
-        "description_zh": "可自行托管的免费软件网络服务和 Web 应用列表"
+        "description_zh": "可自行托管的免费软件网络服务和 Web 应用列表",
+        "features": [
+          "收录可自托管的 Free Software 网络服务与 Web 应用清单",
+          "按 Analytics、Backup、Email 等数十个分类组织项目",
+          "提供 HTML 与 Markdown 两种版本浏览",
+          "自动检测失效链接与停止维护的项目",
+          "单独维护 Non-Free 软件列表作为补充"
+        ]
       },
       {
         "rank": 11,
@@ -2007,7 +2652,7 @@
         "description": "The library for web and native user interfaces.",
         "language": "JavaScript",
         "stars": 244775,
-        "forks": 51025,
+        "forks": 51028,
         "topics": [
           "declarative",
           "frontend",
@@ -2018,7 +2663,14 @@
         ],
         "pushed_at": "2026-04-29T20:18:39Z",
         "created_at": "2013-05-24T16:15:54Z",
-        "description_zh": "用于构建 Web 和原生用户界面的库。"
+        "description_zh": "用于构建 Web 和原生用户界面的库。",
+        "features": [
+          "声明式编程，根据数据变化高效更新和渲染对应组件",
+          "基于组件化开发，封装独立状态并组合构建复杂 UI",
+          "支持服务端渲染（Node）和通过 React Native 构建移动应用",
+          "渐进式采用，可在现有项目中按需引入使用",
+          "组件逻辑用 JavaScript 编写，便于传递数据和管理状态"
+        ]
       },
       {
         "rank": 12,
@@ -2026,12 +2678,19 @@
         "url": "https://github.com/torvalds/linux",
         "description": "Linux kernel source tree",
         "language": "C",
-        "stars": 231529,
-        "forks": 62020,
+        "stars": 231533,
+        "forks": 62024,
         "topics": [],
         "pushed_at": "2026-05-01T00:45:50Z",
         "created_at": "2011-09-04T22:48:12Z",
-        "description_zh": "Linux 内核源码树"
+        "description_zh": "Linux 内核源码树",
+        "features": [
+          "Linux 操作系统的核心 kernel，负责硬件管理、系统资源调度与基础服务",
+          "提供完整的内核开发文档，涵盖编码规范、补丁提交与 build system 流程",
+          "包含内存管理、调度器、网络栈、文件系统等核心子系统的架构文档",
+          "提供安全加固指南、LSM 开发、漏洞报告与 CVE 处理流程",
+          "支持驱动开发、稳定版维护、发行版打包等多角色使用场景"
+        ]
       },
       {
         "rank": 13,
@@ -2039,8 +2698,8 @@
         "url": "https://github.com/TheAlgorithms/Python",
         "description": "All Algorithms implemented in Python",
         "language": "Python",
-        "stars": 220549,
-        "forks": 50496,
+        "stars": 220550,
+        "forks": 50499,
         "topics": [
           "algorithm",
           "algorithm-competitions",
@@ -2059,7 +2718,14 @@
         ],
         "pushed_at": "2026-04-13T22:10:46Z",
         "created_at": "2016-07-16T09:44:01Z",
-        "description_zh": "用 Python 实现的各种算法"
+        "description_zh": "用 Python 实现的各种算法",
+        "features": [
+          "所有算法的 Python 实现，专为学习用途",
+          "提供完整的算法目录便于浏览与导航",
+          "集成 CI、pre-commit 与 ruff 保障代码质量",
+          "支持 Gitpod 一键在线开发环境",
+          "通过 Discord 与 Gitter 提供社区交流支持"
+        ]
       },
       {
         "rank": 14,
@@ -2067,7 +2733,7 @@
         "url": "https://github.com/ossu/computer-science",
         "description": "🎓 Path to a free self-taught education in Computer Science!",
         "language": "HTML",
-        "stars": 203462,
+        "stars": 203463,
         "forks": 25320,
         "topics": [
           "awesome-list",
@@ -2077,7 +2743,14 @@
         ],
         "pushed_at": "2026-04-21T04:43:27Z",
         "created_at": "2014-05-04T00:18:39Z",
-        "description_zh": "🎓 计算机科学免费自学之路！"
+        "description_zh": "🎓 计算机科学免费自学之路！",
+        "features": [
+          "提供完整的计算机科学免费自学课程体系",
+          "课程精选自 Harvard、Princeton、MIT 等顶尖高校的优质资源",
+          "课程结构遵循 CS 2013 本科 CS 学位课程指南标准",
+          "划分为 Intro CS、Core CS、Advanced CS 与 Final Project 四阶段",
+          "拥有全球学习者社区互助支持，约两年可完成学习"
+        ]
       },
       {
         "rank": 15,
@@ -2085,7 +2758,7 @@
         "url": "https://github.com/trekhleb/javascript-algorithms",
         "description": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
         "language": "JavaScript",
-        "stars": 195902,
+        "stars": 195903,
         "forks": 31086,
         "topics": [
           "algorithm",
@@ -2099,7 +2772,14 @@
         ],
         "pushed_at": "2026-02-18T09:20:06Z",
         "created_at": "2018-03-24T07:47:04Z",
-        "description_zh": "📝 用 JavaScript 实现的算法与数据结构，附带说明和延伸阅读链接"
+        "description_zh": "📝 用 JavaScript 实现的算法与数据结构，附带说明和延伸阅读链接",
+        "features": [
+          "提供常见数据结构的 JavaScript 实现，含链表、栈、队列、堆、Trie、各类树等",
+          "提供常见算法的 JavaScript 实现，覆盖排序、搜索、图、动态规划等领域",
+          "按初学者与进阶难度分级标注，便于循序渐进学习",
+          "每个算法与数据结构配有独立 README、说明与延伸阅读链接",
+          "支持多语言翻译版本，方便全球开发者阅读"
+        ]
       },
       {
         "rank": 16,
@@ -2107,8 +2787,8 @@
         "url": "https://github.com/tensorflow/tensorflow",
         "description": "An Open Source Machine Learning Framework for Everyone",
         "language": "C++",
-        "stars": 194944,
-        "forks": 75304,
+        "stars": 194946,
+        "forks": 75307,
         "topics": [
           "deep-learning",
           "deep-neural-networks",
@@ -2121,7 +2801,14 @@
         ],
         "pushed_at": "2026-05-01T07:09:59Z",
         "created_at": "2015-11-07T01:19:20Z",
-        "description_zh": "面向所有人的开源机器学习框架"
+        "description_zh": "面向所有人的开源机器学习框架",
+        "features": [
+          "端到端开源机器学习平台，覆盖研究与生产部署全流程",
+          "提供稳定的 Python 和 C++ API，支持多语言接口",
+          "拥有丰富的工具、库和社区生态扩展",
+          "支持 GPU 加速、Docker 容器及源码构建多种安装方式",
+          "适用于神经网络研究及通用机器学习应用开发"
+        ]
       },
       {
         "rank": 17,
@@ -2129,12 +2816,18 @@
         "url": "https://github.com/ultraworkers/claw-code",
         "description": "The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.",
         "language": "Rust",
-        "stars": 189454,
-        "forks": 109566,
+        "stars": 189460,
+        "forks": 109567,
         "topics": [],
         "pushed_at": "2026-04-30T21:49:51Z",
         "created_at": "2026-03-31T08:58:08Z",
-        "description_zh": "仓库终于解锁了，尽情狂欢吧！史上最快突破 100K star 的项目 ⭐。加入 Discord：https://discord.gg/5TUQKqFWd 使用 oh-my-codex 以 Rust 构建。"
+        "description_zh": "仓库终于解锁了，尽情狂欢吧！史上最快突破 100K star 的项目 ⭐。加入 Discord：https://discord.gg/5TUQKqFWd 使用 oh-my-codex 以 Rust 构建。",
+        "features": [
+          "Rust 实现的 `claw` CLI agent harness",
+          "提供 `claw doctor` 健康检查及会话管理工作流",
+          "支持容器优先（container-first）的运行流程",
+          "包含 parity-harness 用于跟踪 Rust 移植对齐状态"
+        ]
       },
       {
         "rank": 18,
@@ -2142,7 +2835,7 @@
         "url": "https://github.com/ohmyzsh/ohmyzsh",
         "description": "🙃   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
         "language": "Shell",
-        "stars": 186647,
+        "stars": 186646,
         "forks": 26351,
         "topics": [
           "cli",
@@ -2163,7 +2856,14 @@
         ],
         "pushed_at": "2026-04-30T08:03:00Z",
         "created_at": "2009-08-28T18:15:37Z",
-        "description_zh": "🙃 一个由社区驱动（拥有 2400+ 贡献者）的 zsh 配置管理框架。包含 300+ 可选插件（rails、git、macOS、hub、docker、homebrew、node、php、python 等）、140+ 主题点亮你的清晨，以及便于同步社区最新更新的自动更新工具。"
+        "description_zh": "🙃 一个由社区驱动（拥有 2400+ 贡献者）的 zsh 配置管理框架。包含 300+ 可选插件（rails、git、macOS、hub、docker、homebrew、node、php、python 等）、140+ 主题点亮你的清晨，以及便于同步社区最新更新的自动更新工具。",
+        "features": [
+          "开源社区驱动的 zsh 配置管理 framework",
+          "内置数百个强大 plugins，开箱即用扩展终端功能",
+          "提供丰富精美的 themes，可一键切换命令行外观",
+          "支持自定义 plugins 与 themes，灵活扩展个人配置",
+          "提供自动更新机制，可配置更新提示与手动更新"
+        ]
       },
       {
         "rank": 19,
@@ -2171,7 +2871,7 @@
         "url": "https://github.com/n8n-io/n8n",
         "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
         "language": "TypeScript",
-        "stars": 186320,
+        "stars": 186322,
         "forks": 57269,
         "topics": [
           "ai",
@@ -2195,16 +2895,23 @@
           "workflow",
           "workflow-automation"
         ],
-        "pushed_at": "2026-05-01T07:43:38Z",
+        "pushed_at": "2026-05-01T08:44:37Z",
         "created_at": "2019-06-22T09:24:21Z",
-        "description_zh": "公平代码的工作流自动化平台，原生集成 AI 能力。可视化搭建与自定义代码结合，支持自托管或云端，400+ 集成。"
+        "description_zh": "公平代码的工作流自动化平台，原生集成 AI 能力。可视化搭建与自定义代码结合，支持自托管或云端，400+ 集成。",
+        "features": [
+          "支持 400+ 集成与 900+ 现成工作流模板",
+          "可编写 JavaScript/Python 代码或使用可视化界面构建工作流",
+          "基于 LangChain 构建 AI agent 工作流，支持自有数据与模型",
+          "fair-code 许可，支持自托管部署或使用云服务",
+          "面向企业：高级权限管理、SSO 与离网部署"
+        ]
       },
       {
         "rank": 20,
         "name": "getify/You-Dont-Know-JS",
         "url": "https://github.com/getify/You-Dont-Know-JS",
         "description": "A book series (2 published editions) on the JS language.",
-        "stars": 184441,
+        "stars": 184442,
         "forks": 33578,
         "topics": [
           "async",
@@ -2223,7 +2930,8 @@
         ],
         "pushed_at": "2026-02-15T04:36:44Z",
         "created_at": "2013-11-16T02:37:24Z",
-        "description_zh": "关于 JS 语言的系列丛书（已出版 2 版）。"
+        "description_zh": "关于 JS 语言的系列丛书（已出版 2 版）。",
+        "features": []
       },
       {
         "rank": 21,
@@ -2231,7 +2939,7 @@
         "url": "https://github.com/microsoft/vscode",
         "description": "Visual Studio Code",
         "language": "TypeScript",
-        "stars": 184432,
+        "stars": 184434,
         "forks": 39590,
         "topics": [
           "editor",
@@ -2240,9 +2948,16 @@
           "typescript",
           "visual-studio-code"
         ],
-        "pushed_at": "2026-05-01T07:58:08Z",
+        "pushed_at": "2026-05-01T08:39:11Z",
         "created_at": "2015-09-03T20:23:38Z",
-        "description_zh": "Visual Studio Code"
+        "description_zh": "Visual Studio Code",
+        "features": [
+          "全面的代码编辑、导航与智能理解支持",
+          "集成轻量级调试功能，覆盖 edit-build-debug 核心流程",
+          "丰富的扩展模型，支持与现有工具轻量集成",
+          "跨平台支持 Windows、macOS 和 Linux，每月更新迭代",
+          "基于 MIT 协议开源，社区共同参与开发"
+        ]
       },
       {
         "rank": 22,
@@ -2250,7 +2965,7 @@
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
         "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
         "language": "Python",
-        "stars": 183918,
+        "stars": 183921,
         "forks": 46236,
         "topics": [
           "agentic-ai",
@@ -2267,7 +2982,13 @@
         ],
         "pushed_at": "2026-05-01T07:57:08Z",
         "created_at": "2023-03-16T09:21:07Z",
-        "description_zh": "AutoGPT 致力于让人人都能使用和构建 AI。我们的使命是提供工具，让你专注于真正重要的事情。"
+        "description_zh": "AutoGPT 致力于让人人都能使用和构建 AI。我们的使命是提供工具，让你专注于真正重要的事情。",
+        "features": [
+          "创建、部署和管理自动化复杂工作流的持续 AI agent",
+          "支持本地自托管或加入云端 beta 等待列表",
+          "提供一键安装脚本，快速完成本地部署",
+          "基于 Docker 的跨平台部署，支持 Linux、macOS 和 Windows"
+        ]
       },
       {
         "rank": 23,
@@ -2275,12 +2996,19 @@
         "url": "https://github.com/jackfrued/Python-100-Days",
         "description": "Python - 100天从新手到大师",
         "language": "Jupyter Notebook",
-        "stars": 182050,
+        "stars": 182049,
         "forks": 55667,
         "topics": [],
         "pushed_at": "2026-04-13T02:42:42Z",
         "created_at": "2018-03-01T16:05:52Z",
-        "description_zh": "Python - 100天从新手到大师"
+        "description_zh": "Python - 100天从新手到大师",
+        "features": [
+          "100天Python学习路径，从新手到大师的系统化教程",
+          "涵盖Python语言基础、Web开发、数据分析、机器学习等多领域内容",
+          "提供配套Bilibili视频与知乎专栏，适合初学者循序渐进学习",
+          "包含丰富实战案例，如素数判断、斐波那契、CRAPS赌博游戏等",
+          "分析Python应用领域与职业发展方向，提供学习建议"
+        ]
       },
       {
         "rank": 24,
@@ -2311,9 +3039,16 @@
           "web-framework",
           "windows"
         ],
-        "pushed_at": "2026-05-01T07:48:39Z",
+        "pushed_at": "2026-05-01T08:43:46Z",
         "created_at": "2015-03-06T22:54:58Z",
-        "description_zh": "Flutter 让构建精美的移动及多端应用变得简单快捷"
+        "description_zh": "Flutter 让构建精美的移动及多端应用变得简单快捷",
+        "features": [
+          "单一代码库构建移动、Web 和桌面端应用的开源 SDK",
+          "分层架构提供像素级控制与强大合成能力，呈现精美 UI",
+          "跨 iOS、Android、Web、Windows、macOS、Linux 多平台支持",
+          "可作为嵌入式平台的 UI toolkit 使用",
+          "开放、可扩展的开发模型，兼容现有代码"
+        ]
       },
       {
         "rank": 25,
@@ -2321,12 +3056,19 @@
         "url": "https://github.com/obra/superpowers",
         "description": "An agentic skills framework & software development methodology that works.",
         "language": "Shell",
-        "stars": 174920,
-        "forks": 15436,
+        "stars": 174949,
+        "forks": 15442,
         "topics": [],
         "pushed_at": "2026-04-30T22:17:14Z",
         "created_at": "2025-10-09T19:45:18Z",
-        "description_zh": "一套行之有效的 agentic skills 框架与软件开发方法论。"
+        "description_zh": "一套行之有效的 agentic skills 框架与软件开发方法论。",
+        "features": [
+          "从需求对话中提炼 spec 并分块呈现，供用户审阅确认",
+          "生成强调 TDD、YAGNI、DRY 原则的清晰实现计划",
+          "通过 subagent-driven-development 让 agent 自主执行任务并互相审查",
+          "支持 Claude Code、Codex CLI、Cursor、OpenCode 等多平台一键安装",
+          "技能自动触发，无需额外操作即可赋能 coding agent"
+        ]
       },
       {
         "rank": 26,
@@ -2335,7 +3077,7 @@
         "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
         "language": "MDX",
         "stars": 174212,
-        "forks": 78940,
+        "forks": 78939,
         "topics": [
           "bootstrap",
           "css",
@@ -2347,7 +3089,13 @@
         ],
         "pushed_at": "2026-05-01T02:44:29Z",
         "created_at": "2011-07-29T21:19:00Z",
-        "description_zh": "最流行的 HTML、CSS 和 JavaScript 框架，用于开发响应式、移动优先的 Web 项目。"
+        "description_zh": "最流行的 HTML、CSS 和 JavaScript 框架，用于开发响应式、移动优先的 Web 项目。",
+        "features": [
+          "流畅、直观且强大的前端 framework，加速 web 开发",
+          "支持通过 npm、yarn、Bun、Composer、NuGet 等多种包管理器安装",
+          "提供丰富的模板、示例与完善的入门文档",
+          "包含预编译 CSS 与 JS 资源，开箱即用"
+        ]
       },
       {
         "rank": 27,
@@ -2355,8 +3103,8 @@
         "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
         "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting.",
         "language": "Batchfile",
-        "stars": 173703,
-        "forks": 16678,
+        "stars": 173704,
+        "forks": 16679,
         "topics": [
           "activator",
           "hwid",
@@ -2377,22 +3125,35 @@
         ],
         "pushed_at": "2026-04-17T19:03:42Z",
         "created_at": "2020-01-12T23:03:34Z",
-        "description_zh": "开源 Windows 和 Office 激活工具，支持 HWID、Ohook、TSforge 和 Online KMS 多种激活方式，并提供高级故障排查功能。"
+        "description_zh": "开源 Windows 和 Office 激活工具，支持 HWID、Ohook、TSforge 和 Online KMS 多种激活方式，并提供高级故障排查功能。",
+        "features": [
+          "开源 Windows 与 Office 激活工具，支持 HWID、Ohook、TSforge、Online KMS 多种激活方式",
+          "通过 PowerShell 一键运行 irm 命令完成激活，操作简便",
+          "提供传统 MAS_AIO.cmd 脚本，兼容 Windows Vista 及更高版本",
+          "支持激活 Windows、Office 及 Extended Security Updates (ESU)",
+          "内置高级故障排查功能，应对激活异常问题"
+        ]
       },
       {
         "rank": 28,
         "name": "github/gitignore",
         "url": "https://github.com/github/gitignore",
         "description": "A collection of useful .gitignore templates",
-        "stars": 173644,
-        "forks": 82580,
+        "stars": 173645,
+        "forks": 82579,
         "topics": [
           "git",
           "gitignore"
         ],
         "pushed_at": "2026-04-27T16:16:10Z",
         "created_at": "2010-11-08T20:17:14Z",
-        "description_zh": "实用 .gitignore 模板集合"
+        "description_zh": "实用 .gitignore 模板集合",
+        "features": [
+          "GitHub 官方 .gitignore 模板集合，覆盖主流编程语言与技术",
+          "Global 目录提供编辑器、工具与操作系统通用模板",
+          "community 目录收录特定语言、框架与工具的专用模板",
+          "为 GitHub.com 新建仓库时的 .gitignore 选择器提供数据源"
+        ]
       },
       {
         "rank": 29,
@@ -2400,7 +3161,7 @@
         "url": "https://github.com/avelino/awesome-go",
         "description": "A curated list of awesome Go frameworks, libraries and software",
         "language": "Go",
-        "stars": 171470,
+        "stars": 171476,
         "forks": 13180,
         "topics": [
           "awesome",
@@ -2412,7 +3173,12 @@
         ],
         "pushed_at": "2026-05-01T07:57:32Z",
         "created_at": "2014-07-06T13:42:15Z",
-        "description_zh": "精选的 Go 框架、库和软件资源列表"
+        "description_zh": "精选的 Go 框架、库和软件资源列表",
+        "features": [
+          "精选 Go 框架、库和软件的资源列表",
+          "按分类组织 Go 生态项目，方便开发者发现工具",
+          "由社区驱动维护，持续更新和贡献"
+        ]
       },
       {
         "rank": 30,
@@ -2420,8 +3186,8 @@
         "url": "https://github.com/affaan-m/everything-claude-code",
         "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
         "language": "JavaScript",
-        "stars": 171128,
-        "forks": 26524,
+        "stars": 171154,
+        "forks": 26528,
         "topics": [
           "ai-agents",
           "anthropic",
@@ -2434,7 +3200,14 @@
         ],
         "pushed_at": "2026-04-30T16:25:17Z",
         "created_at": "2026-01-18T00:51:51Z",
-        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。"
+        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。",
+        "features": [
+          "面向 AI agent harness 的性能优化系统，含 skills、hooks、rules 与 MCP 配置",
+          "跨 Claude Code、Codex、Cursor、OpenCode、Gemini 等多种 AI agent harness 通用",
+          "提供 ecc-universal 与 ecc-agentshield 两款 npm 包，并配套 GitHub App",
+          "内置安全扫描、记忆优化与持续学习能力，支持 research-first 开发流程",
+          "提供生产级 agents、skills 及遗留命令 shim，多语言生态覆盖 12+ 种"
+        ]
       },
       {
         "rank": 31,
@@ -2442,7 +3215,7 @@
         "url": "https://github.com/ollama/ollama",
         "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
         "language": "Go",
-        "stars": 170449,
+        "stars": 170458,
         "forks": 15915,
         "topics": [
           "deepseek",
@@ -2463,7 +3236,14 @@
         ],
         "pushed_at": "2026-05-01T02:21:15Z",
         "created_at": "2023-06-26T19:39:32Z",
-        "description_zh": "快速运行 Kimi-K2.5、GLM-5、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型。"
+        "description_zh": "快速运行 Kimi-K2.5、GLM-5、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型。",
+        "features": [
+          "本地运行开源 LLM，支持 macOS、Windows、Linux 及 Docker 部署",
+          "提供 REST API 用于运行和管理模型，附带 Python 和 JavaScript SDK",
+          "集成 Claude Code、Codex、Copilot CLI 等多种编码 agent",
+          "通过 OpenClaw 将 Ollama 接入 WhatsApp、Telegram、Slack 等平台作为 AI 助手",
+          "内置模型库支持 Gemma 3 等主流开源模型一键运行"
+        ]
       },
       {
         "rank": 32,
@@ -2471,7 +3251,7 @@
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
         "description": "Stable Diffusion web UI",
         "language": "Python",
-        "stars": 162676,
+        "stars": 162677,
         "forks": 30300,
         "topics": [
           "ai",
@@ -2493,7 +3273,14 @@
         ],
         "pushed_at": "2026-03-02T07:00:53Z",
         "created_at": "2022-08-22T14:05:26Z",
-        "description_zh": "Stable Diffusion Web UI"
+        "description_zh": "Stable Diffusion Web UI",
+        "features": [
+          "基于 Gradio 的 Stable Diffusion Web 界面，支持 txt2img 与 img2img",
+          "支持 Outpainting、Inpainting、Color Sketch 等多种绘图模式",
+          "内置 GFPGAN、CodeFormer、RealESRGAN、SwinIR 等人脸修复与超分模型",
+          "支持 Textual Inversion 训练与多 embedding 使用",
+          "提供 Attention 权重语法、X/Y/Z plot、Prompt Matrix 等高级提示词功能"
+        ]
       },
       {
         "rank": 33,
@@ -2501,8 +3288,8 @@
         "url": "https://github.com/f/prompts.chat",
         "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
         "language": "HTML",
-        "stars": 161280,
-        "forks": 21054,
+        "stars": 161282,
+        "forks": 21053,
         "topics": [
           "ai",
           "artificial-intelligence",
@@ -2525,7 +3312,14 @@
         ],
         "pushed_at": "2026-05-01T04:27:46Z",
         "created_at": "2022-12-05T13:54:13Z",
-        "description_zh": "前身为 Awesome ChatGPT Prompts。分享、发现并收集社区 prompt。免费开源——可自托管部署，为组织提供完全隐私保障。"
+        "description_zh": "前身为 Awesome ChatGPT Prompts。分享、发现并收集社区 prompt。免费开源——可自托管部署，为组织提供完全隐私保障。",
+        "features": [
+          "收录全球最大开源 AI prompt 库,适配 ChatGPT、Claude、Gemini 等主流 LLM",
+          "通过 prompts.chat 网站提供在线浏览和搜索 prompt 功能",
+          "以 Hugging Face dataset 形式发布,支持开发者直接调用",
+          "支持自托管部署,可自定义运行 prompt 库",
+          "提供配套书籍《The Art of ChatGPT Prompting》深入讲解 prompt 技巧"
+        ]
       },
       {
         "rank": 34,
@@ -2556,9 +3350,16 @@
           "transformer",
           "vlm"
         ],
-        "pushed_at": "2026-05-01T07:45:16Z",
+        "pushed_at": "2026-05-01T08:32:35Z",
         "created_at": "2018-10-29T13:56:00Z",
-        "description_zh": "🤗 Transformers：面向文本、视觉、音频及多模态前沿机器学习模型的模型定义框架，支持推理与训练。"
+        "description_zh": "🤗 Transformers：面向文本、视觉、音频及多模态前沿机器学习模型的模型定义框架，支持推理与训练。",
+        "features": [
+          "提供统一 API 加载和使用预训练 SOTA 模型，支持文本、视觉、音频、视频和多模态任务",
+          "作为模型定义框架，与训练、推理及生产部署生态深度集成",
+          "通过 pipeline API 实现一行代码完成推理任务",
+          "支持 PyTorch、TensorFlow、Flax 多后端，并可在 CPU/GPU/TPU 上运行",
+          "提供 Trainer 类与 Hugging Face Hub 集成，便于模型微调与分享"
+        ]
       },
       {
         "rank": 35,
@@ -2566,7 +3367,7 @@
         "url": "https://github.com/yt-dlp/yt-dlp",
         "description": "A feature-rich command-line audio/video downloader",
         "language": "Python",
-        "stars": 159960,
+        "stars": 159962,
         "forks": 13264,
         "topics": [
           "cli",
@@ -2579,7 +3380,14 @@
         ],
         "pushed_at": "2026-04-30T22:23:21Z",
         "created_at": "2020-10-26T04:22:55Z",
-        "description_zh": "功能丰富的命令行音视频下载器"
+        "description_zh": "功能丰富的命令行音视频下载器",
+        "features": [
+          "命令行音视频下载工具，支持数千个网站",
+          "提供格式选择、字幕下载、缩略图获取等丰富选项",
+          "支持下载后处理，如格式转换与元数据嵌入",
+          "支持身份认证、地理限制绕过及网络代理配置",
+          "基于 youtube-dl fork，新增大量功能与修复"
+        ]
       },
       {
         "rank": 36,
@@ -2587,7 +3395,7 @@
         "url": "https://github.com/DigitalPlatDev/FreeDomain",
         "description": "DigitalPlat FreeDomain: Free Domain For Everyone",
         "language": "HTML",
-        "stars": 159554,
+        "stars": 159561,
         "forks": 2717,
         "topics": [
           "digitalplat",
@@ -2600,7 +3408,14 @@
         ],
         "pushed_at": "2026-04-24T13:50:28Z",
         "created_at": "2024-05-30T13:23:00Z",
-        "description_zh": "DigitalPlat FreeDomain：人人可用的免费域名"
+        "description_zh": "DigitalPlat FreeDomain：人人可用的免费域名",
+        "features": [
+          "提供 .dpdns.org、.us.kg、.qzz.io 等多种免费域名后缀注册",
+          "支持搭配 Cloudflare、FreeDNS、Hostry 等 DNS 提供商托管",
+          "提供网页 Dashboard 一站式注册和管理域名",
+          "已注册域名超过 50 万个，服务个人与组织用户",
+          "提供域名滥用举报邮箱与 Discord 社区支持"
+        ]
       },
       {
         "rank": 37,
@@ -2608,7 +3423,7 @@
         "url": "https://github.com/Snailclimb/JavaGuide",
         "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
         "language": "Java",
-        "stars": 155355,
+        "stars": 155356,
         "forks": 46155,
         "topics": [
           "agent",
@@ -2627,7 +3442,14 @@
         ],
         "pushed_at": "2026-05-01T00:55:00Z",
         "created_at": "2018-05-07T13:27:00Z",
-        "description_zh": "Java 面试 & 后端通用面试指南，涵盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
+        "description_zh": "Java 面试 & 后端通用面试指南，涵盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+        "features": [
+          "系统梳理 Java 后端面试核心知识点，覆盖基础、并发、JVM 等",
+          "新增 AI 应用开发面试指南，涵盖 Agent、RAG、MCP 协议等考点",
+          "提供 Java 学习路线、面试通关计划及简历与项目经验指南",
+          "配套在线阅读站点 javaguide.cn 与面试突击精简版 PDF",
+          "包含基于 Spring Boot + Spring AI 的 AI 智能面试辅助实战项目"
+        ]
       },
       {
         "rank": 38,
@@ -2635,8 +3457,8 @@
         "url": "https://github.com/521xueweihan/HelloGitHub",
         "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
         "language": "Python",
-        "stars": 154181,
-        "forks": 11756,
+        "stars": 154186,
+        "forks": 11757,
         "topics": [
           "awesome",
           "github",
@@ -2645,7 +3467,13 @@
         ],
         "pushed_at": "2026-04-28T00:48:03Z",
         "created_at": "2016-05-04T06:24:11Z",
-        "description_zh": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。"
+        "description_zh": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。",
+        "features": [
+          "每月 28 号以月刊形式分享 GitHub 上有趣、入门级的开源项目",
+          "内容涵盖开源书籍、实战项目、企业级项目等多种类型",
+          "提供官网与微信公众号等多渠道阅读体验",
+          "支持中文、英文、日文多语言版本"
+        ]
       },
       {
         "rank": 39,
@@ -2653,12 +3481,18 @@
         "url": "https://github.com/anomalyco/opencode",
         "description": "The open source coding agent.",
         "language": "TypeScript",
-        "stars": 152750,
-        "forks": 17625,
+        "stars": 152767,
+        "forks": 17629,
         "topics": [],
         "pushed_at": "2026-05-01T07:26:22Z",
         "created_at": "2025-04-30T20:08:00Z",
-        "description_zh": "开源编程智能体。"
+        "description_zh": "开源编程智能体。",
+        "features": [
+          "开源 AI 编码 agent，提供终端 UI 交互体验",
+          "支持多平台安装：npm、brew、scoop、pacman、nix 等包管理器",
+          "提供桌面应用程序（Beta），支持多平台下载",
+          "支持 20+ 种语言的多语言 README 文档"
+        ]
       },
       {
         "rank": 40,
@@ -2666,8 +3500,8 @@
         "url": "https://github.com/airbnb/javascript",
         "description": "JavaScript Style Guide",
         "language": "JavaScript",
-        "stars": 148118,
-        "forks": 26703,
+        "stars": 148119,
+        "forks": 26702,
         "topics": [
           "arrow-functions",
           "es2015",
@@ -2686,7 +3520,14 @@
         ],
         "pushed_at": "2026-04-16T19:24:09Z",
         "created_at": "2012-11-01T23:13:50Z",
-        "description_zh": "JavaScript 风格指南"
+        "description_zh": "JavaScript 风格指南",
+        "features": [
+          "覆盖 ES6+ 全面 JavaScript 编码规范，含变量、函数、类、模块等",
+          "提供配套 eslint-config-airbnb 规则包，可直接在项目中启用",
+          "包含 React、CSS-in-JavaScript 等扩展风格指南",
+          "基于 Babel 与 babel-preset-airbnb，支持现代语法与 polyfill",
+          "拥有多语言翻译版本，被业界广泛采用"
+        ]
       },
       {
         "rank": 41,
@@ -2695,7 +3536,7 @@
         "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
         "language": "Python",
         "stars": 147580,
-        "forks": 8886,
+        "forks": 8887,
         "topics": [
           "agents",
           "chatgpt",
@@ -2706,7 +3547,15 @@
         ],
         "pushed_at": "2026-05-01T04:12:19Z",
         "created_at": "2023-02-08T22:28:03Z",
-        "description_zh": "Langflow 是用于构建和部署 AI 智能体及工作流的强大工具。"
+        "description_zh": "Langflow 是用于构建和部署 AI 智能体及工作流的强大工具。",
+        "features": [
+          "可视化构建界面，快速创建和迭代 AI agent 与工作流",
+          "支持 Python 源代码自定义任意组件",
+          "内置交互式 playground，逐步测试和调优流程",
+          "多 agent 编排，支持会话管理与检索",
+          "一键部署为 API 或 MCP server，将流程转为工具",
+          "集成 LangSmith、LangFuse 等可观测性工具"
+        ]
       },
       {
         "rank": 42,
@@ -2715,11 +3564,18 @@
         "description": "Command-line program to download videos from YouTube.com and other video sites",
         "language": "Python",
         "stars": 140166,
-        "forks": 10621,
+        "forks": 10623,
         "topics": [],
         "pushed_at": "2026-02-19T16:45:25Z",
         "created_at": "2010-10-31T14:35:07Z",
-        "description_zh": "用于从 YouTube.com 及其他视频网站下载视频的命令行程序"
+        "description_zh": "用于从 YouTube.com 及其他视频网站下载视频的命令行程序",
+        "features": [
+          "命令行下载 YouTube 及多平台视频，支持 Unix、Windows、macOS",
+          "支持灵活的 format selection 与 output template 自定义输出",
+          "支持 playlist 批量下载与错误跳过等视频选择选项",
+          "可作为 Python 模块嵌入到其他程序中使用",
+          "跨 Python 2.6+/3.2+ 平台无关，纯命令行工具"
+        ]
       },
       {
         "rank": 43,
@@ -2727,7 +3583,7 @@
         "url": "https://github.com/langgenius/dify",
         "description": "Production-ready platform for agentic workflow development.",
         "language": "TypeScript",
-        "stars": 139784,
+        "stars": 139785,
         "forks": 21922,
         "topics": [
           "agent",
@@ -2753,7 +3609,15 @@
         ],
         "pushed_at": "2026-04-30T21:47:22Z",
         "created_at": "2023-04-12T07:40:24Z",
-        "description_zh": "用于 agentic 工作流开发的生产级平台。"
+        "description_zh": "用于 agentic 工作流开发的生产级平台。",
+        "features": [
+          "可视化 Workflow 画布编排 AI 应用与 agent 流程",
+          "内置 RAG pipeline，支持文档摄取与向量检索",
+          "Agent 框架集成 50+ 内置工具，支持自定义扩展",
+          "统一接入数百种 LLM，提供 Prompt IDE 与模型管理",
+          "提供 Backend-as-a-Service API，便于嵌入业务系统",
+          "内置 LLMOps 监控，跟踪日志与应用性能"
+        ]
       },
       {
         "rank": 44,
@@ -2775,7 +3639,14 @@
         ],
         "pushed_at": "2026-04-30T11:09:17Z",
         "created_at": "2017-11-21T18:00:27Z",
-        "description_zh": "显示并控制你的 Android 设备"
+        "description_zh": "显示并控制你的 Android 设备",
+        "features": [
+          "通过 USB 或 TCP/IP 镜像 Android 设备屏幕和音频，无需 root",
+          "支持键盘鼠标控制设备，提供 HID 物理键鼠和 gamepad 模拟",
+          "支持音频转发、录制、虚拟显示和摄像头镜像",
+          "跨平台运行于 Linux、Windows 和 macOS，启动快、延迟低",
+          "支持双向复制粘贴、OTG 模式及 V4L2 网络摄像头映射"
+        ]
       },
       {
         "rank": 45,
@@ -2783,7 +3654,7 @@
         "url": "https://github.com/vercel/next.js",
         "description": "The React Framework",
         "language": "JavaScript",
-        "stars": 139239,
+        "stars": 139238,
         "forks": 30993,
         "topics": [
           "blog",
@@ -2803,7 +3674,12 @@
         ],
         "pushed_at": "2026-05-01T05:00:01Z",
         "created_at": "2016-10-05T23:32:51Z",
-        "description_zh": "React 框架"
+        "description_zh": "React 框架",
+        "features": [
+          "基于 React 构建全栈 web 应用的 framework",
+          "集成 Rust-based JavaScript 工具链，提供极速构建",
+          "扩展最新 React 特性，支持服务端与客户端渲染"
+        ]
       },
       {
         "rank": 46,
@@ -2811,7 +3687,7 @@
         "url": "https://github.com/yangshun/tech-interview-handbook",
         "description": "Curated coding interview preparation materials for busy software engineers",
         "language": "TypeScript",
-        "stars": 139216,
+        "stars": 139218,
         "forks": 16546,
         "topics": [
           "algorithm",
@@ -2827,14 +3703,21 @@
         ],
         "pushed_at": "2026-04-05T23:58:25Z",
         "created_at": "2016-07-05T05:00:48Z",
-        "description_zh": "为忙碌的软件工程师精选的编程面试准备资料"
+        "description_zh": "为忙碌的软件工程师精选的编程面试准备资料",
+        "features": [
+          "精选技术面试备考资料，专为忙碌工程师打造",
+          "提供 Grind 75 与 Blind 75 高频 LeetCode 题目清单",
+          "涵盖编程面试最佳实践、Do's 和 Don'ts 速查表",
+          "按主题分类的算法 cheatsheet 与解题技巧",
+          "包含简历指南、行为面试题及前端面试准备"
+        ]
       },
       {
         "rank": 47,
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
         "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-        "stars": 136477,
+        "stars": 136476,
         "forks": 34101,
         "topics": [
           "ai",
@@ -2860,7 +3743,8 @@
         ],
         "pushed_at": "2026-04-29T14:57:40Z",
         "created_at": "2025-03-05T16:38:29Z",
-        "description_zh": "完整收录 Augment Code、Claude Code、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、Lovable、Manus、NotionAI、Orchids.app、Perplexity、Poke、Qoder、Replit、Same.dev、Trae、Traycer AI、VSCode Agent、Warp.dev、Windsurf、Xcode、Z.ai Code、Dia 及 v0（含其他开源项目）的系统提示词、内部工具与 AI 模型"
+        "description_zh": "完整收录 Augment Code、Claude Code、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、Lovable、Manus、NotionAI、Orchids.app、Perplexity、Poke、Qoder、Replit、Same.dev、Trae、Traycer AI、VSCode Agent、Warp.dev、Windsurf、Xcode、Z.ai Code、Dia 及 v0（含其他开源项目）的系统提示词、内部工具与 AI 模型",
+        "features": []
       },
       {
         "rank": 48,
@@ -2868,8 +3752,8 @@
         "url": "https://github.com/langchain-ai/langchain",
         "description": "The agent engineering platform",
         "language": "Python",
-        "stars": 135542,
-        "forks": 22400,
+        "stars": 135545,
+        "forks": 22401,
         "topics": [
           "agents",
           "ai",
@@ -2891,9 +3775,16 @@
           "python",
           "rag"
         ],
-        "pushed_at": "2026-04-30T21:57:57Z",
+        "pushed_at": "2026-05-01T08:40:47Z",
         "created_at": "2022-10-17T02:58:36Z",
-        "description_zh": "智能体工程平台"
+        "description_zh": "智能体工程平台",
+        "features": [
+          "构建 agent 与 LLM 应用的统一 framework，可链式组合组件与第三方集成",
+          "通过 init_chat_model 统一接口快速调用各类 chat model",
+          "与 LangGraph 集成，支持低层级 agent 编排与复杂工作流",
+          "与 Deep Agents 协同，实现规划、子 agent 与文件系统能力",
+          "与 LangSmith 无缝衔接，提供评测、可观测性与部署能力"
+        ]
       },
       {
         "rank": 49,
@@ -2901,7 +3792,7 @@
         "url": "https://github.com/open-webui/open-webui",
         "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
         "language": "Python",
-        "stars": 135024,
+        "stars": 135029,
         "forks": 19200,
         "topics": [
           "ai",
@@ -2922,7 +3813,14 @@
         ],
         "pushed_at": "2026-05-01T02:21:15Z",
         "created_at": "2023-10-06T22:08:27Z",
-        "description_zh": "用户友好的 AI 界面（支持 Ollama、OpenAI API 等）"
+        "description_zh": "用户友好的 AI 界面（支持 Ollama、OpenAI API 等）",
+        "features": [
+          "支持 Ollama 和 OpenAI 兼容 API，集成 LMStudio、GroqCloud、Mistral 等多种 LLM 服务",
+          "内置 RAG 推理引擎，提供完整的本地 AI 部署方案",
+          "支持 Docker、Kubernetes 一键部署，可完全离线运行",
+          "精细化的用户权限和用户组管理，保障多用户安全使用",
+          "响应式设计与 PWA 支持，跨桌面和移动端无缝体验"
+        ]
       },
       {
         "rank": 50,
@@ -2931,7 +3829,7 @@
         "description": "The Go programming language",
         "language": "Go",
         "stars": 133697,
-        "forks": 18998,
+        "forks": 18999,
         "topics": [
           "go",
           "golang",
@@ -2940,7 +3838,13 @@
         ],
         "pushed_at": "2026-05-01T01:29:20Z",
         "created_at": "2014-08-19T04:33:40Z",
-        "description_zh": "Go 编程语言"
+        "description_zh": "Go 编程语言",
+        "features": [
+          "开源编程语言，专为构建简洁、可靠、高效的软件而设计",
+          "提供官方二进制发行版，支持多平台快速安装",
+          "支持从源码安装，适配未提供二进制版本的系统架构",
+          "采用 BSD-style 许可证，源代码完全开放"
+        ]
       }
     ],
     "ai": [
@@ -2950,8 +3854,8 @@
         "url": "https://github.com/openclaw/openclaw",
         "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
         "language": "TypeScript",
-        "stars": 366904,
-        "forks": 75389,
+        "stars": 366919,
+        "forks": 75392,
         "topics": [
           "ai",
           "assistant",
@@ -2961,9 +3865,16 @@
           "own-your-data",
           "personal"
         ],
-        "pushed_at": "2026-05-01T07:56:29Z",
+        "pushed_at": "2026-05-01T08:45:01Z",
         "created_at": "2025-11-24T10:16:47Z",
-        "description_zh": "你的专属 AI 个人助手。任意系统，任意平台。lobster 之道。🦞"
+        "description_zh": "你的专属 AI 个人助手。任意系统，任意平台。lobster 之道。🦞",
+        "features": [
+          "在自有设备上运行的个人 AI 助手，支持本地化、快速、常驻服务",
+          "支持 WhatsApp、Telegram、Slack、Discord、iMessage、微信等 20+ 通讯渠道",
+          "在 macOS/iOS/Android 上支持语音听说，并可渲染实时 Canvas",
+          "通过 `openclaw onboard` CLI 引导式配置 gateway、workspace、channels 和 skills",
+          "跨平台支持 macOS、Linux 和 Windows（WSL2），兼容 npm、pnpm、bun"
+        ]
       },
       {
         "rank": 16,
@@ -2971,8 +3882,8 @@
         "url": "https://github.com/tensorflow/tensorflow",
         "description": "An Open Source Machine Learning Framework for Everyone",
         "language": "C++",
-        "stars": 194944,
-        "forks": 75304,
+        "stars": 194946,
+        "forks": 75307,
         "topics": [
           "deep-learning",
           "deep-neural-networks",
@@ -2985,7 +3896,14 @@
         ],
         "pushed_at": "2026-05-01T07:09:59Z",
         "created_at": "2015-11-07T01:19:20Z",
-        "description_zh": "面向所有人的开源机器学习框架"
+        "description_zh": "面向所有人的开源机器学习框架",
+        "features": [
+          "端到端开源机器学习平台，覆盖研究与生产部署全流程",
+          "提供稳定的 Python 和 C++ API，支持多语言接口",
+          "拥有丰富的工具、库和社区生态扩展",
+          "支持 GPU 加速、Docker 容器及源码构建多种安装方式",
+          "适用于神经网络研究及通用机器学习应用开发"
+        ]
       },
       {
         "rank": 19,
@@ -2993,7 +3911,7 @@
         "url": "https://github.com/n8n-io/n8n",
         "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
         "language": "TypeScript",
-        "stars": 186320,
+        "stars": 186322,
         "forks": 57269,
         "topics": [
           "ai",
@@ -3017,9 +3935,16 @@
           "workflow",
           "workflow-automation"
         ],
-        "pushed_at": "2026-05-01T07:43:38Z",
+        "pushed_at": "2026-05-01T08:44:37Z",
         "created_at": "2019-06-22T09:24:21Z",
-        "description_zh": "公平代码的工作流自动化平台，原生集成 AI 能力。可视化搭建与自定义代码结合，支持自托管或云端，400+ 集成。"
+        "description_zh": "公平代码的工作流自动化平台，原生集成 AI 能力。可视化搭建与自定义代码结合，支持自托管或云端，400+ 集成。",
+        "features": [
+          "支持 400+ 集成与 900+ 现成工作流模板",
+          "可编写 JavaScript/Python 代码或使用可视化界面构建工作流",
+          "基于 LangChain 构建 AI agent 工作流，支持自有数据与模型",
+          "fair-code 许可，支持自托管部署或使用云服务",
+          "面向企业：高级权限管理、SSO 与离网部署"
+        ]
       },
       {
         "rank": 22,
@@ -3027,7 +3952,7 @@
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
         "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
         "language": "Python",
-        "stars": 183918,
+        "stars": 183921,
         "forks": 46236,
         "topics": [
           "agentic-ai",
@@ -3044,7 +3969,13 @@
         ],
         "pushed_at": "2026-05-01T07:57:08Z",
         "created_at": "2023-03-16T09:21:07Z",
-        "description_zh": "AutoGPT 致力于让人人都能使用和构建 AI。我们的使命是提供工具，让你专注于真正重要的事情。"
+        "description_zh": "AutoGPT 致力于让人人都能使用和构建 AI。我们的使命是提供工具，让你专注于真正重要的事情。",
+        "features": [
+          "创建、部署和管理自动化复杂工作流的持续 AI agent",
+          "支持本地自托管或加入云端 beta 等待列表",
+          "提供一键安装脚本，快速完成本地部署",
+          "基于 Docker 的跨平台部署，支持 Linux、macOS 和 Windows"
+        ]
       },
       {
         "rank": 30,
@@ -3052,8 +3983,8 @@
         "url": "https://github.com/affaan-m/everything-claude-code",
         "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
         "language": "JavaScript",
-        "stars": 171128,
-        "forks": 26524,
+        "stars": 171154,
+        "forks": 26528,
         "topics": [
           "ai-agents",
           "anthropic",
@@ -3066,7 +3997,14 @@
         ],
         "pushed_at": "2026-04-30T16:25:17Z",
         "created_at": "2026-01-18T00:51:51Z",
-        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。"
+        "description_zh": "智能体框架性能优化系统。为 Claude Code、Codex、Opencode、Cursor 等提供技能、直觉、记忆、安全性及研究优先的开发能力。",
+        "features": [
+          "面向 AI agent harness 的性能优化系统，含 skills、hooks、rules 与 MCP 配置",
+          "跨 Claude Code、Codex、Cursor、OpenCode、Gemini 等多种 AI agent harness 通用",
+          "提供 ecc-universal 与 ecc-agentshield 两款 npm 包，并配套 GitHub App",
+          "内置安全扫描、记忆优化与持续学习能力，支持 research-first 开发流程",
+          "提供生产级 agents、skills 及遗留命令 shim，多语言生态覆盖 12+ 种"
+        ]
       },
       {
         "rank": 31,
@@ -3074,7 +4012,7 @@
         "url": "https://github.com/ollama/ollama",
         "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
         "language": "Go",
-        "stars": 170449,
+        "stars": 170458,
         "forks": 15915,
         "topics": [
           "deepseek",
@@ -3095,7 +4033,14 @@
         ],
         "pushed_at": "2026-05-01T02:21:15Z",
         "created_at": "2023-06-26T19:39:32Z",
-        "description_zh": "快速运行 Kimi-K2.5、GLM-5、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型。"
+        "description_zh": "快速运行 Kimi-K2.5、GLM-5、MiniMax、DeepSeek、gpt-oss、Qwen、Gemma 等模型。",
+        "features": [
+          "本地运行开源 LLM，支持 macOS、Windows、Linux 及 Docker 部署",
+          "提供 REST API 用于运行和管理模型，附带 Python 和 JavaScript SDK",
+          "集成 Claude Code、Codex、Copilot CLI 等多种编码 agent",
+          "通过 OpenClaw 将 Ollama 接入 WhatsApp、Telegram、Slack 等平台作为 AI 助手",
+          "内置模型库支持 Gemma 3 等主流开源模型一键运行"
+        ]
       },
       {
         "rank": 32,
@@ -3103,7 +4048,7 @@
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
         "description": "Stable Diffusion web UI",
         "language": "Python",
-        "stars": 162676,
+        "stars": 162677,
         "forks": 30300,
         "topics": [
           "ai",
@@ -3125,7 +4070,14 @@
         ],
         "pushed_at": "2026-03-02T07:00:53Z",
         "created_at": "2022-08-22T14:05:26Z",
-        "description_zh": "Stable Diffusion Web UI"
+        "description_zh": "Stable Diffusion Web UI",
+        "features": [
+          "基于 Gradio 的 Stable Diffusion Web 界面，支持 txt2img 与 img2img",
+          "支持 Outpainting、Inpainting、Color Sketch 等多种绘图模式",
+          "内置 GFPGAN、CodeFormer、RealESRGAN、SwinIR 等人脸修复与超分模型",
+          "支持 Textual Inversion 训练与多 embedding 使用",
+          "提供 Attention 权重语法、X/Y/Z plot、Prompt Matrix 等高级提示词功能"
+        ]
       },
       {
         "rank": 33,
@@ -3133,8 +4085,8 @@
         "url": "https://github.com/f/prompts.chat",
         "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
         "language": "HTML",
-        "stars": 161280,
-        "forks": 21054,
+        "stars": 161282,
+        "forks": 21053,
         "topics": [
           "ai",
           "artificial-intelligence",
@@ -3157,7 +4109,14 @@
         ],
         "pushed_at": "2026-05-01T04:27:46Z",
         "created_at": "2022-12-05T13:54:13Z",
-        "description_zh": "前身为 Awesome ChatGPT Prompts。分享、发现并收集社区 prompt。免费开源——可自托管部署，为组织提供完全隐私保障。"
+        "description_zh": "前身为 Awesome ChatGPT Prompts。分享、发现并收集社区 prompt。免费开源——可自托管部署，为组织提供完全隐私保障。",
+        "features": [
+          "收录全球最大开源 AI prompt 库,适配 ChatGPT、Claude、Gemini 等主流 LLM",
+          "通过 prompts.chat 网站提供在线浏览和搜索 prompt 功能",
+          "以 Hugging Face dataset 形式发布,支持开发者直接调用",
+          "支持自托管部署,可自定义运行 prompt 库",
+          "提供配套书籍《The Art of ChatGPT Prompting》深入讲解 prompt 技巧"
+        ]
       },
       {
         "rank": 34,
@@ -3188,9 +4147,16 @@
           "transformer",
           "vlm"
         ],
-        "pushed_at": "2026-05-01T07:45:16Z",
+        "pushed_at": "2026-05-01T08:32:35Z",
         "created_at": "2018-10-29T13:56:00Z",
-        "description_zh": "🤗 Transformers：面向文本、视觉、音频及多模态前沿机器学习模型的模型定义框架，支持推理与训练。"
+        "description_zh": "🤗 Transformers：面向文本、视觉、音频及多模态前沿机器学习模型的模型定义框架，支持推理与训练。",
+        "features": [
+          "提供统一 API 加载和使用预训练 SOTA 模型，支持文本、视觉、音频、视频和多模态任务",
+          "作为模型定义框架，与训练、推理及生产部署生态深度集成",
+          "通过 pipeline API 实现一行代码完成推理任务",
+          "支持 PyTorch、TensorFlow、Flax 多后端，并可在 CPU/GPU/TPU 上运行",
+          "提供 Trainer 类与 Hugging Face Hub 集成，便于模型微调与分享"
+        ]
       },
       {
         "rank": 37,
@@ -3198,7 +4164,7 @@
         "url": "https://github.com/Snailclimb/JavaGuide",
         "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
         "language": "Java",
-        "stars": 155355,
+        "stars": 155356,
         "forks": 46155,
         "topics": [
           "agent",
@@ -3217,7 +4183,14 @@
         ],
         "pushed_at": "2026-05-01T00:55:00Z",
         "created_at": "2018-05-07T13:27:00Z",
-        "description_zh": "Java 面试 & 后端通用面试指南，涵盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发"
+        "description_zh": "Java 面试 & 后端通用面试指南，涵盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+        "features": [
+          "系统梳理 Java 后端面试核心知识点，覆盖基础、并发、JVM 等",
+          "新增 AI 应用开发面试指南，涵盖 Agent、RAG、MCP 协议等考点",
+          "提供 Java 学习路线、面试通关计划及简历与项目经验指南",
+          "配套在线阅读站点 javaguide.cn 与面试突击精简版 PDF",
+          "包含基于 Spring Boot + Spring AI 的 AI 智能面试辅助实战项目"
+        ]
       },
       {
         "rank": 39,
@@ -3225,12 +4198,18 @@
         "url": "https://github.com/anomalyco/opencode",
         "description": "The open source coding agent.",
         "language": "TypeScript",
-        "stars": 152750,
-        "forks": 17625,
+        "stars": 152767,
+        "forks": 17629,
         "topics": [],
         "pushed_at": "2026-05-01T07:26:22Z",
         "created_at": "2025-04-30T20:08:00Z",
-        "description_zh": "开源编程智能体。"
+        "description_zh": "开源编程智能体。",
+        "features": [
+          "开源 AI 编码 agent，提供终端 UI 交互体验",
+          "支持多平台安装：npm、brew、scoop、pacman、nix 等包管理器",
+          "提供桌面应用程序（Beta），支持多平台下载",
+          "支持 20+ 种语言的多语言 README 文档"
+        ]
       },
       {
         "rank": 41,
@@ -3239,7 +4218,7 @@
         "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
         "language": "Python",
         "stars": 147580,
-        "forks": 8886,
+        "forks": 8887,
         "topics": [
           "agents",
           "chatgpt",
@@ -3250,7 +4229,15 @@
         ],
         "pushed_at": "2026-05-01T04:12:19Z",
         "created_at": "2023-02-08T22:28:03Z",
-        "description_zh": "Langflow 是用于构建和部署 AI 智能体及工作流的强大工具。"
+        "description_zh": "Langflow 是用于构建和部署 AI 智能体及工作流的强大工具。",
+        "features": [
+          "可视化构建界面，快速创建和迭代 AI agent 与工作流",
+          "支持 Python 源代码自定义任意组件",
+          "内置交互式 playground，逐步测试和调优流程",
+          "多 agent 编排，支持会话管理与检索",
+          "一键部署为 API 或 MCP server，将流程转为工具",
+          "集成 LangSmith、LangFuse 等可观测性工具"
+        ]
       },
       {
         "rank": 43,
@@ -3258,7 +4245,7 @@
         "url": "https://github.com/langgenius/dify",
         "description": "Production-ready platform for agentic workflow development.",
         "language": "TypeScript",
-        "stars": 139784,
+        "stars": 139785,
         "forks": 21922,
         "topics": [
           "agent",
@@ -3284,14 +4271,22 @@
         ],
         "pushed_at": "2026-04-30T21:47:22Z",
         "created_at": "2023-04-12T07:40:24Z",
-        "description_zh": "用于 agentic 工作流开发的生产级平台。"
+        "description_zh": "用于 agentic 工作流开发的生产级平台。",
+        "features": [
+          "可视化 Workflow 画布编排 AI 应用与 agent 流程",
+          "内置 RAG pipeline，支持文档摄取与向量检索",
+          "Agent 框架集成 50+ 内置工具，支持自定义扩展",
+          "统一接入数百种 LLM，提供 Prompt IDE 与模型管理",
+          "提供 Backend-as-a-Service API，便于嵌入业务系统",
+          "内置 LLMOps 监控，跟踪日志与应用性能"
+        ]
       },
       {
         "rank": 47,
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
         "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-        "stars": 136477,
+        "stars": 136476,
         "forks": 34101,
         "topics": [
           "ai",
@@ -3317,7 +4312,8 @@
         ],
         "pushed_at": "2026-04-29T14:57:40Z",
         "created_at": "2025-03-05T16:38:29Z",
-        "description_zh": "完整收录 Augment Code、Claude Code、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、Lovable、Manus、NotionAI、Orchids.app、Perplexity、Poke、Qoder、Replit、Same.dev、Trae、Traycer AI、VSCode Agent、Warp.dev、Windsurf、Xcode、Z.ai Code、Dia 及 v0（含其他开源项目）的系统提示词、内部工具与 AI 模型"
+        "description_zh": "完整收录 Augment Code、Claude Code、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、Lovable、Manus、NotionAI、Orchids.app、Perplexity、Poke、Qoder、Replit、Same.dev、Trae、Traycer AI、VSCode Agent、Warp.dev、Windsurf、Xcode、Z.ai Code、Dia 及 v0（含其他开源项目）的系统提示词、内部工具与 AI 模型",
+        "features": []
       },
       {
         "rank": 48,
@@ -3325,8 +4321,8 @@
         "url": "https://github.com/langchain-ai/langchain",
         "description": "The agent engineering platform",
         "language": "Python",
-        "stars": 135542,
-        "forks": 22400,
+        "stars": 135545,
+        "forks": 22401,
         "topics": [
           "agents",
           "ai",
@@ -3348,9 +4344,16 @@
           "python",
           "rag"
         ],
-        "pushed_at": "2026-04-30T21:57:57Z",
+        "pushed_at": "2026-05-01T08:40:47Z",
         "created_at": "2022-10-17T02:58:36Z",
-        "description_zh": "智能体工程平台"
+        "description_zh": "智能体工程平台",
+        "features": [
+          "构建 agent 与 LLM 应用的统一 framework，可链式组合组件与第三方集成",
+          "通过 init_chat_model 统一接口快速调用各类 chat model",
+          "与 LangGraph 集成，支持低层级 agent 编排与复杂工作流",
+          "与 Deep Agents 协同，实现规划、子 agent 与文件系统能力",
+          "与 LangSmith 无缝衔接，提供评测、可观测性与部署能力"
+        ]
       },
       {
         "rank": 49,
@@ -3358,7 +4361,7 @@
         "url": "https://github.com/open-webui/open-webui",
         "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
         "language": "Python",
-        "stars": 135024,
+        "stars": 135029,
         "forks": 19200,
         "topics": [
           "ai",
@@ -3379,7 +4382,14 @@
         ],
         "pushed_at": "2026-05-01T02:21:15Z",
         "created_at": "2023-10-06T22:08:27Z",
-        "description_zh": "用户友好的 AI 界面（支持 Ollama、OpenAI API 等）"
+        "description_zh": "用户友好的 AI 界面（支持 Ollama、OpenAI API 等）",
+        "features": [
+          "支持 Ollama 和 OpenAI 兼容 API，集成 LMStudio、GroqCloud、Mistral 等多种 LLM 服务",
+          "内置 RAG 推理引擎，提供完整的本地 AI 部署方案",
+          "支持 Docker、Kubernetes 一键部署，可完全离线运行",
+          "精细化的用户权限和用户组管理，保障多用户安全使用",
+          "响应式设计与 PWA 支持，跨桌面和移动端无缝体验"
+        ]
       }
     ]
   }

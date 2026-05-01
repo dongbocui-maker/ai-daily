@@ -35,21 +35,15 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: pnpm sync
 
-      - name: Sync GitHub Trending
-        env:
-          LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx tsx scripts/github-trending.ts
-        continue-on-error: true
+      # GitHub Trending 同步已拆到 .github/workflows/github-trending.yml
+      # （独立调度：日榜每天 / 周榜+年榜每周一 / 月榜每月1号）
 
       - name: Commit & push if changed
         run: |
-          if [[ -n "$(git status --porcelain src/data/)" ]]; then
+          if [[ -n "$(git status --porcelain src/data/daily)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/
+            git add src/data/daily
             git commit -m "chore(data): daily sync $(TZ=Asia/Shanghai date +%F)"
             git push
             echo "::notice::Daily content synced and pushed."

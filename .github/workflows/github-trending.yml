@@ -1,0 +1,91 @@
+name: GitHub Trending Sync
+
+# 兜底用：本地 VM cron 失败时，GH Actions 在更晚的时间补跑
+# 频率与 cron 推荐一致：日 / 周一 / 月 1 号 / 周一年榜
+on:
+  schedule:
+    # 日榜兜底：每天 13:00 北京 = UTC 05:00（本地 09:35 失败兜底）
+    - cron: '0 5 * * *'
+    # 周榜 + 年榜兜底：每周一 14:00 北京 = UTC 06:00 周一
+    - cron: '0 6 * * 1'
+    # 月榜兜底：每月 1 号 15:00 北京 = UTC 07:00
+    - cron: '0 7 1 * *'
+  workflow_dispatch:
+    inputs:
+      board:
+        description: '榜单类型（daily/weekly/monthly/yearly/all）'
+        required: false
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+          - monthly
+          - yearly
+          - all
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Determine board(s) to run
+        id: board
+        run: |
+          # 手动触发：用 input
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "boards=${{ github.event.inputs.board }}" >> $GITHUB_OUTPUT
+          else
+            # schedule 触发：根据 cron 表达式判断
+            case "${{ github.event.schedule }}" in
+              "0 5 * * *")     echo "boards=daily" >> $GITHUB_OUTPUT ;;
+              "0 6 * * 1")     echo "boards=weekly+yearly" >> $GITHUB_OUTPUT ;;
+              "0 7 1 * *")     echo "boards=monthly" >> $GITHUB_OUTPUT ;;
+              *)               echo "boards=daily" >> $GITHUB_OUTPUT ;;
+            esac
+          fi
+
+      - name: Run trending sync
+        env:
+          LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_PROTOCOL: ${{ secrets.LLM_PROTOCOL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BOARDS="${{ steps.board.outputs.boards }}"
+          if [[ "$BOARDS" == "all" ]]; then
+            npx tsx scripts/github-trending.ts
+          else
+            for board in ${BOARDS//+/ }; do
+              echo "::group::Running $board"
+              npx tsx scripts/github-trending.ts --${board}-only
+              echo "::endgroup::"
+            done
+          fi
+        continue-on-error: true
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain src/data/github)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/github
+            git commit -m "chore(github): trending sync $(TZ=Asia/Shanghai date +%F) [GH Actions]"
+            git push
+            echo "::notice::Trending boards synced and pushed."
+          else
+            echo "::notice::No changes today."
+          fi

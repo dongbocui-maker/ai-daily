@@ -216,44 +216,78 @@ function saveTranslationCache(cache: TranslationCache) {
   writeFileSync(TRANSLATION_CACHE_PATH, JSON.stringify(cache, null, 2));
 }
 
+type LLMProtocol = 'openai' | 'anthropic';
+
+interface LLMConfig {
+  apiBase: string;
+  apiKey: string;
+  model: string;
+  protocol: LLMProtocol;
+}
+
+const SYSTEM_PROMPT = '你是一名英中翻译。把给定的 GitHub 仓库 description 翻译成中文。规则：\n1. 简洁自然，不超过原文长度\n2. 保留专业术语英文（API、SDK、CLI、LLM、RAG 等）\n3. 不加任何解释或前缀\n4. 直接输出中文译文';
+
+async function callOpenAI(llm: LLMConfig, text: string): Promise<string> {
+  const res = await fetch(`${llm.apiBase.replace(/\/$/, '')}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${llm.apiKey}`,
+    },
+    body: JSON.stringify({
+      model: llm.model,
+      temperature: 0.1,
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'user', content: text },
+      ],
+    }),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  return (data.choices?.[0]?.message?.content ?? '').trim();
+}
+
+async function callAnthropic(llm: LLMConfig, text: string): Promise<string> {
+  const res = await fetch(`${llm.apiBase.replace(/\/$/, '')}/messages`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': llm.apiKey,
+      'anthropic-version': '2023-06-01',
+      Authorization: `Bearer ${llm.apiKey}`, // Azure 需要 Bearer
+    },
+    body: JSON.stringify({
+      model: llm.model,
+      max_tokens: 200,
+      system: SYSTEM_PROMPT,
+      messages: [{ role: 'user', content: text }],
+    }),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  // Anthropic 响应格式：{ content: [{ type: 'text', text: '...' }] }
+  const block = data.content?.[0];
+  return (block?.text ?? '').trim();
+}
+
 async function translateText(
   text: string,
   cache: TranslationCache,
-  llm: { apiBase: string; apiKey: string; model: string } | null,
+  llm: LLMConfig | null,
 ): Promise<string> {
   if (!text.trim()) return '';
   if (cache[text]) return cache[text];
   if (!llm) return ''; // 离线模式：返回空，前端 fallback 显示原文
 
   try {
-    const res = await fetch(`${llm.apiBase.replace(/\/$/, '')}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${llm.apiKey}`,
-      },
-      body: JSON.stringify({
-        model: llm.model,
-        temperature: 0.1,
-        messages: [
-          {
-            role: 'system',
-            content: '你是一名英中翻译。把给定的 GitHub 仓库 description 翻译成中文。规则：\n1. 简洁自然，不超过原文长度\n2. 保留专业术语英文（API、SDK、CLI、LLM、RAG 等）\n3. 不加任何解释或前缀\n4. 直接输出中文译文',
-          },
-          { role: 'user', content: text },
-        ],
-      }),
-    });
-    if (!res.ok) {
-      console.warn(`[translate] HTTP ${res.status}: ${await res.text()}`);
-      return '';
-    }
-    const data = await res.json();
-    const zh = (data.choices?.[0]?.message?.content ?? '').trim();
+    const zh = llm.protocol === 'anthropic'
+      ? await callAnthropic(llm, text)
+      : await callOpenAI(llm, text);
     if (zh) cache[text] = zh;
     return zh;
   } catch (err) {
-    console.warn(`[translate] fail:`, err);
+    console.warn(`[translate] fail (${llm.protocol}):`, err instanceof Error ? err.message : err);
     return '';
   }
 }
@@ -261,7 +295,7 @@ async function translateText(
 async function translateBoard(
   repos: GitHubRepo[],
   cache: TranslationCache,
-  llm: { apiBase: string; apiKey: string; model: string } | null,
+  llm: LLMConfig | null,
 ): Promise<GitHubRepo[]> {
   // 串行限速（避免 rate limit）
   for (const repo of repos) {
@@ -319,11 +353,17 @@ async function main() {
   const onlyDaily = args.includes('--daily-only');
   const skipTranslate = args.includes('--no-translate');
 
-  const llm = (process.env.LLM_API_KEY && process.env.LLM_API_BASE)
+  // Auto-detect protocol: if LLM_PROTOCOL is set, use it; otherwise infer from URL
+  const inferProtocol = (url: string): LLMProtocol => {
+    if (/anthropic|claude/i.test(url)) return 'anthropic';
+    return 'openai';
+  };
+  const llm: LLMConfig | null = (process.env.LLM_API_KEY && process.env.LLM_API_BASE)
     ? {
         apiBase: process.env.LLM_API_BASE,
         apiKey: process.env.LLM_API_KEY,
-        model: process.env.LLM_MODEL ?? 'deepseek-v4-flash',
+        model: process.env.LLM_MODEL ?? 'claude-opus-4-7',
+        protocol: (process.env.LLM_PROTOCOL as LLMProtocol | undefined) ?? inferProtocol(process.env.LLM_API_BASE),
       }
     : null;
 
@@ -332,7 +372,7 @@ async function main() {
   } else if (!llm) {
     console.log('[main] LLM 未配置 (.env 缺 LLM_API_KEY)，跳过翻译');
   } else {
-    console.log(`[main] 使用 ${llm.model} 翻译，cache 路径 ${TRANSLATION_CACHE_PATH}`);
+    console.log(`[main] 使用 ${llm.model} (${llm.protocol}) 翻译，cache 路径 ${TRANSLATION_CACHE_PATH}`);
   }
 
   const cache = loadTranslationCache();

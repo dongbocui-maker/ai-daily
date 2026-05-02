@@ -1,0 +1,377 @@
+{
+  "general": [
+    {
+      "rank": 1,
+      "name": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stars": 59869,
+      "stars_period": 2112,
+      "forks": 11499,
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "pushed_at": "2026-05-01T19:23:24Z",
+      "created_at": "2024-12-28T03:31:08Z",
+      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架",
+      "features": [
+        "多 agent LLM 金融交易框架，模拟真实交易团队协作决策",
+        "支持 GPT、Gemini、Claude、Grok、DeepSeek、Qwen、GLM 等多种 LLM provider",
+        "基于 LangGraph 实现 checkpoint 断点恢复与持久化决策日志",
+        "提供结构化输出的 Research Manager、Trader、Portfolio Manager 等 agent",
+        "支持回测、五级评级、Docker 部署及跨平台稳定性"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "soxoj/maigret",
+      "url": "https://github.com/soxoj/maigret",
+      "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+      "language": "Python",
+      "stars": 21646,
+      "stars_period": 535,
+      "forks": 1510,
+      "topics": [
+        "blueteam",
+        "cli",
+        "cybersecurity",
+        "identification",
+        "infosec",
+        "investigation",
+        "namechecker",
+        "open-source",
+        "osint",
+        "osint-framework",
+        "osint-python",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "scraping",
+        "sherlock",
+        "social-network",
+        "socmint"
+      ],
+      "pushed_at": "2026-04-30T22:14:41Z",
+      "created_at": "2020-06-27T14:16:42Z",
+      "description_zh": "🕵️‍♂️ 通过用户名从 3000+ 网站收集个人档案",
+      "features": [
+        "仅凭 username 在 3000+ 站点搜集个人 dossier，无需 API key",
+        "可作为 Python 库嵌入项目，编程式调用搜索功能",
+        "从主页与站点 API 提取账户信息，并递归搜索发现的新 username",
+        "支持按 tag（站点分类、国家）过滤，检测并部分绕过封锁与 CAPTCHA",
+        "支持 Tor 与 I2P，每日自动更新站点数据库并提供离线回退"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "warpdotdev/warp",
+      "url": "https://github.com/warpdotdev/warp",
+      "description": "Warp is an agentic development environment, born out of the terminal.",
+      "language": "Rust",
+      "stars": 51454,
+      "stars_period": 3401,
+      "forks": 3446,
+      "topics": [
+        "bash",
+        "linux",
+        "macos",
+        "rust",
+        "shell",
+        "terminal",
+        "wasm",
+        "zsh"
+      ],
+      "pushed_at": "2026-05-02T00:29:20Z",
+      "created_at": "2021-07-08T18:48:08Z",
+      "description_zh": "Warp 是一款源自终端的智能体开发环境。",
+      "features": [
+        "基于终端打造的 agentic 开发环境，内置编码 agent",
+        "支持接入 Claude Code、Codex、Gemini CLI 等第三方 CLI agent",
+        "提供 build.warp.dev 仪表板，实时观察 Oz agents 处理 issue 与 PR",
+        "UI 框架采用 MIT 协议，其余代码采用 AGPL v3 开源"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "1jehuang/jcode",
+      "url": "https://github.com/1jehuang/jcode",
+      "description": "Coding Agent Harness",
+      "language": "Rust",
+      "stars": 2355,
+      "stars_period": 403,
+      "forks": 207,
+      "topics": [
+        "ai",
+        "claude",
+        "cli",
+        "coding-agent",
+        "llm",
+        "mcp",
+        "openai",
+        "rust",
+        "terminal",
+        "tui"
+      ],
+      "pushed_at": "2026-05-01T08:52:14Z",
+      "created_at": "2026-01-05T09:43:36Z",
+      "description_zh": "编程 Agent 框架",
+      "features": [
+        "面向多会话工作流的下一代 coding agent harness",
+        "跨平台支持 Linux、macOS 和 Windows，提供一键安装脚本",
+        "极致优化 RAM 占用与启动性能，适合大规模多会话场景",
+        "支持本地 embedding，可灵活开关以控制资源消耗",
+        "高度可定制化，适配不同 provider 与工作流配置"
+      ]
+    },
+    {
+      "rank": 5,
+      "name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "stars": 52539,
+      "stars_period": 3645,
+      "forks": 4393,
+      "topics": [],
+      "pushed_at": "2026-04-30T11:38:13Z",
+      "created_at": "2026-02-03T11:15:53Z",
+      "description_zh": "真正工程师的 Skills。直接来自我的 .claude 目录。",
+      "features": [
+        "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
+        "通过 skills.sh 一键安装并配置到各类 coding agent",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 /grill-me 等技能，主动追问需求避免理解偏差",
+        "基于 /triage 标签实现工单分类管理"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "browserbase/skills",
+      "url": "https://github.com/browserbase/skills",
+      "description": "Claude Agent SDK with a web browsing tool",
+      "language": "JavaScript",
+      "stars": 1176,
+      "stars_period": 334,
+      "forks": 81,
+      "topics": [],
+      "pushed_at": "2026-04-30T00:54:53Z",
+      "created_at": "2025-10-12T08:44:05Z",
+      "description_zh": "带网页浏览工具的 Claude Agent SDK",
+      "features": [
+        "通过 CLI 命令自动化浏览器交互，支持远程 Browserbase session、反爬隐身、验证码破解和住宅代理",
+        "集成官方 bb CLI，管理 Browserbase Functions、sessions、projects、contexts 等平台 API 工作流",
+        "AI 驱动的对抗式 UI 测试，分析 git diff 或探索应用以发现 bug",
+        "诊断浏览器自动化失败问题，分析 bot 检测、选择器、时序、认证并生成站点 playbook",
+        "捕获完整 DevTools CDP trace、截图和 DOM 快照，并按页面拆分为可搜索片段"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "simstudioai/sim",
+      "url": "https://github.com/simstudioai/sim",
+      "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
+      "language": "TypeScript",
+      "stars": 28152,
+      "stars_period": 56,
+      "forks": 3557,
+      "topics": [
+        "agent-workflow",
+        "agentic-workflow",
+        "agents",
+        "ai",
+        "aiagents",
+        "anthropic",
+        "artificial-intelligence",
+        "automation",
+        "chatbot",
+        "deepseek",
+        "gemini",
+        "low-code",
+        "nextjs",
+        "no-code",
+        "openai",
+        "rag",
+        "react",
+        "typescript"
+      ],
+      "pushed_at": "2026-05-02T00:28:31Z",
+      "created_at": "2025-01-05T22:47:49Z",
+      "description_zh": "构建、部署和编排 AI 智能体。Sim 是你的 AI 工作团队的中央智能层。",
+      "features": [
+        "可视化画布构建 AI agent workflow，连接 agent、tool 与 block 即时运行",
+        "集成 1000+ 第三方服务与 LLM，编排 agentic workflow",
+        "开源平台，支持 Docker Compose 一键自托管部署",
+        "支持 Ollama 本地 AI 模型运行"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 175622,
+      "stars_period": 1096,
+      "forks": 15515,
+      "topics": [],
+      "pushed_at": "2026-04-30T22:17:14Z",
+      "created_at": "2025-10-09T19:45:18Z",
+      "description_zh": "一套行之有效的 agentic skills 框架与软件开发方法论。",
+      "features": [
+        "从需求对话中提炼 spec 并分块呈现，供用户审阅确认",
+        "生成强调 TDD、YAGNI、DRY 原则的清晰实现计划",
+        "通过 subagent-driven-development 让 agent 自主执行任务并互相审查",
+        "支持 Claude Code、Codex CLI、Cursor、OpenCode 等多平台一键安装",
+        "技能自动触发，无需额外操作即可赋能 coding agent"
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "Flowseal/zapret-discord-youtube",
+      "url": "https://github.com/Flowseal/zapret-discord-youtube",
+      "description": "",
+      "language": "Batchfile",
+      "stars": 26971,
+      "stars_period": 145,
+      "forks": 2107,
+      "topics": [],
+      "pushed_at": "2026-05-01T21:17:52Z",
+      "created_at": "2024-10-08T20:02:28Z",
+      "features": [
+        "基于 zapret 实现 Discord 与 YouTube 解封绕过封锁",
+        "通过 WinDivert 驱动拦截过滤网络流量绕过 DPI 检测",
+        "提供预配置的 .bat 脚本一键启动，无需手动配置",
+        "可作为 Windows 服务安装实现开机自启",
+        "内置多套策略文件适配不同 ISP 与封锁场景"
+      ]
+    }
+  ],
+  "ai": [
+    {
+      "rank": 1,
+      "name": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stars": 59869,
+      "stars_period": 2112,
+      "forks": 11499,
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "pushed_at": "2026-05-01T19:23:24Z",
+      "created_at": "2024-12-28T03:31:08Z",
+      "description_zh": "TradingAgents：多智能体 LLM 金融交易框架",
+      "features": [
+        "多 agent LLM 金融交易框架，模拟真实交易团队协作决策",
+        "支持 GPT、Gemini、Claude、Grok、DeepSeek、Qwen、GLM 等多种 LLM provider",
+        "基于 LangGraph 实现 checkpoint 断点恢复与持久化决策日志",
+        "提供结构化输出的 Research Manager、Trader、Portfolio Manager 等 agent",
+        "支持回测、五级评级、Docker 部署及跨平台稳定性"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "1jehuang/jcode",
+      "url": "https://github.com/1jehuang/jcode",
+      "description": "Coding Agent Harness",
+      "language": "Rust",
+      "stars": 2355,
+      "stars_period": 403,
+      "forks": 207,
+      "topics": [
+        "ai",
+        "claude",
+        "cli",
+        "coding-agent",
+        "llm",
+        "mcp",
+        "openai",
+        "rust",
+        "terminal",
+        "tui"
+      ],
+      "pushed_at": "2026-05-01T08:52:14Z",
+      "created_at": "2026-01-05T09:43:36Z",
+      "description_zh": "编程 Agent 框架",
+      "features": [
+        "面向多会话工作流的下一代 coding agent harness",
+        "跨平台支持 Linux、macOS 和 Windows，提供一键安装脚本",
+        "极致优化 RAM 占用与启动性能，适合大规模多会话场景",
+        "支持本地 embedding，可灵活开关以控制资源消耗",
+        "高度可定制化，适配不同 provider 与工作流配置"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "browserbase/skills",
+      "url": "https://github.com/browserbase/skills",
+      "description": "Claude Agent SDK with a web browsing tool",
+      "language": "JavaScript",
+      "stars": 1176,
+      "stars_period": 334,
+      "forks": 81,
+      "topics": [],
+      "pushed_at": "2026-04-30T00:54:53Z",
+      "created_at": "2025-10-12T08:44:05Z",
+      "description_zh": "带网页浏览工具的 Claude Agent SDK",
+      "features": [
+        "通过 CLI 命令自动化浏览器交互，支持远程 Browserbase session、反爬隐身、验证码破解和住宅代理",
+        "集成官方 bb CLI，管理 Browserbase Functions、sessions、projects、contexts 等平台 API 工作流",
+        "AI 驱动的对抗式 UI 测试，分析 git diff 或探索应用以发现 bug",
+        "诊断浏览器自动化失败问题，分析 bot 检测、选择器、时序、认证并生成站点 playbook",
+        "捕获完整 DevTools CDP trace、截图和 DOM 快照，并按页面拆分为可搜索片段"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "simstudioai/sim",
+      "url": "https://github.com/simstudioai/sim",
+      "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
+      "language": "TypeScript",
+      "stars": 28152,
+      "stars_period": 56,
+      "forks": 3557,
+      "topics": [
+        "agent-workflow",
+        "agentic-workflow",
+        "agents",
+        "ai",
+        "aiagents",
+        "anthropic",
+        "artificial-intelligence",
+        "automation",
+        "chatbot",
+        "deepseek",
+        "gemini",
+        "low-code",
+        "nextjs",
+        "no-code",
+        "openai",
+        "rag",
+        "react",
+        "typescript"
+      ],
+      "pushed_at": "2026-05-02T00:28:31Z",
+      "created_at": "2025-01-05T22:47:49Z",
+      "description_zh": "构建、部署和编排 AI 智能体。Sim 是你的 AI 工作团队的中央智能层。",
+      "features": [
+        "可视化画布构建 AI agent workflow，连接 agent、tool 与 block 即时运行",
+        "集成 1000+ 第三方服务与 LLM，编排 agentic workflow",
+        "开源平台，支持 Docker Compose 一键自托管部署",
+        "支持 Ollama 本地 AI 模型运行"
+      ]
+    }
+  ]
+}

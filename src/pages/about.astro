@@ -31,16 +31,41 @@ import Footer from '../components/Footer.astro';
           </ul>
 
           <h2 class="text-h2 mb-6">🌐 信息源</h2>
-          <p class="mb-4 leading-relaxed">优先采用以下权威源：</p>
-          <ul class="grid grid-cols-2 gap-2 mb-10 text-sm">
-            <li>· Reuters</li><li>· Bloomberg</li><li>· FT</li><li>· The Information</li>
-            <li>· The Verge</li><li>· VentureBeat</li><li>· TechCrunch</li><li>· Wired</li>
-            <li>· OpenAI / Anthropic</li><li>· Google DeepMind</li><li>· NVIDIA Blog</li><li>· arXiv / GitHub</li>
-            <li>· 36 氪 / 机器之心</li><li>· 量子位 / 虎嗅</li><li>· McKinsey / BCG</li><li>· Gartner / IDC</li>
+          <p class="mb-4 leading-relaxed">本站优先采用以下权威信息源，按类别划分：</p>
+
+          <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">🌍 国际媒体</h3>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6 text-sm">
+            <li>· Reuters</li><li>· Bloomberg</li><li>· FT</li>
+            <li>· WSJ</li><li>· NYT</li><li>· The Guardian</li>
+            <li>· The Information</li><li>· Wired</li><li>· TechCrunch</li>
+            <li>· The Verge</li><li>· VentureBeat</li>
+          </ul>
+
+          <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">🏢 厂商一手源</h3>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6 text-sm">
+            <li>· OpenAI</li><li>· Anthropic</li><li>· Google DeepMind</li>
+            <li>· Microsoft</li><li>· Meta</li><li>· NVIDIA</li>
+            <li>· arXiv</li><li>· GitHub Trending</li>
+          </ul>
+
+          <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">🇨🇳 中文科技媒体</h3>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6 text-sm">
+            <li>· 36氪</li><li>· 机器之心</li><li>· 量子位</li>
+            <li>· 虎嗅</li><li>· 晚点 LatePost</li><li>· 极客公园</li>
+            <li>· InfoQ 中国</li><li>· 雷峰网</li><li>· PingWest 品玩</li>
+            <li>· 钛媒体</li><li>· IT 之家</li><li>· 智东西</li>
+            <li>· 36氪出海</li>
+          </ul>
+
+          <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">📊 咨询与研究机构</h3>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-10 text-sm">
+            <li>· Accenture</li><li>· McKinsey</li><li>· BCG</li>
+            <li>· Gartner</li><li>· IDC</li><li>· Deloitte</li>
+            <li>· PwC</li>
           </ul>
 
           <h2 class="text-h2 mb-6">🤖 生成机制</h2>
-          <p class="mb-4 leading-relaxed">每日 9:30（Asia/Shanghai）自动同步：</p>
+          <p class="mb-4 leading-relaxed">每日清晨（Asia/Shanghai）自动同步：</p>
           <ol class="space-y-2 mb-10 list-decimal list-inside">
             <li>AI Agent 联网搜集过去 24 小时各信息源最新内容</li>
             <li>按四个板块筛选、整合、撰写要点与行业启示</li>

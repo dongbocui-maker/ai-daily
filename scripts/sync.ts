@@ -34,6 +34,7 @@ async function main() {
         apiBase: process.env.LLM_API_BASE ?? 'https://api.openai.com/v1',
         apiKey: process.env.LLM_API_KEY,
         model: process.env.LLM_MODEL ?? 'gpt-4o-mini',
+        protocol: (process.env.LLM_PROTOCOL ?? 'openai') as 'openai' | 'anthropic',
       }
     : null;
 

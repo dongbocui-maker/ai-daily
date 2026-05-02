@@ -45,9 +45,18 @@ interface LLMConfig {
   apiBase: string;
   apiKey: string;
   model: string;
+  protocol?: 'openai' | 'anthropic';
 }
 
 async function callLLM(cfg: LLMConfig, prompt: string): Promise<string> {
+  const protocol = cfg.protocol ?? 'openai';
+  if (protocol === 'anthropic') {
+    return callAnthropicLLM(cfg, prompt);
+  }
+  return callOpenAILLM(cfg, prompt);
+}
+
+async function callOpenAILLM(cfg: LLMConfig, prompt: string): Promise<string> {
   const res = await fetch(`${cfg.apiBase.replace(/\/$/, '')}/chat/completions`, {
     method: 'POST',
     headers: {
@@ -67,6 +76,32 @@ async function callLLM(cfg: LLMConfig, prompt: string): Promise<string> {
   if (!res.ok) throw new Error(`LLM call failed ${res.status}: ${await res.text()}`);
   const json = (await res.json()) as { choices: Array<{ message: { content: string } }> };
   return json.choices[0].message.content;
+}
+
+async function callAnthropicLLM(cfg: LLMConfig, prompt: string): Promise<string> {
+  // Anthropic Messages API（Azure 也是这个 schema）
+  const res = await fetch(`${cfg.apiBase.replace(/\/$/, '')}/messages`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': cfg.apiKey,
+      'anthropic-version': '2023-06-01',
+      Authorization: `Bearer ${cfg.apiKey}`, // Azure 兼容
+    },
+    body: JSON.stringify({
+      model: cfg.model,
+      max_tokens: 2000,
+      // 注：Claude Opus 4.7 不再接受 temperature 参数
+      system: TITLE + '\n\n严格输出 JSON 对象（不带任何前后说明、不带 markdown 代码块包裹）。',
+      messages: [{ role: 'user', content: prompt }],
+    }),
+  });
+  if (!res.ok) throw new Error(`LLM call failed ${res.status}: ${await res.text()}`);
+  const json = (await res.json()) as { content: Array<{ type: string; text?: string }> };
+  const block = json.content?.find((b) => b.type === 'text') ?? json.content?.[0];
+  const raw = (block?.text ?? '').trim();
+  // 兼容模型偶尔包 ```json ... ``` 的情况
+  return raw.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '').trim();
 }
 
 export async function sanitizeReport(report: DailyReport, cfg: LLMConfig | null): Promise<DailyReport> {

@@ -1,0 +1,179 @@
+{
+  "date": "2026-05-02",
+  "title": "2026-05-02",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "Musk v. Altman 庭审进入证据披露阶段，OpenAI 早期内部邮件大量曝光",
+          "body": "Elon Musk 起诉 Sam Altman 案本周进入证据展示环节，多份早期 OpenAI 邮件、合同与企业文档被披露。证据显示：黄仁勋当年向 OpenAI 赠送了一台稀缺的超算；Musk 主导起草了 OpenAI 早期使命与组织架构；Altman 当时高度依赖 YC 提供早期支持；Brockman、Sutskever 对 Musk 控制权早有担忧。",
+          "insight": "硅谷头部 AI 公司早期治理结构的\"非营利初心\"与\"商业化转型\"之间张力，将成为未来 AI 公司组织设计的标志性参照。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial"
+        },
+        {
+          "title": "美国国防部与 Nvidia/Microsoft/AWS 达成协议，将 AI 部署进涉密网络",
+          "body": "继与 Anthropic 在使用条款上发生争议后，五角大楼正式签约 Nvidia、微软、AWS 三家供应商，把 AI 模型与算力部署至涉密分级网络。该动作是 DOD\"多元化 AI 供应商\"战略的关键落子。",
+          "insight": "政府/国防级 AI 采购正在从单一厂商绑定，转向\"分级部署+多供应商\"架构，企业 AI 基础设施厂商进入新一轮 GovCloud 红利期。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/"
+        },
+        {
+          "title": "AWS CEO Matt Garman：AI 不会让程序员失业，今年还要招 1.1 万实习生",
+          "body": "Garman 在采访中表示亚马逊招聘软件开发人员的数量\"与以往一样多，甚至需求在加速\"，今年计划招 11000 名软件实习生。他同时指出工程师的角色将转向\"构建应用、解决客户问题\"，纯写 Java 的能力重要性下降。",
+          "insight": "与\"AI 替代程序员\"的悲观叙事相反，超大厂正以\"AI 提效→加大基础人才储备\"的方式回应，工程师能力栈正向\"业务+AI 编排\"上移。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/0/945/961.htm"
+        },
+        {
+          "title": "Meta 收购人形机器人初创 Assured Robot Intelligence，押注具身智能",
+          "body": "Meta 宣布收购 Assured Robot Intelligence，扩充其面向人形机器人的 AI 模型能力，纳入 FAIR / Reality Labs 体系。这是继年内一系列具身相关投资后又一笔关键 M&A。",
+          "insight": "大模型公司\"补具身\"趋势确立——OpenAI、Meta、Tesla、Apple 正构建一条\"foundation model + robotics stack\"的复合护城河。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/"
+        },
+        {
+          "title": "奥斯卡明确：AI 生成的演员与剧本不具获奖资格",
+          "body": "美国电影艺术与科学学院更新规则，自 2027 年颁奖典礼起，AI 生成表演与剧本不再具备奥斯卡评奖资格，剧本必须为\"人类创作\"。",
+          "insight": "内容创意行业首次为\"人类作者性\"建立明确制度边界，将影响未来生成式 AI 在影视、广告、出版领域的署名与版权框架。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/0/945/960.htm"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "OpenAI GPT 模型、Codex 和 Managed Agents 全面登陆 AWS",
+          "body": "OpenAI 宣布其旗舰模型、Codex 编程能力和托管 Agent 服务正式在 AWS 上架，企业可在自有 AWS 环境内构建安全 AI 应用。这是 OpenAI 与微软之外最重要的云分销合作。",
+          "insight": "OpenAI 正式打破\"只在 Azure 上\"的格局，多云分销时代到来；企业采购\"OpenAI on AWS\"将显著降低云迁移成本，加速 AI 落地。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/openai-on-aws"
+        },
+        {
+          "title": "OpenAI 通过 FedRAMP Moderate 认证，正式服务美国联邦机构",
+          "body": "ChatGPT Enterprise 和 OpenAI API 取得 FedRAMP Moderate 授权，可服务美国联邦政府客户。结合 Stargate 与 Pentagon 合作，OpenAI 正在搭建\"商业 + 政府 + 国防\"的三栈体系。",
+          "insight": "合规认证是企业级 AI 的重要护城河；中国厂商在等保、密评、信创等本地化合规上有同等机会窗口。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/openai-available-at-fedramp-moderate"
+        },
+        {
+          "title": "Choco 用 OpenAI API 重塑食品分销，自动化订单与生产力提升显著",
+          "body": "OpenAI 在 B2B 案例库新增 Choco 故事：通过 OpenAI API 与 Agents SDK,Choco 把食品供应链订单流程做到端到端自动化,推动其在欧洲多国快速扩张。",
+          "insight": "\"垂直 SaaS + 通用大模型 API\"组合,正成为传统行业(餐饮/零售/物流)实现 AI 转型的最务实路径。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/choco"
+        },
+        {
+          "title": "Anthropic 牵头 Project Glasswing,联合微软/谷歌/苹果/JPMC 共同保护关键软件",
+          "body": "Anthropic 联合 AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks 启动 Project Glasswing,目标:确保全球最关键软件供应链的安全。",
+          "insight": "AI 时代的安全竞争从单点厂商进入\"行业共同体\"模式,头部 AI 公司开始扮演基础设施级安全角色。",
+          "source": "Anthropic 官方",
+          "url": "https://www.anthropic.com/news"
+        },
+        {
+          "title": "自然堂联合上海天文馆推\"航天美妆\",中国本土品牌打造 AI+科技叙事",
+          "body": "自然堂联合上海天文馆开展\"遇见宇宙发现更美\"科普展,披露其 2013 年起参与中国航天生物诱变育种实验,并在 2023 年随载人航天将高原微生物送入空间站完成在轨实验,后由企业与高校联合转化。集团在 2024-2025 年获某快消客户 4.42 亿元、加华资本 3 亿元战略投资,估值 71.4 亿元。",
+          "insight": "中国消费品牌正以\"硬科技+AI 研发\"作为下一代差异化护城河,与某快消客户/雅诗兰黛在生物科技、皮肤科学、AI 研发上的长期投入形成正面对标。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3787830454787330"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "SpaceX 拟以 600 亿美元收购 Cursor,Replit CEO 谈\"为何不卖\"",
+          "body": "据报道,SpaceX 正洽谈以约 600 亿美元收购 AI 代码编辑器 Cursor。Replit CEO Amjad Masad 在 StrictlyVC 上回应称:Replit 不打算出售,要\"独立做长期\"。Cursor 估值进入硅谷史上最大 AI 编辑器交易区间。",
+          "insight": "AI Coding 赛道头部已进入战略整合期;基础设施厂商(SpaceX/云厂商)正在抢占\"AI 时代的开发者入口\"。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/"
+        },
+        {
+          "title": "OpenAI 开源 Symphony:把 Issue Tracker 变成 Always-on Agent 系统",
+          "body": "OpenAI 发布 Symphony——Codex Agent 编排的开源规范。它把 GitHub Issues、Linear 等工单系统转换为长驻 Agent 输入,自动接单、生成 PR、完成上下文切换,据称可显著提升工程产出。",
+          "insight": "Coding Agent 进入\"workflow-native\"阶段——不再是 IDE 内插件,而是嵌入研发流水线的常驻智能体。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/open-source-codex-orchestration-symphony"
+        },
+        {
+          "title": "GitHub Trending 当日多个 Coding Agent 项目占榜",
+          "body": "今日 GitHub Trending Top 榜:warpdotdev/warp(终端原生 Agent 开发环境)、1jehuang/jcode(Rust 编写的 Coding Agent Harness,单日 +403 星)、mattpocock/skills(实战工程师 .claude skills 集合,单日 +3,645 星)、browserbase/skills(Claude Agent SDK + Browser Tool)、simstudioai/sim(AI Agent 编排)。Skills 模式爆发明显。",
+          "insight": "Anthropic Claude Skills 生态正快速形成,开源社区围绕\"Agent Skill 库 + Harness\"已出现明显聚合效应。",
+          "source": "GitHub Trending",
+          "url": "https://github.com/trending"
+        },
+        {
+          "title": "Railway 融资 1 亿美元,挑战 AWS,主打\"AI Native 部署速度<1秒\"",
+          "body": "Railway 完成 1 亿美元 B 轮,TQ Ventures 领投。其差异化在于:为匹配 AI 生成代码的速度,把部署延迟从 Terraform 的 2-3 分钟压到 1 秒以内,客户案例显示\"开发速度 +10x、成本下降 65%~87%\"。已服务 31% 财富 500 强、月部署量超 1000 万次。",
+          "insight": "AI Coding 不只改变 IDE,正在重塑 CI/CD 和云基础设施定义——\"为 Agent 部署速度优化\"成为新一代云的核心命题。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
+        },
+        {
+          "title": "Show HN: Adam.new——把 AI Agent 直接接入 Onshape/Fusion CAD",
+          "body": "Adam 团队在 Hacker News 发布:他们的 AI 工程 Agent 现已 native 集成到 Autodesk Fusion 和 PTC Onshape,可读取并编辑 CAD 特征树,执行\"清理特征树/重命名/批量倒角/参数化建模\"等任务。同时披露其内部 CAD benchmark 显示 GPT-5.5 与 Claude Opus 4.7 在空间推理上跃升。",
+          "insight": "Coding Agent 正从纯软件领域跨入工业设计/制造业 CAD 领域,垂直专业 Agent 成为新蓝海。",
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=47977694"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "OpenAI 发布《Building the Compute Infrastructure for the Intelligence Age》",
+          "body": "OpenAI 系统性披露 Stargate 算力扩张方案——新增多座超大规模数据中心,以应对持续指数级的算力需求。文章首次给出 Stargate 与全球电力/土地/芯片供应链的耦合策略。",
+          "insight": "AGI 已成\"基建竞赛\"——算力、电力、地皮、人才四要素决定下一代 AI 公司的天花板。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age"
+        },
+        {
+          "title": "OpenAI《Cybersecurity in the Intelligence Age》:AI 网络安全五点行动纲领",
+          "body": "OpenAI 提出五点行动计划,覆盖\"AI 攻防自动化、关键系统保护、漏洞披露、合作生态、人才\"。强调要\"AI 驱动的网络防御民主化\",让中小企业也能用得起 AI 安全。",
+          "insight": "AI 既是攻击者武器也是防御利器,2026 年起头部模型公司将正式以\"安全基础设施\"身份参与全球治理。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/cybersecurity-in-the-intelligence-age"
+        },
+        {
+          "title": "Anthropic《What 81,000 People Want from AI》:史上规模最大 AI 用户期待研究",
+          "body": "Anthropic 邀请 Claude.ai 用户分享对 AI 的使用、期待与担忧,8.1 万人参与,是同类研究中规模最大、语种覆盖最多的之一。研究揭示用户最在意\"准确性\"与\"个人时间释放\",对\"操控\"与\"误用\"恐惧最高。",
+          "insight": "模型公司开始用大规模一手用户调研指导对齐与产品策略,定性研究成为 LLM 训练数据外的重要补充。",
+          "source": "Anthropic 官方",
+          "url": "https://www.anthropic.com/news"
+        },
+        {
+          "title": "36氪深度:《追觅造车,从\"火箭\"开始》——中国\"第三代造车新势力\"登场",
+          "body": "36氪报道追觅在旧金山发布 Nebula NEXT 01 JET Edition 火箭车,搭载双固体火箭助推、自研激光雷达 DHX1、可量产全固态电池、全线控智能底盘。文章将其与特斯拉、鸿蒙智行并列为\"第三代造车新势力\"。",
+          "insight": "中国 AI/智能硬件能力正向高端制造迁移——电驱+AI 感知+多品类硬件集成构成的\"全栈技术生态\",成为本土厂商挑战国际豪华品牌的新切口。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3790587098832137"
+        },
+        {
+          "title": "OpenAI 发布《GPT-5.5 System Card》与新模型公告",
+          "body": "GPT-5.5 已正式发布并附 System Card,定位\"最聪明模型\",在编程、研究、跨工具数据分析等复杂任务上提升显著。配套发布的还有 OpenAI Academy \"What is Codex\"和\"Codex Automations\"等培训内容。",
+          "insight": "模型迭代节奏从年级降至季度级,企业 AI 战略需要把\"模型版本敏捷管理\"纳入 ML Ops 必备能力。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/gpt-5-5-system-card"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "当日核心趋势:今日 AI 行业最大主线是**\"基础设施层与监管层同时进入新一轮整合期\"**。在算力侧,OpenAI 公开 Stargate 扩张路径,五角大楼与 Nvidia/MS/AWS 签约把 AI 推进涉密网络;在治理侧,Musk v. Altman 庭审揭开早期 OpenAI 决策细节,奥斯卡明确\"AI 不可获奖\"边界,Anthropic 牵头 Project Glasswing 将安全提升为产业共同体议题。AI 已不只是产品议题,而是地缘、合规、版权、能源的复合命题。",
+    "Coding Agent 进入\"流水线原生\"阶段:Cursor 传出被 SpaceX 600 亿美元收购,Replit 选择独立长跑,OpenAI 开源 Symphony 把 Issue Tracker 变成 Always-on Agent;基础设施层 Railway 融资 1 亿美元主打\"亚秒级部署适配 AI 生成代码\";GitHub Trending 上 Skills/Harness 类项目集中爆发——下一阶段 AI Coding 的竞争点已经从\"IDE 内补全\"上升到\"研发流水线全链路自动化\"。",
+    "中国动向:IT之家、36氪两条主线值得关注——AWS CEO 公开反驳\"AI 替代程序员\"叙事,与中国大厂当下\"加大 AI 人才储备\"思路高度一致;追觅以\"火箭车\"切入全球高端汽车市场,标志中国 AI/硬件公司开始从消费电子向高端制造跃迁,与自然堂\"航天+生物科技\"形成\"硬科技品牌叙事\"的本土范式。对企业客户而言,采购侧的\"多云、合规、安全\"三件事,与产品侧的\"垂直 Agent、流水线 Agent、具身 Agent\"三件事,是 2026 年 H2 必须同步推进的双轮。"
+  ]
+}

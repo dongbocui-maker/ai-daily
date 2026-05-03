@@ -1,0 +1,2868 @@
+{
+  "snapshotDate": "2026-05-03",
+  "isBaseline": true,
+  "totalModelsObserved": 356,
+  "totalModelsShown": 50,
+  "categoryLabels": {
+    "overall": "综合",
+    "exclude-ties": "排除平局",
+    "hard-prompts": "难题",
+    "hard-prompts-english": "英文难题",
+    "longer-query": "长查询",
+    "multi-turn": "多轮对话",
+    "multi-turn-context": "多轮上下文",
+    "instruction-following": "指令遵循",
+    "creative-writing": "创意写作",
+    "expert": "专家级",
+    "coding": "代码",
+    "math": "数学",
+    "english": "英文",
+    "non-english": "非英文",
+    "chinese": "中文",
+    "korean": "韩文",
+    "japanese": "日文",
+    "french": "法文",
+    "german": "德文",
+    "spanish": "西文",
+    "russian": "俄文",
+    "polish": "波兰文",
+    "industry-life-and-physical-and-social-science": "科学行业",
+    "industry-software-and-it-services": "软件IT行业",
+    "industry-writing-and-literature-and-language": "文学写作行业",
+    "industry-medicine-and-healthcare": "医疗行业",
+    "industry-business-and-management-and-financial-operations": "商业金融行业",
+    "industry-mathematical": "数学行业",
+    "industry-legal-and-government": "法律政府行业",
+    "industry-entertainment-and-sports-and-media": "娱乐媒体行业"
+  },
+  "sourceUrl": "https://lmarena.ai/leaderboard",
+  "models": [
+    {
+      "rank": 1,
+      "name": "claude-opus-4-7-thinking",
+      "org": "Anthropic",
+      "scores": {
+        "math": 6,
+        "korean": 2,
+        "exclude-ties": 1,
+        "industry-life-and-physical-and-social-science": 1,
+        "creative-writing": 1,
+        "multi-turn-context": 1,
+        "instruction-following": 2,
+        "multi-turn": 1,
+        "expert": 1,
+        "non-english": 1,
+        "industry-software-and-it-services": 1,
+        "coding": 1,
+        "french": 6,
+        "overall": 1,
+        "spanish": 2,
+        "russian": 1,
+        "chinese": 1,
+        "industry-writing-and-literature-and-language": 1,
+        "hard-prompts-english": 2,
+        "longer-query": 2,
+        "industry-medicine-and-healthcare": 7,
+        "hard-prompts": 3,
+        "industry-business-and-management-and-financial-operations": 5,
+        "industry-mathematical": 8,
+        "industry-legal-and-government": 8,
+        "english": 2,
+        "industry-entertainment-and-sports-and-media": 3
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 1,
+          "isTop10": true
+        }
+      ],
+      "summary": "创意写作 #1 · 多轮上下文 #1 · 多轮对话 #1"
+    },
+    {
+      "rank": 2,
+      "name": "claude-opus-4-6-thinking",
+      "org": "Anthropic",
+      "scores": {
+        "math": 2,
+        "korean": 16,
+        "exclude-ties": 2,
+        "industry-life-and-physical-and-social-science": 2,
+        "creative-writing": 2,
+        "multi-turn-context": 2,
+        "instruction-following": 1,
+        "polish": 1,
+        "multi-turn": 2,
+        "expert": 2,
+        "non-english": 3,
+        "industry-software-and-it-services": 2,
+        "coding": 2,
+        "french": 12,
+        "overall": 2,
+        "german": 1,
+        "spanish": 1,
+        "russian": 3,
+        "chinese": 4,
+        "industry-writing-and-literature-and-language": 2,
+        "hard-prompts-english": 1,
+        "longer-query": 1,
+        "japanese": 2,
+        "industry-medicine-and-healthcare": 5,
+        "hard-prompts": 1,
+        "industry-business-and-management-and-financial-operations": 3,
+        "industry-mathematical": 2,
+        "industry-legal-and-government": 3,
+        "english": 1,
+        "industry-entertainment-and-sports-and-media": 1
+      },
+      "highlight": [
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 1,
+          "isTop10": true
+        }
+      ],
+      "summary": "指令遵循 #1 · 英文难题 #1 · 长查询 #1"
+    },
+    {
+      "rank": 3,
+      "name": "claude-opus-4-6",
+      "org": "Anthropic",
+      "scores": {
+        "math": 5,
+        "korean": 10,
+        "exclude-ties": 3,
+        "industry-life-and-physical-and-social-science": 3,
+        "creative-writing": 6,
+        "multi-turn-context": 4,
+        "instruction-following": 3,
+        "polish": 3,
+        "multi-turn": 4,
+        "expert": 3,
+        "non-english": 5,
+        "industry-software-and-it-services": 3,
+        "coding": 3,
+        "french": 15,
+        "overall": 3,
+        "german": 6,
+        "spanish": 3,
+        "russian": 2,
+        "chinese": 3,
+        "industry-writing-and-literature-and-language": 6,
+        "hard-prompts-english": 3,
+        "longer-query": 3,
+        "japanese": 5,
+        "industry-medicine-and-healthcare": 3,
+        "hard-prompts": 2,
+        "industry-business-and-management-and-financial-operations": 2,
+        "industry-mathematical": 1,
+        "industry-legal-and-government": 4,
+        "english": 3,
+        "industry-entertainment-and-sports-and-media": 5
+      },
+      "highlight": [
+        {
+          "category": "hard-prompts",
+          "label": "难题",
+          "rank": 2,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 3,
+          "isTop10": true
+        }
+      ],
+      "summary": "难题 #2 · 指令遵循 #3 · 专家级 #3"
+    },
+    {
+      "rank": 4,
+      "name": "gemini-3.1-pro-preview",
+      "org": "Google",
+      "scores": {
+        "math": 3,
+        "korean": 1,
+        "exclude-ties": 5,
+        "industry-life-and-physical-and-social-science": 4,
+        "creative-writing": 3,
+        "multi-turn-context": 5,
+        "instruction-following": 5,
+        "polish": 2,
+        "multi-turn": 5,
+        "expert": 7,
+        "non-english": 2,
+        "industry-software-and-it-services": 6,
+        "coding": 6,
+        "french": 18,
+        "overall": 4,
+        "german": 4,
+        "spanish": 4,
+        "russian": 4,
+        "chinese": 6,
+        "industry-writing-and-literature-and-language": 3,
+        "hard-prompts-english": 5,
+        "longer-query": 5,
+        "japanese": 1,
+        "industry-medicine-and-healthcare": 10,
+        "hard-prompts": 5,
+        "industry-business-and-management-and-financial-operations": 9,
+        "industry-mathematical": 12,
+        "industry-legal-and-government": 5,
+        "english": 6,
+        "industry-entertainment-and-sports-and-media": 4
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 5,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #3 · 创意写作 #3 · 多轮上下文 #5"
+    },
+    {
+      "rank": 5,
+      "name": "claude-opus-4-7",
+      "org": "Anthropic",
+      "scores": {
+        "math": 8,
+        "korean": 4,
+        "exclude-ties": 4,
+        "industry-life-and-physical-and-social-science": 6,
+        "creative-writing": 5,
+        "multi-turn-context": 3,
+        "instruction-following": 4,
+        "multi-turn": 3,
+        "expert": 4,
+        "non-english": 7,
+        "industry-software-and-it-services": 4,
+        "coding": 4,
+        "french": 7,
+        "overall": 5,
+        "spanish": 27,
+        "russian": 6,
+        "chinese": 5,
+        "industry-writing-and-literature-and-language": 4,
+        "hard-prompts-english": 4,
+        "longer-query": 4,
+        "industry-medicine-and-healthcare": 4,
+        "hard-prompts": 4,
+        "industry-business-and-management-and-financial-operations": 4,
+        "industry-mathematical": 11,
+        "industry-legal-and-government": 11,
+        "english": 4,
+        "industry-entertainment-and-sports-and-media": 2
+      },
+      "highlight": [
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 4,
+          "isTop10": true
+        }
+      ],
+      "summary": "多轮上下文 #3 · 多轮对话 #3 · 指令遵循 #4"
+    },
+    {
+      "rank": 6,
+      "name": "muse-spark",
+      "org": "Meta",
+      "scores": {
+        "math": 27,
+        "korean": 5,
+        "exclude-ties": 6,
+        "industry-life-and-physical-and-social-science": 7,
+        "creative-writing": 10,
+        "multi-turn-context": 12,
+        "instruction-following": 15,
+        "polish": 9,
+        "multi-turn": 6,
+        "expert": 25,
+        "non-english": 6,
+        "industry-software-and-it-services": 5,
+        "coding": 7,
+        "french": 5,
+        "overall": 6,
+        "german": 3,
+        "spanish": 9,
+        "russian": 12,
+        "chinese": 7,
+        "industry-writing-and-literature-and-language": 12,
+        "hard-prompts-english": 6,
+        "longer-query": 24,
+        "industry-medicine-and-healthcare": 2,
+        "hard-prompts": 6,
+        "industry-business-and-management-and-financial-operations": 6,
+        "industry-mathematical": 26,
+        "industry-legal-and-government": 2,
+        "english": 5,
+        "industry-entertainment-and-sports-and-media": 7
+      },
+      "highlight": [
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts",
+          "label": "难题",
+          "rank": 6,
+          "isTop10": true
+        }
+      ],
+      "summary": "多轮对话 #6 · 英文难题 #6 · 难题 #6"
+    },
+    {
+      "rank": 7,
+      "name": "gpt-5.5-high",
+      "org": "OpenAI",
+      "scores": {
+        "math": 4,
+        "exclude-ties": 7,
+        "industry-life-and-physical-and-social-science": 14,
+        "creative-writing": 23,
+        "multi-turn-context": 8,
+        "instruction-following": 7,
+        "multi-turn": 17,
+        "expert": 5,
+        "non-english": 4,
+        "industry-software-and-it-services": 8,
+        "coding": 9,
+        "french": 2,
+        "overall": 7,
+        "russian": 8,
+        "chinese": 12,
+        "industry-writing-and-literature-and-language": 7,
+        "hard-prompts-english": 9,
+        "longer-query": 6,
+        "industry-medicine-and-healthcare": 43,
+        "hard-prompts": 7,
+        "industry-business-and-management-and-financial-operations": 1,
+        "industry-mathematical": 4,
+        "industry-legal-and-government": 1,
+        "english": 8,
+        "industry-entertainment-and-sports-and-media": 14
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 4,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 5,
+          "isTop10": true
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 6,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #4 · 专家级 #5 · 长查询 #6"
+    },
+    {
+      "rank": 8,
+      "name": "gemini-3-pro",
+      "org": "Google",
+      "scores": {
+        "math": 12,
+        "korean": 6,
+        "exclude-ties": 8,
+        "industry-life-and-physical-and-social-science": 8,
+        "creative-writing": 4,
+        "multi-turn-context": 6,
+        "instruction-following": 11,
+        "polish": 4,
+        "multi-turn": 9,
+        "expert": 14,
+        "non-english": 8,
+        "industry-software-and-it-services": 13,
+        "coding": 17,
+        "french": 10,
+        "overall": 8,
+        "german": 2,
+        "spanish": 11,
+        "russian": 5,
+        "chinese": 9,
+        "industry-writing-and-literature-and-language": 5,
+        "hard-prompts-english": 10,
+        "longer-query": 9,
+        "japanese": 3,
+        "industry-medicine-and-healthcare": 9,
+        "hard-prompts": 8,
+        "industry-business-and-management-and-financial-operations": 15,
+        "industry-mathematical": 14,
+        "industry-legal-and-government": 7,
+        "english": 7,
+        "industry-entertainment-and-sports-and-media": 6
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 4,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts",
+          "label": "难题",
+          "rank": 8,
+          "isTop10": true
+        }
+      ],
+      "summary": "创意写作 #4 · 多轮上下文 #6 · 难题 #8"
+    },
+    {
+      "rank": 9,
+      "name": "grok-4.20-beta1",
+      "org": "xAI",
+      "scores": {
+        "math": 29,
+        "korean": 3,
+        "exclude-ties": 9,
+        "industry-life-and-physical-and-social-science": 19,
+        "creative-writing": 8,
+        "multi-turn-context": 19,
+        "instruction-following": 25,
+        "polish": 8,
+        "multi-turn": 10,
+        "expert": 42,
+        "non-english": 10,
+        "industry-software-and-it-services": 17,
+        "coding": 24,
+        "french": 20,
+        "overall": 9,
+        "german": 8,
+        "spanish": 8,
+        "russian": 13,
+        "chinese": 14,
+        "industry-writing-and-literature-and-language": 16,
+        "hard-prompts-english": 24,
+        "longer-query": 34,
+        "japanese": 8,
+        "industry-medicine-and-healthcare": 6,
+        "hard-prompts": 15,
+        "industry-business-and-management-and-financial-operations": 14,
+        "industry-mathematical": 33,
+        "industry-legal-and-government": 9,
+        "english": 9,
+        "industry-entertainment-and-sports-and-media": 10
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "english",
+          "label": "英文",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "创意写作 #8 · 多轮对话 #10 · 英文 #9"
+    },
+    {
+      "rank": 10,
+      "name": "grok-4.20-beta-0309-reasoning",
+      "org": "xAI",
+      "scores": {
+        "math": 25,
+        "korean": 15,
+        "exclude-ties": 10,
+        "industry-life-and-physical-and-social-science": 28,
+        "creative-writing": 17,
+        "multi-turn-context": 20,
+        "instruction-following": 24,
+        "polish": 16,
+        "multi-turn": 14,
+        "expert": 31,
+        "non-english": 13,
+        "industry-software-and-it-services": 11,
+        "coding": 15,
+        "french": 3,
+        "overall": 10,
+        "german": 32,
+        "spanish": 35,
+        "russian": 9,
+        "chinese": 16,
+        "industry-writing-and-literature-and-language": 15,
+        "hard-prompts-english": 16,
+        "longer-query": 32,
+        "japanese": 21,
+        "industry-medicine-and-healthcare": 14,
+        "hard-prompts": 12,
+        "industry-business-and-management-and-financial-operations": 16,
+        "industry-mathematical": 19,
+        "industry-legal-and-government": 23,
+        "english": 11,
+        "industry-entertainment-and-sports-and-media": 8
+      },
+      "highlight": [
+        {
+          "category": "industry-entertainment-and-sports-and-media",
+          "label": "娱乐媒体行业",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "french",
+          "label": "法文",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "russian",
+          "label": "俄文",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "娱乐媒体行业 #8 · 法文 #3 · 俄文 #9"
+    },
+    {
+      "rank": 11,
+      "name": "gpt-5.4-high",
+      "org": "OpenAI",
+      "scores": {
+        "math": 1,
+        "korean": 21,
+        "exclude-ties": 11,
+        "industry-life-and-physical-and-social-science": 30,
+        "creative-writing": 22,
+        "multi-turn-context": 11,
+        "instruction-following": 8,
+        "polish": 23,
+        "multi-turn": 7,
+        "expert": 6,
+        "non-english": 9,
+        "industry-software-and-it-services": 16,
+        "coding": 8,
+        "french": 4,
+        "overall": 11,
+        "german": 7,
+        "spanish": 28,
+        "russian": 7,
+        "chinese": 21,
+        "industry-writing-and-literature-and-language": 8,
+        "hard-prompts-english": 11,
+        "longer-query": 12,
+        "japanese": 7,
+        "industry-medicine-and-healthcare": 42,
+        "hard-prompts": 9,
+        "industry-business-and-management-and-financial-operations": 10,
+        "industry-mathematical": 5,
+        "industry-legal-and-government": 26,
+        "english": 17,
+        "industry-entertainment-and-sports-and-media": 15
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 7,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #1 · 专家级 #6 · 多轮对话 #7"
+    },
+    {
+      "rank": 12,
+      "name": "gpt-5.2-chat-latest-20260210",
+      "org": "OpenAI",
+      "scores": {
+        "math": 28,
+        "korean": 18,
+        "exclude-ties": 14,
+        "industry-life-and-physical-and-social-science": 18,
+        "creative-writing": 31,
+        "multi-turn-context": 14,
+        "instruction-following": 23,
+        "polish": 14,
+        "multi-turn": 8,
+        "expert": 27,
+        "non-english": 14,
+        "industry-software-and-it-services": 10,
+        "coding": 14,
+        "french": 16,
+        "overall": 12,
+        "german": 11,
+        "spanish": 13,
+        "russian": 15,
+        "chinese": 18,
+        "industry-writing-and-literature-and-language": 23,
+        "hard-prompts-english": 12,
+        "longer-query": 26,
+        "japanese": 20,
+        "industry-medicine-and-healthcare": 12,
+        "hard-prompts": 14,
+        "industry-business-and-management-and-financial-operations": 8,
+        "industry-mathematical": 29,
+        "industry-legal-and-government": 19,
+        "english": 13,
+        "industry-entertainment-and-sports-and-media": 20
+      },
+      "highlight": [
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "industry-business-and-management-and-financial-operations",
+          "label": "商业金融行业",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "industry-software-and-it-services",
+          "label": "软件IT行业",
+          "rank": 10,
+          "isTop10": true
+        }
+      ],
+      "summary": "多轮对话 #8 · 商业金融行业 #8 · 软件IT行业 #10"
+    },
+    {
+      "rank": 13,
+      "name": "gpt-5.5",
+      "org": "OpenAI",
+      "scores": {
+        "math": 7,
+        "exclude-ties": 13,
+        "industry-life-and-physical-and-social-science": 24,
+        "creative-writing": 37,
+        "multi-turn-context": 30,
+        "instruction-following": 14,
+        "multi-turn": 13,
+        "expert": 22,
+        "non-english": 11,
+        "industry-software-and-it-services": 19,
+        "coding": 27,
+        "french": 1,
+        "overall": 13,
+        "spanish": 6,
+        "russian": 21,
+        "chinese": 2,
+        "industry-writing-and-literature-and-language": 17,
+        "hard-prompts-english": 20,
+        "longer-query": 21,
+        "industry-medicine-and-healthcare": 44,
+        "hard-prompts": 19,
+        "industry-business-and-management-and-financial-operations": 11,
+        "industry-mathematical": 6,
+        "industry-legal-and-government": 21,
+        "english": 15,
+        "industry-entertainment-and-sports-and-media": 39
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 7,
+          "isTop10": true
+        },
+        {
+          "category": "chinese",
+          "label": "中文",
+          "rank": 2,
+          "isTop10": true
+        },
+        {
+          "category": "industry-mathematical",
+          "label": "数学行业",
+          "rank": 6,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #7 · 中文 #2 · 数学行业 #6"
+    },
+    {
+      "rank": 14,
+      "name": "grok-4.20-multi-agent-beta-0309",
+      "org": "xAI",
+      "scores": {
+        "math": 21,
+        "korean": 8,
+        "exclude-ties": 15,
+        "industry-life-and-physical-and-social-science": 16,
+        "creative-writing": 19,
+        "multi-turn-context": 22,
+        "instruction-following": 35,
+        "polish": 11,
+        "multi-turn": 19,
+        "expert": 13,
+        "non-english": 15,
+        "industry-software-and-it-services": 12,
+        "coding": 12,
+        "french": 14,
+        "overall": 14,
+        "german": 20,
+        "spanish": 36,
+        "russian": 10,
+        "chinese": 28,
+        "industry-writing-and-literature-and-language": 28,
+        "hard-prompts-english": 27,
+        "longer-query": 25,
+        "industry-medicine-and-healthcare": 8,
+        "hard-prompts": 21,
+        "industry-business-and-management-and-financial-operations": 23,
+        "industry-mathematical": 17,
+        "industry-legal-and-government": 12,
+        "english": 16,
+        "industry-entertainment-and-sports-and-media": 16
+      },
+      "highlight": [
+        {
+          "category": "industry-medicine-and-healthcare",
+          "label": "医疗行业",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "korean",
+          "label": "韩文",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "russian",
+          "label": "俄文",
+          "rank": 10,
+          "isTop10": true
+        }
+      ],
+      "summary": "医疗行业 #8 · 韩文 #8 · 俄文 #10"
+    },
+    {
+      "rank": 15,
+      "name": "ernie-5.1-preview",
+      "org": "Baidu",
+      "scores": {
+        "math": 10,
+        "exclude-ties": 12,
+        "industry-life-and-physical-and-social-science": 13,
+        "creative-writing": 30,
+        "multi-turn-context": 15,
+        "instruction-following": 21,
+        "multi-turn": 11,
+        "expert": 23,
+        "non-english": 16,
+        "industry-software-and-it-services": 7,
+        "coding": 18,
+        "overall": 15,
+        "russian": 14,
+        "chinese": 52,
+        "industry-writing-and-literature-and-language": 36,
+        "hard-prompts-english": 25,
+        "longer-query": 23,
+        "industry-medicine-and-healthcare": 28,
+        "hard-prompts": 20,
+        "industry-business-and-management-and-financial-operations": 7,
+        "industry-mathematical": 3,
+        "industry-legal-and-government": 6,
+        "english": 14,
+        "industry-entertainment-and-sports-and-media": 26
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "industry-mathematical",
+          "label": "数学行业",
+          "rank": 3,
+          "isTop10": true
+        },
+        {
+          "category": "industry-legal-and-government",
+          "label": "法律政府行业",
+          "rank": 6,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #10 · 数学行业 #3 · 法律政府行业 #6"
+    },
+    {
+      "rank": 16,
+      "name": "gemini-3-flash",
+      "org": "Google",
+      "scores": {
+        "math": 16,
+        "korean": 7,
+        "exclude-ties": 16,
+        "industry-life-and-physical-and-social-science": 20,
+        "creative-writing": 11,
+        "multi-turn-context": 16,
+        "instruction-following": 22,
+        "polish": 5,
+        "multi-turn": 18,
+        "expert": 18,
+        "non-english": 12,
+        "industry-software-and-it-services": 22,
+        "coding": 26,
+        "french": 11,
+        "overall": 16,
+        "german": 5,
+        "spanish": 17,
+        "russian": 11,
+        "chinese": 13,
+        "industry-writing-and-literature-and-language": 11,
+        "hard-prompts-english": 28,
+        "longer-query": 19,
+        "japanese": 4,
+        "industry-medicine-and-healthcare": 24,
+        "hard-prompts": 16,
+        "industry-business-and-management-and-financial-operations": 17,
+        "industry-mathematical": 21,
+        "industry-legal-and-government": 13,
+        "english": 22,
+        "industry-entertainment-and-sports-and-media": 12
+      },
+      "highlight": [
+        {
+          "category": "japanese",
+          "label": "日文",
+          "rank": 4,
+          "isTop10": true
+        },
+        {
+          "category": "polish",
+          "label": "波兰文",
+          "rank": 5,
+          "isTop10": true
+        },
+        {
+          "category": "german",
+          "label": "德文",
+          "rank": 5,
+          "isTop10": true
+        }
+      ],
+      "summary": "日文 #4 · 波兰文 #5 · 德文 #5"
+    },
+    {
+      "rank": 17,
+      "name": "claude-opus-4-5-20251101-thinking-32k",
+      "org": "Anthropic",
+      "scores": {
+        "math": 18,
+        "korean": 34,
+        "exclude-ties": 18,
+        "industry-life-and-physical-and-social-science": 15,
+        "creative-writing": 7,
+        "multi-turn-context": 7,
+        "instruction-following": 6,
+        "polish": 19,
+        "multi-turn": 12,
+        "expert": 11,
+        "non-english": 18,
+        "industry-software-and-it-services": 9,
+        "coding": 5,
+        "french": 17,
+        "overall": 17,
+        "german": 10,
+        "spanish": 15,
+        "russian": 25,
+        "chinese": 32,
+        "industry-writing-and-literature-and-language": 10,
+        "hard-prompts-english": 7,
+        "longer-query": 8,
+        "japanese": 11,
+        "industry-medicine-and-healthcare": 19,
+        "hard-prompts": 10,
+        "industry-business-and-management-and-financial-operations": 21,
+        "industry-mathematical": 23,
+        "industry-legal-and-government": 15,
+        "english": 10,
+        "industry-entertainment-and-sports-and-media": 9
+      },
+      "highlight": [
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 5,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 7,
+          "isTop10": true
+        }
+      ],
+      "summary": "代码 #5 · 指令遵循 #6 · 创意写作 #7"
+    },
+    {
+      "rank": 18,
+      "name": "glm-5.1",
+      "org": "Z.ai",
+      "scores": {
+        "math": 19,
+        "korean": 23,
+        "exclude-ties": 17,
+        "industry-life-and-physical-and-social-science": 10,
+        "creative-writing": 12,
+        "multi-turn-context": 10,
+        "instruction-following": 18,
+        "polish": 39,
+        "multi-turn": 25,
+        "expert": 26,
+        "non-english": 19,
+        "industry-software-and-it-services": 14,
+        "coding": 10,
+        "french": 19,
+        "overall": 18,
+        "german": 19,
+        "spanish": 19,
+        "russian": 18,
+        "chinese": 19,
+        "industry-writing-and-literature-and-language": 13,
+        "hard-prompts-english": 14,
+        "longer-query": 11,
+        "industry-medicine-and-healthcare": 41,
+        "hard-prompts": 18,
+        "industry-business-and-management-and-financial-operations": 35,
+        "industry-mathematical": 20,
+        "industry-legal-and-government": 24,
+        "english": 12,
+        "industry-entertainment-and-sports-and-media": 11
+      },
+      "highlight": [
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "industry-life-and-physical-and-social-science",
+          "label": "科学行业",
+          "rank": 10,
+          "isTop10": true
+        }
+      ],
+      "summary": "多轮上下文 #10 · 代码 #10 · 科学行业 #10"
+    },
+    {
+      "rank": 19,
+      "name": "grok-4.1-thinking",
+      "org": "xAI",
+      "scores": {
+        "math": 44,
+        "korean": 13,
+        "exclude-ties": 20,
+        "industry-life-and-physical-and-social-science": 21,
+        "creative-writing": 35,
+        "multi-turn-context": 33,
+        "instruction-following": 47,
+        "polish": 6,
+        "multi-turn": 41,
+        "expert": 41,
+        "non-english": 17,
+        "industry-software-and-it-services": 25,
+        "coding": 36,
+        "french": 25,
+        "overall": 19,
+        "german": 22,
+        "spanish": 14,
+        "russian": 22,
+        "chinese": 34,
+        "industry-writing-and-literature-and-language": 42,
+        "hard-prompts-english": 34,
+        "longer-query": 47,
+        "japanese": 27,
+        "industry-medicine-and-healthcare": 11,
+        "hard-prompts": 30,
+        "industry-business-and-management-and-financial-operations": 24,
+        "industry-mathematical": 61,
+        "industry-legal-and-government": 16,
+        "english": 24,
+        "industry-entertainment-and-sports-and-media": 23
+      },
+      "highlight": [
+        {
+          "category": "polish",
+          "label": "波兰文",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts",
+          "label": "难题",
+          "rank": 30,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 33,
+          "isTop10": false
+        }
+      ],
+      "summary": "波兰文 #6 | 相对擅长 难题 #30 · 多轮上下文 #33"
+    },
+    {
+      "rank": 20,
+      "name": "claude-opus-4-5-20251101",
+      "org": "Anthropic",
+      "scores": {
+        "math": 26,
+        "korean": 11,
+        "exclude-ties": 19,
+        "industry-life-and-physical-and-social-science": 17,
+        "creative-writing": 9,
+        "multi-turn-context": 9,
+        "instruction-following": 9,
+        "polish": 26,
+        "multi-turn": 15,
+        "expert": 12,
+        "non-english": 22,
+        "industry-software-and-it-services": 18,
+        "coding": 16,
+        "french": 8,
+        "overall": 20,
+        "german": 13,
+        "spanish": 18,
+        "russian": 19,
+        "chinese": 39,
+        "industry-writing-and-literature-and-language": 9,
+        "hard-prompts-english": 15,
+        "longer-query": 10,
+        "japanese": 15,
+        "industry-medicine-and-healthcare": 21,
+        "hard-prompts": 13,
+        "industry-business-and-management-and-financial-operations": 18,
+        "industry-mathematical": 16,
+        "industry-legal-and-government": 17,
+        "english": 18,
+        "industry-entertainment-and-sports-and-media": 13
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "创意写作 #9 · 多轮上下文 #9 · 指令遵循 #9"
+    },
+    {
+      "rank": 21,
+      "name": "gpt-5.4",
+      "org": "OpenAI",
+      "scores": {
+        "math": 35,
+        "korean": 27,
+        "exclude-ties": 21,
+        "industry-life-and-physical-and-social-science": 40,
+        "creative-writing": 34,
+        "multi-turn-context": 29,
+        "instruction-following": 12,
+        "polish": 20,
+        "multi-turn": 16,
+        "expert": 16,
+        "non-english": 20,
+        "industry-software-and-it-services": 24,
+        "coding": 19,
+        "french": 44,
+        "overall": 21,
+        "german": 14,
+        "spanish": 22,
+        "russian": 24,
+        "chinese": 15,
+        "industry-writing-and-literature-and-language": 14,
+        "hard-prompts-english": 19,
+        "longer-query": 18,
+        "japanese": 6,
+        "industry-medicine-and-healthcare": 52,
+        "hard-prompts": 22,
+        "industry-business-and-management-and-financial-operations": 12,
+        "industry-mathematical": 28,
+        "industry-legal-and-government": 27,
+        "english": 26,
+        "industry-entertainment-and-sports-and-media": 36
+      },
+      "highlight": [
+        {
+          "category": "japanese",
+          "label": "日文",
+          "rank": 6,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 12,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 16,
+          "isTop10": false
+        }
+      ],
+      "summary": "日文 #6 | 相对擅长 指令遵循 #12 · 多轮对话 #16"
+    },
+    {
+      "rank": 22,
+      "name": "mimo-v2.5-pro",
+      "org": "Xiaomi",
+      "scores": {
+        "math": 15,
+        "exclude-ties": 24,
+        "industry-life-and-physical-and-social-science": 5,
+        "creative-writing": 39,
+        "multi-turn-context": 27,
+        "instruction-following": 13,
+        "multi-turn": 22,
+        "expert": 8,
+        "non-english": 29,
+        "industry-software-and-it-services": 21,
+        "coding": 25,
+        "overall": 22,
+        "spanish": 25,
+        "russian": 42,
+        "chinese": 38,
+        "industry-writing-and-literature-and-language": 19,
+        "hard-prompts-english": 13,
+        "longer-query": 16,
+        "industry-medicine-and-healthcare": 17,
+        "hard-prompts": 17,
+        "industry-business-and-management-and-financial-operations": 20,
+        "industry-mathematical": 9,
+        "industry-legal-and-government": 14,
+        "english": 20,
+        "industry-entertainment-and-sports-and-media": 34
+      },
+      "highlight": [
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "industry-life-and-physical-and-social-science",
+          "label": "科学行业",
+          "rank": 5,
+          "isTop10": true
+        },
+        {
+          "category": "industry-mathematical",
+          "label": "数学行业",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "专家级 #8 · 科学行业 #5 · 数学行业 #9"
+    },
+    {
+      "rank": 23,
+      "name": "claude-sonnet-4-6",
+      "org": "Anthropic",
+      "scores": {
+        "math": 20,
+        "korean": 14,
+        "exclude-ties": 25,
+        "industry-life-and-physical-and-social-science": 11,
+        "creative-writing": 25,
+        "multi-turn-context": 13,
+        "instruction-following": 10,
+        "polish": 15,
+        "multi-turn": 20,
+        "expert": 9,
+        "non-english": 30,
+        "industry-software-and-it-services": 15,
+        "coding": 11,
+        "french": 27,
+        "overall": 23,
+        "german": 25,
+        "spanish": 12,
+        "russian": 49,
+        "chinese": 22,
+        "industry-writing-and-literature-and-language": 22,
+        "hard-prompts-english": 8,
+        "longer-query": 7,
+        "japanese": 80,
+        "industry-medicine-and-healthcare": 39,
+        "hard-prompts": 11,
+        "industry-business-and-management-and-financial-operations": 13,
+        "industry-mathematical": 13,
+        "industry-legal-and-government": 28,
+        "english": 21,
+        "industry-entertainment-and-sports-and-media": 21
+      },
+      "highlight": [
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 7,
+          "isTop10": true
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "长查询 #7 · 英文难题 #8 · 专家级 #9"
+    },
+    {
+      "rank": 24,
+      "name": "deepseek-v4-pro",
+      "org": "DeepSeek",
+      "scores": {
+        "math": 41,
+        "exclude-ties": 23,
+        "industry-life-and-physical-and-social-science": 31,
+        "creative-writing": 16,
+        "multi-turn-context": 17,
+        "instruction-following": 30,
+        "multi-turn": 21,
+        "expert": 40,
+        "non-english": 23,
+        "industry-software-and-it-services": 49,
+        "coding": 57,
+        "overall": 24,
+        "russian": 17,
+        "chinese": 11,
+        "industry-writing-and-literature-and-language": 27,
+        "hard-prompts-english": 43,
+        "longer-query": 39,
+        "industry-medicine-and-healthcare": 1,
+        "hard-prompts": 35,
+        "industry-business-and-management-and-financial-operations": 31,
+        "industry-mathematical": 39,
+        "industry-legal-and-government": 10,
+        "english": 30,
+        "industry-entertainment-and-sports-and-media": 27
+      },
+      "highlight": [
+        {
+          "category": "industry-medicine-and-healthcare",
+          "label": "医疗行业",
+          "rank": 1,
+          "isTop10": true
+        },
+        {
+          "category": "industry-legal-and-government",
+          "label": "法律政府行业",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 16,
+          "isTop10": false
+        }
+      ],
+      "summary": "医疗行业 #1 · 法律政府行业 #10 | 相对擅长 创意写作 #16"
+    },
+    {
+      "rank": 25,
+      "name": "qwen3.5-max-preview",
+      "org": "Alibaba",
+      "scores": {
+        "math": 14,
+        "korean": 33,
+        "exclude-ties": 22,
+        "industry-life-and-physical-and-social-science": 23,
+        "creative-writing": 27,
+        "multi-turn-context": 26,
+        "instruction-following": 17,
+        "polish": 37,
+        "multi-turn": 26,
+        "expert": 10,
+        "non-english": 24,
+        "industry-software-and-it-services": 27,
+        "coding": 29,
+        "french": 37,
+        "overall": 25,
+        "german": 17,
+        "spanish": 51,
+        "russian": 20,
+        "chinese": 17,
+        "industry-writing-and-literature-and-language": 25,
+        "hard-prompts-english": 21,
+        "longer-query": 20,
+        "industry-medicine-and-healthcare": 26,
+        "hard-prompts": 23,
+        "industry-business-and-management-and-financial-operations": 29,
+        "industry-mathematical": 10,
+        "industry-legal-and-government": 49,
+        "english": 23,
+        "industry-entertainment-and-sports-and-media": 24
+      },
+      "highlight": [
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "industry-mathematical",
+          "label": "数学行业",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 14,
+          "isTop10": false
+        }
+      ],
+      "summary": "专家级 #10 · 数学行业 #10 | 相对擅长 数学 #14"
+    },
+    {
+      "rank": 26,
+      "name": "gemini-3-flash (thinking-minimal)",
+      "org": "Google",
+      "scores": {
+        "math": 30,
+        "korean": 9,
+        "exclude-ties": 26,
+        "industry-life-and-physical-and-social-science": 22,
+        "creative-writing": 15,
+        "multi-turn-context": 28,
+        "instruction-following": 34,
+        "polish": 12,
+        "multi-turn": 24,
+        "expert": 43,
+        "non-english": 21,
+        "industry-software-and-it-services": 31,
+        "coding": 37,
+        "french": 21,
+        "overall": 26,
+        "german": 18,
+        "spanish": 47,
+        "russian": 16,
+        "chinese": 29,
+        "industry-writing-and-literature-and-language": 21,
+        "hard-prompts-english": 38,
+        "longer-query": 30,
+        "japanese": 14,
+        "industry-medicine-and-healthcare": 22,
+        "hard-prompts": 29,
+        "industry-business-and-management-and-financial-operations": 27,
+        "industry-mathematical": 37,
+        "industry-legal-and-government": 18,
+        "english": 32,
+        "industry-entertainment-and-sports-and-media": 17
+      },
+      "highlight": [
+        {
+          "category": "korean",
+          "label": "韩文",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 15,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 24,
+          "isTop10": false
+        }
+      ],
+      "summary": "韩文 #9 | 相对擅长 创意写作 #15 · 多轮对话 #24"
+    },
+    {
+      "rank": 27,
+      "name": "deepseek-v4-pro-thinking",
+      "org": "DeepSeek",
+      "scores": {
+        "math": 11,
+        "exclude-ties": 27,
+        "industry-life-and-physical-and-social-science": 12,
+        "creative-writing": 28,
+        "multi-turn-context": 31,
+        "instruction-following": 28,
+        "multi-turn": 37,
+        "expert": 19,
+        "non-english": 32,
+        "industry-software-and-it-services": 29,
+        "coding": 35,
+        "overall": 27,
+        "russian": 26,
+        "chinese": 20,
+        "industry-writing-and-literature-and-language": 34,
+        "hard-prompts-english": 22,
+        "longer-query": 15,
+        "industry-medicine-and-healthcare": 15,
+        "hard-prompts": 27,
+        "industry-business-and-management-and-financial-operations": 42,
+        "industry-mathematical": 27,
+        "industry-legal-and-government": 20,
+        "english": 19,
+        "industry-entertainment-and-sports-and-media": 45
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 11,
+          "isTop10": false
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 15,
+          "isTop10": false
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 19,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 数学 #11 · 长查询 #15 · 专家级 #19"
+    },
+    {
+      "rank": 28,
+      "name": "kimi-k2.6",
+      "org": "Moonshot",
+      "scores": {
+        "math": 24,
+        "exclude-ties": 29,
+        "industry-life-and-physical-and-social-science": 32,
+        "creative-writing": 41,
+        "multi-turn-context": 34,
+        "instruction-following": 27,
+        "multi-turn": 42,
+        "expert": 20,
+        "non-english": 28,
+        "industry-software-and-it-services": 26,
+        "coding": 20,
+        "french": 9,
+        "overall": 28,
+        "german": 46,
+        "spanish": 21,
+        "russian": 36,
+        "chinese": 8,
+        "industry-writing-and-literature-and-language": 37,
+        "hard-prompts-english": 31,
+        "longer-query": 33,
+        "industry-medicine-and-healthcare": 29,
+        "hard-prompts": 26,
+        "industry-business-and-management-and-financial-operations": 37,
+        "industry-mathematical": 31,
+        "industry-legal-and-government": 72,
+        "english": 36,
+        "industry-entertainment-and-sports-and-media": 35
+      },
+      "highlight": [
+        {
+          "category": "chinese",
+          "label": "中文",
+          "rank": 8,
+          "isTop10": true
+        },
+        {
+          "category": "french",
+          "label": "法文",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 20,
+          "isTop10": false
+        }
+      ],
+      "summary": "中文 #8 · 法文 #9 | 相对擅长 专家级 #20"
+    },
+    {
+      "rank": 29,
+      "name": "grok-4.1",
+      "org": "xAI",
+      "scores": {
+        "math": 58,
+        "korean": 12,
+        "exclude-ties": 28,
+        "industry-life-and-physical-and-social-science": 26,
+        "creative-writing": 33,
+        "multi-turn-context": 32,
+        "instruction-following": 48,
+        "polish": 18,
+        "multi-turn": 40,
+        "expert": 59,
+        "non-english": 31,
+        "industry-software-and-it-services": 38,
+        "coding": 49,
+        "french": 31,
+        "overall": 29,
+        "german": 21,
+        "spanish": 38,
+        "russian": 35,
+        "chinese": 25,
+        "industry-writing-and-literature-and-language": 44,
+        "hard-prompts-english": 37,
+        "longer-query": 45,
+        "japanese": 19,
+        "industry-medicine-and-healthcare": 18,
+        "hard-prompts": 39,
+        "industry-business-and-management-and-financial-operations": 25,
+        "industry-mathematical": 74,
+        "industry-legal-and-government": 25,
+        "english": 27,
+        "industry-entertainment-and-sports-and-media": 33
+      },
+      "highlight": [
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 32,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 33,
+          "isTop10": false
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 37,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 多轮上下文 #32 · 创意写作 #33 · 英文难题 #37"
+    },
+    {
+      "rank": 30,
+      "name": "dola-seed-2.0-pro",
+      "org": "Bytedance",
+      "scores": {
+        "math": 36,
+        "korean": 17,
+        "exclude-ties": 30,
+        "industry-life-and-physical-and-social-science": 42,
+        "creative-writing": 62,
+        "multi-turn-context": 42,
+        "instruction-following": 43,
+        "polish": 10,
+        "multi-turn": 45,
+        "expert": 37,
+        "non-english": 26,
+        "industry-software-and-it-services": 20,
+        "coding": 21,
+        "french": 13,
+        "overall": 30,
+        "german": 42,
+        "spanish": 5,
+        "russian": 38,
+        "chinese": 23,
+        "industry-writing-and-literature-and-language": 58,
+        "hard-prompts-english": 32,
+        "longer-query": 43,
+        "japanese": 37,
+        "industry-medicine-and-healthcare": 13,
+        "hard-prompts": 24,
+        "industry-business-and-management-and-financial-operations": 22,
+        "industry-mathematical": 50,
+        "industry-legal-and-government": 22,
+        "english": 34,
+        "industry-entertainment-and-sports-and-media": 47
+      },
+      "highlight": [
+        {
+          "category": "spanish",
+          "label": "西文",
+          "rank": 5,
+          "isTop10": true
+        },
+        {
+          "category": "polish",
+          "label": "波兰文",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 21,
+          "isTop10": false
+        }
+      ],
+      "summary": "西文 #5 · 波兰文 #10 | 相对擅长 代码 #21"
+    },
+    {
+      "rank": 31,
+      "name": "qwen3.6-max-preview",
+      "org": "Alibaba",
+      "scores": {
+        "math": 9,
+        "exclude-ties": 31,
+        "industry-life-and-physical-and-social-science": 9,
+        "creative-writing": 32,
+        "multi-turn-context": 39,
+        "instruction-following": 32,
+        "multi-turn": 31,
+        "expert": 30,
+        "non-english": 25,
+        "industry-software-and-it-services": 40,
+        "coding": 41,
+        "overall": 31,
+        "russian": 27,
+        "chinese": 27,
+        "industry-writing-and-literature-and-language": 20,
+        "hard-prompts-english": 47,
+        "longer-query": 27,
+        "industry-medicine-and-healthcare": 23,
+        "hard-prompts": 33,
+        "industry-business-and-management-and-financial-operations": 39,
+        "industry-mathematical": 7,
+        "industry-legal-and-government": 36,
+        "english": 45,
+        "industry-entertainment-and-sports-and-media": 32
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "industry-mathematical",
+          "label": "数学行业",
+          "rank": 7,
+          "isTop10": true
+        },
+        {
+          "category": "industry-life-and-physical-and-social-science",
+          "label": "科学行业",
+          "rank": 9,
+          "isTop10": true
+        }
+      ],
+      "summary": "数学 #9 · 数学行业 #7 · 科学行业 #9"
+    },
+    {
+      "rank": 32,
+      "name": "glm-5",
+      "org": "Z.ai",
+      "scores": {
+        "math": 39,
+        "korean": 20,
+        "exclude-ties": 32,
+        "industry-life-and-physical-and-social-science": 27,
+        "creative-writing": 21,
+        "multi-turn-context": 35,
+        "instruction-following": 36,
+        "polish": 42,
+        "multi-turn": 36,
+        "expert": 32,
+        "non-english": 40,
+        "industry-software-and-it-services": 44,
+        "coding": 46,
+        "french": 22,
+        "overall": 32,
+        "german": 29,
+        "spanish": 41,
+        "russian": 40,
+        "chinese": 10,
+        "industry-writing-and-literature-and-language": 33,
+        "hard-prompts-english": 30,
+        "longer-query": 28,
+        "japanese": 40,
+        "industry-medicine-and-healthcare": 20,
+        "hard-prompts": 37,
+        "industry-business-and-management-and-financial-operations": 41,
+        "industry-mathematical": 32,
+        "industry-legal-and-government": 34,
+        "english": 28,
+        "industry-entertainment-and-sports-and-media": 31
+      },
+      "highlight": [
+        {
+          "category": "chinese",
+          "label": "中文",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 21,
+          "isTop10": false
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 28,
+          "isTop10": false
+        }
+      ],
+      "summary": "中文 #10 | 相对擅长 创意写作 #21 · 长查询 #28"
+    },
+    {
+      "rank": 33,
+      "name": "gpt-5.4-mini-high",
+      "org": "OpenAI",
+      "scores": {
+        "math": 50,
+        "korean": 42,
+        "exclude-ties": 33,
+        "industry-life-and-physical-and-social-science": 38,
+        "creative-writing": 50,
+        "multi-turn-context": 48,
+        "instruction-following": 39,
+        "polish": 17,
+        "multi-turn": 27,
+        "expert": 24,
+        "non-english": 27,
+        "industry-software-and-it-services": 30,
+        "coding": 28,
+        "french": 36,
+        "overall": 33,
+        "german": 16,
+        "spanish": 46,
+        "russian": 28,
+        "chinese": 36,
+        "industry-writing-and-literature-and-language": 40,
+        "hard-prompts-english": 41,
+        "longer-query": 38,
+        "industry-medicine-and-healthcare": 63,
+        "hard-prompts": 32,
+        "industry-business-and-management-and-financial-operations": 19,
+        "industry-mathematical": 35,
+        "industry-legal-and-government": 41,
+        "english": 46,
+        "industry-entertainment-and-sports-and-media": 41
+      },
+      "highlight": [
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 24,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 27,
+          "isTop10": false
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 28,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 专家级 #24 · 多轮对话 #27 · 代码 #28"
+    },
+    {
+      "rank": 34,
+      "name": "grok-4.3",
+      "org": "xAI",
+      "scores": {
+        "exclude-ties": 34,
+        "industry-life-and-physical-and-social-science": 53,
+        "creative-writing": 13,
+        "multi-turn-context": 43,
+        "instruction-following": 49,
+        "multi-turn": 44,
+        "expert": 64,
+        "non-english": 35,
+        "industry-software-and-it-services": 42,
+        "coding": 44,
+        "overall": 34,
+        "russian": 32,
+        "industry-writing-and-literature-and-language": 24,
+        "hard-prompts-english": 50,
+        "longer-query": 58,
+        "hard-prompts": 45,
+        "industry-business-and-management-and-financial-operations": 48,
+        "english": 33,
+        "industry-entertainment-and-sports-and-media": 18
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 13,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 43,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 44,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 创意写作 #13 · 多轮上下文 #43 · 多轮对话 #44"
+    },
+    {
+      "rank": 35,
+      "name": "gpt-5.1-high",
+      "org": "OpenAI",
+      "scores": {
+        "math": 34,
+        "korean": 43,
+        "exclude-ties": 35,
+        "industry-life-and-physical-and-social-science": 41,
+        "creative-writing": 36,
+        "multi-turn-context": 41,
+        "instruction-following": 33,
+        "polish": 27,
+        "multi-turn": 38,
+        "expert": 35,
+        "non-english": 33,
+        "industry-software-and-it-services": 47,
+        "coding": 48,
+        "french": 35,
+        "overall": 35,
+        "german": 30,
+        "spanish": 33,
+        "russian": 31,
+        "chinese": 31,
+        "industry-writing-and-literature-and-language": 38,
+        "hard-prompts-english": 35,
+        "longer-query": 36,
+        "japanese": 9,
+        "industry-medicine-and-healthcare": 48,
+        "hard-prompts": 38,
+        "industry-business-and-management-and-financial-operations": 43,
+        "industry-mathematical": 34,
+        "industry-legal-and-government": 45,
+        "english": 37,
+        "industry-entertainment-and-sports-and-media": 44
+      },
+      "highlight": [
+        {
+          "category": "japanese",
+          "label": "日文",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 33,
+          "isTop10": false
+        },
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 34,
+          "isTop10": false
+        }
+      ],
+      "summary": "日文 #9 | 相对擅长 指令遵循 #33 · 数学 #34"
+    },
+    {
+      "rank": 36,
+      "name": "claude-sonnet-4-5-20250929-thinking-32k",
+      "org": "Anthropic",
+      "scores": {
+        "math": 33,
+        "korean": 52,
+        "exclude-ties": 36,
+        "industry-life-and-physical-and-social-science": 39,
+        "creative-writing": 24,
+        "multi-turn-context": 21,
+        "instruction-following": 16,
+        "polish": 30,
+        "multi-turn": 30,
+        "expert": 17,
+        "non-english": 46,
+        "industry-software-and-it-services": 23,
+        "coding": 13,
+        "french": 46,
+        "overall": 36,
+        "german": 24,
+        "spanish": 31,
+        "russian": 47,
+        "chinese": 50,
+        "industry-writing-and-literature-and-language": 29,
+        "hard-prompts-english": 17,
+        "longer-query": 14,
+        "japanese": 34,
+        "industry-medicine-and-healthcare": 51,
+        "hard-prompts": 25,
+        "industry-business-and-management-and-financial-operations": 32,
+        "industry-mathematical": 25,
+        "industry-legal-and-government": 44,
+        "english": 25,
+        "industry-entertainment-and-sports-and-media": 22
+      },
+      "highlight": [
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 13,
+          "isTop10": false
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 14,
+          "isTop10": false
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 16,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 代码 #13 · 长查询 #14 · 指令遵循 #16"
+    },
+    {
+      "rank": 37,
+      "name": "claude-sonnet-4-5-20250929",
+      "org": "Anthropic",
+      "scores": {
+        "math": 70,
+        "korean": 31,
+        "exclude-ties": 37,
+        "industry-life-and-physical-and-social-science": 36,
+        "creative-writing": 14,
+        "multi-turn-context": 24,
+        "instruction-following": 19,
+        "polish": 46,
+        "multi-turn": 23,
+        "expert": 29,
+        "non-english": 43,
+        "industry-software-and-it-services": 28,
+        "coding": 23,
+        "french": 30,
+        "overall": 37,
+        "german": 38,
+        "spanish": 23,
+        "russian": 43,
+        "chinese": 60,
+        "industry-writing-and-literature-and-language": 18,
+        "hard-prompts-english": 23,
+        "longer-query": 17,
+        "japanese": 32,
+        "industry-medicine-and-healthcare": 45,
+        "hard-prompts": 28,
+        "industry-business-and-management-and-financial-operations": 30,
+        "industry-mathematical": 45,
+        "industry-legal-and-government": 38,
+        "english": 31,
+        "industry-entertainment-and-sports-and-media": 19
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 14,
+          "isTop10": false
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 17,
+          "isTop10": false
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 19,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 创意写作 #14 · 长查询 #17 · 指令遵循 #19"
+    },
+    {
+      "rank": 38,
+      "name": "gemma-4-31b",
+      "org": "Google",
+      "scores": {
+        "math": 23,
+        "exclude-ties": 38,
+        "industry-life-and-physical-and-social-science": 43,
+        "creative-writing": 42,
+        "multi-turn-context": 36,
+        "instruction-following": 29,
+        "multi-turn": 39,
+        "expert": 34,
+        "non-english": 39,
+        "industry-software-and-it-services": 37,
+        "coding": 39,
+        "french": 47,
+        "overall": 38,
+        "spanish": 16,
+        "russian": 23,
+        "chinese": 53,
+        "industry-writing-and-literature-and-language": 39,
+        "hard-prompts-english": 29,
+        "longer-query": 29,
+        "industry-medicine-and-healthcare": 56,
+        "hard-prompts": 41,
+        "industry-business-and-management-and-financial-operations": 50,
+        "industry-mathematical": 22,
+        "industry-legal-and-government": 33,
+        "english": 40,
+        "industry-entertainment-and-sports-and-media": 48
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 23,
+          "isTop10": false
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 29,
+          "isTop10": false
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 29,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 数学 #23 · 指令遵循 #29 · 英文难题 #29"
+    },
+    {
+      "rank": 39,
+      "name": "ernie-5.0-0110",
+      "org": "Baidu",
+      "scores": {
+        "math": 40,
+        "korean": 28,
+        "exclude-ties": 39,
+        "industry-life-and-physical-and-social-science": 47,
+        "creative-writing": 40,
+        "multi-turn-context": 50,
+        "instruction-following": 46,
+        "polish": 22,
+        "multi-turn": 57,
+        "expert": 60,
+        "non-english": 34,
+        "industry-software-and-it-services": 39,
+        "coding": 45,
+        "french": 23,
+        "overall": 39,
+        "german": 52,
+        "spanish": 37,
+        "russian": 33,
+        "chinese": 30,
+        "industry-writing-and-literature-and-language": 50,
+        "hard-prompts-english": 46,
+        "longer-query": 49,
+        "japanese": 42,
+        "industry-medicine-and-healthcare": 34,
+        "hard-prompts": 43,
+        "industry-business-and-management-and-financial-operations": 47,
+        "industry-mathematical": 63,
+        "industry-legal-and-government": 64,
+        "english": 47,
+        "industry-entertainment-and-sports-and-media": 40
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 40,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 40,
+          "isTop10": false
+        },
+        {
+          "category": "hard-prompts",
+          "label": "难题",
+          "rank": 43,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 数学 #40 · 创意写作 #40 · 难题 #43"
+    },
+    {
+      "rank": 40,
+      "name": "kimi-k2.5-thinking",
+      "org": "Moonshot",
+      "scores": {
+        "math": 17,
+        "korean": 38,
+        "exclude-ties": 42,
+        "industry-life-and-physical-and-social-science": 37,
+        "creative-writing": 48,
+        "multi-turn-context": 46,
+        "instruction-following": 40,
+        "polish": 34,
+        "multi-turn": 46,
+        "expert": 28,
+        "non-english": 42,
+        "industry-software-and-it-services": 32,
+        "coding": 30,
+        "french": 33,
+        "overall": 40,
+        "german": 26,
+        "spanish": 20,
+        "russian": 54,
+        "chinese": 24,
+        "industry-writing-and-literature-and-language": 49,
+        "hard-prompts-english": 39,
+        "longer-query": 41,
+        "japanese": 26,
+        "industry-medicine-and-healthcare": 53,
+        "hard-prompts": 42,
+        "industry-business-and-management-and-financial-operations": 57,
+        "industry-mathematical": 15,
+        "industry-legal-and-government": 62,
+        "english": 41,
+        "industry-entertainment-and-sports-and-media": 42
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 17,
+          "isTop10": false
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 28,
+          "isTop10": false
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 30,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 数学 #17 · 专家级 #28 · 代码 #30"
+    },
+    {
+      "rank": 41,
+      "name": "ernie-5.0-preview-1203",
+      "org": "Baidu",
+      "scores": {
+        "math": 93,
+        "korean": 59,
+        "exclude-ties": 44,
+        "industry-life-and-physical-and-social-science": 29,
+        "creative-writing": 45,
+        "multi-turn-context": 64,
+        "instruction-following": 61,
+        "polish": 7,
+        "multi-turn": 70,
+        "expert": 66,
+        "non-english": 36,
+        "industry-software-and-it-services": 50,
+        "coding": 68,
+        "french": 26,
+        "overall": 41,
+        "german": 23,
+        "spanish": 10,
+        "russian": 41,
+        "chinese": 49,
+        "industry-writing-and-literature-and-language": 56,
+        "hard-prompts-english": 57,
+        "longer-query": 71,
+        "industry-medicine-and-healthcare": 16,
+        "hard-prompts": 48,
+        "industry-business-and-management-and-financial-operations": 54,
+        "industry-mathematical": 92,
+        "industry-legal-and-government": 43,
+        "english": 49,
+        "industry-entertainment-and-sports-and-media": 50
+      },
+      "highlight": [
+        {
+          "category": "polish",
+          "label": "波兰文",
+          "rank": 7,
+          "isTop10": true
+        },
+        {
+          "category": "spanish",
+          "label": "西文",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 45,
+          "isTop10": false
+        }
+      ],
+      "summary": "波兰文 #7 · 西文 #10 | 相对擅长 创意写作 #45"
+    },
+    {
+      "rank": 42,
+      "name": "mimo-v2-pro",
+      "org": "Xiaomi",
+      "scores": {
+        "math": 31,
+        "korean": 35,
+        "exclude-ties": 40,
+        "industry-life-and-physical-and-social-science": 25,
+        "creative-writing": 44,
+        "multi-turn-context": 37,
+        "instruction-following": 31,
+        "polish": 45,
+        "multi-turn": 34,
+        "expert": 15,
+        "non-english": 53,
+        "industry-software-and-it-services": 35,
+        "coding": 31,
+        "french": 40,
+        "overall": 42,
+        "german": 43,
+        "spanish": 7,
+        "russian": 52,
+        "chinese": 48,
+        "industry-writing-and-literature-and-language": 35,
+        "hard-prompts-english": 18,
+        "longer-query": 31,
+        "industry-medicine-and-healthcare": 32,
+        "hard-prompts": 36,
+        "industry-business-and-management-and-financial-operations": 28,
+        "industry-mathematical": 24,
+        "industry-legal-and-government": 51,
+        "english": 29,
+        "industry-entertainment-and-sports-and-media": 37
+      },
+      "highlight": [
+        {
+          "category": "spanish",
+          "label": "西文",
+          "rank": 7,
+          "isTop10": true
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 15,
+          "isTop10": false
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 18,
+          "isTop10": false
+        }
+      ],
+      "summary": "西文 #7 | 相对擅长 专家级 #15 · 英文难题 #18"
+    },
+    {
+      "rank": 43,
+      "name": "claude-opus-4-1-20250805-thinking-16k",
+      "org": "Anthropic",
+      "scores": {
+        "math": 43,
+        "korean": 22,
+        "exclude-ties": 43,
+        "industry-life-and-physical-and-social-science": 35,
+        "creative-writing": 20,
+        "multi-turn-context": 23,
+        "instruction-following": 20,
+        "polish": 40,
+        "multi-turn": 28,
+        "expert": 33,
+        "non-english": 51,
+        "industry-software-and-it-services": 34,
+        "coding": 22,
+        "french": 32,
+        "overall": 43,
+        "german": 28,
+        "spanish": 24,
+        "russian": 48,
+        "chinese": 75,
+        "industry-writing-and-literature-and-language": 31,
+        "hard-prompts-english": 26,
+        "longer-query": 13,
+        "japanese": 29,
+        "industry-medicine-and-healthcare": 30,
+        "hard-prompts": 31,
+        "industry-business-and-management-and-financial-operations": 38,
+        "industry-mathematical": 44,
+        "industry-legal-and-government": 35,
+        "english": 35,
+        "industry-entertainment-and-sports-and-media": 28
+      },
+      "highlight": [
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 13,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 20,
+          "isTop10": false
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 20,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 长查询 #13 · 创意写作 #20 · 指令遵循 #20"
+    },
+    {
+      "rank": 44,
+      "name": "gpt-5.3-chat-latest",
+      "org": "OpenAI",
+      "scores": {
+        "math": 66,
+        "korean": 24,
+        "exclude-ties": 45,
+        "industry-life-and-physical-and-social-science": 50,
+        "creative-writing": 58,
+        "multi-turn-context": 40,
+        "instruction-following": 50,
+        "polish": 13,
+        "multi-turn": 33,
+        "expert": 47,
+        "non-english": 38,
+        "industry-software-and-it-services": 33,
+        "coding": 38,
+        "french": 39,
+        "overall": 44,
+        "german": 41,
+        "spanish": 43,
+        "russian": 29,
+        "chinese": 35,
+        "industry-writing-and-literature-and-language": 48,
+        "hard-prompts-english": 45,
+        "longer-query": 40,
+        "japanese": 17,
+        "industry-medicine-and-healthcare": 25,
+        "hard-prompts": 40,
+        "industry-business-and-management-and-financial-operations": 26,
+        "industry-mathematical": 88,
+        "industry-legal-and-government": 29,
+        "english": 48,
+        "industry-entertainment-and-sports-and-media": 43
+      },
+      "highlight": [
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 33,
+          "isTop10": false
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 38,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 40,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 多轮对话 #33 · 代码 #38 · 多轮上下文 #40"
+    },
+    {
+      "rank": 45,
+      "name": "gemini-2.5-pro",
+      "org": "Google",
+      "scores": {
+        "math": 42,
+        "korean": 25,
+        "exclude-ties": 49,
+        "industry-life-and-physical-and-social-science": 33,
+        "creative-writing": 18,
+        "multi-turn-context": 47,
+        "instruction-following": 38,
+        "polish": 31,
+        "multi-turn": 50,
+        "expert": 50,
+        "non-english": 37,
+        "industry-software-and-it-services": 67,
+        "coding": 78,
+        "french": 41,
+        "overall": 45,
+        "german": 15,
+        "spanish": 30,
+        "russian": 30,
+        "chinese": 33,
+        "industry-writing-and-literature-and-language": 26,
+        "hard-prompts-english": 62,
+        "longer-query": 37,
+        "japanese": 12,
+        "industry-medicine-and-healthcare": 47,
+        "hard-prompts": 54,
+        "industry-business-and-management-and-financial-operations": 56,
+        "industry-mathematical": 41,
+        "industry-legal-and-government": 32,
+        "english": 50,
+        "industry-entertainment-and-sports-and-media": 30
+      },
+      "highlight": [
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 18,
+          "isTop10": false
+        },
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 37,
+          "isTop10": false
+        },
+        {
+          "category": "instruction-following",
+          "label": "指令遵循",
+          "rank": 38,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 创意写作 #18 · 长查询 #37 · 指令遵循 #38"
+    },
+    {
+      "rank": 46,
+      "name": "qwen3.6-plus",
+      "org": "Alibaba",
+      "scores": {
+        "math": 13,
+        "korean": 39,
+        "exclude-ties": 47,
+        "industry-life-and-physical-and-social-science": 70,
+        "creative-writing": 68,
+        "multi-turn-context": 55,
+        "instruction-following": 45,
+        "polish": 35,
+        "multi-turn": 61,
+        "expert": 38,
+        "non-english": 50,
+        "industry-software-and-it-services": 45,
+        "coding": 32,
+        "french": 38,
+        "overall": 46,
+        "spanish": 67,
+        "russian": 53,
+        "chinese": 51,
+        "industry-writing-and-literature-and-language": 51,
+        "hard-prompts-english": 40,
+        "longer-query": 44,
+        "industry-medicine-and-healthcare": 40,
+        "hard-prompts": 44,
+        "industry-business-and-management-and-financial-operations": 33,
+        "industry-mathematical": 38,
+        "industry-legal-and-government": 57,
+        "english": 42,
+        "industry-entertainment-and-sports-and-media": 61
+      },
+      "highlight": [
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 13,
+          "isTop10": false
+        },
+        {
+          "category": "coding",
+          "label": "代码",
+          "rank": 32,
+          "isTop10": false
+        },
+        {
+          "category": "expert",
+          "label": "专家级",
+          "rank": 38,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 数学 #13 · 代码 #32 · 专家级 #38"
+    },
+    {
+      "rank": 47,
+      "name": "qwen3.5-397b-a17b",
+      "org": "Alibaba",
+      "scores": {
+        "math": 38,
+        "korean": 49,
+        "exclude-ties": 46,
+        "industry-life-and-physical-and-social-science": 44,
+        "creative-writing": 49,
+        "multi-turn-context": 45,
+        "instruction-following": 53,
+        "polish": 36,
+        "multi-turn": 48,
+        "expert": 45,
+        "non-english": 45,
+        "industry-software-and-it-services": 46,
+        "coding": 52,
+        "french": 67,
+        "overall": 47,
+        "german": 54,
+        "spanish": 40,
+        "russian": 50,
+        "chinese": 26,
+        "industry-writing-and-literature-and-language": 45,
+        "hard-prompts-english": 44,
+        "longer-query": 46,
+        "japanese": 10,
+        "industry-medicine-and-healthcare": 46,
+        "hard-prompts": 46,
+        "industry-business-and-management-and-financial-operations": 49,
+        "industry-mathematical": 36,
+        "industry-legal-and-government": 66,
+        "english": 44,
+        "industry-entertainment-and-sports-and-media": 55
+      },
+      "highlight": [
+        {
+          "category": "japanese",
+          "label": "日文",
+          "rank": 10,
+          "isTop10": true
+        },
+        {
+          "category": "math",
+          "label": "数学",
+          "rank": 38,
+          "isTop10": false
+        },
+        {
+          "category": "hard-prompts-english",
+          "label": "英文难题",
+          "rank": 44,
+          "isTop10": false
+        }
+      ],
+      "summary": "日文 #10 | 相对擅长 数学 #38 · 英文难题 #44"
+    },
+    {
+      "rank": 48,
+      "name": "claude-opus-4-1-20250805",
+      "org": "Anthropic",
+      "scores": {
+        "math": 56,
+        "korean": 37,
+        "exclude-ties": 48,
+        "industry-life-and-physical-and-social-science": 45,
+        "creative-writing": 26,
+        "multi-turn-context": 25,
+        "instruction-following": 26,
+        "polish": 38,
+        "multi-turn": 32,
+        "expert": 49,
+        "non-english": 49,
+        "industry-software-and-it-services": 43,
+        "coding": 34,
+        "french": 43,
+        "overall": 48,
+        "german": 40,
+        "spanish": 26,
+        "russian": 34,
+        "chinese": 68,
+        "industry-writing-and-literature-and-language": 32,
+        "hard-prompts-english": 33,
+        "longer-query": 22,
+        "japanese": 31,
+        "industry-medicine-and-healthcare": 35,
+        "hard-prompts": 34,
+        "industry-business-and-management-and-financial-operations": 40,
+        "industry-mathematical": 59,
+        "industry-legal-and-government": 39,
+        "english": 43,
+        "industry-entertainment-and-sports-and-media": 29
+      },
+      "highlight": [
+        {
+          "category": "longer-query",
+          "label": "长查询",
+          "rank": 22,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 25,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 26,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 长查询 #22 · 多轮上下文 #25 · 创意写作 #26"
+    },
+    {
+      "rank": 49,
+      "name": "gpt-4.5-preview-2025-02-27",
+      "org": "OpenAI",
+      "scores": {
+        "math": 89,
+        "korean": 26,
+        "exclude-ties": 41,
+        "industry-life-and-physical-and-social-science": 64,
+        "creative-writing": 29,
+        "multi-turn-context": 18,
+        "instruction-following": 42,
+        "multi-turn": 35,
+        "expert": 94,
+        "non-english": 41,
+        "industry-software-and-it-services": 72,
+        "coding": 89,
+        "french": 60,
+        "overall": 49,
+        "german": 9,
+        "russian": 45,
+        "chinese": 80,
+        "industry-writing-and-literature-and-language": 30,
+        "hard-prompts-english": 84,
+        "longer-query": 59,
+        "japanese": 13,
+        "industry-medicine-and-healthcare": 66,
+        "hard-prompts": 78,
+        "industry-business-and-management-and-financial-operations": 67,
+        "industry-mathematical": 94,
+        "industry-legal-and-government": 30,
+        "english": 53,
+        "industry-entertainment-and-sports-and-media": 25
+      },
+      "highlight": [
+        {
+          "category": "german",
+          "label": "德文",
+          "rank": 9,
+          "isTop10": true
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 18,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 29,
+          "isTop10": false
+        }
+      ],
+      "summary": "德文 #9 | 相对擅长 多轮上下文 #18 · 创意写作 #29"
+    },
+    {
+      "rank": 50,
+      "name": "chatgpt-4o-latest-20250326",
+      "org": "OpenAI",
+      "scores": {
+        "math": 101,
+        "korean": 32,
+        "exclude-ties": 50,
+        "industry-life-and-physical-and-social-science": 48,
+        "creative-writing": 43,
+        "multi-turn-context": 38,
+        "instruction-following": 57,
+        "polish": 28,
+        "multi-turn": 29,
+        "expert": 92,
+        "non-english": 44,
+        "industry-software-and-it-services": 62,
+        "coding": 71,
+        "french": 42,
+        "overall": 50,
+        "german": 50,
+        "spanish": 34,
+        "russian": 39,
+        "chinese": 67,
+        "industry-writing-and-literature-and-language": 41,
+        "hard-prompts-english": 67,
+        "longer-query": 62,
+        "japanese": 28,
+        "industry-medicine-and-healthcare": 31,
+        "hard-prompts": 57,
+        "industry-business-and-management-and-financial-operations": 34,
+        "industry-mathematical": 105,
+        "industry-legal-and-government": 42,
+        "english": 52,
+        "industry-entertainment-and-sports-and-media": 38
+      },
+      "highlight": [
+        {
+          "category": "multi-turn",
+          "label": "多轮对话",
+          "rank": 29,
+          "isTop10": false
+        },
+        {
+          "category": "multi-turn-context",
+          "label": "多轮上下文",
+          "rank": 38,
+          "isTop10": false
+        },
+        {
+          "category": "creative-writing",
+          "label": "创意写作",
+          "rank": 43,
+          "isTop10": false
+        }
+      ],
+      "summary": "相对擅长 多轮对话 #29 · 多轮上下文 #38 · 创意写作 #43"
+    }
+  ]
+}

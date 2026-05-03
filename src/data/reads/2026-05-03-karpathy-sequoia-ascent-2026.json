@@ -1,0 +1,59 @@
+{
+  "slug": "karpathy-sequoia-ascent-2026",
+  "savedDate": "2026-05-03",
+  "publishDate": "2026-04-30",
+  "titleZh": "Karpathy@Sequoia Ascent 2026：Software 3.0 来了，程序员变成 Agent 编排者",
+  "titleEn": "Sequoia Ascent 2026: Software 3.0, Agentic Engineering, and Jagged Intelligence",
+  "author": "Andrej Karpathy",
+  "authorTitle": "前 OpenAI 创始团队、前 Tesla AI 负责人；vibe coding 一词提出者",
+  "originalUrl": "https://karpathy.bearblog.dev/sequoia-ascent-2026/",
+  "tags": ["AI", "Software 3.0", "Agentic Engineering", "Karpathy", "Sequoia", "vibe coding"],
+  "summary": "Karpathy 在 Sequoia Ascent 2026 给出他对 AI 编程的最新观点：2025 年 12 月是 agentic 拐点，编程进入 Software 3.0 时代——人通过 prompt/上下文/工具/记忆来编程 LLM；程序员从「写代码」变成「编排 agent」；vibe coding 抬地板，agentic engineering 提天花板。",
+  "keyPoints": [
+    "**2025 年 12 月是拐点**：在那之前，Claude Code / Codex / Cursor 这些 agent 还频繁需要纠错；12 月起生成块更大、更连贯、更可靠，Karpathy 说他「开始把更多工作交给 agent」。",
+    "**Software 3.0 = 用 prompt、上下文、工具、记忆、指令编程 LLM**。1.0 是写代码、2.0 是训神经网络、3.0 是把 LLM 当可编程层用。**上下文窗口成为新的程序**——以前一个 brittle shell script 装的东西，现在是给 agent 一段说明书让它自己适配环境装好。",
+    "**有些 app 不该作为 app 存在了**：MenuGen 之前要做 OCR + 图像生成 + 前端 + 后端 + 部署；现在直接给多模态模型一张菜单图，要求它在原图上画出菜品——「神经网络直接做端到端的 media 转换，old software stack 是给现在能直接做的事搭的脚手架」。",
+    "**verifiability 决定 AI 进步快的领域**：传统软件自动化「能 specify」的事，LLM + RL 自动化「能 verify」的事。代码、数学、benchmark 进步快，因为有 reward 信号。能 reset/repeat/reward 的任务都会被吃掉。",
+    "**Jagged Intelligence 公式**：能力突起 ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值。模型不是「均匀变强」——它在 lab 训过的领域飞，没训过的领域意外地烂。「Are you on the model's rails?」是创业者必须问自己的问题。",
+    "**Vibe coding 抬地板，Agentic engineering 提天花板**：vibe coding 让任何人都能造原型；agentic engineering 是专业纪律——写 spec、审 plan、查 diff、写 test、做 eval、管权限、隔离 worktree。MenuGen 的 Stripe 支付 bug（agent 用 email 串 Stripe 和 Google 账号）就是反例：人需要产品判断力坚持用持久 user id。",
+    "**Agent-native 基础设施缺口**：当前软件还是给「人点屏幕」造的——doc 说「打开这个 URL，点这个按钮」。但越来越多的「用户」是人的 agent。未来需要 markdown doc / CLI / API / MCP server / 结构化 log / machine-readable schema / 安全权限 / 可审计的 action。**部署仍然是 agent 最痛的地方**——MenuGen 写代码容易，配 Vercel + auth + payment + DNS + secret 痛苦。",
+    "**「You can outsource your thinking, but you can't outsource your understanding」**：哪怕 agent 做更多事，人还要负责知道什么值得做、什么结果可疑、什么 trade-off 可以接受。理解仍然是 bottleneck，因为没有理解就做不好 director。"
+  ],
+  "insight": "这场对话最值得给客户讲的，是 Karpathy 那句**「Are you on the model's rails?」**——这是 AI 时代的战略基础题。\n\n把 jagged intelligence 公式翻译给我们的客户：\n\n**capability spike ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值**\n\n埃森哲很多客户的真实业务（保单核保、合规审查、医药 BD、奢侈品门店运营）都**不在 lab 的 rails 上**——因为这些领域既缺公开 benchmark，也缺 RL 环境，更缺标准化数据。这意味着两件事：\n\n**第一，仅靠 GPT-5 / Opus 4.7 + prompt engineering 不够。** 那些客户里，最容易达成的「让 AI 写代码 / 写营销文案 / 做客服 FAQ」很快会饱和——因为这些都在 model rails 上，竞争对手买同样的 license 就能做。**真正的差异化不在「用 frontier model」，而在「能不能给自己的领域造出 verifiable environment」**——能让模型 try 一个 action、拿到 reliable reward 的小世界。Karpathy 说这就是创业 wedge，对企业来说也是护城河。\n\n**第二，agentic engineering 是新的专业岗位。** Vibe coding 上限低、地板低，所以人人能做——但企业级软件的核心问题是 quality / security / maintainability，这些都是 vibe coding 解决不了的。这意味着我们在大客户那边的咨询业务里，**「AI Engineer」这个岗位的角色会重定义**——从写代码升级到「写 spec + 设计 eval + 编排 agent + 管权限」。这是一个**能让初级工程师跨级跃迁，也能让平庸资深工程师被替代**的拐点。建议给我们的开发团队（包括内部 ATC）做一轮 agentic engineering 培训设计。\n\n**第三，agent-native 基础设施是下一波 IT 投入的方向。** 客户的 IT 系统大部分都是给人设计的——portal、UI、点击流。当用户开始变成 agent，这套全部要重做。**MCP server、结构化 doc、headless setup、agent-friendly API**——这些不是技术 nice-to-have，是未来 5 年的基础设施。可以基于此做 Microsoft Azure + Copilot 生态的解决方案——围绕 Azure AI Foundry + Copilot Studio + MCP，设计企业「agent-ready 改造」的服务包。\n\n最后那句关于「understanding is the bottleneck」是给所有 KM/培训部门的提醒：**靠 LLM 把员工「升级」的项目，如果只增加输出量但不强化理解力，只是在制造平庸放大器，不是在创造 AI-native 员工**。",
+  "summaryZh": "## Sequoia Ascent 2026 上的 Karpathy：Software 3.0 元年\n\n2026 年 4 月 30 日，Karpathy 在 Sequoia Ascent 2026 跟 Stephanie Zhan 做了一场炉边对话。视频在 YouTube 已经 372K views，Karpathy 自己用 Codex 5.5 把 transcript 清洗后做了一篇 blog 总结——既给读者看，也给 LLM 喂。\n\n这篇 blog 是 Karpathy 自己审过的，他说「reads ok without glaring mistakes」。我们以下基于这篇做精读。\n\n## 一、2025 年 12 月：agentic 拐点\n\nKarpathy 说他最近从未感觉自己作为程序员这么「掉队」。**不是编程变难了，是默认 workflow 变了。**\n\n- 2025 年大半年时间，Claude Code、Codex、Cursor 这些工具有用但还要频繁纠错\n- 2026 年 12 月左右开始，他感到 step change：生成的代码块更大、更连贯、更可靠\n- 「我开始把更多工作交给 agent」\n\n编程的最小单位从「敲代码」变成了「委托宏指令」：\n\n> Implement this feature. Refactor this subsystem. Research this library. Set up this service. Write tests, run them, and fix failures. Compare approaches and propose a plan.\n\n**程序员的角色被重写——从代码作者变成 agent 编排者。**\n\n## 二、Software 3.0：上下文窗口就是新的程序\n\nKarpathy 把演化序列写清楚：\n\n- **Software 1.0**：人写显式代码\n- **Software 2.0**：人造数据集 + 目标 + 神经网络，程序学进权重\n- **Software 3.0**：人通过 prompt、context、tools、examples、memory、instructions 编程 LLM\n\nLLM 是上下文之上的「解释器」，对数字信息做计算。\n\n他举的最直观例子：**安装。** 旧世界要写一个 brittle shell script 处理各种环境差异；Software 3.0 时代，installer 是一段你贴给 agent 的说明文字——agent 读环境、debug、适配、装完。\n\n这是另一种程序：**没那么精确，但更适应。**\n\n## 三、MenuGen 案例：有些 app 应该不再作为 app 存在\n\nKarpathy 用 MenuGen 讲了更深的转变。\n\nMenuGen 原本是一个传统 web app：拍菜单 → OCR 出菜名 → 生成图 → 渲染 UI。需要前端、API、图像生成、部署、auth、payment、secret、infrastructure。\n\n但 Software 3.0 版本是：拍菜单 → 给多模态模型 → 让它直接在菜单图上画出菜品。\n\n> In that version, much of the app disappears.\n\n原本的 software stack 是给「现在模型能直接做的事」搭的脚手架。**这是给 founder 最重要的提醒：AI 不只是更快做老 app，有些 app 应该不再存在为 app。**\n\n## 四、新机会不是「更快编程」\n\n更广的转变在「LLM 自动化以前不能编程的信息处理」。\n\n他自己的 LLM Wiki pattern 是最清晰的例子：传统 RAG 是每次查问题都从原始 doc 里检索；他做的是 agent 增量地把原始材料编译成持久 markdown wiki——summary、entity 页、concept 页、矛盾点、cross-link、log、不断演化的综合。\n\n> No classical program could robustly maintain that kind of knowledge base across messy human documents. But an LLM can.\n\n**问题不只是「哪个 workflow 能 AI 加速」，更要问「哪个信息转换以前不可能、现在自然了」。**\n\n## 五、Verifiability 决定 AI 在哪里飞\n\nKarpathy 的核心自动化框架：\n\n- 传统软件自动化能 **specify** 的事\n- LLM + RL 自动化能 **verify** 的事\n\n如果一个任务有自动 reward 或 success 信号，模型就能 practice。这就是数学、编程、benchmark、游戏、很多工程任务进步飞快的原因——它们 resettable、repeatable、rewardable。\n\n这也解释为什么 coding agent 体感比一般 chatbot 强很多——coding 给模型反馈：test 过没过、程序跑没跑、diff 能不能看、benchmark 能不能测。\n\n## 六、Jagged Intelligence：两个轴\n\nKarpathy 在这次访谈中给 verifiability 论加了一层补丁：\n\n**模型能力不仅取决于任务能不能 verify，还取决于这个任务在 lab 里被多用心训练。**\n\n粗略公式：\n\n```\ncapability spike ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值\n```\n\n国际象棋是好例子。GPT-4 在棋上的提升，未必是「智能均匀提升了」，而可能是「训练数据里塞了更多棋」。\n\n这意味着——**前沿模型没有 manual。** 它们是 pretraining 配方、RL 环境、benchmark 压力、产品优先级、经济激励的产物。它们在某些领域 spike，在另一些领域奇怪地烂。\n\n创始人的实操问题是：**Are you on the model's rails？**\n\n- 如果你的任务在「verifiable + 高训练关注度」区间，模型可能飞起来\n- 如果不在，它可能在意想不到的简单事上失败\n- 这种情况你需要更好的 context、tool、fine-tuning、自己的 eval、自己的 RL 环境\n\n## 七、Vibe coding vs Agentic Engineering\n\nKarpathy 划了清楚的边界：\n\n- **Vibe coding** 抬地板——让几乎所有人都能描述自己想要什么然后造出来\n- **Agentic engineering** 提天花板——是协调 fallible agent 同时保留 correctness/security/taste/maintainability 的专业纪律\n\nVibe coding 适合原型和个人工具；agentic engineering 是 serious team 需要的。\n\n**Agentic engineer 不会盲目接受 generated code。** 他们写 spec、监督 plan、查 diff、写 test、造 eval loop、管权限、隔离 worktree、保质量。\n\nMenuGen 的支付 bug 是反例：agent 用 email 来 match Stripe 购买和 Google 登录。代码看起来 plausible，但系统设计差——Stripe 邮箱和 Google 邮箱可能不同。**人需要足够的产品和工程判断力，坚持用持久 user id。**\n\n前沿技能不是记每个 API 细节（agent 自己记 dim/axis/keepdim/reshape/permute）。**人还需要懂 storage、view、memory copy、invariant、identity、security boundary 这些底层概念。**\n\n## 八、招聘应该改变\n\n传统 coding puzzle 越来越不匹配。\n\n更好的面试是：用 agent 造一个 substantial 项目，部署、加固，然后让 adversarial agent 试图攻破。\n\n这真正测试的是：\n\n- 候选人能不能把工作分解给 agent？\n- 能不能写有用的 spec？\n- 能不能保持质量同时高速？\n- 能不能 review 生成的工作？\n- 能不能加固系统？\n- 能不能把 agent 当杠杆而不是产生 slop？\n\n> The old \"10x engineer\" idea may become much more extreme.\n\n**掌握 agentic workflow 的人，可能远不止 10x outperformance。**\n\n## 九、创业 wedge：找有价值的 verifiable 环境\n\n创业者最重要的机会，是找「价值高 + verifiable + lab 训练不够」的领域。\n\n如果你能给某个垂直领域造一个 environment——模型能 try action、得到可靠 reward——你就能用 fine-tuning 或 RL 提升性能，即使 base model 在这领域不出色。\n\n**最显眼的领域（coding/数学）已经被 lab 重投。但很多经济上重要的领域有潜在的 verifiable 结构未被开发。**\n\n这就是 startup wedge。\n\n## 十、Agent-native 基础设施\n\n大部分软件还是给「人点屏幕」造的。Doc 说「打开这个 URL，点这个按钮，开这个设置面板」。\n\n但 user 越来越不是直接的人——是人的 agent。\n\n产品需要 agent-native surface：\n\n- Markdown 文档\n- CLI\n- API\n- MCP server\n- 结构化 log\n- 机器可读 schema\n- 可粘贴的 agent 指令\n- 安全权限\n- 可审计的 action\n- Headless setup\n\nKarpathy 用 **sensors / actuators** 框架思考：sensor 把世界状态变成数字信息；actuator 让 agent 改变某个东西。**未来的 stack 是 agent 代表人和组织使用 sensor 和 actuator。**\n\nMenuGen 的部署故事是 benchmark：写代码容易，配 Vercel/auth/payment/DNS/secret 痛苦。**成熟的 agent-native 世界里，应该可以说「build MenuGen」然后 agent 自己部署完整。**\n\n## 十一、Ghosts，不是 Animals\n\nKarpathy 反复强调：**LLM 不是动物。** 它没有生物驱动、具身生存压力、好奇心、玩耍、内在动机。它是人类制品的统计模拟，被 pretraining、post-training、RL、产品反馈、经济激励塑造。\n\n这意味着——拟人化预期会误导我们。这些系统**一刻聪明、一刻蠢得离谱。** 它们不是平滑的人类心智，是 jagged 的、外星的工具。\n\n正确的姿势既不是 dismiss 也不是盲信——是 empirical familiarity：知道它们在哪儿能 work、在哪儿失败、训练里都有什么、怎么搭 guardrail。\n\n## 十二、教育：可以外包思考，不能外包理解\n\nKarpathy 反复回到一句：\n\n> You can outsource your thinking, but you can't outsource your understanding.\n\n哪怕 agent 做更多事，人还需要 understanding 来 direct——你需要知道什么值得造、什么问题重要、什么结果可疑、什么 trade-off 可以接受。\n\n他对自己的 LLM Wiki 工具尤其热情：「每次我看到对信息的不同投影，就感到获得了 insight。这是对固定数据做合成数据生成。我读文章时，我的 wiki 在自动构建——我喜欢对它问问题。」\n\n**Tools that enhance understanding are incredibly interesting and exciting. Understanding is still the bottleneck because you cannot be a good director if you do not understand.**",
+  "quotes": [
+    {
+      "en": "I have never felt more behind as a programmer.",
+      "zh": "作为程序员，我从未感觉这么掉队过。"
+    },
+    {
+      "en": "The unit of programming changed from typing lines of code to delegating larger 'macro actions'.",
+      "zh": "编程的最小单位从「敲代码」变成「委托宏指令」。"
+    },
+    {
+      "en": "AI is not just a faster way to build the old apps. Some apps should stop existing as apps.",
+      "zh": "AI 不只是更快做老 app——有些 app 应该不再作为 app 存在。"
+    },
+    {
+      "en": "Traditional software automates what you can specify. LLMs and reinforcement learning automate what you can verify.",
+      "zh": "传统软件自动化你能 specify 的事；LLM 和 RL 自动化你能 verify 的事。"
+    },
+    {
+      "en": "Vibe coding raises the floor. Agentic engineering raises the ceiling.",
+      "zh": "Vibe coding 抬地板，agentic engineering 提天花板。"
+    },
+    {
+      "en": "You can outsource your thinking, but you can't outsource your understanding.",
+      "zh": "你可以外包思考，但你不能外包理解。"
+    },
+    {
+      "en": "Are you on the model's rails?",
+      "zh": "你在不在模型的轨道上？"
+    },
+    {
+      "en": "LLMs are not animals. They are statistical simulations of human artifacts.",
+      "zh": "LLM 不是动物——它们是人类制品的统计模拟。"
+    }
+  ],
+  "source": "auto"
+}

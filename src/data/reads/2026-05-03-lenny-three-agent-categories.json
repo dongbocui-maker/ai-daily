@@ -1,0 +1,52 @@
+{
+  "slug": "lenny-three-agent-categories",
+  "savedDate": "2026-05-03",
+  "publishDate": "2026-04-14",
+  "titleZh": "不是所有 AI Agent 都一样：三类 agent 框架，决定你团队该先做哪个",
+  "titleEn": "Not all AI agents are created equal",
+  "author": "Hamza Farooq & Jaya Rajwani",
+  "authorTitle": "Agent Engineering Bootcamp / Agentic AI for PMs 课程作者；本文发表于 Lenny's Newsletter",
+  "originalUrl": "https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal",
+  "tags": ["AI", "Agent", "产品策略", "Lenny", "ReAct", "Multi-agent"],
+  "summary": "Lenny's Newsletter 上 Hamza Farooq 和 Jaya Rajwani 提出 agent 三层分类法：Cat 1 确定性自动化、Cat 2 推理-行动 agent、Cat 3 多 agent 网络。文章核心论点——团队卡在 agent 路线图上不是因为想法不够，是因为把架构完全不同的产品当作同一类比较。**先分类，再排优先级。** 90% 的「agent 想法」应该从 Cat 1 起步，而不是上来就堆 LangGraph。",
+  "keyPoints": [
+    "**核心问题：你的「agent backlog」里把架构完全不同的产品混在一起比 effort 和 impact**——一个「agent」可能 6 周搞定，另一个要 6 个月；一个 PM 用 n8n 自己拼出来，另一个要专门 ML 团队；一个月花 $500，另一个能产生六位数 LLM 账单。**impact-vs-effort 矩阵在这里完全失效。**",
+    "**Cat 1：确定性自动化（Deterministic Automation）—— 大多数团队的起点**：你定义完整的 flow，AI 处理具体步骤的内容。代表工具：n8n、Zapier 加 LLM 节点。**「绝大多数 agent 机会属于这里，团队也应该从这里开始。」** 最快上线、最快出 ROI。",
+    "**Cat 2：推理-行动 agent（ReAct）**：你定义可用的 tools，LLM 自主决定下一步做什么。observe → reason → act → observe → repeat 的循环。代表工具：LangGraph、CrewAI、AutoGen、Google ADK。**「你控制 tools，LLM 控制 reasoning。」** 占 25%-30% 的 agent 机会。",
+    "**Cat 3：多 agent 网络**：多个专门 agent 互相协调，每个 agent 由不同团队拥有。「应该几乎从不作为起点选择，是 Cat 1 / Cat 2 都打满后才进入的阶段。」（注：Lenny 文章后半部分被 paywall 截断，本卡片仅基于 Cat 1 / Cat 2 的完整公开内容 + Cat 3 的概述）",
+    "**最常见的错误是用 Cat 2 工具解决 Cat 1 问题——overengineering**：明明一个 n8n workflow + LLM node 就够，团队上来就要用 LangGraph 搭 ReAct agent，浪费时间和成本。**反向更糟**：用 Cat 1 工具解决 Cat 2 问题——production 环境会崩，因为 deterministic flow 处理不了真实用户的 ambiguous 请求。",
+    "**Cat 1 真实案例（SaaS 公司邮件支持 agent）**：Week 1 完成率 52%（边缘 case 暴露），Week 4 78%，Week 8 87%（生产可用）。3,000 邮件/月自动化、节省 2.5 FTE/天、每月节省 $18K。**典型的「6 周可以上线、ROI 立刻可衡量」的 agent 项目。**",
+    "**Cat 2 真实案例（家居零售商语音+图像购物助手）**：Month 1 完成率 71%、conversation 长、tool 调用多、$0.12/session；Month 4 完成率 86%、对话短、tool 调用少、$0.08/session。**图像识别 76%→91%、conversion lift +8%→+22%、CSAT 4.0→4.5。** 但要 4 个月才稳定。",
+    "**Cat 1 → Cat 2 的过渡信号**：你的 flowchart 已经有 30+ 节点、每周还在加新分支；用户用你预料不到的方式表述；agent 需要根据 context 决定用哪个 API；最高价值机会无法用预定义 workflow 表达。**这些信号同时出现 = 该升级架构。**",
+    "**Cat 2 → Cat 3 的过渡信号**：单个 agent 已经在 customer service + inventory + logistics + finance 多个域里降级；agent 之间需要互相 delegate（不是只调用 stateless API）；任务需要小时或天来完成；需要几百个 agent 实例并行协调；不同团队希望各自拥有 agent 但需要协作。"
+  ],
+  "insight": "这个三层框架是当前 agent 类项目方法论里少有的「能直接拿去给客户用」的工具——它解决了 2025-2026 几乎所有大企业转型客户的真实痛点：**「我们要不要做 agent？做哪个？怎么排优先级？」**\n\n**给我们咨询团队的 actionable 用法**：\n\n**第一，每个客户的 agent 路线图先做「Cat 分类筛查」。** 我们在 L'Oréal、LVMH 这些客户那看到的「想做 agent 的 idea list」往往有 5-10 个想法混在一起——客服 agent、PM 助理、库存优化、营销文案 agent、合规审查……每个看起来都很 sexy，但实际上是 3 类完全不同的工程项目。**用这个 Cat 1/2/3 框架做第一轮 triage，能立刻挑出哪些是「6 周上线 + 立刻 ROI」的快赢，哪些是「6 个月专项 + 需要 ML 团队」的中长期投资。**\n\n**第二，避免「LangGraph 优先症」。** 我们工程团队、特别是新进的 AI Engineer，**有强烈的「上来就用最 fancy 的工具」倾向**——明明 n8n + LLM 能搞定的，要用 LangGraph 写 ReAct agent。这篇文章用真实数据（Week 8 完成率 87% / 月省 $18K）证明 Cat 1 项目的商业价值不输 Cat 2，但成本和风险低得多。**应该把这条作为我们 AI 实施方法论的硬规则：除非问题明确属于 Cat 2 特征，否则 Cat 1 是默认选择。**\n\n**第三，把 Cat 1 / Cat 2 的真实 metrics 直接进我们的 case study 库。** 「3,000 邮件/月、2.5 FTE/天、月省 $18K」「conversion +22%、CSAT 4.0→4.5」这种真实数据正是 sales team 在客户提案里最缺的——客户 CIO 要的不是「这是革命性技术」，是「同行业 SaaS 用了 8 周达到 87% 完成率，省了多少钱」。**建议把这两个 case 直接加到 ATC 内部的 reference architecture 库。**\n\n**给客户的高管沟通**：\n\n这篇文章里最值得直接引用给客户 C-Suite 的句子是这一句：\n\n> 你的团队不是缺创意——他们是在把架构完全不同的产品当作同一类来比较优先级。\n\n这能直接破除「为什么我们的 agent backlog 排了一年还没排出来」的死循环。**这是 PMO/CTO 都应该贴在墙上的一句话。**\n\n**关于 Cat 3 的 paywall 缺失**：我们没拿到 Lenny 文章 Cat 3 部分的完整内容（该部分在 paywall 后），所以这个卡片对 Cat 3（多 agent 网络）的描述不够深入。如果 Jason 后续看到完整版（或要给客户做 multi-agent 设计），需要补充。",
+  "summaryZh": "## 一份给「卡在 agent 路线图」的产品团队的方法论\n\n2026 年 4 月 14 日，Hamza Farooq 和 Jaya Rajwani 在 Lenny's Newsletter 发表了这篇文章。两位作者教着行业里两个最受欢迎的 agent 课程——Agent Engineering Bootcamp 和 Agentic AI for PMs——用 50+ 小时把这个框架整理出来。\n\n他们说过去一年里，跟客户做过**至少 30 次同一种对话**：AI 负责人拉出 roadmap，5-10 个 agent idea，问「help us figure out which one to build first」。\n\n## 一、为什么传统优先级工具失效？\n\n大多数团队会拿出 impact-effort 矩阵，把 idea 一一对比。但作者说——**这种方法在 agent 上彻底崩溃**：\n\n> 一个「agent」可能要 6 周构建，另一个要 6 个月。\n> 一个能由 PM 用 n8n 自己拼出来，另一个需要专门 ML 工程团队。\n> 一个月运行 $500，另一个能产生六位数 LLM 账单。\n\n你不能把这些放在同一张 spreadsheet 上比 impact 和 effort——这就是把苹果、橘子、和喷气式发动机扔在一起比较。\n\n核心问题：\n\n> The problem isn't that they lack ideas; it's that they try to prioritize fundamentally different kinds of systems as if they were the same thing.\n\n## 二、缺失的步骤是「层级（hierarchy）」\n\n在决定先做哪个 agent 之前，你需要先回答一个更基础的问题：\n\n> 每个 idea 实际上提议的是哪种类型的 agent？\n\n这决定一切：构建复杂度、所需技能和基础设施、时间长短、运行成本、应该用什么 metric。\n\n**Categorization 不只是技术练习——是 prioritization 的基础。**\n\n## 三、三类 agent\n\n### Category 1：确定性自动化（Deterministic Automation）\n\n你定义整个 flow，AI 处理具体步骤的内容。代表工具：n8n、Zapier 加 LLM 节点。\n\n**「绝大多数 agent 机会属于这里。」** 大多数团队应该从这里开始：最快上线、最快出 ROI。\n\n**真实案例 — SaaS 公司的邮件支持 agent**：\n\n| 阶段 | 完成率 |\n|---|---|\n| Week 1 | 52%（大量边缘 case 暴露） |\n| Week 4 | 78%（分类逻辑优化后） |\n| Week 8 | 87%（生产可用） |\n\n**结果**：3,000 邮件/月自动化，节省 2.5 FTE/天，每月节省 $18K。\n\n### 何时该升级出 Cat 1？\n\n下面 6 个信号**同时出现**几个就该升级：\n\n1. flowchart 已经 30+ 节点，每周还在加新分支\n2. 用户表述方式无法预料，所有分支不可能 map 完\n3. agent 需要根据 context 决定用哪个 API 或知识源\n4. 拆解 ambiguous 请求需要探索和适应，不是预定义分解\n5. 最高价值的机会无法用 predictable workflow 表达\n6. 大部分 quick-win 流程已经自动化\n\n### Category 2：推理-行动 agent（ReAct）\n\n你定义可用的 tools，LLM 自主决定下一步做什么。\n\n```\nobserve → reason → act → observe result → repeat\n```\n\n**核心区别：你控制 tools，LLM 控制 reasoning。**\n\n代表工具：LangGraph、CrewAI、AutoGen、Google ADK。\n\n**真实案例 — 家居零售商语音+图像购物助手**：\n\n| 阶段 | Task 完成率 | 对话长度 | Tool 调用 | 成本/session |\n|---|---|---|---|---|\n| Month 1 | 71% | 长 | 多 | $0.12 |\n| Month 4 | 86% | 短 | 少 | $0.08 |\n\n**结果**：图像识别 76%→91%、conversion lift +8%→+22%、CSAT 4.0→4.5。\n\n**注意时间尺度**：Cat 2 项目通常需要 4 个月才稳定，远比 Cat 1 的 8 周长。\n\n### 何时该升级出 Cat 2？\n\n5 个信号：\n\n1. 单个 agent 在多个域里降级（客服+库存+物流+财务）\n2. agent 需要互相 delegate（不是只调 stateless API）。例：购物 agent 需要问库存 agent「能不能查所有仓库给我替代方案」\n3. 任务需要小时或天才能完成（如自动 eval agent 一夜分析 10,000 段对话）\n4. 需要几百个 agent 实例并行运行、互相协调\n5. 不同团队希望各自拥有专门 agent，但需要互相协作\n\n两到三个信号同时出现 = 该考虑 Cat 3。\n\n### Category 3：多 agent 网络\n\n> 不是一个 agent 调用 tools，而是多个专门 agent 互相协调，每个 agent 被一个不同团队拥有，处理自己的领域，可以向其他 agent 请求帮助。\n\n代表工具：Google ADK、AutoGen 这些支持企业级 multi-agent 的框架。\n\n> 这类项目通常留给后期阶段——多个团队需要跨域协作时，几乎绝不应该作为路线图的起点。\n\n**⚠️ 注意**：本卡片的 Cat 3 介绍仅来自 Lenny 文章的开头部分。文章 Cat 3 的具体说明、metrics、案例分析在 paywall 之后，未能在本次抓取中获得。**如果你需要给客户做 multi-agent 设计，建议补充其他 multi-agent 资源**。\n\n## 四、最常见的错误\n\n作者总结的 anti-pattern：\n\n- **更常见**：用 Cat 2 工具解决 Cat 1 问题——overengineering，加成本、加复杂度，但回报不增加\n- **更糟糕**：用 Cat 1 工具解决 Cat 2 问题——在生产环境崩，因为 deterministic flow 处理不了真实用户的 ambiguous 输入\n\n他们也明确提到——**OpenClaw 和 Claude Code 这类「massively popular」工具都是基于这套架构原则设计的**。\n\n## 五、5 分钟 triage 流程\n\n文章承诺给读者 4 个 deliverable：\n\n1. **5 分钟 triage 流程**：把每个 agent idea 归入一个架构类型\n2. **挑工具/平台的指南**：什么时候用 n8n vs LangGraph vs ADK\n3. **Success metrics 和 ROI framework**：每个类型的对应指标\n4. **Warning signs**：你选错了路径的预警信号\n\n这是为什么这篇文章在产品社区里转发量这么高——它把模糊的「agent 战略」翻译成可以直接执行的决策树。\n\n## 六、结尾——「agent」是个 umbrella term\n\n作者提醒：\n\n> 「Agent」是覆盖很多种完全不同系统的总称。在认识到这一点之前，你的优先级排得多准都没用。\n\n这是这篇文章的核心 takeaway——**先分类，再排优先级**。",
+  "quotes": [
+    {
+      "en": "The problem isn't that they lack ideas; it's that they try to prioritize fundamentally different kinds of systems as if they were the same thing.",
+      "zh": "问题不是他们缺创意——他们是在把架构完全不同的系统当作同一类来比较优先级。"
+    },
+    {
+      "en": "You control the tools; the LLM controls the reasoning.",
+      "zh": "你控制 tools，LLM 控制 reasoning。"
+    },
+    {
+      "en": "Treating architecturally different products as if they're in the same category makes effective prioritization nearly impossible.",
+      "zh": "把架构上完全不同的产品当作同一类，让有效的优先级排序几乎不可能。"
+    },
+    {
+      "en": "Categorization isn't just a technical exercise. It's the foundation for smart prioritization.",
+      "zh": "分类不只是技术练习——它是聪明排优先级的基础。"
+    },
+    {
+      "en": "Most teams should start [with Category 1]. These projects are fastest to launch and deliver measurable ROI quickly.",
+      "zh": "大多数团队应该从 Cat 1 开始——最快上线、最快产生可衡量的 ROI。"
+    },
+    {
+      "en": "'Agent' is an umbrella term for very different kinds of systems.",
+      "zh": "「Agent」是覆盖很多种完全不同系统的总称。"
+    }
+  ],
+  "source": "auto"
+}

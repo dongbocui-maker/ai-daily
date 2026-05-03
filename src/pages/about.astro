@@ -11,7 +11,7 @@ import Footer from '../components/Footer.astro';
         <span class="badge bg-accent-purple text-white mb-4">ABOUT</span>
         <h1 class="text-h1 mb-4">关于本站</h1>
         <p class="text-lg text-accent-gray-300 max-w-3xl">
-          每日 AI 行业动态摘要——一个 AI 辅助整理、自动每日更新的个人项目。
+          一个 AI 辅助整理、自动 + 人工混合更新的 AI 行业信息聚合站。
         </p>
       </div>
     </section>
@@ -19,19 +19,47 @@ import Footer from '../components/Footer.astro';
     <section class="py-16 lg:py-20">
       <div class="container-x max-w-3xl">
         <div class="prose prose-lg">
+
+          {/* ===== 内容范围（重构）===== */}
           <h2 class="text-h2 mb-6">📅 内容范围</h2>
           <p class="mb-6 leading-relaxed">
-            本站每日同步整理过去 24 小时全球 AI 行业重要动态，按四个板块组织：
+            本站由 <strong>5 个独立栏目</strong> + <strong>每日新闻 4 板块</strong> 组成。每个栏目有不同的更新节奏和信息源。
           </p>
-          <ul class="space-y-3 mb-10">
+
+          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🗞️ 每日新闻（首页 + 归档）</h3>
+          <p class="mb-4 leading-relaxed text-sm text-accent-gray-700">
+            每日清晨自动同步过去 24 小时全球 AI 行业重要动态，按 4 个板块组织：
+          </p>
+          <ul class="space-y-3 mb-6 text-sm">
             <li class="flex gap-3"><span class="text-2xl">🔥</span><div><strong>AI 热点新闻</strong> · 重大融资、产品发布、监管动态、突发事件</div></li>
             <li class="flex gap-3"><span class="text-2xl">🏢</span><div><strong>企业级 AI 实践</strong> · 落地案例、Agent 编排、企业架构演进</div></li>
             <li class="flex gap-3"><span class="text-2xl">💻</span><div><strong>AI Coding 动态</strong> · 编码模型、IDE 集成、开发者工具</div></li>
             <li class="flex gap-3"><span class="text-2xl">📊</span><div><strong>深度报告与论文</strong> · 行业研究、学术论文、白皮书</div></li>
           </ul>
 
-          <h2 class="text-h2 mb-6">🌐 信息源</h2>
-          <p class="mb-4 leading-relaxed">本站优先采用以下权威信息源，按类别划分：</p>
+          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🐙 GitHub 热门</h3>
+          <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
+            每日同步 GitHub Trending 上 AI 相关仓库的热度变化、Star 增长、新晋黑马项目。聚焦开源生态。
+          </p>
+
+          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🏆 LMArena</h3>
+          <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
+            基于 <a href="https://lmarena.ai/leaderboard" class="text-accent-purple hover:underline" target="_blank" rel="noopener">lmarena.ai</a> 真实人类盲测对战数据的全球大模型 Top 50 排行榜。每月 1 日 10:30 自动抓取、解析、生成优势赛道标签，与上月快照对比生成排名变化（↑/↓/🆕/⛔）。
+          </p>
+
+          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">📖 精读</h3>
+          <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
+            精挑细选的 AI 时代深度长文，配中文解读、核心观点、金句精选。每周一 09:00 自动生成候选清单（3-5 篇），人工拍板后写正式精读卡片。**宁缺勿滥**——某周无合适候选则跳过，不为凑数硬塞。
+          </p>
+
+          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🎓 学习</h3>
+          <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
+            AI 相关的学习计划、课程笔记、技术资料汇总。独立于每日资讯主题，更聚焦于深度学习和长期价值。手工维护，按需更新。
+          </p>
+
+          {/* ===== 信息源 ===== */}
+          <h2 class="text-h2 mb-6 mt-12">🌐 信息源</h2>
+          <p class="mb-4 leading-relaxed">本站每日新闻栏目的权威信息源，按类别划分：</p>
 
           <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">🌍 国际媒体</h3>
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6 text-sm">
@@ -71,10 +99,10 @@ import Footer from '../components/Footer.astro';
           </ul>
 
           <h2 class="text-h2 mb-6">📖 精读专用信息源</h2>
-          <p class="mb-4 leading-relaxed">
+          <p class="mb-4 leading-relaxed text-sm text-accent-gray-700">
             「精读」栏目面向深度长文（原创洞察、深度分析、长期价值），除上述信息源外，额外依赖以下优质深度来源：
           </p>
-          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4 text-sm">
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-10 text-sm">
             <li>· Stratechery</li><li>· Latent Space</li><li>· Import AI</li>
             <li>· Ben's Bites Pro</li><li>· Dwarkesh Podcast</li><li>· Zvi @ LessWrong</li>
             <li>· Anthropic Research</li><li>· OpenAI Research</li><li>· Google Research</li>
@@ -82,10 +110,8 @@ import Footer from '../components/Footer.astro';
             <li>· Andrej Karpathy Blog</li><li>· Anthropic Transformer Circuits</li><li>· Andrew Ng — The Batch</li>
             <li>· Lenny's Newsletter</li>
           </ul>
-          <p class="mb-10 text-sm text-accent-gray-600 leading-relaxed">
-            每周一 09:00 自动生成候选清单（3-5 篇），人工拍板后纳入精读栏目。宁缺勿滥——某周无合适候选则跳过。
-          </p>
 
+          {/* ===== 类型标签 ===== */}
           <h2 class="text-h2 mb-6">🏷️ 类型标签</h2>
           <p class="mb-4 leading-relaxed">
             「🔥 AI 热点新闻」板块覆盖话题较广，每条新闻开头会附一个类型标签便于快速浏览：
@@ -96,15 +122,59 @@ import Footer from '../components/Footer.astro';
             <li>🌍 行业动向</li>
           </ul>
 
+          {/* ===== 生成机制（重构）===== */}
           <h2 class="text-h2 mb-6">🤖 生成机制</h2>
-          <p class="mb-4 leading-relaxed">每日清晨（Asia/Shanghai）自动同步：</p>
-          <ol class="space-y-2 mb-10 list-decimal list-inside">
+          <p class="mb-4 leading-relaxed">本站 5 个栏目使用混合更新策略：</p>
+
+          <div class="overflow-x-auto mb-10">
+            <table class="w-full text-sm border border-accent-gray-200">
+              <thead class="bg-accent-gray-50">
+                <tr>
+                  <th class="px-3 py-2 text-left font-semibold border-b border-accent-gray-200">栏目</th>
+                  <th class="px-3 py-2 text-left font-semibold border-b border-accent-gray-200">更新节奏</th>
+                  <th class="px-3 py-2 text-left font-semibold border-b border-accent-gray-200">触发方式</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-accent-gray-100">
+                  <td class="px-3 py-2"><strong>🗞️ 每日新闻</strong></td>
+                  <td class="px-3 py-2">每日 09:18 (Asia/Shanghai)</td>
+                  <td class="px-3 py-2">全自动 (AI Agent + cron)</td>
+                </tr>
+                <tr class="border-b border-accent-gray-100">
+                  <td class="px-3 py-2"><strong>🐙 GitHub 热门</strong></td>
+                  <td class="px-3 py-2">每日多次同步</td>
+                  <td class="px-3 py-2">全自动 (GitHub Actions + 本地 cron)</td>
+                </tr>
+                <tr class="border-b border-accent-gray-100">
+                  <td class="px-3 py-2"><strong>🏆 LMArena</strong></td>
+                  <td class="px-3 py-2">每月 1 日 10:30</td>
+                  <td class="px-3 py-2">全自动 (system cron + mihomo 抓取)</td>
+                </tr>
+                <tr class="border-b border-accent-gray-100">
+                  <td class="px-3 py-2"><strong>📖 精读</strong></td>
+                  <td class="px-3 py-2">每周一 09:00 候选 + 不定期上线</td>
+                  <td class="px-3 py-2">半自动 (AI 筛候选 → 人工拍板 → 写卡片)</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2"><strong>🎓 学习</strong></td>
+                  <td class="px-3 py-2">按需更新</td>
+                  <td class="px-3 py-2">全人工</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-base font-semibold mt-6 mb-3 text-accent-gray-700">🗞️ 每日新闻流程</h3>
+          <ol class="space-y-2 mb-10 list-decimal list-inside text-sm text-accent-gray-700">
             <li>AI Agent 联网搜集过去 24 小时各信息源最新内容</li>
             <li>按四个板块筛选、整合、撰写要点与行业启示</li>
+            <li>每条 🔥 热点新闻自动打上类型标签</li>
             <li>同步到本站 + 飞书工作文档</li>
-            <li>自动部署，公开访问</li>
+            <li>GitHub Actions 自动部署、公开访问</li>
           </ol>
 
+          {/* ===== 免责声明 ===== */}
           <h2 class="text-h2 mb-6">⚖️ 免责声明</h2>
           <div class="bg-accent-gray-50 p-6 border-l-4 border-accent-purple text-sm leading-relaxed space-y-3">
             <p>
@@ -119,6 +189,7 @@ import Footer from '../components/Footer.astro';
               <strong>版权声明</strong> · 所有引用的新闻、报告内容版权归原作者所有，本站仅作摘要与链接。
             </p>
           </div>
+
         </div>
       </div>
     </section>

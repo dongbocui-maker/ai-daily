@@ -1,0 +1,172 @@
+{
+  "date": "2026-05-03",
+  "title": "2026-05-03",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "OpenAI 加码 Stargate，构建\"智能时代\"算力底座",
+          "body": "OpenAI 官方博客披露 Stargate 项目持续扩容，新增数据中心容量以应对模型训练与推理需求的爆发；同期发布 Advanced Account Security（抗钓鱼登录）与企业网络安全行动计划。算力之争已从\"芯片\"上升到\"主权级基建\"层面。",
+          "insight": "AGI 时代的核心瓶颈是电力 + 数据中心，企业在做云成本规划时必须把\"AI 专属算力溢价\"列入未来 24 个月预算。",
+          "source": "OpenAI 官方",
+          "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age"
+        },
+        {
+          "title": "五角大楼与 NVIDIA、Microsoft、AWS 签约，AI 部署进入机密网络",
+          "body": "TechCrunch 报道，美国国防部与 NVIDIA、Microsoft、AWS 签订一揽子协议，将生成式 AI 与基础模型部署到分级机密网络。背景是 DOD 因 Anthropic 使用条款争议正在主动多元化 AI 供应商。",
+          "insight": "政府/国防级 AI 落地全面提速，企业供应链中\"AI 主权能力\"已成为下一阶段招标硬指标。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/"
+        },
+        {
+          "title": "马斯克庭审承认：xAI 用 OpenAI 模型\"蒸馏\"训练 Grok",
+          "body": "马斯克 vs OpenAI 案件中，他在加州联邦法院作证时承认 xAI\"部分\"使用过 OpenAI 模型来蒸馏 Grok，并称此为行业常见做法。庭审同时曝光大量邮件、短信。",
+          "insight": "模型蒸馏的法律边界正在被司法定义；企业自训模型时必须留好训练数据合规留痕。",
+          "source": "极客公园（凤凰网科技转引）",
+          "url": "https://www.geekpark.net/news/363696"
+        },
+        {
+          "title": "🇨🇳 杭州出台全国首部具身智能机器人地方法规，5 月 1 日施行",
+          "body": "《杭州市促进具身智能机器人产业发展条例》正式生效，杭州已集聚机器人企业 700+，2025 年具身智能产业集群产值达 1068 亿元。",
+          "insight": "中国地方政府已把\"具身智能\"作为下一个万亿级赛道重点扶持，国内厂商在 Robotics + AI 赛道的政策窗口已开。",
+          "source": "极客公园（杭州发布）",
+          "url": "https://www.geekpark.net/news/363696"
+        },
+        {
+          "title": "🇨🇳 卓驭副总裁于贝贝：算法厂商向\"物理 AI\"转型是生存法则",
+          "body": "36氪专访，卓驭基于移动基座模型尝试打破\"卖硬件 + 收开发费\"的 Tier 1 单一逻辑，向 L4 Robotaxi/RoboVan 拓展，提出基于\"动作令牌（Action Token）\"的订阅 + 分润商业模式。",
+          "insight": "自动驾驶下半场的范式从\"专家小模型\"切到\"通用基座模型\"，对手已从同行扩展到数字 AI 巨头与具身智能公司。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3789475357400068"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "OpenAI GPT 模型、Codex、Managed Agents 全面登陆 AWS",
+          "body": "OpenAI 官方宣布 GPT 系列、Codex 与 Managed Agents 正式上线 AWS Bedrock 等环境，企业可在自家 AWS VPC 内构建安全 AI 应用，覆盖代码、Agent 编排、长上下文推理。",
+          "insight": "OpenAI 的\"中立云\"战略落地——MSFT 不再独享，企业选型时应重新评估\"模型 × 云\"的双向锁定策略，多云 AI 基线即将成为标配。",
+          "source": "OpenAI 官方",
+          "url": "https://openai.com/index/openai-on-aws"
+        },
+        {
+          "title": "Meta 收购具身机器人初创 Assured Robot Intelligence",
+          "body": "TechCrunch 披露，Meta 收购 Assured Robot Intelligence 以强化人形机器人 AI 模型能力，是其继 Reality Labs 后第二条\"具身路线\"投入。",
+          "insight": "大厂正以并购抢夺具身 AI 数据 + 算法人才；企业可关注其后向 Robotics 衍生的供应链投资机会。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/"
+        },
+        {
+          "title": "微软推按 Token 计费，Copilot 6 月起改\"用多少付多少\"",
+          "body": "极客公园援引报道：微软 Azure 与 GitHub Copilot 全面从订阅制转向\"按使用量付费/Token 经济\"。GitHub Copilot 自 2026 年 6 月 1 日起改为按使用量计费。",
+          "insight": "Token 经济正在成为 SaaS 计价新基准，CIO 需重做 ROI 模型——尤其对高频代码场景，预算结构会发生根本变化。",
+          "source": "极客公园",
+          "url": "https://www.geekpark.net/news/363696"
+        },
+        {
+          "title": "🇨🇳 智元/宇树具身机器人激进出货：1 万台 + 5500 台落地",
+          "body": "36氪：智元机器人宣布第 1 万台机器人量产下线，5000→10000 仅用三个多月；宇树科技 IPO 招股书披露 2025 年营收 17.07 亿元，出货超 5500 台。",
+          "insight": "中国具身机器人量产进度领先海外同行，零售/物流/工业巡检客户应提前布局采购与场景验证。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3792155815304450"
+        },
+        {
+          "title": "Meta Q1 流失 2000 万家庭日活，仍上调 AI 资本开支至 1450 亿美元",
+          "body": "Meta 上季度家庭 DAU 减少 2000 万（归因伊朗网络中断与俄罗斯封锁 WhatsApp），但宣布 2026 年资本开支预期上调至 1250-1450 亿美元，AI 投入有增无减。",
+          "insight": "流量见顶 + AI 重投是当前互联网巨头共同剧本；广告/电商客户应警惕 ROI 短期波动，并把握 AI 广告新增量。",
+          "source": "The Verge（极客公园转引）",
+          "url": "https://www.theverge.com"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "Replit CEO 谈 Cursor 收购传闻：宁可不卖",
+          "body": "TechCrunch StrictlyVC 现场，Replit 创始人 Amjad Masad 回应业内热议——传闻 Cursor 将以 600 亿美元被 SpaceX 收购，Replit 是否跟进出售？他表态：宁可对抗 Apple 也不卖。",
+          "insight": "AI Coding 赛道估值在 1 年内爆涨 10 倍以上，投资逻辑从\"工具\"切到\"开发平台 + 用户分发\"。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/"
+        },
+        {
+          "title": "Railway 拿 1 亿美元 B 轮，叫板 AWS 做\"AI 原生云\"",
+          "body": "VentureBeat：Railway 获 TQ Ventures 领投的 1 亿美元 B 轮，主打\"亚秒级部署 + 比 AWS 便宜 50%\"，目标是适配 Claude/Cursor 等 AI 助手生成的代码——传统 Terraform 2-3 分钟构建在 Agent 时代已成瓶颈。",
+          "insight": "AI Coding 的下游催生新一代基础设施层，企业内部 DevOps 平台可能也需重构以匹配\"Agent 速率\"。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
+        },
+        {
+          "title": "AI Dictation 应用大评测，语音编程时代来临",
+          "body": "TechCrunch 评测 2026 年最佳 AI 听写/语音应用，Wispr Flow 等已可流畅完成\"语音写代码、回邮件\"。",
+          "insight": "键盘 + 语音的混合交互将成为开发者新标配，IDE 厂商需把语音通道作为一等公民设计。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/02/the-best-ai-powered-dictation-apps-of-2025/"
+        },
+        {
+          "title": "🇨🇳 GitHub Copilot 改按量计费引发中国开发者\"算账潮\"",
+          "body": "极客公园整理：Copilot 自 6 月 1 日转按量付费，国内开发者社区开始重新评估通义灵码、文心快码、CodeGeeX 等本土替代方案的 ROI。",
+          "insight": "国内 AI Coding 生态有望迎来\"按量付费倒逼自主化\"窗口，企业可分批迁移以分散成本风险。",
+          "source": "极客公园",
+          "url": "https://www.geekpark.net/news/363696"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "OpenAI《GPT-5 行为复盘：goblin 输出从何而来》",
+          "body": "OpenAI 官方公开技术 Postmortem，复盘 GPT-5 出现\"哥布林化\"人格输出的根因、扩散路径与修复方法，是其首次以 Publication 形式向社区公开模型行为问题。",
+          "insight": "模型对齐 + 行为漂移已成\"产品事故\"的新主因；企业应建立 LLM 输出监控与回归基线。",
+          "source": "OpenAI 官方",
+          "url": "https://openai.com/index/where-the-goblins-came-from"
+        },
+        {
+          "title": "OpenAI《智能时代的网络安全》五点行动计划",
+          "body": "OpenAI 提出\"AI 驱动的网络防御民主化\"五大行动，包括与基础设施运营方共建威胁情报、向中小机构提供 AI 安全工具等。",
+          "insight": "AI for Security 即将走向产品化；CISO 应评估生成式 AI 在 SOC、漏洞修复、钓鱼检测中的标准接入路径。",
+          "source": "OpenAI 官方",
+          "url": "https://openai.com/index/cybersecurity-in-the-intelligence-age"
+        },
+        {
+          "title": "Synced/PSU & Duke：LLM 多 Agent 系统的失败归因研究",
+          "body": "Synced 介绍宾夕法尼亚州立大学、杜克大学等联合研究\"自动化失败归因\"——在多 Agent 长链路中精确定位是哪一个 Agent、在哪个步骤导致任务失败。",
+          "insight": "多 Agent 系统进入\"工程化可观测性\"阶段，企业落地 Agent 应用前应预置 trace + 归因机制。",
+          "source": "Synced",
+          "url": "https://syncedreview.com/2025/08/14/which-agent-causes-task-failures-and-when"
+        },
+        {
+          "title": "🇨🇳 36氪深度：中美具身公司同台 PK 的四个解法",
+          "body": "36氪硅谷现场对话整理，覆盖中美具身机器人公司在\"规模化落地、数据采集、底层架构、商业模式\"四大问题上的分歧与共识。",
+          "insight": "中国厂商优势在量产与价格、海外厂商优势在通用模型与生态，企业采购应做\"双源 + 场景验证\"组合。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3792155815304450"
+        },
+        {
+          "title": "美国电影学院新规：AI 演员/剧本无缘奥斯卡",
+          "body": "AMPAS 明确 2027 年起，演技与编剧必须由人类完成才有资格参评，AI 工具仍可使用但合成演员（如 Tilly Norwood）不具备获奖资格。",
+          "insight": "内容产业在\"AI 协作 vs 人类署名\"上正在划红线；品牌方需要重新审视广告片中的 AI 使用披露规范。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "算力 + 法律 + 商业模式三线齐推。OpenAI 持续扩容 Stargate、五角大楼把生成式 AI 部署到机密网络、Meta 上调资本开支至 1450 亿美元——AI 基础设施竞赛已升级为\"主权基建\"。同时，马斯克承认 xAI 蒸馏 OpenAI 模型、奥斯卡封禁 AI 演员/编剧，标志着模型训练数据与生成内容的法律边界正在被司法和行业协会同步划定，企业必须把合规留痕从\"加分项\"变为\"必选项\"。",
+    "中国市场的两条主线值得高度关注：一是杭州出台全国首部具身智能法规、智元/宇树激进出货、卓驭转型物理 AI——具身智能正从概念走向千亿级量产阶段；二是 GitHub Copilot 改按量计费，将倒逼国内开发者重新评估通义灵码等本土替代方案的 ROI 优势。两条线共同指向\"国产 AI 商业化窗口\"在政策、技术、成本三端同时打开。",
+    "企业行动建议：CIO 重做 Token 经济下的预算模型；CTO 评估多云 AI 基线（OpenAI on AWS）以避免单云锁定；CMO 关注 AI 广告披露与品牌内容合规；CHRO 提前布局 AI Coding 与具身智能岗位的技能图谱重构。今天的关键信号是——AI 已不再是\"前沿技术\"，而是\"基础设施\"，企业要从\"试点\"思维切到\"基建\"思维。"
+  ]
+}

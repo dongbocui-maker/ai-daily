@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { listReads } from '../../lib/reads';
+
+const articles = listReads();
+const base = import.meta.env.BASE_URL;
+---
+<Base title="精读" description="精挑细选的 AI 时代深度好文，配中文解读。">
+  <Header />
+  <main class="flex-1">
+    <section class="bg-accent-ink text-white py-12 lg:py-16">
+      <div class="container-x">
+        <span class="badge bg-accent-purple text-white mb-4">DEEP READS</span>
+        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">📖 精读</h1>
+        <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
+          精挑细选的 AI 时代深度好文，配中文解读、核心观点、金句精选。少而精，宁缺勿滥。
+        </p>
+        {articles.length > 0 && (
+          <p class="mt-3 text-sm text-accent-gray-400">共收录 {articles.length} 篇</p>
+        )}
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-16">
+      <div class="container-x max-w-5xl">
+        {articles.length === 0 ? (
+          <div class="text-center py-16 text-accent-gray-500">
+            <p>暂无精读文章。</p>
+          </div>
+        ) : (
+          <ul class="space-y-6">
+            {articles.map((a) => (
+              <li>
+                <a
+                  href={`${base}reads/${a.slug}/`}
+                  class="block px-6 py-6 bg-white border border-accent-gray-200 rounded-sm
+                         hover:border-accent-purple hover:shadow-md transition-all group"
+                >
+                  <div class="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+                    <div class="flex items-baseline gap-2 text-xs text-accent-gray-500">
+                      <span class="font-medium">{a.savedDate}</span>
+                      {a.source === 'auto' && (
+                        <span class="px-2 py-0.5 bg-accent-purple/10 text-accent-purple rounded">🤖 AI 推荐</span>
+                      )}
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                      {a.tags.slice(0, 4).map((t) => (
+                        <span class="text-xs px-2 py-0.5 bg-accent-gray-100 text-accent-gray-700 rounded">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <h2 class="text-xl lg:text-2xl font-extrabold tracking-tight mb-1 group-hover:text-accent-purple transition-colors">
+                    {a.titleZh}
+                  </h2>
+                  {a.titleEn && (
+                    <p class="text-sm text-accent-gray-500 mb-3 italic">{a.titleEn}</p>
+                  )}
+
+                  <p class="text-sm text-accent-gray-700 mb-4">
+                    <span class="font-medium">{a.author}</span>
+                    {a.authorTitle && <span class="text-accent-gray-500"> · {a.authorTitle}</span>}
+                  </p>
+
+                  <p class="text-base text-accent-gray-800 leading-relaxed">
+                    {a.summary}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

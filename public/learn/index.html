@@ -32,13 +32,13 @@
     justify-content: space-between;
   }
   .logo {
-    font-size: 18px;
-    font-weight: 700;
-    color: #1a1a1a;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: -0.02em;
+    transition: transform 0.15s;
   }
-  .logo span { color: #7c3aed; }
+  .logo:hover { transform: scale(1.02); }
+  .logo img { height: 32px; width: auto; }
   .nav { display: flex; gap: 4px; }
   .nav a {
     padding: 8px 14px;
@@ -181,10 +181,15 @@
 
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="logo">aidigest<span>.club</span></a>
+    <a href="/" class="logo" aria-label="aidigest.club home">
+      <img src="/logo-compact.svg" alt="aidigest.club" width="480" height="80">
+    </a>
     <nav class="nav">
       <a href="/">最新</a>
       <a href="/archive/">归档</a>
+      <a href="/github/">GitHub 热门</a>
+      <a href="/lmarena/">LMArena</a>
+      <a href="/reads/">精读</a>
       <a href="/learn/" class="active">学习</a>
       <a href="/about/">关于</a>
     </nav>

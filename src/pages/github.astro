@@ -5,12 +5,11 @@ import Footer from '../components/Footer.astro';
 import GitHubBoard from '../components/GitHubBoard.astro';
 import GitHubYearlyView from '../components/GitHubYearlyView.astro';
 import {
-  loadDaily, loadWeekly, loadMonthly, loadYearly,
+  loadWeekly, loadMonthly, loadYearly,
   formatWeekLabel, formatMonthLabel, formatYearLabel,
   type BoardData, type YearlyBoardData
 } from '../lib/github';
 
-const daily = loadDaily();
 const weekly = loadWeekly();
 const monthly = loadMonthly();
 const yearly = loadYearly();
@@ -24,12 +23,6 @@ interface PeriodTab {
 }
 
 const periods: PeriodTab[] = [
-  {
-    id: 'daily',
-    label: '今日',
-    subLabel: daily?.key ?? '—',
-    data: daily?.data ?? null,
-  },
   {
     id: 'weekly',
     label: '本周',
@@ -51,7 +44,7 @@ const periods: PeriodTab[] = [
   },
 ];
 ---
-<Base title="GitHub 热门项目" description="GitHub 最热门的开源项目——按日 / 周 / 月 / 年实时榜单，含 AI 专题">
+<Base title="GitHub 热门项目" description="GitHub 最热门的开源项目——按周 / 月 / 年榜单，含 AI 专题">
   <Header />
   <main class="flex-1">
     {/* Hero */}
@@ -60,7 +53,7 @@ const periods: PeriodTab[] = [
         <span class="badge bg-emerald-500 text-white mb-4">GITHUB</span>
         <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">GitHub 热门项目</h1>
         <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
-          GitHub Trending + Search API 实时数据，按日 / 周 / 月 / 年四档榜单。
+          GitHub Trending + Search API 数据，按周 / 月 / 年三档榜单。
           每档含「综合榜」与「AI 专题」双维度筛选，描述自动中英对照。
         </p>
       </div>

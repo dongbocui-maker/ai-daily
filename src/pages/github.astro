@@ -3,11 +3,9 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import GitHubBoard from '../components/GitHubBoard.astro';
-import GitHubYearlyView from '../components/GitHubYearlyView.astro';
 import {
   loadWeekly, loadMonthly, loadYearly,
-  formatWeekLabel, formatMonthLabel, formatYearLabel,
-  type BoardData, type YearlyBoardData
+  type BoardData
 } from '../lib/github';
 
 const weekly = loadWeekly();
@@ -17,34 +15,33 @@ const yearly = loadYearly();
 interface PeriodTab {
   id: string;
   label: string;
-  subLabel: string;
   data: BoardData | null;
-  yearlyData?: YearlyBoardData | null;
 }
 
 const periods: PeriodTab[] = [
   {
     id: 'weekly',
     label: '本周',
-    subLabel: weekly ? formatWeekLabel(weekly.key) : '—',
     data: weekly?.data ?? null,
   },
   {
     id: 'monthly',
     label: '本月',
-    subLabel: monthly ? formatMonthLabel(monthly.key) : '—',
     data: monthly?.data ?? null,
   },
   {
-    id: 'yearly',
-    label: '今年',
-    subLabel: yearly ? formatYearLabel(yearly.key) : '—',
-    data: null,
-    yearlyData: yearly?.data ?? null,
+    id: 'yearly-new',
+    label: '年度项目',
+    data: yearly?.data?.newborn ?? null,
+  },
+  {
+    id: 'yearly-active',
+    label: '历史热门',
+    data: yearly?.data?.fastest_growing ?? null,
   },
 ];
 ---
-<Base title="GitHub 热门项目" description="GitHub 最热门的开源项目——按周 / 月 / 年榜单，含 AI 专题">
+<Base title="GitHub 热门项目" description="GitHub 最热门的开源项目——本周 / 本月 / 年度项目 / 历史热门 四档榜单，含 AI 专题">
   <Header />
   <main class="flex-1">
     {/* Hero */}
@@ -53,7 +50,7 @@ const periods: PeriodTab[] = [
         <span class="badge bg-emerald-500 text-white mb-4">GITHUB</span>
         <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">GitHub 热门项目</h1>
         <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
-          GitHub Trending + Search API 数据，按周 / 月 / 年三档榜单。
+          GitHub Trending + Search API 数据，本周 / 本月 / 年度项目（今年新生）/ 历史热门（今年活跃的老牌大项目）四档榜单。
           每档含「综合榜」与「AI 专题」双维度筛选，描述自动中英对照。
         </p>
       </div>
@@ -73,7 +70,6 @@ const periods: PeriodTab[] = [
                 ${i === 0 ? 'border-accent-purple text-accent-purple' : 'border-transparent text-accent-gray-500 hover:text-accent-ink'}`}
             >
               {p.label}
-              <span class="ml-2 text-xs font-normal text-accent-gray-400">{p.subLabel}</span>
             </button>
           ))}
         </div>
@@ -84,13 +80,21 @@ const periods: PeriodTab[] = [
     <div class="container-x py-8 lg:py-12">
       {periods.map((p, i) => (
         <div data-panel={p.id} class={`${i === 0 ? '' : 'hidden'}`} role="tabpanel">
-          {p.id !== 'yearly' && p.data && (
-            <GitHubBoard data={p.data} scopeId={p.id} />
-          )}
-          {p.id === 'yearly' && p.yearlyData && (
-            <GitHubYearlyView data={p.yearlyData} />
-          )}
-          {((p.id !== 'yearly' && !p.data) || (p.id === 'yearly' && !p.yearlyData)) && (
+          {p.data ? (
+            <>
+              {p.id === 'yearly-new' && (
+                <p class="text-sm text-accent-gray-500 mb-4">
+                  📍 今年新创建的项目中 stars 最多的 Top 50——发现今年诞生的爆款。
+                </p>
+              )}
+              {p.id === 'yearly-active' && (
+                <p class="text-sm text-accent-gray-500 mb-4">
+                  📍 今年仍在活跃维护（今年有提交）且 stars 最多的项目 Top 50——老牌大项目今年仍热。
+                </p>
+              )}
+              <GitHubBoard data={p.data} scopeId={p.id} showPeriodStars={p.id === 'weekly' || p.id === 'monthly'} />
+            </>
+          ) : (
             <p class="text-accent-gray-500 text-center py-12">暂无{p.label}数据，请稍后再查看。</p>
           )}
         </div>

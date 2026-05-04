@@ -2,19 +2,21 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import learnData from '../../data/learn.json';
 
 const base = import.meta.env.BASE_URL;
 
-// 学习板块条目（手工维护——以后多了再考虑改成 JSON / 自动收集）
-const items = [
-  {
-    href: `${base}learn/anthropic-academy/`,
-    tag: '学习计划',
-    title: 'Anthropic Academy',
-    desc: '17 门课程，5 天完整规划，从入门到进阶。基于 Jas Wong 的 Builders 路径，结合 AWS 企业背景定制。',
-    meta: ['🗓 May 1–5, 2026', '~35 hrs'],
-  },
-];
+// 学习板块条目——从 src/data/learn.json 读取。
+// 新增课程只需改 JSON，不动源码。说明见 docs/learn-template.md。
+const items = learnData.items.map((it) => ({
+  // 外部链接保留原样，内部链接拼上 base path
+  href: it.external ? it.href : `${base.replace(/\/$/, '')}${it.href}`,
+  tag: it.tag,
+  title: it.title,
+  desc: it.desc,
+  meta: it.meta,
+  external: it.external ?? false,
+}));
 ---
 <Base title="学习中心" description="AI 相关的学习计划、课程笔记、技术资料汇总。">
   <Header />

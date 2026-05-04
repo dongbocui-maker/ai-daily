@@ -109,13 +109,29 @@ export function parseDay(day: RawDayBlock): DailyReport {
 
     if (!currentSection) continue;
 
-    // 条目编号：**1. 标题** / **1、标题** / 1. 标题 / 1、标题
+    // 条目标题识别 —— 支持两种格式：
+    //   1) 数字编号：**1. 标题** / **1、标题** / 1. 标题 / 1、标题
+    //   2) Emoji + 类目前缀：💰 融资 | 标题 / 🚀 产品发布 | 标题 / 📜 监管政策 | 标题 等
+    //   注意：板块大标题（🔥/🏢/💻/📊 + 板块名）已在前面被 detectSection 拦截，到这里的 emoji 行都是条目标题
     const itemTitleMatch = line.match(/^\*?\*?\s*(\d+)[.、]\s*\*?\*?\s*(.+?)\*?\*?$/);
+    // emoji item header: 任意 emoji（含变体选择符）+ 可选类目 + | + 标题
+    // 简化：行首是 emoji（非中英文/数字/星号字符），后面跟有 " | " 或 "｜" 分隔的标题
+    const emojiItemMatch = !itemTitleMatch && /^[^\w\u4e00-\u9fa5\d*#>][^|｜\n]*[|｜]\s*.+/u.test(line)
+      ? line.match(/^([^\w\u4e00-\u9fa5\d*#>][^|｜]*?)[|｜]\s*(.+?)\*?\*?$/u)
+      : null;
     if (itemTitleMatch && /[\u4e00-\u9fa5\w]/.test(itemTitleMatch[2])) {
       flushItem();
       // 清掉前后的 ** 包裹
       const title = itemTitleMatch[2].replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
       currentItem = { title };
+      continue;
+    }
+    if (emojiItemMatch && /[\u4e00-\u9fa5\w]/.test(emojiItemMatch[2])) {
+      flushItem();
+      const category = emojiItemMatch[1].trim().replace(/\*+/g, '').trim();
+      const title = emojiItemMatch[2].replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
+      // 把类目作为前缀放到 title 里（如 "💰 融资 | Google 加码 400 亿"），保持原文本可读性
+      currentItem = { title: category ? `${category} | ${title}` : title };
       continue;
     }
 

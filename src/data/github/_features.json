@@ -1407,5 +1407,102 @@
     ],
     "sourceHash": "14796ffe",
     "ts": 1777801922637
+  },
+  "Hmbown/DeepSeek-TUI": {
+    "features": [
+      "基于 DeepSeek V4 的 1M token 上下文和 prefix cache 的终端原生 coding agent",
+      "内置 rlm_query 工具，可并行 fan out 1-16 个 flash 子任务进行批量推理",
+      "实时流式展示 DeepSeek 的 thinking-mode 思维链推理过程",
+      "支持 Plan/Agent/YOLO 三种交互模式及 reasoning-effort 分级切换",
+      "内置 MCP client、sandbox、HTTP/SSE runtime API 和 session 保存恢复"
+    ],
+    "sourceHash": "-28e1094a",
+    "ts": 1777894103152
+  },
+  "qbittorrent/qBittorrent": {
+    "features": [
+      "基于 C++ / Qt 开发的 BitTorrent 客户端，使用 libtorrent 库",
+      "快速稳定，支持 Unicode，提供丰富的下载管理功能",
+      "集成 DB-IP 数据库，可解析 peer 所在国家",
+      "跨平台运行，提供官方签名的源码与二进制发行包"
+    ],
+    "sourceHash": "-7679d3e5",
+    "ts": 1777894106626
+  },
+  "czlonkowski/n8n-mcp": {
+    "features": [
+      "MCP server 为 AI 助手提供 n8n 节点文档、属性与操作的全面访问",
+      "覆盖 1650 个 n8n 节点（820 核心 + 830 社区），节点属性覆盖率达 99%",
+      "提供 265 个 AI-capable 工具变体的完整文档",
+      "内置 2352 个工作流模板库，AI 元数据覆盖率 99.96%",
+      "支持通过 source 过滤器搜索已验证的社区节点集成"
+    ],
+    "sourceHash": "126bb019",
+    "ts": 1777894110599
+  },
+  "msitarzewski/agency-agents": {
+    "features": [
+      "精心打造的专业化 AI agent 角色集合，每个 agent 具备独特个性和领域专长",
+      "提供安装脚本，一键将 agents 部署到 Claude Code 目录",
+      "支持 GitHub Copilot、Cursor、Aider、Gemini CLI 等多种工具集成",
+      "每个 agent 包含身份设定、工作流、技术交付物和成功指标",
+      "通过 convert.sh 自动生成各工具的集成文件，install.sh 交互式安装"
+    ],
+    "sourceHash": "-7878e845",
+    "ts": 1777894114879
+  },
+  "virattt/dexter": {
+    "features": [
+      "将复杂金融问题自动拆解为结构化的研究任务计划",
+      "自主选择并执行工具，获取实时财务数据",
+      "自我验证与迭代，直到得出可靠、有数据支撑的答案",
+      "可访问利润表、资产负债表、现金流量表等实时财务数据",
+      "内置循环检测与步骤上限，防止 agent 失控运行"
+    ],
+    "sourceHash": "-5ea3513e",
+    "ts": 1777894118554
+  },
+  "fspecii/ace-step-ui": {
+    "features": [
+      "基于 ACE-Step 1.5 模型的开源 Suno 替代方案，本地 GPU 运行 AI 音乐生成",
+      "提供 Spotify 风格的专业界面，操作流畅美观",
+      "100% 本地运行，保护隐私且无任何使用限制",
+      "支持完整歌曲生成，质量媲美商业服务",
+      "基于 React、TypeScript、TailwindCSS 与 SQLite 构建，本地优先架构"
+    ],
+    "sourceHash": "-4c23cb3b",
+    "ts": 1777894122236
+  },
+  "jellyfin/jellyfin": {
+    "features": [
+      "自由开源的媒体管理与流媒体系统，替代 Emby 和 Plex",
+      "基于 .NET 平台开发，全面支持跨平台部署",
+      "通过专用服务器向多种终端 app 推送媒体内容",
+      "完全免费无任何高级授权或隐藏功能限制"
+    ],
+    "sourceHash": "4702b19f",
+    "ts": 1777894126260
+  },
+  "cocoindex-io/cocoindex": {
+    "features": [
+      "增量同步引擎，仅对数据变更部分 Δ 重新处理",
+      "为 AI agent 提供持续更新的实时上下文",
+      "开源 Python framework，支持 RAG 与向量检索",
+      "内置 connectors、transformations，对接多种 target stores",
+      "支持企业级数据源如代码库、Slack、会议纪要、文档"
+    ],
+    "sourceHash": "-662108e",
+    "ts": 1777894130863
+  },
+  "docusealco/docuseal": {
+    "features": [
+      "WYSIWYG PDF 表单字段构建器，支持签名、日期、文件等 12 种字段类型",
+      "支持多签署人、SMTP 自动邮件通知及移动端优化",
+      "文件可存储于本地或 AWS S3、Google Storage、Azure 云",
+      "自动 PDF 电子签名与签名验证功能",
+      "提供 API 和 Webhooks，支持 7 种 UI 语言、14 种签署语言"
+    ],
+    "sourceHash": "3511303",
+    "ts": 1777894134890
   }
 }

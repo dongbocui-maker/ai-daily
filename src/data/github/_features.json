@@ -1504,5 +1504,49 @@
     ],
     "sourceHash": "3511303",
     "ts": 1777894134890
+  },
+  "refactoringhq/tolaria": {
+    "features": [
+      "跨平台桌面 app，管理 markdown 知识库（macOS/Windows/Linux）",
+      "Files-first：笔记为纯 markdown 文件，可移植无锁定",
+      "Git-first：每个 vault 即 git 仓库，支持完整版本历史",
+      "离线优先，无需账号、订阅或云依赖",
+      "基于 markdown + YAML frontmatter 标准，与 AI agent 协作良好"
+    ],
+    "sourceHash": "52062de8",
+    "ts": 1777896683426
+  },
+  "abhigyanpatwari/GitNexus": {
+    "features": [
+      "将代码库索引为知识图谱，追踪依赖、调用链、集群与执行流",
+      "通过 MCP 为 Cursor、Claude Code、Codex 等 AI agent 提供代码架构上下文",
+      "提供 Web UI 用于直接与代码仓库对话交互",
+      "提供 CLI 工具支持本地索引代码库",
+      "让小模型也能获得完整架构视图，避免遗漏依赖与调用链"
+    ],
+    "sourceHash": "-793d5b78",
+    "ts": 1777896688733
+  },
+  "nexu-io/open-design": {
+    "features": [
+      "自动检测 PATH 上 13 款 coding-agent CLI 作为设计引擎",
+      "内置 31 个可组合 Skills 和 72 个品牌级 Design Systems",
+      "支持 local-first 本地运行与 web 部署两种模式",
+      "提供 OpenAI 兼容的 BYOK 代理，无需 CLI 也可使用",
+      "各层均支持 BYOK，开源替代 Claude Design"
+    ],
+    "sourceHash": "-4873e4f1",
+    "ts": 1777896701197
+  },
+  "openai/codex-plugin-cc": {
+    "features": [
+      "在 Claude Code 中通过 /codex:review 等斜杠命令调用 Codex 进行代码评审",
+      "提供 /codex:adversarial-review 可引导式对抗评审，质疑实现与设计决策",
+      "支持 --background 后台任务执行，可通过 /codex:status、/codex:result、/codex:cancel 管理",
+      "通过 /codex:setup 一键检测并安装配置 Codex 环境",
+      "支持基于分支的评审，使用 --base <ref> 对比基准分支"
+    ],
+    "sourceHash": "-b5534fe",
+    "ts": 1777896705391
   }
 }

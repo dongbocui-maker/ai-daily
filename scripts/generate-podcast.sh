@@ -175,31 +175,22 @@ fi
 echo "  → 等 source 索引完成（最多 60 秒）..." >&2
 $NOTEBOOKLM source wait "$SOURCE_ID" --timeout 90 2>&1 | head -3 >&2 || echo "  ⚠️ wait 超时但继续（NotebookLM 一般也能用）" >&2
 
-# ===== Step 4: 生成 audio（snapshot before/after 策略）=====
+# ===== Step 4: 生成 audio（task_id 直接关联策略，2026-05-06 重写）=====
 #
-# 核心思路：
-#   - artifact 没有 source 关联字段，NotebookLM 会重写 title → 不能靠 title 匹配
-#   - snapshot before/after：记录触发生成前的 ID 集，轮询「新出现的」
-#   - 避免双生成：如果近 30 分钟有 in_progress audio artifact，先删掉避免混淆
-# Python 助手脚本：notebooklm-poll.py
-
-export NOTEBOOKLM="$NOTEBOOKLM"
-POLL="$SCRIPT_DIR/notebooklm-poll.py"
+# 重大发现：NotebookLM CLI 返回的 task_id 就等于 artifact_id！
+# 这意味着可以彻底消除并行竞态：
+#   1. generate audio --json → 拿 task_id（= artifact_id）
+#   2. artifact wait <task_id> --timeout N → 阻塞等 completed
+#   3. download audio -a <task_id> → 下载
+#
+# 之前的 snapshot before/after 策略在并行场景有 bug：两个进程同时
+# snapshot 时 BEFORE 集相同，会都把对方的新 artifact 当成自己的。
+# task_id 是确定性的强关联，不存在这个问题。
 
 echo "" >&2
-echo "[4/6] snapshot 现有 audio artifact ID 集..." >&2
+echo "[4/6] 启动 generate audio（deep-dive long zh）..." >&2
 
-# Step 4a: snapshot before
-BEFORE_IDS_FILE="$WORK_DIR/before-ids.txt"
-python3 "$POLL" before "$NOTEBOOK_ID" > "$BEFORE_IDS_FILE" 2>"$WORK_DIR/before.stderr" || true
-BEFORE_COUNT=$(wc -l < "$BEFORE_IDS_FILE" | tr -d ' ')
-echo "  before: $BEFORE_COUNT 个现有 audio artifact" >&2
-
-# Step 4b: 不再“检查并删除 in_progress”——该逻辑在并行场景会误删同伴则起动的 artifact。
-# snapshot before 已经抱住了。所有“不在 BEFORE 集里」的 artifact 必是本轮本篇产生的。
-# 残留的 in_progress（如果是其他请求的）只要在 BEFORE 集里，本脚本不会误识到。
-
-# Step 4c: PROMPT（Jason 2026-05-06 拍板的铁律）
+# Step 4a: PROMPT（Jason 2026-05-06 拍板的铁律）
 PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深度阐释原文。
 
 严格要求：
@@ -209,8 +200,7 @@ PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深
 4. 如果原文某个点介绍不够详细，说「作者未详述」即可，不准填补。
 风格：严谨专业、信息密集、面向专业人士，不要闲聊化。"
 
-# Step 4d: 启动 generate audio（不 --wait）
-echo "  → 启动 generate audio（deep-dive long zh）" >&2
+# Step 4b: 启动 generate audio --json，提取 task_id
 set +e
 $NOTEBOOKLM generate audio \
     -s "$SOURCE_ID" \
@@ -222,27 +212,53 @@ $NOTEBOOKLM generate audio \
     > "$WORK_DIR/generate-audio.stdout" 2>"$WORK_DIR/generate-audio.stderr"
 GEN_RC=$?
 set -e
-echo "  → 生成请求已发起（rc=$GEN_RC）" >&2
 
-# Step 4e: 轮询「不在 BEFORE_IDS 里的新 completed audio artifact」
-echo "  ⏳ 轮询新 artifact（30s/次，最多 35 min）..." >&2
-set +e
-ARTIFACT_ID=$(python3 "$POLL" poll "$NOTEBOOK_ID" "$BEFORE_IDS_FILE" --max-tries 70 --interval 30 2>&1 | tee "$WORK_DIR/poll.log" | tail -n 1)
-POLL_RC=$?
-set -e
-
-if [[ $POLL_RC -ne 0 || -z "$ARTIFACT_ID" ]]; then
-    echo "  ❌ 轮询失败 rc=$POLL_RC" >&2
-    echo "  —— generate stdout ——" >&2
-    cat "$WORK_DIR/generate-audio.stdout" >&2 || true
-    echo "  —— generate stderr ——" >&2
+if [[ $GEN_RC -ne 0 ]]; then
+    echo "  ❌ generate audio 调用失败 rc=$GEN_RC" >&2
     cat "$WORK_DIR/generate-audio.stderr" >&2 || true
-    echo "  —— poll log (末尾) ——" >&2
-    tail -20 "$WORK_DIR/poll.log" >&2 || true
     exit 2
 fi
 
-echo "  ✅ artifact-id: $ARTIFACT_ID" >&2
+TASK_ID=$(python3 -c "
+import json, sys
+try:
+    with open('$WORK_DIR/generate-audio.stdout') as f:
+        data = json.load(f)
+    print(data.get('task_id', ''))
+except Exception as e:
+    print('', end='')
+")
+
+if [[ -z "$TASK_ID" ]]; then
+    echo "  ❌ 从 generate audio 输出提不出 task_id" >&2
+    echo "  --- stdout ---" >&2
+    cat "$WORK_DIR/generate-audio.stdout" >&2
+    exit 2
+fi
+
+# task_id == artifact_id（NotebookLM CLI 设计如此）
+ARTIFACT_ID="$TASK_ID"
+echo "  ✅ task_id (= artifact_id): $ARTIFACT_ID" >&2
+
+# Step 4c: 阻塞等 artifact completed（最多 35 min）
+echo "  ⏳ 等 artifact 生成完成（最多 35 min）..." >&2
+set +e
+$NOTEBOOKLM artifact wait "$ARTIFACT_ID" -n "$NOTEBOOK_ID" --timeout 2100 --interval 15 \
+    > "$WORK_DIR/artifact-wait.stdout" 2>"$WORK_DIR/artifact-wait.stderr"
+WAIT_RC=$?
+set -e
+
+if [[ $WAIT_RC -ne 0 ]]; then
+    echo "  ❌ artifact wait 失败 rc=$WAIT_RC" >&2
+    echo "  --- wait stderr ---" >&2
+    cat "$WORK_DIR/artifact-wait.stderr" >&2 || true
+    echo "  --- wait stdout ---" >&2
+    cat "$WORK_DIR/artifact-wait.stdout" >&2 || true
+    exit 2
+fi
+
+echo "  ✅ artifact completed: $ARTIFACT_ID" >&2
+
 
 # ===== Step 5: 下载 m4a =====
 # ⚠️ CLI 语义：`download audio -a <artifact-id> [OUTPUT_PATH]`。不是 -o。

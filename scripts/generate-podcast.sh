@@ -195,16 +195,9 @@ python3 "$POLL" before "$NOTEBOOK_ID" > "$BEFORE_IDS_FILE" 2>"$WORK_DIR/before.s
 BEFORE_COUNT=$(wc -l < "$BEFORE_IDS_FILE" | tr -d ' ')
 echo "  before: $BEFORE_COUNT 个现有 audio artifact" >&2
 
-# Step 4b: 避免双生成 —— 检查近 30 min in_progress
-IN_PROGRESS_ID=$(python3 "$POLL" in-progress-recent "$NOTEBOOK_ID" 30 2>/dev/null || echo "")
-if [[ -n "$IN_PROGRESS_ID" ]]; then
-    echo "  ⚠️  发现近 30 min in_progress artifact: $IN_PROGRESS_ID" >&2
-    echo "     为避免双生成，先删掉它" >&2
-    $NOTEBOOKLM artifact delete "$IN_PROGRESS_ID" -y 2>&1 | head -2 >&2 || true
-    sleep 2
-    # 重新 snapshot
-    python3 "$POLL" before "$NOTEBOOK_ID" > "$BEFORE_IDS_FILE" 2>/dev/null || true
-fi
+# Step 4b: 不再“检查并删除 in_progress”——该逻辑在并行场景会误删同伴则起动的 artifact。
+# snapshot before 已经抱住了。所有“不在 BEFORE 集里」的 artifact 必是本轮本篇产生的。
+# 残留的 in_progress（如果是其他请求的）只要在 BEFORE 集里，本脚本不会误识到。
 
 # Step 4c: PROMPT（Jason 2026-05-06 拍板的铁律）
 PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深度阐释原文。

@@ -7,7 +7,14 @@
   "author": "Jack Lindsey",
   "authorTitle": "Anthropic 可解释性研究员",
   "originalUrl": "https://transformer-circuits.pub/2025/introspection/index.html",
-  "tags": ["AI", "Anthropic", "可解释性", "对齐", "introspection", "Transformer Circuits"],
+  "tags": [
+    "AI",
+    "Anthropic",
+    "可解释性",
+    "对齐",
+    "introspection",
+    "Transformer Circuits"
+  ],
   "summary": "Anthropic 用「概念注入」实验证明：当代大模型（特别是 Claude Opus 4.1 和 4）确实具备有限的「内省」能力——能在某些情境下察觉自己被注入了某个概念、区分注入思想 vs 文字输入、甚至按指令「想或不想」某个词。能力还很不稳，但确实是真的。",
   "keyPoints": [
     "**核心方法 — 概念注入（Concept Injection）**：把代表某个概念（如「全大写」「海洋」「正义」）的激活向量直接注入模型的内部状态，然后看模型对自己的内部状态的报告会不会变。这是 activation steering 的应用，关键创新在「让模型在自由文本里报告自己被影响了」这一步。",
@@ -52,5 +59,12 @@
       "zh": "我们测试过的最强模型——Claude Opus 4 和 4.1——总体上展示了最强的自省能力。"
     }
   ],
-  "source": "auto"
+  "source": "auto",
+  "audio": {
+    "url": "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/anthropic-emergent-introspection.m4a",
+    "duration_seconds": 1312.25,
+    "size_bytes": 42234219,
+    "generated_at": "2026-05-06T18:08:42+08:00",
+    "format": "m4a"
+  }
 }

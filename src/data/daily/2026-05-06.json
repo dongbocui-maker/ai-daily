@@ -1,0 +1,109 @@
+{
+  "date": "2026-05-06",
+  "title": "2026-05-06",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 豆包正式收费，三档会员年费最高 5088 元",
+          "body": "字节跳动旗下豆包大模型 5 月 5 日宣布开启会员收费模式，分 68/200/500 元三档月费，最高年费 5088 元，背景是日均 Token 调用量已突破 120 万亿，免费烧钱两年后开始向商业化要利润。这被视为国内 C 端大模型告别\"用免费换增长\"的转折点。",
+          "insight": "国内大模型应用层的免费红利正在收敛，订阅制将成为头部模型主战场，定价能力直接考验产品价值与用户黏性。",
+          "source": "网易财经",
+          "url": "https://www.163.com/dy/article/KS71RDPR0556BK9Z.html"
+        },
+        {
+          "title": "🤝 收并购 | 字节跳动锁定华为昇腾 950PR 25 万颗，订单 297 亿元创纪录",
+          "body": "DeepSeek-V4 适配昇腾后，字节跳动一次性锁定华为昇腾 950PR 推理芯片 25 万颗，总额 56 亿美元（约 297 亿元人民币），创国产 AI 芯片单笔最大订单。阿里、腾讯也在跟进。华为 2026 年昇腾 950PR 计划产能约 75 万颗，下半年起全面供货。",
+          "insight": "DeepSeek-V4 + 昇腾 950 形成\"国模 + 国芯\"闭环，国产算力替代英伟达的临界点已到，CUDA 生态在中国市场垄断溢价首次被市场重新定价。",
+          "source": "凤凰网/路透社",
+          "url": "https://h5.ifeng.com/c/vivo/v002I9MP68RGg84QWquaNmGveWpKjHVZ32Cr2t5HyhkkFgU__"
+        },
+        {
+          "title": "💰 融资 | Meta 发行 250 亿美元债券，加码 AI 资本支出",
+          "body": "Meta 4 月 30 日完成 250 亿美元债券发行，是公司历史第二大债券融资，资金主要用于支撑 AI 基础设施扩张。Bridgewater 预计 2026 年大型科技公司 AI 资本开支将达 6500 亿美元，Big Tech 四家合计约 6000 亿美元。",
+          "insight": "AI 已进入\"债务驱动的基础设施军备竞赛\"，云厂商与超大规模数据中心运营商的现金流正被极限测试，分析师对资本回报周期分歧显著。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/meta-looks-raise-up-25-billion-with-bond-sale-bloomberg-news-reports-2026-04-30/"
+        },
+        {
+          "title": "📜 监管政策 | 中国商务部激活《阻断办法》反制美国 AI 链制裁",
+          "body": "针对美国以\"伊朗石油交易\"为由制裁 5 家中国企业，中国商务部启动《阻断办法》予以反制，是该法工具首次对 AI 与半导体相关产业链出手。市场解读为中美 AI 供应链博弈进入\"以法对法\"新阶段。",
+          "insight": "监管对抗从单点出口管制升级为系统性法律工具对峙，跨国企业的合规成本与供应链冗余成本将进一步上升。",
+          "source": "网易财经",
+          "url": "https://www.163.com/dy/article/KS71RDPR0556BK9Z.html"
+        },
+        {
+          "title": "🔬 技术突破 | DeepSeek-TUI 五一爆火，GitHub 星数 5 天破 2.3k",
+          "body": "一名美国开发者用 Rust 写的\"DeepSeek 版 Claude Code\"——DeepSeek-TUI，在五一假期 GitHub Star 数飙升至 2.3k，海外开发者称其为\"鲸鱼版命令行 Coding Agent\"。这与 DeepSeek-V4 的 Agentic Coding 能力升级直接相关。",
+          "insight": "开源模型 + 开源工具链正快速复制 Anthropic Claude Code 的开发者心智，国产模型首次在开发者工作流中获得海外原生社区支持。",
+          "source": "网易财经",
+          "url": "https://www.163.com/dy/article/KS71RDPR0556BK9Z.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🚀 产品发布 | DeepSeek-V4 Agentic Coding 反超 Sonnet 4.5，逼近 Opus 4.6",
+          "body": "DeepSeek-V4 Pro 在 SWE Verified 拿到 80.6%，Terminal Bench 2.0 与 Toolathlon 表现亮眼，DeepSeek 内部已全员使用 V4 作为 Agentic Coding 主力，官方称体验优于 Anthropic Sonnet 4.5、交付质量接近 Opus 4.6 非思考模式。",
+          "insight": "开源模型在 Agent 编程任务上首次进入第一梯队，价格仅是 Claude Opus 的 1/700——AI Coding 工具栈的\"国产替代\"窗口正在打开。",
+          "source": "证券时报",
+          "url": "https://www.stcn.com/article/detail/3802960.html"
+        },
+        {
+          "title": "📊 行业动向 | Claude Code 单日提交全球 4% GitHub 公开代码",
+          "body": "Anthropic CEO Dario Amodei 确认 Claude 内部超过 90% 新代码由 AI 写成；Claude Code 单日最高提交全球 4% 公开 GitHub 代码，年化营收约 25 亿美元。Anthropic 52 天内连发 74 次更新，Codex 周活突破 160 万、桌面应用下载破 100 万。",
+          "insight": "AI Coding 已从\"辅助补全\"进入\"主力生产\"阶段，开发者团队配置、CI 流程、Code Review 标准都需重新设计。",
+          "source": "36氪",
+          "url": "https://eu.36kr.com/zh/p/3774848502661889"
+        },
+        {
+          "title": "🔬 技术突破 | Amazon Q Developer 登顶 SWE-Bench，多文件 Agentic 能力领先",
+          "body": "Amazon Q Developer 在 SWE-Bench Leaderboard 上以 Agentic 能力夺得最高分，可跨多文件实现特性、生成测试、文档与代码评审，免费版每月 50 次安全扫描，Pro 版 19 美元/用户/月。配合 MCP 集成，AWS 正构建专业化 Agent 编排体系。",
+          "insight": "三足鼎立格局已稳：Claude Code（深度推理）+ Cursor（IDE 重构）+ Amazon Q（企业级安全合规），企业选型需按场景而非模型分。",
+          "source": "Java Code Geeks",
+          "url": "https://www.javacodegeeks.com/2025/12/ai-assisted-coding-in-2026-how-github-copilot-cursor-and-amazon-q-are-reshaping-developer-workflows.html"
+        },
+        {
+          "title": "🌍 行业动向 | 阿里旗下 Meoo 集成四大顶尖模型，加入 Coding 战场",
+          "body": "阿里 ATH 事业群在 4 月 19 日推出首款 AI 开发工具 Meoo，集成通义、Claude、GPT、Gemini 四大模型，面向阿里云开发者免费试用。同期阿里云宣布 API 免费额度调整，开启按量付费模式。",
+          "insight": "国内 IDE 级 AI Coding 工具进入\"模型聚合 + 平台分发\"阶段，阿里云 vs 字节扣子 vs 腾讯云 ADP 的\"龙虾大战\"延伸到了 Coding 工具层。",
+          "source": "MBA智库（界面新闻转载）",
+          "url": "https://news.mbalib.com/story/258655"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "🔬 arXiv 长文 | 60 大 LLM 评测基准饱和度研究：基准已无法分辨前沿模型",
+          "body": "arXiv 最新研究系统分析了 60 个主流 LLM 评测基准的饱和情况，发现 2026 年顶级模型在 MMLU、GSM8K 等\"传统旗舰基准\"上得分聚集，区分度急剧下降。Nature 子刊同期推出 HLE（Humanity's Last Exam）2500 题专家级基准，目前最强模型准确率仍处低位。",
+          "insight": "模型选型必须切换评测视角——长上下文、Agent 能力、工具使用、域专业能力将取代传统通用基准成为新尺度。",
+          "source": "arXiv / Nature",
+          "url": "https://arxiv.org/abs/2602.16763"
+        },
+        {
+          "title": "📈 中文研究 | DeepSeek 押注国产芯片：API 价格比 GPT-5.5 Pro 便宜 700 倍",
+          "body": "中新网报道 DeepSeek-V4 适配华为昇腾 950PR 后，单卡算力较英伟达对华特供版 H20 提升 2.87 倍，采购价仅为英伟达的 1/4。V4-Pro API 限时 2.5 折后输入价格低至 0.25 元/百万 token，而 GPT-5.5 Pro 加权输入价为 30 美元/百万 token——折算后差距超 700 倍。",
+          "insight": "国产\"模型+芯片+云\"全栈协同首次在性价比维度实现压倒性优势，全球 AI 推理市场的价格曲线将被重新定义。",
+          "source": "中新网",
+          "url": "https://www.chinanews.com.cn/cj/2026/05-01/10614230.shtml"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "主线一：国产算力闭环正式跑通。 DeepSeek-V4 + 华为昇腾 950PR + 字节 297 亿订单，三件事在五一前后串成一条线——国产模型脱离 CUDA 的工程可行性、国产芯片大规模商业化能力、头部互联网厂商的真金白银下单都到位。叠加 DeepSeek-TUI 海外开发者社区爆火，国产 AI 第一次同时收获了\"性能可比 + 成本碾压 + 生态认可\"的三重胜利。市场已开始重新定价英伟达对华业务的垄断溢价，A 股相关板块连日异动。",
+    "主线二：AI 落地的瓶颈从\"模型能力\"切到\"组织能力\"。 麦肯锡《2026 组织状况报告》的 86% 数字揭穿了行业幻觉：技术供给已经过剩，但企业组织、流程、考核体系都还停留在 PC 时代。微软 Copilot Wave 3 产品力领先但企业渗透率仅 3.3%；Alvarez & Marsal、埃森哲、麦肯锡等纷纷把\"AI 业务收入占比\"写进战略目标——AI 咨询和 AgentOps 服务市场将在 2026 下半年迎来真正放量。",
+    "主线三：商业化进入\"收钱即考验\"阶段。 豆包推三档会员、阿里云 API 转按量付费、Meta 250 亿美元发债扩 AI、Reuters 因 AI 受冲击导致 Thomson 家族特别分红 5 亿美元——AI 行业从\"烧钱讲故事\"切到\"现金流验真伪\"。下半年的关键观察点是：哪些产品能在订阅制下保持留存，哪些重资本投入能在 18 个月内见到回报。"
+  ]
+}

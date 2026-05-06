@@ -37,7 +37,25 @@ WORK_DIR=$(mktemp -d -t podcast-${SLUG}-XXXXXX)
 SOURCE_MD="${WORK_DIR}/source.md"
 AUDIO_FILE="${WORK_DIR}/podcast.m4a"
 
-trap 'echo "[!] 工作目录保留：$WORK_DIR" >&2' EXIT
+# 失败诊断 trap：保留工作目录 + dump 任何 stderr 文件
+on_exit() {
+    local code=$?
+    if [[ $code -ne 0 ]]; then
+        echo "" >&2
+        echo "==== ❌ 脚本异常退出（code=$code）====" >&2
+        echo "工作目录：$WORK_DIR" >&2
+        for f in "$WORK_DIR"/*.stderr; do
+            [[ -f "$f" ]] || continue
+            echo "---- $(basename $f) ----" >&2
+            cat "$f" >&2
+            echo "-------------------------" >&2
+        done
+        echo "==== 诊断信息结束 ====" >&2
+    else
+        echo "[i] 工作目录保留：$WORK_DIR" >&2
+    fi
+}
+trap on_exit EXIT
 
 # ===== 启动 mihomo =====
 if ! pgrep mihomo > /dev/null; then
@@ -129,7 +147,8 @@ else
     NAMED_MD="${WORK_DIR}/${SOURCE_TITLE}.md"
     cp "$SOURCE_MD" "$NAMED_MD"
 
-    SOURCE_ADD_JSON=$($NOTEBOOKLM source add "$NAMED_MD" --json 2>&1)
+    # 关键：stderr 单独存文件，stdout 拿干净的 JSON
+    SOURCE_ADD_JSON=$($NOTEBOOKLM source add "$NAMED_MD" --json 2>"$WORK_DIR/source-add.stderr")
 SOURCE_ID=$(echo "$SOURCE_ADD_JSON" | python3 -c "
 import sys, json
 try:
@@ -156,22 +175,58 @@ fi
 echo "  → 等 source 索引完成（最多 60 秒）..." >&2
 $NOTEBOOKLM source wait "$SOURCE_ID" --timeout 90 2>&1 | head -3 >&2 || echo "  ⚠️ wait 超时但继续（NotebookLM 一般也能用）" >&2
 
-# ===== Step 4: 生成 audio（关键：-s <source-id> 锁定单篇）=====
+# ===== Step 4: 幂等检测 + 生成 audio（关键：-s <source-id> 锁定单篇）=====
+# 注：artifact 没有 source 关联字段。幂等检测用「同一 notebook + title 包含本篇关键词 + 最近1小时」。
 echo "" >&2
-echo "[4/6] 生成播客（deep-dive long zh，-s 锁定本篇 source）..." >&2
-echo "  ⏳ 预计 15-25 分钟，请耐心等待..." >&2
+echo "[4/6] 检查是否已有 completed artifact（幂等）..." >&2
 
-ARTIFACT_JSON=$($NOTEBOOKLM generate audio \
-    -s "$SOURCE_ID" \
-    --format deep-dive \
-    --length long \
-    --language zh_Hans \
-    --wait \
-    --retry 2 \
-    --json \
-    "中文深度讲解《${SOURCE_TITLE}》核心观点，双主持人对谈风格，深入分析作者论点、关键论据、行业影响、对企业 AI 落地的启示" 2>&1)
+# 取 source title 前4个字作为模糊匹配锯（避先误匹配同 notebook 其他篇）
+TITLE_PREFIX=$(echo "$SOURCE_TITLE" | head -c 12)
 
-ARTIFACT_ID=$(echo "$ARTIFACT_JSON" | python3 -c "
+EXISTING_ARTIFACT_ID=$($NOTEBOOKLM artifact list -n "$NOTEBOOK_ID" --type audio --json 2>"$WORK_DIR/artifact-list.stderr" | python3 -c "
+import sys, json, time
+from datetime import datetime, timedelta
+try:
+    data = json.load(sys.stdin)
+    items = data.get('artifacts', []) if isinstance(data, dict) else data
+    title_kw = '${TITLE_PREFIX}'.strip()
+    cutoff = datetime.now() - timedelta(hours=24)
+    for a in items:
+        if a.get('status') != 'completed': continue
+        title = a.get('title', '')
+        # title 包含本篇关键词（模糊匹配，容忍 NotebookLM 自动变名）
+        if not title or not any(w in title for w in title_kw.replace('《','').replace('》','').replace('：','').split()[:1]):
+            continue
+        # 仅看最近 24h 创建的
+        try:
+            ct = datetime.fromisoformat(a.get('created_at', '').split('+')[0])
+            if ct > cutoff:
+                print(a['id']); break
+        except Exception:
+            continue
+except Exception:
+    pass
+" 2>/dev/null || echo "")
+
+if [[ -n "$EXISTING_ARTIFACT_ID" ]]; then
+    ARTIFACT_ID="$EXISTING_ARTIFACT_ID"
+    echo "  ♻️  发现近期 completed artifact，复用：$ARTIFACT_ID" >&2
+else
+    echo "  → 无现成 artifact，开始生成（deep-dive long zh，-s 锁定本篇 source）" >&2
+    echo "  ⏳ 预计 15-25 分钟，请耐心等待..." >&2
+
+    # 关键：stderr 单独存文件，stdout 拿干净的 JSON（这是 13:00 那次崩溃的根因）
+    ARTIFACT_JSON=$($NOTEBOOKLM generate audio \
+        -s "$SOURCE_ID" \
+        --format deep-dive \
+        --length long \
+        --language zh_Hans \
+        --wait \
+        --retry 2 \
+        --json \
+        "中文深度讲解《${SOURCE_TITLE}》核心观点，双主持人对谈风格，深入分析作者论点、关键论据、行业影响、对企业 AI 落地的启示" 2>"$WORK_DIR/generate-audio.stderr")
+
+    ARTIFACT_ID=$(echo "$ARTIFACT_JSON" | python3 -c "
 import sys, json
 try:
     data = json.load(sys.stdin)
@@ -183,14 +238,21 @@ try:
     print(aid)
 except Exception as e:
     print(f'ERROR parsing artifact json: {e}', file=sys.stderr)
+    print('--- raw output ---', file=sys.stderr)
+    print(sys.stdin.read()[:2000] if False else '(see stderr file)', file=sys.stderr)
     sys.exit(1)
 ")
+fi
 echo "  ✅ artifact-id: $ARTIFACT_ID" >&2
 
 # ===== Step 5: 下载 m4a =====
 echo "" >&2
 echo "[5/6] 下载 m4a..." >&2
-$NOTEBOOKLM download audio "$ARTIFACT_ID" -o "$AUDIO_FILE" 2>&1 | tail -3 >&2
+$NOTEBOOKLM download audio "$ARTIFACT_ID" -o "$AUDIO_FILE" 2>"$WORK_DIR/download.stderr" | tail -3 >&2 || {
+    echo "  ❌ 下载失败，stderr:" >&2
+    cat "$WORK_DIR/download.stderr" >&2
+    exit 2
+}
 
 if [[ ! -f "$AUDIO_FILE" ]]; then
     echo "ERROR: 下载失败，文件不存在：$AUDIO_FILE" >&2

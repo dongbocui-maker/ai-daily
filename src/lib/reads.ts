@@ -5,6 +5,16 @@ export interface ReadQuote {
   zh: string;
 }
 
+/** 音频元数据（跳 Hero 区下方渲染播放器） */
+export interface ReadAudio {
+  url: string;                 // COS 公网 URL
+  duration_seconds: number;    // ffprobe 探测的精确时长
+  size_bytes: number;          // 文件大小
+  generated_at: string;        // ISO 时间戳
+  format?: 'mp3' | 'm4a';      // 默认 m4a（NotebookLM 输出）
+  // 后期可加：transcript / subtitle_url
+}
+
 export interface ReadArticle {
   slug: string;
   savedDate: string;        // 你收藏日期 YYYY-MM-DD
@@ -21,6 +31,7 @@ export interface ReadArticle {
   summaryZh: string;        // 完整中文解读（markdown）
   quotes?: ReadQuote[];     // 金句精选
   source: 'manual' | 'auto'; // 手工添加 vs cron 自动收集
+  audio?: ReadAudio;        // 可选：NotebookLM 生成的双人对谈播客
 }
 
 // Vite glob: 静态构建期把所有 JSON 内嵌

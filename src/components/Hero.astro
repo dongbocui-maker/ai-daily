@@ -1,6 +1,7 @@
 ---
 import { formatDateZh, dayOfWeekZh } from '../lib/data';
 import type { DailyReport } from '../lib/data';
+import AudioPlayer from './AudioPlayer.astro';
 
 const report = Astro.props.report as DailyReport;
 // title 如果就是日期本身说明没解析出真正的标题，用静态名代替
@@ -31,6 +32,8 @@ const totalItems = report.sections.reduce((sum, s) => sum + s.items.length, 0);
     <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed">
       {report.summary || `今日收录 ${totalItems} 条资讯，涵盖 ${report.sections.length} 个板块。向下滚动查看本期速览。`}
     </p>
+
+    {report.audio && <AudioPlayer audio={report.audio} date={report.date} />}
 
     <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
       {report.sections.map((s) => (

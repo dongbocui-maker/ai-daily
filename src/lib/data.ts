@@ -16,12 +16,21 @@ export interface Section {
   items: NewsItem[];
 }
 
+export interface AudioMeta {
+  url: string;                 // COS 公网 URL
+  duration_seconds: number;    // ffprobe 探测的精确时长
+  size_bytes: number;          // 文件大小
+  generated_at: string;        // ISO 时间戳
+  // 后期可加：transcript / subtitle_url（字幕功能时）
+}
+
 export interface DailyReport {
   date: string;
   title: string;
   summary?: string;
   sections: Section[];
   closing?: string[];
+  audio?: AudioMeta;          // 可选：当天日报的语音版 mp3
 }
 
 // Vite glob: 静态构建期把所有 JSON 内嵌

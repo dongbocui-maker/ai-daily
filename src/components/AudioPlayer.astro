@@ -1,0 +1,264 @@
+---
+// AudioPlayer.astro — 通用音频播放器（日报 + 精读 共用）
+// 和 Hero 暗色风格融合：紫色品牌强调 + 半透明白色 + 玻璃拟态
+
+/** 只要结构匹配就能传进来——DailyReport.AudioMeta / ReadArticle.ReadAudio 都能用 */
+export interface PlayerAudio {
+  url: string;
+  duration_seconds: number;
+  size_bytes?: number;
+  generated_at?: string;
+  format?: string;
+}
+
+interface Props {
+  audio: PlayerAudio;
+  /** 唯一标识（日报传 date、精读传 slug）——只是拼到元素 ID 里避免同页多个播放器冲突 */
+  date: string;
+}
+
+const { audio, date } = Astro.props;
+
+// 把秒数格式化为 mm:ss
+function fmtDuration(sec: number): string {
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+const initialDuration = fmtDuration(audio.duration_seconds);
+const playerId = `audio-player-${date}`;
+---
+
+<div
+  class="relative mt-7 max-w-2xl rounded-xl overflow-hidden
+         bg-white/5 backdrop-blur-sm border border-white/10
+         hover:border-accent-purple-light/40 transition-colors
+         group/player"
+  data-audio-player={playerId}
+>
+  <!-- 隐藏的 native <audio>，由 JS 控制 -->
+  <audio
+    id={playerId}
+    src={audio.url}
+    preload="metadata"
+    class="sr-only"
+  ></audio>
+
+  <div class="flex items-center gap-4 p-4">
+    <!-- 播放/暂停按钮 -->
+    <button
+      type="button"
+      data-action="toggle"
+      aria-label="播放/暂停"
+      class="flex-shrink-0 w-12 h-12 rounded-full
+             bg-accent-purple hover:bg-accent-purple-light
+             flex items-center justify-center
+             transition-all duration-200
+             shadow-lg shadow-accent-purple/30
+             group/btn"
+    >
+      <!-- 播放三角 -->
+      <svg
+        data-icon="play"
+        class="w-5 h-5 text-white translate-x-0.5 transition-transform group-hover/btn:scale-110"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M8 5.14v13.72L19 12 8 5.14z" />
+      </svg>
+      <!-- 暂停（默认隐藏）-->
+      <svg
+        data-icon="pause"
+        class="w-5 h-5 text-white hidden transition-transform group-hover/btn:scale-110"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z" />
+      </svg>
+      <!-- 加载（默认隐藏）-->
+      <svg
+        data-icon="loading"
+        class="w-5 h-5 text-white hidden animate-spin"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity="0.25" stroke-width="3" />
+        <path d="M22 12a10 10 0 0 1-10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <!-- 中部：标题 + 进度条 + 时间 -->
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 mb-1.5">
+        <span class="text-[10px] font-bold tracking-wider text-accent-purple-light uppercase">
+          🎧 AUDIO
+        </span>
+        <span class="text-xs font-medium text-white/90 truncate">
+          听一段语音版日报
+        </span>
+      </div>
+
+      <!-- 进度条（可点击拖动）-->
+      <div
+        data-action="seek"
+        class="relative h-1.5 bg-white/15 rounded-full cursor-pointer overflow-hidden group/seek
+               hover:h-2 transition-all"
+      >
+        <!-- 已缓冲 -->
+        <div
+          data-progress="buffered"
+          class="absolute inset-y-0 left-0 bg-white/20 rounded-full"
+          style="width: 0%"
+        ></div>
+        <!-- 已播放 -->
+        <div
+          data-progress="played"
+          class="absolute inset-y-0 left-0 bg-gradient-to-r from-accent-purple to-accent-purple-light rounded-full"
+          style="width: 0%"
+        ></div>
+        <!-- 进度小球（hover 时出现）-->
+        <div
+          data-progress="thumb"
+          class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full
+                 bg-white shadow-md opacity-0 group-hover/seek:opacity-100 transition-opacity"
+          style="left: 0%"
+        ></div>
+      </div>
+
+      <!-- 时间显示 -->
+      <div class="flex items-center justify-between mt-1.5 text-[11px] tabular-nums text-white/60">
+        <span data-time="current">0:00</span>
+        <span data-time="duration">{initialDuration}</span>
+      </div>
+    </div>
+
+    <!-- 右侧：倍速 + 下载 -->
+    <div class="flex-shrink-0 flex items-center gap-1">
+      <button
+        type="button"
+        data-action="speed"
+        data-speed="1"
+        class="px-2 py-1 text-xs font-medium tabular-nums text-white/70 hover:text-white
+               hover:bg-white/10 rounded transition-colors"
+        aria-label="切换倍速"
+      >
+        1×
+      </button>
+      <a
+        href={audio.url}
+        download={`audio-${date}.${audio.format || 'mp3'}`}
+        class="p-1.5 text-white/60 hover:text-white hover:bg-white/10 rounded transition-colors"
+        aria-label="下载 MP3"
+        title="下载 MP3"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ playerId }}>
+  // 控件初始化（每个播放器独立闭包）
+  const root = document.querySelector(`[data-audio-player="${playerId}"]`);
+  if (!root) {
+    /* 容错：找不到根元素就放弃 */
+  } else {
+    const audio = root.querySelector('audio');
+    const btnToggle = root.querySelector('[data-action="toggle"]');
+    const iconPlay = root.querySelector('[data-icon="play"]');
+    const iconPause = root.querySelector('[data-icon="pause"]');
+    const iconLoading = root.querySelector('[data-icon="loading"]');
+    const seekBar = root.querySelector('[data-action="seek"]');
+    const playedBar = root.querySelector('[data-progress="played"]');
+    const bufferedBar = root.querySelector('[data-progress="buffered"]');
+    const thumb = root.querySelector('[data-progress="thumb"]');
+    const timeCurrent = root.querySelector('[data-time="current"]');
+    const timeDuration = root.querySelector('[data-time="duration"]');
+    const btnSpeed = root.querySelector('[data-action="speed"]');
+
+    const fmt = (sec) => {
+      if (!isFinite(sec) || sec < 0) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s.toString().padStart(2, '0')}`;
+    };
+
+    const setIcon = (state) => {
+      iconPlay.classList.toggle('hidden', state !== 'play');
+      iconPause.classList.toggle('hidden', state !== 'pause');
+      iconLoading.classList.toggle('hidden', state !== 'loading');
+    };
+
+    // 播放/暂停切换
+    btnToggle.addEventListener('click', () => {
+      if (audio.paused) audio.play();
+      else audio.pause();
+    });
+
+    audio.addEventListener('play', () => setIcon('pause'));
+    audio.addEventListener('pause', () => setIcon('play'));
+    audio.addEventListener('waiting', () => setIcon('loading'));
+    audio.addEventListener('playing', () => setIcon('pause'));
+    audio.addEventListener('ended', () => setIcon('play'));
+
+    // 时长 / 进度 / 已缓冲
+    audio.addEventListener('loadedmetadata', () => {
+      timeDuration.textContent = fmt(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+      playedBar.style.width = `${pct}%`;
+      thumb.style.left = `${pct}%`;
+      timeCurrent.textContent = fmt(audio.currentTime);
+    });
+
+    audio.addEventListener('progress', () => {
+      if (audio.buffered.length > 0 && audio.duration) {
+        const end = audio.buffered.end(audio.buffered.length - 1);
+        bufferedBar.style.width = `${(end / audio.duration) * 100}%`;
+      }
+    });
+
+    // 进度条点击 / 拖动
+    let dragging = false;
+    const seekTo = (clientX) => {
+      const rect = seekBar.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      if (audio.duration) audio.currentTime = ratio * audio.duration;
+    };
+
+    seekBar.addEventListener('mousedown', (e) => {
+      dragging = true;
+      seekTo(e.clientX);
+    });
+    document.addEventListener('mousemove', (e) => {
+      if (dragging) seekTo(e.clientX);
+    });
+    document.addEventListener('mouseup', () => {
+      dragging = false;
+    });
+    // 触屏支持
+    seekBar.addEventListener('touchstart', (e) => seekTo(e.touches[0].clientX), { passive: true });
+    seekBar.addEventListener('touchmove', (e) => seekTo(e.touches[0].clientX), { passive: true });
+
+    // 倍速循环（1× → 1.25× → 1.5× → 2× → 1×）
+    const speeds = [1, 1.25, 1.5, 2];
+    let speedIdx = 0;
+    btnSpeed.addEventListener('click', () => {
+      speedIdx = (speedIdx + 1) % speeds.length;
+      const sp = speeds[speedIdx];
+      audio.playbackRate = sp;
+      btnSpeed.textContent = `${sp}×`;
+    });
+
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error('[AudioPlayer] load failed:', audio.error);
+      setIcon('play');
+    });
+  }
+</script>

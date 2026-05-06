@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
 import { listSlugs, loadRead } from '../../lib/reads';
 
 export async function getStaticPaths() {
@@ -96,6 +97,10 @@ function formatInline(s: string): string {
         >
           🔗 阅读英文原文
         </a>
+
+        {article.audio && (
+          <AudioPlayer audio={article.audio} date={article.slug} />
+        )}
       </div>
     </section>
 

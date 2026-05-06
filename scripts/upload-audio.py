@@ -121,18 +121,40 @@ def upload(
     client = CosS3Client(config)
 
     # 上传（高级 upload_file自动处理大文件分片）
-    try:
-        response = client.upload_file(
-            Bucket=BUCKET,
-            Key=key,
-            LocalFilePath=local_path,
-            EnableMD5=False,
-            ContentType=content_type,
-            CacheControl="public, max-age=86400",  # 浏览器缓存 1 天（音频不变）
-        )
-        etag = response.get("ETag", "")
-    except (CosClientError, CosServiceError) as e:
-        raise RuntimeError(f"COS 上传失败：{e}") from e
+    # 重试策略：最多 4 次，指数退避（60MB+ 文件首次上传偶发失败）
+    import time
+    MAX_RETRIES = 4
+    BACKOFF_BASE = 5  # 第 i 次重试前 sleep BACKOFF_BASE * 2^(i-1)。 0s、5s、10s、20s
+
+    last_exc = None
+    response = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            if attempt > 1:
+                wait = BACKOFF_BASE * (2 ** (attempt - 2))
+                print(f"  ⏳ 重试上传（第 {attempt}/{MAX_RETRIES} 次，等 {wait}s）...", file=sys.stderr)
+                time.sleep(wait)
+
+            response = client.upload_file(
+                Bucket=BUCKET,
+                Key=key,
+                LocalFilePath=local_path,
+                EnableMD5=False,
+                ContentType=content_type,
+                CacheControl="public, max-age=86400",  # 浏览器缓存 1 天（音频不变）
+            )
+            if attempt > 1:
+                print(f"  ✅ 第 {attempt} 次重试成功", file=sys.stderr)
+            break
+        except (CosClientError, CosServiceError) as e:
+            last_exc = e
+            print(f"  ⚠️  第 {attempt} 次上传失败：{e}", file=sys.stderr)
+            if attempt == MAX_RETRIES:
+                raise RuntimeError(f"COS 上传失败（已重试 {MAX_RETRIES} 次）：{e}") from e
+
+    if response is None:
+        raise RuntimeError(f"COS 上传完全失败：{last_exc}")
+    etag = response.get("ETag", "")
 
     return {
         "url": f"{DOMAIN}/{key}",

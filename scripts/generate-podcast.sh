@@ -213,42 +213,99 @@ if [[ -n "$EXISTING_ARTIFACT_ID" ]]; then
     echo "  ♻️  发现近期 completed artifact，复用：$ARTIFACT_ID" >&2
 else
     echo "  → 无现成 artifact，开始生成（deep-dive long zh，-s 锁定本篇 source）" >&2
-    echo "  ⏳ 预计 15-25 分钟，请耐心等待..." >&2
 
-    # 关键：stderr 单独存文件，stdout 拿干净的 JSON（这是 13:00 那次崩溃的根因）
-    ARTIFACT_JSON=$($NOTEBOOKLM generate audio \
+    # 记录生成启动时间，后面轮询只看这之后创建的 artifact
+    GEN_START_EPOCH=$(date +%s)
+    GEN_START_ISO=$(TZ=UTC date -u -d "@$GEN_START_EPOCH" '+%Y-%m-%dT%H:%M:%S')
+    echo "  ⏰ 启动时间（UTC）：$GEN_START_ISO" >&2
+
+    # ⚠️ 铁律：不依赖 --wait（1 个脚本设计必须是幂等、可重试、可诊断的）
+    # generate audio --wait 会提前退出（5-6 分钟而不是 15-25）。改用我们自己的轮询。
+    #
+    # PROMPT 铁律（Jason 2026-05-06 拍板）：
+    # 1. 沿用原标题，不要重写
+    # 2. 严格仅限原文内容，不准编原文未讲过的东西
+    PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深度阐释原文。
+
+严格要求：
+1. 本期节目标题必须是《${SOURCE_TITLE}》。不要重写、不要改名、不要起别的名字。
+2. 所有论点、数据、例子、引言、背景信息都必须严格出自原文。不准编原文未讲过的内容。
+3. 可以重述、阐释、讨论原文观点，但不准联想、不准类比到原文未提的例子、不准「补充背景」。
+4. 如果原文某个点介绍不够详细，说「作者未详述」即可，不准填补。
+风格：严谨专业、信息密集、面向专业人士，不要闲聊化。"
+
+    # 启动生成（不 --wait）——发起请求后就退出
+    set +e
+    $NOTEBOOKLM generate audio \
         -s "$SOURCE_ID" \
         --format deep-dive \
         --length long \
         --language zh_Hans \
-        --wait \
-        --retry 2 \
         --json \
-        "中文深度讲解《${SOURCE_TITLE}》核心观点，双主持人对谈风格，深入分析作者论点、关键论据、行业影响、对企业 AI 落地的启示" 2>"$WORK_DIR/generate-audio.stderr")
+        "$PROMPT" \
+        > "$WORK_DIR/generate-audio.stdout" 2>"$WORK_DIR/generate-audio.stderr"
+    GEN_RC=$?
+    set -e
+    echo "  → 生成请求已发起（rc=$GEN_RC）" >&2
 
-    ARTIFACT_ID=$(echo "$ARTIFACT_JSON" | python3 -c "
+    # 轮询 artifact list，取本次启动后创建的 audio artifact
+    # 轮询策略：最多等 35 分钟（避免 long deep-dive 超期），每 30s 查一次
+    echo "  ⏳ 轮询生成状态（最多等 35 分钟）..." >&2
+    ARTIFACT_ID=""
+    POLL_INTERVAL=30
+    POLL_MAX_TRIES=70  # 70 * 30s = 35 分钟
+
+    for i in $(seq 1 $POLL_MAX_TRIES); do
+        sleep $POLL_INTERVAL
+        ELAPSED=$(( $(date +%s) - GEN_START_EPOCH ))
+
+        # 查 artifact list，取「启动之后创建的 + completed + audio」
+        FOUND_ID=$($NOTEBOOKLM artifact list -n "$NOTEBOOK_ID" --type audio --json 2>"$WORK_DIR/poll-${i}.stderr" | python3 -c "
 import sys, json
+from datetime import datetime
 try:
     data = json.load(sys.stdin)
-    aid = data.get('id') or (data.get('artifact') or {}).get('id')
-    if not aid:
-        print('ERROR: no artifact id', file=sys.stderr)
-        print(json.dumps(data, indent=2)[:2000], file=sys.stderr)
-        sys.exit(1)
-    print(aid)
+    items = data.get('artifacts', []) if isinstance(data, dict) else data
+    cutoff = datetime.fromisoformat('${GEN_START_ISO}')
+    for a in items:
+        if a.get('status') != 'completed': continue
+        try:
+            ct = datetime.fromisoformat(a.get('created_at', '').split('+')[0])
+            if ct >= cutoff:
+                print(a['id']); break
+        except Exception:
+            continue
 except Exception as e:
-    print(f'ERROR parsing artifact json: {e}', file=sys.stderr)
-    print('--- raw output ---', file=sys.stderr)
-    print(sys.stdin.read()[:2000] if False else '(see stderr file)', file=sys.stderr)
-    sys.exit(1)
-")
+    pass
+" 2>/dev/null || echo "")
+
+        if [[ -n "$FOUND_ID" ]]; then
+            ARTIFACT_ID="$FOUND_ID"
+            echo "  ✅ 生成完成（耗时 ${ELAPSED}s，轮询 #${i}）：$ARTIFACT_ID" >&2
+            break
+        fi
+
+        if (( i % 4 == 0 )); then
+            echo "  …还在生成中（已等 ${ELAPSED}s / 轮询 #${i}）..." >&2
+        fi
+    done
+
+    if [[ -z "$ARTIFACT_ID" ]]; then
+        echo "  ❌ 轮询 35 分钟后仍未看到 completed artifact" >&2
+        echo "  generate-audio.stdout:" >&2
+        cat "$WORK_DIR/generate-audio.stdout" >&2
+        echo "  generate-audio.stderr:" >&2
+        cat "$WORK_DIR/generate-audio.stderr" >&2
+        exit 2
+    fi
 fi
 echo "  ✅ artifact-id: $ARTIFACT_ID" >&2
 
 # ===== Step 5: 下载 m4a =====
+# ⚠️ CLI 语义：`download audio -a <artifact-id> [OUTPUT_PATH]`。不是 -o。
 echo "" >&2
 echo "[5/6] 下载 m4a..." >&2
-$NOTEBOOKLM download audio "$ARTIFACT_ID" -o "$AUDIO_FILE" 2>"$WORK_DIR/download.stderr" | tail -3 >&2 || {
+$NOTEBOOKLM download audio -a "$ARTIFACT_ID" "$AUDIO_FILE" 2>"$WORK_DIR/download.stderr" | tail -3 >&2 || {
     echo "  ❌ 下载失败，stderr:" >&2
     cat "$WORK_DIR/download.stderr" >&2
     exit 2

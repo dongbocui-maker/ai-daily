@@ -175,57 +175,39 @@ fi
 echo "  → 等 source 索引完成（最多 60 秒）..." >&2
 $NOTEBOOKLM source wait "$SOURCE_ID" --timeout 90 2>&1 | head -3 >&2 || echo "  ⚠️ wait 超时但继续（NotebookLM 一般也能用）" >&2
 
-# ===== Step 4: 幂等检测 + 生成 audio（关键：-s <source-id> 锁定单篇）=====
-# 注：artifact 没有 source 关联字段。幂等检测用「同一 notebook + title 包含本篇关键词 + 最近1小时」。
+# ===== Step 4: 生成 audio（snapshot before/after 策略）=====
+#
+# 核心思路：
+#   - artifact 没有 source 关联字段，NotebookLM 会重写 title → 不能靠 title 匹配
+#   - snapshot before/after：记录触发生成前的 ID 集，轮询「新出现的」
+#   - 避免双生成：如果近 30 分钟有 in_progress audio artifact，先删掉避免混淆
+# Python 助手脚本：notebooklm-poll.py
+
+export NOTEBOOKLM="$NOTEBOOKLM"
+POLL="$SCRIPT_DIR/notebooklm-poll.py"
+
 echo "" >&2
-echo "[4/6] 检查是否已有 completed artifact（幂等）..." >&2
+echo "[4/6] snapshot 现有 audio artifact ID 集..." >&2
 
-# 取 source title 前4个字作为模糊匹配锯（避先误匹配同 notebook 其他篇）
-TITLE_PREFIX=$(echo "$SOURCE_TITLE" | head -c 12)
+# Step 4a: snapshot before
+BEFORE_IDS_FILE="$WORK_DIR/before-ids.txt"
+python3 "$POLL" before "$NOTEBOOK_ID" > "$BEFORE_IDS_FILE" 2>"$WORK_DIR/before.stderr" || true
+BEFORE_COUNT=$(wc -l < "$BEFORE_IDS_FILE" | tr -d ' ')
+echo "  before: $BEFORE_COUNT 个现有 audio artifact" >&2
 
-EXISTING_ARTIFACT_ID=$($NOTEBOOKLM artifact list -n "$NOTEBOOK_ID" --type audio --json 2>"$WORK_DIR/artifact-list.stderr" | python3 -c "
-import sys, json, time
-from datetime import datetime, timedelta
-try:
-    data = json.load(sys.stdin)
-    items = data.get('artifacts', []) if isinstance(data, dict) else data
-    title_kw = '${TITLE_PREFIX}'.strip()
-    cutoff = datetime.now() - timedelta(hours=24)
-    for a in items:
-        if a.get('status') != 'completed': continue
-        title = a.get('title', '')
-        # title 包含本篇关键词（模糊匹配，容忍 NotebookLM 自动变名）
-        if not title or not any(w in title for w in title_kw.replace('《','').replace('》','').replace('：','').split()[:1]):
-            continue
-        # 仅看最近 24h 创建的
-        try:
-            ct = datetime.fromisoformat(a.get('created_at', '').split('+')[0])
-            if ct > cutoff:
-                print(a['id']); break
-        except Exception:
-            continue
-except Exception:
-    pass
-" 2>/dev/null || echo "")
+# Step 4b: 避免双生成 —— 检查近 30 min in_progress
+IN_PROGRESS_ID=$(python3 "$POLL" in-progress-recent "$NOTEBOOK_ID" 30 2>/dev/null || echo "")
+if [[ -n "$IN_PROGRESS_ID" ]]; then
+    echo "  ⚠️  发现近 30 min in_progress artifact: $IN_PROGRESS_ID" >&2
+    echo "     为避免双生成，先删掉它" >&2
+    $NOTEBOOKLM artifact delete "$IN_PROGRESS_ID" -y 2>&1 | head -2 >&2 || true
+    sleep 2
+    # 重新 snapshot
+    python3 "$POLL" before "$NOTEBOOK_ID" > "$BEFORE_IDS_FILE" 2>/dev/null || true
+fi
 
-if [[ -n "$EXISTING_ARTIFACT_ID" ]]; then
-    ARTIFACT_ID="$EXISTING_ARTIFACT_ID"
-    echo "  ♻️  发现近期 completed artifact，复用：$ARTIFACT_ID" >&2
-else
-    echo "  → 无现成 artifact，开始生成（deep-dive long zh，-s 锁定本篇 source）" >&2
-
-    # 记录生成启动时间，后面轮询只看这之后创建的 artifact
-    GEN_START_EPOCH=$(date +%s)
-    GEN_START_ISO=$(TZ=UTC date -u -d "@$GEN_START_EPOCH" '+%Y-%m-%dT%H:%M:%S')
-    echo "  ⏰ 启动时间（UTC）：$GEN_START_ISO" >&2
-
-    # ⚠️ 铁律：不依赖 --wait（1 个脚本设计必须是幂等、可重试、可诊断的）
-    # generate audio --wait 会提前退出（5-6 分钟而不是 15-25）。改用我们自己的轮询。
-    #
-    # PROMPT 铁律（Jason 2026-05-06 拍板）：
-    # 1. 沿用原标题，不要重写
-    # 2. 严格仅限原文内容，不准编原文未讲过的东西
-    PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深度阐释原文。
+# Step 4c: PROMPT（Jason 2026-05-06 拍板的铁律）
+PROMPT="这期播客介绍《${SOURCE_TITLE}》。中文双主持人对谈，深度阐释原文。
 
 严格要求：
 1. 本期节目标题必须是《${SOURCE_TITLE}》。不要重写、不要改名、不要起别的名字。
@@ -234,71 +216,39 @@ else
 4. 如果原文某个点介绍不够详细，说「作者未详述」即可，不准填补。
 风格：严谨专业、信息密集、面向专业人士，不要闲聊化。"
 
-    # 启动生成（不 --wait）——发起请求后就退出
-    set +e
-    $NOTEBOOKLM generate audio \
-        -s "$SOURCE_ID" \
-        --format deep-dive \
-        --length long \
-        --language zh_Hans \
-        --json \
-        "$PROMPT" \
-        > "$WORK_DIR/generate-audio.stdout" 2>"$WORK_DIR/generate-audio.stderr"
-    GEN_RC=$?
-    set -e
-    echo "  → 生成请求已发起（rc=$GEN_RC）" >&2
+# Step 4d: 启动 generate audio（不 --wait）
+echo "  → 启动 generate audio（deep-dive long zh）" >&2
+set +e
+$NOTEBOOKLM generate audio \
+    -s "$SOURCE_ID" \
+    --format deep-dive \
+    --length long \
+    --language zh_Hans \
+    --json \
+    "$PROMPT" \
+    > "$WORK_DIR/generate-audio.stdout" 2>"$WORK_DIR/generate-audio.stderr"
+GEN_RC=$?
+set -e
+echo "  → 生成请求已发起（rc=$GEN_RC）" >&2
 
-    # 轮询 artifact list，取本次启动后创建的 audio artifact
-    # 轮询策略：最多等 35 分钟（避免 long deep-dive 超期），每 30s 查一次
-    echo "  ⏳ 轮询生成状态（最多等 35 分钟）..." >&2
-    ARTIFACT_ID=""
-    POLL_INTERVAL=30
-    POLL_MAX_TRIES=70  # 70 * 30s = 35 分钟
+# Step 4e: 轮询「不在 BEFORE_IDS 里的新 completed audio artifact」
+echo "  ⏳ 轮询新 artifact（30s/次，最多 35 min）..." >&2
+set +e
+ARTIFACT_ID=$(python3 "$POLL" poll "$NOTEBOOK_ID" "$BEFORE_IDS_FILE" --max-tries 70 --interval 30 2>&1 | tee "$WORK_DIR/poll.log" | tail -n 1)
+POLL_RC=$?
+set -e
 
-    for i in $(seq 1 $POLL_MAX_TRIES); do
-        sleep $POLL_INTERVAL
-        ELAPSED=$(( $(date +%s) - GEN_START_EPOCH ))
-
-        # 查 artifact list，取「启动之后创建的 + completed + audio」
-        FOUND_ID=$($NOTEBOOKLM artifact list -n "$NOTEBOOK_ID" --type audio --json 2>"$WORK_DIR/poll-${i}.stderr" | python3 -c "
-import sys, json
-from datetime import datetime
-try:
-    data = json.load(sys.stdin)
-    items = data.get('artifacts', []) if isinstance(data, dict) else data
-    cutoff = datetime.fromisoformat('${GEN_START_ISO}')
-    for a in items:
-        if a.get('status') != 'completed': continue
-        try:
-            ct = datetime.fromisoformat(a.get('created_at', '').split('+')[0])
-            if ct >= cutoff:
-                print(a['id']); break
-        except Exception:
-            continue
-except Exception as e:
-    pass
-" 2>/dev/null || echo "")
-
-        if [[ -n "$FOUND_ID" ]]; then
-            ARTIFACT_ID="$FOUND_ID"
-            echo "  ✅ 生成完成（耗时 ${ELAPSED}s，轮询 #${i}）：$ARTIFACT_ID" >&2
-            break
-        fi
-
-        if (( i % 4 == 0 )); then
-            echo "  …还在生成中（已等 ${ELAPSED}s / 轮询 #${i}）..." >&2
-        fi
-    done
-
-    if [[ -z "$ARTIFACT_ID" ]]; then
-        echo "  ❌ 轮询 35 分钟后仍未看到 completed artifact" >&2
-        echo "  generate-audio.stdout:" >&2
-        cat "$WORK_DIR/generate-audio.stdout" >&2
-        echo "  generate-audio.stderr:" >&2
-        cat "$WORK_DIR/generate-audio.stderr" >&2
-        exit 2
-    fi
+if [[ $POLL_RC -ne 0 || -z "$ARTIFACT_ID" ]]; then
+    echo "  ❌ 轮询失败 rc=$POLL_RC" >&2
+    echo "  —— generate stdout ——" >&2
+    cat "$WORK_DIR/generate-audio.stdout" >&2 || true
+    echo "  —— generate stderr ——" >&2
+    cat "$WORK_DIR/generate-audio.stderr" >&2 || true
+    echo "  —— poll log (末尾) ——" >&2
+    tail -20 "$WORK_DIR/poll.log" >&2 || true
+    exit 2
 fi
+
 echo "  ✅ artifact-id: $ARTIFACT_ID" >&2
 
 # ===== Step 5: 下载 m4a =====

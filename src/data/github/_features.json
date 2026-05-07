@@ -1607,5 +1607,64 @@
     ],
     "sourceHash": "-67ea7792",
     "ts": 1778053074078
+  },
+  "LadybirdBrowser/ladybird": {
+    "features": [
+      "基于 web 标准的全新引擎，独立自研浏览器",
+      "多进程架构：UI、WebContent 渲染、ImageDecoder 与 RequestServer 分离",
+      "每个标签页独立沙箱化渲染进程，增强安全性",
+      "自带 LibWeb 渲染引擎、LibJS、LibWasm 等核心库",
+      "跨平台运行，支持 Linux、macOS、Windows (WSL2) 及多种 *Nix 系统"
+    ],
+    "sourceHash": "-4a1b65ae",
+    "ts": 1778139896923
+  },
+  "InsForge/InsForge": {
+    "features": [],
+    "sourceHash": "54afe6a8",
+    "ts": 1778139898435
+  },
+  "anthropics/financial-services": {
+    "features": [
+      "面向投行、股票研究、PE 和财富管理的金融服务 agent 参考实现",
+      "支持 Claude Cowork 插件和 Managed Agents API 两种部署方式",
+      "内置 Pitch、Market Researcher、Model Builder 等端到端 workflow agent",
+      "按 FSI 垂直领域打包 skills、slash commands 和数据连接器",
+      "所有输出均为人工复核草稿，不构成投资或合规决策"
+    ],
+    "sourceHash": "3f644cd1",
+    "ts": 1778139902878
+  },
+  "cheahjs/free-llm-api-resources": {
+    "features": [
+      "汇总各大 LLM API 服务商提供的免费访问额度与免费模型列表",
+      "涵盖 OpenRouter、Google AI Studio、Groq、Cerebras 等免费 Provider",
+      "整理 Fireworks、Nebius、SambaNova 等带试用 credits 的 Provider",
+      "列出每个服务的速率限制、配额及可用模型链接"
+    ],
+    "sourceHash": "-5a9f815e",
+    "ts": 1778139907077
+  },
+  "BigBodyCobain/Shadowbroker": {
+    "features": [
+      "聚合 60+ 实时 OSINT 情报源到统一地图界面，支持 35+ 可切换数据图层",
+      "集成飞机 ADS-B、船舶 AIS、卫星轨道、冲突区、CCTV、GPS 干扰等多域遥测数据",
+      "提供 DEFAULT/SATELLITE/FLIR/NVG/CRT 多种可视化模式及 SAR 地面变化检测",
+      "右键查询任意地点国家档案、国家元首信息及最新 Sentinel-2 卫星照片",
+      "通过 HMAC 签名 agent 命令通道接入 AI agent 作为协同分析师"
+    ],
+    "sourceHash": "506360ea",
+    "ts": 1778139912220
+  },
+  "bytedance/deer-flow": {
+    "features": [
+      "开源 super agent harness，编排 sub-agents、memory 和 sandboxes 完成各类任务",
+      "基于可扩展 skills 驱动，支持灵活定制 agent 能力",
+      "集成 BytePlus InfoQuest 智能搜索与爬取工具集",
+      "推荐搭配 Doubao-Seed-2.0-Code、DeepSeek v3.2、Kimi 2.5 等 LLM 运行",
+      "2.0 版本完全重写，登顶 GitHub Trending 榜首"
+    ],
+    "sourceHash": "378370ff",
+    "ts": 1778139916302
   }
 }

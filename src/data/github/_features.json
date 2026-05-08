@@ -1666,5 +1666,49 @@
     ],
     "sourceHash": "378370ff",
     "ts": 1778139916302
+  },
+  "z-lab/dflash": {
+    "features": [
+      "基于 block diffusion 的轻量级投机解码 draft 模型",
+      "支持高效高质量的并行 drafting 加速 LLM 推理",
+      "为 Qwen3、gemma、Llama、gpt-oss 等主流模型提供预训练 draft",
+      "兼容 Transformers 等多种推理后端",
+      "即将开源训练流程，支持自定义 DFlash draft 模型"
+    ],
+    "sourceHash": "20e8866f",
+    "ts": 1778223267542
+  },
+  "VectifyAI/PageIndex": {
+    "features": [
+      "将文档构建为 agentic in-context 树索引，无需 vector DB 或 chunking",
+      "基于 reasoning 的 context-aware 检索，模拟人类对长文档的查阅方式",
+      "PageIndex File System 文件级树层，支持百万级文档语料检索",
+      "提供 MCP 与 API 接入，配套长文档分析 Chat Platform",
+      "支持 OCR-free 的 vision-only RAG，直接在 PDF 页面图像上检索"
+    ],
+    "sourceHash": "3283d481",
+    "ts": 1778223272024
+  },
+  "vercel-labs/open-agents": {
+    "features": [
+      "chat 驱动的 coding agent，集成文件、搜索、shell、task 等工具",
+      "基于 Workflow SDK 的持久化多步执行，支持流式输出与取消",
+      "隔离的 Vercel sandbox，支持快照恢复与休眠",
+      "sandbox 内 repo 克隆、分支操作及自动提交、推送与创建 PR",
+      "通过只读链接共享会话，支持 ElevenLabs 语音输入"
+    ],
+    "sourceHash": "3ffc28a0",
+    "ts": 1778223275805
+  },
+  "decolua/9router": {
+    "features": [
+      "RTK Token Saver 自动压缩 tool_result 内容，节省 20-40% token",
+      "支持 40+ AI 提供商与 100+ 模型，兼容 Claude Code、Cursor、Copilot 等 CLI 工具",
+      "订阅→低价→免费三级自动 fallback，避免触发限流中断编码",
+      "多账户轮询调度，自动追踪配额与刷新 token",
+      "内置 OpenAI ↔ Claude 格式互转，统一 API 接入"
+    ],
+    "sourceHash": "-7973c0c0",
+    "ts": 1778223280236
   }
 }

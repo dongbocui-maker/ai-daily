@@ -1710,5 +1710,70 @@
     ],
     "sourceHash": "-7973c0c0",
     "ts": 1778223280236
+  },
+  "CloakHQ/CloakBrowser": {
+    "features": [
+      "源码级 49 处 C++ patch 修改 Chromium 指纹，绕过反爬检测",
+      "Playwright/Puppeteer 无缝替换，仅需改 import 即可使用",
+      "humanize 模式模拟人类鼠标、键盘和滚动行为",
+      "通过 Cloudflare Turnstile、reCAPTCHA v3、FingerprintJS 等检测",
+      "支持 pip、npm、Docker 一键安装，二进制自动下载更新"
+    ],
+    "sourceHash": "-4ecc087",
+    "ts": 1778310655860
+  },
+  "awslabs/aidlc-workflows": {
+    "features": [
+      "提供三阶段自适应的 AI 驱动软件开发生命周期工作流",
+      "支持 Kiro、Cursor、Cline、Claude Code、GitHub Copilot 等多种 coding agent",
+      "通过 release zip 分发可复用的 AI-DLC 规则集与详细规则",
+      "在保持质量标准的同时让开发者掌控 AI 生成过程"
+    ],
+    "sourceHash": "-446a7f38",
+    "ts": 1778310660193
+  },
+  "HKUDS/AI-Trader": {
+    "features": [
+      "一条消息即可秒级接入任意 AI agent 至交易平台",
+      "多 agent 协作辩论，自动产出最优交易思路",
+      "跨平台信号同步，券商互联与交易共享",
+      "一键跟单，实时镜像顶尖玩家持仓",
+      "覆盖股票、加密、外汇、期权等全市场交易"
+    ],
+    "sourceHash": "-7e5badc2",
+    "ts": 1778310664159
+  },
+  "lobehub/lobehub": {
+    "features": [
+      "Agent 协作网络，支持创建、协作与人机共同进化",
+      "MCP 插件一键安装与 MCP 市场",
+      "支持多模型服务商及本地 LLM",
+      "内置知识库、文件上传与 RAG 检索",
+      "支持 TTS/STT 语音对话与文生图"
+    ],
+    "sourceHash": "49647a8e",
+    "ts": 1778310667780
+  },
+  "datawhalechina/hello-agents": {
+    "features": [
+      "系统讲解 AI Native Agent 的核心原理、经典范式与多智能体架构",
+      "基于 OpenAI 原生 API 从零构建自研智能体框架 HelloAgents",
+      "涵盖上下文工程、Memory、协议与评估等系统性进阶技能",
+      "实战 Agentic RL 训练，覆盖从 SFT 到 GRPO 的全流程",
+      "提供智能旅行助手、赛博小镇等综合项目实战案例"
+    ],
+    "sourceHash": "-7e629416",
+    "ts": 1778310671451
+  },
+  "flutter/skills": {
+    "features": [
+      "提供 Flutter 开发全流程的 agent skills，让 agent 遵循最佳实践完成任务",
+      "通过 npx skills CLI 一键安装与更新所有 skills 到项目中",
+      "包含集成测试、widget 测试、widget preview 等测试相关 skills",
+      "提供分层架构最佳实践与响应式布局构建的专项 skills",
+      "与 MCP 互补：MCP 提供工具，Skills 教会 agent 如何使用工具"
+    ],
+    "sourceHash": "7edf2f21",
+    "ts": 1778310675430
   }
 }

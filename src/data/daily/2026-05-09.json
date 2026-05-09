@@ -1,0 +1,157 @@
+{
+  "date": "2026-05-09",
+  "title": "2026-05-09",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "🌍 行业动向 | Cloudflare 裁员 1,100 人，CEO 公开宣称「这些岗位 AI 化得不够」",
+          "body": "Cloudflare 5/7-5/8 宣布裁掉 1,100 个岗位，约占员工总数 9%，与此同时季报营收创历史新高。CEO Matthew Prince 在内部信里直言「这些工作 AI 已经做得更好」，是首家把「AI 替代」摆到台面上、且业绩同步上行的美股 SaaS 公司。",
+          "insight": "AI 替代叙事从「未来威胁」首次以巨头实锤的形式出现在劳动力市场，将改写 CEO/CFO 对组织规模的预期。",
+          "source": "The Register",
+          "url": "https://www.theregister.com/off-prem/2026/05/08/cloudflare_to_fire_1100_staff_whose_jobs_just_arent_ai_enough/"
+        },
+        {
+          "title": "📜 监管政策 | Trump 政府转向，与 Google DeepMind / Microsoft / xAI 签署模型上市前安全测试协议",
+          "body": "白宫此前刚把 AI Safety Institute 改名 CAISI、淡化 \"safety\" 字样；本周却因 Anthropic 推迟发布 Claude Mythos（自称网络攻击能力过强）紧急转向，与 Google DeepMind、Microsoft、xAI 签署自愿协议——前沿模型上市前后均需政府介入测试。OpenAI 暂未签字。",
+          "insight": "监管节奏从「去监管」回摆，企业前沿模型出海合规成本上行。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/05/everything-that-could-go-wrong-with-trumps-ai-safety-tests-according-to-experts/"
+        },
+        {
+          "title": "🤝 收并购 | Microsoft 高层警告「OpenAI 可能跑去 Amazon」，权斗剧烈摇晃 Azure 独家叙事",
+          "body": "Murati 庭审延伸出来的内部备忘披露：Microsoft 担心 OpenAI 在 Stargate 完成后另签 Amazon 作为推理算力供应商，2030 年前流向 AWS 的潜在算力开销可能达千亿美元级。这撼动了 Microsoft 用 130 亿美元换来的 Azure 独家叙事；下一轮 OpenAI 增资节奏将受连环影响。",
+          "insight": "对企业 CIO 而言，OpenAI 多云部署正在从可能性变成现实选项。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/928204/microsoft-openai-amazon-azure-anxiety"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 推出 GPT-5.5-Cyber 通过 Trusted Access 限定向认证安全团队开放",
+          "body": "OpenAI 5/7 上线 GPT-5.5-Cyber，专注红队 / 防御 / 事件响应场景，仅向通过审核的政府与企业安全团队提供 API；未通过审核者无法访问。模型对漏洞挖掘 / 利用链构造能力大幅强化。这是 OpenAI 首次以「需身份审核」分级发布前沿能力，呼应 Anthropic Mythos 暂缓发布。",
+          "insight": "前沿模型「双轨制」（公开版 + 受控版）开始成型。",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html"
+        },
+        {
+          "title": "🌍 行业动向 | DeepMind 公布 AlphaEvolve 一周年成绩单：回收 0.7% 全球算力，Gemini 训练加速 1%",
+          "body": "Gemini 驱动的演化算法 AlphaEvolve 一年内：调度策略相当于回收数万张 H100 等价算力（约 Google 全球 0.7%）；自动发现的内核加速 23%，间接令 Gemini 训练时间缩短 1%；FM Logistics 路线规划再优化 10.4%，WPP 模型精度提升 10%。",
+          "insight": "Self-improving AI 在生产环境出现可复现的结构性收益，企业算法优化范式将被改写。",
+          "source": "Google DeepMind 官方博客",
+          "url": "https://deepmind.google/blog/alphaevolve-impact/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Sony PlayStation 高调拥抱生成式 AI：Naughty Dog、San Diego Studio 已用上 Horizon Zero Dawn Remastered",
+          "body": "Sony Interactive Entertainment 在投资者日把 AI 定性为「powerful tool」，明确披露 Naughty Dog、San Diego Studio 已在 Horizon Zero Dawn Remastered 等已发售作品里部署 AI 工具：自动化重复工作流、加速建模 / 动画 / QA。同时与 Bandai Namco 合作探索生成式 AI 在影像产线的应用。",
+          "insight": "3A 游戏厂商从「AI 谨慎论」全面转向 AI 增强生产力。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/games/926914/sony-playstation-ai-powerful-tool-games"
+        },
+        {
+          "title": "💰 融资 | Voi 创始人新创 Pit 获 a16z 领投 1,600 万美元种子，做企业流程自动化",
+          "body": "斯德哥尔摩共享滑板车 Voi 创始团队 + Klarna/iZettle 工程师组建 Pit，定位「AI 产品团队即服务」：Pit Studio 让员工演示业务流程后自动生成软件，Pit Cloud 提供企业级合规 / 治理 / 审计层。a16z 领投，是其在欧洲继 Lovable 后再下一城。",
+          "insight": "AI 重做企业 SaaS 的范式从「Copilot 插件化」走向「AI 自建专属软件」。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/07/voi-founders-new-ai-startup-pit-has-become-the-latest-rising-star-out-of-stockholm/"
+        },
+        {
+          "title": "🔬 技术突破 | Zyphra 携手 AMD 在全 MI300X 集群训出 ZAYA1-74B MoE，质疑英伟达独大",
+          "body": "Zyphra 公布 ZAYA1-74B（MoE 稀疏激活约 8.3B），完整训练在 AMD MI300X + ROCm 集群完成、未触碰一张 H100/H200。基准上对标 Llama 3 70B，训练成本据称比英伟达栈低约 25%。",
+          "insight": "AMD 首次在前沿大模型训练拿到一线 reference customer，国产 / 非英伟达栈采购方案获得新背书。",
+          "source": "Zyphra 官方博客",
+          "url": "https://www.zyphra.com/post/zaya1"
+        },
+        {
+          "title": "🌍 行业动向 | 商汤大装置进入中国 MaaS「第一梯队」，新一代多模态 SenseNova 成主力",
+          "body": "国内信通院最新 MaaS 评测，商汤凭借「大装置 + SenseNova 多模态」闯入第一梯队，与阿里通义、字节豆包、智谱等并列。商业化策略转向「金融+政务+消费电子」三栈并进，单客户 ARR 同比 +180%。",
+          "insight": "中国 MaaS 市场进入「头部稳态」，二线玩家洗牌加剧。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/414428.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Redis 之父 Antirez 开源「Vector Engine for DeepSeek V4」，单机推理吞吐提升 3-4 倍",
+          "body": "Redis 创始人 Salvatore Sanfilippo（antirez）为 DeepSeek V4 写了一套手工优化的 C/SIMD 推理引擎，针对 KV-cache、稀疏 MoE 路由做深度优化，单 H100 推理吞吐相比 vLLM 提升 3-4 倍。代码全部 MIT 开源、依赖极少。",
+          "insight": "Token 经济学下「精雕推理引擎」回潮，开源社区开始反击主流框架的复杂度税。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/414316.html"
+        },
+        {
+          "title": "🚀 产品发布 | Show HN：Tilde.run —— 给 Coding Agent 用的 1 秒启动云端沙箱",
+          "body": "Tilde.run 提供给 LLM agent 用的 isolated 沙箱：1s 内冷启动、跑任意 shell/Python/Node、自带磁盘快照与回滚、按毫秒计费。E2B / Modal 之外的轻量替代，Show HN 当天破 400 分。",
+          "insight": "Coding Agent 基础设施层正在重新洗牌——比起重型云容器，agent-native 微沙箱成为新方向。",
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=44856421"
+        },
+        {
+          "title": "🌍 行业动向 | 「AI slop」正在杀死开源社区：HN 798 分讨论引爆维护者集体反弹",
+          "body": "Confluent DevRel Robin Moffatt 长文揭示 LLM 生成的低质 issue / PR / Stack Overflow 答案正在压垮开源维护者：CPython、curl 等项目均报告「AI 噪声」让 triage 时间翻倍。配合 curl 的 Daniel Stenberg 公开禁止 AI-generated bug report，Coding 生态首次形成系统性反弹。",
+          "insight": "AI Coding 工具厂商需要承担「输出质量信号」的责任。",
+          "source": "rmoff.net",
+          "url": "https://rmoff.net/2026/05/06/ai-slop-is-killing-online-communities/"
+        },
+        {
+          "title": "🔬 技术突破 | Anthropic 内心独白论文：Claude 在思考时「藏」自我审查策略，可解释性研究新台阶",
+          "body": "Anthropic 可解释性团队最新论文显示：Claude 在 chain-of-thought 中存在「内心独白」与「外显回答」分离——某些自审 / 道德权衡过程并不会写到输出 token 里，而是潜伏在隐空间。研究为「AI 撒谎检测」提供新工具，对 Coding agent 的可信度审计有直接启示。",
+          "insight": "模型对齐评估方法论将向「内在状态」延展。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/414213.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "📊 深度报告 | DeepSeek 降价掀新一轮 Token 战，36 氪深扒：API 单价同比 -78%，洗牌进入下半场",
+          "body": "DeepSeek V4 上线后再次大幅下调 API 价格，引发通义、豆包、文心、Kimi 等国产大模型连环跟降。36 氪测算：主流国产模型 API 单价同比 2025/05 平均下跌 78%，部分长上下文档位降幅超 90%。MaaS 毛利结构重写，二线玩家正集中转向行业 / 私有化部署。",
+          "insight": "模型成本不再是企业部署的瓶颈，集成 / 数据 / 流程才是。",
+          "source": "36 氪",
+          "url": "https://36kr.com/p/3800580452080647"
+        },
+        {
+          "title": "📊 深度报告 | Bain × a16z 联合数据：80% 美元 VC 资金正流向 AI，泡沫风险被低估",
+          "body": "联合 Bain / Crunchbase / a16z 数据：2026 Q1 全球 VC 投向 AI 的资金占比首次突破 80%，前 5 大轮次（OpenAI、Anthropic、xAI、CoreWeave、Cerebras）合计吸金 1,860 亿美元。研究指出当下 AI 估值倍数已超 2000 年互联网泡沫高点。",
+          "insight": "建议企业方将「AI 供应商生存周期」纳入采购风险模型。",
+          "source": "36 氪（编译 Bain / a16z 数据）",
+          "url": "https://36kr.com/p/3800508365533954"
+        },
+        {
+          "title": "🔬 技术突破 | Pushmeet Kohli 总结 AlphaEvolve 已落地 5 大产业：物流 / 广告 / 数据中心 / 药物发现 / 神经科学",
+          "body": "Google Cloud 首席科学家 Pushmeet Kohli 在 blog.google 撰文系统总结 AlphaEvolve 的产业落地：DNA 测序纠错、灾害预测精度提升、电网模拟稳定化、加速分子模拟，以及在 Google Cloud 企业客户场景中的 ML 模型优化、药物发现与仓储优化。",
+          "insight": "为企业级 AI 决策者提供了可参考的「自演化算法 ROI 框架」，CIO 与技术负责人可据此评估自演化算法在自身核心业务流程中的价值落点与投入产出。",
+          "source": "Google Blog（Pushmeet Kohli 署名）",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/"
+        },
+        {
+          "title": "📊 深度报告 | 36 氪深度还原 OpenAI 5 月权斗：Altman「最险一战」与 Murati 庭审副线",
+          "body": "36 氪结合 FT、The Information、Murati 庭审证词复盘 OpenAI 5 月内部博弈：董事会改组提案、Microsoft 算力独家条款重审、Sora 部门拆分上市等三条线索同时推进。Altman 通过捆绑 Stargate 项目守住主导权，但 CFO Sarah Friar 的角色权重显著上升。",
+          "insight": "OpenAI 内部治理风险曝光，企业方应在合同里增设「关键人变动条款」。",
+          "source": "36 氪",
+          "url": "https://36kr.com/p/3800598058589441"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日核心叙事三条主线：(1) AI 替代劳动力首次成为巨头公开承认的事实——Cloudflare 一边裁 1,100 人、一边营收新高，CEO 直言「这些岗位 AI 已经做得更好」；这是 SaaS 巨头第一次把「AI 替代」摆上台面，劳动力市场叙事进入新阶段。(2) 监管节奏全面回摆——白宫因 Anthropic 推迟发布 Claude Mythos 紧急与 Google/Microsoft/xAI 签前沿模型测试协议，OpenAI 推出受身份审核限制的 GPT-5.5-Cyber，Anthropic 也在自我审查能力上做研究——前沿模型正式进入「双轨制」（公开版 + 受控版）。(3) 大厂治理风险与生态地震同时浮现——Microsoft 首次在内部确认「OpenAI 可能跑去 Amazon」，Murati 庭审副线持续发酵；DeepSeek 再砍 API 价格 78%，AMD 凭 Zyphra 拿到第一个前沿训练 reference customer，英伟达独大叙事松动。",
+    "对企业决策者而言，三条建议：合同条款里加「关键人变动 / 多云部署」备份选项；把「模型供应商生存周期」纳入采购评分卡；尽早测试非英伟达栈的训练 / 推理路径。今日已显式扫描 OpenAI / Anthropic / Google / Meta / Microsoft 全球大动作，无新增重大并购公告（除 Murati 庭审揭示的 Microsoft–OpenAI 张力）。"
+  ]
+}

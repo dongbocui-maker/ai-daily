@@ -1,0 +1,370 @@
+{
+  "slug": "brynjolfsson-generative-ai-at-work",
+  "deck_meta": {
+    "title": "Generative AI at Work",
+    "subtitle": "How AI Reshapes Productivity, Skill Distribution, and Learning in the Workplace",
+    "source_authors": "Brynjolfsson, Li & Raymond",
+    "source_org": "Stanford & MIT & NBER",
+    "source_paper": "NBER WP 31161 / arXiv:2304.11771v2",
+    "source_url": "https://arxiv.org/abs/2304.11771",
+    "publish_date": "2024-11-07",
+    "deck_audience": "Enterprise leaders, HR strategists, AI deployment teams",
+    "deck_lang": "en"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Generative AI at Work",
+      "subtitle": "Evidence from 5,172 Customer-Service Agents on the Real Productivity Impact of GenAI",
+      "footer_meta": "Brynjolfsson, Li & Raymond · NBER WP 31161 / arXiv:2304.11771v2 · 2024",
+      "highlights": [
+        {"label": "Sample size", "value": "5,172 agents"},
+        {"label": "Avg. productivity gain", "value": "+15%"},
+        {"label": "Method", "value": "Causal DiD"},
+        {"label": "Setting", "value": "Fortune 500 firm"}
+      ]
+    },
+    {
+      "type": "context",
+      "title": "Why This Study Matters",
+      "kicker": "Context",
+      "key_message": "First rigorous, large-scale, causal evidence of how GenAI changes real workplaces.",
+      "before_after": {
+        "before": {
+          "header": "Before This Paper",
+          "points": [
+            "Lab experiments (GPT writing code/emails)",
+            "Self-reported survey data (McKinsey, Accenture)",
+            "Anecdotes from early adopters",
+            "No causal identification"
+          ]
+        },
+        "after": {
+          "header": "What This Paper Adds",
+          "points": [
+            "5,172 real customer-service agents",
+            "Staggered rollout → quasi-random assignment",
+            "Two-way fixed effects DiD",
+            "Outage natural experiment for learning persistence"
+          ]
+        }
+      },
+      "stat_band": [
+        {"value": "5,172", "label": "Agents observed"},
+        {"value": "12 mo.", "label": "Panel window"},
+        {"value": "Multi-country", "label": "Incl. PH, IN offshoring sites"}
+      ],
+      "source_note": "§1 Introduction; §3 Empirical Setting"
+    },
+    {
+      "type": "agenda",
+      "title": "What This Deck Covers",
+      "items": [
+        {"label": "Findings & Trends", "sub": "Headline numbers and the dispersion behind them"},
+        {"label": "Core Views", "sub": "Authors' thesis and three mechanisms"},
+        {"label": "Themes", "sub": "Compressed learning curves and customer experience"},
+        {"label": "Insights", "sub": "Two structural risks lurking behind the win"},
+        {"label": "Recommended Actions", "sub": "Five concrete moves for enterprise leaders"},
+        {"label": "References", "sub": "Source paper and citation map"}
+      ]
+    },
+    {
+      "type": "section_header",
+      "title": "01  Findings & Trends",
+      "kicker": "What the data shows",
+      "preview": [
+        "Average +15% productivity",
+        "But the gain is wildly uneven",
+        "Tenure premium collapses"
+      ]
+    },
+    {
+      "type": "stat_grid",
+      "title": "The Headline Numbers",
+      "key_message": "AI lifts average productivity by 15%, but the gains are deeply uneven.",
+      "stats": [
+        {"value": "+15%", "label": "Avg. resolutions per hour (RPH) across 5,172 agents", "context": "From 1.97 to 2.27 RPH baseline", "source": "§Abstract; Table 2"},
+        {"value": "+36%", "label": "RPH gain for the lowest-skill quintile", "context": "Vs. AI-naive baseline performance", "source": "§5.2; Table 3"},
+        {"value": "≈ 0%", "label": "RPH gain for the highest-skill quintile", "context": "With small declines in quality metrics", "source": "§5.2; Table 3"},
+        {"value": "−40%", "label": "Reduction in new-hire attrition (≤6 mo. tenure)", "context": "From 25% baseline down to ~15%", "source": "§7.2"}
+      ],
+      "narrative": "Average gain masks a striking distribution: junior agents leap forward, senior agents barely move. The same intervention, very different outcomes — and that asymmetry is the entire story."
+    },
+    {
+      "type": "distribution",
+      "title": "The Productivity Lift Is Not Evenly Shared",
+      "kicker": "Distribution",
+      "key_message": "Gains concentrate at the bottom; the top barely moves.",
+      "bars": [
+        {"label": "Q1 (lowest skill)", "value": 36, "display": "+36%"},
+        {"label": "Q2", "value": 22, "display": "+22%"},
+        {"label": "Q3 (median)", "value": 14, "display": "+14%"},
+        {"label": "Q4", "value": 6, "display": "+6%"},
+        {"label": "Q5 (highest skill)", "value": 1, "display": "≈ 0%"}
+      ],
+      "annotation_left": "Largest learning headroom",
+      "annotation_right": "Already at AI-trained peer level",
+      "source_note": "§5.2; Table 3 — RPH gain by pre-treatment skill quintile (illustrative; intermediate quintile values approximated from Figures 4–5)."
+    },
+    {
+      "type": "section_header",
+      "title": "02  Core Views",
+      "kicker": "What the authors are arguing",
+      "preview": [
+        "GenAI is skill-equalizing",
+        "Tacit knowledge gets encoded",
+        "Top performers train the system"
+      ]
+    },
+    {
+      "type": "quote_pair",
+      "title": "Thesis: GenAI Is Skill-Equalizing",
+      "kicker": "Direct From the Paper",
+      "primary_quote": "Less experienced and lower-skilled workers improve both the speed and quality of their output while the most experienced and highest-skilled workers see small gains in speed and small declines in quality.",
+      "primary_attrib": "§Abstract",
+      "secondary_quote": "Treated agents with two months of tenure perform just as well as untreated agents with more than six months of tenure.",
+      "secondary_attrib": "§6.1 Tenure analysis",
+      "implication": "This is the first major IT wave that does not behave as skill-biased technical change. The historical pattern — where new tech rewarded the strong and widened inequality — is reversed.",
+      "implication_label": "Why this matters"
+    },
+    {
+      "type": "three_column_rich",
+      "title": "Three Mechanisms Behind the Gains",
+      "kicker": "Mechanisms",
+      "key_message": "The lift isn't magic — it's encoded best practice flowing top → bottom.",
+      "columns": [
+        {
+          "icon_text": "①",
+          "header": "Encoded Tacit Knowledge",
+          "body": "AI learns top performers' patterns and broadcasts them to everyone — durable learning, not real-time dependency.",
+          "evidence_label": "Evidence",
+          "evidence": "During AI service outages, previously-treated agents still outperform their pre-AI baseline. Learning persists.",
+          "source": "§6.2 outage natural experiment"
+        },
+        {
+          "icon_text": "②",
+          "header": "Language Uplift",
+          "body": "Conversation analysis shows non-native English speakers' fluency converging toward top-performer style.",
+          "evidence_label": "Evidence",
+          "evidence": "Linguistic features of low-skill agents shift measurably toward those of high-skill peers post-AI exposure.",
+          "source": "§6.3 text analysis"
+        },
+        {
+          "icon_text": "③",
+          "header": "Rare-Problem Coverage",
+          "body": "The largest gains are on rare issues — where the human baseline is weakest, AI net contribution is highest.",
+          "evidence_label": "Evidence",
+          "evidence": "Counter-intuitive: AI has less training data on rare topics, but human baseline is even worse, so net help is greatest.",
+          "source": "§6.4 topic stratification"
+        }
+      ]
+    },
+    {
+      "type": "section_header",
+      "title": "03  Themes",
+      "kicker": "How this changes work itself",
+      "preview": [
+        "Compressed learning curves",
+        "Better customer experience",
+        "Lower new-hire attrition"
+      ]
+    },
+    {
+      "type": "two_column_rich",
+      "title": "Theme A — The Learning Curve Is Compressed",
+      "kicker": "Theme",
+      "key_message": "Ramp-up time collapses; tenure-based seniority loses its signal value.",
+      "left": {
+        "header": "Without AI",
+        "points": [
+          "8–10 months to reach 2.5 RPH",
+          "25% new-hire attrition within 6 mo.",
+          "Tenure strongly predicts performance",
+          "Senior agents 2× as productive as new hires"
+        ]
+      },
+      "right": {
+        "header": "With AI",
+        "points": [
+          "5 months to reach 3.0 RPH",
+          "~15% new-hire attrition (−40%)",
+          "Tenure premium weakens substantially",
+          "2-mo. new hires ≈ 6+ mo. veterans"
+        ]
+      },
+      "callout": {
+        "label": "Strategic implication",
+        "text": "Traditional 'pay-for-experience' compensation curves were designed for a world where tenure = capability. AI breaks that proxy."
+      },
+      "source_note": "§6.1 Tenure dynamics; §7.2 Attrition analysis"
+    },
+    {
+      "type": "two_column_rich",
+      "title": "Theme B — Customer Experience Improves Too",
+      "kicker": "Theme",
+      "key_message": "AI assistance doesn't make agents feel robotic — customers respond better.",
+      "left": {
+        "header": "Customer Behavior",
+        "points": [
+          "Fewer aggressive / negative messages",
+          "Manager-escalation requests −25%",
+          "From 6.0% baseline to ~4.5%",
+          "Politeness-coded language up materially"
+        ]
+      },
+      "right": {
+        "header": "Adoption Pattern",
+        "points": [
+          "Avg. agent accepts 35% of suggestions",
+          "Adoption rises with exposure time",
+          "Initial skeptics (seniors) warm up most",
+          "Higher adoption → larger productivity gain"
+        ]
+      },
+      "callout": {
+        "label": "Why this is novel",
+        "text": "First large-scale evidence that AI augmentation can improve the experience of work itself — not just throughput."
+      },
+      "source_note": "§7.1 Customer sentiment; §6.5 Adoption dynamics"
+    },
+    {
+      "type": "section_header",
+      "title": "04  Insights",
+      "kicker": "What this means strategically",
+      "preview": [
+        "Today's win, tomorrow's risk",
+        "Top talent gets flattened",
+        "Training data quietly decays"
+      ]
+    },
+    {
+      "type": "insight_card_rich",
+      "title": "Strategic Insight: Two Long-Term Risks",
+      "kicker": "Strategic Insight",
+      "key_message": "Today's productivity win quietly creates two structural problems.",
+      "cards": [
+        {
+          "tag": "Risk 1",
+          "header": "Top Talent Flattening",
+          "body": "If senior agents increasingly defer to AI's median-quality suggestions, their original creative contribution declines.",
+          "evidence_label": "Signal in the data",
+          "evidence": "Top quintile shows small declines in quality metrics (resolution rate, NPS) even as speed marginally rises.",
+          "implication": "→ The very signal future AI models depend on starts to weaken at the source."
+        },
+        {
+          "tag": "Risk 2",
+          "header": "Training Data Decay",
+          "body": "Agent conversations are simultaneously customer service AND model training data — but employees are not compensated for the latter.",
+          "evidence_label": "Authors' framing",
+          "evidence": "\"Whether and how workers should be compensated for the data they provide for training AI systems\" is left as an open policy question.",
+          "implication": "→ Without attribution mechanisms, the source of intelligence erodes over time."
+        }
+      ],
+      "source_note": "§8 Discussion; §Conclusion"
+    },
+    {
+      "type": "section_header",
+      "title": "05  Recommended Actions",
+      "kicker": "What enterprise leaders should do now",
+      "preview": [
+        "Reset HR economics",
+        "Rewire ROI targets",
+        "Treat conversations as capital"
+      ]
+    },
+    {
+      "type": "action_table",
+      "title": "Five Moves for Enterprise Leaders",
+      "kicker": "Recommended Actions",
+      "key_message": "Treat this paper as an operating playbook, not a forecast.",
+      "actions": [
+        {
+          "header": "Reset HR Economics",
+          "what": "Re-evaluate seniority-based pay curves — AI compresses the experience premium.",
+          "outcome": "Pay-for-skill replaces pay-for-tenure; reduces overpaying for time served."
+        },
+        {
+          "header": "Rewire AI ROI Targets",
+          "what": "Make new-hire retention a hard KPI for AI deployments, not just speed metrics.",
+          "outcome": "−40% attrition has more durable ROI than +15% throughput."
+        },
+        {
+          "header": "Treat Conversations as Capital",
+          "what": "Establish attribution & incentive systems for employees whose work trains AI models.",
+          "outcome": "Protects long-term training data quality; aligns incentives with model health."
+        },
+        {
+          "header": "Compress Onboarding",
+          "what": "Use AI to shrink customer-service ramp-up from 6–9 months to 2–3 months.",
+          "outcome": "Faster time-to-productivity; lower cost-to-train per agent."
+        },
+        {
+          "header": "Protect Top-Talent Originality",
+          "what": "Reserve high-difficulty, AI-free tasks for senior staff to preserve creative output.",
+          "outcome": "Prevents flattening; preserves the 'human signal' future models need."
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "The Big Picture",
+      "kicker": "Synthesis",
+      "key_message": "GenAI is the first IT wave that lifts the bottom — but it asks new questions of the top.",
+      "pillars": [
+        {
+          "header": "What changed",
+          "body": "AI shifted from skill-amplifier to skill-equalizer. The 5,172-agent dataset is the strongest causal evidence to date."
+        },
+        {
+          "header": "What it means",
+          "body": "Tenure-based seniority loses signal value. New-hire ramp-up compresses. Customer experience gets better, not worse."
+        },
+        {
+          "header": "What to watch",
+          "body": "Top-talent flattening and training-data decay are slow-moving risks. They don't show up in this year's KPIs."
+        }
+      ],
+      "closing_line": "The window to redesign HR economics, ROI targets, and data-attribution mechanisms is now — while the gains are still accruing."
+    },
+    {
+      "type": "references",
+      "title": "References & Source",
+      "kicker": "Citation Map",
+      "primary": {
+        "header": "Primary source",
+        "items": [
+          "Brynjolfsson, E., Li, D., & Raymond, L. (2024). Generative AI at Work. NBER Working Paper No. 31161 / arXiv:2304.11771v2 (Nov 7, 2024).",
+          "Published as: Quarterly Journal of Economics, Vol. 140, No. 2, 2025, pp. 889–942.",
+          "URL: https://arxiv.org/abs/2304.11771"
+        ]
+      },
+      "method": {
+        "header": "Methodology",
+        "items": [
+          "Sample: 5,172 customer-service agents at a Fortune 500 business-process software firm.",
+          "Identification: Two-way fixed effects DiD; Sun-Abraham robust estimators.",
+          "Natural experiment: AI service outages used to test learning persistence."
+        ]
+      },
+      "citations": {
+        "header": "Where each statistic appears",
+        "items": [
+          "+15% RPH lift — §Abstract; Table 2",
+          "+36% / 0% quintile dispersion — §5.2; Table 3",
+          "−25% manager-escalation — §7.1",
+          "−40% new-hire attrition — §7.2",
+          "35% AI suggestion adherence — §6.5",
+          "12% worker-hour savings — Conclusion §8"
+        ]
+      }
+    },
+    {
+      "type": "closing",
+      "title": "Thank You",
+      "subtitle": "AI Daily Reads — Curated by aidigest.club",
+      "footer_meta": "Slides generated from primary source · For executive briefing use",
+      "qr_text": "Read the full paper",
+      "url_text": "https://arxiv.org/abs/2304.11771"
+    }
+  ]
+}

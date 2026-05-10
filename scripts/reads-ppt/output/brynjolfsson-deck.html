@@ -1,0 +1,797 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Generative AI at Work — aidigest.club</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+  /* System font fallback — renders correctly even if Google Fonts blocked */
+  @font-face {
+    font-family: 'Inter Fallback';
+    src: local('Inter'), local('Helvetica Neue'), local('Arial');
+    size-adjust: 107%;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --purple-deep: #460073;
+    --purple-mid: #7B42F6;
+    --purple-bright: #A100FF;
+    --purple-light: #BE82FF;
+    --purple-bg: #faf7ff;
+    --pink: #FF50A0;
+    --pink-deep: #C82A80;
+    --gray-100: #f5f5f5;
+    --gray-200: #e8e8e8;
+    --gray-400: #aaa;
+    --gray-500: #888;
+    --gray-600: #666;
+    --gray-700: #555;
+    --gray-800: #444;
+    --text-white: #fff;
+    --text-body: #444;
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 16px;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Inter', 'Inter Fallback', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: var(--text-body);
+    line-height: 1.6;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- Slide Base ---- */
+  .slide {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 72px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Navigation dots ---- */
+  .nav-dots {
+    position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 10px; z-index: 100;
+  }
+  .nav-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer; transition: all 0.3s;
+  }
+  .nav-dot:hover, .nav-dot.active { background: var(--purple-bright); transform: scale(1.4); }
+
+  /* ====== COVER SLIDE ====== */
+  .cover {
+    background: linear-gradient(160deg, #460073 0%, #2d004a 45%, #1a002e 100%);
+    color: var(--text-white);
+  }
+  .cover .cover-accent {
+    position: absolute; right: -5%; top: -10%; width: 60%; height: 120%;
+    background: linear-gradient(160deg, rgba(161,0,255,0.25) 0%, transparent 70%);
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .cover .slide-inner { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 144px); }
+  .cover .brand-line { width: 60px; height: 5px; background: var(--purple-bright); border-radius: 3px; margin-bottom: 16px; opacity: 0.9; }
+  .cover .kicker { font-size: 0.85rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.78); margin-bottom: 40px; }
+  .cover h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.08; margin-bottom: 20px; max-width: 700px; letter-spacing: -0.02em; }
+  .cover .subtitle { font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 600px; margin-bottom: 48px; }
+  .cover .stat-pills { display: flex; flex-wrap: wrap; gap: 14px; }
+  .cover .stat-pill {
+    background: rgba(255,255,255,0.07); backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 18px 24px;
+    text-align: center; min-width: 130px;
+  }
+  .cover .stat-pill .val { color: var(--purple-light); font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: 2px; }
+  .cover .stat-pill .lbl { color: rgba(255,255,255,0.75); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+  .cover .footer-meta { margin-top: 32px; color: rgba(255,255,255,0.58); font-size: 0.8rem; }
+
+  /* ====== DARK SECTION HEADERS ====== */
+  .section-header {
+    background: linear-gradient(160deg, #460073 0%, #2d004a 45%, #1a002e 100%);
+    color: var(--text-white);
+  }
+  .section-header .sh-circle {
+    position: absolute; right: -8%; top: -12%;
+    width: 500px; height: 500px; border-radius: 50%;
+    border: 2px solid rgba(161,0,255,0.12);
+  }
+  .section-header .sh-circle.c2 {
+    right: -4%; top: -6%; width: 380px; height: 380px;
+    border-color: rgba(255,80,160,0.1);
+  }
+  .section-header .slide-inner { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 144px); }
+  .section-header .sh-kicker { font-size: 0.85rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-bottom: 16px; }
+  .section-header .sh-line { width: 50px; height: 4px; background: var(--purple-bright); border-radius: 2px; margin-bottom: 32px; }
+  .section-header h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900; line-height: 1.15; margin-bottom: 28px; max-width: 800px; }
+  .section-header .sh-previews { display: flex; flex-wrap: wrap; gap: 24px; }
+  .section-header .sh-preview { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.78); font-size: 1rem; }
+  .section-header .sh-preview-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+
+  /* ====== WHITE CONTENT SLIDES ====== */
+  .content-slide { background: #fff; }
+  .content-slide .slide-inner { display: flex; flex-direction: column; justify-content: center; }
+  .content-slide .cs-kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple-bright); margin-bottom: 8px; }
+  .content-slide h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 800; color: var(--purple-deep); margin-bottom: 12px; line-height: 1.2; }
+  .content-slide .cs-km { font-size: 1.05rem; color: var(--gray-600); font-style: italic; margin-bottom: 36px; }
+
+  /* ====== LIGHT BG SLIDES ====== */
+  .light-slide { background: var(--purple-bg); }
+  .light-slide .slide-inner { display: flex; flex-direction: column; justify-content: center; }
+  .light-slide .ls-kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple-bright); margin-bottom: 8px; }
+  .light-slide h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 800; color: var(--purple-deep); margin-bottom: 12px; line-height: 1.2; }
+  .light-slide .ls-km { font-size: 1.05rem; color: var(--gray-600); font-style: italic; margin-bottom: 36px; }
+
+  /* ====== CONTEXT SLIDE (before/after) ====== */
+  .context-cols { display: flex; gap: 30px; }
+  .context-card {
+    flex: 1; border-radius: var(--radius-lg); padding: 36px;
+    position: relative; overflow: hidden;
+  }
+  .context-card.before { background: var(--gray-100); border: 1px solid var(--gray-200); }
+  .context-card.after { background: linear-gradient(135deg, #f3e8ff, #faf7ff); border: 1px solid rgba(161,0,255,0.12); }
+  .cc-tag { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .context-card.before .cc-tag { background: var(--gray-200); color: var(--gray-600); }
+  .context-card.after .cc-tag { background: var(--purple-bright); color: #fff; }
+  .context-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+  .context-card.before h3 { color: var(--gray-800); }
+  .context-card.after h3 { color: var(--purple-deep); }
+  .context-card ul { list-style: none; }
+  .context-card li { font-size: 0.9rem; color: var(--gray-700); padding: 6px 0 6px 18px; position: relative; line-height: 1.5; }
+  .context-card li::before { content: ''; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; }
+  .context-card.before li::before { background: #ccc; }
+  .context-card.after li::before { background: var(--purple-mid); }
+  .stat-band { display: flex; margin-top: 28px; border-radius: 16px; overflow: hidden; }
+  .stat-band .sb-item { flex: 1; background: var(--purple-deep); padding: 24px 28px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); }
+  .stat-band .sb-item:last-child { border-right: none; }
+  .stat-band .sb-val { color: #fff; font-size: 1.75rem; font-weight: 800; display: block; margin-bottom: 2px; }
+  .stat-band .sb-txt { color: rgba(255,255,255,0.78); font-size: 0.8rem; font-weight: 500; }
+
+  /* ====== AGENDA ====== */
+  .agenda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ag-item {
+    display: flex; align-items: center; gap: 20px;
+    padding: 24px 28px; border-radius: var(--radius-md);
+    background: #fff; border: 1px solid rgba(161,0,255,0.06);
+  }
+  .ag-num {
+    width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-mid));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.1rem; font-weight: 800;
+    box-shadow: 0 6px 20px rgba(161,0,255,0.2);
+  }
+  .ag-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--purple-deep); margin-bottom: 2px; }
+  .ag-content span { font-size: 0.82rem; color: var(--gray-600); line-height: 1.4; }
+
+  /* ====== STAT GRID (4 gradient cards) ====== */
+  .stat-cards { display: flex; gap: 16px; }
+  .stat-card {
+    flex: 1; border-radius: var(--radius-lg); padding: 32px 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 200px; position: relative; overflow: hidden;
+  }
+  .stat-card::after {
+    content: ''; position: absolute; right: -30px; bottom: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .stat-card:nth-child(1) { background: linear-gradient(135deg, var(--purple-bright), var(--purple-mid)); }
+  .stat-card:nth-child(2) { background: linear-gradient(135deg, var(--purple-deep), #2d004a); }
+  .stat-card:nth-child(3) { background: linear-gradient(135deg, var(--purple-mid), var(--purple-bright)); }
+  .stat-card:nth-child(4) { background: linear-gradient(135deg, var(--pink-deep), var(--pink)); }
+  .stat-card .sc-val { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: #fff; line-height: 1; position: relative; z-index: 1; }
+  .stat-card .sc-label { font-size: 0.88rem; color: rgba(255,255,255,0.9); line-height: 1.4; position: relative; z-index: 1; margin-top: 6px; }
+  .stat-card .sc-ctx { font-size: 0.75rem; color: rgba(255,255,255,0.72); font-style: italic; position: relative; z-index: 1; margin-top: auto; }
+  .narrative-bar {
+    margin-top: 20px; background: linear-gradient(135deg, #f3e8ff, #faf7ff);
+    border-radius: var(--radius-md); padding: 20px 28px;
+    border-left: 4px solid var(--purple-bright);
+  }
+  .narrative-bar p { font-size: 0.88rem; color: var(--gray-700); font-style: italic; line-height: 1.6; }
+
+  /* ====== DISTRIBUTION CHART ====== */
+  .dist-chart-wrap { margin-top: 12px; }
+  .dist-chart {
+    display: flex; align-items: flex-end; gap: 32px;
+    padding: 0 60px 0 60px; height: 280px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  .dist-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; }
+  .dist-val { font-size: 1.3rem; font-weight: 800; color: var(--purple-deep); margin-bottom: 8px; }
+  .dist-bar { width: 100%; max-width: 100px; border-radius: 16px 16px 6px 6px; position: relative; }
+  .dist-bar.b1 { height: 260px; background: linear-gradient(to top, var(--pink-deep), var(--pink)); }
+  .dist-bar.b2 { height: 175px; background: linear-gradient(to top, var(--purple-bright), var(--purple-light)); }
+  .dist-bar.b3 { height: 115px; background: linear-gradient(to top, var(--purple-mid), var(--purple-bright)); }
+  .dist-bar.b4 { height: 52px; background: linear-gradient(to top, var(--purple-deep), var(--purple-mid)); }
+  .dist-bar.b5 { height: 18px; background: linear-gradient(to top, #2d004a, var(--purple-deep)); }
+  .dist-label { font-size: 0.75rem; font-weight: 600; color: var(--gray-500); margin-top: 10px; text-align: center; }
+  .dist-annots { display: flex; justify-content: space-between; padding: 0 60px; margin-top: 10px; }
+  .dist-ann { font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+  .dist-ann.left { color: var(--pink-deep); background: rgba(255,80,160,0.07); }
+  .dist-ann.right { color: var(--gray-500); background: var(--gray-100); }
+  .src-note { margin-top: 14px; font-size: 0.75rem; color: var(--gray-600); font-style: italic; }
+
+  /* ====== QUOTE SLIDE ====== */
+  .quote-primary {
+    background: #fff; border-radius: var(--radius-lg); padding: 40px 48px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.03); position: relative;
+  }
+  .quote-mark { position: absolute; left: 48px; top: 10px; font-size: 5rem; line-height: 1; color: var(--purple-bright); opacity: 0.12; font-family: Georgia, serif; }
+  .quote-primary blockquote { font-size: 1.2rem; font-weight: 500; line-height: 1.55; color: var(--purple-deep); position: relative; z-index: 1; }
+  .quote-primary .qp-attrib { font-size: 0.75rem; color: var(--gray-500); font-weight: 600; margin-top: 12px; position: relative; z-index: 1; }
+  .quote-secondary {
+    margin-top: 16px; background: #fff; border-radius: var(--radius-md);
+    padding: 24px 32px; border-left: 4px solid var(--pink);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+  }
+  .quote-secondary p { font-size: 0.9rem; color: var(--gray-700); font-style: italic; line-height: 1.55; }
+  .quote-secondary .qs-attrib { font-size: 0.7rem; color: var(--gray-400); margin-top: 6px; }
+  .implication-bar {
+    margin-top: 16px; background: var(--purple-deep); border-radius: var(--radius-md);
+    padding: 20px 28px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .implication-bar .imp-label { color: rgba(255,255,255,0.72); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; margin-top: 3px; }
+  .implication-bar .imp-text { font-size: 0.92rem; color: rgba(255,255,255,0.92); line-height: 1.55; }
+
+  /* ====== 3 COLUMN ====== */
+  .three-cols { display: flex; gap: 24px; }
+  .tc-card {
+    flex: 1; border-radius: var(--radius-lg); background: #fff;
+    border: 1px solid rgba(161,0,255,0.06);
+    box-shadow: 0 3px 18px rgba(0,0,0,0.03); overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .tc-header {
+    padding: 28px 28px 20px; position: relative;
+  }
+  .tc-card:nth-child(1) .tc-header { background: linear-gradient(135deg, var(--purple-bright), var(--purple-mid)); }
+  .tc-card:nth-child(2) .tc-header { background: linear-gradient(135deg, var(--purple-mid), var(--purple-bright)); }
+  .tc-card:nth-child(3) .tc-header { background: linear-gradient(135deg, var(--purple-light), var(--purple-bright)); }
+  .tc-icon { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  .tc-header h3 { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.3; }
+  .tc-body { padding: 20px 28px; flex: 1; font-size: 0.82rem; color: var(--gray-600); line-height: 1.6; }
+  .tc-evidence { margin: 0 20px 20px; padding: 16px 20px; background: var(--purple-bg); border-radius: 12px; border-left: 3px solid var(--purple-bright); }
+  .tc-ev-label { font-size: 0.6rem; font-weight: 700; color: var(--purple-bright); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .tc-evidence p { font-size: 0.7rem; color: var(--gray-700); font-style: italic; line-height: 1.5; }
+  .tc-src { padding: 0 28px 20px; font-size: 0.72rem; color: var(--gray-600); }
+
+  /* ====== 2 COLUMN SPLIT ====== */
+  .two-split { display: flex; gap: 30px; margin-bottom: 16px; }
+  .tw-side { flex: 1; border-radius: var(--radius-lg); padding: 32px; position: relative; overflow: hidden; }
+  .tw-side.left { background: var(--gray-100); border: 1px solid var(--gray-200); }
+  .tw-side.right { background: linear-gradient(135deg, #f3e8ff, #faf7ff); border: 1px solid rgba(161,0,255,0.1); }
+  .tw-tag { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+  .tw-side.left .tw-tag { background: var(--gray-200); color: var(--gray-600); }
+  .tw-side.right .tw-tag { background: var(--purple-bright); color: #fff; }
+  .tw-side h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 14px; }
+  .tw-side.left h3 { color: var(--gray-800); }
+  .tw-side.right h3 { color: var(--purple-deep); }
+  .tw-side ul { list-style: none; }
+  .tw-side li { font-size: 0.85rem; color: var(--gray-600); padding: 5px 0 5px 18px; position: relative; line-height: 1.5; }
+  .tw-side li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; }
+  .tw-side.left li::before { background: #ccc; }
+  .tw-side.right li::before { background: var(--purple-mid); }
+  .callout-bar {
+    background: var(--purple-deep); border-radius: var(--radius-md); padding: 18px 28px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .callout-bar .co-label { color: rgba(255,255,255,0.72); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; margin-top: 2px; }
+  .callout-bar .co-text { font-size: 0.92rem; color: rgba(255,255,255,0.92); line-height: 1.55; }
+
+  /* ====== INSIGHT CARDS (2) ====== */
+  .insight-cards { display: flex; gap: 30px; }
+  .ic-card {
+    flex: 1; border-radius: var(--radius-lg); background: #fff; overflow: hidden;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.03);
+    display: flex; flex-direction: column;
+  }
+  .ic-card:nth-child(1) { border-top: 7px solid var(--pink-deep); }
+  .ic-card:nth-child(2) { border-top: 7px solid var(--purple-deep); }
+  .ic-card-header { padding: 28px 28px 14px; }
+  .ic-tag { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+  .ic-card:nth-child(1) .ic-tag { background: rgba(200,42,128,0.08); color: var(--pink-deep); }
+  .ic-card:nth-child(2) .ic-tag { background: rgba(70,0,115,0.08); color: var(--purple-deep); }
+  .ic-card-header h3 { font-size: 1.15rem; font-weight: 700; color: #333; line-height: 1.3; }
+  .ic-body { padding: 0 28px; flex: 1; font-size: 0.85rem; color: var(--gray-600); line-height: 1.65; }
+  .ic-evidence { margin: 16px 20px 14px; padding: 16px 20px; background: var(--purple-bg); border-radius: 12px; border-left: 3px solid var(--purple-mid); }
+  .ic-ev-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .ic-card:nth-child(1) .ic-ev-label { color: var(--pink-deep); }
+  .ic-card:nth-child(2) .ic-ev-label { color: var(--purple-deep); }
+  .ic-evidence p { font-size: 0.7rem; font-style: italic; line-height: 1.5; }
+  .ic-card:nth-child(1) .ic-evidence p { color: var(--pink-deep); }
+  .ic-card:nth-child(2) .ic-evidence p { color: var(--purple-deep); }
+  .ic-implication { padding: 8px 28px 24px; font-size: 0.8rem; font-weight: 700; line-height: 1.5; }
+  .ic-card:nth-child(1) .ic-implication { color: var(--pink-deep); }
+  .ic-card:nth-child(2) .ic-implication { color: var(--purple-deep); }
+
+  /* ====== ACTION ROWS ====== */
+  .action-rows { display: flex; flex-direction: column; gap: 10px; }
+  .ar-row {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 18px 24px; border-radius: 16px;
+    background: var(--purple-bg); border: 1px solid rgba(161,0,255,0.05);
+  }
+  .ar-num {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-mid));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1rem; font-weight: 800;
+    box-shadow: 0 3px 14px rgba(161,0,255,0.18);
+  }
+  .ar-action { width: 240px; flex-shrink: 0; font-size: 0.95rem; font-weight: 700; color: var(--purple-deep); line-height: 1.3; }
+  .ar-what { flex: 1; font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; }
+  .ar-outcome { width: 280px; flex-shrink: 0; font-size: 0.72rem; color: var(--gray-500); font-style: italic; line-height: 1.5; }
+
+  /* ====== SUMMARY (dark) ====== */
+  .summary-slide {
+    background: linear-gradient(160deg, #460073 0%, #2d004a 45%, #1a002e 100%);
+    color: var(--text-white);
+  }
+  .summary-slide .sum-line {
+    position: absolute; top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(to right, var(--purple-bright), var(--pink));
+  }
+  .summary-slide .slide-inner { display: flex; flex-direction: column; justify-content: center; }
+  .summary-slide .sum-kicker { font-size: 0.85rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-bottom: 8px; }
+  .summary-slide h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .summary-slide .sum-km { font-size: 1.1rem; color: rgba(255,255,255,0.78); font-style: italic; margin-bottom: 32px; }
+  .pillars { display: flex; gap: 24px; }
+  .pillar {
+    flex: 1; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-lg);
+    padding: 28px; position: relative; overflow: hidden;
+  }
+  .pillar::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .pillar:nth-child(1)::after { background: var(--purple-bright); }
+  .pillar:nth-child(2)::after { background: var(--purple-light); }
+  .pillar:nth-child(3)::after { background: var(--pink); }
+  .pillar-num {
+    font-size: 2.5rem; font-weight: 900; margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .pillar:nth-child(3) .pillar-num { background: linear-gradient(135deg, var(--pink), var(--purple-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .pillar h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 10px; margin-top: 12px; }
+  .pillar p { font-size: 0.9rem; color: rgba(255,255,255,0.78); line-height: 1.65; }
+  .closing-bar {
+    margin-top: 20px; background: rgba(255,255,255,0.03); border-radius: 12px;
+    padding: 18px 24px; border-left: 4px solid var(--pink);
+  }
+  .closing-bar p { font-size: 0.95rem; color: rgba(255,255,255,0.82); font-style: italic; line-height: 1.55; }
+
+  /* ====== REFERENCES ====== */
+  .ref-cols { display: flex; gap: 24px; }
+  .ref-col {
+    flex: 1; background: #fff; border-radius: var(--radius-md); padding: 28px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.02);
+  }
+  .ref-col:nth-child(1) { border-top: 5px solid var(--purple-bright); }
+  .ref-col:nth-child(2) { border-top: 5px solid var(--purple-mid); }
+  .ref-col:nth-child(3) { border-top: 5px solid var(--purple-light); }
+  .ref-col h3 { font-size: 0.85rem; font-weight: 700; color: var(--purple-deep); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .ref-col ul { list-style: none; }
+  .ref-col li { font-size: 0.7rem; color: var(--gray-600); padding: 4px 0 4px 14px; position: relative; line-height: 1.5; }
+  .ref-col li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #ccc; }
+
+  /* ====== CLOSING ====== */
+  .closing-slide {
+    background: linear-gradient(160deg, #460073 0%, #2d004a 45%, #1a002e 100%);
+    text-align: center; color: var(--text-white);
+  }
+  .closing-slide .slide-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .closing-circle {
+    width: 300px; height: 300px; border-radius: 50%;
+    border: 2px solid rgba(161,0,255,0.12);
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .closing-circle.c2 { width: 220px; height: 220px; border-color: rgba(255,80,160,0.08); }
+  .closing-accent { width: 120px; height: 4px; background: var(--purple-bright); border-radius: 2px; margin-bottom: 40px; }
+  .closing-slide h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 8px; }
+  .closing-slide .cl-sub { font-size: 1.1rem; color: rgba(255,255,255,0.78); margin-bottom: 16px; }
+  .closing-slide .cl-url { font-size: 0.95rem; color: var(--purple-light); font-weight: 600; margin-bottom: 40px; }
+  .closing-slide .cl-footer { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  /* ====== PAGE COUNTER ====== */
+  .page-counter {
+    position: absolute; right: 40px; bottom: 28px;
+    font-size: 0.8rem; font-weight: 600; color: rgba(161,0,255,0.4);
+  }
+  .dark-slide .page-counter { color: rgba(255,255,255,0.38); }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 960px) {
+    .slide-inner { padding: 48px 28px; }
+    .context-cols, .stat-cards, .three-cols, .two-split, .insight-cards, .pillars, .ref-cols { flex-direction: column; }
+    .stat-band { flex-wrap: wrap; }
+    .stat-band .sb-item { flex: 1 1 50%; }
+    .agenda-grid { grid-template-columns: 1fr; }
+    .dist-chart { padding: 0 20px; gap: 16px; height: 200px; }
+    .dist-annots { padding: 0 20px; }
+    .nav-dots { right: 8px; gap: 6px; }
+    .nav-dot { width: 7px; height: 7px; }
+    .ar-row { flex-wrap: wrap; }
+    .ar-action, .ar-outcome { width: 100%; }
+  }
+  @media (max-width: 640px) {
+    .slide-inner { padding: 36px 18px; }
+    .cover .stat-pills { gap: 8px; }
+    .cover .stat-pill { min-width: auto; padding: 12px 16px; }
+    .cover .stat-pill .val { font-size: 1.2rem; }
+  }
+</style>
+</head><body>
+<div class="nav-dots"><div class="nav-dot active" onclick="document.querySelectorAll('.slide')[0].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[1].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[2].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[3].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[4].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[5].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[6].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[7].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[8].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[9].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[10].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[11].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[12].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[13].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[14].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[15].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[16].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[17].scrollIntoView({behavior:'smooth'})"></div>
+<div class="nav-dot" onclick="document.querySelectorAll('.slide')[18].scrollIntoView({behavior:'smooth'})"></div></div>
+<div class="slide dark-slide cover" data-slide="1">
+
+            <div class="cover-accent"></div>
+            <div class="slide-inner">
+              <div class="brand-line"></div>
+              <div class="kicker">Executive Briefing</div>
+              <h1>Generative AI at Work</h1>
+              <p class="subtitle">Evidence from 5,172 Customer-Service Agents on the Real Productivity Impact of GenAI</p>
+              <div class="stat-pills">
+                <div class="stat-pill"><span class="val">5,172 agents</span><span class="lbl">Sample size</span></div><div class="stat-pill"><span class="val">+15%</span><span class="lbl">Avg. productivity gain</span></div><div class="stat-pill"><span class="val">Causal DiD</span><span class="lbl">Method</span></div><div class="stat-pill"><span class="val">Fortune 500 firm</span><span class="lbl">Setting</span></div>
+              </div>
+              <p class="footer-meta">Brynjolfsson, Li & Raymond · NBER WP 31161 / arXiv:2304.11771v2 · 2024</p>
+            </div>
+            <div class="page-counter">1 / 19</div>
+</div>
+<div class="slide context" data-slide="2">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Context</div>
+              <h2>Why This Study Matters</h2>
+              <p class="cs-km">First rigorous, large-scale, causal evidence of how GenAI changes real workplaces.</p>
+              <div class="context-cols">
+                <div class="context-card before">
+                  <span class="cc-tag">Before This Paper</span>
+                  <h3>Before This Paper</h3>
+                  <ul><li>Lab experiments (GPT writing code/emails)</li><li>Self-reported survey data (McKinsey, Accenture)</li><li>Anecdotes from early adopters</li><li>No causal identification</li></ul>
+                </div>
+                <div class="context-card after">
+                  <span class="cc-tag">What This Paper Adds</span>
+                  <h3>What This Paper Adds</h3>
+                  <ul><li>5,172 real customer-service agents</li><li>Staggered rollout → quasi-random assignment</li><li>Two-way fixed effects DiD</li><li>Outage natural experiment for learning persistence</li></ul>
+                </div>
+              </div>
+              <div class="stat-band">
+                <div class="sb-item"><span class="sb-val">5,172</span><span class="sb-txt">Agents observed</span></div><div class="sb-item"><span class="sb-val">12 mo.</span><span class="sb-txt">Panel window</span></div><div class="sb-item"><span class="sb-val">Multi-country</span><span class="sb-txt">Incl. PH, IN offshoring sites</span></div>
+              </div>
+            </div>
+            <div class="page-counter">2 / 19</div>
+</div>
+<div class="slide agenda" data-slide="3">
+
+            <div class="slide-inner">
+              <div class="ls-kicker">Agenda</div>
+              <h2>What This Deck Covers</h2>
+              <div class="agenda-grid">
+                <div class="ag-item"><div class="ag-num">01</div><div class="ag-content"><h3>Findings & Trends</h3><span>Headline numbers and the dispersion behind them</span></div></div><div class="ag-item"><div class="ag-num">02</div><div class="ag-content"><h3>Core Views</h3><span>Authors' thesis and three mechanisms</span></div></div><div class="ag-item"><div class="ag-num">03</div><div class="ag-content"><h3>Themes</h3><span>Compressed learning curves and customer experience</span></div></div><div class="ag-item"><div class="ag-num">04</div><div class="ag-content"><h3>Insights</h3><span>Two structural risks lurking behind the win</span></div></div><div class="ag-item"><div class="ag-num">05</div><div class="ag-content"><h3>Recommended Actions</h3><span>Five concrete moves for enterprise leaders</span></div></div><div class="ag-item"><div class="ag-num">06</div><div class="ag-content"><h3>References</h3><span>Source paper and citation map</span></div></div>
+              </div>
+            </div>
+            <div class="page-counter">3 / 19</div>
+</div>
+<div class="slide dark-slide section_header" data-slide="4">
+
+            <div class="sh-circle"></div>
+            <div class="sh-circle c2"></div>
+            <div class="slide-inner">
+              <div class="sh-kicker">What the data shows</div>
+              <div class="sh-line"></div>
+              <h2>01  Findings & Trends</h2>
+              <div class="sh-previews">
+                <div class="sh-preview"><div class="sh-preview-dot"></div>Average +15% productivity</div><div class="sh-preview"><div class="sh-preview-dot"></div>But the gain is wildly uneven</div><div class="sh-preview"><div class="sh-preview-dot"></div>Tenure premium collapses</div>
+              </div>
+            </div>
+            <div class="page-counter">4 / 19</div>
+</div>
+<div class="slide stat_grid" data-slide="5">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Findings</div>
+              <h2>The Headline Numbers</h2>
+              <p class="cs-km">AI lifts average productivity by 15%, but the gains are deeply uneven.</p>
+              <div class="stat-cards">
+                <div class="stat-card"><span class="sc-val">+15%</span><span class="sc-label">Avg. resolutions per hour (RPH) across 5,172 agents</span><span class="sc-ctx">From 1.97 to 2.27 RPH baseline</span></div><div class="stat-card"><span class="sc-val">+36%</span><span class="sc-label">RPH gain for the lowest-skill quintile</span><span class="sc-ctx">Vs. AI-naive baseline performance</span></div><div class="stat-card"><span class="sc-val">≈ 0%</span><span class="sc-label">RPH gain for the highest-skill quintile</span><span class="sc-ctx">With small declines in quality metrics</span></div><div class="stat-card"><span class="sc-val">−40%</span><span class="sc-label">Reduction in new-hire attrition (≤6 mo. tenure)</span><span class="sc-ctx">From 25% baseline down to ~15%</span></div>
+              </div>
+              <div class="narrative-bar"><p>Average gain masks a striking distribution: junior agents leap forward, senior agents barely move. The same intervention, very different outcomes — and that asymmetry is the entire story.</p></div>
+            </div>
+            <div class="page-counter">5 / 19</div>
+</div>
+<div class="slide distribution" data-slide="6">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Distribution</div>
+              <h2>The Productivity Lift Is Not Evenly Shared</h2>
+              <p class="cs-km">Gains concentrate at the bottom; the top barely moves.</p>
+              <div class="dist-chart-wrap">
+                <div class="dist-chart">
+                  <div class="dist-bar-group"><div class="dist-val">+36%</div><div class="dist-bar b1"></div><div class="dist-label">Q1 (lowest skill)</div></div><div class="dist-bar-group"><div class="dist-val">+22%</div><div class="dist-bar b2"></div><div class="dist-label">Q2</div></div><div class="dist-bar-group"><div class="dist-val">+14%</div><div class="dist-bar b3"></div><div class="dist-label">Q3 (median)</div></div><div class="dist-bar-group"><div class="dist-val">+6%</div><div class="dist-bar b4"></div><div class="dist-label">Q4</div></div><div class="dist-bar-group"><div class="dist-val">≈ 0%</div><div class="dist-bar b5"></div><div class="dist-label">Q5 (highest skill)</div></div>
+                </div>
+                <div class="dist-annots">
+                  <span class="dist-ann left">← Largest learning headroom</span>
+                  <span class="dist-ann right">Already at AI-trained peer level →</span>
+                </div>
+              </div>
+              <p class="src-note">Source: §5.2; Table 3 — RPH gain by pre-treatment skill quintile (illustrative; intermediate quintile values approximated from Figures 4–5).</p>
+            </div>
+            <div class="page-counter">6 / 19</div>
+</div>
+<div class="slide dark-slide section_header" data-slide="7">
+
+            <div class="sh-circle"></div>
+            <div class="sh-circle c2"></div>
+            <div class="slide-inner">
+              <div class="sh-kicker">What the authors are arguing</div>
+              <div class="sh-line"></div>
+              <h2>02  Core Views</h2>
+              <div class="sh-previews">
+                <div class="sh-preview"><div class="sh-preview-dot"></div>GenAI is skill-equalizing</div><div class="sh-preview"><div class="sh-preview-dot"></div>Tacit knowledge gets encoded</div><div class="sh-preview"><div class="sh-preview-dot"></div>Top performers train the system</div>
+              </div>
+            </div>
+            <div class="page-counter">7 / 19</div>
+</div>
+<div class="slide quote_pair" data-slide="8">
+
+            <div class="slide-inner">
+              <div class="ls-kicker">Direct From the Paper</div>
+              <h2>Thesis: GenAI Is Skill-Equalizing</h2>
+              <div class="quote-primary">
+                <div class="quote-mark">"</div>
+                <blockquote>Less experienced and lower-skilled workers improve both the speed and quality of their output while the most experienced and highest-skilled workers see small gains in speed and small declines in quality.</blockquote>
+                <p class="qp-attrib">— §Abstract</p>
+              </div>
+              <div class="quote-secondary">
+                <p>Treated agents with two months of tenure perform just as well as untreated agents with more than six months of tenure.</p>
+                <p class="qs-attrib">— §6.1 Tenure analysis</p>
+              </div>
+              <div class="implication-bar">
+                <span class="imp-label">Why this matters</span>
+                <span class="imp-text">This is the first major IT wave that does not behave as skill-biased technical change. The historical pattern — where new tech rewarded the strong and widened inequality — is reversed.</span>
+              </div>
+            </div>
+            <div class="page-counter">8 / 19</div>
+</div>
+<div class="slide three_column_rich" data-slide="9">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Mechanisms</div>
+              <h2>Three Mechanisms Behind the Gains</h2>
+              <p class="cs-km">The lift isn't magic — it's encoded best practice flowing top → bottom.</p>
+              <div class="three-cols">
+                <div class="tc-card"><div class="tc-header"><div class="tc-icon">①</div><h3>Encoded Tacit Knowledge</h3></div><div class="tc-body">AI learns top performers' patterns and broadcasts them to everyone — durable learning, not real-time dependency.</div><div class="tc-evidence"><div class="tc-ev-label">Evidence</div><p>During AI service outages, previously-treated agents still outperform their pre-AI baseline. Learning persists.</p></div><div class="tc-src">§6.2 outage natural experiment</div></div><div class="tc-card"><div class="tc-header"><div class="tc-icon">②</div><h3>Language Uplift</h3></div><div class="tc-body">Conversation analysis shows non-native English speakers' fluency converging toward top-performer style.</div><div class="tc-evidence"><div class="tc-ev-label">Evidence</div><p>Linguistic features of low-skill agents shift measurably toward those of high-skill peers post-AI exposure.</p></div><div class="tc-src">§6.3 text analysis</div></div><div class="tc-card"><div class="tc-header"><div class="tc-icon">③</div><h3>Rare-Problem Coverage</h3></div><div class="tc-body">The largest gains are on rare issues — where the human baseline is weakest, AI net contribution is highest.</div><div class="tc-evidence"><div class="tc-ev-label">Evidence</div><p>Counter-intuitive: AI has less training data on rare topics, but human baseline is even worse, so net help is greatest.</p></div><div class="tc-src">§6.4 topic stratification</div></div>
+              </div>
+            </div>
+            <div class="page-counter">9 / 19</div>
+</div>
+<div class="slide dark-slide section_header" data-slide="10">
+
+            <div class="sh-circle"></div>
+            <div class="sh-circle c2"></div>
+            <div class="slide-inner">
+              <div class="sh-kicker">How this changes work itself</div>
+              <div class="sh-line"></div>
+              <h2>03  Themes</h2>
+              <div class="sh-previews">
+                <div class="sh-preview"><div class="sh-preview-dot"></div>Compressed learning curves</div><div class="sh-preview"><div class="sh-preview-dot"></div>Better customer experience</div><div class="sh-preview"><div class="sh-preview-dot"></div>Lower new-hire attrition</div>
+              </div>
+            </div>
+            <div class="page-counter">10 / 19</div>
+</div>
+<div class="slide two_column_rich" data-slide="11">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Theme</div>
+              <h2>Theme A — The Learning Curve Is Compressed</h2>
+              <p class="cs-km">Ramp-up time collapses; tenure-based seniority loses its signal value.</p>
+              <div class="two-split">
+                <div class="tw-side left">
+                  <span class="tw-tag">Without AI</span>
+                  <h3>Without AI</h3>
+                  <ul><li>8–10 months to reach 2.5 RPH</li><li>25% new-hire attrition within 6 mo.</li><li>Tenure strongly predicts performance</li><li>Senior agents 2× as productive as new hires</li></ul>
+                </div>
+                <div class="tw-side right">
+                  <span class="tw-tag">With AI</span>
+                  <h3>With AI</h3>
+                  <ul><li>5 months to reach 3.0 RPH</li><li>~15% new-hire attrition (−40%)</li><li>Tenure premium weakens substantially</li><li>2-mo. new hires ≈ 6+ mo. veterans</li></ul>
+                </div>
+              </div>
+              <div class="callout-bar">
+                <span class="co-label">Strategic implication</span>
+                <span class="co-text">Traditional 'pay-for-experience' compensation curves were designed for a world where tenure = capability. AI breaks that proxy.</span>
+              </div>
+              <p class="src-note">Source: §6.1 Tenure dynamics; §7.2 Attrition analysis</p>
+            </div>
+            <div class="page-counter">11 / 19</div>
+</div>
+<div class="slide two_column_rich" data-slide="12">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Theme</div>
+              <h2>Theme B — Customer Experience Improves Too</h2>
+              <p class="cs-km">AI assistance doesn't make agents feel robotic — customers respond better.</p>
+              <div class="two-split">
+                <div class="tw-side left">
+                  <span class="tw-tag">Customer Behavior</span>
+                  <h3>Without AI</h3>
+                  <ul><li>Fewer aggressive / negative messages</li><li>Manager-escalation requests −25%</li><li>From 6.0% baseline to ~4.5%</li><li>Politeness-coded language up materially</li></ul>
+                </div>
+                <div class="tw-side right">
+                  <span class="tw-tag">Adoption Pattern</span>
+                  <h3>With AI</h3>
+                  <ul><li>Avg. agent accepts 35% of suggestions</li><li>Adoption rises with exposure time</li><li>Initial skeptics (seniors) warm up most</li><li>Higher adoption → larger productivity gain</li></ul>
+                </div>
+              </div>
+              <div class="callout-bar">
+                <span class="co-label">Why this is novel</span>
+                <span class="co-text">First large-scale evidence that AI augmentation can improve the experience of work itself — not just throughput.</span>
+              </div>
+              <p class="src-note">Source: §7.1 Customer sentiment; §6.5 Adoption dynamics</p>
+            </div>
+            <div class="page-counter">12 / 19</div>
+</div>
+<div class="slide dark-slide section_header" data-slide="13">
+
+            <div class="sh-circle"></div>
+            <div class="sh-circle c2"></div>
+            <div class="slide-inner">
+              <div class="sh-kicker">What this means strategically</div>
+              <div class="sh-line"></div>
+              <h2>04  Insights</h2>
+              <div class="sh-previews">
+                <div class="sh-preview"><div class="sh-preview-dot"></div>Today's win, tomorrow's risk</div><div class="sh-preview"><div class="sh-preview-dot"></div>Top talent gets flattened</div><div class="sh-preview"><div class="sh-preview-dot"></div>Training data quietly decays</div>
+              </div>
+            </div>
+            <div class="page-counter">13 / 19</div>
+</div>
+<div class="slide insight_card_rich" data-slide="14">
+
+            <div class="slide-inner">
+              <div class="ls-kicker">Strategic Insight</div>
+              <h2>Strategic Insight: Two Long-Term Risks</h2>
+              <p class="ls-km">Today's productivity win quietly creates two structural problems.</p>
+              <div class="insight-cards">
+                <div class="ic-card"><div class="ic-card-header"><span class="ic-tag">Risk 1</span><h3>Top Talent Flattening</h3></div><div class="ic-body">If senior agents increasingly defer to AI's median-quality suggestions, their original creative contribution declines.</div><div class="ic-evidence"><div class="ic-ev-label">Signal in the data</div><p>Top quintile shows small declines in quality metrics (resolution rate, NPS) even as speed marginally rises.</p></div><div class="ic-implication">→ The very signal future AI models depend on starts to weaken at the source.</div></div><div class="ic-card"><div class="ic-card-header"><span class="ic-tag">Risk 2</span><h3>Training Data Decay</h3></div><div class="ic-body">Agent conversations are simultaneously customer service AND model training data — but employees are not compensated for the latter.</div><div class="ic-evidence"><div class="ic-ev-label">Authors' framing</div><p>"Whether and how workers should be compensated for the data they provide for training AI systems" is left as an open policy question.</p></div><div class="ic-implication">→ Without attribution mechanisms, the source of intelligence erodes over time.</div></div>
+              </div>
+              <p class="src-note">Source: §8 Discussion; §Conclusion</p>
+            </div>
+            <div class="page-counter">14 / 19</div>
+</div>
+<div class="slide dark-slide section_header" data-slide="15">
+
+            <div class="sh-circle"></div>
+            <div class="sh-circle c2"></div>
+            <div class="slide-inner">
+              <div class="sh-kicker">What enterprise leaders should do now</div>
+              <div class="sh-line"></div>
+              <h2>05  Recommended Actions</h2>
+              <div class="sh-previews">
+                <div class="sh-preview"><div class="sh-preview-dot"></div>Reset HR economics</div><div class="sh-preview"><div class="sh-preview-dot"></div>Rewire ROI targets</div><div class="sh-preview"><div class="sh-preview-dot"></div>Treat conversations as capital</div>
+              </div>
+            </div>
+            <div class="page-counter">15 / 19</div>
+</div>
+<div class="slide action_table" data-slide="16">
+
+            <div class="slide-inner">
+              <div class="cs-kicker">Recommended Actions</div>
+              <h2>Five Moves for Enterprise Leaders</h2>
+              <p class="cs-km">Treat this paper as an operating playbook, not a forecast.</p>
+              <div class="action-rows">
+                <div class="ar-row"><div class="ar-num">1</div><div class="ar-action">Reset HR Economics</div><div class="ar-what">Re-evaluate seniority-based pay curves — AI compresses the experience premium.</div><div class="ar-outcome">Pay-for-skill replaces pay-for-tenure; reduces overpaying for time served.</div></div><div class="ar-row"><div class="ar-num">2</div><div class="ar-action">Rewire AI ROI Targets</div><div class="ar-what">Make new-hire retention a hard KPI for AI deployments, not just speed metrics.</div><div class="ar-outcome">−40% attrition has more durable ROI than +15% throughput.</div></div><div class="ar-row"><div class="ar-num">3</div><div class="ar-action">Treat Conversations as Capital</div><div class="ar-what">Establish attribution & incentive systems for employees whose work trains AI models.</div><div class="ar-outcome">Protects long-term training data quality; aligns incentives with model health.</div></div><div class="ar-row"><div class="ar-num">4</div><div class="ar-action">Compress Onboarding</div><div class="ar-what">Use AI to shrink customer-service ramp-up from 6–9 months to 2–3 months.</div><div class="ar-outcome">Faster time-to-productivity; lower cost-to-train per agent.</div></div><div class="ar-row"><div class="ar-num">5</div><div class="ar-action">Protect Top-Talent Originality</div><div class="ar-what">Reserve high-difficulty, AI-free tasks for senior staff to preserve creative output.</div><div class="ar-outcome">Prevents flattening; preserves the 'human signal' future models need.</div></div>
+              </div>
+            </div>
+            <div class="page-counter">16 / 19</div>
+</div>
+<div class="slide summary" data-slide="17">
+
+            <div class="sum-line"></div>
+            <div class="slide-inner">
+              <div class="sum-kicker">Synthesis</div>
+              <h2>The Big Picture</h2>
+              <p class="sum-km">GenAI is the first IT wave that lifts the bottom — but it asks new questions of the top.</p>
+              <div class="pillars">
+                <div class="pillar"><div class="pillar-num">01</div><h3>What changed</h3><p>AI shifted from skill-amplifier to skill-equalizer. The 5,172-agent dataset is the strongest causal evidence to date.</p></div><div class="pillar"><div class="pillar-num">02</div><h3>What it means</h3><p>Tenure-based seniority loses signal value. New-hire ramp-up compresses. Customer experience gets better, not worse.</p></div><div class="pillar"><div class="pillar-num">03</div><h3>What to watch</h3><p>Top-talent flattening and training-data decay are slow-moving risks. They don't show up in this year's KPIs.</p></div>
+              </div>
+              <div class="closing-bar"><p>The window to redesign HR economics, ROI targets, and data-attribution mechanisms is now — while the gains are still accruing.</p></div>
+            </div>
+            <div class="page-counter">17 / 19</div>
+</div>
+<div class="slide references" data-slide="18">
+
+            <div class="slide-inner">
+              <div class="ls-kicker">Citation Map</div>
+              <h2>References & Source</h2>
+              <div class="ref-cols">
+                <div class="ref-col"><h3>Primary source</h3><ul><li>Brynjolfsson, E., Li, D., & Raymond, L. (2024). Generative AI at Work. NBER Working Paper No. 31161 / arXiv:2304.11771v2 (Nov 7, 2024).</li><li>Published as: Quarterly Journal of Economics, Vol. 140, No. 2, 2025, pp. 889–942.</li><li>URL: https://arxiv.org/abs/2304.11771</li></ul></div><div class="ref-col"><h3>Methodology</h3><ul><li>Sample: 5,172 customer-service agents at a Fortune 500 business-process software firm.</li><li>Identification: Two-way fixed effects DiD; Sun-Abraham robust estimators.</li><li>Natural experiment: AI service outages used to test learning persistence.</li></ul></div><div class="ref-col"><h3>Where each statistic appears</h3><ul><li>+15% RPH lift — §Abstract; Table 2</li><li>+36% / 0% quintile dispersion — §5.2; Table 3</li><li>−25% manager-escalation — §7.1</li><li>−40% new-hire attrition — §7.2</li><li>35% AI suggestion adherence — §6.5</li><li>12% worker-hour savings — Conclusion §8</li></ul></div>
+              </div>
+            </div>
+            <div class="page-counter">18 / 19</div>
+</div>
+<div class="slide dark-slide closing" data-slide="19">
+
+            <div class="closing-circle"></div>
+            <div class="closing-circle c2"></div>
+            <div class="slide-inner">
+              <div class="closing-accent"></div>
+              <h1>Thank You</h1>
+              <p class="cl-sub">AI Daily Reads — Curated by aidigest.club</p>
+              <p class="cl-url">https://arxiv.org/abs/2304.11771</p>
+              <p class="cl-footer">Slides generated from primary source · For executive briefing use</p>
+            </div>
+            <div class="page-counter">19 / 19</div>
+</div>
+<script>
+(function(){
+  const dots = document.querySelectorAll('.nav-dot');
+  const slides = document.querySelectorAll('.slide');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        const idx = parseInt(e.target.dataset.slide) - 1;
+        dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => observer.observe(s));
+
+  // Keyboard nav
+  let currentSlide = 0;
+  document.addEventListener('keydown', e => {
+    if(e.key === 'ArrowDown' || e.key === 'j' || e.key === 'PageDown') {
+      e.preventDefault();
+      currentSlide = Math.min(slides.length - 1, currentSlide + 1);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    } else if(e.key === 'ArrowUp' || e.key === 'k' || e.key === 'PageUp') {
+      e.preventDefault();
+      currentSlide = Math.max(0, currentSlide - 1);
+      slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Update currentSlide on scroll
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) currentSlide = parseInt(e.target.dataset.slide) - 1;
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => scrollObserver.observe(s));
+})();
+</script>
+</body></html>

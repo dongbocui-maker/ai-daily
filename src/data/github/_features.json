@@ -1775,5 +1775,102 @@
     ],
     "sourceHash": "7edf2f21",
     "ts": 1778310675430
+  },
+  "bytedance/UI-TARS-desktop": {
+    "features": [
+      "提供 Agent TARS 多模态 AI Agent stack，集成 CLI 与 Web UI",
+      "通过先进多模态 LLM 实现 GUI Agent 与视觉能力",
+      "无缝集成各类 MCP 工具，贴近人类任务完成工作流",
+      "UI-TARS Desktop 提供基于 UI-TARS 模型的原生 GUI Agent 桌面应用",
+      "支持本地与远程的 computer 及 browser operator"
+    ],
+    "sourceHash": "-3e779f75",
+    "ts": 1778398081077
+  },
+  "rohitg00/agentmemory": {
+    "features": [
+      "为 Claude Code、Cursor、Gemini CLI 等 MCP 客户端提供持久化记忆",
+      "基于 iii engine 构建，提供 51 个 MCP 工具与 12 个自动 hooks",
+      "支持混合检索，实现 95.2% R@5 召回率与 92% token 节省",
+      "内置置信度评分、生命周期管理与知识图谱",
+      "零外部数据库依赖，开箱即用"
+    ],
+    "sourceHash": "-c0b1fa8",
+    "ts": 1778398084487
+  },
+  "datawhalechina/easy-vibe": {
+    "features": [
+      "面向零基础用户的 Vibe Coding 入门教程，用自然语言构建应用",
+      "提供交互式在线教程与学习地图，配套 Web 阅读站点",
+      "集成 OpenClaw 实战项目，引导从对话到落地开发",
+      "支持多语言文档，覆盖中英日韩法西等版本"
+    ],
+    "sourceHash": "-31282e6b",
+    "ts": 1778398088647
+  },
+  "rowboatlabs/rowboat": {
+    "features": [
+      "连接邮件和会议记录，构建长期知识图谱辅助工作",
+      "基于知识图谱上下文生成 PDF 演示文稿等文档",
+      "自动整理会议简报，提取过往决策与未决问题",
+      "支持以 Markdown 形式可视化、编辑和更新知识图谱",
+      "通过语音备忘录自动捕获并更新图谱中的关键信息"
+    ],
+    "sourceHash": "61a09448",
+    "ts": 1778398101851
+  },
+  "ChromeDevTools/chrome-devtools-mcp": {
+    "features": [
+      "作为 MCP server 让 AI coding agent 控制和检查 Chrome 浏览器",
+      "基于 Chrome DevTools 录制 trace 并提取可执行的性能分析洞察",
+      "支持网络请求分析、截图、console 消息检查（含 source map 堆栈）",
+      "通过 Puppeteer 自动化 Chrome 操作并自动等待结果",
+      "提供 CLI 工具，可在不使用 MCP 的场景下独立使用"
+    ],
+    "sourceHash": "-7266689",
+    "ts": 1778398105676
+  },
+  "masterking32/MasterDnsVPN": {
+    "features": [
+      "通过 DNS 查询/响应承载 TCP 流量的 DNS 隧道 VPN",
+      "支持多 resolver 与数据包复制以增强抗丢包与抗审查能力",
+      "自定义传输协议配合 ARQ，传输头开销低至 5–7 字节",
+      "支持 AES、ChaCha20、XOR 多种加密方式可选",
+      "内置 8 种负载均衡模式与基于延迟/丢包的自适应路由"
+    ],
+    "sourceHash": "-4b8d396a",
+    "ts": 1778398110179
+  },
+  "playcanvas/supersplat": {
+    "features": [
+      "浏览器中检查、编辑、优化和发布 3D Gaussian Splats",
+      "基于 web 技术构建，无需下载安装即可使用",
+      "开源免费的 3D Gaussian Splat 编辑器",
+      "支持多语言本地化，可扩展添加新语言"
+    ],
+    "sourceHash": "6e009148",
+    "ts": 1778398113819
+  },
+  "Lordog/dive-into-llms": {
+    "features": [
+      "提供大模型微调与部署的入门实践教程及示例脚本",
+      "涵盖提示学习、思维链与大模型API调用推理实战",
+      "包含知识编辑方法与工具的实操指南",
+      "提供数学推理蒸馏迷你R1等前沿主题教程",
+      "新增GUI Agent、大模型对齐、隐写术等专题内容"
+    ],
+    "sourceHash": "-247b3749",
+    "ts": 1778398117207
+  },
+  "oracle-devrel/oracle-ai-developer-hub": {
+    "features": [
+      "提供基于 Oracle AI Database 与 OCI 服务的 AI 应用、agent 参考实现",
+      "集成 agentic RAG，支持 PDF、Web、Repo 处理与多 agent CoT",
+      "展示 Oracle 26ai JSON Duality Views、Select AI 等数据库 AI 特性",
+      "提供 OCI Generative AI 全栈应用，含 Kubernetes 与 Terraform 部署",
+      "包含 Jupyter notebooks，涵盖 AI/ML 开发与 OCI AI 服务集成教程"
+    ],
+    "sourceHash": "655107e5",
+    "ts": 1778398121937
   }
 }

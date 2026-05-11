@@ -9,6 +9,11 @@ import json
 import sys
 from pathlib import Path
 
+# Inject skills/brand-guidelines/python into sys.path so anthropic_brand resolves.
+_SKILL_PY = Path.home() / ".openclaw" / "workspace" / "skills" / "brand-guidelines" / "python"
+if str(_SKILL_PY) not in sys.path:
+    sys.path.insert(0, str(_SKILL_PY))
+
 from pptx import Presentation
 
 from anthropic_brand import style as S

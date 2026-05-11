@@ -9,13 +9,25 @@ from .drawing import add_rect, add_textbox, add_paragraphs, add_card
 from .chrome import add_header, add_footer
 
 
-def _fit_size(text, *, base=36, max_chars=7, min_size=18, step=4):
-    """Return a pt size that shrinks when text exceeds max_chars."""
+def _fit_size(text, *, base=36, max_chars=7, min_size=14, step=4):
+    """Return a pt size that shrinks when text exceeds max_chars.
+
+    Aggressive shrinking so multi-word values like 'Open-ended survey'
+    actually fit in a ~2.5in wide stat card.
+    """
     if not text:
         return base
-    overflow = max(0, len(text) - max_chars)
-    size = base - (overflow // 2) * step
-    return max(min_size, size)
+    L = len(text)
+    if L <= max_chars:
+        return base
+    # tiered shrinking
+    if L <= 10:
+        return max(min_size, base - step)            # 32pt
+    if L <= 14:
+        return max(min_size, base - step * 3)        # 24pt
+    if L <= 18:
+        return max(min_size, base - step * 5)        # 16pt
+    return min_size                                    # very long → 14pt
 
 
 # ---------- Cover ----------
@@ -31,7 +43,7 @@ def build_cover(slide, sd, page, total):
 
     if source_line:
         add_textbox(
-            slide, Inches(0.5), Inches(2.05), Inches(12), Inches(0.28),
+            slide, Inches(0.5), Inches(2.25), Inches(12), Inches(0.28),
             source_line,
             font_size=Pt(10), italic=True, color=S.MUTED, margin=Inches(0),
         )
@@ -44,8 +56,8 @@ def build_cover(slide, sd, page, total):
     total_w = Inches(12.333)
     gap = Inches(0.18)
     card_w = (total_w - gap * (n - 1)) / n
-    card_h = Inches(2.6)
-    top = Inches(3.6)
+    card_h = Inches(2.85)
+    top = Inches(3.55)
 
     for i, h in enumerate(highlights):
         x = Inches(0.5) + (card_w + gap) * i
@@ -54,21 +66,26 @@ def build_cover(slide, sd, page, total):
         value = h.get("value", "")
         label = h.get("label", "")
         # auto-shrink long values so they fit on one line
-        v_size = _fit_size(value, base=36, max_chars=7, min_size=20)
+        v_size = _fit_size(value, base=36, max_chars=7, min_size=14)
+        # use bigger value box so 2-line values like "Open-ended\nsurvey" fit
         add_textbox(
-            slide, x, top + Inches(0.35), card_w, Inches(0.95),
+            slide, x + Inches(0.10), top + Inches(0.35),
+            card_w - Inches(0.20), Inches(1.15),
             value,
             font_size=Pt(v_size), bold=True, color=S.PURPLE_DEEP,
-            align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margin=Inches(0.05),
+            align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE,
+            line_spacing=1.10, margin=Inches(0.05),
         )
         rule_w = Inches(0.6)
-        add_rect(slide, x + (card_w - rule_w) / 2, top + Inches(1.55),
+        add_rect(slide, x + (card_w - rule_w) / 2, top + Inches(1.70),
                  rule_w, Inches(0.025), fill=S.PURPLE, line=S.PURPLE)
         add_textbox(
-            slide, x + Inches(0.15), top + Inches(1.75), card_w - Inches(0.3), Inches(0.75),
+            slide, x + Inches(0.15), top + Inches(1.85),
+            card_w - Inches(0.3), Inches(0.90),
             label,
             font_size=Pt(11), italic=True, color=S.INK_SOFT,
-            align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.TOP, margin=Inches(0.02),
+            align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.TOP,
+            line_spacing=1.20, margin=Inches(0.02),
         )
 
 
@@ -134,16 +151,19 @@ def build_context(slide, sd, page, total):
                 add_rect(slide, cx, sb_y + Inches(0.1), Inches(0.005),
                          sb_h - Inches(0.2),
                          fill=S.BORDER, line=S.BORDER)
+            v = st.get("value", "")
+            v_size = _fit_size(v, base=18, max_chars=10, min_size=12)
             add_textbox(
-                slide, cx, sb_y + Inches(0.10), cell_w, Inches(0.4),
-                st.get("value", ""),
-                font_size=Pt(18), bold=True, color=S.PURPLE_DEEP,
+                slide, cx, sb_y + Inches(0.08), cell_w, Inches(0.40),
+                v,
+                font_size=Pt(v_size), bold=True, color=S.PURPLE_DEEP,
                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margin=Inches(0),
             )
             add_textbox(
-                slide, cx, sb_y + Inches(0.52), cell_w, Inches(0.32),
+                slide, cx + Inches(0.10), sb_y + Inches(0.50),
+                cell_w - Inches(0.20), Inches(0.34),
                 st.get("label", ""),
-                font_size=Pt(9.5), italic=True, color=S.INK_SOFT,
+                font_size=Pt(9), italic=True, color=S.INK_SOFT,
                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.TOP, margin=Inches(0),
             )
 

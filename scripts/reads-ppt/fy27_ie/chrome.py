@@ -34,13 +34,13 @@ def add_header(slide, eyebrow, title, subtitle=None):
         title,
         font_size=S.SZ_TITLE, bold=True, color=S.INK, margin=Inches(0),
     )
-    # subtitle
+    # subtitle (allow up to 2 wrap lines)
     if subtitle:
         add_textbox(
-            slide, Inches(0.5), Inches(1.58), Inches(12.3), Inches(0.32),
+            slide, Inches(0.5), Inches(1.58), Inches(12.3), Inches(0.55),
             subtitle,
             font_size=S.SZ_SUBTITLE, italic=True, color=S.INK_SOFT,
-            margin=Inches(0),
+            line_spacing=1.20, margin=Inches(0),
         )
 
 

@@ -6,13 +6,19 @@ from .drawing import add_rect, add_textbox, add_paragraphs, add_card
 from .chrome import add_header, add_footer
 
 
-def _fit_size(text, *, base=36, max_chars=7, min_size=18, step=4):
-    """Return a pt size that shrinks when text exceeds max_chars."""
+def _fit_size(text, *, base=36, max_chars=7, min_size=14, step=4):
     if not text:
         return base
-    overflow = max(0, len(text) - max_chars)
-    size = base - (overflow // 2) * step
-    return max(min_size, size)
+    L = len(text)
+    if L <= max_chars:
+        return base
+    if L <= 10:
+        return max(min_size, base - step)
+    if L <= 14:
+        return max(min_size, base - step * 3)
+    if L <= 18:
+        return max(min_size, base - step * 5)
+    return min_size
 
 
 # ---------- Stat Grid ----------

@@ -262,7 +262,15 @@ def build_stat_grid(slide, sd, page, total):
         # vertical accent rule on left
         add_rect(slide, x, top, Pt(2), col_h, fill=accent, line=accent)
         v = st.get("value", "")
-        v_size = _fit_size(v, base=48, max_chars=6, min_size=22, step=4)
+        # Aggressive fit for 4-col stat grid (col_w ~2.67" content):
+        # short ≤5 chars → 48pt; 6 → 42; 7 → 36; 8 → 30; ≥9 → 26pt
+        L = len(v)
+        if   L <= 5: v_size = 48
+        elif L == 6: v_size = 42
+        elif L == 7: v_size = 36
+        elif L == 8: v_size = 30
+        elif L == 9: v_size = 26
+        else:        v_size = 22
         # value
         add_textbox(
             slide, x + Inches(0.18), top, col_w - Inches(0.18), Inches(0.95),

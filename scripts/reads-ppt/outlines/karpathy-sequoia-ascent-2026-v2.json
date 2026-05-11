@@ -1,0 +1,351 @@
+{
+  "slug": "karpathy-sequoia-ascent-2026",
+  "brand": "anthropic",
+  "deck_meta": {
+    "title": "Software 3.0 and the Rise of Agentic Engineering",
+    "subtitle": "Karpathy's framework for the AI-native software era",
+    "kicker": "Executive Brief · AI Daily Reads",
+    "authors": "Andrej Karpathy",
+    "org": "Sequoia Ascent 2026 · Fireside Chat",
+    "date": "Apr 2026",
+    "url": "https://karpathy.bearblog.dev/sequoia-ascent-2026/",
+    "audience": "Founders, engineering leaders, AI strategists"
+  },
+  "sections": [
+    {"act": 1, "label": "Findings & Trends", "color": "orange"},
+    {"act": 2, "label": "Core Views",        "color": "blue"},
+    {"act": 3, "label": "Thematic Analysis", "color": "green"},
+    {"act": 4, "label": "Insights",          "color": "orange"},
+    {"act": 5, "label": "Actions",           "color": "blue"}
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "AI DAILY READS · EXECUTIVE BRIEF",
+      "title": "Software 3.0 and the\nRise of Agentic\nEngineering",
+      "subtitle": "Karpathy at Sequoia Ascent 2026 — the context window is the new program, and the programmer is the orchestrator.",
+      "byline": "Andrej Karpathy  ·  Sequoia Ascent 2026  ·  April 2026",
+      "headline_stats": [
+        {"value": "3.0",   "label": "Software era"},
+        {"value": "Dec 2025", "label": "Agentic inflection point"},
+        {"value": "10x+",  "label": "Agentic engineer leverage"}
+      ]
+    },
+
+    {
+      "type": "context",
+      "act_color": "orange",
+      "kicker": "CONTEXT",
+      "title": "From writing code —\nto orchestrating agents.",
+      "lede": "Karpathy frames a step change in late 2025: LLM-driven agents stopped being autocomplete and started being a programmable layer. The unit of programming shifted from typing lines to delegating macro actions.",
+      "from_block": {
+        "label": "Old default workflow",
+        "points": [
+          "Humans write explicit code (Software 1.0)",
+          "Humans curate datasets, train weights (Software 2.0)",
+          "Agents useful but require frequent correction",
+          "Programmer = primary author of every line"
+        ]
+      },
+      "to_block": {
+        "label": "Software 3.0 default",
+        "points": [
+          "Humans program LLMs through context, tools, examples",
+          "Context window becomes the main lever",
+          "Programmer delegates: implement, refactor, research, deploy",
+          "Programmer = orchestrator of fallible agents"
+        ]
+      }
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "01",
+      "color": "orange",
+      "section_label": "Findings & Trends",
+      "section_title": "Three shifts that define the new era.",
+      "preview": [
+        "December 2025 marked an agentic step change",
+        "Software 3.0: the context window is the new program",
+        "Some apps stop existing as apps"
+      ]
+    },
+
+    {
+      "type": "stat_grid",
+      "kicker": "ACT 01 · KEY FINDINGS",
+      "title": "The headline shifts.",
+      "subtitle": "Software is being refactored around agents and verifiable feedback loops.",
+      "stats": [
+        {
+          "value": "3.0",
+          "label": "Software paradigm",
+          "note": "1.0 explicit code → 2.0 learned weights → 3.0 prompts, context, tools, memory. The interpreter is the LLM.",
+          "color": "orange"
+        },
+        {
+          "value": "Dec 2025",
+          "label": "Agentic inflection",
+          "note": "Generated chunks got larger, more coherent, more reliable. The unit of programming shifted from lines to macro actions.",
+          "color": "blue"
+        },
+        {
+          "value": "4×",
+          "label": "Capability levers",
+          "note": "Capability spike ≈ verifiability × training attention × data coverage × economic value. Frontier models spike where labs trained hardest.",
+          "color": "green"
+        },
+        {
+          "value": "10x+",
+          "label": "Agentic engineer leverage",
+          "note": "Mastery of agentic workflows may extend the old \u201C10x engineer\u201D gap by an order of magnitude — orchestration is the new ceiling skill.",
+          "color": "orange"
+        }
+      ],
+      "footer_note": "Source: §1 Agentic Inflection · §2 Software 3.0 · §6 Jagged Intelligence · §8 Hiring"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "02",
+      "color": "blue",
+      "section_label": "Core Views",
+      "section_title": "Karpathy's framework for what changed.",
+      "preview": [
+        "Traditional software specifies; LLMs verify",
+        "Capability is jagged, not smooth",
+        "Models are ghosts, not animals"
+      ]
+    },
+
+    {
+      "type": "thesis_quote",
+      "kicker": "ACT 02 · THESIS",
+      "title": "What you can specify\nvs. what you can verify.",
+      "subtitle": "The dividing line between classical software and the LLM-RL frontier.",
+      "primary_quote": "Traditional software automates what you can specify. LLMs and reinforcement learning automate what you can verify.",
+      "primary_source": "Andrej Karpathy · Sequoia Ascent 2026",
+      "secondary_quote": "Capability spike ≈ verifiability × training attention × data coverage × economic value.",
+      "secondary_source": "Karpathy · Jagged Intelligence framework",
+      "implication_label": "Why this matters",
+      "implication": "If your task is resettable, repeatable, and rewardable — models will fly. If not, they will fail in surprisingly basic ways. The founder question becomes: are you on the model's rails, or do you need your own evals, fine-tuning, or RL environment?"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "03",
+      "color": "green",
+      "section_label": "Thematic Analysis",
+      "section_title": "Where the new opportunity actually sits.",
+      "preview": [
+        "Some apps disappear into direct model transformations",
+        "The new user is the human's agent",
+        "Verifiable environments are the new wedge"
+      ]
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 · THEME A",
+      "title": "Speeding up the old app\nvs. dissolving it.",
+      "subtitle": "AI is not just faster scaffolding — for some workflows, the scaffolding disappears entirely.",
+      "left": {
+        "tag": "FASTER",
+        "value": "Old apps, accelerated",
+        "header": "AI as productivity boost",
+        "points": [
+          "OCR pipelines, image gen, deployment glue still in place",
+          "AI makes each step faster but the stack is preserved",
+          "Useful, but not the deepest shift",
+          "Most current \u201CAI features\u201D live here"
+        ],
+        "color": "orange"
+      },
+      "right": {
+        "tag": "DISSOLVED",
+        "value": "Apps that stop existing",
+        "header": "Direct media-to-media transforms",
+        "points": [
+          "MenuGen example: photo \u2192 multimodal model \u2192 rendered menu",
+          "Frontend, OCR, image API, UI \u2014 most of the app disappears",
+          "Old stack was scaffolding for a transform the model now does",
+          "\u201CSome apps should stop existing as apps\u201D"
+        ],
+        "color": "blue"
+      },
+      "callout": "Do not only ask \u201Cwhat workflow can AI speed up?\u201D Also ask \u201Cwhat information transformation was impossible before but is now natural?\u201D"
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 · THEME B",
+      "title": "Build for the human —\nor for the human's agent.",
+      "subtitle": "Most products are still designed for humans clicking screens. The user is increasingly an agent acting on behalf of a human.",
+      "left": {
+        "tag": "HUMAN-FIRST",
+        "value": "Click-and-read UX",
+        "header": "Default product surface",
+        "points": [
+          "GUI flows, dashboards, settings panels",
+          "Docs assume manual navigation between pages",
+          "Onboarding is a tutorial, not an instruction set",
+          "Auth and deploy require visual confirmation"
+        ],
+        "color": "green"
+      },
+      "right": {
+        "tag": "AGENT-NATIVE",
+        "value": "Sensors and actuators",
+        "header": "Surfaces an agent can act on",
+        "points": [
+          "Markdown docs, CLIs, APIs, MCP servers",
+          "Structured logs, machine-readable schemas",
+          "Copy-pasteable agent instructions",
+          "Safe permissioning + auditable actions + headless setup"
+        ],
+        "color": "orange"
+      },
+      "callout": "A sensor turns world state into digital information; an actuator lets an agent change something. The future stack is agents using sensors and actuators on behalf of organizations."
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "04",
+      "color": "orange",
+      "section_label": "Insights",
+      "section_title": "What founders and engineers\nshould internalize.",
+      "preview": [
+        "Vibe coding raises the floor; agentic engineering raises the ceiling",
+        "LLMs are ghosts, not animals — jagged, alien tools",
+        "Understanding cannot be outsourced, even when thinking can"
+      ]
+    },
+
+    {
+      "type": "insight_pair",
+      "kicker": "ACT 04 · INSIGHTS",
+      "title": "Two truths about the new\nprofessional skill.",
+      "subtitle": "Vibe coding democratizes creation. Agentic engineering is the discipline that keeps it shippable.",
+      "cards": [
+        {
+          "tag": "INSIGHT 01",
+          "header": "Floor vs. ceiling",
+          "body": "Vibe coding lets almost anyone build software by description. Agentic engineering is the professional craft of coordinating fallible agents while preserving correctness, security, taste, and maintainability.",
+          "evidence_label": "Signal",
+          "evidence": "The MenuGen Stripe-vs-Google email bug: plausible code, bad system design. A human still needs persistent-user-ID judgment.",
+          "implication_label": "Implication",
+          "implication": "Hiring should test agentic skill directly: decompose work for agents, write specs, review diffs, harden against adversarial agents.",
+          "color": "orange"
+        },
+        {
+          "tag": "INSIGHT 02",
+          "header": "Ghosts, not animals",
+          "body": "LLMs have no biological drives, embodied survival, or intrinsic motivation. They are statistical simulations of human artifacts \u2014 shaped by pretraining, RL, product feedback, and economic incentives.",
+          "evidence_label": "Framing",
+          "evidence": "Anthropomorphic expectations mislead us. These systems are brilliant in one moment and bizarrely dumb the next \u2014 jagged, alien tools.",
+          "implication_label": "Implication",
+          "implication": "The right posture is empirical familiarity: learn where they work, where they fail, what they were trained for, and build guardrails accordingly.",
+          "color": "blue"
+        }
+      ],
+      "footer_note": "Source: §7 Vibe vs Agentic · §8 Hiring · §11 Ghosts not Animals"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "05",
+      "color": "blue",
+      "section_label": "Actions",
+      "section_title": "Five concrete moves\nfor founders and leaders.",
+      "preview": [
+        "Find valuable verifiable environments",
+        "Make products agent-native end to end",
+        "Preserve human understanding as the scarce asset"
+      ]
+    },
+
+    {
+      "type": "action_list",
+      "kicker": "ACT 05 · PLAYBOOK",
+      "title": "Five moves for founders and engineering leaders.",
+      "subtitle": "Reorganize the work around agents, sensors, actuators, and verifiable loops.",
+      "actions": [
+        {
+          "num": "01",
+          "header": "Find verifiable wedges",
+          "what": "Hunt domains that are valuable, verifiable, and undertrained by frontier labs. Build an environment where agents can try, get reward, and improve.",
+          "value": "Coding and math are crowded · economically important verticals with latent verifiable structure are the real wedge",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "Audit what should disappear",
+          "what": "For each existing app or workflow, ask whether a multimodal model could perform the core transformation directly \u2014 dissolving the scaffolding.",
+          "value": "Some apps should stop existing as apps · don't build faster horses",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "Ship agent-native surfaces",
+          "what": "Treat the human's agent as the primary user. Expose CLIs, APIs, MCP servers, markdown docs, structured logs, machine-readable schemas, safe permissions.",
+          "value": "Auditable actions and headless setup beat click-through tutorials · adoption follows the agent",
+          "color": "green"
+        },
+        {
+          "num": "04",
+          "header": "Hire for agentic engineering",
+          "what": "Replace traditional coding puzzles with: build a substantial project with agents, deploy it, secure it, then have adversarial agents try to break it.",
+          "value": "Tests real ceiling skills · decomposition, specs, review, security, leverage \u2014 not memorization",
+          "color": "orange"
+        },
+        {
+          "num": "05",
+          "header": "Protect human understanding",
+          "what": "Invest in distilled, inspectable artifacts (microGPT-style) and LLM-maintained knowledge bases that turn information into understanding \u2014 not just answers.",
+          "value": "Thinking can be outsourced; understanding cannot · keep judgment in the loop",
+          "color": "blue"
+        }
+      ]
+    },
+
+    {
+      "type": "synthesis",
+      "kicker": "SYNTHESIS",
+      "title": "AI is becoming a new operating\nlayer for digital work.",
+      "subtitle": "The scarce thing has shifted — and the work itself is being reorganized.",
+      "pillars": [
+        {
+          "num": "01",
+          "header": "What changed",
+          "body": "Software 3.0 made the context window the main lever. December 2025 was a step change: agents stopped being autocomplete and started being a programmable layer for digital work.",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "What it means",
+          "body": "Less scarce: code generation, API recall, first drafts, repetitive setup. More scarce: understanding, taste, eval design, security, system boundaries, and knowing when the model is off the rails.",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "What to watch",
+          "body": "Jagged capability, agent-native infrastructure, verifiable environments, and the gap between humans who orchestrate agents skillfully and those who do not.",
+          "color": "green"
+        }
+      ],
+      "closing_line": "Define the context, define the tools, define the feedback loop, define the guardrails — let agents work, and preserve human understanding."
+    },
+
+    {
+      "type": "closing",
+      "kicker": "READ THE FULL TRANSCRIPT",
+      "title": "Thank you.",
+      "subtitle": "Curated executive briefs · aidigest.club / reads",
+      "primary_link": {
+        "label": "Karpathy · Sequoia Ascent 2026",
+        "url": "https://karpathy.bearblog.dev/sequoia-ascent-2026/"
+      },
+      "authors_line": "Karpathy, A. (2026). Sequoia Ascent 2026: Software 3.0, Agentic Engineering, and Jagged Intelligence. Fireside chat with Stephanie Zhan."
+    }
+  ]
+}

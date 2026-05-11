@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DemoCard, { type DemoItem } from '../../components/DemoCard.astro';
+import demosData from '../../data/demos.json';
+
+// 按 addedDate 倒序（最新加的在最上）
+const items: DemoItem[] = [...demosData.items].sort((a, b) =>
+  b.addedDate.localeCompare(a.addedDate)
+);
+---
+<Base
+  title="Demo 精选"
+  description="Jason 手工精选的可亲手玩的 AI / Dashboard / Tools 项目。每个项目都附 Live Demo 直达链接。"
+>
+  <Header />
+  <main class="flex-1">
+    {/* Hero */}
+    <section class="bg-accent-ink text-white py-12 lg:py-16">
+      <div class="container-x">
+        <span class="badge bg-accent-purple text-white mb-4">DEMO</span>
+        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">
+          🎬 Demo 精选
+        </h1>
+        <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
+          手工挑选的「值得亲手玩一下」的项目——AI 应用、行业 Dashboard、Agent 工具、可视化作品。
+          每张卡片点开即跳 Live Demo，源码在 GitHub。
+        </p>
+        {items.length > 0 && (
+          <p class="mt-3 text-sm text-accent-gray-400">共 {items.length} 个项目 · 按添加时间倒序</p>
+        )}
+      </div>
+    </section>
+
+    {/* Cards 一行一个 */}
+    <section class="py-12 lg:py-16">
+      <div class="container-x max-w-5xl">
+        {items.length === 0 ? (
+          <div class="text-center py-16 text-accent-gray-500">
+            <p>暂无 Demo。</p>
+          </div>
+        ) : (
+          <div class="space-y-6 lg:space-y-8">
+            {items.map((item) => <DemoCard item={item} />)}
+          </div>
+        )}
+
+        <p class="mt-12 text-center text-sm text-accent-gray-500">
+          更多 Demo 陆续添加中。
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

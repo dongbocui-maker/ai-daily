@@ -7,6 +7,48 @@ from .chrome import (
     apply_page_background, add_brand_mark, add_kicker, add_footer,
     add_standard_page_frame, add_title, add_subtitle,
 )
+from .builders_a import _group_size_table
+
+
+# --- two_column value sizer ---
+# Column content width ~5.65" — generous, but long phrases like
+# "Slowed-down users" (17 chars) still need shrinking from 36pt.
+_TWO_COL_VALUE_TABLE = [
+    (8,  36),
+    (14, 30),
+    (20, 24),
+    (28, 20),
+    (999, 18),
+]
+
+# --- insight_pair header sizer ---
+# Card content width ~5.85". Default 16pt. Headers like
+# "Early-career squeeze" (20 chars) fit at 16pt; longer needs shrink.
+_INSIGHT_HEADER_TABLE = [
+    (22, 16),
+    (32, 14),
+    (44, 12),
+    (999, 11),
+]
+
+# --- action_list header sizer ---
+# Header column width ~3.5". Default 13pt. Long headers like
+# "Re-design junior pathways" (25 chars) need shrink to avoid wrap-clip.
+_ACTION_HEADER_TABLE = [
+    (20, 13),
+    (28, 12),
+    (36, 11),
+    (999, 10),
+]
+
+# --- synthesis header sizer ---
+# 3-col content width ~3.85". Default 15pt.
+_SYNTHESIS_HEADER_TABLE = [
+    (18, 15),
+    (26, 13),
+    (36, 12),
+    (999, 11),
+]
 
 
 # ---------- Two Column ----------
@@ -25,8 +67,11 @@ def build_two_column(slide, sd, page, total):
     top = Inches(3.90)
     col_h = Inches(2.55)
 
-    _draw_two_col(slide, x_left, top, col_w, col_h, left)
-    _draw_two_col(slide, x_right, top, col_w, col_h, right)
+    # PARALLEL ELEMENT RULE: both columns share the same value font size
+    v_size = _group_size_table([left, right], key="value", table=_TWO_COL_VALUE_TABLE)
+
+    _draw_two_col(slide, x_left, top, col_w, col_h, left, v_size=v_size)
+    _draw_two_col(slide, x_right, top, col_w, col_h, right, v_size=v_size)
 
     # callout strip
     callout = sd.get("callout")
@@ -42,7 +87,7 @@ def build_two_column(slide, sd, page, total):
         )
 
 
-def _draw_two_col(slide, x, y, w, h, col):
+def _draw_two_col(slide, x, y, w, h, col, *, v_size=36):
     color_name = col.get("color", "orange")
     accent = S.ACCENTS.get(color_name, S.ORANGE)
 
@@ -59,8 +104,7 @@ def _draw_two_col(slide, x, y, w, h, col):
         font=S.FONT_HEAD, font_size=Pt(11), bold=True, color=accent,
         char_spacing=S.CSP_KICKER, margin=Inches(0),
     )
-    # value (big)
-    v_size = 36 if len(value) <= 8 else 22
+    # value (large) — size injected from parallel-element sizer
     add_textbox(
         slide, x + Inches(0.20), cur_y + Inches(0.32),
         w - Inches(0.20), Inches(0.70),
@@ -113,12 +157,15 @@ def build_insight_pair(slide, sd, page, total):
     top = Inches(3.95)
     col_h = Inches(2.95)
 
+    # PARALLEL ELEMENT RULE: both cards share the same header font size
+    h_size = _group_size_table(cards, key="header", table=_INSIGHT_HEADER_TABLE)
+
     for i, c in enumerate(cards):
         x = x_left if i == 0 else x_right
-        _draw_insight(slide, x, top, col_w, col_h, c)
+        _draw_insight(slide, x, top, col_w, col_h, c, h_size=h_size)
 
 
-def _draw_insight(slide, x, y, w, h, c):
+def _draw_insight(slide, x, y, w, h, c, *, h_size=16):
     color_name = c.get("color", "orange")
     accent = S.ACCENTS.get(color_name, S.ORANGE)
     pad = Inches(0.05)
@@ -132,11 +179,11 @@ def _draw_insight(slide, x, y, w, h, c):
         font=S.FONT_HEAD, font_size=Pt(10), bold=True, color=accent,
         char_spacing=S.CSP_KICKER, margin=Inches(0),
     )
-    # header
+    # header — size injected from parallel-element sizer
     add_textbox(
         slide, x, y + Inches(0.45), w, Inches(0.55),
         c.get("header", ""),
-        font=S.FONT_HEAD, font_size=Pt(16), bold=True, color=S.DARK,
+        font=S.FONT_HEAD, font_size=Pt(h_size), bold=True, color=S.DARK,
         line_spacing=1.15, margin=Inches(0),
     )
     # body
@@ -196,14 +243,17 @@ def build_action_list(slide, sd, page, total):
     avail = Inches(6.85) - top
     row_h = avail / n
 
+    # PARALLEL ELEMENT RULE: all action headers share the same font size
+    head_size = _group_size_table(actions, key="header", table=_ACTION_HEADER_TABLE)
+
     for i, act in enumerate(actions):
         y = top + row_h * i
         color_name = act.get("color", "orange")
         accent = S.ACCENTS.get(color_name, S.ORANGE)
-        _draw_action_row(slide, y, row_h, act, accent)
+        _draw_action_row(slide, y, row_h, act, accent, head_size=head_size)
 
 
-def _draw_action_row(slide, y, h, act, accent):
+def _draw_action_row(slide, y, h, act, accent, *, head_size=13):
     # number column
     num_x = S.M_LEFT
     num_w = Inches(0.85)
@@ -217,13 +267,13 @@ def _draw_action_row(slide, y, h, act, accent):
     add_rect(slide, num_x + num_w, y + Inches(0.10),
              Pt(1.5), h - Inches(0.20),
              fill=accent, line=accent)
-    # action header column
+    # action header column — size injected from parallel-element sizer
     head_x = num_x + num_w + Inches(0.30)
     head_w = Inches(3.5)
     add_textbox(
         slide, head_x, y, head_w, h,
         act.get("header", ""),
-        font=S.FONT_HEAD, font_size=Pt(13), bold=True, color=S.DARK,
+        font=S.FONT_HEAD, font_size=Pt(head_size), bold=True, color=S.DARK,
         anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.20, margin=Inches(0),
     )
     # what to do column
@@ -266,6 +316,9 @@ def build_synthesis(slide, sd, page, total):
     top = Inches(3.85)
     col_h = Inches(2.65)
 
+    # PARALLEL ELEMENT RULE: all 3 pillar headers share the same font size
+    p_head_size = _group_size_table(pillars, key="header", table=_SYNTHESIS_HEADER_TABLE)
+
     for i, p in enumerate(pillars):
         x = S.M_LEFT + (col_w + gap) * i
         color_name = p.get("color", "orange")
@@ -279,11 +332,11 @@ def build_synthesis(slide, sd, page, total):
             font=S.FONT_HEAD, font_size=Pt(36), bold=True, color=accent,
             margin=Inches(0),
         )
-        # header
+        # header — size injected from parallel-element sizer
         add_textbox(
             slide, x, top + Inches(0.95), col_w, Inches(0.5),
             p.get("header", ""),
-            font=S.FONT_HEAD, font_size=Pt(15), bold=True, color=S.DARK,
+            font=S.FONT_HEAD, font_size=Pt(p_head_size), bold=True, color=S.DARK,
             line_spacing=1.20, margin=Inches(0),
         )
         # body

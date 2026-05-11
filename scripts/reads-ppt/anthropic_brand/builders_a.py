@@ -20,6 +20,42 @@ def _fit_size(text, *, base, max_chars, min_size, step=4):
     return max(min_size, size)
 
 
+def _stat_value_size(text):
+    """Hard table for 4-col stat_grid value (col content ~2.67"). Single line guaranteed."""
+    L = len(text or "")
+    if   L <= 5: return 48
+    elif L == 6: return 42
+    elif L == 7: return 36
+    elif L == 8: return 30
+    elif L == 9: return 26
+    else:        return 22
+
+
+def _group_value_size(items, *, key="value"):
+    """For parallel stat_grid values: pick the smallest size across the group → uniform."""
+    if not items:
+        return 48
+    return min(_stat_value_size(s.get(key, "")) for s in items)
+
+
+def _group_size_table(items, *, key, table):
+    """Generic parallel-element sizer.
+    `table` maps a length-bucket to a size, in DESCENDING bucket order, e.g.
+      [(15, 28), (25, 24), (40, 20), (999, 18)]
+    means: text length <=15 → 28pt, <=25 → 24pt, <=40 → 20pt, else 18pt.
+    Returns the SMALLEST size needed across the group.
+    """
+    if not items:
+        return table[0][1]
+    def one(t):
+        L = len(t or "")
+        for cap, sz in table:
+            if L <= cap:
+                return sz
+        return table[-1][1]
+    return min(one(it.get(key, "")) for it in items)
+
+
 # ---------- Cover ----------
 def build_cover(slide, sd, page, total):
     apply_page_background(slide)
@@ -256,21 +292,16 @@ def build_stat_grid(slide, sd, page, total):
     top = Inches(3.95)
     col_h = Inches(2.90)
 
+    # PARALLEL ELEMENT RULE: all stat values share ONE size
+    # (the smallest needed to keep every value on a single line)
+    v_size = _group_value_size(stats, key="value")
+
     for i, st in enumerate(stats):
         x = S.M_LEFT + (col_w + gap) * i
         accent = S.ACCENTS.get(st.get("color", "orange"), S.ORANGE)
         # vertical accent rule on left
         add_rect(slide, x, top, Pt(2), col_h, fill=accent, line=accent)
         v = st.get("value", "")
-        # Aggressive fit for 4-col stat grid (col_w ~2.67" content):
-        # short ≤5 chars → 48pt; 6 → 42; 7 → 36; 8 → 30; ≥9 → 26pt
-        L = len(v)
-        if   L <= 5: v_size = 48
-        elif L == 6: v_size = 42
-        elif L == 7: v_size = 36
-        elif L == 8: v_size = 30
-        elif L == 9: v_size = 26
-        else:        v_size = 22
         # value
         add_textbox(
             slide, x + Inches(0.18), top, col_w - Inches(0.18), Inches(0.95),

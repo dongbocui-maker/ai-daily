@@ -1,0 +1,352 @@
+{
+  "slug": "stanford-ai-index-2026",
+  "brand": "anthropic",
+  "deck_meta": {
+    "title": "The 2026 AI Index",
+    "subtitle": "AI is scaling — the systems around it are not",
+    "kicker": "Executive Brief · AI Daily Reads",
+    "authors": "Yolanda Gil · Raymond Perrault et al.",
+    "org": "Stanford HAI · AI Index Report 2026 (9th ed.)",
+    "date": "April 2026",
+    "url": "https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf",
+    "audience": "Enterprise leaders, AI strategists, policy-makers"
+  },
+  "sections": [
+    {"act": 1, "label": "Findings & Trends", "color": "orange"},
+    {"act": 2, "label": "Core Views",        "color": "blue"},
+    {"act": 3, "label": "Thematic Analysis", "color": "green"},
+    {"act": 4, "label": "Insights",          "color": "orange"},
+    {"act": 5, "label": "Actions",           "color": "blue"}
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "AI DAILY READS · EXECUTIVE BRIEF",
+      "title": "The 2026 AI Index\nReport",
+      "subtitle": "Capability has not plateaued · the U.S.-China gap has closed · adoption is faster than the PC era — but governance, education, and work are not keeping up.",
+      "byline": "Stanford HAI  ·  April 2026  ·  9th annual edition",
+      "headline_stats": [
+        {"value": "2.7%",  "label": "U.S.-China model gap"},
+        {"value": "88%",   "label": "Org. AI adoption rate"},
+        {"value": "\u221289%",   "label": "U.S. talent net inflow"}
+      ]
+    },
+
+    {
+      "type": "context",
+      "act_color": "orange",
+      "kicker": "CONTEXT",
+      "title": "From \u201Cwill AI work?\u201D\nto \u201Ccan systems keep up?\u201D",
+      "lede": "The 9th edition of the AI Index makes the underlying question visible. AI capability is accelerating; the U.S.-China model gap has effectively closed; adoption is outpacing every prior platform. The bottleneck is no longer the technology \u2014 it is the policy, workforce, and evaluation systems around it.",
+      "from_block": {
+        "label": "Old narrative",
+        "points": [
+          "Capability gains will slow as we approach human baselines",
+          "U.S. labs hold a comfortable lead over China",
+          "Enterprise adoption will follow a slow technology curve",
+          "Talent and capital will continue to concentrate in the U.S."
+        ]
+      },
+      "to_block": {
+        "label": "What 2026 actually shows",
+        "points": [
+          "Capability is still accelerating \u2014 SWE-bench 60% \u2192 ~100% in a year",
+          "U.S.-China flagship gap collapsed to 2.7%",
+          "53% population reach in 3 years \u2014 faster than the PC and the internet",
+          "U.S. AI researcher net inflow fell 89% since 2017"
+        ]
+      }
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "01",
+      "color": "orange",
+      "section_label": "Findings & Trends",
+      "section_title": "Four headline numbers from\nthe 2026 edition.",
+      "preview": [
+        "Capability has not plateaued \u2014 SWE-bench 60% \u2192 ~100%",
+        "U.S.-China flagship model gap shrunk to 2.7%",
+        "Generative AI reached 53% of the population in 3 years",
+        "U.S. AI talent net inflow collapsed 89%"
+      ]
+    },
+
+    {
+      "type": "stat_grid",
+      "kicker": "ACT 01 \u00b7 KEY FINDINGS",
+      "title": "The headline numbers.",
+      "subtitle": "Four data points that reframe the strategic conversation for 2026.",
+      "stats": [
+        {
+          "value": "~100%",
+          "label": "SWE-bench Verified",
+          "note": "AI moved from 60% of human baseline to near-100% on the most serious coding benchmark in a single year. Capability is still accelerating.",
+          "color": "orange"
+        },
+        {
+          "value": "2.7%",
+          "label": "U.S.-China gap",
+          "note": "DeepSeek-R1 briefly matched the U.S. frontier in Feb 2025. By Mar 2026 the flagship Anthropic model leads by just 2.7% \u2014 effectively closed.",
+          "color": "blue"
+        },
+        {
+          "value": "53%",
+          "label": "3-year reach",
+          "note": "Generative AI reached 53% of the population in 3 years \u2014 faster than the PC or the internet. Singapore 61%, UAE 54%, U.S. rank 24 (28.3%).",
+          "color": "green"
+        },
+        {
+          "value": "\u221289%",
+          "label": "U.S. AI talent inflow",
+          "note": "AI researchers moving to the U.S. fell 89% since 2017 \u2014 with 80% of that drop in the last year alone. The talent reshuffle is real.",
+          "color": "orange"
+        }
+      ],
+      "footer_note": "Source: AI Index 2026 \u00b7 Technical Performance \u00b7 R&D \u00b7 Public Opinion \u00b7 Talent chapters"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "02",
+      "color": "blue",
+      "section_label": "Core Views",
+      "section_title": "Stanford HAI's central message.",
+      "preview": [
+        "AI is scaling \u2014 the systems around it are not",
+        "Model choice is no longer the decisive variable",
+        "Capability is jagged \u2014 superhuman in some tasks, sub-human in others"
+      ]
+    },
+
+    {
+      "type": "thesis_quote",
+      "kicker": "ACT 02 \u00b7 THESIS",
+      "title": "AI is scaling. The systems\naround it are not.",
+      "subtitle": "Capability and adoption are running ahead of governance, evaluation, education, and workforce policy.",
+      "primary_quote": "The data does not point in a single direction. It reveals a field that is scaling faster than the systems around it can adapt.",
+      "primary_source": "Stanford HAI \u00b7 AI Index 2026 \u00b7 Overview",
+      "secondary_quote": "AI capability is not plateauing. It is accelerating and reaching more people than ever.",
+      "secondary_source": "AI Index 2026 \u00b7 Technical Performance",
+      "implication_label": "Why this matters",
+      "implication": "The strategic question for enterprises and policy-makers has shifted from \u201Ccan AI do this?\u201D to \u201Ccan our organisation, our regulations, and our workforce absorb this change fast enough?\u201D The bottleneck is no longer the technology."
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "03",
+      "color": "green",
+      "section_label": "Thematic Analysis",
+      "section_title": "Two patterns the data\nmakes unavoidable.",
+      "preview": [
+        "U.S. vs China: leadership is now multi-axis, not single-line",
+        "Productivity gains and entry-level decline are appearing together",
+        "Capability is jagged \u2014 same model, brilliant and broken"
+      ]
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 \u00b7 THEME A",
+      "title": "U.S. and China \u2014 leadership\nis now multi-axis.",
+      "subtitle": "The single-line \u201Cwho is ahead\u201D narrative no longer fits the data. Each country leads on different dimensions.",
+      "left": {
+        "tag": "U.S. LEADS",
+        "value": "Flagship & capital",
+        "header": "Top-tier models, investment, datacenters",
+        "points": [
+          "Top-tier model count and high-impact patents",
+          "$285.9B private AI investment in 2025 (vs $12.4B in China)",
+          "5,427 datacenters \u2014 10\u00d7 any other country",
+          "1,953 new AI companies founded \u2014 10\u00d7 the runner-up"
+        ],
+        "color": "orange"
+      },
+      "right": {
+        "tag": "CHINA LEADS",
+        "value": "Research & robotics",
+        "header": "Papers, patents, industrial robots",
+        "points": [
+          "Leads in paper count, citations, AI patents",
+          "Leads in industrial-robot installations",
+          "DeepSeek-R1 briefly matched the U.S. frontier (Feb 2025)",
+          "23\u00d7 investment gap is misleading \u2014 government funds excluded"
+        ],
+        "color": "blue"
+      },
+      "callout": "Korea leads on per-capita AI patents. The interesting strategic frontier is no longer \u201CU.S. vs China\u201D \u2014 it is which country gets the deployment, governance, and workforce stack right first."
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 \u00b7 THEME B",
+      "title": "Productivity gains and\nentry-level decline \u2014 together.",
+      "subtitle": "AI is delivering measurable productivity gains. It is also hitting the bottom rungs of the career ladder first.",
+      "left": {
+        "tag": "PRODUCTIVITY",
+        "value": "Real and measurable",
+        "header": "Customer service & software gains",
+        "points": [
+          "Customer service productivity up 14\u201326%",
+          "Software development productivity up 14\u201326%",
+          "Enterprise agent deployment still in the single digits",
+          "Adoption rate is fast \u2014 ROI capture remains uneven"
+        ],
+        "color": "green"
+      },
+      "right": {
+        "tag": "DISPLACEMENT",
+        "value": "Entry-level squeeze",
+        "header": "Junior developer roles already declining",
+        "points": [
+          "U.S. developers age 22\u201325: \u221220% employment since 2024",
+          "Senior developer headcount still growing",
+          "AI is eating the junior tasks first \u2014 not the senior ones",
+          "Anthropic 81k & OECD report the same pattern"
+        ],
+        "color": "orange"
+      },
+      "callout": "The combination is the real story. Enterprises capture the gain; the entry-level worker carries the cost. The 5-year risk is a missing middle \u2014 no senior pipeline if junior roles vanish."
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "04",
+      "color": "orange",
+      "section_label": "Insights",
+      "section_title": "Two structural issues hiding\nbehind the headline progress.",
+      "preview": [
+        "Capability is jagged \u2014 superhuman and sub-human in the same model",
+        "Experts and the public live in different worlds \u2014 50pt gap on jobs",
+        "Responsible AI is falling behind capability AI"
+      ]
+    },
+
+    {
+      "type": "insight_pair",
+      "kicker": "ACT 04 \u00b7 INSIGHTS",
+      "title": "Brilliant and broken \u2014 in\nthe same model.",
+      "subtitle": "The two patterns the index makes unavoidable: jagged capability, and a public-expert gap that will shape policy.",
+      "cards": [
+        {
+          "tag": "INSIGHT 01",
+          "header": "The Jagged Frontier",
+          "body": "Capability is not a single ladder. The same flagship model wins gold at the International Mathematical Olympiad \u2014 and reads an analog clock correctly only 50% of the time.",
+          "evidence_label": "Concrete evidence",
+          "evidence": "Gemini Deep Think \u2014 IMO gold medal; analog clock reading 50.1%. AI agents on OSWorld jumped 12% \u2192 ~66%, but still fail one task in three.",
+          "implication_label": "Implication",
+          "implication": "Product teams must build capability maps \u2014 atomic-task tests \u2014 not capability points. \u201CIt felt good in the demo\u201D is the most common failure mode for enterprise AI agents.",
+          "color": "orange"
+        },
+        {
+          "tag": "INSIGHT 02",
+          "header": "The 50-point perception gap",
+          "body": "73% of AI experts expect a positive impact on jobs. Only 23% of the public agrees. A 50-point gap on the most consequential AI question \u2014 between the people building it and the people living with it.",
+          "evidence_label": "Survey signal",
+          "evidence": "AI incidents recorded jumped from 233 (2024) to 362 (2025). Responsible-AI benchmarks remain sparse \u2014 most frontier labs report capability metrics only.",
+          "implication_label": "Implication",
+          "implication": "Public trust is now the rate-limiting step on adoption. Enterprises that treat workforce anxiety as a comms problem will under-deploy. Treat it as design input.",
+          "color": "blue"
+        }
+      ],
+      "footer_note": "Source: Technical Performance \u00b7 Public Opinion \u00b7 Responsible AI chapters"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "05",
+      "color": "blue",
+      "section_label": "Actions",
+      "section_title": "Five concrete moves\nfor enterprise leaders.",
+      "preview": [
+        "Treat model choice as commodity \u2014 invest in deployment instead",
+        "Build capability maps, not capability demos",
+        "Protect the junior pipeline before it collapses"
+      ]
+    },
+
+    {
+      "type": "action_list",
+      "kicker": "ACT 05 \u00b7 PLAYBOOK",
+      "title": "Five moves for enterprise leaders.",
+      "subtitle": "Reorganise around deployment, governance, and workforce \u2014 not model selection.",
+      "actions": [
+        {
+          "num": "01",
+          "header": "Commoditise model choice",
+          "what": "Stop spending strategy cycles on which frontier model to license. A 2.7% gap is not a moat \u2014 deployment, data, and change management are.",
+          "value": "Frees senior bandwidth for variables that actually move the ROI needle",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "Map capabilities atomically",
+          "what": "For each AI use case, decompose the workflow into atomic tasks. Test each against your evals before promising the outcome to the business.",
+          "value": "Counters the Jagged Frontier risk \u00b7 prevents capability-point illusions",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "Protect the junior ladder",
+          "what": "Build AI-augmented apprenticeship paths. Use AI as a tutor for the junior role \u2014 not as a substitute for it. Track entry-level headcount as a KPI.",
+          "value": "Prevents the 5-year missing-middle risk \u00b7 keeps your senior pipeline alive",
+          "color": "green"
+        },
+        {
+          "num": "04",
+          "header": "Operationalise responsible AI",
+          "what": "Adopt a responsible-AI eval stack with the same rigor as capability evals. Track AI-incident rate as an internal KPI alongside latency and accuracy.",
+          "value": "Closes the perception gap with regulators and the workforce \u00b7 reduces incident exposure",
+          "color": "orange"
+        },
+        {
+          "num": "05",
+          "header": "Close the perception gap",
+          "what": "Run workforce-sentiment listening tied to actual exposure data. Communicate AI plans with the 50-point gap in mind \u2014 not the expert view.",
+          "value": "Treats trust as deployment infrastructure \u00b7 turns anxiety into participation",
+          "color": "blue"
+        }
+      ]
+    },
+
+    {
+      "type": "synthesis",
+      "kicker": "SYNTHESIS",
+      "title": "AI is scaling faster than\nthe systems around it.",
+      "subtitle": "The 2026 Index reframes the strategic question for the next five years.",
+      "pillars": [
+        {
+          "num": "01",
+          "header": "What changed",
+          "body": "Capability did not plateau. The U.S.-China gap closed. Adoption outpaced the PC and the internet. Model choice is no longer the decisive strategic variable.",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "What it means",
+          "body": "The bottleneck moved from the model to the systems around it: deployment, evaluation, education, workforce, governance. That is where the next 5 years of value will be captured \u2014 or lost.",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "What to watch",
+          "body": "Jagged capability and the entry-level squeeze. The public-expert perception gap. Government-fund AI investment that does not show up in private-capital data. The talent reshuffle out of the U.S.",
+          "color": "green"
+        }
+      ],
+      "closing_line": "The opportunity is not to pick the right model \u2014 it is to build the deployment, governance, and workforce stack that lets the model land."
+    },
+
+    {
+      "type": "closing",
+      "kicker": "READ THE FULL REPORT",
+      "title": "Thank you.",
+      "subtitle": "Curated executive briefs \u00b7 aidigest.club / reads",
+      "primary_link": {
+        "label": "Stanford HAI \u00b7 AI Index 2026",
+        "url": "https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf"
+      },
+      "authors_line": "Gil, Y., Perrault, R. et al. (2026). The 2026 AI Index Report. Stanford Institute for Human-Centered AI \u00b7 9th annual edition."
+    }
+  ]
+}

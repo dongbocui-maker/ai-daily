@@ -228,6 +228,22 @@ def _draw_insight(slide, x, y, w, h, c, *, h_size=16):
 
 
 # ---------- Action List ----------
+# --- action_list what/value body sizer (shrinks long bodies to fit row_h) ---
+_ACTION_BODY_TABLE = [
+    (90,  11),   # short — default 11pt
+    (120, 10),
+    (160, 9),
+    (999, 8),
+]
+
+_ACTION_VALUE_TABLE = [
+    (60,  10),
+    (85,  9),
+    (120, 8),
+    (999, 7.5),
+]
+
+
 def build_action_list(slide, sd, page, total):
     add_standard_page_frame(slide, sd.get("kicker", ""), page, total)
     add_title(slide, sd.get("title", ""), y=Inches(1.50), size=Pt(30))
@@ -238,22 +254,29 @@ def build_action_list(slide, sd, page, total):
     if n == 0:
         return
 
-    # vertical stack — 5 rows
-    top = Inches(3.85)
-    avail = Inches(6.85) - top
+    # vertical stack — 5 rows; lift top + extend bottom for more breathing room
+    top = Inches(3.65)
+    avail = Inches(7.00) - top   # 3.35" total → 0.67"/row for n=5
     row_h = avail / n
 
     # PARALLEL ELEMENT RULE: all action headers share the same font size
     head_size = _group_size_table(actions, key="header", table=_ACTION_HEADER_TABLE)
+    # PARALLEL ELEMENT RULE: all action `what` and `value` bodies share one size
+    what_size = _group_size_table(actions, key="what",  table=_ACTION_BODY_TABLE)
+    val_size  = _group_size_table(actions, key="value", table=_ACTION_VALUE_TABLE)
 
     for i, act in enumerate(actions):
         y = top + row_h * i
         color_name = act.get("color", "orange")
         accent = S.ACCENTS.get(color_name, S.ORANGE)
-        _draw_action_row(slide, y, row_h, act, accent, head_size=head_size)
+        _draw_action_row(slide, y, row_h, act, accent,
+                         head_size=head_size,
+                         what_size=what_size,
+                         val_size=val_size)
 
 
-def _draw_action_row(slide, y, h, act, accent, *, head_size=13):
+def _draw_action_row(slide, y, h, act, accent, *, head_size=13,
+                     what_size=11, val_size=10):
     # number column
     num_x = S.M_LEFT
     num_w = Inches(0.85)
@@ -276,23 +299,23 @@ def _draw_action_row(slide, y, h, act, accent, *, head_size=13):
         font=S.FONT_HEAD, font_size=Pt(head_size), bold=True, color=S.DARK,
         anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.20, margin=Inches(0),
     )
-    # what to do column
+    # what to do column — size injected from parallel-element sizer
     what_x = head_x + head_w + Inches(0.20)
     what_w = Inches(4.3)
     add_textbox(
         slide, what_x, y, what_w, h,
         act.get("what", ""),
-        font=S.FONT_BODY, font_size=Pt(11), color=S.DARK,
-        anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.32, margin=Inches(0),
+        font=S.FONT_BODY, font_size=Pt(what_size), color=S.DARK,
+        anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.28, margin=Inches(0),
     )
-    # value column
+    # value column — size injected from parallel-element sizer
     val_x = what_x + what_w + Inches(0.20)
     val_w = Inches(2.50)
     add_textbox(
         slide, val_x, y, val_w, h,
         act.get("value", ""),
-        font=S.FONT_BODY, font_size=Pt(10), italic=True, color=accent,
-        anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.30, margin=Inches(0),
+        font=S.FONT_BODY, font_size=Pt(val_size), italic=True, color=accent,
+        anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.28, margin=Inches(0),
     )
     # bottom rule
     add_hrule(slide, S.M_LEFT, y + h - Pt(0.6), S.CONTENT_W,

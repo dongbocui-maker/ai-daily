@@ -32,6 +32,12 @@ export interface ReadArticle {
   quotes?: ReadQuote[];     // 金句精选
   source: 'manual' | 'auto'; // 手工添加 vs cron 自动收集
   audio?: ReadAudio;        // 可选：NotebookLM 生成的双人对谈播客
+  /** 可选：精读概要 PPT（PDF 形式，浏览器可直接预览）
+   *  路径建议：/decks/<slug>.pdf （public 下）
+   */
+  deckPdfUrl?: string;
+  /** 可选：原始 .pptx 文件（供下载/编辑） */
+  deckPptxUrl?: string;
 }
 
 // Vite glob: 静态构建期把所有 JSON 内嵌

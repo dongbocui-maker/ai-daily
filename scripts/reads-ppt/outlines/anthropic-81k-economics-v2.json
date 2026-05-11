@@ -1,0 +1,350 @@
+{
+  "slug": "anthropic-81k-economics",
+  "brand": "anthropic",
+  "deck_meta": {
+    "title": "What 81,000 People Told Us",
+    "subtitle": "Productivity, exposure, and the felt economics of AI",
+    "kicker": "Executive Brief · AI Daily Reads",
+    "authors": "Maxim Massenkoff & Saffron Huang",
+    "org": "Anthropic Research · Economic Index",
+    "date": "2026",
+    "url": "https://www.anthropic.com/research/81k-economics",
+    "audience": "Enterprise leaders, HR & workforce strategists"
+  },
+  "sections": [
+    {"act": 1, "label": "Findings & Trends", "color": "orange"},
+    {"act": 2, "label": "Core Views",        "color": "blue"},
+    {"act": 3, "label": "Thematic Analysis", "color": "green"},
+    {"act": 4, "label": "Insights",          "color": "orange"},
+    {"act": 5, "label": "Actions",           "color": "blue"}
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "AI DAILY READS · EXECUTIVE BRIEF",
+      "title": "What 81,000 People\nTold Us About\nthe Economics of AI",
+      "subtitle": "Productivity, exposure, and the felt economics of AI \u2014 a survey of 81,000 Claude users",
+      "byline": "Maxim Massenkoff & Saffron Huang  \u00b7  Anthropic Research  \u00b7  2026",
+      "headline_stats": [
+        {"value": "81,000",   "label": "Claude users surveyed"},
+        {"value": "5.1 / 7",  "label": "Mean productivity rating"},
+        {"value": "1 in 5",   "label": "Voice displacement concern"}
+      ]
+    },
+
+    {
+      "type": "context",
+      "act_color": "orange",
+      "kicker": "CONTEXT",
+      "title": "From what Claude does \u2014\nto how its users feel.",
+      "lede": "Prior Anthropic research mapped Claude usage onto the U.S. occupation system. This survey is the first qualitative bridge \u2014 connecting observed exposure with what workers actually feel about the displacement risk.",
+      "from_block": {
+        "label": "Before this study",
+        "points": [
+          "Economic Index measured what tasks Claude performs",
+          "Observed exposure quantified % of role's tasks AI touches",
+          "But: no link to worker sentiment or felt threat"
+        ]
+      },
+      "to_block": {
+        "label": "What this study adds",
+        "points": [
+          "81,000 self-selected Claude.ai users surveyed in-product",
+          "Open-ended interview format \u2014 not multiple choice",
+          "LLM classifiers extract occupation, career stage, sentiment",
+          "Direct link from exposure data to perceived job threat"
+        ]
+      }
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "01",
+      "color": "orange",
+      "section_label": "Findings & Trends",
+      "section_title": "Three headline patterns the survey makes visible.",
+      "preview": [
+        "Productivity gains are real and substantial",
+        "Exposure correlates with displacement fear",
+        "Speedup and anxiety form a U-shape"
+      ]
+    },
+
+    {
+      "type": "stat_grid",
+      "kicker": "ACT 01 \u00b7 KEY FINDINGS",
+      "title": "The headline numbers.",
+      "subtitle": "Productivity gains are real \u2014 anxiety scales with exposure.",
+      "stats": [
+        {
+          "value": "5.1 / 7",
+          "label": "Mean productivity rating",
+          "note": "Self-reported on 1\u20137 scale. 5 corresponds to \u201Csubstantially more productive.\u201D 3% reported negative or neutral impacts; 42% gave no clear indication.",
+          "color": "orange"
+        },
+        {
+          "value": "1 in 5",
+          "label": "Voice job-displacement concern",
+          "note": "20% of respondents directly expressed worry about their own role being lost to AI \u2014 with concern concentrated in high-exposure occupations.",
+          "color": "blue"
+        },
+        {
+          "value": "3\u00d7",
+          "label": "Top vs bottom exposure quartile",
+          "note": "People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%. +1.3pt threat per 10pt exposure.",
+          "color": "green"
+        },
+        {
+          "value": "48% / 40%",
+          "label": "Scope gains / Speed gains",
+          "note": "48% of users who mentioned productivity cited scope gains (new abilities). 40% cited speed gains (faster execution of existing work).",
+          "color": "orange"
+        }
+      ],
+      "footer_note": "Source: \u00a7Who benefits from AI?  \u00b7  \u00a7Who worries about displacement?  \u00b7  Figure 1"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "02",
+      "color": "blue",
+      "section_label": "Core Views",
+      "section_title": "What the authors are arguing.",
+      "preview": [
+        "Worker intuitions track the usage data \u2014 anxiety is rational",
+        "Career stage shapes who feels safe",
+        "Benefits do not equal feeling safe"
+      ]
+    },
+
+    {
+      "type": "thesis_quote",
+      "kicker": "ACT 02 \u00b7 THESIS",
+      "title": "Worker anxiety is concentrated\nwhere Claude is most active.",
+      "subtitle": "People's intuitions track the usage data \u2014 not paranoia, not panic.",
+      "primary_quote": "People's intuitions track the usage data: they worry most about AI's effect in the jobs where we observe Claude doing the most work.",
+      "primary_source": "Anthropic Research \u00b7 Discussion",
+      "secondary_quote": "Like anyone who has a white collar job these days, I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.",
+      "secondary_source": "Software engineer  \u00b7  survey respondent",
+      "implication_label": "Why this matters",
+      "implication": "Workers can feel the diffusion of AI in their own occupations long before formal labor statistics show displacement. The fear is rational \u2014 and concentrated exactly where AI use is highest."
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "03",
+      "color": "green",
+      "section_label": "Thematic Analysis",
+      "section_title": "How AI restructures who wins \u2014 and how.",
+      "preview": [
+        "Scope before speed \u2014 access, not just efficiency",
+        "Productivity is bimodal across the wage distribution",
+        "Speedup and anxiety form a U-shape"
+      ]
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 \u00b7 THEME A",
+      "title": "Scope and speed \u2014 not just speed.",
+      "subtitle": "Most users describe AI unlocking new abilities, not just faster execution of old ones.",
+      "left": {
+        "tag": "SCOPE",
+        "value": "48%",
+        "header": "Access to new capabilities",
+        "points": [
+          "\u201CI'm a non-tech guy but now I'm a full-stack developer\u201D",
+          "Customer-service rep starts e-commerce business",
+          "Delivery driver builds e-commerce \u00b7 landscaper builds music app",
+          "Users attempt tasks they could not do before"
+        ],
+        "color": "orange"
+      },
+      "right": {
+        "tag": "SPEED",
+        "value": "40%",
+        "header": "Faster execution of existing work",
+        "points": [
+          "\u201C15 minutes that used to take 2 hours\u201D \u2014 financing task",
+          "Faster code reviews, contract checks, paperwork",
+          "Quality gains via more thorough checks of code and contracts",
+          "Cost gains: replace help that was \u201Cover my budget\u201D"
+        ],
+        "color": "blue"
+      },
+      "callout": "AI is not just an efficiency tool \u2014 for many users it is an access tool. That distinction shapes who gains and how visibly the gains are felt."
+    },
+
+    {
+      "type": "two_column",
+      "kicker": "ACT 03 \u00b7 THEME B",
+      "title": "Speedup and anxiety form a U-shape.",
+      "subtitle": "Both extremes \u2014 being slowed down and being sped up the most \u2014 track with the highest job threat.",
+      "left": {
+        "tag": "LEFT TAIL",
+        "value": "Slowed-down users",
+        "header": "Creative workers, displaced workflow",
+        "points": [
+          "Some creatives find AI too stifling and rigid to use",
+          "Examples: fine artists, certain writers",
+          "Still fear AI diffusion into their fields",
+          "Highest threat perception among groups in the survey"
+        ],
+        "color": "green"
+      },
+      "right": {
+        "tag": "RIGHT TAIL",
+        "value": "Sped-up users",
+        "header": "Largest productivity gains, rising fear",
+        "points": [
+          "Largest measured productivity gains in the sample",
+          "Above-baseline threat perception",
+          "Implicit reasoning: if tasks shrink rapidly, what is left?",
+          "Speed gain does not equal job security"
+        ],
+        "color": "orange"
+      },
+      "callout": "The familiar narrative \u2014 \u201CAI just makes good workers more productive\u201D \u2014 misses half the story. The most empowered users are simultaneously the most worried."
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "04",
+      "color": "orange",
+      "section_label": "Insights",
+      "section_title": "Two structural risks hiding behind\nthe positive top line.",
+      "preview": [
+        "Beneficiary capture by employers",
+        "Early-career squeeze \u2014 the ladder is eroding from the bottom",
+        "Bargaining power decides who keeps the surplus"
+      ]
+    },
+
+    {
+      "type": "insight_pair",
+      "kicker": "ACT 04 \u00b7 INSIGHTS",
+      "title": "Today's gains hide tomorrow's questions.",
+      "subtitle": "Positive sentiment is real \u2014 but who actually captures the surplus is unresolved.",
+      "cards": [
+        {
+          "tag": "RISK 01",
+          "header": "Beneficiary capture by employers",
+          "body": "Most workers report benefits flowing to themselves. But a meaningful share say employers or clients are simply extracting more work from the same person.",
+          "evidence_label": "Signal in the data",
+          "evidence": "10% of respondents who named a beneficiary said their employer or clients were the ones getting more work from them.",
+          "implication_label": "Implication",
+          "implication": "Productivity gain does not equal wage gain. Without bargaining power, the surplus accrues to firms \u2014 not workers.",
+          "color": "orange"
+        },
+        {
+          "tag": "RISK 02",
+          "header": "Early-career squeeze",
+          "body": "The cohort with the most anxiety is also the cohort least confident they personally benefit \u2014 a structural mismatch the labor market has not yet priced in.",
+          "evidence_label": "Author framing",
+          "evidence": "Only 60% of early-career workers see themselves benefiting (vs. 80% of senior). Hiring of recent grads is already slowing in the U.S.",
+          "implication_label": "Implication",
+          "implication": "The traditional \u201Cclimb the ladder\u201D path may be eroding from the bottom rungs first.",
+          "color": "blue"
+        }
+      ],
+      "footer_note": "Source: Figure 4 \u00b7 Discussion section"
+    },
+
+    {
+      "type": "section_divider",
+      "act_num": "05",
+      "color": "blue",
+      "section_label": "Actions",
+      "section_title": "Five concrete moves\nfor enterprise leaders.",
+      "preview": [
+        "Treat workers' fear as data, not noise",
+        "Position AI as an access tool, not a cost tool",
+        "Protect early-career pathways now \u2014 not later"
+      ]
+    },
+
+    {
+      "type": "action_list",
+      "kicker": "ACT 05 \u00b7 PLAYBOOK",
+      "title": "Five moves for enterprise leaders.",
+      "subtitle": "Workers' fear of AI is rational and predictable \u2014 you can act on it.",
+      "actions": [
+        {
+          "num": "01",
+          "header": "Map your internal exposure",
+          "what": "Build your own observed-exposure map: % of each role's tasks already done by AI today.",
+          "value": "Identify which teams will feel threatened first \u00b7 prioritize change management",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "Frame AI as scope, not speed",
+          "what": "Position AI internally as an access tool unlocking new tasks \u2014 not as a labor-cost cutter.",
+          "value": "Aligns with the 48% who frame AI as scope expansion \u00b7 dampens displacement framing",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "Re-design junior pathways",
+          "what": "Build AI-augmented apprenticeship programs that explicitly protect early-career development.",
+          "value": "Counters the early-career squeeze \u00b7 preserves your future senior pipeline",
+          "color": "green"
+        },
+        {
+          "num": "04",
+          "header": "Share the productivity upside",
+          "what": "Adopt explicit gain-sharing schemes \u2014 bonuses, equity, time-off \u2014 tied to AI-driven productivity wins.",
+          "value": "Closes the employer-capture gap \u00b7 converts anxiety into engagement",
+          "color": "orange"
+        },
+        {
+          "num": "05",
+          "header": "Listen to anxious top performers",
+          "what": "Run sentiment listening explicitly with your highest-speedup workers. Do not assume they feel safest.",
+          "value": "Heads off attrition in highest-leverage staff \u00b7 turns the U-shape into retention",
+          "color": "blue"
+        }
+      ]
+    },
+
+    {
+      "type": "synthesis",
+      "kicker": "SYNTHESIS",
+      "title": "AI is empowering and unsettling\nits users at the same time.",
+      "subtitle": "The two feelings live in the same people.",
+      "pillars": [
+        {
+          "num": "01",
+          "header": "What changed",
+          "body": "The first large-scale qualitative bridge from observed AI usage to user sentiment. Productivity gains are real, broad-based, and skewed bimodally across the wage distribution.",
+          "color": "orange"
+        },
+        {
+          "num": "02",
+          "header": "What it means",
+          "body": "Worker anxiety is not paranoia \u2014 it tracks measurable exposure. The most-empowered users are simultaneously the most worried. Career stage shapes who benefits.",
+          "color": "blue"
+        },
+        {
+          "num": "03",
+          "header": "What to watch",
+          "body": "Beneficiary capture (who keeps the surplus) and the early-career squeeze (who gets in) are the two structural risks behind the positive top-line numbers.",
+          "color": "green"
+        }
+      ],
+      "closing_line": "The opportunity is not just to deploy AI \u2014 it is to do so in a way that lets the workforce share both the upside and the certainty."
+    },
+
+    {
+      "type": "closing",
+      "kicker": "READ THE FULL REPORT",
+      "title": "Thank you.",
+      "subtitle": "Curated executive briefs \u00b7 aidigest.club / reads",
+      "primary_link": {
+        "label": "Anthropic Research",
+        "url": "https://www.anthropic.com/research/81k-economics"
+      },
+      "authors_line": "Massenkoff, M. & Huang, S. (2026). What 81,000 people told us about the economics of AI. Anthropic Research \u00b7 Economic Index."
+    }
+  ]
+}

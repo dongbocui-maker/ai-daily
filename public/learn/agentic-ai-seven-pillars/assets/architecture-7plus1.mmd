@@ -1,0 +1,50 @@
+flowchart BT
+    classDef valueLayer fill:#5D00A0,color:#fff,stroke:#A100FF,stroke-width:2px,font-weight:bold
+    classDef layerLabel fill:#F5EBFF,color:#5D00A0,stroke:#A100FF,stroke-width:1px,font-style:italic
+    classDef pillar fill:#fff,color:#5D00A0,stroke:#A100FF,stroke-width:2px
+    classDef foundationLayer fill:#3D006B,color:#fff,stroke:#A100FF,stroke-width:2px,font-weight:bold
+    classDef arrowNode fill:#fff,color:#A100FF,stroke:none,font-style:italic
+
+    F["<b>共享底座：数据治理 + 知识管理</b><br/><i>脏数据 → 脏 agent · 底座不夯实，上层全部白搭</i>"]:::foundationLayer
+
+    A1["⬆ 输入质量决定输出质量"]:::arrowNode
+
+    subgraph TECH[" "]
+        direction TB
+        TL["<b>技术栈（4 柱）</b><br/>让 agent 稳定 · 安全 · 可观测地工作"]:::layerLabel
+        subgraph TECHROW[" "]
+            direction LR
+            P1["<b>柱 1 · 架构</b><br/><i>怎么搭</i>"]:::pillar
+            P2["<b>柱 2 · API 治理</b><br/><i>怎么通信</i>"]:::pillar
+            P3["<b>柱 3 · LLMOps / AgentOps</b><br/><i>怎么运维</i>"]:::pillar
+            P4["<b>柱 4 · 风险 + IAM</b><br/><i>怎么管</i>"]:::pillar
+            P1 --> P2 --> P3 --> P4
+        end
+        TL ~~~ TECHROW
+    end
+
+    A2["⬆ 支撑组织运行"]:::arrowNode
+
+    subgraph ORG[" "]
+        direction TB
+        OL["<b>组织 + 业务栈（3 柱）</b><br/>把技术能力转化为业务结果"]:::layerLabel
+        subgraph ORGROW[" "]
+            direction LR
+            P5["<b>柱 5 · 人才 / 组织设计</b><br/><i>谁来管 agent</i>"]:::pillar
+            P6["<b>柱 6 · 变革管理 / 流程再设计</b><br/><i>怎么改工作流</i>"]:::pillar
+            P7["<b>柱 7 · FinOps / ROI 量化</b><br/><i>钱花得值吗？</i>"]:::pillar
+            P5 --> P6 --> P7
+        end
+        OL ~~~ ORGROW
+    end
+
+    A3["⬆ 价值兑现"]:::arrowNode
+
+    V["<b>业务价值层 Business Outcomes</b><br/>收入增长 · 效率提升 · 风险降低 · 客户体验"]:::valueLayer
+
+    F --> A1 --> TECH --> A2 --> ORG --> A3 --> V
+
+    style TECH fill:#FCFAFF,stroke:#A100FF,stroke-width:1.5px
+    style ORG fill:#FCFAFF,stroke:#A100FF,stroke-width:1.5px
+    style TECHROW fill:none,stroke:none
+    style ORGROW fill:none,stroke:none

@@ -13,29 +13,29 @@ words: "~15K 字"
 
 ## 一、核心观点
 
-1. **「AI Agent = 非人身份（Non-Human Identity, NHI）」是 IAM 在 agentic 时代必须接受的新范式**。Okta 直陈：在云原生环境里，「service accounts and API keys often outnumber human users」；Agent 作为 NHI 必须像人类员工一样有完整的生命周期管理（onboarding / entitlement / certification / deprovisioning）。出处：[Okta, The Role of AI in IAM](https://www.okta.com/identity-101/ai-in-iam/)。
+1. **「AI Agent = 非人身份（Non-Human Identity, NHI）」是 IAM 在 agentic 时代必须接受的新范式**。Okta 直陈：在云原生环境里，「service accounts and API keys often outnumber human users」；Agent 作为 NHI 必须像人类员工一样有完整的生命周期管理（onboarding / entitlement / certification / deprovisioning）。出处：Okta, The Role of AI in IAM<sup>[[1]](#ref-1)</sup>。
 
-1. **「AI Agent 必须用 delegated authority 而不是 user impersonation」**。OpenID 白皮书（10/2025）核心论断：「User impersonation by agents should be replaced by delegated authority…True delegation requires explicit 'on-behalf-of' flows where agents prove their delegated scope while remaining identifiable as distinct from the user they represent.」出处：[OpenID, AI Identity, Authentication, and Authorization Whitepaper](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)。
+1. **「AI Agent 必须用 delegated authority 而不是 user impersonation」**。OpenID 白皮书（10/2025）核心论断：「User impersonation by agents should be replaced by delegated authority…True delegation requires explicit 'on-behalf-of' flows where agents prove their delegated scope while remaining identifiable as distinct from the user they represent.」出处：OpenID, AI Identity, Authentication, and Authorization Whitepaper<sup>[[2]](#ref-2)</sup>。
 
-1. **OAuth 2.1 + Token Exchange (RFC 8693) 是当前可用的事实标准**。Okta 列出 5 大 AI Agent 控制项：①Delegated Authority（OAuth 2.0 token exchange + workload identity federation）②Fine-Grained Authorization（ReBAC / ABAC 替代 RBAC）③ISPM（Identity Security Posture Management）④HITL via CIBA ⑤CAEP（Continuous Access Evaluation）。出处：[Okta](https://www.okta.com/identity-101/ai-in-iam/)。
+1. **OAuth 2.1 + Token Exchange (RFC 8693) 是当前可用的事实标准**。Okta 列出 5 大 AI Agent 控制项：①Delegated Authority（OAuth 2.0 token exchange + workload identity federation）②Fine-Grained Authorization（ReBAC / ABAC 替代 RBAC）③ISPM（Identity Security Posture Management）④HITL via CIBA ⑤CAEP（Continuous Access Evaluation）。出处：Okta<sup>[[1]](#ref-1)</sup>。
 
-1. **「NIST AI RMF Agentic Profile」（CSA 2026 年 3 月白皮书）是当前最权威的 Agentic AI 风险框架**。它在 NIST AI RMF 1.0 的 GOVERN / MAP / MEASURE / MANAGE 四函数上叠加四类新能力：①autonomy tier classification + oversight obligations（GOVERN 扩展）②systematic tool-use risk modeling + action-consequence mapping（MAP 扩展）③runtime behavioral metrics + autonomy calibration + delegation chain monitoring（MEASURE 扩展）④structured incident response + behavioral drift correction + principled agent decommissioning（MANAGE 扩展）。出处：[CSA, NIST AI Risk Management Framework: Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)。
+1. **「NIST AI RMF Agentic Profile」（CSA 2026 年 3 月白皮书）是当前最权威的 Agentic AI 风险框架**。它在 NIST AI RMF 1.0 的 GOVERN / MAP / MEASURE / MANAGE 四函数上叠加四类新能力：①autonomy tier classification + oversight obligations（GOVERN 扩展）②systematic tool-use risk modeling + action-consequence mapping（MAP 扩展）③runtime behavioral metrics + autonomy calibration + delegation chain monitoring（MEASURE 扩展）④structured incident response + behavioral drift correction + principled agent decommissioning（MANAGE 扩展）。出处：CSA, NIST AI Risk Management Framework: Agentic Profile<sup>[[3]](#ref-3)</sup>。
 
-1. **CSA「Agentic Trust Framework: Zero Trust for AI Agents」** 把 Zero Trust 原则系统映射到 Agent 上下文：never trust always verify、explicit verification、assume breach 三大 ZT 原则需要扩展到「Agent Identity / Action / Memory」三层。出处：[CSA, Agentic Trust Framework](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)。
+1. **CSA「Agentic Trust Framework: Zero Trust for AI Agents」** 把 Zero Trust 原则系统映射到 Agent 上下文：never trust always verify、explicit verification、assume breach 三大 ZT 原则需要扩展到「Agent Identity / Action / Memory」三层。出处：CSA, Agentic Trust Framework<sup>[[4]](#ref-4)</sup>。
 
-1. **OWASP「State of Agentic AI Security and Governance 1.0」（5/2026）+ OWASP「LLM Top 10」**：当前 Agent 安全风险的事实标准清单，覆盖 prompt injection、tool poisoning、memory poisoning、excessive agency、insecure output handling 等。出处：[OWASP, State of Agentic AI Security and Governance 1.0](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance-1-0/)、[OWASP AI Exchange](https://owaspai.org/)（#45）。
+1. **OWASP「State of Agentic AI Security and Governance 1.0」（5/2026）+ OWASP「LLM Top 10」**：当前 Agent 安全风险的事实标准清单，覆盖 prompt injection、tool poisoning、memory poisoning、excessive agency、insecure output handling 等。出处：OWASP, State of Agentic AI Security and Governance 1.0<sup>[[5]](#ref-5)</sup>、OWASP AI Exchange<sup>[[6]](#ref-6)</sup>（#45）。
 
-1. **「Microsoft Defender NIST-Based Security Framework for AI Agents」（1/2026）** 提供了产品化的 Agent 安全治理蓝图：把 NIST AI RMF 的 4 函数翻译成 Microsoft Defender 的检测、响应、合规能力。出处：[Microsoft, Architecting Trust: A NIST-Based Security Governance Framework for AI Agents](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/architecting-trust-a-nist-based-security-governance-framework-for-ai-agents/4490556)。
+1. **「Microsoft Defender NIST-Based Security Framework for AI Agents」（1/2026）** 提供了产品化的 Agent 安全治理蓝图：把 NIST AI RMF 的 4 函数翻译成 Microsoft Defender 的检测、响应、合规能力。出处：Microsoft, Architecting Trust: A NIST-Based Security Governance Framework for AI Agents<sup>[[7]](#ref-7)</sup>。
 
-1. **「ARC Framework」（GovTech Singapore，arXiv 2512.22211）**：「Agentic Risk & Capability」三源风险模型——components / design / capabilities。它的创新点是「**capability-centric**」视角——不分析具体 tool，而是分析 Agent 能执行的动作类（code execution / internet interaction / file modification 等），更稳定也更可治理。出处：[ARC Framework](https://arxiv.org/html/2512.22211v1)（#38）。
+1. **「ARC Framework」（GovTech Singapore，arXiv 2512.22211）**：「Agentic Risk & Capability」三源风险模型——components / design / capabilities。它的创新点是「**capability-centric**」视角——不分析具体 tool，而是分析 Agent 能执行的动作类（code execution / internet interaction / file modification 等），更稳定也更可治理。出处：ARC Framework<sup>[[8]](#ref-8)</sup>（#38）。
 
-1. **「Identity Defined Security Alliance」（IDSA）给出三阶段实施路径**：Phase 1 Assessment（评估现有 IAM 成熟度、识别 AI 管理缺口、定义安全/合规要求）→ Phase 2 Planning（开发 AI-specific 访问策略、设计 workflow、规划部署）→ Phase 3 Implementation（落地策略、做 monitoring、持续优化）。出处：[IDSA, IAM Implications of AI in 2025](https://www.idsalliance.org/blog/iam-implications-of-ai-in-2025/)（#50）。
+1. **「Identity Defined Security Alliance」（IDSA）给出三阶段实施路径**：Phase 1 Assessment（评估现有 IAM 成熟度、识别 AI 管理缺口、定义安全/合规要求）→ Phase 2 Planning（开发 AI-specific 访问策略、设计 workflow、规划部署）→ Phase 3 Implementation（落地策略、做 monitoring、持续优化）。出处：IDSA, IAM Implications of AI in 2025<sup>[[9]](#ref-9)</sup>（#50）。
 
-1. **Agent 风险有 4 个「结构性新维度」**：①Irreversibility（一旦动作发起就无法撤销）②Cascading delegation（Agent 派生 Sub-Agent，责任分散）③Temporal gap（动作发起到人能观察到的时间差）④Memory persistence + cross-session poisoning。这些维度在传统 IT 风险框架中都没有对应概念。出处：[CSA, NIST RMF Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)。
+1. **Agent 风险有 4 个「结构性新维度」**：①Irreversibility（一旦动作发起就无法撤销）②Cascading delegation（Agent 派生 Sub-Agent，责任分散）③Temporal gap（动作发起到人能观察到的时间差）④Memory persistence + cross-session poisoning。这些维度在传统 IT 风险框架中都没有对应概念。出处：CSA, NIST RMF Agentic Profile<sup>[[3]](#ref-3)</sup>。
 
-1. **「97% 的企业领导预期未来 12 个月内会发生 AI Agent 驱动的安全/欺诈事件，但只有 6% 的安全预算分配到该风险」**——Dynamisch 2026 年初的调研。这是当前安全投入与风险暴露之间最严重的不对称。出处：[Dynamisch, 6 Critical Realities](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)（#59）。
+1. **「97% 的企业领导预期未来 12 个月内会发生 AI Agent 驱动的安全/欺诈事件，但只有 6% 的安全预算分配到该风险」**——Dynamisch 2026 年初的调研。这是当前安全投入与风险暴露之间最严重的不对称。出处：Dynamisch, 6 Critical Realities<sup>[[10]](#ref-10)</sup>（#59）。
 
-1. **「缺乏 AI 治理政策的企业平均每次数据泄露多损失 $670,000；63% 的泄露企业完全没有 AI 治理政策」**。出处：[Dynamisch](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)。
+1. **「缺乏 AI 治理政策的企业平均每次数据泄露多损失 $670,000；63% 的泄露企业完全没有 AI 治理政策」**。出处：Dynamisch<sup>[[10]](#ref-10)</sup>。
 
 ## 二、重要性综述
 
@@ -99,7 +99,7 @@ words: "~15K 字"
 
 - **劣势**：Agent-specific 能力相对初级（标准未稳定）；可能需要补充专门工具。
 
-- **出处**：[Okta](https://www.okta.com/identity-101/ai-in-iam/)、[IDSA](https://www.idsalliance.org/blog/iam-implications-of-ai-in-2025/)。
+- **出处**：Okta<sup>[[1]](#ref-1)</sup>、IDSA<sup>[[9]](#ref-9)</sup>。
 
 ### 方案 B：专门的 AI Agent 治理平台（Cyera / BigID / SecurePrivacy + Microsoft Defender for AI）
 
@@ -111,7 +111,7 @@ words: "~15K 字"
 
 - **劣势**：与传统 IAM 集成需要 SCIM/SAML 桥接；多平台维护成本。
 
-- **出处**：[Microsoft Defender for AI](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/architecting-trust-a-nist-based-security-governance-framework-for-ai-agents/4490556)、[BigID](https://bigid.com/blog/agentic-ai-governance-trends/)。
+- **出处**：Microsoft Defender for AI<sup>[[7]](#ref-7)</sup>、BigID<sup>[[11]](#ref-11)</sup>。
 
 ### 方案 C：「NIST AI RMF Agentic Profile + AAGATE Reference Architecture」自建
 
@@ -123,7 +123,7 @@ words: "~15K 字"
 
 - **劣势**：工程投入巨大；需要持续跟进 NIST/CSA 标准演进。
 
-- **出处**：[CSA, NIST RMF Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)。
+- **出处**：CSA, NIST RMF Agentic Profile<sup>[[3]](#ref-3)</sup>。
 
 ### 方案 D：MCP/A2A Gateway-Centric Agent Identity
 
@@ -135,7 +135,7 @@ words: "~15K 字"
 
 - **劣势**：Gateway 自身是单点；不能覆盖 Agent 内部 reasoning（只能控制对外动作）。
 
-- **出处**：[CSA, MCP Security NIST Profile](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)（#41）、[Salesforce MuleSoft](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+- **出处**：CSA, MCP Security NIST Profile<sup>[[4]](#ref-4)</sup>（#41）、Salesforce MuleSoft<sup>[[12]](#ref-12)</sup>。
 
 ### 选型建议
 
@@ -143,21 +143,21 @@ words: "~15K 字"
 
 ## 四、风险
 
-1. **「Shadow MCP / Shadow Agent」**：开发者自建 Agent 不走中央治理直接连接生产数据。BigID 把 Shadow AI 列为「最大治理盲区」。对策：unified AI access governance + ISPM 持续 discovery + Mesh/Gateway 默认 deny。出处：[BigID](https://bigid.com/blog/agentic-ai-governance-trends/)、[Okta](https://www.okta.com/identity-101/ai-in-iam/)。
+1. **「Shadow MCP / Shadow Agent」**：开发者自建 Agent 不走中央治理直接连接生产数据。BigID 把 Shadow AI 列为「最大治理盲区」。对策：unified AI access governance + ISPM 持续 discovery + Mesh/Gateway 默认 deny。出处：BigID<sup>[[11]](#ref-11)</sup>、Okta<sup>[[1]](#ref-1)</sup>。
 
 1. **「过度权限授权」**：图省事给 Agent 服务账号超大权限，违反最小权限原则。Okta：「An agent with a 'viewer' relationship can summarize project documents, but can't export data to external APIs」要求 ReBAC/ABAC 实现真正细粒度。对策：默认 deny + 显式 grant + JIT + scope expiry。
 
-1. **「Prompt Injection / Tool Poisoning」**：通过文档、网页、API 返回值注入恶意指令，操纵 Agent 越权操作。OWASP 把这列为 Agentic Top 10 之首。对策：input sanitization + output filtering + tool 返回值 schema validation + 不可执行外部内容指令。出处：[OWASP, State of Agentic AI Security and Governance 1.0](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance-1-0/)。
+1. **「Prompt Injection / Tool Poisoning」**：通过文档、网页、API 返回值注入恶意指令，操纵 Agent 越权操作。OWASP 把这列为 Agentic Top 10 之首。对策：input sanitization + output filtering + tool 返回值 schema validation + 不可执行外部内容指令。出处：OWASP, State of Agentic AI Security and Governance 1.0<sup>[[5]](#ref-5)</sup>。
 
 1. **「Excessive Agency」**：Agent 在没有人审批的情况下做了高风险操作（删数据、发邮件、转账）。OWASP LLM Top 10 中的核心条目。对策：HITL via CIBA（Client-Initiated Backchannel Authentication）+ 高风险动作强制 2-eye 审批 + tool 白名单 + 动作影响评估。
 
-1. **「Behavioral Drift Undetected」**：Agent 行为随模型更新或上下文变化逐渐漂移，几个月后才被发现，期间所有决策都有偏差。对策：runtime behavioral metrics + autonomy calibration assessment + 定期 red team。出处：[CSA, NIST RMF Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)。
+1. **「Behavioral Drift Undetected」**：Agent 行为随模型更新或上下文变化逐渐漂移，几个月后才被发现，期间所有决策都有偏差。对策：runtime behavioral metrics + autonomy calibration assessment + 定期 red team。出处：CSA, NIST RMF Agentic Profile<sup>[[3]](#ref-3)</sup>。
 
 1. **「Cross-Session Memory Poisoning」**：Agent 跨会话保留 memory，一次被污染影响多次后续会话。对策：memory 加密 + 来源追溯 + 异常检测 + 关键场景禁用持久化 memory。
 
 1. **「Cascading Delegation Accountability Gap」**：Orchestrator Agent 派生 Sub-Agent，出问题后无法追溯到具体责任主体。对策：每个 Agent 动作 trace 必须带完整 delegation chain（caller_id + delegated_scope + reasoning trace）。
 
-1. **「Identity Fragmentation」**：每个 vendor 提供自家 Agent identity 体系，企业里出现 10 套 Agent ID 系统。OpenID 警告：「reduce developer velocity by forcing repeated one-off integrations…compromise security by creating multiple security models」。对策：坚持 OAuth 2.1 + Token Exchange 标准；选支持 IPSIE 的 vendor。出处：[OpenID](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)。
+1. **「Identity Fragmentation」**：每个 vendor 提供自家 Agent identity 体系，企业里出现 10 套 Agent ID 系统。OpenID 警告：「reduce developer velocity by forcing repeated one-off integrations…compromise security by creating multiple security models」。对策：坚持 OAuth 2.1 + Token Exchange 标准；选支持 IPSIE 的 vendor。出处：OpenID<sup>[[2]](#ref-2)</sup>。
 
 1. **「合规但不安全」陷阱**：通过了 SOC 2 / GDPR 审计但 Agent 实际行为仍然超出预期。对策：把治理动作 instrument 进 Mesh/Gateway，自动化 evidence collection；定期 red team。
 
@@ -190,40 +190,78 @@ words: "~15K 字"
 **做法**：以 NIST AI RMF 4 函数（GOVERN / MAP / MEASURE / MANAGE）为骨架，在 Microsoft Defender 上落地 Agent 安全治理；与 Microsoft Entra、Microsoft Purview、Microsoft Sentinel 联动。
 **关键能力**：Agent discovery、risk scoring、policy enforcement、incident response、audit logging。
 **意义**：把通用风险框架变成产品级实现；可作为 Microsoft 生态客户的标杆。
-**出处**：[Microsoft, Architecting Trust](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/architecting-trust-a-nist-based-security-governance-framework-for-ai-agents/4490556)。
+**出处**：Microsoft, Architecting Trust<sup>[[7]](#ref-7)</sup>。
 
 ### 案例 2：Palo Alto Networks NIST AI RMF 适配
 
 **做法**：基于 NIST AI RMF 提供 enterprise-grade agentic security 套件——Prisma AIRS、Strata、Prisma Cloud 联合给出 Agent 可见性、风险评估、运行时保护。
 **意义**：第一批把 NIST AI RMF 落到全栈安全产品的厂商。
-**出处**：[Palo Alto Networks, NIST AI RMF Implementation](https://www.paloaltonetworks.com/blog/2026/05/agentic-ai-nist-rmf/)。
+**出处**：Palo Alto Networks, NIST AI RMF Implementation<sup>[[13]](#ref-13)</sup>。
 
 ### 案例 3：GovTech Singapore ARC Framework
 
 **做法**：开源框架，三层风险模型——components / design / capabilities；提供 risk → control 映射表；适合做 Agent 上线前的结构化风险评估。
 **意义**：政府级 Agent 风险评估的可复用工具，已被多家公共部门采纳。
-**出处**：[ARC Framework, arXiv 2512.22211](https://arxiv.org/html/2512.22211v1)、[GovTech ARC Framework](https://medium.com/govtech-singapore/arc-framework)。
+**出处**：ARC Framework, arXiv 2512.22211<sup>[[8]](#ref-8)</sup>、GovTech ARC Framework<sup>[[14]](#ref-14)</sup>。
 
 ### 案例 4：Microsoft WWPS Public Sector Identity Agent
 
 **场景**：公民身份验证 + 福利资格审定，多 Agent 协作（Orchestrator + Document Parsing + Validation + Eligibility）；强合规要求（SNAP 30 天、Medicaid 45/90 天）。
 **做法**：Azure AI Document Intelligence + Azure Container Apps + Azure AD + Key Vault；audit & compliance logging 服务捕获完整 decision path；每个 Agent 一个容器，独立 IAM。
 **意义**：公共部门 Agent 部署的可复用蓝图；身份 + 风险治理深度整合。
-**出处**：[Microsoft, Architectural Framework for Agentic AI in Identity & Eligibility](https://techcommunity.microsoft.com/blog/publicsectorblog/architectural-framework-for-agentic-ai-in-identity-eligibility/4490333)。
+**出处**：Microsoft, Architectural Framework for Agentic AI in Identity & Eligibility<sup>[[15]](#ref-15)</sup>。
 
 ### 案例 5：CSA NIST AI RMF Agentic Profile + AAGATE
 
 **蓝图**：4 函数扩展模型 + 243 control AICM + Kubernetes-native runtime governance overlay。
 **适用**：超大规模科技、政府、防务客户。
 **意义**：可与企业现有 NIST RMF 程序对接的标准化 supplement。
-**出处**：[CSA Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)、[CSA AICM](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)。
+**出处**：CSA Agentic Profile<sup>[[3]](#ref-3)</sup>、CSA AICM<sup>[[4]](#ref-4)</sup>。
 
 ### 案例 6：Cyera + SecurePrivacy 数据隐私 + Agent 治理整合
 
 **做法**：以数据为中心，先发现敏感数据 → 再监控 Agent 访问 → 最后做 policy enforcement。
 **适用**：医疗、零售、消金。
-**出处**：[Cyera, Agentic AI Governance](https://www.cyera.com/blog/agentic-ai-governance-frameworks)、[SecurePrivacy](https://secureprivacy.ai/blog/agentic-ai-governance)。
+**出处**：Cyera, Agentic AI Governance<sup>[[16]](#ref-16)</sup>、SecurePrivacy<sup>[[17]](#ref-17)</sup>。
 
 ---
 
 下一节：柱 5：人才 / 组织设计
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [Okta, The Role of AI in IAM](https://www.okta.com/identity-101/ai-in-iam/)
+
+<a id="ref-2"></a>2. [OpenID, AI Identity, Authentication, and Authorization Whitepaper](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)
+
+<a id="ref-3"></a>3. [CSA, NIST AI Risk Management Framework: Agentic Profile](https://labs.cloudsecurityalliance.org/research/nist-ai-rmf-agentic-profile/)
+
+<a id="ref-4"></a>4. [CSA, Agentic Trust Framework](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)
+
+<a id="ref-5"></a>5. [OWASP, State of Agentic AI Security and Governance 1.0](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance-1-0/)
+
+<a id="ref-6"></a>6. [OWASP AI Exchange](https://owaspai.org/)
+
+<a id="ref-7"></a>7. [Microsoft, Architecting Trust: A NIST-Based Security Governance Framework for AI Agents](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/architecting-trust-a-nist-based-security-governance-framework-for-ai-agents/4490556)
+
+<a id="ref-8"></a>8. [ARC Framework](https://arxiv.org/html/2512.22211v1)
+
+<a id="ref-9"></a>9. [IDSA, IAM Implications of AI in 2025](https://www.idsalliance.org/blog/iam-implications-of-ai-in-2025/)
+
+<a id="ref-10"></a>10. [Dynamisch, 6 Critical Realities](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)
+
+<a id="ref-11"></a>11. [BigID](https://bigid.com/blog/agentic-ai-governance-trends/)
+
+<a id="ref-12"></a>12. [Salesforce MuleSoft](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)
+
+<a id="ref-13"></a>13. [Palo Alto Networks, NIST AI RMF Implementation](https://www.paloaltonetworks.com/blog/2026/05/agentic-ai-nist-rmf/)
+
+<a id="ref-14"></a>14. [GovTech ARC Framework](https://medium.com/govtech-singapore/arc-framework)
+
+<a id="ref-15"></a>15. [Microsoft, Architectural Framework for Agentic AI in Identity & Eligibility](https://techcommunity.microsoft.com/blog/publicsectorblog/architectural-framework-for-agentic-ai-in-identity-eligibility/4490333)
+
+<a id="ref-16"></a>16. [Cyera, Agentic AI Governance](https://www.cyera.com/blog/agentic-ai-governance-frameworks)
+
+<a id="ref-17"></a>17. [SecurePrivacy](https://secureprivacy.ai/blog/agentic-ai-governance)

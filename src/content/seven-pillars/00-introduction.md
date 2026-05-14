@@ -9,7 +9,7 @@ words: "~5K 字"
 ---
 # 引言
 
-> 本文档基于 60 个权威源原文（一手信息）撰写。完整源清单：[资源总索引 v2](https://my.feishu.cn/docx/Ybc5deJlBoV7kgx6BaFcoxKenee)。
+> 本文档基于 60 个权威源原文（一手信息）撰写。完整源清单：资源总索引 v2<sup>[[1]](#ref-1)</sup>。
 > 引用的所有核心观点、数据、案例均附飞书内联链接，可点击直达原文。
 
 ---
@@ -40,14 +40,14 @@ words: "~5K 字"
 
 | # | 板块 | 一句话精华（精华中的精华） |
 | --- | --- | --- |
-| **底座** | **数据治理 + 知识管理** | Agent 的智商上限 = 它能访问的数据 × 知识的可用性，[BigID](https://bigid.com/blog/agentic-ai-governance-trends/) 将「治理重心从模型层迁移到数据层」列为 2026 头号趋势 |
-| 柱 1 | 架构 | 协议层（[MCP × A2A 双协议](https://www.infoq.com/articles/architecting-agentic-mlops-a2a-mcp/)）+ 编排层（[Agent Mesh / Orchestrator-Worker 等 5 大模式](https://www.bcg.com/assets/2025/building-effective-enterprise-agents.pdf)）+ [9 大工程铁律](https://arxiv.org/html/2512.08769v1)（tool-first / single-responsibility / KISS） |
-| 柱 2 | API 治理 | Agent 是 API 的"高频不可预测调用方"，需要 AI Gateway 层（[MuleSoft Omni](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/) / [Kong AI Gateway](https://konghq.com/blog/enterprise/best-practices-for-api-management)）承接限流、鉴权、可观测、成本控制 |
-| 柱 3 | LLMOps / AgentOps | DevOps for AI Agents——评测、追踪、漂移检测、人工标注闭环；[ZenML 数据库 457 个企业案例](https://www.zenml.io/blog/llmops-in-production-457-case-studies-of-what-actually-works) 证明可观测性比模型选择更影响成败 |
-| 柱 4 | 风险治理 + IAM | [NIST AI RMF Agentic Profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/) + [OWASP Agentic Top 10](https://owaspai.org/docs/ai_security_overview/) + [Zero Trust for Agents](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents)；agent 自己也是「非人类身份」（NHI），需要单独的身份管理 |
-| 柱 5 | 人才 / 组织设计 | 新增 [AI Orchestrator / Agent PM / Trust & Safety](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/) 等角色；从"人管人"演化到"人管 agent fleet"（[BCG: Managing Machines That Manage Themselves](https://www.bcg.com/publications/2025/machines-that-manage-themselves)） |
-| 柱 6 | 变革管理 | 不是培训问题，是工作流推倒重建的人因工程——员工焦虑、流程重映射、成功标准重定义（[CIO 端到端变革指南](https://www.cio.com/article/4082282/preparing-your-workforce-for-ai-agents-a-change-management-guide.html)） |
-| 柱 7 | FinOps / ROI | 不能 per-agent 算成本 = 无法量化价值；[IDC 数据](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/white-papers/idc-the-tipping-point-final.pdf) 显示 agentic AI 投入将快速超过传统 AI 投入，FinOps 框架必须前置 |
+| **底座** | **数据治理 + 知识管理** | Agent 的智商上限 = 它能访问的数据 × 知识的可用性，BigID<sup>[[2]](#ref-2)</sup> 将「治理重心从模型层迁移到数据层」列为 2026 头号趋势 |
+| 柱 1 | 架构 | 协议层（MCP × A2A 双协议<sup>[[3]](#ref-3)</sup>）+ 编排层（Agent Mesh / Orchestrator-Worker 等 5 大模式<sup>[[4]](#ref-4)</sup>）+ 9 大工程铁律<sup>[[5]](#ref-5)</sup>（tool-first / single-responsibility / KISS） |
+| 柱 2 | API 治理 | Agent 是 API 的"高频不可预测调用方"，需要 AI Gateway 层（MuleSoft Omni<sup>[[6]](#ref-6)</sup> / Kong AI Gateway<sup>[[7]](#ref-7)</sup>）承接限流、鉴权、可观测、成本控制 |
+| 柱 3 | LLMOps / AgentOps | DevOps for AI Agents——评测、追踪、漂移检测、人工标注闭环；ZenML 数据库 457 个企业案例<sup>[[8]](#ref-8)</sup> 证明可观测性比模型选择更影响成败 |
+| 柱 4 | 风险治理 + IAM | NIST AI RMF Agentic Profile<sup>[[9]](#ref-9)</sup> + OWASP Agentic Top 10<sup>[[10]](#ref-10)</sup> + Zero Trust for Agents<sup>[[11]](#ref-11)</sup>；agent 自己也是「非人类身份」（NHI），需要单独的身份管理 |
+| 柱 5 | 人才 / 组织设计 | 新增 AI Orchestrator / Agent PM / Trust & Safety<sup>[[12]](#ref-12)</sup> 等角色；从"人管人"演化到"人管 agent fleet"（BCG: Managing Machines That Manage Themselves<sup>[[13]](#ref-13)</sup>） |
+| 柱 6 | 变革管理 | 不是培训问题，是工作流推倒重建的人因工程——员工焦虑、流程重映射、成功标准重定义（CIO 端到端变革指南<sup>[[14]](#ref-14)</sup>） |
+| 柱 7 | FinOps / ROI | 不能 per-agent 算成本 = 无法量化价值；IDC 数据<sup>[[15]](#ref-15)</sup> 显示 agentic AI 投入将快速超过传统 AI 投入，FinOps 框架必须前置 |
 
 ---
 
@@ -111,3 +111,37 @@ words: "~5K 字"
 ---
 
 **说明**：本节为校样版第二轮（基于反馈重写）。全文 9 板块预计 25,000–40,000 字、200+ 引用链接。本节约 1,400 字。
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [资源总索引 v2](https://my.feishu.cn/docx/Ybc5deJlBoV7kgx6BaFcoxKenee)
+
+<a id="ref-2"></a>2. [BigID](https://bigid.com/blog/agentic-ai-governance-trends/)
+
+<a id="ref-3"></a>3. [MCP × A2A 双协议](https://www.infoq.com/articles/architecting-agentic-mlops-a2a-mcp/)
+
+<a id="ref-4"></a>4. [Agent Mesh / Orchestrator-Worker 等 5 大模式](https://www.bcg.com/assets/2025/building-effective-enterprise-agents.pdf)
+
+<a id="ref-5"></a>5. [9 大工程铁律](https://arxiv.org/html/2512.08769v1)
+
+<a id="ref-6"></a>6. [MuleSoft Omni](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)
+
+<a id="ref-7"></a>7. [Kong AI Gateway](https://konghq.com/blog/enterprise/best-practices-for-api-management)
+
+<a id="ref-8"></a>8. [ZenML 数据库 457 个企业案例](https://www.zenml.io/blog/llmops-in-production-457-case-studies-of-what-actually-works)
+
+<a id="ref-9"></a>9. [NIST AI RMF Agentic Profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/)
+
+<a id="ref-10"></a>10. [OWASP Agentic Top 10](https://owaspai.org/docs/ai_security_overview/)
+
+<a id="ref-11"></a>11. [Zero Trust for Agents](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents)
+
+<a id="ref-12"></a>12. [AI Orchestrator / Agent PM / Trust & Safety](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)
+
+<a id="ref-13"></a>13. [BCG: Managing Machines That Manage Themselves](https://www.bcg.com/publications/2025/machines-that-manage-themselves)
+
+<a id="ref-14"></a>14. [CIO 端到端变革指南](https://www.cio.com/article/4082282/preparing-your-workforce-for-ai-agents-a-change-management-guide.html)
+
+<a id="ref-15"></a>15. [IDC 数据](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/white-papers/idc-the-tipping-point-final.pdf)

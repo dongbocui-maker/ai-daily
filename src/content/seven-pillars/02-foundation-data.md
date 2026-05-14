@@ -11,7 +11,7 @@ words: "~12K 字"
 
 > **一句话定位**：Agent 的智商上限 = 它能访问的数据质量 × 知识库的可用性。所有 7 个柱子都依赖这个底座——底座不夯实，上层全部白搭。
 
-> **主要源**：#51 [BigID](https://bigid.com/blog/agentic-ai-governance-trends/)（2026 治理 6 大趋势）/ #52 [Acceldata](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)（Agentic AI 治理实施蓝图）/ #53 [OneReach](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)（AI agent 重塑企业知识管理）/ #47 [Cyera](https://www.cyera.com/blog/ai-governance-for-the-agentic-era)（agentic era 数据治理）
+> **主要源**：#51 BigID<sup>[[1]](#ref-1)</sup>（2026 治理 6 大趋势）/ #52 Acceldata<sup>[[2]](#ref-2)</sup>（Agentic AI 治理实施蓝图）/ #53 OneReach<sup>[[3]](#ref-3)</sup>（AI agent 重塑企业知识管理）/ #47 Cyera<sup>[[4]](#ref-4)</sup>（agentic era 数据治理）
 
 ---
 
@@ -19,35 +19,35 @@ words: "~12K 字"
 
 ### 1. 治理重心从模型层迁移到数据层（2026 头号趋势）
 
-传统 AI 治理假设"每一步都有人盯着输出"，Agentic AI 打破这个假设。BigID 在 2026 年初的趋势报告里给出明确判断："AI 治理只能强到它底下的数据治理那么强（AI governance is only as strong as the data governance beneath it）"。理由：**风险源头在数据进入训练/推理流水线时就已经产生，而不是在输出层**。欧盟 AI Act 第 10 条已经明确把"数据质量、来源、敏感度治理"列为 AI 部署前的强制义务。出处：[BigID 2026 trend #2: Governance shifts to the data layer](https://bigid.com/blog/agentic-ai-governance-trends/)。
+传统 AI 治理假设"每一步都有人盯着输出"，Agentic AI 打破这个假设。BigID 在 2026 年初的趋势报告里给出明确判断："AI 治理只能强到它底下的数据治理那么强（AI governance is only as strong as the data governance beneath it）"。理由：**风险源头在数据进入训练/推理流水线时就已经产生，而不是在输出层**。欧盟 AI Act 第 10 条已经明确把"数据质量、来源、敏感度治理"列为 AI 部署前的强制义务。出处：BigID 2026 trend #2: Governance shifts to the data layer<sup>[[1]](#ref-1)</sup>。
 
 ### 2. AI Agent 必须被当作"数字身份"管理（带权限 + 审计轨迹）
 
-Agent 在企业里执行的动作等价于特权用户——读写记录、执行交易、跨系统调用。但大多数企业**没有任何能力告诉你"我们现在有多少个 agent、它们各自能访问什么数据、有什么权限"**——这不是监控问题，是身份治理盲区。出处：[BigID trend #1: AI Agents Are Digital Identities](https://bigid.com/blog/agentic-ai-governance-trends/)。一个有效的治理平台必须做到三点：① 跨云/SaaS/本地环境**发现所有 agent**；② 识别**过度授权 + 风险数据访问**；③ 一致地落实**最小特权原则**。
+Agent 在企业里执行的动作等价于特权用户——读写记录、执行交易、跨系统调用。但大多数企业**没有任何能力告诉你"我们现在有多少个 agent、它们各自能访问什么数据、有什么权限"**——这不是监控问题，是身份治理盲区。出处：BigID trend #1: AI Agents Are Digital Identities<sup>[[1]](#ref-1)</sup>。一个有效的治理平台必须做到三点：① 跨云/SaaS/本地环境**发现所有 agent**；② 识别**过度授权 + 风险数据访问**；③ 一致地落实**最小特权原则**。
 
 ### 3. 实时风险监控取代周期性审计
 
-Agent 系统持续演化——在两次审计周期之间可能获得新权限、访问新数据源、改变行为模式。**年度审计或季度审计跟不上**。出处：[BigID trend #3: Real-Time AI Risk Monitoring Replaces Periodic Audits](https://bigid.com/blog/agentic-ai-governance-trends/)。实时监控需要持续评估三件事：数据访问模式 / 模型行为 / agent 活动与输出。
+Agent 系统持续演化——在两次审计周期之间可能获得新权限、访问新数据源、改变行为模式。**年度审计或季度审计跟不上**。出处：BigID trend #3: Real-Time AI Risk Monitoring Replaces Periodic Audits<sup>[[1]](#ref-1)</sup>。实时监控需要持续评估三件事：数据访问模式 / 模型行为 / agent 活动与输出。
 
 ### 4. Agent 可观测性是监管硬性要求，不是"加分项"
 
-Agent 可观测性必须超越传统的"模型监控"——要能完整重构一次 agent 行为的**多步推理过程、工具与应用交互、跨会话的数据检索与使用**。这不只是工程最佳实践——**NIST AI RMF 和欧盟 AI Act 对高风险系统已把这种可追溯性列为合规硬性要求**。出处：[BigID trend #4: Agent Observability Becomes Essential](https://bigid.com/blog/agentic-ai-governance-trends/)。
+Agent 可观测性必须超越传统的"模型监控"——要能完整重构一次 agent 行为的**多步推理过程、工具与应用交互、跨会话的数据检索与使用**。这不只是工程最佳实践——**NIST AI RMF 和欧盟 AI Act 对高风险系统已把这种可追溯性列为合规硬性要求**。出处：BigID trend #4: Agent Observability Becomes Essential<sup>[[1]](#ref-1)</sup>。
 
 ### 5. 知识管理的范式转换：从"存储 + 检索"到"理解 + 行动"
 
-传统知识管理系统的逻辑是"把信息存起来、让员工搜索"，AI Agent 把这个范式打碎了。它们更像**智能同事**——能理解上下文、做推理、基于知识采取行动；能同时处理**显性知识**（文档/数据库）和**隐性知识**（经验类的难以编码内容）。出处：[OneReach: How AI Agents are Transforming Enterprise Knowledge](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)。这是为什么 "RAG 上线了但召回率上不去" 这种问题——根因往往不在模型，而在知识库本身根本没被组织成 agent 可消费的形式。
+传统知识管理系统的逻辑是"把信息存起来、让员工搜索"，AI Agent 把这个范式打碎了。它们更像**智能同事**——能理解上下文、做推理、基于知识采取行动；能同时处理**显性知识**（文档/数据库）和**隐性知识**（经验类的难以编码内容）。出处：OneReach: How AI Agents are Transforming Enterprise Knowledge<sup>[[3]](#ref-3)</sup>。这是为什么 "RAG 上线了但召回率上不去" 这种问题——根因往往不在模型，而在知识库本身根本没被组织成 agent 可消费的形式。
 
 ### 6. AI 治理与人类访问治理必须统一（防"影子 AI"）
 
-把人类用户和 AI agent 放在不同系统里管理，会产生**结构性盲区和不一致**。统一访问治理（unified access governance）的意义在于：员工、外包、第三方、AI agent 都在**同一框架**下治理，最小特权一致执行。最关键的应用是治理"**影子 AI**"——那些绕开 IT 监管、私自部署的模型和 agent，是当前最大的合规与安全盲点。出处：[BigID trend #6: AI Access Governance Unifies Human and Agent Permissions](https://bigid.com/blog/agentic-ai-governance-trends/)。
+把人类用户和 AI agent 放在不同系统里管理，会产生**结构性盲区和不一致**。统一访问治理（unified access governance）的意义在于：员工、外包、第三方、AI agent 都在**同一框架**下治理，最小特权一致执行。最关键的应用是治理"**影子 AI**"——那些绕开 IT 监管、私自部署的模型和 agent，是当前最大的合规与安全盲点。出处：BigID trend #6: AI Access Governance Unifies Human and Agent Permissions<sup>[[1]](#ref-1)</sup>。
 
 ### 7. 自动化合规不是可选项
 
-GDPR / HIPAA / PCI DSS / NIST AI RMF / 欧盟 AI Act ——这五个监管框架在 agent 规模化部署后**无法用人工合规跟上**。出处：[BigID trend #5: AI Compliance Automation Becomes Non-Negotiable](https://bigid.com/blog/agentic-ai-governance-trends/)。必须自动化的范围至少包括：训练数据文档 / 模型风险评估 / 访问策略执行 / 跨境数据传输记录。
+GDPR / HIPAA / PCI DSS / NIST AI RMF / 欧盟 AI Act ——这五个监管框架在 agent 规模化部署后**无法用人工合规跟上**。出处：BigID trend #5: AI Compliance Automation Becomes Non-Negotiable<sup>[[1]](#ref-1)</sup>。必须自动化的范围至少包括：训练数据文档 / 模型风险评估 / 访问策略执行 / 跨境数据传输记录。
 
 ### 8. Agentic AI 让数据治理本身从"反应式"变"主动式"
 
-Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期检查"变成"持续 Detect → Decide → Act"循环：① **Detect**：持续分析活跃元数据，识别异常、风险、敏感数据暴露；② **Decide**：用 ML/NLP 模型 + 策略引擎，结合业务上下文与规则做判断；③ **Act**：执行策略、修复问题、或将异常 escalate 给人类。出处：[Acceldata: How Agentic AI Solves Enterprise Data Governance Challenges](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)。
+Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期检查"变成"持续 Detect → Decide → Act"循环：① **Detect**：持续分析活跃元数据，识别异常、风险、敏感数据暴露；② **Decide**：用 ML/NLP 模型 + 策略引擎，结合业务上下文与规则做判断；③ **Act**：执行策略、修复问题、或将异常 escalate 给人类。出处：Acceldata: How Agentic AI Solves Enterprise Data Governance Challenges<sup>[[2]](#ref-2)</sup>。
 
 ---
 
@@ -55,15 +55,15 @@ Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期
 
 **为什么底座是"7+1"中最被低估、却是失败率最高的领域？**
 
-第一，**因果链上它最靠前**。Acceldata 引用 [McKinsey 数据](https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage)指出：「**近 80% 企业已经在用 generative AI / agentic AI，但只有 1/10 认为自己的 AI 战略是"成熟"的**」——这个差距 90% 不是模型问题，而是**数据/知识底座不到位**。模型再强，喂进去的是脏数据，出来的就是脏推理。出处：[Acceldata](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)。
+第一，**因果链上它最靠前**。Acceldata 引用 McKinsey 数据<sup>[[5]](#ref-5)</sup>指出：「**近 80% 企业已经在用 generative AI / agentic AI，但只有 1/10 认为自己的 AI 战略是"成熟"的**」——这个差距 90% 不是模型问题，而是**数据/知识底座不到位**。模型再强，喂进去的是脏数据，出来的就是脏推理。出处：Acceldata<sup>[[2]](#ref-2)</sup>。
 
-第二，**监管风险全部由这一层兜底**。欧盟 AI Act Article 10 已经把"数据治理"列为高风险 AI 系统的强制前置义务（在部署前就要证明数据质量、来源、敏感度被治理）——这不是 IT 治理问题，是**法律合规问题**。出处：[BigID](https://bigid.com/blog/agentic-ai-governance-trends/)。NIST AI RMF 和欧盟 AI Act 都要求高风险系统具备完整可追溯性——而可追溯性的源头是**数据层的 lineage、metadata、access logs**。
+第二，**监管风险全部由这一层兜底**。欧盟 AI Act Article 10 已经把"数据治理"列为高风险 AI 系统的强制前置义务（在部署前就要证明数据质量、来源、敏感度被治理）——这不是 IT 治理问题，是**法律合规问题**。出处：BigID<sup>[[1]](#ref-1)</sup>。NIST AI RMF 和欧盟 AI Act 都要求高风险系统具备完整可追溯性——而可追溯性的源头是**数据层的 lineage、metadata、access logs**。
 
 第三，**它决定其他 7 个柱子的天花板**。柱 1（架构）再好，agent 之间共享的是脏数据，推理就是错的；柱 2（API 治理）再严，agent 调用 API 取回的是过时数据，决策就是错的；柱 3（LLMOps）的评测信号再准，被评测的 agent 用的数据本身有问题，调优就是无的放矢；柱 4（IAM）管住了"谁能调 agent"，但管不住"agent 能访问什么数据"，照样泄密。所以这一柱是**真正的"基础设施的基础设施"**。
 
-第四，**它是被传统数据治理团队和新兴 AI 团队反复踢皮球的领域**。OneReach 给出的诊断很尖锐：「**Bringing AI agents into your knowledge management isn't plug-and-play. It often means untangling a web of disconnected systems and making sure the right data is available, clean, and accessible.**」（[出处](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)）这件事既需要传统 DG 的功底（lineage / catalog / classification），又需要新的 agent-aware 视角（agent 是 identity / governance shift to data layer）——两个团队都觉得"这是另一边的事"，结果就是没人负责。
+第四，**它是被传统数据治理团队和新兴 AI 团队反复踢皮球的领域**。OneReach 给出的诊断很尖锐：「**Bringing AI agents into your knowledge management isn't plug-and-play. It often means untangling a web of disconnected systems and making sure the right data is available, clean, and accessible.**」（出处<sup>[[3]](#ref-3)</sup>）这件事既需要传统 DG 的功底（lineage / catalog / classification），又需要新的 agent-aware 视角（agent 是 identity / governance shift to data layer）——两个团队都觉得"这是另一边的事"，结果就是没人负责。
 
-第五，**它是 ROI 最容易被低估的领域**。这一柱的投入不会立刻产生"agent 上线"这种显性成果，但它的缺失会让所有上层投入失效。这是为什么 [BigID 调研](https://bigid.com/blog/agentic-ai-governance-trends/)把"治理重心从模型层迁移到数据层"列为 2026 6 大趋势之**首**——市场已经意识到这是核心瓶颈。
+第五，**它是 ROI 最容易被低估的领域**。这一柱的投入不会立刻产生"agent 上线"这种显性成果，但它的缺失会让所有上层投入失效。这是为什么 BigID 调研<sup>[[1]](#ref-1)</sup>把"治理重心从模型层迁移到数据层"列为 2026 6 大趋势之**首**——市场已经意识到这是核心瓶颈。
 
 ---
 
@@ -77,7 +77,7 @@ Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期
 
 - **优势**：成熟、合规框架完备、内部团队熟悉
 
-- **劣势**：**完全没有"agent 是 identity"的概念**——agent 部署后产生的影子 AI、过度授权、跨会话数据访问都看不见。BigID 明确指出："Most organizations lack visibility into which agents exist, what data they access, and what permissions they hold"（[出处](https://bigid.com/blog/agentic-ai-governance-trends/)）
+- **劣势**：**完全没有"agent 是 identity"的概念**——agent 部署后产生的影子 AI、过度授权、跨会话数据访问都看不见。BigID 明确指出："Most organizations lack visibility into which agents exist, what data they access, and what permissions they hold"（出处<sup>[[1]](#ref-1)</sup>）
 
 - **判定**：⚠️ 短期可用，但**不能作为终态**
 
@@ -91,7 +91,7 @@ Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期
   - 实时风险监控 + 持续可观测性，符合 NIST AI RMF 和欧盟 AI Act 要求
   - 自动发现影子 AI、自动分类敏感数据、自动执行策略
   - 统一治理人类和 agent 访问（防止"两套系统两套盲点"）
-  - Acceldata 给出可执行的 [30/60/90 实施蓝图](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)
+  - Acceldata 给出可执行的 30/60/90 实施蓝图<sup>[[2]](#ref-2)</sup>
 
 - **劣势**：① 新兴市场，厂商成熟度参差，需要 POC 验证；② 价格不低；③ 需要和现有数据栈深度集成（Snowflake / Databricks / BigQuery 等）
 
@@ -105,7 +105,7 @@ Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期
 
 - **优势**：灵活、成本低、可深度定制
 
-- **劣势**：[OneReach 警告](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)很尖锐——**"agent 不是 plug-and-play"**。不解决底层数据可用性（disconnected systems / dirty data / 缺少访问策略）就上 RAG，结果就是召回率上不去、答案不准——**问题不在模型，在底座**
+- **劣势**：OneReach 警告<sup>[[3]](#ref-3)</sup>很尖锐——**"agent 不是 plug-and-play"**。不解决底层数据可用性（disconnected systems / dirty data / 缺少访问策略）就上 RAG，结果就是召回率上不去、答案不准——**问题不在模型，在底座**
 
 - **判定**：⚠️ 适合早期探索，不适合规模化
 
@@ -121,27 +121,27 @@ Acceldata 提出 Agentic AI 改变了数据治理的运作模式——从"定期
 
 ### 风险 1：把"建个 RAG"等同于"做了知识管理"
 
-最常见陷阱。OneReach 直接点破：「**Many organizations find they need to upgrade their existing tech stack to support the full potential of AI agents. Success starts with building a solid foundation — bringing data together in one place, setting clear policies around how it's used, and making sure all your systems can talk to each other.**」（[出处](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)）。RAG 只是检索层，底下没有数据治理 + 知识工程，就是 garbage in / garbage out。
+最常见陷阱。OneReach 直接点破：「**Many organizations find they need to upgrade their existing tech stack to support the full potential of AI agents. Success starts with building a solid foundation — bringing data together in one place, setting clear policies around how it's used, and making sure all your systems can talk to each other.**」（出处<sup>[[3]](#ref-3)</sup>）。RAG 只是检索层，底下没有数据治理 + 知识工程，就是 garbage in / garbage out。
 
 ### 风险 2：影子 AI（Shadow AI）失控
 
-BigID 把它列为"最大的治理盲点"（[出处](https://bigid.com/blog/agentic-ai-governance-trends/)）。业务部门私自接 ChatGPT 处理客户数据、研发团队私自部署本地 LLM——**这些 agent 在 IT 雷达之外运行，绕过所有治理控制**。一旦泄密或合规事故，企业完全没有审计轨迹自证清白。
+BigID 把它列为"最大的治理盲点"（出处<sup>[[1]](#ref-1)</sup>）。业务部门私自接 ChatGPT 处理客户数据、研发团队私自部署本地 LLM——**这些 agent 在 IT 雷达之外运行，绕过所有治理控制**。一旦泄密或合规事故，企业完全没有审计轨迹自证清白。
 
 ### 风险 3：访问权限漫游（Access Sprawl）
 
-Acceldata 列为传统治理工具的核心痛点之一：「Users accumulate permissions faster than they're revoked」（[出处](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)）。**Agent 把这个问题放大 10 倍**——agent 通常以"服务账号 + broad scope"的方式部署，权限只增不减。
+Acceldata 列为传统治理工具的核心痛点之一：「Users accumulate permissions faster than they're revoked」（出处<sup>[[2]](#ref-2)</sup>）。**Agent 把这个问题放大 10 倍**——agent 通常以"服务账号 + broad scope"的方式部署，权限只增不减。
 
 ### 风险 4：Lineage 盲点（数据溯源缺失）
 
-Agent 做了一次决策，事后被监管或法务问"这个决策基于什么数据"——如果 lineage 不完整，企业无法回答。Acceldata 明确指出"Incomplete tracking forces teams into reactive reporting cycles"（[出处](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)）。**欧盟 AI Act 已把这种可追溯性列为合规硬性要求**。
+Agent 做了一次决策，事后被监管或法务问"这个决策基于什么数据"——如果 lineage 不完整，企业无法回答。Acceldata 明确指出"Incomplete tracking forces teams into reactive reporting cycles"（出处<sup>[[2]](#ref-2)</sup>）。**欧盟 AI Act 已把这种可追溯性列为合规硬性要求**。
 
 ### 风险 5：数据质量漂移（Quality Drift）无人察觉
 
-Agent 持续运行，数据源也在持续变化（schema 改了、字段含义变了、上游业务规则调整）——但**没有自动 anomaly detection 和质量监控**，agent 默默给出错答案，业务方半年后才发现。Acceldata 把"automated anomaly detection + rule remediation"列为必备能力（[出处](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)）。
+Agent 持续运行，数据源也在持续变化（schema 改了、字段含义变了、上游业务规则调整）——但**没有自动 anomaly detection 和质量监控**，agent 默默给出错答案，业务方半年后才发现。Acceldata 把"automated anomaly detection + rule remediation"列为必备能力（出处<sup>[[2]](#ref-2)</sup>）。
 
 ### 风险 6：组织治理 vs 技术治理的"两层皮"
 
-OneReach 明确警告：「**Using AI in knowledge management isn't just a tech shift, it's a people shift too.**」（[出处](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)）。**数据治理团队**（传统）和 **AI 治理团队**（新兴）如果各自为政、不互通元数据，就会出现"两套 catalog、两套权限、两套审计"——这是规模化最大的隐性成本。
+OneReach 明确警告：「**Using AI in knowledge management isn't just a tech shift, it's a people shift too.**」（出处<sup>[[3]](#ref-3)</sup>）。**数据治理团队**（传统）和 **AI 治理团队**（新兴）如果各自为政、不互通元数据，就会出现"两套 catalog、两套权限、两套审计"——这是规模化最大的隐性成本。
 
 ---
 
@@ -149,13 +149,13 @@ OneReach 明确警告：「**Using AI in knowledge management isn't just a tech 
 
 ### 必须重投这一柱的企业（红线场景）
 
-- **金融服务业**：SOX、CCAR、BCBS 239 等监管对 lineage 和访问控制有硬性要求。Acceldata 给出明确建议：「**accurate lineage and strict access controls are critical**」（[出处](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)）
+- **金融服务业**：SOX、CCAR、BCBS 239 等监管对 lineage 和访问控制有硬性要求。Acceldata 给出明确建议：「**accurate lineage and strict access controls are critical**」（出处<sup>[[2]](#ref-2)</sup>）
 
 - **医疗健康**：HIPAA 要求 PHI 自动分类、访问审计、emergency access 的 break-glass logging。同时医疗 agent 一旦决策错误风险极高
 
 - **零售/电商**：消费者数据（消费者同意、PCI 范围）的合规复杂度高
 
-- **跨国企业**：数据本地化要求（如欧盟 GDPR vs 中国《数据出境安全评估办法》）需要 differential access by geography（[Acceldata 实践](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)）
+- **跨国企业**：数据本地化要求（如欧盟 GDPR vs 中国《数据出境安全评估办法》）需要 differential access by geography（Acceldata 实践<sup>[[2]](#ref-2)</sup>）
 
 - **政府与公共部门**：合规标准全面（NIST AI RMF + 各国 AI 法规），可追溯性要求最严
 
@@ -189,11 +189,11 @@ OneReach 明确警告：「**Using AI in knowledge management isn't just a tech 
 
 - **关键能力**：data security posture management / AI trust, risk and security management / privacy automation / unified access governance
 
-- 出处：[BigID 平台综述](https://bigid.com/blog/agentic-ai-governance-trends/)
+- 出处：BigID 平台综述<sup>[[1]](#ref-1)</sup>
 
 ### 案例 2：Acceldata 30/60/90 实施蓝图
 
-[Acceldata 提供的可执行落地蓝图](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)：
+Acceldata 提供的可执行落地蓝图<sup>[[2]](#ref-2)</sup>：
 
 | 阶段 | 时间 | 核心动作 | 产出 |
 | --- | --- | --- | --- |
@@ -209,7 +209,7 @@ OneReach 明确警告：「**Using AI in knowledge management isn't just a tech 
 
 - **零售/电商**：consent-aware activation（营销/分析尊重消费者同意）+ PCI 范围缩减
 
-- 出处：[Acceldata 行业案例](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)
+- 出处：Acceldata 行业案例<sup>[[2]](#ref-2)</sup>
 
 ### 案例 4：OneReach 客服转型 — 知识 agent 重构
 
@@ -219,11 +219,11 @@ OneReach 明确警告：「**Using AI in knowledge management isn't just a tech 
 
 - **结果**：响应时间显著下降、满意度提升、知识保留率提升（防"员工离职即知识流失"）
 
-- 出处：[OneReach: AI Agents in Knowledge Management](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)
+- 出处：OneReach: AI Agents in Knowledge Management<sup>[[3]](#ref-3)</sup>
 
 ### 案例 5：成功 KPI 体系（可直接对客户用）
 
-[Acceldata 给出的可量化指标](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)（用于年度治理报告 / 给老板汇报 ROI）：
+Acceldata 给出的可量化指标<sup>[[2]](#ref-2)</sup>（用于年度治理报告 / 给老板汇报 ROI）：
 
 - **合规效率**：策略违规数量 ↓ / MTTR（mean time to remediate）↓
 
@@ -249,3 +249,17 @@ OneReach 明确警告：「**Using AI in knowledge management isn't just a tech 
 ---
 
 **下一节**：`02-architecture.md` — 柱 1：架构（协议层 MCP × A2A +
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [BigID](https://bigid.com/blog/agentic-ai-governance-trends/)
+
+<a id="ref-2"></a>2. [Acceldata](https://www.acceldata.io/blog/streamline-enterprise-data-governance-with-smart-agentic-ai)
+
+<a id="ref-3"></a>3. [OneReach](https://onereach.ai/blog/enterprise-knowledge-management-ai-agents/)
+
+<a id="ref-4"></a>4. [Cyera](https://www.cyera.com/blog/ai-governance-for-the-agentic-era)
+
+<a id="ref-5"></a>5. [McKinsey 数据](https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage)

@@ -13,25 +13,25 @@ words: "~13K 字"
 
 ## 一、核心观点
 
-1. **「API 成熟度决定 Agentic AI 成熟度」**——这是 Deloitte「API Governance for Agentic AI」（2026 年 4 月）的核心论断。一个企业的 API maturity model 直接决定它能在多大尺度、多大速度上部署 Agent。API 不成熟的企业，Agent 永远只能在「demo」层级跑。出处：[Deloitte, API governance for agentic AI](https://www.deloitte.com/us/en/services/consulting/articles/api-governance-agentic-ai.html)。
+1. **「API 成熟度决定 Agentic AI 成熟度」**——这是 Deloitte「API Governance for Agentic AI」（2026 年 4 月）的核心论断。一个企业的 API maturity model 直接决定它能在多大尺度、多大速度上部署 Agent。API 不成熟的企业，Agent 永远只能在「demo」层级跑。出处：Deloitte, API governance for agentic AI<sup>[[1]](#ref-1)</sup>。
 
-1. **API 治理是 Agentic 时代的「重新发现」**：Salesforce 直陈：「Security gaps, versioning issues, shadow assets, inconsistent onboarding — these are the same challenges that enterprise API programs spent years solving. The difference is that they're now arriving at scale, on infrastructure that wasn't designed for autonomous consumers, and at a pace that manual governance processes can't match.」出处：[Salesforce, MuleSoft Omni Gateway](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+1. **API 治理是 Agentic 时代的「重新发现」**：Salesforce 直陈：「Security gaps, versioning issues, shadow assets, inconsistent onboarding — these are the same challenges that enterprise API programs spent years solving. The difference is that they're now arriving at scale, on infrastructure that wasn't designed for autonomous consumers, and at a pace that manual governance processes can't match.」出处：Salesforce, MuleSoft Omni Gateway<sup>[[2]](#ref-2)</sup>。
 
-1. **「Gartner 2025 预测：< 50% 企业 API 会被管理」**：API 增长速度已经超过 API 管理工具能跟上的程度。在 Agent 时代这一缺口被放大——Agent 每次推理可能调用 5-20 个 API，无治理的 API 在 Agent 链条里被放大成 5-20 倍的风险。出处：[MuleSoft, 3 Best Practices for API Governance](https://blogs.mulesoft.com/learn-apis/api-governance-best-practices/)（引 Gartner）。
+1. **「Gartner 2025 预测：< 50% 企业 API 会被管理」**：API 增长速度已经超过 API 管理工具能跟上的程度。在 Agent 时代这一缺口被放大——Agent 每次推理可能调用 5-20 个 API，无治理的 API 在 Agent 链条里被放大成 5-20 倍的风险。出处：MuleSoft, 3 Best Practices for API Governance<sup>[[3]](#ref-3)</sup>（引 Gartner）。
 
-1. **「Headless 360」与「Everything-as-an-API」**：Salesforce 提出 Agent 时代企业必须做到 expose every platform capability as an API, CLI, or MCP tool。这一定位把企业能力的可消费性从「面向人」扩展到「面向 Agent」，是一种根本性架构转变。出处：[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+1. **「Headless 360」与「Everything-as-an-API」**：Salesforce 提出 Agent 时代企业必须做到 expose every platform capability as an API, CLI, or MCP tool。这一定位把企业能力的可消费性从「面向人」扩展到「面向 Agent」，是一种根本性架构转变。出处：Salesforce<sup>[[2]](#ref-2)</sup>。
 
-1. **API 管理的四大支柱仍然是 design / monitoring / documentation / security**——但每个支柱在 Agent 时代都需要新增内容。Kong 列出 4 pillar 框架；现在需要叠加：design 加 LLM-friendly schema、monitoring 加 token 跟踪、documentation 加 MCP 描述、security 加 prompt injection 防护。出处：[Kong, API Management Best Practices](https://konghq.com/blog/enterprise/best-practices-for-api-management)。
+1. **API 管理的四大支柱仍然是 design / monitoring / documentation / security**——但每个支柱在 Agent 时代都需要新增内容。Kong 列出 4 pillar 框架；现在需要叠加：design 加 LLM-friendly schema、monitoring 加 token 跟踪、documentation 加 MCP 描述、security 加 prompt injection 防护。出处：Kong, API Management Best Practices<sup>[[4]](#ref-4)</sup>。
 
-1. **「Three-Layer Architecture」（System / Process / Experience APIs）+ 事件驱动是 Deloitte 推荐的 agentic 友好 API 架构**：System APIs 暴露原子能力；Process APIs 编排业务逻辑；Experience APIs 给 Agent / 应用消费。事件驱动（Event-Driven Architecture）是 Agent 异步协作的必要基础。出处：[Deloitte, API Governance for Agentic AI](https://www.deloitte.com/us/en/services/consulting/articles/api-governance-agentic-ai.html)。
+1. **「Three-Layer Architecture」（System / Process / Experience APIs）+ 事件驱动是 Deloitte 推荐的 agentic 友好 API 架构**：System APIs 暴露原子能力；Process APIs 编排业务逻辑；Experience APIs 给 Agent / 应用消费。事件驱动（Event-Driven Architecture）是 Agent 异步协作的必要基础。出处：Deloitte, API Governance for Agentic AI<sup>[[1]](#ref-1)</sup>。
 
-1. **「Unified Catalog」打破点工具陷阱**：单独的 AI Gateway、单独的 MCP Server、单独的 LLM Router 都是「solving one layer at a time」——「doesn't solve a full-stack problem」（Salesforce）。企业需要一个**统一 catalog + 一致策略层**，覆盖 API / MCP / LLM / A2A 流量。出处：[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+1. **「Unified Catalog」打破点工具陷阱**：单独的 AI Gateway、单独的 MCP Server、单独的 LLM Router 都是「solving one layer at a time」——「doesn't solve a full-stack problem」（Salesforce）。企业需要一个**统一 catalog + 一致策略层**，覆盖 API / MCP / LLM / A2A 流量。出处：Salesforce<sup>[[2]](#ref-2)</sup>。
 
-1. **API 治理 ≠ 阻碍创新**：MuleSoft 反复强调「How can we protect APIs without slowing down innovation?」——答案是把治理嵌入 CI/CD（automatic governance checks throughout the development lifecycle），用 governance ruleset 替代人工审核，预置 OWASP API Top 10 / OpenAPI Best Practices 等通用规则集。出处：[MuleSoft, API Governance Best Practices](https://blogs.mulesoft.com/learn-apis/api-governance-best-practices/)。
+1. **API 治理 ≠ 阻碍创新**：MuleSoft 反复强调「How can we protect APIs without slowing down innovation?」——答案是把治理嵌入 CI/CD（automatic governance checks throughout the development lifecycle），用 governance ruleset 替代人工审核，预置 OWASP API Top 10 / OpenAPI Best Practices 等通用规则集。出处：MuleSoft, API Governance Best Practices<sup>[[3]](#ref-3)</sup>。
 
-1. **「Identity Propagation」是 agentic 时代 API 治理的关键新需求**：传统 API 网关只验证调用方身份；agentic API 网关必须把「最终用户身份 + Agent 身份」一起传递（end-to-end identity），让被调用的下游系统能基于真实用户做权限判断。出处：[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)、[OpenID Identity Whitepaper](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)（详见柱 4）。
+1. **「Identity Propagation」是 agentic 时代 API 治理的关键新需求**：传统 API 网关只验证调用方身份；agentic API 网关必须把「最终用户身份 + Agent 身份」一起传递（end-to-end identity），让被调用的下游系统能基于真实用户做权限判断。出处：Salesforce<sup>[[2]](#ref-2)</sup>、OpenID Identity Whitepaper<sup>[[5]](#ref-5)</sup>（详见柱 4）。
 
-1. **「Gravitee / Kong / Apigee 三足鼎立 + AI Gateway 新赛道」**：传统 API 网关厂商（Apigee / Kong / MuleSoft / Gravitee）都在 2025-2026 推出 AI Gateway 能力（LLM proxy、token tracking、prompt safety）；同时新生 AI Gateway（Portkey、Helicone、LiteLLM）正在抢市场。出处：[Gravitee, API Governance for AI](https://www.gravitee.io/blog/api-governance-for-ai)（#25）。
+1. **「Gravitee / Kong / Apigee 三足鼎立 + AI Gateway 新赛道」**：传统 API 网关厂商（Apigee / Kong / MuleSoft / Gravitee）都在 2025-2026 推出 AI Gateway 能力（LLM proxy、token tracking、prompt safety）；同时新生 AI Gateway（Portkey、Helicone、LiteLLM）正在抢市场。出处：Gravitee, API Governance for AI<sup>[[6]](#ref-6)</sup>（#25）。
 
 ## 二、重要性综述
 
@@ -47,9 +47,9 @@ words: "~13K 字"
 
 - 没有 event-driven 架构，多 Agent 协作只能轮询，性能崩塌。
 
-「Three-layer architecture」（System / Process / Experience APIs）+「Event-Driven Architecture」是 Deloitte 推荐的 agentic 友好 API 基线（[Deloitte](https://www.deloitte.com/us/en/services/consulting/articles/api-governance-agentic-ai.html)）。这套架构与传统 SOA 看似相似，但关键差异在：在 Agent 时代，Process API 必须显式建模业务事件、状态机、补偿逻辑，让 Agent 能在失败后回滚；Experience API 必须既能被 UI 消费也能被 Agent 消费，这意味着每个 endpoint 都要有 MCP-compatible 描述。
+「Three-layer architecture」（System / Process / Experience APIs）+「Event-Driven Architecture」是 Deloitte 推荐的 agentic 友好 API 基线（Deloitte<sup>[[1]](#ref-1)</sup>）。这套架构与传统 SOA 看似相似，但关键差异在：在 Agent 时代，Process API 必须显式建模业务事件、状态机、补偿逻辑，让 Agent 能在失败后回滚；Experience API 必须既能被 UI 消费也能被 Agent 消费，这意味着每个 endpoint 都要有 MCP-compatible 描述。
 
-**Salesforce「The defining infrastructure shift of the agentic era」论断**值得反复引用：「your AI program is probably further along than your governance is; companies are building AI agents faster than they can govern them. According to S&P Global, 42% of companies abandon them before they even reach production.」42% 的 PoC 死亡率说明 API 治理不足以前是「迟早要解决的问题」，现在变成了「不解决就死」的问题（[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)）。
+**Salesforce「The defining infrastructure shift of the agentic era」论断**值得反复引用：「your AI program is probably further along than your governance is; companies are building AI agents faster than they can govern them. According to S&P Global, 42% of companies abandon them before they even reach production.」42% 的 PoC 死亡率说明 API 治理不足以前是「迟早要解决的问题」，现在变成了「不解决就死」的问题（Salesforce<sup>[[2]](#ref-2)</sup>）。
 
 **API 治理在 agentic 时代的核心扩展点有 5 个**：
 
@@ -63,7 +63,7 @@ words: "~13K 字"
 
 1. **Federated Governance**：大型企业有多个 gateway（前端、后端、SaaS 内置、第三方），需要一个 federated control plane 把策略一次定义、多处执行，不强制替换既有网关。
 
-**Kong 的四支柱**——design / monitoring / documentation / security——仍然适用，但每个支柱内涵被扩展（[Kong](https://konghq.com/blog/enterprise/best-practices-for-api-management)）：
+**Kong 的四支柱**——design / monitoring / documentation / security——仍然适用，但每个支柱内涵被扩展（Kong<sup>[[4]](#ref-4)</sup>）：
 
 - **Design**：LLM-friendly schema（明确的字段命名、稳定的响应格式、机器可读的错误码）；
 
@@ -87,7 +87,7 @@ prompt injection 检测 + rate limiting per agent。
 
 - **劣势**：AI Gateway 能力相对新生，可能不如专门 AI Gateway 灵活；vendor 锁定加深。
 
-- **出处**：[Salesforce MuleSoft](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)、[Kong](https://konghq.com/blog/enterprise/best-practices-for-api-management)。
+- **出处**：Salesforce MuleSoft<sup>[[2]](#ref-2)</sup>、Kong<sup>[[4]](#ref-4)</sup>。
 
 ### 方案 B：专门 AI Gateway（Portkey / Helicone / LiteLLM / Cloudflare AI Gateway）
 
@@ -99,7 +99,7 @@ prompt injection 检测 + rate limiting per agent。
 
 - **劣势**：与企业级 IAM / SIEM / ITSM 集成有限；缺乏完整 API 生命周期管理；存在被传统厂商收购或反超的风险。
 
-- **出处**：[Galileo, Best LLMOps Platforms](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)（#26）讨论了这条赛道的厂商。
+- **出处**：Galileo, Best LLMOps Platforms<sup>[[7]](#ref-7)</sup>（#26）讨论了这条赛道的厂商。
 
 ### 方案 C：「Universal API Management + Federated Governance」（MuleSoft Omni Gateway 路线）
 
@@ -111,7 +111,7 @@ prompt injection 检测 + rate limiting per agent。
 
 - **劣势**：control plane 本身有 vendor 选择风险；策略表达力可能不及单一原生网关。
 
-- **出处**：[Salesforce MuleSoft Omni Gateway](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+- **出处**：Salesforce MuleSoft Omni Gateway<sup>[[2]](#ref-2)</sup>。
 
 ### 方案 D：自建 API Gateway + Open Source Service Mesh
 
@@ -131,17 +131,17 @@ prompt injection 检测 + rate limiting per agent。
 
 ## 四、风险
 
-1. **「点工具陷阱」**：单独买 AI Gateway、单独买 MCP server、单独买 LLM router，结果三套策略、三套审计、三处 token 跟踪，无法回答「我的 Agent 整体合规吗？」。Salesforce 直接点名这是 buyer 最大的误判。对策：选 federated 策略平面或 universal gateway。出处：[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+1. **「点工具陷阱」**：单独买 AI Gateway、单独买 MCP server、单独买 LLM router，结果三套策略、三套审计、三处 token 跟踪，无法回答「我的 Agent 整体合规吗？」。Salesforce 直接点名这是 buyer 最大的误判。对策：选 federated 策略平面或 universal gateway。出处：Salesforce<sup>[[2]](#ref-2)</sup>。
 
-1. **「MCP Wrapping 过快」**：把所有 OpenAPI 都自动转换成 MCP server，结果 Agent 看到 500 个 tool，无法在合理时间内选择对的 tool（context overflow + tool selection accuracy 下降）。对策：先分类、按业务域聚合 tool，再选择性 MCP 化。出处：[BCG, Building Effective Enterprise Agents](https://www.bcg.com/assets/2025/building-effective-enterprise-agents.pdf)。
+1. **「MCP Wrapping 过快」**：把所有 OpenAPI 都自动转换成 MCP server，结果 Agent 看到 500 个 tool，无法在合理时间内选择对的 tool（context overflow + tool selection accuracy 下降）。对策：先分类、按业务域聚合 tool，再选择性 MCP 化。出处：BCG, Building Effective Enterprise Agents<sup>[[8]](#ref-8)</sup>。
 
-1. **API 描述质量不足**：Agent 调用 API 时严重依赖 description / parameter docstring 来选 tool 和构造参数。文档不全 = Agent 选错 tool / 传错参数。对策：用 AI lint 工具自动检测 OpenAPI 描述完整度；把「描述完整度」做成 API 上架准入门槛。出处：[MuleSoft](https://blogs.mulesoft.com/learn-apis/api-governance-best-practices/)。
+1. **API 描述质量不足**：Agent 调用 API 时严重依赖 description / parameter docstring 来选 tool 和构造参数。文档不全 = Agent 选错 tool / 传错参数。对策：用 AI lint 工具自动检测 OpenAPI 描述完整度；把「描述完整度」做成 API 上架准入门槛。出处：MuleSoft<sup>[[3]](#ref-3)</sup>。
 
-1. **Token 失控**：没有 per-agent token 配额，单个失控 Agent 一晚上烧光月度预算。Galileo 引 S&P Global：42% 企业放弃 AI 项目，token 失控是重要原因。对策：default per-agent / per-use-case token quota；异常 spike 自动熔断。出处：[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)。
+1. **Token 失控**：没有 per-agent token 配额，单个失控 Agent 一晚上烧光月度预算。Galileo 引 S&P Global：42% 企业放弃 AI 项目，token 失控是重要原因。对策：default per-agent / per-use-case token quota；异常 spike 自动熔断。出处：Galileo<sup>[[7]](#ref-7)</sup>。
 
-1. **Shadow MCP Server**：开发者自建 MCP server 不走中央治理，部署到生产环境暴露内部 API。对策：MCP server 上架强制注册；Mesh/Gateway 默认 deny unknown MCP endpoints。出处：[CSA, MCP Security](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)（参见柱 4 详述）。
+1. **Shadow MCP Server**：开发者自建 MCP server 不走中央治理，部署到生产环境暴露内部 API。对策：MCP server 上架强制注册；Mesh/Gateway 默认 deny unknown MCP endpoints。出处：CSA, MCP Security<sup>[[9]](#ref-9)</sup>（参见柱 4 详述）。
 
-1. **Identity 丢失**：Agent 调用下游 API 时只传 Agent 自己的 service account，丢失了「最终用户是谁」，导致下游系统按 Agent 的最大权限执行，违反最小权限原则。对策：implement OAuth 2.1 on-behalf-of flow + token exchange，强制传播 end-user identity。出处：[OpenID Whitepaper](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)、[Salesforce](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+1. **Identity 丢失**：Agent 调用下游 API 时只传 Agent 自己的 service account，丢失了「最终用户是谁」，导致下游系统按 Agent 的最大权限执行，违反最小权限原则。对策：implement OAuth 2.1 on-behalf-of flow + token exchange，强制传播 end-user identity。出处：OpenID Whitepaper<sup>[[5]](#ref-5)</sup>、Salesforce<sup>[[2]](#ref-2)</sup>。
 
 ## 五、适用场景
 
@@ -181,13 +181,13 @@ prompt injection 检测 + rate limiting per agent。
 - Token usage、model routing、unified LLM access 在 shared policy layer。
 
 **意义**：MuleSoft 把「Universal API Management」概念从理念变成产品；可作为埃森哲在大型客户的标杆参考。
-**出处**：[Salesforce, MuleSoft Omni Gateway](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)。
+**出处**：Salesforce, MuleSoft Omni Gateway<sup>[[2]](#ref-2)</sup>。
 
 ### 案例 2：MuleSoft 内部用 Anypoint API Governance + Catalog CLI
 
 **做法**：Pre-built rulesets（Anypoint API Best Practices、OpenAPI Best Practices、OWASP API Security Top 10、Authentication Security Best Practices）；governance check 嵌入 CI/CD；不符合规范的 API 上架被自动 block。
 **意义**：把「治理 vs 创新」张力变成「自动化治理 → 加速创新」。
-**出处**：[MuleSoft, API Governance Best Practices](https://blogs.mulesoft.com/learn-apis/api-governance-best-practices/)。
+**出处**：MuleSoft, API Governance Best Practices<sup>[[3]](#ref-3)</sup>。
 
 ### 案例 3：Deloitte API Maturity Model
 
@@ -202,26 +202,50 @@ prompt injection 检测 + rate limiting per agent。
 - **Enterprise Data Models**：跨 API 共享的标准化数据模型是 AI 训练和 Agent 推理的关键。
 
 **应用**：埃森哲做客户 AI Readiness Assessment 时可直接复用此评估维度。
-**出处**：[Deloitte, API Governance for Agentic AI](https://www.deloitte.com/us/en/services/consulting/articles/api-governance-agentic-ai.html)。
+**出处**：Deloitte, API Governance for Agentic AI<sup>[[1]](#ref-1)</sup>。
 
 ### 案例 4：Kong API 管理四支柱实践
 
 **框架**：Design / Monitoring / Documentation / Security；每支柱在 agentic 时代延展。
 **已知客户**：金融、电信、零售大型客户（Kong 客户名册）。
 **关键实践**：rate limiting per consumer、developer portal、OpenAPI documentation 自动生成、JWT/OAuth2 集成。
-**出处**：[Kong, API Management Best Practices for 2025](https://konghq.com/blog/enterprise/best-practices-for-api-management)。
+**出处**：Kong, API Management Best Practices for 2025<sup>[[4]](#ref-4)</sup>。
 
 ### 案例 5：Gravitee AI Governance for Agentic Era
 
 **关键能力**：原生支持 LLM 流量治理、token quotas、AI policy enforcement、与 OpenAI/Anthropic/Azure OpenAI 等模型对接的 governed proxy。
 **适用客户**：中等规模欧洲客户、强 GDPR 合规。
-**出处**：[Gravitee, API Governance for AI](https://www.gravitee.io/blog/api-governance-for-ai)。
+**出处**：Gravitee, API Governance for AI<sup>[[6]](#ref-6)</sup>。
 
 ### 案例 6：Medium Vedcraft「Agentic Gateway」概念
 
 **核心思想**：AI Agent 时代的 Gateway 必须同时管 API / MCP / LLM / A2A 四类流量；标准 API Gateway 只管 API 是不够的。
-**出处**：[Medium Vedcraft, The Agentic Gateway](https://vedcraft.medium.com)。
+**出处**：Medium Vedcraft, The Agentic Gateway<sup>[[10]](#ref-10)</sup>。
 
 ---
 
 **下一节**：柱 3：LLMOps / AgentOps
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [Deloitte, API governance for agentic AI](https://www.deloitte.com/us/en/services/consulting/articles/api-governance-agentic-ai.html)
+
+<a id="ref-2"></a>2. [Salesforce, MuleSoft Omni Gateway](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/)
+
+<a id="ref-3"></a>3. [MuleSoft, 3 Best Practices for API Governance](https://blogs.mulesoft.com/learn-apis/api-governance-best-practices/)
+
+<a id="ref-4"></a>4. [Kong, API Management Best Practices](https://konghq.com/blog/enterprise/best-practices-for-api-management)
+
+<a id="ref-5"></a>5. [OpenID Identity Whitepaper](https://openid.net/wordpress-content/uploads/2025/10/AI-Identity-and-AuthN-AuthZ-Whitepaper.pdf)
+
+<a id="ref-6"></a>6. [Gravitee, API Governance for AI](https://www.gravitee.io/blog/api-governance-for-ai)
+
+<a id="ref-7"></a>7. [Galileo, Best LLMOps Platforms](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)
+
+<a id="ref-8"></a>8. [BCG, Building Effective Enterprise Agents](https://www.bcg.com/assets/2025/building-effective-enterprise-agents.pdf)
+
+<a id="ref-9"></a>9. [CSA, MCP Security](https://cloudsecurityalliance.org/research/topics/ai-safety-initiative)
+
+<a id="ref-10"></a>10. [Medium Vedcraft, The Agentic Gateway](https://vedcraft.medium.com)

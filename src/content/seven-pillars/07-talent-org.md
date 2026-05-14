@@ -13,25 +13,25 @@ words: "~12K 字"
 
 ## 一、核心观点
 
-1. **「Agentic Organization」是企业组织设计的新范式**。McKinsey 论断：「competitive advantage will come not from using individual AI tools but from redesigning the enterprise around an 'agentic organization,' where humans and AI agents create value together」。这要求重新设计五大支柱：Business Model / Operating Model / Governance / Workforce Culture / Technology & Data。出处：[McKinsey, The Agentic Organization](https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era)（via Talent Edge Weekly syndicated summary，[原文链接](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)）。
+1. **「Agentic Organization」是企业组织设计的新范式**。McKinsey 论断：「competitive advantage will come not from using individual AI tools but from redesigning the enterprise around an 'agentic organization,' where humans and AI agents create value together」。这要求重新设计五大支柱：Business Model / Operating Model / Governance / Workforce Culture / Technology & Data。出处：McKinsey, The Agentic Organization<sup>[[1]](#ref-1)</sup>（via Talent Edge Weekly syndicated summary，原文链接<sup>[[2]](#ref-2)</sup>）。
 
-1. **员工角色从「执行任务」转向「编排结果」**。McKinsey：「employees shift from performing tasks to orchestrating outcomes, supervising AI agents, setting goals, and managing trade-offs. Humans move 'above the loop,' overseeing workflows instead of completing every step.」三类新角色出现：①Supervisors 监督 AI Agent ②Specialists 重新设计工作流并管异常 ③AI-augmented frontline workers。出处：[McKinsey](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)。
+1. **员工角色从「执行任务」转向「编排结果」**。McKinsey：「employees shift from performing tasks to orchestrating outcomes, supervising AI agents, setting goals, and managing trade-offs. Humans move 'above the loop,' overseeing workflows instead of completing every step.」三类新角色出现：①Supervisors 监督 AI Agent ②Specialists 重新设计工作流并管异常 ③AI-augmented frontline workers。出处：McKinsey<sup>[[2]](#ref-2)</sup>。
 
-1. **「Flatter Organization」是大势所趋**：BCG/MIT Sloan 调研（2,102 受访者跨 21 行业 116 国）显示，45% 的 agentic AI 领先者预期减少中层管理层；58% 预期治理和决策权调整。McKinsey：「When AI agents coordinate workflows, traditional spans of control widen.」出处：[BCG, Managing the Machines That Manage Themselves](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)（#54）。
+1. **「Flatter Organization」是大势所趋**：BCG/MIT Sloan 调研（2,102 受访者跨 21 行业 116 国）显示，45% 的 agentic AI 领先者预期减少中层管理层；58% 预期治理和决策权调整。McKinsey：「When AI agents coordinate workflows, traditional spans of control widen.」出处：BCG, Managing the Machines That Manage Themselves<sup>[[3]](#ref-3)</sup>（#54）。
 
-1. **HR 三大核心实践必须重做**：①Workforce Planning（账面同时计人 + AI agent）②Performance Management（评估员工“如何引导 AI 创造价值”）③Learning & Development（超越 AI literacy，扩展到 systems thinking、judgment、decision-making with AI）。出处：[McKinsey](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)。
+1. **HR 三大核心实践必须重做**：①Workforce Planning（账面同时计人 + AI agent）②Performance Management（评估员工“如何引导 AI 创造价值”）③Learning & Development（超越 AI literacy，扩展到 systems thinking、judgment、decision-making with AI）。出处：McKinsey<sup>[[2]](#ref-2)</sup>。
 
-1. **「双重职业路径」是 BCG 推荐的关键组织变革**：generalist orchestrators（管理混合人 + AI 团队的“通才”）vs AI-augmented specialists（垂直专精 + AI 杠杆的“专家”）——两条并存的职业晋升路径。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「双重职业路径」是 BCG 推荐的关键组织变革**：generalist orchestrators（管理混合人 + AI 团队的“通才”）vs AI-augmented specialists（垂直专精 + AI 杠杆的“专家”）——两条并存的职业晋升路径。出处：BCG<sup>[[3]](#ref-3)</sup>。
 
-1. **IDC「Digital Labor」框架**：把 AI Agent 定位为「数字劳动力」而非工具。IDC 指出企业要从「workforce of humans」演进为「workforce of humans + digital labor」，劳动力规划、绩效管理、组织结构都要据此重做。出处：[IDC/Salesforce, The Tipping Point](https://www.salesforce.com/content/dam/web/en_us/www/documents/research/idc-tipping-point-agentic-ai-redefining-future-work.pdf)（#60）。
+1. **IDC「Digital Labor」框架**：把 AI Agent 定位为「数字劳动力」而非工具。IDC 指出企业要从「workforce of humans」演进为「workforce of humans + digital labor」，劳动力规划、绩效管理、组织结构都要据此重做。出处：IDC/Salesforce, The Tipping Point<sup>[[4]](#ref-4)</sup>（#60）。
 
-1. **「四组结构性张力」**（BCG/MIT）：①Scalability vs Adaptability ②Investment vs Employment（资本支出 vs 工资支出）③Supervision vs Autonomy（监督 vs 自主）④Process Retrofitting vs Process Reimagining（流程改造 vs 重新想象）。每组张力都需要 HR / 财务 / IT 联合决策。出处：[MIT Sloan, The Emerging Agentic Enterprise](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)（#56）。
+1. **「四组结构性张力」**（BCG/MIT）：①Scalability vs Adaptability ②Investment vs Employment（资本支出 vs 工资支出）③Supervision vs Autonomy（监督 vs 自主）④Process Retrofitting vs Process Reimagining（流程改造 vs 重新想象）。每组张力都需要 HR / 财务 / IT 联合决策。出处：MIT Sloan, The Emerging Agentic Enterprise<sup>[[5]](#ref-5)</sup>（#56）。
 
-1. **「47% 的企业没有 AI 战略」**——BCG/MIT 数据。这意味着大多数企业即使想做 agentic 组织也缺最基本的战略锚点。CIO 必须先把战略锚点立起来再谈组织设计。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「47% 的企业没有 AI 战略」**——BCG/MIT 数据。这意味着大多数企业即使想做 agentic 组织也缺最基本的战略锚点。CIO 必须先把战略锚点立起来再谈组织设计。出处：BCG<sup>[[3]](#ref-3)</sup>。
 
-1. **「Continuous Learning for Humans AND AI Agents」**：BCG 把「持续学习」从人扩展到 Agent——「Like their human counterparts, agentic AI benefits from continuous learning and support. This can take different forms, including fine-tuning agents through retraining as more data becomes available and conducting AI performance reviews」。AI 也要“绩效复盘”。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「Continuous Learning for Humans AND AI Agents」**：BCG 把「持续学习」从人扩展到 Agent——「Like their human counterparts, agentic AI benefits from continuous learning and support. This can take different forms, including fine-tuning agents through retraining as more data becomes available and conducting AI performance reviews」。AI 也要“绩效复盘”。出处：BCG<sup>[[3]](#ref-3)</sup>。
 
-1. **「Workforce Segmentation 是 CIO 第一动作」**：CIO.com 给出 5 类员工分段——Executives / Compliance Leaders / SMEs / End Users / Innovators。每段需要不同的 change management 方案。出处：[CIO.com, CIOs Must Lead Change Management for AI Agent Rollouts](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)（#57）。
+1. **「Workforce Segmentation 是 CIO 第一动作」**：CIO.com 给出 5 类员工分段——Executives / Compliance Leaders / SMEs / End Users / Innovators。每段需要不同的 change management 方案。出处：CIO.com, CIOs Must Lead Change Management for AI Agent Rollouts<sup>[[6]](#ref-6)</sup>（#57）。
 
 ## 二、重要性综述
 
@@ -99,7 +99,7 @@ words: "~12K 字"
 
 - **劣势**：周期长（12-24 个月）；前期投入大；需要 CEO/Board 持续 sponsor。
 
-- **出处**：[McKinsey](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)、[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+- **出处**：McKinsey<sup>[[2]](#ref-2)</sup>、BCG<sup>[[3]](#ref-3)</sup>。
 
 ### 方案 C：「Agentic CoE」（Center of Excellence）模式
 
@@ -111,7 +111,7 @@ words: "~12K 字"
 
 - **劣势**：CoE 容易变成「报告者」而非「赋能者」；需要明确的服务 SLA。
 
-- **出处**：[Cygnet, Best Practices](https://www.cygnet.one/feeds/blog/ai-agents-enterprise-deployment-november-2025)、[CIO.com](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)。
+- **出处**：Cygnet, Best Practices<sup>[[7]](#ref-7)</sup>、CIO.com<sup>[[6]](#ref-6)</sup>。
 
 ### 方案 D：「Dual-Track」（业务部门高速跑 + 平台部门做基础）
 
@@ -123,7 +123,7 @@ words: "~12K 字"
 
 - **劣势**：边界协议复杂；需要明确「哪些动作必须经中央 Mesh」。
 
-- **出处**：BCG「Platform Assembly」章节、[Cygnet](https://www.cygnet.one/feeds/blog/ai-agents-enterprise-deployment-november-2025)。
+- **出处**：BCG「Platform Assembly」章节、Cygnet<sup>[[7]](#ref-7)</sup>。
 
 ### 选型建议
 
@@ -131,17 +131,17 @@ words: "~12K 字"
 
 ## 四、风险
 
-1. **「Job Displacement Fear → Resistance」**：员工担心 Agent 抢饭碗，演变为静默抵制或主动破坏。CIO.com 警告：「employees who fear that AI agents may take their jobs can become detractors」。对策：明确「Agent 抢的是任务不是岗位」叙事；提供清晰的 re-skilling path；高管亲自示范用 Agent。出处：[CIO.com](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)。
+1. **「Job Displacement Fear → Resistance」**：员工担心 Agent 抢饭碗，演变为静默抵制或主动破坏。CIO.com 警告：「employees who fear that AI agents may take their jobs can become detractors」。对策：明确「Agent 抢的是任务不是岗位」叙事；提供清晰的 re-skilling path；高管亲自示范用 Agent。出处：CIO.com<sup>[[6]](#ref-6)</sup>。
 
-1. **「SME 知识囤积」**：SME 担心知识沉淀到 Agent 后自己被边缘化，拒绝把 tribal knowledge 写下来。LatentView VP Boobesh Ramadurai：「If your processes rely on tribal knowledge, scattered data, or manual decisions, agents will stall.」对策：把"贡献知识给 Agent"作为 SME 绩效维度；用 SME 自己的名字命名 Agent 模块；建立 royalty/recognition 机制。出处：[CIO.com](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)。
+1. **「SME 知识囤积」**：SME 担心知识沉淀到 Agent 后自己被边缘化，拒绝把 tribal knowledge 写下来。LatentView VP Boobesh Ramadurai：「If your processes rely on tribal knowledge, scattered data, or manual decisions, agents will stall.」对策：把"贡献知识给 Agent"作为 SME 绩效维度；用 SME 自己的名字命名 Agent 模块；建立 royalty/recognition 机制。出处：CIO.com<sup>[[6]](#ref-6)</sup>。
 
-1. **「Middle Management 失位」**：当 spans of control 扩大、中层管理层被压缩时，那群"老中层"的安置问题。如果处理不好，会成为整体变革的阻力源。对策：把"中层管理者"重定义为"Agent 团队 orchestrator"+ specialist，给清晰的转型路径，而非简单裁员。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「Middle Management 失位」**：当 spans of control 扩大、中层管理层被压缩时，那群"老中层"的安置问题。如果处理不好，会成为整体变革的阻力源。对策：把"中层管理者"重定义为"Agent 团队 orchestrator"+ specialist，给清晰的转型路径，而非简单裁员。出处：BCG<sup>[[3]](#ref-3)</sup>。
 
-1. **「考核错配」**：员工 KPI 还在按"个人产出"考核，但实际上他在指挥一个 Agent 团队，KPI 不奖励"团队产出"导致他不用 Agent。对策：把"Agent 杠杆率"（agent-augmented output / 个人 baseline output）作为新 KPI。出处：[McKinsey](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)。
+1. **「考核错配」**：员工 KPI 还在按"个人产出"考核，但实际上他在指挥一个 Agent 团队，KPI 不奖励"团队产出"导致他不用 Agent。对策：把"Agent 杠杆率"（agent-augmented output / 个人 baseline output）作为新 KPI。出处：McKinsey<sup>[[2]](#ref-2)</sup>。
 
-1. **「Career Path 不清」**：员工不知道在 agentic 时代怎么晋升，焦虑。对策：明确 dual career paths（orchestrator vs specialist）；规划 5-10 年职业地图样例。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「Career Path 不清」**：员工不知道在 agentic 时代怎么晋升，焦虑。对策：明确 dual career paths（orchestrator vs specialist）；规划 5-10 年职业地图样例。出处：BCG<sup>[[3]](#ref-3)</sup>。
 
-1. **「人才争夺战」**：能管理 Agent 的复合人才（AI Ops + 业务专业 + 治理意识）市场稀缺。MIT Sloan 引 Chevron CDAO Margery Connor 说技术迭代快需要 agile workforce。对策：内部培训为主、外部招聘为辅；与高校共建项目；考虑跨界招聘（如游戏行业的"团队 orchestrator"思维很适合）。出处：[MIT Sloan](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+1. **「人才争夺战」**：能管理 Agent 的复合人才（AI Ops + 业务专业 + 治理意识）市场稀缺。MIT Sloan 引 Chevron CDAO Margery Connor 说技术迭代快需要 agile workforce。对策：内部培训为主、外部招聘为辅；与高校共建项目；考虑跨界招聘（如游戏行业的"团队 orchestrator"思维很适合）。出处：MIT Sloan<sup>[[5]](#ref-5)</sup>。
 
 ## 五、适用场景
 
@@ -171,38 +171,56 @@ words: "~12K 字"
 
 **做法**：Prem Natarajan（EVP, Chief Scientist, Head of Enterprise AI）描述 building「dozens of use cases at scale」from a single substantial platform investment；用 technology exploitation + exploration 双视角评估平台战略。
 **意义**：FS 行业大规模 Agent 化的人才 + 平台一体化案例。
-**出处**：[MIT Sloan, The Emerging Agentic Enterprise](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+**出处**：MIT Sloan, The Emerging Agentic Enterprise<sup>[[5]](#ref-5)</sup>。
 
 ### 案例 2：SAP Generative AI Hub + 全生命周期 LLM 管理
 
 **做法**：Walter Sun（SVP, Global Head of AI at SAP）— Generative AI Hub 提供 LLM full lifecycle management；与开发者生态价值挂钩定义 ROI。
 **意义**：把"AI 平台"做成给开发者生态使用的产品，是大型软件企业的样板。
-**出处**：[MIT Sloan](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+**出处**：MIT Sloan<sup>[[5]](#ref-5)</sup>。
 
 ### 案例 3：Chevron 适应型 AI 治理
 
 **做法**：Margery Connor（CDAO）— 「fast-paced development of agentic AI requires organizations to be agile while consistently upholding their data and AI governance standards」；human-in-the-loop 评估输出合理性是默认。
 **意义**：能源行业平衡敏捷与合规的案例。
-**出处**：[MIT Sloan](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+**出处**：MIT Sloan<sup>[[5]](#ref-5)</sup>。
 
 ### 案例 4：Truist Bank「人在环不可去」
 
 **做法**：Chandra Kapireddy（前 Generative AI / ML / Analytics Head）：「If you look at the financial services industry, I don't think there is any use case that is actually customer-facing, affecting the decisions that we would make without a human in the loop.」
 **意义**：金融 customer-facing 场景 HITL 不可妥协的原则。
-**出处**：[MIT Sloan](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+**出处**：MIT Sloan<sup>[[5]](#ref-5)</sup>。
 
 ### 案例 5：LexisNexis 「快速 catch-up」战略
 
 **做法**：Jeff Reihl（EVP, Technology Chairman）：「This technology is changing so fast, we might have to do a quick catch-up」——把"持续学习 + agile 组织"作为战略原则，而非项目。
 **意义**：传统出版/法律信息服务向 agentic 转型的姿态。
-**出处**：[MIT Sloan](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)。
+**出处**：MIT Sloan<sup>[[5]](#ref-5)</sup>。
 
 ### 案例 6：Zapier — AI Agents 战略锚点法
 
 **做法**：Brandon Sammut（CPO）：「Anchor your AI agents imperative in two to three opportunities to boost existing priorities and goals. That keeps AI agents at the center of the company's focus, and avoids the 'sideshow' trap」。
 **意义**：避免「AI 项目作为 side show」的实操原则。
-**出处**：[CIO.com](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)。
+**出处**：CIO.com<sup>[[6]](#ref-6)</sup>。
 
 ---
 
 下一节：柱 6：变革管理
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [McKinsey, The Agentic Organization](https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era)
+
+<a id="ref-2"></a>2. [原文链接](https://www.brianheger.com/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era-mckinsey/)
+
+<a id="ref-3"></a>3. [BCG, Managing the Machines That Manage Themselves](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)
+
+<a id="ref-4"></a>4. [IDC/Salesforce, The Tipping Point](https://www.salesforce.com/content/dam/web/en_us/www/documents/research/idc-tipping-point-agentic-ai-redefining-future-work.pdf)
+
+<a id="ref-5"></a>5. [MIT Sloan, The Emerging Agentic Enterprise](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/)
+
+<a id="ref-6"></a>6. [CIO.com, CIOs Must Lead Change Management for AI Agent Rollouts](https://www.cio.com/article/4079017/cios-must-lead-change-management-for-ai-agent-rollouts-thats-not-easy.html)
+
+<a id="ref-7"></a>7. [Cygnet, Best Practices](https://www.cygnet.one/feeds/blog/ai-agents-enterprise-deployment-november-2025)

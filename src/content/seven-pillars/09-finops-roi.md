@@ -13,25 +13,25 @@ words: "~12K 字"
 
 ## 一、核心观点
 
-1. **「Production Agent 平均 171% ROI」但只有 11% 进入生产**——Dynamisch 引述的 2026 数据。投资 vs 兑现的差距不是模型能力问题，是基础设施 + 治理问题。出处：[Dynamisch, Agentic AI Enterprise Implementation Guide](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)（#59）。
+1. **「Production Agent 平均 171% ROI」但只有 11% 进入生产**——Dynamisch 引述的 2026 数据。投资 vs 兑现的差距不是模型能力问题，是基础设施 + 治理问题。出处：Dynamisch, Agentic AI Enterprise Implementation Guide<sup>[[1]](#ref-1)</sup>（#59）。
 
-1. **「MIT：95% 组织 AI 投资零回报」**——MIT NANDA Initiative 2025 报告引起轰动的数据。绝大多数 generative AI 试点项目没有产生 measurable P&L 影响。原因不是 AI 能力不足，是用例选择、价值锚定、衡量框架、组织对接全面缺位。出处：[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)（#26 引 MIT 报告）。
+1. **「MIT：95% 组织 AI 投资零回报」**——MIT NANDA Initiative 2025 报告引起轰动的数据。绝大多数 generative AI 试点项目没有产生 measurable P&L 影响。原因不是 AI 能力不足，是用例选择、价值锚定、衡量框架、组织对接全面缺位。出处：Galileo<sup>[[2]](#ref-2)</sup>（#26 引 MIT 报告）。
 
-1. **「S&P Global 2025：42% 企业放弃 AI 项目，是上年的 2.5 倍（17% → 42%）」**。Gartner：到 2027 年底 >40% agentic AI 项目会被取消（cost、unclear value、insufficient risk control）。这两个数据一起把"agentic AI ROI 风险"放到聚光灯下。出处：[Dynamisch](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)、[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)。
+1. **「S&P Global 2025：42% 企业放弃 AI 项目，是上年的 2.5 倍（17% → 42%）」**。Gartner：到 2027 年底 >40% agentic AI 项目会被取消（cost、unclear value、insufficient risk control）。这两个数据一起把"agentic AI ROI 风险"放到聚光灯下。出处：Dynamisch<sup>[[1]](#ref-1)</sup>、Galileo<sup>[[2]](#ref-2)</sup>。
 
-1. **「Token-Level Cost Tracking 是 FinOps 的入场券」**：ByteDance 用 token 优化做到 50% cost reduction，业内有 90x improvement 极端案例。Galileo Luna-2 模型把 evaluation 自身成本降低 97% vs GPT-4。Pratik on LLMOps 把 token-tracking 列为 LLMOps 第一步基本动作。出处：[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)、[Pratik on LLMOps](https://medium.com/@pratik.gajbhiye)（#28）。
+1. **「Token-Level Cost Tracking 是 FinOps 的入场券」**：ByteDance 用 token 优化做到 50% cost reduction，业内有 90x improvement 极端案例。Galileo Luna-2 模型把 evaluation 自身成本降低 97% vs GPT-4。Pratik on LLMOps 把 token-tracking 列为 LLMOps 第一步基本动作。出处：Galileo<sup>[[2]](#ref-2)</sup>、Pratik on LLMOps<sup>[[3]](#ref-3)</sup>（#28）。
 
-1. **「Investment vs Employment 张力」是 Agent FinOps 的结构性挑战**：MIT Sloan/BCG—「Traditional tools require large upfront costs but deliver predictable returns through established depreciation schedules. Human workers are an ongoing variable expense, but their value appreciates with experience and training. Agentic AI defies both models, requiring substantial initial development costs and ongoing variable costs.」传统的 CapEx vs OpEx 二分法在 Agent 上失效。出处：[BCG, Managing the Machines That Manage Themselves](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)（#54）。
+1. **「Investment vs Employment 张力」是 Agent FinOps 的结构性挑战**：MIT Sloan/BCG—「Traditional tools require large upfront costs but deliver predictable returns through established depreciation schedules. Human workers are an ongoing variable expense, but their value appreciates with experience and training. Agentic AI defies both models, requiring substantial initial development costs and ongoing variable costs.」传统的 CapEx vs OpEx 二分法在 Agent 上失效。出处：BCG, Managing the Machines That Manage Themselves<sup>[[4]](#ref-4)</sup>（#54）。
 
-1. **「Anchor in Value, Not Modernization」**：BCG/MIT 强烈警告——「To safeguard against pursuing modernization for its own sake, leaders must anchor agentic AI investments in value, ensuring every initiative ties directly to a measurable outcome.」每一笔投资都必须绑定明确可度量业务结果。出处：[BCG](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)。
+1. **「Anchor in Value, Not Modernization」**：BCG/MIT 强烈警告——「To safeguard against pursuing modernization for its own sake, leaders must anchor agentic AI investments in value, ensuring every initiative ties directly to a measurable outcome.」每一笔投资都必须绑定明确可度量业务结果。出处：BCG<sup>[[4]](#ref-4)</sup>。
 
-1. **「Worldwide GenAI 模型 spending 2025 = $14B (Gartner)」**——市场规模和资本投入持续膨胀，但 ROI 衡量框架普遍滞后。出处：[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)（引 Gartner）。
+1. **「Worldwide GenAI 模型 spending 2025 = $14B (Gartner)」**——市场规模和资本投入持续膨胀，但 ROI 衡量框架普遍滞后。出处：Galileo<sup>[[2]](#ref-2)</sup>（引 Gartner）。
 
-1. **「ZenML 457 案例库提供具体 ROI 范本」**：从「reduction in handling time（X%）」「cost per query（USD Y）」「accuracy improvement（Z points）」到 「FTE saved」「revenue lift」 等不同维度的真实企业数据，是 Agent ROI benchmarking 最有用的开源参考。出处：[ZenML LLMOps Database](https://www.zenml.io/llmops-database)（#33）。
+1. **「ZenML 457 案例库提供具体 ROI 范本」**：从「reduction in handling time（X%）」「cost per query（USD Y）」「accuracy improvement（Z points）」到 「FTE saved」「revenue lift」 等不同维度的真实企业数据，是 Agent ROI benchmarking 最有用的开源参考。出处：ZenML LLMOps Database<sup>[[5]](#ref-5)</sup>（#33）。
 
-1. **「FinOps for AI 是 FinOps 的下一个边疆」**：传统 FinOps 关注云计算资源；AI FinOps 必须额外管理 model（token、context、cache）、Agent（step、tool 调用）、Evaluation（评估调用本身的成本）三层。这是过去几年 FinOps Foundation 在标准化的方向。出处：[Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)、[Pratik on LLMOps](https://medium.com/@pratik.gajbhiye)。
+1. **「FinOps for AI 是 FinOps 的下一个边疆」**：传统 FinOps 关注云计算资源；AI FinOps 必须额外管理 model（token、context、cache）、Agent（step、tool 调用）、Evaluation（评估调用本身的成本）三层。这是过去几年 FinOps Foundation 在标准化的方向。出处：Galileo<sup>[[2]](#ref-2)</sup>、Pratik on LLMOps<sup>[[3]](#ref-3)</sup>。
 
-1. **IDC「Digital Labor」框架重塑 ROI 命题**：「With the introduction of digital labor as part of an AI-enabled workforce, organizations have an entirely new way of providing labor capacity, productivity, and efficiency that allows them to expand into new market opportunities and provide new offerings without significantly increasing the human workforce.」 ROI 不只是成本节约，更是 capacity expansion 与 new revenue。出处：[IDC/Salesforce, The Tipping Point](https://www.salesforce.com/content/dam/web/en_us/www/documents/research/idc-tipping-point-agentic-ai-redefining-future-work.pdf)（#60）。
+1. **IDC「Digital Labor」框架重塑 ROI 命题**：「With the introduction of digital labor as part of an AI-enabled workforce, organizations have an entirely new way of providing labor capacity, productivity, and efficiency that allows them to expand into new market opportunities and provide new offerings without significantly increasing the human workforce.」 ROI 不只是成本节约，更是 capacity expansion 与 new revenue。出处：IDC/Salesforce, The Tipping Point<sup>[[6]](#ref-6)</sup>（#60）。
 
 ## 二、重要性综述
 
@@ -273,3 +273,19 @@ BCG/MIT 反复强调「anchor in value」——具体怎么做？
 ---
 
 下一节：结论 — 七柱协同 + 客户成熟度评估
+
+---
+
+## 参考文献
+
+<a id="ref-1"></a>1. [Dynamisch, Agentic AI Enterprise Implementation Guide](https://dynamisch.co/insights/blogs/agentic-ai-enterprise-implementation-guide)
+
+<a id="ref-2"></a>2. [Galileo](https://galileo.ai/blog/best-agent-observability-platforms-scaling-generative-ai)
+
+<a id="ref-3"></a>3. [Pratik on LLMOps](https://medium.com/@pratik.gajbhiye)
+
+<a id="ref-4"></a>4. [BCG, Managing the Machines That Manage Themselves](https://sloanreview.mit.edu/article/managing-the-machines-that-manage-themselves/)
+
+<a id="ref-5"></a>5. [ZenML LLMOps Database](https://www.zenml.io/llmops-database)
+
+<a id="ref-6"></a>6. [IDC/Salesforce, The Tipping Point](https://www.salesforce.com/content/dam/web/en_us/www/documents/research/idc-tipping-point-agentic-ai-redefining-future-work.pdf)

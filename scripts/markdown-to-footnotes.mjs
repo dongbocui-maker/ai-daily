@@ -16,6 +16,12 @@
 import { readFileSync } from 'fs';
 
 function transform(md) {
+  // 幂等检测：已经包含 <sup>[[N]](#ref-N)</sup> 角标 → 跳过
+  if (/<sup>\[\[\d+\]\]\(#ref-\d+\)<\/sup>/.test(md)) {
+    process.stderr.write('  [skip] already converted\n');
+    return md;
+  }
+
   const refs = [];       // [{ url, text }]
   const urlIndex = {};   // url -> 1-based index
 

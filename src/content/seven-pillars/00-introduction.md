@@ -7,14 +7,20 @@ title: "研究背景与方法论"
 feishuToken: YBYqdU0gnouVsqxOjf6cMIHPnpX
 words: "~5K 字"
 ---
-七柱深度·引言（校样）
-引言
-本文档基于 60 个权威源原文（一手信息）撰写。完整源清单：资源总索引 v2。
-引用的所有核心观点、数据、案例均附飞书内联链接，可点击直达原文。
+# 引言
 
-一、本报告覆盖范围：Agentic AI 企业落地的 7+1 框架
-本报告系统性地拆解企业落地 Agentic AI 所需的 7 个基础设施 + 1 个共享底座。每个板块基于 60 个一手权威源（McKinsey / BCG / Deloitte / AWS / Microsoft / Google Cloud / arXiv / OWASP / OpenID Foundation / IDC / CSA / ZenML 等），用 6 个维度展开：核心观点 / 重要性 / 方案利弊 / 风险 / 适用场景 / 最佳实践案例。
-7+1 架构图（含板块间关联关系）
+> 本文档基于 60 个权威源原文（一手信息）撰写。完整源清单：[资源总索引 v2](https://my.feishu.cn/docx/Ybc5deJlBoV7kgx6BaFcoxKenee)。
+> 引用的所有核心观点、数据、案例均附飞书内联链接，可点击直达原文。
+
+---
+
+## 一、本报告覆盖范围：Agentic AI 企业落地的 7+1 框架
+
+本报告系统性地拆解企业落地 Agentic AI 所需的 **7 个基础设施 + 1 个共享底座**。每个板块基于 60 个一手权威源（McKinsey / BCG / Deloitte / AWS / Microsoft / Google Cloud / arXiv / OWASP / OpenID Foundation / IDC / CSA / ZenML 等），用 6 个维度展开：**核心观点 / 重要性 / 方案利弊 / 风险 / 适用场景 / 最佳实践案例**。
+
+### 7+1 架构图（含板块间关联关系）
+
+```
                   ┌─────────────────────────────────────────┐
                   │     业务价值层（Business Outcomes）        │
                   │   收入增长 / 效率提升 / 风险降低 / 客户体验   │
@@ -42,159 +48,92 @@ words: "~5K 字"
                   │     共享底座：数据治理 + 知识管理           │
                   │（脏数据 → 脏 agent。底座不夯实，上层全部白搭）│
                   └─────────────────────────────────────────┘
-关联关系一句话总结：
-底座 → 4 个技术柱：数据/知识质量决定 agent 推理质量；底座没夯实，再好的架构、API 治理、LLMOps、IAM 都是空中楼阁
-4 个技术柱内部：架构是骨架 → API 治理是神经系统（agent 间 + agent 与系统间通信）→ LLMOps 是免疫系统（监控、调试、防漂移）→ IAM/风险是安全边界（谁能做什么、出事谁担责）
-技术栈 → 组织栈：技术能力只是"能做"，组织栈决定"做对的事 + 持续做"
-组织栈内部：人才（谁来主理）→ 变革（怎么把人和流程切换过来）→ FinOps（怎么算清楚值不值）
-组织栈 → 业务价值：所有投入最终要在业务结果上兑现，否则就是技术自嗨
-每板块核心内容（一句精华）
+```
 
+**关联关系一句话总结**：
 
-#
+- **底座 → 4 个技术柱**：数据/知识质量决定 agent 推理质量；底座没夯实，再好的架构、API 治理、LLMOps、IAM 都是空中楼阁
 
-板块
+- **4 个技术柱内部**：架构是骨架 → API 治理是神经系统（agent 间 + agent 与系统间通信）→ LLMOps 是免疫系统（监控、调试、防漂移）→ IAM/风险是安全边界（谁能做什么、出事谁担责）
 
-一句话精华（精华中的精华）
+- **技术栈 → 组织栈**：技术能力只是"能做"，组织栈决定"做对的事 + 持续做"
 
-底座
+- **组织栈内部**：人才（谁来主理）→ 变革（怎么把人和流程切换过来）→ FinOps（怎么算清楚值不值）
 
-数据治理 + 知识管理
+- **组织栈 → 业务价值**：所有投入最终要在业务结果上兑现，否则就是技术自嗨
 
-Agent 的智商上限 = 它能访问的数据 × 知识的可用性，BigID 将「治理重心从模型层迁移到数据层」列为 2026 头号趋势
+### 每板块核心内容（一句精华）
 
-柱 1
+| # | 板块 | 一句话精华（精华中的精华） |
+| --- | --- | --- |
+| **底座** | **数据治理 + 知识管理** | Agent 的智商上限 = 它能访问的数据 × 知识的可用性，[BigID](https://bigid.com/blog/agentic-ai-governance-trends/) 将「治理重心从模型层迁移到数据层」列为 2026 头号趋势 |
+| 柱 1 | 架构 | 协议层（[MCP × A2A 双协议](https://www.infoq.com/articles/architecting-agentic-mlops-a2a-mcp/)）+ 编排层（[Agent Mesh / Orchestrator-Worker 等 5 大模式](https://www.bcg.com/assets/2025/building-effective-enterprise-agents.pdf)）+ [9 大工程铁律](https://arxiv.org/html/2512.08769v1)（tool-first / single-responsibility / KISS） |
+| 柱 2 | API 治理 | Agent 是 API 的"高频不可预测调用方"，需要 AI Gateway 层（[MuleSoft Omni](https://www.salesforce.com/blog/mulesoft-omni-gateway-agentic-ai-governance/) / [Kong AI Gateway](https://konghq.com/blog/enterprise/best-practices-for-api-management)）承接限流、鉴权、可观测、成本控制 |
+| 柱 3 | LLMOps / AgentOps | DevOps for AI Agents——评测、追踪、漂移检测、人工标注闭环；[ZenML 数据库 457 个企业案例](https://www.zenml.io/blog/llmops-in-production-457-case-studies-of-what-actually-works) 证明可观测性比模型选择更影响成败 |
+| 柱 4 | 风险治理 + IAM | [NIST AI RMF Agentic Profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/) + [OWASP Agentic Top 10](https://owaspai.org/docs/ai_security_overview/) + [Zero Trust for Agents](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents)；agent 自己也是「非人类身份」（NHI），需要单独的身份管理 |
+| 柱 5 | 人才 / 组织设计 | 新增 [AI Orchestrator / Agent PM / Trust & Safety](https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/) 等角色；从"人管人"演化到"人管 agent fleet"（[BCG: Managing Machines That Manage Themselves](https://www.bcg.com/publications/2025/machines-that-manage-themselves)） |
+| 柱 6 | 变革管理 | 不是培训问题，是工作流推倒重建的人因工程——员工焦虑、流程重映射、成功标准重定义（[CIO 端到端变革指南](https://www.cio.com/article/4082282/preparing-your-workforce-for-ai-agents-a-change-management-guide.html)） |
+| 柱 7 | FinOps / ROI | 不能 per-agent 算成本 = 无法量化价值；[IDC 数据](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/white-papers/idc-the-tipping-point-final.pdf) 显示 agentic AI 投入将快速超过传统 AI 投入，FinOps 框架必须前置 |
 
-架构
+---
 
-协议层（MCP × A2A 双协议）+ 编排层（Agent Mesh / Orchestrator-Worker 等 5 大模式）+ 9 大工程铁律（tool-first / single-responsibility / KISS）
+## 二、企业 Agentic AI 落地面临的典型问题（按 7+1 映射）
 
-柱 2
-
-API 治理
-
-Agent 是 API 的"高频不可预测调用方"，需要 AI Gateway 层（MuleSoft Omni / Kong AI Gateway）承接限流、鉴权、可观测、成本控制
-
-柱 3
-
-LLMOps / AgentOps
-
-DevOps for AI Agents——评测、追踪、漂移检测、人工标注闭环；ZenML 数据库 457 个企业案例 证明可观测性比模型选择更影响成败
-
-柱 4
-
-风险治理 + IAM
-
-NIST AI RMF Agentic Profile + OWASP Agentic Top 10 + Zero Trust for Agents；agent 自己也是「非人类身份」（NHI），需要单独的身份管理
-
-柱 5
-
-人才 / 组织设计
-
-新增 AI Orchestrator / Agent PM / Trust & Safety 等角色；从"人管人"演化到"人管 agent fleet"（BCG: Managing Machines That Manage Themselves）
-
-柱 6
-
-变革管理
-
-不是培训问题，是工作流推倒重建的人因工程——员工焦虑、流程重映射、成功标准重定义（CIO 端到端变革指南）
-
-柱 7
-
-FinOps / ROI
-
-不能 per-agent 算成本 = 无法量化价值；IDC 数据 显示 agentic AI 投入将快速超过传统 AI 投入，FinOps 框架必须前置
-
-二、企业 Agentic AI 落地面临的典型问题（按 7+1 映射）
 如果你是企业一把手 / CIO / 转型负责人，下面这些问题大概率正在困扰你。本报告对每个问题给出基于一手源的诊断框架：
-关于底座（数据 + 知识）
-「我们 RAG 上线半年了，召回率上不去，agent 答案还是不准——是模型问题吗？」
-「数据治理团队和 AI 团队是两条线，谁该负责给 agent 喂数据？」
-「内部知识库散落在 Confluence / SharePoint / 网盘 / 群聊，agent 怎么用？」
-→ 见底座章节
-关于技术栈（柱 1-4）
-「我们要不要自建 MCP server？还是用厂商的？」「MCP 和 A2A 到底谁是谁的子集？」
-「Agent 调用 API 的成本爆了，怎么管？传统 API Gateway 够用吗？」
-「Agent 在生产环境答错了，怎么定位是 prompt 问题 / 模型问题 / 工具问题 / 数据问题？」
-「Agent 拥有 SAP / CRM / 邮件的读写权限——出事了谁担责？怎么审计？」
-→ 见柱 1（架构）、柱 2（API 治理）、柱 3（LLMOps）、柱 4（风险/IAM）
-关于组织栈（柱 5-7）
-「我们要不要专门设一个 AI Orchestrator 岗？汇报给 CIO 还是业务部门？」
-「业务部门怕被 agent 替代，抗拒配合；技术团队怕背锅，不敢推——怎么破？」
-「老板问 ROI——我能不能说清楚每个 agent 一年值多少钱？省了多少人力？带来了多少收入？」
-→ 见柱 5（人才）、柱 6（变革）、柱 7（FinOps）
-关于整体
-「同样是上 Agentic AI，为什么有的同行 6 个月跑通了 3-5 个生产场景，我们还卡在 PoC？」
-「7+1 这 8 块都重要，但预算和人力有限，先做哪个、缓做哪个？」
-→ 见总结章节（7+1 协同 + 成熟度评估表）
 
-三、本文档结构索引
+### 关于底座（数据 + 知识）
 
+- 「我们 RAG 上线半年了，召回率上不去，agent 答案还是不准——是模型问题吗？」
 
-编号
+- 「数据治理团队和 AI 团队是两条线，谁该负责给 agent 喂数据？」
 
-板块
+- 「内部知识库散落在 Confluence / SharePoint / 网盘 / 群聊，agent 怎么用？」
+→ 见**底座章节**
 
-主要源
+### 关于技术栈（柱 1-4）
 
-00
+- 「我们要不要自建 MCP server？还是用厂商的？」「MCP 和 A2A 到底谁是谁的子集？」
 
-引言（本文档）
+- 「Agent 调用 API 的成本爆了，怎么管？传统 API Gateway 够用吗？」
 
-—
+- 「Agent 在生产环境答错了，怎么定位是 prompt 问题 / 模型问题 / 工具问题 / 数据问题？」
 
-01
+- 「Agent 拥有 SAP / CRM / 邮件的读写权限——出事了谁担责？怎么审计？」
+→ 见**柱 1（架构）、柱 2（API 治理）、柱 3（LLMOps）、柱 4（风险/IAM）**
 
-底座：数据治理 + 知识管理
+### 关于组织栈（柱 5-7）
 
-#51, #52, #53, #47
+- 「我们要不要专门设一个 AI Orchestrator 岗？汇报给 CIO 还是业务部门？」
 
-02
+- 「业务部门怕被 agent 替代，抗拒配合；技术团队怕背锅，不敢推——怎么破？」
 
-柱 1：架构
+- 「老板问 ROI——我能不能说清楚每个 agent 一年值多少钱？省了多少人力？带来了多少收入？」
+→ 见**柱 5（人才）、柱 6（变革）、柱 7（FinOps）**
 
-#14, #16, #09, #06, #07, #08 等 18 源
+### 关于整体
 
-03
+- 「同样是上 Agentic AI，为什么有的同行 6 个月跑通了 3-5 个生产场景，我们还卡在 PoC？」
 
-柱 2：API 治理
+- 「7+1 这 8 块都重要，但预算和人力有限，先做哪个、缓做哪个？」
+→ 见**总结章节**（7+1 协同 + 成熟度评估表）
 
-#19, #21, #22, #23, #24, #25 等 7 源
+---
 
-04
+## 三、本文档结构索引
 
-柱 3：LLMOps / AgentOps
+| 编号 | 板块 | 主要源 |
+| --- | --- | --- |
+| 00 | 引言（本文档） | — |
+| 01 | **底座：数据治理 + 知识管理** | #51, #52, #53, #47 |
+| 02 | 柱 1：架构 | #14, #16, #09, #06, #07, #08 等 18 源 |
+| 03 | 柱 2：API 治理 | #19, #21, #22, #23, #24, #25 等 7 源 |
+| 04 | 柱 3：LLMOps / AgentOps | #26, #27, #29, #33, #34, #35 等 10 源 |
+| 05 | 柱 4：风险治理 + IAM | #36, #38, #41, #42, #44, #45, #48, #49 等 15 源 |
+| 06 | 柱 5：人才 / 组织设计 | #54, #55, #56 |
+| 07 | 柱 6：变革管理 | #57, #58 |
+| 08 | 柱 7：FinOps / ROI | #59, #60 |
+| 99 | 总结：七柱协同 + 成熟度评估 | 全 60 源综合 |
 
-#26, #27, #29, #33, #34, #35 等 10 源
+---
 
-05
-
-柱 4：风险治理 + IAM
-
-#36, #38, #41, #42, #44, #45, #48, #49 等 15 源
-
-06
-
-柱 5：人才 / 组织设计
-
-#54, #55, #56
-
-07
-
-柱 6：变革管理
-
-#57, #58
-
-08
-
-柱 7：FinOps / ROI
-
-#59, #60
-
-99
-
-总结：七柱协同 + 成熟度评估
-
-全 60 源综合
-
-说明：本节为校样版第二轮（基于反馈重写）。全文 9 板块预计 25,000–40,000 字、200+ 引用链接。本节约 1,400 字。
+**说明**：本节为校样版第二轮（基于反馈重写）。全文 9 板块预计 25,000–40,000 字、200+ 引用链接。本节约 1,400 字。

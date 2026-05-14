@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
@@ -18,6 +18,7 @@ export async function getStaticPaths() {
 }
 
 const { doc, prev, next } = Astro.props;
+const { Content } = await render(doc);
 const base = import.meta.env.BASE_URL;
 ---
 <Base title={`${doc.data.docNum} · ${doc.data.title}`} description={`Agentic AI 七柱深度研究 · ${doc.data.title}`}>
@@ -44,9 +45,9 @@ const base = import.meta.env.BASE_URL;
       </div>
     </header>
 
-    {/* 正文（保留原始换行、ASCII 图）*/}
-    <article class="container-x max-w-4xl pb-8">
-      <pre class="whitespace-pre-wrap break-words font-sans text-[15px] leading-[1.75] text-accent-gray-800 m-0">{doc.body}</pre>
+    {/* 正文 — markdown 渲染 */}
+    <article class="container-x max-w-4xl pb-8 prose prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-a:text-accent-purple prose-a:no-underline hover:prose-a:underline prose-strong:text-accent-ink prose-table:text-sm prose-table:my-4 prose-th:bg-accent-gray-50 prose-th:font-semibold prose-th:px-3 prose-th:py-2 prose-td:px-3 prose-td:py-2 prose-td:border prose-th:border prose-td:border-accent-gray-200 prose-th:border-accent-gray-200 prose-code:text-accent-purple prose-code:bg-accent-gray-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-accent-gray-900 prose-pre:text-accent-gray-100 prose-pre:text-[13px] prose-pre:leading-[1.5] prose-blockquote:border-accent-purple prose-blockquote:font-normal prose-blockquote:text-accent-gray-700 prose-hr:border-accent-gray-200">
+      <Content />
     </article>
 
     {/* 上下篇导航 */}

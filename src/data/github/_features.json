@@ -1970,5 +1970,92 @@
     ],
     "sourceHash": "-3037b893",
     "ts": 1778658765755
+  },
+  "influxdata/telegraf": {
+    "features": [
+      "用于采集、处理、聚合并写入 metrics、logs 等数据的 agent",
+      "提供超过 300 个插件，覆盖系统监控、云服务、消息传递等场景",
+      "编译为独立静态二进制文件，无外部依赖，部署简便",
+      "使用 TOML 配置文件，设置直观清晰",
+      "支持用户自定义代码以采集、转换和传输数据"
+    ],
+    "sourceHash": "-6aafce20",
+    "ts": 1778744797932
+  },
+  "K-Dense-AI/scientific-agent-skills": {
+    "features": [
+      "提供 135 个即用型科研 skills，覆盖基因组学、药物发现等多个科学领域",
+      "兼容 Cursor、Claude Code、Codex 等支持开放 Agent Skills 标准的 AI agent",
+      "集成 100+ 科学数据库与专业库，支持复杂多步科研工作流",
+      "为 AI agent 提供精选文档与示例，增强其在专业科学任务中的可靠性",
+      "配套 K-Dense BYOK 开源桌面 AI co-scientist，支持自带 API key 与 40+ 模型"
+    ],
+    "sourceHash": "-5226cb7e",
+    "ts": 1778744802824
+  },
+  "danielmiessler/Personal_AI_Infrastructure": {
+    "features": [
+      "提供个人 AI 基础设施框架，打造专属生活操作系统",
+      "基于 Claude 构建，集成自定义 agent 与算法引擎",
+      "内置 Pulse 自动化模块，实现持续后台任务执行",
+      "提供版本化发布机制，支持算法与配置独立迭代"
+    ],
+    "sourceHash": "-3bf45f08",
+    "ts": 1778744806535
+  },
+  "supertone-inc/supertonic": {
+    "features": [
+      "设备端 TTS 推理，基于 ONNX Runtime 本地运行，无需云端 API",
+      "Supertonic 3 支持 31 种语言，朗读准确率高，重复/跳词更少",
+      "提供 Python SDK（pip install supertonic），首次运行自动下载模型",
+      "Voice Builder 可将用户声音转为可部署的边缘端 TTS",
+      "支持 Flutter SDK 及 macOS 等多平台集成"
+    ],
+    "sourceHash": "7c5a3e75",
+    "ts": 1778744810501
+  },
+  "ArthurBrussee/brush": {
+    "features": [
+      "基于 Gaussian splatting 的 3D 重建引擎，跨平台运行",
+      "支持 macOS/Windows/Linux/Android 及浏览器，兼容 AMD/Nvidia/Intel 显卡",
+      "支持 COLMAP 与 Nerfstudio 格式数据训练，可实时交互查看训练动态",
+      "可作为 splat viewer 加载 .ply 文件，支持 URL 流式加载与动画播放",
+      "提供 CLI 工具，并集成 rerun 实现训练过程可视化"
+    ],
+    "sourceHash": "-736c3ec8",
+    "ts": 1778744815487
+  },
+  "imthenachoman/How-To-Secure-A-Linux-Server": {
+    "features": [
+      "SSH 加固指南：密钥认证、sshd_config 配置与 2FA/MFA 接入",
+      "基础安全配置：限制 sudo/su、强密码策略与自动安全更新",
+      "网络防护：UFW 防火墙、PSAD、Fail2Ban 与 CrowdSec 入侵检测",
+      "系统审计：AIDE 文件完整性监控与 ClamAV 病毒扫描",
+      "支持使用 Ansible Playbooks 自动化部署 Linux 服务器安全加固"
+    ],
+    "sourceHash": "1101e4ac",
+    "ts": 1778744819974
+  },
+  "ton-blockchain/acton": {
+    "features": [
+      "一体化 TON 智能合约开发 CLI，覆盖创建、构建、测试到部署全流程",
+      "基于 Rust 实现，提供原生级别的工具链和测试运行时性能",
+      "Tolk-first 工作流，内置 wrapper、测试工具和脚本支持",
+      "快速测试运行器，支持 fork 模式、gas 快照、覆盖率、变异和模糊测试",
+      "浏览器测试 UI，可查看失败测试、trace、日志和覆盖率"
+    ],
+    "sourceHash": "-7a05ef69",
+    "ts": 1778744826027
+  },
+  "github/spec-kit": {
+    "features": [
+      "将 specification 转化为可执行产物，直接生成可运行的实现代码",
+      "提供 Specify CLI，支持持久化或一次性安装并初始化项目",
+      "原生集成多种 AI coding agent，支撑 Spec-Driven Development 工作流",
+      "支持 Community Extensions 与 Presets，可自定义扩展工具链",
+      "以阶段化流程引导从产品场景到可预测交付的开发过程"
+    ],
+    "sourceHash": "ef33d2a",
+    "ts": 1778744830812
   }
 }

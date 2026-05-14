@@ -247,53 +247,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* ── 阅读路径推荐 ── */
-  .paths-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-  }
-  .path-card {
-    background: var(--bg-section);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 22px 22px 20px;
-    transition: all 0.18s ease;
-  }
-  .path-card:hover {
-    border-color: var(--purple);
-    box-shadow: 0 4px 16px rgba(161,0,255,0.06);
-  }
-  .path-icon {
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-  .path-role {
-    font-size: 11px;
-    color: var(--text-3);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-  .path-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-  .path-time {
-    font-size: 12px;
-    color: var(--purple);
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-  .path-route {
-    font-size: 13px;
-    color: var(--text-2);
-    line-height: 1.55;
-  }
-
   /* ── 11 份文档卡片网格 ── */
   .docs-grid {
     display: grid;
@@ -567,61 +520,6 @@
         <div class="stat-num">70%</div>
         <div class="stat-label">数字化转型失败<br>根因不是技术，是人</div>
         <div class="stat-src">McKinsey/Gartner/Deloitte</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 阅读路径 -->
-<section class="section section-mute">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-eyebrow">阅读路径推荐</div>
-      <h2 class="section-title">不同角色 · 不同路线</h2>
-      <p class="section-desc">11 份相互关联但可独立阅读。先按你的角色挑路径，再按需深读。</p>
-    </div>
-    <div class="paths-grid">
-      <div class="path-card">
-        <div class="path-icon">📊</div>
-        <div class="path-role">Board / CFO</div>
-        <div class="path-title">高管汇报</div>
-        <div class="path-time">≤ 1 小时</div>
-        <div class="path-route">引言 → 总结 → 各柱「重要性综述」段落</div>
-      </div>
-      <div class="path-card">
-        <div class="path-icon">🏗</div>
-        <div class="path-role">CIO / CTO</div>
-        <div class="path-title">技术规划</div>
-        <div class="path-time">1–2 天</div>
-        <div class="path-route">引言 → 底座 → 柱 1 架构 → 柱 2 API → 柱 3 LLMOps → 路线图</div>
-      </div>
-      <div class="path-card">
-        <div class="path-icon">🛡</div>
-        <div class="path-role">CSO / CRO</div>
-        <div class="path-title">风险评估</div>
-        <div class="path-time">1 天</div>
-        <div class="path-route">引言 → 柱 4 风险/IAM → 总结的 8 维度评估表</div>
-      </div>
-      <div class="path-card">
-        <div class="path-icon">👥</div>
-        <div class="path-role">CHRO</div>
-        <div class="path-title">变革手册</div>
-        <div class="path-time">1 天</div>
-        <div class="path-route">引言 → 柱 5 人才/组织 → 柱 6 变革管理</div>
-      </div>
-      <div class="path-card">
-        <div class="path-icon">💰</div>
-        <div class="path-role">CFO / FinOps</div>
-        <div class="path-title">衡量框架</div>
-        <div class="path-time">0.5 天</div>
-        <div class="path-route">柱 7 FinOps/ROI → 总结路线图</div>
-      </div>
-      <div class="path-card">
-        <div class="path-icon">🎯</div>
-        <div class="path-role">埃森哲</div>
-        <div class="path-title">Engagement 第一周</div>
-        <div class="path-time">3–5 天</div>
-        <div class="path-route">总结的「8 维度成熟度评估表」+「90/180/365 路线图」 → 挑 1–2 柱深读</div>
       </div>
     </div>
   </div>

@@ -1,0 +1,234 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const docs = (await getCollection('seven-pillars')).sort((a, b) => a.data.order - b.data.order);
+
+// Doc 描述 + 标签（与原 Hub 页一致）
+const docMeta: Record<string, { desc: string; tags: string[] }> = {
+  introduction: {
+    desc: '研究的背景、方法论、源材料概述、七柱模型的整体定位。理解全套文档的入口。',
+    tags: ['研究方法', '问题定义'],
+  },
+  'foundation-overview': {
+    desc: '底座（数据 + 知识）与 7 柱的关系、整体架构思路、为什么这是 minimum viable set。',
+    tags: ['整体架构', '概念框架'],
+  },
+  'foundation-data': {
+    desc: 'Data Catalog、知识图谱、RAG 评估、数据质量治理、Knowledge Lifecycle。You cannot agent your way out of a data mess.',
+    tags: ['RAG', '知识图谱', '数据治理'],
+  },
+  architecture: {
+    desc: 'Agentic Mesh、单 vs 多 Agent、调度 vs 协作、状态机设计、MCP/A2A 协议架构。',
+    tags: ['Agentic Mesh', 'MCP', 'A2A'],
+  },
+  'api-governance': {
+    desc: 'Omni Gateway、MCP Gateway、Tool Marketplace、PEP 集中化、A2A 协议、Salesforce MuleSoft / Kong / Apigee 实践。',
+    tags: ['Gateway', 'Tool 治理'],
+  },
+  llmops: {
+    desc: 'Semantic Observability、Continuous Evaluation、Prompt Lifecycle、Token Tracking、Agent Graph 可视化、ZenML 457 案例。',
+    tags: ['Galileo', 'LangSmith', 'Evaluation'],
+  },
+  'risk-iam': {
+    desc: 'NHI / Agent Identity、OAuth 2.1 + Token Exchange、ReBAC/ABAC、NIST AI RMF Agentic Profile、CSA Agentic Trust、Microsoft Defender for AI。',
+    tags: ['NIST AI RMF', 'CSA', 'OWASP', 'OpenID'],
+  },
+  'talent-org': {
+    desc: 'Agentic Organization、Dual Career Path、Workforce Planning、Performance Management Redesign、Digital Labor 框架。',
+    tags: ['McKinsey', 'BCG', 'HR'],
+  },
+  'change-mgmt': {
+    desc: 'Change is Human, Not Technological. Productivity Paradox、Workload Paradox、五段员工差异化变革、Champion Network。',
+    tags: ['Change Mgmt', 'CIO 实操'],
+  },
+  'finops-roi': {
+    desc: 'TCO of Agent Ownership、4 类 ROI 维度、Value Anchoring、Per-Use-Case Budget、Smart Routing、Klarna / ByteDance / Convirza 案例。',
+    tags: ['TCO', 'Token Cost', 'Stage Gate'],
+  },
+  conclusion: {
+    desc: '七柱协同矩阵、客户 8 维度 × 5 级成熟度评估表（40 评估点）、埃森哲 90/180/365 + 24 个月落地路线图、给 MD 的 5 条最后建议。',
+    tags: ['成熟度评估', '路线图', 'Go/No-Go Gate'],
+  },
+};
+
+const base = import.meta.env.BASE_URL;
+---
+<Base
+  title="Agentic AI 企业落地 · 一个底座 + 七大基础设施"
+  description="Agentic AI 企业落地完整研究：1 个数据底座 + 7 大基础设施 = 11 份深度文档 · ~118K 字 · 296 引用 · 60 权威源。面向 MD / CIO / CTO / CSO / CHRO / CFO。"
+>
+  <Header />
+  <main class="flex-1">
+    {/* Hero */}
+    <section class="bg-accent-ink text-white relative overflow-hidden">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container-x py-16 lg:py-20 relative">
+        <span class="inline-block bg-accent-purple text-white px-3 py-1.5 text-[11px] font-semibold tracking-widest uppercase mb-5 rounded-sm">深度研究 · 系列文档</span>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-6 max-w-4xl">
+          Agentic AI 企业落地：<br>
+          <span class="text-accent-purple-light">一个底座 + 七大基础设施</span>
+        </h1>
+        <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed mb-10">
+          面向 MD / CIO / CTO / CSO / CHRO / CFO 的结构化弹药。基于 60 个权威源（NIST、CSA、OWASP、McKinsey、BCG、MIT Sloan、Galileo、ZenML、OpenID 等），系统回答企业落地 Agentic AI 的 11 个核心问题：从数据底座、架构、API 治理、LLMOps、风险 IAM、人才组织、变革管理，到 FinOps/ROI 与落地路线图。
+        </p>
+        <div class="flex flex-wrap gap-7 md:gap-10">
+          <div>
+            <div class="text-2xl md:text-3xl font-bold leading-none">11</div>
+            <div class="text-[11px] tracking-widest uppercase text-accent-gray-500 mt-1.5">深度文档</div>
+          </div>
+          <div>
+            <div class="text-2xl md:text-3xl font-bold leading-none">~118K</div>
+            <div class="text-[11px] tracking-widest uppercase text-accent-gray-500 mt-1.5">字</div>
+          </div>
+          <div>
+            <div class="text-2xl md:text-3xl font-bold leading-none">296</div>
+            <div class="text-[11px] tracking-widest uppercase text-accent-gray-500 mt-1.5">引用</div>
+          </div>
+          <div>
+            <div class="text-2xl md:text-3xl font-bold leading-none">60</div>
+            <div class="text-[11px] tracking-widest uppercase text-accent-gray-500 mt-1.5">权威源</div>
+          </div>
+          <div>
+            <div class="text-2xl md:text-3xl font-bold leading-none">6</div>
+            <div class="text-[11px] tracking-widest uppercase text-accent-gray-500 mt-1.5">维度结构</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 核心矛盾 / 5 张警示卡 */}
+    <section class="bg-accent-ink text-white py-14 lg:py-16 border-t border-white/5">
+      <div class="container-x">
+        <div class="mb-9">
+          <div class="text-[11px] tracking-widest uppercase text-accent-purple-light font-semibold mb-2">核心矛盾</div>
+          <h2 class="text-2xl md:text-3xl font-bold leading-tight mb-3">为什么 79% 部署 Agent，仅 11% 进入生产？</h2>
+          <p class="text-sm md:text-base text-accent-gray-300 max-w-3xl">把这些数字摆在一起，落地失败的根因清晰浮现：不是模型不够强，是基础设施跟不上 Agent 自主行为带来的结构性需求。</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div class="bg-accent-gray-900 border border-white/10 border-l-[3px] border-l-accent-purple p-5">
+            <div class="text-3xl font-bold text-accent-purple-light leading-none mb-2">95%</div>
+            <div class="text-[13px] leading-tight mb-2 font-medium">企业 AI 投资<br>零回报</div>
+            <div class="text-[11px] text-accent-gray-500 tracking-wide">MIT NANDA · 2025</div>
+          </div>
+          <div class="bg-accent-gray-900 border border-white/10 border-l-[3px] border-l-accent-purple p-5">
+            <div class="text-3xl font-bold text-accent-purple-light leading-none mb-2">42%</div>
+            <div class="text-[13px] leading-tight mb-2 font-medium">企业放弃 AI 项目<br>同比 17% 翻 2.5 倍</div>
+            <div class="text-[11px] text-accent-gray-500 tracking-wide">S&amp;P Global · 2025</div>
+          </div>
+          <div class="bg-accent-gray-900 border border-white/10 border-l-[3px] border-l-accent-purple p-5">
+            <div class="text-3xl font-bold text-accent-purple-light leading-none mb-2">&gt;40%</div>
+            <div class="text-[13px] leading-tight mb-2 font-medium">Agentic AI 项目<br>2027 年底将被取消</div>
+            <div class="text-[11px] text-accent-gray-500 tracking-wide">Gartner</div>
+          </div>
+          <div class="bg-accent-gray-900 border border-white/10 border-l-[3px] border-l-accent-purple p-5">
+            <div class="text-3xl font-bold text-accent-purple-light leading-none mb-2">47%</div>
+            <div class="text-[13px] leading-tight mb-2 font-medium">企业完全<br>没有 AI 战略</div>
+            <div class="text-[11px] text-accent-gray-500 tracking-wide">MIT/BCG · N=2102</div>
+          </div>
+          <div class="bg-accent-gray-900 border border-white/10 border-l-[3px] border-l-accent-purple p-5">
+            <div class="text-3xl font-bold text-accent-purple-light leading-none mb-2">70%</div>
+            <div class="text-[13px] leading-tight mb-2 font-medium">数字化转型失败<br>根因不是技术，是人</div>
+            <div class="text-[11px] text-accent-gray-500 tracking-wide">McKinsey/Gartner/Deloitte</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 11 份文档卡片 */}
+    <section class="bg-white py-14 lg:py-20">
+      <div class="container-x">
+        <div class="mb-10">
+          <div class="text-[11px] tracking-widest uppercase text-accent-purple font-semibold mb-2">完整目录</div>
+          <h2 class="text-2xl md:text-3xl font-bold leading-tight mb-3">11 份深度文档</h2>
+          <p class="text-sm md:text-base text-accent-gray-700 max-w-3xl">每份独立成篇，按统一 6 维度结构展开：核心观点 · 重要性综述 · 方案利弊 · 风险 · 适用场景 · 最佳实践案例。点击卡片打开对应文档。</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {docs.map((doc) => {
+            const meta = docMeta[doc.data.slug] ?? { desc: '', tags: [] };
+            return (
+              <a
+                href={`${base}learn/agentic-ai-seven-pillars/${doc.data.slug}/`}
+                class={`doc-card pillar-${doc.data.docColor} relative bg-white border border-accent-gray-200 rounded-md p-6 flex flex-col transition-all hover:-translate-y-[2px] hover:shadow-lg hover:border-accent-gray-300 overflow-hidden`}
+              >
+                <span class="doc-card-bar absolute top-0 left-0 bottom-0 w-1"></span>
+                <span class="text-[11px] font-bold tracking-[0.1em] text-accent-gray-500 mb-2 uppercase">{doc.data.docNum}</span>
+                <div class="text-base font-bold text-accent-ink leading-tight mb-2.5 tracking-tight">{doc.data.title}</div>
+                <div class="text-[13px] text-accent-gray-700 leading-relaxed mb-3.5 flex-grow">{meta.desc}</div>
+                {meta.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mb-3.5">
+                    {meta.tags.map((t) => (
+                      <span class="text-[11px] bg-accent-gray-50 text-accent-gray-700 px-2 py-0.5 rounded-sm border border-accent-gray-200">{t}</span>
+                    ))}
+                  </div>
+                )}
+                <div class="flex justify-between items-center pt-3 border-t border-accent-gray-100 text-[12px] text-accent-gray-500">
+                  <span class="font-medium">{doc.data.words ?? ''}</span>
+                  <span class="text-accent-purple font-semibold">查看 →</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    {/* 跨柱协同矩阵 */}
+    <section class="bg-accent-gray-50 py-14 lg:py-20">
+      <div class="container-x">
+        <div class="mb-8">
+          <div class="text-[11px] tracking-widest uppercase text-accent-purple font-semibold mb-2">跨柱协同</div>
+          <h2 class="text-2xl md:text-3xl font-bold leading-tight mb-3">真正的杠杆来自协同</h2>
+          <p class="text-sm md:text-base text-accent-gray-700 max-w-3xl">每一柱独立都是必要条件，但单柱完美也救不了整体——「装了 Mesh 没接 IAM」「LLMOps 有了没接 FinOps」「治理框架有了没接变革」是企业最常见的失败模式。</p>
+        </div>
+        <div class="overflow-x-auto bg-white border border-accent-gray-200 rounded-md">
+          <table class="w-full min-w-[700px] border-collapse text-sm">
+            <thead>
+              <tr class="bg-accent-gray-50 border-b border-accent-gray-200">
+                <th class="text-left px-4 py-3 text-xs font-bold uppercase tracking-wide text-accent-ink">协同方向</th>
+                <th class="text-left px-4 py-3 text-xs font-bold uppercase tracking-wide text-accent-ink">协同动作</th>
+                <th class="text-left px-4 py-3 text-xs font-bold uppercase tracking-wide text-accent-ink">价值</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">底座 ↔ 柱 1 架构</td><td class="px-4 py-3 text-accent-gray-700">知识图谱 + RAG 支撑 Agent 推理</td><td class="px-4 py-3 text-accent-gray-700">Agent 决策有据可循</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">底座 ↔ 柱 4 风险/IAM</td><td class="px-4 py-3 text-accent-gray-700">数据敏感度标签自动驱动 Agent 访问策略</td><td class="px-4 py-3 text-accent-gray-700">零信任落到数据级</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 1 架构 ↔ 柱 2 API 治理</td><td class="px-4 py-3 text-accent-gray-700">MCP/A2A 协议 + API Gateway 统一 PEP</td><td class="px-4 py-3 text-accent-gray-700">单点治理多 Agent 调用</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 2 API ↔ 柱 4 IAM</td><td class="px-4 py-3 text-accent-gray-700">Gateway 验证 Agent identity + scope</td><td class="px-4 py-3 text-accent-gray-700">防越权 + Shadow Agent</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 3 LLMOps ↔ 柱 4 风险</td><td class="px-4 py-3 text-accent-gray-700">Behavioral drift 数据驱动 risk 检测</td><td class="px-4 py-3 text-accent-gray-700">主动风险防御</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 3 LLMOps ↔ 柱 7 FinOps</td><td class="px-4 py-3 text-accent-gray-700">Token / step 数据驱动成本归因</td><td class="px-4 py-3 text-accent-gray-700">TCO 可视</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 4 风险 ↔ 柱 5 人才</td><td class="px-4 py-3 text-accent-gray-700">SME 参与 red team + HITL approval</td><td class="px-4 py-3 text-accent-gray-700">治理 + 人深度结合</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 5 人才 ↔ 柱 6 变革</td><td class="px-4 py-3 text-accent-gray-700">Champion network + dual career path</td><td class="px-4 py-3 text-accent-gray-700">持续采用</td></tr>
+              <tr class="border-b border-accent-gray-100"><td class="px-4 py-3 font-semibold text-accent-ink">柱 6 变革 ↔ 柱 7 FinOps</td><td class="px-4 py-3 text-accent-gray-700">ROI scorecard 公开化 + 内部传播</td><td class="px-4 py-3 text-accent-gray-700">内部说服力</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-accent-ink">柱 7 FinOps ↔ 战略层</td><td class="px-4 py-3 text-accent-gray-700">Anchor in value 框架 + CFO/Board 对话</td><td class="px-4 py-3 text-accent-gray-700">长期 sustainability</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .hero-glow {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(161, 0, 255, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .doc-card.pillar-foundation .doc-card-bar { background-color: #6B7280; }
+  .doc-card.pillar-p1 .doc-card-bar { background-color: #A100FF; }
+  .doc-card.pillar-p2 .doc-card-bar { background-color: #00C8FF; }
+  .doc-card.pillar-p3 .doc-card-bar { background-color: #00E676; }
+  .doc-card.pillar-p4 .doc-card-bar { background-color: #FF3B30; }
+  .doc-card.pillar-p5 .doc-card-bar { background-color: #FF9500; }
+  .doc-card.pillar-p6 .doc-card-bar { background-color: #E5B900; }
+  .doc-card.pillar-p7 .doc-card-bar { background-color: #5856D6; }
+  .doc-card.pillar-conclusion .doc-card-bar { background-color: #1A1A1A; }
+</style>

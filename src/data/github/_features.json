@@ -2057,5 +2057,38 @@
     ],
     "sourceHash": "ef33d2a",
     "ts": 1778744830812
+  },
+  "ruvnet/RuView": {
+    "features": [
+      "基于 ESP32 CSI 的 WiFi 感知平台，可穿墙检测人员存在与计数",
+      "非接触式监测呼吸、心率及睡眠质量，含睡眠阶段分类与呼吸暂停筛查",
+      "通过时序 CSI 模式识别行走、坐立、手势和跌倒等活动",
+      "边缘部署 ESP32 mesh，结合 Cognitum Seed 提供持久记忆与加密认证",
+      "支持 WiFlow 架构的 17 个 COCO 关键点姿态估计，无需摄像头"
+    ],
+    "sourceHash": "18f7dc2c",
+    "ts": 1778831788142
+  },
+  "roboflow/supervision": {
+    "features": [
+      "与 Ultralytics、Transformers、MMDetection、Inference 等主流模型库无缝集成",
+      "提供检测、分类、分割结果的统一数据结构 sv.Detections",
+      "内置丰富的标注器，可绘制边界框、掩码、关键点等可视化效果",
+      "支持视频处理、实时区域计数与目标追踪",
+      "model-agnostic 的计算机视觉工具包，从数据加载到部署一站式覆盖"
+    ],
+    "sourceHash": "-118c88ed",
+    "ts": 1778831792843
+  },
+  "NVIDIA-AI-Blueprints/video-search-and-summarization": {
+    "features": [
+      "提供视觉 agent 与 AI 视频分析参考架构，整合 VLM、LLM 和加速视觉微服务",
+      "支持视频搜索、摘要、视觉 Q&A 及报告生成等自然语言视频 agent 工作流",
+      "实现实时视频智能处理，包含特征提取、embeddings 和流理解",
+      "提供下游分析能力，将元数据丰富为轨迹、事件和已验证告警",
+      "基于 NVIDIA NIM 微服务，支持 Model Context Protocol 编排"
+    ],
+    "sourceHash": "-74642867",
+    "ts": 1778831797810
   }
 }

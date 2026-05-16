@@ -24,13 +24,22 @@ export interface AudioMeta {
   // 后期可加：transcript / subtitle_url（字幕功能时）
 }
 
+// 审计/元数据字段——仅供内部追溯，**不渲染到前端用户界面**
+export interface AuditMeta {
+  tieluFourScan?: string;     // 铁律 4 扫描结果声明（OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 大动作扫描）
+  [key: string]: unknown;     // 未来其他审计字段
+}
+
 export interface DailyReport {
   date: string;
   title: string;
   summary?: string;
   sections: Section[];
+  // 本期速览（Brief）面向读者的核心趋势总结，通常 2-3 段。
+  // ⚠️ 不要往里塞「铁律 X 扫描结果」「审计日志」之类的内部元信息——那是 audit 字段的事。
   closing?: string[];
   audio?: AudioMeta;          // 可选：当天日报的语音版 mp3
+  audit?: AuditMeta;          // 可选：内部审计元数据，不渲染
 }
 
 // Vite glob: 静态构建期把所有 JSON 内嵌

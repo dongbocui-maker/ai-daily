@@ -1,6 +1,15 @@
 ---
-const paragraphs = Astro.props.paragraphs as string[] | undefined;
-if (!paragraphs?.length) return;
+const rawParagraphs = Astro.props.paragraphs as string[] | undefined;
+// 防御性过滤：audit/审计性声明不能出现在本期速览（即使数据层有误传入）
+// 过滤关键词：「铁律 X 扫描」「审计」「scan log」等内部追溯字眼
+const AUDIT_PATTERNS = [
+  /^\s*今日?铁律\s*\d/,      // 「今日铁律 4」「铁律 4」开头
+  /^\s*铁律\s*\d+\s*扫描/,    // 「铁律 4 扫描」「铁律4扫描」
+  /^\s*审计日志/,           // 「审计日志」
+  /^\s*scan\s*log/i,         // 英文「scan log」
+];
+const paragraphs = (rawParagraphs ?? []).filter(p => !AUDIT_PATTERNS.some(re => re.test(p)));
+if (!paragraphs.length) return;
 ---
 <section class="py-12 lg:py-16 bg-accent-gray-50 border-b border-accent-gray-100">
   <div class="container-x max-w-6xl">

@@ -2090,5 +2090,38 @@
     ],
     "sourceHash": "-74642867",
     "ts": 1778831797810
+  },
+  "anthropics/skills": {
+    "features": [
+      "提供 Claude Skills 示例集合，涵盖创意设计、技术开发、企业沟通等场景",
+      "包含驱动 Claude 文档能力的 docx、pdf、pptx、xlsx 文档处理 skills",
+      "每个 skill 自包含 SKILL.md 文件，含指令与元数据供 Claude 动态加载",
+      "提供 Agent Skills 规范说明与 skill 模板，便于开发者自建 skills",
+      "支持在 Claude Code、Claude.ai 及 API 中注册使用"
+    ],
+    "sourceHash": "-5808b23b",
+    "ts": 1778915912166
+  },
+  "oven-sh/bun": {
+    "features": [
+      "快速的 JavaScript runtime，可作为 Node.js 的 drop-in 替代",
+      "内置 Node.js 兼容的 package manager，安装速度显著更快",
+      "内置 test runner 和 script runner，无需额外工具",
+      "原生支持 TypeScript 和 JSX，开箱即用",
+      "基于 Zig 编写，由 JavaScriptCore 驱动，启动快、内存占用低"
+    ],
+    "sourceHash": "-ec548e5",
+    "ts": 1778915915695
+  },
+  "joeseesun/qiaomu-anything-to-notebooklm": {
+    "features": [
+      "自然语言驱动，将任意内容转换为播客 / PPT / 思维导图 / Quiz",
+      "支持 15+ 内容源：微信、X、YouTube、播客、PDF、EPUB、Office 文档等",
+      "6 层级联策略自动绕过 300+ 付费新闻网站付费墙",
+      "通过 MCP 浏览器模拟抓取微信公众号等受限内容",
+      "集成 Google NotebookLM 实现 AI 内容生成"
+    ],
+    "sourceHash": "-6c554606",
+    "ts": 1778915919764
   }
 }

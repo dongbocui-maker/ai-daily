@@ -1,5 +1,6 @@
 {
   "date": "2026-05-18",
+  "title": "2026-05-18",
   "sections": [
     {
       "key": "news",
@@ -149,6 +150,14 @@
       "label": "深度报告与论文"
     }
   ],
-  "title": "AI 日报 2026-05-18",
-  "closing": "## 📌 本日总结\n\n今天最值得关注的信号是市场结构层的双重位移：\n\n1. **市场份额拐点**：Anthropic 企业客户份额（34.4%）首次反超 OpenAI（32.3%）。从 2023 年中 <1% 到登顶用了 ~24 个月——这是基础模型层第一次出现挑战者超越的硬数据。VentureBeat 同步点出 Anthropic 三大威胁（算力受限、OpenAI Deployment Co 反扑、定价压力）。\n\n2. **咨询模式重构**：同周 OpenAI 联合 TPG/Bain/Brookfield 投入 40 亿美元成立 Deployment Company + 收购 Tomoro；Anthropic 推进 3 亿美元收购 Stainless 拿下 SDK 接入层。Frontier Lab 的扩张路径正在分叉——OpenAI 自建落地咨询向 SI 抢蛋糕，Anthropic 收购上游卡脖子环节向工具链上移。\n\n3. **Accenture 双线动作**：5 月 14 日 Federal × OpenAI（美国政府场景）+ 同周 EMEA × Mistral（欧洲主权 AI），两条差异化战线正好对冲 OpenAI Deployment Co 的通吃压力。\n\n埃森哲 MD 视角的两条直接行动建议：(a) 把 Federal × OpenAI 的 Agentic Lab 形态作为央企/政企客户的提案模板；(b) 在欧洲零售快消客户（L'Oréal、LVMH）的多供应商策略里把 Mistral 列为强 B 角，缓冲美系模型合规风险。"
+  "closing": [
+    "今日 AI 头版的核心信号是「**市场份额拐点 + 咨询模式重构**」的双重位移：Anthropic 企业客户份额（34.4%）首次反超 OpenAI（32.3%），从 2023 年中 <1% 到登顶用了 ~24 个月——这是基础模型层第一次出现挑战者超越的硬数据。VentureBeat 同步点出 Anthropic 三大威胁：算力受限、OpenAI Deployment Co 反扑、定价压力。",
+    "Frontier Lab 的扩张路径正在分叉——OpenAI 联合 TPG/Bain/Brookfield 投入 40 亿美元成立 Deployment Company + 收购 Tomoro，自建落地咨询向 SI 抢蛋糕；Anthropic 推进 3 亿美元收购 Stainless 拿下 SDK 接入层，向工具链上游卡位。两条路径首次明确分化，企业 AI 采购方需要重新评估「模型 + 实施服务」的捆绑风险。",
+    "Accenture 双线动作（5 月 14 日 Federal × OpenAI 美国政府场景 + 同周 EMEA × Mistral 欧洲主权 AI）正好对冲 OpenAI Deployment Co 的通吃压力。埃森哲 MD 视角两条直接行动建议：(a) 把 Federal × OpenAI 的 Agentic Lab 形态作为央企/政企客户的提案模板；(b) 在欧洲零售快消客户（L'Oréal、LVMH）的多供应商策略里把 Mistral 列为强 B 角，缓冲美系模型合规风险。"
+  ],
+  "audit": {
+    "tieluFourScan": "已执行铁律 4 扫描——5/18 重大动向：Anthropic 企业份额反超 OpenAI（Ramp AI Index）、OpenAI Deployment Co 40 亿美元 + 收购 Tomoro、Anthropic 推进 Stainless 3 亿美元收购、Accenture Federal × OpenAI + Accenture × Mistral 双线落地。",
+    "closingFixedAt": "2026-05-18T01:30:00+08:00",
+    "fixNote": "修复 closing 字段错误的单字符序列化（678 个 1 字符元素 → 重组为 3 段正常文本 + audit 元数据分离）"
+  }
 }

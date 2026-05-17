@@ -10,7 +10,7 @@ set -euo pipefail
 # ============ 配置（必须和 setup.sh 一致） ============
 
 REPO_DIR="$HOME/repos/ai-daily"
-VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB"
+VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB/KB"
 TARGET_SUBDIR="AI 精读"
 TARGET_FULL="$VAULT_DIR/$TARGET_SUBDIR"
 

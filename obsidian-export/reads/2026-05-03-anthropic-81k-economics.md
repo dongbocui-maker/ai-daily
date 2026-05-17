@@ -1,6 +1,6 @@
 ---
-title: "Anthropic 问了 81000 个 Claude 用户：AI 让谁焦虑、让谁赚到钱"
-title_en: "What 81,000 people told us about the economics of AI"
+title: "What 81,000 people told us about the economics of AI"
+title_zh: "Anthropic 问了 81000 个 Claude 用户：AI 让谁焦虑、让谁赚到钱"
 author: "Anthropic Research"
 author_title: "Maxim Massenkoff、Saffron Huang 等（Anthropic Economic Index）"
 saved_date: 2026-05-03
@@ -8,7 +8,10 @@ original_url: "https://www.anthropic.com/research/81k-economics"
 slug: "anthropic-81k-economics"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/anthropic-81k-economics.m4a"
-audio_duration: "21:52"
+fetch_status: "ok"
+fetched_at: "2026-05-17T14:44:50.769Z"
+fetch_type: "html"
+content_length: 14818
 tags:
   - "AI"
   - "经济影响"
@@ -16,155 +19,127 @@ tags:
   - "生产力"
   - "Anthropic"
 ---
-
-# Anthropic 问了 81000 个 Claude 用户：AI 让谁焦虑、让谁赚到钱
-
-**作者**：Anthropic Research（Maxim Massenkoff、Saffron Huang 等（Anthropic Economic Index）） · **原文**：[https://www.anthropic.com/research/81k-economics](https://www.anthropic.com/research/81k-economics) · **音频**：[播客 21:52](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/anthropic-81k-economics.m4a)
-
+# What 81,000 people told us about the economics of AI
+> 🔗 原文：[https://www.anthropic.com/research/81k-economics](https://www.anthropic.com/research/81k-economics)
 ---
+### Key findings:
 
-## 一份用 AI 研究 AI 的研究
+-   _Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents._
+-   _Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks)._
+-   _Respondents experiencing the largest speedups from AI express higher concern about job displacement._
 
-这份报告的方法论本身就是新闻：Anthropic 让 Claude 通过 Claude.ai 平台**主动访谈**了 81000 个用户，再用 Claude 给这些自由文本回答做编码分类。这个体量在传统社会学/经济学研究里几乎是不可想象的——同等深度的访谈样本通常只有几百人。
+In order to inform the public about the economic changes we’re observing with AI, our [Economic Index](https://www.anthropic.com/research/economic-index-march-2026-report) shares what work Claude is being asked to do, and in which jobs Claude is doing the largest share of tasks. To date, however, we’ve lacked information on how these usage patterns map onto people’s thoughts and impressions of AI.
 
-这次他们想搞清楚一个核心问题：**人们对 AI 的经济感受，能不能和我们观测到的 AI 使用模式对应起来？**
+Our recent [survey study with 81,000 Claude users](https://www.anthropic.com/features/81k-interviews) provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
 
-答案是：**能，而且对得很整齐。**
+The survey asked people about their visions and fears around advances in AI. Many of the thoughts that people shared touched on economic topics. We learned that many people fear job displacement—though they also feel more productive and empowered at work. In some cases, AI has enabled them to start businesses, or given them time for more important things; in others, AI feels stifling, or imposed on them by their employers.
 
-## 一、被替代焦虑：1/5 的人主动说出来了
+The survey’s results provide initial evidence that [observed exposure](https://www.anthropic.com/research/labor-market-impacts) (our measure of AI displacement risk) is correlated with economic concern around AI. People in highly exposed occupations—as defined by the tasks Claude is observed performing—were more nervous about economic displacement. This is consistent with people being broadly aware of AI’s diffusion and potential impacts. We expand on our findings below.
 
-问卷不是直接问「你怕不怕失业「——是开放性问「你对 AI 的愿景和担忧是什么「，然后用 Claude 分类。结果：
+## Who worries about job displacement?
 
-- **20% 的回答主动提到了被替代焦虑**
-- 软件工程师代表性引言：「像所有白领一样，我 100% 担心，差不多 24/7 担心。「
-- 市场研究员：「AI 在提升我能力上毫无疑问，但未来它可能取代我的工作。「
+_“Well like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.”—Software engineer.1_
 
-更精细的发现——焦虑和**职业暴露度**强相关：
+One fifth of the respondents in our survey voiced concern about economic displacement. Some worried about this in the abstract: one software developer cautioned about “the possibility of AI in its current state being used to replace junior positions.” Others lamented that their jobs, or aspects of their jobs, were being automated away. One market researcher said, “In terms of improving my capability, it's no doubt. \[B\]ut in the future AI may replace my work.” In some jobs, people felt it made their work harder. One software developer observed that “when AI arrived, the project managers started giving harder and harder tickets and bugs to solve.”
 
-- Anthropic 自己有一个 「observed exposure「 指标，定义为「该职业里被 Claude 用来做的任务比例「
-- 暴露度每提升 10 个百分点，焦虑表达率提升 1.3 个百分点
-- 暴露度最高 25% 职业的焦虑率是最低 25% 的 **3 倍**
-- 软件工程师 ≫ 小学老师（因为 Claude 主要被用来写代码）
+Throughout this report, we use Claude-powered classifiers to infer people’s attributes and sentiments from their responses. For example, many participants mention their line of work in passing or give informative details about their work life, which allows us to infer their occupation. Similarly, we quantify concerns about job loss by prompting Claude to identify and interpret direct quotes in which respondents indicate that their own role is at risk of AI-driven displacement. We give example prompts in [the Appendix](https://cdn.sanity.io/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
 
-这说明：**人们对 AI 威胁的直觉，和 AI 真实部署的方向，匹配得相当准。**人不是被 hype 吓到，是真的看到了自己工作被怎么用 Claude 替代。
+Respondents’ perceived threat from AI was correlated with our [own measure of observed exposure](https://www.anthropic.com/research/labor-market-impacts), which reflects the percentage of a job’s tasks for which Claude is used. A respondent was more concerned about AI when our observed exposure measure for that respondent was higher. Elementary school teachers were less worried about their own displacement than software engineers, for example, consistent with the fact that Claude usage skews toward coding tasks.
 
-## 二、生产力收益：U 型分布
+We show this in Figure 1 below. The y-axis is the percentage of respondents in a given occupation who said that AI is already replacing their role or is likely to do so soon. The x-axis is observed exposure. The plot shows that, on average, people in more exposed occupations tended to express more concern about their jobs being automated away. For every 10-percentage-point increase in exposure, perceived job threat increased by 1.3 percentage points. People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%.
 
-Claude 把回答打成 1–7 分（1=变低效，2=无变化，越高越多收益）。整体均值 **5.1**，对应「显著更高效「。
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F3cc91526f31561f390700d113a9091e6ad8c094b-1920x1080.png&w=3840&q=75)
 
-但更有意思的是**按薪资分组**：
+**Figure 1: Perceived job threat from AI and Observed Exposure.** Percentage of respondents indicating some job threat from AI vs. the Observed Exposure measure from [Massenkoff and McCrory (2026)](https://www.anthropic.com/research/labor-market-impacts). A respondent was coded as indicating job threat if they said their role was already being replaced or substantially reduced, or that such changes were likely in the near term (coded using Claude). The green line shows a simple linear fit.
 
-| 薪资组 | 生产力评分 | 典型用例 |
-|---|---|---|
-| 高薪（管理、开发者） | 最高 | 管理者用 Claude 起业务、开发者写代码 |
-| 中薪（科研、法律） | 最低 | 律师抱怨 Claude 总不遵守特定规则 |
-| 低薪（客服、外卖、园林） | 也很高 | 客服参考已有回答、外卖员副业起电商、园林工建音乐 app |
+Another important worker characteristic is career stage. In previous research, we reported [tentative signs](https://cdn.sanity.io/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf) of a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.2 We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
 
-这是一条 **U 型曲线**——和直觉里「白领最受益、蓝领无关「完全不同。低薪用户的高收益主要不来自他们的本职工作，而是**用 AI 跨界做副业/创业**，相当于 AI 在打开新的 scope。
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe734cb6470a143e7fafa0ec0e0b1070ea63118db-1920x1080.png&w=3840&q=75)
 
-## 三、Scope vs Speed：质变 > 量变
+**Figure 2: Concern about economic displacement by career stage.** Percentage of respondents indicating some job threat from AI, by career stage. Both fields are inferred from free-form responses using Claude-powered classifiers.  
 
-报告把生产力收益拆成四类：
+## Who benefits from AI?
 
-- **Scope**（做新事）：「我不是技术，但现在我能做全栈「
-- **Speed**（做得快）：「4 小时的财务任务变 15 分钟「
-- **Quality**（做得好）：合同、代码审查更彻底
-- **Cost**（更便宜）：极少数人提及
+Using Claude to assess the survey responses, we rated the extent of people’s self-reported productivity gains from AI on a 1–7 scale, where 1 is “less productive,” 2 is “no change,” and each subsequent level denotes a larger gain. Responses that scored 7 included testimonials like, “It used to take months to make the website I \[made\] in 4-5 days”; Claude gave a 5 to statements like, “What might have taken four hours was accomplished in half the time,” and a 2 to ones like, “Personally, I had AI help me fix code on a website. But it took multiple passes to get the result I was after.”3
 
-大多数有意义的回答属于 Scope 或 Speed。**Scope 的故事尤其打动人**——一位送货司机在用 Claude 搭电商，一位园林工在写音乐 app。这是过去任何「生产力工具「都不曾产生的现象。
+Overall, people reported meaningful productivity gains on average. The mean productivity rating was 5.1, corresponding to “substantially more productive.” Our respondents were, of course, active Claude users who were willing to take a survey. This could make them more likely to report productivity benefits than the average user. Some 3% reported negative or neutral impacts, and 42% did not give a clear indication on productivity.
 
-## 四、收益归谁？10% 流向了雇主
+This splits somewhat across income lines. The left panel in Figure 3 shows that people in high-paying jobs, like software developers, conveyed the largest productivity gains from AI. This result is not driven only by coding; it holds when we leave out computer and math occupations. It echoes a previous [Economic Index finding](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf) that also favored higher-paid workers: in tasks requiring greater levels of education, Claude tended to reduce the time taken to complete a task (relative to doing it without AI) by a higher percentage.
 
-在主动提到「谁受益「的回答里：
+Some of the lowest-paid workers describe high productivity gains as well. This included a customer service representative using “AI to save me a lot of time with creating a response based on another one.” And in some cases, people in low-wage jobs were using AI on technical side projects. One delivery driver, for example, was using Claude to start an e-commerce business, and a landscaper was building a music application.
 
-- 大多数说「我自己受益「——任务更快、能做更多事、空出时间
-- **但 10% 说「老板让我做更多了「**——AI 的剩余价值被雇主吃掉了
-- 一位开发者：「AI 来了之后，PM 给的 ticket 越来越难。「
-- 还有一些说「AI 公司在收割「——但比例小
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F054ba6248545bfe2908345aa00abb7baf0ad0e42-1920x1080.png&w=3840&q=75)
 
-**早期员工和资深员工的差距很明显**：
-- 早期员工里只有 **60% 觉得自己受益**
-- 资深员工里 **80% 觉得自己受益**
+**Figure 3: Inferred productivity gain by occupation.** The left panel shows the mean inferred productivity benefit from AI (inferred using a Claude-powered classifier) by quartile of occupational median wage from the BLS. The right panel shows the same outcome, split by major occupational group. Error bars show 95% confidence intervals.  
 
-这呼应了 Stanford 和 Anthropic 之前的研究：**AI 暴露最严重的初级岗位招聘正在收缩**。早期生涯员工同时面对两件事——招聘减少 + AI 帮助有限。
+We look at this in more detail in the right panel of Figure 3, showing the inferred productivity gain by major occupational group. At the top are management occupations. These respondents are mostly entrepreneurs using Claude to build a business.4 The next highest category is computer and math, which includes software developers. The two groups exhibiting the mildest productivity improvements were workers in scientific and legal professions. Some lawyers worried about AI’s ability to follow precise instructions. For example: “I have given very specific rules about what is where, how to read a legal document, what I want it to do… but it diverges every time.”
 
-## 五、最反直觉的发现：速度越快、焦虑越高
+A key question as AI diffuses through the economy is where the benefits will accrue—to workers, their managers, consumers, or corporations. Respondents indicated the recipient of these gains in about a quarter of interviews. Overall, most of these people cited benefits to themselves, through faster tasks, expanded scope, and freed-up time.5 But 10% of respondents who named a recipient said that employers or clients were asking for and getting more work. A smaller share mentioned benefits to AI companies, and an even smaller share said that AI would be a net negative. This depended on career stage: only 60% of early-career workers indicated that they personally benefited from AI, compared to 80% of senior professionals.
 
-Anthropic 把生产力提升和被替代焦虑做了交叉分析，发现：
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F4c1138907fd70ea69195da8100056a9e4801b030-1920x1080.png&w=3840&q=75)
 
-> 速度提升越大的人，对失业的担忧越高。
+**Figure 4: Where does the surplus from AI productivity go?** Among respondents who named a beneficiary of their AI productivity gains, the share identifying each destination.
 
-这看起来矛盾，但其实合乎经济学逻辑：**如果你的任务时间在快速缩短，那这个岗位还有多久能存在的不确定性就在快速增加。**当你从 4 小时压到 30 分钟，下一步就会问：那雇主还需要 1 个全职吗？
+## Scope and speed
 
-这是这份报告最有传播力的一个洞察，也是给企业管理者最难解的问题——**你越投入 AI，员工越焦虑；你不投，员工就被市场淘汰。**
+Respondents also shared where they experienced gains in productivity. We separate this into scope, speed, quality, and cost. For example, many people using AI for coding tasks said things like, “I’m a non tech guy but now I’m a full stack developer.” This is an expansion of scope; AI unlocks new abilities for them. In contrast, some users sped up tasks they were already doing, like the accountant who said, “I built a tool that helps me finish a financing task in 15 minutes that used to take 2 hours.” Quality gains often came from more thorough checks of code, contracts, and other paperwork. And a small share of respondents mentioned the low cost of using AI: “\[I\]f I hire a social media manager it’s over my budget.”
 
-## 一些方法论的局限
+We find that the most common productivity enhancement is in scope, which was cited by 48% of users who explicitly mentioned productivity effects. 40% of users who mentioned productivity emphasized speed.
 
-- 样本是「愿意被 Claude 访谈的 Claude 个人版用户「——已经是 AI 早期采用者
-- 占用、生涯阶段都是 Claude 自己从对话中推断的——可能有误判
-- 开放性回答 = 只有用户主动提到的话题被统计——很多担忧可能没说出口
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F197366411f5546a640214b38baaeb1402f950c74-1920x1080.png&w=3840&q=75)
 
-但 Anthropic 自己也说：「即使有这些 caveat，**有 1/5 的回答主动提到经济焦虑，本身就是非常强的信号。**「
+**Figure 5: What kind of productivity gain do users report?** Share of respondents describing each type of productivity benefit.  
 
----
+People’s experience with Claude might also shape their concerns about AI. To assess this, we measured the speedup reported by respondents, by extracting whether their work was now much slower (which we coded as 1), showed no change in speed (4), or had become much faster (7).
 
-## 附录
+We found that the relationship between speedup and perceived job threat is U-shaped (see Figure 6). The leftmost bar shows respondents who reported that AI slowed them down. These respondents were more likely to indicate that AI posed a significant threat to their livelihoods. For example, some creative workers, like fine artists and writers, found AI too stifling and rigid to help them at their own work. At the same time, they feared the diffusion of AI into creative fields would make it harder for them to find work.
 
-### TL;DR
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fed7b1b8b258c348ad2127b6de33a3802160fac28-1920x1080.png&w=3840&q=75)
 
-Anthropic 用 Claude 自己访谈了 81000 个用户，得出三个反直觉发现：AI 速度提升越大、被替代焦虑越高；高薪和低薪都受益最大；早期生涯员工最焦虑。
+**Figure 6: Job threat from AI and speedup.** Percentage of respondents who said that displacement at their own job was already happening or likely in the near term, by the level of inferred speedup.
 
-### 关键要点
+For the remaining respondents, perceived job threat increases consistently with the level of speedup implied by their answers. This makes some economic sense: if the time required to do one’s tasks is shrinking quickly, there may be more uncertainty about the future viability of the role.
 
-1. **1/5 用户主动表达被替代焦虑**——其中软件工程师等高暴露职业的焦虑度是低暴露职业的 3 倍；exposure 每提升 10 个百分点，焦虑率提升 1.3 个百分点。
-2. **生产力收益均值 5.1 / 7**（5 = 「显著更高效「），3% 报告负面/无变化，42% 没明确说。「四小时的工作压到半小时「是典型描述。
-3. **U 型分布**：最高薪（管理者、开发者）和最低薪（客服、外卖员）都报告大幅生产力提升；中间薪资（科研、法律）提升最小——律师抱怨「AI 总是偏离我设定的规则「。
-4. **早期生涯最受冲击**：早期员工对「被替代「的担忧远高于资深员工；只有 60% 的早期员工说自己在 AI 中受益，而资深员工是 80%。
-5. **收益归谁？**：在明确提及受益方的回答里，多数人说「自己受益「（任务变快、能做更多事、有时间做别的）；但 10% 的人说「老板让我做更多了「，AI 的 surplus 流向雇主。
-6. **「Scope > Speed「**：很多用户报告的不是「做得更快「，而是「能做我以前不会的事「——非技术员工通过 Claude 写代码、做全栈、起小生意。一位送货司机用 Claude 起电商，景观工人在做音乐 app。
-7. **速度越快、焦虑越高**：报告生产力提升最大的人，反而是表达就业焦虑最强的人。这解释了为什么「AI 让我变强「和「AI 要替代我「在同一份调研里同时出现。
+## Discussion
 
-### 我的判断
+The Economic Index reveals what people do with AI. But another key input for understanding AI’s economic impact is to hear directly from people about their experience. The responses explored here show that people’s intuitions track the usage data: they worry most about AI’s effect in the jobs where we observe Claude doing the most work. We also find higher levels of economic anxiety among early-career workers, which aligns with past research.
 
-这份报告最值得咨询行业关注的，不是数字本身，而是它揭示的**情绪悖论**：AI 让我们更强的同时让我们更怕。
+There are also signs that Claude empowers its users. People are most likely to talk about benefits flowing to themselves rather than to employers or AI companies. High-wage workers were the most enthusiastic about the productivity impacts of AI, but people with low-wage jobs and lower levels of education also reported large productivity gains. Most respondents reported that Claude enhanced their capabilities in the form of broadening the scope of their work or speeding it up. But users experiencing the largest speedups were also the most nervous about AI’s job impacts.
 
-这件事有三个直接管理含义：
+There are key caveats to our analysis, owing to the nature of the data. First, our survey is limited to users of personal accounts on Claude.ai who chose to respond. Among other potential biases, these users could be more likely to perceive the benefits as flowing to themselves. Second, the users weren’t asked directly about many of the derived variables here, so our inferences on occupation, career stage, and other variables from contextual clues could be wrong. Relatedly, because the survey is open-ended, our measures are based on what respondents happen to mention; these findings should be confirmed in structured surveys that ask about these topics directly.
 
-**第一，「AI 焦虑「不能用培训解决。** 传统的「upskilling「叙事假设员工只要学会用 AI 就会安心——但这份数据正好相反：用得越深、速度提升越大的人，焦虑越强。这意味着对客户做组织变革时，不能只发 Copilot license + 上培训课，要从 KPI、晋升路径、工作内容三个维度同时重构「被 AI 增强后的人「应该做什么。
+Still, the interviews surface real insights about people’s feelings around the economics of AI, showing how qualitative data can surface quantitative hypotheses. And the large share of economic-related concerns is a strong signal in itself.
 
-**第二，早期员工的危机是真的，不是 narrative。** Anthropic、Stanford、OECD 三份独立研究都指向同一个信号：AI-exposed 行业的初级岗位招聘正在缩水。对中国大型企业来说，这不只是「少招几个「的问题——这是组织传承断层的伏笔。今天少招的初级，五年后就是没有的中层。建议给客户做「AI-augmented apprenticeship「——让 AI 替代不掉的高接触/重判断任务，留给初级员工去练。
+### Appendix
 
-**第三，警惕调研偏差。** 这份样本是「愿意接受 Claude 访谈的 Claude 个人版用户「——本身就是 AI 早期采用者，结论不能直接外推到普通职场。但即使在这群最 pro-AI 的用户里都有 1/5 表达焦虑，那么在普通员工里这个数字大概率更高。
+See the final section of the [linked PDF](https://cdn.sanity.io/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
 
-方法论本身值得借鉴：**用 LLM 做开放式访谈 + LLM 分类编码**——81000 人样本量在传统社会学研究里几乎不可能（成本会几百万美元），现在 Anthropic 一份内部研究就做出来了。这预示着**未来 5 年所有市场调研、用户研究的成本结构会被重写**。
+### Acknowledgements
 
-### 关键引用
+We thank the 80,508 Claude users who shared their stories.
 
-**1.**
-> Like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to AI.
-> 
-> 像所有白领一样，我 100% 担心，差不多 24/7 担心未来会因为 AI 失业。
+Maxim Massenkoff led the analysis and wrote the blog post. Saffron Huang led the interview project and provided guidance throughout.
 
-**2.**
-> It used to take months to make the website I made in 4-5 days.
-> 
-> 以前要几个月才能做出来的网站，我现在 4-5 天就搞完了。
+Zoe Hitzig and Eva Lyubich provided critical feedback and methodological guidance. Keir Bradwell and Rebecca Hiscott gave editorial support. Hanah Ho and Kim Withee contributed to design. Grace Yun, AJ Alt, and Thomas Millar implemented Anthropic Interviewer within Claude.ai. Chelsea Larsson, Jane Leibrock, and Matt Gallivan contributed to survey and experience design. Theodore Sumers contributed to the data processing and clustering infrastructure. Peter McCrory, Deep Ganguli, and Jack Clark provided critical feedback, direction and organizational support.
 
-**3.**
-> I'm a non-tech guy but now I'm a full stack developer.
-> 
-> 我不是技术出身，但现在我是个全栈工程师。
+Additionally, we thank Miriam Chaum, Ankur Rathi, Santi Ruiz, and David Saunders for their discussion, feedback, and support.
 
-**4.**
-> When AI arrived, the project managers started giving harder and harder tickets and bugs to solve.
-> 
-> AI 来了之后，PM 给的 ticket 越来越难。
+## Related content
 
-**5.**
-> Users experiencing the largest speedups from AI express higher concern about job displacement.
-> 
-> 从 AI 中获得最大速度提升的人，对失业的担忧也最强。
+### 2028: Two scenarios for global AI leadership
 
----
+Our views on the AI competition between the US and China.
 
-*Saved: 2026-05-03 · Source: aidigest.club*
+[Read more](https://www.anthropic.com/research/2028-ai-leadership)
+
+### Teaching Claude why
+
+New research on how we've reduced agentic misalignment.
+
+[Read more](https://www.anthropic.com/research/teaching-claude-why)
+
+### Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+
+[Read more](https://www.anthropic.com/research/natural-language-autoencoders)

@@ -1,6 +1,6 @@
 ---
-title: "Karpathy@Sequoia Ascent 2026：Software 3.0 来了，程序员变成 Agent 编排者"
-title_en: "Sequoia Ascent 2026: Software 3.0, Agentic Engineering, and Jagged Intelligence"
+title: "Sequoia Ascent 2026: Software 3.0, Agentic Engineering, and Jagged Intelligence"
+title_zh: "Karpathy@Sequoia Ascent 2026：Software 3.0 来了，程序员变成 Agent 编排者"
 author: "Andrej Karpathy"
 author_title: "前 OpenAI 创始团队、前 Tesla AI 负责人；vibe coding 一词提出者"
 publish_date: 2026-04-30
@@ -9,7 +9,10 @@ original_url: "https://karpathy.bearblog.dev/sequoia-ascent-2026/"
 slug: "karpathy-sequoia-ascent-2026"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-sequoia-ascent-2026.m4a"
-audio_duration: "33:03"
+fetch_status: "ok"
+fetched_at: "2026-05-17T14:45:11.626Z"
+fetch_type: "html"
+content_length: 36368
 tags:
   - "AI"
   - "Software-3.0"
@@ -18,268 +21,450 @@ tags:
   - "Sequoia"
   - "vibe-coding"
 ---
-
-# Karpathy@Sequoia Ascent 2026：Software 3.0 来了，程序员变成 Agent 编排者
-
-**作者**：Andrej Karpathy（前 OpenAI 创始团队、前 Tesla AI 负责人；vibe coding 一词提出者） · **发表**：2026-04-30 · **原文**：[https://karpathy.bearblog.dev/sequoia-ascent-2026/](https://karpathy.bearblog.dev/sequoia-ascent-2026/) · **音频**：[播客 33:03](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-sequoia-ascent-2026.m4a)
-
+# Sequoia Ascent 2026 summary
+> 🔗 原文：[https://karpathy.bearblog.dev/sequoia-ascent-2026/](https://karpathy.bearblog.dev/sequoia-ascent-2026/)
 ---
+_30 Apr, 2026_
 
-## Sequoia Ascent 2026 上的 Karpathy：Software 3.0 元年
+I did a fireside chat at Sequoia Ascent 2026. The YouTube video is here:
 
-2026 年 4 月 30 日，Karpathy 在 Sequoia Ascent 2026 跟 Stephanie Zhan 做了一场炉边对话。视频在 YouTube 已经 372K views，Karpathy 自己用 Codex 5.5 把 transcript 清洗后做了一篇 blog 总结——既给读者看，也给 LLM 喂。
+[YouTube Video Link](https://www.youtube.com/watch?v=96jN2OCOfLs)
 
-这篇 blog 是 Karpathy 自己审过的，他说「reads ok without glaring mistakes」。我们以下基于这篇做精读。
+As an experiment, I fed an LLM all of my recent blog posts and tweets, then I had it read this video's transcript and produce 1) a summary and 2) a cleaned up transcript (correcting all transcription mistakes, getting rid of fill words, etc). I am posting both of these below. These can be useful for both people who may want to just read the summary in text format, but also for LLMs so that my content is legible and available to them.
 
-## 一、2025 年 12 月：agentic 拐点
+**AI generated content below for this talk follows.** I used a top capability model (in this case Codex 5.5) and read the content and it reads ok without glaring mistakes.
 
-Karpathy 说他最近从未感觉自己作为程序员这么「掉队」。**不是编程变难了，是默认 workflow 变了。**
+* * *
 
-- 2025 年大半年时间，Claude Code、Codex、Cursor 这些工具有用但还要频繁纠错
-- 2026 年 12 月左右开始，他感到 step change：生成的代码块更大、更连贯、更可靠
-- 「我开始把更多工作交给 agent」
+## Sequoia Ascent 2026: Software 3.0, Agentic Engineering, and Jagged Intelligence
 
-编程的最小单位从「敲代码」变成了「委托宏指令」：
+I recently joined Stephanie Zhan for a fireside chat at Sequoia Ascent 2026, speaking with founders about the recent shift in AI agents, what it means for software, and how I think about the next wave of AI-native companies.
 
-> Implement this feature. Refactor this subsystem. Research this library. Set up this service. Write tests, run them, and fix failures. Compare approaches and propose a plan.
+The transcript from the event is a bit noisy, so I wanted to write up the main intellectual content in a cleaner form. The short version is that I think we have crossed a new threshold. LLMs are no longer just chatbots or autocomplete. They are becoming a new programmable layer for digital work.
 
-**程序员的角色被重写——从代码作者变成 agent 编排者。**
+This is the compact version of the conversation.
 
-## 二、Software 3.0：上下文窗口就是新的程序
+## 1\. December 2025 Was an Agentic Inflection Point
 
-Karpathy 把演化序列写清楚：
+I said recently that I have never felt more behind as a programmer.
 
-- **Software 1.0**：人写显式代码
-- **Software 2.0**：人造数据集 + 目标 + 神经网络，程序学进权重
-- **Software 3.0**：人通过 prompt、context、tools、examples、memory、instructions 编程 LLM
+The reason is not that programming became harder in the old sense. It is that the default workflow changed. For much of 2025, tools like Claude Code, Codex, and Cursor-like agents were useful but still required frequent correction. Around December 2025, I felt a step change: the generated chunks got larger, more coherent, and more reliable. I started trusting the agents with more of the work.
 
-LLM 是上下文之上的「解释器」，对数字信息做计算。
+The unit of programming changed from typing lines of code to delegating larger "macro actions":
 
-他举的最直观例子：**安装。** 旧世界要写一个 brittle shell script 处理各种环境差异；Software 3.0 时代，installer 是一段你贴给 agent 的说明文字——agent 读环境、debug、适配、装完。
+-   Implement this feature.
+-   Refactor this subsystem.
+-   Research this library.
+-   Set up this service.
+-   Write tests, run them, and fix failures.
+-   Compare approaches and propose a plan.
 
-这是另一种程序：**没那么精确，但更适应。**
+This is why I think the profession is being refactored. The programmer is increasingly not just a code writer, but an orchestrator of agents.
 
-## 三、MenuGen 案例：有些 app 应该不再作为 app 存在
+## 2\. Software 3.0: The Context Window as the New Program
 
-Karpathy 用 MenuGen 讲了更深的转变。
+I think of this as the next step in a sequence:
 
-MenuGen 原本是一个传统 web app：拍菜单 → OCR 出菜名 → 生成图 → 渲染 UI。需要前端、API、图像生成、部署、auth、payment、secret、infrastructure。
+-   **Software 1.0:** humans write explicit code.
+-   **Software 2.0:** humans create datasets, objectives, and neural networks; the program is learned into weights.
+-   **Software 3.0:** humans program LLMs through prompts, context, tools, examples, memory, and instructions.
 
-但 Software 3.0 版本是：拍菜单 → 给多模态模型 → 让它直接在菜单图上画出菜品。
+In Software 3.0, the context window becomes the main lever. The LLM is an interpreter over that context, performing computation over digital information.
 
-> In that version, much of the app disappears.
+One example is installation. In the old world, installing a complex tool across many environments required a brittle shell script full of conditionals. In the Software 3.0 world, the installer can be a block of instructions you paste into an agent. The agent reads the local environment, debugs errors, adapts to the machine, and completes the setup.
 
-原本的 software stack 是给「现在模型能直接做的事」搭的脚手架。**这是给 founder 最重要的提醒：AI 不只是更快做老 app，有些 app 应该不再存在为 app。**
+That is a different kind of program. It is less precise, but more adaptive.
 
-## 四、新机会不是「更快编程」
+## 3\. MenuGen and the Moment Software Disappears
 
-更广的转变在「LLM 自动化以前不能编程的信息处理」。
+I used [MenuGen](https://karpathy.bearblog.dev/vibe-coding-menugen/) as an example of a deeper shift.
 
-他自己的 LLM Wiki pattern 是最清晰的例子：传统 RAG 是每次查问题都从原始 doc 里检索；他做的是 agent 增量地把原始材料编译成持久 markdown wiki——summary、entity 页、concept 页、矛盾点、cross-link、log、不断演化的综合。
+MenuGen was a traditional web app: take a picture of a restaurant menu, OCR the dish names, generate images of the dishes, and render the result in a UI. It required frontend code, APIs, image generation, deployment, auth, payments, secrets, and infrastructure.
 
-> No classical program could robustly maintain that kind of knowledge base across messy human documents. But an LLM can.
+But later, I saw the Software 3.0 version: take a photo of the menu, give it to a multimodal model, and ask it to render dish images directly onto the menu image.
 
-**问题不只是「哪个 workflow 能 AI 加速」，更要问「哪个信息转换以前不可能、现在自然了」。**
+In that version, much of the app disappears. The neural network directly transforms input media into output media. The old software stack was scaffolding around a transformation the model can now perform directly.
 
-## 五、Verifiability 决定 AI 在哪里飞
+This is one of the most important founder implications: AI is not just a faster way to build the old apps. Some apps should stop existing as apps.
 
-Karpathy 的核心自动化框架：
+## 4\. The New Opportunity Is Not Just Faster Programming
 
-- 传统软件自动化能 **specify** 的事
-- LLM + RL 自动化能 **verify** 的事
+The shift is broader than coding. LLMs automate forms of information processing that were not previously programmable.
 
-如果一个任务有自动 reward 或 success 信号，模型就能 practice。这就是数学、编程、benchmark、游戏、很多工程任务进步飞快的原因——它们 resettable、repeatable、rewardable。
+My [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern is the clearest example. Instead of using retrieval-augmented generation to answer questions from raw documents each time, an agent incrementally compiles raw sources into a persistent Markdown wiki: summaries, entity pages, concept pages, contradictions, cross-links, logs, and evolving synthesis.
 
-这也解释为什么 coding agent 体感比一般 chatbot 强很多——coding 给模型反馈：test 过没过、程序跑没跑、diff 能不能看、benchmark 能不能测。
+No classical program could robustly maintain that kind of knowledge base across messy human documents. But an LLM can.
 
-## 六、Jagged Intelligence：两个轴
+The lesson: do not only ask, "What existing workflow can AI speed up?" Also ask, "What information transformation was impossible before, but is now natural?"
 
-Karpathy 在这次访谈中给 verifiability 论加了一层补丁：
+## 5\. Verifiability Explains Where AI Moves Fastest
 
-**模型能力不仅取决于任务能不能 verify，还取决于这个任务在 lab 里被多用心训练。**
+My core automation framework is:
 
-粗略公式：
+-   Traditional software automates what you can **specify**.
+-   LLMs and reinforcement learning automate what you can **verify**.
 
-```
-capability spike ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值
-```
+If a task has an automatic reward or success signal, models can practice it. This is why math, coding, tests, benchmarks, games, and many engineering tasks improve so quickly. They are resettable, repeatable, and rewardable.
 
-国际象棋是好例子。GPT-4 在棋上的提升，未必是「智能均匀提升了」，而可能是「训练数据里塞了更多棋」。
+This also explains why coding agents feel dramatically better than many ordinary chatbot experiences. Coding gives the model feedback: tests pass or fail, programs run or crash, diffs can be inspected, benchmarks can be measured.
 
-这意味着——**前沿模型没有 manual。** 它们是 pretraining 配方、RL 环境、benchmark 压力、产品优先级、经济激励的产物。它们在某些领域 spike，在另一些领域奇怪地烂。
+## 6\. Jagged Intelligence Has Two Axes: Verifiability and Training Attention
 
-创始人的实操问题是：**Are you on the model's rails？**
+The interview added an important refinement to the verifiability thesis.
 
-- 如果你的任务在「verifiable + 高训练关注度」区间，模型可能飞起来
-- 如果不在，它可能在意想不到的简单事上失败
-- 这种情况你需要更好的 context、tool、fine-tuning、自己的 eval、自己的 RL 环境
+Model capability is not only about whether a task is verifiable. It also depends on whether the task was emphasized by labs during training, post-training, synthetic data generation, and reinforcement learning.
 
-## 七、Vibe coding vs Agentic Engineering
+A rough formula:
 
-Karpathy 划了清楚的边界：
+capability spike ~= verifiability x training attention x data coverage x economic value
 
-- **Vibe coding** 抬地板——让几乎所有人都能描述自己想要什么然后造出来
-- **Agentic engineering** 提天花板——是协调 fallible agent 同时保留 correctness/security/taste/maintainability 的专业纪律
+Chess is a good example. When GPT-4 improved at chess, that was not necessarily because general intelligence smoothly improved everywhere. It may also have been because much more chess data was included in the training mix.
 
-Vibe coding 适合原型和个人工具；agentic engineering 是 serious team 需要的。
+This matters because frontier models do not come with a manual. They are artifacts of pretraining mixtures, RL environments, benchmark pressure, product priorities, and economic incentives. They spike in some places and behave strangely in others.
 
-**Agentic engineer 不会盲目接受 generated code。** 他们写 spec、监督 plan、查 diff、写 test、造 eval loop、管权限、隔离 worktree、保质量。
+So the practical question for a founder is: are you on the model's rails?
 
-MenuGen 的支付 bug 是反例：agent 用 email 来 match Stripe 购买和 Google 登录。代码看起来 plausible，但系统设计差——Stripe 邮箱和 Google 邮箱可能不同。**人需要足够的产品和工程判断力，坚持用持久 user id。**
+If your task sits inside a region that is verifiable and heavily trained, the model may fly. If not, it may fail in surprisingly basic ways. You may need better context, tools, fine-tuning, your own evals, or your own reinforcement learning environment.
 
-前沿技能不是记每个 API 细节（agent 自己记 dim/axis/keepdim/reshape/permute）。**人还需要懂 storage、view、memory copy、invariant、identity、security boundary 这些底层概念。**
+## 7\. Vibe Coding vs. Agentic Engineering
 
-## 八、招聘应该改变
+I distinguish two related but different ideas:
 
-传统 coding puzzle 越来越不匹配。
+-   **Vibe coding** raises the floor. It lets almost anyone create software by describing what they want.
+-   **Agentic engineering** raises the ceiling. It is the professional discipline of coordinating fallible agents while preserving correctness, security, taste, and maintainability.
 
-更好的面试是：用 agent 造一个 substantial 项目，部署、加固，然后让 adversarial agent 试图攻破。
+Vibe coding is fine for prototypes and personal tools. Agentic engineering is what serious teams need.
 
-这真正测试的是：
+The agentic engineer does not blindly accept generated code. They design specs, supervise plans, inspect diffs, write tests, create evaluation loops, manage permissions, isolate worktrees, and preserve quality.
 
-- 候选人能不能把工作分解给 agent？
-- 能不能写有用的 spec？
-- 能不能保持质量同时高速？
-- 能不能 review 生成的工作？
-- 能不能加固系统？
-- 能不能把 agent 当杠杆而不是产生 slop？
+My MenuGen payment bug is a useful example. The agent tried to match Stripe purchases to Google accounts using email addresses. That is plausible code, but bad system design: the Stripe email and Google login email can differ. A human needs enough product and engineering judgment to insist on persistent user IDs.
 
-> The old "10x engineer" idea may become much more extreme.
+The frontier skill is not memorizing every API detail. Agents can remember whether a tensor library uses `dim`, `axis`, `keepdim`, `reshape`, or `permute`. The human still needs to understand the underlying concepts: storage, views, memory copies, invariants, identity, security boundaries, and the shape of the system.
 
-**掌握 agentic workflow 的人，可能远不止 10x outperformance。**
+## 8\. Hiring Should Change
 
-## 九、创业 wedge：找有价值的 verifiable 环境
+If agentic engineering is the new professional skill, hiring should test it directly.
 
-创业者最重要的机会，是找「价值高 + verifiable + lab 训练不够」的领域。
+Traditional coding puzzles are increasingly mismatched. A better interview might be: build a substantial project with agents, deploy it, make it secure, and then have adversarial agents try to break it.
 
-如果你能给某个垂直领域造一个 environment——模型能 try action、得到可靠 reward——你就能用 fine-tuning 或 RL 提升性能，即使 base model 在这领域不出色。
+This tests the real skill:
 
-**最显眼的领域（coding/数学）已经被 lab 重投。但很多经济上重要的领域有潜在的 verifiable 结构未被开发。**
+-   Can the candidate decompose work for agents?
+-   Can they write useful specs?
+-   Can they preserve quality while moving fast?
+-   Can they review generated work?
+-   Can they secure and harden a system?
+-   Can they use agents as leverage rather than produce slop?
 
-这就是 startup wedge。
+The old "10x engineer" idea may become much more extreme. People who master agentic workflows may outperform others by far more than 10x.
 
-## 十、Agent-native 基础设施
+## 9\. Founders Should Look for Valuable Verifiable Environments
 
-大部分软件还是给「人点屏幕」造的。Doc 说「打开这个 URL，点这个按钮，开这个设置面板」。
+For founders, one important opportunity is finding domains that are valuable, verifiable, and undertrained by frontier labs.
 
-但 user 越来越不是直接的人——是人的 agent。
+If you can create a domain-specific environment where models can try actions and receive reliable rewards, you may be able to improve performance with fine-tuning or reinforcement learning even if the base model is not already excellent there.
 
-产品需要 agent-native surface：
+The most obvious domains, like coding and math, are already heavily targeted by labs. But many economically important domains may have latent verifiable structure that has not yet been exploited.
 
-- Markdown 文档
-- CLI
-- API
-- MCP server
-- 结构化 log
-- 机器可读 schema
-- 可粘贴的 agent 指令
-- 安全权限
-- 可审计的 action
-- Headless setup
+That is a startup wedge.
 
-Karpathy 用 **sensors / actuators** 框架思考：sensor 把世界状态变成数字信息；actuator 让 agent 改变某个东西。**未来的 stack 是 agent 代表人和组织使用 sensor 和 actuator。**
+## 10\. Agent-Native Infrastructure: Build for the Agent, Not Just the Human
 
-MenuGen 的部署故事是 benchmark：写代码容易，配 Vercel/auth/payment/DNS/secret 痛苦。**成熟的 agent-native 世界里，应该可以说「build MenuGen」然后 agent 自己部署完整。**
+Most software is still built for humans clicking through screens.
 
-## 十一、Ghosts，不是 Animals
+Docs say things like "go to this URL, click this button, open this settings panel." But increasingly the user is not the human directly. The user is the human's agent.
 
-Karpathy 反复强调：**LLM 不是动物。** 它没有生物驱动、具身生存压力、好奇心、玩耍、内在动机。它是人类制品的统计模拟，被 pretraining、post-training、RL、产品反馈、经济激励塑造。
+This means products need agent-native surfaces:
 
-这意味着——拟人化预期会误导我们。这些系统**一刻聪明、一刻蠢得离谱。** 它们不是平滑的人类心智，是 jagged 的、外星的工具。
+-   Markdown docs.
+-   CLIs.
+-   APIs.
+-   MCP servers.
+-   Structured logs.
+-   Machine-readable schemas.
+-   Copy-pasteable agent instructions.
+-   Safe permissioning.
+-   Auditable actions.
+-   Headless setup flows.
 
-正确的姿势既不是 dismiss 也不是盲信——是 empirical familiarity：知道它们在哪儿能 work、在哪儿失败、训练里都有什么、怎么搭 guardrail。
+I think about this in terms of **sensors** and **actuators**. A sensor turns some state of the world into digital information. An actuator lets an agent change something. The future stack is agents using sensors and actuators on behalf of people and organizations.
 
-## 十二、教育：可以外包思考，不能外包理解
+The MenuGen deployment story remains a useful benchmark. Building the app was easy compared to wiring Vercel, auth, payments, DNS, secrets, and production settings. In a mature agent-native world, I should be able to say "build MenuGen" and have the agent deploy the whole thing without manual clicking.
 
-Karpathy 反复回到一句：
+## 11\. Ghosts, Not Animals
+
+My [Animals vs. Ghosts](https://karpathy.bearblog.dev/animals-vs-ghosts/) framing is a way to avoid bad intuitions.
+
+LLMs are not animals. They do not have biological drives, embodied survival pressure, curiosity, play, or intrinsic motivation in the animal sense. They are statistical simulations of human artifacts, shaped by pretraining, post-training, RL, product feedback, and economic incentives.
+
+This matters because anthropomorphic expectations mislead us. These systems can be brilliant in one moment and bizarrely dumb in the next. They are not smooth human minds. They are jagged, alien tools.
+
+The right posture is neither dismissal nor blind trust. It is empirical familiarity: learn where they work, where they fail, what they were trained for, and how to build guardrails around them.
+
+## 12\. Education: You Can Outsource Thinking, But Not Understanding
+
+We ended on education. There is a line I keep returning to:
 
 > You can outsource your thinking, but you can't outsource your understanding.
 
-哪怕 agent 做更多事，人还需要 understanding 来 direct——你需要知道什么值得造、什么问题重要、什么结果可疑、什么 trade-off 可以接受。
+Even if agents do more of the work, the human still needs understanding to direct them. You need to know what is worth building, what question matters, what result is suspicious, and what tradeoff is acceptable.
 
-他对自己的 LLM Wiki 工具尤其热情：「每次我看到对信息的不同投影，就感到获得了 insight。这是对固定数据做合成数据生成。我读文章时，我的 wiki 在自动构建——我喜欢对它问问题。」
+This is why I am interested in LLM knowledge bases. They are not just answer machines. They are tools for transforming information into understanding.
 
-**Tools that enhance understanding are incredibly interesting and exciting. Understanding is still the bottleneck because you cannot be a good director if you do not understand.**
+This also connects to my tiny `microGPT` project: a complete GPT training and inference implementation in a single dependency-free Python file. The educational artifact becomes small enough for both humans and agents to inspect. The human expert contributes the distilled artifact and the taste behind it; the agent can then explain it interactively to each learner.
 
----
+## The Big Picture
 
-## 附录
+The main thesis of the conversation is that AI is becoming a new operating layer for digital work.
 
-### TL;DR
+The scarce thing is shifting:
 
-Karpathy 在 Sequoia Ascent 2026 给出他对 AI 编程的最新观点：2025 年 12 月是 agentic 拐点，编程进入 Software 3.0 时代——人通过 prompt/上下文/工具/记忆来编程 LLM；程序员从「写代码」变成「编排 agent」；vibe coding 抬地板，agentic engineering 提天花板。
+-   Less scarce: code generation, API recall, boilerplate, first drafts, repetitive setup, simple transformations.
+-   More scarce: understanding, taste, eval design, security, system boundaries, agent orchestration, domain-specific feedback loops, and knowing when the model is off the rails.
 
-### 关键要点
+For founders, the most important questions are:
 
-1. **2025 年 12 月是拐点**：在那之前，Claude Code / Codex / Cursor 这些 agent 还频繁需要纠错；12 月起生成块更大、更连贯、更可靠，Karpathy 说他「开始把更多工作交给 agent」。
-2. **Software 3.0 = 用 prompt、上下文、工具、记忆、指令编程 LLM**。1.0 是写代码、2.0 是训神经网络、3.0 是把 LLM 当可编程层用。**上下文窗口成为新的程序**——以前一个 brittle shell script 装的东西，现在是给 agent 一段说明书让它自己适配环境装好。
-3. **有些 app 不该作为 app 存在了**：MenuGen 之前要做 OCR + 图像生成 + 前端 + 后端 + 部署；现在直接给多模态模型一张菜单图，要求它在原图上画出菜品——「神经网络直接做端到端的 media 转换，old software stack 是给现在能直接做的事搭的脚手架」。
-4. **verifiability 决定 AI 进步快的领域**：传统软件自动化「能 specify」的事，LLM + RL 自动化「能 verify」的事。代码、数学、benchmark 进步快，因为有 reward 信号。能 reset/repeat/reward 的任务都会被吃掉。
-5. **Jagged Intelligence 公式**：能力突起 ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值。模型不是「均匀变强」——它在 lab 训过的领域飞，没训过的领域意外地烂。「Are you on the model's rails?」是创业者必须问自己的问题。
-6. **Vibe coding 抬地板，Agentic engineering 提天花板**：vibe coding 让任何人都能造原型；agentic engineering 是专业纪律——写 spec、审 plan、查 diff、写 test、做 eval、管权限、隔离 worktree。MenuGen 的 Stripe 支付 bug（agent 用 email 串 Stripe 和 Google 账号）就是反例：人需要产品判断力坚持用持久 user id。
-7. **Agent-native 基础设施缺口**：当前软件还是给「人点屏幕」造的——doc 说「打开这个 URL，点这个按钮」。但越来越多的「用户」是人的 agent。未来需要 markdown doc / CLI / API / MCP server / 结构化 log / machine-readable schema / 安全权限 / 可审计的 action。**部署仍然是 agent 最痛的地方**——MenuGen 写代码容易，配 Vercel + auth + payment + DNS + secret 痛苦。
-8. **「You can outsource your thinking, but you can't outsource your understanding」**：哪怕 agent 做更多事，人还要负责知道什么值得做、什么结果可疑、什么 trade-off 可以接受。理解仍然是 bottleneck，因为没有理解就做不好 director。
+-   What becomes possible when the primary user is an agent acting for a human?
+-   What workflows can be rebuilt around sensors, actuators, and verifiable loops?
+-   What software should disappear into direct model transformations?
+-   What domains are valuable and verifiable but not yet heavily trained by frontier labs?
+-   What human judgment must remain in the loop to preserve quality?
 
-### 我的判断
+My current worldview is not that AI simply makes everyone faster at the old work. It is that the work itself is being reorganized around agents. Software, research, education, infrastructure, and knowledge work are all becoming variations of the same pattern:
 
-这场对话最值得给客户讲的，是 Karpathy 那句**「Are you on the model's rails?」**——这是 AI 时代的战略基础题。
+define the context
+define the tools
+define the feedback loop
+define the guardrails
+let agents work
+preserve human understanding
 
-把 jagged intelligence 公式翻译给我们的客户：
+* * *
 
-**capability spike ≈ verifiability × 训练关注度 × 数据覆盖 × 经济价值**
+## Sequoia Ascent 2026: Andrej Karpathy in Conversation with Stephanie Zhan
 
-埃森哲很多客户的真实业务（保单核保、合规审查、医药 BD、奢侈品门店运营）都**不在 lab 的 rails 上**——因为这些领域既缺公开 benchmark，也缺 RL 环境，更缺标准化数据。这意味着两件事：
+Edited transcript. Lightly cleaned for readability, with obvious transcription errors corrected, filler removed, and a few relevant links added.
 
-**第一，仅靠 GPT-5 / Opus 4.7 + prompt engineering 不够。** 那些客户里，最容易达成的「让 AI 写代码 / 写营销文案 / 做客服 FAQ」很快会饱和——因为这些都在 model rails 上，竞争对手买同样的 license 就能做。**真正的差异化不在「用 frontier model」，而在「能不能给自己的领域造出 verifiable environment」**——能让模型 try 一个 action、拿到 reliable reward 的小世界。Karpathy 说这就是创业 wedge，对企业来说也是护城河。
+## Introduction
 
-**第二，agentic engineering 是新的专业岗位。** Vibe coding 上限低、地板低，所以人人能做——但企业级软件的核心问题是 quality / security / maintainability，这些都是 vibe coding 解决不了的。这意味着我们在大客户那边的咨询业务里，**「AI Engineer」这个岗位的角色会重定义**——从写代码升级到「写 spec + 设计 eval + 编排 agent + 管权限」。这是一个**能让初级工程师跨级跃迁，也能让平庸资深工程师被替代**的拐点。建议给我们的开发团队（包括内部 ATC）做一轮 agentic engineering 培训设计。
+**Konstantine:** Someone you all know, someone who has become, in this AI revolution, a teacher of AI. In every revolution there is the technologist, but there is also the teacher, the person who actually informs and instructs how this transformation is going to happen. Andrej has become that teacher to the world.
 
-**第三，agent-native 基础设施是下一波 IT 投入的方向。** 客户的 IT 系统大部分都是给人设计的——portal、UI、点击流。当用户开始变成 agent，这套全部要重做。**MCP server、结构化 doc、headless setup、agent-friendly API**——这些不是技术 nice-to-have，是未来 5 年的基础设施。可以基于此做 Microsoft Azure + Copilot 生态的解决方案——围绕 Azure AI Foundry + Copilot Studio + MCP，设计企业「agent-ready 改造」的服务包。
+Early at Autopilot at Tesla, co-founder of OpenAI, he left it all to start Eureka Labs, where he leaned into the idea of an AI that was a true instructor. We're happy to have Andrej Karpathy with our partner Stephanie Zhan.
 
-最后那句关于「understanding is the bottleneck」是给所有 KM/培训部门的提醒：**靠 LLM 把员工「升级」的项目，如果只增加输出量但不强化理解力，只是在制造平庸放大器，不是在创造 AI-native 员工**。
+**Stephanie:** Hi everyone. We're excited for our first special guest. He has helped build modern AI, explain modern AI, and occasionally rename modern AI.
 
-### 关键引用
+He helped co-found OpenAI. He helped get Autopilot working at Tesla. And he has a rare gift for making the most complex technical shifts feel both accessible and inevitable.
 
-**1.**
-> I have never felt more behind as a programmer.
-> 
-> 作为程序员，我从未感觉这么掉队过。
+You all know him for having coined the term [vibe coding](https://x.com/karpathy/status/1886192184808149383) last year. But just in the last few months, he said something even more startling: he has never felt more behind as a programmer. That's where we're starting today. Thank you, Andrej, for joining us.
 
-**2.**
-> The unit of programming changed from typing lines of code to delegating larger 'macro actions'.
-> 
-> 编程的最小单位从「敲代码」变成「委托宏指令」。
+**Andrej:** Hello. Excited to be here and to kick us off.
 
-**3.**
-> AI is not just a faster way to build the old apps. Some apps should stop existing as apps.
-> 
-> AI 不只是更快做老 app——有些 app 应该不再作为 app 存在。
+## The December 2025 Agentic Inflection
 
-**4.**
-> Traditional software automates what you can specify. LLMs and reinforcement learning automate what you can verify.
-> 
-> 传统软件自动化你能 specify 的事；LLM 和 RL 自动化你能 verify 的事。
+**Stephanie:** A couple of months ago, you said you've never felt more behind as a programmer. That's startling to hear from you, of all people. Can you help us unpack that? Was that feeling exhilarating or unsettling?
 
-**5.**
-> Vibe coding raises the floor. Agentic engineering raises the ceiling.
-> 
-> Vibe coding 抬地板，agentic engineering 提天花板。
+**Andrej:** A mixture of both, for sure.
 
-**6.**
+Like many of you, I've been using agentic tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://developers.openai.com/codex/cli), and adjacent things for a while, maybe over the last year. They were very good at chunks of code, but sometimes they would mess up and you had to edit them. They were helpful.
+
+Then I would say December was a clear point. I was on a break, so I had more time. I think many other people were similar. I started to notice that with the latest models, the chunks just came out fine. Then I kept asking for more and they still came out fine. I couldn't remember the last time I corrected it. I started trusting the system more and more.
+
+I do think it was a stark transition. A lot of people experienced AI last year as a ChatGPT-adjacent thing, but you really had to look again as of December, because things changed fundamentally, especially in this agentic, coherent workflow. It really started to work.
+
+That realization sent me down the rabbit hole of infinite side projects. My side-projects folder is extremely full with random things. I was coding all the time. That happened in December, and I've been looking at the repercussions since.
+
+## Software 3.0
+
+**Stephanie:** You've talked about LLMs as a new computer. It isn't just better software; it's a new computing paradigm. Software 1.0 was explicit rules. Software 2.0 was learned weights. Software 3.0 is this. If that is true, what does a team build differently the day they actually believe it?
+
+**Andrej:** Software 1.0 is writing code. Software 2.0 is programming by creating datasets and training neural networks. Programming becomes arranging datasets, objectives, and neural network architectures.
+
+Then what happened is that if you train GPT models or LLMs on a sufficiently large set of tasks, implicitly, because the internet contains many tasks, these models become programmable computers in a certain sense.
+
+Software 3.0 is about programming through prompting. What's in the context window is your lever over the interpreter, and the interpreter is the LLM. It interprets your context and performs computation in digital information space.
+
+A few examples drove this home for me. When [OpenClaw](https://github.com/openclaw/openclaw) came out, to install it you would normally expect a shell script. But to target many platforms and many kinds of computers, shell scripts usually balloon and become extremely complex. You're stuck in the Software 1.0 universe of wanting to write exact code.
+
+The OpenClaw installation was instead a block of text that you copy and paste into your agent. It is like a little skill: copy this, give it to your agent, and it will install OpenClaw. That is more powerful because you're working in the Software 3.0 paradigm. You don't have to spell out every detail. The agent has intelligence. It looks at your environment, performs intelligent actions, and debugs in the loop.
+
+That is a different way of thinking. What is the piece of text to copy-paste into your agent? That is now part of the programming paradigm.
+
+Another example is [MenuGen](https://karpathy.bearblog.dev/vibe-coding-menugen/). You sit down at a restaurant, get a menu, and there are no pictures. I don't know what many of these things are. I wanted to take a photo of the menu and get pictures of what those dishes might look like in a generic sense.
+
+So I built an app. You upload a photo, it OCRs all the titles, uses an image generator to get pictures, and shows them to you. It runs on Vercel and rerenders the menu.
+
+Then I saw the Software 3.0 version, which blew my mind. You take the photo, give it to Gemini, and say: use Nano Banana to overlay the things onto the menu. It returns an image of the menu I took, but with pictures rendered into the pixels.
+
+All of MenuGen is spurious in that framing. It is working in the old paradigm. That app shouldn't exist. In the Software 3.0 paradigm, the neural network does more of the work. Your prompt or context is the image, and the output is an image. There is no need for all the app machinery in between.
+
+People have to reframe. Don't only work in the existing paradigm and think of AI as a speedup of what exists. New things are available now.
+
+And it is not just programming becoming faster. This is more general information processing that is now automatable. Previous code worked over structured data. You wrote code over structured data.
+
+With my [LLM knowledge bases](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) project, you get LLMs to create wikis for your organization or for you personally. This is not a program in the old sense. There was no code that could create a knowledge base based on a bunch of messy facts. But now you can take documents, recompile them, reorder them, and create something new and interesting as a reframing of the data.
+
+These are new things that weren't possible before. I keep trying to come back to that: not only what can we do faster, but what couldn't be possible before? That is more exciting.
+
+## Neural Computers
+
+**Stephanie:** I love the MenuGen progression. If you extrapolate further, what is the 2026 equivalent of building websites in the 90s, mobile apps in the 2010s, or SaaS in the cloud era? What will look obvious in hindsight that is still mostly unbuilt today?
+
+**Andrej:** Going with the MenuGen example, a lot of this code shouldn't exist. The neural network should be doing most of the work.
+
+The extrapolation looks very weird. You could imagine completely neural computers in a certain sense. Imagine a device that takes raw video or audio into a neural net and uses diffusion to render a UI unique for that moment.
+
+In the early days of computing, people were a little confused about whether computers would look like calculators or neural nets. In the 1950s and 1960s, it was not obvious which way it would go. We went down the calculator path and built classical computing.
+
+Neural nets are currently running virtualized on existing computers. But you can imagine a flip where the neural net becomes the host process and CPUs become coprocessors. Intelligence compute and neural-network compute become the dominant spend of FLOPs.
+
+You can imagine something foreign, where neural nets do most of the heavy lifting and use tools as a historical appendage for deterministic tasks. What is really running the show is neural nets networked in some way.
+
+That is the extrapolation, but I think we will get there piece by piece.
+
+## Verifiability and Jagged Intelligence
+
+**Stephanie:** I'd love to talk about verifiability: the idea that AI will automate faster and more easily in domains where the output can be verified. If that framework is right, what work is about to move much faster than people realize? And what professions do people think are safe, but are actually highly verifiable?
+
+**Andrej:** Traditional computers automate what you can specify in code. This latest round of LLMs can automate what you can verify.
+
+When frontier labs train these LLMs, they train them in giant reinforcement learning environments with verification rewards. Because of that, models progress and become jagged entities. They peak in capability in verifiable domains like math, code, and adjacent areas, and they stagnate or remain rough around the edges where things are not in that space.
+
+I wrote about [verifiability](https://karpathy.bearblog.dev/verifiability/) because I was trying to understand why these things are so jagged. Some of it has to do with how labs train the models. Some of it also has to do with what labs focus on and what they put into the data distribution. Some things are significantly more valuable economically, so labs create more environments for those settings. Code is a good example.
+
+There are probably many verifiable environments that you could think about that did not make it into the mix because they are not as economically useful to have capability around.
+
+One favorite example for a while was: how many letters are in "strawberry"? Models famously got this wrong. That has now been patched. The newer example is: I want to go to a car wash to wash my car, and it's 50 meters away. Should I drive or walk? State-of-the-art models may tell you to walk because it's close.
+
+How is it possible that a state-of-the-art model can refactor a 100,000-line codebase or find zero-day vulnerabilities, yet tells me to walk to the car wash? That's jaggedness. To the extent models remain jagged, it means you need to be in the loop. You need to treat them as tools and stay in touch with what they are doing.
+
+My writing on verifiability is trying to understand this pattern. I think it is some combination of "verifiable" plus "labs care."
+
+Another anecdote is chess. From GPT-3.5 to GPT-4, people noticed that chess improved a lot. Some people thought that was just general capability progress. But I think it is public information that a large amount of chess data made it into the pretraining set. Because it was in the data distribution, the model improved much more than it would by default.
+
+Someone at OpenAI decided to add that data, and now there is a capability spike. That is why I stress this dimension: we are slightly at the mercy of what the labs do and what they put into the mix. You have to explore the model they give you. It has no manual. It works in some settings and not others.
+
+If you are in the circuits that were part of reinforcement learning, you fly. If you are outside the data distribution, you struggle. You have to figure out which circuits your application is in. If you are not in those circuits, then you have to look at fine-tuning or doing some of your own work, because it may not come out of the LLM out of the box.
+
+## Startup Opportunities in Verifiable Domains
+
+**Stephanie:** If you were a founder today, and you were solving a tractable, verifiable problem, but you looked around and saw that the labs have started getting to escape velocity in obvious domains like math and coding, what would your advice be?
+
+**Andrej:** Verifiability makes something tractable in the current paradigm because you can throw a huge amount of reinforcement learning at it.
+
+That remains true even if the labs are not focusing on it directly. If you are in a verifiable setting where you can create reinforcement learning environments or examples, then you can potentially do your own fine-tuning and benefit from it. That technology fundamentally works. If you have diverse datasets or RL environments, you can use a fine-tuning framework, pull the lever, and get something that works pretty well.
+
+I don't want to give away specific examples, but there are valuable reinforcement learning environments that people could think of that are not part of the current frontier-lab mix.
+
+**Stephanie:** On the flip side, what still feels automatable only from a distance? What domains or professions are safer than others?
+
+**Andrej:** Ultimately, almost everything can be made verifiable to some extent, some things more easily than others. Even for writing, you can imagine having a council of LLM judges and getting something reasonable.
+
+So it is more about what is easy or hard.
+
+## Vibe Coding vs. Agentic Engineering
+
+**Stephanie:** Last year you coined the term vibe coding. Today we are in a world that feels more serious, more agentic engineering. What is the difference between the two, and what would you call what we are in today?
+
+**Andrej:** Vibe coding is about raising the floor for everyone in terms of what they can do in software. Everyone can vibe code anything, and that is amazing.
+
+Agentic engineering is about preserving the quality bar of professional software. You are not allowed to introduce vulnerabilities because of vibe coding. You are still responsible for your software, just as before. But can you go faster? Spoiler: you can. The question is how to do that properly.
+
+I call it agentic engineering because it is an engineering discipline. You have agents, which are spiky entities. They are fallible and stochastic, but extremely powerful. How do you coordinate them to go faster without sacrificing your quality bar?
+
+Vibe coding raises the floor. Agentic engineering is about extrapolating the ceiling. I think there is a very high ceiling on agentic-engineer capability. People used to talk about the 10x engineer. I think this is magnified a lot more. 10x is not the speedup people can gain. People who are very good at this can peak much higher than that.
+
+## What AI-Native Coding Looks Like
+
+**Stephanie:** Last year Sam Altman came to Ascent and said people of different generations use ChatGPT differently. If you're in your 30s, you use it as a Google search replacement. If you're in your teens, ChatGPT is your gateway to the internet.
+
+What is the parallel in coding? If we watched two people code using OpenClaw, Claude Code, or Codex, one mediocre and one fully AI-native, how would you describe the difference?
+
+**Andrej:** It is about getting the most out of the tools available, using their features, and investing in your own setup.
+
+Engineers have always done this with tools like Vim or VS Code. Now the tools are Claude Code, Codex, and so on. You invest in your setup and use what is available.
+
+One related thought is hiring. Many people want to hire strong agentic engineers, but most hiring processes have not been refactored for agentic-engineer capability. If you are giving out small puzzles to solve, that is still the old paradigm.
+
+Hiring should look more like: give someone a big project and see them implement it. For example, write a Twitter clone for agents, make it good and secure, then have agents simulate activity on it. Then I will use ten Codex agents to try to break the website you deployed, and they should not be able to break it.
+
+Watching people in that setting, building a bigger project and using the tooling, is closer to what I would look for.
+
+## What Human Skills Become More Valuable?
+
+**Stephanie:** As agents do more, what human skill becomes more valuable, not less?
+
+**Andrej:** Right now the agents are like interns. You still have to be in charge of aesthetics, judgment, taste, and oversight.
+
+One of my favorite examples is from MenuGen. You sign up with a Google account, but you purchase credits using Stripe. Both have email addresses. My agent tried to assign purchased credits by matching the Stripe email address to the Google email address.
+
+But those can be different emails. The user might not get the credits they purchased. Why would you use email addresses to cross-correlate funds? You need a persistent user ID. This is the kind of mistake agents still make.
+
+People have to be in charge of the spec and plan. I don't even fully like "plan mode" as a concept, though it is useful. There is something more general: you work with your agent to design a detailed spec, maybe basically the docs, and get agents to write them. You are in charge of oversight and the top-level categories. The agents do much of the work underneath.
+
+As another example, with tensors in neural networks, there are many details across PyTorch, NumPy, pandas, and so on: `dim` versus `axis`, `reshape`, `permute`, `transpose`, `keepdim`. I don't remember this stuff anymore because I don't have to. These details are handled by the intern because agents have good recall.
+
+But you still have to understand the fundamentals. You need to know that there is underlying tensor storage, that you can manipulate a view of the same storage, or create different storage, which is less efficient. You still need to know enough to avoid copying memory unnecessarily.
+
+So you are in charge of taste, engineering, design, and whether the system makes sense. You ask for the right things: for example, we tie everything to unique user IDs. The agents fill in the blanks.
+
+**Stephanie:** Do you think taste and judgment matter less over time, or does the ceiling just keep rising?
+
+**Andrej:** I hope it improves. The reason it does not improve right now is probably that it is not part of the reinforcement learning. There may be no aesthetics reward, or it is not good enough.
+
+When I look at the code, sometimes I get a heart attack. It is not always amazing code. It can be bloated, copy-pasted, awkwardly abstracted, brittle. It works, but it is gross. I hope this improves in future models.
+
+A good example is my `microGPT` project, where I tried to simplify LLM training as much as possible. The models hate this. They can't do it. I kept trying to prompt an LLM to simplify more and more, and it just couldn't. You feel like you are outside the RL circuits. It feels like pulling teeth.
+
+So people remain in charge of this for now. But I don't think there is anything fundamental preventing improvement. The labs just haven't done it yet.
+
+## Ghosts, Not Animals
+
+**Stephanie:** I'd love to come back to jagged forms of intelligence. You wrote a thought-provoking piece around [Animals vs. Ghosts](https://karpathy.bearblog.dev/animals-vs-ghosts/): we are not building animals, we are summoning ghosts. These are jagged forms of intelligence shaped by data and reward functions, but not by intrinsic motivation, fun, curiosity, or empowerment in the way evolution shaped animals.
+
+Why does that framing matter? What does it change about how you build, deploy, evaluate, or trust them?
+
+**Andrej:** I wrote about it because I am trying to wrap my head around what these things are. If you have a good model of what they are and are not, you will be more competent at using them.
+
+I don't know if the framing has direct practical power. It is a little philosophical. But it is about coming to terms with the fact that these things are not animal intelligence. If you yell at them, they are not going to work better or worse. They are statistical simulation circuits. The substrate is pretraining, then reinforcement learning bolted on top.
+
+It is a mindset: what am I interacting with, what is likely to work, what is not likely to work, and how do I modify it? I don't have five obvious outcomes that make your system better. It is more about being suspicious of the system and figuring it out empirically over time.
+
+## Agent-Native Infrastructure
+
+**Stephanie:** You are deep in working with agents that do not just chat. They have real permissions, local context, and actually take action on your behalf. What does the world look like when we all live in that world?
+
+**Andrej:** A lot of people here are probably excited about what the agent-native environment looks like. Everything has to be rewritten. Most things are still fundamentally written for humans.
+
+When I use frameworks or libraries, the docs are still written for humans. This is my favorite pet peeve. Why are people still telling me what to do? I don't want to do anything. What is the thing I should copy-paste to my agent?
+
+Every time I am told "go to this URL" or "click here," I think: no. The industry has to decompose workloads into sensors and actuators over the world. How do we make things agent-native? How do we describe them to agents first, and build automation around data structures that are legible to LLMs?
+
+I hope there is a lot of agent-first infrastructure. With MenuGen, the hard part was not writing the code. The trouble was deploying it on Vercel, wiring services, settings, DNS, auth, payments, secrets, and production configuration.
+
+I would hope I could prompt an LLM: build MenuGen. Then I don't touch anything, and it is deployed on the internet. That would be a good test of whether our infrastructure is becoming agent-native.
+
+Ultimately, I do think we are going toward a world where people and organizations have agent representation. My agent will talk to your agent to figure out meeting details and other tasks. That is roughly where things are going.
+
+## Education and Understanding
+
+**Stephanie:** We have to end on education. You are probably one of the best in the world at making complex technical concepts simple, and you think deeply about education. What remains worth learning deeply when intelligence gets cheap?
+
+**Andrej:** There was a tweet that blew my mind recently, and I keep thinking about it:
+
 > You can outsource your thinking, but you can't outsource your understanding.
-> 
-> 你可以外包思考，但你不能外包理解。
 
-**7.**
-> Are you on the model's rails?
-> 
-> 你在不在模型的轨道上？
+That is nicely put. I am still part of the system. Information still has to make it into my brain. I am becoming the bottleneck of even knowing what we are trying to build, why it is worth doing, and how to direct my agents.
 
-**8.**
-> LLMs are not animals. They are statistical simulations of human artifacts.
-> 
-> LLM 不是动物——它们是人类制品的统计模拟。
+Something still has to direct the thinking and processing. That is constrained by understanding.
 
----
+This is one reason I am excited about LLM knowledge bases. They are a way for me to process information. Whenever I see a different projection onto information, I feel like I gain insight. It is synthetic data generation over fixed data.
 
-*Saved: 2026-05-03 · Source: aidigest.club*
+When I read an article, I have my wiki being built up from those articles. I love asking questions about it. Ultimately these are tools to enhance understanding. Understanding is still the bottleneck because you cannot be a good director if you do not understand.
+
+The LLMs do not fully excel at understanding. You are still uniquely in charge of that. Tools that enhance understanding are incredibly interesting and exciting.
+
+**Stephanie:** I'm excited to come back here in a couple of years and see if we have been fully automated out of the loop, and whether they take care of understanding as well. Thank you so much, Andrej.
+
+**Andrej:** Thank you.
+
+**Konstantine:** Stephanie, Andrej, thank you so much.

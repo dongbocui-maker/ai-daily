@@ -1,6 +1,6 @@
 ---
-title: "蒸汽、钢铁与无穷头脑"
-title_en: "Steam, Steel, and Infinite Minds"
+title: "Steam, Steel, and Infinite Minds"
+title_zh: "蒸汽、钢铁与无穷头脑"
 author: "Ivan Zhao"
 author_title: "Notion 联合创始人 & CEO"
 saved_date: 2026-05-03
@@ -8,112 +8,134 @@ original_url: "https://www.notion.com/blog/steam-steel-and-infinite-minds-ai"
 slug: "steam-steel-infinite-minds"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/steam-steel-infinite-minds.m4a"
-audio_duration: "30:45"
+fetch_status: "ok"
+fetched_at: "2026-05-17T14:46:22.620Z"
+fetch_type: "html"
+content_length: 10862
 tags:
   - "AI"
   - "组织变革"
   - "未来工作"
   - "知识工作"
 ---
-
-# 蒸汽、钢铁与无穷头脑
-
-**作者**：Ivan Zhao（Notion 联合创始人 & CEO） · **原文**：[https://www.notion.com/blog/steam-steel-and-infinite-minds-ai](https://www.notion.com/blog/steam-steel-and-infinite-minds-ai) · **音频**：[播客 30:45](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/steam-steel-infinite-minds.m4a)
-
+# Steam, Steel, and Infinite Minds
+*Ivan Zhao*
+> 🔗 原文：[https://www.notion.com/blog/steam-steel-and-infinite-minds-ai](https://www.notion.com/blog/steam-steel-and-infinite-minds-ai)
 ---
+Every era is shaped by its miracle material. Steel forged the Gilded Age. Semiconductors switched on the Digital Age. Now AI has arrived as infinite minds. If history teaches us anything, those who master the material define the era.
 
-## 三层框架：个人、组织、经济
+![Left: teenage Andrew Carnegie and his younger brother. Right: Pittsburgh steel factories during the Glided Age.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F3FB59yYIDw05SoCRrtGoB%2Ffd7b0e1aa1abfca7fb9803e5214a21c5%2F1.jpeg&w=3840&q=75)
 
-Ivan Zhao 用一个清晰的三层结构展开论证：AI 时代的变革不仅是工具升级，而是从个人工作方式到组织结构、再到整个经济形态的连锁重构。
+Left: teenage Andrew Carnegie and his younger brother. Right: Pittsburgh steel factories during the Glided Age.
 
-### 1. 个人层：从自行车到汽车
+In the 1850s, Andrew Carnegie ran through muddy Pittsburgh streets as a telegraph boy. Six in ten Americans were farmers. Within two generations, Carnegie and his peers forged the modern world. Horses gave way to railroads, candlelight to electricity, iron to steel.
 
-Steve Jobs 在 1980 年代说 PC 是「mind 的自行车」，但 40 年后的我们还在 Information Superhighway 上骑自行车。差距在哪儿？
+Since then, work shifted from factories to offices. Today I run a software company in San Francisco, building tools for millions of knowledge workers. In this industry town, everyone is talking about AGI, but most of the two billion desk workers have yet to feel it. What will knowledge work look like soon? What happens when the org chart absorbs minds that never sleep?
 
-程序员（Ivan 称之为「知识工作的祭司」）已经率先升级到了汽车——他的联合创始人 Simon 同时编排 3-4 个 AI coding agent，从 10× 程序员变成 30-40×，「成为了无穷头脑的管理者」。
+![Early movies often looked like stage plays, with one camera focused on the stage.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F6y5RarrZ7Ug6vh1MONNboK%2F2ecbcf6f7c7a087e912f11277a457dfa%2F2.jpeg&w=3840&q=75)
 
-但其他职业还在骑自行车。Ivan 指出两道坎：
+Early movies often looked like stage plays, with one camera focused on the stage.
 
-- **上下文碎片化**：写代码的上下文集中在 IDE 里，但写产品 brief 要从 Slack / 文档 / dashboard / 别人脑子里捡。「现在的人类是胶水，靠 copy-paste 和切 tab 把碎片粘起来。」
-- **不可验证性**：代码可以跑测试，所以可以用 RL 训练 AI 变好。但战略备忘录、项目管理质量怎么验证？没法验证就没法训练。
+This future is often difficult to predict because it always disguises itself as the past. Early phone calls were concise like telegrams. Early movies looked like filmed plays. (**This is what Marshall McLuhan called "driving to the future via the rearview window."**)
 
-直到这两道坎被攻克，AI 才能让其他知识工作者也开上车。
+![The most popular form of AI today look like Google search of the past. To quote Marshall McLuhan: "we are always driving into the future via the rearview window."](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F6ku2cSeU22PJk1evKqJ0Q7%2F06ff1f3233a39fcbbcd0e31d396fdf21%2F3.jpeg&w=3840&q=75)
 
-### 2. 组织层：钢与蒸汽（最精彩的两个比喻）
+The most popular form of AI today look like Google search of the past. To quote Marshall McLuhan: "we are always driving into the future via the rearview window."
 
-**🏗️ 钢铁比喻**：19 世纪建筑限高 6-7 层（铁太脆），钢出现后楼能盖几十层。**AI 之于组织 = 钢之于建筑**——人脑沟通不再是承重墙，组织可以「真正地 scale」而不再 degrade。
+Today, we see this as AI chatbots which mimic Google search boxes. We're now deep in that uncomfortable transition phase which happens with every new technology shift.
 
-**⚙️ 蒸汽机比喻**（最深刻）：早期工厂把蒸汽机直接塞进水车位置，生产力提升有限。直到工厂主意识到可以「解耦于水」，重新设计工厂布局——第二次工业革命才真正起飞。
+I don't have all the answers on what comes next. But I like to play with a few historical metaphors to think about how AI can work at different scales, from individuals to organizations to whole economies.
 
-> 我们现在还在 swap-the-waterwheel 阶段：把 AI chatbot 螺丝拧到旧工具上。还没重新想象「公司由 infinite minds 驱动」时该长什么样。
+## Individuals: from bicycles to cars
 
-**Notion 自己的实证**：1000 员工 + 700+ agents 一起工作，agents 处理会议记录、tribal knowledge 综合、IT 请求、客户反馈、新员工 onboarding、周报。Ivan 强调「这只是 baby steps」。
+The first glimpses can be found with the high priests of knowledge work: programmers.
 
-### 3. 经济层：从佛罗伦萨到东京
+My co-founder Simon was what we call a 10× programmer, but he rarely writes code these days. Walk by his desk and you'll see him orchestrating three or four AI coding agents at once, and they don't just type faster, they think, which together makes him a 30-40× engineer. He queues tasks before lunch or bed, letting them work while he's away. He's become a manager of infinite minds.
 
-几百年前的城市是 human-scale 的（步行 40 分钟横穿佛罗伦萨）。钢框架 + 蒸汽火车 → 摩天大楼 + 地铁 → 巨型城市（东京 / 重庆 / 达拉斯）。
+![A 1970s Scientific American study on locomotion efficiency inspired Steve Jobs's famous 'bicycle for the mind' metaphor. Except we've been pedaling on the Information Superhighway for decades since.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F3Ya1e8uSgjmSOW8aiL7My%2Fad040477b6dd51554c70be8bce487ced%2F4.jpeg&w=3840&q=75)
 
-知识经济现在占美国 GDP 近一半，但还停在「佛罗伦萨」规模。当 AI agents 大规模上线，我们将建「东京」：跨时区的连续 workflow、几千 agent 与 human 共存、决策在分钟级而非天级完成。
+A 1970s Scientific American study on locomotion efficiency inspired Steve Jobs's famous 'bicycle for the mind' metaphor. Except we've been pedaling on the Information Superhighway for decades since.
 
-**代价**：失去一些 legibility（可读性）。
-**收益**：scale + speed。
+In the 1980s, Steve Jobs called personal computers "bicycles for the mind." A decade later, we paved the "information superhighway" that is the internet. But today, most knowledge work is still human-powered. It's like we've been pedaling bicycles on the autobahn.
 
-## Red Flag Act：人不该在 loop 之中
+With AI agents, someone like Simon has graduated from riding a bicycle to driving a car.
 
-Ivan 引用了一段冷门历史——1865 年英国《红旗法》要求每辆汽车前面必须有人举红旗走路。这是早期监管者「凭借旧框架监管新技术」的经典反例。
+When will other types of knowledge workers get cars? Two problems must be solved.
 
-类比到今天：AI 的「human-in-the-loop」常常被视为标配，但 Ivan 的判断是「我们要的是人**监督**循环，而不是身处循环之中」。这一句重新定义了 AI 时代人在系统中的位置。
+![Comparing with coding agent, why is it more difficult for AI to help with knowledge work? Because knowledge work is more fragmented and less verifiable.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F2wwfbMBAfLRdKKpuwxCWXz%2Fc46c610e340aa8bd0ffc1dcb5c1045c5%2F5.jpeg&w=3840&q=75)
 
-## 收尾：下一个天际线
+Comparing with coding agent, why is it more difficult for AI to help with knowledge work? Because knowledge work is more fragmented and less verifiable.
 
-> Steel. Steam. Infinite minds. The next skyline is there, waiting for us to build it.
+**First, context fragmentation.** For coding, tools and context tend to live in one place: the IDE, the repo, the terminal. But general knowledge work is scattered across dozens of tools. Imagine an AI agent trying to draft a product brief: it needs to pull from Slack threads, a strategy doc, last quarter's metrics in a dashboard, and institutional memory that lives only in someone's head. Today, humans are the glue, stitching all that together with copy-paste and switching between browser tabs. Until that context is consolidated, agents will stay stuck in narrow use-cases.
 
-每个时代都需要有人停止用「后视镜」看世界，开始想象新的可能。Carnegie 看着钢铁看到了城市天际线，Lancashire 工厂主看着蒸汽机看到了脱离河流的工厂楼板。
+**The second missing ingredient is verifiability.** Code has a magical property: you can verify it with tests and errors. Model makers use this to train AI to get better at coding (e.g. reinforcement learning). But how do you verify if a project is managed well, or if a strategy memo is any good? We haven't yet found ways to improve models for general knowledge work. So humans still need to be in the loop to supervise, guide, and show what good looks like.
 
-现在轮到我们了。
+![The Red Flag Act of 1865 required a flag bearer to walk ahead of the vehicle while it drove down the street (repealed in 1896). An example of undesirable "human in the loop."](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F18xCDcBD0z2hvK3OQx97WV%2F1b6ee9b897f90cf6b347b3a716e483d8%2F6.jpeg&w=3840&q=75)
 
----
+The Red Flag Act of 1865 required a flag bearer to walk ahead of the vehicle while it drove down the street (repealed in 1896). An example of undesirable "human in the loop."
 
-## 附录
+Programming agents this year taught us that having a "human-in-the-loop" isn't always desirable. It's like having someone personally inspect every bolt on a factory line, or walk in front of a car to clear the road (see: the Red Flag Act of 1865). We want humans to supervise the loops from a leveraged point, not be in them. Once context is consolidated and work is verifiable, billions of workers will go from pedaling to driving, and then from driving to self-driving.
 
-### TL;DR
+## Organizations: steel and steam
 
-每个时代都被它的「奇迹材料」塑造——AI 是知识经济时代的「无穷头脑」。我们还停留在「把蒸汽机塞进水车架」的过渡期。
+Companies are a recent invention. They degrade as they scale and reach their limit.
 
-### 关键要点
+![Organizational chart for the New York and Erie Railroad, 1855. The modern corporation and org chart evolved with the railroad companies, which were the first enterprises that needed to coordinate thousands of people across great distances.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F1JALgTmAzBRrHdsQWmMJKN%2F547131091227323b6fed7b57bf7258fc%2F7.jpeg&w=3840&q=75)
 
-1. **个人层**：知识工作者从骑自行车（PC 时代）升级到开汽车（AI 时代）。程序员已率先升级——10× 程序员通过编排 3-4 个 AI agent 变成 30-40×；其他职业还卡在「上下文碎片化」和「不可验证」两道坎。
-2. **组织层**：AI 是钢铁。就像钢铁让建筑突破 6-7 层限高，AI 让组织突破「人脑沟通承重」的限制——两小时对齐会变成 5 分钟异步评审。
-3. **蒸汽机比喻**：早期工厂只是把蒸汽机塞进水车位置，生产力提升有限。直到工厂主重新设计布局，第二次工业革命才真正起飞。我们当下的 AI chatbot 就是「换了发动机的水车」。
-4. **Notion 自身实践**：1000 名员工 + 700+ AI agents 一起工作，agents 负责会议记录、tribal knowledge 综合、IT 请求、新员工 onboarding、周报等重复性工作。
-5. **经济层**：知识经济将从「佛罗伦萨规模」（步行 40 分钟横穿）演变为「东京规模」（巨型城市）——更失序，但 scale 与 speed 大幅提升。
+Organizational chart for the New York and Erie Railroad, 1855. The modern corporation and org chart evolved with the railroad companies, which were the first enterprises that needed to coordinate thousands of people across great distances.
 
-### 我的判断
+A few hundred years ago, most companies were workshops of a dozen people. Now we have multinationals with hundreds of thousands. The communication infrastructure (human brains connected by meetings and messages) buckles under exponential load. We try to solve this with hierarchy, process, and documentation. But we've been solving an industrial-scale problem with human-scale tools, like building a skyscraper with wood.
 
-对大型组织（尤其是咨询行业）的直接启示：会议文化、层级审批、跨时区协同等长期被视为「必然成本」的低效环节，本质都是「用木头盖摩天楼」——将在 AI 重塑下被根本性压缩。但 Ivan 主动避开了三个棘手议题：监管、安全、经济不平等。这是一篇乐观主义底色的文章，需要配反方读物（如 Daron Acemoglu）平衡视角。文中最值得反复琢磨的不是「AI 多强」，而是「我们要的是人监督循环，而不是身处循环之中」——这定义了未来组织里人的位置。
+Two historical metaphors show how future organizations can look differently with new miracle materials.
 
-### 关键引用
+![A wonder of steel: the Woolworth building was the tallest building in the world upon completion in NYC, 1913.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F4En9naLCOGEKHqYof0QWkg%2F22c62c6dd0a8b60af90911fefda25925%2F8.jpeg&w=3840&q=75)
 
-**1.**
-> Today, humans are the glue, stitching all that together with copy-paste and switching between browser tabs.
-> 
-> 现在的人类是胶水，靠 copy-paste 和切 tab 把碎片粘起来。
+A wonder of steel: the Woolworth building was the tallest building in the world upon completion in NYC, 1913.
 
-**2.**
-> We've been solving an industrial-scale problem with human-scale tools, like building a skyscraper with wood.
-> 
-> 我们在用人力工具解决工业规模的问题，像用木头盖摩天大楼。
+The first is steel. Before steel, buildings in the 19th century had a limit of six or seven floors. Iron was strong but brittle and heavy; add more floors, and the structure collapsed under its own weight. Steel changed everything. It's strong yet malleable. Frames could be lighter, walls thinner, and suddenly buildings could rise dozens of stories. New kinds of buildings became possible.
 
-**3.**
-> We want humans to supervise the loops from a leveraged point, not be in them.
-> 
-> 我们要的是人监督循环，而不是身处循环之中。
+**AI is steel for organizations.** It has the potential to maintain context across workflows and surface decisions when needed without the noise. Human communication no longer has to be the load-bearing wall. The weekly two-hour alignment meeting becomes a five-minute async review. The executive decision that required three levels of approval might soon happen in minutes. Companies can scale, truly scale, without the degradation we've accepted as inevitable.
 
-**4.**
-> Steel. Steam. Infinite minds. The next skyline is there, waiting for us to build it.
-> 
-> 钢铁。蒸汽。无穷头脑。下一个天际线就在那里，等我们去建。
+![A mill with a water wheel to power its operations. Water was powerful but unreliable and restricted mills to a few locations and seasonality.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F2g5ZwvC8sLLwala5JOLkId%2F471726e1e9685b015afac83ec1357521%2F9.jpeg&w=3840&q=75)
 
----
+A mill with a water wheel to power its operations. Water was powerful but unreliable and restricted mills to a few locations and seasonality.
 
-*Saved: 2026-05-03 · Source: aidigest.club*
+The second story is about the steam engine. At the beginning of the Industrial Revolution, early textile factories sat next to rivers and streams and were powered by waterwheels. When the steam engine arrived, factory owners initially swapped waterwheels for steam engines and kept everything else the same. Productivity gains were modest.
+
+The real breakthrough came when factory owners realized they could decouple from water entirely. They built larger mills closer to workers, ports, and raw materials. And they redesigned their factories around steam engines (Later, when electricity came online, owners further decentralized away from a central power shaft and placed smaller engines around the factory for different machines.) Productivity exploded, and the Second Industrial Revolution really took off.
+
+![This 1835 engraving by Thomas Allom depicts a textile factory in Lancashire, UK. It was powered by steam engines.](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F6oR10odBHiCyXr4hmlB2X3%2Fa0b69b88faa03b987c221f3ea907a2bd%2F10.jpeg&w=3840&q=75)
+
+This 1835 engraving by Thomas Allom depicts a textile factory in Lancashire, UK. It was powered by steam engines.
+
+**We're still in the "swap out the waterwheel" phase.** AI chatbots bolted onto existing tools. We haven't reimagined what organizations look like when the old constraints dissolve and your company can run on infinite minds that work while you sleep.
+
+At my company Notion, we have been experimenting. Alongside our 1,000 employees, more than 700 agents now handle repetitive work. They take meeting notes and answer questions to synthesize tribal knowledge. They field IT requests and log customer feedback. They help new hires onboard with employee benefits. They write weekly status reports so people don't have to copy-paste. And this is just baby steps. The real gains are limited only by our imagination and inertia.
+
+## Economies: from Florence to megacities
+
+Steel and steam didn't just change buildings and factories. They changed cities.
+
+![Florence and Tokyo](https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F5wVBGHGSeKeUnSUpjT554E%2F3e611a739be2e91a3d83d91097b720b7%2F11.jpeg&w=3840&q=75)
+
+Until a few hundred years ago, cities were human-scaled. You could walk across Florence in forty minutes. The rhythm of life was set by how far a person could walk, how loud a voice could carry.
+
+Then steel frames made skyscrapers possible. Steam engines powered railways that connected city centers to hinterlands. Elevators, subways, highways followed. Cities exploded in scale and density. Tokyo. Chongqing. Dallas.
+
+These aren't just bigger versions of Florence. They're different ways of living. Megacities are disorienting, anonymous, harder to navigate. That illegibility is the price of scale. But they also offer more opportunity, more freedom. More people doing more things in more combinations than a human-scaled Renaissance city could support.
+
+I think the knowledge economy is about to undergo the same transformation.
+
+Today, knowledge work represents nearly half of America's GDP. Most of it still operates at human scale: teams of dozens, workflows paced by meetings and email, organizations that buckle past a few hundred people. We've built Florences with stone and wood.
+
+When AI agents come online at scale, we'll be building Tokyos. Organizations that span thousands of agents and humans. Workflows that run continuously, across time zones, without waiting for someone to wake up. Decisions synthesized with just the right amount of human in the loop.
+
+It will feel different. Faster, more leveraged, but also more disorienting at first. The rhythms of the weekly meeting, the quarterly planning cycle, and the annual review may stop making sense. New rhythms emerge. We lose some legibility. We gain scale and speed.
+
+## Beyond the waterwheels
+
+Every miracle material required people to stop seeing the world via the rearview mirror and start imagining the new one. Carnegie looked at steel and saw city skylines. Lancashire mill owners looked at steam engines and saw factory floors free from rivers.
+
+We are still in the waterwheel phase of AI, bolting chatbots onto workflows designed for humans. We need to stop asking AI to be merely our copilots. We need to imagine what knowledge work could look like when human organizations are reinforced with steel, when busywork is delegated to minds that never sleep.
+
+Steel. Steam. Infinite minds. The next skyline is there, waiting for us to build it.

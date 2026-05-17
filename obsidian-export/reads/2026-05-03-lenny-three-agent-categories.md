@@ -1,6 +1,6 @@
 ---
-title: "不是所有 AI Agent 都一样：三类 agent 框架，决定你团队该先做哪个"
-title_en: "Not all AI agents are created equal"
+title: "Not all AI agents are created equal"
+title_zh: "不是所有 AI Agent 都一样：三类 agent 框架，决定你团队该先做哪个"
 author: "Hamza Farooq & Jaya Rajwani"
 author_title: "Agent Engineering Bootcamp / Agentic AI for PMs 课程作者；本文发表于 Lenny's Newsletter"
 publish_date: 2026-04-14
@@ -9,7 +9,10 @@ original_url: "https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-
 slug: "lenny-three-agent-categories"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/lenny-three-agent-categories.m4a"
-audio_duration: "18:21"
+fetch_status: "ok"
+fetched_at: "2026-05-17T14:45:14.022Z"
+fetch_type: "html"
+content_length: 18829
 tags:
   - "AI"
   - "Agent"
@@ -18,219 +21,376 @@ tags:
   - "ReAct"
   - "Multi-agent"
 ---
-
-# 不是所有 AI Agent 都一样：三类 agent 框架，决定你团队该先做哪个
-
-**作者**：Hamza Farooq & Jaya Rajwani（Agent Engineering Bootcamp / Agentic AI for PMs 课程作者；本文发表于 Lenny's Newsletter） · **发表**：2026-04-14 · **原文**：[https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal](https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal) · **音频**：[播客 18:21](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/lenny-three-agent-categories.m4a)
-
+# Not all AI agents are created equal
+*Hamza Farooq, Jaya Rajwani*
+> 🔗 原文：[https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal](https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal)
 ---
+_👋 Hey there, I’m Lenny. Each week, I answer reader questions about building product, driving growth, and accelerating your career. For more: [Lenny’s Podcast](https://www.lennysnewsletter.com/podcast) | [Lennybot](https://www.lennybot.com/) | [How I AI](https://www.youtube.com/@howiaipodcast) | My favorite [AI/PM courses](https://maven.com/lenny), [public speaking course](https://ultraspeaking.com/lennyslist?via=lenny), and [interview prep copilot](https://www.benerez.com/copilot/lenny)_
 
-## 一份给「卡在 agent 路线图」的产品团队的方法论
+_P.S. Get a full free year of Lovable, Manus, Replit, Gamma, n8n, Canva, ElevenLabs, Amp, Factory, Devin, Bolt, Wispr Flow, Linear, PostHog, Framer, Railway, Granola, Warp, Perplexity, Magic Patterns, Mobbin, ChatPRD, and Stripe Atlas [by becoming an Insider subscriber](https://www.lennysnewsletter.com/subscribe?plan=founding). [Yes, this is for real](https://www.lennysnewsletter.com/p/productpass)._
 
-2026 年 4 月 14 日，Hamza Farooq 和 Jaya Rajwani 在 Lenny's Newsletter 发表了这篇文章。两位作者教着行业里两个最受欢迎的 agent 课程——Agent Engineering Bootcamp 和 Agentic AI for PMs——用 50+ 小时把这个框架整理出来。
+Agents are so hot right now. Every other day, someone’s launching a new one or a new tool to manage them. I bet your team has a half-dozen agent ideas on your backlog right now. None of this means you actually need to build an agent today. But it does mean that you need to understand how agents fit into your broader strategy, and what the right investment looks like.
 
-他们说过去一年里，跟客户做过**至少 30 次同一种对话**：AI 负责人拉出 roadmap，5-10 个 agent idea，问「help us figure out which one to build first」。
+[Hamza Farooq](https://www.linkedin.com/in/hamzafarooq/) and [Jaya Rajwani](https://www.linkedin.com/in/jayarajwani/) teach two of the most highly rated and well-respected courses on building AI agents ([Agent Engineering Bootcamp](https://bit.ly/4mdjIHq) and [Agentic AI for PMs](https://bit.ly/415aF1b)) and spent over 50 hours putting this guide together. **By the time you finish reading this post, you’ll understand the three types of agents, how to decide which initiatives to prioritize, and how to avoid common pitfalls—with specific recommended tools and platforms and tons of real-life examples.**
 
-## 一、为什么传统优先级工具失效？
+Let’s get into it.
 
-大多数团队会拿出 impact-effort 矩阵，把 idea 一一对比。但作者说——**这种方法在 agent 上彻底崩溃**：
+[
 
-> 一个「agent」可能要 6 周构建，另一个要 6 个月。
-> 一个能由 PM 用 n8n 自己拼出来，另一个需要专门 ML 工程团队。
-> 一个月运行 $500，另一个能产生六位数 LLM 账单。
+![](https://substackcdn.com/image/fetch/$s_!0bKY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7622271-6226-44da-926d-8fbb1e4af173_1456x970.png)
 
-你不能把这些放在同一张 spreadsheet 上比 impact 和 effort——这就是把苹果、橘子、和喷气式发动机扔在一起比较。
+](https://substackcdn.com/image/fetch/$s_!0bKY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7622271-6226-44da-926d-8fbb1e4af173_1456x970.png)
 
-核心问题：
+Over the past year, we’ve had the same conversation at least 30 times. An AI leader pulls up their roadmap, usually 5 to 10 “agent” initiatives, and says, “Help us figure out which one to build first.”
 
-> The problem isn't that they lack ideas; it's that they try to prioritize fundamentally different kinds of systems as if they were the same thing.
+The list usually includes a PM assistant, a RAG copilot, a customer support system, a code review agent, and a voice-enabled shopping assistant
 
-## 二、缺失的步骤是「层级（hierarchy）」
+If you’re reading this, you probably have a similar list. Your team is energized, investors are asking about it, competitors are announcing agent launches. You need to pick something and ship it.
 
-在决定先做哪个 agent 之前，你需要先回答一个更基础的问题：
+That’s where most teams get stuck. **The problem isn’t that they lack ideas; it’s that they try to prioritize fundamentally different kinds of systems as if they were the same thing.** The usual approach is to reach for familiar planning tools. Teams open an impact-vs.-effort matrix and try to compare ideas side by side.
 
-> 每个 idea 实际上提议的是哪种类型的 agent？
+But with AI agents, that quickly falls apart. One “agent” might take six weeks to build. Another might take six months. One can be assembled by a product manager using n8n. Another requires a dedicated ML engineering team. One costs $500 per month to operate. Another could generate a six-figure annual LLM bill.
 
-这决定一切：构建复杂度、所需技能和基础设施、时间长短、运行成本、应该用什么 metric。
+A customer support assistant and a voice-enabled shopping agent may both be called agents, but they demand different architectures, different teams, different infrastructure, and different timelines. Until you recognize those differences, any attempt to compare “effort” or “impact” is essentially guesswork.
 
-**Categorization 不只是技术练习——是 prioritization 的基础。**
+Treating architecturally different products as if they’re in the same category makes effective prioritization nearly impossible. Prioritization breaks not because teams are bad at planning but because they’re comparing apples, oranges, and jet engines on the same spreadsheet.
 
-## 三、三类 agent
+Before you can decide which agent to build first, you need to answer a more basic question: **What type of agent is each idea actually proposing?**
 
-### Category 1：确定性自动化（Deterministic Automation）
+This will determine almost everything that matters for planning:
 
-你定义整个 flow，AI 处理具体步骤的内容。代表工具：n8n、Zapier 加 LLM 节点。
+-   How complex it will be to build
+    
+-   What skills and infrastructure are required
+    
+-   How long it is likely to take
+    
+-   How expensive it will be to operate
+    
+-   How you should measure success
+    
 
-**「绝大多数 agent 机会属于这里。」** 大多数团队应该从这里开始：最快上线、最快出 ROI。
+In other words, categorization isn’t just a technical exercise. It’s the foundation for smart prioritization.
 
-**真实案例 — SaaS 公司的邮件支持 agent**：
+**This post gives you a decision framework you can start using today with your current roadmap.**
 
-| 阶段 | 完成率 |
-|---|---|
-| Week 1 | 52%（大量边缘 case 暴露） |
-| Week 4 | 78%（分类逻辑优化后） |
-| Week 8 | 87%（生产可用） |
+We developed this framework from patterns we’ve seen while helping organizations turn agent ideas into real production systems. Working with enterprise teams across Fortune 500 companies such as Jack in the Box, Tripadvisor, and The Home Depot, we found that grouping ideas by their underlying architecture unlocks prioritization and significantly speeds up the development and launch process. These distinctions also mirror how the broader industry is beginning to classify AI agents, from automation workflows to reasoning systems and multi-agent networks (like the [Levels of Autonomy for AI Agents](https://arxiv.org/abs/2506.12469) paper and [Types of AI agents](https://www.ibm.com/think/topics/ai-agent-types) by IBM). These are also the foundations of how massively popular tools like OpenClaw and Claude Code are actually architected.
 
-**结果**：3,000 邮件/月自动化，节省 2.5 FTE/天，每月节省 $18K。
+If you’re staring at a backlog of agent ideas trying to figure out what to build first, here’s what you’ll have by the end of this post:
 
-### 何时该升级出 Cat 1？
+1.  **A 5-minute triage process** to categorize every agent idea into one of three architectural types
+    
+2.  **A guide to picking the right tool/platform** for your project (i.e. when to use n8n vs. LangGraph vs. ADK)
+    
+3.  **Success metrics and ROI frameworks** tailored to each architectural type
+    
+4.  **Warning signs** that you’ve picked the wrong path (and how to fix it)
+    
 
-下面 6 个信号**同时出现**几个就该升级：
+You’ll be able to look at your backlog and know which ideas can ship in six weeks for quick ROI, which need three months but will drive significant revenue growth, and which are a six-month bet that only makes sense with the right resourcing and expectation setting.
 
-1. flowchart 已经 30+ 节点，每周还在加新分支
-2. 用户表述方式无法预料，所有分支不可能 map 完
-3. agent 需要根据 context 决定用哪个 API 或知识源
-4. 拆解 ambiguous 请求需要探索和适应，不是预定义分解
-5. 最高价值的机会无法用 predictable workflow 表达
-6. 大部分 quick-win 流程已经自动化
+All by first recognizing that “agent” is an umbrella term for very different kinds of systems.
 
-### Category 2：推理-行动 agent（ReAct）
+Every “agent” idea falls into one of three architectural categories.
 
-你定义可用的 tools，LLM 自主决定下一步做什么。
+[
 
-```
-observe → reason → act → observe result → repeat
-```
+![](https://substackcdn.com/image/fetch/$s_!wh-z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2de1ce4-ffb8-4c89-b494-06bcdbb4a163_1456x970.png)
 
-**核心区别：你控制 tools，LLM 控制 reasoning。**
+](https://substackcdn.com/image/fetch/$s_!wh-z!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2de1ce4-ffb8-4c89-b494-06bcdbb4a163_1456x970.png)
 
-代表工具：LangGraph、CrewAI、AutoGen、Google ADK。
+**Category 1: Deterministic automation  
+**You define the entire flow. AI handles content at specific steps. Think: n8n or Zapier workflows with LLM nodes. This is where the majority of agent opportunities belong and where most teams should start. These projects are fastest to launch and deliver measurable ROI quickly.
 
-**真实案例 — 家居零售商语音+图像购物助手**：
+**Category 2: Reasoning and acting agents  
+**AI decides what to do next, using available tools. Think: Cursor, Lovable, or agents built with LangGraph, CrewAI, Google ADK, etc. These initiatives typically come after Category 1, when higher-value problems require flexibility and dynamic decision-making that workflows alone can’t handle.
 
-| 阶段 | Task 完成率 | 对话长度 | Tool 调用 | 成本/session |
-|---|---|---|---|---|
-| Month 1 | 71% | 长 | 多 | $0.12 |
-| Month 4 | 86% | 短 | 少 | $0.08 |
+**Category 3: Multi-agent networks  
+**Multiple specialized agents coordinate with each other. Think: enterprise systems built with ADK or AutoGen. These projects are typically reserved for later stages, when multiple teams must coordinate across domains, and should almost never be the starting point on a roadmap.
 
-**结果**：图像识别 76%→91%、conversion lift +8%→+22%、CSAT 4.0→4.5。
+Some examples of “agents” that fit into each category to help you understand the differences:
 
-**注意时间尺度**：Cat 2 项目通常需要 4 个月才稳定，远比 Cat 1 的 8 周长。
+[
 
-### 何时该升级出 Cat 2？
+![](https://substackcdn.com/image/fetch/$s_!IVsO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb072fb6f-ba6b-4ea6-b215-e842ba409cf0_1456x1289.png)
 
-5 个信号：
+](https://substackcdn.com/image/fetch/$s_!IVsO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb072fb6f-ba6b-4ea6-b215-e842ba409cf0_1456x1289.png)
 
-1. 单个 agent 在多个域里降级（客服+库存+物流+财务）
-2. agent 需要互相 delegate（不是只调 stateless API）。例：购物 agent 需要问库存 agent「能不能查所有仓库给我替代方案」
-3. 任务需要小时或天才能完成（如自动 eval agent 一夜分析 10,000 段对话）
-4. 需要几百个 agent 实例并行运行、互相协调
-5. 不同团队希望各自拥有专门 agent，但需要互相协作
+Organizations often try to build Category 1 problems with Category 2 frameworks—overengineering solutions that add unnecessary complexity and cost. Less frequently but with worse outcomes, they try to solve Category 2 problems with Category 1 tools, and it breaks in production because the tool is not robust enough.
 
-两到三个信号同时出现 = 该考虑 Cat 3。
+Let’s take a deeper dive into each category, starting with the workhorse, Category 1.
 
-### Category 3：多 agent 网络
+These are workflows where you define every step, every branch, every decision point. An LLM handles natural language understanding and generation at specific nodes, but you control the flow. Think of them as intelligent flowcharts where you design the path and AI handles the content.
 
-> 不是一个 agent 调用 tools，而是多个专门 agent 互相协调，每个 agent 被一个不同团队拥有，处理自己的领域，可以向其他 agent 请求帮助。
+**Tools most commonly used** for deterministic automation are n8n, Zapier, Make.com, OpenAI AgentKit, Lindy, and Gumloop. These tools are built around explicit triggers and predefined branching logic. You define the workflow, while LLMs are used only for classification, extraction, or drafting within those boundaries.
 
-代表工具：Google ADK、AutoGen 这些支持企业级 multi-agent 的框架。
+If your backlog includes a mix of agent ideas, Category 1 projects are almost always the smartest place to begin. These initiatives tend to be the simplest to plan and the lowest-risk to execute.
 
-> 这类项目通常留给后期阶段——多个团队需要跨域协作时，几乎绝不应该作为路线图的起点。
+They’re best suited to situations where the process is already well-defined and the goal is to automate repetitive, high-volume work. If you need quick, measurable ROI, have limited AI engineering capacity, or are under pressure to deliver results in weeks rather than months, Category 1 projects are almost always the right starting point.
 
-**⚠️ 注意**：本卡片的 Cat 3 介绍仅来自 Lenny 文章的开头部分。文章 Cat 3 的具体说明、metrics、案例分析在 paywall 之后，未能在本次抓取中获得。**如果你需要给客户做 multi-agent 设计，建议补充其他 multi-agent 资源**。
+Most initiatives in this category share a similar profile across certain criteria:
 
-## 四、最常见的错误
+[
 
-作者总结的 anti-pattern：
+![](https://substackcdn.com/image/fetch/$s_!0716!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a664ae3-eeae-49ec-b616-ac973a5fece6_1456x970.png)
 
-- **更常见**：用 Cat 2 工具解决 Cat 1 问题——overengineering，加成本、加复杂度，但回报不增加
-- **更糟糕**：用 Cat 1 工具解决 Cat 2 问题——在生产环境崩，因为 deterministic flow 处理不了真实用户的 ambiguous 输入
+](https://substackcdn.com/image/fetch/$s_!0716!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a664ae3-eeae-49ec-b616-ac973a5fece6_1456x970.png)
 
-他们也明确提到——**OpenClaw 和 Claude Code 这类「massively popular」工具都是基于这套架构原则设计的**。
+That combination of fast timelines, modest resources, and clear business impact is what makes Category 1 initiatives such powerful early wins. They generate near-term value while building organizational confidence for more advanced efforts later.
 
-## 五、5 分钟 triage 流程
+If you can map the entire process as a flowchart with clear decision points, a product belongs in Category 1. Here are some more traits of a Category 1 product:
 
-文章承诺给读者 4 个 deliverable：
+-   Execution paths are finite and predictable (fewer than 15 to 20 branches)
+    
+-   Task completion needs to happen in seconds to minutes
+    
+-   The value is in automating a known process, not discovering new approaches
+    
 
-1. **5 分钟 triage 流程**：把每个 agent idea 归入一个架构类型
-2. **挑工具/平台的指南**：什么时候用 n8n vs LangGraph vs ADK
-3. **Success metrics 和 ROI framework**：每个类型的对应指标
-4. **Warning signs**：你选错了路径的预警信号
+In our experience with customers, this covers 60% to 70% of agent opportunities. Revisiting the typical list of opportunities I mentioned above, here is a great example of a Category 1 product: “We need an AI agent to handle incoming customer emails, read them, understand what they’re asking, pull relevant information from our docs, draft replies, and route to our team for approval.”
 
-这是为什么这篇文章在产品社区里转发量这么高——它把模糊的「agent 战略」翻译成可以直接执行的决策树。
+At first, this sounds like it needs sophisticated reasoning. But when you map out what actually needs to happen, it’s remarkably deterministic:
 
-## 六、结尾——「agent」是个 umbrella term
+[
 
-作者提醒：
+![](https://substackcdn.com/image/fetch/$s_!BovG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c06485a-4723-44a4-afa9-5e6928817017_1456x1753.png)
 
-> 「Agent」是覆盖很多种完全不同系统的总称。在认识到这一点之前，你的优先级排得多准都没用。
+](https://substackcdn.com/image/fetch/$s_!BovG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c06485a-4723-44a4-afa9-5e6928817017_1456x1753.png)
 
-这是这篇文章的核心 takeaway——**先分类，再排优先级**。
+Every step is predictable. The “intelligence” is in understanding the email and generating a good response, not in figuring out what to do next. This is Category 1.
 
----
+There are a ton of great examples of automation agents; [here’s](http://airbnb.traversaal.ai/) one built by me.
 
-## 附录
+I love Airbnb, but I hate spending long hours finding the best ones, so I built an agent that will take my exact request for, e.g., “Modern apartment in Paris near train stations from 20th March to 26th March. Great for a couple” (more than 10,000 users have used it) and run a search. [Here’s](https://github.com/traversaal-ai/agents-in-action/tree/main/airbnb-agent) how you can build your own.
 
-### TL;DR
+[
 
-Lenny's Newsletter 上 Hamza Farooq 和 Jaya Rajwani 提出 agent 三层分类法：Cat 1 确定性自动化、Cat 2 推理-行动 agent、Cat 3 多 agent 网络。文章核心论点——团队卡在 agent 路线图上不是因为想法不够，是因为把架构完全不同的产品当作同一类比较。**先分类，再排优先级。** 90% 的「agent 想法」应该从 Cat 1 起步，而不是上来就堆 LangGraph。
+![](https://substackcdn.com/image/fetch/$s_!_kvu!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd27ebbfa-6a53-4c37-8dcd-f824548d575d_1456x785.gif)
 
-### 关键要点
+](https://substackcdn.com/image/fetch/$s_!_kvu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd27ebbfa-6a53-4c37-8dcd-f824548d575d_1456x785.gif)
 
-1. **核心问题：你的「agent backlog」里把架构完全不同的产品混在一起比 effort 和 impact**——一个「agent」可能 6 周搞定，另一个要 6 个月；一个 PM 用 n8n 自己拼出来，另一个要专门 ML 团队；一个月花 $500，另一个能产生六位数 LLM 账单。**impact-vs-effort 矩阵在这里完全失效。**
-2. **Cat 1：确定性自动化（Deterministic Automation）—— 大多数团队的起点**：你定义完整的 flow，AI 处理具体步骤的内容。代表工具：n8n、Zapier 加 LLM 节点。**「绝大多数 agent 机会属于这里，团队也应该从这里开始。」** 最快上线、最快出 ROI。
-3. **Cat 2：推理-行动 agent（ReAct）**：你定义可用的 tools，LLM 自主决定下一步做什么。observe → reason → act → observe → repeat 的循环。代表工具：LangGraph、CrewAI、AutoGen、Google ADK。**「你控制 tools，LLM 控制 reasoning。」** 占 25%-30% 的 agent 机会。
-4. **Cat 3：多 agent 网络**：多个专门 agent 互相协调，每个 agent 由不同团队拥有。「应该几乎从不作为起点选择，是 Cat 1 / Cat 2 都打满后才进入的阶段。」（注：Lenny 文章后半部分被 paywall 截断，本卡片仅基于 Cat 1 / Cat 2 的完整公开内容 + Cat 3 的概述）
-5. **最常见的错误是用 Cat 2 工具解决 Cat 1 问题——overengineering**：明明一个 n8n workflow + LLM node 就够，团队上来就要用 LangGraph 搭 ReAct agent，浪费时间和成本。**反向更糟**：用 Cat 1 工具解决 Cat 2 问题——production 环境会崩，因为 deterministic flow 处理不了真实用户的 ambiguous 请求。
-6. **Cat 1 真实案例（SaaS 公司邮件支持 agent）**：Week 1 完成率 52%（边缘 case 暴露），Week 4 78%，Week 8 87%（生产可用）。3,000 邮件/月自动化、节省 2.5 FTE/天、每月节省 $18K。**典型的「6 周可以上线、ROI 立刻可衡量」的 agent 项目。**
-7. **Cat 2 真实案例（家居零售商语音+图像购物助手）**：Month 1 完成率 71%、conversation 长、tool 调用多、$0.12/session；Month 4 完成率 86%、对话短、tool 调用少、$0.08/session。**图像识别 76%→91%、conversion lift +8%→+22%、CSAT 4.0→4.5。** 但要 4 个月才稳定。
-8. **Cat 1 → Cat 2 的过渡信号**：你的 flowchart 已经有 30+ 节点、每周还在加新分支；用户用你预料不到的方式表述；agent 需要根据 context 决定用哪个 API；最高价值机会无法用预定义 workflow 表达。**这些信号同时出现 = 该升级架构。**
-9. **Cat 2 → Cat 3 的过渡信号**：单个 agent 已经在 customer service + inventory + logistics + finance 多个域里降级；agent 之间需要互相 delegate（不是只调用 stateless API）；任务需要小时或天来完成；需要几百个 agent 实例并行协调；不同团队希望各自拥有 agent 但需要协作。
+[
 
-### 我的判断
+![](https://substackcdn.com/image/fetch/$s_!SZG_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb3ebd07b-4809-4ec6-8ac0-2c00e7bdad88_1456x864.png)
 
-这个三层框架是当前 agent 类项目方法论里少有的「能直接拿去给客户用」的工具——它解决了 2025-2026 几乎所有大企业转型客户的真实痛点：**「我们要不要做 agent？做哪个？怎么排优先级？」**
+](https://substackcdn.com/image/fetch/$s_!SZG_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb3ebd07b-4809-4ec6-8ac0-2c00e7bdad88_1456x864.png)
 
-**给我们咨询团队的 actionable 用法**：
+**Other examples of Category 1 “agents”:**
 
-**第一，每个客户的 agent 路线图先做「Cat 分类筛查」。** 我们在 L'Oréal、LVMH 这些客户那看到的「想做 agent 的 idea list」往往有 5-10 个想法混在一起——客服 agent、PM 助理、库存优化、营销文案 agent、合规审查……每个看起来都很 sexy，但实际上是 3 类完全不同的工程项目。**用这个 Cat 1/2/3 框架做第一轮 triage，能立刻挑出哪些是「6 周上线 + 立刻 ROI」的快赢，哪些是「6 个月专项 + 需要 ML 团队」的中长期投资。**
+-   a travel planning agent
+    
+-   a voice-enabled book companion agent
+    
+-   a content automation agent (YouTube → LinkedIn)
+    
+-   a knowledge base of your organization with internet search (Perplexity clone)
+    
+-   an agent that generates deeply researched blogs, based on a given topic
+    
+-   a highly personalized calorie counter app that allows you to upload images of your meals to keep track of your daily caloric intake and recommends better dietary choices and exercises
+    
 
-**第二，避免「LangGraph 优先症」。** 我们工程团队、特别是新进的 AI Engineer，**有强烈的「上来就用最 fancy 的工具」倾向**——明明 n8n + LLM 能搞定的，要用 LangGraph 写 ReAct agent。这篇文章用真实数据（Week 8 完成率 87% / 月省 $18K）证明 Cat 1 项目的商业价值不输 Cat 2，但成本和风险低得多。**应该把这条作为我们 AI 实施方法论的硬规则：除非问题明确属于 Cat 2 特征，否则 Cat 1 是默认选择。**
+The metrics below are designed to answer a simple question: Did this agent automate the right process, or should this idea be reconsidered or re-scoped?
 
-**第三，把 Cat 1 / Cat 2 的真实 metrics 直接进我们的 case study 库。** 「3,000 邮件/月、2.5 FTE/天、月省 $18K」「conversion +22%、CSAT 4.0→4.5」这种真实数据正是 sales team 在客户提案里最缺的——客户 CIO 要的不是「这是革命性技术」，是「同行业 SaaS 用了 8 周达到 87% 完成率，省了多少钱」。**建议把这两个 case 直接加到 ATC 内部的 reference architecture 库。**
+A deterministic agent built for the email automation process can be evaluated as follows:
 
-**给客户的高管沟通**：
+-   **Workflow completion rate:** % of executions that finish successfully
+    
+-   **Automation rate:** % of requests handled without human intervention
+    
+-   **Accuracy:** correctness of intent classification, data extraction, and routing decisions
+    
+-   **Latency:** time from trigger to final output (P50/P95 if relevant)
+    
+-   **Cost per workflow:** total LLM and API cost per completed run
+    
+-   **Error rate:** % of runs failing due to tool, integration, or system errors
+    
+-   **Human review rate:** % of runs requiring manual approval or intervention
+    
 
-这篇文章里最值得直接引用给客户 C-Suite 的句子是这一句：
+Here are workflow completion rate metrics from a real-life example of a Category 1 product, an email support agent built by a SaaS company we worked with:
 
-> 你的团队不是缺创意——他们是在把架构完全不同的产品当作同一类来比较优先级。
+-   **Week 1:** 52% completion rate (lots of edge cases discovered)
+    
+-   **Week 4:** 78% completion rate (refined classification logic)
+    
+-   **Week 8:** 87% completion rate (stable, production-ready)
+    
+-   **Result:** 3,000 support emails/month automated, 2.5 FTE hours/day freed, $18K/month savings
+    
 
-这能直接破除「为什么我们的 agent backlog 排了一年还没排出来」的死循环。**这是 PMO/CTO 都应该贴在墙上的一句话。**
+When these metrics stabilize and cost trends downward, the workflow is doing what it should. If completion remains low or manual intervention stays high, the problem may not be deterministic enough for this category.
 
-**关于 Cat 3 的 paywall 缺失**：我们没拿到 Lenny 文章 Cat 3 部分的完整内容（该部分在 paywall 后），所以这个卡片对 Cat 3（多 agent 网络）的描述不够深入。如果 Jason 后续看到完整版（或要给客户做 multi-agent 设计），需要补充。
+You’ll know you need a different architecture when:
 
-### 关键引用
+1.  Your flowchart has 30+ nodes and you’re adding new branches every week
+    
+2.  Customers phrase things in ways you can’t anticipate, and mapping all variations is impossible
+    
+3.  The agent needs to decide _which_ API or knowledge source to use based on context, not follow a predetermined path
+    
+4.  Breaking down ambiguous requests requires exploration and adaptation, not predefined decomposition
+    
+5.  The highest-value opportunities can no longer be expressed as predictable workflows
+    
+6.  Most quick-win processes are already automated
+    
 
-**1.**
-> The problem isn't that they lack ideas; it's that they try to prioritize fundamentally different kinds of systems as if they were the same thing.
-> 
-> 问题不是他们缺创意——他们是在把架构完全不同的系统当作同一类来比较优先级。
+If several of these signals are present at once, the problem is no longer a good fit for a deterministic workflow, and you should consider Category 2.
 
-**2.**
-> You control the tools; the LLM controls the reasoning.
-> 
-> 你控制 tools，LLM 控制 reasoning。
+Instead of defining the flow, you define the _available tools_, and an LLM autonomously decides what to do next. The agent operates in a loop: observe → reason → act → observe result → repeat.
 
-**3.**
-> Treating architecturally different products as if they're in the same category makes effective prioritization nearly impossible.
-> 
-> 把架构上完全不同的产品当作同一类，让有效的优先级排序几乎不可能。
+The key characteristic: **you control the tools; the LLM controls the reasoning.**
 
-**4.**
-> Categorization isn't just a technical exercise. It's the foundation for smart prioritization.
-> 
-> 分类不只是技术练习——它是聪明排优先级的基础。
+**Tools most commonly used** for building ReAct agents include LangGraph, CrewAI, AutoGen, and other agent orchestration libraries that support tool use, memory, and dynamic planning.
 
-**5.**
-> Most teams should start [with Category 1]. These projects are fastest to launch and deliver measurable ROI quickly.
-> 
-> 大多数团队应该从 Cat 1 开始——最快上线、最快产生可衡量的 ROI。
+[
 
-**6.**
-> 'Agent' is an umbrella term for very different kinds of systems.
-> 
-> 「Agent」是覆盖很多种完全不同系统的总称。
+![](https://substackcdn.com/image/fetch/$s_!JUSF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F19f431ae-bf87-4b50-8e49-d7ad6d452f0c_1424x1449.png)
 
----
+](https://substackcdn.com/image/fetch/$s_!JUSF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F19f431ae-bf87-4b50-8e49-d7ad6d452f0c_1424x1449.png)
 
-*Saved: 2026-05-03 · Source: aidigest.club*
+Category 2 is for situations where user requests are ambiguous, workflows cannot be mapped in advance, and real value comes from flexible, contextual decision-making. If you need agents that can reason across multiple tools, handle conversational interactions, or adapt dynamically to new inputs, that’s a Category 2 product.
+
+Category 2 products are more complex to plan and carry higher execution risk than Category 1. Most initiatives in this category share a similar profile:
+
+[
+
+![](https://substackcdn.com/image/fetch/$s_!LfM9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d3d9c7e-88d3-4488-bc45-10fe38027f6b_1456x970.png)
+
+](https://substackcdn.com/image/fetch/$s_!LfM9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d3d9c7e-88d3-4488-bc45-10fe38027f6b_1456x970.png)
+
+The combination of longer timelines, specialized expertise, and higher costs is what makes Category 2 initiatives powerful but more demanding than Category 1. If your backlog includes problems that truly require reasoning and dynamic behavior, prioritizing Category 2 projects becomes essential. They unlock use cases that deterministic automation cannot handle and enable more advanced, high-impact agent experiences.
+
+A product belongs in Category 2 if the same user request can trigger different action sequences every time. That means that you don’t determine the path; the LLM does. That’s the key difference from Category 1. Here are some more traits of a Category 2 product:
+
+-   The same high-level task requires different sequences of actions depending on input
+    
+-   You have 5-15+ distinct capabilities and the right one depends on context
+    
+-   User intent is ambiguous and needs clarification through interaction
+    
+-   Multiple input modalities (voice, image, text) need to be understood contextually
+    
+-   Breaking down complex requests into sub-tasks is part of the value
+    
+
+In our work with customers, this is the right choice for 25% to 30% of agent opportunities. For an example of this type of product, let’s return to the voice-enabled shopping assistant opportunity from the start of this post.
+
+Customers should be able to search products by voice, upload images to find similar items, check order status, update preferences, and initiate returns, all through conversation.
+
+At first, this sounds like Category 1. Just map out the intents and route accordingly, right? But in practice, real conversations don’t follow fixed paths. To see why, let’s walk through one interaction.
+
+A customer uploads a photo of shoes and says:  
+_“These are too small. I need a size up, and I want them delivered by Thursday.”_
+
+Here’s what happens under the hood:
+
+1.  **Observe.** The agent receives mixed input: an image + voice request.
+    
+2.  **Reason.** It determines:
+    
+    -   First, identify the product in the image
+        
+    -   Then, find available size variants
+        
+    -   Then, check delivery dates
+        
+    -   Finally, confirm the order with the user
+        
+3.  **Act.** The agent dynamically selects tools:
+    
+    -   **visual\_search()** → identify product
+        
+    -   **check\_inventory()** → find size-up availability
+        
+    -   **get\_delivery\_options()** → verify Thursday delivery
+        
+    -   **place\_order()** → after confirmation
+        
+4.  **Observe result → reason again.** Each tool response updates the agent’s state and influences the next step.
+    
+
+This sequence cannot be pre-defined.
+
+-   If the item is out of stock, the agent may suggest alternatives.
+    
+-   If Thursday delivery isn’t available, it may propose pickup.
+    
+-   If the image can’t be recognized, it asks a clarifying question.
+    
+
+The same user request triggers different action sequences based on reasoned considerations.
+
+[
+
+![](https://substackcdn.com/image/fetch/$s_!Plu-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2ceaeb2-37c7-48a5-b3ab-e3a726bb633f_1456x1382.png)
+
+](https://substackcdn.com/image/fetch/$s_!Plu-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2ceaeb2-37c7-48a5-b3ab-e3a726bb633f_1456x1382.png)
+
+Other examples of Category 2 “agents”:
+
+-   a conversational customer support agent
+    
+-   a code assistant that modifies repositories, e.g. Claude Code
+    
+-   an intelligent personal shopping assistant
+    
+-   an IT troubleshooting agent
+    
+-   a sales copilot that researches accounts and drafts outreach
+    
+-   a multimodal assistant combining voice, image, and text
+    
+
+Reasoning agents should be evaluated on whether they help users achieve their goals across variable paths, while remaining efficient enough to justify their cost.
+
+These metrics answer the question: Was dynamic reasoning necessary, or should the problem be simplified to a lower category?
+
+-   **Task completion rate:** % of sessions where users achieve their intended goal
+    
+-   **Reasoning accuracy:** correctness of task decomposition, tool selection, and decision ordering
+    
+-   **Conversation length:** average turns to resolution
+    
+-   **Multimodal accuracy:** correctness of image, voice, or structured input interpretation (if applicable)
+    
+-   **Tool call efficiency:** average number of tool calls per successful session
+    
+-   **Latency:** time per turn and end-to-end session duration
+    
+-   **Cost per session:** total LLM and API cost per completed interaction
+    
+-   **User satisfaction:** post-interaction CSAT or equivalent signal
+    
+-   **Business impact:** lift in conversion, retention, or task success versus baseline
+    
+
+Here are some metrics from a real-life example, a voice + image shopping assistant for a home goods retailer we built:
+
+-   **Month 1:** 71% task completion, longer conversations, higher tool usage, $0.12 cost per session
+    
+-   **Month 4:** 86% task completion, shorter conversations, fewer tool calls, $0.08 cost per session
+    
+
+Result: Image identification accuracy improved from 76% to 91%, conversion lift increased from +8% to +22%, and CSAT rose from 4.0 to 4.5.
+
+When task completion improves while conversation length, tool usage, and cost per session decline, the agent’s reasoning loop is adding value. If performance stalls while costs remain high, the problem may be over-scoped or better served by the deterministic approach of Category 1 tools.
+
+You’ll know you need a different architecture when:
+
+1.  Your single agent is trying to handle too many domains (customer service + inventory + logistics + finance) and performance is degrading
+    
+2.  You need agents to delegate tasks to each other, not just call stateless APIs. Example: A shopping agent needs to ask an inventory agent, “Can you check all warehouses and suggest alternatives?”
+    
+3.  Tasks take hours or days to complete (like the automated eval agent analyzing 10,000 conversations overnight)
+    
+4.  You need hundreds of agent instances running in parallel, coordinating work among them
+    
+5.  Different teams want to own their specialized agents, but they need to work together
+    
+
+If you’re hitting two to three or more of these, it’s time to consider Category 3 tools and approaches.
+
+Instead of one agent calling tools, you have multiple specialized agents that coordinate with each other. Each agent is owned by a different team, handles its own domain, and can request help from other agents.

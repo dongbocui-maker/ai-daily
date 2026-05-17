@@ -1,6 +1,6 @@
 ---
-title: "客服坐席的 AI 革命：5,172 人实证研究——AI 如何打破经验壁垒"
-title_en: "Generative AI at Work"
+title: "Generative AI at Work"
+title_zh: "客服坐席的 AI 革命：5,172 人实证研究——AI 如何打破经验壁垒"
 author: "Erik Brynjolfsson, Danielle Li, Lindsey Raymond"
 author_title: "Stanford & MIT & NBER（NBER Working Paper No. 31161；arXiv v2，2024 年 11 月 7 日）"
 publish_date: 2024-11-07
@@ -9,7 +9,10 @@ original_url: "https://arxiv.org/abs/2304.11771"
 slug: "brynjolfsson-generative-ai-at-work"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/brynjolfsson-generative-ai-at-work.m4a"
-audio_duration: "17:46"
+fetch_status: "ok"
+fetched_at: "2026-05-17T14:48:46.989Z"
+fetch_type: "html"
+content_length: 1806
 tags:
   - "AI"
   - "客服中心"
@@ -17,115 +20,34 @@ tags:
   - "经济学实证"
   - "组织变革"
 ---
-
-# 客服坐席的 AI 革命：5,172 人实证研究——AI 如何打破经验壁垒
-
-**作者**：Erik Brynjolfsson, Danielle Li, Lindsey Raymond（Stanford & MIT & NBER（NBER Working Paper No. 31161；arXiv v2，2024 年 11 月 7 日）） · **发表**：2024-11-07 · **原文**：[https://arxiv.org/abs/2304.11771](https://arxiv.org/abs/2304.11771) · **音频**：[播客 17:46](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/brynjolfsson-generative-ai-at-work.m4a)
-
+# Generative AI at Work
+*[Submitted on 23 Apr 2023 (v1), last revised 6 Nov 2024 (this version, v2)]*
+> 🔗 原文：[https://arxiv.org/abs/2304.11771](https://arxiv.org/abs/2304.11771)
 ---
+[View PDF](https://arxiv.org/pdf/2304.11771) [HTML (experimental)](https://arxiv.org/html/2304.11771v2)
 
-## 一、研究背景与价值
+> Abstract:We study the staggered introduction of a generative AI-based conversational assistant using data from 5,172 customer support agents. Access to AI assistance increases worker productivity, as measured by issues resolved per hour, by 15\\% on average, with substantial heterogeneity across workers. Less experienced and lower-skilled workers improve both the speed and quality of their output while the most experienced and highest-skilled workers see small gains in speed and small declines in quality. We also find evidence that AI assistance facilitates worker learning and improves English fluency, particularly among international agents. While AI systems improve with more training data, we find that the gains from AI adoption are largest for relatively rare problems, where human agents have less baseline training and experience. Finally, we provide evidence that AI assistance improves the experience of work along two key dimensions: customers are more polite and less likely to ask to speak to a manager.
 
-2023 年 ChatGPT 引爆生成式 AI 之后，所有企业管理者都在问同一个问题：「AI 究竟能不能在真实的、有客户压力的、组织复杂的工作中产生效益？」此前的研究要么是 lab 实验（GPT 写代码、写邮件），要么是宏观调查问卷（McKinsey、Accenture 自报告数据）。Brynjolfsson、Li、Raymond 这篇论文是**第一份**对生成式 AI 在真实大规模工作场景中、用准随机实证方法、得出因果结论的研究。它使用一家《财富》500 强企业 business process software 公司的内部数据，覆盖 5,172 名分布在多国（含菲律宾、印度等离岸基地）的客服坐席。AI 工具是基于 GPT 家族的对话推荐助手——在客户聊天进行时实时给坐席「下一句话怎么说」的建议。坐席自由决定是否采纳。
+Subjects:
 
-## 二、识别策略：为什么这是「准随机」的？
+General Economics (econ.GN); General Finance (q-fin.GN)
 
-企业内 AI 工具的滚动式部署（staggered rollout）由各团队 / 各 location 的管理者决定。研究人员利用三个层次的差分回归（two-way fixed effects DiD + Sun-Abraham 等多种 robust 估计器）来排除：(1) 自选择偏差（管理者优先给最优秀员工接 AI？）——团队级 IV 估计排除；(2) 时间趋势偏差——month FE 排除；(3) 个体异质性——agent FE 排除。结果在所有规格下高度一致：AI 提升 RPH 0.30-0.55 不等，平均 15%。
+Cite as:
 
-## 三、核心结果一：平均 +15%，但严重不均
+[arXiv:2304.11771](https://arxiv.org/abs/2304.11771) \[econ.GN\]
 
-回归显示 AI 让客服平均每小时解决问题数（resolutions per hour, RPH）从基线 1.97 提升约 0.30，约 15%。但当作者把坐席按 AI 接入前 3 个月的综合技能指数分成五等时，效应模式震撼：最低技能五分位 +36%，最高技能五分位 0%（甚至质量略降）。同样的，按司龄分组——不到 1 个月的新坐席 +0.7 RPH（约 +40%），1 年以上的老兵 0%。
+ 
 
-这与历史上所有 IT 浪潮的发现完全相反：互联网、PC、ERP、机器人等技术都被发现是**高技能放大器**（skill-biased technical change）——技术让本就强的人更强，加剧不平等。生成式 AI 第一次反过来——它在**平权**。原因在于 AI 模型从全体员工的对话中学习，自然学到的是中上水平员工的最佳实践。它对低技能员工有用（学到了之前不会的东西）；对高技能员工无用（自己已经是 AI 学习的对象）。
+(or [arXiv:2304.11771v2](https://arxiv.org/abs/2304.11771v2) \[econ.GN\] for this version)
 
-## 四、核心结果二：可衡量的「学习」
+ 
 
-反对者会说：「这只是 AI 在帮员工，员工本身没有变好。一旦 AI 撤掉员工就回到原状。」作者用一个绝妙的自然实验回应——AI 系统在样本期内多次故障（software outages），坐席在故障期暂时失去 AI 帮助。结果：暴露过 AI 的坐席在故障期仍然比他们 AI 接入前表现更好——证明有持久性的人类学习发生了。学习幅度还与「AI 暴露时长」「AI 建议采纳率」正相关——越认真听 AI 的，越能在 AI 不在的时候做得好。
+[https://doi.org/10.48550/arXiv.2304.11771](https://doi.org/10.48550/arXiv.2304.11771)
 
-更进一步，对话文本分析表明：低技能坐席的「写作风格」「英语流利度」「常用语向头部坐席收敛」。这一发现对国际外包客服中心尤其重要——AI 在帮非英语母语员工提升英语表达，把语言劣势变成可以靠 AI 抹平的事情。
+arXiv-issued DOI via DataCite
 
-## 五、核心结果三：客户体验与员工保留
+## Submission history
 
-之前的担忧是：客户能感受到 AI 介入吗？会不会觉得坐席「机械、没温度」？数据回应：(1) 接入 AI 的坐席收到的客户负面情绪表达减少；(2) 客户「找你主管来」的请求下降 25%——客户对坐席能力的信心提升了。同时，新员工流失率从 25% 降到约 15%（-40%）。这一点的 ROI 计算实际超过「+15% 速度」本身——因为新员工流失意味着 6-12 个月培训沉没成本作废。
-
-## 六、长期忧虑与政策含义
-
-作者在结尾给出了三个关键洞察：
-
-1. **顶部员工激励错位**：数据显示顶部员工随时间也开始更多采纳 AI 建议，但这些建议略微降低了他们对话的质量——AI 在「平庸化」他们。如果不加干预，他们对 AI 训练数据的「原创性贡献」会下降，未来 AI 模型质量会缓慢劣化。
-2. **训练数据补偿问题**：客服坐席的对话同时是「服务客户」和「训练 AI 模型」。后者是公司的关键数字资产，但目前没有任何薪酬机制对此补偿。这呼应了 Brynjolfsson 此前关于「数据作为资本」的研究主张。
-3. **均衡效应未知**：12% 工时节省可以通过裁员（更少坐席）或扩量（更多客户咨询）实现。研究人员明确表示他们的数据无法回答这一点——这取决于客户对客服需求的弹性、公司战略、监管环境。
-
-## 七、对企业 / 咨询的实操含义
-
-- **HR 层面**：重新评估「资历溢价」——AI 让 2 个月新人达到 6 个月老兵的水平，传统「干越久工资越高」的薪酬曲线被部分削弱。
-- **采购 + 部署层面**：把「降低新员工流失率」列为 AI 项目的硬 KPI，远比「提速 15%」更有 ROI。
-- **数据资产层面**：把员工对话视为关键训练数据资产，建立内部署名 + 激励机制（哪怕初期只是象征性的，比如「贡献了 X 条被采纳建议」的内部表彰）。
-- **培训层面**：用 AI 协助新员工的「ramp-up 期」，把传统 6-9 个月的入职爬坡压缩到 2-3 个月。
-- **质量管控层面**：警惕顶部员工被 AI 平庸化——给他们设计「不依赖 AI 直接产出的高难度任务」配额，保护其原创能力。
-
----
-
-## 附录
-
-### TL;DR
-
-Stanford 与 MIT 团队对一家《财富》500 强企业的 5,172 名客服坐席接入 GPT 生成式 AI 助手前后做了准随机实证研究——这是迄今规模最大、最具因果说服力的「AI 真实工作场景影响」研究。核心发现：AI 让平均生产力提升 15%；但收益严重不均——技能与资历最低的坐席提升 30%-35%，技能与经验最高的坐席几乎无收益甚至质量略降。AI 不再是「高技能放大器」，它在把「老员工的隐性经验」编码并扩散给新员工，重塑「学习曲线」。
-
-### 关键要点
-
-1. **生产力 +15%（解决率 / 小时）**：5,172 名客服坐席的差分回归（DiD）显示，接入 AI 后每小时已解决问题（resolutions per hour）从 1.97 提升到 2.27，平均增 15.2%（带 agent + tenure 固定效应）。事件研究显示效应在第一个月即出现并保持稳定。
-2. **收益严重不均：低技能 +36%，高技能 0%**：将坐席按 AI 接入前 3 个月的综合技能（处理速度 + 解决率 + 客户满意度）分五等。最低技能五分位的坐席 RPH 提升 36%；最高技能五分位几乎为 0，部分质量指标（解决率、NPS）甚至小幅下降。这与 PC、互联网等「高技能放大器」式技术形成鲜明反差。
-3. **经验曲线被压平：2 月新人 ≈ 6 月老兵**：接入 AI 的新坐席仅需 2 个月就能达到未接入 AI 的坐席工作 6+ 个月才有的解决率水平。「永久接入 AI」的坐席 5 个月达到 3+ RPH，而对照组 8-10 个月才到 2.5 RPH。AI 大幅缩短「ramp-up」时间。
-4. **机制 1：可衡量的「学习」而非依赖**：利用 AI 服务故障期（outage 时段，AI 临时不可用）的自然实验——之前接触过 AI 的坐席在断网期仍比 AI 接入前表现更好。学习有持久性，且暴露时间越长、越认真采纳建议者，learning 越显著。
-5. **机制 2：英语流利度提升（尤以国际坐席）**：研究人员对聊天文本做语言分析，发现 AI 显著改善了坐席的英语表达——尤其是英语初始水平最低的坐席。同时，低技能坐席的对话「文本特征」开始向高技能坐席收敛，证据上支持「AI 把头部员工的最佳实践编码并扩散」的假说。
-6. **机制 3：稀有问题的收益最大**：按问题主题分层后，AI 对训练数据稀缺、坐席自身经验最少的「罕见问题」帮助最大。这反直觉——因为 AI 训练数据少，但因人类基线更弱，所以净收益反而最大。
-7. **采纳率 35%，但越听越多**：坐席不是盲从——平均只采纳 AI 35% 的建议。但所有人随时间提升采纳率，尤其是初期最怀疑的资深员工。坐席越愿意「听 AI 的话」，生产力提升越大。
-8. **客户体验改善：粗鲁话减少、要求转主管下降 25%**：客户对接入 AI 的坐席发的攻击性 / 负面情绪信息显著减少；要求「找你主管来」的频率下降约 25%（从基线 6% 到 4.5%）。这是首次有大样本证据表明 AI 协助能改善「工作的体验」本身。
-9. **新员工流失率下降 40%**：接入 AI 的新坐席（≤6 个月司龄）流失率从基线 25% 降至约 15%，下降约 40%。资深员工流失率也降但幅度较小。这是 AI 驱动「员工保留」的首份大规模实证。
-10. **长期忧虑：顶部员工激励错位 + 训练数据萎缩**：作者警告——如果顶部员工被推动遵循中位水平的 AI 建议，他们的「创造性」贡献会减少，从而 AI 模型未来的训练数据会逐步劣化。这提出一个政策问题：是否应为「贡献训练数据」的高水平员工设计补偿机制？
-
-### 我的判断
-
-这篇论文是 Brynjolfsson 团队 2026 年最有政策含量的实证研究——也是 Stanford《Enterprise AI Playbook》（51 案例）背后的「学术内核」。它解答了一个埃森哲、咨询行业必须回答的核心问题：**AI 究竟会扩大不平等，还是缩小不平等？** 答案是反直觉的——至少在客服场景，AI 正在「平权」：让最差的员工接近最好的员工，让 2 个月的新人达到 6 个月老兵的水平。但这同时埋下两个风险：(1) 顶部员工被 AI 「平庸化」；(2) 整个公司对训练数据的依赖加深，而训练数据正在劣化。对企业 IT 与人力策略的直接含义：(a) 重新定义「资历」与「绩效奖金」结构——传统「干得越久工资越高」的逻辑被 AI 削弱；(b) 把「员工产生的对话」视为公司的关键数字资产，建立训练数据的署名 / 激励机制；(c) 客服中心的招聘门槛可以大幅降低（节省工时 12% 即少招 12% 的人），但这会推动产业链向「AI 工程师 + 业务规则审核员」迁移；(d) 把「降低新员工流失率」作为 AI 落地的硬 KPI——这一项的 ROI 远超「提速 15%」本身，因为新员工 6 月内流失意味着所有培训沉没。
-
-### 关键引用
-
-**1.**
-> We find that access to AI assistance increases the productivity of agents by 15%, as measured by the number of customer issues they are able to resolve per hour.
-> 
-> 我们发现 AI 助手的接入让坐席的生产力（每小时解决问题数）提升了 15%。
-
-**2.**
-> Less experienced and lower-skilled workers improve both the speed and quality of their output while the most experienced and highest-skilled workers see small gains in speed and small declines in quality.
-> 
-> 经验较少、技能较低的员工在速度和质量上同时获得提升；而经验最丰富、技能最高的员工只在速度上有小幅提升，质量上还出现小幅下降。
-
-**3.**
-> Treated agents with two months of tenure perform just as well as untreated agents with more than six months of tenure.
-> 
-> 接入 AI 的 2 个月新坐席的表现，已经赶上未接入 AI 的 6+ 个月老兵。
-
-**4.**
-> We provide evidence that AI assistance improves the experience of work along two key dimensions: customers are more polite and less likely to ask to speak to a manager.
-> 
-> 我们提供证据表明 AI 助手在两个关键维度上改善了工作体验：客户变得更礼貌，要求转接主管的频率也降低了。
-
-**5.**
-> These results contrast, in spirit, with studies that find evidence of skill-biased technical change for earlier waves of computer technology and robotics.
-> 
-> 这些结果在精神上与之前 IT 与机器人浪潮普遍发现的「高技能偏向型技术变革」形成鲜明对照——生成式 AI 是不一样的。
-
-**6.**
-> Our work therefore raises questions about whether and how workers should be compensated for the data they provide for training AI systems.
-> 
-> 因此我们的研究提出一个问题：员工为训练 AI 系统贡献的数据，是否以及如何应该获得相应的报酬？
-
-**7.**
-> A back-of-the-envelope calculation suggests the firm could field the same number of customer support issues with 12% fewer worker-hours.
-> 
-> 一个粗略估算显示，公司可以用少 12% 的工时处理同等数量的客服问题。
-
----
-
-*Saved: 2026-05-08 · Source: aidigest.club*
+From: Lindsey Raymond \[[view email](https://arxiv.org/show-email/6bdcad59/2304.11771)\]  
+**[\[v1\]](https://arxiv.org/abs/2304.11771v1)** Sun, 23 Apr 2023 23:43:57 UTC (8,129 KB)  
+**\[v2\]** Wed, 6 Nov 2024 02:35:01 UTC (8,741 KB)

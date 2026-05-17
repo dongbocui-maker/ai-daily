@@ -11,7 +11,7 @@ set -euo pipefail
 
 REPO_DIR="$HOME/repos/ai-daily"
 VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB/KB"
-TARGET_SUBDIR="AI 精读"
+TARGET_SUBDIR="AI Reads"
 TARGET_FULL="$VAULT_DIR/$TARGET_SUBDIR"
 
 # ============ 主流程 ============

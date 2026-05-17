@@ -1,31 +1,29 @@
 #!/usr/bin/env bash
-# setup.sh - Mac 端一次性 setup 脚本
-# 把 ai-daily repo clone 到 ~/repos/，配 launchd 定时同步精读到 Obsidian vault
+# setup.sh - Mac 端一次性 setup（纯 F 方案：on-demand 同步）
 #
-# 用法：
-#   bash setup.sh
+# 做的事：
+#   1. clone ai-daily repo 到 ~/repos/
+#   2. 首次同步精读到 Obsidian vault
+#   3. 给你打印 Shell Commands 插件配置说明
 #
-# 设置完成后：
-#   - ~/repos/ai-daily 是 git working tree（git pull 拉新精读）
-#   - launchd job 每 30 分钟自动 git pull + rsync 到 vault
-#   - vault 在 OneDrive 同步路径里，OneDrive 自动同步到云端
+# 不做的事：
+#   - 不装任何定时任务（launchd / cron）
+#   - 不动 OneDrive 同步规则
+#
+# 同步触发方式：你在 Obsidian 里按快捷键（参考末尾说明配置 Shell Commands 插件）
 
 set -euo pipefail
 
-# ============ 配置区（用户可改） ============
+# ============ 配置区 ============
 
 REPO_URL="https://github.com/dongbocui-maker/ai-daily.git"
 REPO_DIR="$HOME/repos/ai-daily"
 VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB"
-TARGET_SUBDIR="AI 精读"  # vault 内的子目录名
-SYNC_INTERVAL_SEC=1800  # 30 分钟
-PLIST_NAME="com.aidigest.obsidian-sync"
-PLIST_PATH="$HOME/Library/LaunchAgents/${PLIST_NAME}.plist"
-LOG_DIR="$HOME/Library/Logs/aidigest-obsidian"
+TARGET_SUBDIR="AI 精读"
 
 # ============ 主流程 ============
 
-echo "🚀 aidigest.club → Obsidian 同步 setup"
+echo "🚀 aidigest.club → Obsidian 同步 setup（纯按需触发版）"
 echo ""
 
 # 1. 检查 vault 存在
@@ -38,25 +36,26 @@ echo "✅ Vault 路径: $VAULT_DIR"
 
 # 2. clone repo
 if [ -d "$REPO_DIR/.git" ]; then
-  echo "✅ Repo 已存在: $REPO_DIR（跳过 clone）"
+  echo "✅ Repo 已存在: $REPO_DIR（更新中）"
   cd "$REPO_DIR"
   git fetch origin
   git checkout main
-  git pull
+  git reset --hard origin/main
 else
   mkdir -p "$(dirname "$REPO_DIR")"
-  echo "📥 Clone 中..."
+  echo "📥 Clone repo..."
   git clone "$REPO_URL" "$REPO_DIR"
 fi
 
-# 3. 第一次跑转换器（确保 obsidian-export/ 有内容）
+# 3. 第一次跑转换器（如果 markdown 不存在）
 cd "$REPO_DIR"
 if [ ! -d "obsidian-export/reads" ] || [ -z "$(ls -A obsidian-export/reads 2>/dev/null)" ]; then
-  echo "🔄 生成 markdown..."
-  node scripts/reads-to-obsidian.mjs || {
-    echo "⚠️  本地转换失败（可能 node 没装）——没关系，GitHub Actions 会自动跑"
-    echo "   等下次 push 后 ~5 分钟，markdown 会自动出现在 repo 里"
-  }
+  if command -v node >/dev/null 2>&1; then
+    echo "🔄 本地生成 markdown..."
+    node scripts/reads-to-obsidian.mjs
+  else
+    echo "⚠️  Node.js 没装——GitHub Actions 会在云端生成，几分钟后再跑一次 setup.sh"
+  fi
 fi
 
 # 4. 准备 vault 目标目录
@@ -64,56 +63,56 @@ TARGET_FULL="$VAULT_DIR/$TARGET_SUBDIR"
 mkdir -p "$TARGET_FULL"
 echo "✅ Vault 目标目录: $TARGET_FULL"
 
-# 5. 第一次 rsync
+# 5. 首次 rsync
 if [ -d "$REPO_DIR/obsidian-export/reads" ]; then
   echo "📋 首次同步 markdown 到 vault..."
-  rsync -av --delete "$REPO_DIR/obsidian-export/reads/" "$TARGET_FULL/"
+  rsync -av --delete "$REPO_DIR/obsidian-export/reads/" "$TARGET_FULL/" 2>&1 | tail -5
+  COUNT=$(ls "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+  echo "✅ 已同步 ${COUNT} 篇精读到 vault"
 fi
 
-# 6. 写 launchd plist
-mkdir -p "$LOG_DIR"
-mkdir -p "$HOME/Library/LaunchAgents"
-
-cat > "$PLIST_PATH" <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>${PLIST_NAME}</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/bin/bash</string>
-        <string>-c</string>
-        <string>cd "${REPO_DIR}" &amp;&amp; /usr/bin/git pull --quiet &amp;&amp; /usr/bin/rsync -a --delete "${REPO_DIR}/obsidian-export/reads/" "${TARGET_FULL}/"</string>
-    </array>
-    <key>StartInterval</key>
-    <integer>${SYNC_INTERVAL_SEC}</integer>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>StandardOutPath</key>
-    <string>${LOG_DIR}/sync.log</string>
-    <key>StandardErrorPath</key>
-    <string>${LOG_DIR}/sync.err</string>
-</dict>
-</plist>
-EOF
-
-# 7. 加载 launchd job
-launchctl unload "$PLIST_PATH" 2>/dev/null || true
-launchctl load "$PLIST_PATH"
-
+# 6. 打印 Shell Commands 插件配置说明
 echo ""
-echo "✅ Setup 完成！"
+echo "═══════════════════════════════════════════════════════════════"
+echo "✅ Repo + vault 已就绪"
+echo "═══════════════════════════════════════════════════════════════"
 echo ""
-echo "📊 状态："
-echo "   Repo:    $REPO_DIR"
-echo "   Vault:   $TARGET_FULL"
-echo "   日志:    $LOG_DIR/sync.log"
-echo "   间隔:    ${SYNC_INTERVAL_SEC}s（30 分钟）"
+echo "📂 同步脚本位置（Obsidian 插件会调用它）："
+echo "   ${REPO_DIR}/scripts/obsidian-sync-mac/manual-sync.sh"
 echo ""
-echo "🎉 现在 Obsidian 打开 KB vault，应该能在「AI 精读」目录看到 17 篇精读"
+echo "下一步：在 Obsidian 里配置 Shell Commands 插件"
 echo ""
-echo "🔧 手动同步一次：launchctl start ${PLIST_NAME}"
-echo "🛑 停止：       launchctl unload $PLIST_PATH"
-echo "📋 查看日志：    tail -f $LOG_DIR/sync.log"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📌 步骤 1：装 Shell Commands 插件"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  1. 打开 Obsidian → 左下齿轮 (Settings)"
+echo "  2. Community plugins → Turn on (如果第一次用)"
+echo "  3. Browse → 搜 'Shell commands' (作者 Taitava)"
+echo "  4. Install → Enable"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📌 步骤 2：配置同步按钮"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  1. Settings → Shell commands (左侧栏新增项)"
+echo "  2. 点 'New shell command'"
+echo "  3. 在 Command 框粘贴："
+echo ""
+echo "     ${REPO_DIR}/scripts/obsidian-sync-mac/manual-sync.sh"
+echo ""
+echo "  4. 点这条命令展开详细配置："
+echo "     - Alias: 🔄 同步 AI 精读"
+echo "     - Output channel: Notification balloons"
+echo "     - 把 'Confirm before execution' 关闭"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📌 步骤 3：绑快捷键（可选但推荐）"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  1. Settings → Hotkeys"
+echo "  2. 搜 '同步 AI 精读' (或 'Shell commands: Execute...')"
+echo "  3. 点 + 号 → 按 Cmd+Shift+R (推荐) 或你喜欢的组合"
+echo ""
+echo "═══════════════════════════════════════════════════════════════"
+echo "🎉 完成后："
+echo "  - 想看新精读 → 按 Cmd+Shift+R → 2 秒后 vault 是最新的"
+echo "  - 不按就不动，零后台任务"
+echo "═══════════════════════════════════════════════════════════════"

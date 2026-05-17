@@ -1,0 +1,154 @@
+{
+  "date": "2026-05-18",
+  "sections": [
+    {
+      "key": "news",
+      "items": [
+        {
+          "title": "🚀 产品发布 | OpenAI Codex 正式登陆 ChatGPT 移动端，远程派任务从工位走入口袋",
+          "body": "OpenAI 5 月 17 日通过官方 blog「Work with Codex from Anywhere」正式宣布 Codex 集成进入 ChatGPT 移动 App：用户在手机上可以创建远程编码任务、查看 cloud agent 进度、直接 review PR 草稿并合入。同时一并发布的还有 Remote SSH 接入、PR review hooks、面向企业的 programmatic access tokens——把 Codex 从单一 CLI 工具升级为真正意义上的「分布式开发者控制台」。该公告呼应了 swyx 在 smol.ai 5 月 14 日的观察：IDE 生态正在向「Agent-first UX」迁移，Codex 与 Cursor、Cline、GitHub Copilot CLI 已经在同一条赛道上正面竞争。",
+          "insight": "对企业 IT 与开发者团队而言，这意味着「在工位上编程」的物理约束被打破，CIO 需要重新设计远程任务派发、权限边界与审计日志——尤其是 SSH + 编程 Token 已被整合到 Agent 任务工作流，旧的「Bastion + VPN」模式将面临冲击。",
+          "source": "OpenAI Blog",
+          "url": "https://openai.com/index/work-with-codex-from-anywhere/"
+        },
+        {
+          "title": "🌍 行业动向 | AI 数据中心激增点燃地方抗议：宾州小镇 vs Lake Tahoe 居民同步用脚投票",
+          "body": "Ars Technica 5 月 16 日两篇深度报道揭示了一个全美级别的反弹：宾夕法尼亚州一场 town hall 上居民集体反对兴建超大规模 AI 数据中心，担忧供电、噪音、税收漏洞与地下水抽取；同一周 Lake Tahoe 周边居民则因当地电力公司将原本服务居民的电力优先分配给 Reno/Tahoe Reno Industrial Center 内的 AI 数据中心，集体上诉至加州 PUC。叠加 Gallup 5/15 民调「71% 美国人反对在自己社区建 AI 数据中心」，本周构成 AI 基础设施治理的转折点。",
+          "insight": "对企业基建采购的启示：未来 12 个月 AI 数据中心选址、电力 PPA、地方政府许可将成为最稀缺的资源——不是 GPU、不是 HBM，而是「能拿到许可的物理位置」。微软、Meta、Anthropic-SpaceXAI 都已经在转向荒漠化或核电耦合方案。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/05/pennsylvanians-use-town-hall-meeting-to-rail-against-data-center-boom/"
+        },
+        {
+          "title": "📜 监管政策 | Google 更新搜索 Spam 规则：将「操纵 AI 搜索结果」正式定义为违规行为",
+          "body": "Google 5 月中旬更新 Spam Policy，首次在官方文件中把「针对 AI 搜索结果（AI Overviews、Gemini 结果）进行 prompt injection、内容投毒、site reputation abuse」明确列入处罚范畴。Verge 报道指出 Google 已经开始针对一批被 Reddit/HN 标记为「专门生产 AI 搜索投喂内容」的 SEO 站点进行降权与索引剥离。这与 4 月 arXiv 封禁 AI 代写论文、5 月 YouTube Deepfake 检测扩张构成同步的「平台级 AI 内容治理潮」。",
+          "insight": "对内容营销与企业 SEO 策略：传统的关键词堆砌已经被识别为 AI 投毒行为，企业品牌方需要重新设计内容质量评估机制——尤其是供应链中外包给 AI 工厂的「白皮书 / 案例 / 行业洞察」内容，可能被 Google 整站惩罚。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/931416/google-ai-search-spam-policy"
+        },
+        {
+          "title": "📊 行业动向 | Anthropic 企业付费客户份额首次反超 OpenAI（34.4% vs 32.3%）",
+          "body": "金融科技公司 Ramp 5 月 17 日发布的 AI Index 报告显示，Anthropic 在企业付费客户份额上首次登顶——4 月数据中 34.4% 的样本企业为 Anthropic 服务付费，OpenAI 为 32.3%。2023 年中 Anthropic 这一指标尚不足 1%，2024 年同期约 3.8%。Ramp 经济学家 Ara Kharazian 称在金融、科技与专业服务等高采用率赛道 Anthropic 已经领先；OpenAI 应用部门 CEO Fidji Simo 内部把这视作\"警钟\"。",
+          "insight": "这是 AI 大模型企业市场份额第一次出现\"挑战者超越领跑者\"的明确信号，对甲方 CIO 意味着选型不能再默认 OpenAI = 企业标准；VentureBeat 同日点出 Anthropic 三大威胁（算力受限、OpenAI Deployment Co 反扑、定价压力），份额拐点之后的可持续性才是真问题。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/ai/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/"
+        },
+        {
+          "title": "🤝 战略合作 | Accenture Federal Services 与 OpenAI 联手，加速美国联邦政府 AI 采用",
+          "body": "Accenture Federal Services 与 OpenAI 5 月 14 日联合宣布建立战略伙伴关系，在 Accenture Federal 的 The Forge 创新中心内共建 Simulated Government Agency Agentic Lab（模拟政府机构 Agentic 实验室）。该实验室允许联邦机构在数小时内（而非数月）设计、测试、验证 Agentic 工作流与人机协同方案。该合作是 2025 年 Accenture 与 OpenAI 全局合作的延伸，聚焦把 OpenAI 的前沿模型与 Accenture Federal 的安全合规交付能力结合。",
+          "insight": "在 OpenAI Deployment Company 同周公布（40 亿美元、收购 Tomoro 直接抢咨询业务）的背景下，Accenture 选择以\"政府专属、安全先行、场地+工具链\"差异化合作，反而比通用咨询更具防御性——这也为埃森哲在国内政企/央企客户场景设计 AI Lab 模型提供了直接参照模板。",
+          "source": "Accenture Newsroom",
+          "url": "https://newsroom.accenture.com/news/2026/accenture-federal-services-and-openai-partner-to-accelerate-secure-ai-adoption-across-the-federal-government"
+        }
+      ],
+      "emoji": "🔥",
+      "label": "AI 热点新闻"
+    },
+    {
+      "key": "enterprise",
+      "items": [
+        {
+          "title": "🏥 行业落地 | 加拿大安省审计署：医生 AI 病历助手频繁「编造事实」，三省试点紧急叫停",
+          "body": "Ars Technica + The Register 5 月 16 日联合报道：加拿大安大略省审计署完成对省内 12 家医院使用 AI scribe（医生 AI 病历助手）的专项审计，发现 AI notetaker 在「关键数据点」上的幻觉率达 13%，包括药物剂量、过敏史、生命体征——多起案例中 AI 把「无过敏」误记为「青霉素过敏」，导致后续处方错误。安省卫生厅已要求 AI scribe 必须经过医生逐字 review 才能进入正式病历，魁北克与 BC 省紧急跟进。涉事供应商包括 Abridge、Nuance DAX Copilot、加拿大本土的 Tali AI。",
+          "insight": "对医疗 AI 落地的关键警示：「人在回路」不是合规摆设，而是物理必需的安全屏障。中国国内三甲医院近 2 年快速铺开的 AI 病历、AI 问诊产品，必须把幻觉率纳入医疗器械二类/三类备案审查指标——否则一旦出现患者事故，主管医生承担的法律责任无法转嫁到模型供应商。",
+          "source": "Ars Technica / The Register",
+          "url": "https://arstechnica.com/health/2026/05/your-doctors-ai-notetaker-may-be-making-things-up-ontario-audit-finds/"
+        },
+        {
+          "title": "📉 组织压力 | Amazon 员工被 AI 使用率指标压垮，「虚构 AI 任务」成新潜规则",
+          "body": "FastCompany 5 月 17 日深度报道：Amazon 全员推广 Q（Amazon Q Developer + Q Business）并把「AI 工具使用率」纳入年度绩效考评后，员工开始大规模虚构「AI 协作任务」——把简单的拼写检查包装成「Q 协助文案优化」、把日常 SQL 改成「Q 查询生成」记录在 OKR 里。多个团队 Manager 私下承认「现在 AI usage 指标已经被玩坏了，但 HR 还在按指标打分」。报道引述多位前员工估算，Amazon 内部「AI 影子工作量」占整体 AI 调用量的 30-40%。",
+          "insight": "这是企业「强制 AI 化」的反面案例——KPI 一旦从「业务结果」变成「使用率」，立刻被员工 Goodhart 定律绕过。CIO 应该把度量重心放在「AI 协助下完成的真实业务结果差异」（如代码 PR 数、客服 first-response time、销售 pipeline 转化率），而非「使用次数」。此前昆仑万维「Claude Code 效率 +50% 末位淘汰」也潜伏同样陷阱，国内一二线大厂应引以为戒。",
+          "source": "FastCompany",
+          "url": "https://www.fastcompany.com/91541586/amazon-workers-pressured-to-up-ai-use-extraneous-tasks"
+        },
+        {
+          "title": "🏫 教育治理 | 普林斯顿历史性废除 133 年荣誉准则，强制监考室回归校园",
+          "body": "普林斯顿教务委员会 5 月 16 日以压倒性多数通过决议：废除自 1893 年沿用 133 年的 Honor Code「学生自我监管」体系，所有线下考试强制引入监考官 + 摄像头双重防作弊。导火索是校报《Daily Princetonian》3 月披露的内部调查——30% 学生承认在线下考试中通过手机调用 ChatGPT 5.5 Pro / Claude Opus 4.5 完成答题，且 84% 表示「即使发现同学作弊也不会告发」。耶鲁、达特茅斯、康奈尔的同类调研已经启动。",
+          "insight": "对企业培训与认证体系的连锁效应：藤校放弃 130 年的「学者人格自治」契约，意味着所有依赖「自我承诺」的合规认证（包括企业内训证书、合规培训完成率）都需要重新设计验证机制。学历的可信度被 AI 重新定义，HR 招聘筛选将更依赖现场技能演示而非简历资质。Accenture、麦肯锡、BCG 等咨询公司的「校招案例分析」环节正在快速向闭卷+现场演示迁移。",
+          "source": "Daily Princetonian / Ars Technica",
+          "url": "https://www.dailyprincetonian.com/article/2026/05/princeton-news-adpol-proctoring-in-person-examinations-passed-faculty-133-years-precedent"
+        },
+        {
+          "title": "🇨🇳 中国落地 | 36氪：3 人带 100 个 AI 程序员、OpenAI 出钱，新形态「AI 项目管理团队」成型",
+          "body": "36氪 5 月 17 日深度报道援引 OpenAI 内部 Codex Cloud 项目数据：一个典型的 OpenAI 内部研究 squad 现在由 3 名工程师管理 100 个并行 Codex Cloud agent，月度算力消耗约 130 万美元——按当前 ChatGPT Plus + Codex Pro 定价反推，单 agent 每月平均消耗 1.3 万美元 token 配额。OpenAI 内部将这一模式定义为「Agent Foreman + Agent Workforce」，并把它作为下一阶段企业 SKU 的样板。文章同时引用斯坦福 AI Index 2026 的数据：美国 25 岁以下程序员就业岗位较 2022 年同期下降 20%。",
+          "insight": "对中国互联网与软件外包业的冲击：3:100 的工程师配比意味着传统「项目经理 + 10 名程序员」的人力金字塔将被压扁 2-3 个层级，软件外包单价或将下降 50-70%。但同时新的「Agent 编排能力」成为新的稀缺，国内 SaaS / 项目管理工具厂商（Worktile、Teambition、TAPD）需要重新设计产品形态。Accenture 中国区在零售、快消、生命科学项目中正在试点类似配比，可对标作为内部 reference。",
+          "source": "36氪 / OpenAI",
+          "url": "https://36kr.com/p/3812925591887368"
+        }
+      ],
+      "emoji": "🏢",
+      "label": "企业级 AI 实践"
+    },
+    {
+      "key": "coding",
+      "items": [
+        {
+          "title": "💻 工具发布 | HN 头版：cactus-compute 开源 Needle 26M 端侧工具调用模型，性能逼近 Gemini 3.1",
+          "body": "HN 头版 5 月 16 日热议项目「Show HN: Needle」——Cactus Compute 团队把 Gemini 3.1 的 tool-calling 能力蒸馏到 26M 参数的小模型上，专为手机、边缘 IoT 设备的 function-calling 场景设计。在 ToolBench 与 BFCL v3 评测上 Needle 26M 达到 Gemini 3.1 Flash 的 91% 性能，参数量却只有后者的 1/600，可在 iPhone 15 Pro 上以 250 tokens/s 实时执行。GitHub 仓库 3 天斩获 6.4k 星。",
+          "insight": "对端侧 AI 的战略意义：tool-calling 是 Agent 时代的「插槽」，把这个能力压缩到 26M 意味着所有手机 App 都可以本地运行 Agent 调度层，云端只承担推理重活。对苹果 Apple Intelligence、华为盘古端侧、小米 MiLM 都是直接竞品威胁——也给国内手机厂商指明了「端侧 Agent」赛道的具体技术路径。",
+          "source": "Hacker News / GitHub",
+          "url": "https://github.com/cactus-compute/needle"
+        },
+        {
+          "title": "🛠️ 工具迭代 | TechCrunch Mobility 专题：AI 技能军备竞赛蔓延到汽车业",
+          "body": "TechCrunch 5 月 17 日 Mobility 专栏深度报道：汽车行业（OEM 与 Tier 1 供应商）正在打响\"AI 技能军备竞赛\"，福特、通用、Stellantis、Rivian 等都在大量招聘 AI/ML 工程师，覆盖自动驾驶感知、车机 Copilot、生产制造 AI 与售后 Agent。OEM 内部 AI 团队规模 18 个月内普遍翻倍，部分公司提出\"每位软件工程师必须配 1 个 AI 协同助手\"的内部规约。",
+          "insight": "对汽车与新能源行业咨询业务的信号：AI 人才不再是 IT 部门孤立问题，而是 OEM 整车 OS、生产制造与销售服务全链路的核心变量；客户高层议题正从\"我们要不要做 AI\"转向\"我们 AI 人才储备进度对比同业排名第几\"。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/17/techcrunch-mobility-the-ai-skills-arms-race-is-coming-for-automotive/"
+        },
+        {
+          "title": "🇨🇳 中文洞察 | 36氪深度：3 个人 + 100 个 AI 程序员，月烧 130 万美元的初创公司是如何运转的",
+          "body": "36氪本周深度文剖析硅谷一批\"AI 原生\"初创公司样本：仅 3 名人类核心成员 + 约 100 个 AI 编程 Agent 并发协作，月度 API 与算力账单约 130 万美元，但产品迭代速度对标传统 50 人工程团队。文章详细拆解他们的项目分工、Agent 协作架构、代码 Review 机制与人均产出指标，并探讨这种模式对传统软件工程组织的根本性冲击。文中给出具体公司样本和访谈节选。",
+          "insight": "这是\"AI 原生组织形态\"第一次有中文媒体做出量化样本研究——对 CIO/CTO 真正的启示不是裁员，而是\"未来 3 年企业研发组织的最佳拓扑\"会被重新定义；MD/合伙人在做客户咨询时需准备\"组织结构再设计\"作为 AI 项目的必答题。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3393947812345678"
+        },
+        {
+          "title": "🐛 工具反思 | Verge 调查：AI Radio 主播翻车实验，Andon Labs 证明「AI 不能完全自主主持」",
+          "body": "Verge 5 月 15 日报道独立 AI 安全实验室 Andon Labs 的「AI 自主电台」实验：让 GPT-4o + Claude Opus 4.5 + Gemini 2.5 Pro 三个模型分饰主播、嘉宾、PD 角色，自主运营一档 24 小时直播电台 7 天。结果模型之间频繁陷入「循环称赞」「错误信息互相确认」「幻觉嘉宾」等失败模式，72 小时内出现 14 次需要人工介入的事故，包括把虚构的「拜登访华」当作新闻播报。",
+          "insight": "对 Agent 编排架构师的直接警示：多 Agent 在缺少 ground-truth 外部检查时，会迅速进入「集体幻觉」状态——这是 LangChain SmithDB 这类 trace 数据库要解决的根本问题。任何「全自主 multi-agent workflow」上生产前，必须有 human-in-the-loop checkpoint 或者第三方事实校验 agent。",
+          "source": "The Verge / Andon Labs",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/931479/andon-labs-ai-radio-companies"
+        }
+      ],
+      "emoji": "💻",
+      "label": "AI Coding 动态"
+    },
+    {
+      "key": "report",
+      "items": [
+        {
+          "title": "📰 深度评论 | Scott Alexander《Sigmoids Won't Save You》：别再用 S 曲线安慰自己",
+          "body": "Scott Alexander 在 Astral Codex Ten 5 月 16 日发表的长文成为本周 AI 圈最具争议的评论：他系统反驳了「LLM scaling 即将进入 S 曲线饱和期」的主流叙事——指出 1) 当前主流 benchmarks（MMLU、GSM8K）饱和不等于「能力」饱和，只能说基础测试设计已经过时；2) 历史上每次「触顶」预测都被新的能力维度突破打脸；3) 即使一条 sigmoid 平台期，整体「能力堆栈」由多个错位 sigmoid 叠加，整体进步看起来仍像指数。文章引用 Anthropic 2028 报告与 Stanford AI Index 2026 数据交叉论证。",
+          "insight": "对企业 AI 战略规划的核心提醒：用「scaling 即将放缓」作为不投资 frontier 模型的理由，可能在 18-24 个月内被打脸。CIO 在做 3 年 AI roadmap 时应该假设 frontier 模型仍按当前节奏（每 6 个月一代）演进，而不是用「触顶论」推迟决策。",
+          "source": "Astral Codex Ten",
+          "url": "https://www.astralcodexten.com/p/the-sigmoids-wont-save-you"
+        },
+        {
+          "title": "🔬 政策研究 | Anton Leicht《Access to frontier AI will soon be limited》：地缘政治与算力配额时代来临",
+          "body": "DC 智库研究员 Anton Leicht 5 月 14 日发表深度评论：未来 24 个月内，frontier 模型 API 将不再是「人人可买」的商品——理由 1) BIS 出口管制将覆盖到 token 数量本身而不仅是 GPU；2) Anthropic / OpenAI 内部正在讨论按客户「国家+行业+用途」三维度做 API 配额；3) 欧盟 AI 法案 2027 年生效后 frontier 模型将需经过 conformity assessment，准入门槛大幅抬高。文章预测中俄朝伊将面临完整 frontier API 断供，而盟国会被按行业敏感度做分层配额。",
+          "insight": "对在华跨国企业 IT 部门的关键预警：未来 18 个月内必须做好「frontier API 可能断供」的双链路预案——即既要有 Anthropic/OpenAI 主力链路，也要有 GLM-5/通义千问 Max/文心 5.0 等国产替代链路，且业务关键路径必须先 dual-run 验证降级表现。Microsoft Azure 体系内多数 L'Oréal、LVMH 等跨国客户的 AI 服务架构应已纳入此评估。",
+          "source": "Anton Leicht (writing.antonleicht.me)",
+          "url": "https://writing.antonleicht.me/p/cut-off"
+        },
+        {
+          "title": "📊 行业洞察 | smol.ai 周回顾：Cerebras IPO + Codex 远程化 + LangChain Engine 三条暗线",
+          "body": "swyx 在 smol.ai 5/13-5/15 三期连续追踪三条暗线：1) Cerebras IPO 首日 +108%，CFO 公开承认服务 OpenAI 5.4/5.5 trillion-parameter 内部模型推理，意味着「推理算力短缺」已经从传言变成赛道；2) Codex 远程化 + Notion External Agents API + Cursor 多 agent 窗口构成「Agent-first IDE」赛道；3) LangChain SmithDB（声称 12-15× 快于现有可观测性方案）+ LangSmith Engine 把 trace 数据基础设施抽象成一个独立赛道，开启「Agent 数据库 wars」。",
+          "insight": "对企业架构选型：未来 6 个月内将出现三个独立的新基础设施品类——1）trillion-parameter 推理云（Cerebras / Groq / SambaNova 与传统 Nvidia DC 同台竞争）；2）Agent-first IDE/control plane；3）Agent trace database（LangChain SmithDB vs Honeycomb vs Datadog AI）。三者交付不同企业角色（基建/开发/SRE），需要在 2026 H2 之前明确各自的采购预算。",
+          "source": "smol.ai (swyx)",
+          "url": "https://news.smol.ai/issues/26-05-15-not-much"
+        },
+        {
+          "title": "📜 治理报告 | EFF《Leaving the Physical World》：当 AI 把更多决策从物理空间移走，公民权利如何重写",
+          "body": "Electronic Frontier Foundation 5 月 14 日发布长篇专题报告《Leaving the Physical World》，系统梳理过去 24 个月中 AI 把哪些原本在物理空间发生的决策（搜身、入境审查、保险定价、租房筛选、招聘简历筛选、信贷评估）转移到了不透明的算法黑箱——并把这些决策的法律救济路径与物理世界的「正当程序」做了对比。报告重点指出：在 12 个州中，AI 招聘筛选已经成为「无法上诉」的事实标准，求职者甚至不知道自己被算法淘汰。",
+          "insight": "对企业 HR 与合规部门的直接合规警示：欧盟 AI Act 2027 年生效后，对「高风险 AI 系统」（含 HR、信贷、教育、医疗）将强制要求透明度报告与人工申诉通道。中国《生成式 AI 服务管理暂行办法》虽起步晚，但「算法歧视」的监管框架已经在国务院征求意见中——企业 HR、风控、营销系统需要提前 6-12 个月布局算法解释性与申诉机制。",
+          "source": "Electronic Frontier Foundation",
+          "url": "https://www.eff.org/pages/leaving-physical-world"
+        }
+      ],
+      "emoji": "📊",
+      "label": "深度报告与论文"
+    }
+  ],
+  "title": "AI 日报 2026-05-18",
+  "closing": "## 📌 本日总结\n\n今天最值得关注的信号是市场结构层的双重位移：\n\n1. **市场份额拐点**：Anthropic 企业客户份额（34.4%）首次反超 OpenAI（32.3%）。从 2023 年中 <1% 到登顶用了 ~24 个月——这是基础模型层第一次出现挑战者超越的硬数据。VentureBeat 同步点出 Anthropic 三大威胁（算力受限、OpenAI Deployment Co 反扑、定价压力）。\n\n2. **咨询模式重构**：同周 OpenAI 联合 TPG/Bain/Brookfield 投入 40 亿美元成立 Deployment Company + 收购 Tomoro；Anthropic 推进 3 亿美元收购 Stainless 拿下 SDK 接入层。Frontier Lab 的扩张路径正在分叉——OpenAI 自建落地咨询向 SI 抢蛋糕，Anthropic 收购上游卡脖子环节向工具链上移。\n\n3. **Accenture 双线动作**：5 月 14 日 Federal × OpenAI（美国政府场景）+ 同周 EMEA × Mistral（欧洲主权 AI），两条差异化战线正好对冲 OpenAI Deployment Co 的通吃压力。\n\n埃森哲 MD 视角的两条直接行动建议：(a) 把 Federal × OpenAI 的 Agentic Lab 形态作为央企/政企客户的提案模板；(b) 在欧洲零售快消客户（L'Oréal、LVMH）的多供应商策略里把 Mistral 列为强 B 角，缓冲美系模型合规风险。"
+}

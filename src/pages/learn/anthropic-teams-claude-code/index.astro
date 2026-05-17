@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const docs = await getCollection('claude-code-docs');
+const doc = docs.find((d) => d.data.slug === 'anthropic-teams-claude-code');
+if (!doc) throw new Error('claude-code-docs entry with slug=anthropic-teams-claude-code not found');
+const { Content } = await render(doc);
+const base = import.meta.env.BASE_URL;
+---
+<Base
+  title={doc.data.title}
+  description="Anthropic 内部 10 个团队的 Claude Code 实战案例 · 中文核心观点 + 章节导读 + 英文原文。"
+>
+  <Header />
+  <main class="flex-1">
+    {/* Hero */}
+    <section class="bg-accent-ink text-white relative overflow-hidden">
+      <div class="container-x py-12 lg:py-16">
+        <nav class="text-xs text-accent-gray-400 mb-4">
+          <a href={`${base}learn/`} class="hover:text-accent-purple-light">学习中心</a>
+          <span class="mx-2">/</span>
+          <span class="text-accent-gray-300">{doc.data.title}</span>
+        </nav>
+        <span class="inline-block bg-accent-purple text-white px-3 py-1 text-[11px] font-semibold tracking-widest uppercase mb-4 rounded-sm">实战案例 · 10 个团队</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] tracking-tight mb-4 max-w-4xl">
+          {doc.data.title}
+        </h1>
+        {doc.data.subtitle && (
+          <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed mb-6">
+            {doc.data.subtitle}
+          </p>
+        )}
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-accent-gray-400">
+          <span>📑 来源：<a href={doc.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-accent-purple-light hover:underline">{doc.data.sourceLabel}</a></span>
+          <span>·</span>
+          <span>🔖 中文导读：钢铁虾</span>
+          {doc.data.updated && (
+            <>
+              <span>·</span>
+              <span>🗓 更新：{doc.data.updated}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+
+    {/* 正文 — markdown 渲染 */}
+    <article class="container-x max-w-4xl py-10 prose prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-a:text-accent-purple prose-a:no-underline hover:prose-a:underline prose-strong:text-accent-ink prose-table:text-sm prose-table:my-4 prose-th:bg-accent-gray-50 prose-th:font-semibold prose-th:px-3 prose-th:py-2 prose-td:px-3 prose-td:py-2 prose-td:border prose-th:border prose-td:border-accent-gray-200 prose-th:border-accent-gray-200 prose-code:text-accent-purple prose-code:bg-accent-gray-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-accent-gray-900 prose-pre:text-accent-gray-100 prose-pre:text-[13px] prose-pre:leading-[1.5] prose-blockquote:border-accent-purple prose-blockquote:font-normal prose-blockquote:text-accent-gray-700 prose-hr:border-accent-gray-200">
+      <Content />
+    </article>
+
+    {/* 底部 */}
+    <section class="container-x max-w-4xl pb-16">
+      <div class="border-t border-accent-gray-200 pt-8 flex flex-col md:flex-row justify-between gap-4">
+        <a href={doc.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-3 border border-accent-gray-300 hover:border-accent-purple hover:text-accent-purple transition text-sm font-semibold">
+          📑 下载官方英文 PDF →
+        </a>
+        <a href={`${base}learn/`} class="px-5 py-3 border-2 border-accent-purple bg-accent-purple text-white hover:bg-accent-purple-deep transition text-sm font-semibold text-center">
+          ⇧ 返回学习中心
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

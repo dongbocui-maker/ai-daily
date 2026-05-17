@@ -14,4 +14,16 @@ const sevenPillars = defineCollection({
   }),
 });
 
-export const collections = { 'seven-pillars': sevenPillars };
+const claudeCodeDocs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/claude-code-docs' }),
+  schema: z.object({
+    slug: z.string(),
+    title: z.string(),
+    subtitle: z.string().optional(),
+    sourceUrl: z.string().url(),
+    sourceLabel: z.string(),
+    updated: z.string().optional(),
+  }),
+});
+
+export const collections = { 'seven-pillars': sevenPillars, 'claude-code-docs': claudeCodeDocs };

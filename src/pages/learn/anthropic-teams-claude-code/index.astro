@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
 ---
 <Base
   title={doc.data.title}
-  description="Anthropic 内部 10 个团队的 Claude Code 实战案例 · 中文核心观点 + 章节导读 + 英文原文。"
+  description="Anthropic 内部 10 个团队（数据基础设施 / 产品研发 / 安全 / 推理 / 数据科学 / API / 增长营销 / 产品设计 / RL / 法务）的 Claude Code 实战用法。"
 >
   <Header />
   <main class="flex-1">
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
           <span class="mx-2">/</span>
           <span class="text-accent-gray-300">{doc.data.title}</span>
         </nav>
-        <span class="inline-block bg-accent-purple text-white px-3 py-1 text-[11px] font-semibold tracking-widest uppercase mb-4 rounded-sm">实战案例 · 10 个团队</span>
+        <span class="inline-block bg-accent-purple text-white px-3 py-1 text-[11px] font-semibold tracking-widest uppercase mb-4 rounded-sm">官方 PDF · 实战案例</span>
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] tracking-tight mb-4 max-w-4xl">
           {doc.data.title}
         </h1>
@@ -56,7 +56,7 @@ const base = import.meta.env.BASE_URL;
     <section class="container-x max-w-4xl pb-16">
       <div class="border-t border-accent-gray-200 pt-8 flex flex-col md:flex-row justify-between gap-4">
         <a href={doc.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="px-5 py-3 border border-accent-gray-300 hover:border-accent-purple hover:text-accent-purple transition text-sm font-semibold">
-          📑 下载官方英文 PDF →
+          📖 下载官方英文 PDF →
         </a>
         <a href={`${base}learn/`} class="px-5 py-3 border-2 border-accent-purple bg-accent-purple text-white hover:bg-accent-purple-deep transition text-sm font-semibold text-center">
           ⇧ 返回学习中心

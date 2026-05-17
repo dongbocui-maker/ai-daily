@@ -19,7 +19,7 @@ set -euo pipefail
 REPO_URL="https://github.com/dongbocui-maker/ai-daily.git"
 REPO_DIR="$HOME/repos/ai-daily"
 VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB/KB"
-TARGET_SUBDIR="AI Reads"
+TARGET_SUBDIR="raw/AI Reads"
 
 # ============ 主流程 ============
 

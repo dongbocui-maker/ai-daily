@@ -1,0 +1,47 @@
+name: Sync Obsidian Export
+
+# 触发条件：精读 JSON 文件变化时自动跑
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/reads/**.json'
+      - 'scripts/reads-to-obsidian.mjs'
+  workflow_dispatch:  # 手动触发
+
+permissions:
+  contents: write  # 需要写权限来 commit 回 repo
+
+concurrency:
+  group: obsidian-sync
+  cancel-in-progress: false  # 排队等前一次跑完，不取消
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 必须，否则没法 push 回去
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate Obsidian markdown
+        run: node scripts/reads-to-obsidian.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add obsidian-export/
+          if git diff --cached --quiet; then
+            echo "No changes in obsidian-export/, skip commit"
+          else
+            git commit -m "auto: regen obsidian export
+
+Triggered by: ${{ github.event.head_commit.message || 'manual dispatch' }}"
+            git push
+          fi

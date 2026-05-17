@@ -1,0 +1,193 @@
+---
+title: "Karpathy：这是 Agent 的十年，不是 Agent 的一年"
+title_en: "AGI is still a decade away"
+author: "Andrej Karpathy × Dwarkesh Patel"
+author_title: "前 OpenAI 创始成员 / Tesla AI 主管 × Dwarkesh Podcast 主理人"
+saved_date: 2026-05-03
+original_url: "https://www.dwarkesh.com/p/andrej-karpathy"
+slug: "karpathy-agi-decade-away"
+source: "manual"
+audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-agi-decade-away.m4a"
+audio_duration: "21:11"
+tags:
+  - "AI"
+  - "AGI"
+  - "Agent"
+  - "RL"
+  - "Karpathy"
+---
+
+# Karpathy：这是 Agent 的十年，不是 Agent 的一年
+
+**作者**：Andrej Karpathy × Dwarkesh Patel（前 OpenAI 创始成员 / Tesla AI 主管 × Dwarkesh Podcast 主理人） · **原文**：[https://www.dwarkesh.com/p/andrej-karpathy](https://www.dwarkesh.com/p/andrej-karpathy) · **音频**：[播客 21:11](https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-agi-decade-away.m4a)
+
+---
+
+## 一、十年，不是一年
+
+Dwarkesh 开场第一个问题：「为什么你说这是 agent 的十年，不是 agent 的一年？」
+
+Karpathy 的回答是这场访谈的基调：
+
+> 「我每天都在用 Claude 和 Codex，它们令人印象深刻——但还有非常多工作要做。我估计需要大约十年才能把所有问题解决。」
+
+他详细解释了「为什么是十年」：
+
+- **continual learning 不存在**：你不能告诉 LLM 一件事它就记住——每次对话结束，「记忆」就消失
+- **cognitive deficits**：当前 LLM 在很多基本认知任务上表现糟糕，不是细节问题而是范式问题
+- **RL 的局限**：reward 信号稀疏，模型在一整轮只能从最后一个数字学习
+- **Model Collapse**：合成数据无法替代真实数据
+
+这些不是渐进改进能解决的——需要新的范式。Karpathy 把自己的判断 anchor 在「过去 15 年 AI 研究的实际进度」上，外推出十年。
+
+## 二、「Ghosts, not Animals」
+
+这是这场访谈最有传播力的比喻：
+
+> 「我们不是在造动物。我们是在造鬼魂——或者随便你叫它什么——因为我们不是通过进化训练，是通过模仿互联网上人类写的东西。最后得到一些飘忽的精神实体，它们是数字化的，模仿人类。」
+
+这个比喻的深意：
+
+- **动物**有 embodied experience（在世界中行动并获得反馈）、有进化压力、有真正的 motor & perception loop
+- **鬼魂**只有从人类文本里学到的「关于世界的描述」——没有真正的世界经验
+
+Karpathy 不是说鬼魂没用——而是说，如果你期待「鬼魂」表现得像「动物」，你会一直失望。
+
+## 三、Cognitive Core：剥离知识，保留智能
+
+这是 Karpathy 对下一代 AI 范式最具体的判断：
+
+> 「我们的研究范式应该是——想办法剥离一些知识，保留我所说的 cognitive core。这是一个被剥离了知识、但保留了智能算法和问题解决策略的智能实体。」
+
+为什么这件事重要？
+
+- 当前 LLM 把事实知识和推理能力**纠缠**在权重里——你训练越多事实，模型越大，但「会不会推理」这件事不一定线性增长
+- 把两者分离意味着：可以做小型化的「认知核」+ 可插拔的领域知识库
+- 这恰好是企业 AI 部署最需要的架构——「通用 reasoning 能力 + 私域知识检索」
+
+Karpathy 没有给出具体路径，但他点明了方向。
+
+## 四、RL 不行，但其他更不行
+
+Karpathy 对当前 reasoning model 路线（OpenAI o-series、DeepSeek R1）持保留态度：
+
+> 「Reinforcement learning is terrible. But everything else is much worse.」
+
+RL 的核心问题：
+
+1. **Reward 信号稀疏**：一整轮 reasoning，只有最后一步告诉你「做对了/做错了」，中间所有 token 都得不到反馈
+2. **Reward Hacking**：模型会找到「让 reward 数字变好但实际任务没做好」的取巧路径
+3. **训练不稳定**：相比 supervised learning，RL 的方差极大
+
+但 Karpathy 也承认——目前没有更好的替代。Pre-training 已经接近饱和，supervised fine-tuning 数据耗尽，RL 是「不得不用的下一步」。
+
+## 五、Continual Learning 与 Sleep 类比
+
+Karpathy 用了一个很有画面感的类比：
+
+> 「我醒着的时候，在头脑里建立一个当天发生事情的 context window。我睡觉的时候，奇迹发生了——这个 context window 不会保留下来，而是有某种「蒸馏到权重」的过程。这发生在睡眠中。LLM 没有等价机制。」
+
+他把这件事和「为什么 AGI 还需要十年」直接关联：
+
+- 当前 LLM = 永远在 inference、从不睡眠的快照式智能
+- 真正的智能需要 sleep-like 的 distillation 机制
+- 这件事在工程上极难——可能需要的不是新算法，而是新硬件 + 新训练范式
+
+## 六、AGI 不会改变 GDP 增长曲线
+
+这是访谈最反直觉的部分。Dwarkesh 期待 AGI 带来「指数级 GDP 跃迁」，Karpathy 浇了冷水：
+
+> 「AGI 会自然融入过去约 2.5 个世纪以来 ~2% 复合 GDP 增长的趋势线里。」
+
+他的逻辑：
+
+- 工业革命、电力、计算机、互联网每一次都是「划时代」的——但 GDP 增长曲线大体保持 2% 复合
+- 技术扩散的瓶颈不在技术本身，而在**组织变革、监管、资本配置、人力技能**
+- AGI 会被同样的瓶颈减速
+
+这个判断对那些期待「AI 带来生产率爆发」的论述是个挑战——Karpathy 说，慢慢来。
+
+## 七、自动驾驶教训：从 demo 到 production
+
+访谈后半段 Karpathy 用 Tesla 自动驾驶做了一个非常深的复盘——直接外推到当前 AI agent：
+
+- **demo 99% 准的系统** vs **能放心交付企业核心流程的系统**——差着两个数量级
+- 长尾问题指数级难——剩下的 1% 比前面的 99% 难解 100 倍
+- **deployment 的复杂度不在算法，在数据 pipeline、安全、合规、用户体验**
+
+这条经验直接挑战了「2026 是 agent 元年」的乐观叙事——因为同样的 demo-vs-production gap 也在等着 AI agent。
+
+## 八、给中国企业 / 咨询客户的三条 takeaway
+
+1. **把 agent 落地预期周期定为 3–10 年**：不要押注 18 个月内的爆发式部署
+2. **关注 Cognitive Core 类的小型化模型 + RAG 架构**：这是「通用推理 + 私域知识」的最优组合
+3. **借鉴自动驾驶经验**：从 demo 到 production 之间永远有两个数量级的工程鸿沟
+
+---
+
+## 附录
+
+### TL;DR
+
+Karpathy 给硅谷泼冷水：「Agent 元年」是过度乐观，更准确的说法是「Agent 的十年」。当前 LLM 是「鬼魂」不是「动物」——缺少持续学习、模型崩塌、RL 信号稀疏。AGI 不会带来超越历史的 GDP 跃迁，只是延续 2.5 个世纪以来的 ~2% 增长。
+
+### 关键要点
+
+1. **「Decade of Agents, not Year of Agents」**——Karpathy 直接反驳硅谷流行的「2025 是 Agent 元年」叙事。他用了 Claude / Codex 等当下「令人印象深刻」的 agent，但坚持「还有大量工作要做，需要约十年才能解决全部问题」。
+2. **Cognitive Core 概念**：Karpathy 认为 AI 研究的下一阶段是**剥离知识、保留认知核**——把训练数据里的事实记忆压缩掉，让模型只保留「智能、推理、问题解决的算法」本身。这是他对当前 LLM 范式最重要的修正方向。
+3. **「Ghosts, not Animals」**：当前 LLM 是「鬼魂」（imitation of humans 的产物），不是「动物」（通过进化得到的智能）。动物天生具备处理世界的能力，LLM 只是在模仿互联网文本中的人类。这个比喻定义了下一代 AI 研究的方向。
+4. **RL is terrible（但其他方法更糟）**：Karpathy 的原句。RL 的问题：reward 信号过于稀疏（一整轮只有最后一个数字告诉你做对没做对），但目前没有更好的替代。他对当前 reasoning model 路线持有保留态度。
+5. **Continual Learning 是真瓶颈**：当前 LLM 不能像人类一样「告诉它一件事就记住」。Karpathy 用 sleep（人类睡眠时把短期记忆蒸馏到权重）类比——LLM 没有等价机制，每次训练后就冻结。
+6. **Model Collapse**：用 LLM 生成的数据训练下一代 LLM 会导致能力退化。这是为什么「合成数据无限循环」不会带来 AGI——你需要真实世界的多样性。
+7. **AGI 不会改变 GDP 增长曲线**：这是访谈最反直觉的判断——即便 AGI 出现，也只会延续过去 2.5 个世纪的 ~2% 复合增长。Karpathy 的逻辑：技术扩散的瓶颈是组织、监管、资本配置，不是技术本身。
+8. **自动驾驶为什么花了那么久**：Karpathy 用自己 Tesla 的经验解释——demo 容易、量产难、长尾问题指数级难。这条经验直接外推到当前 AI agent：「demo 99% 准的 agent 跟「能放心交付企业核心流程的 agent」差着两个数量级。
+
+### 我的判断
+
+这场访谈是给整个 AI 圈降温的一份重要文件。对照 Dario Amodei 同期的《End of the Exponential》一起读，能看到两位顶级研究者**罕见地同时发出谨慎信号**——他们都在告诉资本市场：别期待 18 个月内的指数跃迁。
+
+**对咨询客户三条直接 takeaway**：
+
+**第一，「Agent 落地周期是 10 年，不是 1 年」**。Karpathy 是 OpenAI 创始成员、Tesla 自动驾驶负责人——他不是悲观主义者，是经历过完整 demo→production 周期的人。客户做 AI 投资规划时，把「2026 大规模 agent 落地」的乐观叙事打 5 折，给团队留出 3-5 年的渐进式迭代空间。
+
+**第二，「Cognitive Core」概念有产品意义**。当前企业 AI 部署最大的痛点之一就是「模型懂全网通用知识，但不懂我们公司的业务」。Karpathy 的研究方向暗示——未来 18-24 个月最值得关注的范式是**「剥离公共知识 + 注入私域知识」的小型化模型**。这恰好是 Anthropic / Mistral / 国内若干厂商在做的事。
+
+**第三，「Ghosts vs Animals」对企业组织有隐喻价值**。用 LLM 的人最容易陷入的认知陷阱是「以为它是数字员工」——但它不是。它没有 embodied experience、没有 continual learning、没有真正的「理解」。在企业流程设计里把它当「随时被替换的快照式智能」（而不是「能不断成长的员工」）会得到更稳健的架构。
+
+**配套读物**：Richard Sutton（强化学习奠基人之一）今年也上了 Dwarkesh，立场跟 Karpathy 部分对立——他认为 LLM 路径走偏了，应该回到 agent + RL 的正路。两份访谈一起读，能看到 AI 圈核心研究者对「下一步往哪走」的真实分歧。
+
+### 关键引用
+
+**1.**
+> It's the decade of agents.
+> 
+> 这是 Agent 的十年。
+
+**2.**
+> We're not building animals. We're building ghosts.
+> 
+> 我们不是在造动物，我们是在造鬼魂。
+
+**3.**
+> Reinforcement learning is terrible. But everything else is much worse.
+> 
+> 强化学习很糟，但其他方法更糟。
+
+**4.**
+> Try to remove some of the knowledge and keep what I call this cognitive core.
+> 
+> 想办法剥离一些知识，保留我所说的「认知核」。
+
+**5.**
+> AGI will just blend into the previous ~2.5 centuries of 2% GDP growth.
+> 
+> AGI 会融入过去 2.5 个世纪以来 2% GDP 增长的趋势线里。
+
+**6.**
+> The problems are tractable, but they're still difficult.
+> 
+> 问题是可解的——但它们仍然很难。
+
+---
+
+*Saved: 2026-05-03 · Source: aidigest.club*

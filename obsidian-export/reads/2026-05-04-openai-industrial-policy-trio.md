@@ -10,7 +10,7 @@ slug: "openai-industrial-policy-trio"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/openai-industrial-policy-trio.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:48:39.315Z"
+fetched_at: "2026-05-17T14:56:17.434Z"
 fetch_type: "html"
 content_length: 1010
 tags:

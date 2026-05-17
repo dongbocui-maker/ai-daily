@@ -37,35 +37,39 @@ OLD_HEAD=$(git rev-parse HEAD)
 git fetch origin main --quiet
 NEW_HEAD=$(git rev-parse origin/main)
 
-if [ "$OLD_HEAD" = "$NEW_HEAD" ]; then
-  echo "✅ 已经是最新 — 没有新精读"
-  exit 0
+# 执行 pull（用 reset 避免分叉）
+if [ "$OLD_HEAD" != "$NEW_HEAD" ]; then
+  git reset --hard origin/main --quiet
 fi
-
-# 看看变化了什么
-CHANGED_FILES=$(git diff --name-only "$OLD_HEAD" "$NEW_HEAD" -- 'obsidian-export/reads/' || echo "")
-NEW_COUNT=$(git diff --name-only --diff-filter=A "$OLD_HEAD" "$NEW_HEAD" -- 'obsidian-export/reads/' | wc -l | tr -d ' ')
-MOD_COUNT=$(git diff --name-only --diff-filter=M "$OLD_HEAD" "$NEW_HEAD" -- 'obsidian-export/reads/' | wc -l | tr -d ' ')
-
-# 执行 pull（用 reset 而不是 merge，避免分叉）
-git reset --hard origin/main --quiet
 
 # 准备目标目录
 mkdir -p "$TARGET_FULL"
 
-# rsync
-rsync -a --delete "$REPO_DIR/obsidian-export/reads/" "$TARGET_FULL/" 2>&1
+# 总是跑 rsync（不依赖 git diff）——防止 "git 拉了但 vault 没同步" 的问题
+# 用 -i 选项能输出变化的文件
+RSYNC_OUT=$(rsync -avi --delete "$REPO_DIR/obsidian-export/reads/" "$TARGET_FULL/" 2>&1)
+NEW_FILES=$(echo "$RSYNC_OUT" | grep '^>f+++++++++' | awk '{print $2}' | sed 's|\.md$||')
+MOD_FILES=$(echo "$RSYNC_OUT" | grep '^>f\.st\.\.\.\.\.' | awk '{print $2}' | sed 's|\.md$||')
+DEL_FILES=$(echo "$RSYNC_OUT" | grep '^\*deleting' | awk '{print $2}' | sed 's|\.md$||')
 
 # 汇报
-if [ -z "$CHANGED_FILES" ]; then
-  echo "✅ 同步完成 — repo 变了但 obsidian-export/ 没变"
+NEW_COUNT=$(echo "$NEW_FILES" | grep -c . || true)
+MOD_COUNT=$(echo "$MOD_FILES" | grep -c . || true)
+DEL_COUNT=$(echo "$DEL_FILES" | grep -c . || true)
+TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+
+if [ "$NEW_COUNT" -eq 0 ] && [ "$MOD_COUNT" -eq 0 ] && [ "$DEL_COUNT" -eq 0 ]; then
+  echo "✅ 已经是最新 — vault 里共 ${TOTAL} 篇精读"
 else
-  echo "✅ 同步完成"
+  echo "✅ 同步完成（vault 里现有 ${TOTAL} 篇精读）"
   if [ "$NEW_COUNT" -gt 0 ]; then
-    echo "📥 新增 $NEW_COUNT 篇精读："
-    git diff --name-only --diff-filter=A "$OLD_HEAD" "$NEW_HEAD" -- 'obsidian-export/reads/' | sed 's|obsidian-export/reads/|  - |;s|\.md$||'
+    echo "📥 新增 $NEW_COUNT 篇："
+    echo "$NEW_FILES" | sed 's/^/  - /'
   fi
   if [ "$MOD_COUNT" -gt 0 ]; then
-    echo "✏️  更新 $MOD_COUNT 篇精读"
+    echo "✏️  更新 $MOD_COUNT 篇"
+  fi
+  if [ "$DEL_COUNT" -gt 0 ]; then
+    echo "🗑️  删除 $DEL_COUNT 篇"
   fi
 fi

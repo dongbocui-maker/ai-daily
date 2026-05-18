@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # manual-sync.sh - Obsidian Shell Commands 插件调用的同步脚本
 #
-# 行为模式（2026-05-18 v3 — 已读不再发）：
+# 行为模式（2026-05-18 v3.1 — 已读不再发，POSIX 兼容）：
 #   vault 是「一次性收件箱」——精读首次发到 vault 后，无论你 move/删/改名都不会再发。
 #   - 用 ledger（.obsidian-synced-files）记录"已发过的文件名"
 #   - ledger 里有的文件 → 永远不再复制（即使 vault 里现在没有）
-#   - ledger 里没有的文件 → 发到 vault + 加进 ledger
 #   - vault 里已存在的同名文件 → 跳过 + 加进 ledger（不覆盖你的笔记）
 #
-# 安装在：~/repos/ai-daily/scripts/obsidian-sync-mac/manual-sync.sh
-# 调用方式：Obsidian Shell Commands 插件配置这个脚本路径
+# 兼容 macOS 自带 bash 3.2（不依赖 declare -A 关联数组）
 
 set -euo pipefail
 
@@ -51,65 +49,78 @@ mkdir -p "$TARGET_FULL"
 
 # ============ Ledger 初始化 ============
 
-# 如果 ledger 不存在 → 首次跑
-# 策略：把 vault 里**当前已存在**的精读全部加入 ledger（视为"已读"），不再复制
-# 也把 source 里**任何 vault 已有**的文件加进 ledger
-# vault 里没有 + ledger 里没有的 source 文件 → 这次发
-
 FIRST_RUN=0
 if [ ! -f "$LEDGER_FILE" ]; then
   FIRST_RUN=1
-  touch "$LEDGER_FILE"
+  : > "$LEDGER_FILE"
   # vault 里现存的精读 → 视为"已读"
   if [ -d "$TARGET_FULL" ]; then
-    find "$TARGET_FULL" -maxdepth 1 -name '*.md' -printf '%f\n' >> "$LEDGER_FILE" 2>/dev/null || \
-    find "$TARGET_FULL" -maxdepth 1 -name '*.md' -exec basename {} \; >> "$LEDGER_FILE"
+    # 用 find + basename（兼容 BSD find，不用 GNU printf）
+    find "$TARGET_FULL" -maxdepth 1 -name '*.md' -print0 2>/dev/null | \
+      while IFS= read -r -d '' f; do
+        basename "$f"
+      done | sort -u > "$LEDGER_FILE"
   fi
 fi
 
-# 读 ledger 到 set（用 bash associative array）
-declare -A SYNCED
-while IFS= read -r name; do
-  [ -n "$name" ] && SYNCED["$name"]=1
-done < "$LEDGER_FILE"
+# 把 ledger 内容读到一个 sorted 临时文件，待会用 grep -Fxq 查找（兼容 bash 3.2）
+LEDGER_SORTED=$(mktemp -t obsidian-sync-ledger.XXXXXX)
+trap 'rm -f "$LEDGER_SORTED"' EXIT
+sort -u "$LEDGER_FILE" > "$LEDGER_SORTED"
+
+# 计数器和列表（普通数组，bash 3.2 OK）
+NEW_FILES=()
+SKIPPED_LEDGER_COUNT=0
+SKIPPED_VAULT_HAS_COUNT=0
 
 # ============ 扫描 source，决定发哪些 ============
 
-declare -a NEW_FILES=()
-declare -a SKIPPED_LEDGER=()    # ledger 里有，跳过
-declare -a SKIPPED_VAULT_HAS=() # ledger 里没有但 vault 已有同名（加进 ledger + 跳过）
+# 用临时文件累积要追加进 ledger 的文件名（避免子 shell pipe 问题）
+LEDGER_ADD=$(mktemp -t obsidian-sync-add.XXXXXX)
+trap 'rm -f "$LEDGER_SORTED" "$LEDGER_ADD"' EXIT
 
+find "$REPO_DIR/$SOURCE_SUBDIR" -maxdepth 1 -name '*.md' -print0 2>/dev/null | \
 while IFS= read -r -d '' src; do
   filename=$(basename "$src")
   dst="$TARGET_FULL/$filename"
 
   # 已在 ledger（曾经发过）→ 永远跳过
-  if [ "${SYNCED[$filename]:-}" = "1" ]; then
-    SKIPPED_LEDGER+=("$filename")
+  if grep -Fxq "$filename" "$LEDGER_SORTED"; then
+    echo "SKIP_LEDGER:$filename" >> "$LEDGER_ADD.events"
     continue
   fi
 
-  # vault 已有同名文件（ledger 不知道，可能是 ledger 丢了或老用户）
-  # → 视为已读，加进 ledger + 跳过
+  # vault 已有同名文件（ledger 不知道）→ 视为已读，加进 ledger + 跳过
   if [ -f "$dst" ]; then
-    SKIPPED_VAULT_HAS+=("$filename")
-    SYNCED["$filename"]=1
-    echo "$filename" >> "$LEDGER_FILE"
+    echo "SKIP_VAULT:$filename" >> "$LEDGER_ADD.events"
+    echo "$filename" >> "$LEDGER_ADD"
     continue
   fi
 
   # 真新文件 → 复制 + 加进 ledger
   cp "$src" "$dst"
-  NEW_FILES+=("$filename")
-  SYNCED["$filename"]=1
-  echo "$filename" >> "$LEDGER_FILE"
-done < <(find "$REPO_DIR/$SOURCE_SUBDIR" -maxdepth 1 -name '*.md' -print0)
+  echo "NEW:$filename" >> "$LEDGER_ADD.events"
+  echo "$filename" >> "$LEDGER_ADD"
+done
 
-# ============ 汇报 ============
+# 把新增的文件名追加进 ledger
+if [ -s "$LEDGER_ADD" ]; then
+  cat "$LEDGER_ADD" >> "$LEDGER_FILE"
+fi
+
+# ============ 汇总事件 ============
+
+NEW_COUNT=0
+if [ -f "$LEDGER_ADD.events" ]; then
+  NEW_COUNT=$(grep -c '^NEW:' "$LEDGER_ADD.events" 2>/dev/null || true)
+  SKIPPED_LEDGER_COUNT=$(grep -c '^SKIP_LEDGER:' "$LEDGER_ADD.events" 2>/dev/null || true)
+  SKIPPED_VAULT_HAS_COUNT=$(grep -c '^SKIP_VAULT:' "$LEDGER_ADD.events" 2>/dev/null || true)
+fi
 
 VAULT_TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
 LEDGER_TOTAL=$(wc -l < "$LEDGER_FILE" | tr -d ' ')
-NEW_COUNT=${#NEW_FILES[@]}
+
+# ============ 汇报 ============
 
 if [ "$FIRST_RUN" = "1" ]; then
   echo "🆕 Ledger 初始化（首次跑新脚本）"
@@ -121,8 +132,9 @@ if [ "$NEW_COUNT" -eq 0 ]; then
 else
   echo "✅ 同步完成"
   echo "📥 新增 $NEW_COUNT 篇到 vault："
-  for f in "${NEW_FILES[@]}"; do
-    echo "  - ${f%.md}"
-  done
-  echo "📊 vault 当前 ${VAULT_TOTAL} 篇 / ledger ${LEDGER_TOTAL} 篇已读"
+  grep '^NEW:' "$LEDGER_ADD.events" 2>/dev/null | sed 's/^NEW:/  - /' | sed 's/\.md$//'
+  echo "📊 vault ${VAULT_TOTAL} 篇 / ledger ${LEDGER_TOTAL} 篇已读"
 fi
+
+# 清理
+rm -f "$LEDGER_ADD.events"

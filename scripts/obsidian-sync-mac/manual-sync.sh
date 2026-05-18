@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 # manual-sync.sh - Obsidian Shell Commands 插件调用的同步脚本
-# 单次拉取最新精读到 vault，弹通知告诉你结果
+#
+# 行为模式（2026-05-18 重构）：
+#   vault 是 source 的「收件箱」，不是「镜像」。
+#   - 只把 git pull 本次新增/修改的精读 md 复制到 vault
+#   - vault 里删了 / move 走了 / 改了的文件——永不被覆盖
+#   - vault 里已存在的同名文件——跳过（保留你的笔记/批注）
+#   - 上游删除的精读——vault 不动
 #
 # 安装在：~/repos/ai-daily/scripts/obsidian-sync-mac/manual-sync.sh
-# 调用方式：在 Obsidian Shell Commands 插件里配置这个脚本路径
+# 调用方式：Obsidian Shell Commands 插件配置这个脚本路径
 
 set -euo pipefail
 
@@ -13,31 +19,43 @@ REPO_DIR="$HOME/repos/ai-daily"
 VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB/KB"
 TARGET_SUBDIR="raw/AI Reads"
 TARGET_FULL="$VAULT_DIR/$TARGET_SUBDIR"
+STATE_FILE="$REPO_DIR/.obsidian-sync-last-commit"
+SOURCE_SUBDIR="obsidian-export/reads"
 
-# ============ 主流程 ============
+# ============ 检查 ============
 
-# 检查 repo
 if [ ! -d "$REPO_DIR/.git" ]; then
   echo "❌ Repo 未 setup: $REPO_DIR"
   echo "请先跑 setup.sh"
   exit 1
 fi
 
-# 检查 vault
 if [ ! -d "$VAULT_DIR" ]; then
   echo "❌ Vault 路径不存在: $VAULT_DIR"
   exit 1
 fi
 
-# 记录 pull 前的 commit
-cd "$REPO_DIR"
-OLD_HEAD=$(git rev-parse HEAD)
+# ============ Git fetch + 计算 diff 范围 ============
 
-# Pull
+cd "$REPO_DIR"
+
+OLD_HEAD=$(git rev-parse HEAD)
 git fetch origin main --quiet
 NEW_HEAD=$(git rev-parse origin/main)
 
-# 执行 pull（用 reset 避免分叉）
+# 实际同步起点：优先用 state file，没有就用当前 HEAD
+if [ -f "$STATE_FILE" ]; then
+  SYNC_FROM=$(cat "$STATE_FILE")
+  # 验证 SYNC_FROM 是合法 commit；不合法（如 history rewrite）则 fallback
+  if ! git cat-file -e "$SYNC_FROM" 2>/dev/null; then
+    echo "⚠️  state file 的 commit 已失效，按首次同步处理"
+    SYNC_FROM=""
+  fi
+else
+  SYNC_FROM=""
+fi
+
+# Pull
 if [ "$OLD_HEAD" != "$NEW_HEAD" ]; then
   git reset --hard origin/main --quiet
 fi
@@ -45,31 +63,87 @@ fi
 # 准备目标目录
 mkdir -p "$TARGET_FULL"
 
-# 总是跑 rsync（不依赖 git diff）——防止 "git 拉了但 vault 没同步" 的问题
-# 用 -i 选项能输出变化的文件
-RSYNC_OUT=$(rsync -avi --delete "$REPO_DIR/obsidian-export/reads/" "$TARGET_FULL/" 2>&1)
-NEW_FILES=$(echo "$RSYNC_OUT" | grep '^>f+++++++++' | awk '{print $2}' | sed 's|\.md$||')
-MOD_FILES=$(echo "$RSYNC_OUT" | grep '^>f\.st\.\.\.\.\.' | awk '{print $2}' | sed 's|\.md$||')
-DEL_FILES=$(echo "$RSYNC_OUT" | grep '^\*deleting' | awk '{print $2}' | sed 's|\.md$||')
+# ============ 决定要复制哪些文件 ============
 
-# 汇报
-NEW_COUNT=$(echo "$NEW_FILES" | grep -c . || true)
-MOD_COUNT=$(echo "$MOD_FILES" | grep -c . || true)
-DEL_COUNT=$(echo "$DEL_FILES" | grep -c . || true)
-TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+declare -a CANDIDATES=()
 
-if [ "$NEW_COUNT" -eq 0 ] && [ "$MOD_COUNT" -eq 0 ] && [ "$DEL_COUNT" -eq 0 ]; then
-  echo "✅ 已经是最新 — vault 里共 ${TOTAL} 篇精读"
+if [ -z "$SYNC_FROM" ] || [ "$SYNC_FROM" = "$NEW_HEAD" ]; then
+  # 情况 A：首次同步（无 state file）
+  # 情况 B：state file 等于 HEAD（说明上次已经同步到当前 commit，但可能 vault 缺文件——做一次补齐）
+  # 把 obsidian-export/reads/ 下所有 md 当成候选
+  FIRST_RUN=1
+  while IFS= read -r -d '' f; do
+    CANDIDATES+=("$(basename "$f")")
+  done < <(find "$REPO_DIR/$SOURCE_SUBDIR" -maxdepth 1 -name '*.md' -print0)
 else
-  echo "✅ 同步完成（vault 里现有 ${TOTAL} 篇精读）"
-  if [ "$NEW_COUNT" -gt 0 ]; then
-    echo "📥 新增 $NEW_COUNT 篇："
-    echo "$NEW_FILES" | sed 's/^/  - /'
+  # 情况 C：增量同步
+  # 用 git diff 算出 SYNC_FROM..NEW_HEAD 之间 source 路径下的新增/修改
+  FIRST_RUN=0
+  while IFS= read -r line; do
+    status=$(echo "$line" | awk '{print $1}')
+    file=$(echo "$line" | awk '{print $2}')
+    # 只关心新增(A)和修改(M)；删除(D)和重命名(R)不动 vault
+    case "$status" in
+      A|M)
+        CANDIDATES+=("$(basename "$file")")
+        ;;
+    esac
+  done < <(git diff --name-status "$SYNC_FROM" "$NEW_HEAD" -- "$SOURCE_SUBDIR/" || true)
+fi
+
+# ============ 执行复制（跳过 vault 已有的） ============
+
+declare -a NEW_FILES=()
+declare -a SKIPPED_EXISTS=()
+declare -a SKIPPED_MISSING=()
+
+for filename in "${CANDIDATES[@]}"; do
+  src="$REPO_DIR/$SOURCE_SUBDIR/$filename"
+  dst="$TARGET_FULL/$filename"
+
+  if [ ! -f "$src" ]; then
+    # source 已没了（diff 显示新增/修改但当前 HEAD 已删除——极少见）
+    SKIPPED_MISSING+=("$filename")
+    continue
   fi
-  if [ "$MOD_COUNT" -gt 0 ]; then
-    echo "✏️  更新 $MOD_COUNT 篇"
+
+  if [ -f "$dst" ]; then
+    # vault 里同名文件已存在——跳过（保留笔记）
+    SKIPPED_EXISTS+=("$filename")
+    continue
   fi
-  if [ "$DEL_COUNT" -gt 0 ]; then
-    echo "🗑️  删除 $DEL_COUNT 篇"
+
+  # 复制
+  cp "$src" "$dst"
+  NEW_FILES+=("$filename")
+done
+
+# 写入 state file（即使没新增也写，下次基于这个 commit 算 diff）
+echo "$NEW_HEAD" > "$STATE_FILE"
+
+# ============ 汇报 ============
+
+TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+NEW_COUNT=${#NEW_FILES[@]}
+SKIP_EXISTS_COUNT=${#SKIPPED_EXISTS[@]}
+
+if [ "$FIRST_RUN" = "1" ]; then
+  echo "🆕 首次同步（无 state 文件）— 扫描了 ${#CANDIDATES[@]} 个 source 文件"
+fi
+
+if [ "$NEW_COUNT" -eq 0 ]; then
+  if [ "$SKIP_EXISTS_COUNT" -gt 0 ]; then
+    echo "✅ 已是最新（vault 共 ${TOTAL} 篇）— 跳过 ${SKIP_EXISTS_COUNT} 篇 vault 里已有的"
+  else
+    echo "✅ 已是最新 — vault 共 ${TOTAL} 篇精读"
+  fi
+else
+  echo "✅ 同步完成（vault 共 ${TOTAL} 篇精读）"
+  echo "📥 新增 $NEW_COUNT 篇："
+  for f in "${NEW_FILES[@]}"; do
+    echo "  - ${f%.md}"
+  done
+  if [ "$SKIP_EXISTS_COUNT" -gt 0 ]; then
+    echo "⏭️  跳过 $SKIP_EXISTS_COUNT 篇（vault 里已有，保留你的笔记）"
   fi
 fi

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # manual-sync.sh - Obsidian Shell Commands 插件调用的同步脚本
 #
-# 行为模式（2026-05-18 重构）：
-#   vault 是 source 的「收件箱」，不是「镜像」。
-#   - 只把 git pull 本次新增/修改的精读 md 复制到 vault
-#   - vault 里删了 / move 走了 / 改了的文件——永不被覆盖
-#   - vault 里已存在的同名文件——跳过（保留你的笔记/批注）
-#   - 上游删除的精读——vault 不动
+# 行为模式（2026-05-18 v3 — 已读不再发）：
+#   vault 是「一次性收件箱」——精读首次发到 vault 后，无论你 move/删/改名都不会再发。
+#   - 用 ledger（.obsidian-synced-files）记录"已发过的文件名"
+#   - ledger 里有的文件 → 永远不再复制（即使 vault 里现在没有）
+#   - ledger 里没有的文件 → 发到 vault + 加进 ledger
+#   - vault 里已存在的同名文件 → 跳过 + 加进 ledger（不覆盖你的笔记）
 #
 # 安装在：~/repos/ai-daily/scripts/obsidian-sync-mac/manual-sync.sh
 # 调用方式：Obsidian Shell Commands 插件配置这个脚本路径
@@ -19,7 +19,7 @@ REPO_DIR="$HOME/repos/ai-daily"
 VAULT_DIR="$HOME/Library/CloudStorage/OneDrive-Accenture(China)/Desktop/KB/KB"
 TARGET_SUBDIR="raw/AI Reads"
 TARGET_FULL="$VAULT_DIR/$TARGET_SUBDIR"
-STATE_FILE="$REPO_DIR/.obsidian-sync-last-commit"
+LEDGER_FILE="$REPO_DIR/.obsidian-synced-files"
 SOURCE_SUBDIR="obsidian-export/reads"
 
 # ============ 检查 ============
@@ -35,7 +35,7 @@ if [ ! -d "$VAULT_DIR" ]; then
   exit 1
 fi
 
-# ============ Git fetch + 计算 diff 范围 ============
+# ============ Git pull ============
 
 cd "$REPO_DIR"
 
@@ -43,107 +43,86 @@ OLD_HEAD=$(git rev-parse HEAD)
 git fetch origin main --quiet
 NEW_HEAD=$(git rev-parse origin/main)
 
-# 实际同步起点：优先用 state file，没有就用当前 HEAD
-if [ -f "$STATE_FILE" ]; then
-  SYNC_FROM=$(cat "$STATE_FILE")
-  # 验证 SYNC_FROM 是合法 commit；不合法（如 history rewrite）则 fallback
-  if ! git cat-file -e "$SYNC_FROM" 2>/dev/null; then
-    echo "⚠️  state file 的 commit 已失效，按首次同步处理"
-    SYNC_FROM=""
-  fi
-else
-  SYNC_FROM=""
-fi
-
-# Pull
 if [ "$OLD_HEAD" != "$NEW_HEAD" ]; then
   git reset --hard origin/main --quiet
 fi
 
-# 准备目标目录
 mkdir -p "$TARGET_FULL"
 
-# ============ 决定要复制哪些文件 ============
+# ============ Ledger 初始化 ============
 
-declare -a CANDIDATES=()
+# 如果 ledger 不存在 → 首次跑
+# 策略：把 vault 里**当前已存在**的精读全部加入 ledger（视为"已读"），不再复制
+# 也把 source 里**任何 vault 已有**的文件加进 ledger
+# vault 里没有 + ledger 里没有的 source 文件 → 这次发
 
-if [ -z "$SYNC_FROM" ] || [ "$SYNC_FROM" = "$NEW_HEAD" ]; then
-  # 情况 A：首次同步（无 state file）
-  # 情况 B：state file 等于 HEAD（说明上次已经同步到当前 commit，但可能 vault 缺文件——做一次补齐）
-  # 把 obsidian-export/reads/ 下所有 md 当成候选
+FIRST_RUN=0
+if [ ! -f "$LEDGER_FILE" ]; then
   FIRST_RUN=1
-  while IFS= read -r -d '' f; do
-    CANDIDATES+=("$(basename "$f")")
-  done < <(find "$REPO_DIR/$SOURCE_SUBDIR" -maxdepth 1 -name '*.md' -print0)
-else
-  # 情况 C：增量同步
-  # 用 git diff 算出 SYNC_FROM..NEW_HEAD 之间 source 路径下的新增/修改
-  FIRST_RUN=0
-  while IFS= read -r line; do
-    status=$(echo "$line" | awk '{print $1}')
-    file=$(echo "$line" | awk '{print $2}')
-    # 只关心新增(A)和修改(M)；删除(D)和重命名(R)不动 vault
-    case "$status" in
-      A|M)
-        CANDIDATES+=("$(basename "$file")")
-        ;;
-    esac
-  done < <(git diff --name-status "$SYNC_FROM" "$NEW_HEAD" -- "$SOURCE_SUBDIR/" || true)
+  touch "$LEDGER_FILE"
+  # vault 里现存的精读 → 视为"已读"
+  if [ -d "$TARGET_FULL" ]; then
+    find "$TARGET_FULL" -maxdepth 1 -name '*.md' -printf '%f\n' >> "$LEDGER_FILE" 2>/dev/null || \
+    find "$TARGET_FULL" -maxdepth 1 -name '*.md' -exec basename {} \; >> "$LEDGER_FILE"
+  fi
 fi
 
-# ============ 执行复制（跳过 vault 已有的） ============
+# 读 ledger 到 set（用 bash associative array）
+declare -A SYNCED
+while IFS= read -r name; do
+  [ -n "$name" ] && SYNCED["$name"]=1
+done < "$LEDGER_FILE"
+
+# ============ 扫描 source，决定发哪些 ============
 
 declare -a NEW_FILES=()
-declare -a SKIPPED_EXISTS=()
-declare -a SKIPPED_MISSING=()
+declare -a SKIPPED_LEDGER=()    # ledger 里有，跳过
+declare -a SKIPPED_VAULT_HAS=() # ledger 里没有但 vault 已有同名（加进 ledger + 跳过）
 
-for filename in "${CANDIDATES[@]}"; do
-  src="$REPO_DIR/$SOURCE_SUBDIR/$filename"
+while IFS= read -r -d '' src; do
+  filename=$(basename "$src")
   dst="$TARGET_FULL/$filename"
 
-  if [ ! -f "$src" ]; then
-    # source 已没了（diff 显示新增/修改但当前 HEAD 已删除——极少见）
-    SKIPPED_MISSING+=("$filename")
+  # 已在 ledger（曾经发过）→ 永远跳过
+  if [ "${SYNCED[$filename]:-}" = "1" ]; then
+    SKIPPED_LEDGER+=("$filename")
     continue
   fi
 
+  # vault 已有同名文件（ledger 不知道，可能是 ledger 丢了或老用户）
+  # → 视为已读，加进 ledger + 跳过
   if [ -f "$dst" ]; then
-    # vault 里同名文件已存在——跳过（保留笔记）
-    SKIPPED_EXISTS+=("$filename")
+    SKIPPED_VAULT_HAS+=("$filename")
+    SYNCED["$filename"]=1
+    echo "$filename" >> "$LEDGER_FILE"
     continue
   fi
 
-  # 复制
+  # 真新文件 → 复制 + 加进 ledger
   cp "$src" "$dst"
   NEW_FILES+=("$filename")
-done
-
-# 写入 state file（即使没新增也写，下次基于这个 commit 算 diff）
-echo "$NEW_HEAD" > "$STATE_FILE"
+  SYNCED["$filename"]=1
+  echo "$filename" >> "$LEDGER_FILE"
+done < <(find "$REPO_DIR/$SOURCE_SUBDIR" -maxdepth 1 -name '*.md' -print0)
 
 # ============ 汇报 ============
 
-TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+VAULT_TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
+LEDGER_TOTAL=$(wc -l < "$LEDGER_FILE" | tr -d ' ')
 NEW_COUNT=${#NEW_FILES[@]}
-SKIP_EXISTS_COUNT=${#SKIPPED_EXISTS[@]}
 
 if [ "$FIRST_RUN" = "1" ]; then
-  echo "🆕 首次同步（无 state 文件）— 扫描了 ${#CANDIDATES[@]} 个 source 文件"
+  echo "🆕 Ledger 初始化（首次跑新脚本）"
+  echo "   将 vault 现存的 ${VAULT_TOTAL} 篇视为「已读」记入 ledger"
 fi
 
 if [ "$NEW_COUNT" -eq 0 ]; then
-  if [ "$SKIP_EXISTS_COUNT" -gt 0 ]; then
-    echo "✅ 已是最新（vault 共 ${TOTAL} 篇）— 跳过 ${SKIP_EXISTS_COUNT} 篇 vault 里已有的"
-  else
-    echo "✅ 已是最新 — vault 共 ${TOTAL} 篇精读"
-  fi
+  echo "✅ 没有新精读（vault ${VAULT_TOTAL} 篇 / ledger ${LEDGER_TOTAL} 篇已读）"
 else
-  echo "✅ 同步完成（vault 共 ${TOTAL} 篇精读）"
-  echo "📥 新增 $NEW_COUNT 篇："
+  echo "✅ 同步完成"
+  echo "📥 新增 $NEW_COUNT 篇到 vault："
   for f in "${NEW_FILES[@]}"; do
     echo "  - ${f%.md}"
   done
-  if [ "$SKIP_EXISTS_COUNT" -gt 0 ]; then
-    echo "⏭️  跳过 $SKIP_EXISTS_COUNT 篇（vault 里已有，保留你的笔记）"
-  fi
+  echo "📊 vault 当前 ${VAULT_TOTAL} 篇 / ledger ${LEDGER_TOTAL} 篇已读"
 fi

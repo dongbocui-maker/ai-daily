@@ -117,8 +117,9 @@ if [ -f "$LEDGER_ADD.events" ]; then
   SKIPPED_VAULT_HAS_COUNT=$(grep -c '^SKIP_VAULT:' "$LEDGER_ADD.events" 2>/dev/null || true)
 fi
 
-VAULT_TOTAL=$(ls -1 "$TARGET_FULL"/*.md 2>/dev/null | wc -l | tr -d ' ')
-LEDGER_TOTAL=$(wc -l < "$LEDGER_FILE" | tr -d ' ')
+# 用 find 避免 shell glob 问题（路径带括号不能用 *.md）
+VAULT_TOTAL=$(find "$TARGET_FULL" -maxdepth 1 -name '*.md' 2>/dev/null | wc -l | tr -d ' ')
+LEDGER_TOTAL=$(wc -l < "$LEDGER_FILE" 2>/dev/null | tr -d ' ' || echo 0)
 
 # ============ 汇报 ============
 

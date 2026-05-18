@@ -2150,5 +2150,125 @@
     "features": [],
     "sourceHash": "690b89e8",
     "ts": 1779069623632
+  },
+  "calcom/cal.diy": {
+    "features": [
+      "100% MIT 协议开源的自托管日程安排平台，无任何商业依赖",
+      "Cal.com 社区版 fork，移除所有企业版和商业代码",
+      "提供 Docker 部署支持，便于个人用户自托管",
+      "面向个人非生产环境使用，可完全掌控调度基础设施"
+    ],
+    "sourceHash": "8dd81a9",
+    "ts": 1779094112530
+  },
+  "tech-leads-club/agent-skills": {
+    "features": [
+      "面向 AI 编程 agent 的安全、可验证 skill 注册中心",
+      "提供经过验证、测试与加固的可信 skill 库",
+      "支持 Antigravity、Claude Code、Cursor 等主流 agent",
+      "内置 MCP Server 用于 skill 集成与调用",
+      "通过 npm 包分发，支持语义化发布与 CLI 使用"
+    ],
+    "sourceHash": "3b00ccb7",
+    "ts": 1779094116825
+  },
+  "NirDiamant/agents-towards-production": {
+    "features": [
+      "涵盖 stateful workflows、vector memory 与 RAG 的生产级 agent 教程合集",
+      "包含 Docker 部署、FastAPI 接口与 GPU 扩展的实战指南",
+      "提供 security guardrails、observability 与 evaluation 最佳实践",
+      "覆盖 multi-agent 协调、browser automation 与模型 fine-tuning",
+      "集成实时 web search API 与 agent UI 开发示例"
+    ],
+    "sourceHash": "-7c647dd4",
+    "ts": 1779094120508
+  },
+  "dograh-hq/dograh": {
+    "features": [
+      "开源、可自托管的 Vapi 与 Retell 替代方案，构建生产级语音 agent",
+      "拖拽式工作流构建器，2 分钟内上线语音机器人",
+      "支持自由集成任意 LLM、TTS、STT 提供商或使用 Dograh 自带技术栈",
+      "BSD 2-Clause 协议开源，源码级可定制，无厂商锁定",
+      "一条 Docker 命令即可完成自托管部署，数据完全自主可控"
+    ],
+    "sourceHash": "7104fa4f",
+    "ts": 1779094125511
+  },
+  "Light-Heart-Labs/DreamServer": {
+    "features": [
+      "单条命令在本地硬件部署完整 AI 栈，无需云端或订阅",
+      "集成 LLM 推理、对话、语音、agent、工作流、RAG、图像生成等功能",
+      "支持 Linux、Windows、macOS 平台，兼容 NVIDIA、AMD、Intel Arc 及 Apple Silicon GPU",
+      "local-first 架构，数据完全自主可控，可选启用云端或混合 API 模式",
+      "提供可视化 Dashboard，简化本地 AI 部署与管理流程"
+    ],
+    "sourceHash": "-1851349e",
+    "ts": 1779094130004
+  },
+  "KeygraphHQ/shannon": {
+    "features": [
+      "白盒 AI pentester，自动分析源码并执行真实漏洞利用",
+      "全自动运行：单命令完成 2FA 登录、浏览器操作、漏洞利用与报告生成",
+      "报告仅包含可复现的 PoC，未能利用的漏洞不予记录",
+      "覆盖 OWASP 注入、XSS、SSRF、认证授权失效等漏洞类别",
+      "结合源码分析与浏览器/CLI 动态测试，针对运行中应用验证攻击"
+    ],
+    "sourceHash": "3d8220f5",
+    "ts": 1779094135533
+  },
+  "TryGhost/Ghost": {
+    "features": [
+      "开源 headless Node.js CMS，专为专业发布场景设计",
+      "内置会员订阅与付费 newsletter 功能，支持创作者变现",
+      "提供 Content API 与 Admin API，可对接现代前端与第三方工具",
+      "可视化编辑器支持富媒体内容创作与 SEO 优化",
+      "支持自托管部署或官方 Ghost(Pro) 托管服务"
+    ],
+    "sourceHash": "-75197bd",
+    "ts": 1779094140346
+  },
+  "medusajs/medusa": {
+    "features": [
+      "内置可定制框架的开源数字商务平台",
+      "支持 B2B、DTC、marketplace、PoS 等多种商务场景",
+      "所有 commerce 模块开源并可通过 npm 自由获取",
+      "提供 Medusa Cloud 托管环境，支持自动部署、扩展与维护",
+      "丰富的第三方集成生态与模块化架构"
+    ],
+    "sourceHash": "1de5150a",
+    "ts": 1779094143979
+  },
+  "knadh/listmonk": {
+    "features": [
+      "自托管的 newsletter 和邮件列表管理工具，单一二进制部署",
+      "基于 PostgreSQL 数据库存储，性能快、功能丰富",
+      "支持 Docker 一键部署，开箱即用",
+      "后端使用 Go 编写，前端采用 Vue + Buefy 构建",
+      "遵循 AGPLv3 开源协议，免费可自由使用"
+    ],
+    "sourceHash": "6967ac16",
+    "ts": 1779094148064
+  },
+  "plausible/analytics": {
+    "features": [
+      "开源、注重隐私的 Google Analytics 替代方案，无 cookie 追踪",
+      "GDPR、CCPA、PECR 合规，不存储个人数据和 IP 地址",
+      "轻量级脚本，支持通过 events API 直接发送事件",
+      "支持 SPA、pushState 及 hash 路由等现代前端框架",
+      "支持目标转化、收入归因和 funnel 分析，含无代码事件追踪",
+      "邮件/Slack 周报、团队角色权限及公开 dashboard 分享"
+    ],
+    "sourceHash": "40caf6cc",
+    "ts": 1779094152629
+  },
+  "microsoft/ai-agents-for-beginners": {
+    "features": [
+      "面向初学者的 AI Agents 系统课程，涵盖构建所需全部基础知识",
+      "包含 11 节课程，每课配有书面内容与代码示例",
+      "通过 GitHub Action 自动支持 40+ 语言的多语言翻译",
+      "提供 Discord 社区交流与官方学习支持渠道"
+    ],
+    "sourceHash": "38e8b2b",
+    "ts": 1779094156916
   }
 }

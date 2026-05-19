@@ -19,16 +19,28 @@ interface Props {
 
 const { audio, date } = Astro.props;
 
+// Schema 守卫：audio 字段不完整时直接不渲染（防 NaN:NaN bug，2026-05-19 立）
+// 必须同时具备 url（能播）+ duration_seconds（能显示时长）才认为是「就绪状态」
+const isAudioReady = audio
+  && typeof audio.url === 'string'
+  && audio.url.length > 0
+  && typeof audio.duration_seconds === 'number'
+  && Number.isFinite(audio.duration_seconds)
+  && audio.duration_seconds > 0;
+
 // 把秒数格式化为 mm:ss
 function fmtDuration(sec: number): string {
+  if (!Number.isFinite(sec) || sec <= 0) return '0:00';
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-const initialDuration = fmtDuration(audio.duration_seconds);
+const initialDuration = isAudioReady ? fmtDuration(audio.duration_seconds) : '0:00';
 const playerId = `audio-player-${date}`;
 ---
+
+{isAudioReady && (
 
 <div
   class="relative mt-7 max-w-2xl rounded-xl overflow-hidden
@@ -262,3 +274,4 @@ const playerId = `audio-player-${date}`;
     });
   }
 </script>
+)}

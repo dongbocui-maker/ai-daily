@@ -2323,5 +2323,60 @@
     ],
     "sourceHash": "-2ac0477a",
     "ts": 1779179458197
+  },
+  "anthropics/claude-plugins-official": {
+    "features": [
+      "精选 Claude Code 高质量插件目录，区分官方与第三方插件",
+      "通过 `/plugin install` 命令或 Discover 界面一键安装插件",
+      "标准化插件结构，支持 MCP server、slash commands、agents 和 skills",
+      "提供第三方插件提交通道，须通过质量与安全审核"
+    ],
+    "sourceHash": "5820e9de",
+    "ts": 1779265732710
+  },
+  "Diolinux/PhotoGIMP": {
+    "features": [
+      "将 GIMP 界面改造为 Adobe Photoshop 风格的布局",
+      "重新排列工具位置，模拟 Photoshop 的操作习惯",
+      "内置自定义 PhotoGIMP 启动画面",
+      "默认设置优化，最大化画布工作区域",
+      "采用 Photoshop 官方键盘快捷键方案",
+      "通过独立 .desktop 文件提供专属图标与应用名称"
+    ],
+    "sourceHash": "-6cd1c14c",
+    "ts": 1779265737171
+  },
+  "pascalorg/editor": {
+    "features": [
+      "基于 React Three Fiber 与 WebGPU 构建的 3D 建筑编辑器",
+      "采用 Turborepo monorepo 架构，分为 core、viewer、editor 三个包",
+      "使用 Zustand 管理场景、viewer 与 editor 多层状态",
+      "场景数据持久化至 IndexedDB，并通过 Zundo 支持撤销/重做",
+      "基于 Node 数据原语描述 3D 场景，支持类型安全的层级结构"
+    ],
+    "sourceHash": "145876ce",
+    "ts": 1779265741859
+  },
+  "frappe/erpnext": {
+    "features": [
+      "100% 开源 ERP 系统，免费替代多款商业管理软件",
+      "会计模块：记录交易、汇总分析财务报表，统一管理现金流",
+      "订单管理：跟踪库存、补货并管理销售订单、客户与发货",
+      "制造模块：简化生产周期，支持物料消耗、产能规划与外包",
+      "资产与项目管理：覆盖资产全生命周期及项目任务、工时跟踪"
+    ],
+    "sourceHash": "-5b6b6110",
+    "ts": 1779265746532
+  },
+  "HKUDS/ViMax": {
+    "features": [
+      "输入概念即可端到端自动完成剧本、分镜、角色与视频生成",
+      "集成 Director、Screenwriter、Producer 与视频生成的一体化 agent 框架",
+      "支持长视频生成，突破短片段时长限制",
+      "保持跨帧角色与场景一致性",
+      "融合剧本、音频与叙事结构，丰富故事表达"
+    ],
+    "sourceHash": "2092482e",
+    "ts": 1779265750865
   }
 }

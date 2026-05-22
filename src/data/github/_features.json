@@ -2444,5 +2444,69 @@
     ],
     "sourceHash": "3a5b7b25",
     "ts": 1779352590291
+  },
+  "dotnet/skills": {
+    "features": [
+      ".NET 团队精选的 coding agent 核心 skills 与自定义 agent 集合",
+      "涵盖 MSBuild、NuGet、EF、ASP.NET Core、MAUI 等 .NET 全栈技能插件",
+      "提供 .NET AI/ML 技能，支持 LLM 集成、agentic workflow、RAG 与 MCP",
+      "支持 .NET 项目跨框架版本迁移与升级的 skills",
+      "集成 Copilot CLI、Claude Code 及 VS Code 的插件市场安装方式"
+    ],
+    "sourceHash": "4e2664af",
+    "ts": 1779438245240
+  },
+  "teng-lin/notebooklm-py": {
+    "features": [
+      "通过 Python、CLI 和 AI agent 全面访问 NotebookLM 功能",
+      "批量导入 URL、PDF、YouTube、Google Drive 等多种来源",
+      "生成播客、视频、幻灯片、测验、抽认卡和思维导图等内容",
+      "支持本地批量下载 MP3、MP4、PDF 等生成产物",
+      "可集成至 Claude Code、Codex 等 LLM agent 工作流"
+    ],
+    "sourceHash": "457a72fe",
+    "ts": 1779438249324
+  },
+  "antoinezambelli/forge": {
+    "features": [
+      "为自托管 LLM tool-calling 提供可靠性层，含 rescue parsing、retry nudges 及响应校验等 guardrails",
+      "可选 workflow 约束：通过 required_steps、prerequisites、terminal_tool 控制调用循环",
+      "提供 OpenAI 兼容的 proxy server，无侵入接入 opencode、aider 等客户端",
+      "WorkflowRunner 管理完整 agent 生命周期，SlotWorker 支持多 agent 共享 GPU slot",
+      "guardrails 中间件可嵌入自有 orchestration loop，支持 Ollama、llama.cpp、Anthropic 等后端"
+    ],
+    "sourceHash": "51999c9e",
+    "ts": 1779438254362
+  },
+  "trimstray/the-book-of-secret-knowledge": {
+    "features": [
+      "汇集 manuals、cheatsheets、博客与一行命令的知识合集",
+      "收录大量 CLI 与 Web 工具，提升日常工作效率",
+      "面向系统/网络管理员、DevOps、渗透测试与安全研究人员",
+      "精选高质量资源，注重实用性与可读性"
+    ],
+    "sourceHash": "-cdd6c76",
+    "ts": 1779438258185
+  },
+  "alireza0/s-ui": {
+    "features": [
+      "基于 SagerNet/Sing-Box 的高级 Web 管理面板",
+      "支持多协议、多语言、多客户端/多 inbound 管理",
+      "提供高级流量路由界面与订阅链接（link/json/clash）",
+      "展示客户端、流量及系统状态监控",
+      "提供 API 接口及深色/浅色主题切换"
+    ],
+    "sourceHash": "-4e9ab324",
+    "ts": 1779438261537
+  },
+  "Lum1104/Understand-Anything": {
+    "features": [
+      "通过多 agent pipeline 分析项目并构建文件、函数、类及依赖的知识图谱",
+      "将代码库、知识库或文档转化为可交互探索、搜索和问答的知识图谱",
+      "作为 Claude Code Plugin 集成，兼容 Codex、Cursor、Copilot、Gemini CLI 等工具",
+      "提供多语言 README 及在线 Live Demo 体验"
+    ],
+    "sourceHash": "525d28c8",
+    "ts": 1779438265438
   }
 }

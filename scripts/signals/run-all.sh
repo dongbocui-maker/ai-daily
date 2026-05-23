@@ -9,10 +9,14 @@ mkdir -p /tmp/ai-signals
 echo "===== Signal collection started: $(date '+%F %T %Z') ====="
 
 # 并行跑，每个 60 秒 timeout
-timeout 60 python3 "$SCRIPT_DIR/fetch-hn-ai.py"        > /tmp/ai-signals/hn-ai.log 2>&1 &
-timeout 60 python3 "$SCRIPT_DIR/fetch-smol-ai.py"      > /tmp/ai-signals/smol-ai.log 2>&1 &
-timeout 60 python3 "$SCRIPT_DIR/fetch-editorial-en.py" > /tmp/ai-signals/editorial-en.log 2>&1 &
-timeout 60 python3 "$SCRIPT_DIR/fetch-editorial-cn.py" > /tmp/ai-signals/editorial-cn.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-hn-ai.py"          > /tmp/ai-signals/hn-ai.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-smol-ai.py"        > /tmp/ai-signals/smol-ai.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-editorial-en.py"   > /tmp/ai-signals/editorial-en.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-editorial-cn.py"   > /tmp/ai-signals/editorial-cn.log 2>&1 &
+# 2026-05-23 新增源：blog.google AI 官方 / every.to 深度专栏 / theaivalley.com newsletter
+timeout 60 python3 "$SCRIPT_DIR/fetch-blog-google.py"    > /tmp/ai-signals/blog-google.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-every.py"          > /tmp/ai-signals/every.log 2>&1 &
+timeout 60 python3 "$SCRIPT_DIR/fetch-theaivalley.py"    > /tmp/ai-signals/theaivalley.log 2>&1 &
 
 wait
 

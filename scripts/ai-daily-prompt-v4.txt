@@ -66,7 +66,7 @@ E. 投融资专源：
 【执行步骤】
 
 A.0 【必读热度信号源 — 优先从这些权威数据中选题】
-今日五份热度数据已被预采集在 /tmp/ai-signals/，使用 read 工具读取：
+今日七份热度数据已被预采集在 /tmp/ai-signals/，使用 read 工具读取：（2026-05-23 新增 blog.google / every.to / theaivalley.com 三源）
 
   - **/tmp/ai-signals/hn-ai.json**
     Hacker News AI 热门 (含 score 和评论数)
@@ -90,7 +90,26 @@ A.0 【必读热度信号源 — 优先从这些权威数据中选题】
     这是中文 AI 圈业界两大顶级媒体的今日选题
     **今日中国 AI 圈热门话题从这里看**
 
-读取顺序：先读这 4 份热度数据得到今日热点诧赊列表 → 再补补充缺口。
+  - **/tmp/ai-signals/blog-google.md** 【2026-05-23 新增】
+    Google 官方 The Keyword Blog (blog.google) 的 AI 相关条目（已过 AI 关键词过滤）
+    一手权威源：Gemini / DeepMind / Workspace AI / Pixel AI / Search SGE / TPU / Vertex 官方公告
+    判读：出现在这里的 Google 产品/模型/研究公告 **是官方一手源，准确性 100%**
+    判读补充：今日 Google 发布了什么 = 看这里的最新条目。
+
+  - **/tmp/ai-signals/every.md** 【2026-05-23 新增】
+    Every (every.to) 是 AI 实践者深度写作订阅平台 (column-based)
+    运营方：Dan Shipper 等 AI 专栏作家、同名播客 AI and I
+    含专栏：Chain of Thought / Napkin Math / Divinations / Cybernaut / Source Code / Latent Space 等
+    判读：every.to 的文章是 **深度思考 / 观点性文章**，适合「深度观点 / 产品分析」板块选题
+    判读补充：不适合「热门新闻」板块。适合作为精读候选素材 (另一个项目)。
+
+  - **/tmp/ai-signals/theaivalley.md** 【2026-05-23 新增】
+    The AI Valley (theaivalley.com) 业界 newsletter 聚合站 (走 mihomo 代理)
+    每篇标题类似「<日期> <主事件> PLUS: <补充事件>」格式——**这是一份专业人工选题的业界热点汇总**
+    判读：如果某个事件出现在 The AI Valley 的标题中，说明是 **业界公认的重要事件**，应优先纳入「热门新闻」板块
+    判读补充：源本身是二手聚合，不要直接引用 theaivalley.com 作为"来源"，要从标题里提取原事件后去找一手源
+
+读取顺序：先读这 7 份热度数据得到今日热点候选列表 → 再补补充缺口。
 如果 /tmp/ai-signals/ 不存在或为空（预采集 cron 未跑成功），才走完全依赖 web_search 的后备路径。
 
 A.5 【被限制顶级源的 web_search 后备】
@@ -123,8 +142,13 @@ C. 【🔥 候选条目打分 — 基于热度信号的客观加权】
    - English editorial 第 6-10 位                              → +0.5 分
    - 中文 editorial (qbit/36kr) 前 5 位                       → +1.2 分
    - 中文 editorial 第 6-10 位                                 → +0.5 分
+   - **blog.google AI 条目出现**                                  → +1.5 分（Google 官方一手源，准确性最高）
+   - **The AI Valley 标题提及该事件**                              → +1.5 分（专业人工选题背书；但要找原事件一手源，不能直接引用 theaivalley.com）
+   - Every.to 出现同主题深度专栏                                  → +0.5 分（深度观点加分，不作为热点凭证）
    - 含关键词 "Accenture" / "埃森哲"                            → +2 分 ＋强制保留
    - 同一条事件在多个信号源同时出现（如 HN、Smol AI 、 TechCrunch 同时提到） → 额外 +1分
+     例子：一条事件同时在 HN(score 1500) + Smol AI + blog.google + The AI Valley 出现
+           = HN(+1.5) + Smol(+1) + Google(+1.5) + AIValley(+1.5) + 多源重叠(+1) = +6.5 分（封顶到 10）
 
    评分参考：
    - 9-10 分：必上头条（如 OpenAI/Anthropic 收购、xx 亿美元融资、新一代旗舰模型发布、监管重大变化）

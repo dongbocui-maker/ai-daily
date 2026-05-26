@@ -1,0 +1,303 @@
+{
+  "date": "2026-05-26",
+  "title": "AI 日报 · 2026-05-26",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "⚡ 战略合并 | NextEra × Dominion 670 亿美元合并：AI 数据中心驱动全球最大受监管电力公司诞生",
+          "body": "Ars Technica 5/25 深度报道，NextEra Energy 5/18 宣布以 670 亿美元股票交易与全美第六大电力公司 Dominion Energy 合并。合并后新公司将覆盖 1000 万用户，成为全球市值最大的受监管电力公司，且 80%+ 业务为受监管资产。Dominion 服务的北弗吉尼亚正是全球最密集的数据中心集群所在地——这一合并被定性为「AI 数据中心驱动的能源工业重组」，新公司承诺 2032 年前实现 9% 年化 EPS 增长。",
+          "insight": "对决策者：AI 算力扩张正在重塑能源市场底层结构——电力公司开始按「数据中心负载」做长期合并决策；这一合并若获批，将影响弗吉尼亚 / 佛州 / 卡州数据中心电价谈判格局，企业 AI 基础设施 TCO 模型需把电力供应集中度作为新增风险变量。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/05/electrical-utility-megamerger-is-all-about-the-data-centers/"
+        },
+        {
+          "title": "👔 高层动态 | Uber COO Andrew Macdonald 直言「tokenmaxxing 难以为继」：AI 编程开销越烧越难合算",
+          "body": "Business Insider 5/24 援引 Uber COO Andrew Macdonald 在内部会议上的表态——「tokenmaxxing」(用 token 烧出生产力的范式)正变得越来越难找到 ROI 合理性。此前 Uber CTO 已透露公司 2026 年全年 AI 编程预算在前 4 个月就烧光。叠加微软撤回 Claude Code 内部许可、NVIDIA 副总裁公开称「算力比员工贵」，业内对 vibe coding / 副驾模式的财务可持续性正在集体反思。HN 188 分热议（48268871）。",
+          "insight": "对决策者：CFO 的 AI 账单已成为 2026 H2 的关键议题——单 token 通缩 ≠ 总账单下降；企业重新评估 AI 工具部署时必须从「按员工人头铺」转向「按业务流 ROI」分配 token 预算，并对 power user / 边际成本最高的部门设置月度 cap。",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/uber-coo-andrew-macdonald-ai-token-spending-harder-justify-2026-5"
+        },
+        {
+          "title": "📜 监管政策 | 教皇利奥十四发布首部 AI 通谕《Magnifica Humanitas》：4.2 万字警示「巴别塔综合症」",
+          "body": "The Verge 5/25 报道，新任教皇利奥十四发布罗马教廷史上首份 AI 主题通谕《Magnifica Humanitas》。这份长达 4.2 万字的文件明确呼吁「在 AI 时代捍卫人作为人的尊严」，警示「巴别塔综合症」——把人简化为数据与绩效的偶像崇拜。文件具体主张：把社会标准（包括再培训计划）作为引入 AI 自动化的前置条件、致命武力决策权必须保留给人类、教师与学生应获 AI 工具使用扶持。该通谕的篇幅与位阶使其成为全球范围内最高规格的非官方 AI 治理倡议之一。",
+          "insight": "对决策者：宗教与道德权威首次集体进入 AI 治理话语场——这会推动欧洲 / 拉美 / 非洲市场对 AI 落地的「人本约束」立法节奏；跨国企业需要把伦理、再培训、人在回路 (HITL) 不再视为 PR 点缀，而是合规与许可条件本身。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/news/936945/pope-leo-letter-encyclical-ai-anthropic-labor-warfare"
+        },
+        {
+          "title": "🛡️ 安全事件 | Microsoft Copilot Cowork 被曝可外泄企业文件：间接 prompt injection 击穿 Claude Opus 4.7",
+          "body": "PromptArmor 5/25 公开披露：Microsoft 365 Copilot Cowork 存在严重数据外泄风险——攻击者可通过「投毒 skill」实施间接 prompt injection，让 Cowork 自动通过 Teams 或 Outlook 向当前用户外泄文件。问题根因是 Cowork 在向「当前活跃用户」发送邮件 / Teams 消息时不要求人工审批，而打开此消息会触发攻击者控制的网络请求。攻击在包括 Claude Opus 4.7 在内的多个 SOTA 模型上仍能稳定成功。HN 164 分、31 条评论引爆讨论（48272354）。",
+          "insight": "对决策者：「Agent + 企业系统集成」的攻击面正从单点漏洞变成「跨系统设计缺陷」——即使每个组件本身合规，组合到一起依然可被攻击。CIO 与 CISO 现在必须对所有 Agent 类工具补做「跨域行动审批」与「URL 预览出口」专项审计。",
+          "source": "PromptArmor",
+          "url": "https://www.promptarmor.com/resources/microsoft-copilot-cowork-exfiltrates-files"
+        },
+        {
+          "title": "🌍 行业动向 | 挪威 Sigma2 用 2 PB 华为 OceanStor 闪存训练 LLM：欧洲 HPC 罕见「去美化」路径",
+          "body": "Blocks & Files 5/22 报道，挪威国家级超算中心 Sigma2 已部署 2 PB 华为 OceanStor 闪存存储用于 LLM 训练工作负载——这是欧洲一线 HPC 机构首次在 AI 训练核心环节采用华为存储产品。Sigma2 选择华为的理由公开为「整体性价比与高密度部署能力」，背景是欧洲在芯片与存储两端都在系统性降低对美供应链的依赖。HN 130 分讨论。",
+          "insight": "对决策者：欧洲 AI 基础设施供应链正在「悄悄去美化」——这不再是政策表态，而是落到了核心存储采购上；为欧盟客户提供 AI 解决方案的咨询与系统集成商需要重新评估技术栈中的国别风险，并把华为 / Samsung / 海力士作为合规候选纳入投标矩阵。",
+          "source": "Blocks & Files",
+          "url": "https://www.blocksandfiles.com/flash/2026/05/22/norways-2-petabytes-of-huawei-flash-storage-and-llm-training/5244910"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚗 落地反思 | Waymo 大规模召回:无人车遇水即瘫,多城 Robotaxi 服务紧急叫停",
+          "body": "量子位 5/25 综合报道,Waymo 因雨天 / 积水路况导致传感器异常引发多起事故,已宣布大规模软件召回并在 SF、LA、Phoenix 等多城暂停部分 Robotaxi 服务。这是 Waymo 自 Cruise 退出后首次出现影响商业运营的全城级停摆,凸显出 L4 自动驾驶在「极端环境长尾」上仍未真正解决问题。Waymo 已承诺在下一次软件版本中加入对降雨与水反射的专项处理。",
+          "insight": "对决策者:自动驾驶商业化「最后 5%」的安全长尾仍是阻碍——任何与 L4 出行服务合作的企业(车队管理、保险、出行平台)应把「极端天气下的服务连续性 SLA」单独写入合同;中国 Robotaxi 玩家(萝卜快跑、小马智行、文远知行)需要把 Waymo 的事故清单当作免费的反向 RCA 范本。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/424610.html"
+        },
+        {
+          "title": "💼 组织变革 | ClickUp 宣布大规模裁员:TechCrunch 解读「AI 时代第一波白领规模性出清」",
+          "body": "TechCrunch 5/25 重点报道,SaaS 项目管理软件公司 ClickUp 宣布大规模裁员。文章把这次裁员定性为「AI 时代第一波规模性白领出清」——同样的工作流自动化能力正在被 ChatGPT、Claude、Cursor 与各类 vertical agent 内嵌覆盖,传统 SaaS 中层管理岗位(项目经理、运营专员)首当其冲。文章追溯到同期 Salesforce、Workday 等 SaaS 巨头都在静默调整人员结构。",
+          "insight": "对决策者:SaaS 价值链正在被 LLM「拍扁」——曾被 SaaS 替代的「Excel / 邮件流程」如今被 LLM 进一步内化为 Agent;CHRO 需要在 H2 重新评估中层管理岗位的「LLM 替代曲线」,并加大再培训预算占比。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/"
+        },
+        {
+          "title": "💰 行业格局 | 中国机器人 1100 亿赌注盘点:四足赚钱、工业人形伪需求、家用 5 年才能落地",
+          "body": "36 氪 5/25 长文盘点:2025 全年中国具身智能 / 机器人融资 735 亿元、744 起,2026 至今追加 370 亿,累计破 1100 亿(约 152 亿美元)。文章把热度切成四层:四足机器人(已规模盈利)、工业人形(订单含大量政府补贴催生的伪需求,回本周期 5-6 年)、具身大模型(融资最热但离钱最远)、家庭场景(300 家庭样本不足以验证规模化)。84.7% 全球人形机器人出货量已被中国厂商拿下,但商业模式仍未跑通。",
+          "insight": "对决策者:中国机器人产业链已形成「投资过热、商业化滞后」的明显分叉;产业资本应优先在四足机器人 / 工业 SDK / 关键零部件三条已验证的细分跑道布局;具身大模型 / 工业人形适合战略观察,2026 内做小额跟投而非重注。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3824520810221702"
+        },
+        {
+          "title": "🇸🇬 国际拓展 | Google 与新加坡政府达成新一轮 AI 合作:投资数据中心、培训公务员与中小企业",
+          "body": "Google 官方博客 5/20 公布,与新加坡政府升级 AI 战略合作——内容包括加深云与 AI 数据中心投资、为全国公务员与中小企业员工提供 Gemini 与 AI 实操培训、共建 AI 安全测试基础设施。新加坡政府将 Google 定位为「东南亚 AI 枢纽」战略合作伙伴;同期新加坡 IMDA 也启动了 AI 产业人才认证计划。",
+          "insight": "对决策者:东盟市场的 AI 基础设施正进入「政府主导 + 大厂下注」阶段;区域内跨国企业(金融、零售、消费品)应把新加坡作为东南亚 AI POC 与人才储备的首选枢纽;大厂合作话语权正反向制约本地 AI 采购选择,跟谁站队需早做计划。",
+          "source": "Google Blog",
+          "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/singapore-government-partnership/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "💸 工具反思 | 微软按下 vibe coding 暂停键:从「人均 AI 副驾」转向「员工不再人均 token 烧炉」",
+          "body": "36 氪 5/25 深度复盘:微软 6 个月前还在大规模推广 Claude Code 给数千名员工,6 月 30 日(财年末)将取消大部分员工的内部 Claude Code 许可。同期 YC 合伙人 Tom Blomfield 仍在喊「API 账单不让你心痛就是烧得不够」、NVIDIA 副总裁 Catanzaro 直言「算力成本远超员工成本」。Goldman Sachs 测算 2030 年 agentic AI 将推动 token 消耗增长 24 倍,单价下降 90% 也填不平。文章核心论点:「人均 AI 副驾」财务模型不可持续——副驾不替代员工,只新增 token 账单。",
+          "insight": "对决策者:vibe coding 进入「财务模型再设计」阶段——下一阶段企业 AI 编程工具部署应转向「按业务线 / 按交付物分配 token 预算」,并配合产出衡量;CIO 需要把「token 成本」纳入团队 OKR 的隐性成本项。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3824666239062915"
+        },
+        {
+          "title": "📑 顶级论文 | 《Constraint Decay》:LLM Agent 写后端代码随约束累积平均掉 30 分,FastAPI / Django 受影响最大",
+          "body": "arXiv 5/24 发表新论文《Constraint Decay: The Fragility of LLM Agents in Back End Code Generation》(HN 277 分讨论)。研究者在 80 个绿地任务 + 20 个特性实现任务、跨 8 个 Web 框架统一 API 契约下做了系统评测——发现「约束衰减」现象:随着结构性约束(架构、数据库、ORM)累积,强配置 Agent 平均断言通过率从基线掉 30 分,弱配置直接归零。错误根因主要在数据层(查询拼写错误、ORM 运行时违规);Flask 等极简框架下表现尚可,FastAPI / Django 等约定密集的框架显著恶化。",
+          "insight": "对决策者:用 Claude Code / Cursor / Codex 做生产代码生成时,「单跑流畅」≠「工程结构正确」——AI Coding 工具在多文件、严架构、强 ORM 的存量代码库里仍是「危险助手」。企业落地应配合静态校验、契约测试、强 code review 闭环,并优先在新代码 / 微服务边界使用。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2605.06445"
+        },
+        {
+          "title": "🏛️ 现场观察 | Every 复盘 Anthropic 2026 开发者大会:Managed Agents 三件套首次进入生产环境",
+          "body": "Every(chain-of-thought 专栏)5/25 现场复盘 Anthropic 2026 开发者大会。报告核心:Managed Agents Memory / Skills / Compliance 三件套已从测试预览进入企业生产环境,多个早期客户(金融、医疗、SaaS)报告了首次端到端 Agent 落地;现场演示包括跨会话上下文记忆、组织级 Skills 治理与 Compliance API 对接 SOC2 / HIPAA 的真实流程。文章特别强调「Anthropic 已经从模型公司转身为 Agent 平台公司」。",
+          "insight": "对决策者:Anthropic 正在用「Managed Agents」抢占 Agent 中间层——这是 Salesforce / ServiceNow / Workday 之外的新平台位;选型 2026 H2 企业 Agent 平台时,Claude 阵营已不再只是「能力强的 API」,应被作为「平台候选」与 Microsoft Copilot Studio、Google Vertex Agent Builder 并列评估。",
+          "source": "Every",
+          "url": "https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference"
+        },
+        {
+          "title": "🏗️ 工程范式 | Every 公开《一家 25 人公司怎么用 4 个 AI Agent 跑日常运营》:含可复用 prompts 样本",
+          "body": "Every 内部分享:他们以一家 25 人公司为样本,运行了 4 个长期在线的 AI Agent——优先级 Agent、会议记录 Agent、OKR 规划 Agent、增长追踪 Agent。文章公开了每个 Agent 的核心 prompts、数据接入路径与升级 / 关停规则,并坦白哪些 Agent 在 3 个月后被裁掉、哪些把价值证明出来。结论:Agent 的 ROI 不在「最猛的那个」,而在「最稳定地嵌进流程的那个」。",
+          "insight": "对决策者:中小型组织部署 AI Agent 的样板已经成型——重点是「少而稳」而非「多而炫」;HR / CIO 在 2026 H2 启动 Agent 试点时,应优先选 4 个核心管理流程作为切入点,配合 8 周量化验证。",
+          "source": "Every",
+          "url": "https://every.to/source-code/how-we-run-a-25-person-company-on-four-ai-agents"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 研究动态 | Smol AI 周报:NVIDIA Gated DeltaNet-2、RAEv2 多线推进,OpenAI 攻克 Erdős 几何猜想引爆数学圈",
+          "body": "Smol AI News 5/21 期密集汇总硅谷 AI 圈最新研究动作——NVIDIA Gated DeltaNet-2 用通道门控强化线性注意力,在 1.3B 参数规模下超过 KDA 与 Mamba-3;RAEv2 推进「表示先行」分词,文本到图像和世界模型上收敛速度 10× 提升;新研究指出在 ~1e30 FLOPs 量级下,数据筛选可能最优解就是「不筛选」;OpenAI 借助 AI 攻克 1946 年 Erdős 单位距离几何猜想,菲尔兹奖得主 Gowers 公开点评「这是 AI 在数学研究里的里程碑」。",
+          "insight": "对决策者:模型底层架构仍在快速演进,下一代「线性注意力 + 表示先行分词」可能彻底改变长上下文成本曲线;研究 R&D 投入应把基础架构跟踪作为单独季度议题,避免在「上一代 Transformer 思维」下做长期采购决策。",
+          "source": "Smol AI News",
+          "url": "https://news.smol.ai/issues/26-05-21-not-much"
+        },
+        {
+          "title": "💼 行业洞察 | 36 氪深度《AI 大厂,穷得只剩利润》:四大厂 AI 业务变现速度赶不上算力账单上涨",
+          "body": "36 氪 5/25 长文复盘:阿里、百度、字节、腾讯四大厂 2026 Q1 财报都把 AI 业务作为核心叙事——百度 AI 业务收入占比突破 52%、AI 云增速 79%,阿里 AI 年化营收 358 亿元——但同期算力 Capex、token 调用与基础设施成本上涨速度更快。文章核心论点:四大厂的 AI 业务「能赚钱、但还没真正赚到净利润」,相比硅谷 OpenAI / Anthropic「烧钱换增长」路线,中国大厂选择「以业务利润反哺 AI Capex」,但这条路在 2026 H2 将进入财务张力的临界点。",
+          "insight": "对决策者:评估中国 AI 大厂时,单看「AI 业务收入增速」会失真——必须看 AI 投资 ROI 与现金流;CIO 在选与中国大厂的合作时,应优先押在 AI 业务利润已转正、不依赖广告或电商主业输血的玩家。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3824720338670465"
+        },
+        {
+          "title": "👀 趋势观察 | Ars Technica《Google 用 Agentic AI 重做搜索》:AI Mode 生成定制 mini-app,蓝链接被 UI 取代",
+          "body": "Ars Technica 5/25 深度分析谷歌 2026 搜索变革:AI Mode 不再是简单的回答框,而是会根据用户意图实时生成定制化 UI dashboard——例如规划周末家庭出行时,搜索会返回一个含活动建议、评论、地图嵌入、日历集成的「迷你应用」。这些 dashboard 由 Gemini 3.5 Flash 即时生成代码渲染、可被反复定制并通过链接分享。文章担忧:「网站为搜索排名而设计」的 SEO 范式将走到尽头,搜索结果从「蓝链接」转向「AI 生成 UI」会显著重塑互联网内容生态。",
+          "insight": "对决策者:SEO 与「搜索流量买卖」业务模式正在被 Agentic Search 重写——零售、媒体、旅游、本地服务企业需要把「内容投放策略」从「页面排名」转向「Agent 可调用结构化数据」(schema.org / API 端点);2026 H2 起,「能否被搜索 Agent 调用」会取代「能否被 Google 索引」成为新北极星。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/google/2026/05/buckle-up-google-is-set-to-remake-search-with-agentic-ai-in-2026/"
+        },
+        {
+          "title": "🎨 文化观察 | The Verge《文学世界对 AI 仍未准备好》:Granta 与英联邦奖引发「文学 vs 生成」争论",
+          "body": "The Verge 5/24 报道:英国文学杂志 Granta 与英联邦短篇小说奖近期均因评委疑似无法分辨人类与 AI 写作而引发文学界争议——多位入围作品被指控含有 AI 协作痕迹,组委会迄今未给出明确判定与处置方案。文章追问:当 AI 写作渗透创意行业、连专业评委都难以分辨人机时,文学奖项与文学本身的定义都将面临重写。同期 Spotify 与 Universal Music 也宣布粉丝可在订阅内合法创建 AI 翻唱与混音作品。",
+          "insight": "对决策者:创意行业的版权与内容认证机制将在 2026 下半年面临系统性重构——出版、影视、音乐、广告等内容生产链条需要主动建立「AI 协作披露」的内部 SOP,把作品级元数据(创作工具、模型版本、人工干预占比)纳入合同必备项。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/936073/ai-writing-granta-commonwealth-prize"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "**算力账本走到临界点**：从 NextEra × Dominion 670 亿美元合并到 Uber COO「tokenmaxxing 难以为继」、再到微软按下 vibe coding 暂停键——电力、企业、模型三层成本同时被重新计算。AI 不再是「装进去就增长」的故事，而是要逐项算 ROI 的工程命题。",
+    "**治理与人本议题进入最高位阶**：教皇通谕《Magnifica Humanitas》以 4.2 万字主张「人在回路」、欧洲 HPC 用华为闪存绕开美式供应链、PromptArmor 披露 Microsoft Cowork 数据外泄路径——技术、伦理、地缘三股力量同时进场，企业 AI 部署的合规成本与设计责任正在抬升。",
+    "**Agent 平台化竞赛加速**：Anthropic 用 Managed Agents Memory / Skills / Compliance 全套抢占企业 Agent 中间层；Google 重做搜索、用 AI Mode 定制 mini-app；Every 公开 25 人公司 4-Agent 运营模板。Agent 从「实验项目」走向「平台候选」，CIO 选型坐标系已经从「模型选哪家」扩展到「平台押谁家」。"
+  ],
+  "audit": {
+    "tieluFourScan": {
+      "scan_ts": "2026-05-26T08:18+08:00",
+      "queries": [
+        "OpenAI partnership OR joint venture OR acquisition",
+        "Anthropic Accenture OR Deloitte OR consulting",
+        "AI consulting services launch enterprise",
+        "OpenAI Anthropic Google DeepMind Meta Microsoft 过去 7 天大动作"
+      ],
+      "results": "今日扫描发现 1 条重磅 M&A：NextEra × Dominion 670 亿美元电力公司合并（AI 数据中心驱动），已纳入热点头部。OpenAI / Anthropic 系无新合作或收购公告（PwC×Anthropic 5/14、Anthropic 收 Fractional AI 5/21、Anthropic×KPMG 5/21、OpenAI×BCG/麦肯锡/Accenture/Capgemini 5/18 均已发过，跳过）；Meta / Google / Microsoft 过去 24 小时无新重大合作。",
+      "no_major_today": false
+    },
+    "score_breakdown": {
+      "item_news_1_nextera_dominion": {
+        "final_score": 9.5,
+        "signals": [
+          "ars-tech-10",
+          "international-frontpage",
+          "ma-scan"
+        ]
+      },
+      "item_news_2_uber_coo": {
+        "final_score": 8.8,
+        "signals": [
+          "HN-188pts",
+          "business-insider"
+        ]
+      },
+      "item_news_3_pope_ai": {
+        "final_score": 9.0,
+        "signals": [
+          "verge-1",
+          "ars-2",
+          "tc-2",
+          "multi-source"
+        ]
+      },
+      "item_news_4_copilot_cowork": {
+        "final_score": 8.6,
+        "signals": [
+          "HN-164pts",
+          "promptarmor-disclosure"
+        ]
+      },
+      "item_news_5_norway_huawei": {
+        "final_score": 7.5,
+        "signals": [
+          "HN-130pts"
+        ]
+      },
+      "item_ent_1_waymo_recall": {
+        "final_score": 8.0,
+        "signals": [
+          "qbit-2"
+        ]
+      },
+      "item_ent_2_clickup_layoff": {
+        "final_score": 8.0,
+        "signals": [
+          "tc-1"
+        ]
+      },
+      "item_ent_3_china_robot": {
+        "final_score": 7.5,
+        "signals": [
+          "36kr-8"
+        ]
+      },
+      "item_ent_4_google_sg": {
+        "final_score": 7.0,
+        "signals": [
+          "google-blog-12"
+        ]
+      },
+      "item_code_1_vibe_pause": {
+        "final_score": 8.0,
+        "signals": [
+          "36kr-1",
+          "smol-ai-mention"
+        ]
+      },
+      "item_code_2_constraint_decay": {
+        "final_score": 8.0,
+        "signals": [
+          "HN-277pts",
+          "arxiv"
+        ]
+      },
+      "item_code_3_anthropic_devcon": {
+        "final_score": 8.5,
+        "signals": [
+          "every-chain-of-thought-2"
+        ]
+      },
+      "item_code_4_25person_agents": {
+        "final_score": 7.5,
+        "signals": [
+          "every-source-code-4"
+        ]
+      },
+      "item_report_1_smol_weekly": {
+        "final_score": 7.8,
+        "signals": [
+          "smol-ai-page-snippet"
+        ]
+      },
+      "item_report_2_china_bigtech": {
+        "final_score": 7.5,
+        "signals": [
+          "36kr-2"
+        ]
+      },
+      "item_report_3_google_agentic_search": {
+        "final_score": 8.0,
+        "signals": [
+          "ars-5"
+        ]
+      },
+      "item_report_4_verge_literature": {
+        "final_score": 7.0,
+        "signals": [
+          "verge-6"
+        ]
+      }
+    },
+    "dedup_summary": {
+      "input_count": 17,
+      "kept": 17,
+      "removed_by_url": 0,
+      "non_duplicate_confirmed": [
+        "Microsoft Copilot Cowork (5/25 PromptArmor 新披露的 prompt injection 攻击链，与 5/24 微软取消 Claude Code 许可的人事/采购决策为不同事件，确认保留)"
+      ]
+    },
+    "source_distribution": {
+      "Ars Technica": 2,
+      "Business Insider": 1,
+      "The Verge": 2,
+      "PromptArmor": 1,
+      "Blocks & Files": 1,
+      "量子位": 1,
+      "TechCrunch": 1,
+      "36氪": 3,
+      "Google Blog": 1,
+      "arXiv": 1,
+      "Every": 2,
+      "Smol AI News": 1,
+      "international_first_source_count_in_news_section": 5
+    }
+  }
+}

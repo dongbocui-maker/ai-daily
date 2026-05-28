@@ -2755,5 +2755,60 @@
     ],
     "sourceHash": "7a7b57d3",
     "ts": 1779871265605
+  },
+  "harry0703/MoneyPrinterTurbo": {
+    "features": [
+      "输入主题或关键词即可全自动生成短视频文案、素材、字幕与背景音乐",
+      "支持 OpenAI、DeepSeek、Moonshot、Gemini、Ollama 等多种 LLM 接入",
+      "支持 9:16 竖屏与 16:9 横屏高清视频，可批量生成多个视频",
+      "支持多语种语音合成、实时试听及字幕样式自定义",
+      "提供 API 接口和 Web 界面，基于清晰的 MVC 架构"
+    ],
+    "sourceHash": "-3a2becb7",
+    "ts": 1779957937577
+  },
+  "p-e-w/heretic": {
+    "features": [
+      "基于 directional ablation（abliteration）全自动移除 LLM 的安全对齐限制",
+      "使用 Optuna TPE 优化器自动搜索最优 abliteration 参数",
+      "通过联合最小化拒绝数和 KL 散度，最大限度保留原模型智能",
+      "支持大多数 dense 模型、多模态模型及多种 MoE 架构",
+      "无需理解 transformer 内部即可通过命令行一键去审查"
+    ],
+    "sourceHash": "-5d7045d8",
+    "ts": 1779957943052
+  },
+  "Chachamaru127/claude-code-harness": {
+    "features": [
+      "将 Claude Code 转化为 Spec→Plan→Work→Review→Release 的可重复交付流程",
+      "通过 plugin marketplace 实现 30 秒安装与 /harness-setup 一键配置",
+      "内置 /harness-plan、/harness-work、/harness-review 等 skill 命令驱动开发循环",
+      "自动生成 spec.md 与 Plans.md 草稿，需用户审批后再执行",
+      "兼容 Codex 与 OpenCode 的受限路径，提供迁移检查工具"
+    ],
+    "sourceHash": "-1c9af25a",
+    "ts": 1779957948324
+  },
+  "byoungd/English-level-up-tips": {
+    "features": [
+      "系统化的英语学习指南，涵盖词汇、听说读写各章节",
+      "新增 2026 版 AI 章节，讲解如何用 Gemini 等 LLM 辅助英语学习",
+      "对比 ChatGPT/Claude/Perplexity/DeepL Write 在英语学习中的分工",
+      "基于 CEFR 标准划分英语水平等级，提供进阶路径",
+      "提供常用词汇表 word-list 等配套学习资源"
+    ],
+    "sourceHash": "-49380d2f",
+    "ts": 1779957953400
+  },
+  "iii-hq/iii": {
+    "features": [
+      "通过 Worker、Function、Trigger 三大原语统一编排后端服务",
+      "Worker 加入即注册至 live catalog，其他 worker 可即时调用",
+      "支持 HTTP、cron、队列、state、stream 等多种 trigger 声明式路由",
+      "agent 可运行时动态创建 worker 并发现调用其 function",
+      "提供 TypeScript、Python、Rust 多语言 SDK 及 CLI"
+    ],
+    "sourceHash": "1a3c4aa5",
+    "ts": 1779957957639
   }
 }

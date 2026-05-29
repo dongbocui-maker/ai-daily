@@ -176,9 +176,13 @@ C.5. 【Twitter / X 热度软验证】
    - 或 web_search "<公司名> <关键词>" + reddit.com / news.ycombinator.com
    完全无人讨论的边角条目降权或删除；有 KOL（带认证 / 高粉丝）转发的条目可以提分。
 
-D. 整合成全量稿（约 1500 字），用 feishu_doc 的 append action，把全量内容追加到文档 ZbcpdwlufogXxVxaEyXck3cBnDc 末尾，开头加分隔标题 '## YYYY-MM-DD AI 日报'。注意：不要用 insert 试图插入到文档顶部，飞书 API 在该场景下需要锚点 block_id，容易反复试错超时；统一用 append 落到末尾即可。
+D. 整合成全量稿（约 1500 字），写到 /tmp/ai-daily-YYYY-MM-DD.md，开头加分隔标题 '## YYYY-MM-DD AI 日报'。
+   **然后用 exec 调用： `bash /root/.openclaw/workspace/projects/ai-daily/scripts/append-to-doc.sh /tmp/ai-daily-YYYY-MM-DD.md DxlZdKOovoJiNnxVeMOcmt0NnJc`**（YYYY-MM-DD 用今日）。
+   该脚本会自动用主钢铁虾 App tenant token 调用飞书 docx convert + append API，**避开 MK2 App 对该文档无写权限的问题**。退出码 0 = 成功，非 0 = 失败（stderr 会输出错误详情）。
+   **如果 append-to-doc.sh 退出非 0**：不要 retry feishu_doc append（已知会 400 forBidden）。记在 jsonl notes 里详细 stderr，继续 Step E。本地 daily JSON + GitHub sync + 飞书摘要 3 个 artifact 只要能交付就不算完全失败。
+   （备注：文档旧 token Zbcpdwlu... 已废弃不用，2026-05 起都用 DxlZdKOovoJiNnxVeMOcmt0NnJc）
 
-E. 生成飞书消息摘要：每板块精选 3 条标题+1 句话，约 600 字，末尾附文档链接 https://feishu.cn/docx/ZbcpdwlufogXxVxaEyXck3cBnDc
+E. 生成飞书消息摘要：每板块精选 3 条标题+1 句话，约 600 字，末尾附文档链接 https://feishu.cn/docx/DxlZdKOovoJiNnxVeMOcmt0NnJc
 
 F. 【发布前 self-audit — 必做】
    1. 数来源分布：列出每个 URL 的次数，确认无单一来源 > 25% 总条数；中文聚合媒体每板块最多 1 条
@@ -200,7 +204,7 @@ G. 用 message 工具 action=send，target=user:ou_dbee86fe0e62ee834c7d7225015a1
 模板（exec 工具调用）：
   mkdir -p /root/.openclaw/workspace/memory/agent-actions
   cat >> /root/.openclaw/workspace/memory/agent-actions/$(date +%Y-%m-%d).jsonl <<'JSONL'
-  {"ts":"<ISO8601 时间>","session_kind":"cron-isolated","session_id":"<本 session uuid 或 unknown>","agent_id":"main","agent_name":"钢铁虾","task_id":"c24f6b6f-3cdd-4773-a61c-3d3b624def52","task_name":"ai-daily-report","action":"delivered_message","recipient":"user:ou_dbee86fe0e62ee834c7d7225015a1317","channel":"feishu","summary":"今日 AI 日报已写入文档并推送摘要","outputs":{"files_written":["feishu_docx:ZbcpdwlufogXxVxaEyXck3cBnDc"]},"status":"ok"}
+  {"ts":"<ISO8601 时间>","session_kind":"cron-isolated","session_id":"<本 session uuid 或 unknown>","agent_id":"main","agent_name":"钢铁虾","task_id":"c24f6b6f-3cdd-4773-a61c-3d3b624def52","task_name":"ai-daily-report","action":"delivered_message","recipient":"user:ou_dbee86fe0e62ee834c7d7225015a1317","channel":"feishu","summary":"今日 AI 日报已写入文档并推送摘要","outputs":{"files_written":["feishu_docx:DxlZdKOovoJiNnxVeMOcmt0NnJc"]},"status":"ok"}
   JSONL
 
 要求：

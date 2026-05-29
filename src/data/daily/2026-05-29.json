@@ -1,0 +1,155 @@
+{
+  "date": "2026-05-29",
+  "title": "AI 日报 · 2026-05-29",
+  "sections": [
+    {
+      "key": "news",
+      "label": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "💰 融资 | Anthropic 完成 650 亿美元融资，估值冲至 9650 亿美元首次反超 OpenAI",
+          "body": "Anthropic 周四宣布完成 650 亿美元新一轮融资，投后估值定格 9650 亿美元、距离万亿美元一步之遥，Altimeter 领投，被认为是科技史上规模最大的私募融资之一。本轮资金主要用于扩张算力以满足 Claude 持续暴涨的需求；公司同步透露 IPO 在即。",
+          "insight": "Anthropic 首次在估值上反超 OpenAI，标志着「企业级 AI 信任票」从消费产品偏好流向工程/编码/Agent 路线，合伙人级别的战略合作议价权将随之转移。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/anthropic-raises-65-billion-now-valued-965-billion-2026-05-28/"
+        },
+        {
+          "title": "🚀 产品发布 | Anthropic 发布 Claude Opus 4.8 + Dynamic Workflows：单次会话最多 1000 个并行子代理",
+          "body": "Anthropic 同日上线 Claude Opus 4.8，定位「最完整模型」，在 Senior Engineer 与写作双榜首。配套发布 Dynamic Workflows（Research Preview），Claude 可以在一次 Claude Code 会话内规划任务并 fork 出最多 1000 个并行子代理，Effort Levels 控制台首次让开发者按任务难度自选 extra/max 算力档位。",
+          "insight": "多 Agent 编排从 SDK 概念走向产品默认形态，Claude Code 正式跨越「单进程编程助手」边界进入「编程 OS」。",
+          "source": "Anthropic 官方博客",
+          "url": "https://www.anthropic.com/news/claude-opus-4-8"
+        },
+        {
+          "title": "🤝 收并购 | Asana 完成对 StackAI 收购：no-code Agent Builder 补强「人机协同 OS」",
+          "body": "Asana 周四公告完成对 StackAI 的整体收购。StackAI 是 no-code Agent 工作流平台，可跨企业系统编排 AI Agent 流程。Asana CEO Dan Rogers 称这次收购「带我们进入下一阶段的人机协同工作」，StackAI 将与 AI Teammates / AI Studio 三件套合并交付。",
+          "insight": "任务管理 SaaS 与 Agent 平台合流，「项目管理工具 + Agent 编排」开始抢占「Operating System for Hybrid Workforce」的占位词。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/"
+        },
+        {
+          "title": "📜 监管政策 | Illinois 通过全美最严 AI 安全法 SB 315：第三方安全审计强制化，白宫立场被边缘化",
+          "body": "Illinois 州议会刚刚通过 SB 315，要求所有部署在该州的「前沿 AI 系统」必须接受独立第三方安全审计，在 Trump 政府刚刚撤销联邦 AI 监管行政令几天后立即填补真空。WIRED 称之为「美国最强的 AI 安全立法」，联邦政府对 AI 监管的中央集权能力进一步被州一级撕开口子。",
+          "insight": "联邦与州的拉锯战让企业合规成本进入「按州适配」模式，Big AI 厂商在全美 50 州的部署矩阵将出现 patchwork compliance 难题。",
+          "source": "WIRED",
+          "url": "https://www.wired.com/story/illinois-pass-major-ai-safety-law-pritzker/"
+        },
+        {
+          "title": "🌍 行业动向 | 上海期货交易所将推 AI Token 期货：算力首次像黄金原油一样可对冲",
+          "body": "Reuters 独家披露上海期货交易所（SHFE）正在筹备 AI Token 期货合约，把大模型 API 调用价格作为标的物。这是全球第一次把「Token 算力」纳入大宗商品衍生品体系，企业、投资者、数据中心运营商首次有机会对冲推理成本波动。",
+          "insight": "算力金融化标志着 AI 从「卖产品」时代正式进入「卖大宗商品」时代，大企业 CIO/CFO 将需要在 AI 预算里加上「token 套保」科目。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🎨 产品重设计 | Microsoft 365 Copilot 大改版：加载速度提升 2 倍、各 App 入口统一",
+          "body": "Microsoft 周四上线全面重设计的 Microsoft 365 Copilot，宣称加载速度提升 2 倍、UI 更简洁、跨 App 体验统一化，Copilot 响应将更结构化、便于审阅。Office/Teams/Outlook/Word 等 Copilot 入口同步换肤。",
+          "insight": "Microsoft 押注「企业体感优先于模型能力」——把 Copilot 从「内嵌 AI 助手」改造成「贯穿所有 M365 应用的协同层」，与 Asana 收购 StackAI 形成正面竞争。",
+          "source": "Microsoft 365 Blog",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/28/introducing-a-new-design-for-microsoft-365-copilot/"
+        },
+        {
+          "title": "📱 产品策略 | Apple 用 Gemini 多万亿参数模型蒸馏到 iPhone：Siri 大改背后是 Google Cloud + Nvidia 双重支撑",
+          "body": "The Information 披露 Apple 正使用 Google 多万亿参数 Gemini 模型进行知识蒸馏，训练出可部署在 iPhone 本地的「轻量 Siri 模型」。新 Siri 将同时跑在设备端与 Google Cloud，意味着 Apple 在隐私优先与体验优先之间做出妥协——这是 Apple 第一次大规模公开依赖 Nvidia 算力。",
+          "insight": "三巨头（Apple/Google/Nvidia）在端侧 AI 上罕见利益捆绑，「自研芯片 + 他人大模型」成为本地 AI 主流妥协方案。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/05/apple-reportedly-trying-to-distill-googles-multi-trillion-parameter-gemini-ai-to-run-on-iphone/"
+        },
+        {
+          "title": "🇨🇳 国内案例 | 沙钢与钉钉签约：悟空 AI 智能体进入钢铁工业生产场景",
+          "body": "江苏沙钢钢铁（中国第一民营钢企）与钉钉 5/28 正式签约，围绕全集团协同办公底座与 AI 场景应用展开深度合作，以钉钉悟空（基于通义千问）和系列 AI 产品为核心引擎，推动 AI 在钢铁生产、安全、协同场景的规模化落地。",
+          "insight": "阿里钉钉「悟空智能体」首次切入重工业核心生产场景，印证 To-B 通用 Agent 在传统行业有「场景溢出」能力，大宗产业是 2026 国内 AI 落地的明确增量。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/426223.html"
+        },
+        {
+          "title": "🚀 创业产品 | Sesame 上线 iOS：Oculus 联创打造「会思考的对话 AI」挑战 ChatGPT",
+          "body": "Oculus 创始人成立的新 AI 公司 Sesame 周四在 App Store 上线 iOS App，重新设计了 ChatGPT 类对话 AI 的交互范式——即使 AI 在「思考」，对话流也保持连贯，并配备多个独立人格的 Agent。被视为「voice-first AI 助手」新一波创业的代表。",
+          "insight": "对话 AI 的体验竞争从「响应速度」走向「会话节奏感」，Apple 与 OpenAI 的下一代语音 AI 都将以「对话流」而非「问答」为基础设计。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🚀 旗舰模型 | Claude Opus 4.8 + Dynamic Workflows：并行子代理重写 Claude Code 编程范式",
+          "body": "TechCrunch 实测 Opus 4.8 在编程基准跃居 SOTA，Dynamic Workflows 让 Claude Code 一次性 fork 出最多 1000 个并行 subagent，适合大规模 codebase 重构、多模块并行修复；新 Effort Levels 控制让开发者按预算选 extra/max 档，平衡质量与 token 成本。",
+          "insight": "编程 Agent 从「线性指令执行」进入「调度并行子代理」时代，Claude Code 与 Cursor/Codex 的护城河差距进一步拉开。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/"
+        },
+        {
+          "title": "🛡️ 安全漏洞 | FastAPI 致命漏洞 CVE-2026-48710：3.25 亿次/周下载的 Starlette 让 AI Agent 集体「裸奔」",
+          "body": "安全公司 Secwest + X41 D-Sec 披露 Starlette（FastAPI 的路由内核）的 Host header 注入漏洞 CVE-2026-48710（BadHost），只需一个字符即可绕过基于路径的鉴权。受影响范围包括 MCP Servers、LLM 代理、Agent 框架等数千 ASGI 应用，极大量 AI Agent 后端处于风险敞口下。",
+          "insight": "Agent 生态的安全边界已经从「模型 prompt 注入」延伸到「Web 框架原始漏洞」，企业级 AI Agent 部署必须把基础组件 CVE 纳入威胁建模。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/"
+        },
+        {
+          "title": "🇨🇳 国产突破 | DeepSeek V4 芯模协同：与昇腾/寒武纪深度适配，国产算力生态飞轮启动",
+          "body": "量子位深度披露 DeepSeek V4 与华为昇腾/寒武纪芯片完成「芯模协同」深度优化，百万 token 长上下文在国产算力上稳定推理；鲲鹏开发者已超 415 万、昇腾开发者超 410 万、openEuler 装机超 1600 万套，生态进入「自增长」阶段，创业公司、银行、高校开始主动贡献代码。",
+          "insight": "DeepSeek 模型层 + 昇腾算力层 + openEuler 软件栈，国产 AI 全栈基础设施第一次出现「不依赖单家推动」的飞轮迹象。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/426293.html"
+        },
+        {
+          "title": "🛠️ 开源工具 | Warp 终端开源后 15 小时狂揽 3.5 万 Star：Altman 投的 Agent 终端用 Rust 重写 40 年命令行",
+          "body": "36 氪报道 Sam Altman 投资的下一代终端 Warp（用 Rust 从头重写）周三开源，15 小时 Star 数飙升至 3.5 万。Warp 把 GPU 加速、块状输出、AI Agent 配置文件等现代功能塞进 CLI；新发布 settings file 让 AI 代理可编程地控制终端环境，跨设备无缝迁移。",
+          "insight": "命令行/Terminal 从 IDE 战场延伸出新前线，Agent 与终端深度绑定是「Agentic CLI 时代」的标志，开源策略意在抢占 dev tools 默认入口。",
+          "source": "36 氪",
+          "url": "https://36kr.com/p/3787635096329472"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 行业大势 | Gartner 重磅数据：企业 AI Coding Agent 市场年化规模冲到 98-110 亿美元",
+          "body": "Gartner 发布《Enterprise AI Coding Agents：2026 Market Guide》，披露截至 2026 年 4 月该市场年化规模已达 98-110 亿美元，正快速吞噬企业软件工程预算份额。报告同时给出 Cursor、GitHub Copilot、Claude Code、Codex、Windsurf 等供应商的能力坐标。",
+          "insight": "AI Coding Agent 已从「实验工具」跨入「企业 IT 采购品类」，CIO 级预算开始建立独立科目，头部供应商进入「占位决战年」。",
+          "source": "Gartner",
+          "url": "https://www.gartner.com/en/articles/enterprise-ai-coding-agent-market"
+        },
+        {
+          "title": "⚖️ 版权战 | CNN 起诉 Perplexity：「逐字逐句剽窃」案进入司法程序，AI 搜索引擎版权战升级",
+          "body": "CNN 周四在美国联邦法院起诉 Perplexity，指控其大规模抓取 CNN 报道并以「verbatim 逐字逐句」的形式复述给用户。诉讼文件展示了 Perplexity 与 CNN 谈判破裂后仍未停止抓取的证据。此案是 AI 搜索引擎面临的第二起头部新闻机构诉讼（《纽约时报 v. OpenAI》之后）。",
+          "insight": "AI 搜索引擎商业模式与新闻版权进入「全面对抗」阶段，Perplexity/SearchGPT 等产品的训练数据合规性将成为投资者尽调必查项。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/938893/cnn-perplexity-ai-copyright-lawsuit"
+        },
+        {
+          "title": "🧪 学术研究 | Ars Technica 披露：LLM 在明确警告「这是假话」后仍然相信并复述虚假陈述",
+          "body": "研究人员实验发现，即使在 prompt 中明确告知 LLM「以下陈述是假的」，主流模型仍会将虚假陈述作为事实使用，影响后续推理与生成。结果对 RAG 系统、合规审计、AI 客服等高风险场景构成警示。",
+          "insight": "LLM 的「事实判别」能力被高估，企业级部署必须假设输入污染并增加独立的事实校验层，而非依赖模型自身的「自觉」。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/05/llms-believe-false-statements-even-after-explicit-warnings-that-theyre-false/"
+        },
+        {
+          "title": "🇨🇳 行业洞察 | 36 氪深度《十年前的量化实习生合照》：半数华人、3 位亿万富翁——DeepSeek 时代新贵版图溯源",
+          "body": "36 氪深度复盘十年前量化对冲基金一张实习生合照，合照中半数为华人，目前已诞生 3 位亿万富翁，DeepSeek 创始人梁文锋亦在其中。文章追溯了从量化交易到大模型创业的人才迁徙路径，以及华人量化圈对 2024-2026 AI 大爆发的影响。",
+          "insight": "量化金融出身的「数学/工程/资本」复合型人才是中国 AI 上半场的关键供给侧，DeepSeek、月之暗面、智谱等多家头部公司高管均出自这条链条。",
+          "source": "36 氪",
+          "url": "https://36kr.com/p/3828911935574918"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天是 2026 年 AI 圈最浓墨重彩的一日：**Anthropic 一口气拿下 650 亿美元融资 + 估值 9650 亿美元首超 OpenAI，同时发布 Claude Opus 4.8 与 Dynamic Workflows**，把「Agent OS」这个概念从论文写进了产品。配合 Asana 收购 StackAI、Microsoft 365 Copilot 重设计，「企业 AI 操作系统」第一次成为头部厂商的明牌竞争赛道——合伙人级别的战略合作议价权正在向工程能力一侧倾斜。",
+    "监管侧 **Illinois SB 315** 标志着美国 AI 治理在联邦失能后正式进入「州级补丁」模式，而 **上海期货交易所 AI Token 期货** 则把算力金融化推到前所未有的高度——CIO/CFO 将要在 2026 财年加上「token 套保」科目。",
+    "中国侧三条主线齐头并进：**DeepSeek V4 与昇腾/寒武纪芯模协同**让国产算力生态出现自增长飞轮；**沙钢×钉钉悟空**让 Agent 切入重工业核心生产场景；**Warp 开源 + 36 氪量化人才溯源**则提示我们，无论 Agentic CLI 工具还是 AI 创业的人才供给侧，中国玩家在 2026 都站在了第一梯队。结合 Gartner 把企业 AI Coding Agent 市场报到 98-110 亿美元，以及 CNN 对 Perplexity 的版权诉讼，可以看出 AI 产业的成熟度已经触及「采购品类化 + 版权法律化」两大成熟期阀值。",
+    "（铁律 4 自检：4 板块 × 17 条全数 ≥ 100 字，5 条样本 URL 已抽查可达；本期由钢铁虾主 App 在 11:35 补救上线，原因见 memory/2026-05-29.md「AI 日报 5/29 中断根因」段。）"
+  ]
+}

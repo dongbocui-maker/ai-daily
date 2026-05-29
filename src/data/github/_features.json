@@ -2810,5 +2810,49 @@
     ],
     "sourceHash": "1a3c4aa5",
     "ts": 1779957957639
+  },
+  "revfactory/harness": {
+    "features": [
+      "将领域描述转化为 agent 团队和 skills 的 Claude Code 插件",
+      "内置 6 种预定义团队架构模式（pipeline、fan-out/fan-in 等）",
+      "自动生成定制化的 .claude/agents/ 和 .claude/skills/ 定义",
+      "支持英语、韩语、日语多语言命令触发",
+      "位于 Claude Code 生态的 L3 Meta-Factory 层"
+    ],
+    "sourceHash": "4ae46f0",
+    "ts": 1780044271738
+  },
+  "unclecode/crawl4ai": {
+    "features": [
+      "将网页转换为干净的 LLM 就绪 Markdown，适用于 RAG、agent 与数据管道",
+      "三层自动反爬虫检测，支持 proxy 升级与同意弹窗移除",
+      "Shadow DOM 扁平化与深度爬取，支持崩溃恢复和 resume_state 回调",
+      "prefetch 模式实现 5-10 倍更快的 URL 发现",
+      "提供 Cloud API 用于大规模、低成本网页抽取"
+    ],
+    "sourceHash": "-6069608f",
+    "ts": 1780044275860
+  },
+  "OpenMOSS/MOSS-TTS": {
+    "features": [
+      "开源语音与音效生成模型家族，支持高保真、高表现力合成",
+      "支持稳定长文本语音、多说话人对话和角色音色设计",
+      "基于 DiT 架构和 Flow Matching，生成 48kHz 双语音效",
+      "支持多语言合成、稳定的语音克隆和长参考短文本克隆",
+      "支持标点跟随韵律和 [pause X.Ys] 显式停顿控制"
+    ],
+    "sourceHash": "-65416965",
+    "ts": 1780044280219
+  },
+  "EveryInc/compound-engineering-plugin": {
+    "features": [
+      "通过 brainstorm、plan、review、compound 等 skill 构建 AI 辅助工程闭环",
+      "提供 /ce-strategy 维护 STRATEGY.md 作为产品策略锚点",
+      "支持 /ce-ideate 进行大方向构思并产出排序后的 ideation 产物",
+      "提供 /ce-code-review 和 /ce-doc-review 用于代码与文档审查",
+      "通过 /ce-compound 将经验知识沉淀为可复用资产"
+    ],
+    "sourceHash": "-5c586f6a",
+    "ts": 1780044284374
   }
 }

@@ -2854,5 +2854,71 @@
     ],
     "sourceHash": "-5c586f6a",
     "ts": 1780044284374
+  },
+  "anthropics/claude-code": {
+    "features": [
+      "终端内运行的 agentic 编码工具，通过自然语言命令操作代码库",
+      "自动执行常规任务、解释复杂代码并处理 git 工作流",
+      "支持终端、IDE 使用，或在 GitHub 中 @claude 触发",
+      "提供插件机制，通过自定义命令和 agents 扩展功能",
+      "内置 /bug 命令用于直接反馈问题"
+    ],
+    "sourceHash": "617ae166",
+    "ts": 1780126980271
+  },
+  "run-llama/liteparse": {
+    "features": [
+      "基于 PDFium 的快速本地 PDF 空间文本解析，含 bounding boxes",
+      "灵活 OCR 系统：内置 Tesseract，支持 HTTP 服务器及自定义 OCR API",
+      "生成高质量页面截图，供 LLM agent 使用",
+      "支持 PDF、DOCX、XLSX、PPTX 及图像等多种输入格式",
+      "跨语言可用：Rust、Node.js/TypeScript、Python 及浏览器 WASM"
+    ],
+    "sourceHash": "3665c038",
+    "ts": 1780126984503
+  },
+  "galilai-group/stable-worldmodel": {
+    "features": [
+      "统一接口覆盖 world model 研究的数据采集、训练与 model-predictive control 评估三阶段",
+      "内置常见 baseline 与 planning solver 的参考实现",
+      "提供大量标准化环境用于可复现的 world model 研究与评估",
+      "支持 LeRobot 数据集格式（可选扩展）",
+      "通过 $STABLEWM_HOME 统一管理数据集与 checkpoint 存储"
+    ],
+    "sourceHash": "cb5e7af",
+    "ts": 1780126987982
+  },
+  "Biohub/esm": {
+    "features": [
+      "ESMC：基于数十亿蛋白质序列训练的 SOTA 蛋白质语言模型",
+      "ESMFold2：基于 ESMC 6B 的 SOTA 结构预测模型，支持蛋白质相互作用设计",
+      "通过反演 ESMFold2 实现 de novo minibinder 与 scFv 抗体设计",
+      "ESM Atlas：覆盖 68 亿蛋白质、10 亿预测结构的生物多样性地图",
+      "通过稀疏自编码器（SAE）将 ESMC 内部表征解构为可解释特征"
+    ],
+    "sourceHash": "7dc674b5",
+    "ts": 1780126992400
+  },
+  "Crosstalk-Solutions/project-nomad": {
+    "features": [
+      "一键安装的离线知识与教育服务器，Debian 系统终端化部署",
+      "Command Center 管理 UI 与 API，通过 Docker 编排容器化工具与资源",
+      "内置基于 Ollama 或 OpenAI 兼容 API 的本地 AI 聊天与知识库",
+      "浏览器统一访问，无需桌面环境，可作为服务器远程使用",
+      "自动化处理工具安装、配置和更新，开箱即用"
+    ],
+    "sourceHash": "-4d732986",
+    "ts": 1780126996060
+  },
+  "DataTalksClub/data-engineering-zoomcamp": {
+    "features": [
+      "免费 9 周数据工程基础课程，构建端到端 data pipeline",
+      "涵盖 Docker、Terraform 容器化与基础设施即代码模块",
+      "使用 Kestra 进行 workflow orchestration 实战",
+      "基于 BigQuery 的数据仓库与 dbt analytics engineering 教学",
+      "包含 hands-on workshops、homework 与最终项目实践"
+    ],
+    "sourceHash": "34547e19",
+    "ts": 1780127000192
   }
 }

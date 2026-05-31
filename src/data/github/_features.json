@@ -2920,5 +2920,50 @@
     ],
     "sourceHash": "34547e19",
     "ts": 1780127000192
+  },
+  "OpenBMB/VoxCPM": {
+    "features": [
+      "基于 diffusion autoregressive 架构的 tokenizer-free 端到端语音合成系统",
+      "2B 参数模型，基于超 200 万小时多语种语音数据训练",
+      "支持 30 种语言直接合成，无需语言标签",
+      "Voice Design 功能：仅凭自然语言描述即可创建全新音色",
+      "Controllable Voice Cloning：短样本克隆并支持风格情感引导",
+      "输出 48kHz 录音棚级音质音频"
+    ],
+    "sourceHash": "37cd0120",
+    "ts": 1780215432884
+  },
+  "chen08209/FlClash": {
+    "features": [
+      "基于 ClashMeta 的多平台代理客户端，开源无广告",
+      "支持 Android、Windows、macOS 和 Linux 多平台",
+      "采用 Material You 设计，类 Surfboard UI 风格",
+      "支持通过 WebDAV 进行数据同步",
+      "支持订阅链接和深色模式"
+    ],
+    "sourceHash": "-1b7104cb",
+    "ts": 1780215435623
+  },
+  "FareedKhan-dev/train-llm-from-scratch": {
+    "features": [
+      "基于 Attention is All You Need 论文用 PyTorch 从零实现 Transformer 模型",
+      "提供脚本支持在单 GPU 上训练百万到十亿参数级 LLM",
+      "使用 Pile 数据集进行训练，涵盖书籍、文章、网页等多样化文本",
+      "逐步讲解 MLP、单头/多头注意力及 Transformer Block 的实现",
+      "包含模型训练、保存、损失监控与文本生成的完整流程"
+    ],
+    "sourceHash": "1de46c1b",
+    "ts": 1780215439647
+  },
+  "dreammis/social-auto-upload": {
+    "features": [
+      "一键将视频内容自动发布到抖音、Bilibili、小红书、快手、视频号、百家号、TikTok 等多个平台",
+      "支持各平台的视频上传、图文上传与定时发布功能",
+      "提供 sau CLI 工具，便于命令行批量操作与脚本化使用",
+      "内置 skills 模块，可对接 OpenClaw、Claude Code 等 AI Agent 自动化执行",
+      "基于浏览器自动化的登录与账号管理，模块化 uploader 易于扩展"
+    ],
+    "sourceHash": "-30337e9",
+    "ts": 1780215444290
   }
 }

@@ -1,11 +1,11 @@
 {
   "date": "2026-05-20",
-  "weekday": "周三",
-  "title": "AI 日报 · 2026-05-20",
+  "title": "📅 2026-05-20",
   "sections": [
     {
       "key": "news",
-      "title": "🔥 AI 热点新闻",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
       "items": [
         {
           "title": "👔 高层动态 | Karpathy 加入 Anthropic 预训练团队，OpenAI 联创回归一线",
@@ -46,7 +46,8 @@
     },
     {
       "key": "enterprise",
-      "title": "🏢 企业级 AI 实践",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
       "items": [
         {
           "title": "🛡️ 落地实践 | Cloudflare 公开 Project Glasswing 报告：把前沿安全模型从实验室搬进生产",
@@ -64,7 +65,7 @@
         },
         {
           "title": "🏭 工业落地 | NVIDIA 联手 Adobe / Salesforce / SAP / IQVIA 推出企业 Agent 平台 Agent Toolkit",
-          "body": "NVIDIA 上线 Agent Toolkit，将 Nemotron 开源模型、AI-Q 蓝图、OpenShell 运行时与 cuOpt 优化库打包。Adobe 把 Toolkit 作为长任务创意与营销 Agent 的基础底座；Salesforce 用 Nemotron 增强 Agentforce 服务/销售/营销代理；IQVIA 把 Nemotron 集成进 IQVIA.ai 生命科学平台；CrowdStrike 在 Falcon 中加入 Agentic MDR。",
+          "body": "NVIDIA 上线 Agent Toolkit，将 Nemotron 开源模型、AI-Q 蓝图、OpenShell 运行时与 cuOpt 优化库打包。Adobe 把 Toolkit 作为长任务创意与营销 Agent 的基础底座；Salesforce 用 Nemotron 增强 Agentforce 服务/销售/营销代理;IQVIA 把 Nemotron 集成进 IQVIA.ai 生命科学平台；CrowdStrike 在 Falcon 中加入 Agentic MDR。",
           "insight": "企业 AI 平台从「单一模型选型」变成「模型 + 蓝图 + 运行时 + 安全」一揽子方案——NVIDIA 不再只卖 GPU，正在把自己卡进每家头部 SaaS 的 Agent 栈底部。",
           "source": "VentureBeat",
           "url": "https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among"
@@ -80,7 +81,8 @@
     },
     {
       "key": "coding",
-      "title": "💻 AI Coding 动态",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
       "items": [
         {
           "title": "💻 模型发布 | Cursor Composer 2.5 GA：长任务可持续协作大幅提升，下一代将与 SpaceXAI 在 Colossus 2 上 10× 训练",
@@ -114,7 +116,8 @@
     },
     {
       "key": "report",
-      "title": "📊 深度报告与论文",
+      "label": "深度报告与论文",
+      "emoji": "📊",
       "items": [
         {
           "title": "📊 行业洞察 | Cloudflare 公开企业级 AI 安全 harness 的工程化范式（首次系统披露）",
@@ -133,7 +136,7 @@
         {
           "title": "🔬 技术研究 | DeepMind / Stanford 双 AI 助手在药物再利用任务上「双双成功」",
           "body": "Ars Technica 5 月 19 日报道：两个独立的 AI 科研助手（DeepMind 与 Stanford）在「老药新用」任务上独立得出与人类专家一致或更优的候选化合物，研究流程从文献检索到机制假设到候选筛选实现端到端自动化。被视为 AI for Science 在制药领域第一次跨过「能复现专家洞见」门槛。",
-          "insight": "对制药、生命科学客户：AI 不再只是文献摘要工具，已能进入「假设生成 + 候选筛选」核心研发环节——这是 Accenture L&S 行业团队下一年项目最直接的故事。",
+          "insight": "对制药与生命科学行业的 CIO 与研发决策者而言：AI 已不再仅是文献摘要工具，而能进入「假设生成 + 候选筛选」的核心研发环节，预示着未来一年企业级 AI for Science 项目的关键落点。",
           "source": "Ars Technica",
           "url": "https://arstechnica.com/science/2026/05/two-ai-based-science-assistants-succeed-with-drug-retargeting-tasks/"
         },
@@ -151,140 +154,5 @@
     "Google I/O 2026 与 Karpathy 加盟 Anthropic 同周登场——AI 头部公司的「人才 + 入口」双线对决正进入新阶段。Google 用 Gemini 3.5 Flash + Omni 把战线拉到搜索、Gmail、车载、智能眼镜全栈分发；Anthropic 用顶级研究员补足 OpenAI 系外溢的人才势能；阿里 Qwen 3.7 双 preview 与 Cursor Composer 2.5 同周登台，说明模型迭代仍在 2-3 个月一档的高速节奏里。",
     "企业级 AI 的关键词从「能不能做」彻底切到「怎么治理与运营」：NVIDIA Agent Toolkit、IBM watsonx Orchestrate Agent Control Plane、Cloudflare Glasswing 工程化 harness、钛媒体记录的中国一线 CIO 把安全前置到选型环节——共同指向同一个事实：单 Agent 性能已不是核心瓶颈，能否在生产环境治理「数字员工」才是。AI 安全和 Agent 治理正成为甲方采购评审的第一关。",
     "中国市场进入「商业闭环验证期」：百度萝卜快跑周订单破 35 万、单城盈利、海外车队启程；上交-瑞金 CX-Mind 把医学 AI 推到「可验证推理」门槛；阿里通义 Qwen 在 Arena 文本视觉双榜稳进全球前 6。对决策者而言：2026 年 ROI 衡量标准已不是「省了多少人」，而是「能否进入核心业务链路」——AI for Science / Robotaxi / 工业 Agent / 安全前置 是四条最值得跟进的主线。"
-  ],
-  "audit": {
-    "tieluFourScan": "今日全球 M&A / 战略合作铁律 4 扫描结果：(1) OpenAI/Anthropic 大型新合作或收并购——无新事件（Anthropic-Stainless 5/18 已发；OpenAI-Frontier Alliances / Accenture Federal / PwC 等近一周已发）。(2) Anthropic Accenture / Deloitte / 咨询——无新公告，仅历史合作（去年 12 月 Accenture-OpenAI、Accenture-Anthropic 三年战略已发）。(3) AI 咨询服务发布——无重大新动作。(4) 厂商动向：Google I/O 2026 全面 Gemini 化（已入选）、Karpathy 加入 Anthropic（已入选）、Cursor Composer 2.5（已入选）、Qwen 3.7 Preview（已入选）、NVIDIA Agent Toolkit（已入选）。明确无『新』重大合作/收并购公告——今日重大事件以产品发布与人才动向为主。",
-    "score_breakdown": {
-      "item_karpathy": {
-        "title": "Karpathy 加入 Anthropic",
-        "final_score": 9.5,
-        "signals": [
-          "HN-1118pts",
-          "smol-ai",
-          "techcrunch-#5",
-          "36kr-cn-editorial-#1"
-        ]
-      },
-      "item_gemini_3_5_flash": {
-        "title": "Gemini 3.5 Flash + Omni",
-        "final_score": 9.4,
-        "signals": [
-          "HN-497pts(Flash)+237pts(Omni)",
-          "techcrunch-#1/#8",
-          "verge-#5",
-          "smol-ai-mentioned"
-        ]
-      },
-      "item_gemini_omni": {
-        "title": "Gemini Omni",
-        "final_score": 8.2,
-        "signals": [
-          "HN-237pts",
-          "ars-technica-#3"
-        ]
-      },
-      "item_qwen_3_7": {
-        "title": "Qwen 3.7 Preview",
-        "final_score": 8.0,
-        "signals": [
-          "HN-246pts",
-          "smol-ai-mentioned"
-        ]
-      },
-      "item_baidu_robotaxi": {
-        "title": "百度萝卜快跑单城盈利",
-        "final_score": 7.8,
-        "signals": [
-          "qbit-cn-editorial-#4"
-        ]
-      },
-      "item_cloudflare_glasswing": {
-        "title": "Cloudflare Glasswing",
-        "final_score": 7.5,
-        "signals": [
-          "HN-357pts"
-        ]
-      },
-      "item_tmtpost_security": {
-        "title": "钛媒体 AI 安全选型",
-        "final_score": 7.0,
-        "signals": [
-          "editorial-context"
-        ]
-      },
-      "item_nvidia_agent_toolkit": {
-        "title": "NVIDIA Agent Toolkit",
-        "final_score": 7.2,
-        "signals": [
-          "venturebeat-direct"
-        ]
-      },
-      "item_ibm_orchestrate": {
-        "title": "IBM watsonx Orchestrate Agent Control Plane",
-        "final_score": 6.8,
-        "signals": [
-          "industry-event-coverage"
-        ]
-      },
-      "item_composer_2_5": {
-        "title": "Cursor Composer 2.5",
-        "final_score": 8.5,
-        "signals": [
-          "HN-278pts",
-          "smol-ai-mentioned",
-          "non-duplicate-confirmed (SpaceX/Colossus keyword overlap is shared infrastructure mention, not duplicate event)"
-        ]
-      },
-      "item_openai_image_provenance": {
-        "title": "OpenAI Image Provenance API + SynthID adoption",
-        "final_score": 7.4,
-        "signals": [
-          "techcrunch-#10",
-          "ars-technica-#2"
-        ]
-      },
-      "item_forge_guardrails": {
-        "title": "Forge guardrails 8B→99%",
-        "final_score": 7.6,
-        "signals": [
-          "HN-209pts"
-        ]
-      },
-      "item_simon_willison": {
-        "title": "Simon Willison 6-month LLM recap",
-        "final_score": 7.8,
-        "signals": [
-          "HN-728pts"
-        ]
-      },
-      "item_glasswing_report": {
-        "title": "Cloudflare Glasswing harness analysis",
-        "final_score": 7.0,
-        "signals": [
-          "industry-coverage"
-        ]
-      },
-      "item_ai_eats_world": {
-        "title": "AI eats the world Spring 2026",
-        "final_score": 7.3,
-        "signals": [
-          "HN-292pts"
-        ]
-      },
-      "item_drug_repurposing": {
-        "title": "DeepMind/Stanford drug-retargeting",
-        "final_score": 7.5,
-        "signals": [
-          "ars-technica-#1"
-        ]
-      },
-      "item_cx_mind": {
-        "title": "CX-Mind 胸片可验证推理",
-        "final_score": 6.8,
-        "signals": [
-          "qbit-cn-editorial-#8"
-        ]
-      }
-    }
-  }
+  ]
 }

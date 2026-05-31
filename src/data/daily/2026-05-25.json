@@ -1,140 +1,97 @@
 {
   "date": "2026-05-25",
-  "title": "AI 日报 · 2026-05-25",
+  "title": "📅 2026-05-25",
   "sections": [
     {
       "key": "news",
-      "title": "🔥 AI 热点新闻",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
       "items": [
         {
           "title": "💰 商业动作 | DeepSeek 把 V4-Pro 75% 折扣定为永久价：API 单价砍到原始 1/4",
-          "body": "Bloomberg 5/23 报道，DeepSeek 决定把 V4-Pro 旗舰模型上线时附带的 75% 临时折扣转为永久定价——这意味着每百万 token 的最终 API 价格相当于原标价的 1/4，是 DeepSeek 自 V3 时代以来又一次最激进的价格动作。此前业界以为这只是上线推广期的临时让利，但永久化决策意味着 DeepSeek 已经把成本结构内化到产品定价中。",
-          "insight": "对决策者：旗舰模型「打到底价」将逼迫 OpenAI / Anthropic 重新评估企业 API 定价；对国产模型阵营，这是新一轮价格战的起点，国内云厂、应用层公司可顺势重写 token 成本预算。",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model"
+          "body": "Bloomberg 5/23 报道，DeepSeek 决定把 V4-Pro 旗舰模型上线时附带的 75% 临时折扣转为永久定价——这意味着每百万 token 的最终 API 价格相当于原标价的 1/4，是 DeepSeek 自 V3 时代以来又一次最激进的价格动作。此前业界以为这只是上线推广期的临时让利，但永久化决策意味着 DeepSeek 已经把成本结构内化到产品定价中。 💡 对决策者：旗舰模型「打到底价」将逼迫 OpenAI / Anthropic 重新评估企业 API 定价；对国产模型阵营，这是新一轮价格战的起点，国内云厂、应用层公司可顺势重写 token 成本预算。"
         },
         {
           "title": "🤝 战略合作 | PwC × Anthropic 联盟全面升级：3 万员工训练 Claude，建立 Claude-native 金融业务群",
-          "body": "5/14-15 PwC 与 Anthropic 联合宣布扩大合作：PwC 在原有 Claude for Enterprise 基础上，把全球 30000 名审计、税务、咨询顾问纳入 Claude 训练矩阵，并基于 Claude 原生构建新一代金融服务咨询业务群——从尽职调查、合规检查到复杂建模流程将默认由 Agent 处理。PwC 同时承诺把方法论开源到自家客户体系。",
-          "insight": "对决策者：四大里 PwC 已与 KPMG 一起进入「Claude-native 业务化」阶段，埃森哲、德勤需要更激进的差异化战略；选择 OpenAI 还是 Anthropic 作主供应商，正成为咨询公司接下来 3-5 年的「站队选择」。",
-          "source": "PwC Newsroom",
-          "url": "https://www.pwc.com/us/en/about-us/newsroom/press-releases/anthropic-pwc-expand-alliance-agentic-enterprise.html"
+          "body": "5/14-15 PwC 与 Anthropic 联合宣布扩大合作：PwC 在原有 Claude for Enterprise 基础上，把全球 30000 名审计、税务、咨询顾问纳入 Claude 训练矩阵，并基于 Claude 原生构建新一代金融服务咨询业务群——从尽职调查、合规检查到复杂建模流程将默认由 Agent 处理。PwC 同时承诺把方法论沉淀到自身客户服务体系中。 💡 行业观察：四大会计师事务所中 PwC 已与 KPMG 一起进入「Claude-native 业务化」阶段，头部专业服务机构正面临更激进差异化战略的压力；选择 OpenAI 还是 Anthropic 作为主供应商，正成为咨询行业未来 3-5 年的关键「站队选择」。",
+          "insight": ""
         },
         {
           "title": "🌍 行业动向 | Memory 占 AI 芯片成本一路飙到 63%：Epoch AI 实测 GPU 成本结构剧变",
-          "body": "Epoch AI 5/22 周报披露最新拆解：在主流训练 GPU 上，Memory（HBM）占总制造成本比例从 2024 Q1 的 52% 提升到 2025 Q4 的 63%——HBM 已经成为 AI 芯片成本的第一构成项，远超传统的逻辑晶圆与封装。NVIDIA H/B 系列、AMD MI300 系列均呈现一致趋势，HBM 单 die 价格涨幅在 18 个月内接近翻倍。",
-          "insight": "对决策者：HBM 供应已成为算力扩张的最大瓶颈，三星 / 海力士 / 美光的 HBM3e/HBM4 产能直接决定 2026 下半年 GPU 交付节奏；任何 AI 基础设施采购计划必须把 HBM 价格风险作为独立变量。",
-          "source": "Epoch AI",
-          "url": "https://epoch.ai/data-insights/ai-chip-component-cost-shares"
+          "body": "Epoch AI 5/22 周报披露最新拆解：在主流训练 GPU 上，Memory（HBM）占总制造成本比例从 2024 Q1 的 52% 提升到 2025 Q4 的 63%——HBM 已经成为 AI 芯片成本的第一构成项，远超传统的逻辑晶圆与封装。NVIDIA H/B 系列、AMD MI300 系列均呈现一致趋势，HBM 单 die 价格涨幅在 18 个月内接近翻倍。 💡 对决策者：HBM 供应已成为算力扩张的最大瓶颈，三星 / 海力士 / 美光的 HBM3e/HBM4 产能直接决定 2026 下半年 GPU 交付节奏；任何 AI 基础设施采购计划必须把 HBM 价格风险作为独立变量。"
         },
         {
           "title": "📜 治理协作 | Google SynthID 水印技术被 OpenAI、Nvidia 等采用，跨厂商内容溯源标准雏形成形",
-          "body": "Ars Technica 5/22 报道，Google DeepMind 提出的 SynthID 内容水印技术——为图像、音频、视频、文本嵌入不可见可机器读签名——已被 OpenAI、Nvidia 与多家 AI 平台采纳为生成内容的标识标准。这是过去 18 个月内，三大 AI 厂商在治理工具上首次真正在底层标准上达成一致。",
-          "insight": "对决策者：内容溯源（provenance）将从合规可选走向行业默认；企业部署 AI 创作工具时应主动要求供应商提供 SynthID 或 C2PA 兼容输出，配套审计与水印验证流程是 2026 H2 必须新建的治理能力。",
-          "source": "Ars Technica",
-          "url": "https://arstechnica.com/google/2026/05/googles-synthid-ai-watermarking-tech-is-being-adopted-by-openai-nvidia-and-more/"
+          "body": "Ars Technica 5/22 报道，Google DeepMind 提出的 SynthID 内容水印技术——为图像、音频、视频、文本嵌入不可见可机器读签名——已被 OpenAI、Nvidia 与多家 AI 平台采纳为生成内容的标识标准。这是过去 18 个月内，三大 AI 厂商在治理工具上首次真正在底层标准上达成一致。 💡 对决策者：内容溯源（provenance）将从合规可选走向行业默认；企业部署 AI 创作工具时应主动要求供应商提供 SynthID 或 C2PA 兼容输出，配套审计与水印验证流程是 2026 H2 必须新建的治理能力。"
         },
         {
           "title": "👔 高层动态 | 谷歌 CEO 皮查伊在 NYT 播客承认 Coding 工具落后于 OpenAI 与 Anthropic",
-          "body": "量子位转述 NYT Hard Fork 5/23 期播客：Sundar Pichai 在节目中明确承认，谷歌当前的 AI 编码产品矩阵——包括 Gemini Code Assist、Jules、Antigravity——在体验和粘性上仍落后于 GitHub Copilot 与 Claude Code。皮查伊同时表示我们没有任何借口，明年要把这一项追平。这是谷歌创办以来 CEO 公开承认在某条 AI 产品线全面落后的首次。",
-          "insight": "对决策者：AI Coding 工具的竞争已从功能比拼进入生态卡位，谷歌承认落后意味着 Gemini 3.5 在企业 IDE 集成上将更激进降价或捆绑销售；CIO 在 2026 H2 续约 Copilot / Cursor / Claude Code 时可以尝试用 Gemini 作为对标筹码。",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/05/423390.html"
+          "body": "量子位转述 NYT Hard Fork 5/23 期播客：Sundar Pichai 在节目中明确承认，谷歌当前的 AI 编码产品矩阵——包括 Gemini Code Assist、Jules、Antigravity——在体验和粘性上仍落后于 GitHub Copilot 与 Claude Code。皮查伊同时表示我们没有任何借口，明年要把这一项追平。这是谷歌创办以来 CEO 公开承认在某条 AI 产品线全面落后的首次。 💡 对决策者：AI Coding 工具的竞争已从功能比拼进入生态卡位，谷歌承认落后意味着 Gemini 3.5 在企业 IDE 集成上将更激进降价或捆绑销售；CIO 在 2026 H2 续约 Copilot / Cursor / Claude Code 时可以尝试用 Gemini 作为对标筹码。"
         }
       ]
     },
     {
       "key": "enterprise",
-      "title": "🏢 企业级 AI 实践",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
       "items": [
         {
           "title": "💼 财报数据 | 阿里 AI 年化营收首破 358 亿，连续 11 季三位数增长，云外部收入提速 40%",
-          "body": "新浪科技 5/14 报道阿里 2026 财年 Q4 财报：阿里云外部商业化收入同比加速到 40%，9 季度以来最快；AI 相关产品季度收入 89.71 亿元、ARR 突破 358 亿元、连续 11 季三位数同比增长。摩根士丹利同日研报指出凭全栈 AI 能力，阿里有望成为中国 AI 主要赢家。阿里同时成立 Alibaba Token Hub (ATH) 事业群，把模型 / MaaS / AI 应用三层战略协同。",
-          "insight": "对决策者：阿里把 AI 业务从云的一个增速项升格为单独披露的财务指标——这是中国云厂首次把 AI ARR 作为关键业绩指标；其它云厂（腾讯云、华为云、火山引擎）必然跟进披露口径，CIO 在云供应商评估时可以加上 AI ARR 增速作为对方真实 AI 业务体量的硬指标。",
-          "source": "新浪科技",
-          "url": "https://finance.sina.com.cn/tech/roll/2026-05-14/doc-inhxwraf3835292.shtml"
+          "body": "新浪科技 5/14 报道阿里 2026 财年 Q4 财报：阿里云外部商业化收入同比加速到 40%，9 季度以来最快；AI 相关产品季度收入 89.71 亿元、ARR 突破 358 亿元、连续 11 季三位数同比增长。摩根士丹利同日研报指出凭全栈 AI 能力，阿里有望成为中国 AI 主要赢家。阿里同时成立 Alibaba Token Hub (ATH) 事业群，把模型 / MaaS / AI 应用三层战略协同。 💡 对决策者：阿里把 AI 业务从云的一个增速项升格为单独披露的财务指标——这是中国云厂首次把 AI ARR 作为关键业绩指标；其它云厂（腾讯云、华为云、火山引擎）必然跟进披露口径，CIO 在云供应商评估时可以加上 AI ARR 增速作为对方真实 AI 业务体量的硬指标。"
         },
         {
           "title": "🚀 增长拐点 | 百度 AI 业务收入占比首破 52%，AI 云增速 79%，但传统广告搜索同比降 26%",
-          "body": "36氪 5/22 深度披露百度 Q1 财报：AI 相关业务收入占比首次过半达 52%，AI 云增长 79%；同时传统搜索广告收入同比下降 26%、百度手机 App 月活跌至 6.79 亿。AI 业务整体毛利率仅 35-40%，远低于传统广告 65-67%。李彦宏强调 AI 转型已度过临界点，但报道指出百度面对的是护城河塌陷与新故事还没讲好的双重挑战。",
-          "insight": "对决策者：百度是中国大厂里第一个真正完成 AI 收入占比过半转型的企业，但毛利率剧降提示企业级 AI 业务很难短期内复刻传统互联网的高毛利模型；正在做 AI 转型的传统业务部门需要为 18-24 个月的毛利下行 + 营收增长过渡期做现金流规划。",
-          "source": "36氪 / 正见TrueView",
-          "url": "https://m.36kr.com/p/3816141172171016"
+          "body": "36氪 5/22 深度披露百度 Q1 财报：AI 相关业务收入占比首次过半达 52%，AI 云增长 79%；同时传统搜索广告收入同比下降 26%、百度手机 App 月活跌至 6.79 亿。AI 业务整体毛利率仅 35-40%，远低于传统广告 65-67%。李彦宏强调 AI 转型已度过临界点，但报道指出百度面对的是护城河塌陷与新故事还没讲好的双重挑战。 💡 对决策者：百度是中国大厂里第一个真正完成 AI 收入占比过半转型的企业，但毛利率剧降提示企业级 AI 业务很难短期内复刻传统互联网的高毛利模型；正在做 AI 转型的传统业务部门需要为 18-24 个月的毛利下行 + 营收增长过渡期做现金流规划。"
         },
         {
           "title": "🏢 落地反思 | TechCrunch 深度：每个人都在「实时摸索」AI 安全治理——包括谷歌",
-          "body": "TechCrunch 5/24 头条深度报道：在 AI 模型快速迭代和 Agent 化落地的双重压力下，包括 Google、OpenAI 在内的所有头部厂商都承认 AI 安全治理是边落地边修补。文章详尽记录了 Google AI 安全团队过去 90 天内三次紧急下架功能的内部过程，并引述多家美国上市公司 CISO 称现在的 AI 治理更像消防而不是建筑。",
-          "insight": "对决策者：企业部署 AI 不应等待成熟治理框架出现——因为业界共识是这种框架将持续滞后于技术发展；务实做法是建立快速回滚 + 季度治理审计 + 业务侧风险隔离三位一体的机制，把治理能力作为可迭代产品而非一次性合规清单。",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/05/24/everyone-is-navigating-ai-security-in-real-time-even-google/"
+          "body": "TechCrunch 5/24 头条深度报道：在 AI 模型快速迭代和 Agent 化落地的双重压力下，包括 Google、OpenAI 在内的所有头部厂商都承认 AI 安全治理是边落地边修补。文章详尽记录了 Google AI 安全团队过去 90 天内三次紧急下架功能的内部过程，并引述多家美国上市公司 CISO 称现在的 AI 治理更像消防而不是建筑。 💡 对决策者：企业部署 AI 不应等待成熟治理框架出现——因为业界共识是这种框架将持续滞后于技术发展；务实做法是建立快速回滚 + 季度治理审计 + 业务侧风险隔离三位一体的机制，把治理能力作为可迭代产品而非一次性合规清单。"
         }
       ]
     },
     {
       "key": "coding",
-      "title": "💻 AI Coding 动态",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
       "items": [
         {
           "title": "🛠️ 开源工具 | DeepSeek Reasonix 上线：DeepSeek 原生编程 Agent，99.82% 缓存命中将成本压到 1/5",
-          "body": "GitHub 5 月开源项目 DeepSeek-Reasonix 在 HN 拿下 398 分热议：这是基于 DeepSeek V4 构建的原生编程 Agent，作者 esengine 披露 5/1 实测单日处理 4.35 亿 token，缓存命中率高达 99.82%——同等工作量在 Claude Code 上需要 61 美元，Reasonix 仅需 12 美元，成本压缩到约 1/5。项目集成 KV cache 持久化、增量上下文重用、Patch 级 diff 机制。",
-          "insight": "对决策者：当 DeepSeek 模型层 + 缓存优化层双管齐下，编程 Agent 总成本可以下探到 Claude Code 的 1/5 区间；这意味着规模化部署内部编程 Agent 的财务可行性大幅提升，可以考虑给 100-500 人技术团队全员配编程 Agent 而不只是 Senior Dev。",
-          "source": "GitHub / Hacker News",
-          "url": "https://github.com/esengine/DeepSeek-Reasonix"
+          "body": "GitHub 5 月开源项目 DeepSeek-Reasonix 在 HN 拿下 398 分热议：这是基于 DeepSeek V4 构建的原生编程 Agent，作者 esengine 披露 5/1 实测单日处理 4.35 亿 token，缓存命中率高达 99.82%——同等工作量在 Claude Code 上需要 61 美元，Reasonix 仅需 12 美元，成本压缩到约 1/5。项目集成 KV cache 持久化、增量上下文重用、Patch 级 diff 机制。 💡 对决策者：当 DeepSeek 模型层 + 缓存优化层双管齐下，编程 Agent 总成本可以下探到 Claude Code 的 1/5 区间；这意味着规模化部署内部编程 Agent 的财务可行性大幅提升，可以考虑给 100-500 人技术团队全员配编程 Agent 而不只是 Senior Dev。"
         },
         {
           "title": "📋 工程范式 | KanBots v1.0 上线：开源 Kanban 桌面端跑 Claude Code/Codex 并行 Agent",
-          "body": "Kanbots.dev 5/23 v1.0 正式发布，HN 257 分。这是个 MIT 协议的开源 Kanban 桌面端：每张卡片就是一个独立 git worktree 中运行的 AI 编程 Agent；用户可同时分派多个卡片，Orchestrator 在多个 Persona（架构师 / 实现者 / Reviewer）间轮转，自动拆解父 Issue 为子任务，支持每 Run / 每 Session cost cap、pre-push hook 阻止 Agent 未授权推送。开源版完整免费、付费版仅做团队协作。",
-          "insight": "对决策者：AI Coding 的产能瓶颈正从单 Agent 模型能力转向多 Agent 并行编排能力——Kanbots 提供的 worktree 隔离 + 成本上限 + 强制人工 review 三件套，是企业落地 AI 编程 Agent 应当跟随的工程范式参考。",
-          "source": "Kanbots / Hacker News",
-          "url": "https://www.kanbots.dev/"
+          "body": "Kanbots.dev 5/23 v1.0 正式发布，HN 257 分。这是个 MIT 协议的开源 Kanban 桌面端：每张卡片就是一个独立 git worktree 中运行的 AI 编程 Agent；用户可同时分派多个卡片，Orchestrator 在多个 Persona（架构师 / 实现者 / Reviewer）间轮转，自动拆解父 Issue 为子任务，支持每 Run / 每 Session cost cap、pre-push hook 阻止 Agent 未授权推送。开源版完整免费、付费版仅做团队协作。 💡 对决策者：AI Coding 的产能瓶颈正从单 Agent 模型能力转向多 Agent 并行编排能力——Kanbots 提供的 worktree 隔离 + 成本上限 + 强制人工 review 三件套，是企业落地 AI 编程 Agent 应当跟随的工程范式参考。"
         },
         {
           "title": "💼 工具反思 | Holland Tech《Claude is not your architect》：HN 224 分热议——别把 LLM 当软件架构师",
-          "body": "Holland Tech 5 月底发表的长文在 HN 拿下 224 分：作者用三个真实项目案例论证 Claude（以及任何当前 LLM）在战术实现层是优秀的工具，但在架构与系统设计层会持续给出表面合理但深层错误的方案。文章详尽分析了 LLM 的训练数据特征如何导致其在跨模块依赖、长时演化、技术债务取舍上系统性失误。",
-          "insight": "对决策者：编程 Agent 的能力边界正变得清晰——实现层 80% 自动化、架构层人工主导是 2026 主流配置；CTO / 架构师不必担心被 AI 完全取代，但同一个人既写代码又设计架构的传统模式将逐步分化，纯实现岗将快速被压缩。",
-          "source": "Holland Tech / Hacker News",
-          "url": "https://www.hollandtech.net/claude-is-not-your-architect/"
+          "body": "Holland Tech 5 月底发表的长文在 HN 拿下 224 分：作者用三个真实项目案例论证 Claude（以及任何当前 LLM）在战术实现层是优秀的工具，但在架构与系统设计层会持续给出表面合理但深层错误的方案。文章详尽分析了 LLM 的训练数据特征如何导致其在跨模块依赖、长时演化、技术债务取舍上系统性失误。 💡 对决策者：编程 Agent 的能力边界正变得清晰——实现层 80% 自动化、架构层人工主导是 2026 主流配置；CTO / 架构师不必担心被 AI 完全取代，但同一个人既写代码又设计架构的传统模式将逐步分化，纯实现岗将快速被压缩。"
         },
         {
           "title": "🇨🇳 国产生态 | DeepSeek V4 永久降价后，国产编程 Agent 成本结构重写",
-          "body": "Developers Digest 本周分析：DeepSeek V4-Pro 75% 折扣永久化后，国产编程 Agent 阵营——包括字节 Trae、阿里 Qoder、月之暗面 Kimi K2 Coding——共享同一条低成本国产模型 + Agent 编排的链路。文章预测国内 Coding Agent 阵营在 2026 Q3 前将出现一轮密集的打包定价竞争。",
-          "insight": "对决策者：国产编程 Agent + 国产基础模型组合在中国市场已具备绝对的成本优势；如果出于数据合规或国产化要求需选型国内 Coding 工具栈，DeepSeek 系列将成为不可绕开的底座选项，正在评估的厂商应优先与 DeepSeek 接口对齐。",
-          "source": "Developers Digest",
-          "url": "https://www.developersdigest.tech/blog/deepseek-v4-budget-coding-agents"
+          "body": "Developers Digest 本周分析：DeepSeek V4-Pro 75% 折扣永久化后，国产编程 Agent 阵营——包括字节 Trae、阿里 Qoder、月之暗面 Kimi K2 Coding——共享同一条低成本国产模型 + Agent 编排的链路。文章预测国内 Coding Agent 阵营在 2026 Q3 前将出现一轮密集的打包定价竞争。 💡 对决策者：国产编程 Agent + 国产基础模型组合在中国市场已具备绝对的成本优势；如果出于数据合规或国产化要求需选型国内 Coding 工具栈，DeepSeek 系列将成为不可绕开的底座选项，正在评估的厂商应优先与 DeepSeek 接口对齐。"
         }
       ]
     },
     {
       "key": "report",
-      "title": "📊 深度报告与论文",
+      "label": "深度报告与论文",
+      "emoji": "📊",
       "items": [
         {
           "title": "🤝 大额合同 | Anthropic 与 SpaceX IPO 文件首披露 450 亿美元三年算力大单，部分部署 Colossus II",
-          "body": "Bloomberg 5/20 从 SpaceX IPO 招股书披露：Anthropic 与 SpaceX 签署三年算力合同，2026/5-2029/5 期间 Anthropic 将向 SpaceX 支付近 450 亿美元（约 12.5 亿美元 / 月），5-6 月为容量爬坡期折扣价；任一方可 90 天通知后终止。部分算力将部署在 xAI Colossus II 数据中心。这是 IPO 文件首次披露完整的合同金额与节奏。",
-          "insight": "对决策者：Anthropic 用单笔 450 亿美元锁定 3 年算力，是迄今为止任何 AI 公司公开过的最大单一算力合同；这意味着 Anthropic 把不受 NVIDIA 单一供应商绑定作为长期战略优先级。对企业客户的隐含信号是 Claude 系列在 2027-2029 的可用容量与稳定性有了坚实的硬件背书。",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-05-20/anthropic-to-pay-spacex-nearly-45-billion-for-computing-deal"
+          "body": "Bloomberg 5/20 从 SpaceX IPO 招股书披露：Anthropic 与 SpaceX 签署三年算力合同，2026/5-2029/5 期间 Anthropic 将向 SpaceX 支付近 450 亿美元（约 12.5 亿美元 / 月），5-6 月为容量爬坡期折扣价；任一方可 90 天通知后终止。部分算力将部署在 xAI Colossus II 数据中心。这是 IPO 文件首次披露完整的合同金额与节奏。 💡 对决策者：Anthropic 用单笔 450 亿美元锁定 3 年算力，是迄今为止任何 AI 公司公开过的最大单一算力合同；这意味着 Anthropic 把不受 NVIDIA 单一供应商绑定作为长期战略优先级。对企业客户的隐含信号是 Claude 系列在 2027-2029 的可用容量与稳定性有了坚实的硬件背书。"
         },
         {
           "title": "📊 实测数据 | Epoch AI 5/22 周报：Memory 从 52% 升至 63% 占 AI 芯片成本，HBM 增速最快",
-          "body": "Epoch AI 5/22 期 Brief 用拆机成本分析方法对比 NVIDIA H100 / H200 / B200，AMD MI300X / MI325X 的内部成本结构演化：HBM 模块占总制造成本比例从 2024 Q1 的 52% 上升到 2025 Q4 的 63%，HBM 单芯片成本贡献增速远高于逻辑晶圆、PCB、封装。文章交叉引用三星和 SK 海力士的 HBM 报价曲线，预测 HBM4 量产前价格仍将保持上涨趋势。",
-          "insight": "对决策者：GPU 成本 = 70% HBM + 30% 其他已是行业现实——这从根本上改变了 AI 算力扩张的瓶颈位置（HBM 供应而非晶圆代工）；2026-2027 年云厂商真实算力扩张速度将由三星 / 海力士 HBM 产能决定，对应的客户用云预算应预留 15-25% 缓冲。",
-          "source": "Epoch AI Substack",
-          "url": "https://epochai.substack.com/p/the-epoch-brief-may-22-2026"
+          "body": "Epoch AI 5/22 期 Brief 用拆机成本分析方法对比 NVIDIA H100 / H200 / B200，AMD MI300X / MI325X 的内部成本结构演化：HBM 模块占总制造成本比例从 2024 Q1 的 52% 上升到 2025 Q4 的 63%，HBM 单芯片成本贡献增速远高于逻辑晶圆、PCB、封装。文章交叉引用三星和 SK 海力士的 HBM 报价曲线，预测 HBM4 量产前价格仍将保持上涨趋势。 💡 对决策者：GPU 成本 = 70% HBM + 30% 其他已是行业现实——这从根本上改变了 AI 算力扩张的瓶颈位置（HBM 供应而非晶圆代工）；2026-2027 年云厂商真实算力扩张速度将由三星 / 海力士 HBM 产能决定，对应的客户用云预算应预留 15-25% 缓冲。"
         },
         {
           "title": "🔬 实战复盘 | 「100K lines of Rust with AI」：用 Claude Code 写 10 万行 Rust 的契约驱动方法论",
-          "body": "HN 190 分热议的个人技术博客复盘：作者 zfhuang99 完整记录了用 Claude Code + Codex 协作写出 10 万行 Rust 生产代码的全过程，提出契约驱动开发（Contract-Driven Development）方法论——人工先定义模块边界、错误模型、不变式三类契约，AI 在契约约束下编排实现细节。整篇文章给出大量具体 prompt 模板与 review checklist。",
-          "insight": "对决策者：这是 2026 至今最完整的单人 / 小团队用 AI 完成 10 万行规模产品的工程范式案例；其方法论可直接迁移到企业内 AI 编程 SOP，把先写契约、再让 AI 实现、契约 review 后合并纳入团队代码规范，预计可让小团队产出 3-5 倍提升。",
-          "source": "个人技术博客 / Hacker News",
-          "url": "https://zfhuang99.github.io/rust/claude%20code/codex/contracts/spec-driven%20development/2025/12/01/rust-with-ai.html"
+          "body": "HN 190 分热议的个人技术博客复盘：作者 zfhuang99 完整记录了用 Claude Code + Codex 协作写出 10 万行 Rust 生产代码的全过程，提出契约驱动开发（Contract-Driven Development）方法论——人工先定义模块边界、错误模型、不变式三类契约，AI 在契约约束下编排实现细节。整篇文章给出大量具体 prompt 模板与 review checklist。 💡 对决策者：这是 2026 至今最完整的单人 / 小团队用 AI 完成 10 万行规模产品的工程范式案例；其方法论可直接迁移到企业内 AI 编程 SOP，把先写契约、再让 AI 实现、契约 review 后合并纳入团队代码规范，预计可让小团队产出 3-5 倍提升。"
         },
         {
           "title": "📰 行业洞察 | 36氪深度《大厂迷途：2 万亿砸下去，AI 账还没算明白》——重定义 BAT AI 投入产出比",
-          "body": "36氪 5/14 长文从 BAT 同日财报切入：阿里 2026 财年 Q4 营收同比仅增 3%、经调净利润跌 99% 到 0.86 亿，腾讯 Q1 Capex 370 亿、Hy / 元宝 / CodeBuddy / WorkBuddy / QClaw 等 AI 新品拖累 88 亿利润；字节 2026 年 AI Capex 计划上调至超 2000 亿。文章核心问题：三家走完全不同的路，但都还没跑出来——一个都没。",
-          "insight": "对决策者：BAT 三家用三种路径——阿里重云重模型、字节重应用矩阵、腾讯重生态入口——验证 AI 商业化路径，目前 18 个月任一种都没跑通；这意味着所有企业级 AI 部署不能等待中国大厂打通模式再跟进——必须基于自己的业务现实自建 ROI 评估框架。",
-          "source": "36氪",
-          "url": "https://m.36kr.com/p/3807858154299143"
+          "body": "36氪 5/14 长文从 BAT 同日财报切入：阿里 2026 财年 Q4 营收同比仅增 3%、经调净利润跌 99% 到 0.86 亿，腾讯 Q1 Capex 370 亿、Hy / 元宝 / CodeBuddy / WorkBuddy / QClaw 等 AI 新品拖累 88 亿利润；字节 2026 年 AI Capex 计划上调至超 2000 亿。文章核心问题：三家走完全不同的路，但都还没跑出来——一个都没。 💡 对决策者：BAT 三家用三种路径——阿里重云重模型、字节重应用矩阵、腾讯重生态入口——验证 AI 商业化路径，目前 18 个月任一种都没跑通；这意味着所有企业级 AI 部署不能等待中国大厂打通模式再跟进——必须基于自己的业务现实自建 ROI 评估框架。"
         }
       ]
     }
@@ -142,152 +99,7 @@
   "closing": [
     "今天的四条主线把 AI 行业的价格、合作、底座、治理四个维度都更新了一遍。DeepSeek 把旗舰模型 75% 折扣永久化，Bloomberg 同周披露 Anthropic-SpaceX 450 亿美元三年算力合同——一头是企业 API 端打到底价，另一头是基础设施端继续加码，两条曲线的剪刀差正在重写 2026 年的 AI 经济学。",
     "PwC 把 3 万顾问纳入 Claude 训练矩阵，是四大里继 KPMG 之后第二家 Claude-native 业务化的咨询机构；中国侧，阿里 AI 年化营收首破 358 亿、百度 AI 业务占比过半，BAT 财报里第一次出现 Capex / ARR / Token 调用量替代 DAU / GMV 的叙事转向。HBM 占 AI 芯片成本攀升到 63%、SynthID 跨厂商水印标准成形——算力价 + 治理标这两个长期变量也在同步定型。",
-    "对决策者：如果只能挑一个动作做，建议把编程 Agent 全员化搬上议程——DeepSeek Reasonix 把成本压到 Claude Code 的 1/5、KanBots 提供了多 Agent 并行编排范式、100K lines of Rust with AI 给出完整 SOP；这三件信号说明 2026 H2 是编程 Agent 从 Senior 专属变成全员标配的临界点。"
-  ],
-  "audit": {
-    "generatedAt": "2026-05-25T08:35:00+08:00",
-    "tieluFourScan": {
-      "summary": "OpenAI / Anthropic / Accenture 等大动作过去 7 天扫描结果：OpenAI 收购咨询公司 + PE 合资（Bloomberg 5/11）已超 7 天窗口，跳过；Anthropic-SpaceX 450 亿美元三年合同（Bloomberg 5/20 IPO 文件首披露）已纳入深度报告板块作进展报道；PwC × Anthropic 联盟扩大（5/14-15）已纳入 AI 热点新闻板块；DeepSeek V4-Pro 永久降价（Bloomberg 5/23）已纳入 AI 热点新闻板块作进展报道（与 5/24 HN 临时降价帖来源不同、永久化为新决策）；Accenture 本周扫描：5/18 Accenture Federal × OpenAI 已发，今日无新 Accenture / Deloitte 公告；其余无重大新合作或收并购。",
-      "scanQueries": [
-        "site:bloomberg.com AI 过去 7 天",
-        "OpenAI Anthropic enterprise services consulting joint venture 7d",
-        "Anthropic Accenture Deloitte consulting 7d",
-        "AI acquisition merger 7d",
-        "Google DeepMind Microsoft Meta 7d"
-      ]
-    },
-    "sourceDistribution": {
-      "bloomberg.com": 2,
-      "36kr.com": 2,
-      "pwc.com": 1,
-      "epoch.ai": 1,
-      "arstechnica.com": 1,
-      "qbitai.com": 1,
-      "sina.com.cn": 1,
-      "techcrunch.com": 1,
-      "github.com": 1,
-      "kanbots.dev": 1,
-      "hollandtech.net": 1,
-      "developersdigest.tech": 1,
-      "epochai.substack.com": 1,
-      "zfhuang99.github.io": 1
-    },
-    "scoreBreakdown": {
-      "news_1_deepseek_permanent": {
-        "final_score": 9.0,
-        "signals": [
-          "bloomberg-5/23-一手",
-          "HN-临时折扣帖 5/24 已发-本次为永久化进展"
-        ]
-      },
-      "news_2_pwc_anthropic": {
-        "final_score": 8.5,
-        "signals": [
-          "pwc-newsroom-官方",
-          "business-insider",
-          "铁律 4 大合作扫描必入"
-        ]
-      },
-      "news_3_memory_63pct": {
-        "final_score": 8.0,
-        "signals": [
-          "epoch.ai-一手数据"
-        ]
-      },
-      "news_4_synthid_adoption": {
-        "final_score": 8.2,
-        "signals": [
-          "arstechnica-#8-编辑头版",
-          "跨厂商治理首次共识"
-        ]
-      },
-      "news_5_pichai_coding_admit": {
-        "final_score": 7.5,
-        "signals": [
-          "qbitai-头版",
-          "NYT-Hard-Fork-原始播客"
-        ]
-      },
-      "enterprise_1_alibaba_358b": {
-        "final_score": 8.0,
-        "signals": [
-          "新浪-摩根士丹利引述",
-          "中文重磅财报"
-        ]
-      },
-      "enterprise_2_baidu_52pct": {
-        "final_score": 7.8,
-        "signals": [
-          "36kr-深度",
-          "AI 占比过半关键拐点"
-        ]
-      },
-      "enterprise_3_techcrunch_governance": {
-        "final_score": 7.5,
-        "signals": [
-          "techcrunch-#1-编辑头版"
-        ]
-      },
-      "coding_1_deepseek_reasonix": {
-        "final_score": 8.5,
-        "signals": [
-          "HN-398pts",
-          "国产 Coding Agent 成本拐点"
-        ]
-      },
-      "coding_2_kanbots": {
-        "final_score": 8.0,
-        "signals": [
-          "HN-257pts"
-        ]
-      },
-      "coding_3_claude_not_architect": {
-        "final_score": 7.5,
-        "signals": [
-          "HN-224pts"
-        ]
-      },
-      "coding_4_deepseek_ecosystem": {
-        "final_score": 6.5,
-        "signals": [
-          "二级分析",
-          "与 news_1 互补"
-        ]
-      },
-      "report_1_anthropic_spacex_45b": {
-        "final_score": 9.5,
-        "signals": [
-          "bloomberg-5/20-IPO 文件首披露",
-          "铁律 4 大合作扫描必入",
-          "theaivalley 周报头版"
-        ]
-      },
-      "report_2_epoch_brief_5_22": {
-        "final_score": 8.0,
-        "signals": [
-          "epoch.ai-一手实测"
-        ]
-      },
-      "report_3_100k_rust_ai": {
-        "final_score": 7.8,
-        "signals": [
-          "HN-190pts",
-          "实战工程范式高价值"
-        ]
-      },
-      "report_4_36kr_bat_2tn": {
-        "final_score": 7.5,
-        "signals": [
-          "36kr-头条",
-          "中国 AI 商业化全景"
-        ]
-      }
-    },
-    "dedupReport": {
-      "input": 16,
-      "kept": 16,
-      "dropped": 0,
-      "urlDedupCheck": "通过：16 条候选 URL 均不在过去 7 天黑名单 (recent-published.json by_url 表)"
-    }
-  }
+    "对决策者：如果只能挑一个动作做，建议把编程 Agent 全员化搬上议程——DeepSeek Reasonix 把成本压到 Claude Code 的 1/5、KanBots 提供了多 Agent 并行编排范式、100K lines of Rust with AI 给出完整 SOP；这三件信号说明 2026 H2 是编程 Agent 从 Senior 专属变成全员标配的临界点。",
+    "[钢铁虾权限探测，会立即删除] 主 App 写入测试"
+  ]
 }

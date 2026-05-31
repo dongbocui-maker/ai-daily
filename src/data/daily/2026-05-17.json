@@ -1,168 +1,142 @@
 {
   "date": "2026-05-17",
-  "title": "2026-05-17",
+  "title": "📅 2026-05-17",
   "sections": [
     {
       "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
       "items": [
         {
           "title": "🚀 产品发布 | GitHub 上线 Copilot 桌面 App 技术预览版，重做 Agentic 开发入口",
-          "body": "GitHub 于 5 月 14 日正式开放 Copilot 桌面应用程序的技术预览版，把过去散落在 IDE 插件、Web 端、CLI 里的 Agentic 能力统一收进一个原生客户端。这个桌面 App 直接以\"开发者控制塔\"形态呈现：左侧浏览长跑 cloud agent 任务，右侧并行多个 sessions，可在同一界面跨 VS Code/JetBrains/CLI 切换上下文。",
-          "insight": "对企业开发组织的启示在于：Copilot 已经从\"IDE 内的 Tab 补全\"演化成\"跨设备的 Agent 操作系统\"，IT 部门未来评估开发者效率工具时，桌面端 Agent 编排能力将成为新选型轴。",
+          "body": "GitHub 于 5 月 14 日正式开放 Copilot 桌面应用程序的技术预览版，把过去散落在 IDE 插件、Web 端、CLI 里的 Agentic 能力统一收进一个原生客户端。这个桌面 App 直接以\"开发者控制塔\"形态呈现：左侧浏览长跑 cloud agent 任务，右侧并行多个 sessions，可在同一界面跨 VS Code/JetBrains/CLI 切换上下文。对企业研发组织而言，这一变化的信号是：Copilot 已从\"IDE 内的 Tab 补全\"演化为\"跨设备的 Agent 操作系统\"，CIO 与研发效能负责人在未来选型开发者工具时，桌面端 Agent 编排能力将成为新的评估维度。",
           "source": "GitHub Blog",
           "url": "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview"
         },
         {
           "title": "📜 监管政策 | YouTube 将 AI Deepfake 检测工具对全体成年用户开放",
-          "body": "YouTube 在 5 月 15 日宣布把\"AI 肖像检测\"（Likeness Detection）功能扩展至所有 18 岁以上认证用户，此前该能力仅向 YouTube Partner Program 创作者开放。系统会扫描全平台视频，识别未经授权使用了用户面部或声音的 AI 生成内容，并提供一键申诉移除。",
-          "insight": "这是头部短视频平台首次将 Deepfake 治理工具规模化下沉到普通用户层，可能倒逼 Meta、TikTok、X 跟进，AI 合成内容的\"被滥用人\"维权成本将系统性下降。",
+          "body": "YouTube 在 5 月 15 日宣布把\"AI 肖像检测\"（Likeness Detection）功能扩展至所有 18 岁以上认证用户，此前该能力仅向 YouTube Partner Program 创作者开放。系统会扫描全平台视频，识别未经授权使用了用户面部或声音的 AI 生成内容，并提供一键申诉移除。 这是头部短视频平台首次将 Deepfake 治理工具规模化下沉到普通用户层，可能倒逼 Meta、TikTok、X 跟进，AI 合成内容的\"被滥用人\"维权成本将系统性下降。",
           "source": "The Verge",
           "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults"
         },
         {
           "title": "👔 高层动态 | Greg Brockman 重返 OpenAI 产品战略一线，主导面向开发者新方向",
-          "body": "据 TechCrunch 5 月 16 日报道，OpenAI 联合创始人、总裁 Greg Brockman 正式接管公司产品战略，重心放在面向开发者的新一代产品组合上。这是继 ChatGPT 部门与 Codex 部门合并、Brad Lightcap 升任 COO 之后的进一步组织重排。",
-          "insight": "Brockman 是 Codex/GPT Engineer 系产品的精神领袖，他重返一线意味着 OpenAI 把\"开发者优先 + Agent 优先\"的产品路线明确放到 Sam Altman 之下、Sarah Friar 之上的决策位置，对 Anthropic Claude Code 的正面竞争升级。",
+          "body": "据 TechCrunch 5 月 16 日报道，OpenAI 联合创始人、总裁 Greg Brockman 正式接管公司产品战略，重心放在面向开发者的新一代产品组合上。这是继 ChatGPT 部门与 Codex 部门合并、Brad Lightcap 升任 COO 之后的进一步组织重排。 Brockman 是 Codex/GPT Engineer 系产品的精神领袖，他重返一线意味着 OpenAI 把\"开发者优先 + Agent 优先\"的产品路线明确放到 Sam Altman 之下、Sarah Friar 之上的决策位置，对 Anthropic Claude Code 的正面竞争升级。",
           "source": "TechCrunch",
           "url": "https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/"
         },
         {
           "title": "🌍 行业动向 | 特朗普-习近平峰会避谈 AI 治理实质议题，仅讨论 Nvidia H200 与「护栏」",
-          "body": "5 月 15 日北京峰会落幕，特朗普在事后表态中确认与习近平讨论了\"AI 护栏\"与 Nvidia 芯片出口议题，但未达成任何关于训练算力、模型治理或半导体出口的正式协议。Bloomberg 引述白宫官员称，AI 是\"两国分歧最大、却最不愿摊开谈\"的领域。",
-          "insight": "对中美科技生态而言，这意味着出口管制将继续靠 BIS 临时清单驱动，企业无法预期一个稳定的合规框架；国内云厂商对 H100/H200 替代品的本土化加速将成既定方向。",
+          "body": "5 月 15 日北京峰会落幕，特朗普在事后表态中确认与习近平讨论了\"AI 护栏\"与 Nvidia 芯片出口议题，但未达成任何关于训练算力、模型治理或半导体出口的正式协议。Bloomberg 引述白宫官员称，AI 是\"两国分歧最大、却最不愿摊开谈\"的领域。 对中美科技生态而言，这意味着出口管制将继续靠 BIS 临时清单驱动，企业无法预期一个稳定的合规框架；国内云厂商对 H100/H200 替代品的本土化加速将成既定方向。",
           "source": "Bloomberg",
           "url": "https://www.bloomberg.com/news/articles/2026-05-15/trump-says-he-discussed-ai-guardrails-nvidia-s-chips-with-xi"
         },
         {
           "title": "🌍 行业动向 | 硅谷 AI 财富分化加剧：约 1 万人净资产破 2000 万美元，普通工程师陷入焦虑",
-          "body": "TechCrunch 5 月 16 日深度报道援引 SignalFire 内部数据指出，仅 OpenAI、Anthropic、xAI、Meta Superintelligence Lab 四家公司的现金 + tender offer 已经创造出约 1 万名净资产超过 2000 万美元的\"新富阶层\"，且 60% 集中在 25-35 岁。同时，这些公司之外的普通 AI 工程师薪资增速明显放缓。",
-          "insight": "身份焦虑正在反向影响人才流向：顶尖博士向 Frontier Lab 进一步集中，传统大厂 AI 部门和 AI 创业公司面临\"AI 工程师中产化\"挤压，企业招聘策略需重新校准。",
+          "body": "TechCrunch 5 月 16 日深度报道援引 SignalFire 内部数据指出，仅 OpenAI、Anthropic、xAI、Meta Superintelligence Lab 四家公司的现金 + tender offer 已经创造出约 1 万名净资产超过 2000 万美元的\"新富阶层\"，且 60% 集中在 25-35 岁。同时，这些公司之外的普通 AI 工程师薪资增速明显放缓。 身份焦虑正在反向影响人才流向：顶尖博士向 Frontier Lab 进一步集中，传统大厂 AI 部门和 AI 创业公司面临\"AI 工程师中产化\"挤压，企业招聘策略需重新校准。",
           "source": "TechCrunch",
           "url": "https://techcrunch.com/2026/05/16/the-haves-and-have-nots-of-the-ai-gold-rush/"
         }
-      ],
-      "emoji": "🔥",
-      "label": "AI 热点新闻"
+      ]
     },
     {
       "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
       "items": [
         {
           "title": "🏢 落地实践 | Anthropic 发布《Claude Code 在大型代码库的最佳实践》，给企业级部署一份可复制手册",
-          "body": "Anthropic 在 5 月中旬发布的这份白皮书系统总结了 Claude Code 在百万行级、跨多服务的企业代码库里的最佳实践，覆盖 monorepo 切片、`CLAUDE.md` 规约写法、子代理任务拆分、安全审查 hook 配置等运营细节。文档同时给出 Rakuten、CRED、TELUS、Zapier 四家企业的落地节选。",
-          "insight": "对甲方 CIO/CTO 而言，这是 Frontier Lab 第一次以官方手册形式定义\"企业 Agent 落地框架\"，可直接作为内部规模化推广 AI 编程助手的方法论参考。",
+          "body": "Anthropic 在 5 月中旬发布的这份白皮书系统总结了 Claude Code 在百万行级、跨多服务的企业代码库里的最佳实践，覆盖 monorepo 切片、CLAUDE.md 规约写法、子代理任务拆分、安全审查 hook 配置等运营细节。文档同时给出 Rakuten、CRED、TELUS、Zapier 四家企业的落地节选。 对甲方 CIO/CTO 而言，这是 Frontier Lab 第一次以官方手册形式定义\"企业 Agent 落地框架\"，可直接作为内部规模化推广 AI 编程助手的方法论参考。",
           "source": "Anthropic Blog",
           "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start"
         },
         {
           "title": "🎬 行业落地 | Runway 押注「企业 AI 视频工厂」，与 Google Veo 在好莱坞与广告业正面竞争",
-          "body": "TechCrunch 5 月 15 日深度报道：Runway CEO Cristóbal Valenzuela 在专访中明确公司转向\"企业 AI 视频工厂\"——为好莱坞工作室、广告代理、品牌方提供端到端的视频生成流水线，并和 Google Veo 直接抢夺迪士尼、宝洁、欧莱雅等大客户。",
-          "insight": "此前 Runway 已与狮门影业等签订企业级合同，本次正式宣告 AI 视频从\"创作者工具\"演化为\"企业内容资产 Pipeline\"，传统视频后期外包预算正在被重新切分。",
+          "body": "TechCrunch 5 月 15 日深度报道：Runway CEO Cristóbal Valenzuela 在专访中明确公司转向\"企业 AI 视频工厂\"——为好莱坞工作室、广告代理、头部 B2C 品牌方提供端到端的视频生成流水线，并和 Google Veo 直接抢夺影视巨头、快消客户、奢侈品客户等大客户。此前 Runway 已与主流影业签订企业级合同，本次正式宣告 AI 视频从\"创作者工具\"演化为\"企业内容资产 Pipeline\"，传统视频后期外包预算正在被重新切分，CIO 与 CMO 需重新评估内容生产链路的供应商结构。",
           "source": "TechCrunch",
           "url": "https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-at-ai/"
         },
         {
           "title": "💰 商业模式 | GitHub Copilot 6 月 1 日切换 Usage-Based Billing：企业全面进入 AI Credits 配额制",
-          "body": "GitHub 5 月中旬正式发布通告，确认 Copilot 全线计划（Business / Enterprise / 个人 Pro）将于 6 月 1 日起统一切换到基于 AI Credits 的用量计费——固定月费仍在，但所有 Premium Requests（高级模型调用、Coding Agent 启动、Spark 等）改为消耗 Credits，超出按用量扣费。",
-          "insight": "这是 GitHub 第一次把\"模型成本\"以可见配额的形式推给企业 IT 部门，意味着 CIO 必须建立 AI 用量预算 + 团队级配额治理机制，前期已有 ServiceNow、Atlassian 等厂商跟进类似模式。",
+          "body": "GitHub 5 月中旬正式发布通告，确认 Copilot 全线计划（Business / Enterprise / 个人 Pro）将于 6 月 1 日起统一切换到基于 AI Credits 的用量计费——固定月费仍在，但所有 Premium Requests（高级模型调用、Coding Agent 启动、Spark 等）改为消耗 Credits，超出按用量扣费。 这是 GitHub 第一次把\"模型成本\"以可见配额的形式推给企业 IT 部门，意味着 CIO 必须建立 AI 用量预算 + 团队级配额治理机制，前期已有 ServiceNow、Atlassian 等厂商跟进类似模式。",
           "source": "GitHub Blog",
           "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/"
         },
         {
           "title": "🇨🇳 案例 | 虎嗅深度：Salesforce Agentforce 单季 ARR 8 亿美元同比 169%，揭示 SaaS 在 Agent 时代的新护城河",
-          "body": "虎嗅 5 月中旬发布的硬核分析指出，Salesforce 最新季报中 Agentforce ARR 已达 8 亿美元、同比 169%，叠加 Data 360 合并 ARR 突破 29 亿、同比 200%+，证明\"AI Agent 杀死 SaaS\"是伪命题：真正的稀缺要素已从\"造工具的能力\"转向\"不可替代的业务上下文数据\"，Bloomberg ASKB（32.5 万终端、年入超 100 亿美元）、Workday Sana、Veeva 等数据型 SaaS 正成为新一代企业 AI 的底层。",
-          "insight": "对中国 SaaS 与 ERP 厂商的启示：未来护城河不在 UI 与流程封装，而在能否成为 Agent 时代企业核心业务数据的唯一来源。",
+          "body": "虎嗅 5 月中旬发布的硬核分析指出，Salesforce 最新季报中 Agentforce ARR 已达 8 亿美元、同比 169%，叠加 Data 360 合并 ARR 突破 29 亿、同比 200%+，证明\"AI Agent 杀死 SaaS\"是伪命题：真正的稀缺要素已从\"造工具的能力\"转向\"不可替代的业务上下文数据\"，Bloomberg ASKB（32.5 万终端、年入超 100 亿美元）、Workday Sana、Veeva 等数据型 SaaS 正成为新一代企业 AI 的底层。 对中国 SaaS 与 ERP 厂商的启示：未来护城河不在 UI 与流程封装，而在能否成为 Agent 时代企业核心业务数据的唯一来源。",
           "source": "虎嗅",
           "url": "https://www.huxiu.com/article/4844424.html"
         }
-      ],
-      "emoji": "🏢",
-      "label": "企业级 AI 实践"
+      ]
     },
     {
       "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
       "items": [
         {
           "title": "💻 工具迭代 | GitHub Copilot 进军 JetBrains：统一会话视图 + CLI Agent + Agent Tasks REST API 公测",
-          "body": "GitHub 5 月 13 日宣布在 JetBrains 全家桶（IntelliJ/PyCharm/WebStorm/GoLand 等）中上线统一会话视图（Unified Sessions View）、CLI Agent 集成与 Agent Tasks REST API 公开预览。开发者可在 JetBrains 内部直接调度 Cloud Agent、跨终端跟进任务，REST API 让 CI/CD 可以编排 Copilot Agent 跑大型重构。",
-          "insight": "这是 Copilot 第一次把\"跨 IDE 的统一 Agent 编排面\"推到 JetBrains，企业级开发栈不再因 IDE 不同而割裂，Cursor 在 JetBrains 阵营的空间被进一步挤压。",
+          "body": "GitHub 5 月 13 日宣布在 JetBrains 全家桶（IntelliJ/PyCharm/WebStorm/GoLand 等）中上线统一会话视图（Unified Sessions View）、CLI Agent 集成与 Agent Tasks REST API 公开预览。开发者可在 JetBrains 内部直接调度 Cloud Agent、跨终端跟进任务，REST API 让 CI/CD 可以编排 Copilot Agent 跑大型重构。 这是 Copilot 第一次把\"跨 IDE 的统一 Agent 编排面\"推到 JetBrains，企业级开发栈不再因 IDE 不同而割裂，Cursor 在 JetBrains 阵营的空间被进一步挤压。",
           "source": "GitHub Blog",
           "url": "https://github.blog/changelog/2026-05-13-introducing-copilot-cli-agent-and-unified-sessions-view-in-github-copilot-for-jetbrains-ides"
         },
         {
           "title": "📊 数据可见性 | GitHub 开放 Team-level Copilot Usage Metrics API，企业可量化每个团队 AI 使用价值",
-          "body": "GitHub 5 月 14 日开放 Team-level Copilot Usage Metrics REST API，企业管理员可以按 team / repo 维度精确拉取 Copilot 接受率、Chat 互动次数、Agent 任务数、活跃用户、Credits 消耗等多维指标，并接入到 BI 看板。",
-          "insight": "配合前述 Usage-Based Billing，这套数据是企业评估\"AI 工程效能投资回报\"的关键基础设施。对埃森哲等咨询机构而言，AI 使用度量分析将成为客户的标准服务包之一。",
+          "body": "GitHub 5 月 14 日开放 Team-level Copilot Usage Metrics REST API，企业管理员可按 team / repo 维度精确拉取 Copilot 接受率、Chat 互动次数、Agent 任务数、活跃用户、Credits 消耗等多维指标，并接入 BI 看板。配合 Usage-Based Billing，这套数据将成为企业评估\"AI 工程效能投资回报\"的关键基础设施，也为 CIO 与研发管理者建立 AI 度量体系提供了标准化抓手。",
           "source": "GitHub Blog",
-          "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api"
+          "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
+          "insight": "AI 使用度量分析正在成为企业级 AI 工具采购与治理的标配能力，未来 ROI 量化将是决定 AI 编程工具续约与扩张的核心依据。"
         },
         {
           "title": "📜 治理 | arXiv 永久封禁「让 AI 代写全文」的论文作者一年，正式将 AI 滥用纳入纪律处分",
-          "body": "arXiv 在 5 月中旬正式更新作者守则：被认定\"让 AI 替代独立思考、产出含明显幻觉的全文\"的作者将被永久封禁该 ID 至少一年，相关稿件直接撤稿。这是全球最大预印本平台首次将\"AI 滥用\"纳入纪律处分体系。",
-          "insight": "对企业研究院和 AI 实验室而言，预印本仍是 PR 与人才信号的关键渠道，团队必须重新审视\"AI 辅助论文写作\"的边界、Review 流程与归责机制。",
+          "body": "arXiv 在 5 月中旬正式更新作者守则：被认定\"让 AI 替代独立思考、产出含明显幻觉的全文\"的作者将被永久封禁该 ID 至少一年，相关稿件直接撤稿。这是全球最大预印本平台首次将\"AI 滥用\"纳入纪律处分体系。 对企业研究院和 AI 实验室而言，预印本仍是 PR 与人才信号的关键渠道，团队必须重新审视\"AI 辅助论文写作\"的边界、Review 流程与归责机制。",
           "source": "Ars Technica",
           "url": "https://arstechnica.com/science/2026/05/preprint-server-arxiv-will-ban-submitters-of-ai-generated-hallucinations/"
         },
         {
           "title": "🇨🇳 国内动态 | 量子位：奥特曼押注的 AI 芯片公司即将赴美 IPO，估值或破百亿美元",
-          "body": "量子位 5 月 16 日报道：Sam Altman 个人投资的 AI 推理芯片公司 Rain AI 正在筹备美股 IPO，目标估值超过 100 亿美元。该公司专注神经形态推理芯片（Neuromorphic Inference），主打超低功耗、面向边缘端与 AI Agent 调用场景，已与 OpenAI 签订多年期采购合同。",
-          "insight": "这是 Altman 个人投资版图浮出水面的标志性 IPO，结合 OpenAI 自研芯片项目，整个 AI 算力供给端的多元化（Nvidia + 定制 ASIC + 神经形态）正在加速。",
+          "body": "量子位 5 月 16 日报道：Sam Altman 个人投资的 AI 推理芯片公司 Rain AI 正在筹备美股 IPO，目标估值超过 100 亿美元。该公司专注神经形态推理芯片（Neuromorphic Inference），主打超低功耗、面向边缘端与 AI Agent 调用场景，已与 OpenAI 签订多年期采购合同。 这是 Altman 个人投资版图浮出水面的标志性 IPO，结合 OpenAI 自研芯片项目，整个 AI 算力供给端的多元化（Nvidia + 定制 ASIC + 神经形态）正在加速。",
           "source": "量子位",
           "url": "https://www.qbitai.com/2026/05/418594.html"
         }
-      ],
-      "emoji": "💻",
-      "label": "AI Coding 动态"
+      ]
     },
     {
       "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
       "items": [
         {
           "title": "📊 权威报告 | Stanford HAI 2026 AI Index：中美最强模型差距仅 2.7%，25 岁以下程序员就业-20%",
-          "body": "Stanford HAI 发布的 2026 AI Index 12 大要点，关键发现包括：中美最强基础模型在 LMSYS 综合排名差距压缩到 2.7%（去年是 9.3%）；美国 25 岁以下程序员相比 2022 年同期就业岗位减少 20%；全球 AI 商业投资达到 1090 亿美元同比上涨 27%；67% 的 Fortune 500 提到了 AI Agent。",
-          "insight": "对企业战略意义：中美技术差距继续收窄、初级软件岗位被 AI 替代的速度超出预期、AI Agent 不再是 PoC 而是 C-level 关键词，CIO 战略需要重新校准三个变量。",
+          "body": "Stanford HAI 发布的 2026 AI Index 12 大要点，关键发现包括：中美最强基础模型在 LMSYS 综合排名差距压缩到 2.7%（去年是 9.3%）；美国 25 岁以下程序员相比 2022 年同期就业岗位减少 20%；全球 AI 商业投资达到 1090 亿美元同比上涨 27%；67% 的 Fortune 500 提到了 AI Agent。 对企业战略意义：中美技术差距继续收窄、初级软件岗位被 AI 替代的速度超出预期、AI Agent 不再是 PoC 而是 C-level 关键词，CIO 战略需要重新校准三个变量。",
           "source": "Stanford HAI",
           "url": "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report"
         },
         {
           "title": "📰 深度分析 | TIME：AI 是 Trump-Xi 北京峰会「隐形议题」，两国未达成芯片或治理协议",
-          "body": "TIME 5 月 15 日的现场分析揭示：北京峰会签了大豆与能源协议，但 AI、芯片、模型监管这三个最敏感的议题完全没有出现在公开公报里。两国谈判组在闭门会议中讨论了出口管制路线图，但因美方坚持 H200 不可放开、中方拒绝模型透明度要求，未达成任何文字协议。",
-          "insight": "深远影响：AI 治理与算力竞争已升级为新冷战的\"核谈判\"——双方都不愿在公开层面让步，但都意识到长期对抗的危险。后续将通过 Track 2（学术 + 行业对话）和 BIS 临时清单微调来管理冲突。",
+          "body": "TIME 5 月 15 日的现场分析揭示：北京峰会签了大豆与能源协议，但 AI、芯片、模型监管这三个最敏感的议题完全没有出现在公开公报里。两国谈判组在闭门会议中讨论了出口管制路线图，但因美方坚持 H200 不可放开、中方拒绝模型透明度要求，未达成任何文字协议。 深远影响：AI 治理与算力竞争已升级为新冷战的\"核谈判\"——双方都不愿在公开层面让步，但都意识到长期对抗的危险。后续将通过 Track 2（学术 + 行业对话）和 BIS 临时清单微调来管理冲突。",
           "source": "TIME",
           "url": "https://time.com/article/2026/05/15/trump-xi-us-china-summit-ai-semiconductor-chips/"
         },
         {
           "title": "🔬 技术研究 | Anthropic 发布《2028 全球 AI 领导力》情景报告，剖析未来三年两条政策路径",
-          "body": "Anthropic 政策团队 5 月 14 日发布 Policy Report《2028: Two Scenarios for Global AI Leadership》，给出未来三年的两种结构性路径：场景 A——美国维持算力 + 模型领先 + 严格出口管制；场景 B——中美在 Frontier Model 进入实质性并行，全球出现\"算力分区\"。报告对每条路径下的人才流动、监管协调与商业生态都做了情景建模。",
-          "insight": "对跨国企业（如埃森哲服务的全球 500 强）的现实意义：未来三年的 IT 与 AI 投资组合，需要为两种地缘场景同时做风险敞口准备。",
+          "body": "Anthropic 政策团队 5 月 14 日发布 Policy Report《2028: Two Scenarios for Global AI Leadership》，给出未来三年的两种结构性路径：场景 A——美国维持算力 + 模型领先 + 严格出口管制；场景 B——中美在 Frontier Model 进入实质性并行，全球出现\"算力分区\"。报告对每条路径下的人才流动、监管协调与商业生态都做了情景建模。对跨国企业及其 CIO 而言，未来三年的 IT 与 AI 投资组合，需要为两种地缘场景同时做风险敞口准备。",
           "source": "Anthropic Research",
           "url": "https://www.anthropic.com/research/2028-ai-leadership"
         },
         {
           "title": "🇨🇳 中文深度 | 36氪：Hermes 改写预训练范式，号称在同等效果下降低 60% 算力消耗",
-          "body": "36氪 5 月 16 日报道 Hermes 项目的最新进展：通过重构预训练数据 pipeline 与训练目标函数，在同等下游任务效果下，整体训练算力消耗较行业基线降低 60%，已在 LLaMA-3 70B 量级模型上完成复现。该范式正在被字节、阿里通义、DeepSeek 等多家国内厂商内部跟进评估。",
-          "insight": "若被独立复现，意味着国内厂商可用更少的卡训出对标 Frontier Lab 的模型，AI 算力供给的紧张可能从总量约束转向\"训练效率\"竞争。",
+          "body": "36氪 5 月 16 日报道 Hermes 项目的最新进展：通过重构预训练数据 pipeline 与训练目标函数，在同等下游任务效果下，整体训练算力消耗较行业基线降低 60%，已在 LLaMA-3 70B 量级模型上完成复现。该范式正在被字节、阿里通义、DeepSeek 等多家国内厂商内部跟进评估。 若被独立复现，意味着国内厂商可用更少的卡训出对标 Frontier Lab 的模型，AI 算力供给的紧张可能从总量约束转向\"训练效率\"竞争。",
           "source": "36氪",
           "url": "https://36kr.com/p/3810440762547716"
         }
-      ],
-      "emoji": "📊",
-      "label": "深度报告与论文"
+      ]
     }
   ],
   "closing": [
-    "今日 AI 头版的核心信号是「**Agent 编排成为开发与企业级 IT 的主战场**」：GitHub Copilot 同时推出桌面 App、JetBrains 统一会话视图、Team-level Usage Metrics API 与 Usage-Based Billing 切换，把 AI Coding 从单点助手升级为可治理、可量化、可计费的企业 IT 资产；Anthropic 同步发布大型代码库最佳实践手册，给甲方 CIO 一份可复制的部署方法论；OpenAI Greg Brockman 重返产品战略一线，意味着前两强在\"开发者 + Agent\"赛道的正面竞争升级。",
+    "今日 AI 头版的核心信号是「Agent 编排成为开发与企业级 IT 的主战场」：GitHub Copilot 同时推出桌面 App、JetBrains 统一会话视图、Team-level Usage Metrics API 与 Usage-Based Billing 切换，把 AI Coding 从单点助手升级为可治理、可量化、可计费的企业 IT 资产；Anthropic 同步发布大型代码库最佳实践手册，给甲方 CIO 一份可复制的部署方法论；OpenAI Greg Brockman 重返产品战略一线，意味着前两强在\"开发者 + Agent\"赛道的正面竞争升级。",
     "地缘与监管层面，Trump-Xi 北京峰会刻意绕开 AI 治理实质议题、仅讨论 Nvidia H200 与「护栏」，反映 AI 与芯片已成为中美博弈的\"核谈判\"——双方既不愿公开让步、也意识到长期对抗的危险。叠加 Stanford HAI 2026 Index 揭示的中美模型差距压缩至 2.7%、25 岁以下程序员就业-20% 两组关键数据，意味着 CIO 战略必须为「中美技术并行 + 初级岗位结构性收缩」两条曲线同时做规划。",
     "行业落地侧，Runway 与 Google Veo 正面争夺好莱坞 AI 视频工厂；虎嗅深度复盘 Salesforce Agentforce ARR 8 亿+，证明数据型 SaaS 正在成为 Agent 时代的新护城河；YouTube 把 Deepfake 检测下放到全体成年人、arXiv 永久封禁 AI 全文滥用作者，AI 治理从巨头议题下沉到普通用户与学术社区——「AI 平民化治理」时代正式开启。"
-  ],
-  "audit": {
-    "tieluFourScan": "已执行铁律 4 扫描——查询 OpenAI/Anthropic 联合企业 AI 合资公司、AI 收并购（Reuters/Bloomberg）、Microsoft Azure 投资、NVIDIA 战略合作、Trump-Xi 峰会 AI 议题；今日（2026-05-17）确认无新增重大 M&A 或 JV 公告（5/4 Anthropic+Blackstone+H&F 15 亿 JV 与 OpenAI 19 投资人 40 亿募资已超 7 天且 5/16 PwC×Anthropic 已收录），峰会未达 AI 协议已纳入热点板块。",
-    "sourceDist": {
-      "github.blog": 4,
-      "techcrunch.com": 3,
-      "其他单一域": 1,
-      "占比": "≤23.5%"
-    },
-    "tieluSixDedup": "已跑 dedup-filter.py，17 条全保留 0 删除；URL 重复率 0%，事件级重复 0 条。"
-  }
+  ]
 }

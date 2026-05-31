@@ -1,80 +1,24 @@
 {
   "date": "2026-05-31",
-  "title": "📅 2026-05-31",
+  "title": "AI 日报 · 2026-05-31",
   "sections": [
     {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
-      "items": [
-        {
-          "title": "🤝 战略合作 | KPMG 与 Anthropic 签全球联盟，Claude Cowork 嵌入四大客户交付平台",
-          "body": "5 月 4 日成立的 Anthropic × Blackstone × Hellman & Friedman 15 亿美元 AI 服务合资企业完成首笔收购——AI 工程公司 Fractional AI。Anthropic 高管 Garvan Doyle 称意在弥合「先进模型」与「实际业务部署」之间的鸿沟；Blackstone 看中其在被投组合内的落地工程经验。 Kog AI 公布在标准 GPU 上实现单请求 3000 tokens/s 的实时 LLM 推理工程方案，HN 获 211 分热议。团队通过推理引擎层优化把吞吐推到极限，论证不依赖专用 ASIC、在通用硬件上也能逼近实时交互体验，对自建推理栈的团队有直接参考价值。 据 The Information，Meta 计划未来一年内测试一款 AI 吊坠，作为可记录、转写真实对话并总结每日交互的个人 AI 助理；同时规划「面向工作的可穿戴」产品线。可穿戴 VP Alex Himel 内部备忘录称目标是让更多人用 Meta 模型并付费订阅，以扭转硬件部门亏损。沿用去年收购的 Limitless 吊坠技术。 AI 芯片公司 Groq 正向现有投资者募资至多 6.5 亿美元。此前去年 12 月它与 Nvidia 签下 170 亿美元授权大单、核心团队大量出走后，Groq 把战略重心从卖硬件转向「推理 neocloud」——用自研芯片与系统对外提供推理服务。 路透专栏指出，美国超大规模厂商的 AI 资本开支已超越 1990 年代末互联网泡沫的投资强度，市场对「回报能否覆盖天量投入」的担忧上升。但作者认为这次大概率不会重演 dotcom 式崩盘——资金集中在少数有真实现金流的巨头手中，与当年烧钱的纯概念公司有本质区别。",
-          "source": "Kog AI Blog / Hacker News",
-          "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/",
-          "insight": "前沿厂商正用 PE 资本搭建「模型 + 落地工程」的第二营收层，绕过纯 API 模式直接切入企业实施利润池。"
-        }
-      ]
-    },
-    {
       "key": "news",
-      "label": "AI 热点新闻",
-      "emoji": "🔥",
+      "title": "🔥 AI 热点新闻",
       "items": [
         {
-          "title": "💰 融资 | Groq 向老股东募资至多 6.5 亿美元，Nvidia 170 亿授权大单后转身押注推理 Neocloud",
-          "source": "36氪",
-          "url": "https://36kr.com/p/3802258052096004",
-          "body": "GitHub 宣布 Copilot 自 6 月 1 日起从固定月费切换为按 token 用量计费，社区炸锅。开发者担心实际账单可能显著高于订阅价、且难以监控消耗，TechCrunch 报道有人直呼「what a joke」。GitHub 官方 Discussion 下挤满质询，部分用户转向 BYOK 自带模型 key。"
-        }
-      ]
-    },
-    {
-      "key": "report",
-      "label": "深度报告与论文",
-      "emoji": "📊",
-      "items": [
-        {
-          "title": "🌍 成本反思 | WSJ：美国企业开始「配给」AI，三个月烧光全年预算、账单翻倍",
-          "body": "AI 检测公司 GPTZero 逐条核查一家四大会计师事务所加拿大分支的网络安全报告引用，发现大多数引用系 AI 幻觉凭空生成。该调查登 HN 265 分，与其此前查出 NeurIPS 2025 论文 50+ 处幻觉引用形成连续警示——专业服务机构在用 AI 出报告时普遍缺乏引用核验环节。 成本，是今日另一条暗线。WSJ 曝美国企业开始「配给」AI、三个月烧光预算，GitHub Copilot 被迫转按量计费引爆开发者，Groq 转向推理 neocloud 求生，三者共同印证：推理成本已从技术问题升级为商业治理问题，FinOps for AI 正成为 CIO 的新刚需。与此同时，软银 750 亿欧元押注法国数据中心，把 AI 基建竞赛推向欧洲主权算力新战场。 今日 AI 主旋律是「咨询与基建的资本重排」。头部咨询机构 12 亿美元吞下 Ookla、另一家四大与 Anthropic 结盟、印度 IT 五巨头集体绑定 OpenAI/Anthropic、Anthropic-Blackstone 合资企业首单收购 Fractional AI——四条线索共同指向一个结论：当模型能力趋同，竞争焦点正从「谁的模型强」转向「谁能把模型真正落进企业」，而前沿厂商缺交付腿、服务商缺模型脑的互补格局，正在重写全球咨询与 IT 服务的价值链。",
-          "insight": "被巨头「软收编」后的芯片新贵正用推理云寻求第二曲线，验证推理成本仍是当前 AI 商业化最稀缺的战场。",
-          "source": "Gartner / Enterprise DNA",
-          "url": "https://enterprisedna.co/resources/news/gartner-worldwide-ai-spending-2-59-trillion-2026/"
+          "title": "🌍 行业动向 | SoftBank 宣布最高 750 亿欧元（约 870 亿美元）在法国建 5GW AI 数据中心",
+          "body": "SoftBank 周五官宣计划最高投资 750 亿欧元（约 870 亿美元）在法国建设并运营 5 吉瓦 AI 数据中心容量，称法国有望成为欧洲顶级 AI 基础设施枢纽。这是迄今最大规模的单国 AI 基建承诺之一，紧随孙正义在美国 Stargate 项目后的又一巨额下注，并与 Mistral、Macron 政府的「主权 AI」叙事高度呼应。",
+          "insight": "AI 算力军备竞赛从美国向欧洲外溢，主权 AI 基建成为大国与超级资本争夺的新战场。",
+          "source": "Bloomberg / The Information",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say"
         },
         {
-          "title": "📜 监管政策 | GitHub Copilot 6 月 1 日切换按量计费，开发者怒斥「meter shock」",
-          "insight": "国产团队在端侧小模型这条避开算力卡脖子的赛道上密集出牌，端侧推理或成中国 AI 弯道超车的现实切口。",
-          "body": "中国侧呈现「残酷出清」：36氪两篇深度揭示大模型融资占比从 51% 暴跌至 14%、政企大单 0 元中标头破血流，资本极致向智谱、MiniMax、月之暗面头部集中，华为凭算力底座成隐形赢家。叠加 GPTZero 揭穿头部审计机构报告幻觉引用、Gartner 警告 40% Agent 项目将被砍，整个行业正从狂热叙事走向务实算账的拐点。头部咨询机构以约 12 亿美元收购 Speedtest/Downdetector 母公司 Ookla。Ookla 每次测速捕获 1000+ 网络属性，其管理层表示网络数据已从「电信生命线」变为跨行业业务平台——可服务银行反欺诈、零售流量优化、超大规模云的 AI 基础设施韧性，「端到端网络智能服务」正被嵌入企业 AI 转型主线。Gartner 预测 2026 年全球 AI 支出将达 2.59 万亿美元、同比增 47%，并将 2026 定为企业级采用的拐点年；同时预测到 2026 年底 40% 企业应用将使用任务专用 AI Agent，但也警告超 40% 的 agentic AI 项目会因成本失控与价值不清在 2027 年前被砍。",
+          "title": "🚀 产品发布 | Meta 被曝研发「AI 吊坠」可穿戴设备，基于去年收购的 Limitless",
+          "body": "据 The Information 报道，Meta 正在研发一款「AI 吊坠」——一种夹在衣服上或当项链佩戴的设备，内置麦克风可全天记录、转录用户的现实对话，并提供摘要与可搜索数据库。该设备建立在 Meta 2025 年底收购的 AI 硬件创业公司 Limitless 之上，同时 Meta 还在筹备多款新智能眼镜与「工作场景可穿戴」。",
+          "insight": "大厂正把 AI 入口从手机屏幕推向「随身常驻录音」形态，隐私与 always-on 监听的边界将成监管焦点。",
           "source": "Reuters / The Information",
           "url": "https://www.reuters.com/technology/meta-plans-wearables-work-ai-pendant-information-reports-2026-05-29/"
-        },
-        {
-          "title": "🌍 行业动向 | WSJ：美国企业开始「配给」AI，成本飙升下年度预算三个月烧光",
-          "body": "WSJ 与 Axios 同步披露，随着 token 计费的 AI 工具成本飙升，越来越多美国企业开始限额「配给」AI 使用。有企业三个月就烧光全年 AI 预算，账单翻倍甚至三倍；一位 CTO 透露员工竟用昂贵的 AI 模型查天气。企业级 AI 套餐并非真正「随便用」，连简单聊天查询也背着沉重 token 成本。",
-          "insight": "AI 从「无限畅用」幻觉回落到精算 ROI 的现实，token 成本治理正成为 CIO 的新核心议题。",
-          "source": "WSJ / Axios",
-          "url": "https://www.wsj.com/tech/ai/corporate-america-is-starting-to-ration-ai-as-cost-skyrockets-1eb99d7a"
-        }
-      ]
-    },
-    {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
-      "items": [
-        {
-          "title": "💰 落地变现 | OpenRouter 完成 1.13 亿美元 B 轮：周 token 量暴涨至 25 万亿，多模型路由成企业刚需",
-          "body": "AI 模型聚合平台 OpenRouter 宣布完成 CapitalG 领投的 1.13 亿美元 B 轮，估值翻倍至 13 亿美元，NVIDIA、ServiceNow、Snowflake、Databricks 等产业资本跟投。其周处理 token 量半年内从 5 万亿飙升至 25 万亿（月 100 万亿），接入 400+ 模型、服务 800 万开发者，全年有望突破千万亿 token。",
-          "insight": "企业不再押注单一模型，「多模型路由+成本优化」层成为 AI 应用栈的关键基础设施，验证了模型商品化趋势。",
-          "source": "OpenRouter / BusinessWire",
-          "url": "https://openrouter.ai/announcements/series-b"
-        },
-        {
-          "title": "👔 高层动态 | 上海大模型龙头 MiniMax 正式启动 A 股上市辅导，将与智谱会师 A 股",
-          "body": "据证监会官网，MiniMax 于 5 月 29 日向上海证监局提交上市辅导备案，由中信证券担任辅导机构，意味着它将与已提交辅导备案的智谱一同冲刺「A 股大模型第一股」。MiniMax 今年 1 月完成港股 IPO 后股价大涨超 409%，5 月 29 日收盘市值达 2635 亿港元，并将自 6 月 8 日起纳入恒生科技指数。",
-          "insight": "国产大模型从一级市场融资走向公开资本市场，A 股+港股双轮上市将重塑中国 AI 估值锚。",
-          "source": "虎嗅 / 智东西",
-          "url": "https://www.huxiu.com/article/4863039.html"
         },
         {
           "title": "🚀 产品发布 | Google Gemini Spark 全天候 AI Agent 在美国正式开放，可后台执行第三方 App 任务",
@@ -84,11 +28,58 @@
           "url": "https://www.pcmag.com/news/googles-agentic-ai-tool-gemini-spark-is-now-available"
         },
         {
+          "title": "🌍 行业动向 | WSJ：美国企业开始「配给」AI，成本飙升下年度预算三个月烧光",
+          "body": "WSJ 与 Axios 同步披露，随着 token 计费的 AI 工具成本飙升，越来越多美国企业开始限额「配给」AI 使用。有企业三个月就烧光全年 AI 预算，账单翻倍甚至三倍；一位 CTO 透露员工竟用昂贵的 AI 模型查天气。企业级 AI 套餐并非真正「随便用」，连简单聊天查询也背着沉重 token 成本。",
+          "insight": "AI 从「无限畅用」幻觉回落到精算 ROI 的现实，token 成本治理正成为 CIO 的新核心议题。",
+          "source": "WSJ / Axios",
+          "url": "https://www.wsj.com/tech/ai/corporate-america-is-starting-to-ration-ai-as-cost-skyrockets-1eb99d7a"
+        },
+        {
+          "title": "👔 高层动态 | 上海大模型龙头 MiniMax 正式启动 A 股上市辅导，将与智谱会师 A 股",
+          "body": "据证监会官网，MiniMax 于 5 月 29 日向上海证监局提交上市辅导备案，由中信证券担任辅导机构，意味着它将与已提交辅导备案的智谱一同冲刺「A 股大模型第一股」。MiniMax 今年 1 月完成港股 IPO 后股价大涨超 409%，5 月 29 日收盘市值达 2635 亿港元，并将自 6 月 8 日起纳入恒生科技指数。",
+          "insight": "国产大模型从一级市场融资走向公开资本市场，A 股+港股双轮上市将重塑中国 AI 估值锚。",
+          "source": "虎嗅 / 智东西",
+          "url": "https://www.huxiu.com/article/4863039.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "💰 落地变现 | OpenRouter 完成 1.13 亿美元 B 轮：周 token 量暴涨至 25 万亿，多模型路由成企业刚需",
+          "body": "AI 模型聚合平台 OpenRouter 宣布完成 CapitalG 领投的 1.13 亿美元 B 轮，估值翻倍至 13 亿美元，NVIDIA、ServiceNow、Snowflake、Databricks 等产业资本跟投。其周处理 token 量半年内从 5 万亿飙升至 25 万亿（月 100 万亿），接入 400+ 模型、服务 800 万开发者，全年有望突破千万亿 token。",
+          "insight": "企业不再押注单一模型，「多模型路由+成本优化」层成为 AI 应用栈的关键基础设施，验证了模型商品化趋势。",
+          "source": "OpenRouter / BusinessWire",
+          "url": "https://openrouter.ai/announcements/series-b"
+        },
+        {
+          "title": "👔 高层动态 | Capgemini 押注 AI 咨询发布中期目标，股价反跌 4%——咨询业 AI 转型阵痛显现",
+          "body": "法国 IT 巨头 Capgemini 公布新的中期增长目标，将自身定位为帮助各行业落地 AI 的咨询商，并称正与 AWS、Google Cloud、Microsoft 合作打造区域化云与 AI 方案。但市场对其增长前景存疑，目标公布当日股价一度下跌约 4%，为法国蓝筹指数表现最差成分股。这是继麦肯锡、BCG 重构计费模型后，又一传统咨询/IT 服务商在 AI 浪潮下重新定位。",
+          "insight": "AI 既是咨询业的增长引擎也是利润侵蚀者——资本市场对「AI 咨询能否真正变现」投下怀疑票，对埃森哲等同业是直接的估值参照。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/capgemini-sets-mid-term-targets-it-bets-ai-consulting-growth-2026-05-27/"
+        },
+        {
           "title": "🇨🇳 中国案例 | 腾讯发布智能体创意工作室 Miora，押注创意设计版 WorkBuddy",
           "body": "腾讯发布面向创意设计场景的智能体创意工作室 Miora，定位为「创意设计版 WorkBuddy」，把多模态生成、设计协同能力打包进企业级 Agent 工作流。这是腾讯混元在「将 10+ 内部产品 AI 化」战略下，从元宝、QQ、游戏之后向专业创意生产场景的延伸，把通用大模型能力收敛到具体职业工作流。",
           "insight": "国产大厂把通用模型能力收敛到垂直职业场景（创意设计），证明企业级 AI 落地的关键在「场景化 Agent」而非通用聊天。",
           "source": "量子位",
           "url": "https://www.qbitai.com/2026/05/426400.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "💰 融资 | GitHub Copilot 6 月 1 日转 token 计费引爆开发者众怒：「what a joke」",
+          "body": "GitHub 宣布 6 月 1 日起将 Copilot 从固定月费转为基于 token 的用量计费，覆盖输入、输出和缓存内容，引发开发者强烈反弹。批评者称买「Copilot」的人现在发现自己买的是一张推理账单的月度额度；也有用户反驳称真正烧 token 的多是缺乏开发功底的 vibe-coder。「meter shock（电表惊吓）」成为社区热词。",
+          "insight": "AI 编程工具集体转向用量计费，预示「无限畅用」红利期结束，开发者与厂商围绕 token 成本的博弈才刚开始。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/"
         },
         {
           "title": "🔬 技术突破 | Kog AI 推 KIE 推理引擎：标准数据中心 GPU 上单请求 3000 token/s，无需异构芯片",
@@ -105,46 +96,17 @@
           "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
         },
         {
-          "title": "📊 行业大势 | Reuters 专栏：如果 AI 投资潮逆转会怎样？去年科技设备与软件投资达 1.5 万亿美元",
-          "body": "Reuters 专栏作者 Joachim Klement 警示：尽管他此前论证 OpenAI、Anthropic 等明星公司的商业模式日益不可持续、Meta 与 Amazon 的数据中心投资回报算账困难，但投资浪潮仍在加速。去年科技设备与软件年度投资达 1.5 万亿美元，比 1990 年代末经通胀调整的科技/媒体/电信泡沫峰值还高约 70%。文章追问：一旦这轮 AI capex 逆转，谁来承接资产减值与债务风险。",
-          "insight": "AI 资本开支已超越互联网泡沫峰值，「变现不确定+过度建设+债务依赖」三重风险下，企业与投资者都需为潜在的资本周期反转预案。",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/commentary/reuters-open-interest/what-if-ai-boom-goes-into-reverse-2026-05-29/"
+          "title": "🇨🇳 国产路线 | 面壁智能「开源周」体系化亮剑：MiniCPM5-1B 以 1B 打败 2B，端侧 AI 全栈开源",
+          "body": "面壁智能联合清华、OpenBMB 在端侧大模型「开源周」连发多款成果：MiniCPM5-1B 仅 1B 参数在 AA-Index 上超越所有 2B 以下模型（含 Qwen3.5-2B），INT4 量化后权重仅 0.5GB 可跑在手机/浏览器/纯 CPU。更罕见的是同时开源了训练「生产线」ForgeTrain、数据集 UltraData 与智能体 OS PilotDeck，呈现体系化开源。",
+          "insight": "中国端侧 AI 玩家选择「体系化真开源」路线——不只放模型还放整条生产线，在端侧赛道形成与海外不同的护城河打法。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/05/426542.html"
         }
       ]
     },
     {
-      "key": "news",
-      "label": "AI 热点新闻",
-      "emoji": "🔥",
-      "items": [
-        {
-          "title": "📜 监管政策 | GPTZero 调查：EY 加拿大网络安全报告 27 条引用 16 条不存在",
-          "body": "AI 检测平台 GPTZero 逐条核查安永（EY）加拿大一份 2025 网络安全报告的引用，发现 27 条引用中有 16 条来源根本不存在、另有 4 条「可能不存在于网络」。讽刺的是这份报告本身就是关于风险治理的。同期 GPTZero 还在 NeurIPS 2025 论文中发现 50+ 条幻觉引用，在 HN 引爆讨论（265 分）。",
-          "insight": "四大与顶会都未能幸免 AI 幻觉引用，专业服务业的「AI 输出审核」短板正变成声誉与合规的实质风险。",
-          "source": "GPTZero / Raconteur",
-          "url": "https://gptzero.me/investigations/ey"
-        },
-        {
-          "title": "🚀 产品发布 | Meta 被曝研发「AI 吊坠」可穿戴设备，基于去年收购的 Limitless",
-          "body": "据 The Information 报道，Meta 正在研发一款「AI 吊坠」——一种夹在衣服上或当项链佩戴的设备，内置麦克风可全天记录、转录用户的现实对话，并提供摘要与可搜索数据库。该设备建立在 Meta 2025 年底收购的 AI 硬件创业公司 Limitless 之上，同时 Meta 还在筹备多款新智能眼镜与「工作场景可穿戴」。",
-          "insight": "大厂正把 AI 入口从手机屏幕推向「随身常驻录音」形态，隐私与 always-on 监听的边界将成监管焦点。",
-          "source": "Reuters / The Information",
-          "url": "https://www.reuters.com/technology/meta-plans-wearables-work-ai-pendant-information-reports-2026-05-29/"
-        },
-        {
-          "title": "🌍 行业动向 | SoftBank 宣布最高 750 亿欧元（约 870 亿美元）在法国建 5GW AI 数据中心",
-          "body": "SoftBank 周五官宣计划最高投资 750 亿欧元（约 870 亿美元）在法国建设并运营 5 吉瓦 AI 数据中心容量，称法国有望成为欧洲顶级 AI 基础设施枢纽。这是迄今最大规模的单国 AI 基建承诺之一，紧随孙正义在美国 Stargate 项目后的又一巨额下注，并与 Mistral、Macron 政府的「主权 AI」叙事高度呼应。 今日 AI 行业呈现「巨额扩张」与「冷静算账」并存的张力。一端是基建狂飙：SoftBank 押注 870 亿美元在法国建 5GW 数据中心，Meta 研发常驻录音的「AI 吊坠」，Google Gemini Spark 把 7×24 云端 Agent 推向大众——AI 入口与算力底座同时向前狂奔。另一端则是成本回归理性：WSJ 揭示美国企业开始「配给」AI、年度预算三个月烧光，GitHub Copilot 转 token 计费引爆开发者众怒，Reuters 更直接追问「若 AI 投资潮逆转会怎样」。从畅用幻觉到精算 ROI，token 成本治理正成为 CIO 与开发者共同的新课题。",
-          "insight": "AI 算力军备竞赛从美国向欧洲外溢，主权 AI 基建成为大国与超级资本争夺的新战场。",
-          "source": "Bloomberg / The Information",
-          "url": "https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say"
-        }
-      ]
-    },
-    {
-      "key": "coding",
-      "label": "AI Coding 动态",
-      "emoji": "💻",
+      "key": "report",
+      "title": "📊 深度报告与论文",
       "items": [
         {
           "title": "🔬 技术突破 | 苹果开源 AI 图像压缩 PICO：同等画质文件体积仅传统标准三分之一",
@@ -154,20 +116,29 @@
           "url": "https://www.huxiu.com/article/4862928.html"
         },
         {
-          "title": "💰 融资 | GitHub Copilot 6 月 1 日转 token 计费引爆开发者众怒：「what a joke」",
-          "body": "GitHub 宣布 6 月 1 日起将 Copilot 从固定月费转为基于 token 的用量计费，覆盖输入、输出和缓存内容，引发开发者强烈反弹。批评者称买「Copilot」的人现在发现自己买的是一张推理账单的月度额度；也有用户反驳称真正烧 token 的多是缺乏开发功底的 vibe-coder。「meter shock（电表惊吓）」成为社区热词。",
-          "insight": "AI 编程工具集体转向用量计费，预示「无限畅用」红利期结束，开发者与厂商围绕 token 成本的博弈才刚开始。",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/"
+          "title": "📜 监管政策 | GPTZero 调查：EY 加拿大网络安全报告 27 条引用 16 条不存在",
+          "body": "AI 检测平台 GPTZero 逐条核查安永（EY）加拿大一份 2025 网络安全报告的引用，发现 27 条引用中有 16 条来源根本不存在、另有 4 条「可能不存在于网络」。讽刺的是这份报告本身就是关于风险治理的。同期 GPTZero 还在 NeurIPS 2025 论文中发现 50+ 条幻觉引用，在 HN 引爆讨论（265 分）。",
+          "insight": "四大与顶会都未能幸免 AI 幻觉引用，专业服务业的「AI 输出审核」短板正变成声誉与合规的实质风险。",
+          "source": "GPTZero / Raconteur",
+          "url": "https://gptzero.me/investigations/ey"
         },
         {
-          "title": "🇨🇳 国产路线 | 面壁智能「开源周」体系化亮剑：MiniCPM5-1B 以 1B 打败 2B，端侧 AI 全栈开源",
-          "body": "面壁智能联合清华、OpenBMB 在端侧大模型「开源周」连发多款成果：MiniCPM5-1B 仅 1B 参数在 AA-Index 上超越所有 2B 以下模型（含 Qwen3.5-2B），INT4 量化后权重仅 0.5GB 可跑在手机/浏览器/纯 CPU。更罕见的是同时开源了训练「生产线」ForgeTrain、数据集 UltraData 与智能体 OS PilotDeck，呈现体系化开源。",
-          "insight": "中国端侧 AI 玩家选择「体系化真开源」路线——不只放模型还放整条生产线，在端侧赛道形成与海外不同的护城河打法。",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/05/426542.html"
+          "title": "📊 行业大势 | Reuters 专栏：如果 AI 投资潮逆转会怎样？去年科技设备与软件投资达 1.5 万亿美元",
+          "body": "Reuters 专栏作者 Joachim Klement 警示：尽管他此前论证 OpenAI、Anthropic 等明星公司的商业模式日益不可持续、Meta 与 Amazon 的数据中心投资回报算账困难，但投资浪潮仍在加速。去年科技设备与软件年度投资达 1.5 万亿美元，比 1990 年代末经通胀调整的科技/媒体/电信泡沫峰值还高约 70%。文章追问：一旦这轮 AI capex 逆转，谁来承接资产减值与债务风险。",
+          "insight": "AI 资本开支已超越互联网泡沫峰值，「变现不确定+过度建设+债务依赖」三重风险下，企业与投资者都需为潜在的资本周期反转预案。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/what-if-ai-boom-goes-into-reverse-2026-05-29/"
         }
       ]
     }
-  ]
+  ],
+  "closing": [
+    "今日 AI 行业呈现「巨额扩张」与「冷静算账」并存的张力。一端是基建狂飙：SoftBank 押注 870 亿美元在法国建 5GW 数据中心，Meta 研发常驻录音的「AI 吊坠」，Google Gemini Spark 把 7×24 云端 Agent 推向大众——AI 入口与算力底座同时向前狂奔。另一端则是成本回归理性：WSJ 揭示美国企业开始「配给」AI、年度预算三个月烧光，GitHub Copilot 转 token 计费引爆开发者众怒，Reuters 更直接追问「若 AI 投资潮逆转会怎样」。从畅用幻觉到精算 ROI，token 成本治理正成为 CIO 与开发者共同的新课题。",
+    "中国侧资本与技术双线推进：MiniMax 启动 A 股上市辅导，将与智谱会师「A 股大模型第一股」，国产大模型估值锚加速形成；腾讯 Miora、面壁智能「开源周」则分别在场景化 Agent 与端侧全栈开源上走出差异化路线。技术突破层面，Kog AI 在标准 GPU 上跑出 3000 token/s、苹果开源 PICO 把图像压到三分之一，都在改写 AI 的成本底层逻辑。而 GPTZero 揭出安永报告 16/27 条引用造假，再次提醒：能力越强，专业服务业对「AI 输出审核」的补课就越紧迫。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 扫描已执行：(1) \"OpenAI partnership/JV/acquisition\"——本周 OpenRouter B 轮(CapitalG/NVIDIA 跟投)已纳入企业级；无新 OpenAI 重大收并购；(2) \"Anthropic Accenture/Deloitte/consulting\"——本周无 Anthropic×埃森哲/德勤新公告，相关咨询动向以 Capgemini 押注 AI 咨询(Reuters)替代纳入；(3) \"AI consulting services launch enterprise\"——Capgemini 中期目标(股价跌4%)已纳入企业级；(4) \"OpenAI/Anthropic/Google/Meta/Microsoft 过去7天大动作\"——SoftBank 法国 870 亿美元数据中心、Meta AI 吊坠、Google Gemini Spark 上线、Anthropic Claude Code Dynamic Workflows、GitHub(Microsoft) Copilot 转 token 计费均已纳入。注：Accenture 收购 Ookla 为 2026 年 3 月旧公告(事件发生日>7天)，依铁律 1 排除；今日无其他重大新收并购公告。",
+    "sourceMix": "15 条来源分布：Reuters 3(Meta/Capgemini/AI capex,不同 URL,20%)、Bloomberg/The Information 1、WSJ/Axios 1、PCMag/Google 1、TechCrunch 1、OpenRouter 1、Kog AI 1、Anthropic 1、GPTZero 1、量子位 2(不同板块)、虎嗅 1。无单一媒体>25%；中文聚合媒体每板块≤1。",
+    "intlSources": "🔥 热点板块国际一手源 4 条：Bloomberg/The Information(SoftBank)、Reuters(Meta)、Google(Gemini Spark 厂商官方)、WSJ(配给 AI)，≥3 达标。"
+  }
 }

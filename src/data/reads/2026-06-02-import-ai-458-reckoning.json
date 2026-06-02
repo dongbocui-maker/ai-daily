@@ -8,7 +8,17 @@
   "authorTitle": "Anthropic 联合创始人兼政策负责人，AI 研究通讯 Import AI 作者（已办十年），曾联合创办斯坦福 The AI Index 项目。本文基于他 2026 年 5 月 20 日在牛津大学人本 AI 实验室（HAI Lab）所做的 Cosmos HAI Lab Lecture 演讲稿改写",
   "originalUrl": "https://importai.substack.com/p/import-ai-458-reckoning-with-the",
   "source": "importai.substack.com",
-  "tags": ["AI", "AGI", "Anthropic", "递归自我改进", "超级智能", "奇点", "未来工作", "AI治理", "Import AI"],
+  "tags": [
+    "AI",
+    "AGI",
+    "Anthropic",
+    "递归自我改进",
+    "超级智能",
+    "奇点",
+    "未来工作",
+    "AI治理",
+    "Import AI"
+  ],
   "summary": "Anthropic 联合创始人 Jack Clark 在 2026 年牛津 Cosmos HAI Lab 演讲（本文为演讲稿改写）中，抛出一个核心命题：AI 技术的快速进步给我们每个人——作为个体和作为社会——都摆出了一个选择：「探索未来」（explore the future）还是「逃避当下」（retreat from the present）。探索未来意味着正视 AI 持续进步这个事实，主动追问我们想用这个越来越强大的技术做什么；逃避当下则是忽视技术的含义、否认它的存在，从而把个人和社会推入面对 AI 持续进步时的被动与反应状态。文章分三部分展开：Part 1 用 Epoch Capabilities Index（ECI）这张「让他眩晕」的 AI 进步曲线，论证为什么 AI 不能被当作一项「正常技术」对待——它建立在 compute 与 data 投入的可预测增长之上，企业已投入数千亿美元算力，部分未来进步「已被锁定」；他直言 AI 是「养出来的而非造出来的」（more grown than made），人类并不完全理解它，甚至能想象出它杀死地球上每一个人的合理情景，但同时它也是人类自我提升、扩展科学技术边界的最佳途径之一，并可能在未来两年内触发递归自我改进（RSI）。Part 2 以 Clark 自己十年通讯 Import AI 的亲身经历，以及 Anthropic 内部因 Opus 4.6 发布而发生的剧变（同事不再写代码、转向管理和验证 AI 产出、「验证层」与「虚拟组织」的形成、招聘逻辑变化、单个研究员带 9 个合成研究 agent）来说明「探索未来」具体是什么样子。Part 3 给出一系列对 2026-2028 年世界与他个人未来的具体预测（生物学、诺奖、自主公司、双足机器人、AI 自主设计后继系统），并描绘了「机器经济与人类经济脱钩」「10000 合成员工 : 1 人类的公司」「机器货币」等激进图景，最后以 COVID 指数曲线作类比警告：若我们坐视不管就会被迫陷入反应状态，唯有接受「这正在发生」才能解锁探索的心态。文末附科幻短篇《As I Lay Dreaming》，讲述一个父亲把身患绝症的女儿送入「生命中心」冷冻休眠、多年后在 AI 驱动的「跃升」（The Uplift）中女儿被治愈唤醒的故事，借生命延续技术叩问奇点与递归自我改进对医疗、对人类情感的意义。",
   "keyPoints": [
     "**核心命题：探索未来 vs 逃避当下**。Clark 把 AI 快速进步给所有人摆出的选择凝练成一句话——「explore the future, or retreat from the present」。探索未来要求我们正视 AI 持续进步的事实、主动追问想用它做什么；逃避当下则是忽视含义、否认技术，把个人和社会推入「面对 AI 持续进步时的被动或反应状态」。未来几年我们要做大量关于如何塑造、使用、引导 AI 以及如何分配其收益的决策，而做这些决策的前提是先与这项技术的力量「和解」（reckon），看清它持续进步所隐含的未来。",
@@ -28,16 +38,56 @@
   "insight": "## 一、这篇文章在 2026 年 AI 论述谱系里的位置\n\n如果说 Dan Shipper《After Automation》是「grounded optimist」用一家 30 人公司三年数据反驳 doomer 的工程现实主义，那 Jack Clark 这篇就是站在 Anthropic 联创 + 政策负责人位置上、用一场牛津学术演讲做的「内部人的清醒预警」。两篇都拒绝简单的乐观或悲观，但视角根本不同：Shipper 关心「工作会不会消失」（结论：不会，反而更多专家工作），Clark 关心的是更上一层的「整个世界还能不能保持正常」（结论：很难，且我们必须主动选择如何应对）。\n\nClark 这篇的独特价值在于：他是少数几个「既在技术核心、又有政策视野、还坚持十年公开写作」的人。他不是在卖产品（虽然提到 Opus 4.6 和 Anthropic 内部变化），也不是在外部观望——他描述的是一个 AI 公司内部「每 3-4 个月工作方式就剧变一次、人一年换好几次角色」的真实状态。对做客户教育而言，这篇是「来自震中的一手观察」，权重不同于第三方分析。\n\n## 二、「探索未来 vs 逃避当下」是给客户高管的最佳决策框架\n\nClark 这个二分法（explore the future / retreat from the present）几乎是为企业 AI 转型量身定做的话术。他对「逃避当下」的定义——「忽视技术含义、否认它，从而陷入被动和反应状态」——精准刻画了当前大量传统企业 CIO/CTO 的真实处境。\n\n注：以下是基于 Clark 框架向咨询场景的推论延展，属于我的判断。\n\n这个框架可以直接转译成给客户董事会的一页纸：\n\n- **逃避当下的企业**：把 AI 当成「再观望一两年的新工具」，等成熟了再采用 → 结果是被迫在竞争对手已经重构组织后才反应，陷入 Clark 所说的 reactivity。\n- **探索未来的企业**：像 Anthropic 那样「在更先进系统到来之前就改造组织和工作方式」（aggressively using Claude throughout the organization and trying to change our organization ahead of the arrival of more advanced systems）。\n\nClark 那句「世界其余大部分似乎对今天 AI 系统的能力都处于否认状态，更别提半年或一年后会存在的系统」——可以原句引用给客户，因为它来自一个 AI 公司联创对「公司内 vs 公司外」认知差的直接观察。对零售快消、奢侈品、生命科学这些相对保守的行业客户，这是一记「认知校准」。\n\n## 三、Anthropic 内部「验证层 / 信任经济」是组织设计的前瞻样本\n\nClark 描述的 Anthropic 内部变化，对给客户做 AI 时代组织设计（org design）极具参考价值，因为这是一家「AI 渗透率最高的公司」的真实演化路径，相当于给客户看了「三五年后你的组织可能长什么样」。\n\n注：以下为推论延展。几个可直接落进咨询交付物的概念：\n\n1. **验证层（verification layer）**：人类移动到「验证 AI 产出、为运营风险定价」的层级，坐落在由大量 AI 系统组成的「虚拟组织」之上。这正好对应埃森哲在 BPM / 内控 / 风险管理上的传统资产——把「人审 AI、给 AI 产出定价风险」工业化，是一个全新的服务方向。\n2. **信任经济（trust economy）**：当 Claude 既写代码又写战略分析文档，公司开始需要机制去「标注一份文档里多少是 AI 写的、多少是人背书的」。这对受监管行业（生命科学、金融）客户尤其关键——可演化成「AI 产出溯源与背书治理」服务包，直接接 Azure AI Foundry 的内容溯源 + Copilot 的引用追踪能力。\n3. **招聘逻辑的双向迁移**：初级岗（极熟 LLM 的早期职业者）和资深岗（瓶颈从「能做什么」变成「能想象做什么项目」）两端价值都上升，跨学科人才因「可直接用 Claude」而变便宜。这和 Shipper 的「human sandwich」结论高度一致——都指向「senior 端结构性扩张、junior 工作内容被压缩」。两篇互相印证，可作为客户 talent transformation 论述的双重支撑。\n\n## 四、「单人带 9 个合成 agent」是埃森哲微软生态最该抢的落地形态\n\nClark 提到的「自动化对齐研究」实验——单个研究员有效指挥 9 个合成研究 agent——是「人坐在数字劳动金字塔顶端」最具体的早期样本。\n\n注：以下为推论延展。这个形态恰好是 Copilot Studio + Azure AI Foundry 组合能直接交付的能力：用 Copilot Studio 编排多 agent、用 Azure AI Foundry 提供底层模型和评估、用 M365 Copilot 作为人类「金字塔顶端」的指挥界面。\n\n对 500 人团队、重点客户 L'Oréal / LVMH 这类零售快消与奢侈品场景，可设计的具体落地：\n\n- **市场分析金字塔**：1 个 senior 分析师指挥多个合成 agent 分别做竞品监测、社媒舆情、价格追踪、趋势报告 → 把原本一个团队几周的工作压到几天。\n- **客户洞察金字塔**：1 个 CRM 专家指挥多 agent 处理 Customer Insights（D365）数据、做分群、生成本地化营销文案草稿。\n\n关键交付物建议：一份「Agent Pyramid 组织设计模板」——明确金字塔顶端人类的职责（设方向 + 验证 + 风险定价）、中层编排逻辑、底层 agent 分工与护栏。这是当前市场稀缺的工程化交付物。\n\n## 五、RSI「两年内可能发生」对客户战略节奏的含义\n\nClark 给出的「递归自我改进可能在两年内发生」是全篇最激进、也最需谨慎传递给客户的判断。他本人态度是审慎的（明确说「若能优雅放慢会是好事」），并非鼓吹加速。\n\n注：以下为推论延展，且需强调这是 Clark 个人预测、存在高度不确定性，给客户传递时务必标注为「一种来自核心从业者的情景假设，而非确定性时间表」。\n\n对客户战略的实际含义不是「立刻 all-in」，而是**把 AI 战略的规划周期从「3-5 年路线图」压缩到「6-12 个月滚动迭代 + 季度重估」**。Clark 描述 Anthropic「每 3-4 个月工作方式就剧变」——如果连最前沿的公司都在这个节奏上，那客户用传统的多年 IT 规划方法做 AI 转型注定踏空。这恰好是咨询公司可以提供的核心价值：帮客户建立「短周期、可重估、模块化」的 AI 转型治理机制，而不是交付一份注定过时的五年蓝图。\n\n## 六、科幻短篇的叙事价值：AI 论述的「人性锚点」\n\nClark 在硬核技术分析后附一篇关于生命延续的科幻短篇，这种「数据 + 故事」的结构本身值得学习。注：以下为我的判断。给客户高管做 AI 战略沟通时，纯数据和 benchmark 容易让人麻木或恐慌，而一个具体的人性故事能让「奇点」「RSI」这些抽象概念落地为「它对一个家庭意味着什么」。\n\n这篇短篇的内核——AI 进步最终可能在医疗、生命延续上带来「几乎不可想象的善」——恰好是给生命科学、医疗健康行业客户描绘 AI 价值时最有感染力的叙事原型。它也提醒我们：AI 转型沟通不应只讲「降本增效」，更要讲「让原本做不到的事变得可能」（Clark 的第二类专家走向：用 AI 做以前做不了的更大的事）。\n\n## 总结：这篇文章给做 AI 项目的人的「定海神针」\n\nClark 全篇最有力的一句是那个二选一：「explore the future, or retreat from the present」。它不只是个人选择，更是企业战略选择。每一次新模型发布、每一次 benchmark 突破，企业高管都会在「再等等看」和「现在就重构组织」之间摇摆——Clark 用一个 AI 公司联创的内部视角告诉你：摇摆本身就是「逃避当下」，而代价是被迫陷入反应状态。\n\n对埃森哲这类咨询公司而言，这篇文章的最大价值是把「为什么客户现在就该认真投入 AI 转型」从「供应商话术」升级成「来自技术震中的清醒判断」。当客户被 doomer 叙事吓到不敢动、或被炒作冲昏头脑盲目 all-in 时，Clark 的「探索未来」框架提供了第三条路：既不否认（逃避当下），也不盲信，而是主动追问「我们想用这个越来越强大的技术做什么」——这正是咨询的核心价值所在。\n",
   "summaryZh": "## 一、核心命题：探索未来，还是逃避当下\n\n本文是 Jack Clark（Anthropic 联合创始人、Import AI 通讯作者）基于他 2026 年 5 月 20 日在牛津大学人本 AI 实验室（HAI Lab）所做 Cosmos HAI Lab Lecture 演讲的改写（为阅读而非聋听作了轻微编辑）。整期 Import AI 458 由这篇长文 + 一篇关于「正向奇点」的虚构故事组成。\n\nClark 的核心论点：AI 技术的快速进步给我们所有人摆出一个选择——**探索未来，或逃避当下**。\n\n> 探索未来要求我们与 AI 持续进步这个事实和解，问自己随着它变得更强大、我们想用这项技术做什么。逃避当下则是我们忽视技术的含义、否定它。逃避当下把我们作为个体和社会，逐入面对 AI 持续进步时的反应或被动状态。\n\n未来几年我们要作为个人和社会做出许多决定：如何塑造 AI、如何使用它、如何引导它、如何分配它的收益。做这些决定要求我们与技术的力量和解——看见它持续进步所隐含的未来。\n\n## 二、Part 1：我与一张图表不舒服的关系\n\nClark 说这场演讲本质上是「为构建 AI 系统这个整体事业的成功做规划」。所谓成功，指我们成功构建出越来越强大的系统，最终可能是能构建自己的系统。现在就该为此规划，因为 AI 系统变好的速度可能比人们预期快得多。\n\n他用一张试图代表「所有 AI 进步」的图表——**Epoch Capabilities Index（ECI）**——展开论述。ECI 在 40 多个不同 benchmark 的篮子上展示不同模型随时间的得分。**你看到一堆向上的线；他看到却感到一阵眩晕（vertigo）」**，因为他知道这张图之下意味着什么。\n\n他换一种看法：把图表翻译成 AI 系统随时间的具体成就。从 2023 年 3 月 AI 通过律师资格考试、到 2024 年 7 月 LLM 系统在国际数学奥林匹克拿银牌、2025 年 7 月拿金牌、2025 年 AI 联合署名新的数学证明、Claude Mythos 这类系统在软件中发现新型缺陷。这让你感受到 AI 进步的快，但他要你感受的是它所隐含的未来。这些是一棵棵单独的「成功之树」，但它们都是同一片森林的一部分，**而这片森林正在随每一刻增长——事实上整片森林的增长率本身在随时间增加**。\n\n### 成功意味着什么\n\n这场演讲建立在一个前提上：我们刚见过的这种进步会持续。为什么不会？它基于一项共同技术，性能随投入资源（compute 与 data）可预测地增长，而企业现在正投入数千亿美元建训练未来 AI 的算力设施，所以某些未来进步已被锁定。\n\nClark 极其直白地表态：\n\n> AI 是一项极其强大的技术——并且一直在变得更强大。它比我们大多数个体更聪明、更有能力，并走在「在总体上超过我们所有人」的轨迹上。它是一项我们并不完全理解的技术，因为它是「养出来的多过造出来的」，人们能编造出它杀死地球上每一个人的合理情景。认为构建这项技术毫无风险，是一种傲慢或疯狂之举。\n\n但同时，构建这项技术也是我们作为一个物种推进自己的最佳途径之一——通过装备一个能帮我们思考物种最大挑战的工具，扩展科学与技术的边界。\n\n### 递归自我改进可能两年内发生\n\n成功还会提高「工具本身变得独立、能力更强」的可能性。我们可能很快造出一个聪明到能开发自己后继者的 AI，启动递归自我改进的过程，彻底重塑经济与世界。**类比是一家 3D 打印机公司造出一台能打印出自己更精细打印头、不需任何外部技术的 3D 打印机。这类技术从未存在过，而我相信这可能在未来两年内发生，甚至更早。**\n\nClark 明确表态：如果能优雅地放慢这项技术、给人类更多时间，那很可能是好事；但在缺乏全球协调放慢的情况下，现实就是各方在商业与地缘竞争中以极快速度推进，「物种级的存亡问题被商业和地缘对抗淹没」。这不理想，但是我们身处的现实。他正在挣扎的问题是：**「我该如何让自己的心智与活在奇点之中这件事和解？」**\n\n## 三、Part 2：与 AI 一起探索未来\n\n### 这张图对我的主观感受\n\nClark 复盘自己用 AI 的主观体验如何随模型变强而「深入侵入」生活：\n\n- 2023 年夏，用 AI 查错别字；11 月，用 AI 帮忙决定给婴儿喂什么\n- 2024 年 1 月，用 AI 理解有孩子后变化的婚姻；6 月拓 newsletter；8 月让 AI 写了一个导航 AGI 的文字冒险游戏；11 月用 AI 重新想象自己的工作\n- 2025 年，问 AI 如何为超级智能做准备；AI 说服他去看艺展（他说自己有点拑郁、不合群）；AI 说服他重新去做心理治疗\n- 2026 年，AI 建议他如何鼓励学步期的孩子阅读；跨几十篇论文跟踪 AI 在 kernel 设计上的表现\n\n随着 AI 变聪明，它们在他生活中扮演的角色越来越深：深度智力伙伴、可倪讯个人生活的对象、替他干活的虚拟雇员。**但最重要的是，他现在能把 AI 系统本身当作一台「望远镜」**——用来看清 AI 总体进步的轮廓、理解 AI 的未来。而这台望远镜的「镜片」来自他自己——来自他十年来的一个业余爱好。\n\n### 从个人兴趣的种子探索 AI\n\n这个爱好就是 Import AI 通讯（也就是本通讯！），办到第十年，是他工作之外的主要爱好。他读 AI 研究论文、努力理解它们、写摘要和「为什么重要」的注解，每期还附一篇短篇虚构故事。\n\n最近他有一次「顿悟」经历：他把 AI 指向自己的通讯档案，让它带引用提取所有关于「AI R&D」的内容，AI 出色完成，加速了他为 RSI 文章做的核心分析。**但更有趣的是接下来**——他让 AI 读档案里的引用（多是 arXiv 论文）、拉数据、编译并在一个漂亮的 dashboard 里制作图表供他探索。\n\n然后他意识到可以把这件事变成一个可重复的流程，一个 **skill**。通过把「独属于我的东西——我的通讯、我的直觉、我的品味」交给它，他给了 AI 一个「内核」（kernel），从中能生长出更大的东西。于是他做了一个 skill。接着发生了奇怪的事：他对它说「再做 20 张这样的图」。\n\n它读了几百篇论文、带回 20 张图。他翻看时有一种激动的发现感——虽然有些图他知道，但也有全新的图，连着他从未见过的论文或 benchmark。由此他知道了一些要去读的新原始素材，他读了。\n\nClark 强调：**他骨子里懂得做一张图要花多少时间**——你要读大量论文、找共同度量、读每篇论文里诸多 caveat、辨别哪些指标是 bullshit、哪些有意义，这比你想象的久得多。十年前他联合创办斯坦福 The AI Index 项目，正是因为他亲手做的 Atari、ImageNet、机器翻译进步图被同行视为「proof of work」——别人从这些图看出他投入了大量时间读论文。\n\n现在他有了一个「装瓶的 skill」，能驾驭这些 AI 系统的荒谬力量，几分钟做完原本要数周的事，而且能对任何主题做。**而这个 skill 也是他自己**——是从他的痴迷和特质中生长出来的，看着它工作像奇迹，因为它就是他，但是一个跑得快数千倍、聪明得多、可靠得多的他。这给了他继续做通讯的更大动力：尽管机器显然能做完所有这些活，但持续更新这个「个人兴趣的内核」，正是他用来探索超级智能世界、把自己投射进去的手段。\n\n### Anthropic 内部正在发生什么\n\nClark 2025 年 11 月休陪产假，2026 年 2 月底回来时发现公司变了。他休假期间发布了 Opus 4.6，他知道这模型好（陪产假间隙玩过），**但没料到它把公司内部改变了多少**：Opus 4.6 好到刚刚够，同事开始把大量工作委托给它——有些人完全不再写代码，而是在 Claude Code 这类工具里实例化模型、放手让它干活，工作重心从「亲自做」转向「管理它的工作、检查它的产出」。\n\n因为 Anthropic 大量工作是写软件，编码自动化的剧增「**相当于往公司里塞进了非常非常多的员工**」，加速了整体研发节奏。如今公司里大部分代码由 Claude 写，且代码总量爆炸式增长（趋势始于 2025 年初，最近几个月加速）。\n\n后果是：更多精力投入到「能放心吸收并测试 Claude 生成代码」的工具、以及让人类能直观读懂这个「**涌现的机器社会**」在干什么的遥测系统。Clark 花更多时间和团队一起做可观测性（observability）的挑战——Anthropic 和它运营的 AI 平台越来越像「一个充满四处奔忙、做事的 agent 的生态」，当前任务是搞清如何测量和观察这个生态、什么是正常什么是异常。\n\n### 验证层、信任经济与招聘逻辑\n\n这印证了经济学家正在酝酿的一个理论：AI 自动化的一个后果是**人类转向「验证产出、为 AI 系统的运营风险定价」**。我们添加越多 AI 自动化，人类就越多地移动到坐落其上的一个「**验证层（verification layer）**」。验证层坐落在一个更大的「虚拟组织」之上，后者由越来越大量代表人类工作的 AI 系统组成。\n\nClaude 不仅写越来越多的代码，还产出大量供人类推理战略问题的分析文档。于是大家都在摸索如何标注一份文档里多少是 Claude 写的、多少是自己背书的。Clark 说这看起来像一种「**信任经济（trust economy）**」的形成——人们找方法浮现 Claude 的有趣定性/战略想法，以及更易评估的技术贡献。\n\n这也引发了关于招聘的内部讨论。当 AI 能做你工作的相当一部分时，你怎么招人？这既改变了某些团队预期招聘的人数，也改变了需要招的人的形状：一方面招更多「在 LLM 上极其熟练、伴随这项技术长大」的早期职业者；另一方面资深经验的回报上升，因为瓶颈不再是「一个人能做什么」，而是「他们能想象做什么样的项目」；跨学科人才也更容易招，因为他们可以直接用 Claude，不再需要昂贵的技术资源投入。\n\n更激进的变化来自规模化。一个早期例子：在「**自动化对齐研究**」实验中，单个人类有效地指挥一个由 **9 个合成研究 agent** 组成的团队，替他做真实研究调查——人负责设定初始研究方向，agent 负责做研究。这是侥幸吗？Clark 不这么认为，他预期这是「新常态」：人们坐在「数字劳动金字塔」之上，规模化放大自身效能，让他们比过去任何人都更快、做更多。这通常意味着建更小的团队去追更宏大的目标，也意味着会建比以前多得多的团队。\n\n### Anthropic 探索未来，世界其余逃避当下\n\nClark 提炼的核心教训是：**Anthropic 正在试图与 Claude 一起「探索未来」**——激进地在全组织使用 Claude，在更先进系统到来之前就改造组织和工作方式。相比之下，「世界上其余大部分似乎对今天 AI 系统的能力都处于否认状态，更别提半年或一年后会存在的系统」，因此陷入「逃避当下」、否认技术有效性的状态。\n\n## 四、Part 3：怪异的未来\n\nClark 把图表向前延伸，做出一系列预测。\n\n### 对世界的预测\n\n- **2026 年 11 月**：AI 系统在生物学上好到「既能推进科学、又可能扩散生物武器风险」高度相关\n- **2027 年 4 月**：一个人类与 AI 系统组成的团队做出此后会拿诺贝尔奖的发现\n- **2027 年 11 月**：存在年收入数千万美元的自主公司；多家「人类 & AI」公司收入达数亿到数十亿美元\n- **2028 年 4 月**：双足机器人开始与人类技工合作在现实世界做有用的工作\n- **2028 年 12 月**：AI 系统能够自主设计自己的后继系统\n\n### 对他个人未来的预测\n\n- **2026 年 11 月**：生活的某些部分由为他工作的 AI 系统自主管理\n- **2027 年 4 月**：主要通过与 AI 系统的讨论对职业做出重大改变；11 月，花在读「为他定制的 AI 生成科幻」上的时间超过常规科幻\n- **2028 年 4 月**：通过 AI 定制化辅导学会一项全新技能；12 月，AI 帮他做出一个改变人生轨迹的概念突破\n\n### 告诉我世界如何保持正常\n\nClark 说，想到这些预测，他很难把 AI 的持续进步与「世界保持正常、自己保持不变」调和起来。他预期巨大的变化，且这些变化有可能极其激进。他列出预期世界的参数：\n\n- 来自机器经济的复利财富将驱动前所未见的经济活动繁荣\n- 以太般的合成智能殖民大片人类工作，迫使人类劳动重新配置到经济的其他部分\n- 科学进步速率突然急剧上升\n\n更具体的场景：**完全自主的公司**（由 AI 运行、可能为 AI 而运行）、**「10000 合成员工 : 1 人类」的公司**（极小群人类组成具备 10000+ 员工公司能力的组织）、人类经济与机器经济之间出现「**汇率**」乃至「**机器货币**」、一切被 AI 触及之处都获巨大生产力乘数、科学进步以复利速率扩散到所有领域、世界上「**能动性行动**（agentic actions）」从「以人类为主」切换到「以机器为主」（纯数字上机器自主行动很快会超过人类）、合成智能对人的影响远超社交媒体。\n\n他还指出：经济与科学扩张将直接挂钩于算力与能源支出。鉴于未来几年算力大概率远不够用，社会将能就「如何分配技术收益」做选择——是让市场决定算力用途，还是优先把算力配给某些有社会上行价值、市场却定价不足的方向？\n\nClark 最保守的结论是「**未来几年经济的大片区域将经历深刻变革**」。若递归自我改进发生，任何预测都会显得疯狂：机器经济与人类经济脱钩、机器人因获得能驾驭其（已经相当不错的）身体的「大脑」而突然成熟、基于机器而非人类开发的技术带来科学进步、大片计算迁移到太空数据中心、一个「原本要十年的事现在只要一年」的世界——「**一个令人困惑的奇迹时代，发生得比任何人预期都快**」。\n\n他用 COVID 指数曲线收束：若我们坐视新的合成智能繁衍，就会像各国在 COVID 指数面前行动太晚一样被迫陷入反应状态；但若我们接受「这些系统会变得更好」这个前提，并问自己要拿它们做什么、因它们做什么，就能为自己解锁**探索的心态**——有一个为我们个体、为我们彼此关系而建的新世界，但这个新世界只有在我们选择相信它、一起建造它时才会出现。\n\n## 五、科幻短篇《As I Lay Dreaming》\n\n副标题：「一个来自『跃升』（The Uplift）之前与之中的故事」。\n\n故事开头是父子的对话：「我们知道怎么让她睡着，但不知道怎么唤醒她。」「为什么不知道？」「因为我们还不够聪明。但总有一天会。」\n\n一个父亲把身患绝症、瘦得「骨头锋利分明」的小女儿抱进「生命中心」（Life Center）。母亲留在家陪年幼的弟弟。父亲抱着女儿穿过走廊，进入一个空房间，里面只有一台从天花板生长出来、缠着透明管路的多臂白色机器。工作人员让他道别——他跪在推车旁，对女儿说尽所有昵称、亲吻她的额头脸颊和小鼻子，一遍遍说「我爱你……你会没事的」。\n\n生活继续。父母养大儿子，一家人度假、变老。母亲会做噩梦梦见女儿很冷，惊醒大哭。弟弟年纪太小，姐姐只是「一个温暖的爱的凹痕」般模糊的记忆。\n\n而与此同时，「跃升」开始了。AI 的承诺开始结晶为世界的巨变。这家人躲过了最坏的动荡——没有战争波及他们所在的地方，也没在金融动荡中挨饿或失去家园。然后有一天机器传来消息：唤醒技术已被精炼。老鼠被带回来了，猴子、猪。几周后，第一个人类。「回来感觉如何？」采访者问被唤醒者。「一个奇迹。」**那些自以为注定死亡的人被治愈、活了过来。除了奇迹还能叫什么？**\n\n人们随治疗到来陆续被唤醒，「像反向的雨滴」。终于轮到他们的女儿——机器发来消息描述治疗方案、初期副作用和所需时间，并问「你们同意吗？」父母答「我们同意」。\n\n此时儿子已长成青年，搀扶着年迈的父母走进 FutureLife 中心。门打开，他们走进房间——女儿躺在病床上、穿着病号服、撑起身子，有着孩子明亮的眼睛和饱满有光泽的皮肤。「**嗨！**」女儿说，然后笑起来，「**你们看起来好老啊！**」\n\nClark 自陈这个故事的灵感来自：生命延续技术；对奇点与递归自我改进含义的思考；为人父母时涌现的深沉之爱；哄孩子入睡；旅行时对孩子的幻象与汹涌的情感；以及智能爆炸对医疗的含义。\n",
   "quotes": [
-    {"en": "The rapid advance in AI technology presents all of us with a choice: explore the future, or retreat from the present.", "zh": "AI 技术的快速进步给我们所有人摆出了一个选择：探索未来，或逃避当下。"},
-    {"en": "When I look at the graph, I feel a sense of vertigo, because I know a little bit about what underlies this graph.", "zh": "当我看这张图时，我感到一阵眩晕，因为我多少知道这张图之下意味着什么。"},
-    {"en": "It is a technology that we do not fully understand given that it is more grown than made, and one can concoct plausible scenarios by which AI could kill every single person on the planet.", "zh": "这是一项我们并不完全理解的技术，因为它是「养出来的多过造出来的」，人们能编造出它杀死地球上每一个人的合理情景。"},
-    {"en": "I believe this could happen within the next two years, and possibly sooner.", "zh": "我相信这（递归自我改进）可能在未来两年内发生，甚至更早。"},
-    {"en": "The question I am struggling with now is: how do I get my mind right with living through the singularity?", "zh": "我现在挣扎的问题是：我该如何让自己的心智与活在奇点之中这件事和解？"},
-    {"en": "By giving it something of mine that was uniquely mine — my newsletter, my intuition, my taste, I had given it some kernel from which I could grow something much larger.", "zh": "通过把独属于我的东西——我的通讯、我的直觉、我的品味——交给它，我给了它一个内核，从中能生长出更大的东西。"},
-    {"en": "This significant increase in the automation of coding has been equivalent to dropping many, many more employees into Anthropic.", "zh": "编码自动化的这一显著增加，相当于往 Anthropic 里塞进了非常非常多的员工。"},
-    {"en": "The more we add AI automation, the more humans move to some verification layer that sits atop it.", "zh": "我们添加越多 AI 自动化，人类就越多地移动到坐落在其上的「验证层」。"},
-    {"en": "Much of the rest of the world seems to be in denial about the capabilities of AI systems today, let alone those that will exist in six months or a year, and so is therefore caught in a retreat from the present.", "zh": "世界上其余大部分似乎对今天 AI 系统的能力都处于否认状态，更别提半年或一年后会存在的系统，因此陷入了「逃避当下」。"},
-    {"en": "There is a new world to be built for us as individuals and how we relate to one another, but the new world will only come into being if we choose to believe in it and to build it together.", "zh": "有一个为我们个体、为我们彼此关系而建的新世界，但这个新世界只有在我们选择相信它、并一起建造它时才会出现。"},
-    {"en": "Those that thought themselves fated for death were healed and alive. What else could it be called?", "zh": "那些自以为注定死亡的人被治愈、活了过来。除了奇迹还能叫什么？"}
-  ]
+    {
+      "en": "The rapid advance in AI technology presents all of us with a choice: explore the future, or retreat from the present.",
+      "zh": "AI 技术的快速进步给我们所有人摆出了一个选择：探索未来，或逃避当下。"
+    },
+    {
+      "en": "When I look at the graph, I feel a sense of vertigo, because I know a little bit about what underlies this graph.",
+      "zh": "当我看这张图时，我感到一阵眩晕，因为我多少知道这张图之下意味着什么。"
+    },
+    {
+      "en": "It is a technology that we do not fully understand given that it is more grown than made, and one can concoct plausible scenarios by which AI could kill every single person on the planet.",
+      "zh": "这是一项我们并不完全理解的技术，因为它是「养出来的多过造出来的」，人们能编造出它杀死地球上每一个人的合理情景。"
+    },
+    {
+      "en": "I believe this could happen within the next two years, and possibly sooner.",
+      "zh": "我相信这（递归自我改进）可能在未来两年内发生，甚至更早。"
+    },
+    {
+      "en": "The question I am struggling with now is: how do I get my mind right with living through the singularity?",
+      "zh": "我现在挣扎的问题是：我该如何让自己的心智与活在奇点之中这件事和解？"
+    },
+    {
+      "en": "By giving it something of mine that was uniquely mine — my newsletter, my intuition, my taste, I had given it some kernel from which I could grow something much larger.",
+      "zh": "通过把独属于我的东西——我的通讯、我的直觉、我的品味——交给它，我给了它一个内核，从中能生长出更大的东西。"
+    },
+    {
+      "en": "This significant increase in the automation of coding has been equivalent to dropping many, many more employees into Anthropic.",
+      "zh": "编码自动化的这一显著增加，相当于往 Anthropic 里塞进了非常非常多的员工。"
+    },
+    {
+      "en": "The more we add AI automation, the more humans move to some verification layer that sits atop it.",
+      "zh": "我们添加越多 AI 自动化，人类就越多地移动到坐落在其上的「验证层」。"
+    },
+    {
+      "en": "Much of the rest of the world seems to be in denial about the capabilities of AI systems today, let alone those that will exist in six months or a year, and so is therefore caught in a retreat from the present.",
+      "zh": "世界上其余大部分似乎对今天 AI 系统的能力都处于否认状态，更别提半年或一年后会存在的系统，因此陷入了「逃避当下」。"
+    },
+    {
+      "en": "There is a new world to be built for us as individuals and how we relate to one another, but the new world will only come into being if we choose to believe in it and to build it together.",
+      "zh": "有一个为我们个体、为我们彼此关系而建的新世界，但这个新世界只有在我们选择相信它、并一起建造它时才会出现。"
+    },
+    {
+      "en": "Those that thought themselves fated for death were healed and alive. What else could it be called?",
+      "zh": "那些自以为注定死亡的人被治愈、活了过来。除了奇迹还能叫什么？"
+    }
+  ],
+  "audio": {
+    "url": "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/import-ai-458-reckoning.m4a",
+    "duration_seconds": 921.74,
+    "size_bytes": 29666001,
+    "generated_at": "2026-06-02T13:18:14+08:00",
+    "format": "m4a"
+  }
 }

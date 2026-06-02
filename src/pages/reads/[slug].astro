@@ -44,8 +44,8 @@ function renderMd(md: string): string {
           .join('');
         return `<ul class="list-disc list-outside ml-6 mb-4 space-y-1">${items}</ul>`;
       }
-      // 普通段落
-      return `<p class="mb-4 leading-relaxed">${formatInline(trimmed)}</p>`;
+      // 普通段落（颜色/字号与主文「启示与思考」正文一致：text-accent-gray-800 = 16px）
+      return `<p class="mb-4 leading-relaxed text-accent-gray-800">${formatInline(trimmed)}</p>`;
     })
     .join('\n');
 }
@@ -144,9 +144,11 @@ function formatInline(s: string): string {
         )}
 
         {/* 4. 完整中文解读 */}
+        {/* 不用 prose：renderMd 已给每个元素内联与主文一致的 Tailwind 类；
+            prose/prose-lg 会注入另一套字号/行高/标题样式与之冲突，导致与主文格式不符 */}
         <div class="mb-10">
           <h2 class="text-2xl font-extrabold mb-4">📜 中文解读</h2>
-          <div class="prose prose-lg max-w-none" set:html={renderMd(article.summaryZh)}></div>
+          <div class="reads-body max-w-none" set:html={renderMd(article.summaryZh)}></div>
         </div>
 
         {/* 5. 金句精选 */}

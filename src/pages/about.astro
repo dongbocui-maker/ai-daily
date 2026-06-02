@@ -49,7 +49,7 @@ import Footer from '../components/Footer.astro';
 
           <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">📖 精读</h3>
           <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
-            精挑细选的 AI 时代深度长文，配中文解读、核心观点、金句精选。每周一 09:00 自动生成候选清单（3-5 篇），人工拍板后写正式精读卡片。**宁缺勿滥**——某周无合适候选则跳过，不为凑数硬塞。
+            精挑细选的 AI 时代深度长文，配中文解读、核心观点、金句精选，并为每篇生成 <strong>中文双主持播客音频</strong>（NotebookLM 驱动，可边听边读）。每周一 09:00 自动生成候选清单（3-5 篇），人工拍板后写正式精读卡片。<strong>宁缺勿滥</strong>——某周无合适候选则跳过，不为凑数硬塞。
           </p>
 
           <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🎬 Demo</h3>
@@ -191,7 +191,12 @@ import Footer from '../components/Footer.astro';
                 <tr class="border-b border-accent-gray-100">
                   <td class="px-3 py-2"><strong>📖 精读</strong></td>
                   <td class="px-3 py-2">每周一 09:00 候选 + 不定期上线</td>
-                  <td class="px-3 py-2">半自动 (AI 筛候选 → 人工拍板 → 写卡片)</td>
+                  <td class="px-3 py-2">半自动 (AI 筛候选 → 人工拍板 → 写卡片 + 中文播客音频)</td>
+                </tr>
+                <tr class="border-b border-accent-gray-100">
+                  <td class="px-3 py-2"><strong>🎬 Demo</strong></td>
+                  <td class="px-3 py-2">按需更新</td>
+                  <td class="px-3 py-2">全人工 (手工挑选 + README 提炼)</td>
                 </tr>
                 <tr>
                   <td class="px-3 py-2"><strong>🎓 学习</strong></td>

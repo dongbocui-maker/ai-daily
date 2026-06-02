@@ -124,7 +124,20 @@ def find_or_add_source(notebook_id: str, source_title: str, source_md: Path, wor
                 return s["id"]
 
     # 重命名 markdown 文件，让 NotebookLM 用中文标题
-    named_md = work_dir / f"{source_title}.md"
+    # 文件名需 ≤255 字节（多数文件系统上限），中文 3 字节/字。
+    # 按字节安全截断到 ~200 字节，避免超长 titleZh 触发 [Errno 36] File name too long。
+    def _truncate_filename(name: str, max_bytes: int = 200) -> str:
+        if len(name.encode("utf-8")) <= max_bytes:
+            return name
+        out, total = [], 0
+        for ch in name:
+            cb = len(ch.encode("utf-8"))
+            if total + cb > max_bytes:
+                break
+            out.append(ch); total += cb
+        return "".join(out).rstrip()
+    safe_title = _truncate_filename(source_title)
+    named_md = work_dir / f"{safe_title}.md"
     shutil.copy2(source_md, named_md)
 
     r, parsed = nblm_json("source", "add", str(named_md), "--json", timeout=120)

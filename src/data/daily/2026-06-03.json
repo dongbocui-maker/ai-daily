@@ -1,0 +1,157 @@
+{
+  "date": "2026-06-03",
+  "title": "AI 日报 2026-06-03",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 微软 Build 2026 一口气发七款自研模型：首款推理模型 MAI-Thinking-1 摆脱对 OpenAI 依赖",
+          "body": "微软在 Build 2026 上一次性公布七款来自其 Superintelligence Team 的自研模型，核心是首款推理模型 MAI-Thinking-1——一个「中等体量」模型，官方称其在关键软件工程基准上「匹敌一线模型」，且从零训练。这是微软过去一年逐步壮大 MAI 模型家族后最系统的一次亮相，标志着这家长期依赖 OpenAI 工具栈的巨头正加速建立自有模型护城河。",
+          "insight": "超大客户「去单一供应商化」已成趋势，微软自研模型与 OpenAI 投资将进入既合作又对冲的微妙平衡。",
+          "source": "The Verge / Axios / Neowin",
+          "url": "https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026"
+        },
+        {
+          "title": "🚀 产品发布 | 微软发布 Scout：基于 OpenClaw 的常驻个人办公 Agent，深度接入 M365",
+          "body": "微软在 Build 上推出 Scout，一个「面向工作的常驻个人 Agent」，构建在今年走红的开源 AI 平台 OpenClaw 之上，可与 Outlook、OneDrive、Teams 等 M365 应用联动，目前面向早期接入的 M365 客户开放。这是微软继 Researcher、Copilot Cowork、Word 法律 Agent 之后又一款 agentic 产品。",
+          "insight": "基于开源 Agent 框架做企业级封装，正成为大厂快速补齐 agentic 能力的标准打法，企业部署门槛进一步下探。",
+          "source": "TechCrunch / The Verge",
+          "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/"
+        },
+        {
+          "title": "🔬 技术突破 | 英伟达「开源周」连发 Cosmos 3 世界模型 + 550B 开源权重 Nemotron 3 Ultra",
+          "body": "英伟达本周以全栈开源姿态主导开源模型话题：Cosmos 3 是面向物理 AI 的开源全模态世界模型家族，采用 Mixture-of-Transformers 设计，统一语言、图像、视频、音频与动作，并附带权重、代码、数据集与微调配方；同时发布的 Nemotron 3 Ultra 为 550B 开源权重模型，被多方评为迄今最强美国开源模型（预发布端点超 300 tokens/s），但仍落后于中国领跑的开源前沿（Kimi K2.6）。英伟达还联合 Runway 等成立 Cosmos Coalition。",
+          "insight": "芯片厂用开源换生态绑定，物理 AI 与全模态世界模型成下一争夺焦点；中美开源前沿的差距与互补值得持续追踪。",
+          "source": "Artificial Analysis / Latent Space",
+          "url": "https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 官宣 Codex 整合进 ChatGPT：10 亿用户将获「超级 Agent」入口",
+          "body": "OpenAI 宣布未来数周将把 Codex 整合进 ChatGPT，意味着 ChatGPT 庞大的用户基数（号称面向 10 亿级用户）将直接获得编程与多步任务执行能力，被业界称为「超级 Agent」。此前 Codex 已先行登陆 ChatGPT 手机 App，安卓与 iOS preview 面向包括免费版在内的所有用户，目前每周已有超 400 万人使用 Codex。",
+          "insight": "OpenAI 正把 Codex 从「订阅附赠」推向通用入口级 Agent，对开发工具与通用助手的边界形成强烈冲击。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3836668227466630"
+        },
+        {
+          "title": "🤝 战略合作 | BNP Paribas 加码与 Mistral 合作：法国银行业自建 AI 防御体系",
+          "body": "法国银行巨头 BNP Paribas 宣布扩大与 Mistral 的合作——这段合作始于 2023 年 Mistral 还处早期阶段时。双方此次升级聚焦用 AI 快速构筑网络与业务防御能力，是欧洲金融机构绑定本土前沿模型厂商、降低对美系 AI 依赖的又一标志性动作。",
+          "insight": "主权 AI 与本土模型采购正从政策口号走向真实大客户订单，欧洲金融业是重要风向标。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/finance/bnp-paribas-steps-up-mistral-partnership-bolster-rapid-ai-defences-2026-05-26/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 成本治理 | Uber 给员工 AI 工具设月上限 $1,500/工具：四个月烧穿预算后紧急刹车",
+          "body": "据 Bloomberg 报道，Uber 在今年 AI 预算四个月内被烧穿后，出台新规：每名员工、每个 agentic 编码工具（含 Anthropic Claude Code、Cursor 等）月度 token 支出上限 $1,500，且各工具额度独立计算、互不挤占。这是继 WSJ 报道「美国企业开始配给 AI」之后，又一头部公司用硬性额度管控 AI 失控成本。",
+          "insight": "agentic coding 工具的 token 计费让企业 IT 成本从「可预测订阅」变成「可失控变量」，预算治理正成为 CIO 新课题。",
+          "source": "Bloomberg / TechCrunch",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs"
+        },
+        {
+          "title": "💼 自建路线 | 顶级律所 Kirkland & Ellis 砸 5 亿美元自建专有 AI 平台，法律业军备竞赛升温",
+          "body": "美国头部律所 Kirkland & Ellis 宣布将在未来三到四年投入 5 亿美元营收，开发自有专有 AI 平台，而非仅依赖竞争对手也能买到的现成工具，平台将吸纳事务所内部知识资产。这是法律行业迄今最大的单笔 AI 自建投入，凸显高利润专业服务机构「不愿把核心 know-how 交给第三方模型」的焦虑。",
+          "insight": "高价值知识型企业正从「采购 AI 工具」转向「自建专有平台」，数据与领域知识成为对抗模型同质化的真正护城河。",
+          "source": "Reuters / Bloomberg Law",
+          "url": "https://www.reuters.com/legal/legalindustry/law-firm-kirkland-spend-500-million-developing-its-own-ai-platform-2026-05-28/"
+        },
+        {
+          "title": "🇨🇳 中国案例 | 字节×赛力斯成立「赛豆科技」：豆包生态流量赋能造车，6 月推全新品牌",
+          "body": "5 月 30 日，赛力斯集团旗下全资子公司蓝电科技正式更名为「赛豆科技」，作为赛力斯联手字节打造的全新汽车品牌运营主体，预计 6 月正式发布。合作定位并非简单联合造车，而是字节以豆包 AI 技术赋能 + 抖音/小红书生态流量协同，意图复制「流量→热度→销量」的转化路径，大幅压缩营销成本。",
+          "insight": "互联网平台用 AI 助手 + 内容生态切入硬件与汽车，正成为国产 AI 落地的独特路径，软硬一体生态战打响。",
+          "source": "新浪 / 东方财富",
+          "url": "https://www.sina.cn/news/detail/5304260959147705.html"
+        },
+        {
+          "title": "🚀 落地通道 | OpenAI 前沿模型与 Codex 正式登陆 AWS Bedrock：企业可在自有云环境调用 GPT-5.5",
+          "body": "OpenAI 与 AWS 宣布 OpenAI 前沿模型与 Codex 在 Amazon Bedrock 正式 GA：GPT-5.5 等最新模型通过企业已熟悉的 Bedrock API 与管控调用、定价对齐 OpenAI 一方价格；Codex on Bedrock 按 token 计费，面向企业级软件开发；并推出由 OpenAI 驱动的 Bedrock Managed Agents。企业可在自有 AWS 环境内、用既有合规控制调用 OpenAI 能力。",
+          "insight": "模型厂商「上云中立化」加速——同一模型在 Azure、AWS 多云分发，企业采购话语权增强，部署摩擦显著降低。",
+          "source": "OpenAI / AWS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🛠️ 工具演进 | GitHub Copilot App 进入预览：从 IDE 插件升级为 agent-native 桌面工作台",
+          "body": "GitHub 在 Build 2026 推出 Copilot App 预览版，把 Copilot 从 IDE 插件升级为「agent-native」的独立桌面体验：可调度一组 Agent、并行管理多个项目，支持从计划、autopilot 到交互式会话、再到按需直接进入代码的全流程。GitHub 称其 Forward Deployed Engineers 已用它在单一界面统管多线工程。",
+          "insight": "编码工具正从「补全/对话」迈向「Agent 编排台」，独立桌面 Agent 工作窗成 Claude Code、Codex CLI、Copilot 共同的新形态。",
+          "source": "GitHub Blog / CNET",
+          "url": "https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/"
+        },
+        {
+          "title": "🇨🇳 国产路线 | MiniMax 发布 M3：原生多模态 + 100 万上下文 + MSA 稀疏注意力，对标编程与 Agent 前沿",
+          "body": "MiniMax 发布 M3，宣称在编码与 agentic 任务上达到前沿能力，引入全新 MSA（MiniMax Sparse Attention）支持最高 100 万 token 上下文，且为原生多模态模型，已快速获得 Novita、Vercel AI Gateway 等生态支持。第三方分析也指出 M3 存在 token 消耗偏高、自检循环冗长等效率问题。",
+          "insight": "国产模型在长上下文 + 多模态 + Agent 的综合能力上持续逼近前沿，但「能力强 ≠ 经济」，token 效率正成为落地新门槛。",
+          "source": "MiniMax",
+          "url": "https://www.minimax.io/blog/minimax-m3"
+        },
+        {
+          "title": "🚀 模型发布 | 微软发布 MAI-Code-1-Flash：自研编码模型直接服务 GitHub Copilot",
+          "body": "作为 Build 2026 自研模型阵列的一员，微软发布 MAI-Code-1-Flash——一款专为 GitHub Copilot 打造的编码模型，登上 HN 热榜（364 分）。这意味着 Copilot 的底层模型供给开始从「纯 OpenAI」走向「微软自研 + 第三方」并行，微软对编码这一最核心 AI 商业化场景的自主掌控显著增强。",
+          "insight": "编码模型是 AI 商业化最确定的现金流场景，微软自研补位将重塑 Copilot 的成本结构与议价能力。",
+          "source": "Microsoft AI",
+          "url": "https://microsoft.ai/news/introducingmai-code-1-flash/"
+        },
+        {
+          "title": "📊 商业观察 | 36氪：Codex 500 万用户福利被批「作秀」，Claude Code 吃掉近九成 Token",
+          "body": "36氪报道，OpenAI 为 Codex 推出的 500 万用户福利被部分开发者怼为「作秀」，而从实际 token 消耗看，Claude Code 吃掉了近九成份额。Codex 正从「ChatGPT 订阅附赠能力」转向「订阅额度 + token 化计费」：先靠 ChatGPT Plus/Pro/Business/Enterprise 入口扩面，再用 credits 与 token 费率对高强度开发者货币化。",
+          "insight": "编码 Agent 的竞争已从「谁能用」转向「谁真在被用、谁能赚到钱」，Anthropic 在重度开发者心智上暂时领先。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3834335487501958"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🇨🇳 中国研究 | 百度 PaddleOCR-VL-1.6 开源：1B 参数刷新 OmniDocBench v1.6 文档解析 SOTA 96.33%",
+          "body": "百度开源 PaddleOCR-VL-1.6，仅 1B 参数即在权威文档解析评测集 OmniDocBench v1.6 上取得 96.33% 的全新 SOTA，并同步刷新 v1.5 与 Real5-OmniDocBench，在文本、公式、表格识别上同时超越开源与闭源方案；在古籍、生僻字、印章、图表理解上均有显著提升，且与上一版架构完全一致、可零成本迁移。",
+          "insight": "小参数 + 强专精正成为国产开源模型的高性价比路线，文档解析作为企业 RAG/知识库的入口环节，价值被重新放大。",
+          "source": "Hugging Face / 百度",
+          "url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6"
+        },
+        {
+          "title": "📊 行业大势 | Aventis Advisors 拆解 AI 服务并购潮：OpenAI/Anthropic/埃森哲六周内集体下场买交付能力",
+          "body": "投行研究机构 Aventis Advisors 系统拆解了近期 AI 服务并购潮：约六周内，Anthropic 联合全球顶级 PE 设立约 15 亿美元企业服务合资企业；OpenAI 推出 140 亿美元的 OpenAI Deployment Company 并收购 150 人的伦敦咨询公司 Tomoro 作为锚点；埃森哲也完成相关收购。模型厂商正集体向下游交付与咨询纵深扩张。",
+          "insight": "对埃森哲等咨询机构，「模型厂商自建交付」既是合作机会也是正面竞争——Palihapitiya 警告「直接部署 Anthropic/OpenAI 等于引狼入室」值得决策者警惕。",
+          "source": "Aventis Advisors",
+          "url": "https://aventis-advisors.com/ai-services-ma-what-do-the-top-ai-companies-acquire-inside-the-firms-openai-anthropic-and-accenture-just-bought/"
+        },
+        {
+          "title": "📊 资本市场 | 《经济学人》：股市能否吞下 Anthropic、SpaceX 与 OpenAI 的天量估值？",
+          "body": "《经济学人》刊文（HN 677 分热议）追问：随着 Anthropic（约 9650 亿美元）、SpaceX、OpenAI 等非上市巨头估值持续膨胀并陆续走向 IPO，公开市场是否有足够深度承接这些天量供给。文章探讨了私募估值与公开市场流动性之间的张力，以及一旦多家同时上市可能带来的资金虹吸与重定价风险。",
+          "insight": "AI 一级市场的狂热终将面对二级市场的检验，估值能否「软着陆」将影响整条 AI 投融资链的节奏。",
+          "source": "The Economist",
+          "url": "https://www.economist.com/finance-and-economics/2026/06/01/can-the-stockmarket-swallow-anthropic-spacex-and-openai"
+        },
+        {
+          "title": "📜 监管政策 | 特朗普签署缩水版 AI 行政令：要求发布前审查模型，较初稿大幅收窄",
+          "body": "经过数周反复与产业界反对，特朗普签署了一份大幅收窄的 AI 行政令，核心要求在模型发布前进行审查，但范围较此前流出的初稿明显缩水。此举反映白宫在推动 AI 监管与回应产业界「别拖慢创新」诉求之间的拉扯，也与各州（如 Illinois SB 315）日益严格的立法形成对比。",
+          "insight": "美国联邦层面 AI 监管力度被产业博弈削弱，监管重心仍在州一级，跨州合规复杂度对企业部署构成持续挑战。",
+          "source": "The Verge / Politico",
+          "url": "https://www.theverge.com/policy/941775/trump-ai-executive-order"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日主线是「大厂自研与生态绑定」的双重加速。微软 Build 2026 一口气甩出七款自研模型（推理 MAI-Thinking-1、编码 MAI-Code-1-Flash）+ 基于 OpenClaw 的 Scout Agent，长期依赖 OpenAI 的巨头正系统补齐自有模型护城河；英伟达「开源周」用 Cosmos 3 与 550B Nemotron 3 Ultra 以开源换生态绑定，把物理 AI 与全模态世界模型推到台前。与此同时，OpenAI 把 Codex 整合进 ChatGPT、又同步上线 AWS Bedrock，「模型上云中立化 + 通用 Agent 入口化」两条线并进。",
+    "企业侧的关键词则是「成本」与「自建」。Uber 给员工 AI 工具设 $1,500/工具的硬上限、四个月烧穿预算，Kirkland & Ellis 砸 5 亿美元自建专有 AI 平台——agentic 工具的 token 计费正让 AI 成本从可预测订阅变成可失控变量，而高价值知识型机构则用「自建 + 自有数据」对抗模型同质化。Aventis 的并购复盘进一步印证：模型厂商正集体向交付与咨询纵深扩张，这对咨询业既是合作也是正面竞争。",
+    "国产侧亮点集中在性价比与生态：MiniMax M3 以 100 万上下文 + 原生多模态对标前沿，百度 1B 的 PaddleOCR-VL-1.6 刷新文档解析 SOTA，字节则借豆包生态流量切入造车。一边是能力逼近前沿，一边是「token 效率」「真实使用份额」成为新的落地分水岭——AI 竞争正从「谁能做」转向「谁在被用、谁能赚到钱」。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-06-03）：(1) OpenAI/Anthropic 企业服务并购——OpenAI 140 亿美元 DeployCo + 收购伦敦咨询公司 Tomoro（150 人）、Anthropic 联合 Blackstone/Goldman 等约 15 亿美元 JV，均已在 5/30-6/01 日报发过，今日以 Aventis Advisors 复盘稿（新 URL、整合视角）纳入深度报告板块，非重复。(2) Anthropic×埃森哲/德勤——Claude Partner Network 已于 6/02 发过，今日 Aventis 稿提及但不单列。(3) 大厂动向——微软 Build 2026（MAI-Thinking-1/MAI-Code-1-Flash/Scout）、英伟达 Cosmos 3+Nemotron 3 Ultra、OpenAI Codex×ChatGPT 整合 + AWS Bedrock GA 均为过去 7 天内新事件，纳入。(4) 新增战略合作：BNP Paribas×Mistral（Reuters 5/26）、Kirkland & Ellis 5 亿美元自建 AI（Reuters 5/28）纳入。(5) 当日无其他未覆盖的重大新收并购公告。"
+  }
+}

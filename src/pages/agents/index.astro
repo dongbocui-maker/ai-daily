@@ -9,7 +9,7 @@ const DATA_URL = `${BASE}agents/data/dashboard-data.json`;
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=1280" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex,nofollow" />
 <title>S.H.R.I.M.P. OS · Agents Monitor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -105,7 +105,27 @@ footer{margin-top:28px;text-align:center;font-size:10px;color:var(--dim);border-
 footer .red{color:var(--red-dim)}
 .loading{text-align:center;padding:80px 20px;color:var(--arc);font-size:14px;letter-spacing:2px}
 .loading .pulse{animation:blink 1.2s infinite}
-/* 移动端锁桌面设计布局：viewport width=1280 让手机等比缩放显示整张设计图，不重排 */
+/* 响应式：电脑双列保持设计图布局，手机自适应单列竖排（保留 HUD 风格） */
+@media(max-width:768px){
+  body{padding:14px}
+  .logo{font-size:20px}
+  .summary{grid-template-columns:1fr;gap:12px;margin-bottom:18px}
+  .stat .v{font-size:22px}
+  .suits{grid-template-columns:1fr;gap:14px;margin-bottom:22px}
+  .lower{grid-template-columns:1fr;gap:18px}
+  .suit-grid{grid-template-columns:1fr 1fr} /* 战甲卡内部 2 列保留，紧凑 */
+  .hud-corner{width:24px;height:24px}
+  .trend-chart{height:120px;gap:6px}
+  .tbar{max-width:none}
+  table{font-size:11px}
+  .bd-tip{min-width:150px}
+}
+@media(max-width:420px){
+  .suit-grid{grid-template-columns:1fr 1fr}
+  .stat .v{font-size:20px}
+  .trend-head{font-size:10px}
+  .bd-tip{min-width:135px;font-size:10px}
+}
 /* 近7天趋势图 */
 .trend-sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 20px 12px;margin-bottom:22px;position:relative;overflow:visible}
 .trend-sec::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(var(--arc),var(--gold))}

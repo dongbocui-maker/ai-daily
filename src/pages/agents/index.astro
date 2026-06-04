@@ -9,7 +9,7 @@ const DATA_URL = `${BASE}agents/data/dashboard-data.json`;
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=1280" />
 <meta name="robots" content="noindex,nofollow" />
 <title>S.H.R.I.M.P. OS · Agents Monitor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -105,7 +105,7 @@ footer{margin-top:28px;text-align:center;font-size:10px;color:var(--dim);border-
 footer .red{color:var(--red-dim)}
 .loading{text-align:center;padding:80px 20px;color:var(--arc);font-size:14px;letter-spacing:2px}
 .loading .pulse{animation:blink 1.2s infinite}
-@media(max-width:860px){.summary{grid-template-columns:1fr 1fr}.suits,.lower{grid-template-columns:1fr}}
+/* 移动端锁桌面设计布局：viewport width=1280 让手机等比缩放显示整张设计图，不重排 */
 </style>
 </head>
 <body>

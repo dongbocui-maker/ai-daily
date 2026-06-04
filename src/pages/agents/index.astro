@@ -196,7 +196,7 @@ function render(DATA){
     </div>`;
   }).join('');
   // SVG 曲线占位（用 pixel viewBox，render 后由 drawTrendCurve() 读真实柱顶坐标绘制，保证 100% 对齐）
-  const svgCurve=`<svg class="trend-curve" preserveAspectRatio="none"><polyline class="tline"/><g class="tdots"></g></svg>`;
+  const svgCurve=`<svg class="trend-curve" preserveAspectRatio="none"><path class="tline"/><g class="tdots"></g></svg>`;
   const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${svgCurve}${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
@@ -266,8 +266,20 @@ function drawTrendCurve(DATA){
     const r=el.getBoundingClientRect();
     return {x:r.left+r.width/2-cb.left, y:r.top-cb.top};
   });
+  // 平滑曲线：Catmull-Rom 转贝塞尔，自然弧度过渡每个节点
   const poly=svg.querySelector('.tline');
-  poly.setAttribute('points',pts.map(p=>`${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' '));
+  let dPath='';
+  if(pts.length>0){
+    dPath='M '+pts[0].x.toFixed(1)+' '+pts[0].y.toFixed(1);
+    for(let i=0;i<pts.length-1;i++){
+      const p0=pts[i-1]||pts[i], p1=pts[i], p2=pts[i+1], p3=pts[i+2]||p2;
+      const t=0.16; // 张力，越小越缓
+      const c1x=p1.x+(p2.x-p0.x)*t, c1y=p1.y+(p2.y-p0.y)*t;
+      const c2x=p2.x-(p3.x-p1.x)*t, c2y=p2.y-(p3.y-p1.y)*t;
+      dPath+=' C '+c1x.toFixed(1)+' '+c1y.toFixed(1)+', '+c2x.toFixed(1)+' '+c2y.toFixed(1)+', '+p2.x.toFixed(1)+' '+p2.y.toFixed(1);
+    }
+  }
+  poly.setAttribute('d',dPath);
   const g=svg.querySelector('.tdots');
   g.innerHTML=pts.map((p,i)=>{
     const isToday=(tr[i]&&tr[i].date===DATA.today);

@@ -16,7 +16,7 @@ def price(prov,model):
 
 AGENTS = {
     'main':{'name':'钢铁虾','mark':'MARK I','role':'ORCHESTRATOR','emoji':'🦐'},
-    'aima':{'name':'银月','mark':'MARK III','role':'PERSONAL','emoji':'🌙'},
+    'aima':{'name':'银月','mark':'P.E.P.P.E.R.','role':'PERSONAL ASSISTANT','emoji':'🌶️'},
     'mk2': {'name':'MK2','mark':'MARK II','role':'ENGINEER','emoji':'🦐'},
     'mk46':{'name':'Mark 46','mark':'MARK XLVI','role':'QC AUDITOR','emoji':'🛡'},
 }

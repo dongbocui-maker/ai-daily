@@ -112,11 +112,11 @@ footer .red{color:var(--red-dim)}
 .trend-head{font-family:'Orbitron';font-size:12px;letter-spacing:2px;color:var(--arc);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
 .trend-sum{font-size:11px;color:var(--gold);letter-spacing:1px;font-family:'JetBrains Mono'}
 .trend-chart{display:flex;align-items:flex-end;gap:10px;height:130px;padding-top:18px;position:relative}
-/* SVG 曲线叠加层（占满柱状区域，与柱高坐标系一致） */
-.trend-curve,.trend-dots{position:absolute;left:20px;right:20px;top:18px;bottom:22px;width:auto;height:auto;pointer-events:none;z-index:3;overflow:visible}
-.trend-curve polyline{fill:none;stroke:var(--gold);stroke-width:2;opacity:.85;filter:drop-shadow(0 0 4px rgba(255,196,0,.6))}
-.tdot{fill:var(--arc);stroke:#0a0e14;stroke-width:1}
-.tdot.today{fill:var(--gold);r:2.2}
+/* SVG 曲线叠加层：JS 用 chart 像素尺寸作 viewBox + 真实柱顶坐标绘制，100% 对齐 */
+.trend-curve{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+.trend-curve .tline{fill:none;stroke:var(--gold);stroke-width:2;opacity:.9;filter:drop-shadow(0 0 4px rgba(255,196,0,.6))}
+.tdot{fill:var(--arc);stroke:#0a0e14;stroke-width:2}
+.tdot.today{fill:var(--gold)}
 .tbar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px;position:relative;z-index:2}
 .tbar-val{font-size:10px;color:var(--dim);font-family:'JetBrains Mono'}
 .tbar{width:100%;max-width:60px;background:linear-gradient(180deg,var(--arc),rgba(63,201,255,.25));border-radius:3px 3px 0 0;border:1px solid var(--arc);border-bottom:none;transition:height .4s,box-shadow .2s;min-height:4px;box-shadow:0 0 10px rgba(63,201,255,.3);cursor:pointer}
@@ -195,20 +195,8 @@ function render(DATA){
       <div class="bd-tip"><div class="bd-date">${t.date}${isToday?' · TODAY':''}</div>${bd}<div class="bd-tot">总计 ${fmtTok(t.tok)} · $${t.cost.toFixed(2)}</div></div>
     </div>`;
   }).join('');
-  // SVG 曲线（token 趋势），点坐标按百分比，viewBox 0..100
-  const pts=tr.map((t,i)=>{
-    const x=N>1?(i/(N-1))*100:50;
-    const y=100-(t.tok/maxTrendTok*100);
-    return `${x.toFixed(2)},${y.toFixed(2)}`;
-  });
-  const polyline=pts.join(' ');
-  const dots=tr.map((t,i)=>{
-    const x=N>1?(i/(N-1))*100:50;
-    const y=100-(t.tok/maxTrendTok*100);
-    const isToday=t.date===DATA.today;
-    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1.6" class="tdot ${isToday?'today':''}" vector-effect="non-scaling-stroke"/>`;
-  }).join('');
-  const svgCurve=`<svg class="trend-curve" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${polyline}" vector-effect="non-scaling-stroke"/></svg><svg class="trend-dots" viewBox="0 0 100 100" preserveAspectRatio="none">${dots}</svg>`;
+  // SVG 曲线占位（用 pixel viewBox，render 后由 drawTrendCurve() 读真实柱顶坐标绘制，保证 100% 对齐）
+  const svgCurve=`<svg class="trend-curve" preserveAspectRatio="none"><polyline class="tline"/><g class="tdots"></g></svg>`;
   const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${svgCurve}${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
@@ -259,11 +247,39 @@ function render(DATA){
         <div class="chain">${chain}</div>
       </div>
     </div>`;
+
+  // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
+  requestAnimationFrame(()=>drawTrendCurve(DATA));
 }
+
+function drawTrendCurve(DATA){
+  const chart=document.querySelector('.trend-chart');
+  const svg=document.querySelector('.trend-curve');
+  if(!chart||!svg) return;
+  const tr=DATA.trend||[];
+  const cb=chart.getBoundingClientRect();
+  // SVG 覆盖整个 chart，viewBox = chart 像素尺寸，坐标直接用 px
+  svg.setAttribute('viewBox',`0 0 ${cb.width} ${cb.height}`);
+  svg.style.left='0';svg.style.top='0';svg.style.width='100%';svg.style.height='100%';
+  const bars=[...chart.querySelectorAll('.tbar')];
+  const pts=bars.map(el=>{
+    const r=el.getBoundingClientRect();
+    return {x:r.left+r.width/2-cb.left, y:r.top-cb.top};
+  });
+  const poly=svg.querySelector('.tline');
+  poly.setAttribute('points',pts.map(p=>`${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' '));
+  const g=svg.querySelector('.tdots');
+  g.innerHTML=pts.map((p,i)=>{
+    const isToday=(tr[i]&&tr[i].date===DATA.today);
+    return `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" class="tdot ${isToday?'today':''}"/>`;
+  }).join('');
+}
+let _trendData=null;
+window.addEventListener('resize',()=>{ if(_trendData) drawTrendCurve(_trendData); });
 
 fetch(DATA_URL + '?t=' + Date.now())
   .then(r=>r.json())
-  .then(render)
+  .then(d=>{ _trendData=d; render(d); })
   .catch(e=>{ document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>'; });
 </script>
 </body>

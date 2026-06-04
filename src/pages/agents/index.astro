@@ -1,0 +1,209 @@
+---
+// S.H.R.I.M.P. OS · Agents Monitor — Iron Man HUD 风格独立监控页
+// 数据从 /agents/data/dashboard-data.json 运行时 fetch（每小时 cron 更新，不依赖整站 rebuild）
+// 放 /agents/data/ 下，让 CF Access path=agents 一条规则同时保护页面+数据
+const BASE = import.meta.env.BASE_URL;
+const DATA_URL = `${BASE}agents/data/dashboard-data.json`;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>S.H.R.I.M.P. OS · Agents Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --red:#E62429; --red-dim:#7a1418; --gold:#FFC400; --gold-dim:#8a6a00;
+  --arc:#3FC9FF; --arc-glow:#00E5FF; --bg:#070A0F; --panel:#0E1118; --panel2:#141927;
+  --line:#1f2a3d; --txt:#cdd6e3; --dim:#6b7689;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--txt); font-family:'JetBrains Mono',monospace;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(230,36,41,.10), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(63,201,255,.08), transparent 45%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
+  min-height:100vh; padding:24px; letter-spacing:.3px;
+}
+.scan{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(63,201,255,.025) 0 2px,transparent 2px 5px);z-index:99;animation:scan 8s linear infinite}
+@keyframes scan{to{background-position:0 100px}}
+.hud-corner{position:fixed;width:40px;height:40px;border-color:var(--gold);opacity:.5;z-index:50}
+.tl{top:12px;left:12px;border-top:2px solid;border-left:2px solid}
+.tr{top:12px;right:12px;border-top:2px solid;border-right:2px solid}
+.bl{bottom:12px;left:12px;border-bottom:2px solid;border-left:2px solid}
+.br{bottom:12px;right:12px;border-bottom:2px solid;border-right:2px solid}
+
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.logo{font-family:'Orbitron';font-weight:900;font-size:26px;color:var(--gold);text-shadow:0 0 16px rgba(255,196,0,.4)}
+.logo .red{color:var(--red);text-shadow:0 0 16px rgba(230,36,41,.5)}
+.logo small{display:block;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);letter-spacing:3px;margin-top:2px}
+.jarvis{text-align:right;font-size:11px;color:var(--arc)}
+.jarvis .pulse{color:var(--arc-glow);text-shadow:0 0 10px var(--arc-glow);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.4}}
+.jarvis .ts{color:var(--dim);font-size:10px}
+
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stat{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:6px;padding:16px 18px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red)}
+.stat.g::before{background:var(--gold)} .stat.a::before{background:var(--arc)}
+.stat .k{font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase}
+.stat .v{font-family:'Orbitron';font-weight:700;font-size:24px;margin-top:8px;color:#fff}
+.stat .v .u{font-size:13px;color:var(--dim);font-family:'JetBrains Mono'}
+.stat.g .v{color:var(--gold)} .stat.a .v{color:var(--arc)}
+.stat .sub{font-size:10px;color:var(--dim);margin-top:4px}
+
+h2.sec{font-family:'Orbitron';font-weight:700;font-size:14px;color:var(--gold);letter-spacing:3px;margin:8px 0 16px;display:flex;align-items:center;gap:10px}
+h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)}
+
+.suits{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px}
+.suit{background:linear-gradient(135deg,var(--panel),#0c1420);border:1px solid var(--line);border-radius:8px;padding:18px;position:relative}
+.suit.online{border-color:rgba(63,201,255,.4);box-shadow:0 0 24px rgba(63,201,255,.08)}
+.suit.idle{border-color:rgba(255,196,0,.25)}
+.suit.offline{opacity:.62}
+.suit-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.reactor{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative}
+.reactor.online{background:radial-gradient(circle,rgba(63,201,255,.5),rgba(63,201,255,.05));border:2px solid var(--arc);box-shadow:0 0 20px var(--arc-glow);animation:rpulse 2.5s infinite}
+.reactor.idle{background:radial-gradient(circle,rgba(255,196,0,.4),transparent);border:2px solid var(--gold)}
+.reactor.offline{background:radial-gradient(circle,rgba(230,36,41,.3),transparent);border:2px solid var(--red-dim)}
+@keyframes rpulse{50%{box-shadow:0 0 32px var(--arc-glow)}}
+.suit-id .mark{font-family:'Orbitron';font-weight:700;font-size:13px;color:var(--gold);letter-spacing:1px}
+.suit-id .nm{font-size:16px;color:#fff;font-weight:700;margin-top:2px}
+.suit-id .role{font-size:9px;color:var(--dim);letter-spacing:2px;margin-top:2px}
+.badge{margin-left:auto;font-size:10px;font-weight:700;padding:4px 10px;border-radius:3px;letter-spacing:1px}
+.badge.online{background:rgba(63,201,255,.15);color:var(--arc);border:1px solid var(--arc)}
+.badge.idle{background:rgba(255,196,0,.12);color:var(--gold);border:1px solid var(--gold-dim)}
+.badge.offline{background:rgba(230,36,41,.12);color:var(--red);border:1px solid var(--red-dim)}
+.suit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;font-size:11px}
+.cell .lbl{color:var(--dim);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.cell .val{font-family:'Orbitron';font-size:15px;color:#fff;margin-top:2px}
+.cell .val.gold{color:var(--gold)} .cell .val.arc{color:var(--arc)}
+.pwr{grid-column:1/-1;margin-top:6px}
+.pwr .bar{height:8px;background:#0a0e16;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:4px;position:relative}
+.pwr .fill{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 10px rgba(255,196,0,.5)}
+.models-mini{grid-column:1/-1;margin-top:10px;font-size:10px;color:var(--dim);border-top:1px dashed var(--line);padding-top:8px}
+.models-mini span{color:var(--arc)}
+
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;color:var(--gold);font-size:9px;letter-spacing:1px;border-bottom:1px solid var(--line);padding:6px 8px;text-transform:uppercase}
+td{padding:7px 8px;border-bottom:1px solid rgba(31,42,61,.5)}
+td.r{text-align:right;font-family:'Orbitron'}
+.mdl{color:#fff}
+.chain{font-size:12px;line-height:2.2}
+.chain .node{display:inline-block;padding:3px 10px;border-radius:3px;margin:2px 0}
+.chain .primary{background:rgba(255,196,0,.12);border:1px solid var(--gold);color:var(--gold)}
+.chain .fb{background:rgba(230,36,41,.08);border:1px solid var(--red-dim);color:#d88}
+.chain .arr{color:var(--dim);margin:0 6px}
+.chain .agent-row{margin-bottom:14px}
+.chain .who{font-size:11px;color:var(--arc);letter-spacing:1px;display:block;margin-bottom:4px}
+footer{margin-top:28px;text-align:center;font-size:10px;color:var(--dim);border-top:1px solid var(--line);padding-top:16px;letter-spacing:1px}
+footer .red{color:var(--red-dim)}
+.loading{text-align:center;padding:80px 20px;color:var(--arc);font-size:14px;letter-spacing:2px}
+.loading .pulse{animation:blink 1.2s infinite}
+@media(max-width:860px){.summary{grid-template-columns:1fr 1fr}.suits,.lower{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+<div class="hud-corner bl"></div><div class="hud-corner br"></div>
+
+<header>
+  <div class="logo"><span class="red">S.H.R.I.M.P.</span> OS
+    <small>SHRIMP HYPERVISOR · RESOURCE &amp; INTELLIGENCE MONITORING PLATFORM</small>
+  </div>
+  <div class="jarvis">
+    <div class="pulse">◉ J.A.R.V.I.S. ONLINE · 4 SUITS MONITORED</div>
+    <div class="ts" id="ts"></div>
+  </div>
+</header>
+
+<div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
+
+<footer>
+  ⌜ S.H.R.I.M.P. OS v0.1 ⌟ · DATA SNAPSHOT <span id="gen">—</span> ·
+  <span class="red">CONFIDENTIAL</span> · POWERED BY 🦐 IRON SHRIMP STACK
+</footer>
+
+<script define:vars={{ DATA_URL }}>
+const CHAINS={
+  main:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  aima:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  mk2:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  mk46:['deepseek-v4-pro','azure-claude-48/opus-4.8'],
+};
+const fmt = n => n.toLocaleString('en-US');
+const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
+
+function render(DATA){
+  document.getElementById('ts').textContent = '⟦ '+DATA.generated_at+' ⟧';
+  document.getElementById('gen').textContent = DATA.generated_at;
+  const g=DATA.grand;
+  const summary = [
+    {k:'TOTAL TOKENS',v:fmtTok(g.tok),u:'',c:'',sub:fmt(g.tok)+' tok'},
+    {k:'TOTAL COST',v:'$'+g.cost.toFixed(2),u:'USD',c:'g',sub:fmt(g.calls)+' model calls'},
+    {k:'CACHE SAVINGS',v:'$'+Math.round(g.save),u:'SAVED',c:'a',sub:'reactor efficiency boost'},
+    {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status!=='OFFLINE').length+'/4',u:'',c:'',sub:'monitored in real-time'},
+  ].map(s=>`<div class="stat ${s.c}"><div class="k">${s.k}</div><div class="v">${s.v} <span class="u">${s.u}</span></div><div class="sub">${s.sub}</div></div>`).join('');
+
+  const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
+  const suits = Object.values(DATA.agents).map(a=>{
+    const st=a.status.toLowerCase();
+    const idle = a.idle_min==null?'—':(a.idle_min<60?a.idle_min+'m ago':a.idle_min<1440?Math.round(a.idle_min/60)+'h ago':Math.round(a.idle_min/1440)+'d ago');
+    const pct=(a.total_tok/maxTok*100).toFixed(0);
+    const mdls=a.models.slice(0,3).map(m=>m.name.split('/')[1]+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
+    return `<div class="suit ${st}">
+      <div class="suit-head">
+        <div class="reactor ${st}">${a.emoji}</div>
+        <div class="suit-id"><div class="mark">${a.mark}</div><div class="nm">${a.name}</div><div class="role">${a.role}</div></div>
+        <div class="badge ${st}">● ${a.status}</div>
+      </div>
+      <div class="suit-grid">
+        <div class="cell"><div class="lbl">Total Power</div><div class="val gold">${fmtTok(a.total_tok)}</div></div>
+        <div class="cell"><div class="lbl">Fuel Burn</div><div class="val">$${a.cost.toFixed(2)}</div></div>
+        <div class="cell"><div class="lbl">Reactor Eff.</div><div class="val arc">${a.cache_eff}%</div></div>
+        <div class="cell"><div class="lbl">Last Active</div><div class="val" style="font-size:13px">${idle}</div></div>
+        <div class="pwr"><div class="lbl" style="font-size:9px;color:var(--dim)">POWER LEVEL</div><div class="bar"><div class="fill" style="width:${pct}%"></div></div></div>
+        <div class="models-mini">⚡ ${mdls}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const models = DATA.models.map(m=>
+    `<tr><td class="mdl">${m.name}</td><td class="r">${fmt(m.calls)}</td><td class="r">${fmtTok(m.tok)}</td><td class="r" style="color:var(--gold)">$${m.cost.toFixed(2)}</td></tr>`
+  ).join('');
+
+  const chain = Object.entries(DATA.agents).map(([id,a])=>{
+    const ch=CHAINS[id]||[];
+    const nodes=ch.map((n,i)=>`<span class="node ${i===0?'primary':'fb'}">${n}</span>`).join('<span class="arr">▸</span>');
+    return `<div class="agent-row"><span class="who">${a.mark} · ${a.name}</span>${nodes}</div>`;
+  }).join('');
+
+  document.getElementById('app').innerHTML = `
+    <section class="summary">${summary}</section>
+    <h2 class="sec">SUIT STATUS · 战甲编队</h2>
+    <section class="suits">${suits}</section>
+    <div class="lower">
+      <div class="panel">
+        <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>
+        <table><thead><tr><th>MODEL</th><th>CALLS</th><th>TOKENS</th><th>COST</th></tr></thead><tbody>${models}</tbody></table>
+      </div>
+      <div class="panel">
+        <h2 class="sec">SUIT SYSTEMS · 模型链路</h2>
+        <div class="chain">${chain}</div>
+      </div>
+    </div>`;
+}
+
+fetch(DATA_URL + '?t=' + Date.now())
+  .then(r=>r.json())
+  .then(render)
+  .catch(e=>{ document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>'; });
+</script>
+</body>
+</html>

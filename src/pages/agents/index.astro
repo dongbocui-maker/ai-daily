@@ -60,7 +60,12 @@ h2.sec{font-family:'Orbitron';font-weight:700;font-size:14px;color:var(--gold);l
 h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)}
 
 .suits{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px}
-.suit{background:linear-gradient(135deg,var(--panel),#0c1420);border:1px solid var(--line);border-radius:8px;padding:18px;position:relative}
+.suit{background:linear-gradient(135deg,var(--panel),#0c1420);border:1px solid var(--line);border-radius:8px;padding:18px;position:relative;overflow:hidden}
+.suit::before{content:'';position:absolute;top:50%;right:-20px;transform:translateY(-50%);width:200px;height:200px;background:url('/agents/ironman-lineart.png') no-repeat center right/contain;opacity:.14;pointer-events:none;z-index:0}
+.suit.online::before{opacity:.20}
+.suit.idle::before{opacity:.13}
+.suit.offline::before{opacity:.09}
+.suit-head,.suit-grid{position:relative;z-index:1}
 .suit.online{border-color:rgba(63,201,255,.4);box-shadow:0 0 24px rgba(63,201,255,.08)}
 .suit.idle{border-color:rgba(255,196,0,.25)}
 .suit.offline{opacity:.62}

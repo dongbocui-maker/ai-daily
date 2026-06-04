@@ -106,6 +106,17 @@ footer .red{color:var(--red-dim)}
 .loading{text-align:center;padding:80px 20px;color:var(--arc);font-size:14px;letter-spacing:2px}
 .loading .pulse{animation:blink 1.2s infinite}
 /* 移动端锁桌面设计布局：viewport width=1280 让手机等比缩放显示整张设计图，不重排 */
+/* 近7天趋势图 */
+.trend-sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 20px 12px;margin-bottom:22px;position:relative;overflow:hidden}
+.trend-sec::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(var(--arc),var(--gold))}
+.trend-head{font-family:'Orbitron';font-size:12px;letter-spacing:2px;color:var(--arc);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.trend-sum{font-size:11px;color:var(--gold);letter-spacing:1px;font-family:'JetBrains Mono'}
+.trend-chart{display:flex;align-items:flex-end;gap:10px;height:120px;padding-top:8px}
+.tbar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.tbar-val{font-size:10px;color:var(--dim);font-family:'JetBrains Mono'}
+.tbar{width:100%;max-width:60px;background:linear-gradient(180deg,var(--arc),rgba(63,201,255,.25));border-radius:3px 3px 0 0;border:1px solid var(--arc);border-bottom:none;transition:height .4s;min-height:4px;box-shadow:0 0 10px rgba(63,201,255,.3)}
+.tbar.today{background:linear-gradient(180deg,var(--gold),rgba(255,196,0,.3));border-color:var(--gold);box-shadow:0 0 14px rgba(255,196,0,.5)}
+.tbar-day{font-size:10px;color:var(--dim);font-family:'JetBrains Mono';letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -145,11 +156,25 @@ function render(DATA){
   document.getElementById('gen').textContent = DATA.generated_at;
   const g=DATA.grand;
   const summary = [
-    {k:'TOTAL TOKENS',v:fmtTok(g.tok),u:'',c:'',sub:fmt(g.tok)+' tok'},
-    {k:'TOTAL COST',v:'$'+g.cost.toFixed(2),u:'USD',c:'g',sub:fmt(g.calls)+' model calls'},
-    {k:'CACHE SAVINGS',v:'$'+Math.round(g.save),u:'SAVED',c:'a',sub:'reactor efficiency boost'},
+    {k:'TODAY TOKENS',v:fmtTok(g.today_tok||0),u:'',c:'',sub:'累计 '+fmtTok(g.tok)+' tok'},
+    {k:'TODAY COST',v:'$'+(g.today_cost||0).toFixed(2),u:'USD',c:'g',sub:'累计 $'+g.cost.toFixed(2)+' · '+fmt(g.calls)+' calls'},
+    {k:'CACHE SAVINGS',v:'$'+Math.round(g.save),u:'TOTAL',c:'a',sub:'reactor efficiency boost'},
     {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status!=='OFFLINE').length+'/4',u:'',c:'',sub:'monitored in real-time'},
   ].map(s=>`<div class="stat ${s.c}"><div class="k">${s.k}</div><div class="v">${s.v} <span class="u">${s.u}</span></div><div class="sub">${s.sub}</div></div>`).join('');
+
+  // 近 7 天趋势迷你柱状图
+  const tr=DATA.trend||[];
+  const maxTrendTok=Math.max(1,...tr.map(t=>t.tok));
+  const trendBars=tr.map(t=>{
+    const h=(t.tok/maxTrendTok*100).toFixed(0);
+    const dd=t.date.slice(5); // MM-DD
+    const isToday=t.date===DATA.today;
+    return `<div class="tbar-wrap" title="${t.date}: ${fmtTok(t.tok)} tok / $${t.cost}">
+      <div class="tbar-val">$${Math.round(t.cost)}</div>
+      <div class="tbar ${isToday?'today':''}" style="height:${Math.max(4,h)}%"></div>
+      <div class="tbar-day">${dd}</div></div>`;
+  }).join('');
+  const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
   const suits = Object.values(DATA.agents).map(a=>{
@@ -186,6 +211,7 @@ function render(DATA){
 
   document.getElementById('app').innerHTML = `
     <section class="summary">${summary}</section>
+    ${trendBlock}
     <h2 class="sec">SUIT STATUS · 战甲编队</h2>
     <section class="suits">${suits}</section>
     <div class="lower">

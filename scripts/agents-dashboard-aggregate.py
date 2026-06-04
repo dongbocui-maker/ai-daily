@@ -23,15 +23,30 @@ AGENTS = {
 CN_TZ = timezone(timedelta(hours=8))
 now = datetime.now(CN_TZ)
 today = now.strftime('%Y-%m-%d')
+# 近 7 天日期（含今天）的 YYYY-MM-DD 列表，用于趋势图 + last7d 累计
+last7_days = [(now - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(6, -1, -1)]
+last7_set = set(last7_days)
+
+def ts_to_cn_date(ts):
+    """trajectory ts 是 UTC ISO，转北京日期"""
+    try:
+        dt = datetime.fromisoformat(ts.replace('Z','+00:00')).astimezone(CN_TZ)
+        return dt.strftime('%Y-%m-%d')
+    except: return None
 
 agents_out = {}
 model_totals = defaultdict(lambda:{'tok':0,'cost':0.0,'calls':0})
-grand = {'tok':0,'cost':0.0,'calls':0,'save':0.0}
+grand = {'tok':0,'cost':0.0,'calls':0,'save':0.0,
+         'today_tok':0,'today_cost':0.0,'today_calls':0,
+         'last7d_tok':0,'last7d_cost':0.0,'last7d_calls':0}
+# 全局趋势：按北京日期聚合 token+cost
+daily_trend = defaultdict(lambda:{'tok':0,'cost':0.0})
 
 for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
     last_ts = None
-    today_tok = 0
+    today_tok = 0; today_cost = 0.0
+    last7d_tok = 0; last7d_cost = 0.0
     for f in glob.glob(f'/root/.openclaw/agents/{aid}/sessions/*.trajectory.jsonl'):
         try:
             for line in open(f):
@@ -54,7 +69,12 @@ for aid,meta in AGENTS.items():
                 m['total']+=tot; m['calls']+=1; m['cost']+=cost; m['save']+=save
                 ts=d.get('ts')
                 if ts and (last_ts is None or ts>last_ts): last_ts=ts
-                if ts and ts[:10]==now.strftime('%Y-%m-%d'): today_tok+=tot
+                cn_date = ts_to_cn_date(ts) if ts else None
+                if cn_date==today:
+                    today_tok+=tot; today_cost+=cost
+                if cn_date in last7_set:
+                    last7d_tok+=tot; last7d_cost+=cost
+                    daily_trend[cn_date]['tok']+=tot; daily_trend[cn_date]['cost']+=cost
         except: pass
     a_tok=sum(m['total'] for m in by_model.values())
     a_cost=sum(m['cost'] for m in by_model.values())
@@ -74,13 +94,21 @@ for aid,meta in AGENTS.items():
     for k,m in by_model.items():
         model_totals[k]['tok']+=m['total']; model_totals[k]['cost']+=m['cost']; model_totals[k]['calls']+=m['calls']
     grand['tok']+=a_tok; grand['cost']+=a_cost; grand['calls']+=a_calls; grand['save']+=a_save
+    grand['today_tok']+=today_tok; grand['today_cost']+=today_cost
+    grand['last7d_tok']+=last7d_tok; grand['last7d_cost']+=last7d_cost
     agents_out[aid]={**meta,'status':status,'idle_min':round(mins) if mins is not None else None,
-        'total_tok':a_tok,'today_tok':today_tok,'cost':round(a_cost,2),'save':round(a_save,2),
+        'total_tok':a_tok,'today_tok':today_tok,'today_cost':round(today_cost,2),
+        'last7d_tok':last7d_tok,'last7d_cost':round(last7d_cost,2),
+        'cost':round(a_cost,2),'save':round(a_save,2),
         'calls':a_calls,'cache_eff':round(eff,1),
         'models':sorted([{'name':k,'tok':v['total'],'cost':round(v['cost'],2),'calls':v['calls']} for k,v in by_model.items()],key=lambda x:-x['tok'])}
 
+trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost'],2)} for d in last7_days]
 out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
-     'grand':{'tok':grand['tok'],'cost':round(grand['cost'],2),'calls':grand['calls'],'save':round(grand['save'],2)},
+     'grand':{'tok':grand['tok'],'cost':round(grand['cost'],2),'calls':grand['calls'],'save':round(grand['save'],2),
+              'today_tok':grand['today_tok'],'today_cost':round(grand['today_cost'],2),
+              'last7d_tok':grand['last7d_tok'],'last7d_cost':round(grand['last7d_cost'],2)},
+     'trend':trend,
      'agents':agents_out,
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
 os.makedirs('/root/.openclaw/workspace/projects/ai-daily/public/agents/data',exist_ok=True)

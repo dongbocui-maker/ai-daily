@@ -1,12 +1,53 @@
 {
-  "generated_at": "2026-06-04 13:00:01 +08",
+  "generated_at": "2026-06-04 13:02:33 +08",
   "today": "2026-06-04",
   "grand": {
-    "tok": 974872276,
-    "cost": 1410.43,
-    "calls": 1609,
-    "save": 3606.99
+    "tok": 975130044,
+    "cost": 1411.32,
+    "calls": 1610,
+    "save": 3607.56,
+    "today_tok": 29523318,
+    "today_cost": 36.91,
+    "last7d_tok": 183285297,
+    "last7d_cost": 224.62
   },
+  "trend": [
+    {
+      "date": "2026-05-29",
+      "tok": 44647936,
+      "cost": 56.17
+    },
+    {
+      "date": "2026-05-30",
+      "tok": 12158838,
+      "cost": 15.3
+    },
+    {
+      "date": "2026-05-31",
+      "tok": 46499946,
+      "cost": 55.12
+    },
+    {
+      "date": "2026-06-01",
+      "tok": 21719926,
+      "cost": 21.34
+    },
+    {
+      "date": "2026-06-02",
+      "tok": 22933450,
+      "cost": 27.98
+    },
+    {
+      "date": "2026-06-03",
+      "tok": 5801883,
+      "cost": 11.8
+    },
+    {
+      "date": "2026-06-04",
+      "tok": 29523318,
+      "cost": 36.91
+    }
+  ],
   "agents": {
     "main": {
       "name": "钢铁虾",
@@ -14,12 +55,15 @@
       "role": "ORCHESTRATOR",
       "emoji": "🦐",
       "status": "ONLINE",
-      "idle_min": 24,
-      "total_tok": 705096462,
-      "today_tok": 27672166,
-      "cost": 1074.85,
-      "save": 2559.11,
-      "calls": 1241,
+      "idle_min": 3,
+      "total_tok": 705354230,
+      "today_tok": 27929934,
+      "today_cost": 34.63,
+      "last7d_tok": 91980987,
+      "last7d_cost": 136.89,
+      "cost": 1075.75,
+      "save": 2559.68,
+      "calls": 1242,
       "cache_eff": 84.0,
       "models": [
         {
@@ -30,9 +74,9 @@
         },
         {
           "name": "azure-claude-48/claude-opus-4-8",
-          "tok": 57706681,
-          "cost": 84.65,
-          "calls": 86
+          "tok": 57964449,
+          "cost": 85.55,
+          "calls": 87
         },
         {
           "name": "deepseek/deepseek-v4-pro",
@@ -54,9 +98,12 @@
       "role": "PERSONAL ASSISTANT",
       "emoji": "🌶️",
       "status": "IDLE",
-      "idle_min": 178,
+      "idle_min": 181,
       "total_tok": 131421560,
       "today_tok": 687924,
+      "today_cost": 0.99,
+      "last7d_tok": 21268012,
+      "last7d_cost": 27.91,
       "cost": 211.24,
       "save": 488.62,
       "calls": 292,
@@ -94,9 +141,12 @@
       "role": "ENGINEER",
       "emoji": "🦐",
       "status": "IDLE",
-      "idle_min": 297,
+      "idle_min": 299,
       "total_tok": 129377428,
       "today_tok": 905460,
+      "today_cost": 1.28,
+      "last7d_tok": 68177154,
+      "last7d_cost": 59.0,
       "cost": 118.17,
       "save": 548.31,
       "calls": 65,
@@ -134,9 +184,12 @@
       "role": "QC AUDITOR",
       "emoji": "🛡",
       "status": "OFFLINE",
-      "idle_min": 2891,
+      "idle_min": 2893,
       "total_tok": 8976826,
       "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 1859144,
+      "last7d_cost": 0.82,
       "cost": 6.17,
       "save": 10.95,
       "calls": 11,
@@ -166,9 +219,9 @@
     },
     {
       "name": "azure-claude-48/claude-opus-4-8",
-      "tok": 107594372,
-      "cost": 127.94,
-      "calls": 109
+      "tok": 107852140,
+      "cost": 128.84,
+      "calls": 110
     },
     {
       "name": "deepseek/deepseek-v4-pro",

@@ -107,16 +107,30 @@ footer .red{color:var(--red-dim)}
 .loading .pulse{animation:blink 1.2s infinite}
 /* 移动端锁桌面设计布局：viewport width=1280 让手机等比缩放显示整张设计图，不重排 */
 /* 近7天趋势图 */
-.trend-sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 20px 12px;margin-bottom:22px;position:relative;overflow:hidden}
+.trend-sec{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 20px 12px;margin-bottom:22px;position:relative;overflow:visible}
 .trend-sec::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(var(--arc),var(--gold))}
 .trend-head{font-family:'Orbitron';font-size:12px;letter-spacing:2px;color:var(--arc);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
 .trend-sum{font-size:11px;color:var(--gold);letter-spacing:1px;font-family:'JetBrains Mono'}
-.trend-chart{display:flex;align-items:flex-end;gap:10px;height:120px;padding-top:8px}
-.tbar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.trend-chart{display:flex;align-items:flex-end;gap:10px;height:130px;padding-top:18px;position:relative}
+/* SVG 曲线叠加层（占满柱状区域，与柱高坐标系一致） */
+.trend-curve,.trend-dots{position:absolute;left:20px;right:20px;top:18px;bottom:22px;width:auto;height:auto;pointer-events:none;z-index:3;overflow:visible}
+.trend-curve polyline{fill:none;stroke:var(--gold);stroke-width:2;opacity:.85;filter:drop-shadow(0 0 4px rgba(255,196,0,.6))}
+.tdot{fill:var(--arc);stroke:#0a0e14;stroke-width:1}
+.tdot.today{fill:var(--gold);r:2.2}
+.tbar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px;position:relative;z-index:2}
 .tbar-val{font-size:10px;color:var(--dim);font-family:'JetBrains Mono'}
-.tbar{width:100%;max-width:60px;background:linear-gradient(180deg,var(--arc),rgba(63,201,255,.25));border-radius:3px 3px 0 0;border:1px solid var(--arc);border-bottom:none;transition:height .4s;min-height:4px;box-shadow:0 0 10px rgba(63,201,255,.3)}
+.tbar{width:100%;max-width:60px;background:linear-gradient(180deg,var(--arc),rgba(63,201,255,.25));border-radius:3px 3px 0 0;border:1px solid var(--arc);border-bottom:none;transition:height .4s,box-shadow .2s;min-height:4px;box-shadow:0 0 10px rgba(63,201,255,.3);cursor:pointer}
 .tbar.today{background:linear-gradient(180deg,var(--gold),rgba(255,196,0,.3));border-color:var(--gold);box-shadow:0 0 14px rgba(255,196,0,.5)}
+.tbar-wrap:hover .tbar{box-shadow:0 0 18px rgba(63,201,255,.8);filter:brightness(1.3)}
 .tbar-day{font-size:10px;color:var(--dim);font-family:'JetBrains Mono';letter-spacing:.5px}
+/* breakdown tooltip */
+.bd-tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(6px);background:#0a0e14;border:1px solid var(--arc);border-radius:6px;padding:8px 10px;min-width:180px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:20;box-shadow:0 4px 20px rgba(0,0,0,.7),0 0 14px rgba(63,201,255,.25);pointer-events:none}
+.tbar-wrap:hover .bd-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.bd-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--arc)}
+.bd-date{font-family:'Orbitron';font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.bd-row{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-family:'JetBrains Mono';padding:2px 0;white-space:nowrap}
+.bd-n{color:var(--txt)}.bd-t{color:var(--arc)}.bd-c{color:var(--gold);min-width:48px;text-align:right}
+.bd-tot{margin-top:6px;padding-top:5px;border-top:1px solid var(--line);font-size:10px;color:var(--dim);font-family:'JetBrains Mono';text-align:right}
 </style>
 </head>
 <body>
@@ -162,19 +176,40 @@ function render(DATA){
     {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status!=='OFFLINE').length+'/4',u:'',c:'',sub:'monitored in real-time'},
   ].map(s=>`<div class="stat ${s.c}"><div class="k">${s.k}</div><div class="v">${s.v} <span class="u">${s.u}</span></div><div class="sub">${s.sub}</div></div>`).join('');
 
-  // 近 7 天趋势迷你柱状图
+  // 近 7 天趋势：柱状 + 曲线叠加 + per-agent breakdown tooltip
   const tr=DATA.trend||[];
+  const N=tr.length||1;
   const maxTrendTok=Math.max(1,...tr.map(t=>t.tok));
-  const trendBars=tr.map(t=>{
+  const trendBars=tr.map((t,i)=>{
     const h=(t.tok/maxTrendTok*100).toFixed(0);
-    const dd=t.date.slice(5); // MM-DD
+    const dd=t.date.slice(5);
     const isToday=t.date===DATA.today;
-    return `<div class="tbar-wrap" title="${t.date}: ${fmtTok(t.tok)} tok / $${t.cost}">
+    // breakdown HTML
+    const bd=Object.values(t.by_agent||{}).sort((a,b)=>b.tok-a.tok).map(a=>
+      `<div class="bd-row"><span class="bd-n">${a.emoji} ${a.name}</span><span class="bd-t">${fmtTok(a.tok)}</span><span class="bd-c">$${a.cost.toFixed(2)}</span></div>`).join('')
+      || '<div class="bd-row" style="color:var(--dim)">no activity</div>';
+    return `<div class="tbar-wrap" data-i="${i}">
       <div class="tbar-val">$${Math.round(t.cost)}</div>
       <div class="tbar ${isToday?'today':''}" style="height:${Math.max(4,h)}%"></div>
-      <div class="tbar-day">${dd}</div></div>`;
+      <div class="tbar-day">${dd}</div>
+      <div class="bd-tip"><div class="bd-date">${t.date}${isToday?' · TODAY':''}</div>${bd}<div class="bd-tot">总计 ${fmtTok(t.tok)} · $${t.cost.toFixed(2)}</div></div>
+    </div>`;
   }).join('');
-  const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${trendBars}</div></section>`;
+  // SVG 曲线（token 趋势），点坐标按百分比，viewBox 0..100
+  const pts=tr.map((t,i)=>{
+    const x=N>1?(i/(N-1))*100:50;
+    const y=100-(t.tok/maxTrendTok*100);
+    return `${x.toFixed(2)},${y.toFixed(2)}`;
+  });
+  const polyline=pts.join(' ');
+  const dots=tr.map((t,i)=>{
+    const x=N>1?(i/(N-1))*100:50;
+    const y=100-(t.tok/maxTrendTok*100);
+    const isToday=t.date===DATA.today;
+    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1.6" class="tdot ${isToday?'today':''}" vector-effect="non-scaling-stroke"/>`;
+  }).join('');
+  const svgCurve=`<svg class="trend-curve" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${polyline}" vector-effect="non-scaling-stroke"/></svg><svg class="trend-dots" viewBox="0 0 100 100" preserveAspectRatio="none">${dots}</svg>`;
+  const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${svgCurve}${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
   const suits = Object.values(DATA.agents).map(a=>{

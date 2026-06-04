@@ -41,6 +41,8 @@ grand = {'tok':0,'cost':0.0,'calls':0,'save':0.0,
          'last7d_tok':0,'last7d_cost':0.0,'last7d_calls':0}
 # 全局趋势：按北京日期聚合 token+cost
 daily_trend = defaultdict(lambda:{'tok':0,'cost':0.0})
+# per-agent 每日明细：{date: {aid: {'tok':,'cost':}}}
+daily_agent = defaultdict(lambda: defaultdict(lambda:{'tok':0,'cost':0.0}))
 
 for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
@@ -75,6 +77,7 @@ for aid,meta in AGENTS.items():
                 if cn_date in last7_set:
                     last7d_tok+=tot; last7d_cost+=cost
                     daily_trend[cn_date]['tok']+=tot; daily_trend[cn_date]['cost']+=cost
+                    daily_agent[cn_date][aid]['tok']+=tot; daily_agent[cn_date][aid]['cost']+=cost
         except: pass
     a_tok=sum(m['total'] for m in by_model.values())
     a_cost=sum(m['cost'] for m in by_model.values())
@@ -103,7 +106,11 @@ for aid,meta in AGENTS.items():
         'calls':a_calls,'cache_eff':round(eff,1),
         'models':sorted([{'name':k,'tok':v['total'],'cost':round(v['cost'],2),'calls':v['calls']} for k,v in by_model.items()],key=lambda x:-x['tok'])}
 
-trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost'],2)} for d in last7_days]
+trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost'],2),
+          'by_agent':{aid:{'name':AGENTS[aid]['name'],'mark':AGENTS[aid]['mark'],'emoji':AGENTS[aid]['emoji'],
+                           'tok':daily_agent[d][aid]['tok'],'cost':round(daily_agent[d][aid]['cost'],2)}
+                      for aid in AGENTS if daily_agent[d][aid]['tok']>0}}
+         for d in last7_days]
 out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
      'grand':{'tok':grand['tok'],'cost':round(grand['cost'],2),'calls':grand['calls'],'save':round(grand['save'],2),
               'today_tok':grand['today_tok'],'today_cost':round(grand['today_cost'],2),

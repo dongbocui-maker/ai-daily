@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SHRIMP OS // Access Gate V3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070b; --panel:#0b1018; --panel2:#101724; --line:#183445;
+  --gold:#ffc400; --arc:#3fc9ff; --arc2:#00e5ff; --red:#e62429;
+  --dim:#6f8192; --text:#d8f6ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(63,201,255,.17), transparent 31%),
+    radial-gradient(circle at 50% 60%, rgba(255,196,0,.065), transparent 39%),
+    linear-gradient(180deg,#020307,#070a0f 54%,#030508);
+  color:var(--text);font-family:'JetBrains Mono',monospace;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.20;
+  background-image:
+    linear-gradient(rgba(63,201,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63,201,255,.08) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(circle at center, black, transparent 72%);
+}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.10;
+  background:repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,.28) 5px);
+  mix-blend-mode:screen;
+}
+.gate{
+  position:relative;width:min(460px,calc(100vw - 36px));padding:34px 34px 30px;
+  background:linear-gradient(180deg,rgba(16,23,36,.92),rgba(7,12,18,.94));
+  border:1px solid rgba(63,201,255,.34);border-radius:18px;
+  box-shadow:0 0 0 1px rgba(255,196,0,.08) inset,0 0 48px rgba(0,229,255,.13),0 24px 80px rgba(0,0,0,.65);
+}
+.gate:before,.gate:after{content:"";position:absolute;width:44px;height:44px;border-color:var(--gold);opacity:.75}
+.gate:before{left:-1px;top:-1px;border-left:2px solid;border-top:2px solid;border-radius:18px 0 0 0}
+.gate:after{right:-1px;bottom:-1px;border-right:2px solid;border-bottom:2px solid;border-radius:0 0 18px 0}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.brand{font-family:'Orbitron';font-weight:900;letter-spacing:2.8px;color:var(--gold);font-size:19px;text-shadow:0 0 18px rgba(255,196,0,.45)}
+.badge{font-size:10px;letter-spacing:2px;color:var(--arc);border:1px solid rgba(63,201,255,.45);padding:5px 8px;border-radius:999px;background:rgba(63,201,255,.08)}
+.reactor{width:150px;height:150px;margin:0 auto 20px;position:relative;display:grid;place-items:center;border-radius:50%;
+  filter:drop-shadow(0 0 34px rgba(0,229,255,.42)) drop-shadow(0 0 10px rgba(127,223,255,.28));
+}
+.reactor .halo{position:absolute;inset:14px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(127,223,255,.36) 24%,rgba(0,229,255,.18) 48%,transparent 72%);animation:breath 2.2s ease-in-out infinite}
+.reactor svg{position:relative;width:150px;height:150px;overflow:visible}
+.energy{animation:corePulse 2.25s ease-in-out infinite;transform-origin:80px 80px}
+.scan{animation:scan 5.5s linear infinite;transform-origin:80px 80px}
+@keyframes breath{50%{opacity:.58;transform:scale(.94)}}
+@keyframes corePulse{50%{opacity:.96;filter:drop-shadow(0 0 26px #7fdfff) drop-shadow(0 0 10px #ffffff);transform:scale(1.012)}}
+@keyframes scan{to{transform:rotate(360deg)}}
+.title{text-align:center;font-family:'Orbitron';font-weight:800;letter-spacing:3px;font-size:22px;margin-bottom:8px;color:#fff}
+.subtitle{text-align:center;color:var(--dim);font-size:11px;line-height:1.7;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
+.terminal{border:1px solid rgba(63,201,255,.22);background:#05080d;border-radius:10px;padding:13px 14px;margin-bottom:16px;color:#8edfff;font-size:11px;line-height:1.75;box-shadow:inset 0 0 18px rgba(63,201,255,.04)}
+.terminal b{color:var(--gold);font-weight:700}.cursor{display:inline-block;width:7px;height:13px;background:var(--arc);vertical-align:-2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+.form{display:grid;gap:12px}
+.pin-wrap{display:flex;gap:8px;align-items:center;background:#060a10;border:1px solid #1b3a4c;border-radius:10px;padding:12px 14px;transition:.25s}
+.pin-wrap:focus-within{border-color:var(--arc);box-shadow:0 0 0 2px rgba(63,201,255,.12),0 0 20px rgba(63,201,255,.16)}
+.prompt{font-family:'Orbitron';color:var(--gold);font-size:13px;letter-spacing:1px}
+input{flex:1;background:transparent;border:0;outline:0;color:#fff;font-family:'JetBrains Mono';font-size:20px;letter-spacing:7px;text-align:left;min-width:0}
+button{height:46px;border:0;border-radius:10px;cursor:pointer;background:linear-gradient(90deg,var(--arc),#7fdfff);color:#031018;font-family:'Orbitron';font-weight:900;letter-spacing:2px;font-size:13px;box-shadow:0 0 20px rgba(63,201,255,.25);transition:.2s}
+button:hover{transform:translateY(-1px);box-shadow:0 0 28px rgba(63,201,255,.38)}
+.meta{display:flex;justify-content:space-between;color:#52687c;font-size:10px;letter-spacing:1px;margin-top:16px;text-transform:uppercase}
+.err{height:16px;text-align:center;color:#ff8080;font-size:11px;margin-top:12px;letter-spacing:1px}
+</style>
+</head>
+<body>
+  <main class="gate">
+    <div class="top">
+      <div class="brand">S.H.R.I.M.P. OS</div>
+      <div class="badge">PRIVATE NODE</div>
+    </div>
+
+    <div class="reactor" aria-hidden="true">
+      <div class="halo"></div>
+      <svg viewBox="0 0 160 160">
+        <defs>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="58%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="18%" stop-color="#ffffff"/>
+            <stop offset="36%" stop-color="#9fe8ff"/>
+            <stop offset="64%" stop-color="#3fc9ff" stop-opacity=".78"/>
+            <stop offset="100%" stop-color="#3fc9ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="metal" x1="20" y1="10" x2="138" y2="150">
+            <stop offset="0" stop-color="#e8f1f5" stop-opacity=".34"/>
+            <stop offset=".28" stop-color="#566977" stop-opacity=".82"/>
+            <stop offset=".55" stop-color="#17222c"/>
+            <stop offset="1" stop-color="#91a7b5" stop-opacity=".42"/>
+          </linearGradient>
+          <filter id="blueFire" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="3.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- recessed shadow -->
+        <circle cx="80" cy="80" r="67" fill="#03060a" stroke="#0e1f2b" stroke-width="3"/>
+
+        <!-- brushed metal outer shell -->
+        <circle cx="80" cy="80" r="61" fill="none" stroke="url(#metal)" stroke-width="10"/>
+        <circle cx="80" cy="80" r="49" fill="none" stroke="#273844" stroke-width="4"/>
+
+        <!-- 24 dark mechanical vents -->
+        <g opacity=".9">
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(0 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(15 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(30 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(45 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(60 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(75 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(90 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(105 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(120 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(135 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(150 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(165 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(180 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(195 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(210 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(225 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(240 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(255 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(270 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(285 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(300 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(315 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(330 80 80)"/>
+          <rect x="78.7" y="14" width="2.6" height="13" rx="1.2" fill="#0a1219" transform="rotate(345 80 80)"/>
+        </g>
+
+        <!-- subtle rotating diagnostic sweep, not the whole reactor -->
+        <g class="scan" opacity=".35">
+          <path d="M80 22 A58 58 0 0 1 132 54" fill="none" stroke="#d8fbff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M80 30 A50 50 0 0 1 120 50" fill="none" stroke="#3fc9ff" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+
+        <!-- three structural clamps -->
+        <g fill="#111b24" stroke="#7f98aa" stroke-opacity=".55" stroke-width="1.2">
+          <path d="M74 31 L86 31 L82 57 L78 57 Z"/>
+          <path d="M32 104 L38 93 L60 107 L58 112 Z"/>
+          <path d="M122 93 L128 104 L102 112 L100 107 Z"/>
+        </g>
+
+        <!-- triangular glass aperture / chest reactor core -->
+        <g class="energy" filter="url(#blueFire)">
+          <g opacity=".42" stroke="#baf4ff" stroke-width="1.1" stroke-linecap="round">
+            <path d="M80 34 V18"/>
+            <path d="M80 126 V142"/>
+            <path d="M34 80 H18"/>
+            <path d="M126 80 H142"/>
+            <path d="M47 47 L36 36"/>
+            <path d="M113 47 L124 36"/>
+            <path d="M47 113 L36 124"/>
+            <path d="M113 113 L124 124"/>
+          </g>
+          <circle cx="80" cy="80" r="42" fill="url(#coreGlow)" opacity=".56"/>
+          <circle cx="80" cy="80" r="31" fill="none" stroke="#baf4ff" stroke-opacity=".65" stroke-width="1.4"/>
+          <circle cx="80" cy="80" r="24" fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="1"/>
+          <path d="M80 43 L119 110 H41 Z" fill="#07141c" stroke="#d8fbff" stroke-opacity=".9" stroke-width="2.4"/>
+          <path d="M80 50 L111 105 H49 Z" fill="url(#coreGlow)" opacity="1"/>
+          <path d="M80 50 L111 105 H49 Z" fill="none" stroke="#ffffff" stroke-opacity=".92" stroke-width="1.3"/>
+          <path d="M80 56 L101 99 H59 Z" fill="#ffffff" opacity=".48"/>
+          <path d="M80 64 L94 94 H66 Z" fill="#ffffff" opacity=".30"/>
+          <circle cx="80" cy="82" r="8" fill="#ffffff" opacity=".54"/>
+        </g>
+      </svg>
+    </div>
+
+    <h1 class="title">ACCESS GATE</h1>
+    <p class="subtitle">Telemetry console locked<br/>Authenticate to boot reactor interface</p>
+    <div class="terminal">
+      <b>root@shrimp-os</b>: initiating private dashboard handshake<br/>
+      <b>auth</b>: enter 8-digit operator code <span class="cursor"></span>
+    </div>
+    <form class="form">
+      <label class="pin-wrap">
+        <span class="prompt">PIN&gt;</span>
+        <input type="password" inputmode="numeric" maxlength="8" placeholder="••••••••" />
+      </label>
+      <button type="submit">UNLOCK CONSOLE</button>
+      <div class="err"></div>
+    </form>
+    <div class="meta"><span>NOINDEX</span><span>LOCAL SESSION</span><span>v0.3</span></div>
+  </main>
+</body>
+</html>

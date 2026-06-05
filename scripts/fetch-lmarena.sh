@@ -52,12 +52,14 @@ fi
 log "✅ mihomo 已启动，监听 127.0.0.1:7890"
 
 # Step 2: 抓 leaderboard
-log "🌐 Step 2: 抓 lmarena.ai/leaderboard"
-HTTP_CODE=$(curl -sS -o "$TMP_HTML" -w "%{http_code}" \
+# 注：2026-06 LMArena 域名从 lmarena.ai 迁移到 arena.ai（301 永久重定向）。
+# 加 -L 跟随重定向作为双保险，万一域名再变也能跟上。
+log "🌐 Step 2: 抓 arena.ai/leaderboard"
+HTTP_CODE=$(curl -sS -L -o "$TMP_HTML" -w "%{http_code}" \
   -x http://127.0.0.1:7890 \
   -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36" \
   --max-time 60 \
-  "https://lmarena.ai/leaderboard")
+  "https://arena.ai/leaderboard")
 
 if [ "$HTTP_CODE" != "200" ]; then
   log "❌ 抓取失败：HTTP $HTTP_CODE"
@@ -84,10 +86,8 @@ fi
 MODEL_COUNT=$(python3 -c "import json; d=json.load(open('$SNAPSHOT_FILE')); print(d['totalModelsShown'])")
 log "✅ snapshot 写入完成：$SNAPSHOT_FILE（Top $MODEL_COUNT）"
 
-# Step 4: 关 mihomo（trap 也会关，这里提前关减少代理时间）
-log "🔌 Step 4: 关闭 mihomo"
-pkill mihomo 2>/dev/null || true
-sleep 1
+# 注：mihomo 不在这里关！GitHub push 走 mihomo 代理（127.0.0.1:7890），
+# 提前关会导致 Step 6 push 无代理失败。统一在 push 之后关（trap 也会兑底）。
 
 # Step 5: build + commit + push
 log "🛠️  Step 5: pnpm build"
@@ -116,6 +116,11 @@ else
     sleep 10
   done
 fi
+
+# Step 7: 关 mihomo（push 完成后才关）
+log "🔌 Step 7: 关闭 mihomo"
+pkill mihomo 2>/dev/null || true
+sleep 1
 
 log "===== ✅ LMArena 月度抓取完成 ====="
 echo "::lmarena-snapshot-date::$DATE"

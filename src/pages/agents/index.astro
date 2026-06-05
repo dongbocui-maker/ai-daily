@@ -200,7 +200,7 @@ function render(DATA){
     {k:'TODAY TOKENS',v:fmtTok(g.today_tok||0),u:'',c:'',sub:'累计 '+fmtTok(g.tok||0)+' tok'},
     {k:'TODAY COST',v:'$'+(g.today_cost||0).toFixed(2),u:'USD',c:'g',sub:'累计 $'+(g.cost||0).toFixed(2)+' · '+fmt(g.calls||0)+' calls'},
     {k:'CACHE SAVINGS',v:'$'+(g.today_save||0).toFixed(2),u:'USD',c:'a',sub:'累计 $'+Math.round(g.save||0)+' total'},
-    {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status!=='OFFLINE').length+'/4',u:'',c:'',sub:'monitored in real-time'},
+    {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status==='ONLINE').length+'/4',u:'',c:'',sub:Object.values(DATA.agents).filter(a=>a.status==='IDLE').length+' idle · '+Object.values(DATA.agents).filter(a=>a.status==='OFFLINE').length+' offline'},
   ].map(s=>`<div class="stat ${s.c}"><div class="k">${s.k}</div><div class="v">${s.v} <span class="u">${s.u}</span></div><div class="sub">${s.sub}</div></div>`).join('');
 
   // 近 7 天趋势：柱状 + 曲线叠加 + per-agent breakdown tooltip

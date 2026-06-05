@@ -37,7 +37,7 @@ def ts_to_cn_date(ts):
 agents_out = {}
 model_totals = defaultdict(lambda:{'tok':0,'cost':0.0,'calls':0})
 grand = {'tok':0,'cost':0.0,'calls':0,'save':0.0,
-         'today_tok':0,'today_cost':0.0,'today_calls':0,
+         'today_tok':0,'today_cost':0.0,'today_calls':0,'today_save':0.0,
          'last7d_tok':0,'last7d_cost':0.0,'last7d_calls':0}
 # 全局趋势：按北京日期聚合 token+cost
 daily_trend = defaultdict(lambda:{'tok':0,'cost':0.0})
@@ -47,7 +47,7 @@ daily_agent = defaultdict(lambda: defaultdict(lambda:{'tok':0,'cost':0.0}))
 for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
     last_ts = None
-    today_tok = 0; today_cost = 0.0
+    today_tok = 0; today_cost = 0.0; today_save = 0.0
     last7d_tok = 0; last7d_cost = 0.0
     for f in glob.glob(f'/root/.openclaw/agents/{aid}/sessions/*.trajectory.jsonl'):
         try:
@@ -73,7 +73,7 @@ for aid,meta in AGENTS.items():
                 if ts and (last_ts is None or ts>last_ts): last_ts=ts
                 cn_date = ts_to_cn_date(ts) if ts else None
                 if cn_date==today:
-                    today_tok+=tot; today_cost+=cost
+                    today_tok+=tot; today_cost+=cost; today_save+=save
                 if cn_date in last7_set:
                     last7d_tok+=tot; last7d_cost+=cost
                     daily_trend[cn_date]['tok']+=tot; daily_trend[cn_date]['cost']+=cost
@@ -97,7 +97,7 @@ for aid,meta in AGENTS.items():
     for k,m in by_model.items():
         model_totals[k]['tok']+=m['total']; model_totals[k]['cost']+=m['cost']; model_totals[k]['calls']+=m['calls']
     grand['tok']+=a_tok; grand['cost']+=a_cost; grand['calls']+=a_calls; grand['save']+=a_save
-    grand['today_tok']+=today_tok; grand['today_cost']+=today_cost
+    grand['today_tok']+=today_tok; grand['today_cost']+=today_cost; grand['today_save']+=today_save
     grand['last7d_tok']+=last7d_tok; grand['last7d_cost']+=last7d_cost
     agents_out[aid]={**meta,'status':status,'idle_min':round(mins) if mins is not None else None,
         'total_tok':a_tok,'today_tok':today_tok,'today_cost':round(today_cost,2),
@@ -113,11 +113,20 @@ trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost
          for d in last7_days]
 out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
      'grand':{'tok':grand['tok'],'cost':round(grand['cost'],2),'calls':grand['calls'],'save':round(grand['save'],2),
-              'today_tok':grand['today_tok'],'today_cost':round(grand['today_cost'],2),
+              'today_tok':grand['today_tok'],'today_cost':round(grand['today_cost'],2),'today_save':round(grand['today_save'],2),
               'last7d_tok':grand['last7d_tok'],'last7d_cost':round(grand['last7d_cost'],2)},
      'trend':trend,
      'agents':agents_out,
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
-os.makedirs('/root/.openclaw/workspace/projects/ai-daily/public/agents/data',exist_ok=True)
-json.dump(out,open('/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-data.json','w'),ensure_ascii=False,indent=2)
+# 输出到两处：
+#  1) 站点 build 用的静态 fallback JSON
+#  2) 实时服务(serve.py @8787)读的 live/ 路径
+import os as _os
+_targets = [
+    '/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-data.json',
+    '/root/.openclaw/workspace/projects/agents-dashboard/live/dashboard-data.json',
+]
+for _t in _targets:
+    _os.makedirs(_os.path.dirname(_t), exist_ok=True)
+    json.dump(out, open(_t,'w'), ensure_ascii=False, indent=2)
 print('OK grand tok=%(tok)s cost=$%(cost)s save=$%(save)s'%out['grand'])

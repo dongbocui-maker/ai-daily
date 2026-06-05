@@ -74,7 +74,7 @@ function orgColor(org: string) {
 
 const base = import.meta.env.BASE_URL;
 ---
-<Base title="LMArena 全球大模型排行榜" description="基于 lmarena.ai 实测数据的全球大模型 Top 50 排行榜，每月更新一次。">
+<Base title="LMArena 全球大模型排行榜" description="基于 arena.ai 实测数据的全球大模型 Top 50 排行榜，每月更新一次。">
   <Header />
   <main class="flex-1">
     <!-- Hero -->
@@ -83,7 +83,7 @@ const base = import.meta.env.BASE_URL;
         <span class="badge bg-accent-purple text-white mb-4">LMARENA LEADERBOARD</span>
         <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">🏆 LMArena 全球大模型 Top 50</h1>
         <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
-          基于 <a href="https://lmarena.ai/leaderboard" target="_blank" rel="noopener" class="underline hover:text-accent-purple">lmarena.ai</a> 真实人类盲测对战数据的全球大模型排行榜。每月 1 日自动更新一次。
+          基于 <a href="https://arena.ai/leaderboard" target="_blank" rel="noopener" class="underline hover:text-accent-purple">arena.ai</a> 真实人类盲测对战数据的全球大模型排行榜。每月 1 日自动更新一次。
         </p>
         {latest && (
           <p class="mt-4 text-sm text-accent-gray-400">
@@ -255,7 +255,7 @@ const base = import.meta.env.BASE_URL;
             <h3 class="font-bold text-sm uppercase tracking-wider text-accent-gray-600 mb-3">📖 说明</h3>
             <div class="prose prose-sm text-accent-gray-700 space-y-2">
               <p>
-                <strong>数据来源</strong>：<a href="https://lmarena.ai/leaderboard" target="_blank" rel="noopener" class="text-accent-purple hover:underline">lmarena.ai 官方排行榜</a>，基于全球用户对模型对战的盲测投票。排名为相对位次（rank position），不是 ELO 分数。
+                <strong>数据来源</strong>：<a href="https://arena.ai/leaderboard" target="_blank" rel="noopener" class="text-accent-purple hover:underline">arena.ai 官方排行榜</a>，基于全球用户对模型对战的盲测投票。排名为相对位次（rank position），不是 ELO 分数。
               </p>
               <p>
                 <strong>优势赛道生成规则</strong>：从该模型在 27 个评测维度（综合 / 难题 / 代码 / 数学 / 创意写作 / 中文 / 各行业等）中：
@@ -269,7 +269,7 @@ const base = import.meta.env.BASE_URL;
                 <strong>月度变化</strong>：与上月快照对比。<span class="text-green-600 font-bold">↑</span> 上升 / <span class="text-rose-500 font-bold">↓</span> 下降 / 🆕 新进 Top 50 / 📊 基线（首期或上月不在 Top 50）。
               </p>
               <p>
-                <strong>更新频率</strong>：每月 1 日 09:00（北京时间）自动从 lmarena.ai 抓取最新数据并发布。
+                <strong>更新频率</strong>：每月 1 日 09:00（北京时间）自动从 arena.ai 抓取最新数据并发布。
               </p>
             </div>
           </div>

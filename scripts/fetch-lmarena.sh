@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # fetch-lmarena.sh — LMArena 月度抓取脚本（决策 3：完全自动化）
 #
-# 流程：开 mihomo → 抓 lmarena.ai/leaderboard → 解析 RSC payload → 写 snapshot →
+# 流程：开 mihomo → 抓 arena.ai/leaderboard → 解析 RSC payload → 写 snapshot →
 #       关 mihomo → git commit + push
 #
 # 触发：OpenClaw cron 每月 1 日 09:00
@@ -105,7 +105,7 @@ git add "src/data/lmarena/snapshots/${DATE}.json"
 if git diff --cached --quiet; then
   log "ℹ️  无新增/变更，跳过 commit"
 else
-  git commit -m "chore(lmarena): 月度榜单 ${DATE}" -m "🤖 自动抓取自 lmarena.ai/leaderboard"
+  git commit -m "chore(lmarena): 月度榜单 ${DATE}" -m "🤖 自动抓取自 arena.ai/leaderboard"
   # push 重试 3 次（国内 GitHub push 不稳定）
   for i in 1 2 3; do
     if git push origin main; then

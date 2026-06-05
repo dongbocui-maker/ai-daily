@@ -3,7 +3,7 @@
 
 用法：python3 parse-lmarena.py <input-html> <output-json> <snapshot-date>
 
-输入：lmarena.ai/leaderboard 的 HTML（含 inline RSC payload）
+输入：arena.ai/leaderboard 的 HTML（含 inline RSC payload）
 输出：snapshot JSON（含 Top 50 模型 + 27 维度 + 优势赛道 + 简述）
 """
 import sys
@@ -147,7 +147,7 @@ def build_snapshot(models, snapshot_date, is_baseline=False):
         'totalModelsObserved': len(models),
         'totalModelsShown': len(out_models),
         'categoryLabels': CATEGORY_LABELS,
-        'sourceUrl': 'https://lmarena.ai/leaderboard',
+        'sourceUrl': 'https://arena.ai/leaderboard',
         'models': out_models,
     }
 

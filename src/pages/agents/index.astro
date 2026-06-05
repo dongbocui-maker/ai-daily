@@ -1,9 +1,11 @@
 ---
 // S.H.R.I.M.P. OS · Agents Monitor — Iron Man HUD 风格独立监控页
-// 数据从 /agents/data/dashboard-data.json 运行时 fetch（每小时 cron 更新，不依赖整站 rebuild）
-// 放 /agents/data/ 下，让 CF Access path=agents 一条规则同时保护页面+数据
+// 数据双源：
+//   主源 LIVE_URL = data.aidigest.club（Cloudflare Tunnel → VM 实时端点，每60s聚合，近实时）
+//   兜底 FALLBACK_URL = 打包进站点的静态 JSON（tunnel 挂了时不白屏）
 const BASE = import.meta.env.BASE_URL;
-const DATA_URL = `${BASE}agents/data/dashboard-data.json`;
+const LIVE_URL = 'https://data.aidigest.club/dashboard.json';
+const FALLBACK_URL = `${BASE}agents/data/dashboard-data.json`;
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -180,7 +182,7 @@ footer .red{color:var(--red-dim)}
   <span class="red">CONFIDENTIAL</span> · POWERED BY 🦐 IRON SHRIMP STACK
 </footer>
 
-<script define:vars={{ DATA_URL }}>
+<script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
   main:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
   aima:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
@@ -195,9 +197,9 @@ function render(DATA){
   document.getElementById('gen').textContent = DATA.generated_at;
   const g=DATA.grand;
   const summary = [
-    {k:'TODAY TOKENS',v:fmtTok(g.today_tok||0),u:'',c:'',sub:'累计 '+fmtTok(g.tok)+' tok'},
-    {k:'TODAY COST',v:'$'+(g.today_cost||0).toFixed(2),u:'USD',c:'g',sub:'累计 $'+g.cost.toFixed(2)+' · '+fmt(g.calls)+' calls'},
-    {k:'CACHE SAVINGS',v:'$'+Math.round(g.save),u:'TOTAL',c:'a',sub:'reactor efficiency boost'},
+    {k:'TODAY TOKENS',v:fmtTok(g.today_tok||0),u:'',c:'',sub:'累计 '+fmtTok(g.tok||0)+' tok'},
+    {k:'TODAY COST',v:'$'+(g.today_cost||0).toFixed(2),u:'USD',c:'g',sub:'累计 $'+(g.cost||0).toFixed(2)+' · '+fmt(g.calls||0)+' calls'},
+    {k:'CACHE SAVINGS',v:'$'+Math.round(g.save||0),u:'TOTAL',c:'a',sub:'reactor efficiency boost'},
     {k:'ACTIVE SUITS',v:Object.values(DATA.agents).filter(a=>a.status!=='OFFLINE').length+'/4',u:'',c:'',sub:'monitored in real-time'},
   ].map(s=>`<div class="stat ${s.c}"><div class="k">${s.k}</div><div class="v">${s.v} <span class="u">${s.u}</span></div><div class="sub">${s.sub}</div></div>`).join('');
 
@@ -314,10 +316,27 @@ function drawTrendCurve(DATA){
 let _trendData=null;
 window.addEventListener('resize',()=>{ if(_trendData) drawTrendCurve(_trendData); });
 
-fetch(DATA_URL + '?t=' + Date.now())
-  .then(r=>r.json())
-  .then(d=>{ _trendData=d; render(d); })
-  .catch(e=>{ document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>'; });
+let _firstLoad=true;
+async function tick(){
+  try{
+    // 优先实时端点；失败则回退静态快照
+    let d;
+    try{
+      d = await (await fetch(LIVE_URL, {cache:'no-store'})).json();
+    }catch(err){
+      console.warn('[SHRIMP] LIVE telemetry unreachable, falling back to static snapshot:', err);
+      d = await (await fetch(FALLBACK_URL + '?t=' + Date.now(), {cache:'no-store'})).json();
+    }
+    _trendData=d; render(d); _firstLoad=false;
+  }catch(e){
+    if(_firstLoad){
+      document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>';
+    }
+    // 非首次失败：保留上一帧画面，不闪烁
+  }
+}
+tick();
+setInterval(tick, 60000);  // 每 60 秒刷新（trajectory 日志非秒级写入，更快无信息增益）
 </script>
 </body>
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Arc Reactor Preview</title><style>
+:root{--gold:#ffc400}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070b11;font-family:-apple-system,"Segoe UI",sans-serif;color:#cfe;padding:28px 18px 60px}
+h1{font-size:17px;letter-spacing:2px;color:#8fa;text-transform:uppercase;margin-bottom:4px}
+h2{font-size:13px;letter-spacing:2px;color:#6f90a8;text-transform:uppercase;margin:34px 0 14px;border-bottom:1px solid #16303f;padding-bottom:6px}
+.note{font-size:12px;color:#6a7a8a;line-height:1.6;margin-bottom:8px}
+.grid{display:flex;gap:30px;flex-wrap:wrap}
+.cell{display:flex;flex-direction:column;align-items:center;gap:9px}
+.reactor{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;background:#0a0f16;border:2px solid #1d3a4a;transition:.4s}
+.reactor.online{border-color:var(--ac);box-shadow:0 0 18px var(--glow),inset 0 0 8px var(--glow)}
+.reactor.idle{border-color:#3a4a52}
+.reactor.offline{border-color:#222a30;background:#080b0f}
+.reactor svg{width:42px;height:42px;display:block}
+.st{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#7a8a9a}
+.st.online{color:#6fe0ff}.st.idle{color:var(--gold)}.st.offline{color:#5a6068}
+.nm{font-size:13px;color:#fff}.mk{font-size:10px;color:#6a8;letter-spacing:.5px}
+.big .reactor{width:120px;height:120px}.big .reactor svg{width:108px;height:108px}
+@keyframes pulseGlow{0%,100%{filter:drop-shadow(0 0 1px currentColor)}50%{filter:drop-shadow(0 0 5px currentColor)}}
+@keyframes breathe{0%,100%{opacity:.16}50%{opacity:1}}
+.online .lit{animation:pulseGlow 3s ease-in-out infinite}
+.idle .lit{animation:breathe 2s ease-in-out infinite}
+.offline .lit{opacity:.05!important}
+</style></head><body>
+
+<h1>方案 C — 钢铁侠三角方舟反应堆 (Mark 50)</h1>
+<p class="note">倒三角形反应堆，尽量还原真实样子。<b style="color:#6fe0ff">ONLINE 常亮</b> · <b style="color:#ffc400">IDLE 呼吸闪烁(时亮时暗)</b> · <b style="color:#5a6068">OFFLINE 完全熄灭</b>。4 个 agent 用各自战甲配色区分。</p>
+
+<h2>实际大小 (46px) · 三种状态对照</h2>
+<div id="small"></div>
+
+<h2>放大预览 (120px) · 看反应堆细节 + 动画</h2>
+<div class="big" id="big"></div>
+
+<script>
+function REACTOR(ac, lit){return `
+<svg viewBox="0 0 100 100" fill="none" stroke-linejoin="round">
+  <path d="M50 14 L86 78 L14 78 Z" stroke="${ac}" stroke-width="4" fill="#0a0f15"/>
+  <path class="lit" d="M50 28 L74 71 L26 71 Z" stroke="${lit}" stroke-width="2.5" fill="${lit}" fill-opacity=".22" style="color:${lit}"/>
+  <g class="lit" stroke="${lit}" stroke-width="2" stroke-linecap="round" style="color:${lit}">
+    <path d="M50 40 L50 64"/><path d="M40 58 L43 50"/><path d="M60 58 L57 50"/>
+  </g>
+  <circle class="lit" cx="50" cy="56" r="5" fill="${lit}" stroke="none" style="color:${lit}"/>
+  <circle cx="50" cy="56" r="2.2" fill="#fff"/>
+  <circle cx="50" cy="18" r="2" fill="${ac}" stroke="none"/>
+  <circle cx="81" cy="74" r="2" fill="${ac}" stroke="none"/>
+  <circle cx="19" cy="74" r="2" fill="${ac}" stroke="none"/>
+</svg>`;}
+const AGENTS=[
+  {nm:'钢铁虾',mk:'MARK I',ac:'#e8b923',lit:'#7fdfff'},
+  {nm:'MK2',mk:'MARK II',ac:'#cfdbe6',lit:'#9fe8ff'},
+  {nm:'银月',mk:'P.E.P.P.E.R.',ac:'#e89bb8',lit:'#ffd0e6'},
+  {nm:'Mark 46',mk:'MARK XLVI',ac:'#caa6ff',lit:'#e0c4ff'},
+];
+const STATES=['online','idle','offline'];
+function block(){
+  return AGENTS.map(a=>{
+    const rows=STATES.map(st=>`
+      <div class="cell">
+        <div class="reactor ${st}" style="--ac:${a.ac};--glow:${a.lit}66">${REACTOR(a.ac,a.lit)}</div>
+        <div class="st ${st}">${st}</div>
+      </div>`).join('');
+    return `<div style="margin-bottom:28px">
+      <div style="margin-bottom:10px"><span class="nm">${a.nm}</span> <span class="mk">· ${a.mk}</span></div>
+      <div class="grid">${rows}</div></div>`;
+  }).join('');
+}
+document.getElementById('small').innerHTML=block();
+document.getElementById('big').innerHTML=block();
+</script>
+</body></html>

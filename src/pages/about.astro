@@ -23,7 +23,7 @@ import Footer from '../components/Footer.astro';
           {/* ===== 内容范围（重构）===== */}
           <h2 class="text-h2 mb-6">📅 内容范围</h2>
           <p class="mb-6 leading-relaxed">
-            本站由 <strong>6 个独立栏目</strong> + <strong>每日新闻 4 板块</strong> 组成。每个栏目有不同的更新节奏和信息源。
+            本站由 <strong>5 个独立栏目</strong> + <strong>每日新闻 4 板块</strong> 组成。每个栏目有不同的更新节奏和信息源。
           </p>
 
           <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🗞️ 每日新闻（首页 + 归档）</h3>
@@ -50,11 +50,6 @@ import Footer from '../components/Footer.astro';
           <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">📖 精读</h3>
           <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
             精挑细选的 AI 时代深度长文，配中文解读、核心观点、金句精选，并为每篇生成 <strong>中文双主持播客音频</strong>（NotebookLM 驱动，可边听边读）。每周一 09:00 自动生成候选清单（3-5 篇），人工拍板后写正式精读卡片。<strong>宁缺勿滥</strong>——某周无合适候选则跳过，不为凑数硬塞。
-          </p>
-
-          <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🎬 Demo</h3>
-          <p class="mb-6 leading-relaxed text-sm text-accent-gray-700">
-            手工挑选的「值得亲手玩一下」的项目——AI 应用、行业 Dashboard、Agent 工具、可视化作品。每张卡片附 Live Demo 直达链接 + GitHub 源码，从 README 提炼简介、Purpose、Key Features。
           </p>
 
           <h3 class="text-lg font-bold mt-8 mb-4 text-accent-gray-800">🎓 学习</h3>
@@ -161,7 +156,7 @@ import Footer from '../components/Footer.astro';
 
           {/* ===== 生成机制（重构）===== */}
           <h2 class="text-h2 mb-6">🤖 生成机制</h2>
-          <p class="mb-4 leading-relaxed">本站 6 个栏目使用混合更新策略：</p>
+          <p class="mb-4 leading-relaxed">本站 5 个栏目使用混合更新策略：</p>
 
           <div class="overflow-x-auto mb-10">
             <table class="w-full text-sm border border-accent-gray-200">
@@ -192,11 +187,6 @@ import Footer from '../components/Footer.astro';
                   <td class="px-3 py-2"><strong>📖 精读</strong></td>
                   <td class="px-3 py-2">每周一 09:00 候选 + 不定期上线</td>
                   <td class="px-3 py-2">半自动 (AI 筛候选 → 人工拍板 → 写卡片 + 中文播客音频)</td>
-                </tr>
-                <tr class="border-b border-accent-gray-100">
-                  <td class="px-3 py-2"><strong>🎬 Demo</strong></td>
-                  <td class="px-3 py-2">按需更新</td>
-                  <td class="px-3 py-2">全人工 (手工挑选 + README 提炼)</td>
                 </tr>
                 <tr>
                   <td class="px-3 py-2"><strong>🎓 学习</strong></td>

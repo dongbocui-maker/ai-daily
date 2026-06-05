@@ -1,52 +1,17 @@
 {
-  "generated_at": "2026-06-04 23:00:01 +08",
-  "today": "2026-06-04",
+  "generated_at": "2026-06-05 08:00:01 +08",
+  "today": "2026-06-05",
   "grand": {
-    "tok": 994346786,
-    "cost": 1445.19,
-    "calls": 1652,
-    "save": 3676.41,
-    "today_tok": 48740060,
-    "today_cost": 70.77,
-    "last7d_tok": 202502039,
-    "last7d_cost": 258.48
+    "tok": 997293311,
+    "cost": 1453.99,
+    "calls": 1662,
+    "save": 3684.09,
+    "today_tok": 0,
+    "today_cost": 0.0,
+    "last7d_tok": 160800628,
+    "last7d_cost": 211.11
   },
   "trend": [
-    {
-      "date": "2026-05-29",
-      "tok": 44647936,
-      "cost": 56.17,
-      "by_agent": {
-        "main": {
-          "name": "钢铁虾",
-          "mark": "MARK I",
-          "emoji": "🦐",
-          "tok": 20502123,
-          "cost": 26.85
-        },
-        "aima": {
-          "name": "银月",
-          "mark": "P.E.P.P.E.R.",
-          "emoji": "🌶️",
-          "tok": 13759824,
-          "cost": 18.22
-        },
-        "mk2": {
-          "name": "MK2",
-          "mark": "MARK II",
-          "emoji": "🦐",
-          "tok": 9452055,
-          "cost": 10.7
-        },
-        "mk46": {
-          "name": "Mark 46",
-          "mark": "MARK XLVI",
-          "emoji": "🛡",
-          "tok": 933934,
-          "cost": 0.41
-        }
-      }
-    },
     {
       "date": "2026-05-30",
       "tok": 12158838,
@@ -196,15 +161,15 @@
     },
     {
       "date": "2026-06-04",
-      "tok": 48740060,
-      "cost": 70.77,
+      "tok": 51686585,
+      "cost": 79.57,
       "by_agent": {
         "main": {
           "name": "钢铁虾",
           "mark": "MARK I",
           "emoji": "🦐",
-          "tok": 44132326,
-          "cost": 62.73
+          "tok": 47078851,
+          "cost": 71.53
         },
         "aima": {
           "name": "银月",
@@ -221,6 +186,12 @@
           "cost": 1.28
         }
       }
+    },
+    {
+      "date": "2026-06-05",
+      "tok": 0,
+      "cost": 0.0,
+      "by_agent": {}
     }
   ],
   "agents": {
@@ -229,17 +200,17 @@
       "mark": "MARK I",
       "role": "ORCHESTRATOR",
       "emoji": "🦐",
-      "status": "ONLINE",
-      "idle_min": 3,
-      "total_tok": 721556622,
-      "today_tok": 44132326,
-      "today_cost": 62.73,
-      "last7d_tok": 108183379,
-      "last7d_cost": 165.0,
-      "cost": 1103.85,
-      "save": 2617.78,
-      "calls": 1274,
-      "cache_eff": 83.9,
+      "status": "IDLE",
+      "idle_min": 500,
+      "total_tok": 724503147,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 90627781,
+      "last7d_cost": 146.94,
+      "cost": 1112.64,
+      "save": 2625.46,
+      "calls": 1284,
+      "cache_eff": 83.8,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -249,9 +220,9 @@
         },
         {
           "name": "azure-claude-48/claude-opus-4-8",
-          "tok": 74166841,
-          "cost": 113.66,
-          "calls": 119
+          "tok": 77113366,
+          "cost": 122.45,
+          "calls": 129
         },
         {
           "name": "deepseek/deepseek-v4-pro",
@@ -273,12 +244,12 @@
       "role": "PERSONAL ASSISTANT",
       "emoji": "🌶️",
       "status": "IDLE",
-      "idle_min": 317,
+      "idle_min": 857,
       "total_tok": 134435910,
-      "today_tok": 3702274,
-      "today_cost": 6.76,
-      "last7d_tok": 24282362,
-      "last7d_cost": 33.68,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 10522538,
+      "last7d_cost": 15.46,
       "cost": 217.0,
       "save": 499.37,
       "calls": 302,
@@ -316,12 +287,12 @@
       "role": "ENGINEER",
       "emoji": "🦐",
       "status": "IDLE",
-      "idle_min": 897,
+      "idle_min": 1437,
       "total_tok": 129377428,
-      "today_tok": 905460,
-      "today_cost": 1.28,
-      "last7d_tok": 68177154,
-      "last7d_cost": 59.0,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 58725099,
+      "last7d_cost": 48.3,
       "cost": 118.17,
       "save": 548.31,
       "calls": 65,
@@ -359,12 +330,12 @@
       "role": "QC AUDITOR",
       "emoji": "🛡",
       "status": "OFFLINE",
-      "idle_min": 3491,
+      "idle_min": 4031,
       "total_tok": 8976826,
       "today_tok": 0,
       "today_cost": 0.0,
-      "last7d_tok": 1859144,
-      "last7d_cost": 0.82,
+      "last7d_tok": 925210,
+      "last7d_cost": 0.41,
       "cost": 6.17,
       "save": 10.95,
       "calls": 11,
@@ -394,9 +365,9 @@
     },
     {
       "name": "azure-claude-48/claude-opus-4-8",
-      "tok": 127068882,
-      "cost": 162.7,
-      "calls": 152
+      "tok": 130015407,
+      "cost": 171.5,
+      "calls": 162
     },
     {
       "name": "deepseek/deepseek-v4-pro",

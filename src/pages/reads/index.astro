@@ -6,6 +6,12 @@ import { listReads } from '../../lib/reads';
 
 const articles = listReads();
 const base = import.meta.env.BASE_URL;
+
+function summaryPreview(summary: string, maxChars = 200): string {
+  const text = summary.trim();
+  if (text.length <= maxChars) return text;
+  return `${text.slice(0, maxChars).replace(/[，。；：、,.!?！？\s]+$/u, '')}…`;
+}
 ---
 <Base title="精读" description="精挑细选的 AI 时代深度好文，配中文解读。">
   <Header />
@@ -67,7 +73,7 @@ const base = import.meta.env.BASE_URL;
                   </p>
 
                   <p class="text-base text-accent-gray-800 leading-relaxed">
-                    {a.summary}
+                    {summaryPreview(a.summary)}
                   </p>
                 </a>
               </li>

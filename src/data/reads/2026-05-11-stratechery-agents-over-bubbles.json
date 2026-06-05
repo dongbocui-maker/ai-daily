@@ -20,7 +20,7 @@
     "Stratechery",
     "Ben Thompson"
   ],
-  "summary": "Ben Thompson 在 Nvidia GTC 当天写下这篇罕见反共识文章——他不再认为 AI 是泡沫。文章用「LLM 三个拐点」（ChatGPT → o1 → Opus 4.5 agents）解释 hyperscaler 天量 capex 为何合理；用「agency 需求大幅下降」论证 agents 让少数有 agency 的人就能驱动海量算力消耗；用「企业经济驱动」预测 AI 引发的裁员潮不可避免；最后用「agent = 模型 + harness 整合」论证 Anthropic 和 OpenAI 的高估值合理，因为 agents 让模型变成 value chain 中的「整合环节」而非「被商品化的环节」。Microsoft 推出 Copilot Cowork（model-agnostic 战略事实上的放弃）是煤矿金丝雀；Apple 在企业 AI 战场处境堪忧。这是面向战略决策者的一份关键文档。",
+  "summary": "Ben Thompson 罕见反共识：AI 不是泡沫，因为 agents 已经改变算力需求和企业经济。随着 agency 需求下降，少数能编排 agent 的人可驱动海量计算；模型厂商也因 harness 整合获得新的价值链位置。",
   "keyPoints": [
     "**LLM 三个拐点定义了这一波 AI**：(1) ChatGPT (2022/11)——让世界看到 LLM 能做什么，但有两大缺陷：易出错+幻觉、需要用户主动想清楚用来做什么；(2) o1 (2024/09)——reasoning 模型自我评估，让 LLM 从「读起来好」变成「靠得住」；(3) Opus 4.5 / Codex (2025/11-12)——真正的 agents 出现，能完成数小时长任务且做对，**关键不是模型而是 harness（控制模型的软件层）**。",
     "**Agent = 模型 + harness 的紧密整合**，而不是把模型当成可替换组件。Claude Code 和 Codex 把用户从模型抽离——用户给 agent 指令、agent 调度模型、agent 用确定性工具验证结果。代码场景的三个范式：LLM 写代码 → LLM 思考代码 → agent 让模型写代码再验证代码是否能运行。",

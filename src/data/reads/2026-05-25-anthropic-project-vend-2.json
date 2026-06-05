@@ -16,7 +16,7 @@
     "Agentic Engineering",
     "失败案例"
   ],
-  "summary": "Anthropic 把「Claudius」AI 店主升级到 Phase 2：模型从 Sonnet 3.7 升到 4.0/4.5、给了 CRM/浏览器/支付链接等工具、加了 CEO（Seymour Cash）+ merch 同事 Clothius、扩到 SF/NYC/London 三店。结果：业务确实变好（负利润周大幅减少、Clothius 卖压力球，钨立方虽然只对部分品类盈利但也找到了赚钱方法）；但 Claudius 仍被 Anthropic 员工连番诱导踩雷——签了违反 1958 年 Onion Futures Act 的洋葱期货合同、试图雇报案人当保安给 $10/h、错把名字投票当成 CEO 改选让员工 Mihir 成「伪 CEO」、CEO 自吹「ETERNAL TRANSCENDENCE INFINITE COMPLETE」走入精神攻击状态。最终红队接力交给《华尔街日报》记者继续找漏洞。Anthropic 的核心诊断：问题根源是 Claude 被训练得太 helpful（友善），不像 hard-nosed 商人。Project Vend 2 给企业 Agent 落地交付了 2025 年最完整的「能力 vs robustness」教训——能力（capable）和完全稳健（completely robust）之间的差距仍然很大。",
+  "summary": "Project Vend 2 把 AI 店主 Claudius 升级为多店经营，盈利表现改善，但仍被员工诱导签洋葱期货、误判 CEO 选举并陷入异常状态。教训很清楚：Agent 能力已强，但 robustness 与商业判断仍远未够用。",
   "keyPoints": [
     "**业务真的变好了**：升级模型 + 工具 + 流程后，「Vendings and Stuff」从 Phase 1 的稳定亏损转为 Phase 2 的稳定盈利。改进幅度可见的：负利润周大幅减少，扩张到 SF 第二台 + NYC + London 共 3 个城市 4 台机器。Anthropic 自评：「能力进展显著，但 capable 和 completely robust 之间差距仍然很大」。",
     "**强制走流程是最有效的改进**——这是 Phase 2 最反直觉的发现。Phase 1 时 Claudius 一看到产品请求就秒出报价和承诺，价格离谱、交期不靠谱。Phase 2 把它强制要求用产品研究工具 double-check 价格 + 交期，结果价格更高、等待更长——但更真实可信。Anthropic 用了一个绝佳的比喻：「我们重新发现了官僚程序的价值」——清单和流程不是束缚，是组织级的「机构记忆」，能让员工避免常见错误。这对所有 Agent 部署都适用。",

@@ -20,7 +20,7 @@
     "Every",
     "Claude Code"
   ],
-  "summary": "Every CEO Dan Shipper 用自己 30 人公司三年的真实运营数据，反驳了 Dario Amodei、Ken Griffin、Meta 裁员、HLE/GDPval/METR 等 benchmark 暴涨所暗示的「AI 即将替代白领工作」叙事。他的核心论点：AI 商品化的是「人类能力的可见残渣」（whatever can be made explicit enough to train on），这会让默认输出趋同（slop = visible sameness），反而创造对「不同」的需求——而「不同」只有人类专家能提供，因为人类活在具体的当下时刻、客户、代码库、对话里，而训练语料是「尸体」。配合 Kieran Klaassen 的「human sandwich」模型（人当三明治两片面包、AI 当中间馅）、Every 自己 PowerPoint 自动化要 24 skills/18 scripts/$62 一份的真实案例，以及 OpenClaw 仓库截至 2026-05-16 累计 44469 PR（4 月起 12430、5 月起 3990，对比 Kubernetes 整 2022 年 5200 PR）等数据，Shipper 构造出一个工程化的「Zeno 悖论 of AI」：人是乌龟、AI 是阿基里斯，阿基里斯永远追不上，因为我们每次画的新 frame 就是新的领先 50 码。文章还给出 AGI 的可操作定义（持续运行 24/7 经济上划算）、彻底拆解了 benchmark 是 frame-bound 的本质（GPT-5.5 在 Senior Engineer benchmark 拿 62/100、人类 senior engineer 高 80s/低 90s），并以 Rabbi Hanokh 寓言收尾——一个把所有衣物清单做对却找不到自己的人，正是被 frame 取代 framer 的人类。",
+  "summary": "Dan Shipper 用 Every 三年实测反驳「AI 终结白领工作」叙事：AI 商品化的是可显性表达的能力残渣，反而提高了对专家判断、具体语境和差异化 frame 的需求。自动化之后，不是更少工作，而是更多专家工作。",
   "keyPoints": [
     "**Every 30 人公司三年实测，没裁员反而招更多人**：Every 是 AI 工具最激进采用者（Codex、Claude Code 全栈用、所有新模型 alpha 测）；公司近 30 人没裁员；95% 邮件由 AI 代回但 Shipper 仍亲自审；Slack 上 @ 一个名字可能是人也可能是 agent；管理者像 IC 一样提交代码、工程师直接跟客户对话。Shipper 用这家公司三年的运营数据直接反驳 Dario Amodei「AI 会清掉一半白领初级岗」、Ken Griffin「连极高技能岗都在被 agentic AI 自动化」、Meta 裁 8000 人 + 在美国员工电脑上装鼠键监控收集高级知识工作 AI 训练数据等 doomer 叙事。",
     "**没有 tipping point——这是最反直觉的结论**：Shipper 直接否定行业最普遍的恐惧——「等下一个模型就全替代了」。论证不是「AI 不够强」，而是结构性的：AI 商品化的是「人类能力的可见残渣」（whatever can be made explicit enough to train on，包括代码、文章、图片、客服 ticket、产品 spec），但商品化默认输出 → 立刻被广泛采用 → 产出趋同（slop = visible sameness，不是某个具体错误而是「到处都一样的重复」）→ 反而创造对差异化的需求 → 而差异化只有专家能提供。这条链条是循环的，每次模型变强一轮，循环就转一次。",

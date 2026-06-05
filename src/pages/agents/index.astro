@@ -72,11 +72,20 @@ h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(
 .suit.idle{border-color:rgba(255,196,0,.25)}
 .suit.offline{opacity:.62}
 .suit-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.reactor{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative}
-.reactor.online{background:radial-gradient(circle,rgba(63,201,255,.5),rgba(63,201,255,.05));border:2px solid var(--arc);box-shadow:0 0 20px var(--arc-glow);animation:rpulse 2.5s infinite}
-.reactor.idle{background:radial-gradient(circle,rgba(255,196,0,.4),transparent);border:2px solid var(--gold)}
-.reactor.offline{background:radial-gradient(circle,rgba(230,36,41,.3),transparent);border:2px solid var(--red-dim)}
-@keyframes rpulse{50%{box-shadow:0 0 32px var(--arc-glow)}}
+.reactor{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;overflow:visible;background:#05080c;border:2px solid #1d3a4a;transition:.45s}
+.reactor svg{width:44px;height:44px;display:block}
+.reactor.online{border-color:var(--ac,var(--arc));box-shadow:0 0 16px var(--glow),inset 0 0 7px var(--glow)}
+.reactor.idle{border-color:#3a4a52}
+.reactor.offline{border-color:#1a2228;background:#05070a}
+@keyframes glowSteady{0%,100%{opacity:.92}50%{opacity:1}}
+@keyframes breathe{0%,100%{opacity:.12}45%,55%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reactor.online .core{animation:glowSteady 2.6s ease-in-out infinite}
+.reactor.idle .core{animation:breathe 1.8s ease-in-out infinite}
+.reactor.offline .core{opacity:.05!important}
+.reactor.online .ring-rot{animation:spin 14s linear infinite;transform-origin:50px 50px}
+.reactor.idle .ring-rot{animation:spin 26s linear infinite;transform-origin:50px 50px}
+.reactor.offline .metal{stroke:#2a3138!important}
 .suit-id .mark{font-family:'Orbitron';font-weight:700;font-size:13px;color:var(--gold);letter-spacing:1px}
 .suit-id .nm{font-size:16px;color:#fff;font-weight:700;margin-top:2px}
 .suit-id .role{font-size:9px;color:var(--dim);letter-spacing:2px;margin-top:2px}
@@ -192,6 +201,15 @@ const CHAINS={
 const fmt = n => n.toLocaleString('en-US');
 const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
 
+// 钢铁侠方舟反应堆 SVG：外金属大环 + 24齿刻度环 + 8段旋转线圈 + 内发光圆盘 + 中心三角核 + 中心白光点
+function reactorSvg(ac,lit,id){
+  let coils='';
+  for(let k=0;k<8;k++){const a=k*45*Math.PI/180;coils+='<line x1="'+(50+Math.cos(a)*22).toFixed(1)+'" y1="'+(50+Math.sin(a)*22).toFixed(1)+'" x2="'+(50+Math.cos(a)*30).toFixed(1)+'" y2="'+(50+Math.sin(a)*30).toFixed(1)+'" stroke="'+lit+'" stroke-width="3" stroke-linecap="round"/>';}
+  let ticks='';
+  for(let k=0;k<24;k++){const a=k*15*Math.PI/180;ticks+='<line x1="'+(50+Math.cos(a)*33).toFixed(1)+'" y1="'+(50+Math.sin(a)*33).toFixed(1)+'" x2="'+(50+Math.cos(a)*37).toFixed(1)+'" y2="'+(50+Math.sin(a)*37).toFixed(1)+'" stroke="'+ac+'" stroke-width="1.2"/>';}
+  return '<svg viewBox="0 0 100 100"><defs><radialGradient id="g'+id+'" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff"/><stop offset="28%" stop-color="'+lit+'"/><stop offset="70%" stop-color="'+lit+'" stop-opacity=".25"/><stop offset="100%" stop-color="'+lit+'" stop-opacity="0"/></radialGradient></defs><circle class="metal" cx="50" cy="50" r="40" fill="#070c11" stroke="'+ac+'" stroke-width="3"/><g class="metal">'+ticks+'</g><circle class="metal" cx="50" cy="50" r="33" fill="none" stroke="'+ac+'" stroke-width="1.5" opacity=".7"/><g class="core ring-rot">'+coils+'</g><circle class="core" cx="50" cy="50" r="21" fill="url(#g'+id+')"/><circle class="metal" cx="50" cy="50" r="21" fill="none" stroke="'+ac+'" stroke-width="2"/><path class="core" d="M50 36 L62 58 L38 58 Z" fill="'+lit+'" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><circle class="core" cx="50" cy="50" r="5" fill="#fff"/></svg>';
+}
+
 function render(DATA){
   document.getElementById('ts').textContent = '⟦ '+DATA.generated_at+' ⟧';
   document.getElementById('gen').textContent = DATA.generated_at;
@@ -227,14 +245,14 @@ function render(DATA){
   const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${svgCurve}${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
-  const suits = Object.values(DATA.agents).map(a=>{
+  const suits = Object.entries(DATA.agents).map(([aid,a],idx)=>{
     const st=a.status.toLowerCase();
     const idle = a.idle_min==null?'—':(a.idle_min<60?a.idle_min+'m ago':a.idle_min<1440?Math.round(a.idle_min/60)+'h ago':Math.round(a.idle_min/1440)+'d ago');
     const pct=(a.total_tok/maxTok*100).toFixed(0);
     const mdls=a.models.slice(0,3).map(m=>m.name.split('/')[1]+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
     return `<div class="suit ${st}">
       <div class="suit-head">
-        <div class="reactor ${st}">${a.emoji}</div>
+        <div class="reactor ${st}" style="--ac:${a.ac||'#888'};--glow:${(a.lit||'#7fdfff')}55">${reactorSvg(a.ac||'#888', a.lit||'#7fdfff', aid||idx)}</div>
         <div class="suit-id"><div class="mark">${a.mark}</div><div class="nm">${a.name}</div><div class="role">${a.role}</div></div>
         <div class="badge ${st}">● ${a.status}</div>
       </div>

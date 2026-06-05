@@ -15,10 +15,10 @@ def price(prov,model):
     return PRICING.get((prov,model)) or PRICING.get((prov,(model or '').lower())) or (0,0,0,0)
 
 AGENTS = {
-    'main':{'name':'钢铁虾','mark':'MARK I','role':'ORCHESTRATOR','emoji':'🦐'},
-    'aima':{'name':'银月','mark':'P.E.P.P.E.R.','role':'PERSONAL ASSISTANT','emoji':'🌶️'},
-    'mk2': {'name':'MK2','mark':'MARK II','role':'ENGINEER','emoji':'🦐'},
-    'mk46':{'name':'Mark 46','mark':'MARK XLVI','role':'QC AUDITOR','emoji':'🛡'},
+    'main':{'name':'钢铁虾','mark':'MARK I','role':'ORCHESTRATOR','emoji':'🦐','ac':'#e8b923','lit':'#7fdfff'},
+    'aima':{'name':'银月','mark':'P.E.P.P.E.R.','role':'PERSONAL ASSISTANT','emoji':'🌶️','ac':'#e89bb8','lit':'#ffd0e6'},
+    'mk2': {'name':'MK2','mark':'MARK II','role':'ENGINEER','emoji':'🦐','ac':'#cfdbe6','lit':'#9fe8ff'},
+    'mk46':{'name':'Mark 46','mark':'MARK XLVI','role':'QC AUDITOR','emoji':'🛡','ac':'#caa6ff','lit':'#e0c4ff'},
 }
 CN_TZ = timezone(timedelta(hours=8))
 now = datetime.now(CN_TZ)

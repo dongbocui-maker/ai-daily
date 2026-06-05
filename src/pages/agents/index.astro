@@ -239,9 +239,9 @@ function render(DATA){
         <div class="badge ${st}">● ${a.status}</div>
       </div>
       <div class="suit-grid">
-        <div class="cell"><div class="lbl">Total Power</div><div class="val gold">${fmtTok(a.total_tok)}</div></div>
-        <div class="cell"><div class="lbl">Fuel Burn</div><div class="val">$${a.cost.toFixed(2)}</div></div>
-        <div class="cell"><div class="lbl">Reactor Eff.</div><div class="val arc">${a.cache_eff}%</div></div>
+        <div class="cell"><div class="lbl">POWER</div><div class="val gold">${fmtTok(a.today_tok||0)} / ${fmtTok(a.total_tok||0)}</div></div>
+        <div class="cell"><div class="lbl">FUEL BURN</div><div class="val">$${(a.today_cost||0).toFixed(2)} / $${(a.cost||0).toFixed(2)}</div></div>
+        <div class="cell"><div class="lbl">REACTOR EFF.</div><div class="val arc">${a.today_cache_eff||0}% / ${a.cache_eff||0}%</div></div>
         <div class="cell"><div class="lbl">Last Active</div><div class="val" style="font-size:13px">${idle}</div></div>
         <div class="pwr"><div class="lbl" style="font-size:9px;color:var(--dim)">POWER LEVEL</div><div class="bar"><div class="fill" style="width:${pct}%"></div></div></div>
         <div class="models-mini">⚡ ${mdls}</div>

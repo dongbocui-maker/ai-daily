@@ -48,6 +48,7 @@ for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
     last_ts = None
     today_tok = 0; today_cost = 0.0; today_save = 0.0
+    today_cr = 0; today_in = 0  # 当天缓存命中率用：cacheRead / (input+cacheRead+cacheWrite)
     last7d_tok = 0; last7d_cost = 0.0
     for f in glob.glob(f'/root/.openclaw/agents/{aid}/sessions/*.trajectory.jsonl'):
         try:
@@ -74,6 +75,7 @@ for aid,meta in AGENTS.items():
                 cn_date = ts_to_cn_date(ts) if ts else None
                 if cn_date==today:
                     today_tok+=tot; today_cost+=cost; today_save+=save
+                    today_cr+=cr; today_in+=(inp+cr+cw)
                 if cn_date in last7_set:
                     last7d_tok+=tot; last7d_cost+=cost
                     daily_trend[cn_date]['tok']+=tot; daily_trend[cn_date]['cost']+=cost
@@ -99,11 +101,12 @@ for aid,meta in AGENTS.items():
     grand['tok']+=a_tok; grand['cost']+=a_cost; grand['calls']+=a_calls; grand['save']+=a_save
     grand['today_tok']+=today_tok; grand['today_cost']+=today_cost; grand['today_save']+=today_save
     grand['last7d_tok']+=last7d_tok; grand['last7d_cost']+=last7d_cost
+    today_eff = (today_cr/today_in*100) if today_in else 0
     agents_out[aid]={**meta,'status':status,'idle_min':round(mins) if mins is not None else None,
         'total_tok':a_tok,'today_tok':today_tok,'today_cost':round(today_cost,2),
         'last7d_tok':last7d_tok,'last7d_cost':round(last7d_cost,2),
         'cost':round(a_cost,2),'save':round(a_save,2),
-        'calls':a_calls,'cache_eff':round(eff,1),
+        'calls':a_calls,'cache_eff':round(eff,1),'today_cache_eff':round(today_eff,1),
         'models':sorted([{'name':k,'tok':v['total'],'cost':round(v['cost'],2),'calls':v['calls']} for k,v in by_model.items()],key=lambda x:-x['tok'])}
 
 trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost'],2),

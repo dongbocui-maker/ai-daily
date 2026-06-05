@@ -121,6 +121,18 @@ footer{margin-top:28px;text-align:center;font-size:10px;color:var(--dim);border-
 footer .red{color:var(--red-dim)}
 .loading{text-align:center;padding:80px 20px;color:var(--arc);font-size:14px;letter-spacing:2px}
 .loading .pulse{animation:blink 1.2s infinite}
+
+/* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
+body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
+body.gate-locked header,body.gate-locked footer{display:none}
+body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:center;padding:18px}
+.login-gate{position:relative;width:min(460px,calc(100vw - 36px));padding:34px 34px 30px;background:linear-gradient(180deg,rgba(16,23,36,.92),rgba(7,12,18,.94));border:1px solid rgba(63,201,255,.34);border-radius:18px;box-shadow:0 0 0 1px rgba(255,196,0,.08) inset,0 0 48px rgba(0,229,255,.13),0 24px 80px rgba(0,0,0,.65)}
+.login-gate:before,.login-gate:after{content:"";position:absolute;width:44px;height:44px;border-color:var(--gold);opacity:.75}.login-gate:before{left:-1px;top:-1px;border-left:2px solid;border-top:2px solid;border-radius:18px 0 0 0}.login-gate:after{right:-1px;bottom:-1px;border-right:2px solid;border-bottom:2px solid;border-radius:0 0 18px 0}
+.login-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.login-brand{font-family:'Orbitron';font-weight:900;letter-spacing:2.8px;color:var(--gold);font-size:19px;text-shadow:0 0 18px rgba(255,196,0,.45)}.login-private-badge{font-size:10px;letter-spacing:2px;color:var(--arc);border:1px solid rgba(63,201,255,.45);padding:5px 8px;border-radius:999px;background:rgba(63,201,255,.08)}
+.login-reactor{width:128px;height:128px;margin:4px auto 22px;position:relative;display:grid;place-items:center;border-radius:50%;filter:drop-shadow(0 0 22px rgba(0,229,255,.35))}.login-reactor svg{width:128px;height:128px}.login-rotor{animation:spin 18s linear infinite;transform-origin:50px 50px}.login-tri{animation:loginTriPulse 2.1s ease-in-out infinite}@keyframes loginTriPulse{50%{filter:drop-shadow(0 0 16px var(--arc-glow));opacity:.86}}
+.login-title{text-align:center;font-family:'Orbitron';font-weight:800;letter-spacing:3px;font-size:22px;margin-bottom:8px;color:#fff}.login-subtitle{text-align:center;color:var(--dim);font-size:11px;line-height:1.7;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:26px}.login-terminal{border:1px solid rgba(63,201,255,.22);background:#05080d;border-radius:10px;padding:13px 14px;margin-bottom:16px;color:#8edfff;font-size:11px;line-height:1.75;box-shadow:inset 0 0 18px rgba(63,201,255,.04)}.login-terminal b{color:var(--gold);font-weight:700}.login-cursor{display:inline-block;width:7px;height:13px;background:var(--arc);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+.login-form{display:grid;gap:12px}.login-pin-wrap{display:flex;gap:8px;align-items:center;background:#060a10;border:1px solid #1b3a4c;border-radius:10px;padding:12px 14px;transition:.25s}.login-pin-wrap:focus-within{border-color:var(--arc);box-shadow:0 0 0 2px rgba(63,201,255,.12),0 0 20px rgba(63,201,255,.16)}.login-prompt{font-family:'Orbitron';color:var(--gold);font-size:13px;letter-spacing:1px}.login-input{flex:1;background:transparent;border:0;outline:0;color:#fff;font-family:'JetBrains Mono';font-size:20px;letter-spacing:7px;text-align:left;min-width:0}.login-btn{height:46px;border:0;border-radius:10px;cursor:pointer;background:linear-gradient(90deg,var(--arc),#7fdfff);color:#031018;font-family:'Orbitron';font-weight:900;letter-spacing:2px;font-size:13px;box-shadow:0 0 20px rgba(63,201,255,.25);transition:.2s}.login-btn:hover{transform:translateY(-1px);box-shadow:0 0 28px rgba(63,201,255,.38)}.login-meta{display:flex;justify-content:space-between;color:#7a9cb8;font-size:10px;letter-spacing:1px;margin-top:16px;text-transform:uppercase}.login-err{height:16px;text-align:center;color:#ff8080;font-size:11px;margin-top:12px;letter-spacing:1px}
+
 /* 响应式：电脑双列保持设计图布局，手机自适应单列竖排（保留 HUD 风格） */
 @media(max-width:768px){
   body{padding:14px}
@@ -360,21 +372,34 @@ const _PIN_KEY = 'shrimp_pin_ok';
 let _started = false;
 function _startDash(){
   if(_started) return; _started = true;
+  document.body.classList.remove('gate-locked');
   tick();
   setInterval(tick, 60000);  // 每 60 秒刷新
 }
 function _gate(){
   if(localStorage.getItem(_PIN_KEY) === _PIN){ _startDash(); return; }
+  document.body.classList.add('gate-locked');
   const app = document.getElementById('app');
-  app.innerHTML = `<div style="min-height:70vh;display:flex;align-items:center;justify-content:center">
-    <form id="pinForm" style="width:300px;padding:38px 30px;background:#0E1118;border:1px solid #16303f;border-radius:14px;box-shadow:0 0 40px rgba(63,201,255,.08);text-align:center">
-      <div style="font-size:22px;font-weight:900;letter-spacing:2px;color:#FFC400;text-shadow:0 0 16px rgba(255,196,0,.4);margin-bottom:6px">🦐 SHRIMP OS</div>
-      <div style="font-size:11px;letter-spacing:3px;color:#6f90a8;text-transform:uppercase;margin-bottom:24px">Restricted Access</div>
-      <input id="pinInput" type="password" inputmode="numeric" maxlength="8" placeholder="输入 8 位访问码" autocomplete="off"
-        style="width:100%;padding:13px 14px;background:#070c11;border:1px solid #1d3a4a;border-radius:8px;color:#fff;font-size:18px;letter-spacing:6px;text-align:center;outline:none">
-      <button type="submit" style="width:100%;margin-top:14px;padding:13px;background:#3FC9FF;border:none;border-radius:8px;color:#031018;font-size:15px;font-weight:700;letter-spacing:2px;cursor:pointer">解 锁</button>
-      <div id="pinErr" style="color:#ff7b7b;font-size:12px;margin-top:14px;min-height:16px"></div>
-    </form></div>`;
+  app.innerHTML = `<main class="login-gate" lang="en">
+    <div class="login-top"><div class="login-brand">S.H.R.I.M.P. OS</div><div class="login-private-badge">PRIVATE NODE</div></div>
+    <div class="login-reactor" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <defs><radialGradient id="loginGateGlow"><stop offset="0%" stop-color="#fff"/><stop offset="28%" stop-color="#7fdfff"/><stop offset="70%" stop-color="#3fc9ff" stop-opacity=".35"/><stop offset="100%" stop-color="#3fc9ff" stop-opacity="0"/></radialGradient></defs>
+        <g class="login-rotor"><circle cx="50" cy="50" r="46" fill="none" stroke="#16384b" stroke-width="2"/><circle cx="50" cy="50" r="39" fill="none" stroke="#ffc400" stroke-width="2.4" stroke-dasharray="4 5"/><circle cx="50" cy="50" r="28" fill="none" stroke="#3fc9ff" stroke-width="3" opacity=".8"/></g>
+        <circle cx="50" cy="50" r="18" fill="url(#loginGateGlow)" opacity=".95"/>
+        <path class="login-tri" d="M50 64 L65 38 L35 38 Z" fill="#7fdfff" stroke="#fff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <h1 class="login-title">ACCESS GATE</h1>
+    <p class="login-subtitle">Telemetry console locked<br/>Authenticate to boot reactor interface</p>
+    <div class="login-terminal"><b>root@shrimp-os</b>: initiating private dashboard handshake<br/><b>auth</b>: enter 8-digit operator code <span class="login-cursor"></span></div>
+    <form id="pinForm" class="login-form">
+      <label class="login-pin-wrap"><span class="login-prompt">PIN&gt;</span><input id="pinInput" class="login-input" type="password" inputmode="numeric" maxlength="8" placeholder="••••••••" autocomplete="off" /></label>
+      <button class="login-btn" type="submit">UNLOCK CONSOLE</button>
+      <div id="pinErr" class="login-err"></div>
+    </form>
+    <div class="login-meta"><span>NOINDEX</span><span>LOCAL SESSION</span><span>v0.5</span></div>
+  </main>`;
   const inp = document.getElementById('pinInput');
   inp.focus();
   document.getElementById('pinForm').addEventListener('submit', (e)=>{
@@ -384,7 +409,7 @@ function _gate(){
       app.innerHTML = '<div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div>';
       _startDash();
     }else{
-      document.getElementById('pinErr').textContent = '访问码错误';
+      document.getElementById('pinErr').textContent = 'ACCESS DENIED · INVALID OPERATOR CODE';
       inp.value=''; inp.focus();
     }
   });

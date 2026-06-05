@@ -210,6 +210,12 @@ const CHAINS={
   mk2:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
   mk46:['deepseek-v4-pro','azure-claude-48/opus-4.8'],
 };
+const CHAIN_MODEL_KEYS={
+  'azure-claude-48/opus-4.8':'azure-claude-48/claude-opus-4-8',
+  'gpt-5.5':'azure-openai-responses/gpt-5.5',
+  'deepseek-v4-pro':'deepseek/DeepSeek-V4-Pro',
+};
+const chainModelKey = n => CHAIN_MODEL_KEYS[n] || n;
 const fmt = n => n.toLocaleString('en-US');
 const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
 
@@ -285,7 +291,10 @@ function render(DATA){
 
   const chain = Object.entries(DATA.agents).map(([id,a])=>{
     const ch=CHAINS[id]||[];
-    const nodes=ch.map((n,i)=>`<span class="node ${i===0?'primary':'fb'}">${n}</span>`).join('<span class="arr">▸</span>');
+    const active=a.active_model;
+    const activeIdx=ch.findIndex(n=>chainModelKey(n)===active);
+    const yellowIdx=activeIdx>=0?activeIdx:0;
+    const nodes=ch.map((n,i)=>`<span class="node ${i===yellowIdx?'primary':'fb'}">${n}</span>`).join('<span class="arr">▸</span>');
     return `<div class="agent-row"><span class="who">${a.mark} · ${a.name}</span>${nodes}</div>`;
   }).join('');
 

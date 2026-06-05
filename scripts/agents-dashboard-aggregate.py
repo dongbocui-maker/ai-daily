@@ -57,6 +57,7 @@ daily_agent = defaultdict(lambda: defaultdict(lambda:{'tok':0,'cost':0.0}))
 for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
     last_ts = None
+    last_model = None
     today_tok = 0; today_cost = 0.0; today_save = 0.0
     today_cr = 0; today_in = 0  # 当天缓存命中率用：cacheRead / (input+cacheRead+cacheWrite)
     last7d_tok = 0; last7d_cost = 0.0
@@ -81,7 +82,9 @@ for aid,meta in AGENTS.items():
                 m['input']+=inp; m['output']+=out; m['cacheRead']+=cr; m['cacheWrite']+=cw
                 m['total']+=tot; m['calls']+=1; m['cost']+=cost; m['save']+=save
                 ts=d.get('ts')
-                if ts and (last_ts is None or ts>last_ts): last_ts=ts
+                if ts and (last_ts is None or ts>last_ts):
+                    last_ts=ts
+                    last_model=key
                 cn_date = ts_to_cn_date(ts) if ts else None
                 if cn_date==today:
                     today_tok+=tot; today_cost+=cost; today_save+=save
@@ -116,7 +119,7 @@ for aid,meta in AGENTS.items():
         'total_tok':a_tok,'today_tok':today_tok,'today_cost':round(today_cost,2),
         'last7d_tok':last7d_tok,'last7d_cost':round(last7d_cost,2),
         'cost':round(a_cost,2),'save':round(a_save,2),
-        'calls':a_calls,'cache_eff':round(eff,1),'today_cache_eff':round(today_eff,1),
+        'calls':a_calls,'active_model':last_model,'cache_eff':round(eff,1),'today_cache_eff':round(today_eff,1),
         'models':sorted([{'name':k,'tok':v['total'],'cost':round(v['cost'],2),'calls':v['calls']} for k,v in by_model.items()],key=lambda x:-x['tok'])}
 
 trend = [{'date':d,'tok':daily_trend[d]['tok'],'cost':round(daily_trend[d]['cost'],2),

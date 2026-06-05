@@ -14,6 +14,16 @@ PRICING = {
 def price(prov,model):
     return PRICING.get((prov,model)) or PRICING.get((prov,(model or '').lower())) or (0,0,0,0)
 
+# 模型标识规范化：同一模型不同大小写写法（如 deepseek-v4-pro / DeepSeek-V4-Pro）
+# 归并到统一展示名，避免 POWER CONSUMPTION 表与 per-agent ⚡行出现重复行。
+# key 用全小写匹配，value 是标准展示名。
+MODEL_CANON = {
+    'deepseek-v4-pro': 'DeepSeek-V4-Pro',
+}
+def canon_model(model):
+    if not model: return model
+    return MODEL_CANON.get(model.lower(), model)
+
 AGENTS = {
     'main':{'name':'钢铁虾','mark':'MARK I','role':'ORCHESTRATOR','emoji':'🦐','ac':'#e8b923','lit':'#7fdfff'},
     'aima':{'name':'银月','mark':'P.E.P.P.E.R.','role':'PERSONAL ASSISTANT','emoji':'🌶️','ac':'#e89bb8','lit':'#ffd0e6'},
@@ -56,7 +66,7 @@ for aid,meta in AGENTS.items():
                 try: d=json.loads(line)
                 except: continue
                 if d.get('type')!='model.completed': continue
-                prov=d.get('provider'); model=d.get('modelId')
+                prov=d.get('provider'); model=canon_model(d.get('modelId'))
                 u=(d.get('data') or {}).get('usage') or {}
                 if not u: continue
                 inp=u.get('input',0) or 0; out=u.get('output',0) or 0

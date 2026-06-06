@@ -257,7 +257,13 @@ async function loadTicker(){
   try {
     const r = await fetch(EVENTS_URL + '?t=' + Date.now(), {cache:'no-store'});
     const j = await r.json();
-    tickerEvents = j.events || [];
+    tickerEvents = (j.events || []).slice().sort((a,b)=>{
+      const priority = {FALLBACK:0, ALERT:1, QC:2, DEPLOY:3};
+      const pa = priority[String(a.tag || '').toUpperCase()] ?? 9;
+      const pb = priority[String(b.tag || '').toUpperCase()] ?? 9;
+      if(pa !== pb) return pa - pb;
+      return String(b.ts || '').localeCompare(String(a.ts || ''));
+    });
     if(tickerEvents.length===0) return;
     const stream = document.getElementById('tickerStream');
     if(!stream) return;

@@ -141,12 +141,20 @@ def refresh_fallback_events(agents):
         e['tag'] = 'FALLBACK'
         e['msg'] = msg
         deduped.append(e)
-    out_events = {'updated': now.strftime('%Y-%m-%dT%H:%M+08:00'), 'events': deduped[:MAX_SIGNAL_EVENTS]}
-    for path in EVENT_TARGETS:
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        json.dump(out_events, open(path, 'w'), ensure_ascii=True, indent=2)
-    os.makedirs(os.path.dirname(FALLBACK_STATE_PATH), exist_ok=True)
-    json.dump(state, open(FALLBACK_STATE_PATH, 'w'), ensure_ascii=True, indent=2)
+    event_list = deduped[:MAX_SIGNAL_EVENTS]
+    events_changed = json.dumps(base.get('events', []), sort_keys=True) != json.dumps(event_list, sort_keys=True)
+    out_events = {
+        'updated': now.strftime('%Y-%m-%dT%H:%M+08:00') if events_changed else base.get('updated', now.strftime('%Y-%m-%dT%H:%M+08:00')),
+        'events': event_list,
+    }
+    if events_changed or any(not os.path.exists(path) for path in EVENT_TARGETS):
+        for path in EVENT_TARGETS:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            json.dump(out_events, open(path, 'w'), ensure_ascii=True, indent=2)
+    old_state = _load_json(FALLBACK_STATE_PATH, {})
+    if old_state != state:
+        os.makedirs(os.path.dirname(FALLBACK_STATE_PATH), exist_ok=True)
+        json.dump(state, open(FALLBACK_STATE_PATH, 'w'), ensure_ascii=True, indent=2)
     return len(new_events), len(out_events['events'])
 CN_TZ = timezone(timedelta(hours=8))
 now = datetime.now(CN_TZ)

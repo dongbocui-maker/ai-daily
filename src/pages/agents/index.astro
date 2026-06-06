@@ -124,7 +124,25 @@ footer .red{color:var(--red-dim)}
 
 /* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
 body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
-body.gate-locked header,body.gate-locked footer{display:none}
+body.gate-locked header,body.gate-locked footer,.event-ticker{display:none}
+
+/* === Event Ticker 跑马灯 === */
+.event-ticker{position:relative;height:36px;background:linear-gradient(90deg,rgba(7,10,15,.95),rgba(14,17,24,.95));border:1px solid var(--line);border-radius:5px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center}
+.event-ticker::before{content:"◈ SIGNAL";font-family:'Orbitron';font-size:10px;color:var(--gold);letter-spacing:2px;padding:0 14px;white-space:nowrap;flex-shrink:0;background:linear-gradient(90deg,rgba(7,10,15,.98) 60%,transparent);z-index:2;line-height:36px;text-shadow:0 0 8px rgba(255,196,0,.5)}
+.event-track{flex:1;overflow:hidden;position:relative;height:100%;display:flex;align-items:center}
+.event-stream{display:flex;gap:0;white-space:nowrap;position:absolute;left:0;animation:eventScroll var(--scroll-dur,40s) linear infinite}
+.event-stream:hover{animation-play-state:paused}
+.event-item{display:inline-flex;align-items:center;padding:0 32px;height:36px;font-size:11px;letter-spacing:.4px;position:relative}
+.event-item::after{content:"⦁";position:absolute;right:4px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:8px}
+.event-item .ev-tag{font-family:'Orbitron';font-size:8px;letter-spacing:1.5px;padding:2px 6px;border-radius:2px;margin-right:8px;flex-shrink:0;font-weight:700}
+.event-item .ev-tag.qc{background:rgba(63,201,255,.15);color:var(--arc);border:1px solid rgba(63,201,255,.3)}
+.event-item .ev-tag.deploy{background:rgba(255,196,0,.12);color:var(--gold);border:1px solid rgba(255,196,0,.3)}
+.event-item .ev-tag.fallback{background:rgba(230,36,41,.12);color:var(--red);border:1px solid rgba(230,36,41,.3)}
+.event-item .ev-tag.alert{background:rgba(230,36,41,.18);color:var(--red);border:1px solid var(--red);animation:pulseTag 1.5s ease-in-out infinite}
+.event-item .ev-time{color:var(--dim);margin-right:8px;font-size:10px;flex-shrink:0}
+.event-item .ev-msg{color:#cdd6e3}
+@keyframes eventScroll{0%{transform:translateX(0)}100%{transform:translateX(var(--scroll-end))}}
+@keyframes pulseTag{50%{opacity:.6}}
 body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:center;padding:18px}
 .login-gate{position:relative;width:min(460px,calc(100vw - 36px));padding:34px 34px 30px;background:linear-gradient(180deg,rgba(16,23,36,.92),rgba(7,12,18,.94));border:1px solid rgba(63,201,255,.34);border-radius:18px;box-shadow:0 0 0 1px rgba(255,196,0,.08) inset,0 0 48px rgba(0,229,255,.13),0 24px 80px rgba(0,0,0,.65)}
 .login-gate:before,.login-gate:after{content:"";position:absolute;width:44px;height:44px;border-color:var(--gold);opacity:.75}.login-gate:before{left:-1px;top:-1px;border-left:2px solid;border-top:2px solid;border-radius:18px 0 0 0}.login-gate:after{right:-1px;bottom:-1px;border-right:2px solid;border-bottom:2px solid;border-radius:0 0 18px 0}
@@ -196,6 +214,10 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   </div>
 </header>
 
+<div class="event-ticker" id="ticker">
+  <div class="event-track"><div class="event-stream" id="tickerStream"></div></div>
+</div>
+
 <div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
 
 <footer>
@@ -226,6 +248,37 @@ function reactorSvg(ac,lit,id){
   let ticks='';
   for(let k=0;k<24;k++){const a=k*15*Math.PI/180;ticks+='<line x1="'+(50+Math.cos(a)*33).toFixed(1)+'" y1="'+(50+Math.sin(a)*33).toFixed(1)+'" x2="'+(50+Math.cos(a)*37).toFixed(1)+'" y2="'+(50+Math.sin(a)*37).toFixed(1)+'" stroke="'+ac+'" stroke-width="1.2"/>';}
   return '<svg viewBox="0 0 100 100"><defs><radialGradient id="g'+id+'" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff"/><stop offset="28%" stop-color="'+lit+'"/><stop offset="70%" stop-color="'+lit+'" stop-opacity=".25"/><stop offset="100%" stop-color="'+lit+'" stop-opacity="0"/></radialGradient></defs><circle class="metal" cx="50" cy="50" r="40" fill="#070c11" stroke="'+ac+'" stroke-width="3"/><g class="metal">'+ticks+'</g><circle class="metal" cx="50" cy="50" r="33" fill="none" stroke="'+ac+'" stroke-width="1.5" opacity=".7"/><g class="core ring-rot">'+coils+'</g><circle class="core" cx="50" cy="50" r="21" fill="url(#g'+id+')"/><circle class="metal" cx="50" cy="50" r="21" fill="none" stroke="'+ac+'" stroke-width="2"/><path class="core" d="M50 36 L62 58 L38 58 Z" fill="'+lit+'" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><circle class="core" cx="50" cy="50" r="5" fill="#fff"/></svg>';
+}
+
+// === Event Ticker 跑马灯 ===
+let tickerEvents = [];
+const EVENTS_URL = `${BASE}agents/data/events.json`;
+async function loadTicker(){
+  try {
+    const r = await fetch(EVENTS_URL + '?t=' + Date.now(), {cache:'no-store'});
+    const j = await r.json();
+    tickerEvents = j.events || [];
+    if(tickerEvents.length===0) return;
+    const stream = document.getElementById('tickerStream');
+    if(!stream) return;
+    const items = [];
+    const tagClass = {QC:'qc',DEPLOY:'deploy',FALLBACK:'fallback',ALERT:'alert',CRON:'qc',DEPLOY_ROLLBACK:'fallback'};
+    for(const e of tickerEvents){
+      const tc = tagClass[e.tag] || 'qc';
+      const time = (e.ts||'').replace(/^2026-0?6?-?0?/, '').replace(/T/, ' ').slice(0,11).trim();
+      items.push(`<span class="event-item"><span class="ev-time">${time}</span><span class="ev-tag ${tc}">${e.tag}</span><span class="ev-msg">${e.msg}</span></span>`);
+    }
+    // 单行跑马灯：标题+内容一起滚，无缝循环 = 内容 × 2
+    const html = items.join('') + items.join('');
+    stream.innerHTML = html;
+    // 计算滚动宽度（内容一半 = 一轮循环）
+    const w = stream.scrollWidth / 2;
+    stream.style.setProperty('--scroll-end', `-${w}px`);
+    // 速度自适应：每轮约 35-50 秒，按字符数调整
+    const totalLen = tickerEvents.reduce((s,e)=>s+e.msg.length+15,0);
+    const dur = Math.max(30, Math.min(80, totalLen * 0.12));
+    stream.style.setProperty('--scroll-dur', dur+'s');
+  }catch(_){ /* ticker 失败静默，不阻塞 dashboard */ }
 }
 
 function render(DATA){
@@ -366,7 +419,7 @@ async function tick(){
       console.warn('[SHRIMP] LIVE telemetry unreachable, falling back to static snapshot:', err);
       d = await (await fetch(FALLBACK_URL + '?t=' + Date.now(), {cache:'no-store'})).json();
     }
-    _trendData=d; render(d); _firstLoad=false;
+    _trendData=d; render(d); loadTicker(); _firstLoad=false;
   }catch(e){
     if(_firstLoad){
       document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>';

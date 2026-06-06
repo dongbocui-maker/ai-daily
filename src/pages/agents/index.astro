@@ -225,7 +225,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   <span class="red">CONFIDENTIAL</span> · POWERED BY 🦐 IRON SHRIMP STACK
 </footer>
 
-<script define:vars={{ BASE, LIVE_URL, FALLBACK_URL }}>
+<script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
   main:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
   aima:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
@@ -252,7 +252,7 @@ function reactorSvg(ac,lit,id){
 
 // === Event Ticker 跑马灯 ===
 let tickerEvents = [];
-const EVENTS_URL = `${BASE}agents/data/events.json`;
+const EVENTS_URL = FALLBACK_URL.replace(/dashboard-data\.json$/, 'events.json');
 async function loadTicker(){
   try {
     const r = await fetch(EVENTS_URL + '?t=' + Date.now(), {cache:'no-store'});

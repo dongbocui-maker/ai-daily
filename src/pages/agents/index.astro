@@ -257,13 +257,9 @@ async function loadTicker(){
   try {
     const r = await fetch(EVENTS_URL + '?t=' + Date.now(), {cache:'no-store'});
     const j = await r.json();
-    tickerEvents = (j.events || []).slice().sort((a,b)=>{
-      const priority = {FALLBACK:0, ALERT:1, QC:2, DEPLOY:3};
-      const pa = priority[String(a.tag || '').toUpperCase()] ?? 9;
-      const pb = priority[String(b.tag || '').toUpperCase()] ?? 9;
-      if(pa !== pb) return pa - pb;
-      return String(b.ts || '').localeCompare(String(a.ts || ''));
-    });
+    tickerEvents = (j.events || [])
+      .filter(e => String(e.tag || '').toUpperCase() === 'FALLBACK')
+      .sort((a,b)=>String(b.ts || '').localeCompare(String(a.ts || '')));
     if(tickerEvents.length===0) return;
     const stream = document.getElementById('tickerStream');
     if(!stream) return;
@@ -282,9 +278,9 @@ async function loadTicker(){
     // 计算滚动宽度（内容一半 = 一轮循环）
     const w = stream.scrollWidth / 2;
     stream.style.setProperty('--scroll-end', `-${w}px`);
-    // 速度自适应：每轮约 35-50 秒，按字符数调整
+    // 速度自适应：每轮约 60-140 秒，按字符数调整（Signal 优先可读性）
     const totalLen = tickerEvents.reduce((s,e)=>s+e.msg.length+15,0);
-    const dur = Math.max(30, Math.min(80, totalLen * 0.12));
+    const dur = Math.max(60, Math.min(140, totalLen * 0.24));
     stream.style.setProperty('--scroll-dur', dur+'s');
   }catch(_){ /* ticker 失败静默，不阻塞 dashboard */ }
 }

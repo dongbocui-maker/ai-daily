@@ -217,6 +217,10 @@ function buildSiteData(source, args) {
     ...podcastItems.slice(0, 1),
   ].filter(Boolean).slice(0, 3);
 
+  if (Array.isArray(source.errors) && source.errors.length) {
+    console.error(`Follow Builders source reported ${source.errors.length} non-fatal issue(s); keeping them in build logs only.`);
+  }
+
   return {
     date,
     title: `Builder Signals · ${date}`,
@@ -236,11 +240,6 @@ function buildSiteData(source, args) {
       { key: 'podcast', label: 'Podcasts', description: '长访谈与播客，适合判断技术路线和战略假设。', items: podcastItems },
       { key: 'blog', label: 'Blogs', description: '工程博客与长文，关注能力边界、复盘和落地经验。', items: blogItems },
     ],
-    errors: source.errors || [],
-    audit: {
-      source: 'follow-builders prepare-digest.js',
-      note: 'Site data is generated from structured Follow Builders feeds, not from email HTML/text.',
-    },
   };
 }
 

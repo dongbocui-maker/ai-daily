@@ -171,14 +171,6 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                 </div>
               </div>
             )}
-            {report.errors?.length ? (
-              <div class="mt-5 pt-4 border-t border-accent-gray-100">
-                <div class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Feed notes</div>
-                <ul class="text-xs text-accent-gray-600 leading-relaxed list-disc pl-4">
-                  {report.errors.slice(0, 3).map((error) => <li>{error}</li>)}
-                </ul>
-              </div>
-            ) : null}
           </aside>
 
           <div class="space-y-10" id="x-list">

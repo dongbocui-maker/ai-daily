@@ -1,0 +1,254 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { allXItems, listXDates, loadLatestX, type XSignalItem } from '../../lib/x';
+
+const report = loadLatestX();
+if (!report) {
+  return Astro.redirect('/about/');
+}
+
+const base = import.meta.env.BASE_URL;
+const dates = listXDates();
+const items = allXItems(report);
+const featured = report.featured?.length ? report.featured : items.slice(0, 3);
+const featuredIds = new Set(featured.map((item) => item.id));
+const displaySections = report.sections.map((section) => ({
+  ...section,
+  items: section.items.filter((item) => !featuredIds.has(item.id)),
+}));
+
+const counts = {
+  all: items.length,
+  x: report.sections.find((s) => s.key === 'x')?.items.length ?? 0,
+  podcast: report.sections.find((s) => s.key === 'podcast')?.items.length ?? 0,
+  blog: report.sections.find((s) => s.key === 'blog')?.items.length ?? 0,
+};
+
+const tabLabels = [
+  { key: 'all', label: 'All', count: counts.all },
+  { key: 'x', label: 'X', count: counts.x },
+  { key: 'podcast', label: 'Podcasts', count: counts.podcast },
+  { key: 'blog', label: 'Blogs', count: counts.blog },
+];
+
+function kindLabel(kind: string) {
+  if (kind === 'podcast') return 'Podcast';
+  if (kind === 'blog') return 'Blog';
+  return 'X';
+}
+
+function kindClass(kind: string) {
+  if (kind === 'podcast') return 'bg-category-report text-accent-ink';
+  if (kind === 'blog') return 'bg-category-enterprise text-accent-ink';
+  return 'bg-accent-purple text-white';
+}
+
+function formatDateTime(value?: string | null) {
+  if (!value) return '';
+  try {
+    return new Intl.DateTimeFormat('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).format(new Date(value));
+  } catch {
+    return '';
+  }
+}
+
+function itemCard(item: XSignalItem, featuredCard = false) {
+  const date = formatDateTime(item.publishedAt);
+  const metrics = item.kind === 'x' && item.metrics
+    ? `${item.metrics.likes ?? 0} likes · ${item.metrics.retweets ?? 0} RT`
+    : '';
+  return { date, metrics, featuredCard };
+}
+---
+<Base title="X · Builder Signals" description={report.summary}>
+  <Header />
+  <main class="flex-1 bg-accent-gray-50/40">
+    <section class="bg-accent-ink text-white py-12 lg:py-16 overflow-hidden">
+      <div class="container-x relative">
+        <div class="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-accent-purple/25 blur-3xl"></div>
+        <span class="badge bg-accent-purple text-white mb-4">BUILDER SIGNALS</span>
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end relative">
+          <div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4">X</h1>
+            <p class="text-lg lg:text-xl text-accent-gray-300 max-w-3xl leading-relaxed">
+              从全球 AI builders / founders / researchers 的 X、Podcasts、Blogs 中提炼高信号观点，形成中文可读的 Builder Intelligence。
+            </p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3">
+            <div class="border border-white/15 bg-white/5 p-4">
+              <div class="text-2xl font-extrabold">{report.stats.totalTweets}</div>
+              <div class="text-xs uppercase tracking-wider text-accent-gray-300">X Posts</div>
+            </div>
+            <div class="border border-white/15 bg-white/5 p-4">
+              <div class="text-2xl font-extrabold">{report.stats.xBuilders}</div>
+              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Builders</div>
+            </div>
+            <div class="border border-white/15 bg-white/5 p-4">
+              <div class="text-2xl font-extrabold">{report.stats.podcastEpisodes}</div>
+              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Podcasts</div>
+            </div>
+            <div class="border border-white/15 bg-white/5 p-4">
+              <div class="text-2xl font-extrabold">{report.stats.blogPosts}</div>
+              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Blogs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-accent-gray-200 bg-white">
+      <div class="container-x py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        <div>
+          <div class="text-sm font-bold text-accent-ink">{report.title}</div>
+          <div class="text-xs text-accent-gray-500 mt-1">
+            Feed: {report.feedGeneratedAt ? formatDateTime(report.feedGeneratedAt) : 'N/A'} · Site: {formatDateTime(report.generatedAt)}
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2" role="tablist" id="x-tabs">
+          {tabLabels.map((tab, idx) => (
+            <button
+              type="button"
+              data-filter={tab.key}
+              aria-selected={idx === 0 ? 'true' : 'false'}
+              class={`px-4 py-2 text-sm font-semibold border transition-colors ${idx === 0 ? 'bg-accent-ink text-white border-accent-ink' : 'bg-white text-accent-gray-700 border-accent-gray-200 hover:border-accent-purple hover:text-accent-purple'}`}
+            >
+              {tab.label} <span class="text-xs opacity-70">{tab.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 lg:py-12">
+      <div class="container-x">
+        <div class="flex items-baseline justify-between gap-4 mb-5">
+          <div>
+            <span class="badge bg-accent-ink text-white mb-3">FEATURED</span>
+            <h2 class="text-2xl lg:text-3xl font-extrabold tracking-tight">今日高信号</h2>
+          </div>
+          <a href="#x-list" class="hidden sm:inline-flex text-sm font-semibold text-accent-purple hover:text-accent-purple-deep">查看全部 signals ↓</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 lg:gap-5 mb-10">
+          {featured.map((item) => {
+            const meta = itemCard(item, true);
+            return (
+              <article class="bg-white border border-accent-gray-200 p-5 lg:p-6 hover:border-accent-purple transition-colors">
+                <div class="flex items-center gap-2 mb-4">
+                  <span class={`badge ${kindClass(item.kind)}`}>{kindLabel(item.kind)}</span>
+                  <span class="text-xs text-accent-gray-500">{item.sourceName}{item.handle ? ` · @${item.handle}` : ''}</span>
+                </div>
+                <h3 class="text-lg font-extrabold tracking-tight leading-snug mb-3">{item.title}</h3>
+                <p class="text-sm text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
+                <p class="text-xs text-accent-gray-500 leading-relaxed line-clamp-3">{item.summaryEn}</p>
+                <div class="mt-4 flex items-center justify-between gap-3 text-xs text-accent-gray-500">
+                  <span>{meta.date || meta.metrics}</span>
+                  {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="font-semibold text-accent-purple hover:text-accent-purple-deep">Source ↗</a>}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div class="grid lg:grid-cols-[220px_1fr] gap-6 lg:gap-8">
+          <aside class="lg:sticky lg:top-24 h-max bg-white border border-accent-gray-200 p-5">
+            <div class="text-xs font-bold uppercase tracking-wider text-accent-gray-500 mb-3">About this column</div>
+            <p class="text-sm text-accent-gray-700 leading-relaxed">
+              X 栏目使用 Follow Builders 的结构化 feed 生成站点数据，不反解析邮件正文。MVP 阶段先做每日最新精选，后续可扩展日期归档、人物页和趋势分析。
+            </p>
+            {dates.length > 1 && (
+              <div class="mt-5 pt-4 border-t border-accent-gray-100">
+                <div class="text-xs font-bold uppercase tracking-wider text-accent-gray-500 mb-2">Recent</div>
+                <div class="flex flex-col gap-1">
+                  {dates.slice(0, 7).map((date) => <span class="text-sm text-accent-gray-700">{date}</span>)}
+                </div>
+              </div>
+            )}
+            {report.errors?.length ? (
+              <div class="mt-5 pt-4 border-t border-accent-gray-100">
+                <div class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Feed notes</div>
+                <ul class="text-xs text-accent-gray-600 leading-relaxed list-disc pl-4">
+                  {report.errors.slice(0, 3).map((error) => <li>{error}</li>)}
+                </ul>
+              </div>
+            ) : null}
+          </aside>
+
+          <div class="space-y-10" id="x-list">
+            {displaySections.map((section) => (
+              <section data-section={section.key}>
+                <div class="flex items-baseline gap-3 mb-4">
+                  <h2 class="text-xl lg:text-2xl font-extrabold tracking-tight">{section.label}</h2>
+                  <span class="text-sm text-accent-gray-500">{section.items.length} 条</span>
+                </div>
+                {section.description && <p class="text-sm text-accent-gray-600 mb-5">{section.description}</p>}
+                <div class="grid gap-4">
+                  {section.items.map((item) => {
+                    const meta = itemCard(item);
+                    return (
+                      <article class="card-news" data-kind={section.key}>
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+                          <div class="flex flex-wrap items-center gap-2">
+                            <span class={`badge ${kindClass(section.key)}`}>{kindLabel(section.key)}</span>
+                            <span class="text-sm font-semibold text-accent-ink">{item.sourceName}</span>
+                            {item.handle && <span class="text-xs text-accent-gray-500">@{item.handle}</span>}
+                            {meta.date && <span class="text-xs text-accent-gray-500">{meta.date}</span>}
+                          </div>
+                          {meta.metrics && <span class="text-xs text-accent-gray-500 whitespace-nowrap">{meta.metrics}</span>}
+                        </div>
+                        <h3 class="text-xl font-extrabold tracking-tight leading-snug mb-3">{item.title}</h3>
+                        <p class="text-sm lg:text-base text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
+                        <div class="insight-block">
+                          <span class="font-semibold text-accent-ink">Original signal: </span>{item.summaryEn}
+                        </div>
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+                          <div class="flex flex-wrap gap-2">
+                            {(item.tags ?? []).map((tag) => <span class="px-2 py-1 bg-accent-gray-50 text-xs font-medium text-accent-gray-700 border border-accent-gray-100">{tag}</span>)}
+                          </div>
+                          {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="text-sm font-semibold text-accent-purple hover:text-accent-purple-deep">Read source ↗</a>}
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('[data-filter]');
+    const sections = document.querySelectorAll('[data-section]');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+        tabs.forEach((candidate) => {
+          const active = candidate === tab;
+          candidate.setAttribute('aria-selected', active ? 'true' : 'false');
+          candidate.classList.toggle('bg-accent-ink', active);
+          candidate.classList.toggle('text-white', active);
+          candidate.classList.toggle('border-accent-ink', active);
+          candidate.classList.toggle('bg-white', !active);
+          candidate.classList.toggle('text-accent-gray-700', !active);
+          candidate.classList.toggle('border-accent-gray-200', !active);
+        });
+        sections.forEach((section) => {
+          section.classList.toggle('hidden', filter !== 'all' && section.getAttribute('data-section') !== filter);
+        });
+      });
+    });
+  });
+</script>

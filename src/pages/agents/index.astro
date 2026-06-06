@@ -308,9 +308,9 @@ function render(DATA){
   // 近 7 天趋势：柱状 + 曲线叠加 + per-agent breakdown tooltip
   const tr=DATA.trend||[];
   const N=tr.length||1;
-  const maxTrendTok=Math.max(1,...tr.map(t=>t.tok));
+  const maxTrendCost=Math.max(1,...tr.map(t=>t.cost||0));
   const trendBars=tr.map((t,i)=>{
-    const h=(t.tok/maxTrendTok*100).toFixed(0);
+    const h=((t.cost||0)/maxTrendCost*100).toFixed(0);
     const dd=t.date.slice(5);
     const isToday=t.date===DATA.today;
     // breakdown HTML

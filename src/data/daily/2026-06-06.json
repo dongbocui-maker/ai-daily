@@ -3,16 +3,23 @@
   "title": "2026-06-06",
   "sections": [
     {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
       "items": [
         {
-          "title": "🛠️ 工具演进 | GitHub Copilot 将 VS Code Agents Window 推入 Stable Preview",
-          "body": "GitHub 6 月 3 日发布 VS Code 5 月更新，Agents Window 进入 Stable Preview，并强化远程 Agent 会话、BYOK、终端安全与效率能力。Copilot 正从 IDE 内的补全工具持续升级为可托管、可远程运行、可被企业管理的 Agent 工作空间，开发流程也随之从“写代码”转向“调度任务”。",
-          "insight": "AI Coding 的企业采购关注点将从模型效果扩展到远程会话、权限、安全和预算控制等工程治理能力。",
-          "source": "GitHub Blog",
-          "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/"
+          "title": "📜 监管政策 | 特朗普称将研究让美国公众持有 AI 公司股权",
+          "body": "Reuters 6 月 5 日报道，美国总统特朗普称，其团队将研究让 AI 公司向美国公众提供股权的想法，并表示最快下周会见 AI 高管。这个表态把 AI 治理从安全监管、出口管制进一步推向产业所有权与公共利益分配议题，虽然尚处研究阶段，但已足以影响头部 AI 公司的资本结构想象。",
+          "insight": "AI 已从技术产业政策进入国家资本政策讨论区，企业需要跟踪美国政府对 AI 公司股权、收益分配与公共利益的潜在干预。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/trump-says-his-team-will-look-into-us-taking-stake-ai-companies-2026-06-05/"
+        },
+        {
+          "title": "💰 基建合作 | Google 将按月向 SpaceX 支付 9.2 亿美元采购算力",
+          "body": "TechCrunch 6 月 5 日披露，Google 将从 2026 年 10 月到 2029 年 6 月向 SpaceX 每月支付 9.2 亿美元，获取约 11 万块 NVIDIA GPU 及相关算力资源。交易把卫星、数据中心和 AI 算力采购绑在一起，显示头部科技公司正在用长期、超大额合同锁定未来推理与训练能力。",
+          "insight": "算力采购正从云上弹性购买转向跨产业长期锁仓，CIO 与 CFO 都需要重新评估 AI 资源合同的期限、价格与供应链风险。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/"
         },
         {
           "title": "📜 监管政策 | AI 领袖联名敦促美国国会堵住 AI 辅助生物武器风险",
@@ -22,6 +29,34 @@
           "url": "https://www.theverge.com/ai-artificial-intelligence/942956/ai-biological-weapons-open-letter-congress"
         },
         {
+          "title": "💰 融资 | Apollo 与 Blackstone 为 Anthropic 敲定 350 亿美元 AI 芯片债务融资",
+          "body": "Bloomberg 6 月 5 日报道，Apollo Global Management 与 Blackstone 已为 Anthropic 敲定 350 亿美元融资方案，用于购买 AI 芯片、扩张基础设施。这不是传统股权融资，而是围绕芯片资产和未来算力需求设计的巨额债务安排，表明 AI 资本战正在进入结构化金融阶段。",
+          "insight": "头部模型公司的竞争力越来越取决于金融工程与算力资产负债表能力，AI 战略不再只是技术路线选择。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic"
+        },
+        {
+          "title": "🚀 产品发布 | 华为云发布 Agentic AI 系列新品，提出 Agentic Infra 新范式",
+          "body": "量子位 6 月 5 日报道，华为云在 INSPIRE 创想者大会发布 Agentic Infra 通智一体化基础设施、新一代模型训推平台、企业级智能体平台等系列新品，并提出面向企业级 Agentic AI 的“硅基黑土地”。华为云强调 Token 成本、一体化调度、强化学习效率与安全自治，试图从基础设施层定义企业智能体落地路径。",
+          "insight": "国内云厂商正在把竞争重点从模型参数转向 Agentic Infra，企业选型时应关注平台能否支撑成本、调度与安全自治闭环。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431027.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🤝 战略合作 | IBM 与 Google Cloud 成立全球 AI 咨询实践，瞄准生产级落地与核心系统现代化",
+          "body": "IBM 与 Google Cloud 6 月 4 日宣布建立新的 Google Cloud Practice，结合 IBM Consulting Advantage、Gemini Enterprise、Google Cloud 数据与安全能力，并投入数千名认证顾问。双方把重点放在从试点走向生产级 AI、核心系统现代化与 AI 驱动交付，显示云厂商与咨询公司正在共同争夺企业 AI 改造预算。",
+          "insight": "企业级 AI 落地正在回到“咨询交付 + 云平台 + 行业流程”的组合拳，单纯采购模型很难形成规模化价值。",
+          "source": "IBM Newsroom",
+          "url": "https://newsroom.ibm.com/2026-06-04-ibm-and-google-cloud-announce-strategic-partnership-to-scale-ai-with-human-expertise-and-ai-powered-delivery"
+        },
+        {
           "title": "💰 基础设施 | AirTrunk 承诺在印度投入 300 亿美元建设 5GW AI 数据中心",
           "body": "AirTrunk 6 月 5 日宣布，计划到 2030 年在印度投资超过 300 亿美元，建设 5GW 数据中心容量，服务快速增长的云与 AI 需求。印度正在成为全球 AI 基建版图中的关键新增节点，这类长期建设承诺也意味着电力、土地、网络与监管能力会成为 AI 产业竞争的前置条件。",
           "insight": "AI 落地能力正在被数据中心与能源约束重新定义，跨国企业布局亚洲 AI 工作负载时需要把印度纳入容量与合规评估。",
@@ -29,18 +64,39 @@
           "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/"
         },
         {
+          "title": "📜 治理实践 | Gartner 提醒 CISO 借 AI 热潮重构身份与信任控制",
+          "body": "Gartner 6 月 1 日指出，CISO 不应只是在脆弱堆栈上叠加 AI 工具，而应抓住 AI 投资窗口重构身份、访问与信任控制。报告特别强调人类、机器与 Agent 之间的交互将扩大 IAM 边界，传统以人为中心的访问治理不足以覆盖自动化代理带来的新风险。",
+          "insight": "企业部署 Agent 前应先升级身份治理，把“哪个 Agent 代表谁、可访问什么、如何审计”作为上线门槛。",
+          "source": "Gartner",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-01-gartner-identifies-strategic-focus-areas-for-cisos-to-seize-moments-of-opportunity-among-ai-chaos"
+        },
+        {
           "title": "🇨🇳 中国案例 | 腾讯云发布 WorkBuddy 企业版，把个人 AI 助手升级为企业超级团队工作台",
           "body": "36氪 6 月 5 日快讯称，腾讯云发布 WorkBuddy Enterprise 与办公智能体套件 Agent Suite，提供 7×24 专家数字员工、人与 AI 协作的“团队”模式和企业级管理后台。腾讯同时披露 CodeBuddy 已覆盖内部超过 95% 工程师、整体编码时间缩短 40%，试图把内部 AI 生产力实践打包为企业组织转型方案。",
           "insight": "国内大厂正在把内部 AI 工具链外溢为企业级套件，客户评估时应重点看是否具备组织管理、权限和协作治理能力。",
           "source": "36氪快讯",
           "url": "https://36kr.com/newsflashes/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🛠️ 工具演进 | GitHub Copilot 将 VS Code Agents Window 推入 Stable Preview",
+          "body": "GitHub 6 月 3 日发布 VS Code 5 月更新，Agents Window 进入 Stable Preview，并强化远程 Agent 会话、BYOK、终端安全与效率能力。Copilot 正从 IDE 内的补全工具持续升级为可托管、可远程运行、可被企业管理的 Agent 工作空间，开发流程也随之从“写代码”转向“调度任务”。",
+          "insight": "AI Coding 的企业采购关注点将从模型效果扩展到远程会话、权限、安全和预算控制等工程治理能力。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/"
         },
         {
-          "title": "📊 论文 | arXiv 提出企业 AI Agent 上线前认证框架：Operational Envelope + Trust Certificate",
-          "body": "arXiv 论文 2606.04037 提出面向企业 AI Agent 的上线前验证框架，结合本体建模、权限边界、领域约束、治理规则、自主等级与场景生成，定义 Agent 的 Operational Envelope，并输出可机器验证的 Trust Certificate。论文关注的不是模型离线分数，而是 Agent 在真实组织约束下是否可被认证上线。 今天的核心主线是 AI 竞争从“模型能力”继续外溢到资本、基建与治理。Google 与 SpaceX 的长期算力采购、Anthropic 的 350 亿美元芯片融资、AirTrunk 的印度 5GW 数据中心计划，说明头部玩家正在用多年期合同、债务融资和区域基建锁定未来算力；特朗普关于公众持有 AI 公司股权的表态，则把 AI 产业推进到国家资本政策讨论区。",
-          "insight": "企业部署 Agent 需要从“评测模型”升级为“认证行为边界”，上线前仿真与信任证书会成为治理新工具。",
-          "source": "arXiv",
-          "url": "https://arxiv.org/abs/2606.04037"
+          "title": "🔒 安全编码 | Anthropic 开源 Claude 自主漏洞发现与修复参考框架",
+          "body": "Anthropic 在 GitHub 开源 defending-code-reference-harness，包含 threat-model、vuln-scan、triage、patch 等 Claude Code skills 与自主扫描 harness，沉淀其安全团队与 Claude 协同做威胁建模、漏洞扫描、分诊和补丁生成的经验。这标志着 AI Coding 的竞争正从生成代码扩展到主动发现并修复安全问题。",
+          "insight": "安全团队可以把编码 Agent 纳入漏洞管理链路，但需要配套扫描边界、补丁评审和责任追踪机制。",
+          "source": "GitHub / Anthropic",
+          "url": "https://github.com/anthropics/defending-code-reference-harness"
         },
         {
           "title": "🇨🇳 中国开源 | 阿里开源 Open Code Review，把内部 AI 代码评审能力产品化",
@@ -48,22 +104,55 @@
           "insight": "大型企业的代码评审 Agent 不会只靠通用模型，规则库、确定性流水线和 LLM Agent 的混合架构更接近生产要求。",
           "source": "GitHub / Alibaba",
           "url": "https://github.com/alibaba/open-code-review"
+        },
+        {
+          "title": "🇨🇳 中文观察 | 36氪追踪 Claude Code goal 模式，编码 Agent 正从补全走向持续任务执行",
+          "body": "36氪近期追踪 Claude Code goal 模式等编码 Agent 进展，指出开发者社区正在从“让模型补一段代码”转向“给定目标后持续执行、自动迭代直到完成”。这类模式背后是任务规划、循环执行、失败恢复与上下文管理能力的提升，也解释了为何 Claude Code、Codex、Copilot 等工具都在强化长任务与远程会话。",
+          "insight": "AI Coding 的下一阶段不是更聪明的补全，而是可被约束、可观察、可恢复的持续工程执行。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3807610454793732"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "📊 论文 | arXiv 提出企业 AI Agent 上线前认证框架：Operational Envelope + Trust Certificate",
+          "body": "arXiv 论文 2606.04037 提出面向企业 AI Agent 的上线前验证框架，结合本体建模、权限边界、领域约束、治理规则、自主等级与场景生成，定义 Agent 的 Operational Envelope，并输出可机器验证的 Trust Certificate。论文关注的不是模型离线分数，而是 Agent 在真实组织约束下是否可被认证上线。",
+          "insight": "企业部署 Agent 需要从“评测模型”升级为“认证行为边界”，上线前仿真与信任证书会成为治理新工具。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2606.04037"
+        },
+        {
+          "title": "🔒 论文 | Notarized Agents 提出接收方签名回执，解决 Agent 自记日志不可信问题",
+          "body": "arXiv 论文 2606.04193 指出，当前 Agent 可观测性存在结构性缺陷：活动日志往往由 Agent 或其操作者自己生成，难以作为可靠审计证据。论文提出 Sello 协议，让接收服务对 Agent 行为生成加密签名回执并写入透明日志，从而形成可验证、抗抵赖的跨服务行为记录。",
+          "insight": "随着 Agent 代表企业执行交易与操作，审计体系必须从“自报日志”转向第三方可验证的行为凭证。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2606.04193"
+        },
+        {
+          "title": "🇨🇳 科研进展 | 智源与清华 Brainμ 登上 Science，用脑科学多模态基础模型解析记忆—睡眠机制",
+          "body": "量子位 6 月 5 日报道，智源与清华合作成果发表于 Science，Brainμ0 被用于处理睡眠 EEG 信号与记忆相关单细胞双光子钙成像信号，辅助研究人员验证记忆重激活与睡眠状态变化之间的关系。该成果展示了 AI 基础模型在复杂生命科学多模态数据分析、假设验证与状态识别中的潜力。",
+          "insight": "AI for Science 正从“加速计算”走向“参与假设验证”，生命科学领域将更依赖跨模态基础模型做研究基础设施。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431033.html"
+        },
+        {
+          "title": "📊 行业分析 | TechCrunch：Token 账单到期，Linux Foundation 推 Tokenomics Foundation",
+          "body": "TechCrunch 6 月 5 日报道，企业 AI 成本治理正在进入“Token 账单到期”阶段：一些公司 4—5 月已超出全年 Token 预算数倍，Linux Foundation 因此推出 Tokenomics Foundation，试图像 FinOps 管理云支出一样，为 AI Token 消耗建立标准与成本纪律。Agentic 工具让单位开发者消耗量激增，低单价并不等于低总账单。",
+          "insight": "企业 AI ROI 管理必须从项目预算转向 Token 级成本观测、限额、归因与优化，否则 Agent 普及会迅速放大账单失控。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/"
         }
       ]
     }
   ],
   "closing": [
-    "🔒 安全编码 | Anthropic 开源 Claude 自主漏洞发现与修复参考框架",
-    "Anthropic 在 GitHub 开源 defending-code-reference-harness，包含 threat-model、vuln-scan、triage、patch 等 Claude Code skills 与自主扫描 harness，沉淀其安全团队与 Claude 协同做威胁建模、漏洞扫描、分诊和补丁生成的经验。这标志着 AI Coding 的竞争正从生成代码扩展到主动发现并修复安全问题。",
-    "启示：安全团队可以把编码 Agent 纳入漏洞管理链路，但需要配套扫描边界、补丁评审和责任追踪机制。",
-    "来源：GitHub / Anthropic | https://github.com/anthropics/defending-code-reference-harness",
-    "🇨🇳 科研进展 | 智源与清华 Brainμ 登上 Science，用脑科学多模态基础模型解析记忆—睡眠机制",
-    "量子位 6 月 5 日报道，智源与清华合作成果发表于 Science，Brainμ0 被用于处理睡眠 EEG 信号与记忆相关单细胞双光子钙成像信号，辅助研究人员验证记忆重激活与睡眠状态变化之间的关系。该成果展示了 AI 基础模型在复杂生命科学多模态数据分析、假设验证与状态识别中的潜力。",
-    "启示：AI for Science 正从“加速计算”走向“参与假设验证”，生命科学领域将更依赖跨模态基础模型做研究基础设施。",
-    "来源：量子位 | https://www.qbitai.com/2026/06/431033.html",
-    "📊 行业分析 | TechCrunch：Token 账单到期，Linux Foundation 推 Tokenomics Foundation",
-    "TechCrunch 6 月 5 日报道，企业 AI 成本治理正在进入“Token 账单到期”阶段：一些公司 4—5 月已超出全年 Token 预算数倍，Linux Foundation 因此推出 Tokenomics Foundation，试图像 FinOps 管理云支出一样，为 AI Token 消耗建立标准与成本纪律。Agentic 工具让单位开发者消耗量激增，低单价并不等于低总账单。",
-    "启示：企业 AI ROI 管理必须从项目预算转向 Token 级成本观测、限额、归因与优化，否则 Agent 普及会迅速放大账单失控。",
-    "来源：TechCrunch | https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/"
+    "今天的核心主线是 AI 竞争从“模型能力”继续外溢到资本、基建与治理。Google 与 SpaceX 的长期算力采购、Anthropic 的 350 亿美元芯片融资、AirTrunk 的印度 5GW 数据中心计划，说明头部玩家正在用多年期合同、债务融资和区域基建锁定未来算力；特朗普关于公众持有 AI 公司股权的表态，则把 AI 产业推进到国家资本政策讨论区。",
+    "企业落地侧，IBM 与 Google Cloud 组建全球 AI 咨询实践，腾讯云把 WorkBuddy 打包为企业超级团队工作台，Gartner 则提醒 CISO 先补身份与信任控制。一个清晰趋势是：AI 不再只是买模型或做 PoC，而是咨询交付、云平台、权限治理与组织协作的系统工程。",
+    "研发与研究侧，AI Coding 正从补全走向持续任务执行和安全修复：Copilot Agents Window、Anthropic 漏洞框架、阿里 Open Code Review 都在补齐工程化能力。与此同时，Agent 上线前认证、Notarized Agents、Tokenomics Foundation 等报告与论文共同指向同一件事——企业要规模化使用 Agent，必须先建立可认证、可审计、可控成本的运行底座。"
   ]
 }

@@ -278,9 +278,9 @@ async function loadTicker(){
     // 计算滚动宽度（内容一半 = 一轮循环）
     const w = stream.scrollWidth / 2;
     stream.style.setProperty('--scroll-end', `-${w}px`);
-    // 速度自适应：每轮约 60-140 秒，按字符数调整（Signal 优先可读性）
+    // 速度自适应：每轮约 45-110 秒，按字符数调整（介于初版与慢速版之间）
     const totalLen = tickerEvents.reduce((s,e)=>s+e.msg.length+15,0);
-    const dur = Math.max(60, Math.min(140, totalLen * 0.24));
+    const dur = Math.max(45, Math.min(110, totalLen * 0.18));
     stream.style.setProperty('--scroll-dur', dur+'s');
   }catch(_){ /* ticker 失败静默，不阻塞 dashboard */ }
 }

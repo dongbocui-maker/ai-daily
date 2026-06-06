@@ -1,0 +1,96 @@
+{
+  "updated": "2026-06-06T09:43+08:00",
+  "events": [
+    {
+      "ts": "2026-06-06T09:43+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "跑马灯事件系统上线 — agents dashboard 单行滚动 ticker V1",
+      "detail": ""
+    },
+    {
+      "ts": "2026-06-05T23:58+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "Login Gate v5 上线 — 等边倒三角反应堆 + 8位PIN锁正式部署 aidigest.club/agents/",
+      "detail": "commit 9031d1e, MK46 QC APPROVE_WITH_WARNINGS"
+    },
+    {
+      "ts": "2026-06-05T23:05+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "Agents dashboard 前端访问锁上线 — 8位数字PIN纯前端gate, 禁爬虫",
+      "detail": "commit fdc571a, Cloudflare Access 付费失败后方案B"
+    },
+    {
+      "ts": "2026-06-05T20:50+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "反应堆圆圈图标改造上线 — 4 suit 战甲配色SVG替换emoji, 三态动画",
+      "detail": "commit d3ea957, ac/lit/glow 三色精确匹配 Mark 设定"
+    },
+    {
+      "ts": "2026-06-05T14:22+08:00",
+      "level": "info",
+      "tag": "QC",
+      "msg": "MK46 QC suit today total — APPROVE, 6处||0兜底 + today_cache_eff算法核实",
+      "detail": "无阻塞问题, 4 agent 数据量级合理, build 92页 OK"
+    },
+    {
+      "ts": "2026-06-05T13:53+08:00",
+      "level": "info",
+      "tag": "QC",
+      "msg": "MK46 QC active suits — APPROVE, ONLINE filter 逻辑正确, idle/offline拆解准确",
+      "detail": "ACTIVE SUITS 单行改动简洁，边界安全"
+    },
+    {
+      "ts": "2026-06-05T13:45+08:00",
+      "level": "info",
+      "tag": "QC",
+      "msg": "MK46 QC cache savings card — APPROVE, today_save与today_cost同构完整",
+      "detail": "3处label(POWER/FUEL BURN/REACTOR EFF.)一致, 无回归"
+    },
+    {
+      "ts": "2026-06-05T12:48+08:00",
+      "level": "warn",
+      "tag": "QC",
+      "msg": "MK46 QC agents realtime — APPROVE_WITH_WARNINGS, 3个低危防御性编码缺陷",
+      "detail": "LIVE fetch 静默吞错 + g.cost/g.save 缺||0兜底, 不阻塞上线"
+    },
+    {
+      "ts": "2026-06-05T10:30+08:00",
+      "level": "warn",
+      "tag": "FALLBACK",
+      "msg": "钢铁虾 main fallback 触发 — azure-claude-48 → gpt-5.5, 原因: 超时",
+      "detail": "推测 hermbot endpoint 冷启动, 后续自动恢复"
+    },
+    {
+      "ts": "2026-06-04T23:45+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "Agents dashboard v1 正式上线 — S.H.R.I.M.P. OS HUD 90页独立监控站",
+      "detail": "4 suit cards + 趋势图 + model table + fallback chain, CF Pages部署"
+    },
+    {
+      "ts": "2026-06-04T20:00+08:00",
+      "level": "warn",
+      "tag": "FALLBACK",
+      "msg": "MK2 claude-opus-4-8 调用间歇超时, 自动回落至 gpt-5.5 续跑cron",
+      "detail": "ai-daily-report cron 08:18 正常完成, 仅模型回落"
+    },
+    {
+      "ts": "2026-06-04T12:00+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "Agents dashboard 实时端点上线 — data.aidigest.club CF Tunnel → VM Python serve",
+      "detail": "每60s聚合, 双源 fallback: LIVE → static JSON"
+    },
+    {
+      "ts": "2026-06-04T10:00+08:00",
+      "level": "info",
+      "tag": "DEPLOY",
+      "msg": "agents-dashboard-aggregate.py 初版完成 — trajectory → dashboard-data.json",
+      "detail": "4 agent × per-model 价格核算 + cache saving + 7d trend"
+    }
+  ]
+}

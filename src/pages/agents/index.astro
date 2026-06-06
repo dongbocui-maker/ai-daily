@@ -252,11 +252,20 @@ function reactorSvg(ac,lit,id){
 
 // === Event Ticker 跑马灯 ===
 let tickerEvents = [];
-const EVENTS_URL = FALLBACK_URL.replace(/dashboard-data\.json$/, 'events.json');
+const EVENTS_URLS = [
+  LIVE_URL.replace(/dashboard\.json$/, 'events.json'),
+  FALLBACK_URL.replace(/dashboard-data\.json$/, 'events.json'),
+];
 async function loadTicker(){
   try {
-    const r = await fetch(EVENTS_URL + '?t=' + Date.now(), {cache:'no-store'});
-    const j = await r.json();
+    let j = null;
+    for(const url of EVENTS_URLS){
+      try{
+        const r = await fetch(url + '?t=' + Date.now(), {cache:'no-store'});
+        if(r.ok){ j = await r.json(); break; }
+      }catch(_){ /* try next source */ }
+    }
+    if(!j) return;
     tickerEvents = (j.events || [])
       .filter(e => String(e.tag || '').toUpperCase() === 'FALLBACK')
       .sort((a,b)=>String(b.ts || '').localeCompare(String(a.ts || '')));

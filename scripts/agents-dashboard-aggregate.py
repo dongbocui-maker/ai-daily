@@ -30,6 +30,124 @@ AGENTS = {
     'mk2': {'name':'MK2','mark':'MARK II','role':'ENGINEER','emoji':'🦐','ac':'#cfdbe6','lit':'#9fe8ff'},
     'mk46':{'name':'Mark 46','mark':'MARK XLVI','role':'QC AUDITOR','emoji':'🛡','ac':'#caa6ff','lit':'#e0c4ff'},
 }
+
+# Signal/Fallback 规则：从 OpenClaw 配置读取各 Agent primary model。
+# active_model 只要偏离 primary，就视为 fallback；无论自动 fallback 还是手动 session model override，
+# 下一次 model.completed 被聚合后都会被捕捉并写入 Signal。
+OPENCLAW_CONFIG = '/root/.openclaw/openclaw.json'
+SIGNAL_NAMES = {
+    'main': 'MAIN AGENT',
+    'aima': 'SILVERMOON AGENT',
+    'mk2': 'MK2 AGENT',
+    'mk46': 'MK46 AGENT',
+}
+MODEL_LABELS = {
+    'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
+    'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
+    'azure-openai-responses/gpt-5.5': 'GPT-5.5',
+    'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
+}
+EVENT_TARGETS = [
+    '/root/.openclaw/workspace/projects/agents-dashboard/events.json',
+    '/root/.openclaw/workspace/projects/ai-daily/public/agents/data/events.json',
+    '/root/.openclaw/workspace/projects/agents-dashboard/live/events.json',
+]
+FALLBACK_STATE_PATH = '/root/.openclaw/workspace/projects/agents-dashboard/fallback-state.json'
+MAX_SIGNAL_EVENTS = 50
+
+def _load_json(path, default):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+def _primary_models_from_config():
+    cfg = _load_json(OPENCLAW_CONFIG, {})
+    defaults = ((cfg.get('agents') or {}).get('defaults') or {}).get('model') or {}
+    default_primary = defaults.get('primary')
+    primaries = {}
+    for item in ((cfg.get('agents') or {}).get('list') or []):
+        aid = item.get('id')
+        if aid not in AGENTS:
+            continue
+        model_cfg = item.get('model') or {}
+        primaries[aid] = model_cfg.get('primary') or default_primary
+    for aid in AGENTS:
+        primaries.setdefault(aid, default_primary)
+    return primaries
+
+def _event_ts_cn(ts):
+    if ts:
+        try:
+            return datetime.fromisoformat(ts.replace('Z','+00:00')).astimezone(CN_TZ).strftime('%Y-%m-%dT%H:%M+08:00')
+        except Exception:
+            pass
+    return now.strftime('%Y-%m-%dT%H:%M+08:00')
+
+def _model_label(model):
+    return MODEL_LABELS.get(model, model).upper()
+
+def refresh_fallback_events(agents):
+    """Persist Signal events from actual route changes.
+
+    Captures:
+    - primary -> fallback
+    - fallback -> different fallback
+    - fallback -> primary recovery
+    - current fallback still active but missing from events (backfill)
+    """
+    primary_models = _primary_models_from_config()
+    state = _load_json(FALLBACK_STATE_PATH, {})
+    base = _load_json(EVENT_TARGETS[1], {'updated': now.strftime('%Y-%m-%dT%H:%M+08:00'), 'events': []})
+    existing = [e for e in base.get('events', []) if str(e.get('tag','')).upper() == 'FALLBACK']
+    new_events = []
+
+    def push(ts, level, msg, detail=''):
+        msg = msg.upper()
+        if any(e.get('msg') == msg for e in new_events + existing):
+            return
+        new_events.append({'ts': ts, 'level': level, 'tag': 'FALLBACK', 'msg': msg, 'detail': detail[:200] if detail else ''})
+
+    for aid, agent in agents.items():
+        current = agent.get('active_model')
+        primary = primary_models.get(aid)
+        if not current or not primary:
+            continue
+        prev = (state.get(aid) or {}).get('active_model')
+        name = SIGNAL_NAMES.get(aid, aid.upper())
+        ts = _event_ts_cn(agent.get('last_ts'))
+        if current != primary:
+            if prev and prev != current and prev != primary:
+                push(ts, 'warn', f'{name} FALLBACK ROUTE CHANGED - {_model_label(prev)} -> {_model_label(current)}')
+            else:
+                push(ts, 'warn', f'{name} FALLBACK ACTIVE - {_model_label(primary)} ROUTED TO {_model_label(current)}')
+        elif prev and prev != primary:
+            push(ts, 'info', f'{name} FALLBACK CLEARED - ROUTED BACK TO PRIMARY {_model_label(current)}')
+        state[aid] = {
+            'active_model': current,
+            'primary_model': primary,
+            'updated': now.strftime('%Y-%m-%dT%H:%M:%S+08:00')
+        }
+
+    # Signal 仍只保留 FALLBACK 类；最新在前，同一 msg 去重。
+    merged = new_events + existing
+    seen = set(); deduped = []
+    for e in sorted(merged, key=lambda x: x.get('ts',''), reverse=True):
+        msg = e.get('msg','').strip().upper()
+        if not msg or msg in seen:
+            continue
+        seen.add(msg)
+        e['tag'] = 'FALLBACK'
+        e['msg'] = msg
+        deduped.append(e)
+    out_events = {'updated': now.strftime('%Y-%m-%dT%H:%M+08:00'), 'events': deduped[:MAX_SIGNAL_EVENTS]}
+    for path in EVENT_TARGETS:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        json.dump(out_events, open(path, 'w'), ensure_ascii=True, indent=2)
+    os.makedirs(os.path.dirname(FALLBACK_STATE_PATH), exist_ok=True)
+    json.dump(state, open(FALLBACK_STATE_PATH, 'w'), ensure_ascii=True, indent=2)
+    return len(new_events), len(out_events['events'])
 CN_TZ = timezone(timedelta(hours=8))
 now = datetime.now(CN_TZ)
 today = now.strftime('%Y-%m-%d')
@@ -116,6 +234,7 @@ for aid,meta in AGENTS.items():
     grand['last7d_tok']+=last7d_tok; grand['last7d_cost']+=last7d_cost
     today_eff = (today_cr/today_in*100) if today_in else 0
     agents_out[aid]={**meta,'status':status,'idle_min':round(mins) if mins is not None else None,
+        'last_ts':last_ts,
         'total_tok':a_tok,'today_tok':today_tok,'today_cost':round(today_cost,2),
         'last7d_tok':last7d_tok,'last7d_cost':round(last7d_cost,2),
         'cost':round(a_cost,2),'save':round(a_save,2),
@@ -134,6 +253,7 @@ out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
      'trend':trend,
      'agents':agents_out,
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
+new_fallback_events, total_signal_events = refresh_fallback_events(agents_out)
 # 输出到两处：
 #  1) 站点 build 用的静态 fallback JSON
 #  2) 实时服务(serve.py @8787)读的 live/ 路径
@@ -145,4 +265,4 @@ _targets = [
 for _t in _targets:
     _os.makedirs(_os.path.dirname(_t), exist_ok=True)
     json.dump(out, open(_t,'w'), ensure_ascii=False, indent=2)
-print('OK grand tok=%(tok)s cost=$%(cost)s save=$%(save)s'%out['grand'])
+print('OK grand tok=%s cost=$%s save=$%s signal=%s(+%s)'%(out['grand']['tok'],out['grand']['cost'],out['grand']['save'],total_signal_events,new_fallback_events))

@@ -1,6 +1,13 @@
 {
-  "updated": "2026-06-06T11:23+08:00",
+  "updated": "2026-06-06T11:38+08:00",
   "events": [
+    {
+      "ts": "2026-06-06T11:26+08:00",
+      "level": "warn",
+      "tag": "FALLBACK",
+      "msg": "MAIN AGENT FALLBACK ACTIVE - AZURE CLAUDE 4.8 ROUTED TO GPT-5.5",
+      "detail": ""
+    },
     {
       "ts": "2026-06-06T11:22+08:00",
       "level": "warn",
@@ -9,17 +16,10 @@
       "detail": ""
     },
     {
-      "ts": "2026-06-05T10:30+08:00",
+      "ts": "2026-06-06T10:30+08:00",
       "level": "warn",
       "tag": "FALLBACK",
-      "msg": "MAIN AGENT FALLBACK TRIGGERED - AZURE CLAUDE 4.8 TIMED OUT, ROUTED TO GPT-5.5",
-      "detail": ""
-    },
-    {
-      "ts": "2026-06-04T20:00+08:00",
-      "level": "warn",
-      "tag": "FALLBACK",
-      "msg": "MK2 FALLBACK TRIGGERED - CLAUDE OPUS 4.8 INTERMITTENT TIMEOUT, GPT-5.5 CONTINUED CRON WORKER RUN",
+      "msg": "MK2 AGENT FALLBACK ACTIVE - AZURE CLAUDE 4.8 ROUTED TO GPT-5.5",
       "detail": ""
     }
   ]

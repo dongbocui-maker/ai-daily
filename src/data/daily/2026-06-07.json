@@ -1,0 +1,102 @@
+{
+  "date": "2026-06-07",
+  "title": "2026-06-07",
+  "sections": [
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🚀 产品发布 | OpenAI 推出 Lockdown Mode，专防提示注入窃取敏感数据",
+          "body": "OpenAI 在 6 月 6 日披露面向高敏感场景的 Lockdown Mode，把外部内容读取、工具调用和跨应用数据访问纳入更严格的默认限制，用来降低提示注入把机密信息“带出系统”的风险。它不是单点功能更新，而是把企业 AI 安全从“事后检测”前移到“运行时隔离”的产品化尝试。 启示：企业采购 Agent 时，安全边界会从模型能力评估升级为数据路径、工具权限和运行时策略的组合评估。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/"
+        },
+        {
+          "title": "📈 战略实践 | Deloitte：2026 年 AI 转型重点转向流程再造、治理和规模化收益",
+          "body": "Deloitte 的 2026 AI 趋势文章把企业转型重点放在流程重塑、业务模型更新和治理能力上，提醒企业不要把生成式 AI 当作孤立工具采购。其判断与市场现象一致：大企业已经过了“演示很惊艳”的阶段，正在追问成本、收益和组织吸收能力。 启示：AI 转型预算应绑定业务 KPI 与组织变革路线图，单纯堆工具很难形成可持续 ROI。",
+          "source": "Deloitte",
+          "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/blogs/pulse-check-series-latest-ai-developments/ai-transformation-predictions-2026.html"
+        },
+        {
+          "title": "🇨🇳 中国案例 | WPS 笔记正式发布，AI 贯穿记录、整理与复用全过程",
+          "body": "WPS 笔记在 6 月发布，把 AI 嵌入记录、整理、检索和内容复用流程，目标不是单次生成文本，而是覆盖个人与团队知识沉淀的完整链路。对中国办公软件生态而言，这类产品会直接影响企业知识管理、会议纪要和文档协同场景。 启示：办公 AI 的下一阶段竞争点在“工作流闭环”和组织知识资产沉淀，而不是单个写作助手功能。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431014.html"
+        }
+      ]
+    },
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "📜 监管政策 | 纽约州议会通过大型数据中心一年禁令，AI 基建扩张遇能源约束",
+          "body": "The Verge 6 月 6 日报道，纽约州议会通过针对新建大型数据中心的一年暂停令，若州长签署将成为全美首个州级大型数据中心禁令。法案要求评估数据中心对电力、水、土地和污染的影响，并要求 20MW 以上项目举行公众听证。 启示：AI 基建扩张正在进入地方能源、环保和社区治理约束期，云厂商与企业客户都要把选址和合规纳入算力战略。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/policy/944041/new-york-data-center-moratorium"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "📄 论文 | Agents’ Last Exam：长周期 Agent 评测暴露真实任务通过率瓶颈",
+          "body": "arXiv 6 月新论文 Agents’ Last Exam 聚焦长周期、经济意义更强的 Agent 任务，试图弥补传统短题评测对真实工作能力的高估。论文与近期 SWE-Marathon 等基准形成呼应：模型会做很多局部任务，但在长链路一致性、工具使用和抗奖励黑客方面仍有明显短板。 启示：企业评估 Agent 不能只看 benchmark 排名，应引入端到端业务任务、失败恢复和长期一致性测试。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2606.05405"
+        },
+        {
+          "title": "🧪 研究观察 | 无法律虚拟城镇实验引发关注，几十个 Agent 互相博弈暴露治理难题",
+          "body": "36氪 6 月 7 日报道一个“没有法律的虚拟城镇”式多 Agent 实验，几十个 Agent 在开放规则下互动、竞争甚至攻击。虽然带有实验和叙事色彩，但它直观展示了多 Agent 系统在目标冲突、规则缺失和行为涌现上的治理难题。 启示：多 Agent 协同不应只关注效率，也必须设计规则层、仲裁机制和安全沙箱，否则规模化后容易放大不可控行为。",
+          "source": "36氪",
+          "url": "https://www.36kr.com/p/3841175573088513"
+        },
+        {
+          "title": "🛠️ 工具演进 | Copilot SDK 正式 GA，GitHub 把 Copilot 能力开放给外部应用",
+          "body": "GitHub 6 月 2 日宣布 Copilot SDK 正式 GA，开发者可以把 Copilot 的上下文理解、代码建议和对话式能力接入自己的工具链。相比 IDE 内功能更新，SDK GA 的意义在于把 Copilot 从单一产品扩展为可嵌入平台能力。 启示：企业内部开发平台可以围绕 SDK 做私有流程集成，但同时需要统一权限、日志和代码数据边界。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/"
+        },
+        {
+          "title": "🇨🇳 开发框架 | Spring 创始人重回一线做 AI 框架，称这是人类亲自选择的最后一代框架",
+          "body": "36氪 6 月报道 Spring 创始人围绕 AI 应用框架重回一线，讨论开发者如何在 Agent、工具调用和工作流中重新设计抽象层。文章的看点不只是个人回归，而是传统软件工程框架正在被 AI 原生开发范式重新定义。 启示：企业技术栈选型要关注 AI 框架与既有 Java/微服务生态的衔接，避免为了追新重建过多底层能力。 今天的 AI 主线不再只是“更强模型”，而是安全边界、资本市场约束与部署纪律同时收紧。OpenAI 的 Lockdown Mode、Meta 相关安全事件和美国政策岗位变化共同说明：当 Agent 进入真实数据和工具链，企业最先要补的是权限、隔离、审计和响应机制。 另一条主线是成本与规模化。端侧推理、异构算力、Copilot API 化和企业级 AI 方法论都指向同一个方向：AI 正从演示型能力进入可治理、可集成、可度量的生产系统。未来几个月，真正拉开差距的不是谁接入了更多模型，而是谁能把 AI 嵌进流程并证明 ROI。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3836956769236360"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "🤖 论文 | Meta-Agent Challenge 追问：当前 Agent 能否自主开发下一个 Agent",
+          "body": "The Meta-Agent Challenge 论文讨论当前 Agent 是否具备自主开发、调试和迭代 Agent 系统的能力，回应了近期递归自我改进热潮。研究把“会写代码”与“能独立构建可靠 Agent”区分开来，强调评估需要覆盖需求分解、架构设计、测试和长期维护。 启示：AI 自我改进仍需严密评测与安全边界，企业不宜把 Agent 自动构建 Agent 当作无需监督的生产能力。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/html/2606.04455v1"
+        },
+        {
+          "title": "🔒 安全分析 | MIT Technology Review：Meta 账号被黑显示 AI 安全不止模型神话",
+          "body": "MIT Technology Review 6 月 5 日分析 Meta 账号被黑事件，指出 AI 安全风险不仅来自模型能力，也来自身份、平台流程、聊天机器人接口和运营安全的组合漏洞。文章提醒业界不要只围绕“超级智能风险”讨论，而忽视已经可被利用的现实攻击面。 启示：企业 AI 安全要覆盖账号体系、客服/社交机器人、权限继承和异常检测，不能只做模型红队。",
+          "source": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "🤖 Agent | GitHub Agent Tasks REST API 开放，Copilot 任务编排能力进入接口层",
+    "GitHub 6 月 4 日上线 Agent Tasks REST API，让 Copilot Agent 任务可通过接口创建、查询和自动化管理。这个变化使编码 Agent 不再只是 IDE 里的交互体验，而能被纳入 CI/CD、工单系统和工程平台的自动化流程。 启示：Coding Agent 的企业落地会从“个人提效”走向“工程流程自动化”，API 治理和审计会成为采购重点。",
+    "来源：GitHub Blog | https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/",
+    "☁️ Agent | Copilot cloud agent 支持定时与自动化任务，后台编码进入常态化",
+    "GitHub 6 月 2 日宣布 Copilot cloud agent 可用于计划和自动化任务，意味着开发者能把重复性修复、迁移和维护工作交给云端 Agent 持续运行。它把代码助手从“随问随答”推进到“后台执行任务”的产品形态。 启示：企业需要尽快定义哪些代码任务可交给 Agent 自动执行，哪些必须保留人工 review 与变更审批。",
+    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/"
+  ]
+}

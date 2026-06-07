@@ -208,7 +208,11 @@ def mark_failed(state: dict[str, Any], error: str) -> dict[str, Any]:
 
 
 def reset_stuck(slug: str) -> dict[str, Any]:
-    """从 stuck 恢复——回退到 stuck 之前那个 step，attempts 清零"""
+    """从 stuck 恢复——回退到 stuck 之前那个 step，attempts 清零。
+
+    注意：stuck/failed 告警使用 data.intervention_notified 去重。
+    手动 reset 后必须清掉该标志，否则同一任务再次卡住时会静默不告警。
+    """
     state = load(slug)
     if state["step"] != "stuck":
         return state
@@ -220,6 +224,7 @@ def reset_stuck(slug: str) -> dict[str, Any]:
             state["attempts"] = 0
             state["last_error"] = None
             state["last_error_at"] = None
+            state.setdefault("data", {}).pop("intervention_notified", None)
             state.setdefault("history", []).append({
                 "step": h["step"],
                 "at": _now(),

@@ -33,6 +33,8 @@ import os
 import shutil
 import sys
 import time
+import tempfile
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -41,7 +43,11 @@ from util import nblm, nblm_json, ensure_mihomo, run, get_logger, CmdResult
 
 PROJECT_ROOT = Path("/root/.openclaw/workspace/projects/ai-daily")
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
+WORKSPACE_ROOT = Path("/root/.openclaw/workspace")
+AGENT_ACTIONS_DIR = WORKSPACE_ROOT / "memory" / "agent-actions"
+JASON_FEISHU_TARGET = "user:ou_dbee86fe0e62ee834c7d7225015a1317"
 LOCK_FILE = Path("/tmp/podcast-worker.lock")
+SHANGHAI = timezone(timedelta(hours=8))
 
 log = get_logger("worker")
 
@@ -57,6 +63,108 @@ def acquire_lock():
     except BlockingIOError:
         log.info("另一个 worker 在跑，跳过本轮")
         return None
+
+
+def now_iso() -> str:
+    return datetime.now(SHANGHAI).isoformat(timespec="seconds")
+
+
+def append_agent_action(state: dict, action: str, status: str, summary: str, notes: str | None = None) -> None:
+    """把 worker 关键动作写入跨 session 行动日志。失败不影响主流程。"""
+    try:
+        AGENT_ACTIONS_DIR.mkdir(parents=True, exist_ok=True)
+        path = AGENT_ACTIONS_DIR / f"{datetime.now(SHANGHAI).strftime('%Y-%m-%d')}.jsonl"
+        record = {
+            "ts": now_iso(),
+            "session_kind": "system-cron",
+            "session_id": "podcast-worker",
+            "agent_id": "main",
+            "agent_name": "钢铁虾",
+            "task_id": "system-cron:podcast-pipeline-worker",
+            "task_name": "精读播客状态机 worker",
+            "action": action,
+            "recipient": JASON_FEISHU_TARGET,
+            "channel": "feishu",
+            "summary": summary[:200],
+            "outputs": {"slug": state.get("slug"), "step": state.get("step")},
+            "status": status,
+        }
+        if notes:
+            record["notes"] = notes[:1000]
+        with path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as e:
+        log.info(f"  [{state.get('slug')}] 写 agent-actions 失败: {e}")
+
+
+def notify_intervention(state: dict, status: str) -> None:
+    """stuck/failed 时主动通知 Jason；每个 state 只通知一次。"""
+    data = state.setdefault("data", {})
+    if data.get("intervention_notified"):
+        return
+
+    slug = state.get("slug", "unknown")
+    last_error = state.get("last_error") or "无 last_error"
+    message = (
+        f"⚠️ 精读播客 pipeline 需要介入\n"
+        f"slug: {slug}\n"
+        f"状态: {state.get('step')} / {status}\n"
+        f"错误: {last_error[:500]}\n"
+        f"已停止自动重试，避免误发布。"
+    )
+    r = run([
+        "openclaw", "message", "send",
+        "--channel", "feishu",
+        "--target", JASON_FEISHU_TARGET,
+        "--message", message,
+    ], timeout=60)
+    if r.ok:
+        data["intervention_notified"] = True
+        S.save_atomic(state)
+        append_agent_action(state, "podcast_pipeline_intervention_alert", "error", f"精读播客 {slug} 进入 {state.get('step')}，已通知 Jason", last_error)
+    else:
+        log.info(f"  [{slug}] 飞书告警发送失败: {(r.stderr or r.stdout)[:300]}")
+        append_agent_action(state, "podcast_pipeline_intervention_alert_failed", "error", f"精读播客 {slug} 进入 {state.get('step')}，但告警发送失败", (r.stderr or r.stdout or last_error))
+
+
+def audio_block_from_meta(meta: dict) -> dict:
+    required = {"url", "duration_seconds", "size_bytes", "uploaded_at"}
+    missing = required - set(meta.keys())
+    if missing:
+        raise ValueError(f"audio_meta 缺字段: {sorted(missing)}")
+    block = {
+        "url": meta["url"],
+        "duration_seconds": meta["duration_seconds"],
+        "size_bytes": meta["size_bytes"],
+        "generated_at": meta["uploaded_at"],
+    }
+    if meta.get("format"):
+        block["format"] = meta["format"]
+    return block
+
+
+def write_audio_meta_to_json(target: Path, audio_meta: dict) -> bool:
+    """写入 audio metadata。
+
+    返回 True 表示文件语义发生变化；False 表示远端已含相同 audio，避免仅因
+    JSON 缩进/字段顺序差异产生无意义 commit。
+    """
+    data = json.loads(target.read_text(encoding="utf-8"))
+    audio = audio_block_from_meta(audio_meta)
+    if data.get("audio") == audio:
+        return False
+    data["audio"] = audio
+    tmp = target.with_suffix(target.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(target)
+    return True
+
+
+def cleanup_worktree(worktree: Path) -> None:
+    if not worktree.exists():
+        return
+    run(["git", "-C", str(PROJECT_ROOT), "worktree", "remove", "--force", str(worktree)], timeout=60)
+    shutil.rmtree(worktree, ignore_errors=True)
 
 
 # ===================== Step handlers =====================
@@ -188,63 +296,112 @@ def handle_downloaded(state: dict) -> dict:
 
 
 def handle_uploaded(state: dict) -> dict:
-    """写回 JSON + git commit + push"""
-    write_script = SCRIPTS_DIR / "write-audio-meta.py"
+    """写回 reads JSON + 用临时 clean worktree commit/push，避免主 workspace 脏文件阻断发布。"""
     audio_meta = state["data"].get("audio_meta")
     if not audio_meta:
         S.mark_failed(state, "uploaded state 缺 audio_meta")
         return state
 
-    r = run(
-        ["python3", str(write_script), "--mode", "reads", "--slug", state["slug"]],
-        timeout=60,
-        input_data=json.dumps(audio_meta, ensure_ascii=False),
-    )
-    if not r.ok:
-        log.info(f"  [{state['slug']}] 写 JSON 失败: {r.stderr[:200]}")
-        S.record_attempt_failure(state, f"write-audio-meta rc={r.rc}: {r.stderr[:200]}")
+    try:
+        # 先在主 workspace 定位目标文件；发布实际基于 origin/main 的 clean worktree，
+        # 不依赖主 workspace 是否干净，也不把无关脏文件带进 commit。
+        json_glob = list((PROJECT_ROOT / "src" / "data" / "reads").glob(f"*-{state['slug']}.json"))
+        if not json_glob:
+            S.mark_failed(state, f"找不到 reads JSON: {state['slug']}")
+            return state
+        json_file = json_glob[0].relative_to(PROJECT_ROOT)
+        audio_block_from_meta(audio_meta)  # 早校验 meta 结构
+    except Exception as e:
+        S.mark_failed(state, f"audio meta/json 校验失败: {e}")
         return state
 
-    # git add + commit + push
-    project_dir = PROJECT_ROOT
-    json_glob = list((project_dir / "src" / "data" / "reads").glob(f"*-{state['slug']}.json"))
-    if not json_glob:
-        S.mark_failed(state, f"找不到 reads JSON: {state['slug']}")
-        return state
-    json_file = json_glob[0].relative_to(project_dir)
+    worktree = Path(tempfile.mkdtemp(prefix=f"podcast-publish-{state['slug']}-"))
+    try:
+        # 确保基于远端 main 发布，避免本地主 workspace 脏状态影响。
+        r = run(["git", "-C", str(PROJECT_ROOT), "fetch", "origin", "main"], timeout=120)
+        if not r.ok:
+            S.record_attempt_failure(state, f"git fetch: {(r.stderr or r.stdout)[:300]}")
+            return state
 
-    log.info(f"  [{state['slug']}] git add {json_file}")
-    r = run(["git", "-C", str(project_dir), "add", str(json_file)], timeout=30)
-    if not r.ok:
-        S.record_attempt_failure(state, f"git add: {r.stderr[:200]}")
-        return state
+        # tempfile 已创建目录；git worktree add 要求目标目录不存在或为空。
+        shutil.rmtree(worktree, ignore_errors=True)
+        r = run(["git", "-C", str(PROJECT_ROOT), "worktree", "add", "--detach", str(worktree), "origin/main"], timeout=120)
+        if not r.ok:
+            S.record_attempt_failure(state, f"git worktree add: {(r.stderr or r.stdout)[:300]}")
+            return state
 
-    r = run(
-        ["git", "-C", str(project_dir), "commit", "-m", f"feat(reads): 加 {state['slug']} 精读播客"],
-        timeout=30,
-    )
-    # commit 失败可能是 nothing to commit（之前手动 commit 过），这种允许跳过
-    if not r.ok and "nothing to commit" not in (r.stdout + r.stderr):
-        S.record_attempt_failure(state, f"git commit: {r.stderr[:200]}")
-        return state
+        target_json = worktree / json_file
+        if not target_json.exists():
+            S.mark_failed(state, f"origin/main 上找不到 reads JSON: {json_file}")
+            return state
 
-    # pull --rebase + push（pull 失败也算暂时性）
-    r = run(["git", "-C", str(project_dir), "pull", "--rebase"], timeout=60)
-    if not r.ok:
-        log.info(f"  [{state['slug']}] git pull 失败（暂时）: {r.stderr[:200]}")
-        S.record_attempt_failure(state, f"git pull: {r.stderr[:200]}")
-        return state
+        changed = write_audio_meta_to_json(target_json, audio_meta)
+        if not changed:
+            log.info(f"  [{state['slug']}] origin/main 已包含相同 audio meta，跳过 commit")
+            S.advance(state, "published", json_file=str(json_file), publish_status="unchanged")
+            return state
+        log.info(f"  [{state['slug']}] worktree 写入 audio meta: {json_file}")
 
-    r = run(["git", "-C", str(project_dir), "push"], timeout=180)
-    if not r.ok:
-        log.info(f"  [{state['slug']}] git push 失败（暂时）: {r.stderr[:200]}")
-        S.record_attempt_failure(state, f"git push: {r.stderr[:200]}")
-        return state
+        r = run(["git", "-C", str(worktree), "add", str(json_file)], timeout=30)
+        if not r.ok:
+            S.record_attempt_failure(state, f"git add(worktree): {(r.stderr or r.stdout)[:300]}")
+            return state
 
-    log.info(f"  [{state['slug']}] uploaded → published ✅")
-    S.advance(state, "published",
-              json_file=str(json_file))
-    return state
+        # 如果远端已经有同样 audio 字段，不重复 commit，直接视作 published。
+        r = run(["git", "-C", str(worktree), "diff", "--cached", "--quiet", "--", str(json_file)], timeout=30)
+        if r.rc == 0:
+            log.info(f"  [{state['slug']}] origin/main 已包含相同 audio meta，跳过 commit")
+            S.advance(state, "published", json_file=str(json_file), publish_status="unchanged")
+            return state
+
+        r = run([
+            "git", "-C", str(worktree), "commit",
+            "-m", f"feat(reads): 加 {state['slug']} 精读播客",
+        ], timeout=60)
+        if not r.ok:
+            S.record_attempt_failure(state, f"git commit(worktree): {(r.stderr or r.stdout)[:300]}")
+            return state
+
+        def push_once() -> CmdResult:
+            return run(["git", "-C", str(worktree), "push", "origin", "HEAD:main"], timeout=180)
+
+        r = push_once()
+        if not r.ok:
+            first_err = (r.stderr or r.stdout)[:300]
+            log.info(f"  [{state['slug']}] git push 失败，fetch/rebase 后重试一次: {first_err}")
+            r_fetch = run(["git", "-C", str(worktree), "fetch", "origin", "main"], timeout=120)
+            if not r_fetch.ok:
+                S.record_attempt_failure(state, f"git fetch retry: {(r_fetch.stderr or r_fetch.stdout)[:300]}")
+                return state
+            r_rebase = run(["git", "-C", str(worktree), "rebase", "origin/main"], timeout=120)
+            if not r_rebase.ok:
+                S.record_attempt_failure(state, f"git rebase retry: {(r_rebase.stderr or r_rebase.stdout)[:300]}")
+                return state
+            # rebase 后确认目标文件仍含可播放 audio。
+            status_after_rebase = run(["git", "-C", str(worktree), "status", "--porcelain", "--", str(json_file)], timeout=30)
+            if not status_after_rebase.ok:
+                S.record_attempt_failure(state, f"rebase 后 git status 失败: {(status_after_rebase.stderr or status_after_rebase.stdout)[:300]}")
+                return state
+            try:
+                remote_data = json.loads(target_json.read_text(encoding="utf-8"))
+                audio = remote_data.get("audio") or {}
+                if audio.get("url") != audio_meta.get("url") or not audio.get("duration_seconds"):
+                    S.record_attempt_failure(state, "rebase 后 audio meta 丢失，停止 push")
+                    return state
+            except Exception as e:
+                S.record_attempt_failure(state, f"rebase 后校验 audio meta 失败: {e}")
+                return state
+            r = push_once()
+            if not r.ok:
+                S.record_attempt_failure(state, f"git push retry: {(r.stderr or r.stdout)[:300]}")
+                return state
+
+        commit_short = run(["git", "-C", str(worktree), "rev-parse", "--short", "HEAD"], timeout=30).stdout.strip()
+        log.info(f"  [{state['slug']}] uploaded → published ✅ ({commit_short})")
+        S.advance(state, "published", json_file=str(json_file), publish_status="pushed", commit=commit_short)
+        return state
+    finally:
+        cleanup_worktree(worktree)
 
 
 def handle_published(state: dict) -> dict:
@@ -274,6 +431,8 @@ def process_one(state: dict, dry_run: bool = False) -> None:
         return
     if step == "stuck":
         log.info(f"  [{state['slug']}] STUCK ({state['attempts']} attempts) — 跳过 (用 reset_stuck 恢复)")
+        if not dry_run:
+            notify_intervention(state, "stuck")
         return
     handler = HANDLERS.get(step)
     if not handler:
@@ -289,6 +448,10 @@ def process_one(state: dict, dry_run: bool = False) -> None:
     except Exception as e:
         log.exception(f"  [{state['slug']}] handler 抛异常")
         S.record_attempt_failure(state, f"handler exception: {e}")
+
+    # 如果本轮把任务推进到需要人工介入的状态，立即告警并归档行动日志。
+    if state.get("step") in S.INTERVENE_STEPS:
+        notify_intervention(state, state.get("step", "unknown"))
 
 
 def main() -> int:
@@ -319,6 +482,10 @@ def main() -> int:
         active = [s for s in all_states if s["step"] not in S.TERMINAL_STEPS and s["step"] != "stuck"]
         stuck = [s for s in all_states if s["step"] == "stuck"]
         log.info(f"worker tick: {len(active)} active, {len(stuck)} stuck, {len(all_states)} total")
+
+        if not args.dry_run:
+            for state in stuck:
+                notify_intervention(state, "stuck")
 
         for state in active:
             process_one(state, args.dry_run)

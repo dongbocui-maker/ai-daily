@@ -1,0 +1,79 @@
+{
+  "slug": "latent-github-plan-for-agents",
+  "savedDate": "2026-06-07",
+  "publishDate": "2026-06-02",
+  "titleZh": "GitHub 的 Agent 计划：Kyle Daigle 谈 Copilot、Actions、PR 信任、企业级上下文与 AI 时代的软件开发平台重构",
+  "titleEn": "GitHub's plan for Agents — Kyle Daigle, GitHub",
+  "author": "Latent.Space / swyx; guest: Kyle Daigle",
+  "authorTitle": "Latent.Space 为 AI Engineer newsletter 与技术播客；Kyle Daigle 为 GitHub COO、Microsoft Developer CMO",
+  "originalUrl": "https://www.latent.space/p/github",
+  "source": "latent.space",
+  "tags": [
+    "GitHub",
+    "Copilot",
+    "AI Agents",
+    "软件工程",
+    "开发者平台",
+    "MCP",
+    "WorkIQ",
+    "企业 AI",
+    "开源治理"
+  ],
+  "summary": "Latent.Space 采访 GitHub COO Kyle Daigle，讨论 AI coding agents 对 GitHub 的基础设施、开源协作、Pull Request 信任机制、Actions 计算层、Copilot 产品线和 Microsoft 企业级上下文战略的冲击。核心结论：GitHub 不只是代码托管平台，正在被迫升级为人类和 agent 共同工作的操作层。",
+  "keyPoints": [
+    "**GitHub 正进入人类速度架构被 agent 速度重压的阶段**。文章开场指出，GitHub 过去二十年围绕人类开发者的 commit、PR、review、Actions、开源协作构建；但 coding agents 让代码提交、构建、分支和自动化活动出现数量级增长。Kyle 提到平台活动从 2025 年 10 亿 commits 到 2026 年每周 2.75 亿 commits，线性外推达 140 亿/年，GitHub Actions 负载也快速上升。",
+    "**Kyle 的个人工作流展示了 AI 对领导层的改变，而不只是对工程师的改变**。他不只是让 AI 写代码，而是把 GitHub、Teams、Email、Slack、Obsidian、PR、transcripts 等上下文接入 agent，让它先回看过去一周、三个月或某个议题的历史，再帮助制定下一步计划。这说明 LLM 在企业中的关键价值常常不是“从零生成”，而是 retrospection + synthesis。",
+    "**GitHub 内部倾向用现有工作流承载 AI，而不是强迫员工换工具**。Kyle 反复强调，内部 rollout 的原则是不要让人改变工作方式：GitHub 仍用 GitHub，会议仍在 Teams，聊天仍在 Slack，邮件仍在邮件系统。AI 通过 MCP、WorkIQ、skills、CLI 等层接入既有上下文，而不是另起一套孤岛系统。",
+    "**从 mega-skill 转向 micro-skill 是 GitHub 的重要实践经验**。Kyle 认为，大而全、漂亮但脆弱的 mega-skill 正在退潮。团队更需要的是“一件事做得很好”的 atomic micro-skills，再由人或 agent 在具体场景中组合。因为营销、PR、分析师关系、客户沟通等场景对“总结”的定义完全不同，微技能比单个大流程更易维护和复用。",
+    "**AI 让 former developers in leadership 获得新的杠杆**。Kyle 认为，曾经写过代码、后来进入管理的人，在 AI 时代特别有优势：他们具备模式识别和问题拆解能力，又积累了商业、组织、客户和沟通经验。AI coding tools 让这些人重新获得“把想法做成产品”的能力，Kyle 甚至能周末同时跑 15 个 agents。",
+    "**Actions 从 CI/CD 变成了 agent compute layer，但也成为基础设施压力点**。GitHub 当年从 webhooks、API、Actions、Pages、npm、Dependabot、Semmle 等能力演化出开发者平台；现在 agent 带来的更多 PR、更多 builds、更多自动化，让 Actions 不再只是 CI，而是 agentic workflows 的通用计算层。Kyle 提到 CPU 资源开始成为约束，GitHub 需要数据中心、Azure 和新 compute 共同扩容。",
+    "**开源协作的核心挑战不是格式，而是信任**。围绕 slop forks、AI vendor、prompt requests、vouch system、AI review 等讨论，Kyle 的判断是：PR 流程要演化，但根问题是 codify trust。当代码由 agent 写、另一个 agent review、人类只做最后判断时，信任来源变得分散。工具可以增加 verification assets，但不能自动解决“我是否相信这个变更”的社会问题。",
+    "**GitHub 对“developer”的定义正在扩大**。Kyle 认为，如果一个人有想法并把它变成可运行的软件，即使用 AI，也应该被看作开发者旅程的一部分。GitHub 超过 2 亿用户后，关键不再是严格区分 professional developer 和 AI-era builder，而是降低恐惧感，让更多人像换家里开关一样敢于修改和创造软件。",
+    "**Copilot 正从 code completion 走向统一 agent runtime / SDK / harness**。Kyle 复盘 Copilot 曾经押注 fine-tuning，但下一代模型快速进步改变了路径。现在 GitHub 的重点不只是更好补全，而是用统一 SDK/harness 支撑 CLI、desktop app、cloud agents、安全修复、issue 处理、文档一致性检查和整个 SDLC 的多点自动化。",
+    "**ambient AI 和企业级上下文是下一阶段关键战场**。Kyle 认为现在的 agentic IDE、background agents、security review 仍然太窄，把软件开发当成单线任务。真正有价值的是 agent 能理解代码之外的所有业务上下文：spec、邮件、会议、依赖、团队讨论、客户背景。Microsoft 的 WorkIQ / FoundryIQ 和类似 OpenClaw 的个人/工作 agent，指向的是“能用电脑、能接上下文、能在企业合规边界内行动”的新操作层。"
+  ],
+  "insight": "## 1. 这篇最值得看的是 GitHub 被迫承认：agent 改变的是平台物理学\n\n很多 AI coding 讨论停留在 IDE、模型和程序员效率。但 Kyle 的访谈把问题拉到平台底层：当每个 idea 都可以自动变成 PR、每个 PR 都触发 build、每个 issue 都能挂一个 agent，GitHub 原来按人类速度设计的数据库、权限系统、PR 流、Actions capacity 和开源治理都会被重写。\n\n这对企业也一样。客户不能只问“Copilot 能让开发者快多少”，还要问：如果开发吞吐提升 5-10 倍，测试、审批、安全扫描、架构评审、发布窗口、云资源、成本控制和事故响应能否同步扩容？AI 转型的瓶颈会从写代码转向 software delivery system 的系统吞吐。\n\n## 2. “Micro-skills 而非 mega-skills” 是非常实用的企业 AI 落地经验\n\nKyle 对 mega-skill 的批评值得记住：大而全的 workflow 一开始很漂亮，但组织场景稍一变化就脆弱。真正能规模化的是可组合的小技能，每个技能只解决一个稳定问题，再由上下文和人来组合。\n\n这对企业 agent 平台建设非常关键。很多客户会本能地要求“一键生成完整报告”“自动完成端到端流程”，但第一阶段更稳的路线可能是搭建一组标准 micro-capabilities：检索会议纪要、抽取客户风险、比较 PR、生成销售摘要、检查文档一致性、读取工单趋势。把它们做成可审计、可复用、可权限控制的企业级能力池，比追求一个万能 mega-agent 更可靠。\n\n## 3. PR 的未来不是“prompt request”这么简单，而是信任机制再设计\n\n文章里最深的一点是：开源和企业代码协作的核心不是代码 diff 本身，而是谁为这个 diff 背书。过去 PR 的信任来自 contributor reputation、maintainer review、CI、测试、历史关系。Agent 时代，代码可能由 A agent 写、B agent review、C 人类 merge，这会让责任和信任链条变得模糊。\n\n因此企业级 AI 编程平台不能只卖“生成代码”。更高价值的部分在 governance layer：谁发起、谁批准、agent 用了哪些上下文、测试覆盖什么、风险等级如何、是否触碰敏感模块、最终由哪个人类 accountable。GitHub 作为开发者社交网络和工程事实系统，天然会进入这个信任编排层。\n\n## 4. 对 Microsoft 生态，这是 Copilot 从工具到操作层的叙事\n\nKyle 对 WorkIQ、FoundryIQ、M365 context、Copilot CLI、desktop app、cloud agents 的描述，实际上是一个清晰战略：AI 不只是 ChatGPT-like assistant，也不是单个 coding tool，而是运行在工作上下文、身份权限、设备沙箱和云计算之上的操作层。\n\n这与 Jason 关注的企业云和 M365/Copilot 生态高度相关。客户真正的需求不是“多一个聊天窗口”，而是：我的 agent 能不能读 Teams 会议、邮件、SharePoint、GitHub、工单、CRM，但仍然遵守权限、合规、审计和数据边界？如果能，这就是 Microsoft 相比纯 AI startup 的结构性优势。\n\n## 5. 咨询服务机会：从 Copilot adoption 扩展到 Agentic SDLC Operating Model\n\n这篇可以直接转成一个面向 CIO/CTO 的服务主题：Agentic SDLC Operating Model。内容包括：\n\n- 评估当前 SDLC 哪些环节会被 agent 吞吐冲垮；\n- 重构 PR / review / test / release 的信任与责任链；\n- 建立 micro-skills catalog 和 agent tool governance；\n- 设计 GitHub Actions / Azure compute 的成本与容量模型；\n- 把 M365 / GitHub / Jira / ServiceNow / Teams 的上下文接成企业级 agent memory；\n- 定义“人类开发者 + agent 开发者”的度量体系。\n\n这比单纯推广 GitHub Copilot license 更高阶，也更贴近企业真正的瓶颈。",
+  "summaryZh": "## 一、GitHub 正被 agent 速度重塑\n\nLatent.Space 这期采访 GitHub COO Kyle Daigle，主题是 GitHub 如何面对 coding agents 带来的新软件开发时代。GitHub 过去二十年是软件协作的核心基础设施：commits、pull requests、reviews、Actions、open source、closed source 都在上面流动。但 AI coding agents 让这些活动的数量和速度出现非线性增长。\n\n文章开头提到，agentic coding 在 2026 年增长 1400%。Kyle 在推文中说，GitHub 2025 年有 10 亿 commits，而现在每周就有 2.75 亿 commits，若线性增长，一年会接近 140 亿。GitHub Actions 也从 2023 年每周 5 亿分钟、2025 年每周 10 亿分钟继续增长。平台原本围绕人类开发者速度设计，现在必须适应 agents 产生的大规模代码、构建、PR 和自动化。\n\n这也解释了 GitHub 近期被公开讨论的 uptime 压力。问题不只是某个服务没扩容，而是 AI 把所有维度的活动都放大了：更多人写代码，更多人用 agent 写代码，更多分支、更多 PR、更多 builds、更多权限组合、更多老系统被新负载撞到边界。\n\n## 二、Kyle 的角色：GitHub COO + Microsoft Developer CMO\n\nKyle 介绍自己在 GitHub 工作 13 年，早年是开发者，参与过 webhooks、API、平台层等关键能力建设。后来进入管理，成为 GitHub COO，现在还负责 Microsoft broader developer ecosystem 的 CMO 职能。\n\n他的独特之处在于既懂工程，又能和企业客户、业务领导、开发者社区沟通。他认为自己的核心不是 title，而是把开发者经验、远程协作经验、企业运营经验和 Microsoft 生态连接起来。\n\nAI 让 Kyle 重新开始写代码。他不是简单用 AI 写博客或回答问题，而是把 AI 用在跨系统 workflow 上：让 agent 读取 PR、公开内容、过去三个月的材料、Obsidian notes、Teams 会议转录、Slack、邮件，再帮他回看过去一周发生了什么、什么有效、未来几天应该怎么调整。\n\n## 三、GitHub 内部如何用 AI：不改变工作方式\n\nKyle 说，GitHub 内部 rollout AI 的原则是不要让员工改变工作方式。GitHub 仍使用 GitHub、Teams、Slack、Email 等已有工具。AI 的作用是接入这些上下文，让员工通过 CLI、skills、MCP server、WorkIQ 等能力从已有工作流中获得智能增强。\n\n他特别提到 WorkIQ MCP server。在远程团队里，很多信息散落在会议、邮件、聊天和 GitHub 讨论里。WorkIQ 能让人问 backward-facing questions：过去一周发生了什么？昨天行业报告里有什么重点？哪些内容应该推到 GitHub issues 或 discussions 中继续协作？\n\n这体现了一个重要判断：企业 AI 的关键不是让所有人去一个新聊天工具里工作，而是把 AI 接入原本的企业事实系统。对 GitHub 来说，这些事实系统包括 GitHub、Teams、Slack、Email；对其他企业可能是 M365、Jira、ServiceNow、Salesforce、SharePoint 和代码仓库。\n\n## 四、从 mega-skills 到 micro-skills\n\n访谈中 Kyle 对 skills 的经验非常具体。他认为，早期很多人追求“巨大、漂亮、完美”的 mega-skill，希望一个 skill 完成完整 workflow。但这种方式很脆弱：几周或几个月后，环境变了、需求变了、上下文变了，想调整这个大技能就很困难。\n\nGitHub 内部现在更关注 micro-skills：每个 skill 做一件很小但稳定的事。比如识别某类 MCP server 中最重要的 marketing information，而不是从头到尾生成一份完整报告。\n\n原因是不同职能对同一个词的定义不同。对 analyst briefing、customer meeting、PR、marketing、communications 来说，“summarize everything”的要求完全不同。真正可扩展的结构不是一个大而全的技能，而是一组 atomic tools + context-specific preferences。\n\n## 五、AI 时代 former developers in leadership 的优势\n\nSwyx 提出一个观察：这是否是 former developers who are now in leadership 的黄金时代？Kyle 认同。开发者背景带来的模式识别、问题拆解和系统构建能力，叠加多年管理、业务、客户和沟通经验，会在 AI 工具出现后获得新杠杆。\n\nKyle 举例，他可以周末在孩子打 lacrosse 时同时跑 15 个 agents，也可以为 CRO/CFO 团队自动生成 revenue planning presentation。他甚至专门做了一个 skill，让输出“不像 AI 做的”。\n\n这说明 AI 对领导层的改变不是替代 chief of staff，而是让管理者能直接把想法变成工具、分析、材料和原型。懂业务又懂一点技术的人，会比单纯会 prompt 的人更能把 AI 嵌入实际运营。\n\n## 六、GitHub 的历史资产：Actions、npm、webhooks、open source\n\nKyle 回顾 GitHub 的几个关键历史节点：webhooks、API、Actions、npm acquisition、Dependabot、Semmle 等。这些能力让 GitHub 不只是代码托管，而是开发者工作流和软件供应链基础设施。\n\nActions 尤其重要。它最初是 CI/CD 和 workflow automation，但现在越来越像 agent compute layer。Agent 会触发更多 PR，更多 PR 触发更多 builds，更多 builds 消耗更多 CPU 和云资源。Kyle 提到，现在压力不只是 GPU，CPU 也成了约束；GitHub 需要在数据中心、Azure 和新的 Dev Compute 能力上扩容。\n\nnpm 则体现供应链治理的复杂性。GitHub 提升 npm 安全，比如 2FA、token invalidation、manifest work 等，每一步都可能破坏大量用户工作流。安全很重要，但平台变更对全球开发者来说可能就是“snow day”或事故。\n\n## 七、AI 代码时代的开源信任问题\n\n访谈讨论了 slop forks、AI vendoring、prompt requests、vouch system、AI review 等新概念。Kyle 的核心观点是：这些方案都有价值，但它们没有解决根本问题——codify trust。\n\nPull Request 标准化了现代代码协作流程。现在问题是，如果 80% 的 PR 来自 agents，PR 应该变成什么？当 agent 写代码、另一个 agent review、人类只做最后浏览时，信任来自哪里？\n\nKyle 认为，很多工具解决的是 verification：给你更多资产、更多检查、更多自动 review。但人类真正关心的是：我能不能信这个变更？过去这个信任来自 Sean、Mitchell、Kyle、senior dev 或 maintainer 的背书。Agent 时代这个信任会变得更分散，也更需要新的社会机制和平台设计。\n\n## 八、谁是 developer？\n\nGitHub 超过 2 亿 developers 后，Swyx 问这是否只是有 GitHub account 的人。Kyle 认为，不必过早拆分 professional enterprise developer 与 AI-era builder。\n\n他的定义更开放：如果一个人有想法，并把它以某种方式变成可运行的软件，即使用 AI，也是在 developer journey 上。人们可能从周末做 side app 开始，后来学数据库、修 bug、理解部署和依赖。\n\nGitHub Spark 也体现这一点。GitHub 尝试低代码和更简单的 runtime，但 Kyle 强调 GitHub 不会隐藏代码。目标不是让人永远停留在“看不见代码”的抽象层，而是让每个人都敢于跨过软件创造的门槛。\n\n## 九、GitHub 的可靠性和规模挑战\n\nKyle 承认，GitHub 正经历非常艰难的规模阶段。过去的扩展常常是 vertical scaling 或 horizontal scaling：数据库更大、服务器更多、云资源更多。但现在不完全适用，因为 CPU/GPU 资源、老系统假设、权限组合、monorepo、PR、Actions、agentic load 同时改变了规则。\n\n有些运行了十到十五年的服务，必须被重新打开并重写，因为“这个服务的规则真的变了”。Kyle 强调这不是借口，而是 GitHub 必须做的工作。\n\n他还提到 GitHub 的老文化：如果服务 down，那就是 GitHub 的问题。用户当然想知道技术细节，但根本承诺是平台应该可用。GitHub 未来会更多公开解释工程细节，写技术博客，让工程师讲清楚他们修了什么。\n\n## 十、Copilot 的演化：从补全到 agent runtime\n\nKyle 复盘 Copilot 的路径。早期 Copilot 以 code completion 打开局面，后来 GitHub 曾投入 fine-tuning，希望提升 correctness 和 customer-specific performance。但下一代模型快速进步，Cursor 等新工具出现，行业速度变快，GitHub 路线也发生变化。\n\n现在 GitHub Copilot 不只是补全。它有统一的 SDK 和 harness，支撑 CLI、desktop app、cloud agents、coding agent workflows。它可以用于安全修复、issue triage、文档一致性检查、repo 分析，以及整个 SDLC 中的 agent automation。\n\nKyle 认为，独特价值不只是生成代码，而是 GitHub 拥有代码、依赖、开源、issues、PR、Actions、权限和组织上下文。Copilot 要成为这些上下文上的 agent layer。\n\n## 十一、Ambient AI、OpenClaw 和新的操作层\n\n访谈后段讨论 ambient AI。Kyle 认为，现在的 code completion、agentic IDE、background agents、security review 都还很窄。软件开发从来不是单线任务，不只是把代码写对就结束；它依赖 spec、邮件、会议、团队上下文、业务目标、客户需求和组织约束。\n\n他提到 OpenClaw 的价值在于让 agent 能访问人拥有的资源，并能使用电脑完成任务。对工作场景而言，人们需要一个 Claw-like object，能运行在工作设备上，访问工作资产，遵守 Windows、企业安全、sandboxing、权限和合规要求。\n\n这也是 Microsoft 为什么重视 Windows sandboxing、cloud sandboxing、WorkIQ、FoundryIQ、M365 context 和开发者组件。Microsoft 的机会不是做又一个垂直聊天产品，而是提供 agent 运行所需的平台组件：操作系统、身份、权限、上下文、计算和企业合规。\n\n## 十二、结论：GitHub 正从代码托管变成人类+agent 的软件操作系统\n\n这篇访谈的主线很清楚：GitHub 不再只是给人类开发者服务的平台，而是在变成人类和 agents 共同工作的操作层。\n\n这会重塑基础设施：更多 CPU、更多 Actions、更复杂的权限和 reliability challenge；也会重塑协作机制：PR、review、trust、vouching、maintainer burden；还会重塑产品形态：Copilot 从 completion 走向 CLI、desktop、cloud agents 和统一 runtime；最终还会重塑 Microsoft 的企业 AI 叙事：agent 必须接入 M365/GitHub/work context，但也必须被 OS、sandbox、identity 和 compliance 管住。\n\n对企业来说，真正的问题不是“要不要用 AI 写代码”，而是“当 AI 让软件开发吞吐扩大一个数量级时，组织能否重新设计交付系统、治理系统和信任系统”。",
+  "quotes": [
+    {
+      "en": "Can CI/CD keep up when every idea becomes a build?",
+      "zh": "当每个想法都变成一次构建时，CI/CD 能跟上吗？"
+    },
+    {
+      "en": "I find AI in what most of this launch here is actually, less building forward. It’s actually, a recursive loop backwards.",
+      "zh": "我发现这次发布中 AI 的价值其实不太是向前构建，而是一个向后回看的递归循环。"
+    },
+    {
+      "en": "We have to do this in a way where no one has to change how they work.",
+      "zh": "我们必须用一种不让任何人改变工作方式的方式来做这件事。"
+    },
+    {
+      "en": "We’re ending the era of these massive, beautiful, perfect skills that are just not any of those things.",
+      "zh": "那些巨大、漂亮、完美的 skills 时代正在结束——它们其实并不具备这些特质。"
+    },
+    {
+      "en": "What does a pull request look like when eighty percent of your PRs are just coming from your agents and not from other devs?",
+      "zh": "当 80% 的 PR 都来自你的 agents 而不是其他开发者时，Pull Request 应该长什么样？"
+    },
+    {
+      "en": "Ultimately we’re trying to codify trust.",
+      "zh": "归根到底，我们是在尝试把信任编码化。"
+    },
+    {
+      "en": "Over 200 million developers now.",
+      "zh": "现在已经超过 2 亿开发者。"
+    },
+    {
+      "en": "We’re never going to hide the code from you ever.",
+      "zh": "我们永远不会把代码从你面前隐藏起来。"
+    },
+    {
+      "en": "More tools, more agents, more PRs mean more builds, more builds mean more CPUs.",
+      "zh": "更多工具、更多 agents、更多 PR 意味着更多构建；更多构建意味着更多 CPU。"
+    },
+    {
+      "en": "It’s all just context, exactly.",
+      "zh": "没错，一切都是上下文。"
+    }
+  ]
+}

@@ -230,6 +230,7 @@ function buildSiteData(source, args) {
     stats: {
       xBuilders: source.stats?.xBuilders || source.x?.length || 0,
       totalTweets: source.stats?.totalTweets || 0,
+      selectedXTweets: xItems.length,
       podcastEpisodes: source.stats?.podcastEpisodes || podcastItems.length,
       blogPosts: source.stats?.blogPosts || blogItems.length,
       selectedItems: allItems.length,

@@ -37,6 +37,7 @@ export interface XDailyData {
   stats: {
     xBuilders: number;
     totalTweets: number;
+    selectedXTweets?: number;
     podcastEpisodes: number;
     blogPosts: number;
     selectedItems: number;

@@ -14,10 +14,12 @@ const dates = listXDates();
 const items = allXItems(report);
 const featured = report.featured?.length ? report.featured : items.slice(0, 3);
 const featuredIds = new Set(featured.map((item) => item.id));
-const displaySections = report.sections.map((section) => ({
-  ...section,
-  items: section.items.filter((item) => !featuredIds.has(item.id)),
-}));
+const displaySections = report.sections
+  .map((section) => ({
+    ...section,
+    items: section.items.filter((item) => !featuredIds.has(item.id)),
+  }))
+  .filter((section) => section.items.length > 0);
 
 const counts = {
   all: items.length,

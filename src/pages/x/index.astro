@@ -163,7 +163,7 @@ function itemCard(item: XSignalItem, featuredCard = false) {
           <aside class="lg:sticky lg:top-24 h-max bg-white border border-accent-gray-200 p-5">
             <div class="text-xs font-bold uppercase tracking-wider text-accent-gray-500 mb-3">About this column</div>
             <p class="text-sm text-accent-gray-700 leading-relaxed">
-              X 栏目使用 Follow Builders 的结构化 feed 生成站点数据，不反解析邮件正文。MVP 阶段先做每日最新精选，后续可扩展日期归档、人物页和趋势分析。
+              X 栏目以 Follow Builders 结构化 feed 为事实源，并优先复用当日邮件里的中文解读与编排，避免页面出现机器抽取的泛化摘要。MVP 阶段先做每日最新精选，后续可扩展日期归档、人物页和趋势分析。
             </p>
             {dates.length > 1 && (
               <div class="mt-5 pt-4 border-t border-accent-gray-100">

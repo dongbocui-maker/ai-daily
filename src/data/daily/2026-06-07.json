@@ -89,6 +89,59 @@
           "url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/"
         }
       ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🌍 行业动向 | Notion 恢复 Anthropic 模型访问，暴露企业 AI 供应链可用性风险",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431033.html",
+          "body": "36氪 6 月 2 日报道，一位开源项目维护者在代码库中埋入针对 AI Agent 的隐藏提示词，诱导模型忽略原指令并删除测试和代码，引发开发者社区关于反 AI、供应链投毒和责任边界的讨论。事件说明，当编码 Agent 会自动读取仓库内容并执行修改时，仓库文本本身也可能成为攻击面。 VentureBeat 6 月 5 日分析称，当前许多 AI Agent 能从单个用户的纠错和反馈中学习，但这些改进往往无法自动迁移给整个团队。结果是团队成员重复调教同一工具，知识沉淀停留在个人会话中，难以形成组织级能力。文章把问题指向共享记忆、上下文治理和跨团队复用机制。",
+          "insight": "AI 项目立项应先定义价值口径和业务指标，再选择模型与工具，否则很容易陷入 PoC 繁荣但规模化乏力。"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "👥 组织变革 | Gartner：AI 不一定降低人力成本，而是在重塑成本结构",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
+          "body": "第二条主线是 Agent 从演示进入生产系统。无论是华为云的 Agentic Infra、OpenAI 的 Codex 工程复盘，还是企业团队记忆与 CISO 身份治理讨论，都指向同一个结论：真正的竞争力不在一次生成，而在可控运行、可验证反馈和组织级复用。"
+        },
+        {
+          "title": "🛠️ 工程实践 | OpenAI 复盘 Codex 驱动百万行产品：人类转向设计环境与反馈回路",
+          "insight": "AI ROI 评估要从人头节省转向流程产出、技能迁移和管理复杂度，否则容易高估短期节流、低估转型成本。",
+          "source": "Gartner",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-01-gartner-identifies-strategic-focus-areas-for-cisos-to-seize-moments-of-opportunity-among-ai-chaos",
+          "body": "Reuters 6 月 7 日援引 Financial Times 报道称，OpenAI 正准备对 ChatGPT 做一次大改版，把编码工具、AI Agent 和更多工作流入口集中到一个“superapp”中，并将资源进一步转向高价值企业客户。这个动作不是简单 UI 改版，而是 OpenAI 在潜在上市前提升收入密度、正面追赶 Anthropic 企业化优势的产品与组织重排。"
+        },
+        {
+          "title": "🇨🇳 中国案例 | 华为云发布 Agentic AI 系列新品，押注智能体时代“硅基黑土地”",
+          "body": "IDC 近期文章指出，许多 AI 试点失败并非模型能力不足，而是企业没有在项目开始前定义“成功是什么”。IDC 用九个维度描述 AI 业务价值，从收入增长、客户体验、上市时间到韧性和可持续发展，强调企业需要把 AI 项目从技术实验迁移到可度量的经营改进。 量子位 6 月 8 日报道，OpenAI 自研芯片团队早期核心成员 Clive Chan 宣布加入 Anthropic。报道将这一人事变动放在 OpenAI 自研芯片量产前夜和 Anthropic 加速商业化融资的背景下观察，显示前沿模型公司的竞争已经从模型、产品延伸到硬件路线、供应链与长期成本结构。 Gartner 6 月 1 日文章提醒 CHRO 和企业领导者，AI 带来的并不总是直接裁员和成本下降，而是工作内容、技能组合、外包边界和管理方式的重新分配。传统“削减人头数”的成本模型难以解释 AI 驱动的生产力变化，企业更需要看任务重组、角色升级和组织吸收能力。",
+          "insight": "AI 公司的人才争夺正向芯片和基础设施层下探，企业客户评估模型供应商时也要关注其算力路线的稳定性。"
+        },
+        {
+          "title": "🧪 论文 | QKV 变体系统研究挑战 Transformer 三投影默认假设",
+          "source": "Anthropic",
+          "url": "https://www.anthropic.com/glasswing",
+          "insight": "AI 治理的底座是身份与权限，安全团队应把人类与机器身份纳入同一套风险管理框架。",
+          "body": "GitHub 6 月 2 日宣布 Copilot CLI 与 JetBrains IDE 的 agentic 能力增强，包括 Agent picker、新 slash commands、agent debug panel 公测，并开始分阶段把 Copilot CLI agent 作为默认体验。相比单纯补全，这意味着开发者可以在命令行和 IDE 中把任务交给可调试、可切换的智能体执行。"
+        },
+        {
+          "title": "⚠️ 开源治理 | 36氪：开源项目出现针对 AI Agent 的隐藏删库提示词，引发投毒争议",
+          "body": "量子位 6 月报道，智源与清华合作成果登上 Science，Brainμ 多模态基础模型支撑研究团队揭示记忆再激活与睡眠动态调控之间的关系。该工作把 AI 基础模型用于脑科学数据理解，说明多模态模型正在从通用感知扩展到科学发现辅助，尤其适合处理复杂神经活动、行为和实验干预数据。 Ars Technica 6 月报道，S&P Dow Jones Indices 决定不修改盈利能力、上市时间和最低可投资权重等准入规则，意味着 SpaceX 即便 IPO 后也难以快速进入 S&P 500；同样处于高估值、重投入阶段的 OpenAI 与 Anthropic 也会受到类似约束。报道援引 Bloomberg Intelligence 估算，指数纳入本可带来数十亿美元被动资金买盘。 量子位 6 月报道，华为云在 INSPIRE 大会上发布 Agentic AI 系列新品，围绕 Agentic Infra、ModelArtsNext、AgentArts、行业 AI 梦工厂等能力，试图把算力、模型开发、智能体平台和行业交付打成一套企业级底座。其核心信号是中国云厂商不再只卖模型调用，而是在争夺智能体运行、记忆、调度和行业模板的基础设施入口。",
+          "source": "OpenAI",
+          "url": "https://openai.com/index/harness-engineering/",
+          "insight": "企业部署 Agent 时要设计团队级记忆与反馈闭环，把个人提示词经验沉淀成可审计、可复用的组织资产。"
+        }
+      ]
     }
   ],
   "closing": [
@@ -97,6 +150,20 @@
     "来源：GitHub Blog | https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/",
     "☁️ Agent | Copilot cloud agent 支持定时与自动化任务，后台编码进入常态化",
     "GitHub 6 月 2 日宣布 Copilot cloud agent 可用于计划和自动化任务，意味着开发者能把重复性修复、迁移和维护工作交给云端 Agent 持续运行。它把代码助手从“随问随答”推进到“后台执行任务”的产品形态。 启示：企业需要尽快定义哪些代码任务可交给 Agent 自动执行，哪些必须保留人工 review 与变更审批。",
-    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/"
+    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+    "启示：代码生成 Agent 的企业价值会扩展到安全验证和遗留代码审计，但必须与人工研究员、披露流程和修复机制绑定。",
+    "arXiv 6 月论文 Do Transformers Need Three Projections? 系统比较 Q、K、V 投影的不同变体，在合成任务、视觉任务和 300M/1.2B 参数语言模型上测试注意力结构。研究发现，某些简化或变体结构可以达到接近甚至偶尔优于标准 QKV 的表现，提示模型架构中仍存在可优化空间。",
+    "来源：Reuters | https://www.reuters.com/business/openai-plans-chatgpt-superapp-overhaul-ahead-listing-ft-reports-2026-06-07/",
+    "OpenAI 6 月发布 Harness Engineering 文章，披露一个内部产品实验：三名工程师在五个月里驱动 Codex 生成约百万行代码、约 1500 个 PR，应用逻辑、测试、CI、文档和内部工具都由 Codex 编写。文章强调关键变化不是“没人写代码”，而是工程团队的核心工作变成设定意图、设计环境、搭建验证与反馈回路。",
+    "📊 资本市场 | S&P 500 拒绝为 SpaceX 放宽规则，OpenAI 与 Anthropic 也受盈利门槛约束",
+    "Anthropic 近期发布 Project Glasswing，展示其用 AI 辅助安全研究的方法，包括在关键开源组件中发现可远程触发崩溃的漏洞和多年潜伏问题。该项目把编码 Agent 的能力推向防御性安全场景：自动搭建测试、生成 harness、分析崩溃并辅助研究人员定位根因。",
+    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/",
+    "启示：在推理成本成为核心约束后，架构微创新会重新变重要，企业应关注模型效率而不仅是参数规模。",
+    "🧠 流程改造 | VentureBeat：企业 Agent 的团队记忆仍是落地短板",
+    "启示：企业采购 AI 应用时要把上游模型可替换性、降级策略和客户沟通纳入 SLA，而不是只评估前端功能。",
+    "来源：36氪 | https://36kr.com/p/3835685534463111",
+    "本期最强主线是“平台化 + 企业化”。OpenAI 准备把 ChatGPT 推向 superapp，Notion 与 Anthropic 的短暂中断提醒市场：AI 应用已成为多层供应链，模型、工具、身份、SLA 与降级策略都必须一起设计。",
+    "启示：国家安全场景的加速采用会外溢到企业级安全、合规和供应链要求，AI 厂商需要证明能力与治理可以同步交付。",
+    "Gartner 6 月 1 日发布安全管理观点，认为 CISO 不应只把 AI 视作新增风险和工具堆叠，而应利用组织加大 AI 投资的窗口，推动身份管理、机器身份、访问控制和信任体系现代化。随着客户、伙伴和员工互动越来越多由机器中介，传统 IAM 的脆弱性会被 Agent 化流程进一步放大。"
   ]
 }

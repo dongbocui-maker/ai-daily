@@ -140,6 +140,118 @@
           "source": "OpenAI",
           "url": "https://openai.com/index/harness-engineering/",
           "insight": "企业部署 Agent 时要设计团队级记忆与反馈闭环，把个人提示词经验沉淀成可审计、可复用的组织资产。"
+        },
+        {
+          "title": "🍎 平台框架 | 苹果 WWDC 2026 发布 Core AI 框架替代 Core ML，开放本地运行 Qwen/Mistral，并把 MCP 推向全平台",
+          "body": "苹果在 WWDC 2026 推出 Core AI 框架取代 Core ML，开发者可在 Apple Silicon 上下载、运行、基准测试一批优化过的开源模型（含 Qwen、Mistral、SAM3），并扩展端侧 Foundation Models API；Xcode 同步支持 Gemini，并把 MCP 推成平台级标准——Claude Code 与 OpenAI Codex 均可通过 MCP 调用 Xcode 的构建、测试、诊断操作。",
+          "insight": "苹果把 MCP 抬成系统级协议，意味着「Agent 调用 IDE/OS 能力」的互操作标准正在收敛，企业工具链应优先押注兼容 MCP 的方案。",
+          "source": "Apple Developer",
+          "url": "https://developer.apple.com/videos/play/wwdc2026/326/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "📊 行业洞察 | Forbes：Anthropic、OpenAI 与私募联手「占领企业心智」，咨询交付能力成新战场",
+          "body": "Forbes 专栏剖析 Anthropic 与 Blackstone、Hellman & Friedman、高盛设立约 15 亿美元合资公司，让 Anthropic 工程师直接驻入 PE 投资组合企业内部、以低于传统咨询的成本重建规划、预测、报告等工作流。OpenAI 的 Deployment Company 是同一逻辑的镜像。私募资本下场，意在「拥有企业的思维方式」。",
+          "insight": "模型厂 + 私募 + 咨询交付的三方组合正在改写企业 AI 转型的供给侧，咨询行业等服务商需要在「被列为顶级交付伙伴」与「交付腹地被直接蚕食」之间精确卡位。",
+          "source": "Forbes",
+          "url": "https://www.forbes.com/sites/johnsviokla/2026/06/02/owning-the-mind-is-that-what-anthropic-openai-and-private-equity-are-up-to/"
+        },
+        {
+          "title": "🇨🇳 中国洞察 | 36氪：GPT-5 作者复盘，趁 OpenAI 沉迷 ChatGPT，Anthropic 死磕代码完成教科书级「偷家」",
+          "body": "36氪整理 GPT-5 作者的复盘视角：当 OpenAI 把战略重心压在 ChatGPT 消费级产品时，Anthropic 持续死磕代码能力，凭 Claude Code 在编码这一高价值企业场景实现「教科书级偷家」，并由此撬动企业客户与 IPO 领先身位。文章为理解两家路线分歧提供了内部叙事。",
+          "insight": "在 AI 竞赛中，聚焦高价值垂直场景（编码）比追逐通用流量更能建立企业级护城河，这对国内厂商的产品优先级排序有直接借鉴意义。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3844470724708617"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 苹果 WWDC 2026 发布 Siri AI：基于 Google Gemini 定制重建，三层隐私路由架构",
+          "body": "苹果在 WWDC 2026 推出全面重做的 Siri AI，作为独立 App 提供，底层放弃自研主力模型、转而与 Google 合作定制 Gemini 变体训练「Apple Foundation Models」第三代。新架构采用三层路由：端侧小模型、Private Cloud Compute、以及复杂任务下沉的 Gemini 后端，按查询复杂度动态分配，主打隐私优先。",
+          "insight": "连苹果都选择「模型外采 + 隐私编排自研」的混合路线，印证企业自建大模型性价比走低，「编排层 + 数据治理」才是差异化所在。",
+          "source": "CNET",
+          "url": "https://www.cnet.com/tech/services-and-software/apple-intelligence-models-wwdc-2026/"
+        },
+        {
+          "title": "⚠️ 工程反思 | 一位工程师热帖《LLM 正在侵蚀我的软件职业生涯》登 HN 1104 分，引爆开发者焦虑",
+          "body": "一篇匿名工程师博文《LLMs are eroding my software engineering career and I don't know what to do》登上 Hacker News 榜首（1104 分、逾千条评论），作者描述在 AI 编码工具普及下，工作从「写代码」退化为「审查 AI 产出」，职业成就感与技能护城河双双流失。后续回应帖也获 132 分。",
+          "insight": "AI Coding 的生产力红利伴随团队士气与技能结构的隐性成本，技术管理者在推工具的同时需重新设计工程师的成长路径与价值定位。",
+          "source": "Hacker News",
+          "url": "https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/"
+        },
+        {
+          "title": "📊 资本市场 | xAI 更像数据中心 REIT 而非前沿实验室：Google 月付 SpaceX 9.2 亿美元算力",
+          "body": "一篇登上 HN（370 分）的独立分析指出，随着 Google 每月向 SpaceX 支付约 9.2 亿美元租用 xAI 数据中心算力，xAI 的商业模式正越来越像「数据中心房地产信托（REIT）」而非纯前沿研究实验室——靠出租算力产生稳定现金流，而非靠模型本身盈利。",
+          "insight": "当头部实验室的真实利润来自「卖铲子（算力出租）」而非「卖模型」，企业采购方应警惕模型创新速度放缓、算力议价权向少数基建持有者集中的趋势。",
+          "source": "Martin Alderson",
+          "url": "https://martinalderson.com/posts/xais-new-rental-business/"
+        },
+        {
+          "title": "🧪 论文 | Tokenomics：量化 Agent 软件工程中 Token 究竟花在哪，揭示成本结构",
+          "body": "arXiv 论文《Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering》（HN 172 分）系统拆解了智能体软件工程任务中 Token 消耗的分布，量化哪些环节（工具调用、上下文重复加载、子代理派生等）最烧 Token，为企业评估 Agent 编码的真实运营成本提供了可复用的分析框架。",
+          "insight": "Agent 编码的账单不透明是规模化落地的隐性障碍，这类成本归因研究能帮企业在「派生子代理」与「Token 预算」之间做出更理性的工程取舍。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2601.14470"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 正式向 SEC 提交保密 S-1，紧追 Anthropic 冲刺史上最大科技 IPO",
+          "body": "OpenAI 于本周一确认已向美国 SEC 保密递交 S-1 招股文件，正式启动上市进程，落后 Anthropic 约一周。公司称选择主动披露是因为「消息无论如何都会泄露」。至此 SpaceX、Anthropic、OpenAI 三大超级独角兽同台冲刺 IPO，资本市场叙事从「估值想象」转向「成本与 Token 经济学」的硬约束。",
+          "insight": "两大前沿实验室抢跑公开市场，意味着企业采购方很快能拿到一手财报数据来评估供应商的长期可持续性与定价能力。",
+          "source": "OpenAI",
+          "url": "https://openai.com/index/openai-submits-confidential-s-1/"
+        },
+        {
+          "title": "🇨🇳 中国案例 | 蚂蚁国际推出移动智能体协议 AMP，商户可实现全球智能体支付运营",
+          "body": "蚂蚁国际面向全球电子钱包、超级应用及数字银行推出移动智能体协议（Agentic Mobile Protocol，AMP），为 AI 智能体参与购物、支付和交易提供统一接入标准。蚂蚁国际 AI 战略覆盖基建层、平台层到产品应用，已搭建 AI 原生商业基础设施，可帮商户做智能体运营（AI 客服、AI 销售），由 AI 主动完成用户搜索、决策、购买全流程。",
+          "insight": "支付即基础设施，谁掌握智能体交易的标准协议，谁就卡住了跨境电商「AI Agent 自主下单」时代的结算入口。",
+          "source": "网易科技",
+          "url": "https://www.163.com/tech/article/KUTC5A1D00098IEO.html"
+        },
+        {
+          "title": "📊 行业大势 | The Information：Anthropic 抢先递表，但 IPO「第一个不一定最好」",
+          "body": "The Information 分析指出，Anthropic 上周率先递交 IPO 文件、略微领先 OpenAI，但投行人士认为「抢跑」未必等于「最优」——率先上市虽能锁定定价窗口与品牌叙事，也意味着更早接受季度盈利的公开市场审视，对仍在烧钱买 GPU 的前沿实验室是把双刃剑。",
+          "insight": "企业在评估前沿模型供应商时，应把「上市节奏带来的盈利压力」纳入长期合作风险——上市后涨价或砍补贴的概率上升。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/articles/anthropic-vs-openai-race-ipo-first-necessarily-mean-best"
+        },
+        {
+          "title": "🇨🇳 开发工具 | 月之暗面发布 Kimi Code CLI 与 K2.6：终端编码 Agent + 开源 Agent Swarm 能力",
+          "body": "月之暗面推出 Kimi Code CLI——用 TypeScript 重写、经 npm 分发的终端 AI 编码 Agent，可读写代码、执行 shell、搜索文件、抓取网页并根据反馈自主决策下一步；底层 Kimi K2.6 为原生多模态开源模型，主打 SOTA 编码、长周期执行与 Agent Swarm（多智能体协同）能力。这是国产模型在终端编码 Agent 赛道对标 Claude Code / Codex 的最新动作。",
+          "insight": "国产开源模型把「编码 Agent + 群体智能」打包开源，给受合规或成本约束的中国企业提供了可私有化部署的 Claude Code 替代路径。",
+          "source": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
+        },
+        {
+          "title": "💰 融资 | Salesforce 持有 Anthropic 股权升至约 50 亿美元，企业软件巨头深度绑定模型供应商",
+          "body": "据 The Information，经多轮投资及 Anthropic 最新一轮融资后，Salesforce 持有的 Anthropic 股权价值已达约 50 亿美元。这一战略绑定发生在 Anthropic 递交 IPO 文件、估值锚定约 9650 亿美元的背景下。",
+          "insight": "头部 SaaS 厂商用真金白银锁定模型供应链，企业客户在选型时需关注「应用层厂商-模型层」的资本捆绑如何影响产品路线与议价权。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/briefings/salesforce-stake-anthropic-reaches-5-billion"
+        },
+        {
+          "title": "👔 高层动态 | The Information：OpenAI 为企业客户重做 Codex，加入产品设计到投行专属能力",
+          "body": "据 The Information，OpenAI 在一场聚焦企业的发布会上宣布，将在 Codex 编码应用中加入面向产品设计、投资银行等垂直任务的专属功能，并计划很快把 Codex 与 ChatGPT 合并，以正面争夺被 Anthropic 蚕食的商业客户。这是 OpenAI 把「编码工具」升级为「企业生产力套件」的关键信号。 今日 AI 圈两条主线交汇：一是「IPO 竞速」进入高潮——OpenAI 正式递交保密 S-1，紧追已抢跑的 Anthropic，叠加 SpaceX/xAI，三大超级独角兽同台冲刺，资本叙事从估值想象切向成本与 Token 经济学的硬约束；二是「企业交付腹地之争」白热化——OpenAI 设立 Deployment Company 并收购咨询商 Tomoro、收编 150 名前沿部署工程师，与 Anthropic 的 15 亿美元 PE 合资公司正面对垒，模型厂 + 私募 + 驻场交付的三方组合，正直接切入咨询行业、德勤所在的咨询交付腹地。 产品侧，苹果 WWDC 2026 用「外采 Gemini + 自研隐私编排」的混合路线重建 Siri AI，并以 Core AI 框架、平台级 MCP 重塑开发者生态；小米 MiMo 在消费级 GPU 首破 1000 tokens/s，把推理速度推成新竞争维度。工程侧，Bun 用 Claude Code 群体 Agent 11 天完成 75 万行 Rust 移植成为标杆，但「99.8% 通过率是否等于安全」与「LLM 侵蚀职业生涯」的热帖也提醒：生产力红利伴随测试治理与团队士气的隐性成本。",
+          "insight": "AI Coding 工具正从开发者垂类向全职能企业工具外溢，CIO 应预判其会侵蚀传统行业软件（投行建模、设计协作）的预算盘子。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/briefings/openai-says-will-combine-codex-chatgpt-soon-announces-business-tools"
+        },
+        {
+          "title": "🔬 技术突破 | 小米 MiMo-V2.5-Pro UltraSpeed：1T 参数模型在消费级 GPU 首破 1000 tokens/s",
+          "body": "小米 MiMo 联合 TileRT 发布 MiMo-V2.5-Pro 的 UltraSpeed 模式，通过 FP4 量化 + DFlash 投机解码 + 极致的模型-系统协同设计，让万亿参数旗舰模型在商用 GPU 上首次突破 1000 tokens/s 解码速度。该成果登上 HN 热榜（478 分），目前每日限量审批、优先向专业机构开放。",
+          "insight": "推理速度而非纯参数量正成为新竞争维度，实时 Agent、语音交互等延迟敏感场景的成本曲线被进一步压低。",
+          "source": "Xiaomi MiMo",
+          "url": "https://mimo.xiaomi.com/blog/mimo-tilert-1000tps"
         }
       ]
     }
@@ -164,6 +276,19 @@
     "来源：36氪 | https://36kr.com/p/3835685534463111",
     "本期最强主线是“平台化 + 企业化”。OpenAI 准备把 ChatGPT 推向 superapp，Notion 与 Anthropic 的短暂中断提醒市场：AI 应用已成为多层供应链，模型、工具、身份、SLA 与降级策略都必须一起设计。",
     "启示：国家安全场景的加速采用会外溢到企业级安全、合规和供应链要求，AI 厂商需要证明能力与治理可以同步交付。",
-    "Gartner 6 月 1 日发布安全管理观点，认为 CISO 不应只把 AI 视作新增风险和工具堆叠，而应利用组织加大 AI 投资的窗口，推动身份管理、机器身份、访问控制和信任体系现代化。随着客户、伙伴和员工互动越来越多由机器中介，传统 IAM 的脆弱性会被 Agent 化流程进一步放大。"
+    "Gartner 6 月 1 日发布安全管理观点，认为 CISO 不应只把 AI 视作新增风险和工具堆叠，而应利用组织加大 AI 投资的窗口，推动身份管理、机器身份、访问控制和信任体系现代化。随着客户、伙伴和员工互动越来越多由机器中介，传统 IAM 的脆弱性会被 Agent 化流程进一步放大。",
+    "对企业决策者而言，信号清晰：自建大模型性价比持续走低，价值正向「编排层 + 数据治理 + 贴身交付」迁移；选型时需把供应商的上市盈利压力、资本捆绑关系，以及 Agent 编码的真实 Token 成本一并纳入长期评估。",
+    "🛠️ 工程实践 | Bun 用 Claude Code Dynamic Workflows 11 天从 Zig 移植到 Rust，75 万行、测试通过率 99.8%",
+    "Bun 作者 Jarred Sumner 用 Anthropic 的 Dynamic Workflows（单会话可派生数百并行子代理）把 Bun 运行时从 Zig 移植到 Rust：约 75 万行 Rust、6755 次提交、从首次提交到合并仅 11 天，现有测试套件 99.8% 通过。该案例成为「Agent 群体协作改造大型代码库」的标杆，但也引发 36氪等对「99.8% 通过率是否等于安全」的争论。",
+    "启示：超大规模并行 Agent 重构已从概念走向真实工程，但测试覆盖与对抗性验证仍是放行前的关键关口——简单任务别盲目上「智能体群」。",
+    "来源：Releasebot / Anthropic | https://releasebot.io/updates/anthropic/claude",
+    "🤝 收并购 | OpenAI 成立 Deployment Company 合资公司并收购 AI 咨询商 Tomoro，150 名前沿部署工程师入列",
+    "OpenAI 设立私募支持的合资公司「OpenAI Deployment Company」，专门帮企业在 GPT 基础设施上构建并部署可日常依赖的 AI 系统；同时收购爱丁堡应用 AI 咨询与工程公司 Tomoro，一次性带来约 150 名前沿部署工程师（FDE）与部署专家，合作方包括贝恩、麦肯锡、凯捷。此举与 Anthropic 的 15 亿美元企业服务合资公司正面对垒。",
+    "启示：两大模型厂商集体下场买「交付能力」，直接切入埃森哲、德勤所在的咨询交付腹地，传统系统集成商的中间层价值面临重估。",
+    "来源：Cooley M&A | https://cooleyma.com/deals/openai-forms-new-joint-venture-openai-deployment-company-and-acquires-tomoro/",
+    "📈 落地方法 | OpenAI Deployment Company 把「前沿部署工程师」推成企业 AI 落地新职能",
+    "随着 OpenAI 收购 Tomoro 并组建 Deployment Company，「前沿部署工程师（Forward Deployed Engineer, FDE）」这一源自 Palantir 的岗位正被前沿实验室规模化复制——工程师直接驻场企业内部，把通用模型能力翻译成具体业务工作流。约 150 名 FDE 与部署专家成为 OpenAI 企业交付的第一支主力。",
+    "启示：模型能力商品化后，「驻场把模型嵌进业务流程」的人成了稀缺资源，企业自建 AI 团队应重点培养这种贴身交付角色，而非单纯的 prompt 工程。",
+    "来源：The Tool Nerd | https://www.thetoolnerd.com/p/forward-deployed-engineer-the-role-enterprise-ai"
   ]
 }

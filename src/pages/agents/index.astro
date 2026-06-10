@@ -227,13 +227,13 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
-  main:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
-  aima:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
-  mk2:['azure-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
-  mk46:['deepseek-v4-pro','azure-claude-48/opus-4.8'],
+  main:['aigw-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  aima:['aigw-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  mk2:['aigw-claude-48/opus-4.8','gpt-5.5','deepseek-v4-pro'],
+  mk46:['deepseek-v4-pro','aigw-claude-48/opus-4.8'],
 };
 const CHAIN_MODEL_KEYS={
-  'azure-claude-48/opus-4.8':'azure-claude-48/claude-opus-4-8',
+  'aigw-claude-48/opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
   'deepseek-v4-pro':'deepseek/DeepSeek-V4-Pro',
 };
@@ -266,9 +266,13 @@ async function loadTicker(){
       }catch(_){ /* try next source */ }
     }
     if(!j) return;
+    const priority = {FALLBACK:0, ALERT:1, QC:2, DEPLOY:3};
     tickerEvents = (j.events || [])
-      .filter(e => String(e.tag || '').toUpperCase() === 'FALLBACK')
-      .sort((a,b)=>String(b.ts || '').localeCompare(String(a.ts || '')));
+      .sort((a,b)=>{
+        const ta=String(a.tag||'').toUpperCase(), tb=String(b.tag||'').toUpperCase();
+        const pa=priority[ta] ?? 9, pb=priority[tb] ?? 9;
+        return pa===pb ? String(b.ts||'').localeCompare(String(a.ts||'')) : pa-pb;
+      });
     if(tickerEvents.length===0) return;
     const stream = document.getElementById('tickerStream');
     if(!stream) return;

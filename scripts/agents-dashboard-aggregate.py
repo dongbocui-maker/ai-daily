@@ -6,6 +6,7 @@ from datetime import datetime, timezone, timedelta
 # 单价表 USD / 1M tokens  (input, output, cacheWrite, cacheRead)
 PRICING = {
     ('azure-claude-48','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
+    ('aigw-claude-48-main','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
     ('azure-claude','claude-opus-4-7'):    (5.00,25.00,6.25,0.50),
     ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
     ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
@@ -43,6 +44,7 @@ SIGNAL_NAMES = {
 }
 MODEL_LABELS = {
     'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
+    'aigw-claude-48-main/claude-opus-4-8': 'AIGW CLAUDE 4.8',
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
@@ -100,12 +102,13 @@ def refresh_fallback_events(agents):
     primary_models = _primary_models_from_config()
     state = _load_json(FALLBACK_STATE_PATH, {})
     base = _load_json(EVENT_TARGETS[1], {'updated': now.strftime('%Y-%m-%dT%H:%M+08:00'), 'events': []})
-    existing = [e for e in base.get('events', []) if str(e.get('tag','')).upper() == 'FALLBACK']
+    base_events = base.get('events', []) or []
+    existing_fallback = [e for e in base_events if str(e.get('tag','')).upper() == 'FALLBACK']
     new_events = []
 
     def push(ts, level, msg, detail=''):
         msg = msg.upper()
-        if any(e.get('msg') == msg for e in new_events + existing):
+        if any(e.get('msg') == msg for e in new_events + existing_fallback):
             return
         new_events.append({'ts': ts, 'level': level, 'tag': 'FALLBACK', 'msg': msg, 'detail': detail[:200] if detail else ''})
 
@@ -130,15 +133,28 @@ def refresh_fallback_events(agents):
             'updated': now.strftime('%Y-%m-%dT%H:%M:%S+08:00')
         }
 
-    # Signal 仍只保留 FALLBACK 类；最新在前，同一 msg 去重。
-    merged = new_events + existing
+    # Signal 保留所有事件，排序规则：FALLBACK 优先，其它事件按优先级与时间往后排；同一 tag+msg 去重。
+    merged = new_events + base_events
+    priority = {'FALLBACK': 0, 'ALERT': 1, 'QC': 2, 'DEPLOY': 3}
     seen = set(); deduped = []
-    for e in sorted(merged, key=lambda x: x.get('ts',''), reverse=True):
+    def sort_key(e):
+        tag = str(e.get('tag','')).upper()
+        ts = str(e.get('ts',''))
+        try:
+            ts_rank = -datetime.fromisoformat(ts.replace('Z','+00:00')).timestamp()
+        except Exception:
+            ts_rank = 0
+        return (priority.get(tag, 9), ts_rank)
+    for e in sorted(merged, key=sort_key):
         msg = e.get('msg','').strip().upper()
-        if not msg or msg in seen:
+        tag = str(e.get('tag','')).upper()
+        if not msg:
             continue
-        seen.add(msg)
-        e['tag'] = 'FALLBACK'
+        key = (tag, msg)
+        if key in seen:
+            continue
+        seen.add(key)
+        e['tag'] = tag
         e['msg'] = msg
         deduped.append(e)
     event_list = deduped[:MAX_SIGNAL_EVENTS]

@@ -7,6 +7,7 @@ from datetime import datetime, timezone, timedelta
 PRICING = {
     ('azure-claude-48','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
     ('aigw-claude-48-main','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
+    ('aigw-claude-48-main','claude-fable-5'):   (10.00,50.00,12.50,1.00),
     ('azure-claude','claude-opus-4-7'):    (5.00,25.00,6.25,0.50),
     ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
     ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
@@ -45,6 +46,7 @@ SIGNAL_NAMES = {
 MODEL_LABELS = {
     'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
     'aigw-claude-48-main/claude-opus-4-8': 'AIGW CLAUDE 4.8',
+    'aigw-claude-48-main/claude-fable-5': 'AIGW FABLE 5',
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',

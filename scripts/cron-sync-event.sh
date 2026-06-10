@@ -31,6 +31,13 @@ cd "$REPO"
     exit 1
   fi
 
+  # Schema 校验门禄：校验失败则不 commit（但仍完成自归档，不当整体失败）
+  # 参考 AUDIT-2026-06-11 H1：坏数据不能上线，等 09:00 系统 cron 修复后重试
+  if ! python3 scripts/validate-daily-schema.py --changed; then
+    echo "[event-sync] ❌ schema 校验失败，拒绝 commit（坏数据不上线）"
+    exit 0
+  fi
+
   # 检查是否有变更
   if [[ -z "$(git status --porcelain src/data/daily)" ]]; then
     echo "[event-sync] no changes in src/data/daily, skip commit"

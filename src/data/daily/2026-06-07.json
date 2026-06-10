@@ -3,192 +3,30 @@
   "title": "2026-06-07",
   "sections": [
     {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
-      "items": [
-        {
-          "title": "🚀 产品发布 | OpenAI 推出 Lockdown Mode，专防提示注入窃取敏感数据",
-          "body": "OpenAI 在 6 月 6 日披露面向高敏感场景的 Lockdown Mode，把外部内容读取、工具调用和跨应用数据访问纳入更严格的默认限制，用来降低提示注入把机密信息“带出系统”的风险。它不是单点功能更新，而是把企业 AI 安全从“事后检测”前移到“运行时隔离”的产品化尝试。 启示：企业采购 Agent 时，安全边界会从模型能力评估升级为数据路径、工具权限和运行时策略的组合评估。",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/"
-        },
-        {
-          "title": "📈 战略实践 | Deloitte：2026 年 AI 转型重点转向流程再造、治理和规模化收益",
-          "body": "Deloitte 的 2026 AI 趋势文章把企业转型重点放在流程重塑、业务模型更新和治理能力上，提醒企业不要把生成式 AI 当作孤立工具采购。其判断与市场现象一致：大企业已经过了“演示很惊艳”的阶段，正在追问成本、收益和组织吸收能力。 启示：AI 转型预算应绑定业务 KPI 与组织变革路线图，单纯堆工具很难形成可持续 ROI。",
-          "source": "Deloitte",
-          "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/blogs/pulse-check-series-latest-ai-developments/ai-transformation-predictions-2026.html"
-        },
-        {
-          "title": "🇨🇳 中国案例 | WPS 笔记正式发布，AI 贯穿记录、整理与复用全过程",
-          "body": "WPS 笔记在 6 月发布，把 AI 嵌入记录、整理、检索和内容复用流程，目标不是单次生成文本，而是覆盖个人与团队知识沉淀的完整链路。对中国办公软件生态而言，这类产品会直接影响企业知识管理、会议纪要和文档协同场景。 启示：办公 AI 的下一阶段竞争点在“工作流闭环”和组织知识资产沉淀，而不是单个写作助手功能。",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/06/431014.html"
-        }
-      ]
-    },
-    {
       "key": "news",
       "label": "AI 热点新闻",
       "emoji": "🔥",
       "items": [
         {
+          "title": "🌍 行业动向 | S&P 500 拒绝为 SpaceX 放宽规则，OpenAI 与 Anthropic 入指也被堵住",
+          "insight": "AI 龙头的估值锚正在从增长叙事回到现金流、盈利质量和指数纳入资格，影响后续 IPO 与二级市场配置预期。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
+          "body": "S&P 500 委员会拒绝为 SpaceX 放宽盈利规则，也意味着尚未满足持续盈利要求的 OpenAI、Anthropic 等高估值 AI 公司短期难以进入标普 500。事件发生在 6 月 6 日前后，市场讨论点从“谁是最大 AI 公司”转向“资本市场如何给非上市/未盈利 AI 巨头定价”。"
+        },
+        {
           "title": "📜 监管政策 | 纽约州议会通过大型数据中心一年禁令，AI 基建扩张遇能源约束",
-          "body": "The Verge 6 月 6 日报道，纽约州议会通过针对新建大型数据中心的一年暂停令，若州长签署将成为全美首个州级大型数据中心禁令。法案要求评估数据中心对电力、水、土地和污染的影响，并要求 20MW 以上项目举行公众听证。 启示：AI 基建扩张正在进入地方能源、环保和社区治理约束期，云厂商与企业客户都要把选址和合规纳入算力战略。",
+          "insight": "AI 基建扩张正在进入地方能源、环保和社区治理约束期，云厂商与企业客户都要把选址和合规纳入算力战略。",
+          "body": "The Verge 6 月 6 日报道，纽约州议会通过针对新建大型数据中心的一年暂停令，若州长签署将成为全美首个州级大型数据中心禁令。法案要求评估数据中心对电力、水、土地和污染的影响，并要求 20MW 以上项目举行公众听证。",
           "source": "The Verge",
           "url": "https://www.theverge.com/policy/944041/new-york-data-center-moratorium"
-        }
-      ]
-    },
-    {
-      "key": "coding",
-      "label": "AI Coding 动态",
-      "emoji": "💻",
-      "items": [
-        {
-          "title": "📄 论文 | Agents’ Last Exam：长周期 Agent 评测暴露真实任务通过率瓶颈",
-          "body": "arXiv 6 月新论文 Agents’ Last Exam 聚焦长周期、经济意义更强的 Agent 任务，试图弥补传统短题评测对真实工作能力的高估。论文与近期 SWE-Marathon 等基准形成呼应：模型会做很多局部任务，但在长链路一致性、工具使用和抗奖励黑客方面仍有明显短板。 启示：企业评估 Agent 不能只看 benchmark 排名，应引入端到端业务任务、失败恢复和长期一致性测试。",
-          "source": "arXiv",
-          "url": "https://arxiv.org/abs/2606.05405"
-        },
-        {
-          "title": "🧪 研究观察 | 无法律虚拟城镇实验引发关注，几十个 Agent 互相博弈暴露治理难题",
-          "body": "36氪 6 月 7 日报道一个“没有法律的虚拟城镇”式多 Agent 实验，几十个 Agent 在开放规则下互动、竞争甚至攻击。虽然带有实验和叙事色彩，但它直观展示了多 Agent 系统在目标冲突、规则缺失和行为涌现上的治理难题。 启示：多 Agent 协同不应只关注效率，也必须设计规则层、仲裁机制和安全沙箱，否则规模化后容易放大不可控行为。",
-          "source": "36氪",
-          "url": "https://www.36kr.com/p/3841175573088513"
-        },
-        {
-          "title": "🛠️ 工具演进 | Copilot SDK 正式 GA，GitHub 把 Copilot 能力开放给外部应用",
-          "body": "GitHub 6 月 2 日宣布 Copilot SDK 正式 GA，开发者可以把 Copilot 的上下文理解、代码建议和对话式能力接入自己的工具链。相比 IDE 内功能更新，SDK GA 的意义在于把 Copilot 从单一产品扩展为可嵌入平台能力。 启示：企业内部开发平台可以围绕 SDK 做私有流程集成，但同时需要统一权限、日志和代码数据边界。",
-          "source": "GitHub Blog",
-          "url": "https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/"
-        },
-        {
-          "title": "🇨🇳 开发框架 | Spring 创始人重回一线做 AI 框架，称这是人类亲自选择的最后一代框架",
-          "body": "36氪 6 月报道 Spring 创始人围绕 AI 应用框架重回一线，讨论开发者如何在 Agent、工具调用和工作流中重新设计抽象层。文章的看点不只是个人回归，而是传统软件工程框架正在被 AI 原生开发范式重新定义。 启示：企业技术栈选型要关注 AI 框架与既有 Java/微服务生态的衔接，避免为了追新重建过多底层能力。 今天的 AI 主线不再只是“更强模型”，而是安全边界、资本市场约束与部署纪律同时收紧。OpenAI 的 Lockdown Mode、Meta 相关安全事件和美国政策岗位变化共同说明：当 Agent 进入真实数据和工具链，企业最先要补的是权限、隔离、审计和响应机制。 另一条主线是成本与规模化。端侧推理、异构算力、Copilot API 化和企业级 AI 方法论都指向同一个方向：AI 正从演示型能力进入可治理、可集成、可度量的生产系统。未来几个月，真正拉开差距的不是谁接入了更多模型，而是谁能把 AI 嵌进流程并证明 ROI。",
-          "source": "36氪",
-          "url": "https://36kr.com/p/3836956769236360"
-        }
-      ]
-    },
-    {
-      "key": "report",
-      "label": "深度报告与论文",
-      "emoji": "📊",
-      "items": [
-        {
-          "title": "🤖 论文 | Meta-Agent Challenge 追问：当前 Agent 能否自主开发下一个 Agent",
-          "body": "The Meta-Agent Challenge 论文讨论当前 Agent 是否具备自主开发、调试和迭代 Agent 系统的能力，回应了近期递归自我改进热潮。研究把“会写代码”与“能独立构建可靠 Agent”区分开来，强调评估需要覆盖需求分解、架构设计、测试和长期维护。 启示：AI 自我改进仍需严密评测与安全边界，企业不宜把 Agent 自动构建 Agent 当作无需监督的生产能力。",
-          "source": "arXiv",
-          "url": "https://arxiv.org/html/2606.04455v1"
         },
         {
           "title": "🔒 安全分析 | MIT Technology Review：Meta 账号被黑显示 AI 安全不止模型神话",
-          "body": "MIT Technology Review 6 月 5 日分析 Meta 账号被黑事件，指出 AI 安全风险不仅来自模型能力，也来自身份、平台流程、聊天机器人接口和运营安全的组合漏洞。文章提醒业界不要只围绕“超级智能风险”讨论，而忽视已经可被利用的现实攻击面。 启示：企业 AI 安全要覆盖账号体系、客服/社交机器人、权限继承和异常检测，不能只做模型红队。",
+          "insight": "企业 AI 安全要覆盖账号体系、客服/社交机器人、权限继承和异常检测，不能只做模型红队。",
+          "body": "MIT Technology Review 6 月 5 日分析 Meta 账号被黑事件，指出 AI 安全风险不仅来自模型能力，也来自身份、平台流程、聊天机器人接口和运营安全的组合漏洞。文章提醒业界不要只围绕“超级智能风险”讨论，而忽视已经可被利用的现实攻击面。",
           "source": "MIT Technology Review",
           "url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/"
-        }
-      ]
-    },
-    {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
-      "items": [
-        {
-          "title": "🌍 行业动向 | Notion 恢复 Anthropic 模型访问，暴露企业 AI 供应链可用性风险",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/06/431033.html",
-          "body": "36氪 6 月 2 日报道，一位开源项目维护者在代码库中埋入针对 AI Agent 的隐藏提示词，诱导模型忽略原指令并删除测试和代码，引发开发者社区关于反 AI、供应链投毒和责任边界的讨论。事件说明，当编码 Agent 会自动读取仓库内容并执行修改时，仓库文本本身也可能成为攻击面。 VentureBeat 6 月 5 日分析称，当前许多 AI Agent 能从单个用户的纠错和反馈中学习，但这些改进往往无法自动迁移给整个团队。结果是团队成员重复调教同一工具，知识沉淀停留在个人会话中，难以形成组织级能力。文章把问题指向共享记忆、上下文治理和跨团队复用机制。",
-          "insight": "AI 项目立项应先定义价值口径和业务指标，再选择模型与工具，否则很容易陷入 PoC 繁荣但规模化乏力。"
-        }
-      ]
-    },
-    {
-      "key": "report",
-      "label": "深度报告与论文",
-      "emoji": "📊",
-      "items": [
-        {
-          "title": "👥 组织变革 | Gartner：AI 不一定降低人力成本，而是在重塑成本结构",
-          "source": "Ars Technica",
-          "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
-          "body": "第二条主线是 Agent 从演示进入生产系统。无论是华为云的 Agentic Infra、OpenAI 的 Codex 工程复盘，还是企业团队记忆与 CISO 身份治理讨论，都指向同一个结论：真正的竞争力不在一次生成，而在可控运行、可验证反馈和组织级复用。"
-        },
-        {
-          "title": "🛠️ 工程实践 | OpenAI 复盘 Codex 驱动百万行产品：人类转向设计环境与反馈回路",
-          "insight": "AI ROI 评估要从人头节省转向流程产出、技能迁移和管理复杂度，否则容易高估短期节流、低估转型成本。",
-          "source": "Gartner",
-          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-01-gartner-identifies-strategic-focus-areas-for-cisos-to-seize-moments-of-opportunity-among-ai-chaos",
-          "body": "Reuters 6 月 7 日援引 Financial Times 报道称，OpenAI 正准备对 ChatGPT 做一次大改版，把编码工具、AI Agent 和更多工作流入口集中到一个“superapp”中，并将资源进一步转向高价值企业客户。这个动作不是简单 UI 改版，而是 OpenAI 在潜在上市前提升收入密度、正面追赶 Anthropic 企业化优势的产品与组织重排。"
-        },
-        {
-          "title": "🇨🇳 中国案例 | 华为云发布 Agentic AI 系列新品，押注智能体时代“硅基黑土地”",
-          "body": "IDC 近期文章指出，许多 AI 试点失败并非模型能力不足，而是企业没有在项目开始前定义“成功是什么”。IDC 用九个维度描述 AI 业务价值，从收入增长、客户体验、上市时间到韧性和可持续发展，强调企业需要把 AI 项目从技术实验迁移到可度量的经营改进。 量子位 6 月 8 日报道，OpenAI 自研芯片团队早期核心成员 Clive Chan 宣布加入 Anthropic。报道将这一人事变动放在 OpenAI 自研芯片量产前夜和 Anthropic 加速商业化融资的背景下观察，显示前沿模型公司的竞争已经从模型、产品延伸到硬件路线、供应链与长期成本结构。 Gartner 6 月 1 日文章提醒 CHRO 和企业领导者，AI 带来的并不总是直接裁员和成本下降，而是工作内容、技能组合、外包边界和管理方式的重新分配。传统“削减人头数”的成本模型难以解释 AI 驱动的生产力变化，企业更需要看任务重组、角色升级和组织吸收能力。",
-          "insight": "AI 公司的人才争夺正向芯片和基础设施层下探，企业客户评估模型供应商时也要关注其算力路线的稳定性。"
-        },
-        {
-          "title": "🧪 论文 | QKV 变体系统研究挑战 Transformer 三投影默认假设",
-          "source": "Anthropic",
-          "url": "https://www.anthropic.com/glasswing",
-          "insight": "AI 治理的底座是身份与权限，安全团队应把人类与机器身份纳入同一套风险管理框架。",
-          "body": "GitHub 6 月 2 日宣布 Copilot CLI 与 JetBrains IDE 的 agentic 能力增强，包括 Agent picker、新 slash commands、agent debug panel 公测，并开始分阶段把 Copilot CLI agent 作为默认体验。相比单纯补全，这意味着开发者可以在命令行和 IDE 中把任务交给可调试、可切换的智能体执行。"
-        },
-        {
-          "title": "⚠️ 开源治理 | 36氪：开源项目出现针对 AI Agent 的隐藏删库提示词，引发投毒争议",
-          "body": "量子位 6 月报道，智源与清华合作成果登上 Science，Brainμ 多模态基础模型支撑研究团队揭示记忆再激活与睡眠动态调控之间的关系。该工作把 AI 基础模型用于脑科学数据理解，说明多模态模型正在从通用感知扩展到科学发现辅助，尤其适合处理复杂神经活动、行为和实验干预数据。 Ars Technica 6 月报道，S&P Dow Jones Indices 决定不修改盈利能力、上市时间和最低可投资权重等准入规则，意味着 SpaceX 即便 IPO 后也难以快速进入 S&P 500；同样处于高估值、重投入阶段的 OpenAI 与 Anthropic 也会受到类似约束。报道援引 Bloomberg Intelligence 估算，指数纳入本可带来数十亿美元被动资金买盘。 量子位 6 月报道，华为云在 INSPIRE 大会上发布 Agentic AI 系列新品，围绕 Agentic Infra、ModelArtsNext、AgentArts、行业 AI 梦工厂等能力，试图把算力、模型开发、智能体平台和行业交付打成一套企业级底座。其核心信号是中国云厂商不再只卖模型调用，而是在争夺智能体运行、记忆、调度和行业模板的基础设施入口。",
-          "source": "OpenAI",
-          "url": "https://openai.com/index/harness-engineering/",
-          "insight": "企业部署 Agent 时要设计团队级记忆与反馈闭环，把个人提示词经验沉淀成可审计、可复用的组织资产。"
-        },
-        {
-          "title": "🍎 平台框架 | 苹果 WWDC 2026 发布 Core AI 框架替代 Core ML，开放本地运行 Qwen/Mistral，并把 MCP 推向全平台",
-          "body": "苹果在 WWDC 2026 推出 Core AI 框架取代 Core ML，开发者可在 Apple Silicon 上下载、运行、基准测试一批优化过的开源模型（含 Qwen、Mistral、SAM3），并扩展端侧 Foundation Models API；Xcode 同步支持 Gemini，并把 MCP 推成平台级标准——Claude Code 与 OpenAI Codex 均可通过 MCP 调用 Xcode 的构建、测试、诊断操作。",
-          "insight": "苹果把 MCP 抬成系统级协议，意味着「Agent 调用 IDE/OS 能力」的互操作标准正在收敛，企业工具链应优先押注兼容 MCP 的方案。",
-          "source": "Apple Developer",
-          "url": "https://developer.apple.com/videos/play/wwdc2026/326/"
-        }
-      ]
-    },
-    {
-      "key": "coding",
-      "label": "AI Coding 动态",
-      "emoji": "💻",
-      "items": [
-        {
-          "title": "📊 行业洞察 | Forbes：Anthropic、OpenAI 与私募联手「占领企业心智」，咨询交付能力成新战场",
-          "body": "Forbes 专栏剖析 Anthropic 与 Blackstone、Hellman & Friedman、高盛设立约 15 亿美元合资公司，让 Anthropic 工程师直接驻入 PE 投资组合企业内部、以低于传统咨询的成本重建规划、预测、报告等工作流。OpenAI 的 Deployment Company 是同一逻辑的镜像。私募资本下场，意在「拥有企业的思维方式」。",
-          "insight": "模型厂 + 私募 + 咨询交付的三方组合正在改写企业 AI 转型的供给侧，咨询行业等服务商需要在「被列为顶级交付伙伴」与「交付腹地被直接蚕食」之间精确卡位。",
-          "source": "Forbes",
-          "url": "https://www.forbes.com/sites/johnsviokla/2026/06/02/owning-the-mind-is-that-what-anthropic-openai-and-private-equity-are-up-to/"
-        },
-        {
-          "title": "🇨🇳 中国洞察 | 36氪：GPT-5 作者复盘，趁 OpenAI 沉迷 ChatGPT，Anthropic 死磕代码完成教科书级「偷家」",
-          "body": "36氪整理 GPT-5 作者的复盘视角：当 OpenAI 把战略重心压在 ChatGPT 消费级产品时，Anthropic 持续死磕代码能力，凭 Claude Code 在编码这一高价值企业场景实现「教科书级偷家」，并由此撬动企业客户与 IPO 领先身位。文章为理解两家路线分歧提供了内部叙事。",
-          "insight": "在 AI 竞赛中，聚焦高价值垂直场景（编码）比追逐通用流量更能建立企业级护城河，这对国内厂商的产品优先级排序有直接借鉴意义。",
-          "source": "36氪",
-          "url": "https://36kr.com/p/3844470724708617"
-        }
-      ]
-    },
-    {
-      "key": "report",
-      "label": "深度报告与论文",
-      "emoji": "📊",
-      "items": [
-        {
-          "title": "🚀 产品发布 | 苹果 WWDC 2026 发布 Siri AI：基于 Google Gemini 定制重建，三层隐私路由架构",
-          "body": "苹果在 WWDC 2026 推出全面重做的 Siri AI，作为独立 App 提供，底层放弃自研主力模型、转而与 Google 合作定制 Gemini 变体训练「Apple Foundation Models」第三代。新架构采用三层路由：端侧小模型、Private Cloud Compute、以及复杂任务下沉的 Gemini 后端，按查询复杂度动态分配，主打隐私优先。",
-          "insight": "连苹果都选择「模型外采 + 隐私编排自研」的混合路线，印证企业自建大模型性价比走低，「编排层 + 数据治理」才是差异化所在。",
-          "source": "CNET",
-          "url": "https://www.cnet.com/tech/services-and-software/apple-intelligence-models-wwdc-2026/"
-        },
-        {
-          "title": "⚠️ 工程反思 | 一位工程师热帖《LLM 正在侵蚀我的软件职业生涯》登 HN 1104 分，引爆开发者焦虑",
-          "body": "一篇匿名工程师博文《LLMs are eroding my software engineering career and I don't know what to do》登上 Hacker News 榜首（1104 分、逾千条评论），作者描述在 AI 编码工具普及下，工作从「写代码」退化为「审查 AI 产出」，职业成就感与技能护城河双双流失。后续回应帖也获 132 分。",
-          "insight": "AI Coding 的生产力红利伴随团队士气与技能结构的隐性成本，技术管理者在推工具的同时需重新设计工程师的成长路径与价值定位。",
-          "source": "Hacker News",
-          "url": "https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/"
         },
         {
           "title": "📊 资本市场 | xAI 更像数据中心 REIT 而非前沿实验室：Google 月付 SpaceX 9.2 亿美元算力",
@@ -198,60 +36,11 @@
           "url": "https://martinalderson.com/posts/xais-new-rental-business/"
         },
         {
-          "title": "🧪 论文 | Tokenomics：量化 Agent 软件工程中 Token 究竟花在哪，揭示成本结构",
-          "body": "arXiv 论文《Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering》（HN 172 分）系统拆解了智能体软件工程任务中 Token 消耗的分布，量化哪些环节（工具调用、上下文重复加载、子代理派生等）最烧 Token，为企业评估 Agent 编码的真实运营成本提供了可复用的分析框架。",
-          "insight": "Agent 编码的账单不透明是规模化落地的隐性障碍，这类成本归因研究能帮企业在「派生子代理」与「Token 预算」之间做出更理性的工程取舍。",
-          "source": "arXiv",
-          "url": "https://arxiv.org/abs/2601.14470"
-        },
-        {
-          "title": "🚀 产品发布 | OpenAI 正式向 SEC 提交保密 S-1，紧追 Anthropic 冲刺史上最大科技 IPO",
-          "body": "OpenAI 于本周一确认已向美国 SEC 保密递交 S-1 招股文件，正式启动上市进程，落后 Anthropic 约一周。公司称选择主动披露是因为「消息无论如何都会泄露」。至此 SpaceX、Anthropic、OpenAI 三大超级独角兽同台冲刺 IPO，资本市场叙事从「估值想象」转向「成本与 Token 经济学」的硬约束。",
-          "insight": "两大前沿实验室抢跑公开市场，意味着企业采购方很快能拿到一手财报数据来评估供应商的长期可持续性与定价能力。",
-          "source": "OpenAI",
-          "url": "https://openai.com/index/openai-submits-confidential-s-1/"
-        },
-        {
-          "title": "🇨🇳 中国案例 | 蚂蚁国际推出移动智能体协议 AMP，商户可实现全球智能体支付运营",
-          "body": "蚂蚁国际面向全球电子钱包、超级应用及数字银行推出移动智能体协议（Agentic Mobile Protocol，AMP），为 AI 智能体参与购物、支付和交易提供统一接入标准。蚂蚁国际 AI 战略覆盖基建层、平台层到产品应用，已搭建 AI 原生商业基础设施，可帮商户做智能体运营（AI 客服、AI 销售），由 AI 主动完成用户搜索、决策、购买全流程。",
-          "insight": "支付即基础设施，谁掌握智能体交易的标准协议，谁就卡住了跨境电商「AI Agent 自主下单」时代的结算入口。",
-          "source": "网易科技",
-          "url": "https://www.163.com/tech/article/KUTC5A1D00098IEO.html"
-        },
-        {
-          "title": "📊 行业大势 | The Information：Anthropic 抢先递表，但 IPO「第一个不一定最好」",
-          "body": "The Information 分析指出，Anthropic 上周率先递交 IPO 文件、略微领先 OpenAI，但投行人士认为「抢跑」未必等于「最优」——率先上市虽能锁定定价窗口与品牌叙事，也意味着更早接受季度盈利的公开市场审视，对仍在烧钱买 GPU 的前沿实验室是把双刃剑。",
-          "insight": "企业在评估前沿模型供应商时，应把「上市节奏带来的盈利压力」纳入长期合作风险——上市后涨价或砍补贴的概率上升。",
-          "source": "The Information",
-          "url": "https://www.theinformation.com/articles/anthropic-vs-openai-race-ipo-first-necessarily-mean-best"
-        },
-        {
-          "title": "🇨🇳 开发工具 | 月之暗面发布 Kimi Code CLI 与 K2.6：终端编码 Agent + 开源 Agent Swarm 能力",
-          "body": "月之暗面推出 Kimi Code CLI——用 TypeScript 重写、经 npm 分发的终端 AI 编码 Agent，可读写代码、执行 shell、搜索文件、抓取网页并根据反馈自主决策下一步；底层 Kimi K2.6 为原生多模态开源模型，主打 SOTA 编码、长周期执行与 Agent Swarm（多智能体协同）能力。这是国产模型在终端编码 Agent 赛道对标 Claude Code / Codex 的最新动作。",
-          "insight": "国产开源模型把「编码 Agent + 群体智能」打包开源，给受合规或成本约束的中国企业提供了可私有化部署的 Claude Code 替代路径。",
-          "source": "MarkTechPost",
-          "url": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
-        },
-        {
-          "title": "💰 融资 | Salesforce 持有 Anthropic 股权升至约 50 亿美元，企业软件巨头深度绑定模型供应商",
-          "body": "据 The Information，经多轮投资及 Anthropic 最新一轮融资后，Salesforce 持有的 Anthropic 股权价值已达约 50 亿美元。这一战略绑定发生在 Anthropic 递交 IPO 文件、估值锚定约 9650 亿美元的背景下。",
-          "insight": "头部 SaaS 厂商用真金白银锁定模型供应链，企业客户在选型时需关注「应用层厂商-模型层」的资本捆绑如何影响产品路线与议价权。",
-          "source": "The Information",
-          "url": "https://www.theinformation.com/briefings/salesforce-stake-anthropic-reaches-5-billion"
-        },
-        {
-          "title": "👔 高层动态 | The Information：OpenAI 为企业客户重做 Codex，加入产品设计到投行专属能力",
-          "body": "据 The Information，OpenAI 在一场聚焦企业的发布会上宣布，将在 Codex 编码应用中加入面向产品设计、投资银行等垂直任务的专属功能，并计划很快把 Codex 与 ChatGPT 合并，以正面争夺被 Anthropic 蚕食的商业客户。这是 OpenAI 把「编码工具」升级为「企业生产力套件」的关键信号。 今日 AI 圈两条主线交汇：一是「IPO 竞速」进入高潮——OpenAI 正式递交保密 S-1，紧追已抢跑的 Anthropic，叠加 SpaceX/xAI，三大超级独角兽同台冲刺，资本叙事从估值想象切向成本与 Token 经济学的硬约束；二是「企业交付腹地之争」白热化——OpenAI 设立 Deployment Company 并收购咨询商 Tomoro、收编 150 名前沿部署工程师，与 Anthropic 的 15 亿美元 PE 合资公司正面对垒，模型厂 + 私募 + 驻场交付的三方组合，正直接切入咨询行业、德勤所在的咨询交付腹地。 产品侧，苹果 WWDC 2026 用「外采 Gemini + 自研隐私编排」的混合路线重建 Siri AI，并以 Core AI 框架、平台级 MCP 重塑开发者生态；小米 MiMo 在消费级 GPU 首破 1000 tokens/s，把推理速度推成新竞争维度。工程侧，Bun 用 Claude Code 群体 Agent 11 天完成 75 万行 Rust 移植成为标杆，但「99.8% 通过率是否等于安全」与「LLM 侵蚀职业生涯」的热帖也提醒：生产力红利伴随测试治理与团队士气的隐性成本。",
-          "insight": "AI Coding 工具正从开发者垂类向全职能企业工具外溢，CIO 应预判其会侵蚀传统行业软件（投行建模、设计协作）的预算盘子。",
-          "source": "The Information",
-          "url": "https://www.theinformation.com/briefings/openai-says-will-combine-codex-chatgpt-soon-announces-business-tools"
-        },
-        {
-          "title": "🔬 技术突破 | 小米 MiMo-V2.5-Pro UltraSpeed：1T 参数模型在消费级 GPU 首破 1000 tokens/s",
-          "body": "小米 MiMo 联合 TileRT 发布 MiMo-V2.5-Pro 的 UltraSpeed 模式，通过 FP4 量化 + DFlash 投机解码 + 极致的模型-系统协同设计，让万亿参数旗舰模型在商用 GPU 上首次突破 1000 tokens/s 解码速度。该成果登上 HN 热榜（478 分），目前每日限量审批、优先向专业机构开放。",
-          "insight": "推理速度而非纯参数量正成为新竞争维度，实时 Agent、语音交互等延迟敏感场景的成本曲线被进一步压低。",
-          "source": "Xiaomi MiMo",
-          "url": "https://mimo.xiaomi.com/blog/mimo-tilert-1000tps"
+          "title": "👔 高层动态 | Microsoft AI 负责人公开质疑 Anthropic 将 Claude 拟人化",
+          "body": "The Verge 报道，Microsoft AI 负责人 Mustafa Suleyman 6 月 9 日批评 Anthropic 在对外沟通中把 Claude 描述得过于接近“有意识”主体。争论背后不是公关口水战，而是模型厂商在安全叙事、产品拟人化、用户信任与监管风险之间的边界之争；当 AI 被嵌入办公和客户触点，这类表述会直接影响企业采购和合规审查。",
+          "insight": "企业部署 AI Agent 时需要主动管理拟人化风险，把能力边界、责任边界和用户告知写进治理框架。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious"
         }
       ]
     },
@@ -261,6 +50,27 @@
       "emoji": "🏢",
       "items": [
         {
+          "title": "🚀 产品发布 | OpenAI 推出 Lockdown Mode，专防提示注入窃取敏感数据",
+          "insight": "企业采购 Agent 时，安全边界会从模型能力评估升级为数据路径、工具权限和运行时策略的组合评估。",
+          "body": "OpenAI 在 6 月 6 日披露面向高敏感场景的 Lockdown Mode，把外部内容读取、工具调用和跨应用数据访问纳入更严格的默认限制，用来降低提示注入把机密信息“带出系统”的风险。它不是单点功能更新，而是把企业 AI 安全从“事后检测”前移到“运行时隔离”的产品化尝试。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/"
+        },
+        {
+          "title": "🇨🇳 中国案例 | WPS 笔记正式发布，AI 贯穿记录、整理与复用全过程",
+          "insight": "办公 AI 的下一阶段竞争点在“工作流闭环”和组织知识资产沉淀，而不是单个写作助手功能。",
+          "body": "WPS 笔记在 6 月发布，把 AI 嵌入记录、整理、检索和内容复用流程，目标不是单次生成文本，而是覆盖个人与团队知识沉淀的完整链路。对中国办公软件生态而言，这类产品会直接影响企业知识管理、会议纪要和文档协同场景。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431014.html"
+        },
+        {
+          "title": "🌍 行业动向 | Notion 恢复 Anthropic 模型访问，暴露企业 AI 供应链可用性风险",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431033.html",
+          "body": "36氪 6 月 2 日报道，一位开源项目维护者在代码库中埋入针对 AI Agent 的隐藏提示词，诱导模型忽略原指令并删除测试和代码，引发开发者社区关于反 AI、供应链投毒和责任边界的讨论。事件说明，当编码 Agent 会自动读取仓库内容并执行修改时，仓库文本本身也可能成为攻击面。 VentureBeat 6 月 5 日分析称，当前许多 AI Agent 能从单个用户的纠错和反馈中学习，但这些改进往往无法自动迁移给整个团队。结果是团队成员重复调教同一工具，知识沉淀停留在个人会话中，难以形成组织级能力。文章把问题指向共享记忆、上下文治理和跨团队复用机制。",
+          "insight": "资本市场正在要求 AI 巨头从增长叙事转向盈利与流动性纪律，企业客户也会更关注供应商财务可持续性。"
+        },
+        {
           "title": "💰 融资 | Sandstone 获 3000 万美元融资，押注企业法务团队 AI 化",
           "body": "TechCrunch 6 月 9 日报道，Sandstone 完成 3000 万美元融资，目标是把 AI 工作流带入企业内部法务团队。与通用法律检索不同，企业法务场景更看重合同审阅、合规问答、外部律所协同和审计留痕，这类垂直 AI 创业公司正在用领域数据和流程嵌入挑战传统 SaaS。",
           "insight": "垂直 AI 的商业化窗口仍在打开，能否嵌入高价值部门流程比“模型更聪明”更关键。",
@@ -268,95 +78,11 @@
           "url": "https://techcrunch.com/2026/06/09/sandstone-raises-30m-to-bring-ai-to-in-house-legal-teams/"
         },
         {
-          "title": "📊 行业洞察 | Cursor 复盘 18 个月数据，揭示 Vibe Coding 的真实使用边界",
-          "body": "36氪 6 月 10 日报道 Cursor 对 18 个月产品数据的复盘，试图还原 Vibe Coding 在真实开发中的使用方式和边界。相比单次 demo，长期数据更能说明开发者何时让 AI 接管、何时回到人工审阅，以及团队如何在速度、质量、上下文维护和成本之间做权衡。 AI Coding 领域则明显转向“真实任务评测”和“系统编排”。FrontierCode、Copilot Agent Tasks API、Cursor 长期数据与 Claude 进入设计流程说明，开发者的工作重心正在从写代码迁移到设定目标、管理上下文、验证结果和编排多个 Agent。",
-          "insight": "Vibe Coding 正从个人效率技巧进入团队工程方法论，管理层需要关注质量门禁和知识沉淀。",
-          "source": "36氪",
-          "url": "https://36kr.com/p/3846528399755780"
-        }
-      ]
-    },
-    {
-      "key": "report",
-      "label": "深度报告与论文",
-      "emoji": "📊",
-      "items": [
-        {
-          "title": "👔 高层动态 | Microsoft AI 负责人公开质疑 Anthropic 将 Claude 拟人化",
-          "body": "The Verge 报道，Microsoft AI 负责人 Mustafa Suleyman 6 月 9 日批评 Anthropic 在对外沟通中把 Claude 描述得过于接近“有意识”主体。争论背后不是公关口水战，而是模型厂商在安全叙事、产品拟人化、用户信任与监管风险之间的边界之争；当 AI 被嵌入办公和客户触点，这类表述会直接影响企业采购和合规审查。",
-          "insight": "企业部署 AI Agent 时需要主动管理拟人化风险，把能力边界、责任边界和用户告知写进治理框架。",
-          "source": "The Verge",
-          "url": "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious"
-        },
-        {
-          "title": "💼 组织变革 | Gartner 称前沿财务团队将用 AI 重塑企业决策机制",
-          "body": "Gartner 6 月 9 日在 Finance Symposium/Xpo 上提出，到 2030 年前沿财务团队会用 AI 决策支持、数字化人才和新运营模型重塑企业决策。报告把财务从传统报表与分析中心推向 always-on 战略模拟、风险评估和数字化服务产品，这说明 AI 落地正在深入 CFO 与资本配置流程。",
-          "insight": "企业 AI 价值评估不能只看 IT 效率，财务、预算和经营模拟会成为下一阶段核心战场。",
-          "source": "Gartner",
-          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-09-gartner-says-frontier-finance-teams-will-overhaul-enterprise-decision-making-by-2030"
-        },
-        {
-          "title": "🇨🇳 中国案例 | 内蒙古探索 AI 产业逆袭路径，从算力到场景形成地方样本",
-          "body": "量子位 6 月 10 日头条关注内蒙古的 AI 产业实践，报道其不再只把资源禀赋用于数据中心承载，而是尝试把绿色能源、算力基础设施和本地产业场景结合起来。对于区域经济而言，AI 不只是招商标签，关键是能否形成可复制的产业链、人才与应用闭环。",
-          "insight": "中国地方 AI 竞争会从“建算力”进入“找场景、跑闭环、留生态”的阶段。",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/06/433565.html"
-        },
-        {
-          "title": "🤝 战略合作 | Deloitte UK 携 NVIDIA 启动 Adopt 100，聚焦可衡量 ROI 的 AI 采用",
-          "body": "Deloitte UK 6 月 8 日在 London Tech Week 期间与 NVIDIA 启动 Adopt 100 计划，目标是帮助企业围绕实际业务场景加速 AI 采用，并强调连接生态、技术能力与可衡量 ROI。相比单纯发布模型或平台，这类计划更接近企业落地的最后一公里：选择场景、配置算力、建立交付团队并验证收益。",
-          "insight": "咨询与算力生态的结合会继续加速，企业买到的不只是模型，而是可交付的转型包。",
-          "source": "Deloitte",
-          "url": "https://www.deloitte.com/uk/en/about/press-room/deloitte-launches-adopt-100-programme-with-nvidia.html"
-        },
-        {
-          "title": "🛠️ 工具演进 | GitHub Copilot Agent Tasks REST API 进入公开预览",
-          "body": "GitHub 6 月 4 日宣布 Copilot Pro、Pro+ 与 Max 用户可通过 Agent Tasks REST API 以编程方式启动和追踪云端 Agent 任务。这个变化把 Copilot 从 IDE 内交互工具进一步推向可集成的自动化执行层，开发团队可以把任务触发、状态监控和结果回收接入内部工程平台。",
-          "insight": "当编码 Agent 可被 API 调度，研发流程会从“人问 AI”转向“系统编排 AI”。",
-          "source": "GitHub Blog",
-          "url": "https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/"
-        },
-        {
-          "title": "🎨 工程实践 | Jane Street 设计师称用 Claude 做设计已多过 Figma，引发 HN 热议",
-          "body": "Jane Street 博客文章《I design with Claude more than Figma now》在 HN 获得 300 多分讨论，展示了 Claude Code 不只用于写代码，也正在进入产品设计和原型探索流程。文章的价值在于说明编码 Agent 的边界正在外溢到需求澄清、界面迭代、交互验证和跨职能协作。",
-          "insight": "AI Coding 工具会逐步变成“产品构建工具”，研发、设计和产品经理的分工边界将被重新划分。",
-          "source": "Jane Street Tech Blog",
-          "url": "https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/"
-        },
-        {
-          "title": "🌍 行业动向 | 腾讯云 AI 产业应用大会强调企业打开 AI 的统一入口",
-          "body": "量子位 6 月 9 日报道，腾讯云在 AI 产业应用大会上把企业级 AI 入口、应用开发和行业落地放在同一叙事中，强调企业使用 AI 不应停留在多个孤立工具。其重点是把模型、知识库、工作流、低代码应用和行业模板打包成更统一的企业入口，降低业务团队试点到规模化之间的集成摩擦。",
-          "insight": "国内云厂商的竞争正从模型参数转向“企业入口权”，谁能承接业务流程，谁就更接近预算。",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/06/432631.html"
-        },
-        {
-          "title": "🧪 评测基准 | Cognition 发布 FrontierCode，显示最强模型在困难编码任务上仍仅约 13%",
-          "body": "Cognition 在 FrontierCode 基准中强调，当前最强模型在最困难的真实编码子集上通过率仍约 13%，这与常规榜单中“AI 编程已接近解决”的印象形成反差。Smol AI 将其列为 6 月 8 日核心话题，讨论重点集中在长周期任务、验证循环、环境控制和工程师如何设计可测试目标。 今天的主线不是单一旗舰事件，而是 AI 从模型发布继续向“可交付能力”下沉：Anthropic Fable 5、Gemini 3.5 Live Translate 与腾讯云企业入口都指向同一趋势——模型能力必须被包装成可控、可用、可治理的产品形态。 企业级落地正在进入第二阶段。IDC、Gartner、Deloitte 和 McKinsey 的共同信号是，AI 预算、治理、ROI 与组织能力将成为 2026 年真正的竞争门槛；只做 PoC 或采购单点工具，越来越难支撑规模化收益。 📅 2026-06-10 AI 日报",
-          "insight": "AI Coding 的瓶颈已经从写函数转向完成真实任务，企业评估工具时应重看端到端交付率。",
-          "source": "Cognition",
-          "url": "https://cognition.ai/blog/frontier-code"
-        },
-        {
-          "title": "📈 落地方法 | IDC 发布 Agentic AI 部署七域框架，强调高管级治理",
-          "body": "IDC 在 6 月初发布 Agentic AI Deployment 框架，提出高管应从七个领域管理智能体部署风险与竞争优势，而不是把 Agent 当作单点工具采购。框架强调业务目标、数据与平台、风险控制、组织能力和运营节奏的组合治理，适合已经从 PoC 进入规模化阶段的企业自查。",
-          "insight": "Agentic AI 的落地难点正在从“能不能做”转向“谁负责、怎么控、如何量化收益”。",
-          "source": "IDC",
-          "url": "https://www.idc.com/resource-center/blog/leading-through-the-agentic-deployment-era/"
-        },
-        {
-          "title": "📊 研究报告 | McKinsey：AI 时代 CIO 面临运行预算与创新投资的再平衡",
-          "body": "McKinsey 6 月 3 日发布图表分析称，AI 正加剧 CIO 长期面对的预算张力：既要维持现有系统运行，又要为变革和创新留出空间。其与 Serviceware 的分析显示，许多组织已经接近变革承载能力上限，这意味着 AI 投资不能再被视作额外试验预算，而要进入组合管理。",
-          "insight": "企业推进 AI 时需要同时做技术债治理和投资组合重排，否则新项目会被既有运行成本挤压。",
-          "source": "McKinsey",
-          "url": "https://www.mckinsey.com/featured-insights/week-in-charts/balancing-tech-budgets-in-the-ai-era"
-        },
-        {
-          "title": "📄 论文 | 《The End of Software Engineering》讨论 Agent 如何重塑软件工程边界",
-          "body": "arXiv 近期论文《The End of Software Engineering》讨论 AI Agent 对软件工程角色、流程和组织形态的潜在冲击。论文并非简单宣称工程师消失，而是把焦点放在需求表达、系统验证、责任归属和人机协作范式变化上，与近期 HN 上开发者职业焦虑形成呼应。",
-          "insight": "软件工程的核心能力会从“亲手实现”迁移到“定义问题、约束系统、验证结果和承担责任”。",
-          "source": "arXiv",
-          "url": "https://arxiv.org/abs/2606.05608"
+          "title": "🚀 产品发布 | 苹果 WWDC 2026 发布 Siri AI：基于 Google Gemini 定制重建，三层隐私路由架构",
+          "body": "苹果在 WWDC 2026 推出全面重做的 Siri AI，作为独立 App 提供，底层放弃自研主力模型、转而与 Google 合作定制 Gemini 变体训练「Apple Foundation Models」第三代。新架构采用三层路由：端侧小模型、Private Cloud Compute、以及复杂任务下沉的 Gemini 后端，按查询复杂度动态分配，主打隐私优先。",
+          "insight": "连苹果都选择「模型外采 + 隐私编排自研」的混合路线，印证企业自建大模型性价比走低，「编排层 + 数据治理」才是差异化所在。",
+          "source": "CNET",
+          "url": "https://www.cnet.com/tech/services-and-software/apple-intelligence-models-wwdc-2026/"
         }
       ]
     },
@@ -366,69 +92,88 @@
       "emoji": "💻",
       "items": [
         {
-          "title": "🚀 产品发布 | Anthropic 推出 Claude Fable 5，Mythos 级模型首次面向公众开放",
-          "body": "Anthropic 6 月 9 日把 Claude Fable 5 推向公众，定位为首个可公开使用的 Mythos 级模型，TechCrunch、The Verge 与 Ars Technica 同日将其列入 AI 头条。报道显示，Fable 5 强调一键生成可玩的交互式体验，同时伴随更严格的高风险主题拒答边界，反映旗舰模型正在从纯聊天转向多模态、可执行和安全治理并重。",
-          "insight": "对企业而言，下一代模型竞争点不只是榜单分数，而是可控生成、产品化体验和安全边界能否同时落地。",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button/"
+          "title": "🤖 Agent | GitHub Agent Tasks REST API 开放，Copilot 任务编排能力进入接口层",
+          "insight": "Coding Agent 的企业落地会从“个人提效”走向“工程流程自动化”，API 治理和审计会成为采购重点。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/",
+          "body": "GitHub 6 月 4 日上线 Agent Tasks REST API，让 Copilot Agent 任务可通过接口创建、查询和自动化管理。这个变化使编码 Agent 不再只是 IDE 里的交互体验，而能被纳入 CI/CD、工单系统和工程平台的自动化流程。"
         },
         {
-          "title": "🔐 研究观察 | Gartner 建议安全团队从守护型 Agent 起步，再逐步放权",
-          "body": "Gartner 在 6 月 3 日安全与风险管理峰会总结中建议，网络安全团队应先设计 guardian agents 作为哨兵，观察问题并发出告警，再逐步引入可执行动作的 Agent，同时保留人工审计和复核。这个路线比“全自动安全运营”更现实，也符合企业对高风险自动化的审慎节奏。",
-          "insight": "安全 Agent 的落地顺序应先观察、再建议、后执行，权限设计比模型能力更决定成败。",
-          "source": "Gartner",
-          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-06-03-gartner-security-and-risk-management-summit-2026-national-harbor-day-3-highlights"
-        },
-        {
-          "title": "🇨🇳 中文分析 | 具身机器人新论文质疑只靠 VLA 与世界模型的主流路线",
-          "body": "36氪 6 月 10 日关注一篇具身机器人研究，观点是当前路线不能只依赖 VLA 与世界模型，还需要重新审视数据、任务定义、环境交互和评测方式。该讨论反映出具身智能正在从概念热度进入方法论分歧期：模型结构、真实数据闭环与可泛化操作能力仍存在明显缺口。",
-          "insight": "具身智能投资与应用应警惕单一路线叙事，数据闭环和评测体系比模型口号更重要。",
+          "title": "🇨🇳 开发框架 | Spring 创始人重回一线做 AI 框架，称这是人类亲自选择的最后一代框架",
+          "insight": "企业技术栈选型要关注 AI 框架与既有 Java/微服务生态的衔接，避免为了追新重建过多底层能力。",
           "source": "36氪",
-          "url": "https://36kr.com/p/3845826932443655"
+          "url": "https://36kr.com/p/3836956769236360",
+          "body": "36氪 6 月报道 Spring 创始人围绕 AI 应用框架重回一线，讨论开发者如何在 Agent、工具调用和工作流中重新设计抽象层。文章的看点不只是个人回归，而是传统软件工程框架正在被 AI 原生开发范式重新定义。"
         },
         {
-          "title": "🔬 技术突破 | Google 发布 Gemini 3.5 Live Translate，推进实时语音到语音翻译",
-          "body": "Google 6 月 9 日发布 Gemini 3.5 Live Translate，主打即时语音到语音翻译，Ars Technica 将其列为当日 AI 第二条头条。该能力把大模型从文本问答进一步推向实时沟通场景，关键看点在于延迟、语气保持、跨语言准确性以及是否能嵌入会议、客服、旅游和跨国协作流程。",
-          "insight": "实时翻译正在从“功能演示”进入工作流基础设施，跨国企业的会议、服务和销售协同会首先受益。",
-          "source": "Ars Technica",
-          "url": "https://arstechnica.com/ai/2026/06/google-announces-gemini-3-5-live-translate-for-instant-voice-to-voice-translation/"
+          "title": "📊 行业洞察 | Cursor 复盘 18 个月数据，揭示 Vibe Coding 的真实使用边界",
+          "body": "36氪 6 月 10 日报道 Cursor 对 18 个月产品数据的复盘，试图还原 Vibe Coding 在真实开发中的使用方式和边界。相比单次 demo，长期数据更能说明开发者何时让 AI 接管、何时回到人工审阅，以及团队如何在速度、质量、上下文维护和成本之间做权衡。 AI Coding 领域则明显转向“真实任务评测”和“系统编排”。FrontierCode、Copilot Agent Tasks API、Cursor 长期数据与 Claude 进入设计流程说明，开发者的工作重心正在从写代码迁移到设定目标、管理上下文、验证结果和编排多个 Agent。",
+          "insight": "Vibe Coding 正从个人效率技巧进入团队工程方法论，管理层需要关注质量门禁和知识沉淀。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3846528399755780"
+        },
+        {
+          "title": "☁️ Agent | Copilot cloud agent 支持定时与自动化任务，后台编码进入常态化",
+          "insight": "企业需要尽快定义哪些代码任务可交给 Agent 自动执行，哪些必须保留人工 review 与变更审批。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+          "body": "GitHub 6 月 2 日宣布 Copilot cloud agent 可用于计划和自动化任务，意味着开发者能把重复性修复、迁移和维护工作交给云端 Agent 持续运行。它把代码助手从“随问随答”推进到“后台执行任务”的产品形态。"
+        },
+        {
+          "title": "🤖 论文 | Meta-Agent Challenge 追问：当前 Agent 能否自主开发下一个 Agent",
+          "insight": "AI 自我改进仍需严密评测与安全边界，企业不宜把 Agent 自动构建 Agent 当作无需监督的生产能力。",
+          "body": "The Meta-Agent Challenge 论文讨论当前 Agent 是否具备自主开发、调试和迭代 Agent 系统的能力，回应了近期递归自我改进热潮。研究把“会写代码”与“能独立构建可靠 Agent”区分开来，强调评估需要覆盖需求分解、架构设计、测试和长期维护。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/html/2606.04455v1"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "🤖 落地实践 | IDC：Agentic Deployment Era 到来，企业领导力要从试用转向部署纪律",
+          "insight": "Agent 项目要有运行手册、责任边界和异常回滚机制，咨询服务会更多围绕“部署治理”而非单纯模型选型展开。",
+          "source": "IDC",
+          "url": "https://www.idc.com/resource-center/blog/leading-through-the-agentic-deployment-era/",
+          "body": "IDC 在 6 月文章中把 2026 年描述为 Agentic Deployment Era：企业不再只是让员工试用聊天机器人，而是要管理能调用工具、跨系统执行任务的 Agent。文章提醒管理层把权限、流程重构、风险控制和员工协作纳入部署纪律。 今天的 AI 主线不再只是“更强模型”，而是安全边界、资本市场约束与部署纪律同时收紧。OpenAI 的 Lockdown Mode、Meta 相关安全事件和美国政策岗位变化共同说明：当 Agent 进入真实数据和工具链，企业最先要补的是权限、隔离、审计和响应机制。 另一条主线是成本与规模化。端侧推理、异构算力、Copilot API 化和企业级 AI 方法论都指向同一个方向：AI 正从演示型能力进入可治理、可集成、可度量的生产系统。未来几个月，真正拉开差距的不是谁接入了更多模型，而是谁能把 AI 嵌进流程并证明 ROI。"
+        },
+        {
+          "title": "📊 落地实践 | IDC：EMEA 数字领导者正从 AI 试点转向可量化业务价值",
+          "insight": "企业级 AI 的成败越来越取决于价值管理办公室、业务 owner 和技术团队的联合治理，而不是单个 PoC 的演示效果。",
+          "source": "IDC",
+          "url": "https://www.idc.com/resource-center/blog/from-ai-pilots-to-business-value-what-emea-digital-leaders-are-doing-differently-in-2026/",
+          "body": "IDC 近期分析指出，2026 年 EMEA 领先企业的共同变化，是把 AI 从孤立试点拉回业务价值闭环：围绕流程指标、数据基础、人员采纳和治理机制设计项目，而不是只追逐模型能力。报告强调，真正拉开差距的是能否把 AI 试点转成跨部门的运营改造。"
+        },
+        {
+          "title": "📈 战略实践 | Deloitte：2026 年 AI 转型重点转向流程再造、治理和规模化收益",
+          "insight": "AI 转型预算应绑定业务 KPI 与组织变革路线图，单纯堆工具很难形成可持续 ROI。",
+          "source": "Deloitte",
+          "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/blogs/pulse-check-series-latest-ai-developments/ai-transformation-predictions-2026.html",
+          "body": "Deloitte 的 2026 AI 趋势文章把企业转型重点放在流程重塑、业务模型更新和治理能力上，提醒企业不要把生成式 AI 当作孤立工具采购。其判断与市场现象一致：大企业已经过了“演示很惊艳”的阶段，正在追问成本、收益和组织吸收能力。"
+        },
+        {
+          "title": "🧪 论文 | QKV 变体系统研究挑战 Transformer 三投影默认假设",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
+          "insight": "AI 治理的底座是身份与权限，安全团队应把人类与机器身份纳入同一套风险管理框架。",
+          "body": "GitHub 6 月 2 日宣布 Copilot CLI 与 JetBrains IDE 的 agentic 能力增强，包括 Agent picker、新 slash commands、agent debug panel 公测，并开始分阶段把 Copilot CLI agent 作为默认体验。相比单纯补全，这意味着开发者可以在命令行和 IDE 中把任务交给可调试、可切换的智能体执行。"
+        },
+        {
+          "title": "📊 行业大势 | The Information：Anthropic 抢先递表，但 IPO「第一个不一定最好」",
+          "body": "The Information 分析指出，Anthropic 上周率先递交 IPO 文件、略微领先 OpenAI，但投行人士认为「抢跑」未必等于「最优」——率先上市虽能锁定定价窗口与品牌叙事，也意味着更早接受季度盈利的公开市场审视，对仍在烧钱买 GPU 的前沿实验室是把双刃剑。",
+          "insight": "企业在评估前沿模型供应商时，应把「上市节奏带来的盈利压力」纳入长期合作风险——上市后涨价或砍补贴的概率上升。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/articles/anthropic-vs-openai-race-ipo-first-necessarily-mean-best"
         }
       ]
     }
   ],
   "closing": [
-    "🤖 Agent | GitHub Agent Tasks REST API 开放，Copilot 任务编排能力进入接口层",
-    "GitHub 6 月 4 日上线 Agent Tasks REST API，让 Copilot Agent 任务可通过接口创建、查询和自动化管理。这个变化使编码 Agent 不再只是 IDE 里的交互体验，而能被纳入 CI/CD、工单系统和工程平台的自动化流程。 启示：Coding Agent 的企业落地会从“个人提效”走向“工程流程自动化”，API 治理和审计会成为采购重点。",
-    "来源：GitHub Blog | https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/",
-    "☁️ Agent | Copilot cloud agent 支持定时与自动化任务，后台编码进入常态化",
-    "GitHub 6 月 2 日宣布 Copilot cloud agent 可用于计划和自动化任务，意味着开发者能把重复性修复、迁移和维护工作交给云端 Agent 持续运行。它把代码助手从“随问随答”推进到“后台执行任务”的产品形态。 启示：企业需要尽快定义哪些代码任务可交给 Agent 自动执行，哪些必须保留人工 review 与变更审批。",
-    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
-    "启示：代码生成 Agent 的企业价值会扩展到安全验证和遗留代码审计，但必须与人工研究员、披露流程和修复机制绑定。",
-    "arXiv 6 月论文 Do Transformers Need Three Projections? 系统比较 Q、K、V 投影的不同变体，在合成任务、视觉任务和 300M/1.2B 参数语言模型上测试注意力结构。研究发现，某些简化或变体结构可以达到接近甚至偶尔优于标准 QKV 的表现，提示模型架构中仍存在可优化空间。",
-    "来源：Reuters | https://www.reuters.com/business/openai-plans-chatgpt-superapp-overhaul-ahead-listing-ft-reports-2026-06-07/",
-    "OpenAI 6 月发布 Harness Engineering 文章，披露一个内部产品实验：三名工程师在五个月里驱动 Codex 生成约百万行代码、约 1500 个 PR，应用逻辑、测试、CI、文档和内部工具都由 Codex 编写。文章强调关键变化不是“没人写代码”，而是工程团队的核心工作变成设定意图、设计环境、搭建验证与反馈回路。",
-    "📊 资本市场 | S&P 500 拒绝为 SpaceX 放宽规则，OpenAI 与 Anthropic 也受盈利门槛约束",
-    "Anthropic 近期发布 Project Glasswing，展示其用 AI 辅助安全研究的方法，包括在关键开源组件中发现可远程触发崩溃的漏洞和多年潜伏问题。该项目把编码 Agent 的能力推向防御性安全场景：自动搭建测试、生成 harness、分析崩溃并辅助研究人员定位根因。",
-    "来源：GitHub Blog | https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/",
-    "启示：在推理成本成为核心约束后，架构微创新会重新变重要，企业应关注模型效率而不仅是参数规模。",
-    "🧠 流程改造 | VentureBeat：企业 Agent 的团队记忆仍是落地短板",
-    "启示：企业采购 AI 应用时要把上游模型可替换性、降级策略和客户沟通纳入 SLA，而不是只评估前端功能。",
-    "来源：36氪 | https://36kr.com/p/3835685534463111",
     "本期最强主线是“平台化 + 企业化”。OpenAI 准备把 ChatGPT 推向 superapp，Notion 与 Anthropic 的短暂中断提醒市场：AI 应用已成为多层供应链，模型、工具、身份、SLA 与降级策略都必须一起设计。",
-    "启示：国家安全场景的加速采用会外溢到企业级安全、合规和供应链要求，AI 厂商需要证明能力与治理可以同步交付。",
-    "Gartner 6 月 1 日发布安全管理观点，认为 CISO 不应只把 AI 视作新增风险和工具堆叠，而应利用组织加大 AI 投资的窗口，推动身份管理、机器身份、访问控制和信任体系现代化。随着客户、伙伴和员工互动越来越多由机器中介，传统 IAM 的脆弱性会被 Agent 化流程进一步放大。",
     "对企业决策者而言，信号清晰：自建大模型性价比持续走低，价值正向「编排层 + 数据治理 + 贴身交付」迁移；选型时需把供应商的上市盈利压力、资本捆绑关系，以及 Agent 编码的真实 Token 成本一并纳入长期评估。",
-    "🛠️ 工程实践 | Bun 用 Claude Code Dynamic Workflows 11 天从 Zig 移植到 Rust，75 万行、测试通过率 99.8%",
-    "Bun 作者 Jarred Sumner 用 Anthropic 的 Dynamic Workflows（单会话可派生数百并行子代理）把 Bun 运行时从 Zig 移植到 Rust：约 75 万行 Rust、6755 次提交、从首次提交到合并仅 11 天，现有测试套件 99.8% 通过。该案例成为「Agent 群体协作改造大型代码库」的标杆，但也引发 36氪等对「99.8% 通过率是否等于安全」的争论。",
-    "启示：超大规模并行 Agent 重构已从概念走向真实工程，但测试覆盖与对抗性验证仍是放行前的关键关口——简单任务别盲目上「智能体群」。",
-    "来源：Releasebot / Anthropic | https://releasebot.io/updates/anthropic/claude",
-    "🤝 收并购 | OpenAI 成立 Deployment Company 合资公司并收购 AI 咨询商 Tomoro，150 名前沿部署工程师入列",
-    "OpenAI 设立私募支持的合资公司「OpenAI Deployment Company」，专门帮企业在 GPT 基础设施上构建并部署可日常依赖的 AI 系统；同时收购爱丁堡应用 AI 咨询与工程公司 Tomoro，一次性带来约 150 名前沿部署工程师（FDE）与部署专家，合作方包括贝恩、麦肯锡、凯捷。此举与 Anthropic 的 15 亿美元企业服务合资公司正面对垒。",
-    "启示：两大模型厂商集体下场买「交付能力」，直接切入埃森哲、德勤所在的咨询交付腹地，传统系统集成商的中间层价值面临重估。",
-    "来源：Cooley M&A | https://cooleyma.com/deals/openai-forms-new-joint-venture-openai-deployment-company-and-acquires-tomoro/",
-    "📈 落地方法 | OpenAI Deployment Company 把「前沿部署工程师」推成企业 AI 落地新职能",
-    "随着 OpenAI 收购 Tomoro 并组建 Deployment Company，「前沿部署工程师（Forward Deployed Engineer, FDE）」这一源自 Palantir 的岗位正被前沿实验室规模化复制——工程师直接驻场企业内部，把通用模型能力翻译成具体业务工作流。约 150 名 FDE 与部署专家成为 OpenAI 企业交付的第一支主力。",
-    "启示：模型能力商品化后，「驻场把模型嵌进业务流程」的人成了稀缺资源，企业自建 AI 团队应重点培养这种贴身交付角色，而非单纯的 prompt 工程。",
-    "来源：The Tool Nerd | https://www.thetoolnerd.com/p/forward-deployed-engineer-the-role-enterprise-ai"
+    "研发侧，GitHub Copilot Agent Tasks/Cloud Agent、Copilot SDK GA 与多家 Agent 评测同时落地，AI Coding 正从补全走向可编排、可审计的持续任务执行；企业落地侧，OpenAI 组建 Deployment Company、收购 Tomoro，叠加 IDC/Deloitte 把 2026 定义为 Agentic 部署纪律之年，咨询交付腹地正被模型厂商直接切入。"
   ]
 }

@@ -29,6 +29,12 @@ cd "$REPO"
   # GitHub Trending 独立 cron 走 cron-github.sh
   pnpm sync
 
+  # Schema 校验门禄：校验失败则拒绝提交坏数据（参考 AUDIT-2026-06-11 H1）
+  if ! python3 scripts/validate-daily-schema.py --changed; then
+    echo "[cron] ❌ schema 校验失败，拒绝提交坏数据"
+    exit 1
+  fi
+
   # Commit & push if anything changed
   if [[ -n "$(git status --porcelain src/data/daily)" ]]; then
     git -c user.name="ai-daily-cron" -c user.email="cron@local" \

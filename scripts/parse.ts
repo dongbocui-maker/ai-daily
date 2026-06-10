@@ -15,6 +15,63 @@ function detectSection(line: string): { key: SectionKey; label: string; emoji: s
   return null;
 }
 
+// 是否像「条目标题行」：数字编号 或 emoji + 类目 + | + 标题
+// 板块大标题（🔥/🏢/💻/📊 + 板块名）不算，会被 detectSection 单独识别。
+function looksLikeItemTitle(line: string): boolean {
+  if (/^\*?\*?\s*\d+[.、]\s*\S/.test(line)) return true;
+  // emoji 行首 + 有 | / ｜ 分隔符
+  if (/^[^\w\u4e00-\u9fa5\d*#>][^|｜\n]*[|｜]\s*.+/u.test(line)) return true;
+  return false;
+}
+
+// closing（本期速览）段落兜底：命中以下任一则不应进入 closing
+// —— 防止新闻条目碎片（来源/启示/链接/条目标题）污染本期速览（参考 6/07 33 段事故）。
+function isClosingNoise(line: string): boolean {
+  if (/^来源[：:]/.test(line)) return true;
+  if (/^启示[：:]/.test(line)) return true;
+  if (/https?:\/\//.test(line)) return true;
+  if (looksLikeItemTitle(line)) return true;
+  return false;
+}
+
+// 把「来源：媒体 | https://...」填进 item.source / item.url
+function applySource(item: Partial<NewsItem>, rest: string): void {
+  const r = rest.trim();
+  const parts = r.split(/[|｜]/);
+  const src = (parts[0] ?? '').trim();
+  if (src && !item.source) item.source = src;
+  const urlMatch = r.match(/(https?:\/\/[^\s|｜)）]+)/);
+  if (urlMatch && !item.url) item.url = urlMatch[1];
+}
+
+// 填 insight（不覆盖已有）
+function applyInsight(item: Partial<NewsItem>, rest: string): void {
+  const v = rest.trim();
+  if (v && !item.insight) item.insight = v;
+}
+
+// 从一行里拆出内联的 启示： / 来源： 段，返回 { body, insight, source }
+// 格式假设：「<正文> 启示：<启示> 来源：<来源 | url>」，顺序出现、空格分隔。
+function splitInlineMeta(line: string): { body?: string; insight?: string; source?: string } {
+  const out: { body?: string; insight?: string; source?: string } = {};
+  let s = line;
+  // 先切 来源：（取最后一个，避免正文里出现“来源”词误切；但带冲号才算）
+  const srcIdx = s.search(/\s来源[：:]/);
+  if (srcIdx >= 0) {
+    out.source = s.slice(srcIdx).replace(/^\s*来源[：:]\s*/, '');
+    s = s.slice(0, srcIdx);
+  }
+  // 再切 启示：
+  const insIdx = s.search(/\s启示[：:]/);
+  if (insIdx >= 0) {
+    out.insight = s.slice(insIdx).replace(/^\s*启示[：:]\s*/, '');
+    s = s.slice(0, insIdx);
+  }
+  const body = s.trim();
+  if (body) out.body = body;
+  return out;
+}
+
 interface RawDayBlock {
   date: string;
   rawTitle?: string;
@@ -64,7 +121,14 @@ export function parseDay(day: RawDayBlock): DailyReport {
   function flushSection() {
     flushItem();
     if (currentSection && currentSection.items.length) {
-      sections.push(currentSection);
+      // 板块去重：同一 key 的 section 合并，不重复 push
+      // （防止源文档里「本期小结」后补发的迟到板块产生重复 sections，参考 6/05 6/07 事故）
+      const existing = sections.find((s) => s.key === currentSection!.key);
+      if (existing) {
+        existing.items.push(...currentSection.items);
+      } else {
+        sections.push(currentSection);
+      }
     }
     currentSection = null;
   }
@@ -88,7 +152,15 @@ export function parseDay(day: RawDayBlock): DailyReport {
     if (sec && /^#{0,3}\s*[🔥🏢💻📊]/u.test(line)) {
       flushSection();
       inClosing = false;
-      currentSection = { ...sec, items: [] };
+      // 板块去重：若该 key 已存在，续接现有 section 而不新建（迟到板块合并回去）
+      const existing = sections.find((s) => s.key === sec.key);
+      if (existing) {
+        // 从 sections 里取出来当 currentSection，结束时 flushSection 会原地合并
+        sections.splice(sections.indexOf(existing), 1);
+        currentSection = existing;
+      } else {
+        currentSection = { ...sec, items: [] };
+      }
       continue;
     }
 
@@ -100,11 +172,18 @@ export function parseDay(day: RawDayBlock): DailyReport {
     }
 
     if (inClosing) {
-      // 把段落原文堆进 closing
-      if (line.length > 20 && !/^#/.test(line)) {
-        closing.push(line.replace(/^\*\*[^*]+\*\*\s*/, '').trim());
+      // 遇到条目标题行（后补的迟到新闻）→ 复位，让后续逻辑当作正常条目处理
+      // （参考 6/07 33 段污染：「本期小结」后又出现 emoji 条目标题，不能全吞进 closing）
+      if (looksLikeItemTitle(line) && currentSection) {
+        inClosing = false;
+        // 不 continue，落到下面的条目标题识别逻辑
+      } else {
+        // 只把「真正的速览段落」堆进 closing：足够长、不是来源/启示/链接/条目标题
+        if (line.length > 20 && !/^#/.test(line) && !isClosingNoise(line)) {
+          closing.push(line.replace(/^\*\*[^*]+\*\*\s*/, '').trim());
+        }
+        continue;
       }
-      continue;
     }
 
     if (!currentSection) continue;
@@ -137,24 +216,33 @@ export function parseDay(day: RawDayBlock): DailyReport {
 
     if (!currentItem) continue;
 
-    // 启示
+    // 启示（整行）
     if (/^启示[：:]/.test(line)) {
-      currentItem.insight = line.replace(/^启示[：:]\s*/, '').trim();
+      applyInsight(currentItem, line.replace(/^启示[：:]\s*/, ''));
       continue;
     }
 
-    // 来源 + 链接
+    // 来源 + 链接（整行）
     if (/^来源[：:]/.test(line)) {
-      const rest = line.replace(/^来源[：:]\s*/, '');
-      // 期望格式 "来源：媒体名 | https://..."
-      const parts = rest.split(/[|｜]/);
-      currentItem.source = (parts[0] ?? '').trim();
-      const urlMatch = rest.match(/(https?:\/\/[^\s|｜)）]+)/);
-      if (urlMatch) currentItem.url = urlMatch[1];
+      applySource(currentItem, line.replace(/^来源[：:]\s*/, ''));
       continue;
     }
 
-    // 否则当作 body 累加
+    // 关键修复：很多日报把「正文 + 启示：… + 来源：…」写在同一物理行（空格分隔），
+    // 旧逻辑只认行首 ^启示/^来源，导致 insight/source/url 全丢、整段堆进 body。
+    // 这里把内联的 启示：/来源： 段切出来，正文部分继续走 body 累加。
+    {
+      const inline = splitInlineMeta(line);
+      if (inline.insight) applyInsight(currentItem, inline.insight);
+      if (inline.source) applySource(currentItem, inline.source);
+      if (inline.body) {
+        if (currentItem.body) currentItem.body = `${currentItem.body} ${inline.body}`;
+        else currentItem.body = inline.body;
+      }
+      continue;
+    }
+
+    // 否则当作 body 累加（理论上到不了这里，保留兜底）
     if (currentItem.body) {
       currentItem.body = `${currentItem.body} ${line}`;
     } else {
@@ -172,7 +260,51 @@ export function parseDay(day: RawDayBlock): DailyReport {
   };
 }
 
+// 日期去重 / 合并：源文档可能出现同一天多个「## YYYY-MM-DD AI 日报」标题块
+// （参考 6/07：L495 / L525 两个 2026-06-07 标题）——同日多块合并为一，避免后者覆盖前者
+function mergeDuplicateDates(reports: DailyReport[]): DailyReport[] {
+  const byDate = new Map<string, DailyReport>();
+  for (const r of reports) {
+    const existing = byDate.get(r.date);
+    if (!existing) {
+      byDate.set(r.date, r);
+      continue;
+    }
+    // 合并 sections（按 key）
+    for (const s of r.sections) {
+      const es = existing.sections.find((x) => x.key === s.key);
+      if (es) es.items.push(...s.items);
+      else existing.sections.push(s);
+    }
+    // 合并 closing（去重）
+    if (r.closing && r.closing.length) {
+      const set = new Set(existing.closing ?? []);
+      const merged = [...(existing.closing ?? [])];
+      for (const c of r.closing) if (!set.has(c)) { set.add(c); merged.push(c); }
+      existing.closing = merged;
+    }
+    if (!existing.summary && r.summary) existing.summary = r.summary;
+  }
+  return [...byDate.values()];
+}
+
+// item 去重（按 title）：同一 section 合并后可能出现重复条目
+function dedupeItems(report: DailyReport): DailyReport {
+  for (const s of report.sections) {
+    const seen = new Set<string>();
+    s.items = s.items.filter((it) => {
+      const k = (it.title ?? '').trim();
+      if (!k || seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  }
+  return report;
+}
+
 // 入口：raw text -> reports[]
 export function parseAll(rawContent: string): DailyReport[] {
-  return splitByDate(rawContent).map(parseDay).filter((r) => r.sections.length > 0);
+  const parsed = splitByDate(rawContent).map(parseDay);
+  const merged = mergeDuplicateDates(parsed).map(dedupeItems);
+  return merged.filter((r) => r.sections.length > 0);
 }

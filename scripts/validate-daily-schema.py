@@ -14,6 +14,11 @@ AI 日报 daily JSON schema 校验脚本
     python3 scripts/validate-daily-schema.py                    # 校验最新日期
     python3 scripts/validate-daily-schema.py 2026-05-18         # 校验指定日期
     python3 scripts/validate-daily-schema.py --all              # 校验所有
+    python3 scripts/validate-daily-schema.py --recent 3         # 只校验最近 N 天（cron 发布门禁用）
+    python3 scripts/validate-daily-schema.py --changed          # 只校验 git 工作区有改动的 daily 文件（发布门禁用）
+
+注意：--all 会把历史上所有（含早期标准较松的）日报都纳入校验，仅适合人工审计；
+      cron / CI 发布门禁应使用 --recent 或 --changed，避免被历史坏数据永久阻塞。
 """
 import json
 import sys
@@ -91,6 +96,28 @@ def main():
     args = sys.argv[1:]
     if '--all' in args:
         files = sorted(glob(os.path.join(DAILY_DIR, '*.json')))
+    elif '--recent' in args:
+        idx = args.index('--recent')
+        n = int(args[idx + 1]) if idx + 1 < len(args) and args[idx + 1].isdigit() else 3
+        files = sorted(glob(os.path.join(DAILY_DIR, '*.json')))[-n:]
+    elif '--changed' in args:
+        # 只校验 git 工作区里有改动（M/A/??）的 daily 文件
+        import subprocess
+        try:
+            out = subprocess.check_output(
+                ['git', 'status', '--porcelain', '--', 'src/data/daily'],
+                cwd=REPO_ROOT, text=True)
+        except Exception as e:
+            print(f'git status 失败: {e}', file=sys.stderr)
+            sys.exit(1)
+        files = []
+        for line in out.splitlines():
+            path = line[3:].strip().strip('"')
+            if path.endswith('.json'):
+                files.append(os.path.join(REPO_ROOT, path))
+        if not files:
+            print('（无改动的 daily 文件，跳过校验）')
+            sys.exit(0)
     elif args and not args[0].startswith('--'):
         files = [os.path.join(DAILY_DIR, args[0] + '.json')]
     else:

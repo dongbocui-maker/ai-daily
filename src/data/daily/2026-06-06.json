@@ -3,17 +3,10 @@
   "title": "2026-06-06",
   "sections": [
     {
-      "key": "enterprise",
-      "label": "企业级 AI 实践",
-      "emoji": "🏢",
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
       "items": [
-        {
-          "title": "🛠️ 工具演进 | GitHub Copilot 将 VS Code Agents Window 推入 Stable Preview",
-          "body": "GitHub 6 月 3 日发布 VS Code 5 月更新，Agents Window 进入 Stable Preview，并强化远程 Agent 会话、BYOK、终端安全与效率能力。Copilot 正从 IDE 内的补全工具持续升级为可托管、可远程运行、可被企业管理的 Agent 工作空间，开发流程也随之从“写代码”转向“调度任务”。",
-          "insight": "AI Coding 的企业采购关注点将从模型效果扩展到远程会话、权限、安全和预算控制等工程治理能力。",
-          "source": "GitHub Blog",
-          "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/"
-        },
         {
           "title": "📜 监管政策 | AI 领袖联名敦促美国国会堵住 AI 辅助生物武器风险",
           "body": "The Verge 6 月 4 日报道，OpenAI、Anthropic、Microsoft、Meta、Google DeepMind 等 AI 领袖联名要求美国国会强制合成 DNA/RNA 供应商进行订单筛查。公开信认为，在线订购合成 DNA 已成为现代科研基础设施，但若缺少统一筛查，先进 AI 可能降低生物武器设计与获取门槛。",
@@ -29,6 +22,20 @@
           "url": "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/"
         },
         {
+          "title": "🔒 安全分析 | MIT Technology Review：Meta 账号被黑显示 AI 安全不止模型神话",
+          "insight": "企业 AI 安全要覆盖账号体系、客服/社交机器人、权限继承和异常检测，不能只做模型红队。",
+          "source": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/",
+          "body": "MIT Technology Review 6 月 5 日分析 Meta 账号被黑事件，指出 AI 安全风险不仅来自模型能力，也来自身份、平台流程、聊天机器人接口和运营安全的组合漏洞。文章提醒业界不要只围绕“超级智能风险”讨论，而忽视已经可被利用的现实攻击面。"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
           "title": "🇨🇳 中国案例 | 腾讯云发布 WorkBuddy 企业版，把个人 AI 助手升级为企业超级团队工作台",
           "body": "36氪 6 月 5 日快讯称，腾讯云发布 WorkBuddy Enterprise 与办公智能体套件 Agent Suite，提供 7×24 专家数字员工、人与 AI 协作的“团队”模式和企业级管理后台。腾讯同时披露 CodeBuddy 已覆盖内部超过 95% 工程师、整体编码时间缩短 40%，试图把内部 AI 生产力实践打包为企业组织转型方案。",
           "insight": "国内大厂正在把内部 AI 工具链外溢为企业级套件，客户评估时应重点看是否具备组织管理、权限和协作治理能力。",
@@ -43,23 +50,18 @@
           "url": "https://arxiv.org/abs/2606.04037"
         },
         {
-          "title": "🇨🇳 中国开源 | 阿里开源 Open Code Review，把内部 AI 代码评审能力产品化",
-          "body": "阿里开源 Open Code Review，称其源自集团内部官方 AI 代码评审助手，已服务数万开发者、识别数百万缺陷。项目采用确定性流水线加 LLM Agent 的混合架构，支持精确行级评论，并内置 NPE、线程安全、XSS、SQL 注入等细粒度规则，兼容 OpenAI 与 Anthropic。",
-          "insight": "大型企业的代码评审 Agent 不会只靠通用模型，规则库、确定性流水线和 LLM Agent 的混合架构更接近生产要求。",
-          "source": "GitHub / Alibaba",
-          "url": "https://github.com/alibaba/open-code-review"
-        },
-        {
           "title": "🔬 技术突破 | 有人靠 CPU 把 AI 算力密度卷到新高度，端侧推理成本战继续升级",
-          "body": "量子位 6 月 7 日头条关注 CPU 路线在 AI 算力密度上的新进展，核心价值在于降低对昂贵 GPU 的单一路径依赖。随着小模型、量化和端侧部署成熟，AI 基础设施竞争正在从“买更多 GPU”扩展到“用更便宜硬件跑更多任务”。 启示：企业做 AI 成本优化时，应把模型压缩、异构算力和工作负载分层纳入架构设计，而非只盯 GPU 采购。 来源：量子位 | https://www.qbitai.com/2026/06/431045.html"
+          "insight": "企业做 AI 成本优化时，应把模型压缩、异构算力和工作负载分层纳入架构设计，而非只盯 GPU 采购。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/431045.html",
+          "body": "量子位 6 月 7 日头条关注 CPU 路线在 AI 算力密度上的新进展，核心价值在于降低对昂贵 GPU 的单一路径依赖。随着小模型、量化和端侧部署成熟，AI 基础设施竞争正在从“买更多 GPU”扩展到“用更便宜硬件跑更多任务”。"
         },
         {
           "title": "🤖 论文 | Meta-Agent Challenge 追问：当前 Agent 能否自主开发下一个 Agent",
-          "body": "The Meta-Agent Challenge 论文讨论当前 Agent 是否具备自主开发、调试和迭代 Agent 系统的能力，回应了近期递归自我改进热潮。研究把“会写代码”与“能独立构建可靠 Agent”区分开来，强调评估需要覆盖需求分解、架构设计、测试和长期维护。 启示：AI 自我改进仍需严密评测与安全边界，企业不宜把 Agent 自动构建 Agent 当作无需监督的生产能力。 来源：arXiv | https://arxiv.org/html/2606.04455v1"
-        },
-        {
-          "title": "🔒 安全分析 | MIT Technology Review：Meta 账号被黑显示 AI 安全不止模型神话",
-          "body": "MIT Technology Review 6 月 5 日分析 Meta 账号被黑事件，指出 AI 安全风险不仅来自模型能力，也来自身份、平台流程、聊天机器人接口和运营安全的组合漏洞。文章提醒业界不要只围绕“超级智能风险”讨论，而忽视已经可被利用的现实攻击面。 启示：企业 AI 安全要覆盖账号体系、客服/社交机器人、权限继承和异常检测，不能只做模型红队。 来源：MIT Technology Review | https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/"
+          "insight": "AI 自我改进仍需严密评测与安全边界，企业不宜把 Agent 自动构建 Agent 当作无需监督的生产能力。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/html/2606.04455v1",
+          "body": "The Meta-Agent Challenge 论文讨论当前 Agent 是否具备自主开发、调试和迭代 Agent 系统的能力，回应了近期递归自我改进热潮。研究把“会写代码”与“能独立构建可靠 Agent”区分开来，强调评估需要覆盖需求分解、架构设计、测试和长期维护。"
         }
       ]
     },
@@ -69,28 +71,39 @@
       "emoji": "💻",
       "items": [
         {
-          "title": "📄 论文 | Agents’ Last Exam：长周期 Agent 评测暴露真实任务通过率瓶颈",
-          "body": "arXiv 6 月新论文 Agents’ Last Exam 聚焦长周期、经济意义更强的 Agent 任务，试图弥补传统短题评测对真实工作能力的高估。论文与近期 SWE-Marathon 等基准形成呼应：模型会做很多局部任务，但在长链路一致性、工具使用和抗奖励黑客方面仍有明显短板。 启示：企业评估 Agent 不能只看 benchmark 排名，应引入端到端业务任务、失败恢复和长期一致性测试。 来源：arXiv | https://arxiv.org/abs/2606.05405"
+          "title": "🛠️ 工具演进 | GitHub Copilot 将 VS Code Agents Window 推入 Stable Preview",
+          "body": "GitHub 6 月 3 日发布 VS Code 5 月更新，Agents Window 进入 Stable Preview，并强化远程 Agent 会话、BYOK、终端安全与效率能力。Copilot 正从 IDE 内的补全工具持续升级为可托管、可远程运行、可被企业管理的 Agent 工作空间，开发流程也随之从“写代码”转向“调度任务”。",
+          "insight": "AI Coding 的企业采购关注点将从模型效果扩展到远程会话、权限、安全和预算控制等工程治理能力。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/"
+        },
+        {
+          "title": "🇨🇳 中国开源 | 阿里开源 Open Code Review，把内部 AI 代码评审能力产品化",
+          "body": "阿里开源 Open Code Review，称其源自集团内部官方 AI 代码评审助手，已服务数万开发者、识别数百万缺陷。项目采用确定性流水线加 LLM Agent 的混合架构，支持精确行级评论，并内置 NPE、线程安全、XSS、SQL 注入等细粒度规则，兼容 OpenAI 与 Anthropic。",
+          "insight": "大型企业的代码评审 Agent 不会只靠通用模型，规则库、确定性流水线和 LLM Agent 的混合架构更接近生产要求。",
+          "source": "GitHub / Alibaba",
+          "url": "https://github.com/alibaba/open-code-review"
         },
         {
           "title": "🛠️ 工具演进 | Copilot SDK 正式 GA，GitHub 把 Copilot 能力开放给外部应用",
-          "body": "GitHub 6 月 2 日宣布 Copilot SDK 正式 GA，开发者可以把 Copilot 的上下文理解、代码建议和对话式能力接入自己的工具链。相比 IDE 内功能更新，SDK GA 的意义在于把 Copilot 从单一产品扩展为可嵌入平台能力。 启示：企业内部开发平台可以围绕 SDK 做私有流程集成，但同时需要统一权限、日志和代码数据边界。 来源：GitHub Blog | https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/"
+          "insight": "企业内部开发平台可以围绕 SDK 做私有流程集成，但同时需要统一权限、日志和代码数据边界。",
+          "source": "GitHub Blog",
+          "url": "https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/",
+          "body": "GitHub 6 月 2 日宣布 Copilot SDK 正式 GA，开发者可以把 Copilot 的上下文理解、代码建议和对话式能力接入自己的工具链。相比 IDE 内功能更新，SDK GA 的意义在于把 Copilot 从单一产品扩展为可嵌入平台能力。"
+        },
+        {
+          "title": "📄 论文 | Agents’ Last Exam：长周期 Agent 评测暴露真实任务通过率瓶颈",
+          "insight": "企业评估 Agent 不能只看 benchmark 排名，应引入端到端业务任务、失败恢复和长期一致性测试。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2606.05405",
+          "body": "arXiv 6 月新论文 Agents’ Last Exam 聚焦长周期、经济意义更强的 Agent 任务，试图弥补传统短题评测对真实工作能力的高估。论文与近期 SWE-Marathon 等基准形成呼应：模型会做很多局部任务，但在长链路一致性、工具使用和抗奖励黑客方面仍有明显短板。"
         }
       ]
     }
   ],
   "closing": [
-    "🔒 安全编码 | Anthropic 开源 Claude 自主漏洞发现与修复参考框架",
     "Anthropic 在 GitHub 开源 defending-code-reference-harness，包含 threat-model、vuln-scan、triage、patch 等 Claude Code skills 与自主扫描 harness，沉淀其安全团队与 Claude 协同做威胁建模、漏洞扫描、分诊和补丁生成的经验。这标志着 AI Coding 的竞争正从生成代码扩展到主动发现并修复安全问题。",
-    "启示：安全团队可以把编码 Agent 纳入漏洞管理链路，但需要配套扫描边界、补丁评审和责任追踪机制。",
-    "来源：GitHub / Anthropic | https://github.com/anthropics/defending-code-reference-harness",
-    "🇨🇳 科研进展 | 智源与清华 Brainμ 登上 Science，用脑科学多模态基础模型解析记忆—睡眠机制",
     "量子位 6 月 5 日报道，智源与清华合作成果发表于 Science，Brainμ0 被用于处理睡眠 EEG 信号与记忆相关单细胞双光子钙成像信号，辅助研究人员验证记忆重激活与睡眠状态变化之间的关系。该成果展示了 AI 基础模型在复杂生命科学多模态数据分析、假设验证与状态识别中的潜力。",
-    "启示：AI for Science 正从“加速计算”走向“参与假设验证”，生命科学领域将更依赖跨模态基础模型做研究基础设施。",
-    "来源：量子位 | https://www.qbitai.com/2026/06/431033.html",
-    "📊 行业分析 | TechCrunch：Token 账单到期，Linux Foundation 推 Tokenomics Foundation",
-    "TechCrunch 6 月 5 日报道，企业 AI 成本治理正在进入“Token 账单到期”阶段：一些公司 4—5 月已超出全年 Token 预算数倍，Linux Foundation 因此推出 Tokenomics Foundation，试图像 FinOps 管理云支出一样，为 AI Token 消耗建立标准与成本纪律。Agentic 工具让单位开发者消耗量激增，低单价并不等于低总账单。",
-    "启示：企业 AI ROI 管理必须从项目预算转向 Token 级成本观测、限额、归因与优化，否则 Agent 普及会迅速放大账单失控。",
-    "来源：TechCrunch | https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/"
+    "TechCrunch 6 月 5 日报道，企业 AI 成本治理正在进入“Token 账单到期”阶段：一些公司 4—5 月已超出全年 Token 预算数倍，Linux Foundation 因此推出 Tokenomics Foundation，试图像 FinOps 管理云支出一样，为 AI Token 消耗建立标准与成本纪律。Agentic 工具让单位开发者消耗量激增，低单价并不等于低总账单。"
   ]
 }

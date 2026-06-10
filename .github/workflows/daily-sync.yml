@@ -35,6 +35,10 @@ jobs:
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
         run: pnpm sync
 
+      - name: Validate daily schema
+        # 校验门禄：schema 失败则不 commit（参考 AUDIT-2026-06-11 H1）
+        run: python3 scripts/validate-daily-schema.py --changed
+
       # GitHub Trending 同步已拆到 .github/workflows/github-trending.yml
       # （独立调度：日榜每天 / 周榜+年榜每周一 / 月榜每月1号）
 

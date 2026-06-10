@@ -45,7 +45,7 @@ SIGNAL_NAMES = {
 }
 MODEL_LABELS = {
     'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
-    'aigw-claude-48-main/claude-opus-4-8': 'AIGW CLAUDE 4.8',
+    'aigw-claude-48-main/claude-opus-4-8': 'OPUS-4.8',
     'aigw-claude-48-main/claude-fable-5': 'AIGW FABLE 5',
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',

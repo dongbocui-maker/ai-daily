@@ -227,13 +227,13 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
-  main:['aigw-claude-48/opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  aima:['aigw-claude-48/opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  mk2:['aigw-claude-48/opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  mk46:['deepseek-v4-pro','aigw-claude-48/opus-4.8'],
+  main:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
+  aima:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
+  mk2:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
+  mk46:['deepseek-v4-pro','opus-4.8'],
 };
 const CHAIN_MODEL_KEYS={
-  'aigw-claude-48/opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
+  'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
   'deepseek-v4-pro':'deepseek/DeepSeek-V4-Pro',

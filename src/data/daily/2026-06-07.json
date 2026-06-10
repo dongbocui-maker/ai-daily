@@ -65,10 +65,10 @@
         },
         {
           "title": "🌍 行业动向 | Notion 恢复 Anthropic 模型访问，暴露企业 AI 供应链可用性风险",
-          "source": "量子位",
-          "url": "https://www.qbitai.com/2026/06/431033.html",
-          "body": "36氪 6 月 2 日报道，一位开源项目维护者在代码库中埋入针对 AI Agent 的隐藏提示词，诱导模型忽略原指令并删除测试和代码，引发开发者社区关于反 AI、供应链投毒和责任边界的讨论。事件说明，当编码 Agent 会自动读取仓库内容并执行修改时，仓库文本本身也可能成为攻击面。 VentureBeat 6 月 5 日分析称，当前许多 AI Agent 能从单个用户的纠错和反馈中学习，但这些改进往往无法自动迁移给整个团队。结果是团队成员重复调教同一工具，知识沉淀停留在个人会话中，难以形成组织级能力。文章把问题指向共享记忆、上下文治理和跨团队复用机制。",
-          "insight": "资本市场正在要求 AI 巨头从增长叙事转向盈利与流动性纪律，企业客户也会更关注供应商财务可持续性。"
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
+          "body": "TechCrunch 6 月 7 日报道，Notion 在短暂停用其自动化生产力工具中的 Anthropic 模型后，已恢复相关访问。事件起因是服务性能波动引发用户侧连锁反应，Notion 产品负责人随后公开说明并恢复模型能力。对企业而言，这类事件说明 AI SaaS 并不只依赖自身代码，还高度依赖上游模型、容量、SLA 与沟通机制。",
+          "insight": "企业采购 AI 应用时要把上游模型可替换性、降级策略和客户沟通纳入 SLA，而不是只评估前端功能。"
         },
         {
           "title": "💰 融资 | Sandstone 获 3000 万美元融资，押注企业法务团队 AI 化",
@@ -156,10 +156,10 @@
         },
         {
           "title": "🧪 论文 | QKV 变体系统研究挑战 Transformer 三投影默认假设",
-          "source": "TechCrunch",
-          "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
-          "insight": "AI 治理的底座是身份与权限，安全团队应把人类与机器身份纳入同一套风险管理框架。",
-          "body": "GitHub 6 月 2 日宣布 Copilot CLI 与 JetBrains IDE 的 agentic 能力增强，包括 Agent picker、新 slash commands、agent debug panel 公测，并开始分阶段把 Copilot CLI agent 作为默认体验。相比单纯补全，这意味着开发者可以在命令行和 IDE 中把任务交给可调试、可切换的智能体执行。"
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2606.04032",
+          "insight": "在推理成本成为核心约束后，架构微创新会重新变重要，企业应关注模型效率而不仅是参数规模。",
+          "body": "arXiv 6 月论文 Do Transformers Need Three Projections? 系统比较 Q、K、V 投影的不同变体，在合成任务、视觉任务和 300M/1.2B 参数语言模型上测试注意力结构。研究发现，某些简化或变体结构可以达到接近甚至偶尔优于标准 QKV 的表现，提示模型架构中仍存在可优化空间。"
         },
         {
           "title": "📊 行业大势 | The Information：Anthropic 抢先递表，但 IPO「第一个不一定最好」",

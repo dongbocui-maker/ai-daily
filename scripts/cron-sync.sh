@@ -21,9 +21,15 @@ cd "$REPO"
   echo "===== $(date '+%F %T %Z') ====="
   echo "[cron] starting sync"
 
-  # Make sure remote is reachable & up-to-date
+  # Make sure remote is reachable & up-to-date.
+  # 用 ff-only 而非 reset --hard：若本地有未推送 commit 会停下报错，
+  # 不会静默吞掉数据（AUDIT-2026-06-11 M1）。
   git fetch --quiet origin main
-  git reset --hard origin/main --quiet
+  if ! git merge --ff-only origin/main --quiet; then
+    echo "[cron] ❌ 本地与 origin/main 分叉（有未推送 commit?），拒绝自动 reset，需人工介入"
+    git status --short
+    exit 1
+  fi
 
   # Run the sync (飞书 → src/data/daily)
   # GitHub Trending 独立 cron 走 cron-github.sh

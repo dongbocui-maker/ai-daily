@@ -5,7 +5,7 @@
 //   兜底 FALLBACK_URL = 打包进站点的静态 JSON（tunnel 挂了时不白屏）
 const BASE = import.meta.env.BASE_URL;
 const LIVE_URL = 'https://data.aidigest.club/dashboard.json';
-const FALLBACK_URL = `${BASE}agents/data/dashboard-data.json`;
+const FALLBACK_URL = `${BASE}agents/data/dashboard-fallback.json`;
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -227,16 +227,16 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
-  main:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  aima:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  mk2:['opus-4.8','fable-5','gpt-5.5','deepseek-v4-pro'],
-  mk46:['deepseek-v4-pro','opus-4.8'],
+  main:['opus-4.8','fable-5','gpt-5.5','qwen3.7-max'],
+  aima:['opus-4.8','fable-5','gpt-5.5','qwen3.7-max'],
+  mk2:['opus-4.8','fable-5','gpt-5.5','qwen3.7-max'],
+  mk46:['qwen3.7-max','opus-4.8','gpt-5.5'],
 };
 const CHAIN_MODEL_KEYS={
   'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
-  'deepseek-v4-pro':'deepseek/DeepSeek-V4-Pro',
+  'qwen3.7-max':'qwen/qwen3.7-max',
 };
 const chainModelKey = n => CHAIN_MODEL_KEYS[n] || n;
 const fmt = n => n.toLocaleString('en-US');
@@ -255,7 +255,7 @@ function reactorSvg(ac,lit,id){
 let tickerEvents = [];
 const EVENTS_URLS = [
   LIVE_URL.replace(/dashboard\.json$/, 'events.json'),
-  FALLBACK_URL.replace(/dashboard-data\.json$/, 'events.json'),
+  FALLBACK_URL.replace(/dashboard-fallback\.json$/, 'events.json'),
 ];
 async function loadTicker(){
   try {

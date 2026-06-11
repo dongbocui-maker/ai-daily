@@ -12,6 +12,8 @@ PRICING = {
     ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
     ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
     ('deepseek','DeepSeek-V4-Pro'):        (0.435,0.87,0.435,0.003625),
+    # qwen3.7-max @ DashScope，价格为估算（公开源称 ~$1.25/M in），待 pricing-sync 核对
+    ('qwen','qwen3.7-max'):                (1.25,5.00,1.25,0.125),
 }
 def price(prov,model):
     return PRICING.get((prov,model)) or PRICING.get((prov,(model or '').lower())) or (0,0,0,0)
@@ -50,6 +52,7 @@ MODEL_LABELS = {
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
+    'qwen/qwen3.7-max': 'QWEN3.7 MAX',
 }
 EVENT_TARGETS = [
     '/root/.openclaw/workspace/projects/agents-dashboard/events.json',
@@ -281,11 +284,12 @@ out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
 new_fallback_events, total_signal_events = refresh_fallback_events(agents_out)
 # 输出到两处：
-#  1) 站点 build 用的静态 fallback JSON
-#  2) 实时服务(serve.py @8787)读的 live/ 路径
+#  1) ai-daily 仓库内 git 跟踪的 fallback 快照（tunnel 挂了时站点兜底，由 deploy 脚本低频 commit）
+#  2) 实时服务(serve.py @8787)读的 live/ 路径（经 Cloudflare Tunnel data.aidigest.club 实时服务，不入 git）
+# 注：旧的 public/agents/data/dashboard-data.json 已 gitignore 弃用（AUDIT-2026-06-11 M2），改写 fallback。
 import os as _os
 _targets = [
-    '/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-data.json',
+    '/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-fallback.json',
     '/root/.openclaw/workspace/projects/agents-dashboard/live/dashboard-data.json',
 ]
 for _t in _targets:

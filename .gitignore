@@ -29,3 +29,6 @@ scripts/podcast-pipeline/__pycache__/
 
 # Obsidian sync state (per-machine, not tracked)
 .obsidian-sync-last-commit
+
+# dashboard live telemetry (churns every aggregate; served via tunnel, fallback is dashboard-fallback.json)
+public/agents/data/dashboard-data.json

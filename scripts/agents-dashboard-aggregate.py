@@ -122,19 +122,41 @@ def refresh_fallback_events(agents):
         primary = primary_models.get(aid)
         if not current or not primary:
             continue
-        prev = (state.get(aid) or {}).get('active_model')
+        st = state.get(aid) or {}
+        prev = st.get('active_model')
+        stored_primary = st.get('primary_model')
+        prev_primary = st.get('prev_primary')
+        primary_since = st.get('primary_since')
         name = SIGNAL_NAMES.get(aid, aid.upper())
         ts = _event_ts_cn(agent.get('last_ts'))
-        if current != primary:
-            if prev and prev != current and prev != primary:
+        # 配置变更检测：primary 被改时记下变更时刻与旧 primary，
+        # 变更前的调用按旧基准评判，避免换模型日产生大量伪 FALLBACK 告警 (AUDIT-2026-06-11 后续)
+        if stored_primary and stored_primary != primary:
+            prev_primary = stored_primary
+            primary_since = now.strftime('%Y-%m-%dT%H:%M:%S+08:00')
+            push(primary_since, 'info', f'{name} PRIMARY CHANGED - {_model_label(stored_primary)} -> {_model_label(primary)}')
+        # 调用发生时刻生效的 primary：早于变更时刻的调用用旧 primary 评判
+        eff_primary = primary
+        if primary_since and prev_primary:
+            try:
+                call_dt = datetime.fromisoformat(str(agent.get('last_ts','')).replace('Z','+00:00'))
+                since_dt = datetime.fromisoformat(primary_since)
+                if call_dt < since_dt:
+                    eff_primary = prev_primary
+            except Exception:
+                pass
+        if current != eff_primary:
+            if prev and prev != current and prev != eff_primary:
                 push(ts, 'warn', f'{name} FALLBACK ROUTE CHANGED - {_model_label(prev)} -> {_model_label(current)}')
             else:
-                push(ts, 'warn', f'{name} FALLBACK ACTIVE - {_model_label(primary)} ROUTED TO {_model_label(current)}')
-        elif prev and prev != primary:
+                push(ts, 'warn', f'{name} FALLBACK ACTIVE - {_model_label(eff_primary)} ROUTED TO {_model_label(current)}')
+        elif prev and prev != eff_primary:
             push(ts, 'info', f'{name} FALLBACK CLEARED - ROUTED BACK TO PRIMARY {_model_label(current)}')
         state[aid] = {
             'active_model': current,
             'primary_model': primary,
+            'prev_primary': prev_primary,
+            'primary_since': primary_since,
             'updated': now.strftime('%Y-%m-%dT%H:%M:%S+08:00')
         }
 

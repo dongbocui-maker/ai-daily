@@ -33,7 +33,7 @@ jobs:
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: pnpm sync
+        run: pnpm sync -- --date=$(TZ=Asia/Shanghai date +%F)
 
       - name: Validate daily schema
         # 校验门禄：schema 失败则不 commit（参考 AUDIT-2026-06-11 H1）

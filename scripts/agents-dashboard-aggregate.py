@@ -40,6 +40,8 @@ AGENTS = {
 # Signal/Fallback 规则：从 OpenClaw 配置读取各 Agent primary model。
 # active_model 只要偏离 primary，就视为 fallback；无论自动 fallback 还是手动 session model override，
 # 下一次 model.completed 被聚合后都会被捕捉并写入 Signal。
+# 注意：Claude CLI runtime 不一定写 model.completed trajectory；需从 session store 补当前 runtime/model，
+# 否则 dashboard 会把切换前最后一次 provider fallback 误当成当前 active model。
 OPENCLAW_CONFIG = '/root/.openclaw/openclaw.json'
 SIGNAL_NAMES = {
     'main': 'MAIN AGENT',
@@ -73,13 +75,16 @@ def _load_json(path, default):
     except Exception:
         return default
 
+def _agent_config_map():
+    cfg = _load_json(OPENCLAW_CONFIG, {})
+    return {item.get('id'): item for item in ((cfg.get('agents') or {}).get('list') or []) if item.get('id')}
+
 def _primary_models_from_config():
     cfg = _load_json(OPENCLAW_CONFIG, {})
     defaults = ((cfg.get('agents') or {}).get('defaults') or {}).get('model') or {}
     default_primary = defaults.get('primary')
     primaries = {}
-    for item in ((cfg.get('agents') or {}).get('list') or []):
-        aid = item.get('id')
+    for aid, item in _agent_config_map().items():
         if aid not in AGENTS:
             continue
         model_cfg = item.get('model') or {}
@@ -87,6 +92,42 @@ def _primary_models_from_config():
     for aid in AGENTS:
         primaries.setdefault(aid, default_primary)
     return primaries
+
+def _session_ms_to_iso(ms):
+    try:
+        return datetime.fromtimestamp(float(ms)/1000, timezone.utc).isoformat().replace('+00:00','Z')
+    except Exception:
+        return None
+
+def _canonical_active_from_session(aid):
+    """Return (active_model, last_ts) from latest session store entry.
+
+    Claude CLI sessions expose provider/model in sessions.json even when no model.completed
+    usage record is written. For dashboard fallback detection we normalize Claude CLI models
+    back to their canonical OpenClaw model ref (anthropic/...), matching config.primary.
+    """
+    sp = f'/root/.openclaw/agents/{aid}/sessions/sessions.json'
+    data = _load_json(sp, {})
+    best = None
+    for key, s in (data or {}).items():
+        if not isinstance(s, dict):
+            continue
+        upd = s.get('updatedAt') or s.get('lastUpdatedAt') or 0
+        if best is None or upd > best[0]:
+            best = (upd, s)
+    if not best:
+        return None, None
+    upd, s = best
+    provider = s.get('modelProvider') or s.get('providerOverride')
+    model = s.get('model') or s.get('modelOverride')
+    if not provider or not model:
+        return None, None
+    model = canon_model(model)
+    if provider == 'claude-cli' and str(model).startswith('claude-'):
+        active = f'anthropic/{model}'
+    else:
+        active = f'{provider}/{model}'
+    return active, _session_ms_to_iso(upd)
 
 def _event_ts_cn(ts):
     if ts:
@@ -227,6 +268,8 @@ daily_trend = defaultdict(lambda:{'tok':0,'cost':0.0})
 # per-agent 每日明细：{date: {aid: {'tok':,'cost':}}}
 daily_agent = defaultdict(lambda: defaultdict(lambda:{'tok':0,'cost':0.0}))
 
+agent_cfg = _agent_config_map()
+
 for aid,meta in AGENTS.items():
     by_model = defaultdict(lambda:{'input':0,'output':0,'cacheRead':0,'cacheWrite':0,'total':0,'calls':0,'cost':0.0,'save':0.0})
     last_ts = None
@@ -274,6 +317,16 @@ for aid,meta in AGENTS.items():
     cr_sum=sum(m['cacheRead'] for m in by_model.values())
     in_sum=sum(m['input']+m['cacheRead']+m['cacheWrite'] for m in by_model.values())
     eff = (cr_sum/in_sum*100) if in_sum else 0
+
+    # Claude CLI runtime 当前模型补偿：CLI 调用目前不稳定写入 model.completed trajectory，
+    # 以 sessions.json 的最新 modelProvider/model 作为 active_model 与活跃时间源。
+    runtime_id = (((agent_cfg.get(aid) or {}).get('agentRuntime') or {}).get('id'))
+    if runtime_id == 'claude-cli':
+        sess_model, sess_ts = _canonical_active_from_session(aid)
+        if sess_model and sess_ts and (not last_ts or sess_ts > last_ts):
+            last_model = sess_model
+            last_ts = sess_ts
+
     # 健康：last_ts 距今
     status='OFFLINE'; mins=None
     if last_ts:

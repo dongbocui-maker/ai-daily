@@ -10,6 +10,7 @@ PRICING = {
     ('aigw-claude-48-main','claude-fable-5'):   (10.00,50.00,12.50,1.00),
     ('azure-claude','claude-opus-4-7'):    (5.00,25.00,6.25,0.50),
     ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
+    ('anthropic','claude-sonnet-4-6'):      (3.00,15.00,3.75,0.30),
     ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
     ('deepseek','DeepSeek-V4-Pro'):        (0.435,0.87,0.435,0.003625),
     # qwen3.7-max @ DashScope，价格为估算（公开源称 ~$1.25/M in），待 pricing-sync 核对
@@ -33,6 +34,7 @@ AGENTS = {
     'aima':{'name':'银月','mark':'P.E.P.P.E.R.','role':'PERSONAL ASSISTANT','emoji':'🌶️','ac':'#e89bb8','lit':'#ffd0e6'},
     'mk2': {'name':'MK2','mark':'MARK II','role':'ENGINEER','emoji':'🦐','ac':'#cfdbe6','lit':'#9fe8ff'},
     'mk46':{'name':'Mark 46','mark':'MARK XLVI','role':'QC AUDITOR','emoji':'🛡','ac':'#caa6ff','lit':'#e0c4ff'},
+    'claude-researcher':{'name':'MK51 哨兵','mark':'MARK LI','role':'SENTINEL RESEARCHER','emoji':'🛰️','ac':'#4fd4ff','lit':'#b8f3ff'},
 }
 
 # Signal/Fallback 规则：从 OpenClaw 配置读取各 Agent primary model。
@@ -44,6 +46,7 @@ SIGNAL_NAMES = {
     'aima': 'SILVERMOON AGENT',
     'mk2': 'MK2 AGENT',
     'mk46': 'MK46 AGENT',
+    'claude-researcher': 'MK51 SENTINEL',
 }
 MODEL_LABELS = {
     'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
@@ -53,6 +56,7 @@ MODEL_LABELS = {
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
     'qwen/qwen3.7-max': 'QWEN3.7 MAX',
+    'anthropic/claude-sonnet-4-6': 'SONNET 4.6',
 }
 EVENT_TARGETS = [
     '/root/.openclaw/workspace/projects/agents-dashboard/events.json',

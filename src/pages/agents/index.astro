@@ -240,6 +240,12 @@ const CHAIN_MODEL_KEYS={
   'qwen3.7-max':'qwen/qwen3.7-max',
   'sonnet-4.6':'anthropic/claude-sonnet-4-6',
 };
+const CARD_NAME_OVERRIDES={
+  main:'钢铁虾 统帅',
+  aima:'银月 副翎',
+  mk2:'MK2 工程师',
+  mk46:'MK46 校官',
+};
 const chainModelKey = n => CHAIN_MODEL_KEYS[n] || n;
 const fmt = n => n.toLocaleString('en-US');
 const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
@@ -343,10 +349,11 @@ function render(DATA){
     const idle = a.idle_min==null?'—':(a.idle_min<60?a.idle_min+'m ago':a.idle_min<1440?Math.round(a.idle_min/60)+'h ago':Math.round(a.idle_min/1440)+'d ago');
     const pct=(a.total_tok/maxTok*100).toFixed(0);
     const mdls=a.models.slice(0,3).map(m=>m.name.split('/')[1]+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
+    const cardName=CARD_NAME_OVERRIDES[aid]||a.name;
     return `<div class="suit ${st}">
       <div class="suit-head">
         <div class="reactor ${st}" style="--ac:${a.ac||'#888'};--glow:${(a.lit||'#7fdfff')}55">${reactorSvg(a.ac||'#888', a.lit||'#7fdfff', aid||idx)}</div>
-        <div class="suit-id"><div class="mark">${a.mark}</div><div class="nm">${a.name}</div><div class="role">${a.role}</div></div>
+        <div class="suit-id"><div class="mark">${a.mark}</div><div class="nm">${cardName}</div><div class="role">${a.role}</div></div>
         <div class="badge ${st}">● ${a.status}</div>
       </div>
       <div class="suit-grid">

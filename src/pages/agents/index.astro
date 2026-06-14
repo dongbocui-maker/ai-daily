@@ -209,7 +209,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
     <small>SHRIMP HYPERVISOR · RESOURCE &amp; INTELLIGENCE MONITORING PLATFORM</small>
   </div>
   <div class="jarvis">
-    <div class="pulse">◉ J.A.R.V.I.S. ONLINE · 4 SUITS MONITORED</div>
+    <div class="pulse" id="suitsMonitored">◉ J.A.R.V.I.S. ONLINE · SUITS MONITORED</div>
     <div class="ts" id="ts"></div>
   </div>
 </header>
@@ -302,7 +302,9 @@ async function loadTicker(){
 }
 
 function render(DATA){
+  const agentCount = Object.values(DATA.agents || {}).length;
   document.getElementById('ts').textContent = '⟦ '+DATA.generated_at+' ⟧';
+  document.getElementById('suitsMonitored').textContent = '◉ J.A.R.V.I.S. ONLINE · '+agentCount+' SUITS MONITORED';
   document.getElementById('gen').textContent = DATA.generated_at;
   const g=DATA.grand;
   const summary = [

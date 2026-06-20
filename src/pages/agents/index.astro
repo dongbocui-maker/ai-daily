@@ -518,7 +518,7 @@ function render(DATA){
   // 窄屏紧凑徽章：短代号 + 短职能 + 中文名（桌面不用，仅 ≤768px 显示）
   const ARCH_CODE = { main:'M1', aima:'PA', mk2:'MK2', mk46:'MK46', 'claude-researcher':'MK51' };
   const ARCH_SHORTROLE = { main:'ORCHESTRATOR', aima:'ASSISTANT', mk2:'ENGINEER', mk46:'QC', 'claude-researcher':'SENTINEL' };
-  const ARCH_SHORTNM = { main:'统帅', aima:'银月', mk2:'工程师', mk46:'校官', 'claude-researcher':'哨兵' };
+  const ARCH_SHORTNM = { main:'统帅', aima:'副翎', mk2:'工程师', mk46:'校官', 'claude-researcher':'哨兵' };
   function _archNode(aid, cls){
     const a = DATA.agents[aid]; if(!a) return '';
     const st = (a.status||'').toLowerCase();

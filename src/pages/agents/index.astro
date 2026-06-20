@@ -474,7 +474,7 @@ function render(DATA){
     </div>`;
   }).join('');
 
-  const models = DATA.models.map(m=>
+  const models = [...DATA.models].sort((a,b)=>(b.cost||0)-(a.cost||0)).map(m=>
     `<tr><td class="mdl">${m.name}</td><td class="r">${fmt(m.calls)}</td><td class="r">${fmtTok(m.tok)}</td><td class="r" style="color:var(--gold)">$${m.cost.toFixed(2)}</td></tr>`
   ).join('');
 

@@ -377,6 +377,31 @@ def _cron_human(expr, kind):
         return f'季度首日 {hhmm}'.strip() if mon == '1,4,7,10' else f'{mon}月{dom}日 {hhmm}'.strip()
     return expr
 
+def _cron_human_en(expr, kind):
+    """cron 表达式 -> 英文频率规则（用于前端展示）。"""
+    if kind == 'at':
+        return 'Once'
+    if not expr:
+        return ''
+    parts = expr.split()
+    if len(parts) != 5:
+        return expr
+    mi, ho, dom, mon, dow = parts
+    hhmm = ''
+    if mi.isdigit() and ho.isdigit():
+        hhmm = f'{int(ho):02d}:{int(mi):02d}'
+    wk = {'0':'Sun','1':'Mon','2':'Tue','3':'Wed','4':'Thu','5':'Fri','6':'Sat','7':'Sun'}
+    if dom == '*' and mon == '*' and dow == '*':
+        return f'Daily {hhmm}'.strip()
+    if dom == '*' and mon == '*' and dow in wk:
+        return f'Weekly {wk[dow]} {hhmm}'.strip()
+    if dom == '*' and mon == '*' and ',' in dow:
+        days = '/'.join(wk.get(d, d) for d in dow.split(','))
+        return f'Weekly {days} {hhmm}'.strip()
+    if mon != '*' and dom.isdigit():
+        return f'Quarterly day {dom} {hhmm}'.strip() if mon == '1,4,7,10' else f'{mon}/{dom} {hhmm}'.strip()
+    return expr
+
 def _prev_crons():
     """读上一次写入的 fallback JSON 里的 crons，作为采集失败时的兑底（A 方案）。"""
     for p in ('/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-fallback.json',
@@ -438,6 +463,7 @@ def collect_crons():
             'enabled': bool(j.get('enabled', True)),
             'expr': expr if kind != 'at' else 'at',
             'human': _cron_human(expr, kind),
+            'human_en': _cron_human_en(expr, kind),
             'kind': kind,
             'next_run_ms': st.get('nextRunAtMs'),
             'last_run_ms': st.get('lastRunAtMs'),

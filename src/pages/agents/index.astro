@@ -124,9 +124,8 @@ td.r{text-align:right;font-family:'Orbitron'}
 .tname .star{color:var(--gold);font-size:9px;flex-shrink:0}
 .tname .ag{font-family:'Orbitron';font-size:8px;color:var(--dim);margin-left:2px}
 .tname .nm{overflow:hidden;text-overflow:ellipsis}
-.tfreq{text-align:right;font-family:'JetBrains Mono'}
-.tfreq .h{color:var(--txt);font-size:10px}
-.tfreq .e{color:var(--arc);font-size:8px;opacity:.8}
+.tfreq{display:block;font-family:'JetBrains Mono';font-size:9px;color:var(--arc);opacity:.75;margin-top:2px;padding-left:14px;letter-spacing:.3px}
+.mq td:first-child{padding-top:6px;padding-bottom:6px}
 td.tnext{color:#fff}
 td.tnext.soon{color:var(--gold)}
 .tst{font-family:'Orbitron';font-size:9px;font-weight:700;letter-spacing:.5px}
@@ -533,13 +532,11 @@ function render(DATA){
     else if(st==='skipped'){ dotCls='idle'; stTxt='SKIP'; stCls='idle'; }
     const star = c.core ? '<span class="star">\u2605</span>' : '';
     const ag = AG_LABEL[c.agent] || _esc(String(c.agent||'').toUpperCase());
-    const expr = _esc(c.expr||'');
-    const human = _esc(c.human||'');
+    const freqEn = _esc(c.human_en || c.expr || '');
     const nextMs = c.next_run_ms || 0;
     const nx = mqCountdown(nextMs);
     return `<tr class="${c.core?'core':''}">`+
-      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${_esc(c.name||'')}</span><span class="ag">${ag}</span></span></td>`+
-      `<td class="r tfreq"><div class="h">${human}</div><div class="e">${expr}</div></td>`+
+      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${_esc(c.name||'')}</span><span class="ag">${ag}</span></span><span class="tfreq">${freqEn}</span></td>`+
       `<td class="r tnext${nx.soon?' soon':''}" data-next="${nextMs}">${nx.txt}</td>`+
       `<td class="r"><span class="tst ${stCls}">${stTxt}</span></td>`+
     `</tr>`;
@@ -652,7 +649,7 @@ function render(DATA){
     <div class="toprow">
       <div class="panel mq">
         <h2 class="sec">MISSION QUEUE · 任务序列 <span style="font-family:'JetBrains Mono';font-size:9px;font-weight:400;letter-spacing:1px;color:var(--dim)">${mqCnt}</span></h2>
-        <table><thead><tr><th>TASK</th><th class="r">FREQ</th><th class="r">NEXT</th><th class="r">LAST</th></tr></thead><tbody>${mqRows}</tbody></table>
+        <table><thead><tr><th>TASK</th><th class="r">NEXT</th><th class="r">LAST</th></tr></thead><tbody>${mqRows}</tbody></table>
       </div>
       <div class="panel">
         <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>

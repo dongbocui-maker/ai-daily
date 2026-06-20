@@ -104,7 +104,7 @@ h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(
 .models-mini span{color:var(--arc)}
 
 /* 顶部行：CAPABILITY MATRIX | FALLBACK SYSTEMS 并排，桌面双列、手机单列竖排 */
-.toprow{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:28px}
+.toprow{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-bottom:28px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th{text-align:left;color:var(--gold);font-size:9px;letter-spacing:1px;border-bottom:1px solid var(--line);padding:6px 8px;text-transform:uppercase}
@@ -515,6 +515,9 @@ function capClose(){
   if(ov) ov.classList.remove('on');
   if(pop) pop.classList.remove('on');
 }
+// Astro <script define:vars> 是模块作用域，inline onclick="capOpen(..)" 找不到模块内函数 → 必须挂到 window
+window.capOpen = capOpen;
+window.capClose = capClose;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')capClose();});
 
 function drawTrendCurve(DATA){

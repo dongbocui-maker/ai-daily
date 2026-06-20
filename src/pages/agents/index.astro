@@ -103,7 +103,8 @@ h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(
 .models-mini{grid-column:1/-1;margin-top:10px;font-size:10px;color:var(--dim);border-top:1px dashed var(--line);padding-top:8px}
 .models-mini span{color:var(--arc)}
 
-.lower{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+/* 顶部行：CAPABILITY MATRIX | FALLBACK SYSTEMS 并排，桌面双列、手机单列竖排 */
+.toprow{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:28px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}
 table{width:100%;border-collapse:collapse;font-size:11px}
 th{text-align:left;color:var(--gold);font-size:9px;letter-spacing:1px;border-bottom:1px solid var(--line);padding:6px 8px;text-transform:uppercase}
@@ -158,7 +159,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   .summary{grid-template-columns:1fr;gap:12px;margin-bottom:18px}
   .stat .v{font-size:22px}
   .suits{grid-template-columns:1fr;gap:14px;margin-bottom:22px}
-  .lower{grid-template-columns:1fr;gap:18px}
+  .toprow{grid-template-columns:1fr;gap:18px;margin-bottom:22px}
   .suit-grid{grid-template-columns:1fr 1fr} /* 战甲卡内部 2 列保留，紧凑 */
   .hud-corner{width:24px;height:24px}
   .trend-chart{height:120px;gap:6px}
@@ -197,6 +198,60 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .bd-row{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-family:'JetBrains Mono';padding:2px 0;white-space:nowrap}
 .bd-n{color:var(--txt)}.bd-t{color:var(--arc)}.bd-c{color:var(--gold);min-width:48px;text-align:right}
 .bd-tot{margin-top:6px;padding-top:5px;border-top:1px solid var(--line);font-size:10px;color:var(--dim);font-family:'JetBrains Mono';text-align:right}
+/* ===== CAPABILITY MATRIX ===== */
+.capcard{background:linear-gradient(135deg,var(--panel),#0c1420);border:1px solid var(--line);border-radius:8px;padding:18px 20px;position:relative;overflow:hidden;box-shadow:0 0 24px rgba(63,201,255,.05);width:100%}
+.capcard::before{content:'';position:absolute;top:-30px;right:-30px;width:220px;height:220px;background:radial-gradient(circle,rgba(63,201,255,.10),transparent 70%);pointer-events:none}
+.cap-head{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:6px;flex-wrap:wrap}
+.cap-head .cic{width:9px;height:9px;background:var(--arc);box-shadow:0 0 12px var(--arc-glow);transform:rotate(45deg);flex-shrink:0}
+/* CAPABILITY MATRIX 标题与 FALLBACK SYSTEMS 等 .sec 标题保持一致（金色 Orbitron），去掉 .sec 默认外边距以与右侧 stat 同行 */
+.cap-head .cap-sec{margin:0}
+.cap-title{font-family:'Orbitron';font-weight:800;letter-spacing:2px;font-size:15px;color:#fff}
+.cap-stat{margin-left:auto;display:flex;gap:11px;font-size:9px;color:var(--dim);letter-spacing:.5px}
+.cap-stat b{font-family:'Orbitron';font-size:12px;margin-right:4px}
+.cap-stat .ca b{color:var(--arc)} .cap-stat .cg b{color:var(--gold)}
+.cap-list{margin-top:8px}
+.cap-row{display:flex;align-items:center;gap:10px;width:100%;background:transparent;border:none;border-bottom:1px solid #141c28;color:var(--txt);font-family:inherit;padding:11px 4px;cursor:pointer;text-align:left;transition:.12s}
+.cap-row:last-child{border-bottom:none}
+.cap-row:hover{background:rgba(63,201,255,.05)}
+.cr-name{font-family:'Orbitron';font-size:11px;letter-spacing:.5px;color:#e6edf6;width:128px;flex-shrink:0}
+.cr-bar{display:flex;gap:5px;flex:1;align-items:center}
+.cr-bar i{width:10px;height:10px;transform:skewX(-22deg);flex-shrink:0;transition:.12s;border-radius:1px}
+.cr-bar i.on{background:var(--arc);box-shadow:0 0 6px rgba(63,201,255,.65)}
+.cr-bar i.off{background:transparent;border:1px solid #1d2838}
+.cap-row:hover .cr-bar i.on{box-shadow:0 0 9px rgba(63,201,255,.9)}
+.cr-num{font-family:'Orbitron';font-size:18px;color:var(--gold);width:32px;text-align:right;flex-shrink:0;text-shadow:0 0 10px rgba(255,196,0,.35)}
+.cr-ws{font-size:12px;color:var(--arc);width:42px;text-align:right;flex-shrink:0}
+.cr-ws small{font-size:8px;color:var(--dim);margin-left:2px}
+.cr-st{width:7px;height:7px;border-radius:50%;background:#39d98a;box-shadow:0 0 8px #39d98a;flex-shrink:0}
+.cr-arrow{color:var(--dim);font-size:10px;flex-shrink:0}
+.cap-row:hover .cr-arrow{color:var(--arc)}
+.cap-legend{border-top:1px solid var(--line);margin-top:12px;padding-top:12px;color:var(--dim);font-size:9.5px;letter-spacing:.5px;line-height:1.7}
+.cap-legend b{color:var(--arc)}
+.cap-legend .ld{display:inline-block;width:8px;height:7px;background:var(--arc);transform:skewX(-22deg);vertical-align:middle;margin:0 3px}
+.cap-legend .ldot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#39d98a;vertical-align:middle;margin:0 3px;box-shadow:0 0 6px #39d98a}
+.cap-ov{position:fixed;inset:0;background:rgba(3,6,10,.72);backdrop-filter:blur(3px);display:none;z-index:50}
+.cap-ov.on{display:block}
+.cap-pop{display:none;position:fixed;top:7vh;left:50%;transform:translateX(-50%);width:min(820px,92vw);max-height:84vh;overflow:auto;background:#0b0f17;border:1px solid #28384f;border-radius:12px;padding:20px;z-index:51;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.cap-pop.on{display:block}
+.cp-head{display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron';font-size:14px;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:11px;margin-bottom:15px}
+.cp-x{background:none;border:1px solid var(--line);color:var(--dim);border-radius:6px;padding:5px 10px;font-family:inherit;font-size:10px;cursor:pointer}
+.cp-x:hover{color:var(--arc);border-color:var(--arc)}
+.cp-sec{font-size:10px;letter-spacing:2px;color:var(--arc);margin-bottom:10px}
+.cp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.csk{display:flex;align-items:center;gap:10px;background:#0d1119;border:1px solid var(--line);border-radius:7px;padding:9px 11px}
+.csk-ico{font-size:15px;width:20px;text-align:center;flex-shrink:0}
+.csk-body{flex:1;min-width:0} .csk-name{font-size:12px;color:#e6edf6;font-weight:600}
+.csk-desc{font-size:9px;color:var(--dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.csk-src{display:flex;gap:3px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;max-width:90px}
+.csk-atag{font-size:8px;color:var(--arc);border:1px solid #224;border-radius:4px;padding:1px 5px;background:rgba(63,201,255,.07)}
+.csk-shared{font-size:8px;color:var(--gold);border:1px solid var(--gold-dim);border-radius:4px;padding:1px 5px;background:rgba(255,196,0,.06)}
+.csk-empty{color:var(--dim);font-size:11px;padding:6px}
+.cap-fold{margin-top:15px;border-top:1px dashed var(--line);padding-top:11px}
+.cap-foldbtn{background:none;border:none;color:var(--dim);font-family:inherit;font-size:10px;letter-spacing:1px;cursor:pointer;padding:0}
+.cap-foldbtn:hover{color:var(--gold)}
+.cap-foldbody{display:none;margin-top:11px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.cap-fold.open .cap-foldbody{display:grid}
+@media(max-width:768px){.cr-name{width:120px;font-size:11px}.cr-bar i{width:9px;height:9px}.cap-stat{gap:10px}}
 </style>
 </head>
 <body>
@@ -380,25 +435,87 @@ function render(DATA){
     return `<div class="agent-row"><span class="who">${a.mark} · ${a.name}</span>${nodes}</div>`;
   }).join('');
 
+  // ===== CAPABILITY MATRIX =====
+  const cap = DATA.capabilities || null;
+  let capMatrix = '';
+  if(cap && cap.domains && cap.domains.length){
+    window._CAP_DOMAINS = cap.domains;
+    const maxTotal = Math.max(1, ...cap.domains.map(d=>d.total));
+    const rows = cap.domains.map((d,i)=>{
+      const filled = Math.max(1, Math.round(d.total/maxTotal*10));
+      const bar = Array.from({length:10},(_,k)=>`<i class="${k<filled?'on':'off'}"></i>`).join('');
+      return `<button class="cap-row" onclick="capOpen(${i})">`+
+        `<span class="cr-name">${_esc(d.domain)}</span>`+
+        `<span class="cr-bar">${bar}</span>`+
+        `<span class="cr-num">${d.total}</span>`+
+        `<span class="cr-ws">${d.ws}<small>WS</small></span>`+
+        `<span class="cr-st"></span>`+
+        `<span class="cr-arrow">\u25B8</span></button>`;
+    }).join('');
+    capMatrix = `<div class="capcard">`+
+      `<div class="cap-head"><h2 class="sec cap-sec">CAPABILITY MATRIX · 能力矩阵</h2>`+
+        `<span class="cap-stat"><span class="ca"><b>${cap.total}</b>TOTAL</span><span><b style="color:#e6edf6">${cap.ndomains}</b>DOMAINS</span><span class="ca"><b>${cap.ws_scoped}</b>WS</span><span class="cg"><b>${cap.shared}</b>SHARED</span></span>`+
+      `</div>`+
+      `<div class="cap-list">${rows}</div>`+
+      `<div class="cap-legend"><span class="ld"></span><b>BAR</b> RELATIVE SCALE &nbsp;\u00b7&nbsp; <b style="color:var(--gold)">GOLD#</b> TOTAL SKILLS &nbsp;\u00b7&nbsp; <b>BLUE WS</b> WORKSPACE-SCOPED &nbsp;\u00b7&nbsp; <span class="ldot"></span><b>GREEN</b> ONLINE &nbsp;\u00b7&nbsp; CLICK A ROW TO EXPAND \u00b7 WORKSPACE-SCOPED FIRST, SHARED COLLAPSED \u00b7 AUTO-REFRESHED ON INSTALL/REMOVE</div>`+
+    `</div>`;
+  }
+
   document.getElementById('app').innerHTML = `
     <section class="summary">${summary}</section>
     ${trendBlock}
     <h2 class="sec">SUIT STATUS · 战甲编队</h2>
     <section class="suits">${suits}</section>
-    <div class="lower">
-      <div class="panel">
-        <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>
-        <table><thead><tr><th>MODEL</th><th>CALLS</th><th>TOKENS</th><th>COST</th></tr></thead><tbody>${models}</tbody></table>
-      </div>
+    <div class="toprow">
+      ${capMatrix}
       <div class="panel">
         <h2 class="sec">FALLBACK SYSTEMS · 模型备用链路</h2>
         <div class="chain">${chain}</div>
       </div>
-    </div>`;
+    </div>
+    <div class="toprow">
+      <div class="panel">
+        <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>
+        <table><thead><tr><th>MODEL</th><th>CALLS</th><th>TOKENS</th><th>COST</th></tr></thead><tbody>${models}</tbody></table>
+      </div>
+    </div>
+    <div class="cap-ov" id="capOv" onclick="capClose()"></div>
+    <div class="cap-pop" id="capPop"></div>`;
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
 }
+
+// ===== CAPABILITY MATRIX 展开面板 =====
+function _esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+function _capSkillRow(s){
+  const ico = s.emoji || '\u25A3';
+  const src = s.shared ? '<span class="csk-shared">SHARED</span>'
+    : (s.agents||[]).map(a=>`<span class="csk-atag">${_esc(a)}</span>`).join('');
+  return `<div class="csk"><div class="csk-ico">${ico}</div>`+
+    `<div class="csk-body"><div class="csk-name">${_esc(s.name)}</div><div class="csk-desc">${_esc(s.desc)}</div></div>`+
+    `<div class="csk-src">${src}</div></div>`;
+}
+function capOpen(i){
+  const doms = window._CAP_DOMAINS || [];
+  const d = doms[i]; if(!d) return;
+  const ws = (d.ws_skills||[]).map(_capSkillRow).join('') || '<div class="csk-empty">\u2014 NONE \u2014</div>';
+  const shared = (d.shared_skills||[]);
+  const sharedBlock = shared.length
+    ? `<div class="cap-fold"><button class="cap-foldbtn" onclick="this.parentNode.classList.toggle('open')">+ ${shared.length} SHARED BUNDLED \u25BE</button><div class="cap-foldbody">${shared.map(_capSkillRow).join('')}</div></div>`
+    : '';
+  const pop = document.getElementById('capPop');
+  pop.innerHTML = `<div class="cp-head"><span>${_esc(d.domain)}</span><button class="cp-x" onclick="capClose()">\u2715 CLOSE</button></div>`+
+    `<div class="cp-sec">WORKSPACE-SCOPED (${d.ws})</div><div class="cp-grid">${ws}</div>${sharedBlock}`;
+  document.getElementById('capOv').classList.add('on');
+  pop.classList.add('on');
+}
+function capClose(){
+  const ov=document.getElementById('capOv'); const pop=document.getElementById('capPop');
+  if(ov) ov.classList.remove('on');
+  if(pop) pop.classList.remove('on');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')capClose();});
 
 function drawTrendCurve(DATA){
   const chart=document.querySelector('.trend-chart');

@@ -541,9 +541,6 @@ function render(DATA){
       `<td class="r"><span class="tst ${stCls}">${stTxt}</span></td>`+
     `</tr>`;
   }).join('');
-  const coreCnt = crons.filter(c=>c.core).length;
-  const errCnt = crons.filter(c=>(c.last_status||'').toLowerCase()==='error').length;
-  const mqCnt = `${crons.length} JOBS \u00b7 ${coreCnt} CORE${errCnt?` \u00b7 <span style="color:var(--red)">${errCnt} ERR</span>`:''}`;
 
   const chain = Object.entries(DATA.agents).map(([id,a])=>{
     const ch=CHAINS[id]||[];
@@ -648,7 +645,7 @@ function render(DATA){
     </div>
     <div class="toprow">
       <div class="panel mq">
-        <h2 class="sec">MISSION QUEUE · 任务序列 <span style="font-family:'JetBrains Mono';font-size:9px;font-weight:400;letter-spacing:1px;color:var(--dim)">${mqCnt}</span></h2>
+        <h2 class="sec">MISSION QUEUE · 任务序列</h2>
         <table><thead><tr><th>TASK</th><th class="r">NEXT</th><th class="r">LAST</th></tr></thead><tbody>${mqRows}</tbody></table>
       </div>
       <div class="panel">

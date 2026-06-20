@@ -20,7 +20,7 @@ const FALLBACK_URL = `${BASE}agents/data/dashboard-fallback.json`;
 :root{
   --red:#E62429; --red-dim:#7a1418; --gold:#FFC400; --gold-dim:#8a6a00;
   --arc:#3FC9FF; --arc-glow:#00E5FF; --bg:#070A0F; --panel:#0E1118; --panel2:#141927;
-  --line:#1f2a3d; --txt:#cdd6e3; --dim:#6b7689;
+  --line:#1f2a3d; --txt:#cdd6e3; --dim:#6b7689; --green:#34d399;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -111,6 +111,26 @@ th{text-align:left;color:var(--gold);font-size:9px;letter-spacing:1px;border-bot
 td{padding:7px 8px;border-bottom:1px solid rgba(31,42,61,.5)}
 td.r{text-align:right;font-family:'Orbitron'}
 .mdl{color:#fff}
+/* MISSION QUEUE · 任务序列（复用 .panel + table，与 POWER CONSUMPTION 同构） */
+.mq tbody tr{transition:.12s}
+.mq tbody tr:hover{background:rgba(63,201,255,.05)}
+.mq tbody tr.core .tname{color:var(--gold)}
+.tname{color:#fff;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.tdot.ok{background:var(--green);box-shadow:0 0 6px var(--green)}
+.tdot.err{background:var(--red);box-shadow:0 0 7px var(--red);animation:mqpulse 1.4s infinite}
+.tdot.idle{background:var(--dim)}
+@keyframes mqpulse{50%{opacity:.3}}
+.tname .star{color:var(--gold);font-size:9px;flex-shrink:0}
+.tname .ag{font-family:'Orbitron';font-size:8px;color:var(--dim);margin-left:2px}
+.tname .nm{overflow:hidden;text-overflow:ellipsis}
+.tfreq{text-align:right;font-family:'JetBrains Mono'}
+.tfreq .h{color:var(--txt);font-size:10px}
+.tfreq .e{color:var(--arc);font-size:8px;opacity:.8}
+td.tnext{color:#fff}
+td.tnext.soon{color:var(--gold)}
+.tst{font-family:'Orbitron';font-size:9px;font-weight:700;letter-spacing:.5px}
+.tst.ok{color:var(--green)} .tst.err{color:var(--red)} .tst.idle{color:var(--dim)}
 .chain{font-size:12px;line-height:2.2}
 .chain .node{display:inline-block;padding:3px 10px;border-radius:3px;margin:2px 0}
 .chain .primary{background:rgba(255,196,0,.12);border:1px solid var(--gold);color:var(--gold)}
@@ -356,6 +376,28 @@ const CARD_NAME_OVERRIDES={
 const chainModelKey = n => CHAIN_MODEL_KEYS[n] || n;
 const fmt = n => n.toLocaleString('en-US');
 const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
+// MISSION QUEUE 倒计时：纯前端用绝对时间戳算，零 token。soon=24h 内高亮金色
+function mqCountdown(nextMs){
+  if(!nextMs) return {txt:'\u2014', soon:false};
+  const diff = nextMs - Date.now();
+  if(diff <= 0) return {txt:'now', soon:true};
+  const mins = diff/60000;
+  if(mins < 60) return {txt:Math.max(1,Math.round(mins))+'m', soon:true};
+  const hrs = mins/60;
+  if(hrs < 24) return {txt:Math.round(hrs)+'h', soon:true};
+  const days = hrs/24;
+  return {txt:Math.round(days)+'d', soon:false};
+}
+// 每 30s 刷新页面上所有 [data-next] 倒计时（仍纯前端，不调任何 API）
+function mqTick(){
+  document.querySelectorAll('td.tnext[data-next]').forEach(el=>{
+    const ms = parseInt(el.getAttribute('data-next')||'0',10);
+    const r = mqCountdown(ms);
+    el.textContent = r.txt;
+    el.classList.toggle('soon', r.soon);
+  });
+}
+setInterval(mqTick, 30000);
 
 // 钢铁侠方舟反应堆 SVG：外金属大环 + 24齿刻度环 + 8段旋转线圈 + 内发光圆盘 + 中心三角核 + 中心白光点
 function reactorSvg(ac,lit,id){
@@ -478,6 +520,34 @@ function render(DATA){
     `<tr><td class="mdl">${m.name}</td><td class="r">${fmt(m.calls)}</td><td class="r">${fmtTok(m.tok)}</td><td class="r" style="color:var(--gold)">$${m.cost.toFixed(2)}</td></tr>`
   ).join('');
 
+  // ===== MISSION QUEUE · 任务序列 =====
+  const AG_LABEL = { main:'MAIN', mk2:'MK2' };
+  const crons = Array.isArray(DATA.crons) ? DATA.crons : [];
+  const mqRows = crons.map(c=>{
+    const st = (c.last_status||'').toLowerCase();
+    const enabled = c.enabled !== false;
+    let dotCls='idle', stTxt='IDLE', stCls='idle';
+    if(!enabled){ dotCls='idle'; stTxt='OFF'; stCls='idle'; }
+    else if(st==='ok'){ dotCls='ok'; stTxt='OK'; stCls='ok'; }
+    else if(st==='error'){ dotCls='err'; stTxt='ERR'; stCls='err'; }
+    else if(st==='skipped'){ dotCls='idle'; stTxt='SKIP'; stCls='idle'; }
+    const star = c.core ? '<span class="star">\u2605</span>' : '';
+    const ag = AG_LABEL[c.agent] || _esc(String(c.agent||'').toUpperCase());
+    const expr = _esc(c.expr||'');
+    const human = _esc(c.human||'');
+    const nextMs = c.next_run_ms || 0;
+    const nx = mqCountdown(nextMs);
+    return `<tr class="${c.core?'core':''}">`+
+      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${_esc(c.name||'')}</span><span class="ag">${ag}</span></span></td>`+
+      `<td class="r tfreq"><div class="h">${human}</div><div class="e">${expr}</div></td>`+
+      `<td class="r tnext${nx.soon?' soon':''}" data-next="${nextMs}">${nx.txt}</td>`+
+      `<td class="r"><span class="tst ${stCls}">${stTxt}</span></td>`+
+    `</tr>`;
+  }).join('');
+  const coreCnt = crons.filter(c=>c.core).length;
+  const errCnt = crons.filter(c=>(c.last_status||'').toLowerCase()==='error').length;
+  const mqCnt = `${crons.length} JOBS \u00b7 ${coreCnt} CORE${errCnt?` \u00b7 <span style="color:var(--red)">${errCnt} ERR</span>`:''}`;
+
   const chain = Object.entries(DATA.agents).map(([id,a])=>{
     const ch=CHAINS[id]||[];
     const active=a.active_model;
@@ -580,6 +650,10 @@ function render(DATA){
       </div>
     </div>
     <div class="toprow">
+      <div class="panel mq">
+        <h2 class="sec">MISSION QUEUE · 任务序列 <span style="font-family:'JetBrains Mono';font-size:9px;font-weight:400;letter-spacing:1px;color:var(--dim)">${mqCnt}</span></h2>
+        <table><thead><tr><th>TASK</th><th class="r">FREQ</th><th class="r">NEXT</th><th class="r">LAST</th></tr></thead><tbody>${mqRows}</tbody></table>
+      </div>
       <div class="panel">
         <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>
         <table><thead><tr><th>MODEL</th><th>CALLS</th><th>TOKENS</th><th>COST</th></tr></thead><tbody>${models}</tbody></table>
@@ -591,6 +665,7 @@ function render(DATA){
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
   requestAnimationFrame(()=>drawArchLines());
+  requestAnimationFrame(()=>mqTick());
 }
 
 // ===== AGENT TOPOLOGY 蓝色辉光调度连线 =====

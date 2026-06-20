@@ -1,7 +1,102 @@
 #!/usr/bin/env python3
-import json, glob, time, os
+import json, glob, time, os, re, subprocess
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
+
+# ===== CAPABILITY MATRIX: 自动扫描各 agent workspace 的 SKILL.md frontmatter =====
+# 动态：装/卸 skill 后重跑本脚本即自动反映。无需手维护。
+# 输出 out['capabilities'] = {domains:[...], total, shared, ws_scoped, ndomains, generated_at}
+_CAP_WS = {
+    'main':  '/root/.openclaw/workspace/skills',
+    'mk2':   '/root/.openclaw/workspace-mk2/skills',
+    'mk46':  '/root/.openclaw/workspace-mk46/skills',
+    'aima':  '/root/.openclaw/workspace-aima/skills',
+    'claude-researcher': '/root/.openclaw/workspace-mk51/skills',
+}
+_CAP_AGENT_LABEL = {'main':'MAIN','mk2':'MK2','mk46':'MK46','aima':'AIMA','claude-researcher':'MK51'}
+# bundled/extension skills（全 agent 共享）扫描根；通配 openclaw 安装目录
+_CAP_BUNDLED_GLOBS = [
+    '/root/.local/share/pnpm/global/*/.pnpm/openclaw@*/node_modules/openclaw/skills',
+    '/root/.local/share/pnpm/global/*/.pnpm/openclaw@*/node_modules/openclaw/dist/extensions/*/skills',
+]
+# 能力域顺序（全大写英文）
+_CAP_ORDER = ['DOCS & KB','WEB & RESEARCH','COMMS','OPS & AUTO','MEDIA & DESIGN','UTILITY']
+
+def _cap_parse_frontmatter(path):
+    try:
+        txt = open(path, encoding='utf-8', errors='ignore').read()
+    except Exception:
+        return None
+    m = re.match(r'^---\s*\n(.*?)\n---', txt, re.S)
+    fm = m.group(1) if m else ''
+    def grab(k):
+        mm = re.search(rf'^{k}:\s*(.+)$', fm, re.M)
+        return mm.group(1).strip() if mm else ''
+    name = grab('name'); desc = grab('description'); emoji=''; cat=''
+    meta = grab('metadata')
+    if meta:
+        try:
+            j=json.loads(meta); oc=j.get('openclaw',{})
+            emoji=oc.get('emoji',''); cat=oc.get('category','')
+        except Exception:
+            pass
+    return {'name':name,'desc':(desc or '')[:90],'emoji':emoji,'cat':cat}
+
+def _cap_scan(root):
+    out={}
+    if not os.path.isdir(root):
+        return out
+    for d in sorted(os.listdir(root)):
+        sk = os.path.join(root,d,'SKILL.md')
+        if os.path.isfile(sk):
+            info=_cap_parse_frontmatter(sk)
+            if info:
+                out[info['name'] or d]=info
+    return out
+
+def _cap_domain(name, info):
+    n=(name+' '+(info.get('cat') or '')+' '+(info.get('desc') or '')).lower()
+    if any(k in n for k in ['feishu','wiki','tencent-doc','docs','notion','obsidian','bear','apple-notes','dws','knowledge']): return 'DOCS & KB'
+    if any(k in n for k in ['web','tavily','research','browser','search','blogwatch','xurl']): return 'WEB & RESEARCH'
+    if any(k in n for k in ['discord','slack','message','imsg','bluebubble','voice-call','wacli','himalaya','mail']): return 'COMMS'
+    if any(k in n for k in ['cron','healthcheck','governance','acp','tmux','node-connect','mcporter','taskflow','clawhub','skill-creator','lighthouse','oracle','session']): return 'OPS & AUTO'
+    if any(k in n for k in ['ppt','brand','diagram','excalidraw','frontend','design','sag','tts','whisper','video','gif','song','spotify','canvas','camsnap','peekaboo','nano-pdf']): return 'MEDIA & DESIGN'
+    return 'UTILITY'
+
+def build_capabilities():
+    agent_skills={a:_cap_scan(p) for a,p in _CAP_WS.items()}
+    bundled={}
+    for pat in _CAP_BUNDLED_GLOBS:
+        for root in glob.glob(pat):
+            bundled.update(_cap_scan(root))
+    skills={}
+    for a, s in agent_skills.items():
+        for name, info in s.items():
+            skills.setdefault(name, {'info':info,'agents':set(),'bundled':False})
+            skills[name]['agents'].add(a)
+    for name, info in bundled.items():
+        skills.setdefault(name, {'info':info,'agents':set(),'bundled':False})
+        skills[name]['bundled']=True
+    groups={}
+    for name, d in skills.items():
+        groups.setdefault(_cap_domain(name, d['info']), []).append((name,d))
+    domains=[]
+    for g in _CAP_ORDER:
+        items=sorted(groups.get(g,[]), key=lambda x:x[0])
+        if not items: continue
+        def srlow(name,d):
+            info=d['info']
+            return {'name':name.upper(),'desc':(info.get('desc') or '').upper(),
+                    'emoji':info.get('emoji') or '▣',
+                    'shared':d['bundled'],
+                    'agents':sorted(_CAP_AGENT_LABEL.get(a,a.upper()) for a in d['agents'])}
+        ws=[srlow(n,d) for n,d in items if not d['bundled']]
+        bd=[srow for srow in (srlow(n,d) for n,d in items if d['bundled'])]
+        domains.append({'domain':g,'total':len(items),'ws':len(ws),'shared':len(bd),
+                        'ws_skills':ws,'shared_skills':bd})
+    total=len(skills); shared=sum(1 for d in skills.values() if d['bundled'])
+    return {'domains':domains,'total':total,'shared':shared,'ws_scoped':total-shared,
+            'ndomains':len(domains)}
 
 # 单价表 USD / 1M tokens  (input, output, cacheWrite, cacheRead)
 PRICING = {
@@ -251,6 +346,111 @@ today = now.strftime('%Y-%m-%d')
 last7_days = [(now - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(6, -1, -1)]
 last7_set = set(last7_days)
 
+# ===== MISSION QUEUE · cron 采集（只取 main/mk2，脱敏，不含任务 prompt）=====
+# 允许展示的 agent（银月 aima 等个人任务不展示）
+CRON_AGENTS = {'main', 'mk2'}
+# 核心每日任务（站点命脉，前端加 ★ 高亮）
+CRON_CORE = {'ai-daily-report', 'follow builders digest'}
+
+def _cron_human(expr, kind):
+    """cron 表达式 -> 人话频率（常见模式，其余原样返回）"""
+    if kind == 'at':
+        return '单次'
+    if not expr:
+        return ''
+    parts = expr.split()
+    if len(parts) != 5:
+        return expr
+    mi, ho, dom, mon, dow = parts
+    hhmm = ''
+    if mi.isdigit() and ho.isdigit():
+        hhmm = f'{int(ho):02d}:{int(mi):02d}'
+    week = {'0':'日','1':'一','2':'二','3':'三','4':'四','5':'五','6':'六','7':'日'}
+    if dom == '*' and mon == '*' and dow == '*':
+        return f'每天 {hhmm}'.strip()
+    if dom == '*' and mon == '*' and dow in week:
+        return f'每周{week[dow]} {hhmm}'.strip()
+    if dom == '*' and mon == '*' and ',' in dow:
+        days = '/'.join(week.get(d, d) for d in dow.split(','))
+        return f'每周{days} {hhmm}'.strip()
+    if mon != '*' and dom.isdigit():
+        return f'季度首日 {hhmm}'.strip() if mon == '1,4,7,10' else f'{mon}月{dom}日 {hhmm}'.strip()
+    return expr
+
+def _prev_crons():
+    """读上一次写入的 fallback JSON 里的 crons，作为采集失败时的兑底（A 方案）。"""
+    for p in ('/root/.openclaw/workspace/projects/ai-daily/public/agents/data/dashboard-fallback.json',
+              '/root/.openclaw/workspace/projects/agents-dashboard/live/dashboard-data.json'):
+        try:
+            prev = json.load(open(p))
+            cs = prev.get('crons')
+            if isinstance(cs, list) and cs:
+                return cs
+        except Exception:
+            continue
+    return []
+
+def collect_crons():
+    """调 openclaw cron list --json，返回脱敏后的 cron 列表（仅 main/mk2）。
+    只取元字段：id/name/agent/schedule/state；绝不输出 payload.message。
+    写入绝对时间戳 next_run_ms 供前端实时算倒计时。
+    A 方案：采集失败（CLI 不可用/超时/解析错）时保留上一次数据，不覆盖成空。"""
+    bin_candidates = ['/root/.local/share/pnpm/openclaw', 'openclaw']
+    raw = None
+    last_err = ''
+    for b in bin_candidates:
+        try:
+            res = subprocess.run([b, 'cron', 'list', '--json'],
+                                 capture_output=True, text=True, timeout=30)
+            raw = res.stdout
+            if raw and raw.strip():
+                break
+            last_err = (res.stderr or '').strip()[:200]
+        except Exception as e:
+            last_err = f'{type(e).__name__}: {e}'[:200]
+            continue
+    if not raw:
+        # 不静默吞：记一条诊断便于线上排错，同时保留上次数据（A 方案）
+        print(f'[mission-queue] cron collect failed, keeping previous: {last_err or "empty output"}')
+        return _prev_crons()
+    try:
+        data = json.loads(raw)
+    except Exception:
+        return _prev_crons()
+    jobs = data.get('jobs', data) if isinstance(data, dict) else data
+    out_crons = []
+    for j in jobs:
+        aid = j.get('agentId')
+        if aid not in CRON_AGENTS:
+            continue
+        sc = j.get('schedule') or {}
+        st = j.get('state') or {}
+        name = j.get('name') or j.get('id', '')
+        kind = sc.get('kind', 'cron')
+        expr = sc.get('expr', '')
+        last_status = st.get('lastStatus') or st.get('lastRunStatus')
+        if last_status:
+            last_status = str(last_status).lower()
+        out_crons.append({
+            'id': j.get('id'),
+            'name': name,
+            'agent': aid,
+            'enabled': bool(j.get('enabled', True)),
+            'expr': expr if kind != 'at' else 'at',
+            'human': _cron_human(expr, kind),
+            'kind': kind,
+            'next_run_ms': st.get('nextRunAtMs'),
+            'last_run_ms': st.get('lastRunAtMs'),
+            'last_status': last_status,           # ok / error / skipped / None
+            'core': name.strip().lower() in CRON_CORE,
+        })
+    # 排序：核心置顶 -> 按下次运行时间升序
+    out_crons.sort(key=lambda c: (not c['core'], c['next_run_ms'] or 9e18))
+    # A 方案补充：CLI 返回了但 main/mk2 一条都没匹配到（异常），也保留上一次
+    if not out_crons:
+        return _prev_crons()
+    return out_crons
+
 def ts_to_cn_date(ts):
     """trajectory ts 是 UTC ISO，转北京日期"""
     try:
@@ -360,6 +560,8 @@ out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
               'last7d_tok':grand['last7d_tok'],'last7d_cost':round(grand['last7d_cost'],2)},
      'trend':trend,
      'agents':agents_out,
+     'capabilities':build_capabilities(),
+     'crons':collect_crons(),
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
 new_fallback_events, total_signal_events = refresh_fallback_events(agents_out)
 # 输出到两处：

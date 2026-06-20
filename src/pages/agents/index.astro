@@ -252,6 +252,40 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .cap-foldbody{display:none;margin-top:11px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
 .cap-fold.open .cap-foldbody{display:grid}
 @media(max-width:768px){.cr-name{width:120px;font-size:11px}.cr-bar i{width:9px;height:9px}.cap-stat{gap:10px}}
+/* ===== AGENT TOPOLOGY · 调度架构 ===== */
+.arch-card{position:relative;background:linear-gradient(135deg,var(--panel),#0a1018);border:1px solid var(--line);border-radius:8px;padding:18px 22px 22px;margin-bottom:22px;overflow:hidden;box-shadow:0 0 30px rgba(63,201,255,.06)}
+.arch-card::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:480px;height:240px;background:radial-gradient(circle,rgba(63,201,255,.10),transparent 68%);pointer-events:none}
+.arch-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:4px;position:relative;z-index:2;flex-wrap:wrap;gap:8px}
+.arch-title{font-family:'Orbitron';font-weight:800;font-size:14px;color:var(--gold);letter-spacing:3px}
+.arch-legend{display:flex;gap:16px;font-size:9.5px;color:var(--dim);letter-spacing:.5px;flex-wrap:wrap}
+.alg{display:flex;align-items:center;gap:6px}
+.alg .aln{width:22px;height:0;border-top:2px solid}
+.alg .aln.solid{border-top-style:solid;border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
+.alg .aln.dot{border-top-style:dotted;border-top-width:3px;border-color:#48b4ec}
+.alg .adot{width:8px;height:8px;border-radius:50%;background:#39d98a;box-shadow:0 0 6px #39d98a}
+.arch-topo{position:relative;z-index:2;padding:22px 8px 6px}
+.arch-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.arch-tier{position:relative;z-index:2;display:flex;justify-content:center;gap:54px}
+.arch-tier.t1{margin-bottom:78px}
+.arch-node{position:relative;width:196px;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:10px;padding:15px 16px 14px;transition:.18s}
+.arch-node:hover{transform:translateY(-2px)}
+.arch-node.orch{border-color:rgba(255,196,0,.35);box-shadow:0 0 22px rgba(255,196,0,.10)}
+.arch-node.worker{border-color:rgba(63,201,255,.28);box-shadow:0 0 18px rgba(63,201,255,.08)}
+.arch-mark{font-family:'Orbitron';font-weight:700;font-size:13px;letter-spacing:1.5px}
+.arch-nm{font-size:14px;color:#fff;font-weight:600;margin-top:5px;letter-spacing:.5px}
+.arch-role{font-size:9px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;border-top:1px dashed var(--line);padding-top:9px;margin-top:10px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.arch-rlabel{line-height:1.45}
+.arch-st{display:flex;align-items:center;gap:5px;font-size:8px;flex-shrink:0;padding-top:1px}
+.arch-stdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.arch-stdot.on{background:#39d98a;box-shadow:0 0 6px #39d98a}
+.arch-stdot.off{background:#555f70}
+.arch-direct{position:absolute;top:-9px;right:12px;font-size:7.5px;letter-spacing:1px;font-family:'Orbitron';color:var(--arc);background:#08111c;border:1px solid rgba(63,201,255,.45);border-radius:999px;padding:2px 8px;box-shadow:0 0 8px rgba(63,201,255,.25)}
+@media(max-width:768px){
+  .arch-tier{flex-wrap:wrap;gap:16px}
+  .arch-tier.t1{margin-bottom:36px}
+  .arch-node{width:100%;max-width:none}
+  .arch-lines{display:none} /* 手机端堆叠后连线意义不大，隐藏避免错位 */
+}
 </style>
 </head>
 <body>
@@ -461,9 +495,47 @@ function render(DATA){
     `</div>`;
   }
 
+  // ===== AGENT TOPOLOGY · 调度架构 =====
+  const _agName = aid => (CARD_NAME_OVERRIDES[aid] || (DATA.agents[aid] && DATA.agents[aid].name) || aid);
+  function _archNode(aid, cls){
+    const a = DATA.agents[aid]; if(!a) return '';
+    const st = (a.status||'').toLowerCase();
+    const on = st!=='offline' && st!=='off';
+    const role = String(a.role||'').toUpperCase();
+    const roleHtml = _esc(role).replace(/ /,'<br>'); // 先转义再插 <br>（首个空格处断行）
+    const _rawColor = a.lit || a.ac || '#9fe8ff';
+    const markColor = /^#[0-9a-fA-F]{3,8}$/.test(_rawColor) ? _rawColor : '#9fe8ff'; // 仅放行 hex 色值
+    const direct = cls==='worker' ? '<span class="arch-direct">DIRECT</span>' : '';
+    return `<div class="arch-node ${cls}" id="arch-${aid}">${direct}`+
+      `<div class="arch-mark" style="color:${markColor}">${_esc(a.mark||'')}</div>`+
+      `<div class="arch-nm">${_esc(_agName(aid))}</div>`+
+      `<div class="arch-role"><span class="arch-rlabel">${roleHtml}</span>`+
+        `<span class="arch-st"><span class="arch-stdot ${on?'on':'off'}"></span>${_esc(a.status||'')}</span></div>`+
+    `</div>`;
+  }
+  const _t1 = ['main','aima'].filter(id=>DATA.agents[id]);
+  const _t2 = ['mk2','mk46','claude-researcher'].filter(id=>DATA.agents[id]);
+  const archTopology = (_t1.length && _t2.length) ? `
+    <div class="arch-card">
+      <div class="arch-head">
+        <span class="arch-title">AGENT TOPOLOGY · 调度架构</span>
+        <span class="arch-legend">
+          <span class="alg"><span class="aln solid"></span> MAIN 调度链</span>
+          <span class="alg"><span class="aln dot"></span> 银月 调度链</span>
+          <span class="alg"><span class="adot"></span> 独立可访问</span>
+        </span>
+      </div>
+      <div class="arch-topo" id="archTopo">
+        <svg class="arch-lines" id="archLines"></svg>
+        <div class="arch-tier t1">${_t1.map(id=>_archNode(id,'orch')).join('')}</div>
+        <div class="arch-tier t2">${_t2.map(id=>_archNode(id,'worker')).join('')}</div>
+      </div>
+    </div>` : '';
+
   document.getElementById('app').innerHTML = `
     <section class="summary">${summary}</section>
     ${trendBlock}
+    ${archTopology}
     <h2 class="sec">SUIT STATUS · 战甲编队</h2>
     <section class="suits">${suits}</section>
     <div class="toprow">
@@ -484,6 +556,49 @@ function render(DATA){
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
+  requestAnimationFrame(()=>drawArchLines());
+}
+
+// ===== AGENT TOPOLOGY 蓝色辉光调度连线 =====
+function drawArchLines(){
+  const svg=document.getElementById('archLines');
+  const topo=document.getElementById('archTopo');
+  if(!svg||!topo) return;
+  const R=topo.getBoundingClientRect();
+  if(!R.width) return;
+  svg.setAttribute('viewBox',`0 0 ${R.width} ${R.height}`);
+  const c=id=>{const el=document.getElementById('arch-'+id); if(!el) return null; const r=el.getBoundingClientRect();
+    return {cx:r.left-R.left+r.width/2, top:r.top-R.top, bot:r.top-R.top+r.height};};
+  const main=c('main'), aima=c('aima');
+  const workers=['mk2','mk46','claude-researcher'].map(c).filter(Boolean);
+  const pathD=(x1,y1,x2,y2)=>{const my=(y1+y2)/2;return `M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}`;};
+  let halo='',core='',flow='',ends='',starts='';
+  if(main){
+    workers.forEach((w,i)=>{
+      const d=pathD(main.cx-14,main.bot,w.cx-16,w.top);
+      halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="7" opacity="0.22" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="2" opacity="0.95" filter="url(#aGlow)"/>`;
+      flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 22" opacity="0.9"><animate attributeName="stroke-dashoffset" from="0" to="-24" dur="${0.9+i*0.12}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx-16}" cy="${w.top}" r="3.4" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${w.cx-16}" cy="${w.top}" r="1.6" fill="#eafdff"/>`;
+    });
+    starts+=`<circle cx="${main.cx-14}" cy="${main.bot}" r="3.6" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${main.cx-14}" cy="${main.bot}" r="1.7" fill="#eafdff"/>`;
+  }
+  if(aima){
+    workers.forEach((w,i)=>{
+      const d=pathD(aima.cx+14,aima.bot,w.cx+16,w.top);
+      halo+=`<path d="${d}" fill="none" stroke="#2f8fd0" stroke-width="5" opacity="0.16" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradAima)" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" opacity="0.95" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="${1.8+i*0.2}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx+16}" cy="${w.top}" r="2.8" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${w.cx+16}" cy="${w.top}" r="1.3" fill="#cdeeff"/>`;
+    });
+    starts+=`<circle cx="${aima.cx+14}" cy="${aima.bot}" r="3" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${aima.cx+14}" cy="${aima.bot}" r="1.4" fill="#cdeeff"/>`;
+  }
+  const defs=`<defs>`+
+    `<filter id="aBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter>`+
+    `<filter id="aGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`+
+    `<linearGradient id="aGradMain" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fefff"/><stop offset="1" stop-color="#1fb6ff"/></linearGradient>`+
+    `<linearGradient id="aGradAima" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fd0ff"/><stop offset="1" stop-color="#2f8fd0"/></linearGradient>`+
+  `</defs>`;
+  svg.innerHTML=defs+halo+core+flow+starts+ends;
 }
 
 // ===== CAPABILITY MATRIX 展开面板 =====
@@ -555,7 +670,7 @@ function drawTrendCurve(DATA){
   }).join('');
 }
 let _trendData=null;
-window.addEventListener('resize',()=>{ if(_trendData) drawTrendCurve(_trendData); });
+window.addEventListener('resize',()=>{ if(_trendData) drawTrendCurve(_trendData); drawArchLines(); });
 
 let _firstLoad=true;
 async function tick(){

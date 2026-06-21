@@ -531,11 +531,12 @@ function render(DATA){
     else if(st==='skipped'){ dotCls='idle'; stTxt='SKIP'; stCls='idle'; }
     const star = c.core ? '<span class="star">\u2605</span>' : '';
     const ag = AG_LABEL[c.agent] || _esc(String(c.agent||'').toUpperCase());
-    const freqEn = _esc(c.human_en || c.expr || '');
+    const freqEn = _esc(String(c.human_en || c.expr || '').toUpperCase());
+    const nameUp = _esc(String(c.name||'').toUpperCase());
     const nextMs = c.next_run_ms || 0;
     const nx = mqCountdown(nextMs);
     return `<tr class="${c.core?'core':''}">`+
-      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${_esc(c.name||'')}</span><span class="ag">${ag}</span></span><span class="tfreq">${freqEn}</span></td>`+
+      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${nameUp}</span><span class="ag">${ag}</span></span><span class="tfreq">${freqEn}</span></td>`+
       `<td class="r tnext${nx.soon?' soon':''}" data-next="${nextMs}">${nx.txt}</td>`+
       `<td class="r"><span class="tst ${stCls}">${stTxt}</span></td>`+
     `</tr>`;

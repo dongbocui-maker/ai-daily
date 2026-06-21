@@ -1,0 +1,57 @@
+{
+  "slug": "deepmind-securing-internal-systems",
+  "savedDate": "2026-06-21",
+  "publishDate": "2026-06-18",
+  "titleZh": "防范能力日强且未必对齐的 AI Agent：DeepMind 内部系统安全实践",
+  "titleEn": "Securing internal systems against increasingly capable and imperfectly aligned AI",
+  "author": "Rohin Shah, Four Flynn (Google DeepMind)",
+  "authorTitle": "Google DeepMind 安全团队（Rohin Shah、Four Flynn 等）",
+  "originalUrl": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+  "source": "deepmind.google",
+  "tags": [
+    "AI 安全",
+    "Agent 安全",
+    "内部系统",
+    "行为监控",
+    "企业部署",
+    "护栏",
+    "AI Control"
+  ],
+  "summary": "DeepMind 公布其 AI Control Roadmap——一套用于构建和管理 Google 内部部署的先进 AI 的「纵深防御」框架。核心思路是：超越传统模型对齐，额外叠加一层系统级安全，把内部 agent 当作「潜在的内部威胁（insider threat）」对待，即便对齐不完美也能提供保障。框架包含三大支柱：基于 MITRE ATT&CK 的 AI 威胁建模、用可信 AI 作「监督者」实时审查 agent 的检测与拦截、按覆盖率/召回率/响应时间衡量效果，并把安全协议按模型能力映射为 D1-D4（检测）和 R1-R3（防控）分级。团队已分析百万级 coding agent 轨迹，并为 Gemini Spark agent 部署了实时监控。一个关键发现：多数被标记事件并非源于恶意，而是 agent 误解或「过度积极」达成用户目标。",
+  "keyPoints": [
+    "**核心命题：即便对齐不完美，也要保证内部系统安全。** DeepMind 推出 AI Control Roadmap，一套「纵深防御（defense-in-depth）」框架。它不取代模型对齐，而是在对齐之上额外叠加一层系统级安全——把内部 agent 当作「可能未对齐」来对待，从而在对齐不到位时仍提供保障。作者称这可作为整个行业的范本。",
+    "**「双控驾校教练」比喻贯穿全文。** 就像驾校教练信任学员、但随时准备接管方向盘或踩刹车；AI Control 系统根据 agent 经过验证的行为来授予权限，通过受控的、渐进的访问来建立信任。这是一种「按行为给权限」的信任模型，而非一次性全权放行。",
+    "**第一支柱——把不可信 agent 当作「内部威胁」做威胁建模。** 借鉴网络安全最佳实践，DeepMind 基于业界标准 MITRE ATT&CK 框架（基于真实世界观测的对手战术技术知识库），把潜在攻击拆解成更小的战术与技术。这让团队能系统化追踪风险、在造成损害前发现坏行为、并安全地做「演练（drills）」测试防御是否真的扛得住。",
+    "**第二支柱——用可信 AI 作「监督者」做检测与拦截。** 监控是 AI Control 的骨干：用其他可信 AI 系统作 supervisor，持续审查工作中 agent 的推理、动作和计划，看它是否偏离轨道（Detection）。一旦 supervisor 发现 agent 试图做有害的事，可在损害发生前介入拦截动作（Prevention and Response）。",
+    "**第三支柱——用三个可量化指标确保系统真的有效。** 覆盖率（coverage，被监控流量的比例）、召回率（recall，被抓到的未对齐行为比例）、响应时间（time-to-response）。安全不靠口号，而靠这三个可测量的工程指标持续衡量。",
+    "**防御要随 AI 变聪明而同步升级——检测分级 D1-D4。** 今天监控模型可见的思维链（chain-of-thought）；但当模型学会隐藏推理——通过「监督感知（oversight awareness，知道自己在被监控）」或「不透明推理（opaque reasoning，不用可见文本推理）」——仅读它说出来的推理就不够了，必须分析其行为、甚至检查模型内部运作。模型的「逃避检测能力」决定 Detection 等级 D1-D4。",
+    "**响应策略必须随威胁严重性 scale——防控分级 R1-R3。** 对低风险、可逆的动作，可以延迟审查轨迹、事后快速补救（异步响应）；对特别高风险的动作（如重大网络攻击），必须转为实时阻断、在执行前拦截（同步响应）。模型的「攻击执行能力」决定 Prevention and Response 等级 R1-R3。",
+    "**已分析百万级 coding agent 轨迹，并落地 Gemini Spark 实时监控。** 团队构建了异步监控系统原型，审查 coding agent 轨迹并升级给人类复核，每个被标记事件按 roadmap 的威胁分类法归类。这让他们超越简单的关键词过滤，转向识别「高信号行为模式」。这项研究已用于为 Gemini Spark agent 构建实时监控，可对「无意中删除数据」等突发问题实时响应。",
+    "**关键发现：多数风险来自「过度积极」而非恶意。** 数据显示，大多数被标记事件并非源于对抗性意图，而往往是 agent 误解、或为达成用户目标而「过度积极（overeagerness）」所致。理解这些细微差别，对完善安全协议至关重要——这把「AI agent 安全」从科幻式的「恶意 AI」叙事，拉回到工程现实。",
+    "**Agent 生态安全是共享责任，DeepMind 同步发布政策框架。** AI Control Roadmap 只是多层方法中的一环。DeepMind 同日发布面向政策制定者的技术框架《Three Layers of Agent Security》，论述需要在三个层面提升安全：单个 agent 层、多 agent 系统层、以及赋能网络防御者、构建更广生态的韧性。目标是让行业、政策制定者、学界围绕最佳实践和标准对齐。"
+  ],
+  "insight": "## 1. 这篇的核心贡献：把「AI 安全」从对齐叙事拉到「系统级控制」工程\n\n大量 AI 安全讨论停留在「如何把模型训练得更对齐」。DeepMind 这篇最重要的转向是：承认对齐永远可能不完美，因此必须在系统层加一道独立的安全网。这与传统网络安全的「假设会被攻破、做纵深防御」哲学一脉相承。对企业决策者而言，这是一个更可操作、更可审计的安全范式——不依赖「相信模型是好的」，而是用监控、权限、拦截来兜底。\n\n## 2. 「把 agent 当内部威胁」是企业部署 agent 的关键心智模型\n\n把不可信 agent 类比为「已经有办公室门禁的潜在 rogue employee」，并直接复用 MITRE ATT&CK——这是把成熟的网络安全方法论平移到 AI agent 治理的范例。对 Jason 关注的企业云和 Copilot/agent 落地，这给出了一条清晰的客户对话主线：企业不该问「这个 agent 对齐了吗」，而该问「我有没有对它做威胁建模、有没有监控覆盖、被抓到的违规行为召回率多少、高危动作能否实时阻断」。\n\n## 3. D1-D4 / R1-R3 分级是可直接借用的治理脚手架\n\n把安全措施按模型能力映射成检测等级（D1-D4，对应逃避检测能力）和防控等级（R1-R3，对应攻击执行能力），是一个非常工程化、可落地的分级思路。企业完全可以借用这个骨架来设计自己的 agent 部署策略：低能力/低风险 agent 用异步审查即可，高能力/高危操作必须上同步实时拦截。这比「全有或全无」的审批要细腻得多，也更能平衡效率与安全。\n\n## 4. 「多数风险来自过度积极而非恶意」改变了风控重心\n\n这是全文最反直觉、也最有实操价值的发现：百万轨迹里大部分被标记事件不是 agent「使坏」，而是误解意图或为了达成目标用力过猛（比如误删数据）。这意味着企业部署 agent 的首要风险不是「被攻击」，而是「好心办坏事」。风控设计应优先覆盖「可逆性」「破坏性操作的二次确认」「数据删除/资金操作的实时拦截」，而非把资源全押在防恶意越权上。\n\n## 5. 对 Microsoft / 企业云生态的战略含义\n\nDeepMind 用可信 AI 监督另一个 AI、按行为渐进授权、把监控指标化——这套「AI 监督 AI + 系统级控制」恰恰是超大规模云厂商的结构性优势所在：它们同时掌握模型、运行时、身份权限、沙箱和计算。对企业客户而言，「能不能在合规边界内安全地跑 agent」会成为选型的核心问题，而这正是 Azure/M365 这类平台相比纯模型厂商可以讲的差异化故事。安全护栏本身正在成为一个独立的产品层和咨询服务机会。",
+  "summaryZh": "## 一、背景：agent 创造巨大价值，也需要更精密的护栏\n\nDeepMind 的 Rohin Shah 和 Four Flynn 在这篇博客中指出，AI agent 正在重塑我们与技术的关系——它们自主执行从网络防御、科学发现到产品开发的复杂任务，开启了新一轮生产力时代。仅在美国，到 2030 年 AI agent 就可能创造 2.9 万亿美元的经济价值（引自麦肯锡研究）。\n\n但随着这些 agent 能力增强，它们也需要更精密的安全保障。为此，DeepMind 开发了 AI Control Roadmap：一套用于构建和管理 Google 内部部署的先进 AI 的框架。这套「纵深防御（defense-in-depth）」方法超越了传统的模型对齐，额外加上一层关键的系统级安全——即便对齐不完美，也能提供保障。作者认为它可以作为更广泛行业的范本。\n\n## 二、理解 AI Control：信任，但随时准备接管\n\nDeepMind 的安全方法从坚实的基础起步，纳入沙箱（sandboxing）、端点安全、抗提示注入等传统保障。在此之上，AI Control Roadmap 把模型对齐——即训练 AI 本质上安全且有用——作为首要防线。然后它再提供额外一层安全：把内部 agent 当作「可能未对齐」来对待，从而在对齐不完美时仍能提供保障。\n\n作者用一个贯穿全文的比喻：这就像一位有「双控装置」的驾校教练。教练信任学员，但随时准备接管方向盘或在出错时踩刹车。类似地，AI Control 系统根据 agent「经过验证的行为」来授予权限，通过受控的、渐进式的访问来建立信任。\n\n整个 roadmap 建立在一个简单但审慎的假设上：如果一个能力极强的 AI agent 并不与我们的目标对齐、并以意料之外的方式行动，怎么办？为应对这一点，方案聚焦三个关键领域。\n\n## 三、第一支柱：把不可信 agent 当作「内部威胁」\n\n遵循网络安全最佳实践，DeepMind 开发了一套面向 AI 的全新威胁建模框架。Roadmap 把不可信的 AI agent 视为潜在的「内部威胁（insider threat）」——类似于一家公司会如何对待一个已经拥有办公室门禁、却可能变坏的员工。\n\n通过构建在业界标准 MITRE ATT&CK 框架之上（这是一个基于真实世界观测、全球可访问的对手战术与技术知识库），团队把潜在攻击拆解成更小的战术和技术。这让他们能够有条理地追踪风险、在坏行为造成损害之前发现它、并安全地进行「演练（drills）」以测试防御是否真的扛得住。\n\n## 四、第二支柱：部署 AI Control 缓解措施\n\n第二，DeepMind 制定了部署 AI Control 缓解措施的计划来应对这些风险：\n\n- **识别问题（检测 Detection）：** 监控是 AI Control 的骨干。他们使用其他可信的 AI 系统作为「监督者（supervisors）」，持续审查工作中 agent 的推理、动作和计划，判断它是否正在偏离轨道。\n- **管理问题（预防与响应 Prevention and Response）：** 如果监督者看到 agent 试图做有害的事，它可以在损害发生之前介入、阻止该动作。\n\n## 五、第三支柱：用三个指标衡量系统是否有效\n\n最后，为确保系统真正起作用，DeepMind 持续在三个关键指标上衡量性能：\n\n- **覆盖率（coverage）：** 被监控流量的比例；\n- **召回率（recall）：** 被抓到的未对齐行为的比例；\n- **响应时间（time-to-response）。**\n\n## 六、随着 AI 变聪明，安全也要同步升级\n\n随着 AI 模型持续进步，防御也必须同步加强。在 AI Control Roadmap 中，DeepMind 把安全协议映射到 AI 能力的两条关键战线上的可衡量里程碑：\n\n**一、逃避检测的能力。** 今天，他们监控模型可见的思维链（chain-of-thought）。然而，随着模型学会隐藏其推理——要么通过「监督感知（oversight awareness）」，即知道自己正在被监控；要么通过「不透明推理（opaque reasoning）」，即不使用可见文本进行推理——仅仅阅读它们口头化的推理将不再足够。届时需要分析它们的行为，并可能检查模型的内部运作。\n\n**二、造成潜在伤害的能力。** 对于低风险、可逆的动作，可以依靠延迟审查轨迹、并在问题发生后快速补救（异步响应）。对于特别高风险的动作，比如重大网络攻击，必须转向实时预防，在有害动作被执行前就阻断它（同步响应）。换言之，响应策略必须随威胁的严重程度而 scale。\n\nAI Control Roadmap 根据所部署模型的能力来推荐安全措施：模型的「检测逃避能力」决定检测等级（D1-D4），模型的「攻击执行能力」决定预防与响应等级（R1-R3）。\n\n## 七、分析百万级 agent 轨迹，支撑实时监控\n\n要构建这些系统，需要数据。DeepMind 团队构建了一个异步监控系统的内部原型，审查 coding agent 的轨迹，并将发现升级给人类复核。每个被标记的事件都依据 roadmap 中的威胁分类法（threat taxonomy）进行归类。\n\n他们已经分析了一百万个 coding agent 任务，这带来了宝贵的洞见来完善安全协议，并让他们超越简单的关键词过滤、转向识别「高信号行为模式」。例如，这项研究在为 Gemini Spark agent 构建实时监控方面发挥了关键作用，使他们能够对「无意中删除数据」这类突发问题做出实时响应。\n\n值得注意的是，数据显示：大多数被标记的事件并非源于对抗性意图；相反，它们往往是 agent 误解意图、或为达成用户目标而「过度积极（overeagerness）」的结果。理解这些细微差别，对完善安全与安保协议至关重要。\n\n## 八、保卫 agent 生态是共同责任\n\nAI Control Roadmap 只是 DeepMind 多层 agent 安全方法中至关重要的一环。通过把这些协议与更广泛的基础设施整合，他们正在扩展内部安全，以安全地管理最先进的 AI 模型。\n\n此外，这种多层 agent 安全方法应当成为行业、政策制定者和学界的协作优先事项。通过让整个生态围绕最佳实践和标准对齐，可以赋能网络防御者、构建社会韧性。这也是为什么 DeepMind 同日发布了一份面向政策制定者的技术框架——《Three Layers of Agent Security（agent 安全的三个层次）》。该论文详述了需要如何在三个层面改进安全：单个 agent 层面、多 agent 系统层面，以及赋能网络防御者、在更广泛生态中构建韧性。\n\nDeepMind 表示，将在这些框架基础上继续构建，以便在今天就有信心地部署有能力的 AI，同时为未来打造安全的基础。",
+  "quotes": [
+    {
+      "en": "This “defense-in-depth” approach goes beyond traditional model alignment, adding a crucial layer of system-level security that provides assurance even if alignment is imperfect.",
+      "zh": "这种「纵深防御」方法超越了传统的模型对齐，额外加上一层关键的系统级安全——即便对齐不完美，也能提供保障。"
+    },
+    {
+      "en": "Think of it like a driving instructor with dual controls. The instructor trusts the student but stays ready to take the wheel or hit the brakes if a mistake occurs.",
+      "zh": "把它想象成一位有双控装置的驾校教练：教练信任学员，但随时准备在出错时接管方向盘或踩刹车。"
+    },
+    {
+      "en": "The roadmap treats untrusted AI agents as potential “insider threats” — similar to the way a company would treat a potential rogue employee who already has access to the office.",
+      "zh": "Roadmap 把不可信的 AI agent 当作潜在的「内部威胁」——类似于一家公司会如何对待一个已经拥有办公室门禁、却可能变坏的员工。"
+    },
+    {
+      "en": "Monitoring is the backbone of AI control. We use other, trusted AI systems as \"supervisors\" to constantly review a working agent's reasoning, actions and plans to see if it is going off track.",
+      "zh": "监控是 AI Control 的骨干。我们用其他可信的 AI 系统作为「监督者」，持续审查工作中 agent 的推理、动作和计划，看它是否正在偏离轨道。"
+    },
+    {
+      "en": "The majority of flagged events do not stem from adversarial intent; instead, they often result from agent misinterpretation or overeagerness to achieve a user’s goal.",
+      "zh": "大多数被标记的事件并非源于对抗性意图；相反，它们往往是 agent 误解意图、或为达成用户目标而过度积极的结果。"
+    }
+  ]
+}

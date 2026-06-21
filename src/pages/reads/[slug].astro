@@ -143,13 +143,29 @@ function formatInline(s: string): string {
           </div>
         )}
 
-        {/* 4. 完整中文解读 */}
-        {/* 不用 prose：renderMd 已给每个元素内联与主文一致的 Tailwind 类；
-            prose/prose-lg 会注入另一套字号/行高/标题样式与之冲突，导致与主文格式不符 */}
-        <div class="mb-10">
-          <h2 class="text-2xl font-extrabold mb-4">📜 中文解读</h2>
-          <div class="reads-body max-w-none" set:html={renderMd(article.summaryZh)}></div>
-        </div>
+        {/* 4. 中英对照全文（新格式优先；无 bilingual 时回退到旧中文解读） */}
+        {/* 不用 prose：renderMd 已给每个元素内联与主文一致的 Tailwind 类 */}
+        {article.bilingual && article.bilingual.length > 0 ? (
+          <div class="mb-10">
+            <h2 class="text-2xl font-extrabold mb-2">📖 中英对照全文</h2>
+            <p class="text-sm text-accent-gray-500 mb-6">英文原文在前、中文译文在后，以小节为单元上下对照</p>
+            <div class="space-y-8">
+              {article.bilingual.map((blk) => (
+                <div class="bilingual-block">
+                  {/* 英文原文在前（偏灰） */}
+                  <div class="reads-body reads-body-en text-accent-gray-500" set:html={renderMd(blk.en)}></div>
+                  {/* 中文译文在后（紫色左线区分） */}
+                  <div class="reads-body pl-4 border-l-2 border-accent-purple/40 mt-2" set:html={renderMd(blk.zh)}></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : article.summaryZh ? (
+          <div class="mb-10">
+            <h2 class="text-2xl font-extrabold mb-4">📜 中文解读</h2>
+            <div class="reads-body max-w-none" set:html={renderMd(article.summaryZh)}></div>
+          </div>
+        ) : null}
 
         {/* 5. 金句精选 */}
         {article.quotes && article.quotes.length > 0 && (
@@ -168,7 +184,27 @@ function formatInline(s: string): string {
           </div>
         )}
 
-        {/* 6. 标签 */}
+        {/* 6. 延伸视角（二手解读卡片） */}
+        {article.secondaryReads && article.secondaryReads.length > 0 && (
+          <div class="mb-10">
+            <h2 class="text-2xl font-extrabold mb-2">🔍 延伸视角</h2>
+            <p class="text-sm text-accent-gray-500 mb-4">来自其他权威信息源的不同解读视角（点击查看原文）</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {article.secondaryReads.map((r) => (
+                <a href={r.url} target="_blank" rel="noopener noreferrer"
+                   class="block p-5 bg-white border border-accent-gray-200 hover:border-accent-purple rounded-sm transition-colors">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="text-sm font-bold text-accent-purple">{r.source}</span>
+                    <span class="text-xs text-accent-gray-400">↗</span>
+                  </div>
+                  <p class="text-sm leading-relaxed text-accent-gray-700" set:html={formatInline(r.pov)}></p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 7. 标签 */}
         {article.tags.length > 0 && (
           <div class="mb-6 pt-6 border-t border-accent-gray-200">
             <div class="flex flex-wrap gap-2">

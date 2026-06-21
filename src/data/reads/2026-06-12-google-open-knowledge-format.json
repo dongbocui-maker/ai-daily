@@ -1,0 +1,87 @@
+{
+  "slug": "google-open-knowledge-format",
+  "savedDate": "2026-06-22",
+  "publishDate": "2026-06-12",
+  "titleZh": "谷歌发布开放知识格式 OKF：把「LLM Wiki」变成智能体可读的通用语",
+  "titleEn": "Introducing the Open Knowledge Format",
+  "author": "Sam McVeety & Amir Hormati",
+  "authorTitle": "Google Cloud 技术负责人（Data Analytics & BigQuery）",
+  "originalUrl": "https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing",
+  "source": "manual",
+  "tags": ["知识管理", "AI Agent", "开放标准", "Google Cloud", "上下文工程", "Markdown"],
+  "summary": "谷歌把过去一年各自为政的「LLM Wiki / AGENTS.md / Obsidian-as-knowledge」模式抽象成一份一页纸的开放规范 OKF——知识不再是又一个服务，而是一种可移植、可互操作的「格式」。",
+  "keyPoints": [
+    "**OKF v0.1 的本质**：知识 = 一个目录 + 一组带 YAML frontmatter 的 Markdown 文件。没有压缩方案、没有新运行时、不强制 SDK——纯 Markdown、纯文件、纯 frontmatter。",
+    "**唯一必填字段是 `type`**：其余 `title / description / resource / tags / timestamp` 全部可选。规范定义的是「互操作的接口面」，而非内容模型。",
+    "**文件路径即概念身份**：每个概念一个文件，概念之间用普通 Markdown 链接互引，把目录变成一张比文件系统父子层级更丰富的关系图。",
+    "**解决的是碎片化问题**：组织内部知识散落在元数据目录、wiki、代码注释、资深工程师脑子里，每家厂商各有 SDK 和 schema，知识无法跨产品/组织迁移。",
+    "**三原则**：最小主张（only `type` 必填）、生产者/消费者解耦（格式即契约，两端工具可独立替换）、是格式不是平台（不绑任何云/模型/框架）。",
+    "**配套工具是 PoC**：BigQuery 富化智能体、纯静态 HTML 可视化器、三个示例 bundle（GA4 电商 / Stack Overflow / 比特币公共数据集），均开源在 GitHub。"
+  ],
+  "insight": "这篇的价值不在技术复杂度（它刻意极简），而在「把一个已经野蛮生长一年的事实标准收敛成规范」的判断力。Karpathy 的 LLM Wiki、AGENTS.md/CLAUDE.md、Obsidian vault——大家都在重复发明同一个轮子，谷歌做的事是承认「缺的不是又一个知识服务，而是一种通用格式」，然后把它标准化。对企业 AI 落地的启发很直接：与其上一套重型知识平台，不如先把组织知识沉淀成版本受控、人机皆可读的 Markdown 库，让智能体承担「读和更新」的脏活、让团队像管代码一样策展内容。OKF 的厂商中立立场也值得注意——它的价值取决于有多少方在用，而非谁拥有它，这是开放标准能否成立的关键。",
+  "bilingual": [
+    {
+      "en": "## Introducing the Open Knowledge Format\n\nAs foundation models continue to improve, the lack of relevant context often limits what they can do, especially as they are used to build agentic systems. While these models can help you write code, summarize documents, or analyze a dataset, they still need the right information to produce accurate and actionable results.\n\nThat's why today, we're introducing the **Open Knowledge Format (OKF)**, an open specification that formalizes the LLM-wiki pattern into a portable, interoperable format. This is a vendor-neutral, agent- and human-friendly standard for representing the metadata, context, and curated knowledge that modern AI systems need.\n\nAs published, OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter, with a small set of agreed-upon conventions that let wikis written by different producers be consumed by different agents without translation.",
+      "zh": "## 介绍开放知识格式\n\n随着基础模型不断进步，**缺乏相关上下文**往往成为制约其能力的瓶颈——在用它们构建智能体（agentic）系统时尤为明显。这些模型虽能帮你写代码、总结文档、分析数据集，但要产出准确且可执行的结果，仍然需要正确的信息。\n\n正因如此，我们今天推出**开放知识格式（Open Knowledge Format, OKF）**——一份将「LLM-wiki」模式正式化为可移植、可互操作格式的开放规范。它是一个厂商中立、对智能体和人类都友好的标准，用于表达现代 AI 系统所需的元数据、上下文与经过策展的知识。\n\nOKF v0.1 将知识表示为「一个目录下的一组 Markdown 文件 + YAML frontmatter」，配上一小套约定俗成的规则，让不同生产者写的 wiki 能被不同智能体直接消费，无需翻译转换。"
+    },
+    {
+      "en": "That's it. No complex compression scheme, no new runtime, no required SDK. A bundle of OKF documents is:\n\n- **Just markdown** — readable in any editor, renderable on GitHub, indexable by any search tool\n- **Just files** — shippable as a tarball, hostable in any git repo, mountable on any filesystem\n- **Just YAML frontmatter** — for the small set of structured fields that need to be queryable: `type`, `title`, `description`, `resource`, `tags`, and `timestamp`\n\nIf you've used Obsidian, Notion, Hugo, or any of the LLM wiki patterns that have emerged over the past year, the shape will feel familiar. OKF formalizes the small set of conventions needed to make these patterns interoperable.",
+      "zh": "就这么简单。没有复杂的压缩方案，没有新运行时，不强制任何 SDK。一个 OKF 文档包（bundle）只是：\n\n- **纯 Markdown** —— 任意编辑器可读、GitHub 可渲染、任意搜索工具可索引\n- **纯文件** —— 可打包成 tarball、托管在任意 git 仓库、挂载到任意文件系统\n- **纯 YAML frontmatter** —— 仅用于一小套需要被查询的结构化字段：`type`、`title`、`description`、`resource`、`tags`、`timestamp`\n\n如果你用过 Obsidian、Notion、Hugo，或过去一年涌现的任何 LLM wiki 模式，这个形态会很眼熟。OKF 所做的，就是把让这些模式能够互操作所需的那一小套约定正式化。"
+    },
+    {
+      "en": "## A fragmented context landscape\n\nIn most organizations, the information that foundation models use is overwhelmingly internal knowledge: the schema of a table, your business's meaning of a metric, the runbook for an incident, the join paths between two systems, the deprecation notice for an old API, etc.\n\nWhen an AI agent needs to answer \"How do I compute weekly active users from our event stream?\" it has to assemble the answer from these scattered, mutually incompatible surfaces. Every vendor offers its own catalog, its own SDK, its own knowledge-graph schema, and none of the knowledge is easily portable across products or organizations.\n\nThe result: Every agent builder is solving the same context-assembly problem from scratch, every catalog vendor is reinventing the same data models, and the knowledge itself is locked behind whichever surface created it.",
+      "zh": "## 碎片化的上下文格局\n\n在大多数组织里，基础模型用到的信息绝大部分是**内部知识**：一张表的 schema、某个指标在你业务里的含义、某次事故的处理手册（runbook）、两个系统之间的 join 路径、某个旧 API 的弃用通知等等。\n\n当一个 AI 智能体要回答「如何从我们的事件流计算周活跃用户（WAU）？」时，它必须从这些零散、互不兼容的来源里拼凑答案。每家厂商都提供自己的目录、自己的 SDK、自己的知识图谱 schema，没有一份知识能在产品或组织之间轻松迁移。\n\n结果就是：**每个智能体开发者都在从零解决同一个「上下文拼装」问题，每个目录厂商都在重复造同样的数据模型，知识本身则被锁死在最初产生它的那个系统里。**"
+    },
+    {
+      "en": "## Knowledge as a living wiki\n\nInstead of using models to search the same documents for the same facts over and over, you can give your agents a shared markdown library that grows more useful over time. This lets your agents take on the drudgery of reading and updating their own files, while your team curates the content and manages it like code.\n\nAndrej Karpathy articulates this idea most crisply in his LLM Wiki gist. \"LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass,\" he writes. The bookkeeping that causes humans to abandon personal wikis is exactly what LLMs are good at.\n\nThe pattern is compelling and powerful, but each instance is bespoke. Karpathy's wiki and your team's wiki and a vendor's catalog export may all look alike (markdown, frontmatter, cross-links), but none of them are intentionally designed to cooperate.",
+      "zh": "## 知识即一座活体 Wiki\n\n与其让模型反复在同样的文档里搜索同样的事实，不如给智能体一个**共享的 Markdown 知识库**，让它随时间越用越有价值。这样，智能体承担读取和更新文件的繁琐工作，而你的团队像管代码一样策展和管理内容。\n\nAndrej Karpathy 在他的「LLM Wiki」gist 中把这一思想表达得最精炼：「LLM 不会觉得无聊，不会忘记更新交叉引用，能一次性改动 15 个文件。」——正是那些让人类放弃维护个人 wiki 的繁琐记账工作，恰恰是 LLM 擅长的。\n\n这套模式很有吸引力也很强大，**但每个实现都是定制的**。Karpathy 的 wiki、你团队的 wiki、某厂商的目录导出，看上去可能都一样（Markdown、frontmatter、交叉链接），却没有一个是有意设计来彼此协作的。"
+    },
+    {
+      "en": "## What's missing is a format, not another service\n\nThe answer to this problem isn't another knowledge service. You need a **format**, a way to represent knowledge that:\n\n- Anyone can produce, without an SDK\n- Anyone can consume, without an integration\n- Survives moving between systems, organizations, and tools\n- Lives in version control alongside the code it describes\n- Is readable by humans and parseable by agents: the same file, no translation layer\n\nBy design, OKF is that format.",
+      "zh": "## 缺的是一种格式，而非又一个服务\n\n这个问题的答案不是又一个知识「服务」。你需要的是一种**格式**——一种表示知识的方式，它能做到：\n\n- 任何人无需 SDK 即可生产\n- 任何人无需集成即可消费\n- 在系统、组织、工具之间迁移而不失效\n- 与它所描述的代码一起存放在版本控制中\n- 人类可读、智能体可解析：同一份文件，没有翻译层\n\n而 OKF 的设计目标，正是成为这样一种格式。"
+    },
+    {
+      "en": "## How OKF works: The design in one screen\n\nAn OKF bundle is a directory of markdown files representing concepts: anything you want to capture, including tables, datasets, metrics, playbooks, runbooks, and APIs. Each concept is one file. The file path is the concept's identity.\n\nEach concept document has a small block of YAML front matter for structured fields and a markdown body for everything else. Concepts link to each other with normal markdown links, turning the directory into a graph of relationships that is richer than the parent/child links implied by the file system. Bundles can optionally include `index.md` files (for progressive disclosure as agents navigate the hierarchy) and `log.md` files (for chronological history of changes).\n\nThe full v0.1 specification (including conformance criteria, cross-linking rules, and the small number of reserved filenames) fits on a single page.",
+      "zh": "## OKF 如何工作：一屏看懂的设计\n\n一个 OKF bundle 就是一个目录，里面是代表各种**概念（concept）**的 Markdown 文件——你想捕获的任何东西：表、数据集、指标、操作手册、运维手册、API。**每个概念对应一个文件，文件路径即该概念的身份标识。**\n\n每个概念文档有一小块 YAML frontmatter 承载结构化字段，其余内容放在 Markdown 正文里。概念之间用**普通的 Markdown 链接**互相引用，把整个目录变成一张关系图——这张图比文件系统隐含的父/子层级关系更丰富。bundle 可选择性地包含 `index.md`（供智能体在层级中导航时渐进式展开）和 `log.md`（记录变更的时间线历史）。\n\n完整的 v0.1 规范（含一致性判定、交叉链接规则、少数保留文件名）**一页就能写完**。"
+    },
+    {
+      "en": "## Three principles behind the design\n\n**1. Minimally opinionated.** OKF requires exactly one thing of every concept: a `type` field. Everything else is left to the producer. The spec defines the interoperability surface, not the content model.\n\n**2. Producer/consumer independence.** OKF cleanly separates who writes the knowledge from who consumes it. A bundle hand-authored by a human can be consumed by an AI agent. The format is the contract; the tooling at each end is independently swappable.\n\n**3. Format, not platform.** OKF is not tied to any specific cloud, database, model provider, or agent framework. It will never require a proprietary account or SDK to read, write, or serve. We're publishing it as an open standard because the value of a knowledge format comes from how many parties speak it, not from who owns it.",
+      "zh": "## 设计背后的三条原则\n\n**1. 最小主张（尽量不干涉）。** OKF 对每个概念只强制要求一样东西：一个 `type` 字段。其余一切都交给生产者决定。规范定义的是**互操作的接口面**，而非内容模型。\n\n**2. 生产者/消费者解耦。** OKF 干净地把「谁生产知识」和「谁用知识」分开。人手写的 bundle 可被 AI 智能体消费。**格式即契约**，两端的工具可各自独立替换。\n\n**3. 是格式，不是平台。** OKF 不绑定任何特定的云、数据库、模型提供商或智能体框架，读写或提供服务永远不需要专有账号或 SDK。我们将其作为开放标准发布，因为一种知识格式的价值来自**有多少方在使用它**，而非由谁拥有它。"
+    },
+    {
+      "en": "## What we're shipping & where we go from here\n\nTo make the format concrete, we're publishing reference implementations: an **enrichment agent** that walks a BigQuery dataset and drafts an OKF concept document for every table and view; a **static HTML visualizer** that turns any OKF bundle into an interactive graph view in a single self-contained file; and **three ready-to-browse sample bundles** (GA4 e-commerce, Stack Overflow, and Bitcoin public datasets).\n\nOKF v0.1 is a starting point, not a finished standard. The repo, the spec, and the sample bundles are available in GitHub. The format itself is the contribution. The tools we've shipped exist to make it real, and to lower the cost of trying it out. Whatever shape your knowledge takes today, OKF is designed to be the lingua franca it can be exchanged for tomorrow.",
+      "zh": "## 我们随规范发布了什么，以及下一步\n\n为了让格式落地，我们发布了参考实现：一个**富化（enrichment）智能体**，遍历 BigQuery 数据集，为每张表和视图起草一份 OKF 概念文档；一个**纯静态 HTML 可视化器**，把任意 OKF bundle 变成自包含单文件的交互式关系图；以及**三个开箱即用的示例 bundle**（GA4 电商、Stack Overflow、比特币公共数据集）。\n\nOKF v0.1 是**起点，而非成品标准**。规范、仓库、示例 bundle 均已在 GitHub 开放。格式本身才是真正的贡献，我们发布的工具只是为了让它变得真实、降低尝试成本。无论你今天的知识是什么形态，OKF 的目标是成为它明天得以交换的「通用语」（lingua franca）。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass.",
+      "zh": "LLM 不会觉得无聊，不会忘记更新交叉引用，能一次性改动 15 个文件。"
+    },
+    {
+      "en": "The answer to this problem isn't another knowledge service. You need a format.",
+      "zh": "这个问题的答案不是又一个知识服务。你需要的是一种格式。"
+    },
+    {
+      "en": "The value of a knowledge format comes from how many parties speak it, not from who owns it.",
+      "zh": "一种知识格式的价值，来自有多少方在使用它，而非由谁拥有它。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/06/16/google-cloud-introduces-open-knowledge-format-okf-a-vendor-neutral-markdown-spec-for-giving-ai-agents-curated-context/",
+      "pov": "从「OKF ≠ RAG」切入：RAG 是把文档切块做向量检索、每次现查；OKF 存的是**经过策展、版本受控、智能体可直接读写的「概念」**。前者「每次重新找答案」，后者「维护一个越用越好的共享知识库」——点破了 OKF 在上下文工程谱系里的真正定位。"
+    },
+    {
+      "source": "StartupHub.ai",
+      "url": "https://www.startuphub.ai/ai-news/insights/2026/google-open-knowledge-format-okf-explained-2026",
+      "pov": "偏 spec 细节与定位：强调 Google 自己把 OKF 定位为「一个起点，而非完成的标准」，发布在 Cloud 生态内却刻意保持厂商中立。提醒读者别高估 v0.1 的成熟度——它是邀请生态共建的开放草案，而非钦定标准。"
+    },
+    {
+      "source": "Medium / Marc Bara",
+      "url": "https://medium.com/@marc.bara.iniesta/googles-new-format-for-agent-context-a-standard-or-just-a-folder-82fb21d92041",
+      "pov": "提供批判性第二视角：「这到底是个标准，还是只是个文件夹？」质疑 OKF 的极简是否会导致约束力不足——当唯一必填字段只有 `type`，互操作性可能停留在「语法层」而非「语义层」。一个值得警惕的反面观点。"
+    }
+  ]
+}

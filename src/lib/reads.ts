@@ -5,6 +5,19 @@ export interface ReadQuote {
   zh: string;
 }
 
+/** 英中逐节对照单元（上下对照：英文在前、中文在后，以小节为分界） */
+export interface BilingualBlock {
+  en: string;   // 英文原文（可含 markdown：## 标题、- 列表、> 引用）
+  zh: string;   // 对应中文翻译
+}
+
+/** 二手解读卡片（其他权威信息源的不同视角，克制、不喧宾夺主） */
+export interface SecondaryRead {
+  source: string;   // 信息源名（如 "MarkTechPost"）
+  url: string;      // 原文链接
+  pov: string;      // 核心观点 / 独特视角提炼（2-4 句）
+}
+
 /** 音频元数据（跳 Hero 区下方渲染播放器） */
 export interface ReadAudio {
   url: string;                 // COS 公网 URL
@@ -28,7 +41,9 @@ export interface ReadArticle {
   summary: string;          // 一句话核心观点（30-50 字）
   keyPoints: string[];      // 核心观点（3-5 条）
   insight?: string;         // 启示与思考（钢铁虾视角）
-  summaryZh: string;        // 完整中文解读（markdown）
+  summaryZh?: string;       // 【旧格式】完整中文解读（markdown）；新格式文章可不写（被 bilingual 取代）
+  bilingual?: BilingualBlock[];     // 【新格式】英中逐节对照全文
+  secondaryReads?: SecondaryRead[]; // 【新格式】二手解读卡片（2-3 张）
   quotes?: ReadQuote[];     // 金句精选
   source: 'manual' | 'auto'; // 手工添加 vs cron 自动收集
   audio?: ReadAudio;        // 可选：NotebookLM 生成的双人对谈播客

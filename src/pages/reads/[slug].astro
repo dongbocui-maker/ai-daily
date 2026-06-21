@@ -148,14 +148,14 @@ function formatInline(s: string): string {
         {article.bilingual && article.bilingual.length > 0 ? (
           <div class="mb-10">
             <h2 class="text-2xl font-extrabold mb-2">📖 中英对照全文</h2>
-            <p class="text-sm text-accent-gray-500 mb-6">英文原文在前、中文译文在后，以小节为单元上下对照</p>
+            <p class="text-sm text-accent-gray-500 mb-6">中文译文在前、英文原文在后，以小节为单元上下对照</p>
             <div class="space-y-8">
               {article.bilingual.map((blk) => (
                 <div class="bilingual-block">
-                  {/* 英文原文在前（偏灰） */}
-                  <div class="reads-body reads-body-en text-accent-gray-500" set:html={renderMd(blk.en)}></div>
-                  {/* 中文译文在后（紫色左线区分） */}
-                  <div class="reads-body pl-4 border-l-2 border-accent-purple/40 mt-2" set:html={renderMd(blk.zh)}></div>
+                  {/* 中文译文在前（默认黑色正文） */}
+                  <div class="reads-body" set:html={renderMd(blk.zh)}></div>
+                  {/* 英文原文在后（灰色 + 紫色左线区分） */}
+                  <div class="reads-body reads-body-en text-accent-gray-500 pl-4 border-l-2 border-accent-purple/40 mt-3" set:html={renderMd(blk.en)}></div>
                 </div>
               ))}
             </div>

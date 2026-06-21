@@ -84,13 +84,29 @@ export function splitByDate(rawContent: string): RawDayBlock[] {
   const days: RawDayBlock[] = [];
   let current: RawDayBlock | null = null;
 
-  const dateHeader = /^#{0,3}\s*(\d{4}-\d{2}-\d{2})\s*AI\s*日报/;
+  // 日界标题正则——必须覆盖文档里所有真实写法，否则当天内容会泄漏进上一天的 daily 文件。
+  // 已知写法（2026-06 实测）：
+  //   "📅 2026-06-01 AI 日报"        emoji 前缀（最常见，#{0,3} 旧正则因 emoji 非 # 非空白而失配 → 历史污染根因）
+  //   "2026-06-05 AI 日报"            纯日期在前
+  //   "AI 日报 · 2026-06-12"          日期在后
+  //   "修正版：2026-06-15 AI 日报"     带前缀修饰
+  // 两个分支：A) 日期在「AI 日报」之前；B) 日期在「AI 日报」之后。
+  // 行首允许任意非换行前缀（emoji / # / 中文标点），用 [^\n]*? 非贪婪兜住。
+  const dateHeaderBefore = /^[^\n\d]*?(\d{4}-\d{2}-\d{2})[^\n]*?AI\s*日报/;
+  const dateHeaderAfter = /^[^\n]*?AI\s*日报[^\n\d]*?(\d{4}-\d{2}-\d{2})/;
+  const matchDateHeader = (line: string): string | null => {
+    const a = line.match(dateHeaderBefore);
+    if (a) return a[1];
+    const b = line.match(dateHeaderAfter);
+    if (b) return b[1];
+    return null;
+  };
 
   for (const line of lines) {
-    const m = line.match(dateHeader);
-    if (m) {
+    const matchedDate = matchDateHeader(line);
+    if (matchedDate) {
       if (current) days.push(current);
-      current = { date: m[1], rawTitle: line.replace(/^#+\s*/, '').trim(), lines: [] };
+      current = { date: matchedDate, rawTitle: line.replace(/^#+\s*/, '').trim(), lines: [] };
     } else if (current) {
       current.lines.push(line);
     }

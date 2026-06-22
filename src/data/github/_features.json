@@ -652,14 +652,14 @@
   },
   "addyosmani/agent-skills": {
     "features": [
-      "7 个 slash 命令覆盖完整开发生命周期：spec、plan、build、test、review、ship",
-      "skills 根据上下文自动激活，如设计 API 触发 api-and-interface-design",
-      "通过 Claude Code marketplace 一键安装并集成 plugin",
-      "支持 Cursor、Gemini CLI、Windsurf 等多种 AI coding agent 工具",
-      "封装资深工程师的工作流、质量门禁与最佳实践，确保 agent 一致执行"
+      "8 个 slash 命令映射开发生命周期，自动激活对应 skills",
+      "为 AI coding agent 封装资深工程师的工作流与质量门禁",
+      "`/build auto` 一次批准后自主完成计划生成与全部任务实现",
+      "skills 按任务自动触发，如 API 设计、frontend UI 工程",
+      "支持通过 Claude Code marketplace 一键安装"
     ],
-    "sourceHash": "69f8705d",
-    "ts": 1777625000802
+    "sourceHash": "-5a12b614",
+    "ts": 1782117658315
   },
   "coreyhaines31/marketingskills": {
     "features": [
@@ -814,14 +814,14 @@
   },
   "Panniantong/Agent-Reach": {
     "features": [
-      "一键为 AI Agent 集成多平台互联网访问能力，无需手动配置",
-      "支持 YouTube、Twitter、Reddit、小红书、B站、抖音等十余个平台的内容抓取",
-      "内置 agent-reach doctor 诊断命令，快速排查各渠道连通状态",
-      "Cookie 本地存储，完全开源免费，兼容 Claude Code、Cursor 等任意 Agent",
-      "底层工具（yt-dlp、twitter-cli、Jina Reader 等）持续追踪更新"
+      "一键为 AI Agent 接入互联网，自动选装并健康检查接入方式",
+      "支持网页、YouTube、Twitter、Reddit、小红书、B站、GitHub、RSS 等多平台读取",
+      "每个平台采用首选+备选多后端路由，接入失效自动换代",
+      "兼容 Claude Code、Cursor、Windsurf 等任意命令行 Agent",
+      "内置 doctor 诊断命令，一键检测各接入状态并给出修复建议"
     ],
-    "sourceHash": "-5604cb6d",
-    "ts": 1777625084897
+    "sourceHash": "-6616394b",
+    "ts": 1782117604713
   },
   "jackwener/OpenCLI": {
     "features": [
@@ -1897,14 +1897,14 @@
   },
   "withastro/flue": {
     "features": [
-      "TypeScript agent harness framework，headless 可编程，类似 Claude Code",
-      "内置 virtual sandbox（基于 just-bash），无需容器即可高效运行 agent",
-      "runtime-agnostic，可部署到 Node.js、Cloudflare、GitHub Actions 等",
-      "通过 Markdown 定义 skills、context 和 AGENTS.md，代码量极少",
-      "提供 @flue/sdk 与 @flue/cli，支持 webhook 等多种 trigger"
+      "基于 TypeScript harness 构建自主 agent 和 AI workflow",
+      "为 agent 提供安全 sandbox 环境以使用工具和修改文件",
+      "支持 durable execution，在故障和重启后保留进度",
+      "通过 subagent 委派任务给专门角色处理",
+      "可本地 CLI 运行或部署到托管 runtime，并通过 HTTP 暴露 agent"
     ],
-    "sourceHash": "-290560b2",
-    "ts": 1778489628515
+    "sourceHash": "-1ea5fe7d",
+    "ts": 1782117651572
   },
   "yikart/AiToEarn": {
     "features": [
@@ -2965,5 +2965,152 @@
     ],
     "sourceHash": "-30337e9",
     "ts": 1780215444290
+  },
+  "DeusData/codebase-memory-mcp": {
+    "features": [
+      "毫秒级全量索引仓库，结构化查询响应低于 1ms",
+      "基于 tree-sitter AST 解析支持 158 种语言",
+      "Hybrid LSP 为 11 种语言提供语义类型解析",
+      "构建函数、类、调用链与 HTTP 路由的持久化 knowledge graph",
+      "提供 14 个 MCP tools，支持 11 个 coding agent 即插即用",
+      "单一静态二进制文件，零依赖，跨 macOS/Linux/Windows"
+    ],
+    "sourceHash": "f077653",
+    "ts": 1782117599031
+  },
+  "iptv-org/iptv": {
+    "features": [
+      "收录全球公开可用的 IPTV 频道，提供 m3u 播放列表",
+      "支持任意兼容直播流的视频播放器直接打开播放",
+      "提供多种分类播放列表，便于按需选择",
+      "配套 EPG 电子节目指南，可下载频道节目表",
+      "提供频道数据 database 与 API 供查询调用"
+    ],
+    "sourceHash": "-373b2514",
+    "ts": 1782117610231
+  },
+  "n0-computer/iroh": {
+    "features": [
+      "通过公钥拨号建立连接的 API，自动维护最快路径",
+      "支持 hole-punching 直连，失败时回退至公共 relay 服务器",
+      "基于 QUIC 实现端点间认证加密、并发流与数据报传输",
+      "可组合 iroh-blobs、iroh-gossip、iroh-docs 等现成协议",
+      "提供 Rust 库，通过 cargo add iroh 快速接入"
+    ],
+    "sourceHash": "35975416",
+    "ts": 1782117615584
+  },
+  "google-research/timesfm": {
+    "features": [
+      "Google Research 开发的预训练 time-series 基础模型，用于时间序列预测",
+      "提供 decoder-only 架构，最新 2.5 版支持长达 16k context length",
+      "通过可选 quantile head 实现长达 1k horizon 的连续分位数预测",
+      "支持通过 HuggingFace Transformers + PEFT (LoRA) 进行 fine-tuning",
+      "通过 XReg 支持协变量，并集成 BigQuery ML、Vertex Model Garden 等产品"
+    ],
+    "sourceHash": "26df5539",
+    "ts": 1782117621695
+  },
+  "NVIDIA/SkillSpector": {
+    "features": [
+      "扫描 AI agent skills 的安全漏洞、恶意模式与风险",
+      "支持 Git 仓库、URL、zip、目录或单文件多种输入",
+      "内置 16 类共 64 种漏洞检测模式",
+      "两阶段分析：静态扫描 + 可选 LLM 语义评估",
+      "SC4 实时查询 OSV.dev 获取 CVE 数据并支持离线回退",
+      "输出 Terminal、JSON、Markdown 和 SARIF 多种格式报告"
+    ],
+    "sourceHash": "3e186bb8",
+    "ts": 1782117629310
+  },
+  "asgeirtj/system_prompts_leaks": {
+    "features": [
+      "收录 Claude、ChatGPT、Gemini 等主流 AI 聊天机器人的 system prompt 泄露文档",
+      "提供不同模型版本间 system prompt 的 diff 对比",
+      "覆盖 GitHub Copilot、Claude Code、Perplexity 等 AI 工具的 prompt"
+    ],
+    "sourceHash": "-7be5e3f4",
+    "ts": 1782117634510
+  },
+  "calesthio/OpenMontage": {
+    "features": [
+      "通过自然语言驱动 agent 完成视频研究、脚本、素材生成与剪辑合成",
+      "将 AI coding assistant 变为完整的 agentic 视频制作工作室",
+      "支持从免费 stock footage 与开放档案构建语料并检索真实视频片段剪辑",
+      "集成 Veo、Kling 等模型生成 motion clips，并用 Remotion 合成成片",
+      "支持 TTS 旁白、版权免费音乐与 word-level 字幕等低成本制作流程"
+    ],
+    "sourceHash": "-79bfc383",
+    "ts": 1782117640125
+  },
+  "Kong/insomnia": {
+    "features": [
+      "支持 GraphQL、REST、WebSockets、SSE、gRPC 等协议的 API 调试",
+      "通过原生 OpenAPI 编辑器与可视化预览设计 API",
+      "使用原生测试套件与 collection runner 测试 API",
+      "通过云端或自托管服务器进行 API mock",
+      "提供 Local Vault、Git Sync、Cloud Sync 多种存储与同步方式"
+    ],
+    "sourceHash": "792317a1",
+    "ts": 1782117666813
+  },
+  "tursodatabase/turso": {
+    "features": [
+      "Rust 编写的 in-process SQL 数据库，兼容 SQLite",
+      "提供 JavaScript、Python、Java 等多语言绑定",
+      "以 Rust crate 形式集成进应用进程内"
+    ],
+    "sourceHash": "da7cec",
+    "ts": 1782117671117
+  },
+  "makeplane/plane": {
+    "features": [
+      "Work Items 支持富文本编辑器及文件上传，可创建子属性与关联 issue",
+      "Cycles 通过 burn-down charts 等工具追踪团队进度",
+      "支持 Docker、Kubernetes 自托管部署",
+      "提供 Plane Cloud 与 self-host 两种使用方式",
+      "Instance admins 可通过 God mode 配置实例设置"
+    ],
+    "sourceHash": "52af44b5",
+    "ts": 1782117675344
+  },
+  "LMCache/LMCache": {
+    "features": [
+      "KV Cache 管理层，支持可扩展的 LLM 推理加速",
+      "支持多节点 P2P CPU 内存共享，可用于生产环境",
+      "采用多进程（MP）架构，提升 MoE 推理性能",
+      "可与 vLLM、NVIDIA Dynamo、Redis 等系统集成"
+    ],
+    "sourceHash": "-3652100e",
+    "ts": 1782117679154
+  },
+  "meshery/meshery": {
+    "features": [
+      "管理 service mesh 的开源云原生平台 Meshery",
+      "支持通过 Helm Chart 一键部署与配置",
+      "提供 CLI 工具进行性能管理与编排"
+    ],
+    "sourceHash": "-49654bcf",
+    "ts": 1782117683127
+  },
+  "chatwoot/chatwoot": {
+    "features": [
+      "开源自托管的现代化客户支持平台，可替代 Intercom、Zendesk",
+      "支持跨渠道统一管理客户对话与数据",
+      "内置 AI agent Captain，自动化响应并处理常见问题",
+      "提供 Heroku、DigitalOcean、Helm 等多种部署方式"
+    ],
+    "sourceHash": "-3e00268a",
+    "ts": 1782117688280
+  },
+  "swc-project/swc": {
+    "features": [
+      "基于 Rust 编写的超快速 TypeScript / JavaScript compiler",
+      "同时提供 Rust 与 JavaScript 双语言库支持",
+      "通过 swc_ecma_parser crate 提供解析能力",
+      "支持 Node v10+ 运行，兼容性优于 Babel"
+    ],
+    "sourceHash": "50ccfcb3",
+    "ts": 1782117692738
   }
 }

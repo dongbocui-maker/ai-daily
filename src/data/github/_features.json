@@ -33,14 +33,14 @@
   },
   "obra/superpowers": {
     "features": [
-      "从需求对话中提炼 spec 并分块呈现，供用户审阅确认",
-      "生成强调 TDD、YAGNI、DRY 原则的清晰实现计划",
-      "通过 subagent-driven-development 让 agent 自主执行任务并互相审查",
-      "支持 Claude Code、Codex CLI、Cursor、OpenCode 等多平台一键安装",
-      "技能自动触发，无需额外操作即可赋能 coding agent"
+      "为 coding agent 提供完整的软件开发方法论与可组合 skills",
+      "先理清需求规格，分块确认后再生成实现计划",
+      "实现计划强调红绿 TDD、YAGNI 与 DRY 原则",
+      "通过 subagent-driven-development 让 agent 自主完成各项任务",
+      "支持 Claude Code、Cursor、Codex、Gemini CLI 等多种 harness"
     ],
-    "sourceHash": "740d6560",
-    "ts": 1777623945518
+    "sourceHash": "-63a51131",
+    "ts": 1782118204766
   },
   "lukilabs/craft-agents-oss": {
     "features": [
@@ -258,15 +258,14 @@
   },
   "NousResearch/hermes-agent": {
     "features": [
-      "内置学习循环，从经验中创建并自我改进 skills",
-      "支持 Telegram、Discord、Slack 等多平台统一网关接入",
-      "兼容 Nous Portal、OpenRouter、OpenAI 等任意 LLM，一键切换",
-      "FTS5 会话搜索 + LLM 摘要，实现跨会话记忆召回",
-      "内置 cron 调度器，自然语言驱动定时自动化任务",
-      "支持子 agent 并行委派与 RPC 工具调用"
+      "内置学习闭环，从经验中自创并自我优化 skills",
+      "支持任意 LLM，可通过 hermes model 无缝切换无锁定",
+      "可在 Telegram、Discord、Slack、WhatsApp、Signal 及 CLI 运行",
+      "完整 TUI 终端界面，支持多行编辑与流式工具输出",
+      "agent 自管理记忆，可搜索历史对话并跨会话建模用户"
     ],
-    "sourceHash": "-2d53a3a5",
-    "ts": 1777624804947
+    "sourceHash": "57ab8414",
+    "ts": 1782118211672
   },
   "shiyu-coder/Kronos": {
     "features": [
@@ -1014,14 +1013,14 @@
   },
   "trekhleb/javascript-algorithms": {
     "features": [
-      "提供常见数据结构的 JavaScript 实现，含链表、栈、队列、堆、Trie、各类树等",
-      "提供常见算法的 JavaScript 实现，覆盖排序、搜索、图、动态规划等领域",
-      "按初学者与进阶难度分级标注，便于循序渐进学习",
-      "每个算法与数据结构配有独立 README、说明与延伸阅读链接",
-      "支持多语言翻译版本，方便全球开发者阅读"
+      "提供 JavaScript 实现的多种流行算法与数据结构示例",
+      "每个算法与数据结构均附独立 README 解释及延伸阅读链接",
+      "按 Beginner 和 Advanced 等级分类组织内容",
+      "数据结构涵盖 Linked List、Queue、Stack、Tree、Trie 等",
+      "README 提供简体中文、日语、韩语等多语言版本"
     ],
-    "sourceHash": "71163274",
-    "ts": 1777625189338
+    "sourceHash": "7aff53aa",
+    "ts": 1782118216946
   },
   "tensorflow/tensorflow": {
     "features": [
@@ -1063,14 +1062,13 @@
   },
   "microsoft/vscode": {
     "features": [
-      "全面的代码编辑、导航与智能理解支持",
-      "集成轻量级调试功能，覆盖 edit-build-debug 核心流程",
-      "丰富的扩展模型，支持与现有工具轻量集成",
-      "跨平台支持 Windows、macOS 和 Linux，每月更新迭代",
-      "基于 MIT 协议开源，社区共同参与开发"
+      "提供全面的代码编辑、导航与理解支持",
+      "内置轻量级调试功能，覆盖 edit-build-debug 核心流程",
+      "提供丰富的可扩展模型与现有工具集成",
+      "支持 Windows、macOS、Linux 跨平台，每月更新"
     ],
-    "sourceHash": "39bc7450",
-    "ts": 1777625209336
+    "sourceHash": "-4d10345c",
+    "ts": 1782118223576
   },
   "Significant-Gravitas/AutoGPT": {
     "features": [
@@ -1095,14 +1093,13 @@
   },
   "flutter/flutter": {
     "features": [
-      "单一代码库构建移动、Web 和桌面端应用的开源 SDK",
-      "分层架构提供像素级控制与强大合成能力，呈现精美 UI",
-      "跨 iOS、Android、Web、Windows、macOS、Linux 多平台支持",
-      "可作为嵌入式平台的 UI toolkit 使用",
-      "开放、可扩展的开发模型，兼容现有代码"
+      "基于单一代码库构建 mobile、web、desktop 跨平台应用的 SDK",
+      "分层架构让开发者精确控制屏幕上的每个像素",
+      "强大的图形合成能力，可叠加动画图形、视频、文本与控件",
+      "自由开源，兼容现有代码，全球开发者与组织广泛使用"
     ],
-    "sourceHash": "6e005514",
-    "ts": 1777625222960
+    "sourceHash": "-1c0f1310",
+    "ts": 1782118234828
   },
   "twbs/bootstrap": {
     "features": [
@@ -1146,14 +1143,14 @@
   },
   "ollama/ollama": {
     "features": [
-      "本地运行开源 LLM，支持 macOS、Windows、Linux 及 Docker 部署",
-      "提供 REST API 用于运行和管理模型，附带 Python 和 JavaScript SDK",
-      "集成 Claude Code、Codex、Copilot CLI 等多种编码 agent",
-      "通过 OpenClaw 将 Ollama 接入 WhatsApp、Telegram、Slack 等平台作为 AI 助手",
-      "内置模型库支持 Gemma 3 等主流开源模型一键运行"
+      "本地运行和管理开源 LLM 模型",
+      "支持 macOS、Windows、Linux 及 Docker 部署",
+      "提供 REST API 及 Python、JavaScript SDK",
+      "可对接 Claude Code、Codex、Copilot 等 agent 与应用",
+      "通过 OpenClaw 接入 WhatsApp、Telegram、Slack 等打造 AI 助手"
     ],
-    "sourceHash": "-47e8d357",
-    "ts": 1777625247512
+    "sourceHash": "7515ee09",
+    "ts": 1782118247187
   },
   "AUTOMATIC1111/stable-diffusion-webui": {
     "features": [
@@ -1168,14 +1165,13 @@
   },
   "f/prompts.chat": {
     "features": [
-      "收录全球最大开源 AI prompt 库,适配 ChatGPT、Claude、Gemini 等主流 LLM",
-      "通过 prompts.chat 网站提供在线浏览和搜索 prompt 功能",
-      "以 Hugging Face dataset 形式发布,支持开发者直接调用",
-      "支持自托管部署,可自定义运行 prompt 库",
-      "提供配套书籍《The Art of ChatGPT Prompting》深入讲解 prompt 技巧"
+      "全球最大的开源 AI prompt 库，含数千条精选 prompt",
+      "兼容 ChatGPT、Claude、Gemini、Llama、Mistral 等多种模型",
+      "可在线浏览 prompt，也支持 self-host 部署",
+      "提供 Hugging Face 数据集，便于直接获取与使用"
     ],
-    "sourceHash": "-72e627eb",
-    "ts": 1777625257406
+    "sourceHash": "21dfe998",
+    "ts": 1782118266380
   },
   "huggingface/transformers": {
     "features": [
@@ -1190,14 +1186,14 @@
   },
   "yt-dlp/yt-dlp": {
     "features": [
-      "命令行音视频下载工具，支持数千个网站",
-      "提供格式选择、字幕下载、缩略图获取等丰富选项",
-      "支持下载后处理，如格式转换与元数据嵌入",
-      "支持身份认证、地理限制绕过及网络代理配置",
-      "基于 youtube-dl fork，新增大量功能与修复"
+      "命令行音视频下载器，支持数千个网站",
+      "支持视频选择、格式筛选与字幕下载",
+      "集成 SponsorBlock 选项，自动处理赞助片段",
+      "提供丰富的后处理、认证与网络代理选项",
+      "支持自定义输出模板与配置文件"
     ],
-    "sourceHash": "-6077f8ea",
-    "ts": 1777625269304
+    "sourceHash": "383cf11f",
+    "ts": 1782118262588
   },
   "DigitalPlatDev/FreeDomain": {
     "features": [
@@ -1212,24 +1208,23 @@
   },
   "Snailclimb/JavaGuide": {
     "features": [
-      "系统梳理 Java 后端面试核心知识点，覆盖基础、并发、JVM 等",
-      "新增 AI 应用开发面试指南，涵盖 Agent、RAG、MCP 协议等考点",
-      "提供 Java 学习路线、面试通关计划及简历与项目经验指南",
-      "配套在线阅读站点 javaguide.cn 与面试突击精简版 PDF",
-      "包含基于 Spring Boot + Spring AI 的 AI 智能面试辅助实战项目"
+      "系统总结 Java 基础、并发、JVM 等后端核心知识点与面试题",
+      "提供 Java 后端面试通关计划与学习路线指南",
+      "涵盖系统设计、场景题等中大厂高频面试内容",
+      "配套基于 Spring Boot + Spring AI 的 LLM + RAG 实战项目"
     ],
-    "sourceHash": "175a0f11",
-    "ts": 1777625282580
+    "sourceHash": "76c85d08",
+    "ts": 1782118278656
   },
   "521xueweihan/HelloGitHub": {
     "features": [
-      "每月 28 号以月刊形式分享 GitHub 上有趣、入门级的开源项目",
-      "内容涵盖开源书籍、实战项目、企业级项目等多种类型",
-      "提供官网与微信公众号等多渠道阅读体验",
-      "支持中文、英文、日文多语言版本"
+      "分享 GitHub 上有趣、入门级的开源项目",
+      "每月 28 号以月刊形式更新发布",
+      "内容涵盖开源书籍、实战项目与企业级项目",
+      "提供官网与公众号获得更好的阅读体验"
     ],
-    "sourceHash": "f9ea8eb",
-    "ts": 1777625286228
+    "sourceHash": "-19b98415",
+    "ts": 1782118271362
   },
   "anomalyco/opencode": {
     "features": [
@@ -1254,15 +1249,15 @@
   },
   "langflow-ai/langflow": {
     "features": [
-      "可视化构建界面，快速创建和迭代 AI agent 与工作流",
-      "支持 Python 源代码自定义任意组件",
-      "内置交互式 playground，逐步测试和调优流程",
-      "多 agent 编排，支持会话管理与检索",
-      "一键部署为 API 或 MCP server，将流程转为工具",
-      "集成 LangSmith、LangFuse 等可观测性工具"
+      "可视化构建界面，快速上手并迭代 AI agent 和 workflow",
+      "支持 Python 源码访问，自定义任意组件",
+      "交互式 playground，逐步测试与优化 flow",
+      "内置 multi-agent 编排，支持对话管理与检索",
+      "可部署为 API 或 MCP server，将 flow 变为工具集成应用",
+      "支持 LangSmith、LangFuse 等 observability 集成"
     ],
-    "sourceHash": "22235aee",
-    "ts": 1777625301464
+    "sourceHash": "6f7e6ef",
+    "ts": 1782118284460
   },
   "ytdl-org/youtube-dl": {
     "features": [
@@ -1289,14 +1284,14 @@
   },
   "Genymobile/scrcpy": {
     "features": [
-      "通过 USB 或 TCP/IP 镜像 Android 设备屏幕和音频，无需 root",
-      "支持键盘鼠标控制设备，提供 HID 物理键鼠和 gamepad 模拟",
-      "支持音频转发、录制、虚拟显示和摄像头镜像",
-      "跨平台运行于 Linux、Windows 和 macOS，启动快、延迟低",
-      "支持双向复制粘贴、OTG 模式及 V4L2 网络摄像头映射"
+      "通过 USB 或 TCP/IP 镜像 Android 设备的画面与音频，无需 root",
+      "用电脑键盘和鼠标控制设备，支持 HID 物理键鼠及 gamepad 模拟",
+      "支持录制、虚拟显示及双向 copy-paste",
+      "支持摄像头镜像，可作为 webcam (V4L2) 使用（仅 Linux）",
+      "跨平台运行于 Linux、Windows 和 macOS，并提供 OTG 模式"
     ],
-    "sourceHash": "7ad4daf",
-    "ts": 1777625318833
+    "sourceHash": "52b48cc",
+    "ts": 1782118292620
   },
   "vercel/next.js": {
     "features": [
@@ -1319,9 +1314,12 @@
     "ts": 1777625329786
   },
   "x1xhlol/system-prompts-and-models-of-ai-tools": {
-    "features": [],
-    "sourceHash": "-d20ba0e",
-    "ts": 1777625332242
+    "features": [
+      "收录主流 AI 工具的 system prompts 与模型配置合集",
+      "面向 AI startup 提供 prompt 安全与防注入风险提示"
+    ],
+    "sourceHash": "-5d5a8e7b",
+    "ts": 1782118298293
   },
   "langchain-ai/langchain": {
     "features": [
@@ -3195,5 +3193,59 @@
     ],
     "sourceHash": "-4f23bc7e",
     "ts": 1782117814741
+  },
+  "pewdiepie-archdaemon/odysseus": {
+    "features": [
+      "Chat 与 agent 支持本地/API 模型、工具、MCP、文件与记忆",
+      "Deep Research 实现多步网络检索、来源阅读与报告生成",
+      "Compare 提供模型盲测并排对比与综合分析",
+      "文档编辑器支持 AI 编辑、Markdown、HTML、CSV 与语法高亮",
+      "集成 IMAP/SMTP 邮箱、笔记、任务与 CalDAV 日历同步"
+    ],
+    "sourceHash": "633ff05f",
+    "ts": 1782118170336
+  },
+  "DietrichGebert/ponytail": {
+    "features": [
+      "把 AI agent 输出的代码量减少约 54%（最高 94%）",
+      "兼容 14 种 AI coding agent",
+      "在真实 FastAPI + React 仓库上经 benchmark 验证省码省钱提速",
+      "保留全部安全防护，输出更精简的代码"
+    ],
+    "sourceHash": "3318d522",
+    "ts": 1782118176846
+  },
+  "headroomlabs-ai/headroom": {
+    "features": [
+      "压缩 tool 输出、日志、RAG chunks 和对话历史，token 用量减少 60–95%",
+      "提供 library、proxy 和 MCP 三种接入方式",
+      "内置 6 种压缩算法，本地优先且可逆",
+      "通过 compress(messages) 支持 Python 与 TypeScript SDK",
+      "兼容多种 AI agent，压缩后保持答案一致"
+    ],
+    "sourceHash": "607ca3fa",
+    "ts": 1782118182592
+  },
+  "heygen-com/hyperframes": {
+    "features": [
+      "将 HTML、CSS、媒体和可定位动画转化为确定性 MP4 视频",
+      "通过 CLI 本地预览（实时重载）并渲染视频",
+      "提供 skills 让 AI coding agent 编写并生成视频",
+      "兼容 Claude Code、Cursor、Gemini CLI、Codex 等 agent",
+      "作为托管创作工作流的渲染核心"
+    ],
+    "sourceHash": "31c23b10",
+    "ts": 1782118187242
+  },
+  "react/react": {
+    "features": [
+      "声明式 UI，数据变化时高效更新并渲染对应组件",
+      "基于组件，构建封装式组件并组合成复杂 UI",
+      "组件逻辑用 JavaScript 编写，可便捷传递丰富数据",
+      "支持渐进式采用，按需引入 React",
+      "可通过 Node 服务端渲染，并借助 React Native 驱动移动应用"
+    ],
+    "sourceHash": "99a5cc",
+    "ts": 1782118198324
   }
 }

@@ -16,17 +16,6 @@
 </div>
 
 ---
-<p align="center">
-  Support my work here: 
-  <a href="https://bags.fm/DEffWzJyaFRNyA4ogUox631hfHuv3KLeCcpBh2ipBAGS">Bags.fm</a> •
-  <a href="https://jup.ag/tokens/DEffWzJyaFRNyA4ogUox631hfHuv3KLeCcpBh2ipBAGS">Jupiter</a> •
-  <a href="https://photon-sol.tinyastro.io/en/lp/Qa5ZCCwrWoPYckNXXMCAhCsw8gafgYFAu1Qes3Grgv5?handle=">Photon</a> •
-  <a href="https://dexscreener.com/solana/qa5zccwrwopycknxxmcahcsw8gafgyfau1qes3grgv5">DEXScreener</a>
-</p>
-
-<p align="center">Official CA: DEffWzJyaFRNyA4ogUox631hfHuv3KLeCcpBh2ipBAGS (on Solana)</p>
-
----
 
 <a href="https://discord.gg/NwzrWErdMU" target="_blank">
   <img src="https://img.shields.io/discord/1402660735833604126?label=LeaksLab%20Discord&logo=discord&style=for-the-badge" alt="LeaksLab Discord" />
@@ -71,7 +60,7 @@ Thank you for your support!
 
 Sponsor the most comprehensive repository of AI system prompts and reach thousands of developers.
 
-[Get Started](mailto:lucknitelol@pm.me)
+[Get Started](mailto:lucasvalbuena@pm.me)
 
 ---
 
@@ -79,15 +68,15 @@ Sponsor the most comprehensive repository of AI system prompts and reach thousan
 
 > Open an issue.
 
-> **Latest Update:** 08/03/2026
+> **Latest Update:** 10/05/2026
 
 ---
 
 ## Connect With Me
 
-- **X:** [NotLucknite](https://x.com/NotLucknite)
+- **X:** [Lucknite](https://x.com/Lucknite)
 - **Discord**: `x1xhlol`
-- **Email**: `lucknitelol@pm.me`
+- **Email**: `lucasvalbuena@pm.me`
 
 
 ## Star History

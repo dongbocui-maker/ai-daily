@@ -1,3 +1,5 @@
+**[English](./README_EN.md)** | **[日本語](./README_JA.md)** | **简体中文**
+
 - 推荐在线阅读（体验更好，速度更快）：[javaguide.cn](https://javaguide.cn/)
 - 面试突击版本（只保留重点，附带精美 PDF 下载）：[interview.javaguide.cn](https://interview.javaguide.cn/)
 
@@ -11,7 +13,7 @@
 
 </div>
 
-> - **大模型实战项目**： [⭐AI 智能面试辅助平台 + RAG 知识库](https://javaguide.cn/zhuanlan/interview-guide.html)（基于 Spring Boot 4.0 + Java 21 + Spring AI 2.0 ，非常适合作为学习和简历项目，学习门槛低）。
+> - **大模型实战项目**： [⭐AI 智能面试辅助平台 + RAG 知识库](https://javaguide.cn/zhuanlan/interview-guide.html)（基于 Spring Boot 4.0 + Java 21 + Spring AI 2.0，非常适合作为学习和简历项目，学习门槛低）。
 > - **面试资料补充**：
 >   - [《Java 面试指北》](https://javaguide.cn/zhuanlan/java-mian-shi-zhi-bei.html)：四年打磨，和 [JavaGuide 开源版](https://javaguide.cn/)的内容互补，带你从零开始系统准备面试！
 >   - [《后端面试高频系统设计&场景题》](https://javaguide.cn/zhuanlan/back-end-interview-high-frequency-system-design-and-scenario-questions.html)：30+ 道高频系统设计和场景面试，助你应对当下中大厂面试趋势。
@@ -23,19 +25,12 @@
 
 ## AI 应用开发面试指南
 
-[AI 应用开发面试指南](https://javaguide.cn/ai/)（⭐新增，正在持续更新）：专门后端开发准备的 AI 应用开发核心知识，涵盖大模型基础、Agent、RAG、MCP 协议等高频面试考点。
+面向后端开发者的 AI 应用开发、AI 编程实战与面试指南已开源，涵盖 LLM、Agent、RAG、MCP、Claude Code、Codex 等核心技术与工程实践。对标 JavaGuide！有帮助的话，欢迎 Star！
 
-### AI Agent
+- **项目地址**：[https://github.com/Snailclimb/AIGuide](https://github.com/Snailclimb/AIGuide)
+- **在线阅读**：[https://javaguide.cn/ai/](https://javaguide.cn/ai/)
 
-- [一文搞懂 AI Agent 核心概念](./docs/ai/agent/agent-basis.md)
-- [大模型提示词工程实践指南](./docs/ai/agent/prompt-engineering.md)
-- [上下文工程实战指南](./docs/ai/agent/context-engineering.md)
-- [万字详解 Agent Skills](./docs/ai/agent/skills.md)
-- [万字拆解 MCP 协议](./docs/ai/agent/mcp.md)
-- [一文搞懂 Harness Engineering](./docs/ai/agent/harness-engineering.md)
-- [AI 工作流中的 Workflow、Graph 与 Loop](./docs/ai/agent/workflow-graph-loop.md)
-
-## 面试准备
+## 后端面试准备
 
 - [⭐Java 后端面试通关计划（涵盖后端通用体系）](./docs/interview-preparation/backend-interview-plan.md) (一定要看 :+1:)
 - [如何高效准备 Java 面试？](./docs/interview-preparation/teach-you-how-to-prepare-for-the-interview-hand-in-hand.md)
@@ -50,7 +45,7 @@
 
 ### 基础
 
-**知识点/面试题总结** : (必看:+1: )：
+**知识点/面试题总结**（必看:+1:）：
 
 - [Java 基础常见知识点&面试题总结(上)](./docs/java/basis/java-basic-questions-01.md)
 - [Java 基础常见知识点&面试题总结(中)](./docs/java/basis/java-basic-questions-02.md)
@@ -72,8 +67,8 @@
 
 **知识点/面试题总结**：
 
-- [Java 集合常见知识点&面试题总结(上)](./docs/java/collection/java-collection-questions-01.md) (必看 :+1:)
-- [Java 集合常见知识点&面试题总结(下)](./docs/java/collection/java-collection-questions-02.md) (必看 :+1:)
+- [Java 集合常见知识点&面试题总结(上)](./docs/java/collection/java-collection-questions-01.md) （必看 :+1:）
+- [Java 集合常见知识点&面试题总结(下)](./docs/java/collection/java-collection-questions-02.md) （必看 :+1:）
 - [Java 容器使用注意事项总结](./docs/java/collection/java-collection-precautions-for-use.md)
 
 **源码分析**：
@@ -97,7 +92,7 @@
 
 ### 并发
 
-**知识点/面试题总结** : (必看 :+1:)
+**知识点/面试题总结**（必看 :+1:）
 
 - [Java 并发常见知识点&面试题总结（上）](./docs/java/concurrent/java-concurrent-questions-01.md)
 - [Java 并发常见知识点&面试题总结（中）](./docs/java/concurrent/java-concurrent-questions-02.md)
@@ -105,6 +100,7 @@
 
 **重要知识点详解**：
 
+- [Java 锁详解](./docs/java/concurrent/java-lock.md)
 - [乐观锁和悲观锁详解](./docs/java/concurrent/optimistic-lock-and-pessimistic-lock.md)
 - [CAS 详解](./docs/java/concurrent/cas.md)
 - [JMM（Java 内存模型）详解](./docs/java/concurrent/jmm.md)
@@ -115,7 +111,7 @@
 - [AQS 详解](./docs/java/concurrent/aqs.md)
 - [CompletableFuture 详解](./docs/java/concurrent/completablefuture-intro.md)
 
-### JVM (必看 :+1:)
+### JVM（必看 :+1:）
 
 JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.com/javase/specs/jvms/se8/html/index.html) 和周志明老师的[《深入理解 Java 虚拟机（第 3 版）》](https://book.douban.com/subject/34907497/) （强烈建议阅读多遍！）。
 
@@ -152,6 +148,12 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 
 - [操作系统常见知识点&面试题总结(上)](./docs/cs-basics/operating-system/operating-system-basic-questions-01.md)
 - [操作系统常见知识点&面试题总结(下)](./docs/cs-basics/operating-system/operating-system-basic-questions-02.md)
+- [进程与线程详解：区别、状态、通信、上下文切换与虚拟线程](./docs/cs-basics/operating-system/process-and-thread.md)
+- [进程间通信（IPC）详解：管道、消息队列、共享内存、Socket 与 Binder](./docs/cs-basics/operating-system/ipc.md)
+- [死锁详解：四个必要条件、Java 死锁排查与数据库死锁处理](./docs/cs-basics/operating-system/dead-lock.md)
+- [虚拟内存详解：地址转换、TLB、缺页中断与页面置换](./docs/cs-basics/operating-system/virtual-memory.md)
+- [I/O 多路复用详解：select、poll、epoll 原理与区别](./docs/cs-basics/operating-system/io-multiplexing.md)
+- [零拷贝详解：mmap、sendfile 与 splice](./docs/cs-basics/operating-system/zero-copy.md)
 - **Linux**：
   - [后端程序员必备的 Linux 基础知识总结](./docs/cs-basics/operating-system/linux-intro.md)
   - [Shell 编程基础知识总结](./docs/cs-basics/operating-system/shell-intro.md)
@@ -173,7 +175,11 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 - [HTTP 常见状态码（应用层）](./docs/cs-basics/network/http-status-codes.md)
 - [DNS 域名系统详解（应用层）](./docs/cs-basics/network/dns.md)
 - [TCP 三次握手和四次挥手（传输层）](./docs/cs-basics/network/tcp-connection-and-disconnection.md)
+- [TCP Keepalive 和 HTTP Keep-Alive 有什么区别？（传输层）](./docs/cs-basics/network/tcp-keepalive-vs-http-keepalive.md)
 - [TCP 传输可靠性保障（传输层）](./docs/cs-basics/network/tcp-reliability-guarantee.md)
+- [能 Ping 通，TCP 就一定能连通吗？（传输层）](./docs/cs-basics/network/can-ping-but-tcp-may-not-connect.md)
+- [TCP 和 UDP 可以使用同一个端口吗？（传输层）](./docs/cs-basics/network/can-tcp-and-udp-use-the-same-port.md)
+- [一台主机最多能保持多少个 TCP 连接？（传输层）](./docs/cs-basics/network/maximum-number-of-tcp-connections-per-host.md)
 - [ARP 协议详解(网络层)](./docs/cs-basics/network/arp.md)
 - [NAT 协议详解(网络层)](./docs/cs-basics/network/nat.md)
 - [网络攻击常见手段总结（安全）](./docs/cs-basics/network/network-attack-means.md)
@@ -195,7 +201,7 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 
 算法这部分内容非常重要，如果你不知道如何学习算法的话，可以看下我写的：
 
-- [算法学习书籍+资源推荐](https://www.zhihu.com/question/323359308/answer/1545320858) 。
+- [算法学习书籍+资源推荐](https://www.zhihu.com/question/323359308/answer/1545320858)。
 - [如何刷 Leetcode?](https://www.zhihu.com/question/31092580/answer/1534887374)
 
 **常见算法问题总结**：
@@ -205,7 +211,7 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 - [剑指 offer 部分编程题](./docs/cs-basics/algorithms/the-sword-refers-to-offer.md)
 - [十大经典排序算法](./docs/cs-basics/algorithms/10-classical-sorting-algorithms.md)
 
-另外，[GeeksforGeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/) 这个网站总结了常见的算法 ，比较全面系统。
+另外，[GeeksforGeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/) 这个网站总结了常见的算法，比较全面系统。
 
 ## 数据库
 
@@ -222,7 +228,7 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 
 **知识点/面试题总结：**
 
-- **[MySQL 常见知识点&面试题总结](./docs/database/mysql/mysql-questions-01.md)** (必看 :+1:)
+- **[MySQL 常见知识点&面试题总结](./docs/database/mysql/mysql-questions-01.md)** （必看 :+1:）
 - [MySQL 高性能优化规范建议总结](./docs/database/mysql/mysql-high-performance-optimization-specification-recommendations.md)
 
 **重要知识点：**
@@ -241,7 +247,7 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 
 ### Redis
 
-**知识点/面试题总结** : (必看:+1: )：
+**知识点/面试题总结**（必看:+1:）：
 
 - [Redis 常见知识点&面试题总结(上)](./docs/database/redis/redis-questions-01.md)
 - [Redis 常见知识点&面试题总结(下)](./docs/database/redis/redis-questions-02.md)
@@ -304,7 +310,7 @@ JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.
 
 ### 常用框架
 
-#### Spring/SpringBoot (必看 :+1:)
+#### Spring/SpringBoot（必看 :+1:）
 
 **知识点/面试题总结** :
 

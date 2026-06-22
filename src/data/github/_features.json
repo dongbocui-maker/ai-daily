@@ -708,14 +708,14 @@
   },
   "mvanhorn/last30days-skill": {
     "features": [
-      "跨 Reddit、X、YouTube、TikTok、Polymarket、GitHub 等平台并行 AI agent 搜索",
-      "按真实用户互动数据(点赞、投票、押注金额)对结果评分排序",
-      "AI agent judge 自动综合多源信息生成统一简报",
-      "零配置开箱即用，支持 BYOK 密钥扩展更多平台",
-      "以 skill 形式集成 Claude Code、OpenClaw、Hermes 等运行时"
+      "AI agent 跨平台并行搜索 Reddit、HN、X、YouTube、TikTok 等内容",
+      "按真实点赞、互动与下注金额对结果评分排序",
+      "AI agent judge 将多平台信息综合为一份简报",
+      "零配置即用，setup wizard 快速解锁更多平台",
+      "支持 Claude Code、Cursor、Copilot 等 50+ Agent Skills host"
     ],
-    "sourceHash": "49eea091",
-    "ts": 1777625027977
+    "sourceHash": "-1f99534d",
+    "ts": 1782117775831
   },
   "jamiepine/voicebox": {
     "features": [
@@ -2126,14 +2126,14 @@
   },
   "colbymchenry/codegraph": {
     "features": [
-      "为 Claude Code 提供预索引代码知识图谱，减少 94% 工具调用",
-      "通过符号关系与调用图实现语义化代码探索，无需 grep/glob 扫描",
-      "交互式安装器自动配置 Claude Code，开箱即用",
-      "100% 本地运行，支持 Windows、macOS 与 Linux",
-      "支持 TypeScript、Python、Rust、Java、Swift、C++ 等多种语言"
+      "为 Claude Code、Cursor、Codex 等多种 agent 提供语义代码智能",
+      "100% 本地运行，减少约 58% tool calls、降低约 16% 成本",
+      "CLI 自带 runtime，无需 Node.js，一条命令完成安装",
+      "跨平台支持 Windows、macOS 和 Linux",
+      "支持 codegraph upgrade 命令原地更新"
     ],
-    "sourceHash": "-71a86462",
-    "ts": 1779003288228
+    "sourceHash": "530ba5ce",
+    "ts": 1782117770549
   },
   "multica-ai/andrej-karpathy-skills": {
     "features": [
@@ -2381,25 +2381,24 @@
   },
   "rohitg00/ai-engineering-from-scratch": {
     "features": [
-      "从零构建 AI 工程：覆盖 435 节课、20 个阶段的开源课程",
-      "支持 Python、TypeScript、Rust、Julia 四种语言实战",
-      "从原始数学推导手写反向传播、Tokenizer、Attention 等核心算法",
-      "每节课产出可复用的 prompt、skill、agent 或 MCP server",
-      "内容覆盖线性代数到自主 agent swarms 的完整端到端栈"
+      "从原始数学开始手写每个算法：backprop、tokenizer、attention、agent loop",
+      "503 节课、20 个阶段，覆盖 Python、TypeScript、Rust、Julia 四种语言",
+      "每节课产出可复用 artifact：prompt、skill、agent 或 MCP server",
+      "端到端从零构建 AI，约 320 小时完整课程"
     ],
-    "sourceHash": "7498bdf0",
-    "ts": 1779352569020
+    "sourceHash": "-72e69cc8",
+    "ts": 1782117781665
   },
   "can1357/oh-my-pi": {
     "features": [
-      "集成 IDE 的编码 agent，开箱即用且完全开放",
-      "支持 40+ providers、32 个内置工具、13 个 LSP 操作及 27 个 DAP 操作",
-      "Rust 核心约 27k 行，跨 macOS、Linux、Windows 平台运行",
-      "针对各类模型优化的工具调用，首次编辑即成功，搜索即时返回",
-      "提供 npm、Bun、curl、PowerShell、mise 多种安装方式"
+      "集成 IDE 的 coding agent，内置 LSP 和 DAP 操作",
+      "支持 40+ 模型 providers 与 32 个内置工具",
+      "Rust 核心约 5.5 万行，运行于 Bun 之上",
+      "为 bash、zsh、fish 自动生成 CLI 补全脚本",
+      "支持 macOS、Linux、Windows 多平台一键安装"
     ],
-    "sourceHash": "52057b48",
-    "ts": 1779352573100
+    "sourceHash": "-28d035d6",
+    "ts": 1782117791989
   },
   "rmyndharis/OpenWA": {
     "features": [
@@ -3112,5 +3111,89 @@
     ],
     "sourceHash": "50ccfcb3",
     "ts": 1782117692738
+  },
+  "Egonex-AI/Understand-Anything": {
+    "features": [
+      "将任意 codebase、知识库或文档转化为可交互的知识图谱",
+      "支持探索、搜索并对内容进行问答",
+      "兼容 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等工具"
+    ],
+    "sourceHash": "-bb12ab0",
+    "ts": 1782117755328
+  },
+  "esengine/DeepSeek-Reasonix": {
+    "features": [
+      "基于 Go 重写的 1.0 版本，通过 npm 全局安装为单一二进制文件",
+      "提供 CLI 工具与配套 Guide、Spec 文档",
+      "支持从 0.x TypeScript 旧版迁移至 Go 版本"
+    ],
+    "sourceHash": "7a3d3556",
+    "ts": 1782117759372
+  },
+  "apple/container": {
+    "features": [
+      "在 Mac 上将 Linux 容器作为轻量级虚拟机创建并运行",
+      "使用 Swift 编写，针对 Apple silicon 优化",
+      "支持消费和生成 OCI 兼容的容器镜像",
+      "可从任意标准 container registry 拉取和推送镜像",
+      "基于 Containerization Swift package 实现底层容器管理"
+    ],
+    "sourceHash": "33f475fa",
+    "ts": 1782117764335
+  },
+  "tashfeenahmed/freellmapi": {
+    "features": [
+      "聚合 17 个 free LLM provider 到单一 OpenAI 兼容 /v1/chat/completions endpoint",
+      "router 自动选择最佳模型并在限流时故障转移到下一个 provider",
+      "per-key 用量追踪，确保不超出各 provider free-tier 配额",
+      "支持自定义 OpenAI 兼容 endpoint，如 llama.cpp、LM Studio、vLLM、Ollama",
+      "API key 加密存储，提供 Docker 镜像与桌面应用"
+    ],
+    "sourceHash": "2a589f55",
+    "ts": 1782117787941
+  },
+  "phuryn/pm-skills": {
+    "features": [
+      "68 个 PM skills 与 42 条链式 workflows，覆盖 9 个 plugins",
+      "内置 discovery、prioritization、strategy 等成熟 PM framework，分步引导",
+      "专为 Claude Code 与 Cowork 设计，skills 兼容其他 AI 助手",
+      "commands 用 /command-name 触发，将多个 skills 链成端到端流程",
+      "skills 按对话相关性自动加载，也可手动强制加载"
+    ],
+    "sourceHash": "-75f24550",
+    "ts": 1782117797491
+  },
+  "lfnovo/open-notebook": {
+    "features": [
+      "100%本地运行、支持多模型的隐私优先Notebook LM开源替代品",
+      "支持OpenAI、Anthropic、Ollama等18+个AI模型provider",
+      "整合PDF、视频、音频、网页等多模态内容",
+      "通过全文检索与vector search智能搜索所有内容",
+      "基于研究内容的AI上下文对话与多人播客生成"
+    ],
+    "sourceHash": "731c4e06",
+    "ts": 1782117802061
+  },
+  "ogulcancelik/herdr": {
+    "features": [
+      "在终端中运行的 agent multiplexer，无需 GUI 或 Electron",
+      "支持 workspaces、tabs、panes，并提供 mouse-native 的点击拖拽分屏操作",
+      "可 detach 和 reattach，agent 在后台持续运行",
+      "一目了然查看每个 agent 状态：blocked、working、done",
+      "提供 socket API 及多种 integrations 集成支持"
+    ],
+    "sourceHash": "-77cccfbd",
+    "ts": 1782117808484
+  },
+  "openai/plugins": {
+    "features": [
+      "精选的 Codex plugin 示例集合，统一 plugin.json manifest 规范",
+      "内置 marketplace 配置，支持 API key 登录用户独立 marketplace",
+      "figma plugin 提供 Code to Canvas、Code Connect 及设计系统规则",
+      "build-ios/macos/web-apps plugin 覆盖 SwiftUI、部署、调试等工作流",
+      "集成 expo、netlify、remotion 等 skill 与 MCP 支持的 plugin 包"
+    ],
+    "sourceHash": "-4f23bc7e",
+    "ts": 1782117814741
   }
 }

@@ -20,6 +20,10 @@ export PATH="/root/.nvm/versions/node/v22.22.2/bin:$PATH"
 
 cd "$REPO"
 
+# LLM endpoint 单一可信源：从 openclaw.json 解析（换 endpoint 只改 openclaw.json 一处）
+# shellcheck disable=SC1091
+source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[event-sync] WARN: LLM endpoint 解析失败，sync 翻译将走 offline"
+
 {
   echo "===== $(date '+%F %T %Z') [event-driven] ====="
   echo "[event-sync] starting (called from cron subagent Step H)"

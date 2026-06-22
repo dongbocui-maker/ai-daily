@@ -517,7 +517,7 @@ async function main() {
     ? {
         apiBase: process.env.LLM_API_BASE,
         apiKey: process.env.LLM_API_KEY,
-        model: process.env.LLM_MODEL ?? 'claude-opus-4-7',
+        model: process.env.LLM_MODEL ?? 'claude-opus-4-8',
         protocol: (process.env.LLM_PROTOCOL as LLMProtocol | undefined) ?? inferProtocol(process.env.LLM_API_BASE),
       }
     : null;

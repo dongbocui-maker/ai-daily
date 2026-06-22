@@ -25,13 +25,18 @@ export PATH="/root/.nvm/versions/node/v22.22.2/bin:$PATH"
 
 cd "$REPO"
 
-# Load .env (LLM key + GITHUB_TOKEN if present)
+# Load .env (FEISHU/GITHUB creds; LLM_* 已迁移到 openclaw.json 单一可信源)
 if [[ -f .env ]]; then
   set -a
   # shellcheck disable=SC1091
   source .env
   set +a
 fi
+
+# LLM endpoint 单一可信源：从 openclaw.json 解析，覆盖任何 .env 里的 LLM_*
+# 换 endpoint 只需改 openclaw.json 的 aigw-claude-48-main provider。
+# shellcheck disable=SC1091
+source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[cron-github] WARN: LLM endpoint 解析失败，翻译将跳过"
 
 # GITHUB_TOKEN —— 用专门的 PAT 避免 60 req/h rate limit
 if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -f /root/.openclaw/secrets/github-ai-daily.token ]]; then

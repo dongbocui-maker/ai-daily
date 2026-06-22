@@ -10,7 +10,7 @@
  * 每个 JSON 包含 general (综合) 和 ai (AI 专题) 两个数组。
  */
 
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
@@ -205,7 +205,7 @@ async function fetchReadme(repoName: string): Promise<string | null> {
 
   // 缓存检查（1 周内不重复拓）
   if (existsSync(cachePath)) {
-    const stat = require('node:fs').statSync(cachePath);
+    const stat = statSync(cachePath);
     const ageMs = Date.now() - stat.mtimeMs;
     if (ageMs < 7 * 24 * 60 * 60 * 1000) {
       return readFileSync(cachePath, 'utf-8');

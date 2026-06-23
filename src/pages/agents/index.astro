@@ -327,7 +327,8 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .ep-mini{display:none}
 .alg .aln.ep{border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
 .alg .aln.epfb{border-top-style:dashed;border-top-width:2px;border-color:var(--arc-glow);opacity:.55}
-/* hover focus 高亮：透明度完全由 drawArchLines() JS 单一数据源管理（避免 CSS !important 与 JS 双重叠加）；此处不再强制 opacity */
+/* 激活 agent 节点：青色描边标识 */
+.arch-node.arch-active{outline:1px solid rgba(0,229,255,.55);outline-offset:1px}
 /* 窄屏/手机 ≤768px：保持上下结构，节点改紧凑徽章，调度链变细（不隐藏） */
 @media(max-width:768px){
   .arch-card{padding:16px 14px 22px}
@@ -719,19 +720,24 @@ function render(DATA){
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
-  requestAnimationFrame(()=>{drawArchLines(null);bindArchFocus();});
+  requestAnimationFrame(()=>{drawArchLines('main');bindArchActive();});
   requestAnimationFrame(()=>mqTick());
 }
 
-// hover 某 agent 节点 → 高亮其 primary+fallback 链路，其余淡出
-function bindArchFocus(){
+// 点击 agent 节点 → 切换激活态（持久）：该 agent 全链路亮，其余 fallback 暗淡
+function _archMarkActive(){
+  document.querySelectorAll('.arch-node[id^="arch-"]').forEach(node=>{
+    const a=node.id.replace(/^arch-/,'');
+    node.classList.toggle('arch-active', a===_archActive);
+  });
+}
+function bindArchActive(){
   const topo=document.getElementById('archTopo'); if(!topo) return;
-  const narrow=window.matchMedia && window.matchMedia('(max-width:768px)').matches;
   topo.querySelectorAll('.arch-node[id^="arch-"]').forEach(node=>{
     const a=node.id.replace(/^arch-/,'');
-    node.addEventListener('mouseenter',()=>{ if(narrow) return; topo.classList.add('focusing'); drawArchLines(a); });
-    node.addEventListener('mouseleave',()=>{ topo.classList.remove('focusing'); drawArchLines(null); });
+    node.addEventListener('click',()=>{ drawArchLines(a); _archMarkActive(); });
   });
+  _archMarkActive();
 }
 
 // ===== AGENT TOPOLOGY 蓝色辉光调度连线 + agent→LLM 链路 =====
@@ -743,9 +749,11 @@ const ARCH_AGENT_EP = {
   mk46:                {primary:'ep-qwen', fallback:['ep-opus','ep-gpt']},
   'claude-researcher': {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
 };
-let _archFocus=null;
-function drawArchLines(focusAgent){
-  if(focusAgent!==undefined) _archFocus=focusAgent; else focusAgent=_archFocus;
+// 持久「当前激活 agent」状态（点击切换，初始=main）
+let _archActive='main';
+function drawArchLines(setActive){
+  if(setActive!==undefined && setActive!==null) _archActive=setActive;
+  const activeAgent=_archActive;
   const svg=document.getElementById('archLines');
   const topo=document.getElementById('archTopo');
   if(!svg||!topo) return;
@@ -768,62 +776,54 @@ function drawArchLines(focusAgent){
     : {mOff:14, mDst:16, mHalo:7, mCore:2, mFlowW:2, mFlowDash:'2 22', mFlowTo:-24, mEnd:3.4, mEndIn:1.6, mStart:3.6, mStartIn:1.7,
        aOff:14, aDst:16, aHalo:5, aCore:3, aDash:'0.1 8', aTo:-16, aEnd:2.8, aEndIn:1.3, aStart:3, aStartIn:1.4, blur:3.5, glow:1.6};
   let halo='',core='',flow='',ends='',starts='';
-  const WIDS=['mk2','mk46','claude-researcher'];
+  // 调度链（Tier1→Tier2）恒亮，与 agent→LLM 激活状态无关
   if(main){
     workers.forEach((w,i)=>{
-      const wid=WIDS[i];
-      const lit=(!focusAgent||focusAgent==='main'||focusAgent===wid);
-      const o=lit?1:0.10;
       const d=pathD(main.cx-P.mOff,main.bot,w.cx-P.mDst,w.top);
-      halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${0.22*o}" filter="url(#aBlur)"/>`;
-      core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="${0.95*o}" filter="url(#aGlow)"/>`;
-      flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="${0.9*o}"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+i*0.12}s" repeatCount="indefinite"/></path>`;
-      ends+=`<circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${o}"/><circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEndIn}" fill="#eafdff" opacity="${o}"/>`;
+      halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="0.22" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="0.95" filter="url(#aGlow)"/>`;
+      flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="0.9"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+i*0.12}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEnd}" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEndIn}" fill="#eafdff"/>`;
     });
     starts+=`<circle cx="${main.cx-P.mOff}" cy="${main.bot}" r="${P.mStart}" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${main.cx-P.mOff}" cy="${main.bot}" r="${P.mStartIn}" fill="#eafdff"/>`;
   }
   if(aima){
-    const aLit=(!focusAgent||focusAgent==='aima');
-    const ao=aLit?1:0.10;
     workers.forEach((w,i)=>{
       const d=pathD(aima.cx+P.aOff,aima.bot,w.cx+P.aDst,w.top);
-      halo+=`<path d="${d}" fill="none" stroke="#2f8fd0" stroke-width="${P.aHalo}" opacity="${0.16*ao}" filter="url(#aBlur)"/>`;
-      core+=`<path d="${d}" fill="none" stroke="url(#aGradAima)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="${0.95*ao}" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+i*0.2}s" repeatCount="indefinite"/></path>`;
-      ends+=`<circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEnd}" fill="#48b4ec" filter="url(#aGlow)" opacity="${ao}"/><circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEndIn}" fill="#cdeeff" opacity="${ao}"/>`;
+      halo+=`<path d="${d}" fill="none" stroke="#2f8fd0" stroke-width="${P.aHalo}" opacity="0.16" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradAima)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="0.95" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+i*0.2}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEnd}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEndIn}" fill="#cdeeff"/>`;
     });
     starts+=`<circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStart}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStartIn}" fill="#cdeeff"/>`;
   }
 
-  // ---- agent → LLM（窄屏跳过，只留调度链）----
+  // ---- agent → LLM 激活态（窄屏跳过，只留调度链）----
+  // primary 实线：所有 agent 恒亮（骨架）；fallback 虚线：仅 activeAgent 正常亮，其余暗淡
   if(!M){
-    const fbW = 1.4, fbDash='4 9', epHalo=5, epCore=1.5, epFlowW=1.5, epFlowDash='2 18', epFlowTo=-20;
+    const fbW = 1.2, fbDash='4 9', epHalo=5, epCore=1.5, epFlowW=1.4, epFlowDash='2 17', epFlowTo=-19;
     ['main','aima','mk2','mk46','claude-researcher'].forEach(a=>{
       const map=ARCH_AGENT_EP[a]; if(!map) return;
       const an=c(a); if(!an) return;
-      const focused=(focusAgent===a);
-      // primary：青色辉光实线 + 流动（默认画所有 agent 主力；focus 只该 agent）
-      if(!focusAgent || focused){
-        const pn=cEp(map.primary);
-        if(pn){
-          const d=pathD(an.cx,an.bot,pn.cx,pn.top);
-          const o=focused?1:(focusAgent?0.06:0.85);
-          const hl=focused?' class="hl"':'';
-          halo+=`<path${hl} d="${d}" fill="none" stroke="#00E5FF" stroke-width="${epHalo}" opacity="${0.20*o}" filter="url(#aBlur)"/>`;
-          core+=`<path${hl} d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${epCore}" opacity="${0.95*o}" filter="url(#aGlow)"/>`;
-          flow+=`<path${hl} d="${d}" fill="none" stroke="#dffbff" stroke-width="${epFlowW}" stroke-linecap="round" stroke-dasharray="${epFlowDash}" opacity="${focused?0.9:0.6}"><animate attributeName="stroke-dashoffset" from="0" to="${epFlowTo}" dur="1s" repeatCount="indefinite"/></path>`;
-          ends+=`<circle${hl} cx="${pn.cx}" cy="${pn.top}" r="2.7" fill="#00E5FF" filter="url(#aGlow)" opacity="${o}"/><circle${hl} cx="${pn.cx}" cy="${pn.top}" r="1.4" fill="#eafdff" opacity="${o}"/>`;
-        }
+      const active=(activeAgent===a);
+      // primary 青色辉光实线 + 流动（恒亮）
+      const pn=cEp(map.primary);
+      if(pn){
+        const d=pathD(an.cx,an.bot,pn.cx,pn.top);
+        halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${epHalo}" opacity="0.16" filter="url(#aBlur)"/>`;
+        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${epCore}" opacity="0.9" filter="url(#aGlow)"/>`;
+        flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${epFlowW}" stroke-linecap="round" stroke-dasharray="${epFlowDash}" opacity="0.6"><animate attributeName="stroke-dashoffset" from="0" to="${epFlowTo}" dur="1s" repeatCount="indefinite"/></path>`;
+        ends+=`<circle cx="${pn.cx}" cy="${pn.top}" r="2.6" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${pn.cx}" cy="${pn.top}" r="1.3" fill="#eafdff"/>`;
       }
-      // fallback 虚线：同青色系 + 虚线 + 低透明 + 不流动（默认不画，hover 该 agent 才展）
-      if(focused){
-        map.fallback.forEach(ep=>{
-          const fn=cEp(ep); if(!fn) return;
-          const d=pathD(an.cx,an.bot,fn.cx,fn.top);
-          halo+=`<path class="hl" d="${d}" fill="none" stroke="#00E5FF" stroke-width="${fbW+1}" opacity="0.05" filter="url(#aBlur)"/>`;
-          core+=`<path class="hl" d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${fbW}" stroke-linecap="round" stroke-dasharray="${fbDash}" opacity="0.6" filter="url(#aGlow)"/>`;
-          ends+=`<circle class="hl" cx="${fn.cx}" cy="${fn.top}" r="1.7" fill="#00E5FF" filter="url(#aGlow)" opacity="0.7"/>`;
-        });
-      }
+      // agent 底部出口点
+      starts+=`<circle cx="${an.cx}" cy="${an.bot}" r="2" fill="#00E5FF" filter="url(#aGlow)" opacity="0.85"/>`;
+      // fallback 虚线：active 正常亮(0.62) / 非 active 暗淡(0.10)
+      const fo = active?0.62:0.10;
+      map.fallback.forEach(ep=>{
+        const fn=cEp(ep); if(!fn) return;
+        const d=pathD(an.cx,an.bot,fn.cx,fn.top);
+        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${fbW}" stroke-linecap="round" stroke-dasharray="${fbDash}" opacity="${fo}" filter="url(#aGlow)"/>`;
+        ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="1.6" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?0.7:0.18}"/>`;
+      });
     });
   }
 

@@ -720,7 +720,7 @@ function render(DATA){
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
-  requestAnimationFrame(()=>{drawArchLines('main');bindArchActive();});
+  requestAnimationFrame(()=>{drawArchLines('mk2');bindArchActive();});
   requestAnimationFrame(()=>mqTick());
 }
 
@@ -750,8 +750,11 @@ const ARCH_AGENT_EP = {
   mk46:                {primary:'ep-qwen', fallback:['ep-opus','ep-gpt']},
   'claude-researcher': {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
 };
-// 持久「当前激活 agent」状态（点击切换，初始=main）
-let _archActive='main';
+// 持久「当前激活 agent」状态（点击切换）
+// 初始='mk2'：默认激活 MK2——二层→三层初始即亮显 MK2 的 primary+fallback 链路；
+// 一层 main/银月→LLM 仍隐藏（MK2 是二层非 Tier1，故 main/aima 仍被 B 方案守卫 skip）；
+// 其它二层 worker(mk46/claude-researcher) 恒显但暗淡。
+let _archActive='mk2';
 // Tier1 节点集（模块级常量：B 方案中仅 active 时才画 LLM 链路）
 const ARCH_TIER1 = new Set(['main','aima']);
 function drawArchLines(setActive){

@@ -326,7 +326,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .tts-badge .ttsd{width:6px;height:6px;border-radius:50%;background:#c98bff;box-shadow:0 0 5px #c98bff;flex-shrink:0}
 .ep-mini{display:none}
 .alg .aln.ep{border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
-.alg .aln.epfb{border-top-style:dashed;border-top-width:2px;border-color:var(--arc-glow);opacity:.55}
+.alg .aln.epfb{border-top-style:dotted;border-top-width:3px;border-color:var(--arc-glow);opacity:.55}
 /* 激活 agent 节点：青色描边标识 */
 .arch-node.arch-active{outline:1px solid rgba(0,229,255,.55);outline-offset:1px}
 /* 窄屏/手机 ≤768px：保持上下结构，节点改紧凑徽章，调度链变细（不隐藏） */
@@ -662,7 +662,7 @@ function render(DATA){
           <span class="alg"><span class="aln solid"></span> MAIN 调度</span>
           <span class="alg"><span class="aln dot"></span> 银月 调度</span>
           <span class="alg"><span class="aln ep"></span> PRIMARY 实线</span>
-          <span class="alg"><span class="aln epfb"></span> FALLBACK 虚线</span>
+          <span class="alg"><span class="aln epfb"></span> FALLBACK 点线</span>
           <span class="alg"><span class="adot"></span> 健康</span>
         </span>
       </div>
@@ -752,6 +752,8 @@ const ARCH_AGENT_EP = {
 };
 // 持久「当前激活 agent」状态（点击切换，初始=main）
 let _archActive='main';
+// Tier1 节点集（模块级常量：B 方案中仅 active 时才画 LLM 链路）
+const ARCH_TIER1 = new Set(['main','aima']);
 function drawArchLines(setActive){
   if(setActive!==undefined && setActive!==null) _archActive=setActive;
   const activeAgent=_archActive;
@@ -798,22 +800,24 @@ function drawArchLines(setActive){
     starts+=`<circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStart}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStartIn}" fill="#cdeeff"/>`;
   }
 
-  // ---- Tier2(worker) → LLM 链路（样式/颜色/动效与 Tier1→Tier2 调度链完全一致）----
-  // 仅二层 agent 画到 LLM；一层(main/银月) LLM 连接借用调度链体现，不另画。
+  // ---- agent → LLM 链路（样式/颜色/动效与 Tier1→Tier2 调度链完全一致）----
   // 复用调度链同一视觉配方：halo(#00E5FF) + core(url(#aGradMain)) + flow(#dffbff 流动动画)。
-  // primary = 实线 core；fallback = 虚线 core。激活态：被点击 agent 的 primary+fallback 全亮，其余暗淡。
+  // 线型语言与 1-2 层统一：primary = 实线 core；fallback = 点线 core（同银月调度链 '0.1 8'）。
+  // B 方案：二层 worker → LLM 恒显（随激活态亮/暗）；一层 main/银月 → LLM 仅在点击该节点(active)时才画，避免画面混乱。
   {
-    const fbDash = M ? '4 6' : '5 8';   // fallback core 虚线
+    const fbDot = M ? '0.1 6' : '0.1 8';   // fallback core 点线（同银月调度链）
     const pEnd = M ? 1.8 : 2.6, pEndIn = M ? 0.9 : 1.3;
     const fbEnd = M ? 1.2 : 1.6;
     const startR = M ? 1.4 : 2;
     // 亮/暗透明度（与调度链恒亮 0.95/0.9 对齐；非激活暗淡）
     const ON_PRIMARY = 0.95, ON_FB = 0.95, DIM = 0.10;
-    // 只画二层 worker，不画一层 main/aima（一层 LLM 连接借用调度链体现）
-    ['mk2','mk46','claude-researcher'].forEach((a,ai)=>{
+    // 二层 worker 恒显；一层 main/aima 仅 active 时显示（B 方案，TIER1 见模块级常量）
+    ['main','aima','mk2','mk46','claude-researcher'].forEach((a,ai)=>{
       const map=ARCH_AGENT_EP[a]; if(!map) return;
       const an=c(a); if(!an) return;
       const active=(activeAgent===a);
+      // 一层节点：非激活时完全不画 LLM 链路（保持静态视图干净）
+      if(ARCH_TIER1.has(a) && !active) return;
       const po = active?ON_PRIMARY:DIM;       // primary 透明度随激活态
       const fo = active?ON_FB:DIM;            // fallback 透明度随激活态
       // primary：复用 MAIN 调度链配方（halo + 实线 core + 流动 flow）
@@ -827,12 +831,12 @@ function drawArchLines(setActive){
       }
       // agent 底部出口点
       starts+=`<circle cx="${an.cx}" cy="${an.bot}" r="${startR}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?0.85:DIM}"/>`;
-      // fallback：同调度链配方但 core 为虚线（halo + 虚线 core + 流动 flow）
+      // fallback：同调度链配方但 core 为点线（halo + 点线 core + 流动 flow）
       map.fallback.forEach((ep,fi)=>{
         const fn=cEp(ep); if(!fn) return;
         const d=pathD(an.cx,an.bot,fn.cx,fn.top);
         halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${active?0.16:0.05}" filter="url(#aBlur)"/>`;
-        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" stroke-linecap="round" stroke-dasharray="${fbDash}" opacity="${fo}" filter="url(#aGlow)"/>`;
+        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" stroke-linecap="round" stroke-dasharray="${fbDot}" opacity="${fo}" filter="url(#aGlow)"/>`;
         flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="${active?0.85:0.10}"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${1.0+fi*0.18}s" repeatCount="indefinite"/></path>`;
         ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="${fbEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?ON_FB:DIM}"/>`;
       });

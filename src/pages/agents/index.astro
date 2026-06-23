@@ -498,6 +498,12 @@ async function loadTicker(){
 
 function render(DATA){
   const agentCount = Object.values(DATA.agents || {}).length;
+  // 动态链路：从各 agent 的 active_model 算出当前实际在用的 ep-id（反映 fallback 状态）。
+  _archActiveEp = {};
+  Object.entries(DATA.agents || {}).forEach(([id,a])=>{
+    const ep = ARCH_MODEL_EP[a && a.active_model];
+    if(ep) _archActiveEp[id] = ep;   // 未映射(如 deepseek)则不写，drawArchLines 回退画配置 primary
+  });
   document.getElementById('ts').textContent = '⟦ '+DATA.generated_at+' ⟧';
   document.getElementById('suitsMonitored').textContent = '◉ J.A.R.V.I.S. ONLINE · '+agentCount+' SUITS MONITORED';
   document.getElementById('gen').textContent = DATA.generated_at;
@@ -661,8 +667,8 @@ function render(DATA){
         <span class="arch-legend">
           <span class="alg"><span class="aln solid"></span> MAIN 调度</span>
           <span class="alg"><span class="aln dot"></span> 银月 调度</span>
-          <span class="alg"><span class="aln ep"></span> PRIMARY 实线</span>
-          <span class="alg"><span class="aln epfb"></span> FALLBACK 点线</span>
+          <span class="alg"><span class="aln ep"></span> 在用 实线</span>
+          <span class="alg"><span class="aln epfb"></span> 备用 点线</span>
           <span class="alg"><span class="adot"></span> 健康</span>
         </span>
       </div>
@@ -757,6 +763,20 @@ const ARCH_AGENT_EP = {
 let _archActive='mk2';
 // Tier1 节点集（模块级常量：B 方案中仅 active 时才画 LLM 链路）
 const ARCH_TIER1 = new Set(['main','aima']);
+// active_model(provider/model) → 端点 ep-id 映射（动态链路：反映真实 fallback 状态）。
+// 同一端点节点可能对应多个 model（如 opus-4.8 / fable-5 同属 Claude/AIGW 节点 ep-opus）。
+// deepseek 暂不处理（ep-dseek 不映射，落配置链外时回退画配置 primary 实线）。
+const ARCH_MODEL_EP = {
+  'aigw-claude-48-main/claude-opus-4-8':'ep-opus',
+  'aigw-claude-48-main/claude-fable-5':'ep-opus',
+  'azure-claude-48/claude-opus-4-8':'ep-opus',
+  'azure-claude/claude-opus-4-7':'ep-opus',
+  'anthropic/claude-sonnet-4-6':'ep-opus',
+  'azure-openai-responses/gpt-5.5':'ep-gpt',
+  'qwen/qwen3.7-max':'ep-qwen',
+};
+// 运行时「各 agent 当前实际在用的 ep-id」映射，由 render(DATA) 从 active_model 填充。
+let _archActiveEp = {};
 function drawArchLines(setActive){
   if(setActive!==undefined && setActive!==null) _archActive=setActive;
   const activeAgent=_archActive;
@@ -805,8 +825,9 @@ function drawArchLines(setActive){
 
   // ---- agent → LLM 链路（样式/颜色/动效与 Tier1→Tier2 调度链完全一致）----
   // 复用调度链同一视觉配方：halo(#00E5FF) + core(url(#aGradMain)) + flow(#dffbff 流动动画)。
-  // 线型语言与 1-2 层统一：primary = 实线 core（同 MAIN 调度链）；fallback = 点线 core（与银月调度链完全同款：同点径 P.aCore + 同 dash P.aDash + 同自身流动 P.aTo，不叠加额外流光）。
-  // 全图只有一种 dot line 风格：银月调度链 + 所有 fallback。
+  // 【动态链路】线型反映真实 fallback 状态：当前实际在用的端点(actEp) = 实线高亮（同 MAIN 调度链）；
+  // 其余配置内端点 = 点线暗淡（同银月调度链 dot line）。actEp 由 active_model 映射而来，随数据刷新准实时跟随。
+  // 全图仅两种线型：实线(实际在用) + 点线(备用)。
   // B 方案：二层 worker → LLM 恒显（随激活态亮/暗）；一层 main/银月 → LLM 仅在点击该节点(active)时才画，避免画面混乱。
   {
     const pEnd = M ? 1.8 : 2.6, pEndIn = M ? 0.9 : 1.3;
@@ -821,26 +842,32 @@ function drawArchLines(setActive){
       const active=(activeAgent===a);
       // 一层节点：非激活时完全不画 LLM 链路（保持静态视图干净）
       if(ARCH_TIER1.has(a) && !active) return;
-      const po = active?ON_PRIMARY:DIM;       // primary 透明度随激活态
-      const fo = active?ON_FB:DIM;            // fallback 透明度随激活态
-      // primary：复用 MAIN 调度链配方（halo + 实线 core + 流动 flow）
-      const pn=cEp(map.primary);
-      if(pn){
-        const d=pathD(an.cx,an.bot,pn.cx,pn.top);
-        halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${active?0.22:0.06}" filter="url(#aBlur)"/>`;
-        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="${po}" filter="url(#aGlow)"/>`;
-        flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="${active?0.9:0.12}"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+ai*0.12}s" repeatCount="indefinite"/></path>`;
-        ends+=`<circle cx="${pn.cx}" cy="${pn.top}" r="${pEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${po}"/><circle cx="${pn.cx}" cy="${pn.top}" r="${pEndIn}" fill="#eafdff" opacity="${po}"/>`;
-      }
+      // 配置内全部端点（primary 在首）
+      const allEps=[map.primary, ...map.fallback];
+      // 当前实际在用的端点：取 active_model 映射结果；若为空或落在配置链外(如 deepseek)则回退 primary
+      let actEp=_archActiveEp[a];
+      if(!actEp || allEps.indexOf(actEp)<0) actEp=map.primary;
       // agent 底部出口点
       starts+=`<circle cx="${an.cx}" cy="${an.bot}" r="${startR}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?0.85:DIM}"/>`;
-      // fallback：与银月调度链完全同款 dot line（halo + 点状 core 自带流动，不另叠加破折号 flow 层）
-      map.fallback.forEach((ep,fi)=>{
+      // 逐端点绘制：actEp=实线高亮（当前在用），其余=点线暗淡（备用）
+      allEps.forEach((ep,ei)=>{
         const fn=cEp(ep); if(!fn) return;
         const d=pathD(an.cx,an.bot,fn.cx,fn.top);
-        halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${active?0.16:0.05}" filter="url(#aBlur)"/>`;
-        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="${fo}" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+fi*0.2}s" repeatCount="indefinite"/></path>`;
-        ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="${fbEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?ON_FB:DIM}"/>`;
+        const isAct=(ep===actEp);
+        if(isAct){
+          // 实际在用：复用 MAIN 调度链配方（halo + 实线 core + 流动 flow）
+          const po = active?ON_PRIMARY:DIM;
+          halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${active?0.22:0.06}" filter="url(#aBlur)"/>`;
+          core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="${po}" filter="url(#aGlow)"/>`;
+          flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="${active?0.9:0.12}"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+ai*0.12}s" repeatCount="indefinite"/></path>`;
+          ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="${pEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${po}"/><circle cx="${fn.cx}" cy="${fn.top}" r="${pEndIn}" fill="#eafdff" opacity="${po}"/>`;
+        }else{
+          // 备用：与银月调度链完全同款 dot line（halo + 点状 core 自带流动）
+          const fo = active?ON_FB:DIM;
+          halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${active?0.16:0.05}" filter="url(#aBlur)"/>`;
+          core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="${fo}" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+ei*0.2}s" repeatCount="indefinite"/></path>`;
+          ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="${fbEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?ON_FB:DIM}"/>`;
+        }
       });
     });
   }

@@ -725,8 +725,10 @@ function render(DATA){
     <div class="cap-pop" id="capPop"></div>`;
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
+  // Topology：首次加载默认激活 MK2；后续数据刷新不覆盖用户当前点击态。
+  const archInit = _firstLoad ? 'mk2' : undefined;
   requestAnimationFrame(()=>drawTrendCurve(DATA));
-  requestAnimationFrame(()=>{drawArchLines('mk2');bindArchActive();});
+  requestAnimationFrame(()=>{drawArchLines(archInit);bindArchActive();});
   requestAnimationFrame(()=>mqTick());
 }
 

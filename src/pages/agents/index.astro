@@ -325,8 +325,8 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .tts-badge{position:absolute;top:-26px;right:2px;display:flex;align-items:center;gap:5px;font-size:8px;letter-spacing:1.5px;font-family:'Orbitron';font-weight:700;color:#c98bff;background:#0c0814;border:1px solid rgba(201,139,255,.4);border-radius:999px;padding:3px 9px;box-shadow:0 0 8px rgba(201,139,255,.2)}
 .tts-badge .ttsd{width:6px;height:6px;border-radius:50%;background:#c98bff;box-shadow:0 0 5px #c98bff;flex-shrink:0}
 .ep-mini{display:none}
-.alg .aln.ep{border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
-.alg .aln.epfb{border-top-style:dashed;border-top-width:2px;border-color:var(--arc-glow);opacity:.55}
+.alg .aln.ep{border-top-style:dotted;border-top-width:3px;border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
+.alg .aln.epfb{border-top-style:dotted;border-top-width:3px;border-color:var(--arc-glow);opacity:.55}
 /* 激活 agent 节点：青色描边标识 */
 .arch-node.arch-active{outline:1px solid rgba(0,229,255,.55);outline-offset:1px}
 /* 窄屏/手机 ≤768px：保持上下结构，节点改紧凑徽章，调度链变细（不隐藏） */
@@ -661,8 +661,8 @@ function render(DATA){
         <span class="arch-legend">
           <span class="alg"><span class="aln solid"></span> MAIN 调度</span>
           <span class="alg"><span class="aln dot"></span> 银月 调度</span>
-          <span class="alg"><span class="aln ep"></span> PRIMARY 实线</span>
-          <span class="alg"><span class="aln epfb"></span> FALLBACK 虚线</span>
+          <span class="alg"><span class="aln ep"></span> PRIMARY 点线</span>
+          <span class="alg"><span class="aln epfb"></span> FALLBACK 点线</span>
           <span class="alg"><span class="adot"></span> 健康</span>
         </span>
       </div>
@@ -797,32 +797,43 @@ function drawArchLines(setActive){
     starts+=`<circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStart}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStartIn}" fill="#cdeeff"/>`;
   }
 
-  // ---- agent → LLM 激活态（窄屏跳过，只留调度链）----
-  // primary 实线：所有 agent 恒亮（骨架）；fallback 虚线：仅 activeAgent 正常亮，其余暗淡
-  if(!M){
-    const fbW = 1.2, fbDash='4 9', epHalo=5, epCore=1.5, epFlowW=1.4, epFlowDash='2 17', epFlowTo=-19;
+  // ---- agent → LLM 激活态（横竖屏一致；窄屏用更细参数）----
+  // primary + fallback 统一 dot line（同调度链点状风格）。
+  // 激活态：被点击 agent 的 primary+fallback 全亮；其余 agent 全部暗淡。
+  {
+    // 点状虚线参数（与调度链 dot 风格一致：极短 dash + 大 gap）
+    const dotDash = M ? '0.1 6' : '0.1 8';
+    const pW   = M ? 1.3 : 1.8;   // primary 线宽
+    const fbW  = M ? 1.0 : 1.4;   // fallback 线宽
+    const epHalo = M ? 3 : 5;
+    const pEnd = M ? 1.8 : 2.6, pEndIn = M ? 0.9 : 1.3;
+    const fbEnd = M ? 1.2 : 1.6;
+    const startR = M ? 1.4 : 2;
+    // 亮/暗透明度
+    const ON_PRIMARY = 0.95, ON_FB = 0.7, DIM = 0.10;
     ['main','aima','mk2','mk46','claude-researcher'].forEach(a=>{
       const map=ARCH_AGENT_EP[a]; if(!map) return;
       const an=c(a); if(!an) return;
       const active=(activeAgent===a);
-      // primary 青色辉光实线 + 流动（恒亮）
+      const po = active?ON_PRIMARY:DIM;       // primary 透明度随激活态
+      const fo = active?ON_FB:DIM;            // fallback 透明度随激活态
+      // primary：青色辉光点状线（激活时亮，非激活暗）
       const pn=cEp(map.primary);
       if(pn){
         const d=pathD(an.cx,an.bot,pn.cx,pn.top);
-        halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${epHalo}" opacity="0.16" filter="url(#aBlur)"/>`;
-        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${epCore}" opacity="0.9" filter="url(#aGlow)"/>`;
-        flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${epFlowW}" stroke-linecap="round" stroke-dasharray="${epFlowDash}" opacity="0.6"><animate attributeName="stroke-dashoffset" from="0" to="${epFlowTo}" dur="1s" repeatCount="indefinite"/></path>`;
-        ends+=`<circle cx="${pn.cx}" cy="${pn.top}" r="2.6" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${pn.cx}" cy="${pn.top}" r="1.3" fill="#eafdff"/>`;
+        if(active) halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${epHalo}" opacity="0.16" filter="url(#aBlur)"/>`;
+        // animate 用负值：agent→LLM 反向流动，区别于 dispatch 调度链的正向流动
+        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${pW}" stroke-linecap="round" stroke-dasharray="${dotDash}" opacity="${po}" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="-${M?12:16}" dur="1.2s" repeatCount="indefinite"/></path>`;
+        ends+=`<circle cx="${pn.cx}" cy="${pn.top}" r="${pEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${po}"/><circle cx="${pn.cx}" cy="${pn.top}" r="${pEndIn}" fill="#eafdff" opacity="${po}"/>`;
       }
       // agent 底部出口点
-      starts+=`<circle cx="${an.cx}" cy="${an.bot}" r="2" fill="#00E5FF" filter="url(#aGlow)" opacity="0.85"/>`;
-      // fallback 虚线：active 正常亮(0.62) / 非 active 暗淡(0.10)
-      const fo = active?0.62:0.10;
+      starts+=`<circle cx="${an.cx}" cy="${an.bot}" r="${startR}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?0.85:0.18}"/>`;
+      // fallback：青色点状线（激活时亮，非激活暗），与 primary 同 dot 风格
       map.fallback.forEach(ep=>{
         const fn=cEp(ep); if(!fn) return;
         const d=pathD(an.cx,an.bot,fn.cx,fn.top);
-        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${fbW}" stroke-linecap="round" stroke-dasharray="${fbDash}" opacity="${fo}" filter="url(#aGlow)"/>`;
-        ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="1.6" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?0.7:0.18}"/>`;
+        core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${fbW}" stroke-linecap="round" stroke-dasharray="${dotDash}" opacity="${fo}" filter="url(#aGlow)"/>`;
+        ends+=`<circle cx="${fn.cx}" cy="${fn.top}" r="${fbEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${active?ON_FB:0.18}"/>`;
       });
     });
   }

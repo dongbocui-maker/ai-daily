@@ -1,0 +1,161 @@
+{
+  "date": "2026-06-24",
+  "title": "📅 2026-06-24",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "💰 融资 | 【进展】Baseten 正式敲定 15 亿美元融资，估值落定 130 亿美元",
+          "body": "此前传闻洽谈中的 Baseten 融资正式 closed：AI 推理基础设施公司敲定 15 亿美元，估值在 110 亿—130 亿美元区间，较五个月前的 50 亿美元估值翻了约 1.6 倍。公司年化营收 run-rate 从 2 亿美元三倍增长，反映推理层（inference）正成为继训练之后资本最拥挤的战场。继 Groq、Reflection 之后，又一笔巨资砸向“模型跑起来”这一环节，说明算力消费正从训练向规模化推理迁移。",
+          "insight": "企业级 AI 进入大规模部署期后，推理成本与稳定性将取代模型能力本身，成为 CIO 选型的核心变量。",
+          "source": "WSJ / Startup Fortune",
+          "url": "https://startupfortune.com/baseten-closes-a-15-billion-round-at-up-to-13-billion-valuation-as-inference-becomes-its-own-infrastructure-war/"
+        },
+        {
+          "title": "📜 监管政策 | 特朗普改口：不再将 Anthropic 视为国家安全威胁",
+          "body": "美国总统特朗普在接受 Axios 采访时表示，上周他可能曾将 Anthropic 视为国家安全威胁，但现在已不再这么认为。此前美国商务部对 Anthropic 模型的出口管制动作在 AI 行业引发法律争议，并波及印度 IT 厂商的主权 AI 合作。这一表态为悬而未决的出口管制争议注入缓和信号。",
+          "insight": "AI 模型已被纳入地缘政治筹码，厂商与依赖其能力的全球集成商（含咨询业）都需将“模型可被远程断供”纳入风险建模。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/us/trump-tells-axios-he-no-longer-views-anthropic-national-security-threat-2026-06-19/"
+        },
+        {
+          "title": "🌍 行业动向 | 腾讯在微信内灰测原生 AI 助手「小微」，加速追赶国内对手",
+          "body": "腾讯已开始在微信（Weixin）内小范围测试名为「小微」的原生 AI 助手，用户可通过文字或语音与其交互、与好友沟通并唤起小程序。这是腾讯在中国白热化 AI 竞赛中追赶字节豆包、阿里通义等对手的关键一步，将 AI 直接嵌入中国用户量最大的超级 App 入口。",
+          "insight": "超级 App 把 AI 助手放进数亿月活的对话流，意味着 AI 分发入口之争从独立 App 转向“嵌入式 + 场景原生”，对企业级 Agent 的触达逻辑有直接借鉴意义。",
+          "source": "Bloomberg / CNBC",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-22/tencent-tests-ai-assistant-for-its-super-app-wechat-in-china"
+        },
+        {
+          "title": "🤝 战略合作 | OpenAI 推出 1.5 亿美元 Partner Network，目标年内培训 30 万顾问，埃森哲、BCG、麦肯锡入伙",
+          "body": "OpenAI 于 6 月 14 日启动 Partner Network，投入 1.5 亿美元，创始合作伙伴包括埃森哲、BCG、麦肯锡、贝恩，目标到 2026 年底培训 30 万名认证顾问，并设 Forward Deployed Experts 试点，将合作方工程师直接嵌入 OpenAI 团队。此举较 Anthropic 3 月的 1 亿美元 Claude Partner Network 规模更大，标志两大实验室同步向“实施交付层”下沉、争夺同一批咨询渠道。",
+          "insight": "模型厂商正以认证与渠道把咨询公司变成“分销 + 交付臂”，对埃森哲等而言既是放量机会，也意味着方法论标准化权被上游模型方部分收编。",
+          "source": "TechTimes / EdTech Innovation Hub",
+          "url": "https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm"
+        },
+        {
+          "title": "💰 融资 | 阶跃星辰新一轮融资落定，华勤、龙旗、豪威、中兴绑定手机供应链",
+          "body": "36氪报道，国产大模型公司阶跃星辰完成新一轮融资，亮点不在金额而在投资方名单——华勤、龙旗（全球手机 ODM 第一梯队）、豪威（摄像头核心器件）、中兴均入局，覆盖手机终端整条产业链。这是供应链端的资本绑定：阶跃的 AI 能力将被硬件制造商主动嵌入产品设计流程，目前已覆盖 60% 头部手机品牌、装机量超 4200 万台。",
+          "insight": "在国产大模型清场期，端侧 AI 公司通过“绑定硬件供应链”获取确定性出货，是区别于纯云端竞争的差异化生存路径。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3801518218845961"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Anthropic 推出 Claude Tag：常驻 Slack 频道、随对话持续积累公司上下文的 AI 队友",
+          "body": "Anthropic 发布 Claude Tag，作为共享团队成员常驻 Slack 工作区——任何人都能 @它派活，而它会随频道对话不断积累对公司业务的理解。与此前 Claude 集成不同，Claude Tag 引入了持久记忆层（persistent memory），让 AI “越用越懂这支团队的工作”。这把企业 AI 从一次性问答推向“有组织记忆的长期队友”。",
+          "insight": "持久上下文是企业级 Agent 落地的真正分水岭——它把 AI 从工具升级为知识资产沉淀载体，但也带来数据治理与权限边界的新课题。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/"
+        },
+        {
+          "title": "🏦 行业落地 | HSBC 携手 Google Cloud，单项 AI 用例预计各带来超 1 亿美元增收或节省",
+          "body": "汇丰宣布将使用 Google Cloud 在全球运营中铺开 AI，多年期合作将支持超 200 个新 AI 用例，其中部分单项目预计可各自产生超 1 亿美元的额外收入或成本节省。这是金融业把 AI 从试点推向“可量化业务价值”的标志性案例，强调用例级 ROI 而非泛泛的效率叙事。",
+          "insight": "当企业以“单用例 1 亿美元”为口径衡量 AI 时，说明落地评估正从技术验证转向财务问责——这是 MD/CIO 层面真正关心的尺度。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-17/hsbc-google-ai-partnership-set-to-add-over-100-million-gains"
+        },
+        {
+          "title": "🌍 行业动向 | Bloomberg：欧洲押注工业 AI，Mistral、西门子、施耐德领跑制造业落地",
+          "body": "Bloomberg 长篇报道指出，在效率压力下欧洲正加速把 AI 推向工厂车间。以西门子软件为例，传感器、激光与摄像头将湿度、蛋白含量等数据实时喂入系统，AI 在质量问题拖慢生产前持续调整配方。工业 AI 成为欧洲在 AI 竞赛中仍有机会领跑的细分领域，Mistral、施耐德等本土玩家构成“技术先锋”。",
+          "insight": "制造业的 AI 价值不在炫技模型，而在与 OT/传感数据闭环的深度耦合——这正是高科技与新能源客户最易兑现 ROI 的场景。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/features/2026-06-18/ai-for-industries-europe-s-mistral-siemens-schneider-lead-tech-vanguard"
+        },
+        {
+          "title": "🤖 中国案例 | 思必驰让 AI「散会之后继续干活」：会议纪要驱动后续任务自动执行",
+          "body": "36氪报道，思必驰把企业 AI 从“记录会议”推进到“散会后继续干活”——AI 不止生成纪要，还能基于会议内容驱动后续任务的拆解与执行，把会议从信息终点变成任务起点。这代表中国企业 AI 厂商正从单点工具（转写/纪要）向“会议—任务—执行”的工作流闭环延伸。",
+          "insight": "纪要类应用同质化严重，真正的护城河在于打通会后任务执行链路；这与 Claude Tag 的“持久上下文 + 派活”思路殊途同归。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3865716311446791"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | OpenAI 扩展 Daybreak：发布完整版 GPT-5.5-Cyber + 开源补丁计划「Patch the Planet」",
+          "body": "OpenAI 于 6 月 22 日扩展 Daybreak 网络安全计划，发布最强防御型模型 GPT-5.5-Cyber 完整版，并联合 Trail of Bits 推出开源安全计划「Patch the Planet」。重点从“发现漏洞”转向“规模化生成补丁”：Codex Security 插件可分流并验证扫描器、公告、漏洞赏金、工单系统的既有发现，再批量生成补丁。Trail of Bits 工程师用 Codex /goal 配合 GPT-5.5-Cyber 在不到一天内搭建起覆盖数十个入口点的完整 fuzzing lab。",
+          "insight": "AI 编码 Agent 正从写功能代码走向“自动化安全修复”，把企业积压的漏洞 backlog 变成可批量清偿的工程任务，对 DevSecOps 流程是结构性变革。",
+          "source": "OpenAI / SiliconANGLE",
+          "url": "https://openai.com/index/patch-the-planet/"
+        },
+        {
+          "title": "🚀 产品发布 | Sakana AI 推出 Fugu：用单个 OpenAI 兼容 API 编排一池可热插拔的前沿大模型",
+          "body": "东京 R&D 实验室 Sakana AI 发布 Sakana Fugu——一个以单一 OpenAI 兼容模型 API 交付的多智能体编排系统。Fugu 本身是一个被训练来调用其他 LLM（及自身实例）的语言模型，在单个端点背后自动完成模型选择、任务委派、验证与综合。它不依赖硬编码角色或工作流，而是“学会”如何协调，并能在单厂商 API 中断（如出口管制）时动态绕行。",
+          "insight": "模型编排层正成为对冲“单厂商依赖”的工程答案——对企业而言，把模型选型抽象成一个可热插拔的路由层，是降低供应链与合规风险的务实架构。",
+          "source": "Sakana AI / MarkTechPost",
+          "url": "https://sakana.ai/fugu-release/"
+        },
+        {
+          "title": "🧭 工具演进 | GitHub Copilot 桌面应用 GA，把 AI 编码升级为「受监督的 Agent 控制平面」",
+          "body": "GitHub Copilot 桌面应用正式 GA，Windows Forum 分析认为这标志 GitHub 押注“最有价值的 AI 界面未必是离光标最近的那个”。Copilot App 坐在 GitHub、IDE、命令行等原语之上，试图让 AI Agent 像系统中的“参与者”一样运作，提供对多 Agent 任务的受监督控制面。编辑器仍是开发者理解代码的最高分辨率场所，但任务编排正上移到独立控制平面。",
+          "insight": "AI 编码竞争正从“补全质量”转向“Agent 编排与治理”，谁掌握控制平面谁就掌握企业级采购的入口。",
+          "source": "Windows Forum",
+          "url": "https://windowsforum.com/threads/github-copilot-desktop-app-ga-2026-turns-ai-coding-into-a-supervised-agent-control-plane.427657/"
+        },
+        {
+          "title": "🇨🇳 中文观察 | 36氪：被骂了一年的 Codex，怎么突然爆了？",
+          "body": "36氪复盘 OpenAI Codex 从被开发者长期吐槽到突然口碑反转的转折点，剖析其在 Agentic 编码工作流中的能力跃迁——从单点代码补全走向可委派、可验证的长程编码 Agent，叠加 Codex Security 等安全场景的扩展，重新赢回开发者信任。这与近期 Codex 在安全补丁、自动化修复上的高调动作相互印证。",
+          "insight": "编码 Agent 的口碑反转往往来自“工作流闭环”而非单点能力提升；企业评估编码工具时应看其能否端到端完成任务，而非补全质量。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3865681265792002"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "📈 经济测量 | ECB 研究：AI 热潮迄今对美国整体就业与工资影响“温和”，结构性重配正在发生",
+          "body": "欧洲央行（ECB）6 月 22 日发布的经济公报研究指出，AI 应用的繁荣虽可能取代部分岗位，但迄今对美国整体（aggregate）就业与工资的影响仍然“温和”。ECB 认为美国多年前就开始适应 AI 浪潮，最脆弱行业的岗位已被逐步重新配置到其他领域，正缓慢重塑劳动力市场，而非引发总量冲击。",
+          "insight": "宏观数据为“AI 大规模裁员”叙事降温——短期内 AI 更多是岗位重配而非净消灭，企业人力规划应聚焦技能迁移而非简单替换。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/world-at-work/ai-booms-us-employment-wage-impact-muted-so-far-ecb-study-finds-2026-06-22/"
+        },
+        {
+          "title": "📉 趋势观点 | Reuters：AI 的未来可能是「小、便宜、不赚钱」",
+          "body": "Reuters 评论（Open Interest）指出，AI 热潮建立在“越大越好”的假设上，但一项研究表明相反趋势或将成立：运行在桌面电脑上的小语言模型，或可处理当前由大模型承担的多数任务。若小而廉价的模型足以胜任，则当前围绕超大模型的高额资本支出与盈利逻辑将面临根本性拷问——能力够用比能力最强更具商业意义。",
+          "insight": "企业不必为“最强模型”支付溢价；在多数业务场景下，小模型 + 本地部署可能是成本与合规更优的解，决策者应重新审视“够用即可”的选型原则。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/future-ai-may-be-small-cheap-unprofitable-2026-06-18/"
+        },
+        {
+          "title": "📉 风险预测 | Gartner：到 2027 年 40% 的 Agentic AI 项目将被取消，实时数据质量是关键瓶颈",
+          "body": "Gartner 预测到 2027 年将有 40% 的 Agentic AI 项目被取消，IHL Services 从零售门店层视角解读指出：零售业的 Agentic AI 用例（自主需求预测、补货触发、履约路由）每一个都把可靠的实时库存数据当作输入信号，数据质量不过关则 Agent 无从可靠运作。这给 Agentic AI 热潮泼了一盆冷水——失败往往不在模型，而在底层数据。",
+          "insight": "上 Agentic AI 之前先治数据——实时、准确的业务数据是 Agent 落地的前置条件，否则高取消率几乎是必然结果。",
+          "source": "Gartner / IHL Services",
+          "url": "https://www.ihlservices.com/news/analyst-corner/2026/06/gartner-predicts-40-of-agentic-ai-projects-will-be-canceled-by-2027-heres-what-the-retail-store-level-shows/"
+        },
+        {
+          "title": "🇨🇳 行业分析 | 36氪：AI 定价彻底分化，大模型“只剩两种活法，中间的先死”",
+          "body": "36氪深度分析指出，AI 大模型市场的定价正彻底分化为两极——要么极致低价走量（如开源/超低成本路线），要么高价绑定高价值场景，夹在中间、既无成本优势又无场景护城河的玩家最先出局。这与全球“循环融资暗藏泡沫、90% 淘汰率”的判断相互印证，反映行业从能力竞赛进入商业模式生死筛选期。",
+          "insight": "企业采购大模型时，应警惕“中间地带”供应商的持续性风险，优先选择要么成本结构清晰、要么场景绑定深的厂商。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3865706008073477"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日主线是 AI 实验室加速向“实施交付层”下沉：OpenAI 以 1.5 亿美元 Partner Network 拉拢埃森哲、BCG、麦肯锡培训 30 万顾问，与 Anthropic 此前的渠道布局正面交锋——模型厂商正把咨询公司变成分销与交付臂，咨询业护城河被上游部分收编的趋势愈发清晰。与此同时，Anthropic 的 Claude Tag 把企业 AI 推向“有持久记忆的常驻队友”，标志企业级 Agent 的竞争焦点从模型能力转向“组织上下文沉淀”。",
+    "资本层面，推理基础设施成最新热战场：Baseten 五个月内估值三倍跳至 130 亿美元，延续 Groq、Reflection 的算力消费迁移逻辑——训练之后，“把模型可靠、低成本地跑起来”成为资本与企业共同关注的核心变量。国内则上演端侧绑定戏码，阶跃星辰用手机供应链资本绑定换取确定性出货，腾讯把 AI 助手「小微」塞进微信入口。",
+    "冷静信号同样值得 MD/CIO 关注：Gartner 警告 2027 年 40% 的 Agentic AI 项目将被取消，根因多在底层实时数据质量而非模型；ECB 研究则为“AI 大裁员”叙事降温，指出短期内更多是岗位重配而非净消灭。落地比模型更难，数据比算法更关键——这是本期最实在的提醒。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律4全球M&A/战略合作/大厂动向扫描已执行（2026-06-24）：(1)OpenAI partnership/JV/acquisition——OpenAI Partner Network 1.5亿美元、30万顾问、埃森哲/BCG/麦肯锡入伙（已纳入热点）；Anthropic+Blackstone 1.5亿美元企业服务合资已于6/23发布（去重跳过）。(2)Anthropic Accenture/Deloitte/consulting——埃森哲培训3万、德勤47万、Cognizant 35万接入 Claude（6/22已发，去重跳过）；Anthropic Claude Tag 进入 Slack（已纳入企业级）。(3)AI consulting services launch enterprise——OpenAI Partner Network 已纳入。(4)OpenAI/Anthropic/Google/Meta/Microsoft 过去7天大动作——Trump 改口不再视 Anthropic 为国安威胁（已纳入）、Tencent 微信测 AI 助手（已纳入）、Baseten 15亿融资 closed（已纳入）。无遗漏的重大新合作/收并购公告。"
+  }
+}

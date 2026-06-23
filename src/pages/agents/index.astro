@@ -286,7 +286,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .arch-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
 .arch-tier{position:relative;z-index:2;display:flex;justify-content:center;gap:54px}
 .arch-tier.t1{margin-bottom:78px}
-.arch-node{position:relative;width:196px;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:10px;padding:15px 16px 14px;transition:.18s}
+.arch-node{position:relative;width:196px;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:10px;padding:15px 16px 14px;transition:.18s;cursor:pointer}
 .arch-node:hover{transform:translateY(-2px)}
 .arch-node.orch{border-color:rgba(255,196,0,.35);box-shadow:0 0 22px rgba(255,196,0,.10)}
 .arch-node.worker{border-color:rgba(63,201,255,.28);box-shadow:0 0 18px rgba(63,201,255,.08)}
@@ -300,14 +300,54 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .arch-stdot.off{background:#555f70}
 .arch-direct{position:absolute;top:-9px;right:12px;font-size:7.5px;letter-spacing:1px;font-family:'Orbitron';color:var(--arc);background:#08111c;border:1px solid rgba(63,201,255,.45);border-radius:999px;padding:2px 8px;box-shadow:0 0 8px rgba(63,201,255,.25)}
 .arch-mini{display:none}
-/* 窄屏/手机 ≤768px：保持上下两层结构，节点改紧凑徽章，调度链变细（不隐藏） */
+.arch-tier.t2{margin-bottom:82px}
+.arch-tier.t3{gap:16px;flex-wrap:nowrap;position:relative}
+/* Tier 3 LLM 节点：主标题=LLM 简写，下方=endpoint 短码 */
+.ep-node{position:relative;width:158px;background:linear-gradient(160deg,#0b1118,#080d14);border:1px solid var(--line);border-radius:9px;padding:12px 13px 11px;transition:.18s;cursor:default}
+.ep-node.healthy{border-color:rgba(52,211,153,.3)}
+.ep-node.idle{border-color:rgba(107,118,137,.4)}
+.ep-node .epn-top{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.epn-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.epn-dot.healthy{background:var(--green,#34d399);box-shadow:0 0 6px var(--green,#34d399)}
+.epn-dot.idle{background:#6b7689}
+.epn-llm{font-family:'Orbitron';font-weight:800;font-size:15px;color:#fff;letter-spacing:.8px}
+.ep-node.idle .epn-llm{color:#8b96a8}
+.epn-tag{font-size:8px;color:var(--dim);letter-spacing:1px;font-family:'Orbitron';margin-left:auto;border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+.epn-eps{display:flex;flex-direction:column;gap:5px;border-top:1px dashed var(--line);padding-top:8px}
+.epn-ep{display:flex;align-items:center;gap:6px;font-size:9.5px;letter-spacing:.4px}
+.epn-ep .eed{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.epn-ep .eed.on{background:var(--green,#34d399);box-shadow:0 0 5px var(--green,#34d399)}
+.epn-ep .eed.sb{background:var(--gold);box-shadow:0 0 5px var(--gold)}
+.epn-ep .eec{font-family:'Orbitron';font-weight:700;color:#cdd6e3;letter-spacing:.6px}
+.epn-ep .ees{font-size:7.5px;color:var(--dim);letter-spacing:.5px;margin-left:auto}
+.epn-ep.sb .eec{color:#caa64a}
+/* TTS 独立小徽章（贴 Tier3 右上角，不属于任何 LLM 节点）*/
+.tts-badge{position:absolute;top:-26px;right:2px;display:flex;align-items:center;gap:5px;font-size:8px;letter-spacing:1.5px;font-family:'Orbitron';font-weight:700;color:#c98bff;background:#0c0814;border:1px solid rgba(201,139,255,.4);border-radius:999px;padding:3px 9px;box-shadow:0 0 8px rgba(201,139,255,.2)}
+.tts-badge .ttsd{width:6px;height:6px;border-radius:50%;background:#c98bff;box-shadow:0 0 5px #c98bff;flex-shrink:0}
+.ep-mini{display:none}
+.alg .aln.ep{border-color:var(--arc-glow);box-shadow:0 0 6px var(--arc-glow)}
+.alg .aln.epfb{border-top-style:dashed;border-top-width:2px;border-color:var(--arc-glow);opacity:.55}
+/* hover focus 高亮：透明度完全由 drawArchLines() JS 单一数据源管理（避免 CSS !important 与 JS 双重叠加）；此处不再强制 opacity */
+/* 窄屏/手机 ≤768px：保持上下结构，节点改紧凑徽章，调度链变细（不隐藏） */
 @media(max-width:768px){
   .arch-card{padding:16px 14px 22px}
   .arch-topo{padding:18px 4px 4px}
   .arch-tier{gap:18px}
-  .arch-tier.t1{gap:40px;margin-bottom:62px}
-  .arch-tier.t2{gap:14px}
+  .arch-tier.t1{gap:40px;margin-bottom:56px}
+  .arch-tier.t2{gap:14px;margin-bottom:60px}
+  .arch-tier.t3{gap:8px;flex-wrap:nowrap;justify-content:space-between}
   .arch-full{display:none}
+  /* Tier3 LLM 节点窄屏：极简徽章，一行 */
+  .ep-node{width:auto;flex:1 1 0;min-width:0;padding:9px 2px 8px;border-radius:10px;text-align:center}
+  .ep-full{display:none}
+  .ep-mini{display:block;position:relative}
+  .em-dot{width:7px;height:7px;border-radius:50%;margin:0 auto 5px}
+  .em-dot.healthy{background:var(--green,#34d399);box-shadow:0 0 5px var(--green,#34d399)}
+  .em-dot.idle{background:#6b7689}
+  .em-llm{font-family:'Orbitron';font-weight:800;font-size:9px;color:#dfe8f3;letter-spacing:.2px;line-height:1.1}
+  .em-ep{font-size:6.5px;color:var(--dim);letter-spacing:.2px;margin-top:2px;line-height:1.1}
+  .tts-badge{top:-20px;right:0;font-size:6.5px;padding:2px 7px;letter-spacing:1px}
+  .tts-badge .ttsd{width:5px;height:5px}
   /* 节点变紧凑徽章卡 */
   .arch-node{width:auto;flex:0 0 auto;padding:11px 6px 9px;border-radius:12px;text-align:center}
   .arch-node:hover{transform:none}
@@ -616,17 +656,38 @@ function render(DATA){
   const archTopology = (_t1.length && _t2.length) ? `
     <div class="arch-card">
       <div class="arch-head">
-        <span class="arch-title">AGENT TOPOLOGY · 调度架构</span>
+        <span class="arch-title">AGENT TOPOLOGY · 调度与模型链路</span>
         <span class="arch-legend">
-          <span class="alg"><span class="aln solid"></span> MAIN 调度链</span>
-          <span class="alg"><span class="aln dot"></span> 银月 调度链</span>
-          <span class="alg"><span class="adot"></span> 独立可访问</span>
+          <span class="alg"><span class="aln solid"></span> MAIN 调度</span>
+          <span class="alg"><span class="aln dot"></span> 银月 调度</span>
+          <span class="alg"><span class="aln ep"></span> PRIMARY 实线</span>
+          <span class="alg"><span class="aln epfb"></span> FALLBACK 虚线</span>
+          <span class="alg"><span class="adot"></span> 健康</span>
         </span>
       </div>
       <div class="arch-topo" id="archTopo">
         <svg class="arch-lines" id="archLines"></svg>
         <div class="arch-tier t1">${_t1.map(id=>_archNode(id,'orch')).join('')}</div>
         <div class="arch-tier t2">${_t2.map(id=>_archNode(id,'worker')).join('')}</div>
+        <div class="arch-tier t3">
+          <span class="tts-badge"><span class="ttsd"></span>TTS</span>
+          <div class="ep-node healthy" id="ep-opus">
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">OPUS48</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">PRIMARY</span></div><div class="epn-ep sb"><span class="eed sb"></span><span class="eec">CL48</span><span class="ees">STANDBY</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">OPUS48</div><div class="em-ep">AIGW·CL48</div></div>
+          </div>
+          <div class="ep-node healthy" id="ep-gpt">
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">GPT55</span><span class="epn-tag">AZURE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">ACAI</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">GPT55</div><div class="em-ep">ACAI</div></div>
+          </div>
+          <div class="ep-node healthy" id="ep-qwen">
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">QWEN37</span><span class="epn-tag">ALI</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">DASH</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">QWEN37</div><div class="em-ep">DASH</div></div>
+          </div>
+          <div class="ep-node idle" id="ep-dseek">
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot idle"></span><span class="epn-llm">DSEEK</span><span class="epn-tag">STDBY</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed" style="background:#6b7689"></span><span class="eec" style="color:#8b96a8">ACAI</span><span class="ees">UNMOUNTED</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot idle"></div><div class="em-llm" style="color:#8b96a8">DSEEK</div><div class="em-ep">ACAI</div></div>
+          </div>
+        </div>
       </div>
     </div>` : '';
 
@@ -658,12 +719,33 @@ function render(DATA){
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   requestAnimationFrame(()=>drawTrendCurve(DATA));
-  requestAnimationFrame(()=>drawArchLines());
+  requestAnimationFrame(()=>{drawArchLines(null);bindArchFocus();});
   requestAnimationFrame(()=>mqTick());
 }
 
-// ===== AGENT TOPOLOGY 蓝色辉光调度连线 =====
-function drawArchLines(){
+// hover 某 agent 节点 → 高亮其 primary+fallback 链路，其余淡出
+function bindArchFocus(){
+  const topo=document.getElementById('archTopo'); if(!topo) return;
+  const narrow=window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+  topo.querySelectorAll('.arch-node[id^="arch-"]').forEach(node=>{
+    const a=node.id.replace(/^arch-/,'');
+    node.addEventListener('mouseenter',()=>{ if(narrow) return; topo.classList.add('focusing'); drawArchLines(a); });
+    node.addEventListener('mouseleave',()=>{ topo.classList.remove('focusing'); drawArchLines(null); });
+  });
+}
+
+// ===== AGENT TOPOLOGY 蓝色辉光调度连线 + agent→LLM 链路 =====
+// agent → LLM 端点映射（primary 青实线；fallback 青虚线，严格同现网青蓝辉光色系）
+const ARCH_AGENT_EP = {
+  main:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
+  aima:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
+  mk2:                 {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
+  mk46:                {primary:'ep-qwen', fallback:['ep-opus','ep-gpt']},
+  'claude-researcher': {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
+};
+let _archFocus=null;
+function drawArchLines(focusAgent){
+  if(focusAgent!==undefined) _archFocus=focusAgent; else focusAgent=_archFocus;
   const svg=document.getElementById('archLines');
   const topo=document.getElementById('archTopo');
   if(!svg||!topo) return;
@@ -671,6 +753,8 @@ function drawArchLines(){
   if(!R.width) return;
   svg.setAttribute('viewBox',`0 0 ${R.width} ${R.height}`);
   const c=id=>{const el=document.getElementById('arch-'+id); if(!el) return null; const r=el.getBoundingClientRect();
+    return {cx:r.left-R.left+r.width/2, top:r.top-R.top, bot:r.top-R.top+r.height};};
+  const cEp=id=>{const el=document.getElementById(id); if(!el) return null; const r=el.getBoundingClientRect();
     return {cx:r.left-R.left+r.width/2, top:r.top-R.top, bot:r.top-R.top+r.height};};
   const main=c('main'), aima=c('aima');
   const workers=['mk2','mk46','claude-researcher'].map(c).filter(Boolean);
@@ -684,25 +768,65 @@ function drawArchLines(){
     : {mOff:14, mDst:16, mHalo:7, mCore:2, mFlowW:2, mFlowDash:'2 22', mFlowTo:-24, mEnd:3.4, mEndIn:1.6, mStart:3.6, mStartIn:1.7,
        aOff:14, aDst:16, aHalo:5, aCore:3, aDash:'0.1 8', aTo:-16, aEnd:2.8, aEndIn:1.3, aStart:3, aStartIn:1.4, blur:3.5, glow:1.6};
   let halo='',core='',flow='',ends='',starts='';
+  const WIDS=['mk2','mk46','claude-researcher'];
   if(main){
     workers.forEach((w,i)=>{
+      const wid=WIDS[i];
+      const lit=(!focusAgent||focusAgent==='main'||focusAgent===wid);
+      const o=lit?1:0.10;
       const d=pathD(main.cx-P.mOff,main.bot,w.cx-P.mDst,w.top);
-      halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="0.22" filter="url(#aBlur)"/>`;
-      core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="0.95" filter="url(#aGlow)"/>`;
-      flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="0.9"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+i*0.12}s" repeatCount="indefinite"/></path>`;
-      ends+=`<circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEnd}" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEndIn}" fill="#eafdff"/>`;
+      halo+=`<path d="${d}" fill="none" stroke="#00E5FF" stroke-width="${P.mHalo}" opacity="${0.22*o}" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${P.mCore}" opacity="${0.95*o}" filter="url(#aGlow)"/>`;
+      flow+=`<path d="${d}" fill="none" stroke="#dffbff" stroke-width="${P.mFlowW}" stroke-linecap="round" stroke-dasharray="${P.mFlowDash}" opacity="${0.9*o}"><animate attributeName="stroke-dashoffset" from="0" to="${P.mFlowTo}" dur="${0.9+i*0.12}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEnd}" fill="#00E5FF" filter="url(#aGlow)" opacity="${o}"/><circle cx="${w.cx-P.mDst}" cy="${w.top}" r="${P.mEndIn}" fill="#eafdff" opacity="${o}"/>`;
     });
     starts+=`<circle cx="${main.cx-P.mOff}" cy="${main.bot}" r="${P.mStart}" fill="#00E5FF" filter="url(#aGlow)"/><circle cx="${main.cx-P.mOff}" cy="${main.bot}" r="${P.mStartIn}" fill="#eafdff"/>`;
   }
   if(aima){
+    const aLit=(!focusAgent||focusAgent==='aima');
+    const ao=aLit?1:0.10;
     workers.forEach((w,i)=>{
       const d=pathD(aima.cx+P.aOff,aima.bot,w.cx+P.aDst,w.top);
-      halo+=`<path d="${d}" fill="none" stroke="#2f8fd0" stroke-width="${P.aHalo}" opacity="0.16" filter="url(#aBlur)"/>`;
-      core+=`<path d="${d}" fill="none" stroke="url(#aGradAima)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="0.95" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+i*0.2}s" repeatCount="indefinite"/></path>`;
-      ends+=`<circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEnd}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEndIn}" fill="#cdeeff"/>`;
+      halo+=`<path d="${d}" fill="none" stroke="#2f8fd0" stroke-width="${P.aHalo}" opacity="${0.16*ao}" filter="url(#aBlur)"/>`;
+      core+=`<path d="${d}" fill="none" stroke="url(#aGradAima)" stroke-width="${P.aCore}" stroke-linecap="round" stroke-dasharray="${P.aDash}" opacity="${0.95*ao}" filter="url(#aGlow)"><animate attributeName="stroke-dashoffset" from="0" to="${P.aTo}" dur="${1.8+i*0.2}s" repeatCount="indefinite"/></path>`;
+      ends+=`<circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEnd}" fill="#48b4ec" filter="url(#aGlow)" opacity="${ao}"/><circle cx="${w.cx+P.aDst}" cy="${w.top}" r="${P.aEndIn}" fill="#cdeeff" opacity="${ao}"/>`;
     });
     starts+=`<circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStart}" fill="#48b4ec" filter="url(#aGlow)"/><circle cx="${aima.cx+P.aOff}" cy="${aima.bot}" r="${P.aStartIn}" fill="#cdeeff"/>`;
   }
+
+  // ---- agent → LLM（窄屏跳过，只留调度链）----
+  if(!M){
+    const fbW = 1.4, fbDash='4 9', epHalo=5, epCore=1.5, epFlowW=1.5, epFlowDash='2 18', epFlowTo=-20;
+    ['main','aima','mk2','mk46','claude-researcher'].forEach(a=>{
+      const map=ARCH_AGENT_EP[a]; if(!map) return;
+      const an=c(a); if(!an) return;
+      const focused=(focusAgent===a);
+      // primary：青色辉光实线 + 流动（默认画所有 agent 主力；focus 只该 agent）
+      if(!focusAgent || focused){
+        const pn=cEp(map.primary);
+        if(pn){
+          const d=pathD(an.cx,an.bot,pn.cx,pn.top);
+          const o=focused?1:(focusAgent?0.06:0.85);
+          const hl=focused?' class="hl"':'';
+          halo+=`<path${hl} d="${d}" fill="none" stroke="#00E5FF" stroke-width="${epHalo}" opacity="${0.20*o}" filter="url(#aBlur)"/>`;
+          core+=`<path${hl} d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${epCore}" opacity="${0.95*o}" filter="url(#aGlow)"/>`;
+          flow+=`<path${hl} d="${d}" fill="none" stroke="#dffbff" stroke-width="${epFlowW}" stroke-linecap="round" stroke-dasharray="${epFlowDash}" opacity="${focused?0.9:0.6}"><animate attributeName="stroke-dashoffset" from="0" to="${epFlowTo}" dur="1s" repeatCount="indefinite"/></path>`;
+          ends+=`<circle${hl} cx="${pn.cx}" cy="${pn.top}" r="2.7" fill="#00E5FF" filter="url(#aGlow)" opacity="${o}"/><circle${hl} cx="${pn.cx}" cy="${pn.top}" r="1.4" fill="#eafdff" opacity="${o}"/>`;
+        }
+      }
+      // fallback 虚线：同青色系 + 虚线 + 低透明 + 不流动（默认不画，hover 该 agent 才展）
+      if(focused){
+        map.fallback.forEach(ep=>{
+          const fn=cEp(ep); if(!fn) return;
+          const d=pathD(an.cx,an.bot,fn.cx,fn.top);
+          halo+=`<path class="hl" d="${d}" fill="none" stroke="#00E5FF" stroke-width="${fbW+1}" opacity="0.05" filter="url(#aBlur)"/>`;
+          core+=`<path class="hl" d="${d}" fill="none" stroke="url(#aGradMain)" stroke-width="${fbW}" stroke-linecap="round" stroke-dasharray="${fbDash}" opacity="0.6" filter="url(#aGlow)"/>`;
+          ends+=`<circle class="hl" cx="${fn.cx}" cy="${fn.top}" r="1.7" fill="#00E5FF" filter="url(#aGlow)" opacity="0.7"/>`;
+        });
+      }
+    });
+  }
+
   const defs=`<defs>`+
     `<filter id="aBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="${P.blur}"/></filter>`+
     `<filter id="aGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${P.glow}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`+

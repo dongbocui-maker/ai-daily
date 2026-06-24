@@ -33,15 +33,32 @@ const READS_SRC = path.join(REPO_ROOT, 'src', 'data', 'reads');
 const OUT_DIR = path.join(REPO_ROOT, 'obsidian-export', 'reads');
 const STATUS_FILE = path.join(REPO_ROOT, 'obsidian-export', '_status.json');
 
-// ============ 代理配置 ============
+// ============ 代理配置（代理可选）============
+//
+// 判定规则：
+//   - 显式设了 HTTPS_PROXY / https_proxy 环境变量 → 走代理（VM 本地手动跑，国内需 mihomo）
+//   - 没设 → 直连（GitHub Actions 海外 runner，本就可达海外站，无需代理）
+//   - 强制直连：设 NO_PROXY=1 / fetch 脚本传 --no-proxy
+//
+// 这样同一脚本在 VM（带代理）和 GitHub Actions（直连）两种环境都能跑。
 
-const PROXY_URL = process.env.HTTPS_PROXY || process.env.https_proxy || 'http://127.0.0.1:7890';
+const EXPLICIT_PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || '';
+const FORCE_NO_PROXY =
+  process.env.NO_PROXY === '1' ||
+  process.env.no_proxy === '1' ||
+  process.argv.includes('--no-proxy');
+// 只有「显式设了代理」且「没强制关闭」时才用代理
+const USE_PROXY = Boolean(EXPLICIT_PROXY) && !FORCE_NO_PROXY;
+const PROXY_URL = EXPLICIT_PROXY || 'http://127.0.0.1:7890';
 let proxyAgent = null;
-try {
-  proxyAgent = new HttpsProxyAgent(PROXY_URL);
-} catch {
-  /* 没装 https-proxy-agent 也能跑，只是不走代理 */
+if (USE_PROXY) {
+  try {
+    proxyAgent = new HttpsProxyAgent(PROXY_URL);
+  } catch {
+    /* 没装 https-proxy-agent 也能跑，只是不走代理 */
+  }
 }
+console.error(`[proxy] ${USE_PROXY ? `走代理 ${PROXY_URL}` : '直连（无代理）'}`);
 
 // ============ 已知会失败的源（直接输出占位）============
 
@@ -109,7 +126,7 @@ function fetchViaCurl(url, opts = {}) {
   const useChromeHeaders = opts.chromeHeaders || false;
   const args = [
     '-fsSL',
-    '-x', PROXY_URL,
+    ...(USE_PROXY ? ['-x', PROXY_URL] : []),
     '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
     '-H', 'Accept: text/html,application/xhtml+xml,application/pdf,*/*;q=0.9',
     '-H', 'Accept-Language: en-US,en;q=0.9',
@@ -171,7 +188,7 @@ async function fetchForUrl(url) {
 
 // Playwright fallback。对于对 curl 返 403 / TLS fingerprint 验证严格的站点。
 const sharedBrowsers = { proxied: null, direct: null };
-async function getSharedBrowser(useProxy = true) {
+async function getSharedBrowser(useProxy = USE_PROXY) {
   const key = useProxy ? 'proxied' : 'direct';
   if (sharedBrowsers[key]) return sharedBrowsers[key];
   const launchOpts = {
@@ -183,7 +200,7 @@ async function getSharedBrowser(useProxy = true) {
   return sharedBrowsers[key];
 }
 async function fetchViaPlaywright(url, opts = {}) {
-  const useProxy = opts.useProxy !== false;
+  const useProxy = opts.useProxy !== false && USE_PROXY;
   const browser = await getSharedBrowser(useProxy);
   const ctx = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -395,9 +412,31 @@ async function processOne(data) {
 async function main() {
   ensureDir(OUT_DIR);
 
-  const arg = process.argv[2];
+  // 取第一个非 -- 开头的参数作为 slug 过滤（避免 --no-proxy 被当成 slug）
+  const arg = process.argv.slice(2).find((a) => !a.startsWith('--'));
+  const MISSING_ONLY = process.argv.includes('--missing-only');
   let files = fs.readdirSync(READS_SRC).filter((f) => f.endsWith('.json')).sort();
   if (arg) files = files.filter((f) => f.includes(arg));
+
+  // 增量模式：只处理「还没有对应 md」或「md 是 error/placeholder 占位」的篇目。
+  // 用于 GitHub Actions 事件驱动：避免重复拓取已成功的 md（呼应 Jason「只拉增量」的诉求）。
+  if (MISSING_ONLY) {
+    const before = files.length;
+    files = files.filter((f) => {
+      const mdPath = path.join(OUT_DIR, f.replace(/\.json$/, '.md'));
+      if (!fs.existsSync(mdPath)) return true; // 缺 md → 要拓
+      const head = fs.readFileSync(mdPath, 'utf-8').slice(0, 600);
+      // 付费墙 / 反爬是终态（设计上拓不到）→ 不重试，避免每次白跑
+      if (/fetch_status:\s*"?(paywall_skipped|antibot_skipped)/.test(head)) return false;
+      // 只重试真正拓取失败（error）的占位
+      return /fetch_status:\s*"?error/.test(head);
+    });
+    console.error(`[missing-only] ${before} 篇中 ${files.length} 篇缺 md/需重试，跳过 ${before - files.length} 篇已有`);
+    if (files.length === 0) {
+      console.error('[missing-only] 没有需要拓取的篇目，退出。');
+      return;
+    }
+  }
 
   const status = { fetchedAt: new Date().toISOString(), items: [] };
   let ok = 0, err = 0, paywall = 0, antibot = 0;

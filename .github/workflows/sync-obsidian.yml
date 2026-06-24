@@ -1,0 +1,89 @@
+name: Sync Obsidian Export
+
+# 精读 JSON 落地时，自动抓原文生成 Obsidian markdown 并 commit 回仓。
+# 事件驱动、零定时、零 token。海外 runner 直连抓原文（无需代理）。
+#
+# 链路：MK2 push 精读 JSON → 本 workflow 抓原文生成 md → commit
+#       → 你 Mac 端 Cmd+Shift+R（manual-sync.sh + ledger 增量去重）→ Obsidian
+#
+# 历史：2026-05 首版 reads-to-obsidian.mjs（中文版渲染）→ 5/17 改英文原文导出后
+#       旧 workflow 被废弃，链路悬空。本版用 fetch-original-texts.mjs --missing-only
+#       恢复自动化（脚本支持代理可选：无 HTTPS_PROXY 时直连，契合海外 runner）。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/reads/**.json'
+      - 'scripts/fetch-original-texts.mjs'
+  workflow_dispatch:        # 手动触发（可选跑全量）
+    inputs:
+      mode:
+        description: '抓取模式：missing（只补缺失，默认）/ all（全量重抓）'
+        required: false
+        default: 'missing'
+        type: choice
+        options:
+          - missing
+          - all
+
+permissions:
+  contents: write           # 需写权限 commit 回 repo
+
+concurrency:
+  group: obsidian-sync
+  cancel-in-progress: false # 排队等前一次跑完，不取消（避免漏篇）
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120   # MK46 QC low-1：防大批量积压串行抓取超 GHA 默认上限
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # PDF 源（arxiv 等）需要 pdftotext
+      - name: Install poppler-utils (pdftotext)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      # 部分源用 playwright 兜底抓取（动态渲染页）
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      # 抓原文生成 md。不设 HTTPS_PROXY → 脚本走直连（海外 runner 本就可达海外站）
+      - name: Generate Obsidian markdown (fetch original texts)
+        run: |
+          if [[ "${{ github.event.inputs.mode }}" == "all" ]]; then
+            echo "::notice::全量重抓模式"
+            node scripts/fetch-original-texts.mjs --no-proxy
+          else
+            echo "::notice::增量模式（只补缺失 md）"
+            node scripts/fetch-original-texts.mjs --missing-only --no-proxy
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add obsidian-export/
+          if git diff --cached --quiet; then
+            echo "::notice::obsidian-export/ 无变化，跳过 commit"
+          else
+            git commit -m "auto: regen obsidian export (fetch original texts)
+
+          Triggered by: ${{ github.event.head_commit.message || 'manual dispatch' }}"
+            git push origin HEAD:main   # MK46 QC low-3：显式指定 target ref，避免 detached HEAD 不确定性
+            echo "::notice::Obsidian export 已更新并 push"
+          fi

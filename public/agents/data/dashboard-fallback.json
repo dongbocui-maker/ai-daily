@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-27 07:04:19 +08",
+  "generated_at": "2026-06-27 21:00:10 +08",
   "today": "2026-06-27",
   "grand": {
-    "tok": 1475712636,
-    "cost": 2072.67,
-    "calls": 2991,
-    "save": 4802.8,
-    "today_tok": 1630467,
-    "today_cost": 2.05,
-    "today_save": 6.57,
-    "last7d_tok": 154698074,
-    "last7d_cost": 206.12
+    "tok": 1480495003,
+    "cost": 2082.75,
+    "calls": 3016,
+    "save": 4818.57,
+    "today_tok": 6412834,
+    "today_cost": 12.12,
+    "today_save": 22.35,
+    "last7d_tok": 159480441,
+    "last7d_cost": 216.2
   },
   "trend": [
     {
@@ -204,15 +204,22 @@
     },
     {
       "date": "2026-06-27",
-      "tok": 1630467,
-      "cost": 2.05,
+      "tok": 6412834,
+      "cost": 12.12,
       "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 1091888,
+          "cost": 2.14
+        },
         "aima": {
           "name": "银月",
           "mark": "P.E.P.P.E.R.",
           "emoji": "🌶️",
-          "tok": 464573,
-          "cost": 0.65
+          "tok": 3916082,
+          "cost": 8.01
         },
         "mk2": {
           "name": "MK2",
@@ -220,6 +227,13 @@
           "emoji": "🦐",
           "tok": 1165894,
           "cost": 1.4
+        },
+        "claude-researcher": {
+          "name": "MK51 哨兵",
+          "mark": "MARK LI",
+          "emoji": "🛰️",
+          "tok": 238970,
+          "cost": 0.57
         }
       }
     }
@@ -233,19 +247,19 @@
       "ac": "#e8b923",
       "lit": "#7fdfff",
       "status": "IDLE",
-      "idle_min": 604,
-      "last_ts": "2026-06-26T13:00:43.150Z",
-      "total_tok": 1024626973,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 91104902,
-      "last7d_cost": 142.26,
-      "cost": 1576.92,
-      "save": 3330.5,
-      "calls": 2258,
+      "idle_min": 66,
+      "last_ts": "2026-06-27T11:54:48.940Z",
+      "total_tok": 1025718861,
+      "today_tok": 1091888,
+      "today_cost": 2.14,
+      "last7d_tok": 92196790,
+      "last7d_cost": 144.4,
+      "cost": 1579.06,
+      "save": 3334.19,
+      "calls": 2263,
       "active_model": "aigw-claude-48-main/claude-opus-4-8",
       "cache_eff": 80.4,
-      "today_cache_eff": 0,
+      "today_cache_eff": 75.3,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -255,9 +269,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
-          "tok": 194176667,
-          "cost": 343.64,
-          "calls": 410
+          "tok": 195268555,
+          "cost": 345.78,
+          "calls": 415
         },
         {
           "name": "azure-openai-responses/gpt-5.5",
@@ -298,20 +312,20 @@
       "emoji": "🌶️",
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
-      "status": "IDLE",
-      "idle_min": 389,
-      "last_ts": "2026-06-26T16:35:53.123Z",
-      "total_tok": 182171693,
-      "today_tok": 464573,
-      "today_cost": 0.65,
-      "last7d_tok": 9505298,
-      "last7d_cost": 18.19,
-      "cost": 289.54,
-      "save": 623.77,
-      "calls": 483,
+      "status": "ONLINE",
+      "idle_min": 28,
+      "last_ts": "2026-06-27T12:32:31.841Z",
+      "total_tok": 185623202,
+      "today_tok": 3916082,
+      "today_cost": 8.01,
+      "last7d_tok": 12956807,
+      "last7d_cost": 25.55,
+      "cost": 296.9,
+      "save": 635.09,
+      "calls": 502,
       "active_model": "aigw-claude-48-main/claude-opus-4-8",
-      "cache_eff": 81.0,
-      "today_cache_eff": 85.5,
+      "cache_eff": 80.9,
+      "today_cache_eff": 74.6,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -321,9 +335,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
-          "tok": 27975247,
-          "cost": 57.55,
-          "calls": 97
+          "tok": 31426756,
+          "cost": 64.91,
+          "calls": 116
         },
         {
           "name": "azure-openai-responses/gpt-5.5",
@@ -358,8 +372,8 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "ONLINE",
-      "idle_min": 0,
+      "status": "IDLE",
+      "idle_min": 836,
       "last_ts": "2026-06-26T23:04:07.999Z",
       "total_tok": 228684708,
       "today_tok": 1165894,
@@ -419,7 +433,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 4050,
+      "idle_min": 4886,
       "last_ts": "2026-06-24T03:34:14.500Z",
       "total_tok": 35207266,
       "today_tok": 0,
@@ -454,26 +468,26 @@
       "emoji": "🛰️",
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
-      "status": "OFFLINE",
-      "idle_min": 2153,
-      "last_ts": "2026-06-25T11:11:26.364Z",
-      "total_tok": 5021996,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 1036728,
-      "last7d_cost": 1.5,
-      "cost": 5.16,
-      "save": 14.87,
-      "calls": 15,
+      "status": "IDLE",
+      "idle_min": 419,
+      "last_ts": "2026-06-27T06:01:43.169Z",
+      "total_tok": 5260966,
+      "today_tok": 238970,
+      "today_cost": 0.57,
+      "last7d_tok": 1275698,
+      "last7d_cost": 2.07,
+      "cost": 5.73,
+      "save": 15.62,
+      "calls": 16,
       "active_model": "aigw-claude-48-main/claude-opus-4-8",
-      "cache_eff": 85.6,
-      "today_cache_eff": 0,
+      "cache_eff": 84.9,
+      "today_cache_eff": 71.2,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
-          "tok": 3341577,
-          "cost": 4.37,
-          "calls": 7
+          "tok": 3580547,
+          "cost": 4.94,
+          "calls": 8
         },
         {
           "name": "azure-openai-responses/gpt-5.5",
@@ -1372,9 +1386,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-opus-4-8",
-      "tok": 290191027,
-      "cost": 468.41,
-      "calls": 567
+      "tok": 294973394,
+      "cost": 478.48,
+      "calls": 592
     },
     {
       "name": "azure-openai-responses/gpt-5.5",

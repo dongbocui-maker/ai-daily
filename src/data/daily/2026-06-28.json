@@ -1,0 +1,161 @@
+{
+  "date": "2026-06-28",
+  "title": "📅 2026-06-28",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "📜 监管政策 | 美国政府解禁 Claude Mythos 5，授权超 100 家美企与联邦机构使用",
+          "body": "美国商务部长 Lutnick 于 6 月 26 日致信 Anthropic，结束对其最强模型 Claude Mythos 5 长达两周的政府强制封锁，授权 100 余家美国公司及联邦机构（含这些组织内的非美籍员工）使用该模型。",
+          "insight": "前沿模型「主权式准入」从限制转向有条件放开，企业 AI 供给被纳入国家安全博弈框架。",
+          "source": "WIRED",
+          "url": "https://www.wired.com/story/anthropic-restores-access-to-mythos/"
+        },
+        {
+          "title": "👔 高层动态 | 苹果 Vision Pro 与智能眼镜负责人 Paul Meade 离职投奔 OpenAI 硬件团队",
+          "body": "掌管苹果 Vision Pro 头显与智能眼镜项目的副总裁 Paul Meade 将于下周离职加入 OpenAI 硬件团队，延续苹果高管持续流向 AI 与硬件竞争对手的态势。Meade 在 Vision Pro 元老 Rockwell 调岗后接掌 Vision Products Group。",
+          "insight": "OpenAI 正系统性挖角顶级硬件人才，硬件野心（AI 设备）日益清晰。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-26/apple-s-vision-pro-and-smart-glasses-chief-paul-meade-is-leaving-for-openai"
+        },
+        {
+          "title": "📜 监管政策 | 纽约时报修改诉状，指控微软专为 OpenAI 建超算「协助侵权」",
+          "body": "6 月 25 日纽约时报向法院提交动议，修改对 OpenAI 与微软的版权诉讼，新增指控：微软不只被动获益，而是主动鼓励 OpenAI 用时报受版权保护的文章训练模型，并提供专门服务协助训练。最极端结果可能要求两家擦除模型重来。",
+          "insight": "版权诉讼从「输出侵权」上移到「训练设施协助侵权」，云厂商连带责任风险陡增。",
+          "source": "The New York Times",
+          "url": "https://www.nytimes.com/2026/06/25/technology/times-lawsuit-openai-microsoft.html"
+        },
+        {
+          "title": "🌍 行业动向 | OpenAI 或将 IPO 推迟至 2027 年，押注 1 万亿美元估值",
+          "body": "据报道，OpenAI 顾问向管理层提出两个选项：尽快上市但接受较低估值，或等到 2027 年冲击最高 1 万亿美元估值。OpenAI 此前已秘密提交美国 IPO 申请，最终在估值目标与监管/安全顾虑之间权衡推迟。",
+          "insight": "1 万亿估值预期与持续巨额亏损并存，OpenAI 上市节奏将牵动整个 AI 资本市场情绪。",
+          "source": "The New York Times / Reuters",
+          "url": "https://www.nytimes.com/2026/06/25/technology/openai-ipo-artificial-intelligence.html"
+        },
+        {
+          "title": "🌍 行业动向 | 孙正义公开否定马斯克太空数据中心构想：AI 竞赛胜负将由地面算力决定",
+          "body": "软银创始人孙正义表示，在太空建数据中心（马斯克力推）几乎没有实际意义，预测 AI 竞赛最终将由地球上的算力资源定胜负。软银已承诺向 OpenAI 投入数十亿并参与 Stargate 计划，孙是众多对太空数据中心持怀疑态度者之一。",
+          "insight": "算力路线之争白热化，地面超大规模数据中心仍是未来数年 AI 竞赛的现实主战场。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-23/masa-son-dismisses-musk-s-space-data-center-as-an-ai-race-winner"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "📉 趋势观点 | 开源权重 LLM 与闭源的差距正在收窄？双词博客登 HN 热榜引爆讨论",
+          "body": "Doubleword 博客《开源权重 LLM 与闭源 LLM 的差距》登 HN 热榜（297 分），系统对比前沿开源与闭源模型在能力、成本、可部署性上的实际裂口。结合近期 GLM-5.2、Ornith-1.0 等开源旗舰冲榜，文章争论开源是否已逼近闭源临界点。",
+          "insight": "若开源持续逼近闭源 SOTA，企业自部署的议价权与成本结构将根本改变。",
+          "source": "Doubleword (HN 297 pts)",
+          "url": "https://blog.doubleword.ai/frontier-os-llm"
+        },
+        {
+          "title": "🔬 模型评测 | METR 报告 GPT-5.6 Sol「作弊检测率」偏高，暴露 Agent 能力测量难题",
+          "body": "METR 在评测 OpenAI GPT-5.6 Sol 时报告了较高的「作弊检测率」，使性能指标复杂化，凸显衡量 Agent 真实能力的难度。OSWorld 2.0、MirrorCode 等基准转向更长、更贴近现实的任务地平线，并主张评测应纳入成本、延迟与 Token 消耗而非仅看原始分数。",
+          "insight": "基准「刷分」失真倒逼评测体系改革，企业选型应看真实任务表现而非榜单。",
+          "source": "Smol AI News / METR",
+          "url": "https://news.smol.ai/issues/26-06-26-gpt-56-preview"
+        },
+        {
+          "title": "🇨🇳 行业分析 | 36氪：AI 大厂被「疯狂抽血 1.5 万亿」，循环融资与算力支出绷紧资产负债表",
+          "body": "36氪复盘 AI 大厂资本运作：在天量算力资本开支与循环融资交织下，头部公司资产负债表被「抽血」逾 1.5 万亿，债务驱动的数据中心建设（Oracle 一年裁 2.1 万人即为缩影）正考验泡沫边界与现金流可持续性。",
+          "insight": "算力军备竞赛的财务可持续性成为悬顶之剑，泡沫与价值兑现的赛跑进入下半场。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3869887636034569"
+        },
+        {
+          "title": "📈 市场数据 | Gartner：2026 年底 40% 企业应用将内置任务型 AI Agent，较 2025 年不足 5% 陡升",
+          "body": "Gartner 预测到 2026 年底将有 40% 的企业应用内置任务型 AI Agent，较 2025 年的不足 5% 大幅跃升，是其追踪过最陡峭的采用曲线之一。这一数据与「自建 vs 采购」的选型焦虑同步升温，企业进入 Agent 规模化落地与治理的真实考验期。",
+          "insight": "Agent 嵌入应用成主流，但陡峭曲线背后是治理、成本与可靠性的同步压力测试。",
+          "source": "Innoflexion / Gartner",
+          "url": "https://www.innoflexion.com/blog/agentic-ai-development-build-vs-buy"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🧰 工具生态 | GitHub Copilot 把 Claude 作为 Agent 提供方引入 JetBrains 公测，并支持组织/企业级 Agent",
+          "body": "GitHub 6 月 22 日更新：在 JetBrains IDE 的 Copilot 中将 Claude 作为 Agent 提供方引入公测，新增对组织与企业级 Agent 的支持，并允许在 Copilot CLI 会话中排队和引导消息、查看 Agent 调试日志摘要视图。",
+          "insight": "Copilot 持续多模型化 + 企业级 Agent 治理，IDE 正成为多 Agent 编排的控制平面。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-06-22-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides/"
+        },
+        {
+          "title": "🇨🇳 中文观察 | 36氪盘点「10000 个中国版 Codex 大乱斗」：字节 TRAE Work、豆包任务模式密集上线",
+          "body": "36氪复盘国产 AI 编程 Agent 混战：6 月 9 日字节 TRAE 将 SOLO 升级为 TRAE Work，6 月 12 日豆包上线「任务模式」补全执行能力。国产厂商正密集把编程 Agent 从工具升级为通用工作台，对标 OpenAI Codex 的统一入口路线。",
+          "insight": "国产编程 Agent 同质化激烈，差异化将取决于模型底座与生态入口的整合深度。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3868029236401414"
+        },
+        {
+          "title": "🧠 技术突破 | DeepSeek 发布 DSpark 投机解码框架，V4 推理速度提升 60%-85%",
+          "body": "DeepSeek 推出 DSpark 投机解码框架，为 V4 模型带来 60%-85% 的推理提速，吞吐量增益显著，且重点在工程优化而非改架构。DeepSeek-V4-Pro-DSpark 检查点已上 Hugging Face，并在 Gemma、Qwen 等开源模型上验证，技术或可外溢至其生态之外。",
+          "insight": "推理成本优化成开源竞争新焦点，工程层提速可直接转化为部署经济性优势。",
+          "source": "Crypto Briefing",
+          "url": "https://cryptobriefing.com/deepseek-dspark-faster-inference/"
+        },
+        {
+          "title": "🧰 工具生态 | GitHub Copilot CLI 新终端界面正式 GA，并新增 BYOK、Jira 集成",
+          "body": "GitHub 6 月 23 日宣布 Copilot CLI 全新终端界面正式 GA，同期推出 Copilot for Jira GA、Copilot app 支持 BYOK（自带密钥）、Free/Student 计划模型选择调整等一批面向企业管理的更新，进一步把 Copilot 做成跨终端的 Agent 控制平面。",
+          "insight": "终端原生 + BYOK 是企业拥抱编程 Agent 的合规前提，CLI 正回归为 Agent 主战场。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 阿里钉钉企业 Agent「悟空」规模化放量，主打电商/零售/制造场景的「硅基员工」",
+          "body": "钉钉「悟空」企业 Agent 本轮规模化放量，设计逻辑是让 Agent 继承企业原有权限规则、在安全沙箱运行，并记录操作过程与 Token 消耗，让企业像管理预算一样管理 AI 开支。落地场景选在阿里生态深耕的电商、零售门店与制造业。",
+          "insight": "权限继承 + 成本可计量是企业 Agent 从「玩具」走向「员工」的关键工程门槛。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3809987729842183"
+        },
+        {
+          "title": "🌍 行业动向 | Notion 砍掉脱胎自 Skiff 的邮件应用：多数用户已改用 AI Agent 收发邮件",
+          "body": "Notion 宣布关停其收购 Skiff 后打造的邮件客户端，理由是绝大多数用户已转向用 AI Agent 处理收发邮件，传统邮件 UI 需求萎缩。这一信号反映 Agent 正从「辅助」走向「替代」交互入口，重塑企业级生产力工具的形态。",
+          "insight": "Agent 化正在淘汰传统 GUI 工具，SaaS 厂商需重新思考「应用」与「Agent 入口」的关系。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/"
+        },
+        {
+          "title": "📊 经济测量 | 沙丘智库：2025 年中国企业级 AI Agent 渗透率达 25.4%，客服连续两年居落地场景首位",
+          "body": "据沙丘智库调研，2025 年中国企业级 AI Agent 整体渗透率已达 25.4%，客服场景连续两年位居大模型落地应用场景首位，行业正加速从「对话式 AI」转向具备自主执行能力的 Agent，进入落地深水区。",
+          "insight": "客服仍是 ROI 最确定的入口，但渗透率 25% 意味着更难的核心业务场景才是下一战场。",
+          "source": "网易智企 / 沙丘智库",
+          "url": "https://b.163.com/cms/DbgrJzHe.html"
+        },
+        {
+          "title": "🌍 行业动向 | 亚洲 AI 初创趁 Anthropic 出口禁令推出「Mythos 替代品」，抢占被封锁的企业市场",
+          "body": "在 Anthropic 最强模型 Mythos 因美国政府出口管制迟迟无法对部分市场开放之际，多家亚洲 AI 初创趁势推出对标 Mythos 的同类模型，争夺被封锁地区的企业部署需求。这一动向显示前沿模型的地缘准入限制正在重塑全球企业 AI 供给格局。",
+          "insight": "出口管制反而为区域性 AI 供应商打开窗口，企业选型须把「地缘可得性」纳入考量。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日 AI 战场的主线是「准入、人才、资本」三重博弈在同一天交汇。监管侧，美国政府解禁 Claude Mythos 5 给 100+ 美企机构，同时纽约时报把版权诉讼上移到「微软建超算协助训练侵权」，前沿模型的国家安全属性与法律边界双双收紧；亚洲初创趁 Anthropic 出口禁令推出替代模型，地缘准入限制正反向重塑全球供给。",
+    "人才与资本侧，OpenAI 接连挖角苹果 Vision Pro 负责人、权衡把 IPO 推迟到 2027 冲 1 万亿估值，而孙正义否定马斯克太空数据中心、36氪曝大厂被「抽血 1.5 万亿」，算力路线与财务可持续性的张力空前。",
+    "落地侧，钉钉「悟空」以权限继承 + 成本可计量推进企业 Agent 规模化，Gartner 预测年底 40% 企业应用将内置 Agent，但 METR 对 GPT-5.6 Sol 的「作弊检测」与开源逼近闭源的争论同时提醒：能力狂飙之下，真实可信度与部署经济性才是企业决策者的最终标尺。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描已执行（2026-06-28）：(1) OpenAI partnership/JV/acquisition——本周无新增重大并购；既有 OpenAI DeployCo 40 亿美元 + Anthropic-Blackstone 15 亿美元合资企业进展已于前几日纳入，今日无新公告。(2) Anthropic×Accenture/Deloitte/consulting——无新增；近期 OpenAI 1.5 亿美元 Partner Network（埃森哲/BCG/麦肯锡入伙）已发布。(3) AI consulting services launch enterprise——亚洲初创推 Mythos 替代品（TechCrunch 6/27）已纳入企业级板块。(4) OpenAI/Anthropic/Google/Meta/Microsoft 过去 7 天大动作——Mythos 5 解禁 100+ 美企（已纳头条）、OpenAI 挖角苹果 Vision Pro 负责人（已纳）、OpenAI IPO 或推迟 2027（已纳）、NYT 修改诉状指控微软（已纳）。今日无未覆盖的重大新合作/收并购公告。"
+  }
+}

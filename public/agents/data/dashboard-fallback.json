@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28 09:00:10 +08",
+  "generated_at": "2026-06-28 09:04:06 +08",
   "today": "2026-06-28",
   "grand": {
     "tok": 1484025533,
@@ -226,7 +226,7 @@
       "ac": "#e8b923",
       "lit": "#7fdfff",
       "status": "IDLE",
-      "idle_min": 649,
+      "idle_min": 653,
       "last_ts": "2026-06-27T14:10:58.696Z",
       "total_tok": 1026776432,
       "today_tok": 0,
@@ -292,7 +292,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "IDLE",
-      "idle_min": 604,
+      "idle_min": 608,
       "last_ts": "2026-06-27T14:56:42.599Z",
       "total_tok": 187040998,
       "today_tok": 0,
@@ -352,7 +352,7 @@
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
       "status": "IDLE",
-      "idle_min": 117,
+      "idle_min": 121,
       "last_ts": "2026-06-27T23:03:48.094Z",
       "total_tok": 229739871,
       "today_tok": 1055163,
@@ -412,7 +412,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 5606,
+      "idle_min": 5610,
       "last_ts": "2026-06-24T03:34:14.500Z",
       "total_tok": 35207266,
       "today_tok": 0,
@@ -448,7 +448,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "IDLE",
-      "idle_min": 1139,
+      "idle_min": 1143,
       "last_ts": "2026-06-27T06:01:43.169Z",
       "total_tok": 5260966,
       "today_tok": 0,
@@ -1286,20 +1286,6 @@
       "core": true
     },
     {
-      "id": "d6c0bf92-c884-4b73-9cc5-da028e3b7b11",
-      "name": "ai-daily-reads-candidates",
-      "agent": "mk2",
-      "enabled": true,
-      "expr": "0 9 * * 0",
-      "human": "每周日 09:00",
-      "human_en": "Weekly Sun 09:00",
-      "kind": "cron",
-      "next_run_ms": 1782608400000,
-      "last_run_ms": 1782003600006,
-      "last_status": "ok",
-      "core": false
-    },
-    {
       "id": "e6b8f79c-cd32-46a4-ac9f-a1498453b076",
       "name": "memory-audit-weekly",
       "agent": "main",
@@ -1352,6 +1338,20 @@
       "kind": "cron",
       "next_run_ms": 1782871200000,
       "last_run_ms": 1779707931891,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "d6c0bf92-c884-4b73-9cc5-da028e3b7b11",
+      "name": "ai-daily-reads-candidates",
+      "agent": "mk2",
+      "enabled": true,
+      "expr": "0 9 * * 0",
+      "human": "每周日 09:00",
+      "human_en": "Weekly Sun 09:00",
+      "kind": "cron",
+      "next_run_ms": 1783213200000,
+      "last_run_ms": 1782608400007,
       "last_status": "ok",
       "core": false
     }

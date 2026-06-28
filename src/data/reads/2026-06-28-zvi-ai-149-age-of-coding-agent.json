@@ -1,0 +1,79 @@
+{
+  "slug": "zvi-ai-149-age-of-coding-agent",
+  "savedDate": "2026-06-28",
+  "publishDate": "2026-06-28",
+  "titleZh": "编码 Agent 之年：当 Claude Code 作者自己 30 天没写一行代码——Zvi 周报 #149 精选",
+  "titleEn": "AI #149: The Age of the Coding Agent",
+  "author": "Zvi Mowshowitz",
+  "authorTitle": "《Don't Worry About the Vase》主笔，AI 周报作者",
+  "originalUrl": "https://thezvi.substack.com/p/ai-149-3",
+  "source": "manual",
+  "tags": ["编码 Agent", "Claude Code", "就业冲击", "AI 周报", "Zvi", "AI 治理", "芯片管制"],
+  "summary": "这是 Zvi 每周横扫 25 个板块的 AI 周报第 149 期，本期主标题点名「编码 Agent 之年」。最有冲击力的一手信号：Claude Code 创造者 Boris Cherny 公开过去 30 天提交的 259 个 PR、4 万行新增代码——『每一行都由 Claude Code + Opus 4.5 写成，我自己 100% 没写』；Karpathy 自称『从未如此落后过』，认为任何超过一个月的编程认知都已过时。Zvi 借此把镜头拉到三组更大的张力：① 就业——经济学家口中『比较优势永远创造新工作』的安慰，在『新工作也由 AI 完成』时会失效；② Jevons 悖论对知识工作只在曲线左侧成立，越过临界点需求就掉头向下；③ 芯片政策——放行 H200 对华销售，Matt Parlmer 称等于用 2-3 年战略领先换 Q1 股市的一时亢奋，而 Zvi 进一步判定这对股市是净负面。本文为这些高信号点的提炼精读，非逐条复述全期。",
+  "keyPoints": [
+    "**『代码不再是瓶颈』不再是口号，而是作者的自述**：Boris Cherny（Claude Code 创造者）晒出过去 30 天的 259 个 PR / 497 次 commit / 新增约 4 万行（删除 3.8 万行、净增约 2 千行）——100% 由 Claude Code + Opus 4.5 写成。Anthropic 安全负责人 Paul Crowley 也称用 Opus 4.5 后『靠代码实际解决问题的速率，比两年前高到不可思议』。",
+    "**Karpathy：编程职业正在被剧烈重构，落后一个月认知就过时**：他自承『作为程序员从未如此落后过』，因为多出了一整层全新的可编程抽象——agent / subagent / 上下文 / 记忆 / 权限 / 工具 / 插件 / skills / hooks / MCP / LSP / 斜杠命令。这把『强大却无说明书的外星工具』递到每个人手里，谁不卷起袖子学就掉队。",
+    "**$20/月的平权效应**：Deepfates 的观点被 Zvi 认同——每月 20 美元就能近乎无限使用一个持续变强的顶级数字心智（首推 Claude），这是巨大、民主化、赋能式的拉平效应；不用就是吃亏。连免费档也已经很强，最多落后不到一年。",
+    "**就业辩论：『比较优势』的安慰会自我证伪**：Zvi 反驳『AI 不是完美替代品，所以只会让人类劳动更值钱』——这个论证『证明了太多』：若成立，今天就不该存在零边际产出的岗位。真正的麻烦在于：当用来替代旧工作的『新知识工作』本身也由 AI 完成时，比较优势的腾挪空间就没了。农业机械化没有等『田间工人的完美替代品』才发生，知识工作的机械化同样不会等。",
+    "**Jevons 悖论对知识工作是一条钟形曲线，不是永动机**：效率提升初期需求随之上升（经典例子：ATM 让银行柜员更多，因为它只能做部分工作还抬高了银行业需求）；但过了临界点，任务被效率化/被更快完成的速度超过人类在新任务上的再就业速度，需求掉头向下。当 AI 足够好、足够便宜地做完所有知识工作，人类知识工作需求会大幅萎缩——除非社会强需求『只能由人来做』。",
+    "**两条治理暗线值得企业留意**：① 芯片——中国企业 2026 年下单逾 200 万颗 H200（仅字节一家计划 140 亿美元），英伟达要求台积电把 H200 产能从 70 万拉到 200 万颗。Matt Parlmer 把放行对华销售形容为『用 2-3 年战略领先换 Q1 一时股市亢奋』；Zvi 则进一步判定这对股市是净负面（英伟达本就能卖光产能，而其他公司面临中国更激烈竞争股价应跌得更多）。② 监管 vs 加速——『支持 AI 不等于反对监管』本是常识，但当 OpenAI 总裁 Brockman 一边说这话、一边资助意在抹除一切州级 AI 监管的超级 PAC 时，这句话就显得格外刺眼。"
+  ],
+  "insight": "对企业决策者，这期周报的真正价值不在某条新闻，而在 Zvi 把『编码 Agent 之年』从一句营销口号坐实成了来自工具作者本人的一手证据——当 Claude Code 的创造者自己 30 天 0 行手写代码、Karpathy 这种顶级工程师都自认落后，说明『代码不再是瓶颈』已越过临界点，组织里『工程产能受限于能写代码的人头』这一默认假设正在失效。落到行动上有三层：① 短期，最大的杠杆不是再招更多工程师，而是让现有团队掌握那层新抽象（agent 编排 / 上下文 / 工具 / 权限 / skills）——Karpathy 说的『10 倍提升没拿到就是 skill issue』对企业同样成立，谁先建立这套心智模型谁先吃到红利。② 中期，要认真对待 Zvi 对就业曲线的判断：别用『比较优势永远创造新岗位』自我安慰，因为这一轮新增的知识工作本身也会被 AI 接管，钟形曲线越过顶点后需求掉头是结构性的，企业的人力规划和客户的劳动力转型咨询都要据此重做假设。③ 战略层，芯片与监管两条暗线提示地缘和政策风险正在抬升——H200 大规模流向中国会改变全球算力竞争格局，而 AI 监管在美国国内的拉锯（多数选民要『慢下来、严监管』）意味着合规环境会比加速派宣传的更紧。一个清醒提醒：Zvi 自己的『高度怪异 / everyone dying』时间线因 2025 的进展不升反『略往后挪到 2030 左右』——进展极快不等于终局迫近，把短期工具革命的确定性和长期 AGI 时间线的高度不确定性分开看，是这期最值得借走的判断纪律。",
+  "bilingual": [
+    {
+      "en": "Claude Code has reached the point where creator Boris Cherny stopped writing code.\n\nBoris Cherny: ...In the last thirty days, I landed 259 PRs -- 497 commits, 40k lines added, 38k lines removed. Every single line was written by Claude Code + Opus 4.5. Claude consistently runs for minutes, hours, and days at a time (using Stop hooks). Software engineering is changing, and we are entering a new period in coding history. And we're still just getting started.\n\nIn the last thirty days, 100% of my contributions to Claude Code were written by Claude Code.",
+      "zh": "Claude Code 已经发展到，连它的创造者 Boris Cherny 自己都不写代码了。\n\nBoris Cherny：……过去 30 天里，我提交了 259 个 PR——497 次 commit，新增 4 万行、删除 3.8 万行。每一行都由 Claude Code + Opus 4.5 写成。Claude 能持续运行数分钟、数小时、甚至数天（借助 Stop hooks）。软件工程正在改变，我们正进入编码历史的一个新阶段。而这才刚刚开始。\n\n过去 30 天里，我对 Claude Code 这个项目 100% 的贡献，都是由 Claude Code 写的。"
+    },
+    {
+      "en": "Andrej Karpathy: I've never felt this much behind as a programmer. The profession is being dramatically refactored as the bits contributed by the programmer are increasingly sparse and between... There's a new programmable layer of abstraction to master... involving agents, subagents, their prompts, contexts, memory, modes, permissions, tools, plugins, skills, hooks, MCP, LSP, slash commands, workflows, IDE integrations...\n\nClearly some powerful alien tool was handed around except it comes with no manual and everyone has to figure out how to hold it and operate it, while the resulting magnitude 9 earthquake is rocking the profession. Roll up your sleeves to not fall behind.",
+      "zh": "Andrej Karpathy：作为一名程序员，我从未感到如此落后。这个职业正在被剧烈重构——程序员亲手贡献的那部分代码越来越稀疏、越来越零星……有一整层全新的可编程抽象需要掌握……涉及 agent、subagent，以及它们的 prompt、上下文、记忆、模式、权限、工具、插件、skills、hooks、MCP、LSP、斜杠命令、工作流、IDE 集成……\n\n显然，有人把一件强大的外星工具传到了每个人手里，却没附说明书——人人都得自己摸索怎么握住它、怎么操作它，与此同时一场 9 级地震正在撼动整个职业。卷起袖子，别掉队。"
+    },
+    {
+      "en": "Deepfates points out that for $20/month you can get essentially unlimited chat access to one of several amazing digital minds that are constantly getting better (I recommend Claude if you have to pick only one), that this is a huge effective equalizing effect that is democratic and empowering, and if you're not taking advantage of this you should start. Even for $0/month you can get something pretty amazing, you'll be less than a year behind.",
+      "zh": "Deepfates 指出：每月 20 美元，你就能近乎无限地使用若干个持续变强的惊人数字心智之一（如果只能选一个，我推荐 Claude）；这是一种巨大、民主化、赋能式的有效拉平效应，如果你还没用上，就该开始了。哪怕是每月 0 美元的免费档，你也能得到相当惊人的东西——最多落后不到一年。"
+    },
+    {
+      "en": "Seb Krier: Unless AGI can do literally everything and becomes abundant enough to meet all demand, it behaves broadly like powerful automation has before: replacing humans in some uses while expanding the production frontier in ways that sustain demand for labour elsewhere.\n\n[Zvi]: Sigh. Among other issues, this very obviously proves too much, right? For example, if this is true, then it shows there cannot possibly be zero marginal product workers today, since clearly human labor cannot meet all demand?... The problem with AI comes when the other new knowledge work to do is also done via AI.",
+      "zh": "Seb Krier：除非 AGI 真能做字面意义上的一切、并且丰裕到足以满足所有需求，否则它的行为大体和以往的强大自动化一样：在某些用途上替代人类，同时以维持别处劳动需求的方式扩张生产边界。\n\n（Zvi 回应）：唉。撇开其他问题不谈，这显然『证明了太多』，对吧？比如，如果这成立，那就说明今天不可能存在零边际产出的劳动者——因为人类劳动显然无法满足所有需求……AI 带来的真正麻烦，恰恰发生在『那些用来替代旧工作的新知识工作，本身也由 AI 来做』的时候。"
+    },
+    {
+      "en": "Charles Foster: The mechanization of agriculture didn't wait for a \"drop-in substitute for a field worker\". Neither will the mechanization of knowledge work wait for a \"drop-in substitute for a remote worker\".\n\n[Zvi on Jevons]: As efficiency grows, demand for such labor increases more up until some critical point. Past that point, if we keep going, tasks and jobs become more efficient or taken faster than humans gain employment in new tasks. At the limit, if AI can do all knowledge work sufficiently better, cheaper and faster than humans, this greatly reduces demand for humans doing knowledge work.",
+      "zh": "Charles Foster：农业机械化并没有等到『田间工人的即插即用替代品』才发生。知识工作的机械化，同样不会等到『远程工作者的即插即用替代品』。\n\n（Zvi 论 Jevons 悖论）：随着效率提升，对这类劳动的需求会先增加，直到某个临界点。越过那个点之后若继续推进，任务和岗位被效率化、或被更快完成的速度，将超过人类在新任务上获得就业的速度。在极限处，如果 AI 能足够好、足够便宜、足够快地完成所有知识工作，那么人类从事知识工作的需求就会大幅下降。"
+    },
+    {
+      "en": "Matt Parlmer: The policy decision to allow this is basically a straightforward trade where we give away a 2-3yr strategic competitive advantage in exchange for a somewhat frothier stock market in Q1 2026. Good job guys.\n\n[Zvi]: On the contrary, this is net negative for the stock market. Nvidia gets a small boost, but they were already able to sell all chips they could produce... Every other tech company, indeed every other company, now faces tougher competition from China, so their stocks should decline far more.",
+      "zh": "Matt Parlmer：允许这件事的政策决定，本质上是一笔直白的交易——我们交出 2-3 年的战略竞争优势，换来 2026 年第一季度一个略微更亢奋的股市。干得好啊各位。\n\n（Zvi）：恰恰相反，这对股市是净负面。英伟达得到的提振很小，因为它本来就能卖光所有能生产的芯片……而其他每一家科技公司、乃至每一家公司，现在都要面对来自中国的更激烈竞争，它们的股价理应跌得多得多。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "In the last thirty days, 100% of my contributions to Claude Code were written by Claude Code.",
+      "zh": "过去 30 天里，我对 Claude Code 这个项目 100% 的贡献，都是由 Claude Code 写的。"
+    },
+    {
+      "en": "I've never felt this much behind as a programmer.",
+      "zh": "作为一名程序员，我从未感到如此落后。"
+    },
+    {
+      "en": "The problem with AI comes when the other new knowledge work to do is also done via AI.",
+      "zh": "AI 带来的真正麻烦，恰恰发生在『那些用来替代旧工作的新知识工作，本身也由 AI 来做』的时候。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Boris Cherny / X（一手当事人）",
+      "url": "https://x.com/bcherny/status/2004897269674639461",
+      "pov": "本期最核心的一手证据原帖：Claude Code 创造者亲述 30 天 259 PR、新增 4 万行（净增约 2 千行）全部由 Claude Code + Opus 4.5 写成，并给出关键判断『代码越来越不是瓶颈了』(code is no longer the bottleneck)。相比 Zvi 的转述，原帖更完整地呈现了从 2024 年 9 月『连转义 bash 命令都费劲』到如今『持续运行数小时数天』的能力跃迁曲线。"
+    },
+    {
+      "source": "Lenny's Newsletter",
+      "url": "https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code",
+      "pov": "Zvi 在文中引用的实操指南，提供了与他『宏观判断』互补的『落地视角』：把 Claude Code 当通用工作台而非纯编码工具——下载 YouTube 视频、提升图片质量、扫描会议录音找出自己回避冲突的时刻、在 VS Code 里写全部内容。点破了一个常被忽略的事实：很多能力标准聊天界面也能做，Claude Code 的真正优势是干净的文件访问 + 可配置记忆（配置存在 .md 文本里，能自我改进）。"
+    },
+    {
+      "source": "AI Futures Project（Kokotajlo / Lifland）",
+      "url": "https://x.com/DKokotajlo/status/2006257807721652588",
+      "pov": "为本期提供『时间线校准』的冷静第二视角：与 Zvi 同步，他们也因 2025 的进展把时间线整体往后调——Kokotajlo 过去一年把预测拉长约 2 年，Lifland 的超级智能中位数时间线现为 2034、自动化编码者 2032。这与『编码 Agent 之年』的兴奋形成有益对冲：工具层革命极快是真的，但通往 AGI 的终局时间线高度不确定且误差棒很宽，两者不该混为一谈。"
+    }
+  ]
+}

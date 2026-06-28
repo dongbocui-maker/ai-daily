@@ -8,8 +8,9 @@ saved_date: 2026-06-28
 original_url: "https://thezvi.substack.com/p/ai-149-3"
 slug: "zvi-ai-149-age-of-coding-agent"
 source: "manual"
+audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/zvi-ai-149-age-of-coding-agent.m4a"
 fetch_status: "error"
-fetched_at: "2026-06-28T02:05:17.562Z"
+fetched_at: "2026-06-28T04:56:30.333Z"
 fetch_type: "placeholder"
 tags:
   - "编码-Agent"

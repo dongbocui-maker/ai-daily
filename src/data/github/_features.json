@@ -1656,14 +1656,13 @@
   },
   "bytedance/deer-flow": {
     "features": [
-      "开源 super agent harness，编排 sub-agents、memory 和 sandboxes 完成各类任务",
-      "基于可扩展 skills 驱动，支持灵活定制 agent 能力",
+      "基于 sub-agents、memory 与 sandboxes 编排的开源 super agent harness",
+      "通过 extensible skills 扩展 agent 能力以执行各类任务",
       "集成 BytePlus InfoQuest 智能搜索与爬取工具集",
-      "推荐搭配 Doubao-Seed-2.0-Code、DeepSeek v3.2、Kimi 2.5 等 LLM 运行",
-      "2.0 版本完全重写，登顶 GitHub Trending 榜首"
+      "提供 One-Line Agent Setup 与 Quick Start 快速部署"
     ],
-    "sourceHash": "378370ff",
-    "ts": 1778139916302
+    "sourceHash": "f9ba3af",
+    "ts": 1782696130985
   },
   "z-lab/dflash": {
     "features": [
@@ -2540,14 +2539,13 @@
   },
   "mukul975/Anthropic-Cybersecurity-Skills": {
     "features": [
-      "提供 754 个生产级 cybersecurity skills，覆盖 26 个安全领域",
-      "为 AI agent 赋予资深安全分析师的能力与知识",
-      "兼容 26+ AI 平台，含 Hermes Agent 等",
-      "映射 5 大主流安全 framework，统一技能标准",
-      "遵循 agentskills.io 开放标准，支持社区贡献"
+      "面向 AI agents 的开源 cybersecurity skills 库，含 817 个生产级技能",
+      "覆盖 29 个安全领域，提供 6 套 framework 映射",
+      "兼容 26+ AI 平台与 agentskills.io 标准",
+      "包含红队 C2、phishing 模拟、漏洞利用等攻防与双用途技术"
     ],
-    "sourceHash": "35f3c8c9",
-    "ts": 1779609074978
+    "sourceHash": "652253d9",
+    "ts": 1782696094782
   },
   "presenton/presenton": {
     "features": [
@@ -2584,14 +2582,14 @@
   },
   "stablyai/orca": {
     "features": [
-      "跨仓库并行运行 Claude Code、Codex、Grok 等多种 CLI agent",
-      "为每个 agent 分配独立 git worktree，实现隔离运行",
-      "在统一界面集中追踪和编排所有 AI agent 任务",
-      "支持 macOS、Windows 和 Linux 全平台",
-      "兼容任意 CLI agent，不局限于内置列表"
+      "手机伴侣 App 远程监控和操控 agent，任务完成即通知",
+      "并行运行 Codex、ClaudeCode、OpenCode、Pi 等多种 AI agent",
+      "每个 agent 在独立 git worktree 中运行并集中追踪",
+      "一个 prompt 分发给多个 agent，对比结果并合并最优",
+      "支持 macOS、Windows、Linux 跨平台运行"
     ],
-    "sourceHash": "-54577af2",
-    "ts": 1779670822176
+    "sourceHash": "446fbc37",
+    "ts": 1782696089754
   },
   "cursor/plugins": {
     "features": [
@@ -3247,5 +3245,146 @@
     ],
     "sourceHash": "99a5cc",
     "ts": 1782118198324
+  },
+  "kunchenguid/no-mistakes": {
+    "features": [
+      "在真实 remote 前架设本地 git proxy，push 即触发校验流水线",
+      "在隔离 worktree 中运行 AI 驱动的 review、test、docs、lint 校验",
+      "所有检查通过后自动转发分支并开启 clean PR",
+      "agent-agnostic，支持 claude、codex、rovodev、opencode 等多种 agent",
+      "自动应用安全 fix，需人工决策的问题升级供 approve、fix 或 skip"
+    ],
+    "sourceHash": "7f9c95c8",
+    "ts": 1782696064770
+  },
+  "palmier-io/palmier-pro": {
+    "features": [
+      "基于 Swift 原生开发的开源 Mac 视频编辑器",
+      "在 timeline 中用 Seedance、Kling 等 SOTA 模型生成视频和图像",
+      "通过 MCP 连接 Claude、Codex、Cursor 等 agent 协同编辑",
+      "内置 in-app agent，与你共同处理同一项目",
+      "应用启动时通过 HTTP 暴露本地 MCP server"
+    ],
+    "sourceHash": "2ae61c04",
+    "ts": 1782696069204
+  },
+  "google-labs-code/design.md": {
+    "features": [
+      "定义结合 YAML design tokens 与 markdown 文档的设计系统格式规范",
+      "为 coding agent 提供持久、结构化的视觉设计理解",
+      "通过 CLI 校验 DESIGN.md，检测 token 引用错误与 WCAG 对比度",
+      "diff 两份设计系统，检测 token 级与文档级回归",
+      "所有校验结果以结构化 JSON 输出，供 agent 使用"
+    ],
+    "sourceHash": "-51f5bb62",
+    "ts": 1782696073492
+  },
+  "JCodesMore/ai-website-cloner-template": {
+    "features": [
+      "将任意网站逆向工程为整洁现代的 Next.js 代码库",
+      "通过 `/clone-website` 命令让 AI agent 自动克隆网站",
+      "AI agent 提取 design tokens 与资源并生成组件规格",
+      "派发并行 builder 重建网站各个区块",
+      "支持 Claude Code 等多种 AI coding agent"
+    ],
+    "sourceHash": "-1b7ff8a2",
+    "ts": 1782696077855
+  },
+  "simplex-chat/simplex-chat": {
+    "features": [
+      "首个无任何用户标识符的隐私优先 messaging 平台",
+      "支持端到端加密的私密一对一连接与用户群组",
+      "提供 iOS、Android、F-Droid 等多平台客户端应用",
+      "经 Trail of Bits 安全审计，注重隐私设计"
+    ],
+    "sourceHash": "7dfe5ab6",
+    "ts": 1782696081654
+  },
+  "interviewstreet/hiring-agent": {
+    "features": [
+      "将简历 PDF 解析为 Markdown 并用 LLM 提取结构化 JSON 数据",
+      "通过 GitHub profile 与 repository 信号增强候选人数据",
+      "对项目进行分类并由 LLM 选出 top 7 代表作",
+      "运行带公平性约束的严格评分，输出分类得分与证据",
+      "支持本地 Ollama 或 Google Gemini 两种 LLM backend"
+    ],
+    "sourceHash": "30f34714",
+    "ts": 1782696085309
+  },
+  "penpot/penpot": {
+    "features": [
+      "Penpot 是面向团队规模化构建数字产品的开源设计平台",
+      "支持 self-hosting，让团队完全掌控自身设计基础设施",
+      "通过验证的数字公共产品（Verified DPG）",
+      "支持 Gitpod 一键就绪开发环境"
+    ],
+    "sourceHash": "-680e15ec",
+    "ts": 1782696099538
+  },
+  "BuilderIO/agent-native": {
+    "features": [
+      "Actions 一次定义，可用于 UI、agent、API、MCP、A2A 和 CLI",
+      "内置 agent runtime，集成 chat、tools、skills、memory、jobs 与可观测性",
+      "后端无关，支持任意 Drizzle SQL 数据库和 Nitro 兼容 host",
+      "提供完整开源 SaaS 应用模板，可克隆并完全自定义代码",
+      "为 agent 提供 actions、状态、身份、tools、skills 等产品级原语"
+    ],
+    "sourceHash": "15687f21",
+    "ts": 1782696104027
+  },
+  "aws/agent-toolkit-for-aws": {
+    "features": [
+      "为 Claude Code、Codex、Cursor、Kiro 等 AI coding agent 提供 AWS 工具与防护",
+      "aws-core 插件覆盖服务选型、CDK/CloudFormation、serverless、容器与部署",
+      "aws-agents 插件支持基于 Amazon Bedrock 和 AgentCore 构建 AI agent",
+      "aws-data-analytics 插件支持 S3 Tables、AWS Glue、Athena 的数据与 ETL 工作流",
+      "aws-agents-for-devsecops 支持事件调查、代码审查、漏洞扫描与渗透测试"
+    ],
+    "sourceHash": "5d68eed3",
+    "ts": 1782696108816
+  },
+  "alibaba/page-agent": {
+    "features": [
+      "通过自然语言控制网页界面的 GUI Agent",
+      "纯 in-page JavaScript 集成，无需浏览器扩展或 headless 浏览器",
+      "基于文本的 DOM 操作，无需截图或多模态 LLM",
+      "支持自带 LLM（Bring your own LLMs）",
+      "可选 chrome extension 与 MCP Server 实现多页面任务控制"
+    ],
+    "sourceHash": "53090835",
+    "ts": 1782696113797
+  },
+  "Stirling-Tools/Stirling-PDF": {
+    "features": [
+      "支持桌面客户端、浏览器 UI 和自托管私有 API",
+      "提供 50+ PDF 工具：编辑、合并、拆分、签名、脱敏、转换、OCR、压缩等",
+      "UI 内无代码 pipeline 工作流，支持 API 批量处理 PDF",
+      "企业级支持 SSO、审计与灵活的本地部署",
+      "几乎所有工具提供 REST API，可集成至现有系统",
+      "界面支持 40+ 种语言"
+    ],
+    "sourceHash": "-7ca26343",
+    "ts": 1782696118513
+  },
+  "NanmiCoder/MediaCrawler": {
+    "features": [
+      "支持小红书、抖音、快手、B站、微博、贴吧、知乎等多平台数据采集",
+      "基于 Playwright 浏览器自动化保存登录态，无需 JS 逆向",
+      "支持关键词搜索、指定帖子 ID 和创作者主页爬取",
+      "支持二级评论抓取与评论词云图生成",
+      "内置登录态缓存与 IP 代理池机制"
+    ],
+    "sourceHash": "266a5ab",
+    "ts": 1782696122839
+  },
+  "topoteretes/cognee": {
+    "features": [
+      "为 AI agents 提供跨会话的持久长期记忆",
+      "支持任意格式数据的 ingest 并构建自托管 knowledge graph",
+      "让 agent 在完整上下文中回溯、关联并行动",
+      "开源 AI memory 平台，支持社区插件与 add-ons"
+    ],
+    "sourceHash": "643a3027",
+    "ts": 1782696126460
   }
 }

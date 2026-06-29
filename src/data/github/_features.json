@@ -2604,25 +2604,24 @@
   },
   "affaan-m/ECC": {
     "features": [
-      "跨 Claude Code、Codex、Cursor 等多种 AI agent harness 的 operator 系统",
-      "内置 skills、instincts、memory optimization 等生产级 agent 能力",
-      "集成 MCP 配置、hooks、rules 与 legacy command shims",
-      "提供 agentshield 安全扫描与持续学习机制",
-      "支持 12+ 语言生态，覆盖 Shell、TypeScript、Python、Go、Java 等"
+      "agent harness operating system，提供统一的 agent 运行框架",
+      "通过 ecc-universal npm 包提供跨语言 agent 工具支持",
+      "通过 ecc-agentshield 提供 agent 安全防护能力",
+      "以 GitHub App 形式集成到工作流中"
     ],
-    "sourceHash": "-3168b5c",
-    "ts": 1779674427807
+    "sourceHash": "-414ac92f",
+    "ts": 1782698412024
   },
   "Hmbown/CodeWhale": {
     "features": [
-      "DeepSeek-first agentic terminal,支持流式输出 reasoning blocks",
-      "自动路由每轮对话到合适的 DeepSeek 模型与思考级别",
-      "带审批门控的本地工作区编辑能力",
-      "以 Rust 二进制分发,提供 npm、Cargo、Homebrew、Docker 等多种安装方式",
-      "提供 codewhale CLI 与配套 TUI 运行时"
+      "终端编码 agent，提供 TUI 和 CLI 两种使用方式",
+      "开源 Rust 项目，本地运行，无需上传代码",
+      "优先支持 DeepSeek 及开源权重模型，本地 vLLM/SGLang/Ollama 免 key",
+      "同时兼容 Claude、GPT、Kimi、GLM 等多家模型 provider",
+      "支持读代码、编辑、运行命令、多步任务规划与自我纠错"
     ],
-    "sourceHash": "-2347f3e8",
-    "ts": 1779674432731
+    "sourceHash": "-6c73ff30",
+    "ts": 1782698424192
   },
   "anthropics/knowledge-work-plugins": {
     "features": [
@@ -2702,13 +2701,13 @@
   },
   "Leonxlnx/taste-skill": {
     "features": [
-      "为 AI agent 提供可移植 Agent Skills，提升前端布局、排版、动效与留白",
-      "内置 image-generation skills，生成 web、mobile 和品牌套件参考板",
-      "兼容 Codex、Cursor、Claude Code 等主流 AI 编码工具",
-      "通过 npx skills add CLI 一键安装全部或单个 skill"
+      "可移植的 Agent Skills，提升 AI 生成界面的布局、排版、动效与间距",
+      "内置 image-generation skills，生成 web、mobile、品牌套件的参考图板",
+      "可搭配 ChatGPT Images 等生成器，再交由 Codex、Cursor、Claude Code 实现",
+      "通过 npx skills add CLI 一键安装 skills"
     ],
-    "sourceHash": "670b7aa6",
-    "ts": 1779784507920
+    "sourceHash": "-157a1b2",
+    "ts": 1782698417669
   },
   "moeru-ai/airi": {
     "features": [

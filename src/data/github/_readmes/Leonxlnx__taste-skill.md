@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.png" alt="Taste Skill - Anti-slop Agent Skills for premium frontends" width="100%" />
+  <img src="assets/readme-banner.webp" alt="Taste Skill - Anti-slop Agent Skills for premium frontends" width="100%" />
 </p>
 
 # Taste Skill
@@ -8,32 +8,35 @@
   <em>The Anti-Slop Frontend Framework for AI Agents</em>
 </p>
 
-<p align="center">
-  <a href="https://tasteskill.dev" title="Taste Skill - tasteskill.dev">
-    <img src="assets/taste-skill-logo.webp" width="80" height="80" alt="Taste Skill" />
-  </a>
+<p align="center" style="margin-bottom: 8px;">
+  <a href="https://tasteskill.dev" title="Visit tasteskill.dev"><img src="assets/readme-buttons/btn-site.webp" alt="Visit tasteskill.dev" height="56" /></a>
 </p>
 
-<p align="center">
-  <a href="https://tasteskill.dev">
-    <img src="https://img.shields.io/badge/OPEN-tasteskill.dev-%23a855f7?style=for-the-badge&labelColor=%230f172a" alt="Open tasteskill.dev" />
-  </a>
-</p>
+<h3 align="center">Sponsors</h3>
+
+<p align="center"><a href="https://animations.dev"><img src="assets/sponsors/animations-dev.webp" alt="animations.dev" width="62" height="62" valign="middle" /></a><sub><a href="https://github.com/emilkowalski"><strong>Emil Kowalski</strong></a> · <a href="https://animations.dev">animations.dev</a></sub></p>
+
+<p align="center"><a href="https://vercel.com/open-source-program"><img alt="Vercel OSS Program" src="assets/vercel-oss-program-badge.svg" height="24" /></a></p>
+
+<p align="center"><sub><a href="https://github.com/sponsors/Leonxlnx">Become a sponsor</a></sub></p>
 
 Portable **Agent Skills** that upgrade AI-built interfaces: stronger layout, typography, motion, and spacing instead of boilerplate-looking UIs. This repo also includes **image-generation skills** for reference boards (web, mobile, brand kits). Pair them with **ChatGPT Images** or similar generators, then hand the frames to Codex, Cursor, or Claude Code for implementation.
 
 <p align="center">
-<a href="https://github.com/Leonxlnx/taste-skill/stargazers"><img src="https://img.shields.io/github/stars/Leonxlnx/taste-skill?style=for-the-badge&logo=github&labelColor=1e293b&color=fbbf24" alt="GitHub stars"/></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-fbbf24?style=for-the-badge&labelColor=1e293b" alt="MIT License"/></a>
-<a href="#installing"><img src="https://img.shields.io/badge/Tools-Codex%20%C2%B7%20Cursor%20%C2%B7%20Claude-111827?style=for-the-badge&labelColor=1e293b" alt="Supported agents"/></a>
-<a href="https://www.tasteskill.dev/changelog"><img src="https://img.shields.io/badge/Changelog-Latest-059669?style=for-the-badge&labelColor=1e293b" alt="Changelog on tasteskill.dev"/></a>
+  <a href="LICENSE"><img src="assets/readme-buttons/btn-mit.webp" alt="MIT License" height="45" valign="middle" /></a>
+  &nbsp;
+  <a href="https://github.com/vercel-labs/agent-skills"><img src="assets/readme-buttons/btn-agent-skills.webp" alt="Agent Skills compatible" height="45" valign="middle" /></a>
+  &nbsp;
+  <a href="#installing"><img src="assets/readme-buttons/btn-tools.webp" alt="Codex, Cursor, Claude" height="45" valign="middle" /></a>
+  &nbsp;
+  <a href="https://www.tasteskill.dev/changelog"><img src="assets/readme-buttons/btn-changelog.webp" alt="Changelog" height="45" valign="middle" /></a>
 </p>
 
 ## Disclaimer
 
 Taste Skill has no official token, coin, or crypto project. Any token using my name, image, or project is unaffiliated and not endorsed by me.
 
-<p align="center"><sub><a href="#disclaimer">Disclaimer</a> · <a href="#installing">Install</a> · <a href="#skills">Skills</a> · <a href="#settings-taste-skill-only">Settings</a> · <a href="#examples">Examples</a> · <a href="#support-the-project">Sponsor</a> · <a href="#research">Research</a> · <a href="#common-questions">FAQ</a> · <a href="#license">License</a></sub></p>
+<p align="center"><sub><a href="#disclaimer">Disclaimer</a> · <a href="#installing">Install</a> · <a href="#skills">Skills</a> · <a href="#settings-taste-skill-only">Settings</a> · <a href="#examples">Examples</a> · <a href="#sponsors">Sponsors</a> · <a href="#research">Research</a> · <a href="#common-questions">FAQ</a> · <a href="#license">License</a></sub></p>
 
 ## Feedback & Contributions
 
@@ -58,6 +61,24 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 ```
 
 You can also copy any `SKILL.md` into your project or paste it into ChatGPT / Codex conversations.
+
+### Updating from the previous version
+
+The default `taste-skill` (install name `design-taste-frontend`) is now **v2 (experimental)**, a substantial rewrite of the original v1. If you already have v1 installed, just re-run the install command and you will be upgraded:
+
+```bash
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+```
+
+The install name did not change, so no script updates are needed. The newer SKILL.md replaces the older one in place.
+
+If you depend on the exact behavior of v1 and want to pin to it explicitly:
+
+```bash
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend-v1"
+```
+
+See [CHANGELOG.md](CHANGELOG.md) for the full v1 to v2 diff and the rationale.
 
 ## Skills
 
@@ -132,6 +153,7 @@ If Taste Skill helps you, consider sponsoring:
 
 ### Current Sponsors
 
+<a href="https://animations.dev" title="Emil Kowalski · animations.dev"><img src="assets/sponsors/animations-dev.webp" width="62" height="62" alt="Emil Kowalski" title="Emil Kowalski · animations.dev" /></a>
 <a href="https://github.com/dnakov"><img src="https://github.com/dnakov.png" width="40" height="40" style="border-radius:50%" alt="dnakov" title="dnakov" /></a>
 <a href="https://github.com/AkramReshad"><img src="https://github.com/AkramReshad.png" width="40" height="40" style="border-radius:50%" alt="AkramReshad" title="AkramReshad" /></a>
 <a href="https://github.com/ajmalaksar25"><img src="https://github.com/ajmalaksar25.png" width="40" height="40" style="border-radius:50%" alt="ajmalaksar25" title="ajmalaksar25" /></a>
@@ -144,6 +166,8 @@ If Taste Skill helps you, consider sponsoring:
 <a href="https://github.com/AtharvaJaiswal005"><img src="https://github.com/AtharvaJaiswal005.png" width="40" height="40" style="border-radius:50%" alt="AtharvaJaiswal005" title="AtharvaJaiswal005" /></a>
 <a href="https://github.com/ghughes7"><img src="https://github.com/ghughes7.png" width="40" height="40" style="border-radius:50%" alt="ghughes7" title="ghughes7" /></a>
 <a href="https://github.com/mccun934"><img src="https://github.com/mccun934.png" width="40" height="40" style="border-radius:50%" alt="mccun934" title="mccun934" /></a>
+<a href="https://github.com/techmedic5"><img src="https://github.com/techmedic5.png" width="40" height="40" style="border-radius:50%" alt="techmedic5" title="techmedic5" /></a>
+<a href="https://github.com/bytewerk-dev"><img src="https://github.com/bytewerk-dev.png" width="40" height="40" style="border-radius:50%" alt="bytewerk-dev" title="bytewerk-dev" /></a>
 
 <p align="center">
  <a href="https://www.star-history.com/leonxlnx/taste-skill">
@@ -158,6 +182,16 @@ If Taste Skill helps you, consider sponsoring:
 ## Research
 
 Background writing that shaped these skills lives in [`research/`](research/).
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=Leonxlnx%2Ftaste-skill&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Leonxlnx/taste-skill&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ## Common Questions
 

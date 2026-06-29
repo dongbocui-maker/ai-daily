@@ -1,0 +1,143 @@
+{
+  "date": "2026-06-30",
+  "title": "AI 日报 · 2026-06-30",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 战略合作 | 加州政府与 Anthropic 达成「首创」协议，全州机构半价用 Claude",
+          "body": "加州州长 Newsom 与 Anthropic 6 月 29 日签署「首创」级合作：全州各级政府机构均可半价使用 Claude，并获 Anthropic 提供的培训与支持，用于公文起草、信息分析等。该协议延续 Newsom 今年 3 月签署的 AI 行政令，意在「让政府更高效」同时维持安全标准，落地正值企业为 AI 订阅费用飙升而焦头烂额之际。Newsom 称「AI 不应取代政府工作，而应帮工作人员更快解决问题」。",
+          "insight": "州级政府正成为 AI 厂商的新增量市场，半价折扣本质是用公共部门的规模换取标杆案例与长期生态锁定。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/"
+        },
+        {
+          "title": "🌍 行业动向 | 韩国举国押注超 9000 亿美元：三星 SK 海力士新建四座存储厂破 RAMageddon",
+          "body": "韩国 6 月 29 日总统简报会公布国家级投资计划：三星与 SK 海力士将砸 5180 亿美元在西南部新建四座存储芯片厂，另有 520 亿用于 HBM 封装中心；SK、GS、Naver 等再投 3560 亿（550 万亿韩元）建 AI 数据中心，规划至 2035 年。合计韩国科技企业 AI 相关承诺超 9000 亿美元，剑指全球内存短缺（RAMageddon）下的产能霸权。总统李在明称「半导体、物理 AI、AI 数据中心是韩国下一个工业时代的三轴」。",
+          "insight": "存储芯片正成为 AI 基建的硬瓶颈，韩国把内存+物理 AI+数据中心定义为国家级「三轴」，举国资本全面下场抢算力上游。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/"
+        },
+        {
+          "title": "📜 监管政策 | 谷歌限制 Meta 采购 Gemini 算力，FT 曝多家客户受波及",
+          "body": "据 FT 6 月 28 日报道，谷歌今年 3 月左右告知 Meta 无法满足其全部 Gemini 算力采购需求，导致 Meta 部分内部 AI 项目延迟、受阻。Meta 因需求异常庞大受冲击最大，谷歌其他客户也不同程度受影响。受限后 Meta 已要求员工更节省地使用 AI token。谷歌与 Meta 均未在非工作时间回应置评。",
+          "insight": "顶级模型算力本身成稀缺品，连 Meta 这种巨头都买不到足够份额——算力供给正反向制约大厂的 AI 路线图，租赁模式的脆弱性暴露。",
+          "source": "CNBC / Financial Times",
+          "url": "https://www.cnbc.com/2026/06/28/google-limits-metas-use-of-its-gemini-ai-models-ft-reports.html"
+        },
+        {
+          "title": "👔 高层动态 | 贾扬清被曝离职英伟达，距老黄 7 亿美元收购 LeptonAI 仅一年",
+          "body": "据 SemiAnalysis 爆料，LeptonAI 创始人贾扬清已从英伟达离职，距 2025 年 4 月老黄斥约 7 亿美元完成收购仅一年零两个月。核心产品 DGX Cloud Lepton 未打出水花，承诺「2026 年前开源 Lepton 核心平台」也未兑现。Lepton 原为开发者设计的轻量级 Python 原生 GPU 云平台，与英伟达面向大企业客户的产品逻辑从一开始就错位；收购后平台一个月即停运、官推注销。",
+          "insight": "Caffe/PyTorch 之父的出走，折射巨头并购明星团队后「文化与产品定位错配」的经典困局——收得了人，却留不住势，开源承诺也成空头。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3874163433903107"
+        },
+        {
+          "title": "🎵 监管政策 | Tidal 出手治理 AI 音乐：7 月 15 日起打标，即日起停止分成",
+          "body": "流媒体平台 Tidal 6 月 29 日公布 AI 生成音乐新政：不全面封禁，而是自 7 月 15 日起对被识别为「100% AI 生成」的曲目加专属图标标注；自即日起这些曲目不再可货币化（停止版税分成）。Tidal 称优先确保版税流向「原创、直接由人类创作」的作品，以「保护艺术家、告知听众」。",
+          "insight": "平台用「标注 + 断货币化」而非一刀切封禁来应对 AI 音乐洪流，为内容平台处理生成式内容版权与分成提供了可借鉴的中间路线。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/959211/tidal-ai-music-policy-demonetizingdetect-label"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 福特返聘「灰胡子」老工程师：质检 AI 不达标被迫请回人重写",
+          "body": "福特在质量检测 AI 系统未达标后，重新返聘资深「灰胡子」工程师重写流程。AI 在复杂、依赖经验判断的质检环节表现不及预期，企业不得不请回此前被替代的人类专家。该案例成为制造业 AI 落地「过度乐观—回调」的典型样本，凸显高经验密度场景中 AI 替代的现实边界。",
+          "insight": "AI 替代的边界在高经验密度的工业场景被反复试探，落地 ROI 必须以「人机协同」而非「纯替代」为前提，否则返工成本反噬。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/06/ford-rehires-gray-beard-engineers-after-ai-falls-short/"
+        },
+        {
+          "title": "🛒 行业动向 | 沃尔玛重金押注 AI 转型：不想在 AI 上重蹈当年电商落后覆辙",
+          "body": "36氪报道，沃尔玛正以前所未有的力度押注 AI，复盘其当年在电商上被亚马逊甩开的教训，决心在 AI 浪潮中抢先卡位。文章梳理沃尔玛在供应链、门店运营、客服与个性化推荐上的 AI 部署，强调零售巨头从被动「跟随者」转向主动「重构者」的战略转向，落地深度从工具采购升级为业务流程的系统性改造。",
+          "insight": "传统零售巨头把 AI 视为「不能再错过的第二次平台迁移」，决策逻辑从「要不要用」彻底转为「如何系统性重构业务」。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3874115785816706"
+        },
+        {
+          "title": "🗄️ 产品发布 | OceanBase 发布 AI 数据库：一套引擎融合湖库与多模态数据",
+          "body": "量子位报道，OceanBase 发布 AI 数据库，主打以一套引擎融合数据湖、数据仓库与多模态数据处理，为企业 AI 应用提供统一的数据底座。该产品瞄准企业在 RAG、Agent 与多模态业务中数据分散、链路割裂的痛点，把向量检索、结构化与非结构化数据统一到同一引擎，降低 AI 应用的数据工程门槛。",
+          "insight": "数据库厂商正把「AI 原生」做进引擎内核——统一湖库与多模态是企业级 AI 从 PoC 走向规模化落地的关键基础设施一环。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/439876.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "📱 产品发布 | Cursor 推出移动端 App：在手机上指挥编码 Agent",
+          "body": "被 SpaceX 以 600 亿美元收购的 Cursor 6 月 29 日推出 Cursor Mobile，用户可直接在手机上启动新编码 Agent，或接管桌面端发起的 Agent。该 App 衔接 Cursor 2.0 转向独立编码 Agent 的方向，继 Anthropic、OpenAI 之后再补移动端。越来越多开发者从多屏桌面转向手机，对写代码的 Agent 做持续对话式监督。",
+          "insight": "AI 编码正从「写代码」抽象为「监督写代码的 Agent」，交互重心从 IDE 迁向移动端，开发者的工作流形态被重塑。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/"
+        },
+        {
+          "title": "🔬 模型评测 | 中国 Z.ai GLM-5.2 在网络安全找漏洞上逼平 Anthropic Mythos",
+          "body": "智谱 Z.ai 发布开源权重 GLM-5.2，多名研究者称其在网络安全找 bug 任务上已逼平 Anthropic Mythos（据 WSJ 报道）。尽管 GLM-5.2 在通用任务上仍不及 Anthropic 与 OpenAI，但在漏洞挖掘这一垂直能力上的差距已显著收窄，开源权重模型在安全领域逼近闭源前沿。",
+          "insight": "开源模型不再全面落后，而是在网络安全等垂直高价值场景点状突破——这对企业自托管安全 Agent 是实质利好，也重置了攻防成本曲线。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity"
+        },
+        {
+          "title": "🛠️ 产品发布 | OpenAI 预告 Codex 专属硬件设备，7 月 15 日联合发布",
+          "body": "OpenAI 6 月 29 日在 X 发布预告，将于 7 月 15 日推出一款与其 AI 编码工具 Codex 相关的设备：视频中展示一个方形、带多个按钮的硬件，配文「你最爱的 Codex 快捷键要升级了」。该设备并非 OpenAI 与前苹果设计师 Jony Ive 合作的神秘 AI 设备，而是一款专为 Codex 工作流设计的实体快捷控制器，由合作方共同推出。",
+          "insight": "编码 Agent 的交互正从软件外溢到专用硬件——实体快捷键设备暗示「监督 Agent」将成为高频、需要低延迟物理控制的常态工作流。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/959174/openai-codex-hardware-work-louder"
+        },
+        {
+          "title": "📨 产品发布 | 腾讯 QQ 邮箱推 Agently Mail：给 AI Agent 发独立邮箱与数字身份",
+          "body": "腾讯 QQ 邮箱 6 月 23 日上线 Agently Mail，给 Claude Code、Kimi Work、豆包、Codex 等 Agent 发放 @agent.qq.com 独立邮箱，与个人邮箱完全隔离。每人可注册两个、内测每天限 50 封，配两阶段确认（Agent 出操作摘要、人类确认后才执行）与防 Prompt 注入。Agent 可用它注册 GitHub、收验证码、进行 A2A 自动通信完成询价报价对账。",
+          "insight": "给 AI 发「数字身份证」是 Agent 经济的基础设施一步，但与「51% 垃圾邮件已由 AI 生成」同月发生，效率与失控之间只隔一道人类确认。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3874089822606343"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📉 市场数据 | Apollo 报告：「七巨头」（Mag 7）开始跑输大盘，AI 估值面临重估",
+          "body": "资管巨头 Apollo 在 6 月 28 日的 Daily Spark 报告中指出，长期领涨美股的「七巨头」（Mag 7：苹果、微软、谷歌、亚马逊、英伟达、Meta、特斯拉）已开始跑输大盘指数，这一信号登上 Hacker News 热榜。报告以数据呈现 AI 主题龙头相对市场的超额收益正在收敛，引发市场对 AI 资本开支回报与高估值可持续性的重新审视。",
+          "insight": "AI 叙事最大的受益者开始跑输大盘，可能是市场从「主题溢价」转向「兑现验证」的拐点——资本对 AI 资本开支的耐心正在被定价。",
+          "source": "Apollo Global Management",
+          "url": "https://www.apollo.com/content/dam/apolloaem/pdf/daily-spark/2026/jun/28/062826-Mag7.pdf"
+        },
+        {
+          "title": "🔬 技术突破 | 隐空间世界模型问世：打通长时序双向物理因果链",
+          "body": "量子位报道全球首个隐空间世界模型，宣称打通了长时序的双向物理因果链——模型可在隐空间中对物理过程做长时间、可逆向推演的因果建模，而非仅做短时序的逐帧预测。这是世界模型方向继生成式视频之后向「可推理物理规律」迈进的关键一步，登上中文 AI 圈热门话题。",
+          "insight": "世界模型从「预测下一帧」走向「建模因果」，若可靠落地将为机器人、自动驾驶等物理 AI 提供更强的可解释推演底座。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/439891.html"
+        },
+        {
+          "title": "📉 趋势观点 | Cory Doctorow 新书《逆半人马指南》：如何从根部刺破 AI 泡沫",
+          "body": "科幻作家、科技记者 Cory Doctorow 推出新书《The Reverse Centaur's Guide to Life After AI》，作为其《Enshittification》的后续，聚焦 AI 泡沫与劳动异化议题。他提出「逆半人马」（reverse centaur）概念——AI 不是增强人类，而是让人类变成服务机器的附属，并主张从底层结构而非表面现象去应对 AI 热潮的社会代价。Ars Technica 对其做了深度专访。",
+          "insight": "在资本与厂商一边倒的乐观叙事中，批判性声音提醒决策者：AI 落地的真实代价不只在成本账本，还在劳动组织与人机关系的重构。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/gadgets/2026/06/how-to-burst-the-ai-bubble-strike-at-its-roots/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日信号集中在「算力供给成硬约束」与「AI 替代边界被反复校准」两条主线。供给侧，韩国举国押注超 9000 亿美元新建四座存储厂破解 RAMageddon，谷歌却因算力不足限制 Meta 采购 Gemini——连巨头都买不到足够份额，标志算力本身已从「成本项」升级为「战略稀缺资源」，反向制约大厂的 AI 路线图。",
+    "需求侧，加州政府半价采购 Claude、沃尔玛系统性押注 AI 重构、OceanBase 把 AI 做进数据库内核，显示企业级落地正从工具采购转向流程与基础设施的深度改造；但福特返聘「灰胡子」工程师重写质检流程，又给「纯替代」叙事泼了冷水——高经验密度场景里，人机协同仍是 ROI 的前提。AI 编码层 Cursor 推移动端、OpenAI 预告 Codex 专属硬件、腾讯给 Agent 发独立邮箱，则把「监督 Agent」推向新的交互形态。",
+    "风险与泡沫信号同样醒目：Apollo 报告指「七巨头」开始跑输大盘，市场或从 AI 主题溢价转向兑现验证；贾扬清离职英伟达暴露巨头并购明星团队的文化错配困局。整体看，AI 产业正从「拼模型能力」进入「拼算力供给、拼落地工程、拼资本耐心」的深水区。"
+  ],
+  "audit": {
+    "tieluFourScan": "2026-06-30 扫描 OpenAI/Anthropic/Google/Meta/Microsoft/NVIDIA 过去 7 天 M&A/合作/大厂动向：(1) 重大合作——Anthropic × 加州政府首创级协议，全州机构半价用 Claude（TechCrunch 6/29），已纳入热点头部；(2) 大厂博弈——谷歌限制 Meta 采购 Gemini 算力（CNBC/FT 6/28），已纳入热点；(3) 高管动向——贾扬清离职英伟达，距 7 亿美元收购仅一年（SemiAnalysis/36氪 6/29），已纳入热点；(4) NVIDIA——除贾扬清离职外无新增收并购；OpenAI-Broadcom Jalapeño 芯片为 6/25 旧事件再报道，已去重剔除；GPT-5.6 Sol（6/27 已发）、GLM-5.2 beats Claude（6/26 已发）、Anthropic-Alibaba 蒸馏（6/28 已发）、Notion 砍邮件应用（6/28 已发）均命中过去 7 天黑名单，已剔除。今日无 OpenAI/Anthropic 新的咨询业务收购或合资公告（无 Accenture 相关新事件）。"
+  }
+}

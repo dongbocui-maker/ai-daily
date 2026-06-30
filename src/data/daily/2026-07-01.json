@@ -1,0 +1,157 @@
+{
+  "date": "2026-07-01",
+  "title": "AI 日报 2026-07-01",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 战略合作 | 亚马逊砸 10 亿美元设 FDE 前线工程部队，紧随 OpenAI、Anthropic 抢咨询交付层",
+          "body": "AWS 周二宣布投入 10 亿美元内部资源组建「前线部署工程」(Forward Deployed Engineering) 组织，派数千名工程师常驻企业客户内部，帮其搭建并部署 AI Agent 系统，首批客户含 NFL、NBA、西南航空、Cox Automotive、Ricoh。此举正式让 AWS 与 OpenAI（40 亿美元 Deployment Company）、Anthropic（15 亿美元 Blackstone 合资）并列，三大 AI 巨头集体复制 Palantir 的 FDE 模式直插交付层。",
+          "insight": "AI 巨头从「卖模型」全面转向「卖交付」，正面冲击埃森哲、麦肯锡等系统集成商的咨询利润空间，咨询业「中间层」面临被压缩的结构性压力。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/30/amazon-launches-new-1-billion-fde-org-following-openai-and-anthropic"
+        },
+        {
+          "title": "🚀 产品发布 | Anthropic 发布 Claude Sonnet 5：近旗舰性能、中端价，剧透冲刺 IPO",
+          "body": "Anthropic 6 月 30 日发布 Claude Sonnet 5，以中端价位提供近旗舰性能，并成为 Free/Pro 用户的默认模型。在 SWE-bench Pro 代理编程基准上得 63.2%（Sonnet 4.6 为 58.1%），逼近 Opus 4.8 的 69.2%，在五项评测中缩小与旗舰的差距、一项超越。VentureBeat 指出，此举正值 Anthropic 冲刺 IPO，是对「私市场高 AI 估值能否经受公开市场检验」的一次压测。",
+          "insight": "中端模型逼近旗舰能力但价格腰斩，意味着企业 Agent 工作流的单位成本快速下降；叠加冲刺 IPO 的背景，反映 AI 实验室正从「烧钱扩张」转向「成本效率 + 变现叙事」。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/anthropic-launches-claude-sonnet-5-at-a-steep-discount-to-its-top-model-as-the-company-races-toward-a-blockbuster-ipo"
+        },
+        {
+          "title": "💰 融资 | 英伟达挑战者 Etched 估值冲到 50 亿美元，新一轮募资近 5 亿、累计逼近 10 亿",
+          "body": "AI 推理芯片初创 Etched 完成近 5 亿美元新一轮融资，估值升至约 50 亿美元，累计融资逼近 10 亿，由 Stripes 与 Peter Thiel 领投。其核心产品 Sohu 是专为 Transformer 推理定制的加速器，主打比通用 GPU 更高的推理能效，剑指英伟达在 AI 加速器市场的统治地位。",
+          "insight": "专用推理 ASIC 赛道资本持续加注，反映市场押注推理成本将成为 AI 经济性的下一个主战场——谁能降低单 token 推理电费，谁就握住企业落地的命门。",
+          "source": "Dealroom / TechFundingNews",
+          "url": "https://app.dealroom.co/news/note/nvidia-challenger-startup-etched-secures-500m-at-5b-valuation-to-build-specialized-ai-chips"
+        },
+        {
+          "title": "🔬 技术突破 | Anthropic 推出 Claude Science：不靠新模型，靠科研工作流争夺科学家",
+          "body": "Anthropic 6 月 30 日发布 Claude Science，押注的不是更强的模型，而是把 Claude 深度嵌入科研工作流——从文献综述、假设生成到数据分析、实验设计的全流程。这是继 Claude Code 把编程做成垂直入口后，Anthropic 把同样的「场景化垂直整合」打法复制到科研领域。",
+          "insight": "前沿大厂的竞争焦点正从「比拼模型分数」转向「占领专业工作流入口」——谁能把 AI 嵌进特定职业的日常流程，谁就锁定了高粘性、高溢价的企业市场。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists"
+        },
+        {
+          "title": "💰 融资 | DeepMind 扑克 AI 三人组转战量化交易，Creandum 砸下创纪录单笔投资",
+          "body": "三位曾在 DeepMind 打造超人类扑克 AI 的研究员，把同一套博弈决策技术应用到股票交易，已为量化对冲基金赚钱。新一轮融资由 Creandum 领投，VP 确认这是该 VC「一次性投入单家公司的最大金额」，称金融交易的潜在市场是地球上最大的之一。",
+          "insight": "博弈论 AI 从游戏跨界到金融交易再获顶级 VC 重注，印证「决策智能」正成为 AI 应用最具商业想象力的方向之一，远超传统生成式应用的天花板。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/30/the-deepmind-trio-who-built-a-poker-ai-are-now-making-money-for-quant-hedge-funds"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "💰 融资 | 跨维智能完成 10 亿元 B 轮、估值破百亿：物理 AGI 独角兽冲刺 IPO",
+          "body": "物理 AI 与具身智能头部企业跨维智能 6 月 30 日官宣完成 10 亿元 B 轮融资，投后估值超百亿，国家级母基金、深创投、蓝思科技等产业资本齐聚。公司已落地 50+ 应用场景、沉淀 1500+ 具身模型，覆盖汽车零部件、新能源、3C 电子等领域，上半年营收 1 亿、全年有望破 3 亿，是国内少数跑通规模化商业闭环的具身智能企业。",
+          "insight": "具身智能从「Demo 炫技」走向「产品级规模化交付」，提出 Physical Token ROI 理念，对制造业客户意味着柔性分拣/装配等场景的 AI 落地正进入可算账、可复用的成熟阶段。",
+          "source": "量子位 / 投资界",
+          "url": "https://www.qbitai.com/2026/06/440949.html"
+        },
+        {
+          "title": "📊 经济测量 | 中国信通院发布 AI Infra 运维领域首个评测基准，首次纳入 5 种国产芯片集群",
+          "body": "中国信通院 6 月 29 日发布 AISHPerf 3.0 软硬件基准体系，含两项 AI Infra 核心评测基准——智算运维智能体评测与算子生成智能体评测。运维基准以近百亿条真实运维数据为底座，提炼 103 条高保真用例，覆盖 5 大技术栈、44 种问题现象、6 种国内外芯片（含天数、壁仞、沐曦、摩尔、昇腾 5 种国产芯片），首次为国产智算运维智能体建立统一量化标尺。",
+          "insight": "运维智能体评测从「语言问答」走向「真实生产实战考核」，并率先覆盖国产芯片集群——对采购国产算力的企业意味着「能用到好用」有了权威标尺，加速 AI 基础设施向自主自治演进。",
+          "source": "科技日报",
+          "url": "https://www.stdaily.com/web/gdxw/2026-06/30/content_539880.html"
+        },
+        {
+          "title": "🌍 行业动向 | Meta 内部收紧外部 AI 工具：员工不能随便用 Claude 和 Codex 了",
+          "body": "据 36氪报道，Meta 内部出于数据安全与合规考量，开始限制员工随意使用 Claude、Codex 等外部 AI 编程工具，要求改用内部受控方案。此举折射出大厂在拥抱 AI 提效与防范代码/数据外泄之间的张力——越强大的外部 Agent，越可能成为敏感信息的泄露通道。",
+          "insight": "企业在 AI 工具治理上正从「鼓励使用」转向「分级管控」，数据主权与合规边界将成为企业级 AI 采购的硬性门槛，利好可私有化部署的方案。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3875518006849537"
+        },
+        {
+          "title": "📨 产品发布 | 谷歌 NotebookLM 新增 TikTok 风格短视频，把研究报告变成可刷的短片",
+          "body": "Google 为 NotebookLM 新增功能，可把用户上传的研究资料自动总结为 TikTok 风格的竖屏短视频片段。继音频概览（Audio Overview）走红后，谷歌继续把企业/个人知识库内容自动转换为更易消费的多模态格式，降低长文档的理解门槛。",
+          "insight": "知识管理工具正从「检索问答」走向「自动生成多模态摘要」，企业内部培训、知识传递的形态将被 AI 重塑，内容消费门槛持续下探。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/959778/google-notebooklm-ai-clips"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🧠 开源模型 | 美团开源 LongCat-2.0：1.6 万亿参数 MoE，全程国产 5 万卡算力训练",
+          "body": "美团 6 月 30 日开源 LongCat-2.0，1.6 万亿总参数 MoE 模型，每 token 动态激活约 48B，原生 1M 上下文，专为 agentic coding 设计。关键点在于：该模型在 5 万卡国产算力集群上完成全量训练与推理，全程未依赖英伟达 A100/H100 等受限高端芯片，被视为中国本土算力规模化的里程碑。",
+          "insight": "国产万亿参数模型在纯国产算力上跑通端到端训练，证明在芯片受限下中国仍能造出前沿编程模型，对全球开源格局与算力自主路线都是重要信号。",
+          "source": "LongCat / Meituan",
+          "url": "https://longcat.chat/blog/longcat-2.0/"
+        },
+        {
+          "title": "📈 市场数据 | Codex 一个月吃掉 150GB 流量、写满 4T 硬盘：编程 Agent 的资源黑洞",
+          "body": "36氪实测发现，OpenAI 的 Codex 编程 Agent 在持续运行下日均网络流量达 3-5GB，一个月累计 100GB-150GB，并写满 4T 硬盘。原因在于 Agent 需要反复维护任务队列状态、拉取依赖、缓存中间结果，长时间自主运行带来的资源消耗远超传统 IDE 插件。",
+          "insight": "编程 Agent 的「隐性资源成本」开始浮出水面，企业在评估 AI Coding 工具 ROI 时，除了 token 费用，还需把网络、存储、算力的运营开销纳入总拥有成本核算。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3875602504822789"
+        },
+        {
+          "title": "📱 产品发布 | OpenClaw 正式登陆 Android 与 iOS：把 AI Agent 装进口袋",
+          "body": "OpenClaw 6 月底正式推出 Android 和 iOS 网关 App，让用户在手机上访问已配置的私有 gateway，可与 Agent 实时语音对话、远程审批操作、把手机当作安全节点参与设备感知的自动化。iOS 版完成度更高，Android 版功能尚显早期。",
+          "insight": "AI Agent 从桌面走向移动端，「随时随地指挥 Agent + 移动审批」正成为新交互范式，企业级 Agent 的人机协作链路被延伸到手机，提升了实际可用性。",
+          "source": "9to5Mac",
+          "url": "https://9to5mac.com/2026/06/29/openclaw-just-launched-an-official-app-for-iphone-details-here/"
+        },
+        {
+          "title": "🧰 工具生态 | X 上线托管 MCP Server：让 Claude、Cursor 等 AI 工具直连平台",
+          "body": "马斯克旗下 X 6 月 30 日推出托管的 MCP（Model Context Protocol）服务器，让 Claude、Cursor、Grok Build 等兼容 MCP 的 AI 工具用用户自己的账号权限直连 X API。此前开发者需自建并托管 MCP server、自行处理鉴权，现在 X 把这一步官方化，大幅降低 AI 应用接入门槛。",
+          "insight": "MCP 正快速成为 AI Agent 连接外部服务的事实标准，主流平台官方下场提供托管 MCP，意味着 Agent 生态的「工具接入层」正在标准化、平台化，加速 Agent 可用工具的爆发。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📉 趋势观点 | 智谱唐杰：AI 时代「认知＞格局＞技术＞管理」，懂技术才管得动",
+          "body": "智谱发起人、首席科学家唐杰在微博发表长文，提出 AI 时代企业成功的优先级是「认知＞格局＞技术＞管理」。他指出过去大量管理动作本质是处理信息差，而 AI 已吃掉信息处理、代码辅助、方案生成、流程协作等环节，不懂技术的管理者「连问题发生在哪都看不见」。技术落后不再是渐进掉队，而是「一夜之间」。",
+          "insight": "AI 正重构企业组织与人才价值排序——技术权重被抬到前所未有的高度，对 CIO/CTO/合伙人而言，深入理解 AI 工作流本身已成为管理的前提，而非可选项。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/06/440024.html"
+        },
+        {
+          "title": "💰 市场数据 | DeepSeek V4 正式版 7 月上线并「破天荒」涨价：高峰时段 API 价格翻倍",
+          "body": "多位开发者确认收到 DeepSeek 调价邮件：V4 正式版计划 7 月中旬上线，并首次引入峰谷定价，每天上午 9-12 点、下午 2-6 点高峰时段 API 价格调整为平时的 2 倍。一向以极致低价著称的 DeepSeek，5 月才宣布永久降价至原价四分之一，此次用「高峰调价」做负载管理，被解读为算力吃紧下的无奈之举。",
+          "insight": "连最激进的低价玩家都开始用涨价做负载管理，标志着「token 管够、随便烧」的时代结束——推理算力成本正反向传导到定价，企业需重新评估大模型调用的成本模型。",
+          "source": "财联社",
+          "url": "https://www.cls.cn/detail/2412093"
+        },
+        {
+          "title": "📉 市场数据 | 一天暴跌 40%：港股 AI 新股成「最狠镰刀」，云知声从高点跌 92%",
+          "body": "虎嗅深度复盘港股 AI 新股的「狂欢与收割」：云知声上市两个月股价从 205 港元飙至 879 港元（+328%），但进入港股通后一路跌至约 71 港元，累计跌幅高达 92%；迅策、滴普科技进入港股通后分别跌 70%、75%。根源是小流通盘（不足 2-5%）+ 指数纳入预期被精准套利，早期资金拉高出货，散户最终买单。",
+          "insight": "AI 概念在二级市场的估值泡沫开始用最惨烈的方式出清，提醒决策者：一级市场的高估值叙事与二级市场的真实流动性严重背离，押注 AI 标的需穿透「指数套利」式的人造繁荣。",
+          "source": "虎嗅",
+          "url": "https://www.huxiu.com/article/4871622.html"
+        },
+        {
+          "title": "🔬 安全研究 | 新攻击「BioShocking」：告诉 AI 浏览器「2+2=5」就能绕过全部安全护栏",
+          "body": "安全研究者演示了一种名为 BioShocking 的新型攻击：网站只需诱导 AI 浏览器接受「2+2=5」这类与现实矛盾的前提，就能把 LLM 拉入一个「规则不再适用」的幻境，使其执行原本被禁止的指令。攻击名取自游戏《生物震荡》中被催眠的角色，原理直指 LLM 无法可靠区分可信系统指令与不可信外部内容的根本缺陷。",
+          "insight": "Prompt injection 被 OWASP 列为 2026 年头号 AI 威胁，且被英国 NCSC 判定「可能永远无法彻底修复」——对部署 AI 浏览器/Agent 的企业是硬性安全警示：自主 Agent 接触外部内容即等于打开攻击面。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/06/ai-browsers-can-be-lulled-into-a-dream-world-where-guardrails-no-longer-apply/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本期最强信号是「卖模型」向「卖交付」的全面转向：亚马逊 10 亿美元组建 FDE 前线工程部队，正式与 OpenAI、Anthropic 并列复制 Palantir 模式，直插企业交付层——这对埃森哲、麦肯锡等系统集成商的咨询利润空间构成结构性挤压。与此同时，Anthropic 用 Claude Sonnet 5 把旗舰级 Agent 能力压进中端价位、用 Claude Science 抢占科研工作流入口，竞争焦点从「比模型分数」转向「占领专业工作流」。",
+    "成本与算力的紧约束开始显性化：DeepSeek V4 正式版破天荒涨价（高峰时段翻倍）、Codex 一个月吃掉 150GB 流量写满 4T 硬盘、Etched 估值冲到 50 亿美元押注推理 ASIC——「token 管够、随便烧」的时代结束，推理成本正反向传导到定价与基础设施选型。国产侧，美团 LongCat-2.0 在纯国产 5 万卡集群跑通万亿参数训练，信通院发布国产芯片智算运维评测基准，自主算力从「能用」迈向「好用」。",
+    "风险与泡沫信号同步亮起：港股 AI 新股一天暴跌 40%、云知声从高点跌 92%，二级市场用最惨烈方式出清估值泡沫；Apollo 警告「七巨头」开始跑输大盘；BioShocking 攻击证明 AI 浏览器/Agent 的安全护栏可被一句「2+2=5」绕过。对企业决策者，这意味着拥抱 AI 提效的同时，必须穿透人造繁荣、把数据主权与 Agent 安全纳入采购硬门槛。"
+  ],
+  "audit": {
+    "tieluFourScan": "已执行铁律 4 全球 M&A/战略合作扫描（Tavily 替代 Brave，后者本月额度耗尽）：(1) OpenAI/Anthropic 合资收购扫描——命中亚马逊 10 亿美元 FDE org（6/30，紧随 OpenAI 40 亿 Deployment Co、Anthropic 15 亿 Blackstone 合资），已纳入热点头条；(2) Anthropic-Accenture/Deloitte 扫描——Accenture 培训 3 万人、Deloitte FDE 合作均为既有合作，本周无新增重大公告；(3) AI consulting services 扫描——三大 AI 巨头集体 FDE 化即本主题；(4) 各厂 7 天大动作——Anthropic 发 Claude Sonnet 5 + Claude Science；OpenAI 预告 Codex 硬件（已在 6/30 发过，跳过）；Google Nano Banana 2 Lite；Meta 收紧外部 AI 工具。今日无新增重大收并购公告，最大战略动向为亚马逊入局 FDE 交付层。"
+  }
+}

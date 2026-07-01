@@ -2752,14 +2752,13 @@
   },
   "harry0703/MoneyPrinterTurbo": {
     "features": [
-      "输入主题或关键词即可全自动生成短视频文案、素材、字幕与背景音乐",
-      "支持 OpenAI、DeepSeek、Moonshot、Gemini、Ollama 等多种 LLM 接入",
-      "支持 9:16 竖屏与 16:9 横屏高清视频，可批量生成多个视频",
-      "支持多语种语音合成、实时试听及字幕样式自定义",
-      "提供 API 接口和 Web 界面，基于清晰的 MVC 架构"
+      "输入视频主题或关键词即可全自动生成高清短视频",
+      "自动生成视频文案、视频素材、字幕与背景音乐",
+      "提供 Web 界面与 API 界面两种使用方式",
+      "支持 OpenAI、Claude、Gemini、DeepSeek 等多种 LLM 接入"
     ],
-    "sourceHash": "-3a2becb7",
-    "ts": 1779957937577
+    "sourceHash": "-c8ec33d",
+    "ts": 1782869426171
   },
   "p-e-w/heretic": {
     "features": [
@@ -3385,5 +3384,38 @@
     ],
     "sourceHash": "643a3027",
     "ts": 1782696126460
+  },
+  "alibaba/zvec": {
+    "features": [
+      "嵌入式进程内向量数据库，可直接集成到应用中",
+      "支持 Full-Text Search，为字符串字段附加 FTS 索引",
+      "支持 Hybrid Retrieval，单次 MultiQuery 融合向量与全文检索",
+      "提供 DiskANN 磁盘索引，大幅降低大规模数据集内存占用",
+      "提供 Python、Node.js、Go 等多语言 SDK 支持"
+    ],
+    "sourceHash": "3dced49e",
+    "ts": 1782869430680
+  },
+  "kenn-io/agentsview": {
+    "features": [
+      "浏览、搜索并追踪所有 AI coding agents 的成本",
+      "单一 binary 本地运行，无需账户，数据全部本地存储",
+      "自动发现各类 agent 会话并同步至本地 SQLite 数据库",
+      "支持 s3:// 根目录，实现多机会话集中读取与同步",
+      "提供 web UI、CLI 及桌面 app，共享本地 daemon"
+    ],
+    "sourceHash": "-6807df06",
+    "ts": 1782869436059
+  },
+  "OpenCut-app/OpenCut": {
+    "features": [
+      "免费开源的视频编辑器，支持 web、桌面和移动端",
+      "基于 Rust core 单一代码库覆盖桌面、移动和浏览器",
+      "plugin-first 架构支持第一方及第三方插件",
+      "提供 Editor API 与面向 AI agent 的 MCP server",
+      "支持 headless 模式，实现自动化与批量渲染"
+    ],
+    "sourceHash": "-7d5caa7",
+    "ts": 1782869441679
   }
 }

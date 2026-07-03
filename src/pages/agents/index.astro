@@ -690,9 +690,9 @@ function render(DATA){
             <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">QWEN37</span><span class="epn-tag">ALI</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">DASH</span><span class="ees">ONLINE</span></div></div></div>
             <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">QWEN37</div><div class="em-ep">DASH</div></div>
           </div>
-          <div class="ep-node idle" id="ep-dseek">
-            <div class="ep-full"><div class="epn-top"><span class="epn-dot idle"></span><span class="epn-llm">DSEEK</span><span class="epn-tag">STDBY</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed" style="background:#6b7689"></span><span class="eec" style="color:#8b96a8">ACAI</span><span class="ees">UNMOUNTED</span></div></div></div>
-            <div class="ep-mini"><div class="em-dot idle"></div><div class="em-llm" style="color:#8b96a8">DSEEK</div><div class="em-ep">ACAI</div></div>
+          <div class="ep-node healthy" id="ep-fable">
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">FABLE5</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">FABLE5</div><div class="em-ep">AIGW</div></div>
           </div>
         </div>
       </div>
@@ -767,10 +767,10 @@ let _archActive='mk2';
 const ARCH_TIER1 = new Set(['main','aima']);
 // active_model(provider/model) → 端点 ep-id 映射（动态链路：反映真实 fallback 状态）。
 // 同一端点节点可能对应多个 model（如 opus-4.8 / fable-5 同属 Claude/AIGW 节点 ep-opus）。
-// deepseek 暂不处理（ep-dseek 不映射，落配置链外时回退画配置 primary 实线）。
+// deepseek 暂不处理（不映射，落配置链外时回退画配置 primary 实线）。
 const ARCH_MODEL_EP = {
   'aigw-claude-48-main/claude-opus-4-8':'ep-opus',
-  'aigw-claude-48-main/claude-fable-5':'ep-opus',
+  'aigw-claude-48-main/claude-fable-5':'ep-fable',
   'azure-claude-48/claude-opus-4-8':'ep-opus',
   'azure-claude/claude-opus-4-7':'ep-opus',
   'anthropic/claude-sonnet-4-6':'ep-opus',

@@ -1,0 +1,150 @@
+{
+  "date": "2026-07-04",
+  "title": "AI 日报 2026-07-04",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 阿里巴巴 7 月 10 日起全面封禁 Claude Code，指其暗藏「后门」安全风险",
+          "body": "据 Reuters 引述知情人士，阿里巴巴将自 7 月 10 日起禁止员工在工作环境中使用 Anthropic 的 Claude Code，理由是该编码工具被指嵌入了隐蔽的检测逻辑与「后门」风险，第一财经也报道阿里内部识别出所谓 embedded backdoor。这一决定紧随此前 Claude Code 被曝用不可见 Unicode 字符对经中国代理路由的请求做隐写指纹化的争议。",
+          "insight": "地缘信任裂痕正从模型层蔓延到开发工具层，跨境 AI 工具的供应链安全审查将成中国大厂标配。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/"
+        },
+        {
+          "title": "👔 高层动态 | 扎克伯格内部承认 AI Agent 进展慢于预期，动摇 1450 亿美元豪赌叙事",
+          "body": "据 Reuters 获得的一份内部全员会录音，扎克伯格周四向员工承认，AI Agent 的发展速度「没有按照高管此前预期的方式加速」。而 AI Agent 正是 Meta 为今年 8000 人裁员、7000 人岗位调动和高达 1450 亿美元资本开支所给出的核心理由。此番罕见坦白与 Meta「算力过剩要对外卖算力」的传闻叠加，加剧了市场对巨额 AI 投入回报的质疑。",
+          "insight": "连最激进的投入者都开始下调 Agent 时间表，2026 下半年企业 AI 叙事正从「能力狂飙」转向「回报证明」。",
+          "source": "TechCrunch / Reuters",
+          "url": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/"
+        },
+        {
+          "title": "📜 监管政策 | Reuters：特朗普政府与 Anthropic 未就政府持股展开讨论，与 OpenAI 让渡 5% 形成对照",
+          "body": "Reuters 周四引述知情人士称，特朗普政府与 Anthropic 并未讨论政府入股该公司事宜。这与几天前 OpenAI 主动提议向美国主权财富基金捐赠约 5% 股权（约 426 亿美元）以缓解华盛顿政治压力形成鲜明对照，显示两大前沿实验室在与美国政府的资本纽带上正走出截然不同的路径。",
+          "insight": "AI 巨头与政府的资本关系正成为新的战略变量，持股与否将直接影响监管待遇与市场准入。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/technology/artificial-intelligence/"
+        },
+        {
+          "title": "🔬 技术突破 | Anthropic 发布 Claude Science 并罕见宣布自研药物，锁定「被忽视疾病」",
+          "body": "Anthropic 本周发布面向生物医药的旗舰产品 Claude Science，一个可原生展示蛋白质、结构与分子、且每个结果都可复现并追溯到代码的科研工作台。更引人注目的是，生命科学负责人 Eric Kauderer-Abrams 宣布公司将亲自下场研发药物，聚焦制药客户因经济性不佳而回避的「被忽视疾病」小患者群体——AI 公司从卖工具转向自建 R&D 管线的信号明确。",
+          "insight": "模型厂商正尝试从「卖铲子」升级为「亲自挖矿」，用自研成果反向验证并锤炼产品，可能重塑 AI for Science 商业模式。",
+          "source": "The Verge / MIT Technology Review",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/961311/anthropic-claude-science-ai-drug-development"
+        },
+        {
+          "title": "🌍 行业动向 | 西班牙下令公私营企业将 Palantir 列入黑名单，主权数据安全博弈升级",
+          "body": "西班牙政府下令将美国数据分析巨头 Palantir 从公共与私营企业采购中列入黑名单，该消息在 Hacker News 获 710 分高热讨论。此举折射出欧洲对美国 AI/数据基础设施供应商的主权与安全戒心正在制度化，也为跨国 AI 平台在欧洲市场的合规敞口敲响警钟。",
+          "insight": "数据主权正从政策口号变为具体采购禁令，AI/数据供应商的地缘合规风险将直接影响其欧洲收入盘。",
+          "source": "Clash Report / Hacker News",
+          "url": "https://clashreport.com/world/articles/spain-orders-blacklist-of-us-tech-giant-palantir-from-public-and-private-companies-fsnc2z17gjv"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 思谋科技从半导体质检切入成智能制造新晋独角兽，贾佳亚押注工业 AI 落地",
+          "body": "36氪报道，思谋科技以半导体行业作为工业 AI 落地第一站，成长为智能制造领域新晋独角兽。创始人贾佳亚认为产业变革来源于时代需求：对制造业而言 AI 首先实现的是替代人工、用更少人力达到同等甚至更高效率，同时 AI 能对材料与工艺流程做大规模自动测试与预判，通过深度学习快速沉淀原本靠人经验积累的工艺升级。",
+          "insight": "工业 AI 的护城河在于「场景+数据+工艺 know-how」的深度绑定，垂直深耕比通用大模型更能形成商业壁垒。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/1307457909099136"
+        },
+        {
+          "title": "📊 市场数据 | IBM 2026 企业 AI 研究：仅 25% AI 项目达到预期 ROI、16% 成功规模化",
+          "body": "IBM 2026 企业 AI 研究显示，尽管全球企业持续加码 AI 投入，但只有 25% 的 AI 项目交付了预期 ROI，仅 16% 成功在企业范围内规模化落地。数据印证了当前企业 AI「从试点到生产」的鸿沟：治理、数据访问和人才缺口仍是主要拦路虎，也解释了近期埃森哲等咨询巨头收紧内部 AI Token 预算、要求员工停止把算力烧在琐事上的动作。",
+          "insight": "ROI 兑现率不足三成意味着 2026 是企业 AI 的「祛魅之年」，选对高价值场景比铺开覆盖率更关键。",
+          "source": "IBM Enterprise AI Research / SculptSoft",
+          "url": "https://www.sculptsoft.com/how-to-measure-ai-roi/"
+        },
+        {
+          "title": "🌍 行业动向 | 微软成立 25 亿美元 Frontier Company，四大厂商 FDE「贴身交付」军备竞赛全面开打",
+          "body": "继 OpenAI（40 亿美元）、Anthropic（15 亿美元）、亚马逊（10 亿美元）之后，微软以 25 亿美元承诺成立自有 AI 交付公司 Frontier Company，四大厂商在企业级 AI「前线部署工程师（FDE）贴身交付」层面的军备竞赛全面成型。分析指出这本质是被重新包装的咨询业务——微软正与埃森哲、EY 等其模式所模仿的公司同台竞争，而服务毛利低于软件，规模化数千人嵌入式团队可能稀释微软引以为傲的经济模型。",
+          "insight": "模型厂商集体下场做交付，直接挤压传统咨询/集成商的价值空间，埃森哲等需重新定义自身在「模型-交付」链条中的差异化位置。",
+          "source": "Business Model Analyst / TechCrunch",
+          "url": "https://businessmodelanalyst.com/microsoft-frontier-company/"
+        },
+        {
+          "title": "🚀 产品发布 | 智用开物获近亿元投资：微软班底打通「AI 进厂最后一公里」",
+          "body": "36氪首发，核心团队来自微软的智用开物获近亿元投资。公司 2024 年 1 月成立于广州，专注通过「工业语义引擎+工业级多智能体系统」把复杂工业知识转化为 AI 可解析、可执行的逻辑，降低 AI 在工业场景的落地门槛。这一路线正对准制造业 AI 落地中「知识难以结构化、场景碎片化」的核心痛点。",
+          "insight": "工业多智能体系统的价值不在模型本身，而在把隐性工艺知识「翻译」成机器可执行逻辑的中间层能力。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3781548853533959"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🧰 工具生态 | Kimi K2.7 Code 登陆 GitHub Copilot：首个进入模型选择器的开源权重模型",
+          "body": "GitHub 于 7 月 1 日将月之暗面（Moonshot AI）在北京研发的开源权重模型 Kimi K2.7 Code 正式纳入 GitHub Copilot 模型选择器，这是全球最大代码托管平台首次把开源权重模型作为可选项提供给开发者。该模型基于 MoE 架构、成本更低但性能可比肩顶级闭源模型，企业与商业版需管理员启用、由 Azure 托管。",
+          "insight": "中国开源模型正以「低成本+可审计」打法切入西方开发者主流工作流，与阿里封禁 Claude Code 形成微妙的双向渗透格局。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/"
+        },
+        {
+          "title": "🧠 技术突破 | DeepSeek DSpark 投机解码移植苹果芯片，Mac 本地大模型推理加速最高 60%",
+          "body": "36氪报道，DeepSeek 于 6 月 27 日开源的 DSpark 投机解码技术此前仅在数据中心 GPU 上实现（服务端提速 60%-85%），现已成功移植到苹果 Apple Silicon 芯片，让 Mac 本地运行大模型的推理速度加速约 60%。这一进展把原本属于数据中心的推理优化红利下放到消费级设备。",
+          "insight": "端侧推理加速将加速本地 AI、隐私优先部署与端侧 Agent 的普及，弱化对云端算力的强依赖。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3879842615308547"
+        },
+        {
+          "title": "🧰 工具生态 | Fullstack Code Arena 把编码 Agent 评测扩展到数据库/密钥/部署全链路",
+          "body": "据 swyx 的 Smol AI News，Fullstack Code Arena 将编码 Agent 的评测范围从「写代码」扩展到数据库、API 密钥、部署与结构化工具调用，标志编码 Agent 评估正从单点代码生成转向端到端「交付可上线应用」。同期 Together 报告称开源模型 GLM-5.2 以 20% 的成本达到 Claude Sonnet 5 约 80% 的编码能力，Simon Willison 等指出当前 UX 挑战已转向路由、可观测性与记忆管理等协同问题。",
+          "insight": "编码 Agent 的竞争焦点正从「代码正确率」上移到「端到端交付可靠性」，工具链协同能力成为下一个分水岭。",
+          "source": "Smol AI News",
+          "url": "https://news.smol.ai/issues/26-07-02-not-much"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | 中国团队把「世界模型」搬进细胞：3.9 亿单细胞训练、首次系统引入 JEPA",
+          "body": "量子位报道，中国团队发布目前公开报道中参数规模最大的单细胞基础模型，基于 3.905 亿个人类单细胞转录组训练，覆盖 40 余种人体组织、260 余种细胞类型。其最受关注的突破在于首次将 JEPA（联合嵌入预测架构）与「世界模型」理念系统性引入单细胞研究，用理解细胞状态转移的方式替代纯生成式预测。",
+          "insight": "JEPA/世界模型范式正从视觉、机器人向生命科学扩张，为 AI for Science 的基础研究提供了可复现、可推理的新架构样本。",
+          "source": "量子位",
+          "url": "https://www.163.com/dy/article/L0UPGE4S0511DSSR.html"
+        },
+        {
+          "title": "📉 趋势观点 | 36氪《消失的真人》：互联网正在被 AI 接管，人类流量首度让位",
+          "body": "36氪深度长文指出，随着 AI 生成内容、AI Agent 抓取与自动交互的爆发，互联网上 AI 产生的流量正在系统性超过真实人类。文章呼应此前 DeepMind 研究科学家「AI 流量已超真人、广告没人看了」的判断，对以人类注意力为货币的整个互联网商业模式提出根本性拷问。",
+          "insight": "当 AI 成为互联网的主要「用户」，内容分发、广告定价与信任机制都将被迫重构，这是比模型能力更深层的产业变量。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3879785788616713"
+        },
+        {
+          "title": "📊 市场数据 | Anthropic 蚕食企业 AI 支出：67%-73% 新增企业 AI 预算流向 Claude",
+          "body": "多方行业统计显示，Anthropic 正在快速攫取企业级 AI 市场份额，新增企业 AI 支出中约 67%-73% 流向 Claude 系列模型。埃森哲（培训 3 万名顾问）、德勤（约 47 万员工可用）、Cognizant（约 35 万人）、Infosys 等主要 IT 服务与咨询巨头均已作为锚定合作伙伴大规模培训顾问使用 Claude，Anthropic 还推出首个官方 Claude Certified Architect 认证。",
+          "insight": "企业 AI 的「模型-咨询-认证」生态正快速闭环，谁绑定了咨询交付层，谁就锁定了企业预算的入口。",
+          "source": "AI CERTs / 行业统计",
+          "url": "https://www.aicerts.ai/news/enterprise-ai-partnerships-anthropics-claude-partner-network/"
+        },
+        {
+          "title": "🔬 技术突破 | LeCun 团队 AdaJEPA：让世界模型在部署中持续自适应进化",
+          "body": "Yann LeCun 团队最新研究提出可在部署过程中持续学习的自适应潜在世界模型 AdaJEPA，将其嵌入模型预测控制（MPC）闭环：每执行一个动作就用实际观测的状态转移校正模型，再用更新后的模型重新规划。这一「边行动边进化」的机制受生物学原理启发，指向世界模型从「离线训练一次」走向「在线终身学习」。",
+          "insight": "在线自适应能力是具身智能走出实验室、应对真实世界不确定性的关键一环，也是 LeCun 长期押注的非生成式路线的重要进展。",
+          "source": "网易科技 / 机器之心系",
+          "url": "https://www.163.com/dy/article/L0TMOFGQ0531E3NX.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日 AI 圈的主线是「信任」与「回报」双重收缩。信任层面，阿里巴巴以「后门风险」封禁 Claude Code、西班牙将 Palantir 列入黑名单，标志地缘对 AI 工具与数据基础设施的审查正从政策口号落为具体禁令；与此同时中国开源模型 Kimi K2.7 反向登陆 GitHub Copilot，跨境渗透呈双向拉扯之势。回报层面，扎克伯格罕见承认 AI Agent 进展慢于预期、IBM 研究显示仅 25% 企业 AI 项目达到预期 ROI，共同宣告 2026 进入企业 AI 的「祛魅之年」——能力狂飙叙事让位于回报证明。",
+    "战略格局上，微软 25 亿美元成立 Frontier Company，与 OpenAI、Anthropic、亚马逊一道把「前线部署工程师贴身交付」推向军备竞赛，模型厂商集体下场做交付正直接挤压传统咨询与集成商的价值空间；Anthropic 更进一步，发布 Claude Science 并罕见宣布自研药物，从「卖铲子」升级为「亲自挖矿」。",
+    "技术前沿则由「世界模型」范式扩张主导：中国团队把 JEPA 搬进 3.9 亿单细胞、LeCun 团队让世界模型在部署中持续自适应，非生成式、可推理的架构正从视觉机器人向生命科学纵深渗透。对企业决策者而言，当下更应聚焦高价值场景的 ROI 兑现与「模型-咨询-认证」生态的入口卡位，而非盲目铺开覆盖率。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律4全球M&A/战略合作/大厂动向扫描（2026-07-04）：(1) OpenAI/Anthropic 合资/收购/大动作——特朗普政府与 Anthropic 未讨论政府持股（Reuters，13小时，已纳入头条，与 OpenAI 让渡 5% 形成对照）；Anthropic 发布 Claude Science 并自研药物（The Verge/MIT Tech Review/Endpoints，8小时-3天，已纳入头条）；微软 25 亿美元 Frontier Company FDE 军备竞赛（Business Model Analyst/TechCrunch，11小时，已纳入企业级）。(2) Anthropic × Accenture/Deloitte/consulting——埃森哲培训 3 万顾问、德勤 47 万员工用 Claude、67-73% 新增企业 AI 支出流向 Claude、Anthropic 推 Claude Certified Architect 认证（AI CERTs/zenvanriel/lowcode，1-4天，已纳入深度报告；注：Anthropic Business Group 主体公告已于 7/02 发布并见报，本日仅取「份额+认证」新增维度，避免重复）。(3) AI consulting services launch enterprise——四大厂商 FDE 全家桶（OpenAI 40 亿/Anthropic 15 亿/亚马逊 10 亿/微软 25 亿）已成体系，微软为本周新增，已纳入。(4) OpenAI/Anthropic/Google/Meta/Microsoft 过去 7 天大动作——扎克伯格承认 AI Agent 进展慢于预期（Reuters/TechCrunch，1天，已纳入头条）；阿里封禁 Claude Code（Reuters，15小时，已纳入头条）；Kimi K2.7 登陆 GitHub Copilot（GitHub，2天，已纳入 Coding）。今日无未覆盖的重大新收并购公告；OpenAI IPO 秘密递交 SEC（7/02 已发）、Anthropic 洽谈三星代工芯片（7/02 已发）本日无新进展，跳过以避免跨日重复。"
+  }
+}

@@ -416,6 +416,24 @@ const CARD_NAME_OVERRIDES={
 const chainModelKey = n => CHAIN_MODEL_KEYS[n] || n;
 const fmt = n => n.toLocaleString('en-US');
 const fmtTok = n => n>=1e9?(n/1e9).toFixed(2)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':fmt(n);
+// provider(端点)简称：用于卡片底部区分「同名模型、不同 provider」的情况（如两个 claude-opus-4-8）。
+const PROVIDER_SHORT={'aigw-claude-48-main':'aigw','azure-claude-48':'azure','azure-claude':'azure','azure-openai-responses':'azure','deepseek':'ds','qwen':'qwen'};
+// 从完整 provider/model 列表构建「模型短名 → 用到的 provider 集合」，只有当同一短名跨多个 provider 时才加端点后缀，保持界面干净。
+function buildModelLabeler(fullNames){
+  const byShort={};
+  fullNames.forEach(fn=>{
+    const [prov,mdl]=fn.includes('/')?[fn.slice(0,fn.indexOf('/')),fn.slice(fn.indexOf('/')+1)]:['',fn];
+    (byShort[mdl]=byShort[mdl]||new Set()).add(prov);
+  });
+  return fn=>{
+    const [prov,mdl]=fn.includes('/')?[fn.slice(0,fn.indexOf('/')),fn.slice(fn.indexOf('/')+1)]:['',fn];
+    if((byShort[mdl]||new Set()).size>1){
+      const tag=PROVIDER_SHORT[prov]||prov;
+      return tag?mdl+' ('+tag+')':mdl; // 裸名（无 provider）不加空括号
+    }
+    return mdl;
+  };
+}
 // MISSION QUEUE 倒计时：纯前端用绝对时间戳算，零 token。soon=24h 内高亮金色
 function mqCountdown(nextMs){
   if(!nextMs) return {txt:'\u2014', soon:false};
@@ -538,11 +556,16 @@ function render(DATA){
   const trendBlock=`<section class="trend-sec"><div class="trend-head">7-DAY POWER TREND · 近7天趋势 <span class="trend-sum">近7日 ${fmtTok(g.last7d_tok||0)} tok · $${(g.last7d_cost||0).toFixed(2)}</span></div><div class="trend-chart">${svgCurve}${trendBars}</div></section>`;
 
   const maxTok = Math.max(...Object.values(DATA.agents).map(a=>a.total_tok));
+  // 汇总全站出现过的完整 provider/model，用于同名端点区分（卡片底部 ⚡ 与 FALLBACK 表口径一致）。
+  const _allNames=new Set();
+  Object.values(DATA.agents).forEach(a=>(a.models||[]).forEach(m=>_allNames.add(m.name)));
+  (DATA.models||[]).forEach(m=>_allNames.add(m.name));
+  const modelLabel=buildModelLabeler([..._allNames]);
   const suits = Object.entries(DATA.agents).map(([aid,a],idx)=>{
     const st=a.status.toLowerCase();
     const idle = a.idle_min==null?'—':(a.idle_min<60?a.idle_min+'m ago':a.idle_min<1440?Math.round(a.idle_min/60)+'h ago':Math.round(a.idle_min/1440)+'d ago');
     const pct=(a.total_tok/maxTok*100).toFixed(0);
-    const mdls=a.models.slice(0,3).map(m=>m.name.split('/')[1]+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
+    const mdls=a.models.slice(0,3).map(m=>modelLabel(m.name)+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
     const cardName=CARD_NAME_OVERRIDES[aid]||a.name;
     return `<div class="suit ${st}">
       <div class="suit-head">

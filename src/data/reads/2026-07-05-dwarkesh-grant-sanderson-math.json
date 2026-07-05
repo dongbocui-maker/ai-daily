@@ -1,0 +1,106 @@
+{
+  "slug": "dwarkesh-grant-sanderson-math",
+  "savedDate": "2026-07-05",
+  "publishDate": "2026-06-30",
+  "titleZh": "AI 与数学的未来：从「灵光一闪」到「造一座新山」（Dwarkesh × 3Blue1Brown）",
+  "titleEn": "Grant Sanderson – AI and the future of math",
+  "author": "Dwarkesh Patel & Grant Sanderson",
+  "authorTitle": "Dwarkesh Podcast 主播 × 3Blue1Brown 创始人",
+  "originalUrl": "https://www.dwarkesh.com/p/grant-sanderson-2",
+  "source": "manual",
+  "tags": ["AI", "数学", "AGI", "推理模型", "科研自动化", "RLVR", "3Blue1Brown"],
+  "summary": "数学是当前 AI 进步最快的领域，因此它是一面提前照见「AI 会如何改变其他行业」的镜子。Grant Sanderson 的核心 PoV 是：AI 在数学上的强不是均匀的，而是「分形般参差」——同一片尖峰里几何秒解、组合数学卡壳。真正的下一道门槛不是证明定理，而是「提出好猜想、发明好定义」这种一百年才验证得了价值、无法做成 benchmark 的能力（Galois 群论就是范本）。他把 AI 解决黎曼猜想的可能路径拆成三种——跨领域的「灵光一闪」（人类可读）、「造一座新理论之山」（要爬很久）、「纯蛮力硬算」（可能没人看得懂），三种对经济自动化的启示截然不同。对企业和个人的落点：验证器（Lean/自动裁判）、可反复 grind 的环境、以及「人类作为策展人 / 教师 / 品味把关者」的社会角色，比「谁来证明定理」更值得下注。",
+  "keyPoints": [
+    "**AI 数学进步是「分形般参差」**：IMO 几何题 2024 年起 19 秒暴力秒解，组合数学却仍卡壳。同一片能力尖峰内部依然凹凸不平，benchmark 头条掩盖了真实的能力缺口。「拿了 IMO 金牌」从来不是 AGI 时刻。",
+    "**下一道真门槛是「提猜想 / 造定义」而非「证定理」**：借用视频里的话——「好数学家证定理，伟大数学家提猜想，最伟大的数学家下定义」。但这类能力天然做不成 benchmark（无法量化「这是个好猜想」），OpenAI 能为「推翻单位距离猜想」发头条，却没法为「GPT 提了个好猜想」发头条。",
+    "**Galois 群论=百年验证回路的范本**：从 Lagrange 隐约觉得「对称性是对的方向」，到 Abel、Galois，再到 Liouville、Jordan 整理成现代群论，跨越百年、经多人之手，且长期通不过「当时学术界这个验证器」。RLVR 式「解出即奖励」根本捕捉不到 Galois「我觉得这里有东西」的直觉。",
+    "**AI 解黎曼猜想的三条路，启示各异**：① 跨领域「灵光一闪」（如 Montgomery×Dyson 把 zeta 零点统计与随机矩阵连起来）→ 人类可读、易消化；② 「造一座新理论之山」（如 Mochizuki 的 abc 猜想式）→ 要爬很久、甚至可能爬错山；③ 纯蛮力超长推理链 → 可能没人看得懂。只有第三种才对应「证了但没人理解」的恐惧。",
+    "**数学快=可验证 + 可 grind + 形式化，三者中「可 grind」被低估**：Dwarkesh 认为电脑操作类任务同样可验证却进步慢，卡在无法大规模并行 rollout（网站反爬、每次起点不同导致 credit assignment 困难）。数学/代码能容器化、确定性重放、上千并行，才是快的关键。Lean 形式化反而「被高估」——DeepMind 从全 Lean 转向自然语言证明就是佐证。",
+    "**AI 的独特优势不只是「合并知识」，还有「刻意清空上下文 / 分叉多智能体」**：自回归让模型「沦为上下文的奴隶」，难做出「不太可能的跨领域连接」。可系统化地 spin off 一个证、一个反证，一个这样想、一个那样想，故意给不同 context——这是人类难做到的「系统性刷新思维」。对抗「熵坍缩」的解法在 prompt 层加熵。",
+    "**Lean 的真正价值在「放手不管的无限探索」+「给每篇 AI 论文盖绿勾」**：可以让 AI fork 一份 Mathlib 无限延伸、十年后回来看长出了什么（AlphaZero 式自博弈，只有数学有这条件）；以及当 AI 一天产十篇论文时，形式化能给出「至少保证正确」的确定性验证——每个领域都会为此杀红眼，而数学天生拥有。",
+    "**AI 写作差的根因是「theory of mind」缺失 + 写作不模块化**：模型是好「解释者」却是差「作者」——写作的每句话都要预判读者三个月后脑中的联想，需要强心智建模；且写作的产物本身就是实质（不像代码/引理可以是 slop 只要功能对）。有趣类比：打了肉毒杆菌的人读表情能力变差，因为「理解情绪要靠自己脸部肌肉去模仿」——模型没有脸部肌肉。",
+    "**给学生 / 从业者的建议：搞清楚「钱从哪来、你加了什么价值」**：Grant 认为无论 AI 是否证定理，数学家的社会角色（基础科学的公共品信念、品牌价值、教学）变化没那么大。「教学」是 post-AGI 最稳的职业之一——因为它高度关系化、教练化，远超「解释清楚」。数学家角色可能从「证定理」漂向「下定义 / 当博物馆策展人 / 给这头新数学巨兽指方向」。"
+  ],
+  "insight": "这期对企业 AI 决策者的价值，不在数学本身，而在它是「AI 改变知识工作」的高保真预演。三个可迁移的判断：其一，**能力是分形般参差的，别被 benchmark 头条骗**——你的业务里最像「几何」（可暴力解）的环节会先被吃掉，最像「组合数学」（需真创造力）的环节会更久，规划自动化要按这个粒度切。其二，**「可 grind」比「可验证」更决定自动化速度**——凡是能容器化、确定性重放、大规模并行的任务（代码、结构化数据流水线）会跑得飞快；凡是要接触真实世界、每次起点都变、credit assignment 困难的任务（真实业务决策、市场交易）会慢得多。其三，**人类角色向「策展 / 品味 / 关系」上移**——当 AI 既能证明又能解释，剩下的高价值位是「决定什么值得做、给这头巨兽指方向、以及那份来自信任关系的教学与引导」。Grant 那句「搞清楚钱从哪来、你加了什么价值」对任何被 AI 冲击的岗位都适用，包括咨询与技术顾问自身。",
+  "bilingual": [
+    {
+      "en": "**Dwarkesh:** Three years ago I asked you, once we have AIs that can get gold in the IMO, wouldn't that just be AGI? You said it'll be another benchmark, like all these other benchmarks that AI are passing. There won't be some \"aha\" moment.\n\n**Grant:** The dirty secret with the IMO is that you really can train for a lot of them. With the whole AI and math project underway, one of the reasons it's interesting is that there's a spiky frontier to AI, and math is just right there in one of the spikes. But there's a fractal nature to that spikiness. If we think about IMO — it's old news at this point. Geometry, it just solves in nineteen seconds since 2024 because it's a brute force solver. But it struggles on those combinatorics ones. Someone trying to keep that torch of the last holdout of math for humanity might say those are the ones that require more creativity.",
+      "zh": "**Dwarkesh：** 三年前我问你，等 AI 能拿 IMO 金牌，那不就是 AGI 了吗？你说那只会是又一个被 AI 攻克的 benchmark，不会有什么「顿悟时刻」。\n\n**Grant：** IMO 的一个不能说的秘密是：其中很多题你真的可以「刷」出来。整个「AI 与数学」项目之所以有意思，是因为 AI 有一条参差不齐的能力前沿，而数学恰好就站在其中一个尖峰上。但这种参差本身还有分形的性质。以 IMO 为例——现在已经是旧闻了。几何题从 2024 年起 19 秒就解掉，因为它就是个暴力求解器。但它在组合数学题上卡壳。想为「人类最后的数学阵地」守火种的人也许会说：正是这些题需要更多创造力。"
+    },
+    {
+      "en": "**Grant:** If we focus on the Riemann hypothesis, what would it look like to solve that? I don't know if you know the story of Hugh Montgomery and Freeman Dyson at the IAS. You have this number theorist trying to understand the statistical correlation between pairs of zeros of the Riemann zeta function. He writes down a formula. Freeman Dyson, a physicist, is like, \"I know that expression. It comes up in studying the eigenvalues for random Hermitian matrices.\" That bridging together of two different fields — if it turned out the solution to the Riemann hypothesis was exploring an idea like that — has the character of how you expect LLMs to be good at math. They're experts at quantum physics. They're experts at analytic number theory. They should be able to see that similarity in a way that doesn't require Montgomery and Dyson to be having lunch.",
+      "zh": "**Grant：** 如果聚焦黎曼猜想，解出来会长什么样？不知道你听没听过 Hugh Montgomery 和 Freeman Dyson 在普林斯顿高等研究院（IAS）的故事。有位数论学家想搞懂黎曼 zeta 函数零点两两之间的统计相关性，他写下一个公式。物理学家 Freeman Dyson 一看：「我认识这个表达式，它出现在研究随机厄米矩阵特征值的时候。」——把两个看似无关的领域连起来。如果黎曼猜想的解法真是沿这类思路走下去，那正好符合我们期待 LLM 擅长数学的方式：它们同时是量子物理专家、又是解析数论专家，本该能看出这种相似，而不必等 Montgomery 和 Dyson 恰好一起吃午饭聊到。"
+    },
+    {
+      "en": "**Dwarkesh:** So it's total goalpost moving. But then we can ask, what is the next benchmark? One could be coming up with interesting problems in the first place, and the other is coming up with new kinds of objects or conceptualizations that create or unify fields.\n\n**Grant:** One of the people in that video highlights this quote: \"good mathematicians prove theorems, great mathematicians come up with conjectures, and the greatest mathematicians come up with definitions.\" We need the conjecture generator and then the definition generator. That's the premium-tier mathematician. I don't understand how exactly you'd make that a benchmark. OpenAI can have their headline on disproving the unit distance conjecture because it's a clear, distinct thing. Whereas imagine trying to have a headline on GPT-5.4 coming up with a really good conjecture. \"We promise, everyone thinks it's a good conjecture.\" It just doesn't land the same way.",
+      "zh": "**Dwarkesh：** 所以这完全是在挪动球门。但我们可以问：下一个 benchmark 是什么？一个可能是「首先能提出有意思的问题」，另一个是「提出创造或统一整个领域的新对象、新概念」。\n\n**Grant：** 那个视频里有人引了一句话：「好数学家证明定理，伟大的数学家提出猜想，最伟大的数学家下定义。」我们需要一个猜想生成器，再需要一个定义生成器——那是顶配版数学家。但我实在想不出怎么把它做成 benchmark。OpenAI 能为「推翻单位距离猜想」发头条，因为那是清晰、明确的事——做到了就是做到了。可你想象一下为「GPT-5.4 提了个很好的猜想」发头条：「我们保证，大家都觉得这是个好猜想。」——完全不是一个量级的说服力。"
+    },
+    {
+      "en": "**Dwarkesh:** If you wanted to do a verification loop on whether group theory is an interesting concept, potentially that verification loop is a hundred years long.\n\n**Grant:** It's a perfect example, because describing why it was a valuable insight does not come from immediate utility. Even with human verifiers at the time, it took a really long time to recognize it as being useful. You literally have this hundred-year segment of an idea that flows through many different people's heads. Lagrange found the right kind of question to ask. Around fifty years later, Abel proved quintics are unsolvable. Then Galois — this teenager, in prison, whose papers had been rejected. The verifier function that is the academy at that time is rejecting what he wrote. It wasn't a complete proof. But he has some instinct that there's something there. It was another twenty years until Liouville sees these notes, and another twenty until Jordan puts together a modern treatment of group theory.",
+      "zh": "**Dwarkesh：** 如果你想跑一个验证回路，判断「群论是不是个有趣的概念」，这个回路可能长达一百年。\n\n**Grant：** 这是个完美的例子，因为它作为有价值洞见的原因，并不来自即时的实用性。哪怕在当时用人类当验证器，也花了很久才认识到它有用。你这里有一段跨越百年、流经许多人脑子的思想：Lagrange 找到了「该问的那种问题」；约五十年后 Abel 证明了五次方程无根式解；再然后是 Galois——一个进了监狱的少年，论文被一再退稿。当时充当验证器的学术界，退掉了他写的东西——那不是一个完整证明。但他有种直觉：这里有东西。又过了二十年 Liouville 才看到这些笔记，再过二十年 Jordan 才整理出现代群论的样子。"
+    },
+    {
+      "en": "**Grant:** If we break down the three possible ways of solving the Riemann hypothesis: the Erdős problem 1196 this year had the character of bringing an idea from a seemingly different field. Those are going to be very human-parsable. If the character of it is mountain building, you have to put in a lot more time to understand that new mountain, because it's a new thread, not just a lightning bolt. And if the nature was just raw hustle — a super long chain of reasoning with no new theories — then you'd have that worry of the whole digestion process. The closest example to mountain building is the attempted solution of the abc conjecture — inter-universal geometry. The biggest fear would be an AI does that, people work for years to go up the mountain, and it just isn't right.",
+      "zh": "**Grant：** 把解黎曼猜想的三种可能路径拆开看：今年那个 Erdős 1196 号问题，就带有「从一个看似无关的领域引入一个想法」的特征——这类结果对人类是很好读的，你只要展示连接的起点和终点。如果它的性质是「造山」，你就得投入多得多的时间去理解这座新山，因为那是一条新线索、而不只是一道灵光的闪电。而如果它的本质只是「纯蛮干」——一条超长的推理链、没有任何新理论——那你就要担心整个消化过程了。最接近「造山」的例子是 abc 猜想的那次尝试性证明——「跨宇宙几何」。最大的恐惧是：AI 造了这么一座山，人们爬了好几年，结果发现它就是错的。"
+    },
+    {
+      "en": "**Dwarkesh:** Why has it been so slow at computer use? A computer is very verifiable. What computer use lacks is grindability. Because websites have bot detectors, it's very hard to run a thousand parallel rollouts of the same checkout flow on Amazon. With code, you can containerize a given level of progress and spin out hundreds of parallel containers. Because it's deterministic, you can solve the credit assignment problem. Math, of course, is the exception. It's not just verifiability; it has to be grindable.\n\n**Dwarkesh:** I feel like Lean just doesn't matter that much for the current level of progress. They released the chain of thought for the unit distance disproof; it didn't have any Lean in it.\n\n**Grant:** DeepMind basically does everything in Lean initially, and then the next year it's all in natural language. So to your point, it's not needed.",
+      "zh": "**Dwarkesh：** 为什么 AI 在「操作电脑」上这么慢？电脑其实非常可验证。电脑操作缺的是「可 grind 性」。因为网站有反爬检测，你很难在亚马逊上跑一千次并行的同一个结账流程。而代码，你可以把某个进度容器化，起几百个并行容器同时跑，因为是确定性的，你就能解决「功劳归属」问题——哪个 rollout 成功、哪个失败，diff 就是那个起作用的东西。数学当然是例外。所以不只是可验证，还得可 grind。\n\n**Dwarkesh：** 我觉得 Lean 对当前这个进步水平其实没那么重要。他们放出了推翻单位距离猜想的思维链——里面根本没有 Lean。\n\n**Grant：** DeepMind 最初基本全用 Lean，第二年就全是自然语言了。所以照你说的，它确实不是必需的。"
+    },
+    {
+      "en": "**Grant:** Of all the advantages that digital minds have, that might actually be one of them: a more systematic approach to refreshing your thinking. Sometimes when an AI is failing, it's because it gets into a bad chain of thought. Same deal with humans. Unwinding your own context and going at it with a fresh mind — you could systematize that, having multiple different agents deliberately given different pieces of context. Spin off two agents, one who's trying to prove it and one who's trying to disprove it. They deliberately have different contexts. We don't have the same level of manipulation on our own context.\n\n**Dwarkesh:** A common concern is entropy collapse — they all think the same way. But maybe the key advantage is you can systematically increase the entropy at the prompt level, systematically trying out both the negation and the positive of any given statement.",
+      "zh": "**Grant：** 在数字心智拥有的所有优势里，这也许算一个：一套更系统化的「刷新思维」的方法。AI 失败时，常常是因为它陷进了一条糟糕的思维链里出不来——人也一样。把自己的上下文清空、用全新的头脑重来——你可以把这件事系统化：让多个不同的 agent 刻意拿到不同的上下文片段。分叉出两个 agent，一个去证、一个去反证，它们故意持有不同的 context。而我们人类对自己的上下文没有这种操纵能力。\n\n**Dwarkesh：** 一个常见担忧是「熵坍缩」——它们都以同一种方式思考。但也许关键优势恰恰是：你可以在 prompt 层系统性地加熵，对任意一个命题同时系统地去尝试它的否命题和正命题。"
+    },
+    {
+      "en": "**Grant:** You could imagine having an AI where you say, \"Simply try to extend Mathlib.\" It just goes and it doesn't stop. It doesn't need anybody to check in on it. It might come up with its own conjectures, its own theories and definitions. Maybe many are useless, but it has this infinite tree it can grow out. That's a very unique thing that math has that nothing else has — you could press go, look away for ten years, and come back and say, \"What do you have?\" The other relevance of Lean: when models generate ten papers a day, if there's any error rate at all, it becomes insufferable. Even if 99 out of 100 are right, it's really labor-intensive to find that error. Having something that gives you that green checkmark — every other field would kill for that. Math has that.",
+      "zh": "**Grant：** 你可以设想让一个 AI「就只管去延伸 Mathlib」，它一路跑下去、不停，不需要任何人来盯着。它可能提出自己的猜想、自己的理论和定义。也许很多没用，但它有这么一棵能无限生长的树。这是数学独有、别的领域没有的特质——你可以按下开始，转头十年不看，回来问一句「你长出了什么？」。Lean 的另一层意义：当模型一天产十篇论文，只要有任何错误率，作为数学家就会不堪其扰。哪怕 100 篇里 99 篇是对的，找出那个错误也极其费力。而有个东西能给你盖上那个绿色对勾——每个领域都会为此杀红眼。数学天生就有。"
+    },
+    {
+      "en": "**Grant:** They seem to be good judges but bad writers. Autoregression is a very weird way to generate things. When you're writing, you have to have an element of the unpredictable — knowing exactly the correct point when you want to make an unpredictable move. Even if it's better at explaining a preexisting thing, what generated that book in the first place? It was some author who, through exploration, decided what aspects were interesting.\n\n**Dwarkesh:** They're also really bad at building good mental models of people. Writing each sentence, you have to be thinking: what is happening in my reader's mind right now?\n\n**Grant:** If it's the case that models have bad theory of mind — they know everything, but at the level of putting themselves in your shoes, the way my face muscles mimic your face muscles helps me understand how you feel. They don't have face muscles. It's like an alien trying to empathize.",
+      "zh": "**Grant：** 它们似乎是好的「评判者」却是差的「作者」。自回归是一种很奇怪的生成方式。写作时你必须带有「不可预测」的成分——知道究竟在哪个点该做出一个出人意料的动作。哪怕它更擅长解释一个已有的东西，可最初生成那本书的是什么？是某位作者，通过对世界的探索，决定了哪些方面有趣。\n\n**Dwarkesh：** 它们还非常不擅长构建关于「人」的良好心智模型。写每一句话，你都得想：此刻我的读者脑子里在发生什么？\n\n**Grant：** 如果模型确实缺乏「心智理论」——它们无所不知，但在真正设身处地这一层：我脸部肌肉去模仿你的脸部肌肉，正是这帮我理解你的感受。它们没有脸部肌肉。这就像一个外星人试图共情。"
+    },
+    {
+      "en": "**Grant:** Even pre-LLM, a relevant insight in learning was recognizing who matters more than what. My advice to any college student: care a little less about your preexisting interests, and more about whether the person teaching it is a good educator you resonate with. LLM explanations feel to me a lot like Wikipedia — amazing, but what's the most useful part of a Wikipedia page? Often just the references at the bottom. So I like to ask an LLM, \"Who should I read?\" I'm basically using it like a very souped-up Google to zero in on the right human-written resource.\n\n**Dwarkesh:** The most productive learning sessions are when there's some artifact a human produced that organizes concepts in the correct way and builds up the motivation for why the next idea is relevant. Then you use LLMs to do a little pruning around the branch the book has identified. A really good human can say, \"Actually, you're not thinking about this the correct way. The question you want to be asking is X.\" An LLM just can't really do that — it's a little too placating, that sycophantic behavior.",
+      "zh": "**Grant：** 甚至在 LLM 之前，学习里一个重要的洞见就是：「跟谁学」比「学什么」更重要。我给大学生的建议是：少在意一点你已有的兴趣（现在它们相当随意），多在意教这门课的人是不是一个你能共鸣的好教育者。LLM 的解释现在给我的感觉很像维基百科——很惊艳，但一个维基页面最有用的部分是什么？往往是底部的参考文献。所以我喜欢问 LLM：「我该去读谁？」——本质上我把它当成一个超级加强版的谷歌，用来精准定位到那份对的、人写的资源。\n\n**Dwarkesh：** 最高效的学习是：有某个人类做出来的成品，把概念以正确的顺序组织起来，并铺垫出「为什么下一个想法与你要解决的下一个问题相关」。然后你用 LLM 在这本书标出的那根枝丫周围做一点修剪。一个真正好的人类能说：「其实你没在用对的方式想这件事，你该问的问题是 X。」——LLM 就是做不到这个，它太会哄人了，就是那种谄媚的毛病。"
+    },
+    {
+      "en": "**Grant:** Even if we have almost-automated theorem proving, a lot of the social role that mathematicians serve doesn't change that much. As a public, we still feel there's value to basic science. The prestige comes from within that community. Maybe it shifts away from theorem proving and towards good definition writing, or that museum curator idea. On the side of prestige for who your lecturers are, teaching is one of the most stable post-AGI jobs, because it's so relational — a social, coaching, mentor-type thing that goes so far beyond explanations. My advice: know where the money is coming from, what value you're actually adding, and the connection between those two. A surprisingly small amount of thought is put towards that by students.",
+      "zh": "**Grant：** 就算我们有了近乎全自动的定理证明，数学家承担的很多社会角色其实变化不大。作为公众，我们依然认为基础科学有价值。声望来自这个共同体内部。也许它会从「证定理」漂移到「写好定义」，或者那个「博物馆策展人」的设想。而在「你的讲师是谁」带来的声望这一侧，教学是 post-AGI 最稳的职业之一——因为它高度关系化：一种社交的、教练式的、导师式的东西，远远超出「把话讲清楚」。我的建议是：搞清楚钱从哪来、你实际加了什么价值、以及这两者之间的连接。学生们在这上面花的心思少得惊人。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "There's a spiky frontier to AI, and math is just right there in one of the spikes. But there's a fractal nature to that spikiness.",
+      "zh": "AI 有一条参差的能力前沿，数学恰好站在其中一个尖峰上。但这种参差本身还带有分形的性质。"
+    },
+    {
+      "en": "Good mathematicians prove theorems, great mathematicians come up with conjectures, and the greatest mathematicians come up with definitions.",
+      "zh": "好数学家证明定理，伟大的数学家提出猜想，最伟大的数学家下定义。"
+    },
+    {
+      "en": "It's not just verifiability; it has to be grindable.",
+      "zh": "（数学快）不只是因为可验证，还得是可反复 grind 的。"
+    },
+    {
+      "en": "Teaching is one of the most stable post-AGI jobs that there is, because it's so relational.",
+      "zh": "教学是 post-AGI 最稳的职业之一，因为它高度关系化。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Alcreon Podcast Digest",
+      "url": "https://www.alcreon.com/podcast-digest/grant-sanderson-3blue1brown-ai-and-the-future-of-math",
+      "pov": "把这期最硬的骨架提炼成三条：① AI 数学进步「分形般参差」——几何 19 秒暴力秒解、组合数学卡壳，benchmark 头条掩盖真实缺口；② 解黎曼猜想的三条路（灵光一闪 / 造新山 / 蛮力硬算）对经济自动化启示各异；③ Lean 虽对当前进步「被高估」，却可能让 AI 无监督地无限延伸 Mathlib、探索公理空间。适合先读它建立骨架，再回原文补血肉。"
+    },
+    {
+      "source": "Digg（社群讨论聚合）",
+      "url": "https://digg.com/tech/zdlymcaf",
+      "pov": "提供「读者/社群怎么接住这期」的第二视角：最被点赞的评论恰恰点中全篇最反直觉的一点——「概念性突破的验证回路长达一世纪」，以及「AI 产出形式正确、但人类跟不上理解的证明，会把瓶颈从『发现』移到『理解』，那是一种很不一样的 AGI」。一句戏谑总结流传最广：「AI：这是个 4 万步的证明。人类：酷，它啥意思？AI：不归我管。」"
+    },
+    {
+      "source": "David Bessis – The Fall of the Theorem Economy",
+      "url": "https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy",
+      "pov": "对话中被 Dwarkesh 直接点名引用的原文。核心论点：历史上「证定理」拿走了所有声望，但它其实是「下定义 / 提问题」的寄生物；过去二者由同一人完成所以功劳分配不成问题，而当 AI 自动化了『证明』这后半段，价值将回流到『提出洞见/定义』的前半段——正好呼应 Grant「最伟大的数学家下定义」的判断。读它能理解本期「角色上移」结论的学理来源。"
+    }
+  ]
+}

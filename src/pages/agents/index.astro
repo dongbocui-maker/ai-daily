@@ -100,7 +100,7 @@ h2.sec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(
 .pwr{grid-column:1/-1;margin-top:6px}
 .pwr .bar{height:8px;background:#0a0e16;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:4px;position:relative}
 .pwr .fill{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 10px rgba(255,196,0,.5)}
-.models-mini{grid-column:1/-1;margin-top:10px;font-size:10px;color:var(--dim);border-top:1px dashed var(--line);padding-top:8px}
+.models-mini{grid-column:1/-1;margin-top:10px;font-size:10px;color:var(--dim);border-top:1px dashed var(--line);padding-top:8px;line-height:1.8}
 .models-mini span{color:var(--arc)}
 
 /* 顶部行：CAPABILITY MATRIX | FALLBACK SYSTEMS 并排，桌面双列、手机单列竖排 */
@@ -565,7 +565,8 @@ function render(DATA){
     const st=a.status.toLowerCase();
     const idle = a.idle_min==null?'—':(a.idle_min<60?a.idle_min+'m ago':a.idle_min<1440?Math.round(a.idle_min/60)+'h ago':Math.round(a.idle_min/1440)+'d ago');
     const pct=(a.total_tok/maxTok*100).toFixed(0);
-    const mdls=a.models.slice(0,3).map(m=>modelLabel(m.name)+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ');
+    // 全量展示该 agent 用过的所有模型（含 fable-5 等小用量模型），按 tok 降序，不再截断前3。
+    const mdls=(a.models||[]).map(m=>modelLabel(m.name)+' <span>'+fmtTok(m.tok)+'</span>').join('  ·  ')||'—';
     const cardName=CARD_NAME_OVERRIDES[aid]||a.name;
     return `<div class="suit ${st}">
       <div class="suit-head">

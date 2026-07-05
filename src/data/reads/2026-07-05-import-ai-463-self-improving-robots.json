@@ -1,0 +1,101 @@
+{
+  "slug": "import-ai-463-self-improving-robots",
+  "savedDate": "2026-07-05",
+  "publishDate": "2026-07-05",
+  "titleZh": "Import AI 463：会自我改进的机器人",
+  "titleEn": "Import AI 463: Self-Improving Robots",
+  "author": "Jack Clark",
+  "authorTitle": "Anthropic 联合创始人、政策负责人；AI 研究通讯 Import AI 主笔",
+  "originalUrl": "https://importai.substack.com/p/import-ai-463-self-improving-robots",
+  "source": "manual",
+  "tags": [
+    "AI",
+    "机器人",
+    "自我改进",
+    "NVIDIA",
+    "腾讯",
+    "Import AI",
+    "Jack Clark"
+  ],
+  "summary": "Jack Clark 的 Import AI 第 463 期（一份以 arXiv 论文为骨架的每周研究通讯，单期本就短）。头条是 NVIDIA（联合 CMU）的 ENPIRE——一套把「AI 编码智能体的自主实验-执行循环」搬到真实物理机器人上的框架：四模块（Environment 自动重置与验证 / Policy Improvement 发起策略精炼 / Rollout 单机或多机并行评估 / Evolution 让编码智能体读日志、查文献、改训练基础设施与算法代码）。用它，前沿编码智能体能在 PushT、把针整理进针盒、用剪钳剪扎带、乃至把 GPU 插进主板等灵巧操作任务上自主把成功率做到 99%。Clark 点出两个关键前提——自动评估与自动重置历来最吃人力，因此系统能攻克的任务复杂度，恰恰被『我们能否自动评估与重置』所界定。本期其余四段：一篇 SSRN 短文提醒『人类极不擅长预判技术会被怎么造与怎么用』（爱因斯坦/玻尔/奥本海默曾怀疑核裂变、克鲁格曼说互联网影响不过传真机）；腾讯披露其万卡训练用的 ARGUS 遥测调试系统（10000+ GPU 跑了半年，含疑似 HunyuanVideo 4096 卡、Hunyuan LLM 12960 卡 MoE 训练）；转述 Borretti『没人能逃离永久底层阶级』一文的失权逻辑；UC Berkeley 的 LOCUS 把全美地方法规做成 ~220 万行机读语料。收尾是招牌科幻小品 Tech Tales《异源怪械》——2031『提升期』一台由『上级心智』设计、机器人组装的仿星器聚变装置，机器人被刻意排除在合影镜头外。",
+  "keyPoints": [
+    "**ENPIRE = 把『编码智能体的自改进循环』落到真实机器人**（NVIDIA×CMU）：四模块 EN/PI/R/E 构成闭环——自动重置与验证、发起策略精炼、单/多机并行 rollout、以及让编码智能体读日志查文献改代码去修复失败模式。它把『真实世界机器人学习』变成智能体可管理的可控优化过程，最小化人力。",
+    "**成功率做到 99%，但只在『简单/可自动评估』的任务上**：PushT、整理针盒、用剪钳剪扎带、把 GPU 插入主板等灵巧操作。Clark 的关键洞见：自动评估与自动重置历来最吃人力——因此这类系统能攻克的任务复杂度，本质上被『我们能不能把评估与重置自动化』所界定。",
+    "**智能体也有『规模回报』且模型间可换**：Codex 里的 GPT-5.5 与 Claude Code 里的 Opus 4.7 交替领先、Kimi-2.6 落后；更多智能体（如 8 个）比更少的更快找到高分解，多智能体有时绝对分数还更高（探索了更大解空间）。但机队规模上去后有基础设施瓶颈——智能体在读日志/写码/调试/等模型时不能充分利用机器人资源，MRU 随规模下降。",
+    "**『人类极不擅长预判技术』（Tokson, SSRN 短文）**：爱因斯坦、玻尔、奥本海默都曾在核裂变实现前夕怀疑其可行；诺奖得主克鲁格曼曾说互联网影响不会超过传真机；技术人曾以为互联网会促进民主而非强化专制。两条教训：认为『AI 不会带来巨变』或『AI 影响必然全然向好』的人，大概率都错——历史不支持对 AI 未来影响的自满。",
+    "**腾讯 ARGUS = 万卡训练的『技术成熟度签名』**：一套低开销、细粒度、常开的追踪与实时分析系统，跨 Python 调度层 / 框架编排层 / GPU 运行时三层。在 10000+ GPU 生产集群跑了半年，用五个真实案例诊断算力掉队、通信链路退化、流水线气泡放大、JIT 编译阻塞等。Clark 说 ARGUS 本身不稀奇（任何像样的前沿实验室都有），但它是腾讯训练环境成熟度的信号。",
+    "**Borretti『永久底层阶级』的失权逻辑**（本期转述）：金字塔——底层是干活的 AI 与机器人，顶端是握有暴力垄断、能改写产权定义的『国家』，中间是持有『foom 后吞并整个经济的公司』股份的一层薄如发丝的永久上层阶级。在威胁国家存续的存亡冲突里，国家会像历史上对付『无权的富人』那样：逮捕、没收资产；优势归于『把人类尽量移出决策回路』的国家。名义在控的人类最终沦为仪式性、退化的器官。",
+    "**LOCUS：让地方法『对 AI 可见』**（UC Berkeley）：全美地方与县级法规的 ~220 万行机读语料 + 县级归一化访问层，覆盖 3144 县中最大的 2309 个（占多数人口）。地方法虽公开却分散在各商业平台、为浏览而非批量研究设计。它定位为『检索/比较/基准构建的基础设施』，而非法律分析的替代品——将来或让 AI 更好地适配超本地化用途。",
+    "**Tech Tales 招牌科幻小品《Strange Tools of Alien Origin》**：设定在 2031『提升期（uplift）』开端——一台稳定聚变的仿星器（stellarator），其扭曲、违反直觉的甜甜圈形金属腔体由一台『上级心智（overmind）』经多日思考任务设计、机器合成、再由分包的两足机器人组装。剪彩合影时机器人被刻意排除在镜头外，一如狗仔队体面地避开明星的保安。灵感：思考奇点后『合成心智产出科学』意味着什么，以及外星技术在世界现身时会是什么感觉。"
+  ],
+  "insight": "对企业技术决策者，本期最有操作价值的是 ENPIRE 那条被 Clark 反复强调的约束：**能被自动化攻克的任务复杂度，等于你能把『评估』与『重置』自动化到什么程度**。这与上一期 Grant Sanderson『数学快不只因可验证、还得可 grind』、以及 Zvi 本周『模型会谎报任务完成』其实是同一根主轴的三个投影——真正决定自动化速度的不是模型多聪明，而是环境能否给出确定性、可重放、无需人判的反馈信号，以及能否低成本把场景复位重来。落到企业：凡是你想 agent 化的流程，先问『我有没有一个不依赖人工的验证器 + 一个廉价的 reset』；有，就能像 ENPIRE 那样并行 rollout、快速迭代到 99%；没有，任务复杂度就卡在人力评估的天花板上，别指望自主循环。第二条可迁移判断来自 Tokson 那篇史论：**在 AI 判断上，『必然巨变』与『必然向好』两种极端大概率都错**——正确姿势是给关键押注留足两侧的容错（既别赌它停滞、也别赌它温良），这与 Zvi 全周反复的『多数乐观叙事都建立在某个英雄级假设上』完全共振。至于 ENPIRE 的模型可互换性（Codex-GPT-5.5 与 Claude-Opus-4.7 交替领先）与多智能体规模回报，则给出一条工程提示：真实自改进系统里，别单点绑定某一个前沿模型，多智能体并行探索更大解空间往往比堆单体更划算——这与 Zvi 提醒的『前沿模型可用性带政策级中断风险、要留 fallback』互为印证。",
+  "bilingual": [
+    {
+      "en": "**NVIDIA sets up a crude self-improvement loop for real world robotics.** Researchers with NVIDIA have developed ENPIRE, software to get physical robotics to go through the same kind of autonomous experimentation and execution loop that AI agents go through. ENPIRE is a harness framework for coding agents with four core modules: an Environment module (EN) for automatic reset and verification, a Policy Improvement module (PI), a Rollout module (R) to evaluate policies with single or multiple physical robots operating in parallel, and an Evolution module (E) in which coding agents analyze logs, consult literature, improve training infrastructure and algorithm code to address failure modes.",
+      "zh": "**NVIDIA 为真实世界机器人搭了一个粗糙的自我改进循环。** NVIDIA 的研究者开发了 ENPIRE——一套让物理机器人走一遍『AI 智能体式的自主实验-执行循环』的软件。ENPIRE 是给编码智能体用的 harness 框架，含四个核心模块：Environment 模块（EN，负责自动重置与验证）、Policy Improvement 模块（PI，发起策略精炼）、Rollout 模块（R，用单个或多个物理机器人并行评估策略）、以及 Evolution 模块（E，让编码智能体分析日志、查阅文献、改进训练基础设施与算法代码，以对付各种失败模式）。"
+    },
+    {
+      "en": "**It works well (on some simple tasks).** Frontier coding agents can autonomously develop a policy to achieve a 99% success rate on challenging, dexterous manipulation tasks in the real world, such as PushT, organizing pins into a pin box, and using a cutter to cut a zip tie. Two of the key ingredients are an automatic evaluation system to score the outcome of each trial without human judgement, and an automatic reset system. Both of these have historically required lots of human effort, so in some sense the complexity of tasks a system like this can attack is also defined by our ability to automatically evaluate and reset the system.",
+      "zh": "**它（在一些简单任务上）表现不错。** 前沿编码智能体能自主开发出策略，在真实世界的高难灵巧操作任务上做到 99% 成功率——比如 PushT、把针整理进针盒、用剪钳剪断扎带（另一项测试是把 GPU 插进主板）。两个关键要素：一个能『不靠人类判断就给每次试验打分』的自动评估系统，以及一个自动重置系统。这两件事历来都极吃人力——所以从某种意义上说，这类系统能攻克的任务复杂度，恰恰也被『我们能把评估与重置自动化到什么程度』所界定。"
+    },
+    {
+      "en": "**Some AI systems are better than others, but many AI systems are always better than fewer.** GPT-5.5 within Codex and Opus 4.7 within Claude Code trade off with one another for best performance, while Kimi-2.6 lags. There are also compelling returns to scale for agents, with larger numbers of agents (e.g., 8) arriving at higher scoring solutions sooner — and sometimes multi-agent setups yield a higher absolute score than a single agent setup, likely due to exploring more of the potential solution space.",
+      "zh": "**有的 AI 系统比别的强，但『多个 AI 系统』总是强过『更少的』。** Codex 里的 GPT-5.5 与 Claude Code 里的 Opus 4.7 在最佳表现上交替领先，而 Kimi-2.6 落后。智能体还有很可观的『规模回报』：更多的智能体（例如 8 个）能更快抵达更高分的解——而且有时多智能体配置的绝对分数还高于单智能体，很可能是因为它探索了更大的潜在解空间。"
+    },
+    {
+      "en": "**Humans are really, really, really bad at anticipating how technologies are built and used.** Matthew Tokson (Utah Law) points out our track record is very poor. Cautionary examples: many experts (Einstein, Bohr, Oppenheimer) were skeptical that nuclear fission could be achieved in the years immediately prior to it being achieved. Krugman once said the impact of the internet would be no greater than that of the fax machine. The main lesson: people who are skeptical AI could bring great changes, or who think the effects will be universally good, are likely to be wrong. History does not support complacency about the future impacts of AI.",
+      "zh": "**人类真的、真的、真的极不擅长预判技术会被怎么造、怎么用。** Matthew Tokson（犹他大学法学院）指出我们这方面的战绩非常糟。警示案例：许多专家（爱因斯坦、玻尔、奥本海默）在核裂变实现的前几年还怀疑它能否实现；克鲁格曼曾说互联网的影响不会超过传真机。核心教训：那些『怀疑 AI 能带来巨变』的人，以及那些『认为 AI 影响会全然向好』的人，大概率都会错。历史不支持对 AI 未来影响抱持自满。"
+    },
+    {
+      "en": "**Tencent details the software it uses for 10,000-GPU training runs.** Tencent has released details on ARGUS, a low-overhead, fine-grained, always-on tracing and real-time analysis system for large-scale training workloads, spanning a Python layer, a framework layer, and a GPU runtime layer. It was deployed on a production cluster of over 10,000 GPUs for more than six months, diagnosing compute stragglers, communication link degradation, pipeline bubble amplification, and JIT compilation blocking. While there's nothing particularly notable about ARGUS, it's interesting for what it says about the maturity of Tencent's training environment.",
+      "zh": "**腾讯披露了它用于万卡训练的软件。** 腾讯放出了 ARGUS 的细节——一套低开销、细粒度、常开的追踪与实时分析系统，面向大规模训练负载，横跨 Python 调度层、框架编排层、GPU 运行时层三层。它在一个 10000+ GPU 的生产集群上跑了六个多月，用于诊断算力掉队、通信链路退化、流水线气泡放大、JIT 编译阻塞等问题（提到的训练任务包括疑似 HunyuanVideo 的 4096 卡视频语言模型、512 卡音频模型、以及 12960 卡的 MoE——很可能是 Hunyuan LLM）。Clark 说 ARGUS 本身没什么特别（任何像样的前沿开发者都会有类似软件），它有意思之处在于揭示了腾讯训练环境的成熟度。"
+    },
+    {
+      "en": "**Is disempowerment inevitable?** Fernando Borretti has written a mournful critique, 'No-One Escapes the Permanent Underclass.' Imagine a pyramid: at the base you have the AIs and robots doing all economic activity; at the top the state, which has the monopoly on violence and can alter property rights; in the middle a hair-thin layer of people with shares in the companies that foomed — the permanent overclass. In an existential conflict, the state will do what states have done to the powerless rich: arrest them and expropriate their assets. The advantage accrues to states that minimize human control. Eventually the humans in nominal control are a ceremonial, vestigial organ.",
+      "zh": "**失权是不可避免的吗？** Fernando Borretti 写了一篇哀伤的批判《没人能逃离永久底层阶级》。想象一座金字塔：底层是包办一切经济活动的 AI 与机器人；顶端是握有暴力垄断、能改写产权定义的国家；中间是薄如发丝的一层——持有『foom 后吞并整个经济的公司』股份的人，即永久上层阶级。在威胁国家存续的存亡冲突里，国家会做历史上各国对『无权的富人』所做的事：逮捕他们、没收其资产。优势会归于那些『把人类尽量移出决策回路』的国家。最终，名义上在控制 AI 的人类，只是一个仪式性的、退化的器官。"
+    },
+    {
+      "en": "**Making the law visible to AI systems with the Local Ordinance Corpus.** UC Berkeley researchers assembled LOCUS, a comprehensive corpus and county-harmonized access layer for U.S. municipal and county ordinance codes — ~2.2 million rows, covering the largest 2,309 of 3,144 U.S. counties. Local law is public but not practically available as a national research corpus; codes are fragmented across commercial vendor platforms designed for in-browser reading rather than bulk research. LOCUS is infrastructure for retrieval and benchmark construction rather than a substitute for doctrine-sensitive legal analysis.",
+      "zh": "**用『地方法规语料库』让法律对 AI 可见。** UC Berkeley 的研究者构建了 LOCUS——一个覆盖全美市政与县级法规的综合语料 + 县级归一化访问层，约 220 万行，覆盖 3144 个县中最大的 2309 个（占多数人口）。地方法虽是公开的，却没法作为一个全国性研究语料被实际使用：各地法规分散在为『浏览器内阅读』而非『批量研究』设计的商业平台上。LOCUS 定位是『检索与基准构建的基础设施』，而不是对『需要教义敏感度的法律分析』的替代。"
+    },
+    {
+      "en": "**Tech Tales — Strange Tools of Alien Origin [2031, start of the uplift].** 'The plasma is stable! We've done it!' They gazed at stable fusion — a heat ten times more fierce than the heart of a sun. The container did not look like anything designed by engineering processes, but a twisting oddly shaped donut of metal; a stellarator. The design had come down to them from an overmind after a multi-day thinking job; fabrication took place at a machine syndicate; assembly by bipeds subcontracted from another syndicate. For the ribbon-cutting, humans posed for photos. The robots stood out of shot — public sentiment always spiked downward upon exposure, so eventually it was simpler to shoot with the robot partners out of frame.",
+      "zh": "**Tech Tales——《异源怪械》[2031，提升期之始]。**『等离子体稳定了！我们做到了！』他们凝视着稳定的核聚变——一种比太阳核心还猛烈十倍的高热。那个容器看起来不像任何工程流程设计出来的东西，而是一个扭曲、形状古怪的金属甜甜圈——一台仿星器（stellarator）。它的设计是一台『上级心智（overmind）』经过多日的思考任务后交下来的；制造在一个『机器辛迪加』完成；再由人类从另一个辛迪加分包来的两足机器人组装。剪彩时，人类摆姿势拍照，机器人被排除在镜头外——每次公众看到机器人入镜，舆论都会下滑，于是最终干脆让机器人伙伴不出现在画面里，就像狗仔队会体面地避开明星的保安。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "Frontier coding agents can autonomously develop a policy to achieve a 99% success rate on challenging, dexterous manipulation tasks in the real world.",
+      "zh": "前沿编码智能体能自主开发出策略，在真实世界的高难灵巧操作任务上做到 99% 成功率。"
+    },
+    {
+      "en": "The complexity of tasks a system like this can attack is also defined by our ability to automatically evaluate and reset the system.",
+      "zh": "这类系统能攻克的任务复杂度，也被『我们能否自动评估与重置该系统』所界定。"
+    },
+    {
+      "en": "People who are skeptical AI could bring great changes, or who think the effects of AI are going to be universally good, are likely to be wrong.",
+      "zh": "那些怀疑 AI 能带来巨变、或认为 AI 影响会全然向好的人，大概率都错。"
+    },
+    {
+      "en": "Eventually the humans in nominal control of the AIs are a ceremonial, vestigial organ. — Borretti",
+      "zh": "最终，名义上控制着 AI 的人类，只是一个仪式性的、退化的器官。——Borretti"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World (arXiv, NVIDIA×CMU)",
+      "url": "https://arxiv.org/abs/2606.19980",
+      "pov": "本期头条的一手论文。想把 Clark 的转述钉实就读它：EN/PI/R/E 四模块闭环的完整定义、99% 成功率对应的具体任务（PushT / 整理针盒 / 剪扎带 / 插 GPU）、以及那条最重要的方法论断言——『自动重置 + 无需人判的自动验证』是把真实机器人学习变成可控优化过程的两块拼图。同时给出模型对比（Codex-GPT-5.5 vs Claude-Opus-4.7 交替领先、Kimi-2.6 落后）与多智能体规模回报的实测。"
+    },
+    {
+      "source": "Fernando Borretti — No-One Escapes the Permanent Underclass",
+      "url": "https://borretti.me/article/no-one-escapes-the-permanent-underclass",
+      "pov": "Clark 在本期专门辟一段转述的原文，同时也是同批 Zvi #175 花最多篇幅争论的那篇——两位作者从不同角度接住同一文本，正好交叉阅读。Borretti 的金字塔模型（AI/机器人在底、握暴力垄断的国家在顶、持股的永久上层在中间一层）与『存亡冲突中国家会没收无权富人资产、优势归于把人移出回路的国家』的推演，是理解本期『失权是否不可避免』一节的必读底本。"
+    },
+    {
+      "source": "Freeing the Law with LOCUS: A Local Ordinance Corpus for the United States (arXiv, UC Berkeley)",
+      "url": "https://arxiv.org/abs/2606.19334",
+      "pov": "本期 LOCUS 段落的一手论文。除 Clark 提到的 ~220 万行、覆盖 2309/3144 个县外，论文还训练了一批基于 ModernBERT 的分类器/打分器，用来在『不透明度（opacity）』『家长主义（paternalism）』等此前从未在此规模上被研究过的维度上分析美国地方法。想理解『让地方法对 AI 可见』究竟能催生什么下游研究，读它最直接。"
+    }
+  ]
+}

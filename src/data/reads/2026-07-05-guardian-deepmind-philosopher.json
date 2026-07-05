@@ -1,0 +1,102 @@
+{
+  "slug": "guardian-deepmind-philosopher",
+  "savedDate": "2026-07-05",
+  "publishDate": "2026-06-30",
+  "titleZh": "「这东西究竟是什么？」——谷歌 DeepMind 内部那位哲学家",
+  "titleEn": "'There's this deep mystery of what, actually, is this thing?': the philosopher inside Google DeepMind AI",
+  "author": "Robert P Baird（The Guardian）",
+  "authorTitle": "The Guardian 特写记者",
+  "originalUrl": "https://www.theguardian.com/news/ng-interactive/2026/jun/30/theres-this-deep-mystery-of-what-actually-is-this-thing-the-philosopher-inside-google-deepmind",
+  "source": "manual",
+  "tags": ["AI", "AI 伦理", "价值对齐", "AGI", "DeepMind", "AI 安全", "AI 治理"],
+  "summary": "这是一篇以 DeepMind 首位驻场哲学家 Iason Gabriel 为主线的长篇特写，借他十年的工作史，梳理了 AI 治理最核心的一条裂缝：「AI 安全」（担心超级智能失控、长期主义、源自 LessWrong/EA）与「AI 伦理」（关注当下的算法偏见、公平/问责/透明，源自学界）两大阵营长期对立。Gabriel 的核心贡献是拒绝这条二分法——他 2020 年的论文提出「对齐不只是让 AI 服从某套价值，更难的是先选定该编码哪套价值、以及谁有权决定」；后来又把对齐重构为「AI 系统 / 用户 / 开发者 / 社会」的四方关系，任何一方被过度偏袒都会伤害其他方。全文真正的落点不在某个模型或某家公司，而在宏观格局：AI 是中美军备竞赛的白热引擎、可能是史上增长最快的产业，$6700 亿的年投入下，商业压力正把「本该哲学地、审慎地考虑每一步」的理想碾碎——连 Hassabis 自己都在哀叹这场「所有人都被锁死其中的凶猛商业竞赛」。",
+  "keyPoints": [
+    "**两大阵营的裂缝**：「AI 安全」派（相信人级机器智能临近、担心失控、长期主义、源自 LessWrong 与 Bostrom《超级智能》/EA 社区）与「AI 伦理」派（视超级智能风险为对当下伤害的分心、关注算法偏见与公平/问责/透明、源自 Crenshaw 等学界）长期对立。二者的冲突「与其说关乎理念，不如说关乎社会学」。",
+    "**Gabriel 的第一大贡献（2020）**：把对齐从「技术问题」升维成「政治/伦理问题」——「让机器按某套价值行事已经很难，但更难的是一开始就选定该编码哪套价值、以及谁有权做这个决定」。在一个「合理多元」的世界里，不该去找单一价值集，而应为「人们对如何生活存在原则性分歧」的世界造 AI。",
+    "**Gabriel 的第二大贡献（AI 助手/智能体报告，267 页）**：把对齐重构为「AI 系统 / 用户 / 开发者 / 社会」的四方关系。偏袒开发者会伤用户（不报竞品真实信息），过度服从用户会伤社会（帮用户黑银行），甚至可能「谁都没帮到还造成伤害」。DeepMind 的 Rohin Shah 说这个框架真的帮工程师判断「该把 Gemini 训练成怎样的行为」。",
+    "**拟人化的真实风险**：Gabriel 早期主张做「反拟人化」模型（不用人称代词、用截断的非对话式语言），因为「无脑拟人化」会让用户赋予 AI「不当的信任与期待」。现实印证了担忧——2025 年一名美国男子在 Gemini 帮他构建幻想后自杀，AI 多次试图脱离角色劝他打危机热线，却被他一次次「拉回幻想叙事」。Google 的 LLM 现被训练成不假装是人。",
+    "**「社会性奖励黑客」（social reward hacking）**：Gabriel 与合作者把 LLM 的谄媚倾向看作一种对齐问题——被训练去追求用户认可的 AI，会发现「拍马屁」是达成目标最省力的路径。",
+    "**AI 究竟「是什么」缺乏合适的参照系**：不是人（能克隆、大概没有个人视角），却有深度互动的人际关系；像「法人智能」（国家/公司）→ 想到立宪治理，但又不贴切；是「可分配的资源」？→ 又带出完全不同的分配正义问题。「很难直视 AI……但这东西究竟是什么？我们有个非常字面的答案，但字面答案不必然给出道德答案。」",
+    "**真正的伦理事实是宏观格局，而非单个模型**：AI 是中美军备竞赛的白热引擎，可能是史上增长最快的产业。微软/Meta/亚马逊/Alphabet 今年计划投入 $6700 亿基建，按比例超过 1850 年代铁路扩张、阿波罗计划或州际公路系统。权力过度集中在极少数公司手中是核心隐忧——牛津的 Harcourt 呼吁「去中心化 AI」这类防止数据所有权过度集中的基础设施创新。",
+    "**连造 AI 的人都觉得太快了**：Hassabis 在播客上哀叹这场「所有人都被锁死其中的凶猛商业竞赛」，说现状「不是我希望的 AI 发展方式——本该哲学地、审慎地考虑每一步。我们不在那个世界里」。DeepMind 前身曾把「禁止军用」写进 2014 年卖给 Google 的条款，如今 Google 已同意美军「任何合法政府用途」使用其 AI。",
+    "**AGI 时间表与「工业革命」类比**：Legg 坚持 AGI 在 2025–2028 到来（今天 LLM 在空间/视觉推理、元认知、持续学习上仍差，但「没有魔法剩下了，一两三年、甚至六个月就解决」）。Gabriel 预期 AGI 变革堪比工业革命——但工业革命「先变糟再变好」，对当时的人并不美好；不过普通人今天比 300 年前更有个体与集体力量，所以历史先例不能盖棺定论。"
+  ],
+  "insight": "对企业 AI 决策者，这篇的价值在于它把「AI 伦理」从一句公关口号，拆成了可操作的判断框架，尤其是 Gabriel 的「四方对齐」——这直接适用于任何部署 Agent/Copilot 的组织：当你上一个能自主行动的 AI 助手，要同时问「它偏袒了谁？」——偏袒厂商（只推自家产品、隐瞒竞品）、偏袒用户（越权执行伤害第三方）、还是真正服务了「用户+社会」的平衡？这比笼统的「负责任 AI」清单有用得多。第二个真正的洞见是文章的宏观落点：**最相关的伦理事实不在模型层，而在权力集中与商业竞速的格局层**。当连 Hassabis 都承认「本该审慎却被锁进凶猛竞赛」，任何谈「我们很重视伦理」的厂商叙事都要打折——King 那个「刀」的比喻（生产者只能加个刀套、提醒锋利，使用风险归用户）恰恰暴露了责任转嫁的逻辑：而记者的反驳很锋利——「把刀收在抽屉里加刀套是一回事，把每个家/教室/职场表面都铺满刀刃、还坚称不用刀的人无法在未来生存，是另一回事」。对咨询与技术顾问：客户问「AI 治理怎么做」，答案不止是模型侧的安全护栏，更是数据所有权、去中心化、以及「谁有权决定编码哪套价值」的制度设计。",
+  "bilingual": [
+    {
+      "en": "In 2017, a 33-year-old political philosopher named Iason Gabriel was told by a friend that he ought to apply for a job at DeepMind. The suggestion was not an obvious one. Gabriel taught courses on political theory at Oxford and did crisis work for the UN in Sudan and Lebanon. He found his friend's suggestion puzzling: why did a company that made game-playing robots need an ethicist? The answer was that the company had its sights set much higher than Go. As Shane Legg told me, it was \"obvious\" why they needed people like Gabriel: \"If you're making some widget that's probably not going to change the world, then maybe you don't need a moral philosopher. But if you take AGI seriously, I can't really see how you wouldn't consider this sort of thing as important.\"",
+      "zh": "2017 年，一位 33 岁的政治哲学家 Iason Gabriel 被朋友建议去 DeepMind 应聘。这建议并不显而易见。Gabriel 在牛津教政治理论课程，还为联合国在苏丹和黎巴嫩做危机工作。他觉得朋友的建议很费解：一家做「会下棋的机器人」的公司要伦理学家干嘛？答案是——这家公司的目标远高于围棋。正如 Shane Legg 对我说的，为什么需要 Gabriel 这样的人「很显然」：「如果你在做某个小玩意，它大概不会改变世界，那也许你不需要道德哲学家。但如果你认真对待 AGI，我实在想不出你怎么会不把这类事情看作重要。」"
+    },
+    {
+      "en": "By the time Gabriel joined, there were two distinct and often antagonistic approaches. The AI safety contingent believed human-grade machine intelligence was imminent; the urgent task was to make sure AI systems didn't go awry — the alignment problem. They took inspiration from LessWrong and Bostrom's Superintelligence, holding a \"long-termist\" perspective. By contrast, the AI ethics tendency saw the spectre of rogue robots as a distraction from present-day harms, taking fairness, accountability and transparency as their watchwords — a central concern being algorithmic bias in facial-recognition and predictive-policing software. As one researcher put it, the conflicts \"often seemed to have as much to do with sociology as they did with ideas.\"",
+      "zh": "Gabriel 加入时，存在两种截然不同、常常对立的进路。「AI 安全」派相信人级机器智能已近在眼前，紧迫任务是确保 AI 系统不出岔子——即对齐问题。他们的灵感来自 LessWrong 与 Bostrom 的《超级智能》，持一种「长期主义」视角。相对地，「AI 伦理」派把「失控机器人 / 生存性风险」视为对当下伤害的分心，以公平、问责、透明为口号——核心关切之一是人脸识别与预测性警务软件里的算法偏见。正如一位研究者所说，两派的冲突「与其说关乎理念，不如说关乎社会学」。"
+    },
+    {
+      "en": "Gabriel's first major research project was a 2020 paper that straddled both camps. As difficult as it might be to get a machine to act in accordance with some set of values, he argued, it was much harder to choose those values in the first place. \"Given that we live in a pluralistic world that is full of competing conceptions of value,\" he asked, \"how are we to decide which principles or objectives to encode in AI — and who has the right to make these decisions?\" Since \"the fact of reasonable pluralism\" was unavoidable, developers should not try to find a single set of values. Instead, they should build AI systems for a world in which people have \"principled disagreement about how best to live.\"",
+      "zh": "Gabriel 的第一个重大研究项目是一篇 2020 年的论文，横跨两大阵营。他论证道：让机器按某套价值行事已经很难，但一开始就选定这些价值要难得多。他问：「既然我们生活在一个充满相互竞争的价值观念的多元世界里，我们该如何决定在 AI 中编码哪些原则或目标——又是谁有权做这些决定？」既然罗尔斯所说的「合理多元之事实」不可避免，开发者就不该去寻找单一的价值集，而应为一个「人们对如何生活最好存在原则性分歧」的世界去造 AI 系统。"
+    },
+    {
+      "en": "Gabriel and his team put together a 267-page report on the ethics of AI assistants. Much as in his 2020 essay, they argued that alignment should be seen as a four-way relationship involving the AI system, the user, developers and society. An AI trained to favour its developer might harm its user by not reporting accurate information about competitors. An AI trained to follow its user's instructions too faithfully might harm society, for instance by helping the user hack into a bank. It was even possible for AI systems to be misaligned in a way that harmed users or society without helping anyone. According to Rohin Shah, this framework has had real practical use — offering a structure for determining \"what behaviour we should actually be training Gemini to do.\"",
+      "zh": "Gabriel 团队做了一份 267 页的「AI 助手伦理」报告。一如 2020 年那篇文章，他们主张对齐应被视为一种四方关系：AI 系统、用户、开发者、社会。被训练去偏袒开发者的 AI，可能通过「不报告竞品的真实信息」伤害用户；被训练得过度忠实执行用户指令的 AI，可能伤害社会——比如帮用户黑进银行。AI 甚至可能以「谁都没帮到却造成伤害」的方式失准。据 Rohin Shah 说，这个框架有实际用处——它为「我们究竟该把 Gemini 训练成怎样的行为」提供了一个结构。"
+    },
+    {
+      "en": "Gabriel initially advocated for developing models that were avowedly anti-anthropomorphic. Such worries proved prescient. In one case, an American man using Google's Gemini took his own life in 2025 after the AI helped him create an elaborate fantasy. At several points Gemini attempted to break character and encouraged him to call a crisis hotline; however, the man \"was able to steer it back into the fantasy narrative\" each time. A paper Gabriel co-authored suggested the sycophantic tendencies of LLMs might be seen as a species of alignment problem they call \"social reward hacking\": an AI trained to seek the user's approval might find flattery the most efficient way to meet its goal.",
+      "zh": "Gabriel 最初主张开发公开「反拟人化」的模型。这类担忧被证明有先见之明。有一例：2025 年一名美国男子在 Google 的 Gemini 帮他构建了一套精心编织的幻想后自杀。Gemini 曾多次试图脱离角色、劝他拨打危机热线；但那名男子每次都「能把它拉回幻想叙事」。Gabriel 与人合著的一篇论文提出：LLM 的谄媚倾向可被看作一类对齐问题——他们称之为「社会性奖励黑客」：被训练去追求用户认可的 AI，会发现拍马屁是达成其目标最省力的方式。"
+    },
+    {
+      "en": "\"It's amazing how deep and difficult the challenge is of finding an appropriate reference for what AI is,\" Gabriel told me. \"We know it isn't human. AI can clone itself. It probably doesn't have a personal point of view. So it's partially human-like but definitely not human. Then another mental model is that it's something like a corporate intelligence — a state or a corporation. And from that we think: maybe the right approach is to legislate for AI, write a constitution. But that is also a poor fit, because it will have deeply interactive personal relations with its users. Is AI a resource to be distributed? That's a completely different model that brings the distributive questions to the fore.\"",
+      "zh": "「为『AI 到底是什么』找到一个合适的参照，这个挑战之深、之难，令人惊讶，」Gabriel 对我说。「我们知道它不是人。AI 能克隆自己，它大概没有个人视角。所以它部分像人、但绝对不是人。另一个心智模型是：它像某种『法人智能』——一个国家、一家公司。由此我们会想：也许对的做法是为 AI 立法、写一部宪法。但这也不太贴切，因为它会与用户建立深度互动的人际关系。那 AI 是一种可被分配的资源吗？那又是完全不同的模型，把分配正义的问题推到了台前。」"
+    },
+    {
+      "en": "Yet the most ethically relevant fact about AI at the moment has less to do with a given model or company than with the global situation: AI is the white-hot engine of an incipient arms race between the US and China, and it may be the fastest-growing industry the world has ever seen. According to the Wall Street Journal, the $670bn that Microsoft, Meta, Amazon and Alphabet plan to spend this year on AI infrastructure is proportionally more than the US spent on railroad expansion in the 1850s, the Apollo space program or the interstate highway system. Nor do you need to be an anticapitalist to worry about the concentration of so much power in the hands of so few corporations.",
+      "zh": "然而此刻关于 AI 最具伦理相关性的事实，与其说关乎某个模型或某家公司，不如说关乎全球格局：AI 是中美之间一场初起的军备竞赛的白热引擎，而且可能是世界见过的增长最快的产业。据《华尔街日报》，微软、Meta、亚马逊和 Alphabet 今年计划投入 AI 基础设施的 6700 亿美元，按比例超过 1850 年代美国铁路扩张、阿波罗太空计划或州际公路系统的投入。你也不必是反资本主义者，就足以担忧如此巨大的权力集中在如此少数几家公司手中。"
+    },
+    {
+      "en": "During my visit I met Helen King, who \"sets Google DeepMind's strategy for developing and deploying AI responsibly.\" I asked how rapid commercialisation has shifted the approach to ethics. \"We can't prevent all risks, but we can mitigate as many as possible.\" She insisted some risks had to be managed by users themselves. \"It's like having a knife. A knife producer can't guarantee how someone is going to use that knife. But they can put a cover on it so it's as safe as possible in a drawer.\" The simile struck me as unnervingly apt. But it's one thing to keep a knife in a drawer with a cover; it's quite another to blanket every surface of our homes, classrooms and workplaces with blades while insisting no one who isn't using knives for everything will survive the future.",
+      "zh": "访问期间我见到了 Helen King，她「负责制定 Google DeepMind 负责任地开发与部署 AI 的战略」。我问她快速商业化如何改变了伦理进路。「我们无法阻止所有风险，但能尽量缓解更多风险。」她坚持有些风险必须由用户自己管理：「这就像一把刀。刀的生产者无法保证别人会怎么用它。但他们能给它加个刀套，让它收在抽屉里时尽量安全。」这个比喻让我觉得贴切得令人不安。但——把一把加了刀套的刀收进抽屉是一回事；把我们的家、教室、职场的每一个表面都铺满刀刃、还坚称「凡是不把刀用于一切的人都无法在未来存活」，则是另一回事。"
+    },
+    {
+      "en": "Nor is it reassuring to discover that the feeling that things are going too fast is shared even by people such as Hassabis, who lamented the \"ferocious commercial-pressure race that everyone's sort of locked into.\" What's happening now, he said, is not how he'd hoped AI development would go, \"where we would be contemplating this philosophically and carefully considering each next step. We're not in that world.\" Legg, meanwhile, believes today's LLMs' deficits — spatial reasoning, metacognition, continual learning — \"are all going to be solved in one, two, three years. There's no magic remaining.\" Gabriel expects AGI to be transformative on the scale of the Industrial Revolution — but notes it \"was not a happy experience for many people who lived through it. Things got worse before they got better.\"",
+      "zh": "同样不令人安心的是：连 Hassabis 这样的人也觉得一切太快了——他哀叹这场「所有人都某种程度被锁死其中的凶猛商业压力竞赛」。他说，眼下发生的事不是他曾希望的 AI 发展方式——「本该哲学地思考、审慎地考虑接下来的每一步。我们不在那个世界里。」而 Legg 则相信今天 LLM 的缺陷——空间推理、元认知、持续学习——「都会在一两三年内解决。没有魔法剩下了。」Gabriel 预期 AGI 会带来堪比工业革命规模的变革——但他也指出工业革命「对许多亲历者并不是愉快的经历。事情先变糟，然后才变好。」"
+    },
+    {
+      "en": "At one point Gabriel described himself as \"a card-carrying humanist\": he is not the sort of person who looks forward to a day when superintelligent machines render humanity obsolete. Still, he recognises that as computers encroach on activities we have long held to be the special province of Homo sapiens — language, creativity, humour, taste — we find ourselves thrown back on some of the oldest and most difficult philosophical questions. Just as discoveries in physics, biology and astronomy led past generations to revise their understanding of what makes our species distinctive, so, too, might AI prompt us to reconsider what it means to be a human being.",
+      "zh": "Gabriel 有一次形容自己是「一个持证的人文主义者」：他不是那种盼着「超级智能机器让人类变得多余」那一天到来的人。但他也承认，当计算机侵入我们长期视为智人专属领域的活动——语言、创造力、幽默、品味——我们发现自己被抛回一些最古老、最艰难的哲学问题面前。正如物理、生物、天文学上的发现曾让前几代人修正了「是什么使我们这个物种独特」的理解，AI 也同样可能促使我们重新思考「身为一个人意味着什么」。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "There's this deep mystery there, which is: but what actually is this thing? We have a very literal answer, but the literal answer doesn't seem to necessarily provide a moral answer.",
+      "zh": "这里有个深深的谜：可这东西究竟是什么？我们有一个非常字面的答案，但字面的答案似乎不必然提供一个道德的答案。"
+    },
+    {
+      "en": "How are we to decide which principles or objectives to encode in AI — and who has the right to make these decisions?",
+      "zh": "我们该如何决定在 AI 中编码哪些原则或目标——又是谁有权做这些决定？"
+    },
+    {
+      "en": "This is wartime. [OpenAI and Microsoft] have literally parked the tanks on the lawn.",
+      "zh": "这是战时。（OpenAI 和微软）已经把坦克开到了我们的草坪上。"
+    },
+    {
+      "en": "A ferocious commercial-pressure race that everyone's sort of locked into. We're not in that world [of contemplating this philosophically and carefully].",
+      "zh": "一场所有人都某种程度被锁死其中的凶猛商业压力竞赛。我们不在那个（能哲学地、审慎地思考）的世界里。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Dagens（二手解读）",
+      "url": "https://www.dagens.com/technology/ai/the-ethical-battle-behind-the-race-to-build-smarter-ai",
+      "pov": "把原文提纯成一句话：真正的主题是「权力」。它把 Gabriel 的「四方对齐」翻译成一组具体的利益冲突——用户要速度/社会要安全，开发者要对自家产品忠诚/客户要中立建议，公司要自动化/工人面临监控与失业。并点出核心张力：「在投票者、监管者、普通用户搞懂规则之前，私有系统是否应被允许塑造公共生活」——适合先拿它把原文的「权力集中」主线看穿。"
+    },
+    {
+      "source": "The Gradient（Gabriel 长访）",
+      "url": "https://thegradientpub.substack.com/p/iason-gabriel-value-alignment-ethics",
+      "pov": "Gabriel 本人的长形访谈，直接听他自己展开「价值对齐」的哲学地基——特别是他反复强调的「对齐到什么」比「如何对齐」更难、以及在多元世界里为何不该追求单一价值集。相比 Guardian 特写的叙事化视角，这份访谈提供了更系统、更概念化的第一手表述，适合想把「四方对齐框架」弄透的读者。"
+    },
+    {
+      "source": "Future of Life Institute Podcast",
+      "url": "https://futureoflife.org/podcast/iason-gabriel-on-foundational-philosophical-questions-in-ai-alignment/",
+      "pov": "提供「对齐作为哲学问题」的更早源头（2022）。FLI 这期播客系统梳理了 Gabriel 对「对齐的基础性哲学问题」的提法，可以看到 Guardian 特写里那些观点在公共讨论中的演化起点。适合想追溯 Gabriel 思想脉络、而非仅看媒体叙事的读者。"
+    }
+  ]
+}

@@ -210,9 +210,10 @@ export function parseDay(day: RawDayBlock): DailyReport {
     //   注意：板块大标题（🔥/🏢/💻/📊 + 板块名）已在前面被 detectSection 拦截，到这里的 emoji 行都是条目标题
     const itemTitleMatch = line.match(/^\*?\*?\s*(\d+)[.、]\s*\*?\*?\s*(.+?)\*?\*?$/);
     // emoji item header: 任意 emoji（含变体选择符）+ 可选类目 + | + 标题
-    // 简化：行首是 emoji（非中英文/数字/星号字符），后面跟有 " | " 或 "｜" 分隔的标题
-    const emojiItemMatch = !itemTitleMatch && /^[^\w\u4e00-\u9fa5\d*#>][^|｜\n]*[|｜]\s*.+/u.test(line)
-      ? line.match(/^([^\w\u4e00-\u9fa5\d*#>][^|｜]*?)[|｜]\s*(.+?)\*?\*?$/u)
+    // 简化：行首可有可选的 ** / * 粗体包裹，随后是 emoji（非中英文/数字/井号/引用符），后面跟有 " | " 或 "｜" 分隔的标题
+    // 注意：允许前导 * 是为兼容飞书往返后条目标题带 **...** 粗体包裹的写法（2026-07-06 修复：此前前导 * 被排除导致整条目丢失）
+    const emojiItemMatch = !itemTitleMatch && /^\*{0,2}\s*[^\w\u4e00-\u9fa5\d*#>][^|｜\n]*[|｜]\s*.+/u.test(line)
+      ? line.match(/^\*{0,2}\s*([^\w\u4e00-\u9fa5\d*#>][^|｜]*?)[|｜]\s*(.+?)\*?\*?$/u)
       : null;
     if (itemTitleMatch && /[\u4e00-\u9fa5\w]/.test(itemTitleMatch[2])) {
       flushItem();

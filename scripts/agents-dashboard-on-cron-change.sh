@@ -30,7 +30,27 @@ fi
 # 去抖静置：等同批写入落定，再统一刷新一次
 sleep "$SETTLE"
 
+# push 冷却：距上次 push 不足 10 分钟则等到满 10 分钟再刷新（持锁期间后续触发自动吸收）
+# 背景：短时间连续 push 会让 GitHub Pages 部署互顶，频发 "Deployment failed, try again later"
+STAMP=/tmp/shrimp-dash-last-push
+COOLDOWN=600
+if [ -f "$STAMP" ]; then
+  LAST=$(stat -c %Y "$STAMP" 2>/dev/null || echo 0)
+  NOW=$(date +%s)
+  ELAPSED=$((NOW - LAST))
+  if [ "$ELAPSED" -lt "$COOLDOWN" ]; then
+    WAIT=$((COOLDOWN - ELAPSED))
+    echo "[$(date '+%F %T')] cooldown: last push ${ELAPSED}s ago, wait ${WAIT}s" >> "$LOG"
+    sleep "$WAIT"
+  fi
+fi
+
 echo "[$(date '+%F %T')] cron-state changed -> dashboard refresh" >> "$LOG"
 cd "$REPO" || exit 1
 bash scripts/agents-dashboard-deploy.sh >> "$LOG" 2>&1
-echo "[$(date '+%F %T')] refresh done (rc=$?)" >> "$LOG"
+RC=$?
+# 仅当真正 push 了才刷新冷却戳（无变化 skip commit 不计入冷却）
+if tail -3 "$LOG" | grep -q "pushed — Pages will rebuild"; then
+  touch "$STAMP"
+fi
+echo "[$(date '+%F %T')] refresh done (rc=$RC)" >> "$LOG"

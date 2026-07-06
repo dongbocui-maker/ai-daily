@@ -12,7 +12,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # 官方 Pages 模板建议 false：部署排队串行，避免并发部署互顶导致 "Deployment failed, try again later"
+  cancel-in-progress: false
 
 jobs:
   build:

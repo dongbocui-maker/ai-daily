@@ -174,8 +174,6 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 /* 响应式：电脑双列保持设计图布局，手机自适应单列竖排（保留 HUD 风格） */
 @media(max-width:768px){
   body{padding:14px}
-  .trend-sec{overflow-x:clip} /* 裁掉隐藏 tooltip 撑宽页面（手机无 hover） */
-  .panel{overflow-x:auto} /* 表格过宽时面板内滚动，不撑宽整页 */
   .logo{font-size:20px}
   .summary{grid-template-columns:1fr;gap:12px;margin-bottom:18px}
   .stat .v{font-size:22px}
@@ -377,6 +375,11 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   .mb-st.off{background:#555f70}
   /* 窄屏 DIRECT 移到徽章底部居中 */
   .arch-direct{top:auto;bottom:-8px;right:50%;transform:translateX(50%);font-size:6.5px;padding:1px 6px}
+}
+/* 手机端防撑宽：必须放样式末尾，晚于上方 .trend-sec{overflow:visible} 与 .panel 定义 */
+@media(max-width:768px){
+  .trend-sec{overflow-x:clip} /* 裁掉隐藏 tooltip 撑宽页面（手机无 hover） */
+  .panel{overflow-x:auto} /* 表格过宽时面板内滚动，不撑宽整页 */
 }
 </style>
 </head>

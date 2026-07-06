@@ -1,0 +1,98 @@
+flowchart TD
+    Start([周日 09:00 定时触发]) --> C1
+
+    subgraph CRON["① 候选采集 · Agent=MK2 · cron d6c0bf92 · isolated"]
+        C1[抓取本周精读候选<br/>每条 URL paywall 预检<br/>标 ✅免费/💰付费墙/🔒部分]
+        C1 --> C2[去重校验 manifest<br/>落盘候选清单]
+        C2 --> C3[📤 飞书推送候选清单给 Jason]
+    end
+
+    C3 --> H1
+
+    subgraph HUMAN1["② 人工决策 · Human in the Loop = Jason"]
+        H1{{Jason 审阅候选}}
+        H1 -->|选定要精读的文章| H2[确认精读清单]
+        H2 --> H3{{是否指定做成播客?}}
+    end
+
+    H3 --> ORIG
+
+    subgraph MAIN1["③ 精读生产 · Agent=main 调度 / MK2 执行"]
+        ORIG[抓取原文<br/>fetch-original-texts.mjs]
+        ORIG --> ORIGCHK{原文抓到?}
+        ORIGCHK -->|否| ASKORIG[📤 向 Jason 要原文<br/>收到前不写 JSON]
+        ASKORIG -.Jason 提供原文.-> WRITE
+        ORIGCHK -->|是| WRITE[写精读 JSON<br/>中英对照 bilingual<br/>secondaryReads 观点提炼]
+    end
+
+    WRITE --> QC1
+
+    subgraph QCLOOP["④ QC 审校循环 · Agent=MK46 只审不改"]
+        QC1[MK46 审精读 JSON]
+        QC1 --> QCV{verdict?}
+        QCV -->|REJECT / critical / high| ESC[📤 上报 Jason 拍板]
+        QCV -->|APPROVE_WITH_WARNINGS<br/>medium/low| FIX[main 派 MK2 修]
+        FIX --> QC2{含 critical/high?<br/>需复审?}
+        QC2 -->|是·第2轮| QC1
+        QC2 -->|否·仅medium/low| PASS
+        QCV -->|APPROVE| PASS[✅ QC 通过]
+        ESC -.Jason 决定改/放行.-> PASS
+    end
+
+    PASS --> PUB1
+
+    subgraph PUBLISH["⑤ 精读上线 · Agent=main/MK2"]
+        PUB1[commit + push 站点]
+        PUB1 --> PUB2[GitHub Actions build<br/>→ Pages 部署]
+        PUB2 --> PUB3[✅ 精读文章上线<br/>/reads/slug/]
+    end
+
+    PUB3 --> BRANCH{这篇要做播客?}
+    BRANCH -->|否| DONE_READ([📤 询问Jason是否补做播客<br/>精读流程结束])
+    BRANCH -->|是·Jason已点名| LOOP
+
+    subgraph PODLOOP["⑥ 播客交付 Loop · Agent=main · 事件驱动 · 失败自愈"]
+        direction TB
+        L0[调 NotebookLM Skill<br/>podcast-pipeline enqueue]
+        L0 --> L1[worker 状态机推进<br/>source→audio→download→COS]
+        L1 --> S1{Step1 生成+写回JSON?}
+        S1 -->|失败| R1[退避重试]
+        R1 --> S1
+        S1 -->|OK| S2{Step2 COS m4a 200?}
+        S2 -->|失败| R2[退避重试]
+        R2 --> S2
+        S2 -->|OK| S3{Step3 push 成功?}
+        S3 -->|失败| R3[rebase恢复+重试]
+        R3 --> S3
+        S3 -->|OK| S4{Step4 线上页面200<br/>含播放器?}
+        S4 -->|失败·Pages构建中| R4[轮询退避]
+        R4 --> S4
+        S4 -->|OK| S5{Step5 飞书推送成功?}
+        S5 -->|失败| R5[退避重试]
+        R5 --> S5
+        S5 -->|OK| L9[记账 agent-actions]
+        R1 -.超最大轮次.-> ESC2
+        R2 -.超最大轮次.-> ESC2
+        R3 -.超最大轮次.-> ESC2
+        R4 -.超最大轮次.-> ESC2
+        R5 -.超最大轮次.-> ESC2
+        ESC2[📤 升级报 Jason<br/>附卡点]
+    end
+
+    L9 --> DONE_POD([✅ 播客上线<br/>📤 飞书推送 Jason 收听])
+
+    classDef cronBox fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+    classDef humanBox fill:#fff3e0,stroke:#e65100,color:#bf360c
+    classDef agentBox fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    classDef qcBox fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef loopBox fill:#fce4ec,stroke:#c2185b,color:#880e4f
+    classDef doneNode fill:#c8e6c9,stroke:#2e7d32,color:#1b5e20
+    classDef escNode fill:#ffcdd2,stroke:#c62828,color:#b71c1c
+
+    class C1,C2,C3 cronBox
+    class H1,H2,H3,ORIG,ORIGCHK,ASKORIG,WRITE agentBox
+    class H1,H2,H3 humanBox
+    class QC1,QCV,FIX,QC2,PASS qcBox
+    class L0,L1,S1,S2,S3,S4,S5,R1,R2,R3,R4,R5,L9 loopBox
+    class DONE_READ,DONE_POD doneNode
+    class ESC,ESC2 escNode

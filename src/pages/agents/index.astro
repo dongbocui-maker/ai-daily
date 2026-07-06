@@ -250,6 +250,18 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .cap-legend .ldot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#39d98a;vertical-align:middle;margin:0 3px;box-shadow:0 0 6px #39d98a}
 .cap-ov{position:fixed;inset:0;background:rgba(3,6,10,.72);backdrop-filter:blur(3px);display:none;z-index:50}
 .cap-ov.on{display:block}
+/* CRON QUEUE 精读行可点击 + 流程图 overlay */
+.mq tr.has-flow{cursor:pointer;transition:background .15s}
+.mq tr.has-flow:hover{background:rgba(63,201,255,.08)}
+.mq tr.has-flow:hover .nm{color:var(--arc)}
+.flow-badge{display:inline-block;margin-left:7px;font-family:'Orbitron',monospace;font-size:8px;letter-spacing:1px;color:var(--arc);border:1px solid rgba(63,201,255,.5);border-radius:3px;padding:1px 4px;vertical-align:middle;box-shadow:0 0 6px rgba(0,229,255,.25)}
+.flow-ov{position:fixed;inset:0;background:rgba(3,6,10,.85);backdrop-filter:blur(4px);display:none;z-index:60}
+.flow-ov.on{display:block}
+.flow-pop{display:none;position:fixed;inset:0;z-index:61;place-items:center;padding:4vh 3vw;cursor:zoom-out}
+.flow-pop.on{display:grid}
+.flow-pop img{max-width:96vw;max-height:92vh;border:1px solid #28384f;border-radius:12px;box-shadow:0 24px 70px rgba(0,0,0,.7),0 0 40px rgba(0,229,255,.12);background:#05070a;cursor:default}
+.flow-x{position:fixed;top:3vh;right:3vw;z-index:62;background:rgba(11,15,23,.9);border:1px solid #28384f;color:var(--dim);border-radius:8px;padding:7px 12px;font-family:'Orbitron',monospace;font-size:13px;cursor:pointer;transition:all .15s}
+.flow-x:hover{color:var(--arc);border-color:var(--arc);box-shadow:0 0 12px rgba(0,229,255,.3)}
 .cap-pop{display:none;position:fixed;top:7vh;left:50%;transform:translateX(-50%);width:min(820px,92vw);max-height:84vh;overflow:auto;background:#0b0f17;border:1px solid #28384f;border-radius:12px;padding:20px;z-index:51;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .cap-pop.on{display:block}
 .cp-head{display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron';font-size:14px;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:11px;margin-bottom:15px}
@@ -606,8 +618,11 @@ function render(DATA){
     const nameUp = _esc(String(c.name||'').toUpperCase());
     const nextMs = c.next_run_ms || 0;
     const nx = mqCountdown(nextMs);
-    return `<tr class="${c.core?'core':''}">`+
-      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${nameUp}</span><span class="ag">${ag}</span></span><span class="tfreq">${freqEn}</span></td>`+
+    // 精读候选 cron：可点击弹出全链路流程图
+    const hasFlow = c.name === 'ai-daily-reads-candidates';
+    const flowAttr = hasFlow ? ' class="has-flow" onclick="flowOpen()" title="点击查看精读→播客全链路流程"' : (c.core?' class="core"':'');
+    return `<tr${flowAttr}>`+
+      `<td><span class="tname"><span class="tdot ${dotCls}"></span>${star}<span class="nm">${nameUp}${hasFlow?'<span class="flow-badge">FLOW</span>':''}</span><span class="ag">${ag}</span></span><span class="tfreq">${freqEn}</span></td>`+
       `<td class="r tnext${nx.soon?' soon':''}" data-next="${nextMs}">${nx.txt}</td>`+
       `<td class="r"><span class="tst ${stCls}">${stTxt}</span></td>`+
     `</tr>`;
@@ -746,7 +761,9 @@ function render(DATA){
       </div>
     </div>
     <div class="cap-ov" id="capOv" onclick="capClose()"></div>
-    <div class="cap-pop" id="capPop"></div>`;
+    <div class="cap-pop" id="capPop"></div>
+    <div class="flow-ov" id="flowOv" onclick="flowClose()"></div>
+    <div class="flow-pop" id="flowPop" onclick="flowClose()"><button class="flow-x" onclick="flowClose()" title="关闭">✕</button><img src="/agents/reads-podcast-flow.png" alt="精读→播客全链路流程" onclick="event.stopPropagation()" /></div>`;
 
   // 渲染后用真实柱顶坐标绘制趋势曲线（100% 对齐，不受 gap/padding 影响）
   // Topology：首次加载默认激活 MK2；后续数据刷新不覆盖用户当前点击态。
@@ -939,7 +956,19 @@ function capClose(){
 // Astro <script define:vars> 是模块作用域，inline onclick="capOpen(..)" 找不到模块内函数 → 必须挂到 window
 window.capOpen = capOpen;
 window.capClose = capClose;
-document.addEventListener('keydown',e=>{if(e.key==='Escape')capClose();});
+// CRON QUEUE 精读行 → 全链路流程图 overlay（点背景/ESC 关闭）
+function flowOpen(){
+  document.getElementById('flowOv').classList.add('on');
+  document.getElementById('flowPop').classList.add('on');
+}
+function flowClose(){
+  const ov=document.getElementById('flowOv'); const pop=document.getElementById('flowPop');
+  if(ov) ov.classList.remove('on');
+  if(pop) pop.classList.remove('on');
+}
+window.flowOpen = flowOpen;
+window.flowClose = flowClose;
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){capClose();flowClose();}});
 
 function drawTrendCurve(DATA){
   const chart=document.querySelector('.trend-chart');

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://roadmap.sh/"><img src="public/img/brand.png" height="128"></a>
   <h2 align="center"><a href="https://roadmap.sh">roadmap.sh</a></h2>
-  <p align="center">Community driven roadmaps, articles and resources for developers<p>
+  <p align="center">Community-driven roadmaps, articles and resources for developers<p>
   <p align="center">
     <a href="https://roadmap.sh/roadmaps">
     	<img src="https://img.shields.io/badge/%E2%9C%A8-Roadmaps%20-0a0a0a.svg?style=flat&colorA=0a0a0a" alt="roadmaps" />
@@ -50,6 +50,7 @@ Here is the list of available roadmaps with more being actively worked upon.
 - [Data Structures and Algorithms Roadmap](https://roadmap.sh/datastructures-and-algorithms)
 - [AI and Data Scientist Roadmap](https://roadmap.sh/ai-data-scientist)
 - [AI Engineer Roadmap](https://roadmap.sh/ai-engineer)
+- [Network Engineer Roadmap](https://roadmap.sh/network-engineer)
 - [AWS Roadmap](https://roadmap.sh/aws)
 - [Cloudflare Roadmap](https://roadmap.sh/cloudflare)
 - [Linux Roadmap](https://roadmap.sh/linux)
@@ -64,6 +65,7 @@ Here is the list of available roadmaps with more being actively worked upon.
 - [Engineering Manager Roadmap](https://roadmap.sh/engineering-manager)
 - [QA Roadmap](https://roadmap.sh/qa)
 - [Python Roadmap](https://roadmap.sh/python) 
+- [Python for Data Analysis Roadmap](https://roadmap.sh/python-data-analysis) 
 - [Django Roadmap](https://roadmap.sh/django)
 - [Software Architect Roadmap](https://roadmap.sh/software-architect)
 - [Game Developer Roadmap](https://roadmap.sh/game-developer) / [Server Side Game Developer](https://roadmap.sh/server-side-game-developer)
@@ -110,6 +112,7 @@ Here is the list of available roadmaps with more being actively worked upon.
 - [Ruby Roadmap](https://roadmap.sh/ruby)
 - [Ruby on Rails Roadmap](https://roadmap.sh/ruby-on-rails)
 - [Scala Roadmap](https://roadmap.sh/scala)
+- [Forward Deployed Engineer Roadmap](https://roadmap.sh/forward-deployed-engineer)
 
 
 There are also interactive best practices:

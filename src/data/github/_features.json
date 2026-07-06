@@ -22,14 +22,14 @@
   },
   "mattpocock/skills": {
     "features": [
-      "提供小巧、易适配、可组合的 agent skills，兼容任意模型",
-      "通过 skills.sh 一键安装并配置到各类 coding agent",
+      "提供小巧、可组合、易于适配的 agent skills，适用于任意 model",
+      "通过 skills.sh 一行命令安装并配置 skills",
       "支持 GitHub、Linear 或本地文件作为 issue tracker",
-      "提供 /grill-me 等技能，主动追问需求避免理解偏差",
-      "基于 /triage 标签实现工单分类管理"
+      "提供 grilling session 让 agent 主动追问需求以消除误解",
+      "适配 Claude Code、Codex 等多种 coding agent"
     ],
-    "sourceHash": "-70b24806",
-    "ts": 1777623940772
+    "sourceHash": "1f200a4d",
+    "ts": 1783303222699
   },
   "obra/superpowers": {
     "features": [
@@ -140,14 +140,14 @@
   },
   "Alishahryar1/free-claude-code": {
     "features": [
-      "将 Claude Code 的 Anthropic Messages API 流量代理到多种后端模型",
-      "支持 NVIDIA NIM、OpenRouter、DeepSeek、LM Studio、llama.cpp、Ollama 六种 provider",
-      "支持按模型路由：Opus、Sonnet、Haiku 可分发至不同 provider",
-      "原生支持 Claude Code 的 /model 选择器及 /v1/models 端点",
-      "可选 Discord/Telegram bot 封装与本地 Whisper 语音转录"
+      "将 Claude Code、Codex CLI 及其扩展路由至任意 provider 的代理",
+      "支持通过同一代理选用免费、付费或本地模型",
+      "兼容 Anthropic Messages API 与 OpenAI Responses API 协议",
+      "提供 Admin UI 管理配置与模型目录",
+      "支持 Claude Code 与 Codex 原生 /model 选择器"
     ],
-    "sourceHash": "-53793d04",
-    "ts": 1777624739079
+    "sourceHash": "-a672377",
+    "ts": 1783303309633
   },
   "huggingface/ml-intern": {
     "features": [
@@ -366,13 +366,13 @@
   },
   "rtk-ai/rtk": {
     "features": [
-      "过滤压缩命令输出，将 LLM token 消耗降低 60-90%",
-      "单一 Rust 二进制 CLI 代理，开销低于 10ms",
-      "支持 100+ 常见命令，包括 git、cargo、pytest、docker 等",
-      "针对 Claude Code 等 LLM 编码会话优化 context 占用"
+      "高性能 CLI proxy，减少 LLM token 消耗 60-90%",
+      "在输出到达 LLM context 前过滤并压缩命令输出",
+      "单一 Rust 二进制文件，支持 100+ 命令，开销小于 10ms",
+      "支持 Homebrew、Cargo 及脚本一键安装"
     ],
-    "sourceHash": "5d166d08",
-    "ts": 1777624853973
+    "sourceHash": "-1fd4cbe2",
+    "ts": 1783303252377
   },
   "ComposioHQ/awesome-codex-skills": {
     "features": [
@@ -386,14 +386,9 @@
     "ts": 1777624858863
   },
   "ultraworkers/claw-code": {
-    "features": [
-      "Rust 实现的 `claw` CLI agent harness",
-      "提供 `claw doctor` 健康检查及会话管理工作流",
-      "支持容器优先（container-first）的运行流程",
-      "包含 parity-harness 用于跟踪 Rust 移植对齐状态"
-    ],
-    "sourceHash": "-1ee76107",
-    "ts": 1777624865827
+    "features": [],
+    "sourceHash": "-6ad9c236",
+    "ts": 1783303217973
   },
   "affaan-m/everything-claude-code": {
     "features": [
@@ -430,66 +425,67 @@
   },
   "VoltAgent/awesome-design-md": {
     "features": [
-      "收录 69+ 个真实网站提取的 DESIGN.md 文件，供 AI agent 直接使用",
-      "提供 plain-text 设计系统文档，让 AI agent 生成一致的 UI",
-      "支持按需求请求特定网站的 DESIGN.md，含私有定制",
-      "覆盖 AI、LLM 等多类开发者导向网站的设计规范集合"
+      "精选真实网站提取的即用型 DESIGN.md 文件集合",
+      "DESIGN.md 是供 AI agent 读取以生成一致 UI 的设计系统文档",
+      "将 DESIGN.md 放入项目根目录即可让 AI coding agent 理解 UI 风格",
+      "支持为指定网站请求专属 DESIGN.md 文件",
+      "内含分析后的设计模式、tokens 与规则，实现高质量 UI 生成"
     ],
-    "sourceHash": "73c37459",
-    "ts": 1777624889372
+    "sourceHash": "-4c886f04",
+    "ts": 1783303230028
   },
   "paperclipai/paperclip": {
     "features": [
-      "编排 AI agent 团队运营公司的开源 Node.js 服务器与 React UI",
-      "支持自带 agent，兼容 OpenClaw、Claude Code、Codex、Cursor 等多种 provider",
-      "通过统一 dashboard 跟踪 agent 的工作进度与成本开销",
-      "提供组织架构、预算管理、治理与目标对齐等业务级编排能力",
-      "Clipmart 即将推出，可一键下载并运行预构建的公司模板"
+      "开源编排平台，协同管理 AI agents 团队运行业务",
+      "通过统一 dashboard 分配目标、追踪工作进度与成本",
+      "支持接入任意 provider 的 agent，如 OpenClaw、Claude Code、Codex、Cursor",
+      "基于 Node.js 服务端与 React UI 构建",
+      "提供 org charts、预算、治理与 agent 协调能力"
     ],
-    "sourceHash": "-3dbe4b5c",
-    "ts": 1777624894354
+    "sourceHash": "60805c83",
+    "ts": 1783303248433
   },
   "koala73/worldmonitor": {
     "features": [
-      "AI 驱动的实时全球新闻聚合与情报监控",
-      "地缘政治动态与基础设施追踪一体化态势感知界面",
-      "提供 Tech、Finance、Commodity 等多个垂直领域变体",
-      "支持 Windows、macOS、Linux 跨平台桌面客户端"
+      "AI 驱动的新闻聚合与地缘政治实时监控",
+      "统一的态势感知界面，整合全球情报与基础设施追踪",
+      "提供 Tech、Finance、Commodity、Energy 等多种主题变体",
+      "可通过 npm 安装并支持 CLI 使用",
+      "集成 MCP server，支持 AI agent 接入"
     ],
-    "sourceHash": "-523e2330",
-    "ts": 1777624898206
+    "sourceHash": "-7ad5e546",
+    "ts": 1783303257162
   },
   "JuliusBrussee/caveman": {
     "features": [
-      "让 Claude Code/Codex agent 以 caveman 风格输出，节省约 75% token",
-      "支持多档强度级别（Lite 等）调节简洁程度",
-      "内置文言文模式，进一步压缩输出 token",
-      "提供 terse commits、一行 review、终身统计等 caveman skills",
-      "压缩工具可削减约 46% 输入 token"
+      "让 AI coding agent 用精简语言回复，节省 65% output tokens",
+      "一次安装即兼容 Claude Code、Codex、Cursor 等 30+ agents",
+      "保持 code、commands、errors 字节级精确无损",
+      "作为 skill/plugin 集成到各类 AI coding agent"
     ],
-    "sourceHash": "-20b513d9",
-    "ts": 1777624903402
+    "sourceHash": "34c088ea",
+    "ts": 1783303235358
   },
   "MemPalace/mempalace": {
     "features": [
-      "以本地优先方式逐字存储对话历史，并通过语义搜索检索，无需 API 调用",
-      "可插拔检索后端，默认使用 ChromaDB，支持自定义 backend 接入",
-      "结构化索引：以 wings、rooms、drawers 组织人物、项目和内容，实现作用域搜索",
-      "提供 CLI 工具支持挖掘项目文件、Claude Code 会话并加载上下文",
-      "在 LongMemEval 基准上取得 96.6% R@5 原始召回率，hybrid 模式达 98.4%"
+      "以逐字文本存储对话历史，通过语义搜索检索，不做摘要或改写",
+      "采用 wings/rooms/drawers 结构化索引，支持范围化检索",
+      "检索层可插拔，默认 ChromaDB，可替换其他 backend",
+      "local-first 设计，数据不出本机，零 API 调用",
+      "提供 CLI 及可运行 MCP server 的 Docker 镜像"
     ],
-    "sourceHash": "558c69bd",
-    "ts": 1777624908899
+    "sourceHash": "-5336455e",
+    "ts": 1783303266462
   },
   "VoltAgent/awesome-openclaw-skills": {
     "features": [
-      "按类别整理 5200+ 社区构建的 OpenClaw skills 集合",
-      "支持通过 ClawHub CLI 一键安装 skills",
-      "提供全局与工作区两种 skill 手动安装路径",
-      "可直接粘贴 GitHub 仓库链接让 assistant 自动配置 skill"
+      "精选 5300+ 社区构建的 OpenClaw skills 并按分类整理",
+      "支持通过 OpenClaw CLI 或 ClawHub CLI 安装 skills",
+      "支持全局、workspace 或手动方式安装 skills",
+      "skills 来源于 ClawHub 公共 registry 并经筛选去除垃圾和恶意内容"
     ],
-    "sourceHash": "-289e9361",
-    "ts": 1777624918817
+    "sourceHash": "fb8743d",
+    "ts": 1783303271673
   },
   "chenglou/pretext": {
     "features": [
@@ -504,25 +500,22 @@
   },
   "HKUDS/nanobot": {
     "features": [
-      "超轻量开源 AI agent，核心循环精简易读",
-      "支持 Feishu、Discord、Slack、Teams 等多平台聊天通道",
-      "集成 MCP、记忆系统与多种 LLM provider（如 DeepSeek、Hugging Face）",
-      "提供 Olostep 网页搜索与自然语言 cron 提醒等实用工具",
-      "支持从本地部署到长期运行的个人 agent 全流程"
+      "最小化 agent framework，基于 Python ≥3.11 构建",
+      "提供 nanobot-ai PyPI 包，可快速安装使用",
+      "支持多语言文档，覆盖十余种语言"
     ],
-    "sourceHash": "-1a68ed85",
-    "ts": 1777624930639
+    "sourceHash": "2d212520",
+    "ts": 1783303279976
   },
   "santifer/career-ops": {
     "features": [
-      "将 AI coding CLI 转化为求职指挥中心，自动化整个申请流程",
-      "基于多 agent 系统智能评估职位匹配度，筛选合适的 offer",
-      "为每个职位生成个性化 CV 与申请材料",
-      "支持 Claude Code、OpenCode、Gemini CLI 等多种 AI CLI",
-      "使用 Playwright 自动抓取职位列表，替代手动表格追踪"
+      "multi-agent 系统自动评估海量招聘职位并筛选目标公司",
+      "基于个人背景生成个性化定制 CV",
+      "支持 14 种语言的多语言界面",
+      "开源的 AI 驱动求职工作流工具"
     ],
-    "sourceHash": "-54798395",
-    "ts": 1777624935989
+    "sourceHash": "69fa37f4",
+    "ts": 1783303261657
   },
   "safishamsi/graphify": {
     "features": [],
@@ -531,14 +524,14 @@
   },
   "sickn33/antigravity-awesome-skills": {
     "features": [
-      "提供 1441+ 可安装的 agentic SKILL.md playbook 库",
-      "支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手",
-      "通过 npx 一键安装，可搜索的技能与 bundle 目录",
-      "提供基于角色的 bundle 和工作流驱动的执行模式",
-      "涵盖规划、编码、调试、测试、安全审查、基础设施等场景"
+      "提供 1,901+ 可安装的 agentic SKILL.md 复用 playbook 库",
+      "支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多款 AI coding assistant",
+      "通过 npm installer 快速安装技能库与 plugin bundle",
+      "提供可搜索的技能、bundle 与 workflow 目录",
+      "覆盖规划、编码、调试、测试、安全审查、基础设施等任务场景"
     ],
-    "sourceHash": "7c510d04",
-    "ts": 1777624943645
+    "sourceHash": "-416cadac",
+    "ts": 1783303294666
   },
   "ZhuLinsen/daily_stock_analysis": {
     "features": [
@@ -553,47 +546,45 @@
   },
   "HKUDS/CLI-Anything": {
     "features": [
-      "通过 CLI 让任意软件具备 agent-native 能力，适配 Cursor、Claude Code 等 agent",
-      "提供 CLI-Hub，可一键浏览、安装和管理社区构建的 CLI",
-      "支持生成 CLI 配合 preview、live preview 和 trajectory loop 产出实际产物",
-      "覆盖 CAD、3D 场景、图表、游戏、字幕等 18 类应用 demo",
-      "内置 2,269 项测试，支持 JSON 与人类可读双输出格式"
+      "通过 CLI 让 AI agent 直接操作各类软件与服务",
+      "CLI-Hub 支持一键 install、浏览与管理社区构建的 CLI",
+      "内置 preview、live preview 及 trajectory loop 生成真实产物",
+      "支持 CAD、3D 场景、图表、字幕等多种应用场景",
+      "输出兼容 JSON 与人类可读格式，覆盖 unit 与 e2e 测试"
     ],
-    "sourceHash": "246f1820",
-    "ts": 1777624954405
+    "sourceHash": "283bbd88",
+    "ts": 1783303287496
   },
   "Yeachan-Heo/oh-my-claudecode": {
     "features": [
-      "为 Claude Code 提供零学习曲线的多 agent 编排能力",
-      "支持 marketplace/plugin 与 npm CLI 两种安装方式",
-      "提供 /setup、/omc-setup 等 slash 命令一键配置工作流",
-      "内置 omc 命令行工具，便于终端调用与管理",
-      "多语言文档支持（英、中、韩、日、西、越、葡）"
+      "为 Claude Code 提供 multi-agent orchestration，零学习成本",
+      "支持 Marketplace/plugin 方式安装为 Claude Code 插件",
+      "通过 CLI 和 slash 命令使用编排工作流",
+      "同一编排体验也支持 OpenAI Codex CLI"
     ],
-    "sourceHash": "1e04ef5e",
-    "ts": 1777624959014
+    "sourceHash": "-5f84df31",
+    "ts": 1783303320765
   },
   "vercel-labs/agent-browser": {
     "features": [
-      "AI agent 专用浏览器自动化 CLI，基于原生 Rust 构建，速度快",
-      "通过 accessibility tree 快照获取元素 ref，支持按 ref 点击、填充、读取",
-      "兼容传统 CSS selector 与 role/name 等定位方式",
-      "自动下载并管理 Chrome for Testing，无需 Playwright 或 Node.js",
-      "支持 npm、Homebrew、Cargo 多种安装方式，并提供一键升级"
+      "为 AI agent 提供浏览器自动化的原生 Rust CLI",
+      "从 Chrome for Testing 下载并自动检测已有浏览器",
+      "通过 accessibility tree 快照和 ref 定位元素",
+      "支持 ref 与传统 CSS selector 两种元素选择方式",
+      "元素被遮挡时点击提前失败并报告遮挡元素"
     ],
-    "sourceHash": "-273e7f77",
-    "ts": 1777624964454
+    "sourceHash": "4f89b29c",
+    "ts": 1783303316312
   },
   "zeroclaw-labs/zeroclaw": {
     "features": [
-      "单一 Rust 二进制的 agent runtime，本地运行并自管数据与密钥",
-      "支持 Anthropic、OpenAI、Ollama 等 20+ LLM provider 接入",
-      "集成 Discord、Telegram、Matrix、邮件、语音、Webhook 等 30+ 通道",
-      "通过 shell、浏览器、HTTP、硬件及自定义 MCP server 调用工具",
-      "提供一键安装脚本，支持预编译二进制或源码自定义 feature 构建"
+      "单一 Rust binary 的 agent runtime，本地运行、自持数据与密钥",
+      "支持 Anthropic、OpenAI、Ollama 等约 20 家 LLM provider",
+      "通过 Discord、Telegram、email、voice 等 30+ 渠道触达",
+      "借助 shell、browser、HTTP、硬件及自定义 MCP server 执行工具"
     ],
-    "sourceHash": "-74cd61b9",
-    "ts": 1777624970893
+    "sourceHash": "772818ef",
+    "ts": 1783303338894
   },
   "hesamsheikh/awesome-openclaw-usecases": {
     "features": [
@@ -628,25 +619,25 @@
   },
   "kepano/obsidian-skills": {
     "features": [
-      "遵循 Agent Skills 规范，兼容 Claude Code、Codex CLI 等 agent",
-      "obsidian-markdown skill：创建和编辑 Obsidian Flavored Markdown 文件",
-      "obsidian-bases skill：管理 .base 文件的视图、过滤器与公式",
-      "json-canvas skill：编辑 .canvas 文件的节点、边和分组",
-      "obsidian-cli skill：通过 CLI 操作 vault 并支持插件主题开发"
+      "提供符合 Agent Skills 规范的 Obsidian 技能，兼容 Claude Code、Codex、OpenCode 等 agent",
+      "支持创建和编辑 Obsidian Flavored Markdown，含 wikilinks、embeds、callouts 等语法",
+      "支持创建和编辑 Obsidian Bases（.base），含视图、过滤器、公式与汇总",
+      "支持创建和编辑 JSON Canvas 文件，含节点、边、分组与连接",
+      "通过 Obsidian CLI 操作 vault，包括插件与主题开发",
+      "使用 Defuddle 从网页提取干净的 markdown，去除杂乱内容以节省 tokens"
     ],
-    "sourceHash": "25580d29",
-    "ts": 1777624991663
+    "sourceHash": "5b9779f3",
+    "ts": 1783303299697
   },
   "Yeachan-Heo/oh-my-codex": {
     "features": [
-      "为 OpenAI Codex CLI 提供工作流层，增强默认会话体验",
-      "通过 `$deep-interview`、`$ralplan`、`$team`、`$ralph` 调用标准化 skills",
-      "从澄清到完成贯穿一致的工作流执行",
-      "在 `.omx/` 中统一管理项目指南、计划、日志与状态",
-      "提供 `omx setup`、`omx update` 等 CLI 命令进行配置与升级"
+      "为 OpenAI Codex CLI 提供 workflow 层，增强默认 Codex session",
+      "以统一 workflow 从需求澄清到完成全流程执行",
+      "通过 $deep-interview、$ralplan、$ultragoal 调用默认 workflow",
+      "在 .omx/ 目录中保存项目指引、计划、日志与状态"
     ],
-    "sourceHash": "-5f78ac2c",
-    "ts": 1777624996067
+    "sourceHash": "3a54d095",
+    "ts": 1783303343190
   },
   "addyosmani/agent-skills": {
     "features": [
@@ -661,14 +652,14 @@
   },
   "coreyhaines31/marketingskills": {
     "features": [
-      "为 AI agent 提供营销任务的 Skills 集合，覆盖 CRO、文案、SEO、分析与增长工程",
-      "兼容 Claude Code、OpenAI Codex、Cursor、Windsurf 等支持 Agent Skills 规范的 agent",
-      "以 product-marketing-context 为核心 skill，所有其他 skill 优先读取该上下文",
-      "按 SEO、CRO、Copy、Paid、Growth、Sales、Strategy 等领域分类组织 skill",
-      "通过 Markdown 文件为 agent 注入营销专业知识与工作流"
+      "专为技术型营销人员打造的 AI agent 营销技能集合",
+      "兼容 Claude Code、OpenAI Codex、Cursor、Windsurf 等 agent",
+      "涵盖 CRO、copywriting、SEO、analytics 与 growth engineering",
+      "以 product-marketing skill 为基础，各 skill 相互引用协作",
+      "基于 Agent Skills spec，以 markdown 文件形式提供专业工作流"
     ],
-    "sourceHash": "559b0694",
-    "ts": 1777625006293
+    "sourceHash": "220db338",
+    "ts": 1783303325528
   },
   "googleworkspace/cli": {
     "features": [
@@ -683,14 +674,14 @@
   },
   "Gitlawb/openclaude": {
     "features": [
-      "跨云端 API 与本地模型后端的统一 coding-agent CLI",
-      "支持 OpenAI 兼容 API、Gemini、GitHub Models、Codex、Ollama 等多种 provider",
-      "通过 /provider 斜杠命令在应用内保存和切换 provider 配置",
-      "集成 bash、文件操作、grep、glob、agent、MCP 与 web 工具链",
-      "附带 VS Code 扩展，支持启动集成与主题适配"
+      "开源 coding-agent CLI，支持云端与本地 model provider",
+      "兼容 OpenAI、Gemini、GitHub Models、Ollama 等多种后端",
+      "提供 terminal-first 工作流：prompts、tools、agents 与 MCP",
+      "支持 slash commands 与流式输出",
+      "提供 VS Code 扩展"
     ],
-    "sourceHash": "7cb1a129",
-    "ts": 1777625016572
+    "sourceHash": "-72a4b823",
+    "ts": 1783303360393
   },
   "AlexsJones/llmfit": {
     "features": [
@@ -739,14 +730,14 @@
   },
   "multica-ai/multica": {
     "features": [
-      "将 coding agent 转化为可分配任务的团队成员，自主写码与汇报",
-      "支持 Claude Code、Codex、Cursor Agent、Gemini、Kimi 等多种 agent",
-      "开源、厂商中立、可自托管的 managed agents 基础设施",
-      "面向人类与 AI 协作的看板视图、活动时间线与任务生命周期管理",
-      "agents 可参与对话、报告阻塞并随时间沉淀可复用技能"
+      "将 coding agents 变为可分配任务、自主编码的团队成员",
+      "开源自托管的 managed agents 平台，vendor-neutral",
+      "看板式追踪 agent 进度、参与对话并沉淀可复用技能",
+      "兼容 Claude Code、Codex、Copilot CLI、Gemini 等多种 agent",
+      "Squads 提供路由层，由 leader agent 分派任务给成员"
     ],
-    "sourceHash": "21f7d422",
-    "ts": 1777625044873
+    "sourceHash": "73cf4075",
+    "ts": 1783303305214
   },
   "jarrodwatts/claude-hud": {
     "features": [
@@ -760,13 +751,14 @@
   },
   "Leey21/awesome-ai-research-writing": {
     "features": [
-      "收录顶尖科研机构的论文写作实战 prompt 模板库",
-      "提供翻译、润色、扩缩写、去 AI 味等多场景 prompt",
-      "集成论文写作相关的 agent skills 教程与配置指南",
-      "包含从 LaTeX 源码翻译并编译 ArXiv 论文的 skill"
+      "提供翻译、润色、缩写、扩写等场景的实战 Prompt 模板库",
+      "集成论文写作相关的 agent skills 及使用教程",
+      "提供从 LaTeX 源码翻译并编译的 arxiv-translator-skill",
+      "内置 Reviewer 视角审视与逻辑检查 Prompt",
+      "支持去 AI 味的中英文论文润色"
     ],
-    "sourceHash": "3004babc",
-    "ts": 1777625054572
+    "sourceHash": "-5d60820",
+    "ts": 1783303350599
   },
   "openai/symphony": {
     "features": [
@@ -888,8 +880,8 @@
   },
   "sindresorhus/awesome": {
     "features": [],
-    "sourceHash": "-78e31c39",
-    "ts": 1777625123900
+    "sourceHash": "4249760",
+    "ts": 1783303370915
   },
   "freeCodeCamp/freeCodeCamp": {
     "features": [
@@ -914,25 +906,24 @@
   },
   "openclaw/openclaw": {
     "features": [
-      "在自有设备上运行的个人 AI 助手，支持本地化、快速、常驻服务",
-      "支持 WhatsApp、Telegram、Slack、Discord、iMessage、微信等 20+ 通讯渠道",
-      "在 macOS/iOS/Android 上支持语音听说，并可渲染实时 Canvas",
-      "通过 `openclaw onboard` CLI 引导式配置 gateway、workspace、channels 和 skills",
-      "跨平台支持 macOS、Linux 和 Windows（WSL2），兼容 npm、pnpm、bun"
+      "运行于自有设备的 personal AI assistant，本地、快速、常驻",
+      "支持 WhatsApp、Telegram、Slack、Discord 等 20 多个聊天渠道",
+      "在 macOS/iOS/Android 上支持语音输入输出及实时 Canvas 渲染",
+      "通过 openclaw onboard CLI 引导配置 gateway、workspace、渠道与技能",
+      "提供 Windows Hub 原生应用，支持托盘状态、聊天、node 模式与本地 MCP"
     ],
-    "sourceHash": "7eaeed13",
-    "ts": 1777625139539
+    "sourceHash": "1ef3e72f",
+    "ts": 1783303379916
   },
   "nilbuild/developer-roadmap": {
     "features": [
-      "提供面向开发者的交互式学习路线图，可点击节点查看详情",
-      "覆盖 Frontend、Backend、DevOps、AI Engineer 等数十个技术方向",
-      "汇集各领域的 Best Practices 最佳实践指南",
-      "提供技术相关的 Questions 题库供自测与学习",
-      "由社区驱动维护文章与学习资源"
+      "社区驱动的开发者学习 roadmaps、文章与资源合集",
+      "提供交互式 roadmap，点击节点即可阅读主题详情",
+      "涵盖 Frontend、Backend、DevOps 等多领域学习路径",
+      "包含 Best Practices、面试 Questions 等辅助内容"
     ],
-    "sourceHash": "-1a3a3087",
-    "ts": 1777625144899
+    "sourceHash": "-6ad02fa1",
+    "ts": 1783303384154
   },
   "donnemartin/system-design-primer": {
     "features": [
@@ -947,13 +938,12 @@
   },
   "vinta/awesome-python": {
     "features": [
-      "精选 Python 框架、库、工具与资源的分类列表",
-      "覆盖 AI/ML、Web 开发、数据科学等数十个领域",
-      "包含 CLI、GUI、DevOps、测试与调试等开发工具",
-      "汇总 Python 工具链：环境管理、包管理与构建工具"
+      "精选 Python 最佳 framework、库、工具与资源清单",
+      "涵盖 AI & ML、Web 开发、数据科学等多领域分类",
+      "提供网站支持项目搜索与过滤"
     ],
-    "sourceHash": "-2ccc8cc6",
-    "ts": 1777625155311
+    "sourceHash": "-43327265",
+    "ts": 1783303389209
   },
   "awesome-selfhosted/awesome-selfhosted": {
     "features": [
@@ -1045,14 +1035,14 @@
   },
   "n8n-io/n8n": {
     "features": [
-      "支持 400+ 集成与 900+ 现成工作流模板",
-      "可编写 JavaScript/Python 代码或使用可视化界面构建工作流",
-      "基于 LangChain 构建 AI agent 工作流，支持自有数据与模型",
-      "fair-code 许可，支持自托管部署或使用云服务",
-      "面向企业：高级权限管理、SSO 与离网部署"
+      "可视化画布结合自定义代码构建AI agent与自动化workflow",
+      "连接OpenAI、Anthropic、Google及开源模型，无供应商锁定",
+      "支持1500+集成与9000+workflow模板",
+      "支持self-host部署，具备角色访问控制与审计追踪",
+      "可用JavaScript、Python及npm包扩展高级AI workflow"
     ],
-    "sourceHash": "4248c250",
-    "ts": 1777625201503
+    "sourceHash": "-2f277024",
+    "ts": 1783303407211
   },
   "getify/You-Dont-Know-JS": {
     "features": [],
@@ -1526,14 +1516,14 @@
   },
   "nexu-io/open-design": {
     "features": [
-      "自动检测 PATH 上 13 款 coding-agent CLI 作为设计引擎",
-      "内置 31 个可组合 Skills 和 72 个品牌级 Design Systems",
-      "支持 local-first 本地运行与 web 部署两种模式",
-      "提供 OpenAI 兼容的 BYOK 代理，无需 CLI 也可使用",
-      "各层均支持 BYOK，开源替代 Claude Design"
+      "开源的 Claude Design 替代方案，专注 AI 辅助设计",
+      "支持 Codex / OpenCode / Pi 等多引擎跨轮次恢复设计会话",
+      "Open Design Cloud 一次充值即用 GPT、Claude、Gemini、DeepSeek 等 20+ 模型",
+      "支持导出截图支持的 PPTX / PDF，无需离开应用",
+      "按真实 token 用量计费，零配置接入旗舰模型"
     ],
-    "sourceHash": "-4873e4f1",
-    "ts": 1777896701197
+    "sourceHash": "-608534c1",
+    "ts": 1783303243594
   },
   "openai/codex-plugin-cc": {
     "features": [
@@ -1870,14 +1860,15 @@
   },
   "nanocoai/nanoclaw": {
     "features": [
-      "Claude agent 在独立 Linux 容器中运行，实现 OS 级隔离",
-      "代码极简，单进程少量文件，易于理解和定制",
-      "一键脚本自动安装 Node、pnpm、Docker 并配置 agent",
+      "在独立 Linux 容器中安全运行 Claude agent，实现文件系统级隔离",
+      "代码库精简，单进程加少量文件，易于理解与完全自定义",
+      "nanoclaw.sh 一键从裸机部署到可对话的命名 agent",
       "支持 Telegram、Discord、WhatsApp 及本地 CLI 多渠道接入",
-      "提供从 v1 迁移到 v2 的自动化迁移脚本"
+      "部署失败时自动调用 Claude Code 诊断并断点续跑",
+      "提供 migrate-v2.sh 从 NanoClaw v1 迁移状态与配置"
     ],
-    "sourceHash": "-70253d42",
-    "ts": 1778464816077
+    "sourceHash": "-27993f03",
+    "ts": 1783303356400
   },
   "jundot/omlx": {
     "features": [
@@ -1914,14 +1905,13 @@
   },
   "tinyhumansai/openhuman": {
     "features": [
-      "桌面端 AI agent，含可对话的桌面 mascot，可加入 Google Meet 会议",
-      "118+ 第三方集成（Gmail、Notion、GitHub、Slack 等）一键 OAuth 接入",
-      "每个连接以 typed tool 暴露给 agent，每 20 分钟自动 auto-fetch 更新",
-      "UI 优先的简洁桌面体验，无需终端配置，安装即用",
-      "跨周记忆用户信息，后台持续思考的 agentic 助手"
+      "Local-first 的个人 AI，记忆所有信息并可深度研究",
+      "内置强大的 orchestrator，协调多任务处理",
+      "开源 AI harness，以人为中心设计",
+      "支持 LLM 驱动的智能助手能力"
     ],
-    "sourceHash": "2aa603e7",
-    "ts": 1778571976079
+    "sourceHash": "-66408670",
+    "ts": 1783303333840
   },
   "millionco/react-doctor": {
     "features": [
@@ -2268,14 +2258,14 @@
   },
   "Imbad0202/academic-research-skills": {
     "features": [
-      "从研究到发表的全流程 Claude Code 学术研究 skills 套件",
-      "通过苏格拉底式对话 /ars-plan 协助构建论文结构",
-      "Stage 2.5/4.5 完整性闸门，7 模式阻断式检查 AI 研究失败模式",
-      "Style Calibration 学习用户写作风格，Writing Quality Check 识别机器化文本",
-      "自动文献检索、引用格式化与引用幻觉验证"
+      "提供覆盖科研到发表全流程的 Claude Code skills 套件",
+      "30 秒安装，支持 Claude Code CLI、VS Code 和 JetBrains",
+      "Style Calibration 从过往作品学习你的写作风格",
+      "Writing Quality Check 检测机器生成的行文模式",
+      "集成 7 模式阻断式 integrity gates 防范 AI 研究失败模式"
     ],
-    "sourceHash": "-7cfffbd5",
-    "ts": 1779096916118
+    "sourceHash": "-7fb1b05f",
+    "ts": 1783303330153
   },
   "facebook/pyrefly": {
     "features": [
@@ -3526,5 +3516,31 @@
     ],
     "sourceHash": "-650e20cd",
     "ts": 1783300902659
+  },
+  "Graphify-Labs/graphify": {
+    "features": [],
+    "sourceHash": "-2b300094",
+    "ts": 1783303237997
+  },
+  "practical-tutorials/project-based-learning": {
+    "features": [
+      "精选覆盖 20+ 主流编程语言的实战项目教程列表",
+      "每个教程带你从零构建完整应用，涵盖多种技术栈",
+      "涉及编译器、OS、游戏引擎、渲染器等硬核项目实践",
+      "开源可 fork，提供贡献指南欢迎社区扩充"
+    ],
+    "sourceHash": "-33111709",
+    "ts": 1783303400215
+  },
+  "firecrawl/firecrawl": {
+    "features": [
+      "提供 search、scrape 和 web 交互的 API，规模化处理网页",
+      "输出 LLM-ready 的干净 Markdown、结构化 JSON 及截图",
+      "自动处理代理轮换、rate limit 和 JS 渲染等难题",
+      "可一键接入任意 AI agent 或 MCP client",
+      "支持解析 PDF、DOCX 等 web 托管媒体内容"
+    ],
+    "sourceHash": "6e395646",
+    "ts": 1783303425744
   }
 }

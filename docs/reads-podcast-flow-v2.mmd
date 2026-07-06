@@ -1,23 +1,23 @@
 flowchart LR
     Start(["精读文章 CRON"]) --> MK2
 
-    MK2["候选采集<br/>付费墙预检 · 去重<br/><b>AGENT · MK2</b>"] --> JASON1
+    MK2["候选采集<br/>付费墙预检 · 去重<br/><b>🤖 AGENT · MK2</b>"] --> JASON1
 
-    JASON1{{"选定精读<br/>决定是否做播客<br/><b>HUMAN · JASON</b>"}} --> MAIN
+    JASON1{{"选定精读<br/>决定是否做播客<br/><b>👤 HUMAN · JASON</b>"}} --> MAIN
 
-    MAIN["调度生产<br/>抓原文 · 中英对照<br/><b>AGENT · MAIN + MK2</b>"] --> QC
+    MAIN["调度生产<br/>抓原文 · 中英对照<br/><b>🤖 AGENT · MAIN + MK2</b>"] --> QC
 
     subgraph QC["QC 审校循环 &nbsp;·&nbsp; 最多 2 轮"]
         direction TB
-        MK46["质量审校<br/>只审不改<br/><b>AGENT · MK46</b>"] --> V{"判定"}
+        MK46["质量审校<br/>只审不改<br/><b>🤖 AGENT · MK46</b>"] --> V{"判定"}
         V -->|"APPROVE"| OK1["通过"]
-        V -->|"MEDIUM"| FIXQC["修复<br/><b>AGENT · MK2</b>"]
+        V -->|"MEDIUM"| FIXQC["修复<br/><b>🤖 AGENT · MK2</b>"]
         FIXQC --> MK46
-        V -->|"CRITICAL / HIGH"| ESC1["上报拍板<br/><b>HUMAN · JASON</b>"]
+        V -->|"CRITICAL / HIGH"| ESC1["上报拍板<br/><b>👤 HUMAN · JASON</b>"]
         ESC1 --> OK1
     end
 
-    QC --> PUB["精读上线<br/>推送至 PAGES<br/><b>AGENT · MAIN</b>"]
+    QC --> PUB["精读上线<br/>推送至 PAGES<br/><b>🤖 AGENT · MAIN</b>"]
 
     PUB --> BR{"是否做播客"}
     BR -->|"否"| END1(["精读完成"])
@@ -25,10 +25,10 @@ flowchart LR
 
     subgraph LOOP["播客交付 LOOP &nbsp;·&nbsp; 事件驱动 · 失败自愈"]
         direction LR
-        NBLM["NOTEBOOKLM 生成<br/>入队 · 音频 · COS<br/><b>SKILL</b>"] --> CHK{"校验链<br/>COS · 推送<br/>播放器 · 通知"}
+        NBLM["NOTEBOOKLM 生成<br/>入队 · 音频 · COS<br/><b>&gt; SKILL</b>"] --> CHK{"校验链<br/>COS · 推送<br/>播放器 · 通知"}
         CHK -->|"任一步失败"| RETRY["退避重试"]
         RETRY --> CHK
-        CHK -->|"超最大轮次"| ESC2["升级上报<br/><b>HUMAN · JASON</b>"]
+        CHK -->|"超最大轮次"| ESC2["升级上报<br/><b>👤 HUMAN · JASON</b>"]
     end
 
     LOOP --> END2(["播客上线<br/>推送 JASON 收听"])

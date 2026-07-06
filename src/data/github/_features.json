@@ -542,15 +542,14 @@
   },
   "ZhuLinsen/daily_stock_analysis": {
     "features": [
-      "AI 大模型驱动的 A股/港股/美股自选股每日智能分析与决策仪表盘",
-      "聚合技术面、行情、筹码、新闻舆情、公告、资金流与基本面的多维度分析",
-      "内置均线、缠论、波浪、情绪周期等策略，支持 Agent 多轮策略问答",
-      "支持企业微信、飞书、Telegram、Discord、Slack、邮件等多渠道推送",
-      "提供 Web 工作台、AI 回测验证、历史报告与持仓管理",
-      "支持 GitHub Actions、Docker、定时任务与 FastAPI 服务部署"
+      "基于 AI 大模型生成含评分、买卖点位、风险警报的决策报告",
+      "聚合 A股/港股/美股/日股/韩股/台股行情、K线、新闻等多市场数据",
+      "提供 Web/桌面工作台，支持分析、回测、持仓与配置管理",
+      "Agent 策略问股支持均线、缠论、波浪等15种内置策略",
+      "支持 GitHub Actions、Docker、FastAPI 自动化及多渠道推送"
     ],
-    "sourceHash": "545dc17",
-    "ts": 1777624948160
+    "sourceHash": "6be64bc",
+    "ts": 1783300898663
   },
   "HKUDS/CLI-Anything": {
     "features": [
@@ -1440,14 +1439,14 @@
   },
   "msitarzewski/agency-agents": {
     "features": [
-      "精心打造的专业化 AI agent 角色集合，每个 agent 具备独特个性和领域专长",
-      "提供安装脚本，一键将 agents 部署到 Claude Code 目录",
-      "支持 GitHub Copilot、Cursor、Aider、Gemini CLI 等多种工具集成",
-      "每个 agent 包含身份设定、工作流、技术交付物和成功指标",
-      "通过 convert.sh 自动生成各工具的集成文件，install.sh 交互式安装"
+      "精心打造的专业 AI agent 集合，每个 agent 拥有独特领域专长与个性",
+      "提供 macOS、Linux、Windows 原生桌面 app，一键安装 agent",
+      "支持 Claude Code、Cursor、Codex、Gemini CLI、OpenCode、Qwen、Osaurus 等工具",
+      "提供脚本化安装方式，可批量或按分类部署 agent",
+      "agent 具备实战验证的工作流、可交付成果与成功指标"
     ],
-    "sourceHash": "-7878e845",
-    "ts": 1777894114879
+    "sourceHash": "-56868303",
+    "ts": 1783300878901
   },
   "virattt/dexter": {
     "features": [
@@ -1538,14 +1537,13 @@
   },
   "openai/codex-plugin-cc": {
     "features": [
-      "在 Claude Code 中通过 /codex:review 等斜杠命令调用 Codex 进行代码评审",
-      "提供 /codex:adversarial-review 可引导式对抗评审，质疑实现与设计决策",
-      "支持 --background 后台任务执行，可通过 /codex:status、/codex:result、/codex:cancel 管理",
-      "通过 /codex:setup 一键检测并安装配置 Codex 环境",
-      "支持基于分支的评审，使用 --base <ref> 对比基准分支"
+      "在 Claude Code 中调用 Codex 进行只读代码审查",
+      "提供 steerable 的 adversarial-review 挑战式审查",
+      "通过 slash 命令委派任务、移交会话并管理后台作业",
+      "内置 codex-rescue subagent 用于任务救援"
     ],
-    "sourceHash": "-b5534fe",
-    "ts": 1777896705391
+    "sourceHash": "6b54a07a",
+    "ts": 1783300893900
   },
   "bwya77/vscode-dark-islands": {
     "features": [
@@ -3417,5 +3415,116 @@
     ],
     "sourceHash": "-7d5caa7",
     "ts": 1782869441679
+  },
+  "usestrix/strix": {
+    "features": [
+      "自主 AI agent 像真实黑客般动态运行代码发现漏洞",
+      "通过实际 PoC 验证漏洞，杜绝误报",
+      "开箱即用的完整黑客工具包",
+      "多 agent 团队协作并可扩展",
+      "面向开发者的 CLI，提供可操作的报告与自动修复",
+      "无缝集成 GitHub Actions 与 CI/CD，每次 PR 自动扫描"
+    ],
+    "sourceHash": "6b46b97f",
+    "ts": 1783300838797
+  },
+  "xbtlin/ai-berkshire": {
+    "features": [
+      "兼容 Claude Code 与 Codex 的投资研究 Skill 合集",
+      "内置巴菲特、芒格、段永平、李录四大师视角对抗分析",
+      "强制输出通过/不通过结论及分层价格建议",
+      "结构化反偏见机制含逆向检验与快速否决清单",
+      "用 Python decimal 精确校验金融数据计算"
+    ],
+    "sourceHash": "6eccb9b9",
+    "ts": 1783300843770
+  },
+  "diegosouzapw/OmniRoute": {
+    "features": [
+      "通过单一 endpoint 连接 236 个 AI providers，其中 50+ 免费",
+      "将 Claude Code、Cursor、Copilot 等工具接入免费 Claude/GPT/Gemini",
+      "支持 provider 故障自动 fallback 切换",
+      "RTK + Caveman 压缩技术节省 15-95% tokens",
+      "内置 17 种 routing 策略灵活调度请求"
+    ],
+    "sourceHash": "5f339bbb",
+    "ts": 1783300848345
+  },
+  "Robbyant/lingbot-map": {
+    "features": [
+      "基于 Geometric Context Transformer 统一坐标定位与长程漂移校正",
+      "采用 feed-forward 架构实现流式 3D 重建",
+      "paged KV cache attention 支持 518×378 分辨率 20 FPS 稳定推理",
+      "可处理超过 10,000 帧的长序列重建",
+      "在多个 benchmark 上达到 state-of-the-art 重建效果"
+    ],
+    "sourceHash": "-f25143a",
+    "ts": 1783300853311
+  },
+  "logto-io/logto": {
+    "features": [
+      "提供多租户、enterprise SSO 和 RBAC，开箱即用无需变通",
+      "预置登录流程、可定制 UI，SDK 支持 30+ framework",
+      "完整支持 OIDC、OAuth 2.1 和 SAML 协议",
+      "原生支持 Model Context Protocol 和 agent-based AI 架构",
+      "提供全托管 Logto Cloud 和开源自托管两种部署方式"
+    ],
+    "sourceHash": "-6cd3d57f",
+    "ts": 1783300857492
+  },
+  "Zackriya-Solutions/meetily": {
+    "features": [
+      "本地捕获、transcribe 并 summarize 会议，数据完全私有",
+      "privacy-first AI 会议助手，全部运行于自有基础设施",
+      "支持 macOS 与 Windows 桌面端",
+      "开源、企业级、注重合规与数据主权",
+      "PRO 版提供高精度、高级导出与自定义摘要工作流"
+    ],
+    "sourceHash": "1afd8e55",
+    "ts": 1783300863214
+  },
+  "browser-use/video-use": {
+    "features": [
+      "用 Claude Code 剪辑视频，通过对话生成 final.mp4，100% 开源",
+      "自动剔除填充词（umm、uh）和镜头间的空白停顿",
+      "为每段视频自动调色，并在剪辑点添加 30ms 音频淡入淡出",
+      "通过 HyperFrames、Remotion、Manim 或 PIL 由并行 sub-agent 生成动画叠加",
+      "在 project.md 中持久化 session 记忆，下次可无缝续接"
+    ],
+    "sourceHash": "488a4a08",
+    "ts": 1783300867902
+  },
+  "Starmel/OpenSuperWhisper": {
+    "features": [
+      "基于 Whisper 模型的 macOS 实时音频录制与转录",
+      "支持 Whisper 和 Parakeet 两种转录引擎，可直接下载模型",
+      "全局快捷键、修饰键及鼠标按键触发录音",
+      "按住即录模式，松开自动停止",
+      "支持拖放音频文件并队列处理转录",
+      "多语言自动检测与亚洲语言 autocorrect"
+    ],
+    "sourceHash": "-4336ab1a",
+    "ts": 1783300873644
+  },
+  "apache/maven": {
+    "features": [
+      "基于 POM 的 Java 项目构建与依赖管理工具",
+      "支持 Reproducible Builds 可复现构建",
+      "提供多版本分支（4.x、3.9.x 等）持续维护",
+      "集成 Maven Central 仓库进行 artifact 发布与获取"
+    ],
+    "sourceHash": "60ffe050",
+    "ts": 1783300887492
+  },
+  "allenai/olmocr": {
+    "features": [
+      "将 PDF、PNG、JPEG 文档转换为干净的 Markdown",
+      "支持公式、表格、手写体及复杂格式",
+      "自动移除页眉页脚，按自然阅读顺序输出文本",
+      "基于 7B 参数 VLM，每百万页转换成本低于 200 美元",
+      "提供可自训练的 trainer 代码与官方 Docker 镜像"
+    ],
+    "sourceHash": "-650e20cd",
+    "ts": 1783300902659
   }
 }

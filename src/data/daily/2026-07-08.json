@@ -1,0 +1,140 @@
+{
+  "date": "2026-07-08",
+  "title": "📅 2026-07-08",
+  "sections": [
+    {
+      "key": "news",
+      "label": "AI 热点新闻",
+      "emoji": "🔥",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 中国开源模型攻入美国企业：Lindy 全量迁至 DeepSeek 省下数百万美元，OpenAI/Anthropic 承压",
+          "body": "CNBC 报道，随着 OpenAI 与 Anthropic API 成本持续攀升，越来越多美国企业转向中国开源模型。AI 创业公司 Lindy 于 6 月将 100% 流量从 Claude 迁至 DeepSeek，CEO Flo Crivello 称成本曲线「直接砸到地板」，数月内可省下数百万美元。行业叙事正从「tokenmaxxing（堆 token）」转向极致效率，闭源前沿实验室的定价护城河被撕开裂口。",
+          "insight": "对企业级决策者：多模型路由加成本敏感型工作负载下沉到开源权重模型，正从边缘实验变为主流采购策略。",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html"
+        },
+        {
+          "title": "🚀 产品发布 | Google Gemini 3.5 Pro 推迟至 7 月 17 日，弃用 2.5 架构做彻底重建",
+          "body": "Google DeepMind 将 Gemini 3.5 Pro 发布日推迟到 2026 年 7 月 17 日，放弃现有 2.5 Pro 架构转而做完整重建，重点提升数学推理、SVG 场景生成等能力。这是继 GPT-5.6、Claude Fable 5 之后前沿模型军备竞赛的又一节点，也反映出旗舰模型迭代难度上升、宁可延期也要重构底座的现实。",
+          "insight": "旗舰模型不再是简单参数升级，架构级重写意味着能力边际收益递减，节奏放缓将成常态。",
+          "source": "BigGo Finance",
+          "url": "https://finance.biggo.com/news/6f0c6bb2-795f-4c57-9d09-6db691d7638a"
+        },
+        {
+          "title": "💰 融资 | OpenAI/Anthropic/Google 向初创狂撒算力补贴：单家最高 50 万美元 credits 抢企业客户",
+          "body": "The Decoder 报道，OpenAI、Anthropic、Google 正向初创公司大规模发放算力补贴以锁定未来企业客户。Google Cloud 单家最高提供 50 万美元 credits、Gemini 模型早期访问权及 DeepMind 工程师支持，微软与 AWS 也提供类似福利。补贴本质是用短期烧钱换取长期 API 锁定与生态占位。",
+          "insight": "算力补贴是新一轮客户获取成本军备竞赛，企业选型时应警惕补贴退坡后的真实 TCO。",
+          "source": "The Decoder",
+          "url": "https://the-decoder.com/openai-and-anthropic-are-giving-away-millions-in-computing-power-to-attract-startups/"
+        },
+        {
+          "title": "📜 监管政策 | 字节豆包、阿里通义千问 7 月 15 日同步下线自建智能体功能，行业首现集体急刹",
+          "body": "7 月 4 日，字节跳动豆包与阿里通义千问几乎同时通知用户：C 端自建智能体功能将于 7 月 15 日正式下线，距上线仅 8 个月。两大头部平台同日对同一核心功能亮红灯在国内 AI 行业尚属首次，被解读为 AI 拟人交互监管框架落地后的商业模式结构性重构——C 端 Agent 商业化跑不通，资源转向 B 端。",
+          "insight": "国内大厂正把 Agent 重心从 C 端聊天搭子抽回 B 端企业级刚需场景，监管与商业逻辑双重驱动。",
+          "source": "网易科技",
+          "url": "https://www.163.com/dy/article/L159FQBV051984TV.html"
+        },
+        {
+          "title": "👔 高层动态 | Anthropic 2026 年狂挖 OpenAI/Google/微软/xAI 五名高管，IPO 前夜排兵布阵",
+          "body": "CRN 盘点 Anthropic 2026 年从 OpenAI、微软、Google、xAI 及 Stack Infrastructure 挖来的五名重量级高管，覆盖 AI 高层、业务负责人与创始人。伴随即将启动的 IPO 与新公布的合作伙伴战略，这波挖角显示 Anthropic 正围绕企业级增长与上市叙事系统性补强管理层。",
+          "insight": "顶级 AI 人才在头部实验室间高频流动，Anthropic 的人才聚合能力是其企业化与 IPO 估值的关键支撑。",
+          "source": "CRN",
+          "url": "https://www.crn.com/news/ai/2026/anthropic-s-5-huge-hires-from-openai-google-microsoft-and-xai-in-2026"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "label": "企业级 AI 实践",
+      "emoji": "🏢",
+      "items": [
+        {
+          "title": "📈 市场数据 | 国内大厂 AI 用量失控：腾讯研发 token 额度 1400 元/月起步、有人过万，美团限豆包、阿里禁 Claude Code",
+          "body": "InfoQ AI 周报披露，国内大厂 AI 支出正进入精细化管控期：腾讯被曝给研发人员的 token 额度从 1400 元/月起步、部分人过万；美团限用豆包、阿里全员禁用 Claude Code。这与豆包、通义千问关停 C 端智能体、微软 25 亿美元组建 Frontier 部署部门形成呼应——企业 AI 从跑马圈地转入 ROI 与成本纪律并重的阶段。",
+          "insight": "对管理者：AI 提效红利与失控成本并存，token 预算治理正成为企业 AI 落地的必备护栏。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/news/rs0HJTRdN6Pl88LIFh1a"
+        },
+        {
+          "title": "📈 市场数据 | G2 报告：员工 AI 工具可及率一年内从 40% 升至 60%，但仅四分之一企业把 40% 以上试点推进生产",
+          "body": "G2 最新企业 AI 采纳框架报告显示，员工可及 AI 工具的比例一年内从不足 40% 升至约 60%，但只有四分之一的公司把 40% 及以上的试点推进到生产，约三分之一实现企业级全面部署。工具普及与价值兑现之间的鸿沟依然是最大落地瓶颈。",
+          "insight": "工具铺开容易、生产落地难——从 PoC 到 production 的最后一公里仍是企业 AI ROI 的决定性关口。",
+          "source": "G2",
+          "url": "https://learn.g2.com/enterprise-ai-adoption-framework"
+        },
+        {
+          "title": "🔬 技术突破 | 蚂蚁灵波开源空间原生具身视觉基模 LingBot-Vision：10 亿参数打平 7B DINOv3",
+          "body": "蚂蚁灵波团队开源首个空间原生的具身视觉基础模型 LingBot-Vision，约 10 亿参数的 ViT 通过纯自监督训练，在密集空间任务上匹敌甚至超过参数量最多约 7 倍的视觉基模；在 NYU-Depth v2 上取得所有对比模型最佳精度（含 7B DINOv3）。其 0.3B 蒸馏学生模型精度也可对标 7B DINOv3，参数少约 23 倍，直击机器人端侧部署的算力与延迟痛点。",
+          "insight": "小参数量加端侧可部署是机器人视觉落地的现实约束，够用且跑得动正取代参数越大越好。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/07/445230.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "label": "AI Coding 动态",
+      "emoji": "💻",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Claude Cowork 上线移动端与 Web：编码 Agent 战火烧进办公室其余角落",
+          "body": "Anthropic 将 Claude Cowork 从桌面端扩展到移动端与 Web。Cowork 复用 Claude Code 的 agentic 架构但无需终端，能后台持续工作（合上笔记本也不停）、跨设备接力、需要人类决策时推送手机提醒。TechCrunch 评论：编码 Agent 之战正外溢到办公室其余角落，把开发者工具变成人人可用的行政协作者——OpenAI 的 Codex 也在被非开发者用于报告、表格、演示。",
+          "insight": "Agent 正从程序员专属走向通用办公助手，产品边界从代码扩展到全流程知识工作。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/"
+        },
+        {
+          "title": "💰 趋势观点 | GLM 5.2 引爆 AI 利润率崩塌论：开源旗舰以 15-20% 价格逼平 Opus/GPT",
+          "body": "工程师 Martin Alderson 撰文指出，GLM 5.2 是首个可被称为 Opus、GPT 在 agentic 工作上真正竞争者的开源权重模型，价格仅为其 15-20%，登上 HN 热榜 660 分。文章核心论点：前沿实验室推理业务当前约 90% 毛利，当同质量开源替代品以 50% 以上折扣出现，这块利润率将从机会变成压力，团队会把更多 agent 流量路由到便宜的开源部署。",
+          "insight": "对采购方是利好、对闭源厂是警报——推理侧价格战正在把模型即差异化的商业模式逼向重构。",
+          "source": "Martin Alderson",
+          "url": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2/"
+        },
+        {
+          "title": "🧰 工具生态 | OpenSquilla 0.5.0 多模型集成登顶 DRACO 双榜：4 个国产模型协作，无海外旗舰",
+          "body": "开源 AI Agent 项目 OpenSquilla 发布 0.5.0 Preview，核心是多模型集成协作（agentic routing）：在 Harness 层把 DeepSeek v4、GLM-5.2、Kimi K2.7、Qwen3.7 四个国产模型组织成并行提案队伍，再由一个模型聚合输出最终结果，阵容中无任何海外旗舰。团队同步发布《Agentic Routing》技术报告，阐述 harness 原生路由如何把日常 agent 流量转化为自我进化的数据飞轮。",
+          "insight": "多模型编排加全国产阵容，既是成本策略也是供应链自主叙事，harness 层正成为新的竞争高地。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/07/443863.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "label": "深度报告与论文",
+      "emoji": "📊",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Anthropic 发布全局工作空间研究：用 J-Lens 在 Claude 内部发现类意识 J 空间",
+          "body": "Anthropic 发表 16 作者论文《Verbalizable Representations Form a Global Workspace in Language Models》，用新数学技术 J-Lens 窥探 Claude 神经网络，发现一个 J 空间——模型可报告、可推理、可主动调用的特权内部区域，被更大片自动处理的海洋包围。研究团队认为这一子集构成功能性全局工作空间，类比神经科学的全局工作空间意识理论。HN 热议 438 分。",
+          "insight": "可解释性从看权重走向看模型的可报告心智空间，对 AI 对齐审计与安全评估提供了新的实用工具。",
+          "source": "Anthropic / VentureBeat",
+          "url": "https://www.anthropic.com/research/global-workspace"
+        },
+        {
+          "title": "📊 市场数据 | MIT NANDA 报告：95% 生成式 AI 项目对利润几无可测量影响，工作流集成是关键",
+          "body": "IntuitionLabs 梳理的企业 AI 失败案例引用 MIT NANDA 报告（基于 150 次访谈与 300 个部署分析）：95% 的生成式 AI 项目对损益几无可测量影响。研究指出根因并非模型能力，而是工作流集成缺失——AI 未嵌入真实业务流程，沦为孤立演示。这与 IBM 企业级 AI 平均 ROI 仅 5.9%、却投入 10% 资本的发现相互印证。",
+          "insight": "企业 AI 失败的主因是组织与流程问题而非技术问题，嵌入工作流比选更强模型更决定 ROI。",
+          "source": "IntuitionLabs / MIT NANDA",
+          "url": "https://intuitionlabs.ai/articles/enterprise-ai-rollout-failures"
+        },
+        {
+          "title": "🔬 技术突破 | AI 只用 28 个 GPU 时找出 4 种全新超导体：大原子模型加 LLM 双引擎自主发现",
+          "body": "量子位报道一项 AI4S 突破：研究者用大原子模型 Elements（精准读三维晶体结构、判断超导性与临界温度）配合大语言模型（像材料学家一样读 paper、查数据、做决策），仅耗费 28 个 GPU 时就找出 4 种人类此前完全未知的全新超导体。这是 AI 从辅助计算迈向自主科学发现的具体案例。",
+          "insight": "AI4S 正把材料发现的成本与周期压缩几个数量级，专用科学基模加通用 LLM 的双引擎范式初显威力。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/07/442452.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日主线是「成本纪律」压过「能力竞赛」。海外侧，中国开源模型（DeepSeek、GLM 5.2）以 15-20% 的价格逼平闭源旗舰，Lindy 等创业公司全量迁移省下数百万美元，直接催生「AI 利润率崩塌」论——前沿实验室约 90% 的推理毛利正被开源替代品逼向重构；OpenAI/Anthropic/Google 转而靠算力补贴抢占初创客户，Google 甚至把 Gemini 3.5 Pro 延期到 7 月 17 日重写架构，折射旗舰迭代的边际收益递减。",
+    "国内侧同频共振：豆包、通义千问同日下线 C 端智能体，腾讯给研发的 token 额度精细到 1400 元/月起步，美团限豆包、阿里禁 Claude Code——企业 AI 集体从跑马圈地转入 ROI 与 token 预算治理的深水区。多份权威数据（G2、MIT NANDA、IBM）共同指向同一结论：工具铺开容易、生产落地难，95% 的生成式 AI 项目对利润几无可测量影响，胜负手在工作流集成而非模型选型。",
+    "技术前沿仍有亮点：Anthropic 的 J-Lens 揭示 Claude 内部类意识的「全局工作空间」，蚂蚁灵波用 10 亿参数打平 7B 视觉基模，AI4S 仅 28 个 GPU 时发现 4 种全新超导体。能力仍在突破，但产业的重心已明确转向「用得起、落得下、算得清账」。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-07-08）：本日无重大新收并购或合资公告。已扫描 OpenAI/Anthropic/Google/Meta/Microsoft 过去 7 天动向——主要为存量主题延续（微软 Frontier $2.5B、亚马逊 FDE $1B、Anthropic Business Group 均已在过去 7 天日报发布，本次不重复）。新增可纳入项：OpenAI/Anthropic/Google 向初创发放算力补贴（单家最高 50 万美元 credits，已纳入热点板块）、Anthropic 从 OpenAI/Google/微软/xAI 挖 5 名高管备战 IPO（已纳入热点板块）。埃森哲(Accenture)：本日无新独立公告，仅在存量 Anthropic Business Group 培训 3 万顾问语境中被提及（该事件已于 7/2 发布，不重复）。"
+  }
+}

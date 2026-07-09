@@ -10,6 +10,8 @@
 set -euo pipefail
 
 # 路径配置
+# cron 环境 PATH 不含 nvm/pnpm（2026-07-01 build 失败教训），显式补 PATH
+export PATH="/root/.nvm/versions/node/v22.22.2/bin:$PATH"
 PROJECT_DIR="/root/.openclaw/workspace/projects/ai-daily"
 SNAPSHOTS_DIR="$PROJECT_DIR/src/data/lmarena/snapshots"
 MIHOMO_BIN="/usr/local/bin/mihomo"

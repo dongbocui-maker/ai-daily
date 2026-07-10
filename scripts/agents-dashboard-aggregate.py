@@ -105,8 +105,8 @@ PRICING = {
     ('aigw-claude-48-main','claude-fable-5'):   (10.00,50.00,12.50,1.00),
     ('azure-claude','claude-opus-4-7'):    (5.00,25.00,6.25,0.50),
     ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
-    # gpt-5.6 sol 价格暂沿用 5.5 同档（官方价未公开确认，待 pricing-check 复核）
-    ('azure-openai-responses','gpt-5.6-sol-2026-07-09'): (1.25,10.00,1.25,0.125),
+    # gpt-5.6 sol 官方 API 价（2026-07-09 发布）：$5 in / $30 out per 1M；cache read 90% off = $0.50；cache write 按 input 同价估（官方 cache-write 单价待确认）
+    ('azure-openai-responses','gpt-5.6-sol-2026-07-09'): (5.00,30.00,5.00,0.50),
     ('anthropic','claude-sonnet-4-6'):      (3.00,15.00,3.75,0.30),
     ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
     ('deepseek','DeepSeek-V4-Pro'):        (0.435,0.87,0.435,0.003625),

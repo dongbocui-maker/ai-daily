@@ -411,16 +411,17 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <script define:vars={{ LIVE_URL, FALLBACK_URL }}>
 const CHAINS={
-  main:['fable-5','opus-4.8','gpt-5.5','qwen3.7-max'],
-  aima:['fable-5','opus-4.8','gpt-5.5','qwen3.7-max'],
-  mk2:['fable-5','opus-4.8','gpt-5.5','qwen3.7-max'],
-  mk46:['qwen3.7-max','opus-4.8','gpt-5.5'],
-  'claude-researcher':['opus-4.8','gpt-5.5','qwen3.7-max'],
+  main:['fable-5','opus-4.8','gpt-5.6-sol','qwen3.7-max'],
+  aima:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
+  mk2:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
+  mk46:['qwen3.7-max','opus-4.8','gpt-5.6-sol'],
+  'claude-researcher':['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
 };
 const CHAIN_MODEL_KEYS={
   'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
+  'gpt-5.6-sol':'azure-openai-responses/gpt-5.6-sol-2026-07-09',
   'qwen3.7-max':'qwen/qwen3.7-max',
   'sonnet-4.6':'anthropic/claude-sonnet-4-6',
 };
@@ -727,8 +728,8 @@ function render(DATA){
             <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">OPUS48</div><div class="em-ep">AIGW·CL48</div></div>
           </div>
           <div class="ep-node healthy" id="ep-gpt">
-            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">GPT55</span><span class="epn-tag">AZURE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">ACAI</span><span class="ees">ONLINE</span></div></div></div>
-            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">GPT55</div><div class="em-ep">ACAI</div></div>
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">GPT56</span><span class="epn-tag">AZURE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">ACAI</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">GPT56</div><div class="em-ep">ACAI</div></div>
           </div>
           <div class="ep-node healthy" id="ep-qwen">
             <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">QWEN37</span><span class="epn-tag">ALI</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">DASH</span><span class="ees">ONLINE</span></div></div></div>
@@ -821,6 +822,7 @@ const ARCH_MODEL_EP = {
   'azure-claude/claude-opus-4-7':'ep-opus',
   'anthropic/claude-sonnet-4-6':'ep-opus',
   'azure-openai-responses/gpt-5.5':'ep-gpt',
+  'azure-openai-responses/gpt-5.6-sol-2026-07-09':'ep-gpt',
   'qwen/qwen3.7-max':'ep-qwen',
 };
 // 运行时「各 agent 当前实际在用的 ep-id」映射，由 render(DATA) 从 active_model 填充。

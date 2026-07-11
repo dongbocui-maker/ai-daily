@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-11 21:00:10 +08",
+  "generated_at": "2026-07-11 21:10:38 +08",
   "today": "2026-07-11",
   "grand": {
-    "tok": 1756283289,
-    "cost": 2592.5,
-    "calls": 3379,
-    "save": 6285.25,
-    "today_tok": 51970032,
-    "today_cost": 100.81,
-    "today_save": 286.62,
-    "last7d_tok": 225724424,
-    "last7d_cost": 408.58
+    "tok": 1756730076,
+    "cost": 2594.04,
+    "calls": 3381,
+    "save": 6288.5,
+    "today_tok": 52416819,
+    "today_cost": 102.35,
+    "today_save": 289.87,
+    "last7d_tok": 226171211,
+    "last7d_cost": 410.12
   },
   "trend": [
     {
@@ -225,15 +225,15 @@
     },
     {
       "date": "2026-07-11",
-      "tok": 51970032,
-      "cost": 100.81,
+      "tok": 52416819,
+      "cost": 102.35,
       "by_agent": {
         "main": {
           "name": "钢铁虾",
           "mark": "MARK I",
           "emoji": "🦐",
-          "tok": 21774057,
-          "cost": 60.55
+          "tok": 22220844,
+          "cost": 62.08
         },
         "aima": {
           "name": "银月",
@@ -268,19 +268,19 @@
       "ac": "#e8b923",
       "lit": "#7fdfff",
       "status": "ONLINE",
-      "idle_min": 5,
-      "last_ts": "2026-07-11T12:55:50.090Z",
-      "total_tok": 1123689752,
-      "today_tok": 21774057,
-      "today_cost": 60.55,
-      "last7d_tok": 82676575,
-      "last7d_cost": 227.12,
-      "cost": 1836.5,
-      "save": 3944.19,
-      "calls": 2439,
+      "idle_min": 9,
+      "last_ts": "2026-07-11T13:01:19.085Z",
+      "total_tok": 1124136539,
+      "today_tok": 22220844,
+      "today_cost": 62.08,
+      "last7d_tok": 83123362,
+      "last7d_cost": 228.66,
+      "cost": 1838.04,
+      "save": 3947.44,
+      "calls": 2441,
       "active_model": "aigw-claude-48-main/claude-fable-5",
       "cache_eff": 80.6,
-      "today_cache_eff": 86.4,
+      "today_cache_eff": 86.3,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -308,9 +308,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 74961459,
-          "cost": 240.55,
-          "calls": 120
+          "tok": 75408246,
+          "cost": 242.08,
+          "calls": 122
         },
         {
           "name": "deepseek/DeepSeek-V4-Pro",
@@ -334,7 +334,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "IDLE",
-      "idle_min": 182,
+      "idle_min": 192,
       "last_ts": "2026-07-11T09:58:53.416Z",
       "total_tok": 266754466,
       "today_tok": 16630013,
@@ -400,7 +400,7 @@
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
       "status": "IDLE",
-      "idle_min": 361,
+      "idle_min": 371,
       "last_ts": "2026-07-11T06:59:41.697Z",
       "total_tok": 331709280,
       "today_tok": 11740292,
@@ -460,7 +460,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 2664,
+      "idle_min": 2674,
       "last_ts": "2026-07-09T16:36:25.677Z",
       "total_tok": 21169515,
       "today_tok": 0,
@@ -490,7 +490,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "IDLE",
-      "idle_min": 435,
+      "idle_min": 445,
       "last_ts": "2026-07-11T05:45:33.903Z",
       "total_tok": 12960276,
       "today_tok": 1825670,
@@ -1334,20 +1334,6 @@
       "core": true
     },
     {
-      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
-      "name": "agent-model-monitor-daily",
-      "agent": "main",
-      "enabled": true,
-      "expr": "0 21 * * *",
-      "human": "每天 21:00",
-      "human_en": "Daily 21:00",
-      "kind": "cron",
-      "next_run_ms": 1783774800000,
-      "last_run_ms": 1783688400008,
-      "last_status": "ok",
-      "core": false
-    },
-    {
       "id": "d6c0bf92-c884-4b73-9cc5-da028e3b7b11",
       "name": "ai-daily-reads-candidates",
       "agent": "mk2",
@@ -1372,6 +1358,20 @@
       "kind": "cron",
       "next_run_ms": 1783821600000,
       "last_run_ms": 1783216800093,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
+      "name": "agent-model-monitor-daily",
+      "agent": "main",
+      "enabled": true,
+      "expr": "0 21 * * *",
+      "human": "每天 21:00",
+      "human_en": "Daily 21:00",
+      "kind": "cron",
+      "next_run_ms": 1783861200000,
+      "last_run_ms": 1783774800007,
       "last_status": "ok",
       "core": false
     },
@@ -1431,9 +1431,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 98110671,
-      "cost": 307.89,
-      "calls": 152
+      "tok": 98557458,
+      "cost": 309.42,
+      "calls": 154
     },
     {
       "name": "deepseek/DeepSeek-V4-Pro",

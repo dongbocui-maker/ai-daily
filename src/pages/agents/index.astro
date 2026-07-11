@@ -376,6 +376,48 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   /* 窄屏 DIRECT 移到徽章底部居中 */
   .arch-direct{top:auto;bottom:-8px;right:50%;transform:translateX(50%);font-size:6.5px;padding:1px 6px}
 }
+/* ===== KNOWLEDGE PYRAMID · 隐性知识沉淀与提取（静态卡片） ===== */
+.kp-card{position:relative;background:linear-gradient(135deg,var(--panel),#0a1018);border:1px solid var(--line);border-radius:8px;padding:18px 22px 22px;margin-bottom:22px;overflow:hidden;box-shadow:0 0 30px rgba(63,201,255,.06)}
+.kp-card::before{content:'';position:absolute;top:-60px;left:30%;width:420px;height:260px;background:radial-gradient(circle,rgba(255,196,0,.07),transparent 65%);pointer-events:none}
+.kp-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;flex-wrap:wrap;gap:8px;position:relative;z-index:2}
+.kp-title{font-family:'Orbitron';font-weight:800;font-size:14px;color:var(--gold);letter-spacing:3px}
+.kp-sub{font-size:9.5px;color:var(--dim);letter-spacing:1px}
+.kp-body{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:28px;align-items:center;position:relative;z-index:2}
+.kp-pyr{position:relative;display:flex;flex-direction:column;gap:7px;padding:6px 0 2px}
+.kp-layer{position:relative;height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:.18s}
+.kp-layer:hover{transform:translateY(-2px)}
+.kp-l3{clip-path:polygon(39% 0,61% 0,74% 100%,26% 100%);background:linear-gradient(180deg,rgba(255,196,0,.30),rgba(255,196,0,.10));border-top:2px solid rgba(255,196,0,.8)}
+.kp-l2{clip-path:polygon(26.5% 0,73.5% 0,87% 100%,13% 100%);background:linear-gradient(180deg,rgba(63,201,255,.26),rgba(63,201,255,.08))}
+.kp-l1{clip-path:polygon(13.5% 0,86.5% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(52,211,153,.22),rgba(52,211,153,.07))}
+.kp-tier{font-family:'Orbitron';font-weight:800;font-size:9px;letter-spacing:2px;color:var(--dim)}
+.kp-l3 .kp-tier{color:rgba(255,196,0,.85)}
+.kp-l2 .kp-tier{color:rgba(63,201,255,.85)}
+.kp-l1 .kp-tier{color:rgba(52,211,153,.85)}
+.kp-name{font-family:'Orbitron';font-weight:800;font-size:13px;color:#fff;letter-spacing:1.5px;margin-top:3px;text-shadow:0 0 12px rgba(255,255,255,.15)}
+.kp-zh{font-size:9px;color:var(--txt);opacity:.75;letter-spacing:2px;margin-top:2px}
+.kp-axis{position:absolute;top:6px;bottom:2px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-size:8px;letter-spacing:1.5px;color:var(--dim);font-family:'Orbitron'}
+.kp-ax-l{left:-6px;writing-mode:vertical-rl;transform:rotate(180deg)}
+.kp-ax-r{right:-6px;writing-mode:vertical-rl}
+.kp-legend{display:flex;flex-direction:column;gap:12px}
+.kp-row{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kp-row.r3{border-color:rgba(255,196,0,.3)}
+.kp-row.r2{border-color:rgba(63,201,255,.28)}
+.kp-row.r1{border-color:rgba(52,211,153,.28)}
+.kp-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.kp-row.r3 .kp-dot{background:var(--gold);box-shadow:0 0 8px rgba(255,196,0,.7)}
+.kp-row.r2 .kp-dot{background:var(--arc);box-shadow:0 0 8px rgba(63,201,255,.7)}
+.kp-row.r1 .kp-dot{background:var(--green);box-shadow:0 0 8px rgba(52,211,153,.7)}
+.kp-rt{font-family:'Orbitron';font-weight:700;font-size:10.5px;letter-spacing:1.5px;color:#fff}
+.kp-rd{font-size:10px;color:var(--dim);line-height:1.6;margin-top:3px;letter-spacing:.4px}
+.kp-rd b{color:var(--txt);font-weight:600}
+.kp-principles{display:flex;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--line);margin-top:16px;padding-top:14px;position:relative;z-index:2}
+.kp-chip{display:flex;align-items:center;gap:7px;font-size:9px;letter-spacing:1px;color:var(--txt);background:#08111c;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.kp-chip .ic{color:var(--arc)}
+.kp-chip b{font-family:'Orbitron';font-weight:700;font-size:8.5px;letter-spacing:1.5px;color:var(--arc)}
+.kp-chip.warn b{color:var(--gold)}.kp-chip.warn .ic{color:var(--gold)}
+.kp-chip.ok b{color:var(--green)}.kp-chip.ok .ic{color:var(--green)}
+@media(max-width:860px){.kp-body{grid-template-columns:1fr}.kp-axis{display:none}}
+
 /* 手机端防撑宽：必须放样式末尾，晚于上方 .trend-sec{overflow:visible} 与 .panel 定义 */
 @media(max-width:768px){
   .trend-sec{overflow-x:clip} /* 裁掉隐藏 tooltip 撑宽页面（手机无 hover） */
@@ -403,6 +445,56 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 </div>
 
 <div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
+
+<section class="kp-card">
+  <div class="kp-head">
+    <div class="kp-title">KNOWLEDGE PYRAMID · 隐性知识沉淀</div>
+    <div class="kp-sub">TACIT → EXPLICIT · PROGRESSIVE DISTILLATION · ZERO-DRIFT HOT INDEX</div>
+  </div>
+  <div class="kp-body">
+    <div class="kp-pyr">
+      <div class="kp-axis kp-ax-l"><span>DENSITY ↑</span></div>
+      <div class="kp-axis kp-ax-r"><span>VOLUME ↓</span></div>
+      <div class="kp-layer kp-l3">
+        <div class="kp-tier">TIER 3</div>
+        <div class="kp-name">HOT INDEX</div>
+        <div class="kp-zh">热索引 · 常驻加载</div>
+      </div>
+      <div class="kp-layer kp-l2">
+        <div class="kp-tier">TIER 2</div>
+        <div class="kp-name">THEMATIC BASE</div>
+        <div class="kp-zh">主题库 · 按需检索</div>
+      </div>
+      <div class="kp-layer kp-l1">
+        <div class="kp-tier">TIER 1</div>
+        <div class="kp-name">FACTUAL BASE</div>
+        <div class="kp-zh">事实底本 · 不可删除</div>
+      </div>
+    </div>
+    <div class="kp-legend">
+      <div class="kp-row r3">
+        <div class="kp-dot"></div>
+        <div><div class="kp-rt">HOT INDEX · 热索引</div>
+        <div class="kp-rd"><b>MEMORY.md</b> — 铁律 + 触发索引 + 项目骨架，每个主会话强制加载；凝练至 ~12KB，零漂移</div></div>
+      </div>
+      <div class="kp-row r2">
+        <div class="kp-dot"></div>
+        <div><div class="kp-rt">THEMATIC BASE · 主题库</div>
+        <div class="kp-rd"><b>archive/ + themes/</b> — 决策点索引、主题归档、项目 Context Pack；关键词触发、按需检索</div></div>
+      </div>
+      <div class="kp-row r1">
+        <div class="kp-dot"></div>
+        <div><div class="kp-rt">FACTUAL BASE · 事实底本</div>
+        <div class="kp-rd"><b>daily logs + agent-actions</b> — 66+ 篇原始日志与跨 session 行动流水；只增不删，永久可回溯</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="kp-principles">
+    <div class="kp-chip ok"><span class="ic">◉</span><b>IMMUTABLE BASE</b><span>底本不可删 · 只新增不覆写</span></div>
+    <div class="kp-chip"><span class="ic">⧉</span><b>DERIVED COPIES</b><span>上层为派生副本 · 可重建可覆盖</span></div>
+    <div class="kp-chip warn"><span class="ic">▲</span><b>UPWARD RESOLUTION</b><span>冲突以上层为准 · 向下修正</span></div>
+  </div>
+</section>
 
 <footer>
   ⌜ S.H.R.I.M.P. OS v0.1 ⌟ · DATA SNAPSHOT <span id="gen">—</span> ·

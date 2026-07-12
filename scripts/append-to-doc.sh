@@ -1,4 +1,5 @@
 #!/bin/bash
+# ⚠️ 已弃用于日报流程 2026-07-12：日报砍掉飞书文档中转，直接写本地 JSON。本文件遵铁律17保留，不删。
 # append-to-doc.sh - 用主钢铁虾 App tenant token 把 markdown 追加到飞书文档
 #
 # 用途：替代 cron 里 feishu_doc append 调用，避免 MK2 App 权限不足问题

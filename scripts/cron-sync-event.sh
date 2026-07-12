@@ -28,12 +28,11 @@ source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[event-sync] WARN: LLM endpo
   echo "===== $(date '+%F %T %Z') [event-driven] ====="
   echo "[event-sync] starting (called from cron subagent Step H)"
 
-  # 跳过 git fetch——直接 pnpm sync 即可
-  # 如果飞书 → src/data/daily 拉数据失败，是 fatal（必报错）
-  if ! pnpm sync; then
-    echo "[event-sync] ❌ pnpm sync failed (fatal)"
-    exit 1
-  fi
+  # 2026-07-12 改造：砍掉飞书文档中转，日报由 cron 子代理 Step D 直接写本地
+  # src/data/daily/YYYY-MM-DD.json。本步不再拉飞书解析（pnpm sync 已移除），
+  # 只负责：schema 校验已改动的 JSON → commit → push。
+  # 弃用说明：sync.ts / parse.ts / feishu.ts / append-to-doc.sh 已弃用于日报流程，
+  #           保留文件（遵铁律17不删），pnpm sync 仍在 package.json 供人工/历史用途。
 
   # Schema 校验门禄：校验失败则不 commit（但仍完成自归档，不当整体失败）
   # 参考 AUDIT-2026-06-11 H1：坏数据不能上线，等 09:00 系统 cron 修复后重试

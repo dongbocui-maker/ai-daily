@@ -1,3 +1,5 @@
+// ⚠️ 已弃用于日报流程 2026-07-12：日报改由 cron 子代理 (c24f6b6f Step D) 直接写 src/data/daily/*.json，
+//    不再经「飞书文档 → 反解析」这条脆弱往返。本文件遵铁律17保留，pnpm sync 仍供人工/历史用途。
 // 主同步流程：飞书文档 → 解析 → 清洗 → 写 src/data/daily/*.json
 import 'dotenv/config';
 import fs from 'node:fs';

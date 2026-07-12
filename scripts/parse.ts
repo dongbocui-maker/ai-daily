@@ -1,3 +1,4 @@
+// ⚠️ 已弃用于日报流程 2026-07-12：日报改由 cron 子代理直接写结构化 JSON，不再反解析飞书文档。保留（铁律17）。
 // 把飞书 docx raw_content（纯文本）解析成日报结构
 import type { DailyReport, Section, NewsItem, SectionKey } from '../src/lib/data';
 

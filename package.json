@@ -12,6 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "_comment_sync": "⚠️ sync/sync:dry/sync:offline 已弃用于日报流程 2026-07-12（日报改由 cron 子代理直写本地 JSON，不再拉飞书反解析）；保留供人工/历史用途，不删（铁律17）",
     "sync": "tsx scripts/sync.ts",
     "sync:dry": "tsx scripts/sync.ts --dry-run",
     "sync:offline": "tsx scripts/sync.ts --no-llm"

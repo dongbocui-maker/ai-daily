@@ -1,3 +1,4 @@
+// ⚠️ 已弃用于日报流程 2026-07-12：日报不再拉飞书文档。保留（铁律17），仅 pnpm sync 人工/历史用途引用。
 // 飞书 API 客户端 —— 拉取 docx 文档纯文本与 block 树
 const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
 

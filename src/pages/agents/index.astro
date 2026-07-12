@@ -533,7 +533,7 @@ const CHAINS={
   aima:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
   mk2:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
   mk46:['qwen3.7-max','opus-4.8','gpt-5.6-sol'],
-  'claude-researcher':['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
+  'claude-researcher':['gpt-5.6-sol','opus-4.8','qwen3.7-max'],
 };
 const CHAIN_MODEL_KEYS={
   'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
@@ -921,7 +921,7 @@ const ARCH_AGENT_EP = {
   aima:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   mk2:                 {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   mk46:                {primary:'ep-qwen', fallback:['ep-opus','ep-gpt']},
-  'claude-researcher': {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
+  'claude-researcher': {primary:'ep-gpt', fallback:['ep-opus','ep-qwen']},
 };
 // 持久「当前激活 agent」状态（点击切换）
 // 初始='mk2'：默认激活 MK2——二层→三层初始即亮显 MK2 的 primary+fallback 链路；

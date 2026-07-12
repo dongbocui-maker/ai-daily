@@ -29,6 +29,17 @@ mkdir -p "$LOG_DIR"
 ts() { TZ=Asia/Shanghai date '+%H:%M:%S'; }
 log() { echo "$(ts) $*" | tee -a "$LOG"; }
 
+# 解析 node 绝对路径——system cron 环境 PATH 不含 nvm 装的 node
+# （历史 bug：cron 下 `node` not found → TODO 空 → 误判"所有精读已有音频"）
+NODE_BIN=""
+for cand in "$(command -v node 2>/dev/null)" /root/.nvm/versions/node/*/bin/node /usr/local/bin/node /usr/bin/node; do
+    if [[ -n "$cand" && -x "$cand" ]]; then NODE_BIN="$cand"; break; fi
+done
+if [[ -z "$NODE_BIN" ]]; then
+    log "❌ 找不到 node 可执行文件，无法扫描待入队精读——本轮失败退出（非静默跳过）"
+    exit 1
+fi
+
 # 单实例锁：避免与上一轮（NotebookLM 调用慢）重叠
 exec 9>"$LOCK"
 if ! flock -n 9; then
@@ -43,7 +54,7 @@ if ! ss -tlnp 2>/dev/null | grep -q '127.0.0.1:7890'; then
 fi
 
 # 用 node 找出"无 audio.url 且无 active state"的 slug 列表
-TODO=$(node -e '
+if ! TODO=$("$NODE_BIN" -e '
 const fs=require("fs");
 const readsDir="'"$READS_DIR"'";
 const stateDir="'"$STATE_DIR"'";
@@ -64,7 +75,10 @@ fs.readdirSync(readsDir).filter(f=>f.endsWith(".json")).forEach(f=>{
   todo.push(slug);
 });
 console.log(todo.join("\n"));
-')
+'); then
+    log "❌ node 扫描精读失败（脚本执行异常），本轮失败退出——不静默跳过，避免掩盖问题"
+    exit 1
+fi
 
 if [[ -z "$TODO" ]]; then
     log "无需入队（所有精读已有音频或正在处理）"

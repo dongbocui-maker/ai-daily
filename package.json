@@ -7,6 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "gen:chains": "python3 scripts/gen-agent-chains.py",
+    "prebuild": "python3 scripts/gen-agent-chains.py || echo '[prebuild] gen-agent-chains skipped (keeping existing agent-chains.json)'",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

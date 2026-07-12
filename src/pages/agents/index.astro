@@ -6,6 +6,17 @@
 const BASE = import.meta.env.BASE_URL;
 const LIVE_URL = 'https://data.aidigest.club/dashboard.json';
 const FALLBACK_URL = `${BASE}agents/data/dashboard-fallback.json`;
+
+// ===== Agent 模型链路：single source of truth =====
+// 由 scripts/gen-agent-chains.py 从 /root/.openclaw/openclaw.json 生成 → src/data/agent-chains.json
+//（prebuild hook + 小时级 agents-dashboard-deploy.sh 刷新，改主模型不再需手动同步页面）。
+// 消除了以前 CHAINS / ARCH_AGENT_EP 两处硬编码。
+// 必须用 dynamic `await import()` 而非顶层 `import ... json`：本页含超大 <style is:global>，
+// 当前 Astro/Vite 版本下任何顶层 frontmatter import 都会让 esbuild 误把 <style> 当 JS 解析
+//（报 Unexpected "."）。已验证：bare `import fs` 也触发，而 dynamic import 不会。
+// 若 JSON 缺失/损坏，下方客户端脚本保留硬编码 literal 作为最后兜底。
+let AGENT_CHAINS=null, AGENT_ARCH_EP=null;
+try{ const _m=await import('../../data/agent-chains.json'); const _ac=_m.default||_m; AGENT_CHAINS=_ac.chains||null; AGENT_ARCH_EP=_ac.archAgentEp||null; }catch(e){ console.warn('[agents/index] chains load fail', e?.message); }
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -527,15 +538,17 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   <span class="red">CONFIDENTIAL</span> · POWERED BY 🦐 IRON SHRIMP STACK
 </footer>
 
-<script define:vars={{ LIVE_URL, FALLBACK_URL }}>
-const CHAINS={
+<script define:vars={{ LIVE_URL, FALLBACK_URL, AGENT_CHAINS, AGENT_ARCH_EP }}>
+// CHAINS: 优先用 build 时从 openclaw.json 生成的 AGENT_CHAINS（single source of truth）；
+// 若 JSON 缺失/损坏则回退到硬编码 literal（仅兜底，可能过时）。
+const CHAINS = AGENT_CHAINS || {
   main:['fable-5','opus-4.8','gpt-5.6-sol','qwen3.7-max'],
   aima:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
   mk2:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
   mk46:['qwen3.7-max','opus-4.8','gpt-5.6-sol'],
   'claude-researcher':['gpt-5.6-sol','opus-4.8','qwen3.7-max'],
 };
-const CHAIN_MODEL_KEYS={
+const CHAIN_MODEL_KEYS = {
   'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
@@ -916,7 +929,9 @@ function bindArchActive(){
 // ===== AGENT TOPOLOGY 蓝色辉光调度连线 + agent→LLM 链路 =====
 // agent → LLM 端点映射（primary 青实线；fallback 青虚线，严格同现网青蓝辉光色系）
 // 注：仅 Tier2 worker 的条目会被渲染画 LLM 链路；main/aima(Tier1) 不画 LLM 直连，下方仅供数据完整性/参考
-const ARCH_AGENT_EP = {
+// 优先用 build 时从 openclaw.json 推导的 AGENT_ARCH_EP（与 CHAINS 同一数据源）；
+// 若缺失则回退硬编码 literal（仅兜底，可能过时）。
+const ARCH_AGENT_EP = AGENT_ARCH_EP || {
   main:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   aima:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   mk2:                 {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},

@@ -1,10 +1,14 @@
-name: Daily Sync from Feishu
+name: Daily Push Fallback
+
+# 纯兜底 push：本地 VM cron（cron-sync.sh，09:30 北京）负责生成日报 JSON 并 push GitHub。
+# 万一本地 VM push 失败（国内网络到 GitHub 不稳），这里在北京 12:00/17:00 再补推一次。
+# ⚠️ 飞书文档中转已于 2026-07-12 弃用（commit b7d741c）：日报由本地 agent 直接产出本地 JSON，
+#    本 workflow 绝不生成/拉取任何数据，仅做「校验 + 推送已存在的本地改动」，避免拉空/坏数据覆盖好 JSON。
 
 on:
   schedule:
-    # 兜底用：本地 VM cron（09:30 北京时间）失败时 GitHub 这边再补两次
-    # GitHub cron 经常延迟 5–15 分钟，所以多跑几次幂等无害
-    - cron: '0 4 * * *'    # UTC 04:00 = 北京 12:00（本地 cron 失败兜底）
+    # GitHub cron 经常延迟 5–15 分钟，多跑几次幂等无害（有未推送改动才推）
+    - cron: '0 4 * * *'    # UTC 04:00 = 北京 12:00（本地 push 失败兜底）
     - cron: '0 9 * * *'    # UTC 09:00 = 北京 17:00（再次兜底）
   workflow_dispatch:
 
@@ -12,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  sync:
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,18 +29,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
-      - name: Sync from Feishu
-        env:
-          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
-          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
-          DOC_TOKEN: ${{ secrets.DOC_TOKEN }}
-          LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
-        run: pnpm sync -- --date=$(TZ=Asia/Shanghai date +%F)
-
       - name: Validate daily schema
-        # 校验门禄：schema 失败则不 commit（参考 AUDIT-2026-06-11 H1）
+        # 校验门禁：schema 失败则不 commit（参考 AUDIT-2026-06-11 H1）
         run: python3 scripts/validate-daily-schema.py --changed
 
       # GitHub Trending 同步已拆到 .github/workflows/github-trending.yml
@@ -48,9 +42,9 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add src/data/daily
-            git commit -m "chore(data): daily sync $(TZ=Asia/Shanghai date +%F)"
+            git commit -m "chore(data): daily push fallback $(TZ=Asia/Shanghai date +%F)"
             git push
-            echo "::notice::Daily content synced and pushed."
+            echo "::notice::Daily content pushed (fallback)."
           else
-            echo "::notice::No changes today."
+            echo "::notice::No unpushed changes today."
           fi

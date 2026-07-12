@@ -156,6 +156,8 @@ footer .red{color:var(--red-dim)}
 /* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
 body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
 body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card{display:none}
+/* 初始隐藏：与 #app 的 loading 占位视觉同步，数据首次到位后由 renderKnowledge 移除 kp-pending。与 gate-locked 独立，两者任一命中即隐藏（解锁但数据未到时仍隐藏） */
+.kp-card.kp-pending{display:none}
 
 /* === Event Ticker 跑马灯 === */
 .event-ticker{position:relative;height:36px;background:linear-gradient(90deg,rgba(7,10,15,.95),rgba(14,17,24,.95));border:1px solid var(--line);border-radius:5px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center}
@@ -468,7 +470,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
 
-<section class="kp-card">
+<section class="kp-card kp-pending">
   <div class="kp-head">
     <div>
       <div class="kp-title">KNOWLEDGE PYRAMID · 知识金字塔</div>
@@ -1162,6 +1164,8 @@ function renderKnowledge(d){
   s3.textContent=_kpFmt(k.t3); s3.classList.toggle('over', !!(k.t3&&k.t3.over));
   s2.textContent=_kpFmt(k.t2); s2.classList.remove('over');
   s1.textContent=_kpFmt(k.t1); s1.classList.remove('over');
+  // 数据已到位并成功渲染（此处 _kpData 与 k 必存在），解除初始隐藏，与 #app 内容同一时刻出现
+  const _kpc=document.querySelector('.kp-card'); if(_kpc) _kpc.classList.remove('kp-pending');
 }
 (function(){
   const sw=document.getElementById('kpSwitch');

@@ -1,0 +1,158 @@
+{
+  "date": "2026-07-13",
+  "title": "AI 日报 · 2026-07-13",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 战略合作 | Anthropic 联手黑石、高盛成立 15 亿美元合资公司，正式向私募股权系企业推销 Claude",
+          "body": "据华尔街日报与 Bloomberg 报道，IPO 前夜的 Anthropic 已与黑石（Blackstone）、Hellman & Friedman、高盛（Goldman Sachs）组建一家 15 亿美元的合资部署公司，专门面向缺乏内部前沿部署资源的私募股权控股企业推销 Claude 服务，交易预计于本周一（7 月 13 日）正式宣布。这与 OpenAI 此前成立的 100 亿美元「Deployment Company」、AWS 的 10 亿美元部署项目、微软 25 亿美元「Frontier」形成呼应——大模型厂商合计约 90 亿美元资金正在把「企业落地」从概念做成一条独立赛道。四家玩家都在用「贴身交付 + 资本绑定渠道」的打法争抢企业客户。",
+          "insight": "模型层同质化后，竞争主战场已从「卖模型」转向「卖落地服务」，咨询集成商成为大厂争抢的关键渠道。",
+          "source": "Stocktwits / WSJ",
+          "url": "https://stocktwits.com/news-articles/markets/equity/ipo-bound-anthropic-is-reportedly-teaming-up-with-blackstone-goldman-sachs-in-1-5-b-joint-venture-to-sell-ai/cZQMiDTRe7n"
+        },
+        {
+          "title": "🌍 行业动向 | Bloomberg：4.4 万亿美元「AI 三巨头」垄断新兴市场回报，资金开始向 AI 以外轮动",
+          "body": "Bloomberg 7 月 12 日报道，新兴市场投资者正在「AI 赢家」之外重新配置资产——仅三只科技股（合计市值约 4.4 万亿美元）就贡献了新兴市场指数中不成比例的超额收益，令基金经理对集中度风险日益警惕。包括摩根大通资产管理、GMO（Grantham Mayo Van Otterloo）在内的机构开始转向博彩、能源乃至越南乳业等更贴近实体经济的标的，以对冲一旦 AI 叙事降温可能出现的剧烈回撤。这是继英格兰银行警示 AI 对金融稳定构成上升风险后，市场对 AI 估值集中度的又一次公开担忧。",
+          "insight": "AI 行情的极度集中正在成为系统性风险源，机构「去 AI 集中化」配置的动作值得企业财务与战略部门关注。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-07-12/funds-fret-over-4-4-trillion-ai-trio-s-grip-on-emerging-markets"
+        },
+        {
+          "title": "🌍 行业动向 | 深度拆解英伟达-CoreWeave-Nebius「循环融资」：GPU 繁荣背后的互保结构引发泡沫质疑",
+          "body": "登上 Hacker News 热榜（357 分）的一篇分析拆解了 Neocloud（新型 GPU 云）赛道的循环融资结构：英伟达既向 CoreWeave 售卖芯片，又持有其约 7% 股份，还承诺在 CoreWeave 数据中心产能未被自有客户消化时——直至 2032 年 4 月——回购未售出的算力。而 OpenAI 又从 CoreWeave 采购算力，CoreWeave 以长期采购合同为抵押融资购买英伟达芯片，形成闭环。分析师将其类比为互联网泡沫时期的「厂商融资」（vendor financing），Michael Burry 等空头据此警告 AI 泡沫。SemiAnalysis 指出，当前 GPU 融资定价更多取决于「谁签了长期承购合同」而非 Neocloud 自身信用。",
+          "insight": "算力供应链的循环担保结构一旦某一环违约即可能连锁传导，是评估 AI 基础设施投资风险时不可忽视的隐性杠杆。",
+          "source": "IO Fund / Hacker News",
+          "url": "https://io-fund.com/ai-stocks/nvidia-coreweave-nebius-circular-financing-gpu-boom"
+        },
+        {
+          "title": "💬 观点 | George Hotz（geohot）发文《我爱 LLM，但我恨炒作》引硅谷共鸣，登 HN 热榜",
+          "body": "tinygrad 与 comma.ai 创始人 George Hotz（geohot）7 月 12 日发表长文《I love LLMs, I hate hype》，迅速登上 Hacker News 热榜（242 分、131 条评论）。他区分了对大语言模型这项技术的真心欣赏，与围绕它的过度承诺、拟人化和商业泡沫式炒作之间的鸿沟，主张以务实、去神话的姿态看待 LLM 的真实能力边界。文章在近期 GPT-5.6「一小时破解数学猜想」「Claude 内部意识」等高热叙事背景下发布，为业界降温提供了一个来自一线技术人的清醒视角。",
+          "insight": "在模型能力被反复戏剧化的当下，来自技术圈内部的「反炒作」声音有助于企业决策者建立更理性的能力预期。",
+          "source": "geohot Blog / Hacker News",
+          "url": "https://geohot.github.io//blog/jekyll/update/2026/07/12/i-love-llms.html"
+        },
+        {
+          "title": "💰 融资 | 量子位：一年 34 起、44.7 亿元砸进「具身数据」赛道，谁能真靠卖数据赚钱？",
+          "body": "量子位 7 月 12 日发布行业盘点：不完全统计国内已有 97 家具身智能数据玩家（70 家做数据采集、27 家做数据基础设施），其中 15 家「不做本体、不做模型、只做数据」的独立数据服务商，在过去一年（2025 年 7 月至 2026 年 7 月）完成 34 起融资、合计约 44.7 亿元人民币，且高度集中在 2026 年 4—6 月三个月。独立数据服务商占比 40%，已成最大群体；主流采集技术路线有四类，行业短期产能目标要扩大 15—20 倍。文章追问：在产能兑现、价格内卷之下，谁能率先拿出利润表，成为具身智能真正赚钱的「卖铲人」。",
+          "insight": "具身智能数据正复刻自动驾驶数据标注赛道的路径，但盈利模型尚未跑通，产能与价格战将决定洗牌节奏。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/07/447914.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "📊 市场数据 | 网易科技梳理「90 亿美元部署赛道」：73% 企业用 AI，仅 10% 进入核心运营",
+          "body": "多家媒体综合报道，大模型厂商正集体押注企业落地：微软 25 亿美元「Frontier」、AWS 10 亿美元 AI 部署项目、OpenAI 由 TPG 领投估值超 40 亿美元的 DeployCo，加上 Anthropic 与黑石/高盛的 15 亿美元合资公司，四个项目合计约 90 亿美元，「落地」在几个月内从概念变成独立赛道。驱动因素来自需求侧数据：Publicis Sapient 调查显示 73% 企业称在用 AI，但仅 10% 表示 AI 已进入核心运营；德勤 2026 报告中 91% 的中国受访制造企业称 AI 实施未达预期。厂商由此转向派驻「前沿部署工程师」（FDE）贴身陪跑。",
+          "insight": "企业 AI 的瓶颈已从「有没有模型」转为「能不能落地到核心流程」，贴身交付与治理能力成为差异化关键。",
+          "source": "网易科技",
+          "url": "https://www.163.com/dy/article/L16CPRTJ05119734.html"
+        },
+        {
+          "title": "🤝 战略合作 | OpenAI 称 GPT-5.6 是微软 Copilot 365「首选模型」，回应「分手」传闻",
+          "body": "TechCrunch 报道，在外界持续揣测 OpenAI 与微软关系生变之际，OpenAI 公开表示 GPT-5.6 是微软 Copilot 365 的「preferred model」（首选模型），试图安抚企业客户对两家合作稳定性的疑虑。此举正值 OpenAI 通过 GPT-5.6 三档分层（Sol/Terra/Luna）与 ChatGPT Work 智能体产品，从「卖模型」转向「卖服务」的战略转型期。分析指出，微软近期也在推进「去 OpenAI 化」、在自有产品中引入多模型，双方在企业市场既深度绑定又暗自角力。",
+          "insight": "对采购 M365 Copilot 的企业而言，底层模型供应关系的稳定性与多模型策略走向，直接影响长期技术选型与议价空间。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/09/openai-says-gpt-5-6-is-the-preferred-model-for-microsoft-copilot-amid-breakup-chatter/"
+        },
+        {
+          "title": "🏭 案例 | 钉钉「悟空」通过 ISO/IEC 42001 AI 管理体系认证，IDC 报告揭企业 Agent 落地真相",
+          "body": "据 IDC 报告及媒体报道，2026 年 6 月钉钉企业级 AI 助手「悟空」正式通过中国质量认证中心 ISO/IEC 42001:2023 人工智能管理体系认证。该认证的价值在于提供了一套责任归属框架：悟空从底层搭建 AI 原生文件系统，每执行一步操作都自动保存完整快照，出问题可查、可回退、可追责；审计层面所有请求与操作全程留痕，谁发的、从哪台设备、什么环境下发的均清晰可溯。IDC 报告指出，随着 Agent 大规模进入企业办公场景，可追溯性、责任界定与合规治理已成为规模化落地的核心门槛，而非单纯拼模型能力。",
+          "insight": "企业级 Agent 的竞争正从「能力」转向「可治理」，可追溯、可回退、可审计的工程底座是通过合规门槛、赢得政企客户的关键。",
+          "source": "搜狐科技 / IDC",
+          "url": "https://www.sohu.com/a/1048177264_122640978"
+        },
+        {
+          "title": "📊 趋势观点 | 830 位 IT 领袖调研：Agentic AI 成企业头号优先级，试点阶段结束",
+          "body": "The D*AI*LY BRIEF 报道，一项覆盖 830 位 IT 领袖的调研显示，agentic AI 已被列为企业头号优先级，标志着「试点阶段」结束。Futurum 分析师 Keith Kirkpatrick 指出，2026 年的企业买家远比以往成熟，正把 agentic AI 当作「生产部署」而非「实验」来对待——采购逻辑从探索性尝鲜转向以 ROI、回本周期和实施成本为核心的严肃投资决策。报道同时提供了面向 AI 智能体部署的储蓄、回本周期与实施成本估算工具，反映买方对量化收益的强烈需求。",
+          "insight": "企业采购心态已从「试试看」切换到「算账」，供应商必须拿出可量化的 ROI 与回本模型才能赢单。",
+          "source": "The D*AI*LY BRIEF (beri.net)",
+          "url": "https://www.beri.net/article/agentic-ai-number-one-enterprise-priority-2026-survey"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🔬 技术突破 | 陶哲轩实测现代编码 Agent：移植二十余个数学可视化 applet，仅发现 1 处小 bug",
+          "body": "菲尔兹奖得主陶哲轩（Terry Tao）7 月 11 日发文，记录用现代 LLM 编码 Agent 把二十余个陈旧的数学可视化 applet 迁移/重写为现代 Web 应用的实测经历，文章登上 Hacker News 热榜（384 分）。他坦言 LLM 编码 Agent 确实可能引入明显或隐蔽的 bug，但在这批移植中只找到一处小 bug（某复分析 applet 拖拽出框时的异常行为），而 Agent 反而识别出原始代码里两个他此前未察觉的 bug，代码质量净值持平。他认为对于「辅助性可视化」这类非关键组件，编码 Agent 的下行风险相对可控。",
+          "insight": "一线顶尖研究者的真实工作流评测，比营销跑分更能校准编码 Agent 在「非核心代码」场景的实用价值与风险边界。",
+          "source": "Terry Tao Blog / Hacker News",
+          "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/"
+        },
+        {
+          "title": "🧰 工具生态 | 实测：Claude Code 读你 prompt 前先发 3.3 万 token，OpenCode 仅 7 千",
+          "body": "登上 Hacker News 热榜（342 分）的 Systima 实测博客量化了编码 Agent 的「bootstrap 开销」：Claude Code 在真正读取用户 prompt 之前，就要先发送约 3.3 万 token 的系统提示与工具描述，而 OpenCode 仅约 7 千 token。更关键的是 subagent 放大效应——一次适度的 fan-out 中，累计计费输入 token 达 51.3 万，而同样工作直接做只需 12.1 万，形成约 4.2 倍的乘数，因为每个 subagent 都要支付自己的 bootstrap，其 transcript 还会被父 Agent 再次摄入。该讨论与近期 Claude Code 缓存时长缩短、用量暴涨的争议相互印证。",
+          "insight": "编码 Agent 的隐性 token 开销直接决定企业实际用量与成本，选型时必须把 harness 开销与 subagent 放大纳入 TCO 核算。",
+          "source": "Systima Blog / Hacker News",
+          "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead"
+        },
+        {
+          "title": "🌍 行业动向 | 全网骂「Claude 变笨」，Anthropic 下场揭秘：坑你的不是模型，是默认档位偷偷降了",
+          "body": "36 氪 7 月 12 日报道，近期大量开发者抱怨「Claude 无缘无故变蠢」，起初以为是自己提示词或配置问题。真相是 Anthropic 为压低延迟，于 3 月 4 日悄悄把 Claude Code 里的 Effort 选项默认档位从 high 降到 medium——虽写进了更新日志，但多数人并未注意。叠加此前用户分析 12 万次 API 调用发现的「提示词缓存有效时长从 1 小时缩短回 5 分钟」，长会话缓存频繁失效、token 消耗与用量上涨。Anthropic 官方下场解释，试图厘清「体感降智」的真实成因来自配置与缓存策略，而非模型权重退化。",
+          "insight": "厂商对默认参数与缓存策略的静默调整会直接改变实际体验与账单，企业应把「配置透明度」纳入供应商评估与合同条款。",
+          "source": "36 氪",
+          "url": "https://36kr.com/p/3892222176574211"
+        },
+        {
+          "title": "🧰 工具生态 | Piebald-AI 开源 Claude Code 全套系统提示词逆向库，v2.1.207 版含 27 个内置工具描述",
+          "body": "登上 GitHub 热门（12 小时前更新）的 Piebald-AI/claude-code-system-prompts 仓库，维护了一份持续更新的 Claude Code 系统提示词全集：截至 v2.1.207（2026 年 7 月 10 日），涵盖 27 个内置工具描述、子 Agent 提示词（Plan/Explore/Task）、以及 CLAUDE.md、compact、statusline、WebFetch、安全审查、Agent 创建等各类实用提示词，并附有跨 233 个版本（自 v2.0.14 起）的 CHANGELOG。该项目为研究编码 Agent 的提示词工程、逆向其行为逻辑、以及审计 token 开销提供了一手素材。",
+          "insight": "编码 Agent 的系统提示词逐渐被社区透明化，既是提示工程学习资源，也让企业得以审计其行为与 token 成本来源。",
+          "source": "GitHub (Piebald-AI)",
+          "url": "https://github.com/Piebald-AI/claude-code-system-prompts"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 研究报告 | IEEE Spectrum：分析 4000 万篇论文发现——用 AI 的科学家发文更多、晋升更快，但科学整体在「变窄」",
+          "body": "IEEE Spectrum 报道一项对 4000 万余篇学术论文的分析（HN 131 分）：使用 AI 工具做研究的科学家，发表更多论文、积累更多引用、更早进入领导岗位。但存在一个隐患——当个体学者在学术阶梯上飞速攀升时，科学整体却在收窄好奇心：AI 密集型研究覆盖的主题范围更小，扎堆于数据丰富的相同问题，研究之间的后续互动与引用也更少。结论揭示了个人职业晋升与集体科学进步之间的张力：AI 把科学家变成了「发表机器」，却悄悄把他们引向同样拥挤的研究角落。",
+          "insight": "AI 提升科研效率的同时可能压缩探索的多样性，对企业研发与创新组合管理同样是「效率 vs 多样性」的警示。",
+          "source": "IEEE Spectrum",
+          "url": "https://spectrum.ieee.org/ai-science-research-flattens-discovery"
+        },
+        {
+          "title": "🔬 技术突破 | GPT-5.6 Sol Ultra 一小时破解 50 年图论猜想，OpenAI 公布 700 词 Prompt 揭多 Agent 编排",
+          "body": "多家媒体报道，OpenAI 用 GPT-5.6 Sol Ultra 在一小时内给出「循环双覆盖猜想」（Cycle Double Cover Conjecture）的一份证明尝试，并公布了驱动该结果的约 700 词 Prompt——其中揭示了模型自主生成并编排多达 64 个子 Agent 进行计算与推理的机制，OpenAI 同步发布了证明 PDF（HN 529 分）。不过 BigGo Finance 等指出，数学界仍需逐步核验每一步归约、确认线性代数论证是否适用于猜想覆盖的所有无桥图，研究者也可能尝试将证明翻译为形式化证明助手验证。这既展示了旗舰模型在科研推理上的进展，也凸显 AI 数学成果的可验证性挑战。",
+          "insight": "AI 生成的数学「证明」仍需人工与形式化工具双重验证，多 Agent 编排能力的价值需在可核验性框架下审慎评估。",
+          "source": "BigGo Finance / OpenAI",
+          "url": "https://finance.biggo.com/news/05b7b227-386f-48e3-bee8-08da95cc3d36"
+        },
+        {
+          "title": "🔬 技术突破 | IEEE Spectrum：小语言模型（SLM）跑在廉价手机与无人机上，撑起「救命级」小 AI",
+          "body": "IEEE Spectrum 报道（2 天前），小语言模型（Small Language Models, SLM）正在低成本、低算力的边缘设备上落地：跑在廉价手机和无人机上，实现快速的药品真伪鉴别与农作物病害预警等「救命级」应用。相比动辄需要数据中心与昂贵 GPU 的前沿大模型，SLM 以极低的部署门槛把 AI 能力送到医疗、农业等资源受限的现实场景，正在开辟与「越大越强」主流叙事平行的另一条实用主义路线。这与近期企业对成本敏感、开源自建、边缘推理的趋势相互呼应。",
+          "insight": "并非所有价值都在前沿大模型——SLM + 边缘部署为成本敏感、离线、垂直场景提供了被低估的高性价比路径。",
+          "source": "IEEE Spectrum",
+          "url": "https://spectrum.ieee.org/small-language-models-ai-pharmaceuticals"
+        },
+        {
+          "title": "🔬 技术突破 | IEEE Spectrum：大表格模型 NEXUS 把 AI 分析能力带进电子表格",
+          "body": "IEEE Spectrum 报道（3 天前），一类新的「大表格模型」（Large Tabular Models）正把 AI 分析能力直接带入电子表格场景。以 NEXUS 为例，其在数十亿张表格上预训练——训练语料结合了通过合作与授权获得的专有数据集、高质量公开与开源数据集，以及扩展多样性与覆盖面的数据增强技术（官方强调未使用客户数据）。这类模型专为结构化表格数据设计，让企业无需编写复杂脚本即可在熟悉的电子表格界面中调用 AI 完成分析、预测与洞察，降低了数据分析的技术门槛。对广泛使用 Excel 的企业业务人员而言，是一条极具亲和力的 AI 赋能路径。",
+          "insight": "把 AI 原生能力嵌入电子表格这一最普及的企业工具，可能比独立 AI 应用更快渗透到一线业务人员的日常决策中。",
+          "source": "IEEE Spectrum",
+          "url": "https://spectrum.ieee.org/large-tabular-models-nexus"
+        }
+
+      ]
+    }
+  ],
+  "closing": [
+    "今日主线是「企业落地赛道的资本化」：Anthropic 联手黑石、高盛的 15 亿美元合资公司本周正式落地，叠加 OpenAI 的 100 亿美元 Deployment Company、微软 25 亿美元 Frontier、AWS 10 亿美元项目，四家合计约 90 亿美元把「AI 落地」做成了独立赛道。背后是残酷的需求侧现实——73% 企业在用 AI，却只有 10% 真正进入核心运营，厂商不得不派 FDE 贴身陪跑。对咨询与集成商而言，这既是渠道红利，也是被大厂「上游化」的竞争压力。",
+    "另一条暗线是「泡沫与降温」：Bloomberg 警示 4.4 万亿美元 AI 三巨头对新兴市场回报的过度垄断，英伟达-CoreWeave-Nebius 的循环融资结构被拆解并类比互联网泡沫时代的厂商融资，geohot《我爱 LLM，我恨炒作》登上热榜——来自资本市场、供应链与技术圈的三重清醒声音，正在为过热的 AI 叙事降温。企业决策者宜借此重估估值集中度与算力供应链的隐性杠杆风险。",
+    "工程侧的关键词是「透明度与成本」：陶哲轩用真实工作流为编码 Agent 做了诚实评测，Systima 量化了 Claude Code 的 3.3 万 token bootstrap 开销与 subagent 4.2 倍放大，36 氪揭露「Claude 变笨」实为默认档位与缓存策略的静默调整。这些都在提醒——选型编码 Agent 时，harness 开销、配置透明度与 TCO 核算，与模型能力本身同等重要。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-07-13 执行）：本日重大事件为 Anthropic 与黑石、Hellman & Friedman、高盛组建的 15 亿美元合资部署公司预计本周一（07-13）正式官宣（WSJ/Bloomberg，已纳入热点头部）。扫描 'OpenAI partnership/JV/acquisition'（Reuters/Bloomberg）：无过去 7 天内新增未发布的重大 OpenAI 并购（其 100 亿美元 Deployment Company、收购 Tomoro 已于 07-11 发布，本日仅作背景引用不重复计条）。扫描 'Anthropic Accenture/Deloitte/consulting'：无今日新增（埃森哲培训 3 万顾问、德勤 47 万员工的 Claude 合作伙伴体系已于 07-11 发布）。扫描 'AI consulting services launch enterprise'：微软 Frontier、AWS 10 亿美元部署项目均为过去 7 天内已发布事件，本日作为『90 亿美元部署赛道』综述背景引用。扫描 'OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 过去 7 天大动作'：Bloomberg 4.4 万亿美元 AI 三巨头新兴市场集中度报告（07-12，新，已纳入）为本日新增大厂相关宏观信号。综上：今日唯一全新战略合作重大公告为 Anthropic-黑石-高盛 15 亿美元合资公司的正式官宣时点，已置于热点新闻头条。"
+  }
+}

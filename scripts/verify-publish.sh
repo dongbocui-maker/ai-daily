@@ -61,8 +61,9 @@ echo "$SCHEMA_OUT"
 if [[ "$SCHEMA_RC" -eq 0 ]]; then
   echo "[verify] ✅ 项1 schema"
 else
-  # 透传原始输出（含 ITEM_MISSING/BODY_TOO_SHORT/MISSING_SECTION/AUDIT_FIELD_MISSING 等），
-  # 供子代理对照 I.2 自愈表。关键字 `schema FAIL`。
+  # 透传原始输出（含 validate-daily-schema.py 的 [TAG] 前缀，如
+  # [MISSING_TOP_FIELD]/[ITEM_MISSING_FIELD]/[BODY_TOO_SHORT]/[MISSING_SECTION]/[CLOSING_TOO_FEW] 等），
+  # 供子代理对照 I.2 自愈表。关键字 `schema FAIL`。此处直接透传，不过滤方括号/tag。
   echo "schema FAIL: $SCHEMA_OUT"
   echo "[verify] ❌ 项1 schema"
   CONTENT_FAIL=$((CONTENT_FAIL + 1))
@@ -135,6 +136,7 @@ if [[ "${SITE_OK:-0}" != "1" ]]; then
   echo "[verify] ⚠️  项3 跳过：首页未成功抓取，无法判断日期"
   # 不额外计 CONTENT_FAIL——首页抓取失败已在项4计过（或环境异常）
 else
+  # 前提：站点 HTML 含 YYYY-MM-DD 格式日期（当前 Astro 渲染确含；若前端改日期格式（如只显示 July 12, 2026）需同步改此匹配）
   if grep -q "$TODAY" "$HTML_FILE"; then
     echo "[verify] ✅ 项3 站点含当天日期 $TODAY"
   else

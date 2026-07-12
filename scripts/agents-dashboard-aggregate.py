@@ -480,6 +480,32 @@ def collect_crons():
         return _prev_crons()
     return out_crons
 
+# ===== KNOWLEDGE PYRAMID: 实时容量统计（main / aima 两个 workspace 的三层记忆文件体系） =====
+# T3 HOT INDEX   = MEMORY.md（超过阈值标 over → 前端标签变红）
+# T2 THEMATIC    = memory/archive/*.md + memory/themes/*.md + projects/*/context/*.md（Context Packs）
+# T1 FACTUAL     = memory/YYYY-MM-DD.md 原始日志 + memory/agent-actions/*.jsonl
+_KP_HOT_LIMIT = 16 * 1024   # HOT INDEX 建议上限 16KB（MEMORY.md 自述 ~12KB，>16K 提示凝缩）
+_KP_WS = {
+    'main': '/root/.openclaw/workspace',
+    'aima': '/root/.openclaw/workspace-aima',
+}
+
+def build_knowledge():
+    out = {}
+    for aid, ws in _KP_WS.items():
+        def _stat(files):
+            fs = [f for f in files if os.path.isfile(f)]
+            return {'kb': round(sum(os.path.getsize(f) for f in fs) / 1024), 'files': len(fs)}
+        t3_path = os.path.join(ws, 'MEMORY.md')
+        t3 = _stat([t3_path])
+        t3['over'] = os.path.isfile(t3_path) and os.path.getsize(t3_path) > _KP_HOT_LIMIT
+        t2 = _stat(glob.glob(ws + '/memory/archive/*.md') + glob.glob(ws + '/memory/themes/*.md')
+                   + glob.glob(ws + '/projects/*/context/*.md'))
+        daily = glob.glob(ws + '/memory/2[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md')
+        t1 = _stat(daily + glob.glob(ws + '/memory/agent-actions/*.jsonl'))
+        out[aid] = {'t3': t3, 't2': t2, 't1': t1, 'daily_files': len([f for f in daily if os.path.isfile(f)])}
+    return out
+
 def ts_to_cn_date(ts):
     """trajectory ts 是 UTC ISO，转北京日期"""
     try:
@@ -590,6 +616,7 @@ out={'generated_at':now.strftime('%Y-%m-%d %H:%M:%S +08'),'today':today,
      'trend':trend,
      'agents':agents_out,
      'capabilities':build_capabilities(),
+     'knowledge':build_knowledge(),
      'crons':collect_crons(),
      'models':sorted([{'name':k,**{kk:(round(vv,2) if kk=='cost' else vv) for kk,vv in v.items()}} for k,v in model_totals.items()],key=lambda x:-x['tok'])}
 new_fallback_events, total_signal_events = refresh_fallback_events(agents_out)

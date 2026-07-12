@@ -144,7 +144,7 @@ footer .red{color:var(--red-dim)}
 
 /* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
 body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
-body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker{display:none}
+body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card{display:none}
 
 /* === Event Ticker 跑马灯 === */
 .event-ticker{position:relative;height:36px;background:linear-gradient(90deg,rgba(7,10,15,.95),rgba(14,17,24,.95));border:1px solid var(--line);border-radius:5px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center}
@@ -399,7 +399,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .kp-ax-l{left:-6px;writing-mode:vertical-rl;transform:rotate(180deg)}
 .kp-ax-r{right:-6px;writing-mode:vertical-rl}
 .kp-legend{display:flex;flex-direction:column;gap:12px}
-.kp-row{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kp-row{position:relative;display:flex;gap:12px;align-items:flex-start;background:linear-gradient(160deg,#0d1422,#0a0f18);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
 .kp-row.r3{border-color:rgba(255,196,0,.3)}
 .kp-row.r2{border-color:rgba(63,201,255,.28)}
 .kp-row.r1{border-color:rgba(52,211,153,.28)}
@@ -407,7 +407,18 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .kp-row.r3 .kp-dot{background:var(--gold);box-shadow:0 0 8px rgba(255,196,0,.7)}
 .kp-row.r2 .kp-dot{background:var(--arc);box-shadow:0 0 8px rgba(63,201,255,.7)}
 .kp-row.r1 .kp-dot{background:var(--green);box-shadow:0 0 8px rgba(52,211,153,.7)}
-.kp-rt{font-family:'Orbitron';font-weight:700;font-size:10.5px;letter-spacing:1.5px;color:#fff}
+.kp-rt{font-family:'Orbitron';font-weight:700;font-size:10.5px;letter-spacing:1.5px;color:#fff;padding-right:92px}
+.kp-stat{position:absolute;right:12px;top:10px;font-family:'Orbitron';font-size:8.5px;font-weight:700;letter-spacing:.8px;color:var(--arc);background:rgba(63,201,255,.055);border:1px solid rgba(63,201,255,.16);border-radius:4px;padding:3px 6px;white-space:nowrap}
+.kp-stat.over{color:#ff7474;border-color:rgba(255,116,116,.38);background:rgba(255,116,116,.07);text-shadow:0 0 7px rgba(255,116,116,.42)}
+.kp-switch{display:flex;gap:5px}
+.kp-agent{height:40px;display:flex;align-items:center;gap:7px;padding:4px 9px 4px 5px;background:#080e17;border:1px solid var(--line);border-radius:6px;color:var(--dim);cursor:pointer;opacity:.62;transition:.15s}
+.kp-agent.active{opacity:1;border-color:rgba(63,201,255,.48);background:rgba(63,201,255,.055);box-shadow:inset 0 0 14px rgba(63,201,255,.04)}
+.mini-reactor{width:29px;height:29px;flex:none}.mini-reactor svg{display:block;width:100%;height:100%}
+.ag-copy{line-height:1.05;white-space:nowrap;text-align:left}
+.ag-top{font-family:'Orbitron';font-size:8px;font-weight:800;letter-spacing:1.1px;color:#fff}
+.ag-name{font-size:9px;color:#aeb9c8;margin-top:3px;letter-spacing:.25px}
+.ag-role{font-size:6px;letter-spacing:.65px;color:var(--dim);text-transform:uppercase;margin-top:3px}
+.kp-agent.active .ag-top{color:var(--arc)}
 .kp-rd{font-size:10px;color:var(--dim);line-height:1.6;margin-top:3px;letter-spacing:.4px}
 .kp-rd b{color:var(--txt);font-weight:600}
 .kp-principles{display:flex;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--line);margin-top:16px;padding-top:14px;position:relative;z-index:2}
@@ -448,8 +459,20 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <section class="kp-card">
   <div class="kp-head">
-    <div class="kp-title">KNOWLEDGE PYRAMID · 知识金字塔</div>
-    <div class="kp-sub">TACIT → EXPLICIT · PROGRESSIVE DISTILLATION · ZERO-DRIFT HOT INDEX</div>
+    <div>
+      <div class="kp-title">KNOWLEDGE PYRAMID · 知识金字塔</div>
+      <div class="kp-sub">TACIT → EXPLICIT · PROGRESSIVE DISTILLATION · ZERO-DRIFT HOT INDEX</div>
+    </div>
+    <div class="kp-switch" id="kpSwitch">
+      <div class="kp-agent active" data-agent="main" role="button" tabindex="0">
+        <div class="mini-reactor"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#070c11" stroke="#e8b923" stroke-width="3"/><circle cx="50" cy="50" r="33" fill="none" stroke="#e8b923" stroke-width="2" opacity=".7"/><circle cx="50" cy="50" r="22" fill="#7fdfff" opacity=".5"/><path d="M50 36 L62 58 L38 58 Z" fill="#7fdfff" stroke="#fff" stroke-width="1.2"/><circle cx="50" cy="50" r="5" fill="#fff"/></svg></div>
+        <div class="ag-copy"><div class="ag-top">MARK I</div><div class="ag-name">钢铁虾 统帅</div><div class="ag-role">ORCHESTRATOR</div></div>
+      </div>
+      <div class="kp-agent" data-agent="aima" role="button" tabindex="0">
+        <div class="mini-reactor"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#070c11" stroke="#e89bb8" stroke-width="3"/><circle cx="50" cy="50" r="33" fill="none" stroke="#e89bb8" stroke-width="2" opacity=".7"/><circle cx="50" cy="50" r="22" fill="#ffd0e6" opacity=".5"/><path d="M50 36 L62 58 L38 58 Z" fill="#ffd0e6" stroke="#fff" stroke-width="1.2"/><circle cx="50" cy="50" r="5" fill="#fff"/></svg></div>
+        <div class="ag-copy"><div class="ag-top">P.E.P.P.E.R.</div><div class="ag-name">银月 副翎</div><div class="ag-role">PERSONAL ASSISTANT</div></div>
+      </div>
+    </div>
   </div>
   <div class="kp-body">
     <div class="kp-pyr">
@@ -476,16 +499,19 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
         <div class="kp-dot"></div>
         <div><div class="kp-rt">热索引 · HOT INDEX</div>
         <div class="kp-rd"><b>MEMORY.md</b> — IRON RULES + TRIGGER INDEX + PROJECT SKELETON · FORCE-LOADED EVERY SESSION · ~12KB, ZERO DRIFT</div></div>
+        <span class="kp-stat" id="kpStat3">— · —</span>
       </div>
       <div class="kp-row r2">
         <div class="kp-dot"></div>
         <div><div class="kp-rt">主题库 · THEMATIC BASE</div>
         <div class="kp-rd"><b>archive/ + themes/</b> — DECISION LOG · TOPIC ARCHIVES · CONTEXT PACKS · KEYWORD-TRIGGERED, ON-DEMAND</div></div>
+        <span class="kp-stat" id="kpStat2">— · —</span>
       </div>
       <div class="kp-row r1">
         <div class="kp-dot"></div>
         <div><div class="kp-rt">事实底本 · FACTUAL BASE</div>
-        <div class="kp-rd"><b>daily logs + agent-actions</b> — 66+ RAW DAILY LOGS · CROSS-SESSION ACTION TRAIL · APPEND-ONLY, FULLY TRACEABLE</div></div>
+        <div class="kp-rd"><b>daily logs + agent-actions</b> — RAW DAILY LOGS · CROSS-SESSION ACTION TRAIL · APPEND-ONLY, FULLY TRACEABLE</div></div>
+        <span class="kp-stat" id="kpStat1">— · —</span>
       </div>
     </div>
   </div>
@@ -1106,6 +1132,32 @@ function drawTrendCurve(DATA){
 let _trendData=null;
 window.addEventListener('resize',()=>{ if(_trendData) drawTrendCurve(_trendData); drawArchLines(); });
 
+// ===== KNOWLEDGE PYRAMID: 实时容量 + Agent 切换 =====
+let _kpAgent='main', _kpData=null;
+function _kpFmt(t){ if(!t) return '— · —'; const files=`${t.files} FILE${t.files===1?'':'S'}`; return `${t.kb}K · ${files}${t.over?' ⚠':''}`; }
+function renderKnowledge(d){
+  if(d && d.knowledge) _kpData = d.knowledge;
+  if(!_kpData) return;
+  const k = _kpData[_kpAgent];
+  if(!k) return;
+  const s3=document.getElementById('kpStat3'), s2=document.getElementById('kpStat2'), s1=document.getElementById('kpStat1');
+  if(!s3) return;
+  s3.textContent=_kpFmt(k.t3); s3.classList.toggle('over', !!(k.t3&&k.t3.over));
+  s2.textContent=_kpFmt(k.t2); s2.classList.remove('over');
+  s1.textContent=_kpFmt(k.t1); s1.classList.remove('over');
+}
+(function(){
+  const sw=document.getElementById('kpSwitch');
+  if(!sw) return;
+  sw.querySelectorAll('.kp-agent').forEach(el=>{
+    const act=()=>{ _kpAgent=el.dataset.agent;
+      sw.querySelectorAll('.kp-agent').forEach(x=>x.classList.toggle('active', x===el));
+      renderKnowledge(null); };
+    el.addEventListener('click', act);
+    el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); act(); } });
+  });
+})();
+
 let _firstLoad=true;
 async function tick(){
   try{
@@ -1117,7 +1169,7 @@ async function tick(){
       console.warn('[SHRIMP] LIVE telemetry unreachable, falling back to static snapshot:', err);
       d = await (await fetch(FALLBACK_URL + '?t=' + Date.now(), {cache:'no-store'})).json();
     }
-    _trendData=d; render(d); loadTicker(); _firstLoad=false;
+    _trendData=d; render(d); renderKnowledge(d); loadTicker(); _firstLoad=false;
   }catch(e){
     if(_firstLoad){
       document.getElementById('app').innerHTML='<div class="loading" style="color:var(--red)">⚠ TELEMETRY LINK FAILED · '+e.message+'</div>';

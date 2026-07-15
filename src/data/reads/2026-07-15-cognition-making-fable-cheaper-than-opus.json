@@ -1,0 +1,109 @@
+{
+  "slug": "cognition-making-fable-cheaper-than-opus",
+  "savedDate": "2026-07-15",
+  "publishDate": "2026-07-13",
+  "titleZh": "让 Fable 比 Opus 更便宜：委派的经济学",
+  "titleEn": "Making Fable Cheaper Than Opus",
+  "author": "Joon Lee",
+  "authorTitle": "Cognition（Devin 团队）工程师",
+  "originalUrl": "https://x.com/joon_h_lee/status/2076714221837173097",
+  "source": "Cognition / X Article",
+  "tags": ["Agent 经济学", "模型路由", "多智能体", "工程实践"],
+  "summary": "Cognition 团队在 Devin 的 Fusion 架构（前沿模型当 lead、便宜模型当 sidekick）上跑了 3000 次评测：Fable 5 单价是 Opus 4.8 的 2 倍，但换上 Fable 当 lead 之后总账单反而更低（$1.86 vs $2.04）、得分更高（60.7 vs 54.6）。原因不在单价而在管理风格：Opus 像带实习生的微管理者——先自己干完再委派收尾；Fable 像带工程师的经理——早委派、写规格式交接文档、只审查不重写。Agent 成本由 lead 的回合数、上下文体积和「决定不亲自做什么」主导，单 token 价格是错误的关注指标。",
+  "keyPoints": [
+    "**实验设计**：FrontierCode 1.1 上 3000 次评测会话、四种配置——Fable 5 与 Opus 4.8 各自担任 lead，配与不配同一个便宜 sidekick。纯净版符合直觉：Fable 得分高（60.8 vs 55.4）也更贵；带 sidekick 后成本排序反转。",
+    "**核心反转**：同一个 sidekick 之下，Fable + Sidekick 比 Opus + Sidekick 更便宜（$1.86 vs $2.04）且得分更高（60.7 vs 54.6）；对比纯 Fable，成本砍掉 54% 而得分几乎不变。",
+    "**成本结构**：Fable 在 sidekick 上多花 $0.27/run，但在自己身上少花 $0.45。Fable lead 平均 11.5 回合 vs Opus 26.5 回合，输出 token 只有对方三分之一（6.1k vs 19.0k）。81% 的 Fable-led run 中 lead 从未亲手改过一行代码（Opus 只有 24%）。",
+    "**委派次数相同、时机不同**：两个模型每次运行都委派约 3 次——差异不在次数。Fable 第一次交接来得很早，有时开场第一个动作就是委派；Opus 常在长段独自探索与实现之后才委派，此时设计已定、重要文件已进上下文、贵的活已经干完。",
+    "**交接质量决定结果**：Opus 委派时口述实现细节（dictate），Fable 写设计文档（design doc）——列约束、边界情况和「完成」的定义。哈希任务案例：Opus 亲手实现却忘了 O(1) 约束，得 25 分；Fable 在交接文档里显式写明「operator() 必须对指针长度 O(1)：禁止全 token 扫描」，sidekick 正确实现得 94 分。",
+    "**审查风格**：两者都用两三个 git diff 做廉价检查，但 Opus 把 sidekick 的文件拉回自己上下文的频率高 2 倍、以 lead 价格做纠正性编辑多 4 倍，极端案例直接回滚重写。Fable 发现 sidekick 的 bug 后选择再发一次便宜的交接，而不是 lead 级重写——不信任并没有换来更高正确率。",
+    "**委派失效边界**：短任务（决策与交付之间没有可委派环节）和串行调试（根因排查是一长串判断、积累的上下文本身就是工作）中委派无杠杆。值得注意的是 Fable 在这类任务上几乎不委派——会写好交接文档的判断力，同样知道什么时候不该写。",
+    "**结论**：作者原本想测 Fable 的 2 倍溢价会推高多少成本，结果发现高效委派反而整体降本。随着 sidekick 模型越来越便宜好用，真正值前沿价格的是判断力：建什么、约束什么、该让谁来写。"
+  ],
+  "insight": "这篇文章把「模型路由」从降本技巧升格为组织设计问题：单 token 价格是错误的计费心智，agent 的真实成本函数是回合数 × 上下文体积 × 亲自动手的比例——和人类组织里「贵的人该干什么」是同一道题。对企业侧的直接启示有三：一是采购 agent 产品时别再对着 API 价目表算账，要看编排架构下的每任务成本；二是「前沿模型做判断、便宜模型做执行」正在成为行业默认模板（Anthropic 官方 benchmark、swyx 等资深实践者的工作流、Levie 的产业判断三方共振）；三是委派质量取决于交接文档质量——把约束和验收标准写清楚的能力，无论对 AI lead 还是人类经理，都是杠杆所在。",
+  "bilingual": [
+    {
+      "en": "We replaced Opus 4.8 with Fable 5, and Devin's bill went down. Fable 5 costs twice as much per token as Opus 4.8. But when we ran both models on FrontierCode 1.1 using our new Fusion architecture, Fable cost less. Unsurprisingly, it also scored higher.",
+      "zh": "我们把 Opus 4.8 换成了 Fable 5，Devin 的账单反而降了。Fable 5 的单 token 价格是 Opus 4.8 的两倍，但当我们在 FrontierCode 1.1 上用新的 Fusion 架构跑这两个模型时，Fable 的成本更低。毫不意外，它的得分也更高。"
+    },
+    {
+      "en": "When we introduced Devin Fusion, we showed a way out: keep a frontier model in charge, let it delegate to a cheaper and faster sidekick, and you get frontier-level performance at 35% lower cost.",
+      "zh": "我们推出 Devin Fusion 时展示过一条出路：让前沿模型掌舵，把活委派给更便宜更快的 sidekick，你就能以低 35% 的成本拿到前沿级性能。"
+    },
+    {
+      "en": "Given the same sidekick, the cost ordering reverses: Fable + Sidekick costs less than Opus + Sidekick ($1.86 vs. $2.04), while scoring higher (60.7 vs. 54.6). Compared with pure Fable, Fable + Sidekick cuts cost by 54% while leaving the score nearly unchanged.",
+      "zh": "在同一个 sidekick 之下，成本排序发生反转：Fable + Sidekick 比 Opus + Sidekick 更便宜（$1.86 对 $2.04），得分却更高（60.7 对 54.6）。与纯 Fable 相比，Fable + Sidekick 把成本砍掉 54%，得分几乎不变。"
+    },
+    {
+      "en": "The 2x per-token premium turns out to be the wrong number to look at. The cost of an agent is dominated by how many turns the lead model takes, how much context it drags along, and above all, what it decides not to do itself.",
+      "zh": "2 倍的单 token 溢价其实是个看错了的数字。一个 agent 的成本由这几件事主导：lead 模型走多少回合、拖着多少上下文，以及最重要的——它决定哪些事不亲自做。"
+    },
+    {
+      "en": "The difference comes down to management style: Opus behaves like a micromanager with an intern; Fable is a manager with a capable engineer.",
+      "zh": "差异归结为管理风格：Opus 像一个带实习生的微管理者；Fable 则是带着一位能干工程师的经理。"
+    },
+    {
+      "en": "Fable spends more on its sidekick than Opus does — $0.27 more per run. But it spends $0.45 less on itself. Fable's lead takes 11.5 turns per run to Opus's 26.5, writes a third of the output tokens (6.1k vs 19.0k), and consumes a third of the input tokens.",
+      "zh": "Fable 在 sidekick 上比 Opus 花得多——每次运行多 $0.27，但在自己身上少花 $0.45。Fable 的 lead 平均每次运行 11.5 个回合，Opus 是 26.5 个；输出 token 只有对方的三分之一（6.1k 对 19.0k），输入 token 同样只有三分之一。"
+    },
+    {
+      "en": "Interestingly, in 81% of Fable-led runs, the lead never makes a single code edit. For Opus, that's true for only 24% of the runs. In 13% of the Fable-led runs, the lead never even reads a repo file itself.",
+      "zh": "有意思的是，在 81% 的 Fable 主导的运行中，lead 从头到尾没有亲手做过一次代码编辑；Opus 只有 24% 的运行如此。甚至在 13% 的 Fable 主导运行中，lead 连一个仓库文件都没亲自读过。"
+    },
+    {
+      "en": "The task spec required a hash function to be O(1) in the length of the pointer. Opus implemented it by hand and never wrote that requirement down anywhere. Somewhere along the way it forgot the constraint and shipped a linear-time implementation, which scored 25. In contrast, Fable delegated using high-level constraints. Its brief said, \"operator() must be O(1) in pointer length: NO full token scan.\" The sidekick implemented this successfully for a score of 94.",
+      "zh": "任务规格要求哈希函数对指针长度是 O(1)。Opus 亲手实现，却从没把这条要求写在任何地方，中途忘掉了约束，交付了一个线性时间的实现，得 25 分。相反，Fable 用高层约束做委派，交接文档里写着：「operator() 必须对指针长度 O(1)：禁止全 token 扫描」。sidekick 成功实现，得 94 分。"
+    },
+    {
+      "en": "Notably, on these tasks Fable barely delegates at all. The same judgment that writes a good brief also knows when not to write one. But when a task offers nothing worth handing off, delegation has no leverage over cost.",
+      "zh": "值得注意的是，在这类任务上 Fable 几乎完全不委派。能写出好交接文档的判断力，同样知道什么时候不该写。而当一个任务没有任何值得交出去的部分时，委派对成本就没有杠杆。"
+    },
+    {
+      "en": "We started this experiment expecting to measure how much Fable's 2x premium would increase cost. We were surprised to find that Fable's effective delegation actually decreased cost overall. It specified constraints and outcomes instead of spelling out the implementation, gave feedback instead of making fixes itself, and in most cases never touched the code at all. These are the habits of a good manager.",
+      "zh": "我们启动这个实验时，本想测量 Fable 的 2 倍溢价会推高多少成本，结果惊讶地发现 Fable 的高效委派反而让总成本下降了。它指定约束和结果而不是口述实现，给反馈而不是亲手修复，多数情况下从头到尾没碰过代码。这些是一个好经理的习惯。"
+    },
+    {
+      "en": "As sidekick models get cheaper and better, more of the work can be handed to them. What will remain worth frontier prices is judgment: what to build, what to constrain, and who should write it.",
+      "zh": "随着 sidekick 模型越来越便宜、越来越好，更多工作可以交给它们。真正配得上前沿价格的，将是判断力：建什么、约束什么、该让谁来写。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "The 2x per-token premium turns out to be the wrong number to look at.",
+      "zh": "2 倍的单 token 溢价，其实是个看错了的数字。"
+    },
+    {
+      "en": "Opus behaves like a micromanager with an intern; Fable is a manager with a capable engineer.",
+      "zh": "Opus 像一个带实习生的微管理者；Fable 是带着一位能干工程师的经理。"
+    },
+    {
+      "en": "The same judgment that writes a good brief also knows when not to write one.",
+      "zh": "能写出好交接文档的判断力，同样知道什么时候不该写。"
+    },
+    {
+      "en": "These are the habits of a good manager.",
+      "zh": "这些是一个好经理的习惯。"
+    },
+    {
+      "en": "What will remain worth frontier prices is judgment: what to build, what to constrain, and who should write it.",
+      "zh": "真正配得上前沿价格的，将是判断力：建什么、约束什么、该让谁来写。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Aaron Levie（Box CEO）· X",
+      "url": "https://x.com/levie/status/2076839463410671637",
+      "pov": "Levie 转发本文并给出产业级定调：「前沿智能当经理、低成本模型干活，这就是未来模型路由的模板。」他把这个实验放进自己的 AI 产业结构判断里——前沿层持续推进、开源权重快速吸收突破、Applied AI 层用编排组合两者拿走性能/成本最优解；而企业与其自训模型（最有价值的信息一直在变、往往最敏感、没法打包进权重、安全层进不了模型），不如把精力花在让任何 AI 系统都能持续拿到对的数据和上下文。本文正是 Applied AI 层价值的实证。"
+    },
+    {
+      "source": "swyx（Latent Space）· X",
+      "url": "https://x.com/swyx/status/2076811977918484795",
+      "pov": "swyx 晒出自己「大项目」工作流，与本文结论形成实践共振：sol ultra 规划、Fable 5 批评审查、Sonnet 5 / terra ultra / SWE 1.7 批量写码（自嘲 slop cannon）、Devin Review 收口审查，动手前必用 grill-me / interview-me 类提示词把关键决策逼问出来。资深实践者的个人分工与 Cognition 的账单数据指向同一件事：按判断力密度给模型分层，前沿模型只做规划与批评，执行交给便宜模型。"
+    },
+    {
+      "source": "The Decoder（报道 Anthropic 官方基准）",
+      "url": "https://the-decoder.com/anthropics-fix-for-fable-5s-high-cost-is-turning-it-into-a-manager-that-delegates-to-sonnet-5/",
+      "pov": "Anthropic 官方（@ClaudeDevs，2026-07-08）发布的第一方基准同样支持 orchestrator 分工：Fable 5 编排 + Sonnet 5 执行达到全 Fable 性能的 96%、成本只要 46%（BrowseComp：86.8% vs 90.8% 准确率，$18.53 vs $40.56 每题），并在性能与成本两个轴上都胜过反向的「Sonnet 执行 + Fable 顾问」模式。The Decoder 的解读点出这就是 Anthropic 对『Fable 太贵』的官方答案——把它变成管理者。官方基准、Devin 生产账单、个人工作流三方证据收敛，说明这不是孤立现象而是可复制的架构规律。"
+    }
+  ]
+}

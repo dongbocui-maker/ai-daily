@@ -8,8 +8,9 @@ saved_date: 2026-07-15
 original_url: "https://x.com/joon_h_lee/status/2076714221837173097"
 slug: "cognition-making-fable-cheaper-than-opus"
 source: "Cognition / X Article"
+audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/cognition-making-fable-cheaper-than-opus.m4a"
 fetch_status: "error"
-fetched_at: "2026-07-15T15:07:20.111Z"
+fetched_at: "2026-07-15T15:35:44.560Z"
 fetch_type: "placeholder"
 tags:
   - "Agent-经济学"

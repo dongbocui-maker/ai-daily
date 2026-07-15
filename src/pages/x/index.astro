@@ -146,9 +146,9 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                   <span class={`badge ${kindClass(item.kind)}`}>{kindLabel(item.kind)}</span>
                   <span class="text-xs text-accent-gray-500">{item.sourceName}{item.handle ? ` · @${item.handle}` : ''}</span>
                 </div>
-                <h3 class="text-lg font-extrabold tracking-tight leading-snug mb-3">{item.title}</h3>
-                <p class="text-sm text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
-                <p class="text-xs text-accent-gray-500 leading-relaxed line-clamp-3">{item.summaryEn}</p>
+                <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
+                <p class="text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
+                <p class="text-sm text-accent-gray-500 leading-relaxed line-clamp-3">{item.summaryEn}</p>
                 <div class="mt-4 flex items-center justify-between gap-3 text-xs text-accent-gray-500">
                   <span>{meta.date || meta.metrics}</span>
                   {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="font-semibold text-accent-purple hover:text-accent-purple-deep">Source ↗</a>}
@@ -180,8 +180,8 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                           </div>
                           {meta.metrics && <span class="text-xs text-accent-gray-500 whitespace-nowrap">{meta.metrics}</span>}
                         </div>
-                        <h3 class="text-xl font-extrabold tracking-tight leading-snug mb-3">{item.title}</h3>
-                        <p class="text-sm lg:text-base text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
+                        <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
+                        <p class="text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
                         <div class="insight-block">
                           <span class="font-semibold text-accent-ink">Original signal: </span>{item.summaryEn}
                         </div>

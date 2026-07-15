@@ -8,7 +8,12 @@
   "authorTitle": "Cognition（Devin 团队）工程师",
   "originalUrl": "https://x.com/joon_h_lee/status/2076714221837173097",
   "source": "Cognition / X Article",
-  "tags": ["Agent 经济学", "模型路由", "多智能体", "工程实践"],
+  "tags": [
+    "Agent 经济学",
+    "模型路由",
+    "多智能体",
+    "工程实践"
+  ],
   "summary": "Cognition 团队在 Devin 的 Fusion 架构（前沿模型当 lead、便宜模型当 sidekick）上跑了 3000 次评测：Fable 5 单价是 Opus 4.8 的 2 倍，但换上 Fable 当 lead 之后总账单反而更低（$1.86 vs $2.04）、得分更高（60.7 vs 54.6）。原因不在单价而在管理风格：Opus 像带实习生的微管理者——先自己干完再委派收尾；Fable 像带工程师的经理——早委派、写规格式交接文档、只审查不重写。Agent 成本由 lead 的回合数、上下文体积和「决定不亲自做什么」主导，单 token 价格是错误的关注指标。",
   "keyPoints": [
     "**实验设计**：FrontierCode 1.1 上 3000 次评测会话、四种配置——Fable 5 与 Opus 4.8 各自担任 lead，配与不配同一个便宜 sidekick。纯净版符合直觉：Fable 得分高（60.8 vs 55.4）也更贵；带 sidekick 后成本排序反转。",
@@ -105,5 +110,12 @@
       "url": "https://the-decoder.com/anthropics-fix-for-fable-5s-high-cost-is-turning-it-into-a-manager-that-delegates-to-sonnet-5/",
       "pov": "Anthropic 官方（@ClaudeDevs，2026-07-08）发布的第一方基准同样支持 orchestrator 分工：Fable 5 编排 + Sonnet 5 执行达到全 Fable 性能的 96%、成本只要 46%（BrowseComp：86.8% vs 90.8% 准确率，$18.53 vs $40.56 每题），并在性能与成本两个轴上都胜过反向的「Sonnet 执行 + Fable 顾问」模式。The Decoder 的解读点出这就是 Anthropic 对『Fable 太贵』的官方答案——把它变成管理者。官方基准、Devin 生产账单、个人工作流三方证据收敛，说明这不是孤立现象而是可复制的架构规律。"
     }
-  ]
+  ],
+  "audio": {
+    "url": "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/cognition-making-fable-cheaper-than-opus.m4a",
+    "duration_seconds": 1055.51,
+    "size_bytes": 33971198,
+    "generated_at": "2026-07-15T23:31:52+08:00",
+    "format": "m4a"
+  }
 }

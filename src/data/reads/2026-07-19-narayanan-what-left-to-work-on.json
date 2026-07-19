@@ -1,0 +1,115 @@
+{
+  "slug": "narayanan-what-left-to-work-on",
+  "savedDate": "2026-07-19",
+  "publishDate": "2026-07-13",
+  "titleZh": "还剩下什么留给我们做？——AI 时代人类角色的迁移",
+  "titleEn": "What will be left for us to work on?",
+  "author": "Arvind Narayanan",
+  "authorTitle": "普林斯顿大学计算机科学教授、信息技术政策中心主任，《AI Snake Oil》《AI as Normal Technology》作者（@random_walker）",
+  "originalUrl": "https://www.normaltech.ai/p/what-will-be-left-for-us-to-work",
+  "source": "manual",
+  "tags": [
+    "AI as Normal Technology",
+    "递归自我改进",
+    "AI agent 评估",
+    "劳动力影响",
+    "超级智能",
+    "ICML 2026",
+    "人机协作"
+  ],
+  "summary": "普林斯顿教授 Narayanan 在 ICML 2026 主会 keynote，正面回应 AI 圈弥漫的「我们还剩什么可做」的焦虑。他拒绝两个廉价答案——「一切照旧」和「什么都不剩」，给出三段论：其一，「AI 是常规技术」框架在出现断点（如递归自我改进 RSI）之前依然成立，AI 影响经济要走「发明→创新→扩散→适应」四阶段，最慢的适应阶段以「几十年」计、至今尚未真正开始；其二，即使认真对待 RSI，也没有哪个实验室里的能力里程碑会突然让所有人失业——因为超级智能的瓶颈在实验室之外（临床试验、混沌系统的物理极限、外部约束），RSI/AGI/经济变革/超级智能是四个互不蕴含的独立维度；其三，工作会剧变但不会消失，核心迁移是「努力从建造转向评估」——纯技术技能（可验证任务）被 AI 接管，人类价值上移到判断、品味、评估、方向选择这些「掌舵」而非「划桨」的能力。最终愿景是「人机协同超级智能（co-superintelligence）」：AI 提升的是被增强的人类的智能，而非取代人类。文章附 ICML 幻灯片全套及编辑版逐字稿。",
+  "keyPoints": [
+    "**四阶段扩散框架**：AI 影响经济要经历「方法/能力（模型在飞速进步）→ 产品/应用（如 coding agent 把能力变得可用）→ 早期采用（vibe coding→更成熟的 agentic engineering）→ 适应/结构性变革」。最后一阶段最慢、以几十年计，需要的是组织与人的变革——就像电力进工厂花了 40 年才从「把蒸汽机换成电机」这种失败的 drop-in replacement，走到围绕流水线逻辑重组整个工厂。今天这个阶段连软件工程都还没真正开始。",
+    "**能力-可靠性鸿沟（本文最硬的实证）**：过去 24 个月三家前沿公司的模型，能力/准确率暴涨，但可靠性只涨了 5-10 个百分点。可靠性拆成四维——一致性（70% 准确率到底是「稳定做对 70% 的任务」还是「每个任务都有 30% 概率抽风」？现有 agent benchmark 竟不区分）、鲁棒性、校准性、操作安全性（失败时可恢复还是会删库）。结论：当下 AI 更适合做协作 agent 而非自动化 agent；通用、高风险、全自动三者当前只能同时取其二。",
+    "**「写代码从来不是瓶颈」**：把软件工作拆成「决策-执行-交付」三明治——决策层（理解需求、写规格、规划）没被压缩，执行层（编码调试，本就只占约 1/3）被压缩，交付层（对发布物负责、集成、维护、测试）也没被压缩。AI 压缩中间层，反而让第一层和第三层扩张。裁员归咎于 AI 多是财务压力下的甩锅。类比：知识工作者正变成「起重机操作员」——机器干认知重活，人保持掌控，整个岗位被重新定义为「操作/理解/控制机器」。",
+    "**劳动总量谬误（lump-of-labor fallacy）**：从机器码到今天，软件工程每一波技术带来近一个数量级的生产力提升，但就业不减反增约 1 万倍——因为要写的代码涨了更多个数量级（Jevons 悖论）。ATM 让银行开更多网点、柜员反而增加；Hinton 十年前预言放射科医生五年内消失，结果放射科就业增长；翻译在近十年前就接近人类水平，译者就业却基本稳定——因为可翻译的内容与语言没有上限。",
+    "**RSI/AGI/超级智能是四个独立维度**（本文最反共识的论断）：把 RSI 自动等同于 AGI/ASI「有点傻」。AI 在可验证任务上远强于不可验证任务；速度、效率可验证、可能被近期 RSI 大幅改善，但创造力是不可验证任务的典型——我们连怎么测 AI 创造力都不清楚。创造力落后源于表征质量：AI 在感知的表征上追平人类，但在创造与推理所依赖的表征上没有（Chollet 说的「意义原子」式极致组合性），且人类能在推理时实时改进表征、「睡一觉第二天更高效」，今天的 AI 做不到；continual learning 领域主要在防遗忘而非提升表征质量。",
+    "**经济变革会来，但不靠下一次模型发布**：这不与第一部分矛盾，而是其重述——因为瓶颈在下游（可靠性、系统集成、行业隐性知识、监管），所以模型进步不会快速改变经济；但也正因瓶颈在下游，即使模型不再进步，这些瓶颈也会在几十年里被逐步解决。因此「抢先到 AGI 就赢者通吃」的曼哈顿计划式竞赛逻辑是错的——没有哪个能力里程碑会解锁全部经济潜力，潜力已经在那儿，取决于下游行动。",
+    "**核心迁移：努力从建造转向评估（若只记住一张幻灯片就是这张）**：可验证的建造工作越来越交给 AI，人类价值转向评估——判断该往哪走、什么是 AI 系统的理想属性。类比从「划桨的水手」到「现代轮船上几十个专职掌舵/导航的岗位」。推论：评估本身成为一门独立学科（做评估的人正与做 SOTA 的人分化）；「evals 是新的 IP」；会议应有专门的评估 track；自动化同行评审是陷阱（等于把进步方向的控制权交给 AI）；「evals 是一种对齐」——对齐的不是模型而是整个社区的方向。",
+    "**个人适应法与 co-superintelligence 愿景**：AI 抬高「地板」（AI 独立能做的）不等于抬高「天花板」（AI 增强下人类能做的雄心项目）——天花板要主动去推。Narayanan 每周花约 10 小时学新工作流、把省下的时间「再投资」于长期成长；「如果一天结束不觉得累，说明我卸载给 AI 太多、牺牲了长期成长」。两条自保启发法：抗拒黑箱诱惑、警惕依赖螺旋（别用 AI 去做自己尚未掌握的任务，先自己精通再用 AI 增强）。愿景：AI 是「心智的起重机」，改善的是被增强的人类的智能——确保未来的超级智能是「我们」而非独立行动的 AI 系统。"
+  ],
+  "insight": "这篇 keynote 的分量在于：它由一位以「戳破 AI 炒作」著称、且真正在做 agent 评估科学的学者，在最高规格的 ML 学术场合，系统地把「AI 焦虑」拆解成可辩驳的经验命题，而非情绪或信仰。对做企业 AI 落地的人，最有操作价值的是三个反直觉判断。第一，「能力-可靠性鸿沟」直接解释了为什么大量 PoC 惊艳但进不了生产——你买的是准确率，赌的是可靠性，而这两者近两年几乎脱钩。企业选型该问的不是「benchmark 多少分」，而是「它在我的任务子集上是稳定做对，还是随机抽风」——前者可部署、后者是定时炸弹。第二，「决策-执行-交付三明治」给出了岗位与团队重构的清晰坐标：被压缩的只是中间的执行层，决策层（需求、规格、领域知识）和交付层（问责、集成、维护）不但没被压缩反而膨胀。这意味着裁掉初级执行、指望 agent 顶上，会让本就是瓶颈的两头更缺人——真正稀缺的是能做判断、担责、控场的人。第三，也是对咨询与交付组织最深的一击：「努力从建造转向评估」。当建造被 AI 商品化，护城河和 IP 就转移到「评估能力」——你能否定义什么是好、能否可信地检验海量 AI 产出、能否为客户设定并守住质量标准。这与 Narayanan 说的「evals 是新的 IP」完全同构，也和 DeepMind「验证瓶颈」、Thariq「发现 unknowns」形成同一条主线：agent 时代人的核心竞争力不是产出，而是判断产出好坏并掌舵方向的元能力。一个值得警惕的点是他的乐观带有明显规范性色彩——「几十年」的适应节奏建立在「没有断点」这个前提上，他自己也承认 RSI 值得认真对待；对企业而言稳妥的姿态是：按他的框架组织人才与流程（重评估、保掌控、拒黑箱），但不把「一定是几十年」当成可以拖延转型的理由。",
+  "bilingual": [
+    {
+      "en": "I made three arguments. First, the AI as Normal Technology framework is correct and useful as a way to think about AI's impacts, unless and until there is some future discontinuity such as through recursive self-improvement. Second, even though we should take recursive self-improvement seriously, there is no milestone that companies might achieve in the lab that will suddenly put us all out of work. Third and finally, jobs of the future will be radically different, and a lot of adaptation will be needed. I shared my thinking about what this might look like and ended with a vision of human/AI \"co-superintelligence\".",
+      "zh": "我提出三个论点。第一，「AI 是常规技术（AI as Normal Technology）」这个框架，作为思考 AI 影响的方式是正确且有用的——除非、直到出现某种未来的断点，比如通过递归自我改进（RSI）。第二，尽管我们应当认真对待递归自我改进，但没有哪个公司能在实验室里达成的里程碑会突然让我们所有人失业。第三，也是最后，未来的工作会与今天截然不同，需要大量的适应。我分享了我对这会是什么样子的思考，并以一个人机「协同超级智能（co-superintelligence）」的愿景收尾。"
+    },
+    {
+      "en": "If you think this is a technology which in a few years is going to be able to replace everything we do today, then perhaps the correct response is to build wealth as quickly as possible before our skills become irrelevant. And this is the path that many have chosen in Silicon Valley. ... On the other hand, if you believe, as I do, that this is a technology that will greatly amplify our potential, then now is the best time to build skills — especially the skills that are going to be complementary to what AI is doing and is going to be able to do — as well as to build all the things around it, such as agency and taste and judgment.",
+      "zh": "如果你认为这是一项几年内就能取代我们今天所做一切的技术，那也许正确的应对是趁自己的技能还没变得无关紧要，尽快积累财富——这正是硅谷许多人选择的路（你或许听过「永久底层阶级 permanent underclass」这个梗）。另一方面，如果你像我一样相信这是一项将极大放大我们潜力的技术，那么现在就是建立技能的最好时机——尤其是那些将与 AI 所做、所能做之事互补的技能，以及围绕它的一切，比如能动性（agency）、品味（taste）和判断力（judgment）。"
+    },
+    {
+      "en": "Before electricity, factories used to look like the picture on the left. A massive steam engine generated power ... So when electricity came along, factory owners tried to replace those steam boilers with electric generators. ... But this idea of a drop-in replacement did not work. We keep hearing that term in the context of AI agents today — that they will be drop-in replacements for human workers. That did not work in the case of electricity. What actually worked, and what took 40 years to develop, is to recognize that electricity is a very different technology. ... That lets you reorganize the entire layout of the factory around the logic of the assembly line.",
+      "zh": "在电力出现之前，工厂是左图那样：一台巨大的蒸汽机产生动力，靠机械齿轮和皮带传遍全厂。所以电力来临时，工厂主试图把蒸汽锅炉换成电动发电机，以为会高效得多。但这种「即插即换（drop-in replacement）」的想法行不通。今天在 AI agent 的语境里我们不断听到这个词——说它们会是人类工人的即插即换替代品。这在电力身上就没成功。真正奇效、且花了 40 年才发展出来的，是认识到电力是一种非常不同的技术：它可携带，你能把动力送到任何需要的地方，这让你能围绕流水线的逻辑重组整个工厂的布局——并进而改变工人的培训、雇佣与解雇方式、以及新的劳动法等等。"
+    },
+    {
+      "en": "Suppose we hear that an AI agent has a 70% accuracy. Does this mean it works on 70% of the tasks, but on the ones that it does, it does so every time? That's great for deployment ... Or does it mean that on any given task it might unpredictably fail with a 30% probability? That's pretty useless from a deployment perspective. Perhaps shockingly, none of the agent benchmarks that we looked into make a distinction between these two. Both of these are represented as 70% accuracy.",
+      "zh": "假设我们听说某个 AI agent 有 70% 的准确率。这是指它能搞定 70% 的任务、而且搞定的那些每次都能成功吗？那对部署来说很棒——你可以把它部署在那部分任务上。还是说，对任何给定任务它都可能以 30% 的概率不可预测地失败？那从部署角度看就相当没用。也许令人震惊的是：我们研究过的所有 agent benchmark，都不区分这两种情况——两者都被表示为 70% 准确率。"
+    },
+    {
+      "en": "This is a period during which accuracy or capability shot up dramatically (left). But reliability (right) only increased by five or ten percentage points. ... My hope is that reliability will continue to improve and automation will become easier over time. But for now I think collaboration agents will continue to be much more successful. ... For the time being, you can have only two out of these three properties in agents: general-purpose ...; deployed in high-stakes scenarios, and automated.",
+      "zh": "在这段时间里，准确率或能力急剧飙升（左图）。但可靠性（右图）只提高了五到十个百分点。……我希望可靠性会持续改善、自动化会随时间变得更容易。但就目前而言，我认为协作 agent 仍会成功得多。许多匆忙用 agent 去自动化业务流程的公司，正在认识到其局限、成本乃至法律责任——比如某个 agent 删掉了生产数据。眼下，agent 的这三个属性你只能同时拥有其二：通用、部署于高风险场景、以及全自动。"
+    },
+    {
+      "en": "The decide layer: understanding customer requirements, developing the specification, planning, etc. That is not getting compressed by AI. The execute layer: the actual coding and debugging. This is getting compressed, but it was only maybe one-third of the work to begin with. The deliver layer: Understanding your code deeply enough to be accountable for what you release; carrying out integration into customer systems, maintenance, testing, etc. This layer is not getting compressed either. In fact, the first and third layers are arguably expanding as AI compresses the middle layer.",
+      "zh": "**决策层（decide）**：理解客户需求、编写规格、做规划等等——这部分没有被 AI 压缩。**执行层（execute）**：真正的编码与调试——这部分正在被压缩，但它一开始也就大概只占三分之一的工作。**交付层（deliver）**：足够深入地理解你的代码，以便为你所发布的东西负责；执行到客户系统的集成、维护、测试等等——这一层也没有被压缩。事实上，随着 AI 压缩中间层，第一层和第三层可以说反而在扩张。"
+    },
+    {
+      "en": "I think it is already the case in software engineering, and will increasingly be the case in many professions, that we can think of knowledge workers as similar to a crane operator or a forklift operator. The machine greatly amplifies the human potential to do physical work — it's doing all the heavy lifting, but the person still remains in control. ... The entire job gets reconceptualized as being about operating the machine, understanding the machine, and controlling the machine, as opposed to doing the cognitive work ourselves.",
+      "zh": "我认为在软件工程里已经如此、并将在越来越多的行业里成立：我们可以把知识工作者看作类似起重机操作员或叉车操作员。机器极大放大了人做体力工作的潜力——它承担所有的重活，但人依然保持掌控。我认为认知工作正在发生同样的事：机器将越来越多地承担认知上的重活，但人依然保持掌控。**整个岗位被重新定义**为「操作机器、理解机器、控制机器」，而不是我们自己去做那些认知工作。"
+    },
+    {
+      "en": "My claim is that this view — that treats AGI and ASI as near-automatic consequences of RSI — is a little bit silly. These are four different dimensions of progress. None of these dimensions implies any of the others. ... the hard part of developing medical treatments is clinical trials that often require thousands of people and 10-15 years. That's an example of the fact that the bottlenecks to superintelligence are external. It is not something that you can solve in the lab through purely computational processes.",
+      "zh": "我的主张是：那种把 AGI 和 ASI 当作 RSI 近乎自动的后果的观点，有点傻。这是四个不同的进步维度，没有哪个维度蕴含其他任何一个。……开发医疗手段最难的部分是临床试验，往往需要数千人、耗时 10-15 年。这就是一个例子，说明通往超级智能的瓶颈在外部——不是你能在实验室里靠纯计算过程解决的。所以「递归自我改进会自动导向超级智能」这种许多评论者的假设，在因果链条上显然缺了点什么。"
+    },
+    {
+      "en": "The reason for my prediction is simple: AI is still in a state where it is much better at verifiable tasks than non-verifiable tasks. Some dimensions of AI performance, like speed and efficiency, are verifiable ... However, creativity, among other dimensions of intelligence, is the epitome of an unverifiable task. We don't even know clearly how to test AI creativity.",
+      "zh": "我这个预测的理由很简单：AI 至今仍处于「在可验证任务上远强于不可验证任务」的状态。AI 表现的某些维度，比如速度和效率，是可验证的，有可能通过近期的 RSI 大幅改善。然而，创造力（以及智能的其他维度）是不可验证任务的典型。我们甚至连怎么清晰地测试 AI 的创造力都不知道——我们从认知科学和神经科学的角度还没充分理解人类创造力，无法为它设计出清晰的测试。"
+    },
+    {
+      "en": "There is no particular capability milestone that will unlock all of this economic potential. The economic potential is already there. It really depends on all these downstream actions that we take. It is not gated by capability.",
+      "zh": "没有哪个特定的能力里程碑会解锁全部这些经济潜力。经济潜力已经在那儿了。它真正取决于我们采取的所有这些下游行动，而不是被能力所卡住。（因此「抢先到 AGI 就赢者通吃」的曼哈顿计划式竞赛逻辑是错的。）"
+    },
+    {
+      "en": "If you're imagining a future where AI is actually owning and running companies and hiring and firing people, that's already dystopian. It doesn't matter if that AI is aligned or not. ... So if your view on safety is to treat this as an inevitable future and just to hope for \"alignment\" to solve that problem — pardon me for being a little bit blunt here — it feels to me that you're against safety, not for safety.",
+      "zh": "如果你想象的是一个 AI 真的拥有并运营公司、雇人和解雇人的未来，那本身就已经是反乌托邦了——这个 AI 是否对齐都无关紧要，对人类尊严、民主治理等的后果已经是灾难性的。所以，如果你对安全的看法是把这当成不可避免的未来、只指望「对齐」来解决那个问题——恕我直言——在我看来你是在反对安全，而不是支持安全。"
+    },
+    {
+      "en": "If there's only one thing you take away from this talk, it should probably be this slide. What I've shown throughout the talk is that in many different areas, because the verifiable tasks can be handled by AI, some or much of the effort shifts from building to evaluation. Effort shifts from \"rowing the boat\" to \"steering the ship, navigating the ship, and figuring out where we even want to go\".",
+      "zh": "如果这场演讲你只带走一件事，那大概应该是这张幻灯片。我在整场演讲里展示的是：在许多不同领域，因为可验证的任务可以交给 AI，一部分乃至大部分努力从「建造」转向「评估」。努力从「划桨（rowing the boat）」转向「掌舵、导航这艘船，以及搞清楚我们究竟想去哪」。"
+    },
+    {
+      "en": "And I would go further and argue that thoughtful evaluation of AI systems is a form of alignment. It's not aligning the AI system itself, but it's aligning the community as a whole — thinking about where we're currently going and where we want to go, and trying to align those two to each other. ... the community ... will behave like a rudderless ship: very powerful, but where we don't collectively have control over what kind of AI we want to develop.",
+      "zh": "我还想进一步论证：对 AI 系统深思熟虑的评估，本身是一种对齐。它对齐的不是 AI 系统本身，而是整个社区——思考我们当前正走向哪里、我们想去哪里，并试图让两者彼此对齐。没有对评估的足够重视，我担心这个社区（回到轮船的比喻）会表现得像一艘无舵之船：非常强大，但我们集体上无法控制自己想开发什么样的 AI。"
+    },
+    {
+      "en": "Computers have often been called bicycles for the mind. I think AI can be more than that. I think AI can be a crane for the mind ... in the sense that it can amplify our potential to previously unimaginable heights. ... Compared to five years ago, in a way, I feel ... maybe superintelligent is not the right word, but I feel like I have superpowers, given the extent to which AI allows me to take on new ambitious things that were not possible before. ... I hope to work towards this vision of co-superintelligence, and I hope you will join me.",
+      "zh": "计算机常被称为「心智的自行车」。我认为 AI 可以不止于此——它可以是「心智的起重机」，能把我们的潜力放大到以前难以想象的高度。……与五年前相比，某种意义上我觉得……也许「超级智能」不是恰当的词，但我觉得自己拥有了超能力——因为 AI 让我能去做以前不可能的、新的雄心勃勃的事。……我希望朝着这个「协同超级智能」的愿景努力，也希望你们与我同行。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "There is no world in which something that an AI company will decide to do in a lab will put us all out of work.",
+      "zh": "不存在那样一个世界：某个 AI 公司在实验室里决定去做的某件事，会让我们所有人失业。"
+    },
+    {
+      "en": "Effort shifts from \"rowing the boat\" to \"steering the ship, navigating the ship, and figuring out where we even want to go\".",
+      "zh": "努力从「划桨」转向「掌舵、导航这艘船，以及搞清楚我们究竟想去哪」。"
+    },
+    {
+      "en": "If your view on safety is to treat this as an inevitable future and just to hope for \"alignment\" to solve that problem ... it feels to me that you're against safety, not for safety.",
+      "zh": "如果你对安全的看法是把这当成不可避免的未来、只指望「对齐」来解决那个问题……在我看来你是在反对安全，而不是支持安全。"
+    },
+    {
+      "en": "I've learned that if I don't feel exhausted at the end of the day, I've done something wrong. I've offloaded too much to AI. I've sacrificed too much of my long-term growth in the pursuit of short-term productivity.",
+      "zh": "我学到：如果一天结束时我不觉得累，那就是哪里做错了——我卸载给 AI 太多了，为了短期生产力牺牲了太多长期成长。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "AI News Weekly (aiweekly.co)",
+      "url": "https://aiweekly.co/alerts/arvind-narayanan-at-icml-2026-ai-is-normal-technology",
+      "pov": "把演讲提炼为三句话，并点出其价值正在于「拒绝两个廉价答案」（一切照旧 / 什么都不剩）。特别把「能力-可靠性鸿沟」提为最硬的实证筹码（能力陡升、可靠性 24 个月只涨 5-10 个百分点），并把 Narayanan 的处方概括为「co-superintelligence」：人类不是等待自动化，而是培养判断、品味与评估能力去掌舵 AI。适合作为“五分钟版”入口，但省略了原文对 RSI/AGI/超智四维度拆解的核心论证。"
+    }
+  ]
+}

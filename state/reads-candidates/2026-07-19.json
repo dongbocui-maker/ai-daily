@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-07-19T09:20:00+08:00",
+  "week_of": "2026-07-19",
+  "candidates": [
+    {
+      "title": "What will be left for us to work on? (ICML 2026 keynote)",
+      "url": "https://www.normaltech.ai/p/what-will-be-left-for-us-to-work",
+      "source": "Arvind Narayanan / Normal Technology (AI Snake Oil)",
+      "paywall": "free",
+      "recommend_reason": "普林斯顿教授在 ICML 2026 主会 keynote，附幻灯片+编辑版逐字稿，系统回应「AI 越强人类还能做什么」的普遍焦虑，学界重量级立场。",
+      "key_points": "1) 「AI 是常规技术(normal technology)」框架在没有断点前仍成立；2) 不必为递归自我改进(RSI)失眠；3) 人类角色向规格设计、判断、验证等高层能力迁移，而非等待被替代。",
+      "suggested_slug": "narayanan-what-left-to-work-on"
+    },
+    {
+      "title": "Claude's values across models and languages",
+      "url": "https://www.anthropic.com/research/claude-values-models-languages",
+      "source": "Anthropic Research",
+      "paywall": "free",
+      "recommend_reason": "分析 30 万真实对话，把模型「价值观」压缩成四条可解释轴，跨模型/跨语言比较——对企业级 AI 治理与本地化部署有直接参考价值。",
+      "key_points": "1) 用四条可解释轴(如 Warmth vs Rigor、Candor vs Execution)量化 Claude 表达的价值观；2) 跨语言差异最大的是「温暖 vs 严谨」「坦诚 vs 执行」，说明同一模型在不同语言下行为不一致，对多语部署是隐性风险。",
+      "suggested_slug": "anthropic-claude-values-across-languages"
+    },
+    {
+      "title": "Verbalizable Representations Form a Global Workspace in Language Models",
+      "url": "https://transformer-circuits.pub/2026/workspace/index.html",
+      "source": "Anthropic / Transformer Circuits (Gurnee et al.)",
+      "paywall": "free",
+      "recommend_reason": "Anthropic 可解释性顶级深度长文(5万+词)，提出全新解释工具 Jacobian lens(J-lens)，论证模型「能说出口的表征」与「沉默推理用的表征」是同一套——interpretability 领域重磅。",
+      "key_points": "1) 语言模型内部存在一个「全局工作空间」——一小组可被报告/调制/灵活推理的特权表征，浮于更大规模的底层表征之上；2) 用 J-lens 证明可言语化表征即模型静默推理所依赖的表征，为对齐与可控性提供机制层抓手。",
+      "suggested_slug": "tc-global-workspace-jacobian-lens"
+    },
+    {
+      "title": "Conjecture machines: AI agents and the new validation bottleneck in science",
+      "url": "https://deepmind.google/public-policy/conjecture-machines-ai-agents-and-the-new-validation-bottleneck-in-science/",
+      "source": "Google DeepMind (Don Wallace, Conor 等)",
+      "paywall": "free",
+      "recommend_reason": "DeepMind 政策研究长文，从「AI agent 正把科研从写代码扩展到提假设/设计实验/发现算法」切入，提出核心论点：瓶颈正从「产生想法」转向「验证想法」。",
+      "key_points": "1) AI agent 能大规模生成科学猜想与实验设计，产出侧不再是瓶颈；2) 新瓶颈是验证(validation)——如何低成本、可信地检验海量 AI 生成的假设，这将重塑科研机构、评审与资助的组织形态。",
+      "suggested_slug": "deepmind-conjecture-machines-validation-bottleneck"
+    },
+    {
+      "title": "The Batch #362 — Andrew Ng on developers moving up to senior-level work",
+      "url": "https://charonhub.deeplearning.ai/issue-362/",
+      "source": "Andrew Ng / The Batch (DeepLearning.AI)",
+      "paywall": "free",
+      "recommend_reason": "Andrew Ng 教育者视角的一封信：AI 自动化编码后，开发者被释放去做过去只属于资深工程师的高层工作(技术架构、需求界定)，对团队能力模型与人才梯队重构有直接启发。",
+      "key_points": "1) 与其花一小时打磨设计规格，不如 10 分钟写个次优规格让 agent 20 分钟做出原型，再审查其假设——迭代式规格设计成为新常态；2) 编码自动化把开发者整体上移到架构决策与产品范围界定层，初级/资深的分界正在重画。",
+      "suggested_slug": "the-batch-362-devs-move-to-senior-work"
+    }
+  ]
+}

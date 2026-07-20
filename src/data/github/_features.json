@@ -280,14 +280,12 @@
   },
   "HKUDS/DeepTutor": {
     "features": [
-      "Agent-native 个性化辅导平台，提供持久化自主 AI tutor (TutorBot)",
-      "支持 RAG 文档抽取与重建索引，具备增强的容错能力",
-      "集成 NVIDIA NIM 与 Gemini embedding，支持统一 Space 上下文管理",
-      "提供 DeepTutor CLI，实现 agent-native 交互界面",
-      "支持书页聊天持久化、会话快照与 chat-to-book 引用"
+      "提供终身个性化 AI 辅导 (personalized tutoring) 体验",
+      "支持多语言界面，覆盖英、中、日等 11 种语言",
+      "基于 Python 3.11+ 构建的 tutoring framework"
     ],
-    "sourceHash": "-16319d08",
-    "ts": 1777624815022
+    "sourceHash": "5013b18d",
+    "ts": 1784510469127
   },
   "google-ai-edge/gallery": {
     "features": [
@@ -2624,14 +2622,14 @@
   },
   "earendil-works/pi": {
     "features": [
-      "可自我扩展的交互式 coding agent CLI",
-      "支持 tool calling 与状态管理的 agent 运行时",
-      "统一多 provider LLM API，兼容 OpenAI、Anthropic、Google 等",
-      "提供差分渲染的终端 UI 库（TUI）",
-      "支持公开分享 OSS coding agent 会话数据"
+      "自扩展的交互式 coding agent CLI",
+      "提供支持 tool calling 与状态管理的 agent runtime",
+      "统一的多 provider LLM API（OpenAI、Anthropic、Google 等）",
+      "支持差分渲染的终端 UI 库",
+      "支持通过容器或沙箱隔离运行 Pi"
     ],
-    "sourceHash": "-181daf1a",
-    "ts": 1779699610050
+    "sourceHash": "5166b75",
+    "ts": 1784510511914
   },
   "manaflow-ai/cmux": {
     "features": [
@@ -3565,5 +3563,97 @@
     ],
     "sourceHash": "-3132235e",
     "ts": 1783908040017
+  },
+  "Nutlope/hallmark": {
+    "features": [
+      "为 Claude Code、Cursor、Codex 提供拒绝 AI 感的 design skill",
+      "内置 20 种主题、57 项 slop-test 检测门与 pre-emit 自我审查",
+      "支持 audit、redesign、study 与默认 build 四种操作",
+      "从截图或 URL 提取设计 DNA 并导出可移植的 design.md",
+      "按 brief 自动选择宏结构、主题与工艺，非模板套用"
+    ],
+    "sourceHash": "-c9c8c80",
+    "ts": 1784510448884
+  },
+  "Shubhamsaboo/awesome-llm-apps": {
+    "features": [
+      "100+ 可直接运行的 AI Agent 与 RAG 应用模板，可克隆定制部署",
+      "涵盖 multi-agent teams、MCP agents、Voice agents 等多种 agent 类型",
+      "兼容 Claude、Gemini、OpenAI、xAI、Qwen、Llama 等 LLM",
+      "在 Unwind AI 提供免费分步教程",
+      "包含 RAG、Agent Skills 与模型 fine-tuning 示例"
+    ],
+    "sourceHash": "11b087c8",
+    "ts": 1784510452653
+  },
+  "HKUDS/Vibe-Trading": {
+    "features": [
+      "一条命令即可为 agent 赋能全面交易能力",
+      "支持 API 与 MCP 服务器集成",
+      "提供 shadow account 模拟交易账户",
+      "基于 FastAPI 后端与 React 19 前端构建",
+      "通过 pip install vibe-trading-ai 快速安装"
+    ],
+    "sourceHash": "-6d96c0a0",
+    "ts": 1784510461252
+  },
+  "iOfficeAI/OfficeCLI": {
+    "features": [
+      "为 AI agent 提供对 Word、Excel、PowerPoint 的完整控制能力",
+      "一行代码即可集成，单一二进制文件，无需安装 Office",
+      "内置 HTML 渲染引擎，将文档高保真渲染为 HTML 或 PNG",
+      "支持渲染 .docx / .xlsx / .pptx，闭合 render→look→fix 循环",
+      "开源、跨平台运行，无依赖"
+    ],
+    "sourceHash": "-308eb24d",
+    "ts": 1784510482667
+  },
+  "ibelick/ui-skills": {
+    "features": [
+      "通过 npx ui-skills start 为 agent 路由合适的 UI skill set",
+      "提供 CLI 浏览、列出并按 category 查询 UI skills",
+      "为 Design Engineers 打造的 UI skills 集合"
+    ],
+    "sourceHash": "74de47a1",
+    "ts": 1784510487061
+  },
+  "openai/codex": {
+    "features": [
+      "OpenAI 推出的本地运行 coding agent，即 Codex CLI",
+      "支持在 VS Code、Cursor、Windsurf 等 IDE 中安装使用",
+      "可通过 curl、npm、Homebrew 等多种方式安装",
+      "支持使用 ChatGPT 账号或 API key 登录",
+      "提供 codex app 桌面应用体验"
+    ],
+    "sourceHash": "75ba3ea5",
+    "ts": 1784510497653
+  },
+  "openinterpreter/openinterpreter": {
+    "features": [
+      "针对低成本模型优化的编码 agent，可切换多种 harness",
+      "在 macOS、Linux、Windows 的原生沙箱中执行命令",
+      "内置 QA skill，让模型操作并测试 Web 和原生 app",
+      "通过 TUI 用 /model、/harness 切换 provider、模型与 harness",
+      "支持以 Agent Client Protocol agent 运行，集成编辑器",
+      "支持 exec、MCP、skills、hooks、permissions 及 AGENTS.md"
+    ],
+    "sourceHash": "2f918fab",
+    "ts": 1784510501943
+  },
+  "tirth8205/code-review-graph": {
+    "features": [
+      "用 Tree-sitter 构建代码结构图谱，精准定位上下文",
+      "增量追踪代码变更，仅读取相关部分",
+      "通过 MCP 为 AI 助手提供精准代码上下文",
+      "一条命令自动检测并配置所有支持的平台",
+      "大幅减少 review 任务的 token 消耗"
+    ],
+    "sourceHash": "bcd062",
+    "ts": 1784510505950
+  },
+  "anthropics/cwc-workshops": {
+    "features": [],
+    "sourceHash": "-2d70c183",
+    "ts": 1784510513504
   }
 }

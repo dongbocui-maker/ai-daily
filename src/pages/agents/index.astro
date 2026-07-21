@@ -53,6 +53,7 @@ body{
 header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;flex-wrap:wrap;gap:12px}
 .logo{font-family:'Orbitron';font-weight:900;font-size:26px;color:var(--gold);text-shadow:0 0 16px rgba(255,196,0,.4);letter-spacing:1px}
 .logo .red{color:var(--red);text-shadow:0 0 16px rgba(230,36,41,.5)}
+.logo .dv{margin:0 -1px}.logo .di{margin:0 1px}
 .logo small{display:block;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);letter-spacing:3px;margin-top:2px}
 .jarvis{text-align:right;font-size:11px;color:var(--arc)}
 .jarvis .pulse{color:var(--arc-glow);text-shadow:0 0 10px var(--arc-glow);animation:blink 2s infinite}
@@ -506,7 +507,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 <div class="hud-corner bl"></div><div class="hud-corner br"></div>
 
 <header>
-  <div class="logo"><span class="red">J.A.R.V.I.S.</span> OS
+  <div class="logo"><span class="red">J.A.R<span class="dv">.</span>V<span class="dv">.</span>I<span class="di">.</span>S.</span> OS
     <small>JARVIS HYPERVISOR · RESOURCE &amp; INTELLIGENCE MONITORING PLATFORM</small>
   </div>
   <div class="jarvis">

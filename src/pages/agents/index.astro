@@ -155,9 +155,60 @@ footer .red{color:var(--red-dim)}
 
 /* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
 body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
-body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card{display:none}
+body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card,body.gate-locked .node{display:none}
+.node.node-pending{display:none}
 /* 初始隐藏：与 #app 的 loading 占位视觉同步，数据首次到位后由 renderKnowledge 移除 kp-pending。与 gate-locked 独立，两者任一命中即隐藏（解锁但数据未到时仍隐藏） */
 .kp-card.kp-pending{display:none}
+
+/* ===== LIGHTHOUSE NODE · 服务器状态 strip ===== */
+.node{position:relative;background:linear-gradient(180deg,rgba(14,17,24,.96),rgba(9,13,20,.96));border:1px solid var(--line);border-radius:6px;padding:10px 14px 11px;overflow:hidden;box-shadow:0 0 24px rgba(63,201,255,.05);margin-bottom:24px}
+.node::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(63,201,255,.018) 2px 4px);pointer-events:none}
+.node::after{content:'';position:absolute;inset:4px;border:1px solid transparent;border-image:linear-gradient(135deg,rgba(63,201,255,.35),transparent 30%,transparent 70%,rgba(63,201,255,.35)) 1;pointer-events:none;opacity:.6}
+.node .nh{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:1px;margin-bottom:9px;flex-wrap:wrap}
+.node .nh .tag{font-family:'Orbitron';font-weight:700;font-size:10px;color:var(--arc);letter-spacing:2px;text-shadow:0 0 8px rgba(63,201,255,.5);white-space:nowrap}
+.node .nh .beacon{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:nodePulse 2s infinite;flex-shrink:0}
+.node.offline .nh .beacon{background:var(--red);box-shadow:0 0 8px var(--red)}
+@keyframes nodePulse{50%{opacity:.45}}
+.node .nh .meta{color:var(--dim);white-space:nowrap}
+.node .nh .meta b{color:var(--txt);font-weight:400}
+.node .nh .nfill{flex:1}
+.node .nh .lv{color:var(--dim);white-space:nowrap}
+.node .nh .lv b{color:var(--green);font-weight:400}
+.node.offline .nh .lv b{color:var(--red)}
+.node .ng{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;gap:8px}
+.node .m{background:rgba(10,15,24,.7);border:1px solid #16202f;border-radius:4px;padding:7px 9px 8px;position:relative}
+.node .m .k{display:flex;justify-content:space-between;align-items:baseline;font-size:8px;letter-spacing:1.5px;color:var(--dim);margin-bottom:6px}
+.node .m .k .v{font-family:'Orbitron';font-weight:700;font-size:15px;letter-spacing:0}
+.node .m .k .v .u{font-size:8px;color:var(--dim);font-family:'JetBrains Mono';font-weight:400;margin-left:1px}
+.node .m .msub{font-size:8px;color:var(--dim);margin-top:5px;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node .m .msub b{color:var(--txt);font-weight:400}
+.node .nseg{display:flex;gap:4px;align-items:center}
+.node .nseg i{width:9px;height:9px;transform:skewX(-22deg);flex-shrink:0;border-radius:1px;transition:.12s;background:transparent;border:1px solid #1d2838}
+.node .m.arc .k .v{color:var(--arc)} .node .m.arc .nseg i.on{background:var(--arc);border-color:transparent;box-shadow:0 0 6px rgba(63,201,255,.65)}
+.node .m.gold .k .v{color:var(--gold)} .node .m.gold .nseg i.on{background:var(--gold);border-color:transparent;box-shadow:0 0 6px rgba(255,196,0,.6)}
+.node .m.green .k .v{color:var(--green)} .node .m.green .nseg i.on{background:var(--green);border-color:transparent;box-shadow:0 0 6px rgba(52,211,153,.6)}
+.node .m.net .rows{display:flex;flex-direction:column;gap:3px}
+.node .m.net .r{display:flex;align-items:baseline;gap:6px;font-size:8px}
+.node .m.net .r .d{font-family:'Orbitron';font-size:8px;font-weight:700;width:14px}
+.node .m.net .r .d.up{color:var(--gold)} .node .m.net .r .d.dn{color:var(--arc)}
+.node .m.net .r .s{font-family:'Orbitron';font-weight:700;font-size:13px;color:#fff}
+.node .m.net .r .s .u{font-size:8px;color:var(--dim);font-family:'JetBrains Mono';font-weight:400}
+.node .m.net .r svg{margin-left:auto;opacity:.85}
+.node .m.tp .k b{color:var(--arc);font-family:'Orbitron';letter-spacing:1px}
+.node .m.tp .k .v{color:#fff;font-size:12px}
+.node .m.tp .nseg{gap:3px;margin-top:1px}
+.node .m.tp .nseg i{width:8px;height:9px}
+.node .m.tp .nseg i.on{background:linear-gradient(180deg,var(--arc),var(--green));border-color:transparent;box-shadow:0 0 5px rgba(63,201,255,.55)}
+.node .m.tp .nseg i.on.hot{background:linear-gradient(180deg,var(--gold),var(--red));box-shadow:0 0 5px rgba(255,196,0,.6)}
+.node .m.tp .nseg i.warn{border-color:rgba(255,196,0,.55)}
+.node .m.tp .nseg i.crit{border-color:rgba(230,36,41,.6)}
+.node .m.tp .ft{display:flex;justify-content:space-between;font-size:8px;color:var(--dim);margin-top:5px;letter-spacing:.3px}
+.node .m.tp .ft b{color:var(--txt);font-weight:400}
+@media(max-width:760px){
+  .node .ng{grid-template-columns:1fr 1fr}
+  .node .m.tp{grid-column:1 / -1}
+  .node .nh .meta.hide-m{display:none}
+}
 
 /* === Event Ticker 跑马灯 === */
 .event-ticker{position:relative;height:36px;background:linear-gradient(90deg,rgba(7,10,15,.95),rgba(14,17,24,.95));border:1px solid var(--line);border-radius:5px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center}
@@ -467,6 +518,46 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 <div class="event-ticker" id="ticker">
   <div class="event-track"><div class="event-stream" id="tickerStream"></div></div>
 </div>
+
+<section class="node node-pending" id="nodeStrip">
+  <div class="nh">
+    <span class="beacon"></span>
+    <span class="tag">⬢ LIGHTHOUSE NODE</span>
+    <span class="meta">ins-fl5zvqw7 · SH · 4C/8G/120G</span>
+    <span class="meta hide-m">124.220.233.211</span>
+    <span class="nfill"></span>
+    <span class="lv" id="nodeLv">UP <b>—</b> · LOAD <b>—</b> · <b>—</b></span>
+  </div>
+  <div class="ng">
+    <div class="m arc">
+      <div class="k"><span>CPU</span><span class="v" id="nCpuV">—<span class="u">%</span></span></div>
+      <div class="nseg" id="nCpuSeg"></div>
+      <div class="msub" id="nCpuSub">usr <b>—</b> · sys <b>—</b> · io <b>—</b></div>
+    </div>
+    <div class="m gold">
+      <div class="k"><span>MEM</span><span class="v" id="nMemV">—<span class="u">%</span></span></div>
+      <div class="nseg" id="nMemSeg"></div>
+      <div class="msub" id="nMemSub"><b>—</b> GB · swap <b>—</b></div>
+    </div>
+    <div class="m green">
+      <div class="k"><span>DISK</span><span class="v" id="nDiskV">—<span class="u">%</span></span></div>
+      <div class="nseg" id="nDiskSeg"></div>
+      <div class="msub" id="nDiskSub"><b>—</b> GB · free <b>—</b></div>
+    </div>
+    <div class="m net">
+      <div class="k"><span>NET</span></div>
+      <div class="rows">
+        <div class="r"><span class="d up">▲</span><span class="s" id="nNetUp">—</span><svg width="52" height="12" viewBox="0 0 52 12" preserveAspectRatio="none"><polyline id="nSparkUp" fill="none" stroke="#FFC400" stroke-width="1" opacity=".8" points=""/></svg></div>
+        <div class="r"><span class="d dn">▼</span><span class="s" id="nNetDn">—</span><svg width="52" height="12" viewBox="0 0 52 12" preserveAspectRatio="none"><polyline id="nSparkDn" fill="none" stroke="#3FC9FF" stroke-width="1" opacity=".9" points=""/></svg></div>
+      </div>
+    </div>
+    <div class="m tp">
+      <div class="k"><span><b>TRAFFIC PKG</b> · 月流量包</span><span class="v" id="nTpV">—</span></div>
+      <div class="nseg" id="nTpSeg"></div>
+      <div class="ft"><span id="nTpPct">—</span><span id="nTpRst">RST <b>—</b> · SYNC <b>—</b></span></div>
+    </div>
+  </div>
+</section>
 
 <div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
 
@@ -1198,6 +1289,69 @@ async function tick(){
     // 非首次失败：保留上一帧画面，不闪烁
   }
 }
+// ===== LIGHTHOUSE NODE · 服务器实时指标（/server.json，每 10s，零 token）=====
+const SERVER_URL = LIVE_URL.replace(/dashboard\.json$/, 'server.json');
+const NSEG_N = 12, NTP_N = 30;
+function _nodeSegs(el, total, onCount, cls){
+  if(el.childElementCount !== total){ el.innerHTML = Array.from({length:total},()=> '<i></i>').join(''); }
+  [...el.children].forEach((c,i)=>{ c.className = i < onCount ? ('on'+(cls&&cls(i)?' '+cls(i):'')) : (cls&&cls(i)?cls(i):''); });
+}
+function _fmtSpeed(kbps){
+  if(kbps >= 1024) return (kbps/1024).toFixed(1)+'<span class="u">MB/s</span>';
+  return Math.round(kbps)+'<span class="u">KB/s</span>';
+}
+function _fmtUp(s){
+  const d=Math.floor(s/86400), h=Math.floor(s%86400/3600);
+  return d>0 ? d+'d'+String(h).padStart(2,'0')+'h' : h+'h'+String(Math.floor(s%3600/60)).padStart(2,'0')+'m';
+}
+function _spark(el, arr){
+  if(!arr || arr.length<2){ el.setAttribute('points',''); return; }
+  const max = Math.max(...arr, 1);
+  const pts = arr.map((v,i)=> (i*(52/(arr.length-1))).toFixed(1)+','+(11 - v/max*9).toFixed(1)).join(' ');
+  el.setAttribute('points', pts);
+}
+function _nodeOffline(){
+  const strip=document.getElementById('nodeStrip');
+  strip.classList.remove('node-pending'); strip.classList.add('offline');
+  document.getElementById('nodeLv').innerHTML='LINK LOST · <b>NODE OFFLINE</b>';
+}
+async function nodeTick(){
+  let d;
+  try{ d = await (await fetch(SERVER_URL, {cache:'no-store'})).json(); }
+  catch(e){ _nodeOffline(); return; }
+  if(!d || !d.ok){ _nodeOffline(); return; }
+  const strip=document.getElementById('nodeStrip');
+  strip.classList.remove('node-pending','offline');
+  document.getElementById('nodeLv').innerHTML='UP <b>'+_fmtUp(d.uptime_s)+'</b> · LOAD <b>'+d.load1.toFixed(2)+'</b> · <b>ONLINE</b>';
+  document.getElementById('nCpuV').innerHTML=Math.round(d.cpu.pct)+'<span class="u">%</span>';
+  _nodeSegs(document.getElementById('nCpuSeg'), NSEG_N, Math.round(d.cpu.pct/100*NSEG_N));
+  document.getElementById('nCpuSub').innerHTML='usr <b>'+d.cpu.user+'</b> · sys <b>'+d.cpu.sys+'</b> · io <b>'+d.cpu.io+'</b>';
+  document.getElementById('nMemV').innerHTML=Math.round(d.mem.pct)+'<span class="u">%</span>';
+  _nodeSegs(document.getElementById('nMemSeg'), NSEG_N, Math.round(d.mem.pct/100*NSEG_N));
+  document.getElementById('nMemSub').innerHTML='<b>'+d.mem.used_gb+'/'+d.mem.total_gb+'</b> GB · swap <b>'+(d.mem.swap_used_mb>=1024?(d.mem.swap_used_mb/1024).toFixed(1)+'G':d.mem.swap_used_mb+'M')+'</b>';
+  document.getElementById('nDiskV').innerHTML=Math.round(d.disk.pct)+'<span class="u">%</span>';
+  _nodeSegs(document.getElementById('nDiskSeg'), NSEG_N, Math.round(d.disk.pct/100*NSEG_N));
+  document.getElementById('nDiskSub').innerHTML='<b>'+d.disk.used_gb+'/'+d.disk.total_gb+'</b> GB · free <b>'+d.disk.free_gb+'</b>';
+  document.getElementById('nNetUp').innerHTML=_fmtSpeed(d.net.up_kbps);
+  document.getElementById('nNetDn').innerHTML=_fmtSpeed(d.net.down_kbps);
+  _spark(document.getElementById('nSparkUp'), d.net.spark_up);
+  _spark(document.getElementById('nSparkDn'), d.net.spark_down);
+  const t=d.traffic;
+  if(t && t.total_bytes){
+    const usedGB=Math.round(t.used_bytes/1e9), totalGB=Math.round(t.total_bytes/1e9);
+    document.getElementById('nTpV').innerHTML=usedGB+'<span class="u">GB</span> / '+totalGB+'<span class="u">GB</span>';
+    const onN=Math.min(NTP_N, Math.round(t.pct_used/100*NTP_N));
+    _nodeSegs(document.getElementById('nTpSeg'), NTP_N, onN, (i)=> i>=27?'crit':(i>=24?'warn':''));
+    document.getElementById('nTpPct').innerHTML=t.pct_used+'% USED · <b style="color:var(--gold)">⧫80%</b> <b style="color:var(--red)">⧫90%</b>';
+    const rst=(t.cycle_end||'').slice(5,10).replace('-','-');
+    const sync=(t.updated||'').slice(11,16);
+    document.getElementById('nTpRst').innerHTML='RST <b>'+rst+'</b> · SYNC <b>'+sync+'</b>';
+  }else{
+    document.getElementById('nTpV').textContent='NO DATA';
+    document.getElementById('nTpPct').textContent='traffic api unsynced';
+  }
+}
+
 // ===== 访问门：8 位数字锁（纯前端，仅防普通人随手查看）=====
 // 未解锁不 fetch 任何数据。解锁后存 localStorage，下次免输。
 const _PIN = '11428089';
@@ -1208,6 +1362,8 @@ function _startDash(){
   document.body.classList.remove('gate-locked');
   tick();
   setInterval(tick, 60000);  // 每 60 秒刷新
+  nodeTick();
+  setInterval(nodeTick, 10000); // LIGHTHOUSE NODE 每 10 秒（纯 JSON，零 token）
 }
 function _gate(){
   if(localStorage.getItem(_PIN_KEY) === _PIN){ _startDash(); return; }

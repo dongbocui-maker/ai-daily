@@ -1,5 +1,5 @@
 ---
-// S.H.R.I.M.P. OS · Agents Monitor — Iron Man HUD 风格独立监控页
+// J.A.R.V.I.S. OS · Agents Monitor — Iron Man HUD 风格独立监控页
 // 数据双源：
 //   主源 LIVE_URL = data.aidigest.club（Cloudflare Tunnel → VM 实时端点，每60s聚合，近实时）
 //   兜底 FALLBACK_URL = 打包进站点的静态 JSON（tunnel 挂了时不白屏）
@@ -24,7 +24,7 @@ try{ const _m=await import('../../data/agent-chains.json'); const _ac=_m.default
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex,nofollow" />
-<title>S.H.R.I.M.P. OS · Agents Monitor</title>
+<title>J.A.R.V.I.S. OS · Agents Monitor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style is:global>
@@ -506,8 +506,8 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 <div class="hud-corner bl"></div><div class="hud-corner br"></div>
 
 <header>
-  <div class="logo"><span class="red">S.H.R.I.M.P.</span> OS
-    <small>SHRIMP HYPERVISOR · RESOURCE &amp; INTELLIGENCE MONITORING PLATFORM</small>
+  <div class="logo"><span class="red">J.A.R.V.I.S.</span> OS
+    <small>JARVIS HYPERVISOR · RESOURCE &amp; INTELLIGENCE MONITORING PLATFORM</small>
   </div>
   <div class="jarvis">
     <div class="pulse" id="suitsMonitored">◉ J.A.R.V.I.S. ONLINE · SUITS MONITORED</div>
@@ -627,8 +627,8 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 </section>
 
 <footer>
-  ⌜ S.H.R.I.M.P. OS v0.1 ⌟ · DATA SNAPSHOT <span id="gen">—</span> ·
-  <span class="red">CONFIDENTIAL</span> · POWERED BY 🦐 IRON SHRIMP STACK
+  ⌜ J.A.R.V.I.S. OS v0.1 ⌟ · DATA SNAPSHOT <span id="gen">—</span> ·
+  <span class="red">CONFIDENTIAL</span> · POWERED BY JARVIS
 </footer>
 
 <script define:vars={{ LIVE_URL, FALLBACK_URL, AGENT_CHAINS, AGENT_ARCH_EP, AGENT_CHAIN_KEYS }}>
@@ -1278,7 +1278,7 @@ async function tick(){
     try{
       d = await (await fetch(LIVE_URL, {cache:'no-store'})).json();
     }catch(err){
-      console.warn('[SHRIMP] LIVE telemetry unreachable, falling back to static snapshot:', err);
+      console.warn('[JARVIS] LIVE telemetry unreachable, falling back to static snapshot:', err);
       d = await (await fetch(FALLBACK_URL + '?t=' + Date.now(), {cache:'no-store'})).json();
     }
     _trendData=d; render(d); renderKnowledge(d); loadTicker(); _firstLoad=false;
@@ -1370,7 +1370,7 @@ function _gate(){
   document.body.classList.add('gate-locked');
   const app = document.getElementById('app');
   app.innerHTML = `<main class="login-gate" lang="en">
-    <div class="login-top"><div class="login-brand">S.H.R.I.M.P. OS</div><div class="login-private-badge">PRIVATE NODE</div></div>
+    <div class="login-top"><div class="login-brand">J.A.R.V.I.S. OS</div><div class="login-private-badge">PRIVATE NODE</div></div>
     <div class="login-reactor" aria-hidden="true">
       <svg viewBox="0 0 100 100">
         <defs><radialGradient id="loginGateGlow"><stop offset="0%" stop-color="#fff"/><stop offset="28%" stop-color="#7fdfff"/><stop offset="70%" stop-color="#3fc9ff" stop-opacity=".35"/><stop offset="100%" stop-color="#3fc9ff" stop-opacity="0"/></radialGradient></defs>
@@ -1381,7 +1381,7 @@ function _gate(){
     </div>
     <h1 class="login-title">ACCESS GATE</h1>
     <p class="login-subtitle">Telemetry console locked<br/>Authenticate to boot reactor interface</p>
-    <div class="login-terminal"><b>root@shrimp-os</b>: initiating private dashboard handshake<br/><b>auth</b>: enter 8-digit operator code <span class="login-cursor"></span></div>
+    <div class="login-terminal"><b>root@jarvis-os</b>: initiating private dashboard handshake<br/><b>auth</b>: enter 8-digit operator code <span class="login-cursor"></span></div>
     <form id="pinForm" class="login-form">
       <label class="login-pin-wrap"><span class="login-prompt">PIN&gt;</span><input id="pinInput" class="login-input" type="password" inputmode="numeric" maxlength="8" placeholder="••••••••" autocomplete="off" /></label>
       <button class="login-btn" type="submit">UNLOCK CONSOLE</button>

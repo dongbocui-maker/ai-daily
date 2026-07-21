@@ -98,21 +98,40 @@ def build_capabilities():
     return {'domains':domains,'total':total,'shared':shared,'ws_scoped':total-shared,
             'ndomains':len(domains)}
 
-# 单价表 USD / 1M tokens  (input, output, cacheWrite, cacheRead)
-PRICING = {
-    ('azure-claude-48','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
-    ('aigw-claude-48-main','claude-opus-4-8'): (5.00,25.00,6.25,0.50),
-    ('aigw-claude-48-main','claude-fable-5'):   (10.00,50.00,12.50,1.00),
-    ('azure-claude','claude-opus-4-7'):    (5.00,25.00,6.25,0.50),
-    ('azure-openai-responses','gpt-5.5'):  (1.25,10.00,1.25,0.125),
-    # gpt-5.6 sol 官方 API 价（2026-07-09 发布）：$5 in / $30 out per 1M；cache read 90% off = $0.50；cache write 按 input 同价估（官方 cache-write 单价待确认）
-    ('azure-openai-responses','gpt-5.6-sol-2026-07-09'): (5.00,30.00,5.00,0.50),
-    ('anthropic','claude-sonnet-4-6'):      (3.00,15.00,3.75,0.30),
-    ('deepseek','deepseek-v4-pro'):        (0.435,0.87,0.435,0.003625),
-    ('deepseek','DeepSeek-V4-Pro'):        (0.435,0.87,0.435,0.003625),
-    # qwen3.7-max @ DashScope，价格为估算（公开源称 ~$1.25/M in），待 pricing-sync 核对
-    ('qwen','qwen3.7-max'):                (1.25,5.00,1.25,0.125),
-}
+# ===== 单价表：single source of truth = src/data/pricing.json =====
+# 不再在此硬编码。改价只改 pricing.json（带 source/verified/confidence 可审计）。
+# dashboard-selfcheck.py 会对照官网 diff + 检测「在用但无价」模型并推 Signal 告警。
+_PRICING_JSON = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src', 'data', 'pricing.json')
+
+def _load_pricing():
+    """Return {(provider,model): (in,out,cw,cr)} from pricing.json.
+    Fails soft to empty dict (cost then computes as 0 but selfcheck will flag it)."""
+    try:
+        with open(_PRICING_JSON) as f:
+            doc = json.load(f)
+    except Exception as e:
+        import sys as _s; _s.stderr.write(f'[aggregate] WARN pricing.json unreadable: {e}\n')
+        return {}, {}
+    table = {}
+    for full, ent in (doc.get('models') or {}).items():
+        if '/' not in full:
+            continue
+        prov, model = full.split('/', 1)
+        p = ent.get('price') or []
+        if len(p) == 4:
+            table[(prov, model)] = tuple(p)
+    # aliases: alias_full -> canonical_full
+    for alias, canon in (doc.get('aliases') or {}).items():
+        if '/' in alias and canon in doc.get('models', {}):
+            ap, am = alias.split('/', 1)
+            cp, cm = canon.split('/', 1)
+            cent = doc['models'][canon].get('price') or []
+            if len(cent) == 4:
+                table[(ap, am)] = tuple(cent)
+    return table, doc
+
+PRICING, _PRICING_DOC = _load_pricing()
+UNPRICED_SEEN = {}  # {provider/model: total_tokens} — 在用但无单价的模型，聚合后推 Signal
 def price(prov,model):
     return PRICING.get((prov,model)) or PRICING.get((prov,(model or '').lower())) or (0,0,0,0)
 
@@ -303,8 +322,18 @@ def refresh_fallback_events(agents):
             'updated': now.strftime('%Y-%m-%dT%H:%M:%S+08:00')
         }
 
+    # UNPRICED 模型告警：在用但 pricing.json 无单价 → 成本静默算 0，推 ALERT 让 Jason 去补价。
+    # 告警可自愈：一旦补上价，下次聚合不再命中 UNPRICED_SEEN，旧告警随去重/截断自然退场。
+    unpriced_alerts = []
+    for key, tok in sorted(UNPRICED_SEEN.items(), key=lambda x:-x[1]):
+        msg = f'NO PRICING FOR {key.upper()} - COST COUNTED AS $0'
+        if any(e.get('msg') == msg for e in base_events):
+            unpriced_alerts.append(next(e for e in base_events if e.get('msg')==msg)); continue
+        unpriced_alerts.append({'ts': now.strftime('%Y-%m-%dT%H:%M+08:00'), 'level': 'warn',
+            'tag': 'ALERT', 'msg': msg, 'detail': f'{tok:,} tokens seen; add to src/data/pricing.json'})
+
     # Signal 保留所有事件，排序规则：FALLBACK 优先，其它事件按优先级与时间往后排；同一 tag+msg 去重。
-    merged = new_events + base_events
+    merged = new_events + unpriced_alerts + base_events
     priority = {'FALLBACK': 0, 'ALERT': 1, 'QC': 2, 'DEPLOY': 3}
     seen = set(); deduped = []
     def sort_key(e):
@@ -545,6 +574,9 @@ for aid,meta in AGENTS.items():
                 cr=u.get('cacheRead',0) or 0; cw=u.get('cacheWrite',0) or 0
                 tot=u.get('total',0) or (inp+out+cr+cw)
                 pi,po,pcw,pcr = price(prov,model)
+                # 无价模型追踪：在用但 pricing.json 没收录 → 成本会静默算 0，录下来事后推 Signal 告警。
+                if (pi,po,pcw,pcr)==(0,0,0,0) and tot>0:
+                    UNPRICED_SEEN[f'{prov}/{model}'] = UNPRICED_SEEN.get(f'{prov}/{model}',0)+tot
                 cost = inp/1e6*pi + out/1e6*po + cw/1e6*pcw + cr/1e6*pcr
                 # 节省额：若 cacheRead 按 full input 价算的差额
                 save = cr/1e6*(pi-pcr)

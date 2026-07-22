@@ -156,7 +156,7 @@ footer .red{color:var(--red-dim)}
 
 /* Login Gate v5: v1 base + fixed equilateral inverted triangle reactor */
 body.gate-locked{padding:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(63,201,255,.16),transparent 32%),radial-gradient(circle at 50% 58%,rgba(255,196,0,.08),transparent 38%),linear-gradient(180deg,#020307,#070a0f 54%,#030508)}
-body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card,body.gate-locked .node{display:none}
+body.gate-locked header,body.gate-locked footer,body.gate-locked .event-ticker,body.gate-locked .kp-card,body.gate-locked .node,body.gate-locked .hudnav,body.gate-locked .hudfab{display:none}
 .node.node-pending{display:none}
 /* 初始隐藏：与 #app 的 loading 占位视觉同步，数据首次到位后由 renderKnowledge 移除 kp-pending。与 gate-locked 独立，两者任一命中即隐藏（解锁但数据未到时仍隐藏） */
 .kp-card.kp-pending{display:none}
@@ -499,6 +499,35 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
   .trend-sec{overflow-x:clip} /* 裁掉隐藏 tooltip 撑宽页面（手机无 hover） */
   .panel{overflow-x:auto} /* 表格过宽时面板内滚动，不撑宽整页 */
 }
+
+/* ===== HUD QUICK NAV · 浮动导航舱（方案A） ===== */
+.hudnav{position:fixed;right:10px;top:50%;transform:translateY(-50%);z-index:48;display:flex;flex-direction:column;gap:7px;padding:12px 7px;border-radius:20px;background:rgba(6,14,22,.55);backdrop-filter:blur(6px);border:1px solid rgba(63,201,255,.32);box-shadow:0 0 22px rgba(63,201,255,.15),inset 0 0 16px rgba(63,201,255,.05)}
+.hn{position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:none;border:0;padding:0}
+.hn svg{width:20px;height:20px;stroke:#3FC9FF;fill:none;stroke-width:1.6;opacity:.7;filter:drop-shadow(0 0 3px rgba(63,201,255,.5));transition:opacity .15s}
+.hn::before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(63,201,255,.25);transition:border-color .15s}
+.hn:hover svg{opacity:1}
+.hn.act svg{stroke:var(--gold);opacity:1;filter:drop-shadow(0 0 5px rgba(255,196,0,.8))}
+.hn.act::before{border-color:var(--gold);box-shadow:0 0 10px rgba(255,196,0,.4)}
+.hn.act::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(255,196,0,.5);animation:hnrot 6s linear infinite}
+@keyframes hnrot{to{transform:rotate(360deg)}}
+.hn .hl{position:absolute;right:42px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font-family:'Orbitron';font-size:10px;letter-spacing:2px;color:#04121c;background:linear-gradient(90deg,#7fdfff,#3FC9FF);padding:4px 10px;border-radius:4px;font-weight:700;box-shadow:0 0 12px rgba(63,201,255,.5);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .12s,transform .12s}
+.hn .hl::after{content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);border-left:4px solid #3FC9FF;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.hn:hover .hl{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+.hn.act .hl{background:linear-gradient(90deg,#ffe27f,var(--gold));box-shadow:0 0 12px rgba(255,196,0,.5)}
+.hn.act .hl::after{border-left-color:var(--gold)}
+/* 竖屏 / 窄屏：收成右下角 FAB，点开向上展开 */
+@media(max-width:820px),(max-height:560px){
+  .hudnav{top:auto;bottom:64px;right:12px;transform:none;flex-direction:column;padding:10px 6px;gap:6px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;transform:translateY(8px)}
+  .hudnav.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .hn{width:30px;height:30px}
+  .hn svg{width:18px;height:18px}
+  .hudnav.open .hn .hl{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+  .hudfab{display:flex !important}
+}
+.hudfab{display:none;position:fixed;right:12px;bottom:14px;width:44px;height:44px;border-radius:50%;z-index:49;background:radial-gradient(circle,#0a1826 30%,#050c14);border:1.5px solid rgba(63,201,255,.55);box-shadow:0 0 14px rgba(63,201,255,.35);align-items:center;justify-content:center;cursor:pointer;padding:0}
+.hudfab svg{width:24px;height:24px}
+.hudfab .fring{animation:hnrot 8s linear infinite;transform-origin:center}
+.hudfab.open{border-color:var(--gold);box-shadow:0 0 14px rgba(255,196,0,.45)}
 </style>
 </head>
 <body>
@@ -562,7 +591,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 <div id="app"><div class="loading"><span class="pulse">◉ BOOTING REACTOR · LOADING TELEMETRY...</span></div></div>
 
-<section class="kp-card kp-pending">
+<section class="kp-card kp-pending" id="nav-kp">
   <div class="kp-head">
     <div>
       <div class="kp-title">KNOWLEDGE PYRAMID · 知识金字塔</div>
@@ -626,6 +655,19 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
     <div class="kp-chip warn"><span class="ic">▲</span><b>冲突向上解 · UPWARD RESOLUTION</b><span>UPPER TIER WINS, FIX DOWNWARD</span></div>
   </div>
 </section>
+
+<nav class="hudnav" id="hudnav" aria-label="Quick section navigation">
+  <button class="hn" data-goto="ticker"><svg viewBox="0 0 24 24"><path d="M12 3v6m0 0l-4 12h8L12 9z"/><circle cx="12" cy="6" r="2"/><path d="M6 21h12"/></svg><span class="hl">SIGNAL</span></button>
+  <button class="hn" data-goto="nodeStrip"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span class="hl">NODE</span></button>
+  <button class="hn" data-goto="nav-topo"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M10.8 7L6.2 16M13.2 7l4.6 9M7.5 18h9"/></svg><span class="hl">TOPOLOGY</span></button>
+  <button class="hn" data-goto="nav-suits"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7z"/><path d="M9 11h6M12 8v6"/></svg><span class="hl">SUITS</span></button>
+  <button class="hn" data-goto="nav-skills"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span class="hl">SKILLS</span></button>
+  <button class="hn" data-goto="nav-fallback"><svg viewBox="0 0 24 24"><path d="M4 7h10M4 12h16M4 17h10"/><path d="M17 4l3 3-3 3M17 14l3 3-3 3"/></svg><span class="hl">FALLBACK</span></button>
+  <button class="hn" data-goto="nav-cron"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2.5"/></svg><span class="hl">CRON</span></button>
+  <button class="hn" data-goto="nav-power"><svg viewBox="0 0 24 24"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></svg><span class="hl">POWER</span></button>
+  <button class="hn" data-goto="nav-kp"><svg viewBox="0 0 24 24"><path d="M12 4l8 16H4z"/><path d="M12 10l4.5 9h-9z"/></svg><span class="hl">PYRAMID</span></button>
+</nav>
+<button class="hudfab" id="hudfab" aria-label="Toggle quick navigation"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#3FC9FF" stroke-width="5" opacity=".8"/><g class="fring"><circle cx="50" cy="50" r="29" fill="none" stroke="#7fdfff" stroke-width="3" stroke-dasharray="11 8"/></g><path d="M50 62 L61 42 L39 42 Z" fill="#7fdfff"/></svg></button>
 
 <footer>
   ⌜ J.A.R.V.I.S. OS v0.1 ⌟ · DATA SNAPSHOT <span id="gen">—</span> ·
@@ -973,22 +1015,22 @@ function render(DATA){
   document.getElementById('app').innerHTML = `
     <section class="summary">${summary}</section>
     ${trendBlock}
-    ${archTopology}
-    <h2 class="sec">SUIT STATUS · 战甲编队</h2>
+    <div id="nav-topo" style="height:0"></div>${archTopology}
+    <h2 class="sec" id="nav-suits">SUIT STATUS · 战甲编队</h2>
     <section class="suits">${suits}</section>
-    <div class="toprow">
+    <div class="toprow" id="nav-skills">
       ${capMatrix}
-      <div class="panel">
+      <div class="panel" id="nav-fallback">
         <h2 class="sec">FALLBACK SYSTEMS · 模型备用链路</h2>
         <div class="chain">${chain}</div>
       </div>
     </div>
     <div class="toprow">
-      <div class="panel mq">
+      <div class="panel mq" id="nav-cron">
         <h2 class="sec">CRON QUEUE · 定时任务</h2>
         <table><thead><tr><th>TASK</th><th class="r">NEXT</th><th class="r">LAST</th></tr></thead><tbody>${mqRows}</tbody></table>
       </div>
-      <div class="panel">
+      <div class="panel" id="nav-power">
         <h2 class="sec">POWER CONSUMPTION · 能量消耗</h2>
         <table><thead><tr><th>MODEL</th><th>CALLS</th><th>TOKENS</th><th>COST</th></tr></thead><tbody>${models}</tbody></table>
       </div>
@@ -1405,6 +1447,53 @@ function _gate(){
   });
 }
 _gate();
+
+// ===== HUD QUICK NAV · scrollspy + jump =====
+(function(){
+  const nav = document.getElementById('hudnav');
+  const fab = document.getElementById('hudfab');
+  if(!nav) return;
+  const btns = Array.from(nav.querySelectorAll('.hn'));
+  const isMobile = () => window.matchMedia('(max-width:820px),(max-height:560px)').matches;
+  // jump
+  btns.forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.goto);
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    if(isMobile() && fab){ nav.classList.remove('open'); fab.classList.remove('open'); }
+  }));
+  // click-outside dismiss (mobile FAB menu)
+  document.addEventListener('pointerdown', (e) => {
+    if(!isMobile() || !fab || !nav.classList.contains('open')) return;
+    if(!nav.contains(e.target) && !fab.contains(e.target)){
+      nav.classList.remove('open'); fab.classList.remove('open');
+    }
+  }, {passive:true});
+  // FAB toggle (portrait / small screens)
+  if(fab) fab.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    fab.classList.toggle('open');
+  });
+  // scrollspy: highlight the section currently in view (top-most past 40% viewport)
+  let ticking = false;
+  function spy(){
+    ticking = false;
+    if(document.body.classList.contains('gate-locked')) return;
+    const mark = window.innerHeight * 0.4;
+    let best = null, bestTop = -Infinity;
+    btns.forEach(b => {
+      const el = document.getElementById(b.dataset.goto);
+      if(!el) return;
+      const top = el.getBoundingClientRect().top;
+      if(top <= mark && top > bestTop){ bestTop = top; best = b; }
+    });
+    if(!best) best = btns[0];
+    btns.forEach(b => b.classList.toggle('act', b === best));
+  }
+  window.addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(spy); } }, {passive:true});
+  window.addEventListener('resize', () => { if(!ticking){ ticking = true; requestAnimationFrame(spy); } }, {passive:true});
+  setTimeout(spy, 800); // 首屏渲染后初始高亮
+})();
 </script>
 </body>
 </html>

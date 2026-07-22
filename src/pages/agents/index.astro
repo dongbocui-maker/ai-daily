@@ -502,7 +502,7 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 
 /* ===== HUD QUICK NAV · 浮动导航舱（方案A） ===== */
 .hudnav{position:fixed;right:10px;top:50%;transform:translateY(-50%);z-index:48;display:flex;flex-direction:column;gap:7px;padding:12px 7px;border-radius:20px;background:rgba(6,14,22,.55);backdrop-filter:blur(6px);border:1px solid rgba(63,201,255,.32);box-shadow:0 0 22px rgba(63,201,255,.15),inset 0 0 16px rgba(63,201,255,.05)}
-.hn{position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:none;border:0;padding:0}
+.hn{position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:none;border:0;padding:0;transition:transform .16s cubic-bezier(.2,.8,.3,1)}
 .hn svg{width:20px;height:20px;stroke:#3FC9FF;fill:none;stroke-width:1.6;opacity:.7;filter:drop-shadow(0 0 3px rgba(63,201,255,.5));transition:opacity .15s}
 .hn::before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(63,201,255,.25);transition:border-color .15s}
 .hn:hover svg{opacity:1}
@@ -524,6 +524,12 @@ body.gate-locked #app{width:100%;min-height:100vh;display:grid;place-items:cente
 .hn.scrub-hot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(255,196,0,.6);animation:hnrot 3s linear infinite}
 .hn.scrub-hot .hl{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);background:linear-gradient(90deg,#ffe27f,var(--gold));box-shadow:0 0 14px rgba(255,196,0,.6)}
 .hn.scrub-hot .hl::after{border-left-color:var(--gold)}
+/* Dock 式距离衰减：hot 放大、相邻微放大、其余缩小 */
+.hudnav.scrubbing .hn{transform:scale(.85)}
+.hudnav.scrubbing .hn.scrub-near{transform:scale(1.12)}
+.hudnav.scrubbing .hn.scrub-near svg{opacity:.55;filter:drop-shadow(0 0 3px rgba(63,201,255,.4))}
+.hudnav.scrubbing .hn.scrub-hot{transform:scale(1.4)}
+body.hud-scrub{cursor:grabbing}body.hud-scrub .hudnav,body.hud-scrub .hudnav *,body.hud-scrub .hudfab,body.hud-scrub .hudfab *{cursor:grabbing !important}
 .hn.flash::before{background:rgba(255,255,255,.55);border-color:#fff;box-shadow:0 0 18px rgba(255,255,255,.8);transition:none}
 .hudnav.snap{transition:none !important}
 /* 竖屏 / 窄屏：收成右下角 FAB，点开向上展开 */
@@ -1489,18 +1495,35 @@ _gate();
     const el = document.elementFromPoint(x, y);
     return el ? el.closest('#hudnav .hn') : null;
   }
+  // scrub 期间用「垂直最近距离」命中：磁吸手感，消除缝隙/缩放导致的丢选中
+  function nearBtn(x, y){
+    const r = nav.getBoundingClientRect();
+    if(x < r.left - 72 || x > r.right + 48) return null; // 水平离舱太远=取消（左侧留宽容纳标签胶囊）
+    if(y < r.top - 30 || y > r.bottom + 30) return null; // ±30 容纳 hot 按钮 1.4× 视觉超出 layout rect 约 6.4px
+    let best = null, bd = Infinity;
+    for(const b of btns){
+      const br = b.getBoundingClientRect();
+      const d = Math.abs(y - (br.top + br.height / 2));
+      if(d < bd){ bd = d; best = b; }
+    }
+    return best;
+  }
   function setHot(b){
     if(scrub && scrub.hot === b) return;
     if(scrub) scrub.hot = b;
-    btns.forEach(x => {
+    const hi = btns.indexOf(b); // b=null 时 hi=-1，下方两个 toggle 条件均为 false → 正确清空 near/dim
+    btns.forEach((x, i) => {
       x.classList.toggle('scrub-hot', x === b);
+      x.classList.toggle('scrub-near', hi >= 0 && Math.abs(i - hi) === 1);
       x.classList.toggle('scrub-dim', !!b && x !== b);
     });
+    if(b && navigator.vibrate) try{ navigator.vibrate(6); }catch(_){} // 每档切换轻震一下（拨盘手感，iOS 静默降级）
   }
   function enterScrub(){
     if(!scrub || scrub.armed) return;
     scrub.armed = true;
     nav.classList.add('scrubbing');
+    document.body.classList.add('hud-scrub');
     if(scrub.fromFab && fab && !nav.classList.contains('open')){
       nav.classList.add('open','snap'); fab.classList.add('open');
       setTimeout(()=>nav.classList.remove('snap'), 50);
@@ -1511,9 +1534,10 @@ _gate();
     if(!scrub) return;
     clearTimeout(scrub.timer);
     const wasArmed = scrub.armed;
-    const hot = (typeof x === 'number') ? hitBtn(x, y) : scrub.hot;
+    const hot = (typeof x === 'number') ? nearBtn(x, y) : scrub.hot;
     nav.classList.remove('scrubbing');
-    btns.forEach(b => b.classList.remove('scrub-hot','scrub-dim'));
+    document.body.classList.remove('hud-scrub');
+    btns.forEach(b => b.classList.remove('scrub-hot','scrub-near','scrub-dim'));
     const fromFab = scrub.fromFab;
     scrub = null;
     if(commit && wasArmed && hot){ jump(hot); return; }
@@ -1530,7 +1554,7 @@ _gate();
     if(!scrub || e.pointerId !== scrub.pid) return;
     const dx = e.clientX - scrub.sx, dy = e.clientY - scrub.sy;
     if(!scrub.armed && (dx*dx + dy*dy) > 36) enterScrub(); // 位移>6px提前进入扫选
-    if(scrub.armed){ e.preventDefault(); setHot(hitBtn(e.clientX, e.clientY)); }
+    if(scrub.armed){ e.preventDefault(); setHot(nearBtn(e.clientX, e.clientY)); }
   }
   function onUp(e){
     if(!scrub || e.pointerId !== scrub.pid) return;

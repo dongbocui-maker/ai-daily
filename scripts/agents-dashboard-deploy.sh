@@ -17,10 +17,26 @@ python3 scripts/agents-dashboard-aggregate.py
 # Actions 的 prebuild hook 会 fail-soft 保留这份已提交的 JSON。
 python3 scripts/gen-agent-chains.py || echo "[$(date '+%F %T')] gen-agent-chains skipped (keeping existing)"
 
-# 2. 仅当 fallback 快照 或 模型链路 有变化才提交（避免空 commit）
-# 注：live 数据走 Cloudflare Tunnel 实时服务，git 只跟踪低频 fallback 快照（AUDIT-2026-06-11 M2）
-if git diff --quiet public/agents/data/dashboard-fallback.json src/data/agent-chains.json 2>/dev/null; then
+# 2. 提交策略（2026-07-25 P2 降频，Jason 拍板方案 B）：
+#   - live 数据走 Cloudflare Tunnel 实时服务（上面 aggregate 已写 dashboard-data.json），不受影响
+#   - agent-chains.json 变化（模型链路调整，罕见但重要）→ 仍即时 commit+push
+#   - 仅 fallback 快照变化（token 计数每小时必变，属噪音）→ 只在定时窗口提交
+#     （crontab 07:05/21:05 以 FORCE_FALLBACK_PUSH=1 调用），其余时段 skip，
+#     避免每天十几次 Pages 全站重建 + push 撞车
+FORCE_FALLBACK_PUSH="${FORCE_FALLBACK_PUSH:-0}"
+
+CHAINS_CHANGED=0
+git diff --quiet src/data/agent-chains.json 2>/dev/null || CHAINS_CHANGED=1
+FALLBACK_CHANGED=0
+git diff --quiet public/agents/data/dashboard-fallback.json 2>/dev/null || FALLBACK_CHANGED=1
+
+if [[ $CHAINS_CHANGED -eq 0 && $FALLBACK_CHANGED -eq 0 ]]; then
   echo "[$(date '+%F %T')] no fallback / chain change, skip commit"
+  exit 0
+fi
+
+if [[ $CHAINS_CHANGED -eq 0 && $FALLBACK_CHANGED -eq 1 && "$FORCE_FALLBACK_PUSH" != "1" ]]; then
+  echo "[$(date '+%F %T')] fallback-only change, deferred to scheduled window (07:05/21:05)"
   exit 0
 fi
 

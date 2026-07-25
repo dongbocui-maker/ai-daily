@@ -145,6 +145,19 @@ def main():
             return 1
         return 0
 
+    # 2026-07-25 P2 降频：除 generated_at 外内容未变则不重写——
+    # 否则时间戳每次刷新都制造 git diff，让 deploy 脚本误判「链路变化」而即时 push
+    if os.path.exists(OUT_PATH):
+        try:
+            with open(OUT_PATH) as f:
+                old = json.load(f)
+            if {k: v for k, v in old.items() if k != 'generated_at'} == \
+               {k: v for k, v in data.items() if k != 'generated_at'}:
+                sys.stderr.write(f'[gen-agent-chains] unchanged (ignoring timestamp), keep {OUT_PATH}\n')
+                return 0
+        except Exception:
+            pass  # 旧文件坏了就直接重写
+
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     tmp = OUT_PATH + '.tmp'
     with open(tmp, 'w') as f:

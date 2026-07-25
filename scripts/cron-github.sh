@@ -70,7 +70,8 @@ fi
         PUSH_OK=1
         break
       else
-        echo "[cron-github] push attempt $attempt failed, retry in 30s"
+        echo "[cron-github] push attempt $attempt failed, pull --rebase then retry in 30s"
+        git pull --rebase --autostash origin main 2>&1 || echo "[cron-github] WARN: rebase failed (will still retry push)"
         sleep 30
       fi
     done

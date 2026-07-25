@@ -114,7 +114,8 @@ else
       log "✅ push 成功（第 $i 次尝试）"
       break
     fi
-    log "⚠️  push 失败（第 $i 次），10 秒后重试"
+    log "⚠️  push 失败（第 $i 次），pull --rebase 后 10 秒重试"
+    git pull --rebase --autostash origin main || log "⚠️  rebase 失败（仍将重试 push）"
     sleep 10
   done
 fi

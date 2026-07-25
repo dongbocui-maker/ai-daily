@@ -54,6 +54,9 @@ source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[event-sync] WARN: LLM endpo
       commit -m "chore(data): daily sync $(TZ=Asia/Shanghai date +%F) (event-driven from cron subagent)"
 
   # Push with retry (China network can be flaky)
+  # 2026-07-25 体检修复：失败后先 pull --rebase --autostash 再重试——
+  # 多写手（dashboard/X/github/podcast/GHA）并发 push 会导致 non-fast-forward，
+  # 光重试不 rebase 必然 5 连败（当天日报就发作过）。autostash 兼容工作区脏文件。
   PUSH_OK=0
   for attempt in 1 2 3 4 5; do
     if git push origin main 2>&1; then
@@ -61,7 +64,8 @@ source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[event-sync] WARN: LLM endpo
       PUSH_OK=1
       break
     else
-      echo "[event-sync] push attempt $attempt failed, retry in 20s"
+      echo "[event-sync] push attempt $attempt failed, pull --rebase then retry in 20s"
+      git pull --rebase --autostash origin main 2>&1 || echo "[event-sync] ⚠️ rebase failed (will still retry push)"
       sleep 20
     fi
   done

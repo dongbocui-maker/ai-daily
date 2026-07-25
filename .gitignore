@@ -32,3 +32,10 @@ scripts/podcast-pipeline/__pycache__/
 
 # dashboard live telemetry (churns every aggregate; served via tunnel, fallback is dashboard-fallback.json)
 public/agents/data/dashboard-data.json
+
+# 2026-07-25 体检：抓取缓存与垃圾文件不进版本库
+# _readmes 是 github-trending.ts 的本地 README 缓存（13MB/488文件），构建不用，磁盘保留但不跟踪
+src/data/github/_readmes/
+scripts/__pycache__/
+*.bak.png
+*.bak

@@ -26,5 +26,24 @@ fi
 
 git add public/agents/data/dashboard-fallback.json src/data/agent-chains.json
 git commit -m "chore(agents): refresh dashboard fallback + agent chains $(date '+%F %H:%M')" >/dev/null
-git push origin main >/dev/null 2>&1
-echo "[$(date '+%F %T')] pushed — Pages will rebuild in ~1-2min"
+
+# 2026-07-25 体检修复：
+# 1) 不再 >/dev/null 2>&1 吞掉 push 错误（曾导致 set -e 下 rc=1、commit 滞留本地、仓库分叉）
+# 2) push 失败先 pull --rebase --autostash 再重试（多写手并发的 non-fast-forward 场景）
+PUSH_OK=0
+for attempt in 1 2 3; do
+  if git push origin main 2>&1; then
+    PUSH_OK=1
+    break
+  fi
+  echo "[$(date '+%F %T')] push attempt $attempt failed, pull --rebase then retry"
+  git pull --rebase --autostash origin main 2>&1 || echo "[$(date '+%F %T')] WARN: rebase failed (will still retry push)"
+  sleep 15
+done
+if [[ $PUSH_OK -eq 1 ]]; then
+  echo "[$(date '+%F %T')] pushed — Pages will rebuild in ~1-2min"
+else
+  # 不让 set -e 把失败变成静默中断：显式报错退出，日志里可见
+  echo "[$(date '+%F %T')] ERROR: push failed after 3 attempts (commit kept locally, next run will retry)"
+  exit 1
+fi

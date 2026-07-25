@@ -65,7 +65,8 @@ source "$REPO/scripts/lib/llm-endpoint.sh" || echo "[cron] WARN: LLM endpoint ่ง
         PUSH_OK=1
         break
       else
-        echo "[cron] push attempt $attempt failed, retry in 30s"
+        echo "[cron] push attempt $attempt failed, pull --rebase then retry in 30s"
+        git pull --rebase --autostash origin main 2>&1 || echo "[cron] WARN: rebase failed (will still retry push)"
         sleep 30
       fi
     done

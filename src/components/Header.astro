@@ -22,12 +22,12 @@ const base = import.meta.env.BASE_URL;
 
     {/* 桌面端导航 */}
     <nav class="hidden md:flex items-center gap-1">
-      <a href={base} class="btn-ghost">最新</a>
-      <a href={`${base}archive/`} class="btn-ghost">归档</a>
-      <a href={`${base}github/`} class="btn-ghost">GitHub 热门</a>
-      <a href={`${base}lmarena/`} class="btn-ghost">LMArena</a>
-      <a href={`${base}reads/`} class="btn-ghost">精读</a>
-      <a href={`${base}learn/`} class="btn-ghost">学习</a>
+      <a href={base} class="btn-ghost">情报流</a>
+      <a href={`${base}archive/`} class="btn-ghost">档案库</a>
+      <a href={`${base}github/`} class="btn-ghost">开源榜</a>
+      <a href={`${base}lmarena/`} class="btn-ghost">竞技场</a>
+      <a href={`${base}reads/`} class="btn-ghost">精读室</a>
+      <a href={`${base}learn/`} class="btn-ghost">研修院</a>
       <a href={`${base}about/`} class="btn-ghost">关于</a>
     </nav>
 
@@ -62,7 +62,7 @@ const base = import.meta.env.BASE_URL;
             </div>
             {hasMore && (
               <a href={`${base}archive/`} class="block px-4 py-2.5 text-sm border-t border-accent-gray-100 text-accent-purple font-medium hover:bg-accent-purple/5 transition-colors">
-                查看完整归档 →
+                进入档案库 →
               </a>
             )}
           </div>
@@ -80,12 +80,12 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </summary>
         <div class="absolute right-0 top-full mt-1 bg-white border border-accent-gray-100 shadow-lg min-w-44">
-          <a href={base} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">最新</a>
-          <a href={`${base}archive/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">归档</a>
-          <a href={`${base}github/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">GitHub 热门</a>
-          <a href={`${base}lmarena/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">LMArena</a>
-          <a href={`${base}reads/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">精读</a>
-          <a href={`${base}learn/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">学习</a>
+          <a href={base} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">情报流</a>
+          <a href={`${base}archive/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">档案库</a>
+          <a href={`${base}github/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">开源榜</a>
+          <a href={`${base}lmarena/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">竞技场</a>
+          <a href={`${base}reads/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">精读室</a>
+          <a href={`${base}learn/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors border-b border-accent-gray-100">研修院</a>
           <a href={`${base}about/`} class="block px-4 py-3 text-sm hover:bg-accent-gray-50 transition-colors">关于</a>
         </div>
       </details>

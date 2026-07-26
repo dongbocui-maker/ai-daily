@@ -58,13 +58,13 @@ function splitStat(n: number): { head: string; tail: string } {
 }
 const shownStat = splitStat(totalShown);
 ---
-<Base title="LMArena 全球大模型排行榜" description="基于 arena.ai 实测数据的全球大模型 Top 50 排行榜，每月更新一次。">
+<Base title="竞技场" description="基于 LMArena / arena.ai 实测数据的全球大模型 Top 50 排行榜，每月更新一次。">
   <Header />
   <SectionSprite />
   <main class="sec-page" style="--acc:#F59E0B;--acc-deep:#B45309;--acc-ghost:#FDF3E3;--acc-band:#FFFBF2">
     <section class="hero"><div class="wrap">
-      <span class="badge"><svg class="ic"><use href="#i-trophy"/></svg>Leaderboard</span>
-      <h1>LMArena <span class="pu">全球 Top {totalShown || 50}</span></h1>
+      <span class="badge"><svg class="ic"><use href="#i-trophy"/></svg>Arena</span>
+      <h1>模型<span class="pu">竞技场</span></h1>
       <p class="hero-sub">基于 <a href="https://arena.ai/leaderboard" target="_blank" rel="noopener">arena.ai</a> 真实人类盲测对战数据的全球大模型排行，含总榜与各单项分区，每月 1 日快照留档可回溯。</p>
       {latest && (
         <div class="stats">

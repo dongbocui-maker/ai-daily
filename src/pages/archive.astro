@@ -37,13 +37,13 @@ function splitStat(n: number): { head: string; tail: string } {
 }
 const totalStat = splitStat(totalReports);
 ---
-<Base title="历史归档" description="所有历史 AI 日报归档">
+<Base title="档案库" description="所有往期 AI 日报档案，按月分类可回溯。">
   <Header />
   <SectionSprite />
   <main class="sec-page" style="--acc:#06B6D4;--acc-deep:#0E7490;--acc-ghost:#E5F8FC;--acc-band:#F3FCFE">
     <section class="hero"><div class="wrap">
-      <span class="badge"><svg class="ic"><use href="#i-cal"/></svg>Archive</span>
-      <h1>历史<span class="pu">归档</span></h1>
+      <span class="badge"><svg class="ic"><use href="#i-cal"/></svg>Vault</span>
+      <h1>档案<span class="pu">库</span></h1>
       <p class="hero-sub">全部往期日报按月归类，每期附当日核心观点，点击回看完整内容。</p>
       <div class="stats">
         <div class="stat"><b>{totalStat.head}<i>{totalStat.tail}</i></b><span>累计期数</span></div>
@@ -53,7 +53,7 @@ const totalStat = splitStat(totalReports);
 
     <div class="wrap">
       {months.length === 0 ? (
-        <div class="empty"><p>暂无归档内容。</p></div>
+        <div class="empty"><p>暂无档案。</p></div>
       ) : (
         months.map(([ym, list]) => (
           <div class="month-block">

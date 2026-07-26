@@ -65,14 +65,14 @@ function formatInline(s: string): string {
   return out;
 }
 ---
-<Base title={`${article.titleZh} · 精读`} description={article.summary}>
+<Base title={`${article.titleZh} · 精读室`} description={article.summary}>
   <Header />
   <main class="flex-1">
     {/* 顶部：标题 + 元信息 */}
     <section class="bg-accent-ink text-white py-12 lg:py-16">
       <div class="container-x max-w-4xl">
         <a href={`${base}reads/`} class="inline-block text-sm text-accent-gray-400 hover:text-white mb-4 transition-colors">
-          ← 返回精读
+          ← 返回精读室
         </a>
         <span class="badge bg-accent-purple text-white mb-4">DEEP READ</span>
         <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-2 leading-tight">
@@ -220,7 +220,7 @@ function formatInline(s: string): string {
         {/* 底部回链 */}
         <div class="mt-10 pt-6 border-t border-accent-gray-200 flex items-center justify-between flex-wrap gap-3">
           <a href={`${base}reads/`} class="text-accent-purple hover:text-accent-purple-deep font-medium">
-            ← 返回精读列表
+            ← 返回精读室列表
           </a>
           <div class="flex items-center gap-4 flex-wrap">
             {article.deckPdfUrl && (

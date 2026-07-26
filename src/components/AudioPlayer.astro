@@ -44,8 +44,8 @@ const playerId = `audio-player-${date}`;
 
 <div
   class="relative mt-7 max-w-2xl rounded-xl overflow-hidden
-         bg-white/5 backdrop-blur-sm border border-white/10
-         hover:border-accent-purple-light/40 transition-colors
+         bg-white border border-accent-gray-300 shadow-sm
+         hover:border-accent-purple/50 transition-colors
          group/player"
   data-audio-player={playerId}
 >
@@ -103,10 +103,10 @@ const playerId = `audio-player-${date}`;
     <!-- 中部：标题 + 进度条 + 时间 -->
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 mb-1.5">
-        <span class="text-[10px] font-bold tracking-wider text-accent-purple-light uppercase">
+        <span class="text-[10px] font-bold tracking-wider text-accent-purple uppercase">
           🎧 AUDIO
         </span>
-        <span class="text-xs font-medium text-white/90 truncate">
+        <span class="text-xs font-medium text-accent-gray-700 truncate">
           听一段语音版日报
         </span>
       </div>
@@ -114,13 +114,13 @@ const playerId = `audio-player-${date}`;
       <!-- 进度条（可点击拖动）-->
       <div
         data-action="seek"
-        class="relative h-1.5 bg-white/15 rounded-full cursor-pointer overflow-hidden group/seek
+        class="relative h-1.5 bg-accent-gray-100 rounded-full cursor-pointer overflow-hidden group/seek
                hover:h-2 transition-all"
       >
         <!-- 已缓冲 -->
         <div
           data-progress="buffered"
-          class="absolute inset-y-0 left-0 bg-white/20 rounded-full"
+          class="absolute inset-y-0 left-0 bg-accent-gray-300 rounded-full"
           style="width: 0%"
         ></div>
         <!-- 已播放 -->
@@ -139,7 +139,7 @@ const playerId = `audio-player-${date}`;
       </div>
 
       <!-- 时间显示 -->
-      <div class="flex items-center justify-between mt-1.5 text-[11px] tabular-nums text-white/60">
+      <div class="flex items-center justify-between mt-1.5 text-[11px] tabular-nums text-accent-gray-500">
         <span data-time="current">0:00</span>
         <span data-time="duration">{initialDuration}</span>
       </div>
@@ -151,8 +151,8 @@ const playerId = `audio-player-${date}`;
         type="button"
         data-action="speed"
         data-speed="1"
-        class="px-2 py-1 text-xs font-medium tabular-nums text-white/70 hover:text-white
-               hover:bg-white/10 rounded transition-colors"
+        class="px-2 py-1 text-xs font-medium tabular-nums text-accent-gray-700 hover:text-accent-purple-deep
+               hover:bg-accent-gray-100 rounded transition-colors"
         aria-label="切换倍速"
       >
         1×
@@ -160,7 +160,7 @@ const playerId = `audio-player-${date}`;
       <a
         href={audio.url}
         download={`audio-${date}.${audio.format || 'mp3'}`}
-        class="p-1.5 text-white/60 hover:text-white hover:bg-white/10 rounded transition-colors"
+        class="p-1.5 text-accent-gray-500 hover:text-accent-purple-deep hover:bg-accent-gray-100 rounded transition-colors"
         aria-label="下载 MP3"
         title="下载 MP3"
       >

@@ -8,8 +8,9 @@ saved_date: 2026-07-26
 original_url: "https://thezvi.substack.com/p/openai-shares-some-alignment-problems"
 slug: "zvi-openai-alignment-problems"
 source: "manual"
+audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/zvi-openai-alignment-problems.m4a"
 fetch_status: "error"
-fetched_at: "2026-07-26T17:34:42.475Z"
+fetched_at: "2026-07-26T18:07:15.508Z"
 fetch_type: "placeholder"
 tags:
   - "AI-对齐"

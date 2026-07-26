@@ -9,7 +9,7 @@ original_url: "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps
 slug: "import-ai-465-open-vs-closed"
 source: "manual"
 fetch_status: "error"
-fetched_at: "2026-07-26T17:34:38.513Z"
+fetched_at: "2026-07-26T18:07:13.958Z"
 fetch_type: "placeholder"
 tags:
   - "Kimi-K3"

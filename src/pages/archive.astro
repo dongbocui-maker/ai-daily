@@ -55,13 +55,14 @@ const totalStat = splitStat(totalReports);
       {months.length === 0 ? (
         <div class="empty"><p>暂无档案。</p></div>
       ) : (
-        months.map(([ym, list]) => (
-          <div class="month-block">
-            <div class="sec-head">
+        months.map(([ym, list], idx) => (
+          <details class="month-block" open={idx === 0}>
+            <summary class="sec-head">
               <span class="sq"><svg class="ic"><use href="#i-cal"/></svg></span>
               <div class="tt"><span class="eyebrow">{monthEyebrow(ym)}</span><h2>{monthLabel(ym)}</h2></div>
               <span class="rule"></span><span class="cnt">{list.length} 期</span>
-            </div>
+              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
             <div class="arch-grid">
               {list.map((r) => {
                 const totalItems = r.sections.reduce((sum, s) => sum + s.items.length, 0);
@@ -78,10 +79,19 @@ const totalStat = splitStat(totalReports);
                 );
               })}
             </div>
-          </div>
+          </details>
         ))
       )}
     </div>
   </main>
   <Footer />
 </Base>
+
+<style>
+  summary.sec-head { cursor: pointer; user-select: none; list-style: none; }
+  summary.sec-head::-webkit-details-marker { display: none; }
+  summary.sec-head .chev { flex: none; margin-bottom: 9px; color: var(--gray-4, #9d9daa); transition: transform 0.18s; }
+  summary.sec-head:hover .chev { color: var(--acc-deep, #0E7490); }
+  details[open] > summary.sec-head .chev { transform: rotate(180deg); }
+  details.month-block:not([open]) > summary.sec-head { margin-bottom: 6px; }
+</style>

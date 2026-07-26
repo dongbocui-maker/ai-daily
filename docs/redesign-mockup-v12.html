@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aidigest.club · 设计稿 v12</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --purple:#A100FF;
+  --purple-deep:#7500C0;
+  --purple-ghost:#F7EDFF;   /* 浅紫 */
+  --pink-tint:#FDF4FB;      /* 浅粉背景 */
+  --lav-tint:#F8F6FE;       /* 浅薰衣草背景 */
+  --warm-tint:#FBF7F3;      /* 暖米背景 */
+  --ink:#000000;
+  --gray-7:#3b3b42;
+  --gray-5:#696973;
+  --gray-4:#9d9daa;
+  --gray-2:#e8e8ee;
+  --gray-1:#f4f4f7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC",sans-serif;background:#fff;color:#17171c;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.ic{width:1em;height:1em;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em}
+
+/* HEADER */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-2)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:17.5px;color:var(--ink)}
+.logo .mark{width:10px;height:10px;background:var(--purple);border-radius:2px;display:inline-block}
+.nav-desktop{display:none}
+.nav-desktop a{position:relative;color:var(--gray-5);font-size:13.5px;font-weight:600;padding:19px 13px 17px;transition:.15s;border-bottom:2px solid transparent}
+.nav-desktop a:hover{color:var(--ink)}
+.nav-desktop a.active{color:var(--ink);border-bottom-color:var(--purple)}
+.burger{background:none;border:0;color:var(--ink);padding:8px;cursor:pointer;display:block}
+@media(min-width:900px){.nav-desktop{display:flex}.burger{display:none}}
+
+/* HERO：白底 + 极淡的紫粉渐变氛围 + 细网格科技感 */
+.hero{position:relative;background:
+  radial-gradient(ellipse 100% 80% at 88% -20%, rgba(161,0,255,.055), transparent 60%),
+  radial-gradient(ellipse 80% 70% at 5% 115%, rgba(240,171,224,.07), transparent 62%),
+  #fff;
+  border-bottom:1px solid var(--gray-2);padding:34px 0 0;overflow:hidden}
+
+.hero-in{position:relative}
+.date-line{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-5);margin-bottom:14px}
+
+.hero h1{font-size:clamp(28px,6.5vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.15;color:var(--ink)}
+.hero h1 .pu{color:var(--purple)}
+.hero-sub{color:var(--gray-5);font-size:14.5px;margin-top:12px;max-width:560px}
+.hero-brief{margin-top:16px;max-width:760px;background:rgba(255,255,255,.75);backdrop-filter:blur(4px);border:1px solid #eeddfb;border-left:3px solid var(--purple);border-radius:4px;padding:13px 16px;font-size:13.5px;color:var(--gray-7);line-height:1.7}
+.hero-brief b{color:var(--purple-deep);font-weight:800;letter-spacing:.03em;margin-right:6px}
+.chips{display:flex;gap:8px;margin-top:24px;overflow-x:auto;padding-bottom:18px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--gray-7);background:rgba(255,255,255,.8);border:1.5px solid var(--gray-2);padding:8px 15px;border-radius:3px;transition:.15s}
+.chip:hover{border-color:var(--purple);color:var(--purple-deep)}
+.chip .ic{font-size:14px;color:var(--purple)}
+.chip .n{font-size:11px;color:var(--gray-4);font-weight:700}
+.chip.sig{border-color:#e9d5ff;background:linear-gradient(135deg,var(--purple-ghost),#fff)}
+
+/* 板块：交替极淡背景 + 双层科技感点缀
+   层1 .deco  = 右侧满高主题线稿水印（可见但不抢戏）
+   层2 ::before = 每板块专属微纹理（点阵/同心弧/十字准星…），Stripe/Linear 式 subtle */
+.band{padding:6px 0 26px;position:relative;overflow:hidden}
+.band>.wrap{position:relative;z-index:2}
+.deco{position:absolute;right:-2%;top:0;bottom:0;width:min(50%,480px);pointer-events:none;color:var(--purple);opacity:.15;z-index:1;
+  mask-image:linear-gradient(to left,#000 40%,transparent 94%);
+  -webkit-mask-image:linear-gradient(to left,#000 40%,transparent 94%);
+  display:flex;align-items:center;justify-content:flex-end}
+.deco svg{width:100%;height:auto;max-height:94%;stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round}
+.deco .dot{fill:currentColor;stroke:none}
+@media(max-width:767px){.deco{width:70%;opacity:.12}}
+
+/* 每板块专属微纹理（超低透明度、右上聚焦、向内容区渐隐） */
+.band::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  mask-image:radial-gradient(ellipse 75% 90% at 82% 30%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 75% 90% at 82% 30%,#000 30%,transparent 75%)}
+/* 热点新闻：标准点阵 */
+#news::before{background-image:radial-gradient(rgba(161,0,255,.10) 1.2px,transparent 1.2px);background-size:26px 26px}
+/* 企业实践：方点阵（电路 pad 感） */
+#ent::before{background-image:radial-gradient(rgba(117,0,192,.09) 1.5px,transparent 1.5px);background-size:34px 34px;background-position:0 0, 17px 17px}
+/* Coding：细密小点阵（终端像素感） */
+#code::before{background-image:radial-gradient(rgba(161,0,255,.09) 1px,transparent 1px);background-size:18px 18px}
+/* 报告论文：横向标尺点阵（行距宽、列距密） */
+#rep::before{background-image:radial-gradient(rgba(117,0,192,.10) 1.2px,transparent 1.2px);background-size:20px 36px}
+/* X：放射同心点阵（信号扩散感） */
+#xzone::before{background-image:radial-gradient(rgba(161,0,255,.11) 1.3px,transparent 1.3px);background-size:30px 30px;background-position:15px 0}
+.band.b-lav{background:var(--lav-tint)}
+.band.b-warm{background:var(--warm-tint)}
+.band.b-pink{background:var(--pink-tint)}
+.sec-head{display:flex;align-items:center;gap:11px;margin:30px 0 16px}
+.sec-head .sq{width:34px;height:34px;border-radius:3px;display:flex;align-items:center;justify-content:center;background:var(--purple-ghost);color:var(--purple-deep);font-size:16px;flex:none}
+.sec-head h2{font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.sec-head .cnt{margin-left:auto;font-size:11.5px;color:var(--gray-4);font-weight:700;letter-spacing:.06em}
+
+.cards{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr;gap:16px}}
+.card{background:#fff;border:1px solid var(--gray-2);border-radius:6px;padding:18px 18px 14px;position:relative;transition:.16s;overflow:hidden;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent;transition:.16s}
+.card:hover{border-color:#d5c0ea;box-shadow:0 6px 24px rgba(117,0,192,.07);transform:translateY(-2px)}
+.card:hover::before{background:var(--purple)}
+.tag-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:3px;background:var(--purple-ghost);color:var(--purple-deep)}
+.pill .ic{font-size:11px}
+.src{font-size:11.5px;color:var(--gray-4);margin-left:auto;font-weight:600}
+.card h3{font-size:15.5px;font-weight:750;line-height:1.45;letter-spacing:-.01em;margin-bottom:8px;color:var(--ink)}
+.card h3 a:hover{color:var(--purple-deep)}
+.card p.body{font-size:13.5px;color:var(--gray-7);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card.expand p.body{-webkit-line-clamp:unset}
+.insight{margin-top:11px;padding:9px 13px;background:var(--gray-1);border-left:3px solid var(--purple);font-size:12.5px;color:var(--gray-7)}
+.insight b{color:var(--purple-deep);font-weight:800;letter-spacing:.03em}
+
+/* 卡片底部动作行：展开 + 原文链接（每卡必有） */
+.card-foot{display:flex;align-items:center;margin-top:auto;padding-top:11px}
+.more-btn{font-size:12px;color:var(--gray-5);font-weight:700;background:none;border:0;cursor:pointer;padding:0}
+.more-btn:hover{color:var(--purple-deep)}
+.orig{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--purple-deep)}
+.orig:hover{text-decoration:underline}
+.orig .ic{font-size:12px}
+
+@media(min-width:768px){.card.lead{grid-column:1/-1}}
+
+.card.lead{border-top:3px solid var(--purple);display:flex}
+.card.lead::before{display:none}
+
+/* ============ Builder Signals：白底 + 浅紫粉渐变氛围（不再黑） ============ */
+
+
+
+
+.x-more{display:flex;justify-content:center;margin-top:18px;position:relative}
+.x-more a{display:inline-flex;align-items:center;gap:9px;color:#fff;font-size:13.5px;font-weight:800;background:var(--purple);padding:12px 26px;border-radius:3px;transition:.15s}
+.x-more a:hover{background:var(--purple-deep)}
+
+.closing{margin:38px 0 8px;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--ink);border-radius:6px;padding:22px 20px}
+.closing h3{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:800;margin-bottom:10px;color:var(--ink)}
+.closing h3 .ic{color:var(--purple)}
+.closing p{font-size:13.5px;color:var(--gray-7);margin-bottom:8px}
+footer{margin-top:38px;padding:28px 0 42px;text-align:center;color:var(--gray-4);font-size:12px;border-top:1px solid var(--gray-2)}
+
+/* 抽屉 */
+.drawer{position:fixed;inset:0;z-index:100;display:none}
+.drawer.open{display:block}
+.drawer .mask{position:absolute;inset:0;background:rgba(0,0,0,.42)}
+.drawer .panel{position:absolute;right:0;top:0;bottom:0;width:min(78vw,300px);background:#fff;padding:24px 18px;display:flex;flex-direction:column;gap:1px;animation:slidein .2s ease;border-left:3px solid var(--purple)}
+@keyframes slidein{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.drawer .panel a{display:flex;align-items:center;gap:11px;color:var(--gray-7);font-size:15px;font-weight:650;padding:13px 14px;border-radius:4px}
+.drawer .panel a .ic{color:var(--gray-4);font-size:16px}
+.drawer .panel a:hover{background:var(--gray-1);color:var(--ink)}
+.drawer .panel a.active{background:var(--purple-ghost);color:var(--purple-deep)}
+.drawer .panel a.active .ic{color:var(--purple)}
+.drawer .panel .sep{height:1px;background:var(--gray-2);margin:10px 4px}
+.drawer .panel .muted{color:var(--gray-4);font-size:13.5px}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M11 17l-1.5-1.5M14 14l-2 2M8 20l-3-3 7-7 3 3"/><path d="M13 5l7 7-3 3M2 12l5-5 3 3"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21 1.18.54 2.03 2.03 2.03 3.79"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+</svg>
+
+<!-- 抽屉 -->
+<div class="drawer" id="drawer">
+  <div class="mask" onclick="drawer.classList.remove('open')"></div>
+  <nav class="panel">
+    <a class="active" href="#"><svg class="ic"><use href="#i-home"/></svg>最新</a>
+    <a href="#"><svg class="ic"><use href="#i-book"/></svg>精读</a>
+    <a href="#"><svg class="ic"><use href="#i-github"/></svg>GitHub 热门</a>
+    <a href="#"><svg class="ic"><use href="#i-trophy"/></svg>LMArena</a>
+    <a href="#"><svg class="ic"><use href="#i-grad"/></svg>学习</a>
+    <div class="sep"></div>
+    <a class="muted" href="#"><svg class="ic"><use href="#i-archive"/></svg>归档</a>
+    <a class="muted" href="#"><svg class="ic"><use href="#i-info"/></svg>关于本站</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#"><span class="mark"></span>aidigest<span style="color:var(--gray-4)">.club</span></a>
+    <nav class="nav-desktop">
+      <a class="active" href="#">最新</a>
+      <a href="#">精读</a>
+      <a href="#">GitHub 热门</a>
+      <a href="#">LMArena</a>
+      <a href="#">学习</a>
+      <a href="#">归档</a>
+      <a href="#">关于本站</a>
+    </nav>
+    <button class="burger" onclick="drawer.classList.add('open')" aria-label="菜单">
+      <svg class="ic" style="font-size:22px"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- HERO：白底 + 淡紫粉氛围 + 细网格科技感 -->
+<div class="hero">
+  <div class="wrap hero-in">
+    <div class="date-line">2026-07-26 · 星期日 · 每日 08:18 更新</div>
+    <h1>AI 情报，<span class="pu">一页读完</span></h1>
+    <p class="hero-sub">17 条今日日报 + 20 条 X 信号，中文提炼，无需跳转。</p>
+    <div class="hero-brief"><b>今日观点</b>本期主线是「实现层」之争全面白热化：Anthropic-Blackstone 合资公司 Ode 正式定名并收购 Fractional，Samsung SDS 联手 Anthropic 形成双押布局——模型厂商下场做交付，系统集成商转向多模型组合分销，企业 AI 的价值分配正在重新划界。</div>
+    <div class="chips">
+      <a class="chip" href="#news"><svg class="ic"><use href="#i-zap"/></svg>热点新闻<span class="n">5</span></a>
+      <a class="chip" href="#ent"><svg class="ic"><use href="#i-building"/></svg>企业实践<span class="n">4</span></a>
+      <a class="chip" href="#code"><svg class="ic"><use href="#i-code"/></svg>Coding<span class="n">4</span></a>
+      <a class="chip" href="#rep"><svg class="ic"><use href="#i-chart"/></svg>报告论文<span class="n">4</span></a>
+      <a class="chip sig" href="#xzone"><svg class="ic"><use href="#i-radio"/></svg>X<span class="n">20</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- 热点新闻（白底） -->
+<div class="band" id="news">
+  <div class="deco"><svg viewBox="0 0 400 400">
+    <circle cx="230" cy="200" r="150"/>
+    <ellipse cx="230" cy="200" rx="150" ry="120"/>
+    <ellipse cx="230" cy="200" rx="150" ry="82"/>
+    <ellipse cx="230" cy="200" rx="150" ry="40"/>
+    <ellipse cx="230" cy="200" rx="120" ry="150"/>
+    <ellipse cx="230" cy="200" rx="82" ry="150"/>
+    <ellipse cx="230" cy="200" rx="40" ry="150"/>
+    <line x1="80" y1="200" x2="380" y2="200"/>
+    <path d="M60 330 A 210 210 0 0 1 120 60" stroke-dasharray="2 8"/>
+    <circle class="dot" cx="230" cy="50" r="2.5"/>
+    <circle class="dot" cx="110" cy="118" r="2.5"/>
+    <circle class="dot" cx="350" cy="118" r="2.5"/>
+    <circle class="dot" cx="80" y="200" cy="200" r="2.5"/>
+    <circle class="dot" cx="188" cy="86" r="2"/>
+    <circle class="dot" cx="272" cy="314" r="2"/>
+  </svg></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sq"><svg class="ic"><use href="#i-zap"/></svg></span>
+      <h2>AI 热点新闻</h2><span class="cnt">5 条</span>
+    </div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-handshake"/></svg>战略合作</span><span class="src">Asia Business Daily</span></div>
+        <h3><a href="#">Samsung SDS 联手 Anthropic 拓展企业 AI，打破对 OpenAI 的单一依赖</a></h3>
+        <p class="body">Samsung SDS CEO 与 Anthropic CEO Dario Amodei 在旧金山 AI Summit 2026 上正式签署战略合作，双方将在韩国联合开拓企业 AI 商机、培养应用型 AI 工程师，并向企业客户提供 Claude Enterprise。</p>
+        <div class="insight"><b>洞察</b> · 系统集成商正从「单一模型代理」转向「多模型组合分销」，谁能把模型能力封装成行业可落地的交付才是护城河。</div>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-coins"/></svg>融资</span><span class="src">AI Funding Tracker</span></div>
+        <h3><a href="#">AI 推理云 Baseten 完成 15 亿美元 F 轮，Altimeter 领投</a></h3>
+        <p class="body">Baseten 以 15 亿美元 F 轮刷新推理基础设施赛道纪录，推理侧成为继训练侧之后资本密度最高的战场。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-zap"/></svg>模型</span><span class="src">示意数据</span></div>
+        <h3><a href="#">（示意）第三条新闻标题占位</a></h3>
+        <p class="body">每张卡片底部固定动作行：左侧「展开全文」，右侧「阅读原文」紫色链接 + 外链图标，随时可追溯出处。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-doc"/></svg>政策</span><span class="src">示意数据</span></div>
+        <h3><a href="#">（示意）第四条新闻标题占位</a></h3>
+        <p class="body">板块背景白→薄衣草→白→暖米交替，差异极淡，滑动时能感知到分区但不突兀。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- 企业实践（薄薰衣草背景） -->
+<div class="band b-lav" id="ent">
+  <div class="deco"><svg viewBox="0 0 400 340">
+    <rect x="168" y="128" width="84" height="84" rx="8"/>
+    <rect x="184" y="144" width="52" height="52" rx="4" stroke-dasharray="3 5"/>
+    <path d="M168 148 H120 Q112 148 112 140 V72 Q112 64 120 64 H180"/>
+    <path d="M168 168 H96 Q88 168 88 176 V260"/>
+    <path d="M168 188 H132 Q124 188 124 196 V292 H180"/>
+    <path d="M252 148 H300 Q308 148 308 140 V88"/>
+    <path d="M252 172 H340 Q348 172 348 180 V240 Q348 248 340 248 H296"/>
+    <path d="M252 196 H312 V300"/>
+    <path d="M188 128 V96 M212 128 V80 M236 128 V104"/>
+    <path d="M188 212 V252 M212 212 V276 M236 212 V240"/>
+    <circle class="dot" cx="180" cy="64" r="3"/><circle class="dot" cx="308" cy="88" r="3"/>
+    <circle class="dot" cx="88" cy="260" r="3"/><circle class="dot" cx="180" cy="292" r="3"/>
+    <circle class="dot" cx="296" cy="248" r="3"/><circle class="dot" cx="312" cy="300" r="3"/>
+    <circle class="dot" cx="212" cy="80" r="3"/><circle class="dot" cx="212" cy="276" r="3"/>
+    <circle cx="180" cy="64" r="7"/><circle cx="308" cy="88" r="7"/><circle cx="88" cy="260" r="7"/>
+  </svg></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sq"><svg class="ic"><use href="#i-building"/></svg></span>
+      <h2>企业级 AI 实践</h2><span class="cnt">4 条</span>
+    </div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-handshake"/></svg>战略合作</span><span class="src">MarketScale</span></div>
+        <h3><a href="#">Anthropic 与 Blackstone 正式命名 15 亿美元合资公司「Ode」</a></h3>
+        <p class="body">合资公司 Ode 正式定名并收购 Fractional，Anthropic 把企业落地「实现层」直接握在自己手里。</p>
+        <div class="insight"><b>洞察</b> · 模型厂商下场做交付，咨询与 SI 的传统地盘正被重新划界。</div>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-chart"/></svg>市场数据</span><span class="src">Domino Data Lab</span></div>
+        <h3><a href="#">Domino 第五份企业 AI 报告：93% 企业称生产力提升</a></h3>
+        <p class="body">但 57% 仍无法量化 ROI——「感觉有用」与「算得清账」之间仍有巨大落差。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- Coding（白底） -->
+<div class="band" id="code">
+  <div class="deco"><svg viewBox="0 0 400 320">
+    <rect x="60" y="40" width="320" height="240" rx="10"/>
+    <line x1="60" y1="76" x2="380" y2="76"/>
+    <circle class="dot" cx="84" cy="58" r="4"/><circle class="dot" cx="104" cy="58" r="4"/><circle class="dot" cx="124" cy="58" r="4"/>
+    <path d="M92 110 L116 130 L92 150"/>
+    <line x1="132" y1="150" x2="164" y2="150"/>
+    <line x1="92" y1="178" x2="220" y2="178"/>
+    <line x1="92" y1="202" x2="180" y2="202" stroke-dasharray="1 0"/>
+    <line x1="116" y1="202" x2="116" y2="202"/>
+    <line x1="92" y1="226" x2="260" y2="226"/>
+    <line x1="112" y1="250" x2="200" y2="250"/>
+    <rect class="dot" x="212" y="244" width="10" height="12"/>
+    <line x1="248" y1="110" x2="352" y2="110" stroke-dasharray="6 8"/>
+    <line x1="248" y1="134" x2="320" y2="134" stroke-dasharray="6 8"/>
+  </svg></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sq"><svg class="ic"><use href="#i-code"/></svg></span>
+      <h2>AI Coding 动态</h2><span class="cnt">4 条</span>
+    </div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-rocket"/></svg>产品发布</span><span class="src">阿里云</span></div>
+        <h3><a href="#">阿里云开源 Qwen3-Coder：号称迄今最具代理能力的代码模型</a></h3>
+        <p class="body">核心性能对标闭源第一梯队，agentic coding 能力成为新的开源竞争焦点。</p>
+        <div class="insight"><b>洞察</b> · 开源代码模型的竞争已从补全走向自主执行任务。</div>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-tool"/></svg>工具生态</span><span class="src">千问 AI 平台</span></div>
+        <h3><a href="#">阿里 Qoder 发布原生代码安全能力</a></h3>
+        <p class="body">漏洞检出率提升 60%、告警误报率降低 80%，安全左移进入 AI IDE 原生功能清单。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- 报告（暖米背景） -->
+<div class="band b-warm" id="rep">
+  <div class="deco"><svg viewBox="0 0 400 320">
+    <line x1="70" y1="40" x2="70" y2="270"/>
+    <line x1="70" y1="270" x2="380" y2="270"/>
+    <line x1="70" y1="212" x2="380" y2="212" stroke-dasharray="2 7"/>
+    <line x1="70" y1="154" x2="380" y2="154" stroke-dasharray="2 7"/>
+    <line x1="70" y1="96" x2="380" y2="96" stroke-dasharray="2 7"/>
+    <rect x="100" y="196" width="26" height="74"/>
+    <rect x="156" y="168" width="26" height="102"/>
+    <rect x="212" y="128" width="26" height="142"/>
+    <rect x="268" y="182" width="26" height="88"/>
+    <rect x="324" y="88" width="26" height="182"/>
+    <path d="M84 232 L113 200 L169 172 L225 132 L281 186 L337 72"/>
+    <circle class="dot" cx="113" cy="200" r="3"/><circle class="dot" cx="169" cy="172" r="3"/>
+    <circle class="dot" cx="225" cy="132" r="3"/><circle class="dot" cx="281" cy="186" r="3"/>
+    <circle class="dot" cx="337" cy="72" r="3.5"/>
+    <path d="M320 56 L337 72 L354 56" stroke-dasharray="2 4"/>
+  </svg></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sq"><svg class="ic"><use href="#i-chart"/></svg></span>
+      <h2>深度报告与论文</h2><span class="cnt">4 条</span>
+    </div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-chart"/></svg>市场数据</span><span class="src">Gartner</span></div>
+        <h3><a href="#">Gartner：2026 全球 AI 平台与模型市场达 640 亿美元</a></h3>
+        <p class="body">同比高速增长，平台层与模型层的价值分配比例成为各家研报交锋的焦点。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-doc"/></svg>研究报告</span><span class="src">Forrester</span></div>
+        <h3><a href="#">FPT-Forrester：仅 26% 企业真正把 AI 投入运营</a></h3>
+        <p class="body">全生命周期工程能力是拉开差距的关键，PoC 到生产的鸿沟仍是行业主旋律。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- X：浅粉底 + 信号网络线稿水印 -->
+<div class="band b-pink" id="xzone">
+  <div class="deco"><svg viewBox="0 0 400 340">
+    <circle cx="210" cy="170" r="10"/>
+    <circle class="dot" cx="210" cy="170" r="3"/>
+    <circle cx="110" cy="90" r="6"/><circle cx="320" cy="76" r="7"/>
+    <circle cx="90" cy="250" r="7"/><circle cx="300" cy="256" r="6"/>
+    <circle cx="368" cy="168" r="5"/><circle cx="160" cy="308" r="4"/><circle cx="250" cy="40" r="4"/>
+    <line x1="203" y1="163" x2="115" y2="95"/>
+    <line x1="218" y1="163" x2="314" y2="82"/>
+    <line x1="203" y1="177" x2="96" y2="245"/>
+    <line x1="218" y1="176" x2="294" y2="251"/>
+    <line x1="220" y1="170" x2="363" y2="168"/>
+    <line x1="110" y1="96" x2="90" y2="243" stroke-dasharray="3 7"/>
+    <line x1="320" y1="83" x2="368" y2="163" stroke-dasharray="3 7"/>
+    <line x1="215" y1="162" x2="248" y2="44" stroke-dasharray="3 7"/>
+    <line x1="205" y1="178" x2="162" y2="304" stroke-dasharray="3 7"/>
+    <circle cx="210" cy="170" r="46" stroke-dasharray="1 9"/>
+    <circle cx="210" cy="170" r="86" stroke-dasharray="1 12"/>
+  </svg></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sq"><svg class="ic"><use href="#i-radio"/></svg></span>
+      <h2>X</h2><span class="cnt">20 条</span>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-radio"/></svg>POST</span><span class="src">Swyx · AI Engineer / Smol AI 创始人</span></div>
+        <h3><a href="#">SmolForge 连发四项新功能，剑指「新一代 G Suite」</a></h3>
+        <p class="body">Swyx 给 SmolForge 一口气加了四项新功能，明确提到可定制皮肤和 spritesheet 动画；同时他把自己开发「新一代 G Suite」的动机归因于现有办公软件积累多年的长期痛点——builder 正在用 AI 重写整套生产力工具栈，入口之争已从聊天框转向工作流。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">查看原 Post<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-radio"/></svg>POST</span><span class="src">Josh Woodward · Google Labs / Gemini 副总裁</span></div>
+        <h3><a href="#">Gemini Spark 演示「从对话到执行」：PDF 日历直接写入 Calendar</a></h3>
+        <p class="body">Josh Woodward 用一个具体场景演示 Gemini Spark 的「从对话到执行」：上传学校日历 PDF，让 Gemini 自动把所有 No School 日期写进 Google Calendar。该能力已面向美国 Google AI Pro 订阅用户上线，下一步扩展到全球——助手正式从「答问题」升级为「替你把事办完」。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">查看原 Post<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-radio"/></svg>PODCAST</span><span class="src">No Priors · DoorDash 联创访谈</span></div>
+        <h3><a href="#">DoorDash 重构为 agentic commerce：壁垒是 100 亿次配送数据</a></h3>
+        <p class="body">DoorDash 正把自己从外卖平台重构为 agentic commerce 与多模态自动配送网络。联创在访谈中强调：真正的壁垒不是某一台机器人，而是 100 亿次历史配送数据、商户集成与调度系统——物理世界的 agent 竞争，数据飞轮比硬件本体更难复制。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">收听原集<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-radio"/></svg>BLOG</span><span class="src">Anthropic Engineering</span></div>
+        <h3><a href="#">How we contain Claude：安全边界成为产品架构一等公民</a></h3>
+        <p class="body">Anthropic 工程团队发布《How we contain Claude across products》，系统解读跨产品沙箱隔离与权限收敛设计：当模型能力越强，「关住它」的工程投入就越重——安全边界正在成为 AI 产品架构的一等公民，而不是事后补丁。</p>
+        <div class="card-foot">
+          <button class="more-btn">展开全文 ↓</button>
+          <a class="orig" href="#">阅读原文<svg class="ic"><use href="#i-ext"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <div class="x-more">
+      <a href="#">查看全部 20 条 <span style="font-weight:900">&rarr;</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- 收盘点评 -->
+  <section class="closing">
+    <h3><svg class="ic"><use href="#i-compass"/></svg>收盘点评</h3>
+    <p>本期主线是「实现层」之争全面白热化。Anthropic-Blackstone 15 亿美元合资公司 Ode 正式定名并收购 Fractional，Samsung SDS 联手 Anthropic 形成双押布局……（原 closing 段落挪到页尾收束）</p>
+  </section>
+</div>
+
+<footer>aidigest.club · AI 日报与 Builder Intelligence · 设计稿 v12</footer>
+
+<script>const drawer=document.getElementById('drawer');
+document.querySelectorAll('.more-btn').forEach(b=>b.addEventListener('click',()=>{const c=b.closest('.card');c.classList.toggle('expand');b.textContent=c.classList.contains('expand')?'收起 ↑':'展开全文 ↓'}))</script>
+</body>
+</html>

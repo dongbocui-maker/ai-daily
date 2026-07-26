@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aidigest.club · 首页整合设计稿 v6</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --ink:#0f1117;
+  --ink-2:#1a1d27;
+  --paper:#f6f7f9;
+  --card:#ffffff;
+  --purple:#7c5cff;
+  --purple-deep:#5f3ff0;
+  --cyan:#2dd4bf;
+  --amber:#f59e0b;
+  --rose:#fb7185;
+  --blue:#38bdf8;
+  --gray-5:#6b7280;
+  --gray-4:#9ca3af;
+  --gray-2:#e5e7eb;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC",sans-serif;background:var(--paper);color:#1f2330;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* ============ HEADER：深色渐变 + 玻璃感，和 Hero 融为一体 ============ */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,17,23,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;color:#fff;letter-spacing:-.02em;font-size:17px}
+.logo .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+.nav-desktop{display:none;gap:2px}
+.nav-desktop a{color:#c8cbd6;font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:99px;transition:.15s}
+.nav-desktop a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-desktop a.active{color:#fff;background:linear-gradient(135deg,rgba(124,92,255,.35),rgba(45,212,191,.2));border:1px solid rgba(124,92,255,.4)}
+.burger{background:none;border:0;color:#fff;padding:8px;cursor:pointer;display:block}
+@media(min-width:900px){.nav-desktop{display:flex}.burger{display:none}}
+
+/* HERO：从 header 无缝延伸的深色画布 */
+.hero{background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 70%,var(--paper) 100%);padding:28px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.35),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-80px;bottom:40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.16),transparent 65%);pointer-events:none}
+.hero-in{position:relative;z-index:1}
+.date-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#dfe2ec;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:14px}
+.date-pill .live{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.hero h1{color:#fff;font-size:clamp(26px,6vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.hero h1 .grad{background:linear-gradient(90deg,var(--purple) 0%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:#8f94a6;font-size:14px;margin-top:10px;max-width:560px}
+
+/* 板块跳转 chips：横滑，手机友好 */
+.chips{display:flex;gap:8px;margin-top:22px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#d8dbe6;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:8px 14px;border-radius:99px;transition:.15s}
+.chip:active{transform:scale(.96)}
+.chip .n{font-size:11px;background:rgba(255,255,255,.15);border-radius:99px;padding:1px 7px}
+.chip.c-news{border-color:rgba(251,113,133,.45)}.chip.c-news .ico{color:var(--rose)}
+.chip.c-ent{border-color:rgba(56,189,248,.45)}.chip.c-ent .ico{color:var(--blue)}
+.chip.c-code{border-color:rgba(45,212,191,.45)}.chip.c-code .ico{color:var(--cyan)}
+.chip.c-rep{border-color:rgba(245,158,11,.45)}.chip.c-rep .ico{color:var(--amber)}
+.chip.c-x{border-color:rgba(124,92,255,.55);background:rgba(124,92,255,.16)}
+
+/* ============ 板块通用 ============ */
+.section{padding:8px 0 8px}
+.sec-head{display:flex;align-items:center;gap:10px;margin:26px 0 14px}
+.sec-head .bar{width:4px;height:22px;border-radius:4px}
+.sec-head h2{font-size:19px;font-weight:800;letter-spacing:-.02em}
+.sec-head .cnt{margin-left:auto;font-size:12px;color:var(--gray-4);font-weight:600}
+.s-news .bar{background:var(--rose)} .s-ent .bar{background:var(--blue)}
+.s-code .bar{background:var(--cyan)} .s-rep .bar{background:var(--amber)}
+
+/* 卡片流：手机单列，桌面双列 */
+.cards{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr;gap:16px}}
+.card{background:var(--card);border-radius:var(--radius);padding:18px 18px 14px;box-shadow:0 1px 2px rgba(15,17,23,.05),0 4px 16px rgba(15,17,23,.04);border:1px solid rgba(15,17,23,.04);position:relative;transition:.18s}
+.card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(15,17,23,.06),0 10px 28px rgba(15,17,23,.08)}
+.card .tag-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;flex-wrap:wrap}
+.pill{font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.01em}
+.p-rose{background:rgba(251,113,133,.12);color:#e11d48}
+.p-blue{background:rgba(56,189,248,.14);color:#0284c7}
+.p-cyan{background:rgba(45,212,191,.14);color:#0d9488}
+.p-amber{background:rgba(245,158,11,.14);color:#b45309}
+.p-purple{background:rgba(124,92,255,.13);color:var(--purple-deep)}
+.card .src{font-size:11.5px;color:var(--gray-4);margin-left:auto}
+.card h3{font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.01em;margin-bottom:8px}
+.card h3 a:hover{color:var(--purple-deep)}
+.card p{font-size:13.5px;color:#4b5162;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .insight{margin-top:10px;padding:9px 12px;background:linear-gradient(90deg,rgba(124,92,255,.06),rgba(45,212,191,.05));border-left:3px solid var(--purple);border-radius:0 10px 10px 0;font-size:12.5px;color:#565d72}
+.card .insight b{color:var(--purple-deep);font-weight:700}
+.card.expand p{-webkit-line-clamp:unset}
+.more-btn{margin-top:8px;font-size:12px;color:var(--purple-deep);font-weight:600;background:none;border:0;cursor:pointer;padding:0}
+
+/* 首条大卡（每个板块第一条横跨全宽，制造节奏感） */
+@media(min-width:768px){.card.lead{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:0 22px}.card.lead .lead-num{grid-row:1/4}}
+.lead-num{font-size:34px;font-weight:800;line-height:1;letter-spacing:-.04em;opacity:.14;margin-bottom:6px}
+
+/* ============ X · Builder Signals 深色区块 ============ */
+.x-zone{margin-top:38px;background:linear-gradient(160deg,var(--ink) 0%,#171a2b 100%);border-radius:24px;padding:26px 18px 22px;position:relative;overflow:hidden}
+@media(min-width:768px){.x-zone{padding:34px 30px 28px}}
+.x-zone::before{content:"";position:absolute;right:-60px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.3),transparent 65%)}
+.x-head{display:flex;align-items:center;gap:10px;position:relative;z-index:1;flex-wrap:wrap}
+.x-head .xlogo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px}
+.x-head h2{color:#fff;font-size:19px;font-weight:800}
+.x-head .sub{width:100%;color:#8f94a6;font-size:12.5px;margin-top:2px}
+.x-stats{display:flex;gap:14px;margin:16px 0 4px;position:relative;z-index:1}
+.x-stats div{font-size:12px;color:#8f94a6}
+.x-stats b{color:#fff;font-size:15px;margin-right:3px}
+.x-cards{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;position:relative;z-index:1}
+@media(min-width:768px){.x-cards{grid-template-columns:1fr 1fr}}
+.x-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:15px 16px;transition:.15s}
+.x-card:hover{background:rgba(255,255,255,.08);border-color:rgba(124,92,255,.4)}
+.x-card .who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.x-card .ava{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#3b3f58,#23263a);display:flex;align-items:center;justify-content:center;color:#aeb3c8;font-weight:700;font-size:12px;flex:none}
+.x-card .who .nm{color:#fff;font-size:13.5px;font-weight:700;line-height:1.25}
+.x-card .who .rl{color:#7d8296;font-size:11.5px}
+.x-card .kind{margin-left:auto;font-size:10.5px;font-weight:700;padding:2.5px 8px;border-radius:99px;flex:none}
+.k-x{background:rgba(124,92,255,.25);color:#b8a5ff}
+.k-pod{background:rgba(245,158,11,.22);color:#fbbf24}
+.k-blog{background:rgba(45,212,191,.2);color:#5eead4}
+.x-card p{color:#c3c7d4;font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.x-more{display:flex;justify-content:center;margin-top:18px;position:relative;z-index:1}
+.x-more a{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:13.5px;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--purple-deep));padding:11px 24px;border-radius:99px;box-shadow:0 4px 20px rgba(124,92,255,.35);transition:.15s}
+.x-more a:hover{transform:translateY(-1px);box-shadow:0 6px 26px rgba(124,92,255,.5)}
+
+/* 收盘点评（挪到页面底部） */
+.closing{margin:36px 0 8px;background:var(--card);border-radius:var(--radius);padding:22px 20px;border:1px solid rgba(15,17,23,.05)}
+.closing h3{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.closing p{font-size:13.5px;color:#4b5162;margin-bottom:8px}
+footer{margin-top:36px;padding:26px 0 40px;text-align:center;color:var(--gray-4);font-size:12px;border-top:1px solid var(--gray-2)}
+
+/* 手机抽屉菜单（演示用） */
+.drawer{position:fixed;inset:0;z-index:100;display:none}
+.drawer.open{display:block}
+.drawer .mask{position:absolute;inset:0;background:rgba(10,12,18,.55);backdrop-filter:blur(2px)}
+.drawer .panel{position:absolute;right:0;top:0;bottom:0;width:min(78vw,300px);background:var(--ink);padding:22px 18px;display:flex;flex-direction:column;gap:2px;animation:slidein .22s ease}
+@keyframes slidein{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.drawer .panel a{color:#d8dbe6;font-size:15px;font-weight:600;padding:13px 14px;border-radius:12px}
+.drawer .panel a:hover{background:rgba(255,255,255,.07);color:#fff}
+.drawer .panel a.active{background:linear-gradient(135deg,rgba(124,92,255,.3),rgba(45,212,191,.15));color:#fff}
+.drawer .panel .sep{height:1px;background:rgba(255,255,255,.08);margin:10px 4px}
+.drawer .panel .muted{color:#8f94a6;font-size:13.5px}
+</style>
+</head>
+<body>
+
+<!-- 手机抽屉菜单 -->
+<div class="drawer" id="drawer">
+  <div class="mask" onclick="drawer.classList.remove('open')"></div>
+  <nav class="panel">
+    <a class="active" href="#">最新</a>
+    <a href="#">精读</a>
+    <a href="#">GitHub 热门</a>
+    <a href="#">LMArena</a>
+    <a href="#">学习</a>
+    <div class="sep"></div>
+    <a class="muted" href="#">归档</a>
+    <a class="muted" href="#">关于本站</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#"><span class="dot">⚡</span>aidigest<span style="color:var(--cyan)">.club</span></a>
+    <nav class="nav-desktop">
+      <a class="active" href="#">最新</a>
+      <a href="#">精读</a>
+      <a href="#">GitHub 热门</a>
+      <a href="#">LMArena</a>
+      <a href="#">学习</a>
+      <a href="#">归档</a>
+      <a href="#">关于本站</a>
+    </nav>
+    <button class="burger" onclick="drawer.classList.add('open')" aria-label="菜单">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- HERO（无本期速览，直接进内容） -->
+<div class="hero">
+  <div class="wrap hero-in">
+    <span class="date-pill"><span class="live"></span>2026-07-26 · 星期日 · 每日 08:18 更新</span>
+    <h1>AI 情报，<span class="grad">一页读完</span></h1>
+    <p class="hero-sub">17 条今日日报 + 20 条 Builder 信号，中文提炼，无需跳转。</p>
+    <div class="chips">
+      <a class="chip c-news" href="#news"><span class="ico">🔥</span>热点新闻<span class="n">5</span></a>
+      <a class="chip c-ent" href="#ent"><span class="ico">🏢</span>企业实践<span class="n">4</span></a>
+      <a class="chip c-code" href="#code"><span class="ico">💻</span>Coding<span class="n">4</span></a>
+      <a class="chip c-rep" href="#rep"><span class="ico">📊</span>报告论文<span class="n">4</span></a>
+      <a class="chip c-x" href="#xzone"><span class="ico">𝕏</span>Builder Signals<span class="n">20</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" style="margin-top:-40px;position:relative;z-index:2">
+
+  <!-- 🔥 热点新闻 -->
+  <section class="section s-news" id="news">
+    <div class="sec-head"><span class="bar"></span><h2>🔥 AI 热点新闻</h2><span class="cnt">5 条</span></div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="lead-num">01</div>
+        <div class="tag-row"><span class="pill p-rose">🤝 战略合作</span><span class="src">Asia Business Daily</span></div>
+        <h3><a href="#">Samsung SDS 联手 Anthropic 拓展企业 AI，打破对 OpenAI 的单一依赖</a></h3>
+        <p>Samsung SDS CEO 与 Anthropic CEO Dario Amodei 在旧金山 AI Summit 2026 上正式签署战略合作，双方将在韩国联合开拓企业 AI 商机、培养应用型 AI 工程师，并向企业客户提供 Claude Enterprise。此前 Samsung SDS 已是韩国首家 ChatGPT Enterprise 分销伙伴，如今补齐 Anthropic 阵营，形成「双押」布局。</p>
+        <div class="insight"><b>洞察</b> · 系统集成商正从「单一模型代理」转向「多模型组合分销」，谁能把模型能力封装成行业可落地的交付才是护城河。</div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-rose">💰 融资</span><span class="src">AI Funding Tracker</span></div>
+        <h3><a href="#">AI 推理云 Baseten 完成 15 亿美元 F 轮，Altimeter 领投</a></h3>
+        <p>Baseten 以 15 亿美元 F 轮刷新推理基础设施赛道纪录，估值冲上新台阶。推理侧成为继训练侧之后资本密度最高的战场。</p>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-rose">🧠 模型</span><span class="src">示意数据</span></div>
+        <h3><a href="#">（示意）第三条新闻标题占位</a></h3>
+        <p>正文摘要三行截断示意。点击「展开」可看全文，再点收起。手机上默认三行保持卡片紧凑，信息密度和可读性平衡。</p>
+        <button class="more-btn" onclick="this.parentNode.classList.toggle('expand');this.textContent=this.parentNode.classList.contains('expand')?'收起 ↑':'展开全文 ↓'">展开全文 ↓</button>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-rose">🏛 政策</span><span class="src">示意数据</span></div>
+        <h3><a href="#">（示意）第四条新闻标题占位</a></h3>
+        <p>每个板块第一条自动升级为「头条大卡」横跨全宽，其余双列（手机单列），打破原来平铺的单调感。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 🏢 企业实践 -->
+  <section class="section s-ent" id="ent">
+    <div class="sec-head"><span class="bar"></span><h2>🏢 企业级 AI 实践</h2><span class="cnt">4 条</span></div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="lead-num">01</div>
+        <div class="tag-row"><span class="pill p-blue">🤝 战略合作</span><span class="src">MarketScale</span></div>
+        <h3><a href="#">Anthropic 与 Blackstone 正式命名 15 亿美元合资公司「Ode」</a></h3>
+        <p>合资公司 Ode 正式定名并收购 Fractional，Anthropic 把企业落地「实现层」直接握在自己手里，与 SI 生态形成微妙的竞合关系。</p>
+        <div class="insight"><b>洞察</b> · 模型厂商下场做交付，咨询与 SI 的传统地盘正被重新划界。</div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-blue">📊 市场数据</span><span class="src">Domino Data Lab</span></div>
+        <h3><a href="#">Domino 第五份企业 AI 报告：93% 企业称生产力提升</a></h3>
+        <p>93% 企业称生产力提升，但 57% 仍无法量化 ROI——企业 AI 的「感觉有用」与「算得清账」之间仍有巨大落差。</p>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-blue">🏭 落地</span><span class="src">示意数据</span></div>
+        <h3><a href="#">（示意）企业实践第三条占位</a></h3>
+        <p>不同板块用左侧色条 + 徽章色系区分：热点玫红、企业蓝、Coding 青、报告琥珀，一眼扫过去就有「区域感」。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 💻 Coding -->
+  <section class="section s-code" id="code">
+    <div class="sec-head"><span class="bar"></span><h2>💻 AI Coding 动态</h2><span class="cnt">4 条</span></div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="lead-num">01</div>
+        <div class="tag-row"><span class="pill p-cyan">🚀 产品发布</span><span class="src">阿里云</span></div>
+        <h3><a href="#">阿里云开源 Qwen3-Coder：号称迄今最具代理能力的代码模型</a></h3>
+        <p>核心性能对标闭源第一梯队，agentic coding 能力成为新的开源竞争焦点。</p>
+        <div class="insight"><b>洞察</b> · 开源代码模型的竞争已从补全走向自主执行任务。</div>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-cyan">🧰 工具生态</span><span class="src">千问 AI 平台</span></div>
+        <h3><a href="#">阿里 Qoder 发布原生代码安全能力</a></h3>
+        <p>漏洞检出率提升 60%、告警误报率降低 80%，安全左移进入 AI IDE 原生功能清单。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 📊 报告 -->
+  <section class="section s-rep" id="rep">
+    <div class="sec-head"><span class="bar"></span><h2>📊 深度报告与论文</h2><span class="cnt">4 条</span></div>
+    <div class="cards">
+      <article class="card lead">
+        <div class="lead-num">01</div>
+        <div class="tag-row"><span class="pill p-amber">📊 市场数据</span><span class="src">Gartner</span></div>
+        <h3><a href="#">Gartner：2026 全球 AI 平台与模型市场达 640 亿美元</a></h3>
+        <p>同比高速增长，平台层与模型层的价值分配比例成为各家研报交锋的焦点。</p>
+      </article>
+      <article class="card">
+        <div class="tag-row"><span class="pill p-amber">📊 研究报告</span><span class="src">Forrester</span></div>
+        <h3><a href="#">FPT-Forrester：仅 26% 企业真正把 AI 投入运营</a></h3>
+        <p>全生命周期工程能力是拉开差距的关键，PoC 到生产的鸿沟仍然是行业主旋律。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ X · BUILDER SIGNALS 嵌入区 ============ -->
+  <section class="x-zone" id="xzone">
+    <div class="x-head">
+      <span class="xlogo">𝕏</span>
+      <h2>Builder Signals</h2>
+      <span class="sub">全球 AI builders 的 X / Podcasts / Blogs 高信号提炼 · 今日精选</span>
+    </div>
+    <div class="x-stats">
+      <div><b>48</b>Posts</div>
+      <div><b>21</b>Builders</div>
+      <div><b>1</b>Podcast</div>
+      <div><b>1</b>Blog</div>
+    </div>
+    <div class="x-cards">
+      <article class="x-card">
+        <div class="who">
+          <span class="ava">SW</span>
+          <div><div class="nm">Swyx</div><div class="rl">AI Engineer / Smol AI 创始人</div></div>
+          <span class="kind k-x">POST</span>
+        </div>
+        <p>给 SmolForge 加了四项新功能（可定制皮肤、spritesheet 动画等）；把开发「新一代 G Suite」的动机归因于现有办公软件的长期痛点。</p>
+      </article>
+      <article class="x-card">
+        <div class="who">
+          <span class="ava">JW</span>
+          <div><div class="nm">Josh Woodward</div><div class="rl">Google Labs / Gemini 副总裁</div></div>
+          <span class="kind k-x">POST</span>
+        </div>
+        <p>演示 Gemini Spark「从对话到执行」：上传学校日历 PDF，让 Gemini 把所有 No School 日期直接写进 Google Calendar，已向美国 AI Pro 用户上线。</p>
+      </article>
+      <article class="x-card">
+        <div class="who">
+          <span class="ava">NP</span>
+          <div><div class="nm">No Priors</div><div class="rl">Podcast · DoorDash 联创访谈</div></div>
+          <span class="kind k-pod">PODCAST</span>
+        </div>
+        <p>DoorDash 正从外卖平台重构为 agentic commerce 与多模态自动配送网络——真正壁垒不是机器人，而是 100 亿次历史配送数据、商户集成与调度系统。</p>
+      </article>
+      <article class="x-card">
+        <div class="who">
+          <span class="ava">AN</span>
+          <div><div class="nm">Anthropic Engineering</div><div class="rl">Blog</div></div>
+          <span class="kind k-blog">BLOG</span>
+        </div>
+        <p>How we contain Claude across products——Anthropic 工程团队解读跨产品沙箱与权限收敛设计。</p>
+      </article>
+    </div>
+    <div class="x-more">
+      <a href="#">查看全部 20 条 Builder Signals →</a>
+    </div>
+  </section>
+
+  <!-- 收盘点评（从顶部速览挪到底部收尾） -->
+  <section class="closing">
+    <h3>🧭 收盘点评</h3>
+    <p>本期主线是「实现层」之争全面白热化。Anthropic-Blackstone 15 亿美元合资公司 Ode 正式定名并收购 Fractional，Samsung SDS 联手 Anthropic 形成双押布局……（原 closing 段落，从页首挪到页尾作收束）</p>
+  </section>
+
+</div>
+
+<footer>aidigest.club · AI 日报与 Builder Intelligence · 设计稿 v6（数据为 2026-07-26 真实内容 + 部分示意占位）</footer>
+
+<script>const drawer=document.getElementById('drawer')</script>
+</body>
+</html>

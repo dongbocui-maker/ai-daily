@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Digest · 2026-07-25 · 改版原型 v5 Purple Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper-2:#F8F7FA;
+  --ink:#0A0A0F;
+  --ink-2:#50505C;
+  --muted:#94949F;
+  --line:#EBEAEF;
+  --line-strong:#0A0A0F;
+  --purple:#A100FF;
+  --purple-dark:#7500C0;
+  --purple-soft:#F6EDFF;
+  --sans:'Inter','Noto Sans SC',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.68;font-size:15px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.ico{width:20px;height:20px;stroke:var(--purple);stroke-width:2;fill:none;stroke-linecap:square;flex-shrink:0;align-self:center}
+.ico-s{width:14px;height:14px}
+
+/* ===== Header ===== */
+header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;gap:clamp(16px,3vw,36px);height:62px}
+.logo{font-weight:900;font-size:19px;letter-spacing:-.03em}
+.logo i{font-style:normal;color:var(--purple)}
+.nav-links{display:flex;gap:clamp(14px,2.5vw,30px);font-size:13.5px;color:var(--ink-2);font-weight:500;overflow-x:auto}
+.nav-links .on{color:var(--ink);font-weight:700;position:relative}
+.nav-links .on::after{content:'';position:absolute;left:0;right:0;bottom:-21px;height:3px;background:var(--purple)}
+.nav-right{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap;letter-spacing:.06em}
+
+/* ===== Edition ===== */
+.edition{padding:clamp(38px,6vw,58px) 0 0}
+.ed-date{font-size:12px;color:var(--purple-dark);letter-spacing:.14em;margin-bottom:16px;font-weight:600}
+.edition h1{font-size:clamp(26px,3.8vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.28;max-width:23em}
+.ed-meta{display:flex;gap:clamp(14px,2.5vw,26px);font-size:12px;color:var(--muted);margin-top:22px;flex-wrap:wrap}
+.ed-meta b{color:var(--ink);font-weight:700}
+.ed-meta .hl{color:var(--purple-dark);font-weight:600}
+
+/* ===== 今日 5 件事 ===== */
+.brief5{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--line-strong);margin-top:30px}
+.brief5 a{padding:18px 18px 22px 0;margin-right:18px;font-size:13px;color:var(--ink-2);line-height:1.58;border-right:1px solid var(--line)}
+.brief5 a:last-child{border-right:none;margin-right:0}
+.brief5 a:hover{color:var(--ink)}
+.brief5 .n{font-size:11px;color:var(--purple);display:block;margin-bottom:7px;letter-spacing:.1em;font-weight:700}
+
+/* ===== kicker ===== */
+.kicker{display:flex;align-items:center;gap:12px;margin:clamp(42px,6vw,60px) 0 22px;flex-wrap:wrap}
+.kicker .tag{font-size:16px;font-weight:800;letter-spacing:-.01em}
+.kicker .zh{font-size:12.5px;color:var(--muted)}
+.kicker .jump{margin-left:auto;font-size:12.5px;color:var(--purple-dark);font-weight:600}
+.kicker .jump:hover{color:var(--purple)}
+
+/* ===== Lead ===== */
+.lead-grid{display:grid;grid-template-columns:1.72fr 1fr;gap:clamp(28px,5vw,54px)}
+.lead .cat{font-size:11px;color:var(--purple-dark);letter-spacing:.1em;display:block;margin-bottom:13px;font-weight:600}
+.lead h2{font-size:clamp(21px,2.5vw,29px);font-weight:900;line-height:1.4;letter-spacing:-.01em;margin-bottom:15px}
+.lead .body{font-size:15px;color:var(--ink-2);margin-bottom:14px;max-width:40em}
+.take{background:var(--purple-soft);border-radius:10px;padding:15px 20px;margin:20px 0;font-size:14px;color:#4A0E7F;display:flex;gap:12px}
+.take .lb{font-size:10.5px;color:var(--purple-dark);letter-spacing:.14em;display:block;margin-bottom:5px;font-weight:700}
+.meta{font-size:11px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;letter-spacing:.03em}
+
+/* Builder reactions */
+.reactions{margin-top:24px;border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+.reactions .rlb{font-size:11px;letter-spacing:.14em;color:var(--purple-dark);margin-bottom:10px;font-weight:700;display:flex;align-items:center;gap:8px}
+.rx{display:flex;gap:14px;padding:9px 0;font-size:13.5px;color:var(--ink-2);border-bottom:1px solid var(--line)}
+.rx:last-child{border-bottom:none}
+.rx .h{font-size:12px;color:var(--purple-dark);white-space:nowrap;padding-top:2px;font-weight:700}
+.rx .more{color:var(--muted);font-size:12px}
+.godeeper{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.gd{font-size:12.5px;padding:7px 16px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);font-weight:500;display:flex;gap:7px;align-items:center}
+.gd:hover{border-color:var(--purple);color:var(--purple-dark);background:var(--purple-soft)}
+
+/* secondary */
+.sec{padding:0 0 22px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.sec:last-child{border-bottom:none;margin-bottom:0}
+.sec .cat{font-size:10.5px;letter-spacing:.1em;margin-bottom:9px;display:block;color:var(--muted);font-weight:600}
+.sec h3{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:8px}
+.sec h3:hover{color:var(--purple-dark)}
+.sec p{font-size:13px;color:var(--ink-2);margin-bottom:10px}
+
+/* ===== Rows ===== */
+.rows{border-top:1px solid var(--line)}
+.row{display:flex;align-items:baseline;gap:16px;padding:15px 6px;border-bottom:1px solid var(--line)}
+.row:hover{background:var(--paper-2)}
+.row .idx{font-size:11.5px;color:var(--purple);min-width:24px;font-weight:700}
+.row .t{font-size:14.5px;font-weight:500;flex:1;line-height:1.58}
+.row .m{font-size:11px;color:var(--muted);white-space:nowrap}
+
+/* ===== Focus ===== */
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,54px)}
+.focus .cat{font-size:10.5px;color:var(--muted);letter-spacing:.1em;display:block;margin-bottom:10px;font-weight:600}
+.focus h3{font-size:18.5px;font-weight:800;line-height:1.5;margin-bottom:10px}
+.focus .body{font-size:13.5px;color:var(--ink-2);margin-bottom:6px}
+.focus .take{margin:14px 0;font-size:13px;padding:12px 17px}
+.focus-rows .row .t{font-size:13.5px}
+
+/* ===== Builder radar ===== */
+.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rc{border:1px solid var(--line);border-radius:14px;padding:22px 24px;transition:.18s;position:relative}
+.rc:hover{border-color:#DCC3F5;box-shadow:0 6px 24px rgba(117,0,192,.07)}
+.rc .kind{font-size:10.5px;letter-spacing:.12em;color:var(--purple-dark);margin-bottom:12px;display:flex;justify-content:space-between;font-weight:700;align-items:center}
+.rc .kind .k{display:flex;gap:8px;align-items:center}
+.rc .kind .dur{color:var(--muted);font-weight:500}
+.rc h4{font-size:15px;font-weight:700;margin-bottom:9px;line-height:1.55}
+.rc p{font-size:12.5px;color:var(--ink-2)}
+.rc .who{font-size:10.5px;color:var(--muted);margin-top:14px;letter-spacing:.05em}
+
+/* ===== Reads ===== */
+.reads{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:20px}
+.read-hero{background:linear-gradient(150deg,#16041F,#2E0A4E 70%,#3D0A66);border-radius:16px;padding:28px 30px;color:#fff;position:relative;overflow:hidden}
+.read-hero .rh-ico{position:absolute;right:24px;bottom:20px;width:64px;height:64px;stroke:rgba(161,0,255,.5);stroke-width:1.5;fill:none}
+.read-hero .cat{font-size:10.5px;letter-spacing:.14em;color:#CE93FF;display:block;margin-bottom:12px;font-weight:700}
+.read-hero h4{font-size:19.5px;font-weight:800;line-height:1.5;margin-bottom:10px}
+.read-hero p{font-size:13px;color:rgba(255,255,255,.72);max-width:30em}
+.read-hero .who{font-size:10.5px;color:rgba(255,255,255,.5);margin-top:16px;letter-spacing:.05em}
+.read{border:1px solid var(--line);border-radius:14px;padding:22px 24px;transition:.18s}
+.read:hover{border-color:#DCC3F5;box-shadow:0 6px 24px rgba(117,0,192,.07)}
+.read .cat{font-size:10.5px;letter-spacing:.12em;color:var(--purple-dark);display:block;margin-bottom:10px;font-weight:700}
+.read h4{font-size:15px;font-weight:700;line-height:1.55;margin-bottom:8px}
+.read p{font-size:12.5px;color:var(--ink-2)}
+.read .who{font-size:10.5px;color:var(--muted);margin-top:12px;letter-spacing:.05em}
+
+/* ===== Closing ===== */
+.closing{background:var(--paper-2);border-radius:14px;padding:28px 32px}
+.closing p{font-size:14.5px;color:var(--ink-2);margin-bottom:14px;max-width:52em}
+.closing p:last-child{margin-bottom:0}
+.closing p b{color:var(--ink)}
+.closing .num{color:var(--purple);font-size:13px;margin-right:10px;font-weight:800}
+
+footer{margin:64px 0 44px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;letter-spacing:.05em}
+
+/* ===== 竖屏 ===== */
+@media(max-width:900px){
+  .lead-grid,.focus-grid{grid-template-columns:1fr;gap:34px}
+  .radar,.reads{grid-template-columns:1fr}
+  .brief5{grid-template-columns:1fr}
+  .brief5 a{border-right:none;border-bottom:1px solid var(--line);margin-right:0;padding:13px 0;display:flex;gap:12px;align-items:baseline}
+  .brief5 .n{margin-bottom:0;min-width:64px}
+  .kicker .jump{margin-left:0}
+  .row .m{display:none}
+  .rx{flex-direction:column;gap:3px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon defs：几何线性 icon，2px 方头描边，斜切 45° 元素——埃森哲式几何语言但非其 logo -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="i-bolt"><path d="M11 2 L5 12 H10 L9 18 L15 8 H10 Z"/></g>
+    <g id="i-list"><path d="M3 5 H17 M3 10 H13 M3 15 H9"/></g>
+    <g id="i-target"><circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="2.5"/></g>
+    <g id="i-radar"><path d="M10 10 L16 4 M10 10 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"/><circle cx="10" cy="10" r="1.6"/></g>
+    <g id="i-book"><path d="M4 3 H16 V17 H4 Z M4 3 V17 M7 7 H13 M7 10.5 H13"/></g>
+    <g id="i-flag"><path d="M5 3 V17 M5 4 H15 L12.5 7 L15 10 H5"/></g>
+    <g id="i-doc"><path d="M5 2 H12 L15 5 V18 H5 Z M12 2 V5 H15"/></g>
+    <g id="i-mic"><rect x="8" y="3" width="4" height="9" rx="2"/><path d="M5 10 A5 5 0 0 0 15 10 M10 15 V18"/></g>
+    <g id="i-link"><path d="M8 12 L12 8 M6 10 L4 12 A3.5 3.5 0 0 0 9 17 L11 15 M14 10 L16 8 A3.5 3.5 0 0 0 11 3 L9 5"/></g>
+    <g id="i-x"><path d="M4 4 L16 16 M16 4 L4 16"/></g>
+    <g id="i-pen"><path d="M4 16 L5 12 L14 3 L17 6 L8 15 Z M12 5 L15 8"/></g>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">AI Digest<i>.</i></div>
+    <nav class="nav-links">
+      <a class="on">今日</a>
+      <a>归档</a>
+      <a>精读</a>
+      <a>榜单</a>
+      <a>学习</a>
+    </nav>
+    <div class="nav-right">UPDATED 08:30</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Edition -->
+  <div class="edition">
+    <div class="ed-date">2026.07.25 · 星期五 · 第 187 期</div>
+    <h1>「省钱」压过「更强」：Opus 5 用成本档位重新定义旗舰竞争，资本面警报与开源反击同日而至</h1>
+    <div class="ed-meta">
+      <span><b>17</b> 条精选</span>
+      <span><b>~7</b> 分钟读完</span>
+      <span><b>34</b> 个来源</span>
+      <span class="hl">已为你筛掉 91% 的噪音</span>
+    </div>
+
+    <div class="brief5">
+      <a><span class="n">01 模型</span>Opus 5 发布：定价不变，努力度三档可调</a>
+      <a><span class="n">02 并购</span>Cognition 收购 Poke：AI「个性」成壁垒</a>
+      <a><span class="n">03 资本</span>Alphabet 上市 22 年首现负自由现金流</a>
+      <a><span class="n">04 硬件</span>AMD Helios 机架级系统硬刚 Nvidia</a>
+      <a><span class="n">05 政策</span>200 家硅谷公司联名反对封锁中国开源</a>
+    </div>
+  </div>
+
+  <!-- LEAD -->
+  <div class="kicker"><svg class="ico"><use href="#i-bolt"/></svg><span class="tag">今日头条</span><span class="zh">事实 → 判断 → Builder 反应</span></div>
+  <div class="lead-grid">
+    <article class="lead">
+      <span class="cat">产品发布 · THE VERGE / FORTUNE / ANTHROPIC · 3 MIN</span>
+      <h2>Anthropic 发布 Claude Opus 5：定价不变，引入「成本-能力」调节开关，主打企业省钱</h2>
+      <p class="body">输入/输出定价维持 $5/$25 每百万 token（与 Opus 4.8 持平，约为 Fable 5 一半）。核心新特性：low/medium/high 三档「努力度」开关，直接回应企业 AI 账单飙升；另推双倍价格换速度的「Fast mode」研究预览。Opus 5 成为 Claude Max 默认模型，官方称其为「迄今最安全的模型」。</p>
+      <div class="take"><div><span class="lb">哨兵判断</span>旗舰竞争已从「更强」转向「更省」。成本可调档意味着企业采购决策将从单一能力评测转向 TCO 精细化核算——选型指标该换了。</div></div>
+
+      <div class="reactions">
+        <div class="rlb"><svg class="ico ico-s"><use href="#i-radar"/></svg>BUILDER 反应 · 一线怎么看</div>
+        <div class="rx"><span class="h">Ars Technica</span><span>拆解 Opus 5：核心是「token 效率」而非能力跃升，成本可调档才是真正卖点——榜单分数几乎横盘。</span></div>
+        <div class="rx"><span class="h">@claudeai</span><span>同日官宣语音模式跑上 Opus/Sonnet，可在对话中途调用工具——发布节奏是组合拳，不是单点。</span></div>
+        <div class="rx"><span class="more">＋ 2 条信号 · 展开</span></div>
+      </div>
+      <div class="godeeper">
+        <a class="gd"><svg class="ico ico-s"><use href="#i-doc"/></svg>精读候选 · Opus 5 System Card</a>
+        <a class="gd"><svg class="ico ico-s"><use href="#i-mic"/></svg>播客 36 min · 推理成本战争</a>
+        <a class="gd"><svg class="ico ico-s"><use href="#i-link"/></svg>官方公告</a>
+      </div>
+    </article>
+
+    <div class="sec-col">
+      <article class="sec">
+        <span class="cat">并购 · TECHCRUNCH</span>
+        <h3>Cognition 收购 Poke 开发商，押注 AI「个性」成竞争壁垒</h3>
+        <p>Poke 三个月促成 1 亿+ 次消息往来。模型能力趋同时代，「人格与交互体验」正成 To C AI 的新护城河。</p>
+        <div class="meta"><span>techcrunch.com · 2 min</span></div>
+      </article>
+      <article class="sec">
+        <span class="cat">硬件 · BLOOMBERG</span>
+        <h3>AMD 发布 Helios 机架级 AI 系统：同成本多处理 30% 工作负载</h3>
+        <p>正面硬刚 Nvidia NVL72。推理成本战争从模型层烧到硬件层，与 Opus 5「省钱」叙事同频。</p>
+        <div class="meta"><span>bloomberg.com · 2 min</span></div>
+      </article>
+    </div>
+  </div>
+
+  <!-- MORNING BRIEF -->
+  <div class="kicker"><svg class="ico"><use href="#i-list"/></svg><span class="tag">快扫</span><span class="zh">30 秒过完其余热点</span></div>
+  <div class="rows">
+    <div class="row"><span class="idx">06</span><span class="t">Midjourney 收购社交占星应用 Co-Star，同步自建独立图像生成 App</span><span class="m">Bloomberg · 并购</span></div>
+    <div class="row"><span class="idx">07</span><span class="t">Alphabet 上市 22 年首现季度负自由现金流：全年 capex 上调至 2050 亿美元</span><span class="m">Ars Technica · 资本</span></div>
+    <div class="row"><span class="idx">08</span><span class="t">Futurism 调查：AI 公司正试图隐藏惊人规模的表外债务</span><span class="m">Futurism · 资本</span></div>
+    <div class="row"><span class="idx">09</span><span class="t">近 200 家硅谷公司联名上书：勿封锁中国开源权重 AI</span><span class="m">Politico · 政策</span></div>
+    <div class="row"><span class="idx">10</span><span class="t">The Stack v3 发布：114TB / 2.24 亿仓库，史上最大开源代码数据集</span><span class="m">HuggingFace · 数据</span></div>
+  </div>
+
+  <!-- FOCUS -->
+  <div class="kicker"><svg class="ico"><use href="#i-target"/></svg><span class="tag">焦点</span><span class="zh">企业级 AI × AI Coding</span><a class="jump">进入板块 →</a></div>
+  <div class="focus-grid">
+    <div class="focus">
+      <span class="cat">企业级 AI · HR EXECUTIVE</span>
+      <h3>AWS 加入 OpenAI、Anthropic 战局：向企业派驻工程师，抢占 AI「实现层」市场</h3>
+      <p class="body">三大玩家同时发现：卖 API 不够，得把工程师派进客户办公室。「最后一公里实施」正成为新的高毛利战场。</p>
+      <div class="take"><div><span class="lb">哨兵判断</span>模型厂商向下做实施 = 与 SI/咨询抢生意。差异化只剩行业 know-how 与多云中立性两张牌。</div></div>
+      <div class="focus-rows rows">
+        <div class="row"><span class="idx">·</span><span class="t">KPMG 与 OpenAI 结盟押注「无头软件」：未来的软件没有界面</span><span class="m">Fortune</span></div>
+        <div class="row"><span class="idx">·</span><span class="t">监管落地：豆包、千问、元宝集中下线拟人化智能体</span><span class="m">i黑马</span></div>
+        <div class="row"><span class="idx">·</span><span class="t">Google ATLAS：AI 触达 88% 美国岗位，仅 21% 深度集成</span><span class="m">Google</span></div>
+      </div>
+    </div>
+
+    <div class="focus">
+      <span class="cat">AI CODING · KILO.AI</span>
+      <h3>Cognition 整合 Windsurf + Devin 成同厂双引擎：IDE 与云端 Agent 一体化</h3>
+      <p class="body">「人主导的 IDE」与「Agent 主导的云端交付」在同一厂商内打通——AI Coding 工具形态收敛的重要信号。</p>
+      <div class="take"><div><span class="lb">哨兵判断</span>双引擎模式将成标配：开发者在「自己写」和「委托写」间自由切换，工具选型看谁先把两端体验做顺。</div></div>
+      <div class="focus-rows rows">
+        <div class="row"><span class="idx">·</span><span class="t">阿里 Qoder 霸榜 IDC 中国 AI 编程市场：内部 10 万人日用</span><span class="m">腾讯新闻</span></div>
+        <div class="row"><span class="idx">·</span><span class="t">GitHub Copilot 度量 API 升级：企业全景追踪采用深度</span><span class="m">GitHub</span></div>
+        <div class="row"><span class="idx">·</span><span class="t">Black Forest Labs 发布 FLUX 3：统一多模态前沿模型</span><span class="m">Decrypt</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILDER RADAR -->
+  <div class="kicker"><svg class="ico"><use href="#i-radar"/></svg><span class="tag">Builder 雷达</span><span class="zh">一线信号 · 与上文不重复的高增量内容</span><a class="jump">全部信号 →</a></div>
+  <div class="radar">
+    <div class="rc">
+      <div class="kind"><span class="k"><svg class="ico ico-s"><use href="#i-x"/></svg>SIGNAL</span><span class="dur">1K+ ENG</span></div>
+      <h4>OpenAI 押注桌面 Agent + 语音：对标 Jarvis / Samantha / TARS</h4>
+      <p>Codex/ChatGPT 负责人 Thibault 整周为桌面端语音+任务能力造势——目标是让你离开键盘把最重要的工作干完。</p>
+      <div class="who">@thsottiaux · OPENAI CODEX LEAD</div>
+    </div>
+    <div class="rc">
+      <div class="kind"><span class="k"><svg class="ico ico-s"><use href="#i-mic"/></svg>PODCAST</span><span class="dur">52 MIN</span></div>
+      <h4>Cerebras Feldman：速度是 AI 主战场，CUDA 已不是护城河</h4>
+      <p>用一整片晶圆（比 GPU 大 58 倍）押注「大芯片做推理」——与今天 AMD Helios、Opus 5 效率叙事三线共振。</p>
+      <div class="who">THE MAD PODCAST · MATT TURCK</div>
+    </div>
+    <div class="rc">
+      <div class="kind"><span class="k"><svg class="ico ico-s"><use href="#i-pen"/></svg>BLOG</span><span class="dur">6 MIN</span></div>
+      <h4>Claude Code 新增 Artifacts：session 进度实时沉淀为可分享网页</h4>
+      <p>PR 讲解、调试记录、架构决策——coding session 的隐性知识第一次有了默认的可视化出口。</p>
+      <div class="who">ANTHROPIC · CLAUDE BLOG</div>
+    </div>
+  </div>
+
+  <!-- DEEP READS -->
+  <div class="kicker"><svg class="ico"><use href="#i-book"/></svg><span class="tag">本周精读</span><span class="zh">中英对照全文 + 哨兵拆解</span><a class="jump">进入精读库 →</a></div>
+  <div class="reads">
+    <a class="read-hero">
+      <svg class="rh-ico" viewBox="0 0 20 20"><use href="#i-book"/></svg>
+      <span class="cat">FEATURED · 与今日头条同频</span>
+      <h4>让 Fable 比 Opus 更便宜：委派的经济学</h4>
+      <p>Cognition 工程师拆解多模型委派策略如何把旗舰模型的单位任务成本压到最低——今天 Opus 5 的定价策略正是对这个趋势的回应。</p>
+      <span class="who">JOON LEE · COGNITION · 07.15</span>
+    </a>
+    <a class="read">
+      <span class="cat">精读 · 12 MIN</span>
+      <h4>还剩下什么留给我们做？——AI 时代人类角色的迁移</h4>
+      <p>普林斯顿 Narayanan 教授论证：自动化的真正瓶颈不在模型能力，而在人类对「把关」的需求。</p>
+      <span class="who">ARVIND NARAYANAN · 07.19</span>
+    </a>
+    <a class="read">
+      <span class="cat">精读 · 8 MIN</span>
+      <h4>AI 自动化编码，把开发者整体上移到「资深级」工作</h4>
+      <p>Andrew Ng：初级编码被接管后，工程师价值重心转向架构判断与需求翻译——与今日 Coding 板块互证。</p>
+      <span class="who">ANDREW NG · THE BATCH #362 · 07.19</span>
+    </a>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="kicker"><svg class="ico"><use href="#i-flag"/></svg><span class="tag">收盘判断</span><span class="zh">今日三条主线</span></div>
+  <div class="closing">
+    <p><span class="num">01</span><b>「省钱」压过「更强」</b>——Opus 5 定价不涨反引入努力度开关，Ars Technica 直言核心是 token 效率。旗舰竞争正式从基准分军备赛转向单位业务结果的成本经济性。</p>
+    <p><span class="num">02</span><b>资本面警报拉响</b>——Alphabet 首现负自由现金流 + Futurism 曝表外债务，AI capex 的可持续性开始被资本市场重新定价。</p>
+    <p><span class="num">03</span><b>实现层争夺战开打</b>——AWS/OpenAI/Anthropic 派驻工程师进企业，模型厂商向下吃实施蛋糕，SI 与咨询的护城河被直接冲击。</p>
+  </div>
+
+  <footer>
+    <span>AI DIGEST · 每日 AI 情报 · EST. 2026</span>
+    <span>GENERATED 08:18 · SYNCED 08:30 CST</span>
+  </footer>
+
+</div>
+</body>
+</html>

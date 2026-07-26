@@ -10,7 +10,7 @@ slug: "cognition-making-fable-cheaper-than-opus"
 source: "Cognition / X Article"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/cognition-making-fable-cheaper-than-opus.m4a"
 fetch_status: "error"
-fetched_at: "2026-07-26T18:07:12.400Z"
+fetched_at: "2026-07-26T18:11:36.377Z"
 fetch_type: "placeholder"
 tags:
   - "Agent-经济学"

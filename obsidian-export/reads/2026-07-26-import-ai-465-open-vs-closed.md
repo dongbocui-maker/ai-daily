@@ -8,8 +8,9 @@ saved_date: 2026-07-26
 original_url: "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps"
 slug: "import-ai-465-open-vs-closed"
 source: "manual"
+audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/import-ai-465-open-vs-closed.m4a"
 fetch_status: "error"
-fetched_at: "2026-07-26T18:07:13.958Z"
+fetched_at: "2026-07-26T18:11:37.950Z"
 fetch_type: "placeholder"
 tags:
   - "Kimi-K3"

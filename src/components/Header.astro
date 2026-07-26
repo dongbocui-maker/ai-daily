@@ -94,3 +94,24 @@ const base = import.meta.env.BASE_URL;
     </div>
   </div>
 </header>
+
+<script>
+  // 点击菜单区域以外的任意位置 / 按 Esc，自动关闭 header 内所有打开的下拉（汉堡菜单 + 日期选择）
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('header details[open]').forEach((d) => {
+      if (!d.contains(e.target as Node)) d.removeAttribute('open');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('header details[open]').forEach((d) => d.removeAttribute('open'));
+    }
+  });
+  // 点击菜单里的链接后也收起（同页锚点跳转时菜单不会自动关）
+  document.querySelectorAll('header details a').forEach((a) => {
+    a.addEventListener('click', () => {
+      const d = a.closest('details');
+      if (d) d.removeAttribute('open');
+    });
+  });
+</script>

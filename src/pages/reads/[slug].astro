@@ -118,7 +118,7 @@ function formatInline(s: string): string {
 
     {/* 内容主体 */}
     <section class="py-12 lg:py-16">
-      <div class="container-x max-w-3xl">
+      <div class="container-x max-w-3xl reads-content">
         {/* 1. 一句话核心观点 */}
         <div class="mb-10 p-6 bg-accent-purple/5 border-l-4 border-accent-purple">
           <h2 class="text-sm font-bold uppercase tracking-wider text-accent-purple mb-2">📌 一句话核心</h2>
@@ -248,3 +248,10 @@ function formatInline(s: string): string {
   </main>
   <Footer />
 </Base>
+
+<style is:global>
+  /* 同步全站卡片字号加大：正文 16→17.5px，小字 14→15px（set:html 内容需 global） */
+  .reads-content { font-size: 17.5px; }
+  .reads-content .text-sm { font-size: 15px; }
+  .reads-content .text-xs { font-size: 13px; }
+</style>

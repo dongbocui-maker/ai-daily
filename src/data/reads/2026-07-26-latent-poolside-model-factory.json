@@ -1,0 +1,129 @@
+{
+  "slug": "latent-poolside-model-factory",
+  "savedDate": "2026-07-26",
+  "publishDate": "2026-07-23",
+  "titleZh": "走进「模型工厂」——Poolside 如何用 70 人、8 周造出一个模型",
+  "titleEn": "Inside the Model Factory — Eiso Kant, Poolside AI",
+  "author": "Eiso Kant",
+  "authorTitle": "Poolside AI 联合创始人兼 co-CEO；2015 年受 Karpathy「RNN 的不合理有效性」启发起步，十余年押注「代码是通往 AGI 的路径」",
+  "originalUrl": "https://www.latent.space/p/poolside",
+  "source": "manual",
+  "tags": [
+    "Poolside",
+    "Model Factory",
+    "开源模型",
+    "AGI 路径",
+    "RSI 递归自我改进",
+    "MCP 与 tool call",
+    "小模型",
+    "AI 工程生产力"
+  ],
+  "summary": "Poolside 联合创始人 Eiso Kant 做客 Latent Space，围绕刚开源的 Laguna S 2.1（118B 总参、8B 激活的 MoE，8 周从开训到发布，性能对标近 10 倍参数量的模型）系统讲述他的核心方法论：模型不是终点，而是「模型工厂」流水线的一个副产品。这套三年打磨的端到端系统让不到 70 名研究员 + 35 名工程师每月跑 1-2 万次实验，靠「数据直接流式喂入训练、不可变数据层、代码全版本化、完美可复现」把「一个想法从研究员到可信实验结果再进入下一次训练」的周期压到极致——过去半年一次模型迭代，如今按周计。他抛出一连串反共识判断：模型构建 90% 是工程而非火箭科学；agent 已开始在工厂里自主写代码、起任务、评估结果、改流水线，是 RSI 的雏形；Laguna S 的提升主要来自「行为」（持久、验证、回溯、不轻易宣布成功）而非原始智能，意味着小模型能榨出的价值远超预期、是模型商品化与开源取胜的证据；MCP 和传统 tool call「很蠢」，未来 12 个月系统提示里塞 20-40 个工具的做法会消失，取而代之是给模型一个最小 harness + 容器让它自己写脚本；下一代增益来自「把 web 变成不只是 next-token 预测的教学材料」、RL 前移进 pre-training、低精度训练。他还谈 $5 亿融资的真实经济学、宁要 100 家基础模型公司也不要寡头、鼓励研究员离职来当他的竞争对手，以及 agent 时代「能动性 agency」成为最重要的用人标准。",
+  "keyPoints": [
+    "**模型是流水线的副产品，「模型工厂」才是真正的护城河**：Kant 反复强调「model building is 90% engineering」——研究员的时间几乎都花在看数据、写代码上。三年前行业还是 bash 脚本 + Slurm + 拼凑的意大利面式代码库，Poolside 从第零天就把顶尖分布式系统工程师纳入研究流程，把「原始数据→清洗转换→分布式训练→post-training→RL」当成一条工业化流水线来建。核心优化指标是「一个想法从研究员到可信实验结果、再进入下一次模型训练的速度」。类比 SpaceX：第一枚火箭很难，但真正难的是建工厂；工厂建成后每次发射只是又一次发射。",
+    "**8 周造一个模型、每月 1-2 万次实验的工程底座**：Laguna XS 用 5 周、Laguna S 用 8 周从开训到发布；发布当天就已启动下一个（更大的 Medium，39 天训练）。关键工程决策——数据「just-in-time」流式喂入训练（不再打包、tokenize、分发到集群再开训，Blender 服务用 config 现场配比数据源，训练可在数据尚未完全物化时就开始）；数据层设为不可变、代码永远版本化，换来完美可复现（两年前的 run 现在还能精确重放到单个 token）。这把「YOLO 跑实验」升级成「每个实验都是真正的 ablation」的科学严谨性——他坦承这一层花了约一年半才想明白。",
+    "**agent 正在自己造工厂——RSI 的雏形已现**：Kant 走过研究员工位，屏幕上默认全是各种 agent 在写代码、起训练任务、评估模型 run 返回的结果、改流水线。这在 pre/post-training 的数据管线和合成数据管线上已非常显著，正开始蔓延到架构层。「你开始看到 RSI 会长什么样的微光。」配套的是极致可靠性——Laguna S 训练全程零 on-call 事故（唯一例外是新 run 头 6 小时可能因配错 config 需小干预，但都在 call 时段内）。造模型的工厂，正越来越多地由模型自己建。",
+    "**Laguna S 的启示：赢在「行为」而非「智能」——小模型价值被严重低估**：应用研究负责人 Peng Ming 的原话「Laguna S 的增益很多不是来自更多智能，而是来自不同的行为——更多验证、不想当然、不过早宣布胜利、更持久」被 Kant 视为全片题眼。一个 118B/8B 激活、能跑在 DGX Spark 上（30-40 tokens/s）的模型能独立解 Erdős 397、在断网条件下靠死磕搞懂 macOS WLAN API 写 WiFi 扫描器。推论：对占全球经济 25%（约 25 万亿美元）的知识工作而言，人擅长的是持久、回溯、查文档、试五种方法——而非把三个跨领域想法拼在一起（那是 Einstein 式、需要更大模型的能力）。因此存在一条「知识工作 vs 模型尺寸」的收益曲线，峰值可能在 1-5 万亿参数就到，之后更大模型 ROI 不划算——这是模型商品化、开源能赢的理论依据（但他强调这不等于反对 scaling，king of small open models 是自欺）。",
+    "**MCP 和 tool call「很蠢」，未来是模型自己写脚本**：Kant 已经讲了两年这个强观点。做越来越长、越来越复杂的任务时，我们却在模型和系统之间塞了一层 MCP / tool call。正确做法是让模型直接写代码与系统交互——不是链式调 2-3 个工具，而是用 if 语句、for 循环、条件分支。趋势正从「系统提示里塞 50 个工具」转向「给一个装了 binary、有代码库可操作、有内存文件夹的虚拟机，让模型自由发挥」。他断言：12 个月内不会再看到系统提示里塞 20-40 个工具的做法。Poolside 自己的 harness 只有 6 个工具（shell、shell kill、shell wait、write、fetch web、bash）——RL 训出来的模型「想要自由」，会用最高效的方式做事，而不是从 50 个工具里挑一个。",
+    "**下一波增益：从 web 榨更多、RL 前移、低精度训练**：Kant 认为 next-token prediction 至今仍从 web 里榨得太少——web 大概编码了人类知识的总和（质量方差极大），Poolside 花了数年研究「如何把 web 变成不只是预测下一个 token、而是在训练早期就教模型思考」的材料，认为「这里有大量金矿」。他有个非共识观点：RL 会越来越早地前移进 pre-training（DeepSeek Zero 论文是公开的早期信号）。他警告行业沉迷于两种「毒品」——蒸馏（distillation）和堆环境（environments），二者好用但通往 AGI 未必是「更多环境」。工程上他最兴奋的是极低精度训练（三元/ternary、NVFP4）——「更大模型+更低精度 ≈ 更小模型+更高精度」，瓶颈本质是 MatMul 和网络，谁做对了能改变整个行业。",
+    "**$5 亿融资的真实经济学：训练 run 本身很「反高潮」**：Kant 拆穿「DeepSeek 500 万美元训出来」的误读——训练 run 不是贵的部分，它极其反高潮（昨天一条 Slack 消息「新模型开训，评估链接在此」就完事了）。贵的是之前所有的 R&D、基础设施、数据。融资逻辑随世界剧变：一年半前募 5 亿时，多数投资人对话还在解释「模型不是随机鹦鹉」；如今相信 AGI 为真的人数呈指数增长，问题变成「谁认为智能会是寡头垄断、谁认为寡头能被打破」——这是当下最分裂投资人的分水岭。Kant 押注：智能会成为世界最被需求也最商品化的资源，「只有两三个玩家」是极短视的看法。",
+    "**寡头化风险、开源边界与 agent 时代的用人观**：Kant 最激烈的政策观点——在 2026 年、基于当前模型能力，就用监管把「只有两三家公司能造基础模型」定死，「读起来像最反乌托邦小说的第 14 章」；他类比禁烟草广告反而巩固了烟草寡头。他不反对未来在真实误用风险出现时收紧开源（承认「开源永远、无条件」和「现在全部关闭」一样极端），但主张交给民主与政府、而非单个公司单边决策；单边安全在全球竞争中无效（你暂停别人不会暂停）。用人层面，他认为 AGI 时代「能动性 agency」是最重要的品质（agency 一定是被行使出来的，可从过往经历观察）；对齐高能动性的人靠「共同目标 + 清晰边界（这些是我们不做的：不做多模态、专注 RL）」，因为「创新来自约束」——Poolside 正是用相对少的算力和钱，被逼着在其他维度做得更好。"
+  ],
+  "insight": "对做企业级 AI 与咨询落地的人，这场对谈最有价值的不是 Poolside 的具体配方，而是三个可迁移的判断框架。第一，「模型工厂才是护城河，模型只是副产品」——这与最近一系列前沿声音（Narayanan「evals 是新 IP」、DeepMind「验证瓶颈」）指向同一条主线：当模型能力被商品化，真正稀缺的不是造出一个 artifact 的能力，而是那套能让「想法→可信结果→进入生产」高速循环、且可复现可追溯的工程系统。对企业而言，这意味着 AI 竞争力的重心正从「选/调哪个模型」上移到「你有没有一条能快速、可复现地把 AI 能力变成业务价值的流水线」——不可变数据层、全链路版本化、每个改动都是真 ablation 这些看似朴素的工程纪律，恰恰是别人抄不走的东西。第二，「赢在行为而非智能」+「小模型被严重低估」，对成本敏感的企业部署是直接的操作指引：大量知识工作（代码、法务、会计的日常）需要的是持久、验证、回溯、会查文档，而不是跨领域天才式的顿悟——这类任务用一个能跑在单卡甚至 DGX Spark 上的 118B/8B 模型可能就够，盲目上最大模型是 ROI 陷阱。选型该问的是「它在我的任务子集上是否持久、会不会过早宣布成功」，而非 benchmark 绝对分。第三，Kant 对 MCP/tool call 的「异端」预言值得所有正在铺 MCP 生态的团队认真对待：如果 12 个月内主流真的从「塞 40 个工具」转向「给容器让模型自己写脚本」，那么今天重投在预定义工具编排上的架构可能很快过时——更稳的下注是把能力沉淀在「模型能自由操作的环境（容器、代码库、API keys、文档）」而非「把每个动作固化成一个 tool」。需要保留的清醒是：Kant 的乐观是自利的（他不在前沿、开源与商品化对他有利），「小模型够用」「工厂比模型重要」也部分是弱势者叙事——企业该采纳的是他的工程纪律和成本判断，而非把「不必 scaling」当成拖延转型的借口；他自己也反复强调，最终只有把模型 scale 到和对手一样大才能赢。",
+  "bilingual": [
+    {
+      "en": "So I would say that our view from very early on in the company was that model building is ultimately 90% engineering. And I think we all know it in the industry because if you look at where's every researcher spending their time, they're spending their time writing code, right? Looking at data and writing code. ... And we said, \"Well, this looks like an industrialized process. This looks like an end process, that every single part of it has its machinery.\" ... And that became our model factory. ... the metric that we are optimizing for is the speed of an idea from a researcher to an experimental result that we can trust to then being part of the next model training.",
+      "zh": "我想说，公司从很早开始就有一个观点：构建模型归根到底 90% 是工程。业内其实都懂——你看每个研究员的时间花在哪？花在写代码、看数据和写代码上。……我们说：「这看起来就是一个工业化的流程，一个端到端的过程，每一个环节都有它自己的机器。」……这就成了我们的模型工厂。……我们优化的核心指标是：一个想法从研究员出发、到一个我们能信任的实验结果、再进入下一次模型训练的速度。"
+    },
+    {
+      "en": "So now what that means is ... Laguna XS 2 that we launched. It was five weeks from the beginning of training to launch. The model that we're gonna talk about today was eight weeks from start of training, to launch. We started the next model literally yesterday ... So the model should be an artifact of someone's process. It shouldn't be really a thing in itself. ... we treat this like the way you would look at like a SpaceX factory where, yes, the first rocket, really hard to build, but the much harder challenge was building the factory.",
+      "zh": "这意味着……我们发布的 Laguna XS 2，从开训到发布是 5 周。今天要聊的这个模型，从开训到发布是 8 周。下一个模型我们昨天刚开训……所以，模型应该是某个人流程的一个副产品，它本身不该是一个「东西」。……我们看待它的方式就像看 SpaceX 的工厂：是的，第一枚火箭非常难造，但真正难得多的挑战是把工厂建起来。"
+    },
+    {
+      "en": "early on ... people prepare their training data sets, they get packaged up, then they get copied over to a training cluster distributed across all of the nodes, and then training starts. And we looked at this like three years ago and we were like, that makes no sense. You lose so much time ... So why aren't we streaming data into training? ... once we made that shift into I can stream data into training, all of a sudden you realize a lot of things unlock. Because now you don't have to wait for the whole data set to materialize. You now all of a sudden when you're running data experiments about mixing data, it's a config.",
+      "zh": "早期……大家准备好训练数据集、打包、再拷贝到训练集群、分发到所有节点，然后才开训。我们三年前看到这个就想：这毫无道理。你浪费了太多时间……那我们为什么不把数据流式喂进训练呢？……一旦转向「我可以把数据流式喂进训练」，很多东西突然就解锁了。因为你不必等整个数据集物化完成。你在做数据配比实验时，它突然变成了一个配置项（config）。"
+    },
+    {
+      "en": "So for us, we treated the data layer underneath as like an immutable data layer, and that was really important. Like experiments as code, immutable data layer means that you can always go back and understand literally down to the single token at which cursor it went in on which version of the code. ... I can still reproduce runs from two years ago if I wanted to ... It enables the scientific progress ... And then once we ... treated data as immutable and code as always versioned ... every experiment is truly an ablation.",
+      "zh": "对我们来说，底层的数据层被当作一个不可变（immutable）数据层，这非常重要。「实验即代码」加「不可变数据层」意味着：你随时可以回溯，精确到单个 token 是在代码的哪个版本、哪个游标位置进入训练的。……如果我想，我现在还能复现两年前的 run……它使科学化的进步成为可能。……一旦我们把数据当作不可变、代码永远版本化……每个实验就都是一次真正的 ablation（消融实验）。"
+    },
+    {
+      "en": "when you build a really good end model factory with really good APIs and really good engineering systems, Well, what is it perfect for? It's perfect for agents. Because agents are now starting to take over more and more work in our model factory. ... The default is all of these different agents running on their screen that are writing the code. They're launching the jobs. They're evaluating the results ... And we're still in the driver's seat. ... You're starting to see these twinklings of what RSI is gonna look like.",
+      "zh": "当你建成一个非常好的端到端模型工厂、配上非常好的 API 和工程系统，它最适合什么？它最适合 agent。因为 agent 现在开始在我们的模型工厂里接管越来越多的工作。……（研究员屏幕上）默认全是各种 agent 在跑：它们写代码、起任务、评估返回的结果……而我们依然坐在驾驶座上。……你开始看到 RSI（递归自我改进）会长什么样的微光。"
+    },
+    {
+      "en": "I in turn ... sum down ... 95% of model building to just doing, you're just doing two things. You're improving data or you're improving compute efficiency. ... if you could train a large enough model ... and you had infinite compute, we probably ... you'd be at AGI probably already tomorrow. ... a lot of the work that all of us are doing on a day Is not sitting down trying to solve a math theorem. ... it's just really doing the basics right, writing good code, looking at data, improving it, running experiments, looking at plots.",
+      "zh": "我把……95% 的模型构建归结为其实只做两件事：你要么在改进数据，要么在改进算力效率。……如果你能训练一个足够大的模型……而且你有无限算力，那你大概……可能明天就到 AGI 了。……我们每天做的很多工作，并不是坐下来解一道数学定理。……而就是把基本功做对：写好代码、看数据、改进数据、跑实验、看图表。"
+    },
+    {
+      "en": "Peng Ming, one of our heads of applied research, said ... \"I have the feeling that a lot of the gains in Laguna S come not from more intelligence, but more from different behavior, more verification, less taking things for granted, not declaring victory early, and being way more persistent.\" And to be honest, those are more predictive than raw intelligence for success in human also to some degree. ... the Laguna S model ... it's just incredibly persistent.",
+      "zh": "我们的应用研究负责人之一 Peng Ming 说……「我感觉 Laguna S 的很多增益并非来自更多的智能，而更多来自不同的行为——更多验证、更少想当然、不过早宣布胜利、以及持久得多。」老实说，某种程度上，这些品质对人类的成功也比原始智能更有预测力。……Laguna S 这个模型……就是极其地持久。"
+    },
+    {
+      "en": "A hundred eighteen billion 8B active model, which is not that large. It fits on a DGX Spark and still runs at, thirty, forty tokens a second on a Spark, is able to solve Erdős 397 independently. ... I asked it this morning to make me a WiFi scanner without using any external libraries on my Mac, and it's, like, figuring out, like, the core WLAN API by really persistently trying to understand it without access to the internet. ... We are gonna be able to squeeze so much more out of smaller models than I think we had imagined in the industry.",
+      "zh": "一个 118B 总参、8B 激活的模型，其实并不大。它能装进一台 DGX Spark、在 Spark 上还能跑到每秒 30-40 tokens，却能独立解出 Erdős 397。……今天早上我让它在我的 Mac 上、不用任何外部库给我写一个 WiFi 扫描器，它就在断网的情况下，靠极其持久地反复尝试去搞懂核心的 WLAN API。……我们能从更小的模型里榨出的东西，将远超我认为业界原本想象的程度。"
+    },
+    {
+      "en": "So I know that at the very limit, I'm not gonna use the world's largest model one day, quadrillion parameter, whatever ... to do a basic coding task. ... So it means that there is an optimal. ... This model for me is the first sign that Maybe that peak is At a trillion, five trillion, ten trillion. Maybe we can just squeeze way more out of these models. ... if that holds true, It is an argument for the commoditization of models. It's an argument that open source can win. ... I do want to put a big asterisk. This does not mean I'm against scaling models.",
+      "zh": "所以我知道，在极限情况下，将来我不会用世界上最大的模型——万亿亿参数、随便多夸张——去做一个基础的编码任务。……这意味着存在一个最优点。……这个模型对我来说是第一个信号：也许那个峰值就在一万亿、五万亿、十万亿参数。也许我们能从这些模型里榨出多得多的东西。……如果这成立，它就是模型商品化的一个论据，是开源能赢的论据。……但我要打个大大的星号：这不代表我反对 scaling（扩大规模）。"
+    },
+    {
+      "en": "I think MCP and tools are stupid. ... If you are looking for complex tasks, increasingly longer horizon ... You are gonna be interacting with data sources ... And what we are doing is that we're putting a layer in between those things. We're putting like MCP in between, we're putting tool calls in between ... where the model can just write the code and interact with the system. ... when it uses code, it is not one or two tool calls ... It starts, using if statements and for loops and making things conditional.",
+      "zh": "我认为 MCP 和工具（tools）很蠢。……当你要做复杂的、越来越长周期的任务时……你会去和数据源交互……而我们现在的做法是在这些东西之间塞了一层：塞进 MCP、塞进 tool call……而其实模型完全可以直接写代码去和系统交互。……当它用代码时，就不是一两个 tool call 或几个链在一起的调用了——它会开始用 if 语句、for 循环、把事情条件化。"
+    },
+    {
+      "en": "I think we will, in 12 months, not see a single system prompt that is stuffed with 20 or 30 or 40 tools anymore. ... I'm a very big fan of Give the model a minimal harness, as minimal as possible, give it a container in which it has its own code base ... that has access to the API keys and data sources and little libraries and documentation that it needs, and just let it run free at the task. ... when you start training them in RL, the models wanna be free.",
+      "zh": "我认为，12 个月内我们不会再看到任何一个系统提示里塞着 20、30 或 40 个工具了。……我非常推崇：给模型一个最小的 harness（越简越好），给它一个容器，里面有它自己的代码库……有它需要的 API keys、数据源、小型库和文档，然后就让它对着任务自由发挥。……当你开始用 RL 训练它们时，模型是想要自由的。"
+    },
+    {
+      "en": "I think just next token prediction during training is not enough. ... we've been spending a couple of years really doing research on how can we turn the web into not just next token prediction, but into a way to teach the model to think earlier in its training. and I think there's a huge amount of gold to be found there. ... we've got some drugs in the industry. One of the drugs is distillation. Another drug is, more environments. ... we're all addicted to them ... but ultimately, I think we are still barely squeezing out of the web what we should be getting out of the web.",
+      "zh": "我认为，训练期间仅靠 next-token 预测是不够的。……我们花了好几年真正在研究：怎么把 web 变成不只是预测下一个 token，而是变成一种在训练早期就教会模型思考的方式。我认为那里有大量金矿可挖。……行业里有几种「毒品」：一种是蒸馏（distillation），另一种是堆更多环境（environments）。……我们都对它们上瘾……但归根到底，我认为我们至今仍只是勉强从 web 里榨出了本该榨出的一小部分。"
+    },
+    {
+      "en": "The DeepSeek moment, right, was a moment when people realized that you can train incredibly capable models for not a lot of money on the training run. But I think that's the falsehood, right? Like the training run is not the expensive part. The training run is a very anticlimactic event ... we just had a Slack message come up yesterday saying, \"The new model is training and here are the links, so you can follow along the evals,\" and like that's it. all the work that goes into that moment ... it's all the preparation, it's all the going to the gym, and then the game is just a game.",
+      "zh": "所谓「DeepSeek 时刻」，是人们意识到你可以在一次训练 run 上花不多的钱就训出极其强大的模型。但我认为这是个误解——训练 run 并不是贵的部分。训练 run 是一个非常反高潮的事件……我们昨天就收到一条 Slack 消息：「新模型正在训练，这里是链接，你们可以跟着看评估。」就这样。所有汇聚到那一刻的工作……都是准备，都是去健身房，而比赛本身只是比赛。"
+    },
+    {
+      "en": "you are deciding right now in 2026, based on the current capabilities of models, that this is something that only two or three companies can build, and that to me reads like chapter 14 of the most dystopian fi novel that I could read ... I think that's a future where intelligence is a commodity. Everyone can access it. It becomes cheaper and cheaper ... it's not one where, a single company puts their thumb on their scale of both what it outputs, to or turns it on or off.",
+      "zh": "你现在、在 2026 年、基于模型当前的能力，就决定「这是只有两三家公司能造的东西」——这在我读来，就像我能读到的最反乌托邦小说的第 14 章。……我想要的是一个智能作为商品的未来：所有人都能获取它，它变得越来越便宜……而不是那种由单个公司把大拇指压在秤上、决定它输出什么、把它开还是关的未来。"
+    },
+    {
+      "en": "I think the common answer to this is agency. ... in the age of AI getting more capable, agency becomes probably one of the most important qualities for anyone. and I think agency is something you can look for in, what people have done in the past because agency is something that if you have it, you are demonstrating it ... The whole definition of it is that it's exercised. ... innovation comes from constraints. ... a common goal and a common set of boundaries.",
+      "zh": "我觉得对这个问题常见的答案是「能动性（agency）」。……在 AI 越来越强的时代，能动性大概是任何人最重要的品质之一。而能动性是你可以从一个人过去做过的事里去寻找的——因为如果你有能动性，你一定在展现它……它的整个定义就是「被行使出来」。……创新来自约束。……（对齐高能动性的人靠的是）一个共同的目标，加上一套共同的边界。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "The model should be an artifact of someone's process. It shouldn't really be a thing in itself.",
+      "zh": "模型应该是某个人流程的一个副产品，它本身不该是一个「东西」。"
+    },
+    {
+      "en": "A lot of the gains in Laguna S come not from more intelligence, but more from different behavior — more verification, less taking things for granted, not declaring victory early, and being way more persistent.",
+      "zh": "Laguna S 的很多增益并非来自更多的智能，而更多来自不同的行为——更多验证、更少想当然、不过早宣布胜利、以及持久得多。"
+    },
+    {
+      "en": "I think MCP and tools are stupid. ... I want the models to have as many degrees of freedom and just, be free and do capable things.",
+      "zh": "我认为 MCP 和工具很蠢。……我希望模型拥有尽可能多的自由度，就是自由地去做有能力的事。"
+    },
+    {
+      "en": "I rather live in a world that has 100 foundation model companies than a world that has five, even if I was one of the five.",
+      "zh": "我宁愿活在一个有 100 家基础模型公司的世界，也不要一个只有 5 家的世界——即便我就是那 5 家之一。"
+    },
+    {
+      "en": "The training run is a very anticlimactic event. ... it's all the preparation, it's all the going to the gym, and then the game is just a game.",
+      "zh": "训练 run 是一个非常反高潮的事件。……都是准备、都是去健身房，而比赛本身只是比赛。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "BigGo Finance — \"Eiso Kant: The Model Factory Is AI's Real Moat, Not the Model\"",
+      "url": "https://finance.biggo.com/news/c6edff8e6e319751",
+      "pov": "抓住全片最锋利的一句——模型只是「某个人流程的副产品」，把叙事从「参数量/榜单竞赛」翻转为「工厂即护城河」，并强调「造模型的工厂正越来越多地由模型自己建」（agent 自主写代码、起训练任务、评估结果，是 RSI 早期形态）。还把 Kant 对 MCP 的异端预言落到实处：给模型一个装了 binary、代码库、API keys、文档的最小容器让它自己写脚本，Poolside 的 harness 只有 6 个工具，并直引「12 个月内不会再有塞 20-40 个工具的系统提示」。适合作为「护城河视角」的浓缩入口。"
+    },
+    {
+      "source": "StartupHub.ai — \"Poolside's Eiso Kant on building AI models in 8 weeks\"",
+      "url": "https://www.startuphub.ai/ai-news/ai-research/2026/poolside-s-eiso-kant-on-building-ai-models-in-8-weeks",
+      "pov": "以「8 周迭代」为主线做要点式速览，提炼模型工厂五大特征——流式喂数据、可复现实验、低精度算力、自主 agent（能写代码/起任务/评估/改流水线）、开放研究，并强调 Poolside「代码是 AGI 关键」的信念与每月上万次实验的规模。信息密度偏低、更像结构化摘要，适合快速把握「工厂做了哪些工程决策」这一层，但不涉及 MCP 批判、小模型经济学等深层论证。"
+    }
+  ]
+}

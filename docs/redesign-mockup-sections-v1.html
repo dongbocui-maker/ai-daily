@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aidigest.club · 栏目页统一风格 v1</title>
+<style>
+:root{
+  --purple:#A100FF;
+  --purple-deep:#7500C0;
+  --purple-ghost:#F7EDFF;
+  --ink:#000000;
+  --gray-7:#3b3b42;
+  --gray-5:#696973;
+  --gray-4:#9d9daa;
+  --gray-2:#e8e8ee;
+  --gray-1:#f4f4f7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC",sans-serif;background:#fff;color:#17171c;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{text-decoration:none;color:inherit}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em}
+
+/* ============ 顶栏（与首页一致） ============ */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-2)}
+.site-in{display:flex;align-items:center;height:56px;gap:20px}
+.logo img{height:30px;width:auto;display:block}
+.nav{display:flex;gap:2px;margin-left:auto;font-size:13.5px;font-weight:600;color:var(--gray-5)}
+.nav a{padding:7px 11px;border-radius:4px}
+.nav a:hover{background:var(--gray-1);color:var(--ink)}
+.nav a.on{color:var(--purple-deep);background:var(--purple-ghost)}
+
+/* ============ 栏目页 Hero 模板 ============ */
+/* 结构与首页 hero 同源：胶囊徽章 + 大标题（重音词栏目色）+ 副标题 + stat 条
+   每栏目一个 accent：通过 .sec-page 上的 CSS 变量切换 */
+.sec-page{--acc:#A100FF;--acc-deep:#7500C0;--acc-ghost:#F7EDFF;--acc-band:#FBF8FF}
+.hero{padding:44px 0 34px;background:linear-gradient(180deg,var(--acc-band),#fff 85%)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--acc-deep);background:var(--acc-ghost);border-radius:3px;padding:6px 12px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,6vw,46px);font-weight:850;letter-spacing:-.04em;line-height:1.1;color:var(--ink)}
+.hero h1 .pu{color:var(--acc)}
+.hero-sub{color:var(--gray-5);font-size:14.5px;margin-top:13px;max-width:620px}
+.stats{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
+.stat b{display:block;font-size:24px;font-weight:850;letter-spacing:-.02em;color:var(--ink)}
+.stat span{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-4)}
+.stat b i{font-style:normal;color:var(--acc)}
+
+/* 双层板块头（与首页同款，眉题用栏目色） */
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin:40px 0 18px}
+.sec-head .sq{width:40px;height:40px;border-radius:4px;display:flex;align-items:center;justify-content:center;background:var(--acc-ghost);color:var(--acc-deep);font-size:19px;flex:none;margin-bottom:2px}
+.sec-head .tt{display:flex;flex-direction:column;gap:2px}
+.sec-head .eyebrow{font-size:10.5px;font-weight:850;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+.sec-head h2{font-size:clamp(20px,4vw,25px);font-weight:850;letter-spacing:-.03em;line-height:1.1;color:var(--ink)}
+.sec-head .rule{flex:1;height:1px;background:linear-gradient(to right,var(--gray-2),transparent);margin-bottom:9px}
+.sec-head .cnt{font-size:11.5px;color:var(--gray-4);font-weight:700;letter-spacing:.06em;margin-bottom:8px;flex:none}
+
+/* 内容卡（与首页新闻卡同款，hover 边条用栏目色） */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{position:relative;background:#fff;border:1px solid var(--gray-2);border-radius:6px;padding:16px 18px;transition:.18s;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acc);opacity:0;transition:.18s}
+.card:hover{border-color:#d8d8e2;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.card:hover::before{opacity:1}
+.meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.pill{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--acc-ghost);color:var(--acc-deep)}
+.src{font-size:11.5px;color:var(--gray-4);font-weight:600}
+.card h3{font-size:15.5px;font-weight:750;letter-spacing:-.01em;line-height:1.45;margin-bottom:6px}
+.card p{font-size:13px;color:var(--gray-5);line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.acts{display:flex;gap:16px;margin-top:12px;font-size:12.5px;font-weight:700}
+.acts a{color:var(--acc-deep)}
+.acts a.dim{color:var(--gray-4)}
+
+/* 排行条（LMArena / GitHub 用） */
+.rank-row{display:flex;align-items:center;gap:14px;padding:13px 16px;background:#fff;border:1px solid var(--gray-2);border-radius:6px;transition:.18s}
+.rank-row:hover{border-color:#d8d8e2;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.rank-num{width:30px;font-size:17px;font-weight:850;color:var(--gray-4);text-align:center;flex:none}
+.rank-row.top .rank-num{color:var(--acc)}
+.rank-name{font-size:14.5px;font-weight:750}
+.rank-sub{font-size:11.5px;color:var(--gray-4);margin-top:1px}
+.rank-val{margin-left:auto;font-size:14px;font-weight:800;color:var(--acc-deep);flex:none}
+.rank-bar{height:4px;border-radius:2px;background:var(--gray-1);margin-top:6px;overflow:hidden}
+.rank-bar i{display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,var(--acc),var(--acc-deep))}
+.rlist{display:flex;flex-direction:column;gap:10px}
+
+/* 归档月份网格 */
+.arch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.arch-card{background:#fff;border:1px solid var(--gray-2);border-radius:6px;padding:14px 16px;transition:.18s}
+.arch-card:hover{border-color:var(--acc);box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.arch-date{display:flex;align-items:baseline;gap:9px}
+.arch-date b{font-size:21px;font-weight:850;letter-spacing:-.02em}
+.arch-date span{font-size:11px;color:var(--gray-4)}
+.arch-date .n{margin-left:auto;font-size:11px;color:var(--gray-4);font-weight:700}
+.arch-card p{font-size:12px;color:var(--gray-5);line-height:1.65;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 分隔区（演示页专用） */
+.divider{background:#101014;color:#fff;padding:14px 0;margin:56px 0 0}
+.divider .wrap{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.divider .chip{font-size:10.5px;padding:3px 10px;border-radius:3px;font-weight:800}
+footer.site{border-top:1px solid var(--gray-2);margin-top:60px;padding:26px 0;text-align:center;font-size:12px;color:var(--gray-4)}
+@media(max-width:767px){.nav{display:none}.stats{gap:18px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 0 12 0V3H6z"/><path d="M6 5H3v2a4 4 0 0 0 4 4"/><path d="M18 5h3v2a4 4 0 0 1-4 4"/><line x1="12" y1="15" x2="12" y2="19"/><path d="M8 21h8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+</svg>
+
+<!-- ══════════════════ ① 精读 /reads/ —— 靛蓝 ══════════════════ -->
+<div class="divider" style="margin-top:0"><div class="wrap">① 精读 /reads/<span class="chip" style="background:#4F46E5">靛蓝 #4F46E5</span></div></div>
+<div class="sec-page" style="--acc:#4F46E5;--acc-deep:#3730A3;--acc-ghost:#EEF0FE;--acc-band:#F7F8FF">
+<header class="site"><div class="wrap site-in">
+  <a class="logo" href="#"><img src="logo-compact.svg" alt="aidigest.club"></a>
+  <nav class="nav"><a href="#">最新</a><a href="#">归档</a><a href="#">GitHub 热门</a><a href="#">LMArena</a><a class="on" href="#">精读</a><a href="#">学习</a><a href="#">关于</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="badge"><svg class="ic"><use href="#i-book"/></svg>Deep Reads</span>
+  <h1>精读<span class="pu">书房</span></h1>
+  <p class="hero-sub">每周精选一篇值得逐段咀嚼的长文，中英对照 + 观点提炼 + 二手解读，可选配播客。</p>
+  <div class="stats">
+    <div class="stat"><b>2<i>6</i></b><span>已收录</span></div>
+    <div class="stat"><b>周<i>更</i></b><span>更新节奏</span></div>
+    <div class="stat"><b>1<i>2</i></b><span>配播客</span></div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="sec-head">
+    <span class="sq"><svg class="ic"><use href="#i-book"/></svg></span>
+    <div class="tt"><span class="eyebrow">Latest</span><h2>最新精读</h2></div>
+    <span class="rule"></span><span class="cnt">26 篇</span>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="meta"><span class="pill">Essay</span><span class="src">Stratechery</span></div>
+      <h3>AI 的实现层之争：模型厂商为何下场做交付</h3>
+      <p>本文提出企业 AI 的价值正在从模型层向实现层迁移，Anthropic 收购 Fractional 是标志性事件，交付能力成为新的护城河……</p>
+      <div class="acts"><a href="#">进入精读</a><a class="dim" href="#">原文 ↗</a></div></div>
+    <div class="card"><div class="meta"><span class="pill">Paper</span><span class="src">arXiv</span></div>
+      <h3>Agentic AI 七大支柱：从工具调用到自主规划</h3>
+      <p>系统梳理 agent 架构的七个核心能力层：感知、规划、记忆、工具、协作、自省与安全，并给出企业落地成熟度模型……</p>
+      <div class="acts"><a href="#">进入精读</a><a class="dim" href="#">原文 ↗</a></div></div>
+    <div class="card"><div class="meta"><span class="pill">Blog</span><span class="src">Anthropic</span></div>
+      <h3>Claude Code 最佳实践：从个人提效到团队工程化</h3>
+      <p>Anthropic 官方总结的 Claude Code 团队级使用模式：CLAUDE.md 约定、TDD 循环、多 agent 分工与代码审查协作……</p>
+      <div class="acts"><a href="#">进入精读</a><a class="dim" href="#">原文 ↗</a></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════ ② GitHub 热门 —— 翠绿 ══════════════════ -->
+<div class="divider"><div class="wrap">② GitHub 热门 /github/<span class="chip" style="background:#059669">翠绿 #059669</span></div></div>
+<div class="sec-page" style="--acc:#10B981;--acc-deep:#047857;--acc-ghost:#E8FAF3;--acc-band:#F4FDF9">
+<header class="site"><div class="wrap site-in">
+  <a class="logo" href="#"><img src="logo-compact.svg" alt="aidigest.club"></a>
+  <nav class="nav"><a href="#">最新</a><a href="#">归档</a><a class="on" href="#">GitHub 热门</a><a href="#">LMArena</a><a href="#">精读</a><a href="#">学习</a><a href="#">关于</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="badge"><svg class="ic"><use href="#i-github"/></svg>GitHub Trending</span>
+  <h1>GitHub <span class="pu">热门项目</span></h1>
+  <p class="hero-sub">Trending + Search API 数据，本周 / 本月 / 年度 / 历史四档榜单，综合榜与 AI 专题双维度，描述中英对照。</p>
+  <div class="stats">
+    <div class="stat"><b>4</b><span>榜单档位</span></div>
+    <div class="stat"><b>8<i>0</i></b><span>本期项目</span></div>
+    <div class="stat"><b>月<i>更</i></b><span>更新节奏</span></div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="sec-head">
+    <span class="sq"><svg class="ic"><use href="#i-star"/></svg></span>
+    <div class="tt"><span class="eyebrow">This Month</span><h2>本月最热</h2></div>
+    <span class="rule"></span><span class="cnt">TOP 20</span>
+  </div>
+  <div class="rlist">
+    <div class="rank-row top"><span class="rank-num">1</span>
+      <div style="flex:1"><div class="rank-name">anthropics/claude-code</div><div class="rank-sub">Agentic coding in your terminal · TypeScript</div><div class="rank-bar"><i style="width:96%"></i></div></div>
+      <span class="rank-val">+18.2k ★</span></div>
+    <div class="rank-row top"><span class="rank-num">2</span>
+      <div style="flex:1"><div class="rank-name">openclaw/openclaw</div><div class="rank-sub">Personal AI agent runtime · TypeScript</div><div class="rank-bar"><i style="width:81%"></i></div></div>
+      <span class="rank-val">+15.4k ★</span></div>
+    <div class="rank-row"><span class="rank-num">3</span>
+      <div style="flex:1"><div class="rank-name">ggml-org/llama.cpp</div><div class="rank-sub">LLM inference in C/C++ · C++</div><div class="rank-bar"><i style="width:64%"></i></div></div>
+      <span class="rank-val">+12.1k ★</span></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════ ③ LMArena —— 琥珀金 ══════════════════ -->
+<div class="divider"><div class="wrap">③ LMArena /lmarena/<span class="chip" style="background:#D97706">琥珀 #D97706</span></div></div>
+<div class="sec-page" style="--acc:#F59E0B;--acc-deep:#B45309;--acc-ghost:#FDF3E3;--acc-band:#FFFBF2">
+<header class="site"><div class="wrap site-in">
+  <a class="logo" href="#"><img src="logo-compact.svg" alt="aidigest.club"></a>
+  <nav class="nav"><a href="#">最新</a><a href="#">归档</a><a href="#">GitHub 热门</a><a class="on" href="#">LMArena</a><a href="#">精读</a><a href="#">学习</a><a href="#">关于</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="badge"><svg class="ic"><use href="#i-trophy"/></svg>Leaderboard</span>
+  <h1>LMArena <span class="pu">全球 Top 50</span></h1>
+  <p class="hero-sub">基于 LMArena 人类盲测投票的大模型排行，含总榜与各单项分区，每月快照留档可回溯。</p>
+  <div class="stats">
+    <div class="stat"><b>5<i>0</i></b><span>上榜模型</span></div>
+    <div class="stat"><b>7</b><span>单项分区</span></div>
+    <div class="stat"><b>月<i>更</i></b><span>快照节奏</span></div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="sec-head">
+    <span class="sq"><svg class="ic"><use href="#i-trophy"/></svg></span>
+    <div class="tt"><span class="eyebrow">Overall</span><h2>总榜 Top 50</h2></div>
+    <span class="rule"></span><span class="cnt">2026-07 快照</span>
+  </div>
+  <div class="rlist">
+    <div class="rank-row top"><span class="rank-num">1</span>
+      <div style="flex:1"><div class="rank-name">Claude Fable 5</div><div class="rank-sub">Anthropic · 2026-06</div><div class="rank-bar"><i style="width:98%"></i></div></div>
+      <span class="rank-val">1478</span></div>
+    <div class="rank-row top"><span class="rank-num">2</span>
+      <div style="flex:1"><div class="rank-name">Gemini 3.5 Ultra</div><div class="rank-sub">Google DeepMind · 2026-05</div><div class="rank-bar"><i style="width:95%"></i></div></div>
+      <span class="rank-val">1461</span></div>
+    <div class="rank-row"><span class="rank-num">3</span>
+      <div style="flex:1"><div class="rank-name">GPT-5.6 sol</div><div class="rank-sub">OpenAI · 2026-07</div><div class="rank-bar"><i style="width:93%"></i></div></div>
+      <span class="rank-val">1452</span></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════ ④ 归档 /archive/ —— 石墨青 ══════════════════ -->
+<div class="divider"><div class="wrap">④ 历史归档 /archive/<span class="chip" style="background:#0891B2">青 #0891B2</span></div></div>
+<div class="sec-page" style="--acc:#06B6D4;--acc-deep:#0E7490;--acc-ghost:#E5F8FC;--acc-band:#F3FCFE">
+<header class="site"><div class="wrap site-in">
+  <a class="logo" href="#"><img src="logo-compact.svg" alt="aidigest.club"></a>
+  <nav class="nav"><a href="#">最新</a><a class="on" href="#">归档</a><a href="#">GitHub 热门</a><a href="#">LMArena</a><a href="#">精读</a><a href="#">学习</a><a href="#">关于</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="badge"><svg class="ic"><use href="#i-cal"/></svg>Archive</span>
+  <h1>历史<span class="pu">归档</span></h1>
+  <p class="hero-sub">全部往期日报按月归类，每期附当日核心观点，点击回看完整内容。</p>
+  <div class="stats">
+    <div class="stat"><b>13<i>8</i></b><span>累计期数</span></div>
+    <div class="stat"><b>5</b><span>覆盖月份</span></div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="sec-head">
+    <span class="sq"><svg class="ic"><use href="#i-cal"/></svg></span>
+    <div class="tt"><span class="eyebrow">2026 · 07</span><h2>2026 年 7 月</h2></div>
+    <span class="rule"></span><span class="cnt">26 期</span>
+  </div>
+  <div class="arch-grid">
+    <a class="arch-card" href="#"><div class="arch-date"><b>7.26</b><span>星期日</span><span class="n">17 条</span></div>
+      <p>「实现层」之争白热化：Ode 定名收购 Fractional，Samsung SDS 双押 Anthropic。</p></a>
+    <a class="arch-card" href="#"><div class="arch-date"><b>7.25</b><span>星期六</span><span class="n">18 条</span></div>
+      <p>开源权重追平闭源旗舰的信号密集出现，推理成本半年再降 60%。</p></a>
+    <a class="arch-card" href="#"><div class="arch-date"><b>7.24</b><span>星期五</span><span class="n">16 条</span></div>
+      <p>企业 agent 从 PoC 走向规模化，安全与审计成为新的采购门槛。</p></a>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════ ⑤ 学习中心 /learn/ —— 玫红 ══════════════════ -->
+<div class="divider"><div class="wrap">⑤ 学习中心 /learn/<span class="chip" style="background:#DB2777">玫红 #DB2777</span></div></div>
+<div class="sec-page" style="--acc:#EC4899;--acc-deep:#BE185D;--acc-ghost:#FDEEF5;--acc-band:#FEF7FB">
+<header class="site"><div class="wrap site-in">
+  <a class="logo" href="#"><img src="logo-compact.svg" alt="aidigest.club"></a>
+  <nav class="nav"><a href="#">最新</a><a href="#">归档</a><a href="#">GitHub 热门</a><a href="#">LMArena</a><a href="#">精读</a><a class="on" href="#">学习</a><a href="#">关于</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="badge"><svg class="ic"><use href="#i-grad"/></svg>Learning Hub</span>
+  <h1>学习<span class="pu">中心</span></h1>
+  <p class="hero-sub">系统化的 AI 工程学习材料：最佳实践、方法论长文与团队案例，持续扩充。</p>
+  <div class="stats">
+    <div class="stat"><b>3</b><span>已上线专题</span></div>
+    <div class="stat"><b>不<i>定期</i></b><span>更新节奏</span></div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="sec-head">
+    <span class="sq"><svg class="ic"><use href="#i-grad"/></svg></span>
+    <div class="tt"><span class="eyebrow">Topics</span><h2>全部专题</h2></div>
+    <span class="rule"></span><span class="cnt">3 个</span>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="meta"><span class="pill">Guide</span><span class="src">Anthropic</span></div>
+      <h3>Claude Code 最佳实践</h3>
+      <p>从 CLAUDE.md 约定到多 agent 工作流，官方推荐的工程化使用模式全解析。</p>
+      <div class="acts"><a href="#">开始学习</a></div></div>
+    <div class="card"><div class="meta"><span class="pill">Methodology</span><span class="src">编译长文</span></div>
+      <h3>Agentic AI 七大支柱</h3>
+      <p>感知、规划、记忆、工具、协作、自省与安全——企业级 agent 架构的七个核心能力层。</p>
+      <div class="acts"><a href="#">开始学习</a></div></div>
+    <div class="card"><div class="meta"><span class="pill">Case</span><span class="src">Anthropic</span></div>
+      <h3>Anthropic 团队怎么用 Claude Code</h3>
+      <p>官方各团队的真实使用案例：数据科学、安全工程、产品设计的日常 agent 工作流。</p>
+      <div class="acts"><a href="#">开始学习</a></div></div>
+  </div>
+</div>
+</div>
+
+<footer class="site">aidigest.club · 栏目页统一风格设计稿 v1 · 五个栏目各自的 accent 色都在本页展示</footer>
+</body>
+</html>

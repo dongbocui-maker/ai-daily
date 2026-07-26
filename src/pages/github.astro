@@ -2,11 +2,12 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import GitHubBoard from '../components/GitHubBoard.astro';
+import SectionSprite from '../components/SectionSprite.astro';
 import {
   loadWeekly, loadMonthly, loadYearly,
-  type BoardData
+  formatStars, type BoardData, type GitHubRepo
 } from '../lib/github';
+import '../styles/sections.css';
 
 const weekly = loadWeekly();
 const monthly = loadMonthly();
@@ -16,86 +17,105 @@ interface PeriodTab {
   id: string;
   label: string;
   data: BoardData | null;
+  showPeriodStars: boolean;
+  note?: string;
 }
 
 const periods: PeriodTab[] = [
-  {
-    id: 'weekly',
-    label: '本周',
-    data: weekly?.data ?? null,
-  },
-  {
-    id: 'monthly',
-    label: '本月',
-    data: monthly?.data ?? null,
-  },
-  {
-    id: 'yearly-new',
-    label: '年度项目',
-    data: yearly?.data?.newborn ?? null,
-  },
-  {
-    id: 'yearly-active',
-    label: '历史热门',
-    data: yearly?.data?.fastest_growing ?? null,
-  },
+  { id: 'weekly', label: '本周', data: weekly?.data ?? null, showPeriodStars: true },
+  { id: 'monthly', label: '本月', data: monthly?.data ?? null, showPeriodStars: true },
+  { id: 'yearly-new', label: '年度项目', data: yearly?.data?.newborn ?? null, showPeriodStars: false,
+    note: '今年新创建的项目中 stars 最多的 Top 50——发现今年诞生的爆款。' },
+  { id: 'yearly-active', label: '历史热门', data: yearly?.data?.fastest_growing ?? null, showPeriodStars: false,
+    note: '今年仍在活跃维护（今年有提交）且 stars 最多的项目 Top 50——老牌大项目今年仍热。' },
 ];
+
+// 动态 stat
+const bandCount = periods.filter((p) => p.data).length || 4;
+const firstWithData = periods.find((p) => p.data);
+const currentItems = firstWithData
+  ? (firstWithData.data!.general.length + firstWithData.data!.ai.length)
+  : 0;
+
+function repoRows(repos: GitHubRepo[], showPeriodStars: boolean) {
+  const max = repos.reduce((m, r) => {
+    const v = showPeriodStars ? (r.stars_period ?? r.stars) : r.stars;
+    return Math.max(m, v || 0);
+  }, 0) || 1;
+  return { max };
+}
 ---
 <Base title="GitHub 热门项目" description="GitHub 最热门的开源项目——本周 / 本月 / 年度项目 / 历史热门 四档榜单，含 AI 专题">
   <Header />
-  <main class="flex-1">
-    {/* Hero */}
-    <section class="bg-accent-ink text-white py-12 lg:py-16">
-      <div class="container-x">
-        <span class="badge bg-emerald-500 text-white mb-4">GITHUB</span>
-        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">GitHub 热门项目</h1>
-        <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
-          GitHub Trending + Search API 数据，本周 / 本月 / 年度项目（今年新生）/ 历史热门（今年活跃的老牌大项目）四档榜单。
-          每档含「综合榜」与「AI 专题」双维度筛选，描述自动中英对照。
-        </p>
+  <SectionSprite />
+  <main class="sec-page" style="--acc:#10B981;--acc-deep:#047857;--acc-ghost:#E8FAF3;--acc-band:#F4FDF9">
+    <section class="hero"><div class="wrap">
+      <span class="badge"><svg class="ic"><use href="#i-github"/></svg>GitHub Trending</span>
+      <h1>GitHub <span class="pu">热门项目</span></h1>
+      <p class="hero-sub">GitHub Trending + Search API 数据，本周 / 本月 / 年度项目（今年新生）/ 历史热门（今年活跃的老牌大项目）四档榜单。每档含「综合榜」与「AI 专题」双维度，描述自动中英对照。</p>
+      <div class="stats">
+        <div class="stat"><b>{bandCount}</b><span>榜单档位</span></div>
+        {currentItems > 0 && <div class="stat"><b>{currentItems}</b><span>本期项目</span></div>}
+        <div class="stat"><b>月<i>更</i></b><span>更新节奏</span></div>
       </div>
-    </section>
+    </div></section>
 
-    {/* Tab navigation */}
-    <section class="border-b border-accent-gray-200 sticky top-16 bg-white/95 backdrop-blur z-30">
-      <div class="container-x">
-        <div class="flex gap-1 overflow-x-auto" role="tablist" id="period-tabs">
-          {periods.map((p, i) => (
-            <button
-              type="button"
-              role="tab"
-              data-tab={p.id}
-              aria-selected={i === 0 ? 'true' : 'false'}
-              class={`px-5 py-4 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors
-                ${i === 0 ? 'border-accent-purple text-accent-purple' : 'border-transparent text-accent-gray-500 hover:text-accent-ink'}`}
-            >
-              {p.label}
-            </button>
-          ))}
-        </div>
+    <div class="wrap">
+      {/* 期段 tab */}
+      <div class="tabbar" id="period-tabs" role="tablist">
+        {periods.map((p, i) => (
+          <button type="button" role="tab" data-tab={p.id}
+            aria-selected={i === 0 ? 'true' : 'false'}>{p.label}</button>
+        ))}
       </div>
-    </section>
 
-    {/* Tab panels */}
-    <div class="container-x py-8 lg:py-12">
       {periods.map((p, i) => (
-        <div data-panel={p.id} class={`${i === 0 ? '' : 'hidden'}`} role="tabpanel">
+        <div data-panel={p.id} class={i === 0 ? '' : 'hidden'} role="tabpanel">
           {p.data ? (
             <>
-              {p.id === 'yearly-new' && (
-                <p class="text-sm text-accent-gray-500 mb-4">
-                  📍 今年新创建的项目中 stars 最多的 Top 50——发现今年诞生的爆款。
-                </p>
-              )}
-              {p.id === 'yearly-active' && (
-                <p class="text-sm text-accent-gray-500 mb-4">
-                  📍 今年仍在活跃维护（今年有提交）且 stars 最多的项目 Top 50——老牌大项目今年仍热。
-                </p>
-              )}
-              <GitHubBoard data={p.data} scopeId={p.id} showPeriodStars={p.id === 'weekly' || p.id === 'monthly'} />
+              {p.note && <p class="note">{p.note}</p>}
+              {/* 综合 / AI 子 tab */}
+              <div class="subtabs" data-subtabs={p.id}>
+                <button type="button" data-subtab={`${p.id}-general`} aria-selected="true">综合榜 ({p.data.general.length})</button>
+                <button type="button" data-subtab={`${p.id}-ai`} aria-selected="false">AI 专题 ({p.data.ai.length})</button>
+              </div>
+
+              {(['general', 'ai'] as const).map((kind) => {
+                const repos = p.data![kind];
+                const { max } = repoRows(repos, p.showPeriodStars);
+                return (
+                  <div data-subpanel={`${p.id}-${kind}`} class={kind === 'general' ? '' : 'hidden'}>
+                    {repos.length === 0 ? (
+                      <p class="note" style="text-align:center;padding:32px 0">本期无 AI 专题项目</p>
+                    ) : (
+                      <div class="rlist" style="margin-top:16px">
+                        {repos.map((r) => {
+                          const periodStars = p.showPeriodStars ? (r.stars_period ?? null) : null;
+                          const barVal = p.showPeriodStars ? (r.stars_period ?? r.stars) : r.stars;
+                          const pct = Math.max(6, Math.round((barVal / max) * 100));
+                          const desc = r.description_zh || r.description || '';
+                          return (
+                            <div class={`rank-row ${r.rank <= 3 ? 'top' : ''}`}>
+                              <span class="rank-num">{r.rank}</span>
+                              <div class="rank-main">
+                                <div class="rank-name"><a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a></div>
+                                <div class="rank-sub">{desc}{r.language ? ` · ${r.language}` : ''}</div>
+                                <div class="rank-bar"><i style={`width:${pct}%`}></i></div>
+                              </div>
+                              <span class="rank-val">
+                                {periodStars != null ? `+${formatStars(periodStars)} ★` : `${formatStars(r.stars)} ★`}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </>
           ) : (
-            <p class="text-accent-gray-500 text-center py-12">暂无{p.label}数据，请稍后再查看。</p>
+            <p class="note" style="text-align:center;padding:48px 0">暂无{p.label}数据，请稍后再查看。</p>
           )}
         </div>
       ))}
@@ -104,51 +124,30 @@ const periods: PeriodTab[] = [
   <Footer />
 </Base>
 
-{/* 嵌入式组件：综合 + AI 二级 tab */}
 <script is:inline>
-  // Tab 切换
   document.addEventListener('DOMContentLoaded', () => {
-    function setupTabs(rootSelector, attrName, panelAttr) {
-      const root = document.querySelector(rootSelector);
-      if (!root) return;
-      const tabs = root.querySelectorAll(`[${attrName}]`);
+    // 期段主 tab
+    const root = document.querySelector('#period-tabs');
+    if (root) {
+      const tabs = root.querySelectorAll('[data-tab]');
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
-          const id = tab.getAttribute(attrName);
-          tabs.forEach((t) => {
-            const active = t === tab;
-            t.setAttribute('aria-selected', active ? 'true' : 'false');
-            t.classList.toggle('border-accent-purple', active);
-            t.classList.toggle('text-accent-purple', active);
-            t.classList.toggle('border-transparent', !active);
-            t.classList.toggle('text-accent-gray-500', !active);
-          });
-          const scope = root.closest('main') || document;
-          scope.querySelectorAll(`[${panelAttr}]`).forEach((p) => {
-            // 只切换同一作用域内（避免外层 tab 影响内层 tab）
-            const ownerRoot = p.closest('[data-tab-root]');
-            const tabRoot = root.getAttribute('data-tab-root-id');
-            if (ownerRoot && tabRoot && ownerRoot.getAttribute('data-tab-root-id') !== tabRoot) return;
-            p.classList.toggle('hidden', p.getAttribute(panelAttr) !== id);
+          const id = tab.getAttribute('data-tab');
+          tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+          const main = root.closest('main') || document;
+          main.querySelectorAll('[data-panel]').forEach((p) => {
+            p.classList.toggle('hidden', p.getAttribute('data-panel') !== id);
           });
         });
       });
     }
-    setupTabs('#period-tabs', 'data-tab', 'data-panel');
-    // 二级 tab（综合/AI 和 newborn/fastest）通过事件代理处理
+    // 综合 / AI 子 tab
     document.querySelectorAll('[data-subtabs]').forEach((subRoot) => {
       const tabs = subRoot.querySelectorAll('[data-subtab]');
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
           const id = tab.getAttribute('data-subtab');
-          tabs.forEach((t) => {
-            const active = t === tab;
-            t.setAttribute('aria-selected', active ? 'true' : 'false');
-            t.classList.toggle('bg-accent-purple', active);
-            t.classList.toggle('text-white', active);
-            t.classList.toggle('text-accent-gray-600', !active);
-            t.classList.toggle('hover:bg-accent-gray-100', !active);
-          });
+          tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
           const parent = subRoot.parentElement;
           parent?.querySelectorAll('[data-subpanel]').forEach((p) => {
             p.classList.toggle('hidden', p.getAttribute('data-subpanel') !== id);

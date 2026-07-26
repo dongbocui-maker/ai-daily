@@ -1,0 +1,167 @@
+/* ============================================================
+   栏目页统一风格 v1 —— 与 v14 新首页（home-v13）同源
+   每个栏目页在最外层容器加 .sec-page 并通过内联 style 覆盖
+   --acc / --acc-deep / --acc-ghost / --acc-band 四个变量切换主色。
+   数据/结构不变，仅提供皮肤。
+   ============================================================ */
+
+.sec-page {
+  --acc: #A100FF;
+  --acc-deep: #7500C0;
+  --acc-ghost: #F7EDFF;
+  --acc-band: #FBF8FF;
+  --ink: #000000;
+  --gray-7: #3b3b42;
+  --gray-5: #696973;
+  --gray-4: #9d9daa;
+  --gray-2: #e8e8ee;
+  --gray-1: #f4f4f7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  color: #17171c;
+}
+.sec-page * { box-sizing: border-box; }
+.sec-page .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.sec-page .ic {
+  width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round; vertical-align: -.12em; flex: none;
+}
+.sec-page a { color: inherit; text-decoration: none; }
+
+/* ---------- Hero ---------- */
+.sec-page .hero { padding: 44px 0 34px; background: linear-gradient(180deg, var(--acc-band), #fff 85%); }
+.sec-page .badge {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--acc-deep);
+  background: var(--acc-ghost); border-radius: 3px; padding: 6px 12px; margin-bottom: 18px;
+}
+.sec-page .hero h1 {
+  margin: 0; font-size: clamp(30px, 6vw, 46px); font-weight: 850; letter-spacing: -.04em;
+  line-height: 1.1; color: var(--ink);
+}
+.sec-page .hero h1 .pu { color: var(--acc); }
+.sec-page .hero-sub { color: var(--gray-5); font-size: 14.5px; margin: 13px 0 0; max-width: 620px; }
+.sec-page .hero-sub a { color: var(--acc-deep); text-decoration: underline; }
+.sec-page .stats { display: flex; gap: 26px; margin-top: 22px; flex-wrap: wrap; }
+.sec-page .stat b { display: block; font-size: 24px; font-weight: 850; letter-spacing: -.02em; color: var(--ink); }
+.sec-page .stat span { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-4); }
+.sec-page .stat b i { font-style: normal; color: var(--acc); }
+
+/* ---------- 双层板块头 ---------- */
+.sec-page .sec-head { display: flex; align-items: flex-end; gap: 14px; margin: 40px 0 18px; }
+.sec-page .sec-head .sq {
+  width: 40px; height: 40px; border-radius: 4px; display: flex; align-items: center;
+  justify-content: center; background: var(--acc-ghost); color: var(--acc-deep);
+  font-size: 19px; flex: none; margin-bottom: 2px;
+}
+.sec-page .sec-head .tt { display: flex; flex-direction: column; gap: 2px; }
+.sec-page .sec-head .eyebrow { font-size: 10.5px; font-weight: 850; letter-spacing: .22em; text-transform: uppercase; color: var(--acc); }
+.sec-page .sec-head h2 { margin: 0; font-size: clamp(20px, 4vw, 25px); font-weight: 850; letter-spacing: -.03em; line-height: 1.1; color: var(--ink); }
+.sec-page .sec-head .rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--gray-2), transparent); margin-bottom: 9px; }
+.sec-page .sec-head .cnt { font-size: 11.5px; color: var(--gray-4); font-weight: 700; letter-spacing: .06em; margin-bottom: 8px; flex: none; }
+
+/* ---------- 内容卡 ---------- */
+.sec-page .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.sec-page .card {
+  position: relative; background: #fff; border: 1px solid var(--gray-2); border-radius: 6px;
+  padding: 16px 18px; transition: .18s; overflow: hidden; display: flex; flex-direction: column;
+}
+.sec-page .card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--acc); opacity: 0; transition: .18s;
+}
+.sec-page .card:hover { border-color: #d8d8e2; box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+.sec-page .card:hover::before { opacity: 1; }
+.sec-page .meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; min-width: 0; flex-wrap: wrap; }
+.sec-page .pill {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+  background: var(--acc-ghost); color: var(--acc-deep); white-space: nowrap;
+}
+.sec-page .src { font-size: 11.5px; color: var(--gray-4); font-weight: 600; }
+.sec-page .card .date { font-size: 11.5px; color: var(--gray-4); font-weight: 600; }
+.sec-page .tag { font-size: 10.5px; padding: 2px 7px; border-radius: 3px; background: var(--gray-1); color: var(--gray-5); font-weight: 600; }
+.sec-page .card h3 { font-size: 15.5px; font-weight: 750; letter-spacing: -.01em; line-height: 1.45; margin: 0 0 6px; color: var(--ink); }
+.sec-page .card h3 a:hover { color: var(--acc-deep); }
+.sec-page .card .sub { font-size: 12px; color: var(--gray-4); font-style: italic; margin: -2px 0 6px; }
+.sec-page .card .byline { font-size: 12.5px; color: var(--gray-5); margin: 0 0 8px; }
+.sec-page .card .byline b { color: var(--gray-7); font-weight: 700; }
+.sec-page .card p { margin: 0; font-size: 13px; color: var(--gray-5); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.sec-page .acts { display: flex; gap: 16px; margin-top: 12px; padding-top: 2px; font-size: 12.5px; font-weight: 700; }
+.sec-page .acts a { color: var(--acc-deep); }
+.sec-page .acts a:hover { text-decoration: underline; }
+.sec-page .acts a.dim { color: var(--gray-4); margin-left: auto; }
+
+/* ---------- 排行条（GitHub / LMArena） ---------- */
+.sec-page .rlist { display: flex; flex-direction: column; gap: 10px; }
+.sec-page .rank-row {
+  display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: #fff;
+  border: 1px solid var(--gray-2); border-radius: 6px; transition: .18s;
+}
+.sec-page .rank-row:hover { border-color: #d8d8e2; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.sec-page .rank-num { width: 30px; font-size: 17px; font-weight: 850; color: var(--gray-4); text-align: center; flex: none; }
+.sec-page .rank-row.top .rank-num { color: var(--acc); }
+.sec-page .rank-main { flex: 1; min-width: 0; }
+.sec-page .rank-name { font-size: 14.5px; font-weight: 750; color: var(--ink); }
+.sec-page .rank-name a:hover { color: var(--acc-deep); }
+.sec-page .rank-sub { font-size: 11.5px; color: var(--gray-4); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; }
+.sec-page .rank-val { margin-left: auto; font-size: 14px; font-weight: 800; color: var(--acc-deep); flex: none; white-space: nowrap; }
+.sec-page .rank-bar { height: 4px; border-radius: 2px; background: var(--gray-1); margin-top: 6px; overflow: hidden; }
+.sec-page .rank-bar i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--acc), var(--acc-deep)); }
+.sec-page .rank-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.sec-page .rank-tags .t { font-size: 10.5px; padding: 2px 7px; border-radius: 3px; background: var(--gray-1); color: var(--gray-5); font-weight: 600; }
+.sec-page .rank-tags .t.hot { background: var(--acc-ghost); color: var(--acc-deep); }
+.sec-page .rank-delta { font-size: 11.5px; font-weight: 800; flex: none; white-space: nowrap; }
+.sec-page .rank-delta.up { color: #059669; }
+.sec-page .rank-delta.down { color: #e11d48; }
+.sec-page .rank-delta.new { color: var(--acc); }
+.sec-page .rank-delta.same, .sec-page .rank-delta.base { color: var(--gray-4); }
+
+/* ---------- 归档月份网格 ---------- */
+.sec-page .month-block { margin-bottom: 8px; }
+.sec-page .arch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.sec-page .arch-card { background: #fff; border: 1px solid var(--gray-2); border-radius: 6px; padding: 14px 16px; transition: .18s; }
+.sec-page .arch-card:hover { border-color: var(--acc); box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.sec-page .arch-date { display: flex; align-items: baseline; gap: 9px; }
+.sec-page .arch-date b { font-size: 21px; font-weight: 850; letter-spacing: -.02em; color: var(--ink); }
+.sec-page .arch-date span { font-size: 11px; color: var(--gray-4); }
+.sec-page .arch-date .n { margin-left: auto; font-size: 11px; color: var(--gray-4); font-weight: 700; }
+.sec-page .arch-card p { font-size: 12px; color: var(--gray-5); line-height: 1.65; margin: 7px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ---------- 二级 tab / 子标签条（GitHub 期段、AI 专题切换复用首页味道） ---------- */
+.sec-page .tabbar { display: flex; gap: 2px; overflow-x: auto; border-bottom: 1px solid var(--gray-2); margin: 26px 0 0; scrollbar-width: none; }
+.sec-page .tabbar::-webkit-scrollbar { display: none; }
+.sec-page .tabbar button {
+  padding: 11px 16px; font-size: 13.5px; font-weight: 700; white-space: nowrap; color: var(--gray-5);
+  background: none; border: 0; border-bottom: 2px solid transparent; cursor: pointer; transition: .15s;
+}
+.sec-page .tabbar button:hover { color: var(--ink); }
+.sec-page .tabbar button[aria-selected="true"] { color: var(--acc-deep); border-bottom-color: var(--acc); }
+.sec-page .subtabs { display: inline-flex; gap: 4px; background: var(--gray-1); padding: 4px; border-radius: 5px; margin: 18px 0 0; }
+.sec-page .subtabs button {
+  padding: 6px 14px; font-size: 12.5px; font-weight: 700; border: 0; border-radius: 4px; cursor: pointer;
+  color: var(--gray-5); background: transparent; transition: .15s;
+}
+.sec-page .subtabs button[aria-selected="true"] { background: var(--acc); color: #fff; }
+.sec-page .note { font-size: 12.5px; color: var(--gray-5); margin: 16px 0 0; }
+
+/* ---------- 说明 / 空态 ---------- */
+.sec-page .empty { text-align: center; padding: 56px 0; color: var(--gray-4); }
+.sec-page .panel { background: var(--gray-1); border: 1px solid var(--gray-2); border-radius: 6px; padding: 18px 20px; margin-top: 22px; }
+.sec-page .panel h3 { margin: 0 0 8px; font-size: 12px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-5); }
+.sec-page .panel p, .sec-page .panel li { font-size: 13px; color: var(--gray-7); line-height: 1.7; }
+.sec-page .panel a { color: var(--acc-deep); text-decoration: underline; }
+.sec-page .panel ul { margin: 6px 0 0 20px; }
+.sec-page .chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.sec-page .org-chip { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--acc-ghost); color: var(--acc-deep); }
+.sec-page .exit-chip { font-size: 11.5px; padding: 4px 9px; border-radius: 3px; background: #fff; border: 1px solid var(--gray-2); color: var(--gray-5); }
+
+/* ---------- 精读播客小标 ---------- */
+.sec-page .badge-pod { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; color: var(--acc-deep); }
+
+@media (max-width: 640px) {
+  .sec-page .stats { gap: 18px; }
+  .sec-page .cards { grid-template-columns: 1fr; }
+  .sec-page .rank-val { font-size: 13px; }
+}

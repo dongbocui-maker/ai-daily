@@ -2,7 +2,9 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SectionSprite from '../components/SectionSprite.astro';
 import { loadAll, dayOfWeekZh, getYearMonth } from '../lib/data';
+import '../styles/sections.css';
 
 const reports = loadAll();
 const base = import.meta.env.BASE_URL;
@@ -15,66 +17,71 @@ for (const r of reports) {
   grouped.get(ym)!.push(r);
 }
 const months = Array.from(grouped.entries()); // 已是倒序，因为 reports 倒序
+
 function monthLabel(ym: string) {
   const [y, m] = ym.split('-').map(Number);
   return `${y} 年 ${m} 月`;
 }
+function monthEyebrow(ym: string) {
+  const [y, m] = ym.split('-');
+  return `${y} · ${m}`;
+}
+
+// 动态 stat
+const totalReports = reports.length;
+const monthCount = months.length;
+function splitStat(n: number): { head: string; tail: string } {
+  const s = String(n);
+  if (s.length <= 1) return { head: '', tail: s };
+  return { head: s.slice(0, -1), tail: s.slice(-1) };
+}
+const totalStat = splitStat(totalReports);
 ---
 <Base title="历史归档" description="所有历史 AI 日报归档">
   <Header />
-  <main class="flex-1">
-    <section class="bg-accent-ink text-white py-12 lg:py-16">
-      <div class="container-x">
-        <span class="badge bg-accent-purple text-white mb-4">ARCHIVE</span>
-        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">历史归档</h1>
-        <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl">
-          共 {reports.length} 期日报，按月份归类。
-        </p>
+  <SectionSprite />
+  <main class="sec-page" style="--acc:#06B6D4;--acc-deep:#0E7490;--acc-ghost:#E5F8FC;--acc-band:#F3FCFE">
+    <section class="hero"><div class="wrap">
+      <span class="badge"><svg class="ic"><use href="#i-cal"/></svg>Archive</span>
+      <h1>历史<span class="pu">归档</span></h1>
+      <p class="hero-sub">全部往期日报按月归类，每期附当日核心观点，点击回看完整内容。</p>
+      <div class="stats">
+        <div class="stat"><b>{totalStat.head}<i>{totalStat.tail}</i></b><span>累计期数</span></div>
+        <div class="stat"><b>{monthCount}</b><span>覆盖月份</span></div>
       </div>
-    </section>
+    </div></section>
 
-    <section class="py-12 lg:py-16">
-      <div class="container-x max-w-6xl">
-        {months.map(([ym, list], idx) => (
-          <div class="mb-12 last:mb-0">
-            <div class="flex items-baseline gap-3 mb-5 pb-3 border-b border-accent-gray-200">
-              <h2 class="text-xl lg:text-2xl font-extrabold tracking-tight">{monthLabel(ym)}</h2>
-              <span class="text-sm text-accent-gray-500">{list.length} 期</span>
+    <div class="wrap">
+      {months.length === 0 ? (
+        <div class="empty"><p>暂无归档内容。</p></div>
+      ) : (
+        months.map(([ym, list]) => (
+          <div class="month-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-cal"/></svg></span>
+              <div class="tt"><span class="eyebrow">{monthEyebrow(ym)}</span><h2>{monthLabel(ym)}</h2></div>
+              <span class="rule"></span><span class="cnt">{list.length} 期</span>
             </div>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="arch-grid">
               {list.map((r) => {
                 const totalItems = r.sections.reduce((sum, s) => sum + s.items.length, 0);
                 const [, mm, dd] = r.date.split('-');
                 return (
-                  <li>
-                    <a
-                      href={`${base}d/${r.date}/`}
-                      class="block px-5 py-4 bg-white border border-accent-gray-200 rounded-sm
-                             hover:border-accent-purple hover:shadow-sm transition-all group"
-                    >
-                      <div class="flex items-baseline justify-between gap-3">
-                        <div class="flex items-baseline gap-3">
-                          <span class="text-2xl font-bold text-accent-ink group-hover:text-accent-purple transition-colors">
-                            {Number(mm)}.{dd}
-                          </span>
-                          <span class="text-xs text-accent-gray-500">{dayOfWeekZh(r.date)}</span>
-                        </div>
-                        <span class="text-xs text-accent-gray-500 font-medium">{totalItems} 条</span>
-                      </div>
-                      {r.closing?.[0] && (
-                        <p class="mt-2 text-xs text-accent-gray-700 leading-relaxed line-clamp-2">
-                          {r.closing[0]}
-                        </p>
-                      )}
-                    </a>
-                  </li>
+                  <a class="arch-card" href={`${base}d/${r.date}/`}>
+                    <div class="arch-date">
+                      <b>{Number(mm)}.{dd}</b>
+                      <span>{dayOfWeekZh(r.date)}</span>
+                      <span class="n">{totalItems} 条</span>
+                    </div>
+                    {r.closing?.[0] && <p>{r.closing[0]}</p>}
+                  </a>
                 );
               })}
-            </ul>
+            </div>
           </div>
-        ))}
-      </div>
-    </section>
+        ))
+      )}
+    </div>
   </main>
   <Footer />
 </Base>

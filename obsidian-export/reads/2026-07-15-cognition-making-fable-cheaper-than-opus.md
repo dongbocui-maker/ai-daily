@@ -10,7 +10,7 @@ slug: "cognition-making-fable-cheaper-than-opus"
 source: "Cognition / X Article"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/cognition-making-fable-cheaper-than-opus.m4a"
 fetch_status: "error"
-fetched_at: "2026-07-19T05:06:42.056Z"
+fetched_at: "2026-07-26T17:34:36.963Z"
 fetch_type: "placeholder"
 tags:
   - "Agent-经济学"
@@ -21,7 +21,7 @@ tags:
 
 # Making Fable Cheaper Than Opus
 
-> ❌ 抓取失败：Readability 提取的正文太短（229 字符），可能未识别正文
+> ❌ 抓取失败：Readability 提取的正文太短（61 字符），可能未识别正文
 
 **原文链接**：[https://x.com/joon_h_lee/status/2076714221837173097](https://x.com/joon_h_lee/status/2076714221837173097)
 

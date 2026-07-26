@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AudioPlayer from '../../components/AudioPlayer.astro';
 import { listSlugs, loadRead } from '../../lib/reads';
+import '../../styles/sections.css';
 
 export async function getStaticPaths() {
   return listSlugs().map((slug) => ({
@@ -67,117 +68,138 @@ function formatInline(s: string): string {
 ---
 <Base title={`${article.titleZh} · 精读室`} description={article.summary}>
   <Header />
-  <main class="flex-1">
-    {/* 顶部：标题 + 元信息 */}
-    <section class="bg-accent-ink text-white py-12 lg:py-16">
-      <div class="container-x max-w-4xl">
-        <a href={`${base}reads/`} class="inline-block text-sm text-accent-gray-400 hover:text-white mb-4 transition-colors">
-          ← 返回精读室
-        </a>
-        <span class="badge bg-accent-purple text-white mb-4">DEEP READ</span>
-        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-2 leading-tight">
-          {article.titleZh}
-        </h1>
-        {article.titleEn && (
-          <p class="text-base lg:text-lg text-accent-gray-400 italic mb-4">{article.titleEn}</p>
-        )}
-        <div class="flex items-baseline gap-3 mb-6 flex-wrap text-sm">
-          <span class="font-medium text-white">{article.author}</span>
-          {article.authorTitle && <span class="text-accent-gray-400">{article.authorTitle}</span>}
-          {article.publishDate && (
-            <span class="text-accent-gray-500">· 发布于 {article.publishDate}</span>
-          )}
-          <span class="text-accent-gray-500">· 收录于 {article.savedDate}</span>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <a
-            href={article.originalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-accent-purple hover:bg-accent-purple-deep text-white text-sm font-medium rounded-sm transition-colors"
-          >
-            🔗 阅读英文原文
-          </a>
-          {article.deckPdfUrl && (
-            <a
-              href={`${base}${article.deckPdfUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2 bg-accent-purple hover:bg-accent-purple-deep text-white text-sm font-medium rounded-sm transition-colors"
-            >
-              📊 精读概要 PPT
-            </a>
-          )}
-        </div>
 
-        {article.audio && (
-          <AudioPlayer audio={article.audio} date={article.slug} />
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="i-deck" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="11 6 5 12 11 18"/></symbol>
+  </svg>
+
+  <main class="sec-page reads-detail" style="--acc:#4F46E5;--acc-deep:#3730A3;--acc-ghost:#EEF0FE;--acc-band:#F7F8FF">
+    {/* Hero：标题 + 元信息 + 动作按钮 */}
+    <section class="hero"><div class="wrap">
+      <a href={`${base}reads/`} class="back-link"><svg class="ic"><use href="#i-arrow-l"/></svg>返回精读室</a>
+      <span class="badge"><svg class="ic"><use href="#i-book"/></svg>Reads</span>
+      <h1 class="read-h1">{article.titleZh}</h1>
+      {article.titleEn && <p class="read-sub">{article.titleEn}</p>}
+      <div class="read-byline">
+        <b>{article.author}</b>
+        {article.authorTitle && <span>{article.authorTitle}</span>}
+        {article.publishDate && <span>· 发布于 {article.publishDate}</span>}
+        <span>· 收录于 {article.savedDate}</span>
+      </div>
+      {article.tags.length > 0 && (
+        <div class="read-tags">
+          {article.tags.map((t) => <span class="tag">#{t}</span>)}
+        </div>
+      )}
+      <div class="read-actions">
+        <a class="btn-acc" href={article.originalUrl} target="_blank" rel="noopener noreferrer">
+          <svg class="ic"><use href="#i-ext"/></svg>阅读英文原文
+        </a>
+        {article.deckPdfUrl && (
+          <a class="btn-ghost" href={`${base}${article.deckPdfUrl}`} target="_blank" rel="noopener noreferrer">
+            <svg class="ic"><use href="#i-deck"/></svg>精读概要 PPT
+          </a>
         )}
       </div>
-    </section>
+      {article.audio && (
+        <div class="read-audio">
+          <AudioPlayer audio={article.audio} date={article.slug} />
+        </div>
+      )}
+    </div></section>
 
     {/* 内容主体 */}
-    <section class="py-12 lg:py-16">
-      <div class="container-x max-w-3xl reads-content">
+    <section class="reads-body-section">
+      <div class="wrap reads-content">
         {/* 1. 一句话核心观点 */}
-        <div class="mb-10 p-6 bg-accent-purple/5 border-l-4 border-accent-purple">
-          <h2 class="text-sm font-bold uppercase tracking-wider text-accent-purple mb-2">📌 一句话核心</h2>
-          <p class="text-lg lg:text-xl font-medium leading-relaxed">{article.summary}</p>
+        <div class="core-callout">
+          <div class="sec-head compact">
+            <span class="sq"><svg class="ic"><use href="#i-quote"/></svg></span>
+            <div class="tt"><span class="eyebrow">Summary</span><h2>一句话核心</h2></div>
+          </div>
+          <p class="core-text">{article.summary}</p>
         </div>
 
         {/* 2. 核心观点 bullets */}
-        <div class="mb-10">
-          <h2 class="text-2xl font-extrabold mb-4">💡 核心观点</h2>
-          <ol class="space-y-3 list-decimal list-outside ml-6">
+        <div class="rd-block">
+          <div class="sec-head">
+            <span class="sq"><svg class="ic"><use href="#i-list"/></svg></span>
+            <div class="tt"><span class="eyebrow">Key Points</span><h2>核心观点</h2></div>
+            <span class="rule"></span>
+          </div>
+          <ol class="keypoints">
             {article.keyPoints.map((p) => (
-              <li class="leading-relaxed pl-1" set:html={formatInline(p)}></li>
+              <li set:html={formatInline(p)}></li>
             ))}
           </ol>
         </div>
 
         {/* 3. 启示与思考（钢铁虾视角） */}
         {article.insight && (
-          <div class="mb-10 p-6 bg-accent-gray-50 border border-accent-gray-200">
-            <h2 class="text-2xl font-extrabold mb-3">🎯 启示与思考</h2>
-            <p class="leading-relaxed text-accent-gray-800">{article.insight}</p>
+          <div class="rd-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-bulb"/></svg></span>
+              <div class="tt"><span class="eyebrow">Insight</span><h2>启示与思考</h2></div>
+              <span class="rule"></span>
+            </div>
+            <div class="insight-panel">
+              <p>{article.insight}</p>
+            </div>
           </div>
         )}
 
         {/* 4. 中英对照全文（新格式优先；无 bilingual 时回退到旧中文解读） */}
-        {/* 不用 prose：renderMd 已给每个元素内联与主文一致的 Tailwind 类 */}
         {article.bilingual && article.bilingual.length > 0 ? (
-          <div class="mb-10">
-            <h2 class="text-2xl font-extrabold mb-2">📖 中英对照全文</h2>
-            <p class="text-sm text-accent-gray-500 mb-6">中文译文在前、英文原文在后，以小节为单元上下对照</p>
+          <div class="rd-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-text"/></svg></span>
+              <div class="tt"><span class="eyebrow">Full Text</span><h2>中英对照全文</h2></div>
+              <span class="rule"></span>
+            </div>
+            <p class="rd-note">中文译文在前、英文原文在后，以小节为单元上下对照</p>
             <div class="space-y-8">
               {article.bilingual.map((blk) => (
                 <div class="bilingual-block">
                   {/* 中文译文在前（默认黑色正文） */}
                   <div class="reads-body" set:html={renderMd(blk.zh)}></div>
-                  {/* 英文原文在后（灰色 + 紫色左线区分） */}
-                  <div class="reads-body reads-body-en text-accent-gray-500 pl-4 border-l-2 border-accent-purple/40 mt-3" set:html={renderMd(blk.en)}></div>
+                  {/* 英文原文在后（灰色 + 靛蓝左线区分） */}
+                  <div class="reads-body reads-body-en" set:html={renderMd(blk.en)}></div>
                 </div>
               ))}
             </div>
           </div>
         ) : article.summaryZh ? (
-          <div class="mb-10">
-            <h2 class="text-2xl font-extrabold mb-4">📜 中文解读</h2>
+          <div class="rd-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-text"/></svg></span>
+              <div class="tt"><span class="eyebrow">Full Text</span><h2>中文解读</h2></div>
+              <span class="rule"></span>
+            </div>
             <div class="reads-body max-w-none" set:html={renderMd(article.summaryZh)}></div>
           </div>
         ) : null}
 
         {/* 5. 金句精选 */}
         {article.quotes && article.quotes.length > 0 && (
-          <div class="mb-10">
-            <h2 class="text-2xl font-extrabold mb-4">💎 金句精选</h2>
-            <div class="space-y-4">
+          <div class="rd-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-quote"/></svg></span>
+              <div class="tt"><span class="eyebrow">Quotes</span><h2>金句精选</h2></div>
+              <span class="rule"></span>
+            </div>
+            <div class="quotes">
               {article.quotes.map((q) => (
-                <div class="p-5 bg-white border-l-4 border-accent-purple">
-                  {q.en && (
-                    <p class="italic text-accent-gray-700 mb-2 leading-relaxed">"{q.en}"</p>
-                  )}
-                  <p class="text-accent-ink font-medium leading-relaxed">「{q.zh}」</p>
+                <div class="quote-card">
+                  {q.en && <p class="q-en">"{q.en}"</p>}
+                  <p class="q-zh">「{q.zh}」</p>
                 </div>
               ))}
             </div>
@@ -186,60 +208,38 @@ function formatInline(s: string): string {
 
         {/* 6. 延伸视角（二手解读卡片） */}
         {article.secondaryReads && article.secondaryReads.length > 0 && (
-          <div class="mb-10">
-            <h2 class="text-2xl font-extrabold mb-2">🔍 延伸视角</h2>
-            <p class="text-sm text-accent-gray-500 mb-4">来自其他权威信息源的不同解读视角（点击查看原文）</p>
-            <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rd-block">
+            <div class="sec-head">
+              <span class="sq"><svg class="ic"><use href="#i-compass"/></svg></span>
+              <div class="tt"><span class="eyebrow">Perspectives</span><h2>延伸视角</h2></div>
+              <span class="rule"></span>
+            </div>
+            <p class="rd-note">来自其他权威信息源的不同解读视角（点击查看原文）</p>
+            <div class="cards">
               {article.secondaryReads.map((r) => (
-                <a href={r.url} target="_blank" rel="noopener noreferrer"
-                   class="block p-5 bg-white border border-accent-gray-200 hover:border-accent-purple rounded-sm transition-colors">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="text-sm font-bold text-accent-purple">{r.source}</span>
-                    <span class="text-xs text-accent-gray-400">↗</span>
+                <a class="card sec-card" href={r.url} target="_blank" rel="noopener noreferrer">
+                  <div class="meta">
+                    <span class="pill">{r.source}</span>
+                    <svg class="ic ext"><use href="#i-ext"/></svg>
                   </div>
-                  <p class="text-sm leading-relaxed text-accent-gray-700" set:html={formatInline(r.pov)}></p>
+                  <p set:html={formatInline(r.pov)}></p>
                 </a>
               ))}
             </div>
           </div>
         )}
 
-        {/* 7. 标签 */}
-        {article.tags.length > 0 && (
-          <div class="mb-6 pt-6 border-t border-accent-gray-200">
-            <div class="flex flex-wrap gap-2">
-              {article.tags.map((t) => (
-                <span class="text-sm px-3 py-1 bg-accent-gray-100 text-accent-gray-700 rounded-sm">
-                  #{t}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* 底部回链 */}
-        <div class="mt-10 pt-6 border-t border-accent-gray-200 flex items-center justify-between flex-wrap gap-3">
-          <a href={`${base}reads/`} class="text-accent-purple hover:text-accent-purple-deep font-medium">
-            ← 返回精读室列表
-          </a>
-          <div class="flex items-center gap-4 flex-wrap">
+        <div class="rd-foot">
+          <a class="foot-back" href={`${base}reads/`}><svg class="ic"><use href="#i-arrow-l"/></svg>返回精读室列表</a>
+          <div class="foot-links">
             {article.deckPdfUrl && (
-              <a
-                href={`${base}${article.deckPdfUrl}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-accent-purple hover:text-accent-purple-deep font-medium"
-              >
-                📊 精读概要 PPT →
+              <a href={`${base}${article.deckPdfUrl}`} target="_blank" rel="noopener noreferrer">
+                精读概要 PPT<svg class="ic"><use href="#i-ext"/></svg>
               </a>
             )}
-            <a
-              href={article.originalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-accent-purple hover:text-accent-purple-deep font-medium"
-            >
-              阅读英文原文 →
+            <a href={article.originalUrl} target="_blank" rel="noopener noreferrer">
+              阅读英文原文<svg class="ic"><use href="#i-ext"/></svg>
             </a>
           </div>
         </div>
@@ -249,9 +249,84 @@ function formatInline(s: string): string {
   <Footer />
 </Base>
 
+<style>
+  /* ===== Hero ===== */
+  .sec-page .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--gray-5); margin-bottom: 16px; transition: .15s; }
+  .sec-page .back-link:hover { color: var(--acc-deep); }
+  .sec-page .back-link .ic { font-size: 15px; }
+  .sec-page .read-h1 { margin: 0; font-size: clamp(26px, 5vw, 40px); font-weight: 850; letter-spacing: -.03em; line-height: 1.15; color: var(--ink); }
+  .sec-page .read-sub { font-size: 15.5px; color: var(--gray-5); font-style: italic; margin: 12px 0 0; max-width: 720px; line-height: 1.5; }
+  .sec-page .read-byline { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; font-size: 13.5px; color: var(--gray-5); }
+  .sec-page .read-byline b { color: var(--gray-7); font-weight: 750; }
+  .sec-page .read-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; }
+  .sec-page .read-tags .tag { font-size: 11.5px; padding: 3px 10px; border-radius: 999px; background: var(--acc-ghost); color: var(--acc-deep); font-weight: 600; }
+  .sec-page .read-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+  .sec-page .btn-acc, .sec-page .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 750; padding: 10px 18px; border-radius: 4px; transition: .15s; }
+  .sec-page .btn-acc { background: var(--acc); color: #fff; }
+  .sec-page .btn-acc:hover { background: var(--acc-deep); }
+  .sec-page .btn-ghost { background: var(--acc-ghost); color: var(--acc-deep); border: 1px solid transparent; }
+  .sec-page .btn-ghost:hover { border-color: var(--acc); }
+  .sec-page .btn-acc .ic, .sec-page .btn-ghost .ic { font-size: 15px; }
+  .sec-page .read-audio :global(.text-accent-purple-light) { color: var(--acc); }
+
+  /* ===== 内容区 ===== */
+  .sec-page .reads-body-section { padding: 10px 0 20px; }
+  .sec-page .reads-content { max-width: 780px; }
+  .sec-page .rd-block { margin-top: 8px; }
+  .sec-page .rd-note { font-size: 13px; color: var(--gray-4); margin: -8px 0 16px; }
+
+  /* 紧凑版 sec-head（用于核心 callout） */
+  .sec-page .sec-head.compact { margin: 0 0 12px; }
+
+  /* 一句话核心 callout */
+  .sec-page .core-callout { margin-top: 20px; padding: 22px 24px; background: var(--acc-band); border-left: 4px solid var(--acc); border-radius: 0 6px 6px 0; }
+  .sec-page .core-text { font-size: 19px; font-weight: 600; line-height: 1.7; color: var(--ink); margin: 0; }
+
+  /* 核心观点列表 */
+  .sec-page .keypoints { list-style: decimal; padding-left: 26px; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .sec-page .keypoints li { font-size: 16px; line-height: 1.75; color: var(--gray-7); padding-left: 4px; }
+  .sec-page .keypoints li::marker { color: var(--acc); font-weight: 800; }
+
+  /* 启示面板 */
+  .sec-page .insight-panel { background: var(--gray-1); border: 1px solid var(--gray-2); border-left: 3px solid var(--acc); border-radius: 0 6px 6px 0; padding: 18px 20px; }
+  .sec-page .insight-panel p { font-size: 16px; line-height: 1.8; color: var(--gray-7); margin: 0; }
+
+  /* 中英对照 */
+  .sec-page .space-y-8 > * + * { margin-top: 30px; }
+  .sec-page .reads-body-en { color: var(--gray-5); padding-left: 16px; border-left: 2px solid color-mix(in srgb, var(--acc) 40%, transparent); margin-top: 12px; }
+
+  /* 金句 */
+  .sec-page .quotes { display: flex; flex-direction: column; gap: 14px; }
+  .sec-page .quote-card { padding: 18px 20px; background: #fff; border: 1px solid var(--gray-2); border-left: 4px solid var(--acc); border-radius: 0 6px 6px 0; }
+  .sec-page .quote-card .q-en { font-style: italic; color: var(--gray-5); margin: 0 0 8px; line-height: 1.65; font-size: 15px; }
+  .sec-page .quote-card .q-zh { color: var(--ink); font-weight: 600; line-height: 1.7; margin: 0; font-size: 16px; }
+
+  /* 延伸视角卡片 */
+  .sec-page .sec-card { cursor: pointer; }
+  .sec-page .sec-card .meta { justify-content: flex-start; }
+  .sec-page .sec-card .ext { font-size: 13px; color: var(--gray-4); }
+  .sec-page .sec-card p { -webkit-line-clamp: unset; display: block; font-size: 14.5px; color: var(--gray-7); line-height: 1.7; }
+
+  /* 底部 */
+  .sec-page .rd-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--gray-2); }
+  .sec-page .foot-back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 750; color: var(--acc-deep); }
+  .sec-page .foot-back:hover { text-decoration: underline; }
+  .sec-page .foot-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .sec-page .foot-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 750; color: var(--acc-deep); }
+  .sec-page .foot-links a:hover { text-decoration: underline; }
+  .sec-page .rd-foot .ic, .sec-page .foot-back .ic { font-size: 15px; }
+
+  @media (max-width: 480px) {
+    .sec-page .core-text { font-size: 17.5px; }
+  }
+</style>
+
 <style is:global>
   /* 同步全站卡片字号加大：正文 16→17.5px，小字 14→15px（set:html 内容需 global） */
   .reads-content { font-size: 17.5px; }
   .reads-content .text-sm { font-size: 15px; }
   .reads-content .text-xs { font-size: 13px; }
+  /* renderMd 输出的正文段落对齐放大后基准 */
+  .reads-content .reads-body p { font-size: 16.5px; line-height: 1.85; }
+  .reads-content .reads-body li { font-size: 16.5px; }
 </style>

@@ -17,19 +17,13 @@
     "RLVR",
     "3Blue1Brown"
   ],
-  "summary": "数学是当前 AI 进步最快的领域，因此它是一面提前照见「AI 会如何改变其他行业」的镜子。Grant Sanderson 的核心 PoV 是：AI 在数学上的强不是均匀的，而是「分形般参差」——同一片尖峰里几何秒解、组合数学卡壳。真正的下一道门槛不是证明定理，而是「提出好猜想、发明好定义」这种一百年才验证得了价值、无法做成 benchmark 的能力（Galois 群论就是范本）。他把 AI 解决黎曼猜想的可能路径拆成三种——跨领域的「灵光一闪」（人类可读）、「造一座新理论之山」（要爬很久）、「纯蛮力硬算」（可能没人看得懂），三种对经济自动化的启示截然不同。对企业和个人的落点：验证器（Lean/自动裁判）、可反复 grind 的环境、以及「人类作为策展人 / 教师 / 品味把关者」的社会角色，比「谁来证明定理」更值得下注。",
+  "summary": "数学是 AI 进步最快的领域，也是提前照见「AI 如何改变其他行业」的镜子。",
   "keyPoints": [
-    "**AI 数学进步是「分形般参差」**：IMO 几何题 2024 年起 19 秒暴力秒解，组合数学却仍卡壳。同一片能力尖峰内部依然凹凸不平，benchmark 头条掩盖了真实的能力缺口。「拿了 IMO 金牌」从来不是 AGI 时刻。",
-    "**下一道真门槛是「提猜想 / 造定义」而非「证定理」**：借用视频里的话——「好数学家证定理，伟大数学家提猜想，最伟大的数学家下定义」。但这类能力天然做不成 benchmark（无法量化「这是个好猜想」），OpenAI 能为「推翻单位距离猜想」发头条，却没法为「GPT 提了个好猜想」发头条。",
-    "**Galois 群论=百年验证回路的范本**：从 Lagrange 隐约觉得「对称性是对的方向」，到 Abel、Galois，再到 Liouville、Jordan 整理成现代群论，跨越百年、经多人之手，且长期通不过「当时学术界这个验证器」。RLVR 式「解出即奖励」根本捕捉不到 Galois「我觉得这里有东西」的直觉。",
-    "**AI 解黎曼猜想的三条路，启示各异**：① 跨领域「灵光一闪」（如 Montgomery×Dyson 把 zeta 零点统计与随机矩阵连起来）→ 人类可读、易消化；② 「造一座新理论之山」（如 Mochizuki 的 abc 猜想式）→ 要爬很久、甚至可能爬错山；③ 纯蛮力超长推理链 → 可能没人看得懂。只有第三种才对应「证了但没人理解」的恐惧。",
-    "**数学快=可验证 + 可 grind + 形式化，三者中「可 grind」被低估**：Dwarkesh 认为电脑操作类任务同样可验证却进步慢，卡在无法大规模并行 rollout（网站反爬、每次起点不同导致 credit assignment 困难）。数学/代码能容器化、确定性重放、上千并行，才是快的关键。Lean 形式化反而「被高估」——DeepMind 从全 Lean 转向自然语言证明就是佐证。",
-    "**AI 的独特优势不只是「合并知识」，还有「刻意清空上下文 / 分叉多智能体」**：自回归让模型「沦为上下文的奴隶」，难做出「不太可能的跨领域连接」。可系统化地 spin off 一个证、一个反证，一个这样想、一个那样想，故意给不同 context——这是人类难做到的「系统性刷新思维」。对抗「熵坍缩」的解法在 prompt 层加熵。",
-    "**Lean 的真正价值在「放手不管的无限探索」+「给每篇 AI 论文盖绿勾」**：可以让 AI fork 一份 Mathlib 无限延伸、十年后回来看长出了什么（AlphaZero 式自博弈，只有数学有这条件）；以及当 AI 一天产十篇论文时，形式化能给出「至少保证正确」的确定性验证——每个领域都会为此杀红眼，而数学天生拥有。",
-    "**AI 写作差的根因是「theory of mind」缺失 + 写作不模块化**：模型是好「解释者」却是差「作者」——写作的每句话都要预判读者三个月后脑中的联想，需要强心智建模；且写作的产物本身就是实质（不像代码/引理可以是 slop 只要功能对）。有趣类比：打了肉毒杆菌的人读表情能力变差，因为「理解情绪要靠自己脸部肌肉去模仿」——模型没有脸部肌肉。",
-    "**给学生 / 从业者的建议：搞清楚「钱从哪来、你加了什么价值」**：Grant 认为无论 AI 是否证定理，数学家的社会角色（基础科学的公共品信念、品牌价值、教学）变化没那么大。「教学」是 post-AGI 最稳的职业之一——因为它高度关系化、教练化，远超「解释清楚」。数学家角色可能从「证定理」漂向「下定义 / 当博物馆策展人 / 给这头新数学巨兽指方向」。"
+    "**能力是分形般参差**：几何题 19 秒秒解、组合数学卡壳，benchmark 头条掩盖真实能力缺口。",
+    "**真门槛是提猜想/造定义而非证定理**：这类价值百年才验证、无法做成 benchmark，Galois 群论是范本。",
+    "**可 grind 比可验证更决定速度**：能容器化、确定性重放、大规模并行的任务才跑得飞快。"
   ],
-  "insight": "这期对企业 AI 决策者的价值，不在数学本身，而在它是「AI 改变知识工作」的高保真预演。三个可迁移的判断：其一，**能力是分形般参差的，别被 benchmark 头条骗**——你的业务里最像「几何」（可暴力解）的环节会先被吃掉，最像「组合数学」（需真创造力）的环节会更久，规划自动化要按这个粒度切。其二，**「可 grind」比「可验证」更决定自动化速度**——凡是能容器化、确定性重放、大规模并行的任务（代码、结构化数据流水线）会跑得飞快；凡是要接触真实世界、每次起点都变、credit assignment 困难的任务（真实业务决策、市场交易）会慢得多。其三，**人类角色向「策展 / 品味 / 关系」上移**——当 AI 既能证明又能解释，剩下的高价值位是「决定什么值得做、给这头巨兽指方向、以及那份来自信任关系的教学与引导」。Grant 那句「搞清楚钱从哪来、你加了什么价值」对任何被 AI 冲击的岗位都适用，包括咨询与技术顾问自身。",
+  "insight": "人类角色向策展、品味、关系上移——决定什么值得做、给这头新巨兽指方向。",
   "bilingual": [
     {
       "en": "**Dwarkesh:** Three years ago I asked you, once we have AIs that can get gold in the IMO, wouldn't that just be AGI? You said it'll be another benchmark, like all these other benchmarks that AI are passing. There won't be some \"aha\" moment.\n\n**Grant:** The dirty secret with the IMO is that you really can train for a lot of them. With the whole AI and math project underway, one of the reasons it's interesting is that there's a spiky frontier to AI, and math is just right there in one of the spikes. But there's a fractal nature to that spikiness. If we think about IMO — it's old news at this point. Geometry, it just solves in nineteen seconds since 2024 because it's a brute force solver. But it struggles on those combinatorics ones. Someone trying to keep that torch of the last holdout of math for humanity might say those are the ones that require more creativity.",

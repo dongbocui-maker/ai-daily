@@ -14,18 +14,13 @@
     "多智能体",
     "工程实践"
   ],
-  "summary": "Cognition 团队在 Devin 的 Fusion 架构（前沿模型当 lead、便宜模型当 sidekick）上跑了 3000 次评测：Fable 5 单价是 Opus 4.8 的 2 倍，但换上 Fable 当 lead 之后总账单反而更低（$1.86 vs $2.04）、得分更高（60.7 vs 54.6）。原因不在单价而在管理风格：Opus 像带实习生的微管理者——先自己干完再委派收尾；Fable 像带工程师的经理——早委派、写规格式交接文档、只审查不重写。Agent 成本由 lead 的回合数、上下文体积和「决定不亲自做什么」主导，单 token 价格是错误的关注指标。",
+  "summary": "Cognition 3000 次评测：Fable 单价是 Opus 的 2 倍，当 lead 后总账反而更低、得分更高。",
   "keyPoints": [
-    "**实验设计**：FrontierCode 1.1 上 3000 次评测会话、四种配置——Fable 5 与 Opus 4.8 各自担任 lead，配与不配同一个便宜 sidekick。纯净版符合直觉：Fable 得分高（60.8 vs 55.4）也更贵；带 sidekick 后成本排序反转。",
-    "**核心反转**：同一个 sidekick 之下，Fable + Sidekick 比 Opus + Sidekick 更便宜（$1.86 vs $2.04）且得分更高（60.7 vs 54.6）；对比纯 Fable，成本砍掉 54% 而得分几乎不变。",
-    "**成本结构**：Fable 在 sidekick 上多花 $0.27/run，但在自己身上少花 $0.45。Fable lead 平均 11.5 回合 vs Opus 26.5 回合，输出 token 只有对方三分之一（6.1k vs 19.0k）。81% 的 Fable-led run 中 lead 从未亲手改过一行代码（Opus 只有 24%）。",
-    "**委派次数相同、时机不同**：两个模型每次运行都委派约 3 次——差异不在次数。Fable 第一次交接来得很早，有时开场第一个动作就是委派；Opus 常在长段独自探索与实现之后才委派，此时设计已定、重要文件已进上下文、贵的活已经干完。",
-    "**交接质量决定结果**：Opus 委派时口述实现细节（dictate），Fable 写设计文档（design doc）——列约束、边界情况和「完成」的定义。哈希任务案例：Opus 亲手实现却忘了 O(1) 约束，得 25 分；Fable 在交接文档里显式写明「operator() 必须对指针长度 O(1)：禁止全 token 扫描」，sidekick 正确实现得 94 分。",
-    "**审查风格**：两者都用两三个 git diff 做廉价检查，但 Opus 把 sidekick 的文件拉回自己上下文的频率高 2 倍、以 lead 价格做纠正性编辑多 4 倍，极端案例直接回滚重写。Fable 发现 sidekick 的 bug 后选择再发一次便宜的交接，而不是 lead 级重写——不信任并没有换来更高正确率。",
-    "**委派失效边界**：短任务（决策与交付之间没有可委派环节）和串行调试（根因排查是一长串判断、积累的上下文本身就是工作）中委派无杠杆。值得注意的是 Fable 在这类任务上几乎不委派——会写好交接文档的判断力，同样知道什么时候不该写。",
-    "**结论**：作者原本想测 Fable 的 2 倍溢价会推高多少成本，结果发现高效委派反而整体降本。随着 sidekick 模型越来越便宜好用，真正值前沿价格的是判断力：建什么、约束什么、该让谁来写。"
+    "**核心反转**：Fable+sidekick 比 Opus+sidekick 更便宜（$1.86 vs $2.04）且分更高，比纯 Fable 砍成本 54%。",
+    "**成本由管理风格决定**：Fable 早委派、写规格式交接文档、只审不重写，81% 的 run 从不亲手改代码。",
+    "**单 token 价格是错误指标**：真实成本=回合数×上下文体积×亲自动手比例，真正值前沿价的是判断力。"
   ],
-  "insight": "这篇文章把「模型路由」从降本技巧升格为组织设计问题：单 token 价格是错误的计费心智，agent 的真实成本函数是回合数 × 上下文体积 × 亲自动手的比例——和人类组织里「贵的人该干什么」是同一道题。对企业侧的直接启示有三：一是采购 agent 产品时别再对着 API 价目表算账，要看编排架构下的每任务成本；二是「前沿模型做判断、便宜模型做执行」正在成为行业默认模板（Anthropic 官方 benchmark、swyx 等资深实践者的工作流、Levie 的产业判断三方共振）；三是委派质量取决于交接文档质量——把约束和验收标准写清楚的能力，无论对 AI lead 还是人类经理，都是杠杆所在。",
+  "insight": "采购 agent 别对着 API 价目表算账，要看编排架构下的每任务成本。",
   "bilingual": [
     {
       "en": "We replaced Opus 4.8 with Fable 5, and Devin's bill went down. Fable 5 costs twice as much per token as Opus 4.8. But when we ran both models on FrontierCode 1.1 using our new Fusion architecture, Fable cost less. Unsurprisingly, it also scored higher.",

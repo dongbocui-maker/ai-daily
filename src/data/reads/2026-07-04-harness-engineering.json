@@ -17,16 +17,13 @@
     "Auto-Research",
     "综述"
   ],
-  "summary": "翁荔综述 35 篇论文，论证递归自我改进的近期现实路径不是模型改写权重，而是先改写「harness」——那层决定模型如何思考、调用工具、管理上下文、评估结果的软件脚手架；而一旦 harness 变成可执行的代码，会写代码的智能体就能搜索工程师手工探索的同一设计空间。",
+  "summary": "翁荔综述 35 篇论文：递归自我改进的近期现实路径不是改权重，而是先把 harness 工程化。",
   "keyPoints": [
-    "**RSI 的近期入口是 harness，不是权重**：翁荔的核心判断是——递归自我改进（RSI）不会一开始就表现为模型直接改写自己的权重，而是先从改进「部署系统 / harness」这一层开始。harness = 环绕基础模型、编排它如何规划-调用工具-感知与管理上下文-存储产物-评估结果的整套系统。",
-    "**三大 harness 设计模式**：①工作流自动化（plan→execute→observe/test→improve 的目标导向循环，Karpathy autoresearch 是范例）；②文件系统即持久记忆（长任务的实验日志、代码 diff、轨迹不塞进 context，而是落成文件）；③子代理与后台任务（并行探索多假设，且要「显式且可检查」——输出落成文件/日志而非藏在临时对话里）。",
-    "**优化对象的升级阶梯**：instruction 提示 → 结构化 context → 工作流 → harness 代码 → 优化器代码。模型越强，优化目标越复杂、方法越通用；从 ACE（把 context 当可演化的 playbook）到 MCE（分离机制与内容、双层优化）再到 Meta-Harness（优化「优化 harness 的代码」）层层深入。",
-    "**代码是通用语言**：一旦把 harness 设计变成可执行的搜索空间，强编码智能体就能探索人类工程师用的同一设计空间。STOP、Self-Harness、ADAS、AFlow、AlphaEvolve、Darwin Gödel Machine 都在这条线上——用进化搜索/元代理搜索自动发现优于手工设计的 agent 系统。",
-    "**关键前提：模型必须足够强**。STOP 的警示结果——同一递归结构，GPT-4 能持续自我改进，而较弱的 GPT-3.5/Mixtral 反而退化。「递归结构本身不够，基座智能才是核心」——更聪明的模型反而让 harness 保持简单、防止过度工程。",
-    "**七大未解挑战**：①评估器薄弱模糊（研究品味/新颖性难量化）；②上下文与记忆生命周期；③负结果（文献偏向成功，模型不善于承认失败）；④多样性坍缩（进化/RL 易收敛到同一高奖励模式）；⑤奖励黑客（评估器与权限控制应置于自改进循环之外）；⑥长期成功（sandbox RLVR 难捕捉可维护性/迁移成本）；⑦人的角色（人应上移到更高抽象层做监督，而非被移出循环）。"
+    "**RSI 入口是 harness 不是权重**：先改进环绕模型的规划-调工具-管上下文-评估的脚手架，代码变成可搜索的设计空间。",
+    "**三大设计模式**：工作流自动化循环、文件系统即持久记忆、子代理并行且「显式可检查」。",
+    "**基座智能仍是核心**：STOP 显示弱模型放进同一递归结构反而退化，评估与权限须置于自改进循环之外。"
   ],
-  "insight": "这篇的份量在于「把一个野蛮生长的从业者直觉，收敛成有 35 篇论文支撑的行业共识」——从「同一个模型放进不同 harness 会呈现完全不同能力」这个 niche 观察，升格为对 RSI 现实路径的系统论证。对做 agentic 系统的团队，几个判断很实用：其一，harness 是「你已经掌控的东西」，也是最先能被改进的东西——不必等下一代模型，先把脚手架工程化就有回报。其二，翁荔反复强调的「文件系统即记忆 / 显式可检查的并行 / 评估与权限置于循环之外」，几乎就是一份 agent 生产系统的设计清单——OpenClaw 自身的 workspace-as-memory、agent-actions 归档、子代理落盘正是同一范式。其三，也是最克制的一点：她明确反对「模型会自己改写自己」的炒作，坚持「基座智能仍是核心、harness 改进最终会被内化进模型」，同时守住「指定目标、约束、上下文、评估的需求永远不会消失」——这对 MD/合伙人判断「该投模型能力还是投 agent 工程」是一个冷静的坐标系：两者互为杠杆，但人类监督的触点必须留在关键决策处。",
+  "insight": "harness 是你已掌控、也最先能改进的东西——不必等下一代模型，先把脚手架工程化就有回报。",
   "bilingual": [
     {
       "en": "The concept of **recursive self-improvement (RSI)** dates back to I. J. Good (1965), where he defined an \"ultraintelligent machine\" as a system that can surpass humans in all intellectual activities and design better machines to improve itself. Yudkowsky (2008) used the phrase \"recursive self-improvement\" for a specific feedback loop: an AI uses its current intelligence to improve the cognitive machinery that produces its intelligence.\n\nThis feedback loop in modern AI may indicate the model rewriting its own weights directly, or more broadly the model improves the _training pipeline_ and the _deployment system_, which in turn enables a better successor model.\n\nI explicitly mention _\"deployment system\"_ because the layer between the raw model and the real-world context seems to be as important as the model's raw intelligence. A **harness** is the system surrounding a base model that orchestrates execution and decides how the model thinks and plans, calls tools and acts, perceives and manages context, stores artifacts, and evaluates results.\n\nThis one post will focus on research around harness engineering and how it contributes to RSI.",

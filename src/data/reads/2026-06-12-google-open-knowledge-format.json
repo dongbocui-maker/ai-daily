@@ -16,16 +16,13 @@
     "上下文工程",
     "Markdown"
   ],
-  "summary": "谷歌把过去一年各自为政的「LLM Wiki / AGENTS.md / Obsidian-as-knowledge」模式抽象成一份一页纸的开放规范 OKF——知识不再是又一个服务，而是一种可移植、可互操作的「格式」。",
+  "summary": "谷歌把野蛮生长一年的「LLM Wiki」收敛成一页纸开放规范 OKF：知识是可移植的格式而非又一个平台。",
   "keyPoints": [
-    "**OKF v0.1 的本质**：知识 = 一个目录 + 一组带 YAML frontmatter 的 Markdown 文件。没有压缩方案、没有新运行时、不强制 SDK——纯 Markdown、纯文件、纯 frontmatter。",
-    "**唯一必填字段是 `type`**：其余 `title / description / resource / tags / timestamp` 全部可选。规范定义的是「互操作的接口面」，而非内容模型。",
-    "**文件路径即概念身份**：每个概念一个文件，概念之间用普通 Markdown 链接互引，把目录变成一张比文件系统父子层级更丰富的关系图。",
-    "**解决的是碎片化问题**：组织内部知识散落在元数据目录、wiki、代码注释、资深工程师脑子里，每家厂商各有 SDK 和 schema，知识无法跨产品/组织迁移。",
-    "**三原则**：最小主张（only `type` 必填）、生产者/消费者解耦（格式即契约，两端工具可独立替换）、是格式不是平台（不绑任何云/模型/框架）。",
-    "**配套工具是 PoC**：BigQuery 富化智能体、纯静态 HTML 可视化器、三个示例 bundle（GA4 电商 / Stack Overflow / 比特币公共数据集），均开源在 GitHub。"
+    "**知识即目录+Markdown**：带 YAML frontmatter 的纯文件，唯一必填字段是 type，无新运行时、不绑 SDK。",
+    "**文件路径即概念身份**：一概念一文件、Markdown 链接互引，把目录变成比父子层级更丰富的关系图。",
+    "**是格式不是平台**：最小主张、生产/消费解耦、厂商中立，价值取决于多少方在用而非谁拥有它。"
   ],
-  "insight": "这篇的价值不在技术复杂度（它刻意极简），而在「把一个已经野蛮生长一年的事实标准收敛成规范」的判断力。Karpathy 的 LLM Wiki、AGENTS.md/CLAUDE.md、Obsidian vault——大家都在重复发明同一个轮子，谷歌做的事是承认「缺的不是又一个知识服务，而是一种通用格式」，然后把它标准化。对企业 AI 落地的启发很直接：与其上一套重型知识平台，不如先把组织知识沉淀成版本受控、人机皆可读的 Markdown 库，让智能体承担「读和更新」的脏活、让团队像管代码一样策展内容。OKF 的厂商中立立场也值得注意——它的价值取决于有多少方在用，而非谁拥有它，这是开放标准能否成立的关键。",
+  "insight": "与其上重型知识平台，不如把组织知识沉淀成版本受控、人机皆可读的 Markdown 库。",
   "bilingual": [
     {
       "en": "## Introducing the Open Knowledge Format\n\nAs foundation models continue to improve, the lack of relevant context often limits what they can do, especially as they are used to build agentic systems. While these models can help you write code, summarize documents, or analyze a dataset, they still need the right information to produce accurate and actionable results.\n\nThat's why today, we're introducing the **Open Knowledge Format (OKF)**, an open specification that formalizes the LLM-wiki pattern into a portable, interoperable format. This is a vendor-neutral, agent- and human-friendly standard for representing the metadata, context, and curated knowledge that modern AI systems need.\n\nAs published, OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter, with a small set of agreed-upon conventions that let wikis written by different producers be consumed by different agents without translation.",

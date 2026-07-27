@@ -16,16 +16,13 @@
     "上下文工程",
     "隐性知识"
   ],
-  "summary": "Anthropic Claude Code 团队工程师 Thariq 用「地图不等于领土」这个老比喻，重新定义了 Fable 5 时代的核心技能：产出质量的瓶颈不再是模型能力，而是你澄清自己 unknowns 的能力。他借用 Rumsfeld 矩阵把每个任务拆成四象限——已知的已知（写进 prompt 的）、已知的未知（意识到的缺口）、未知的已知（显然到从不写下来的隐性常识）、未知的未知（压根没想到的东西），并给出 8 个在实施前、中、后系统性挖掘 unknowns 的实战技巧，每个都配现成 prompt。文章发布 3 天获 200 万浏览、2.1 万收藏，是 Fable 5 发布后传播最广的实践指南。",
+  "summary": "Fable 时代的核心技能不再是模型能力，而是你澄清自己 unknowns 的能力。",
   "keyPoints": [
-    "**核心论断**：Fable 是第一个「工作质量瓶颈在于你澄清 unknowns 的能力、而非模型能力」的模型。地图（prompt/skills/context）与领土（真实代码库与约束）之间的差距就是 unknowns，每个 unknown 都逼 Claude 猜，猜错累积就是长任务跑偏的根源。",
-    "**四象限拆解**：Known Knowns = prompt 里写了的；Known Unknowns = 知道自己还没想清楚的；Unknown Knowns = 显然到从不写下来、但看到就能认出来的隐性标准；Unknown Unknowns = 完全没考虑到的。后三类才是危险区。",
-    "**实施前 5 招**：盲区扫描（blindspot pass，直接用这两个词让 Claude 挖 unknown unknowns）、头脑风暴与原型（用 HTML mock 廉价试错、把 unknown knowns 提前逼出来）、访谈（让 Claude 一次一个问题反向面试你，优先问会改变架构的）、参考物（源码是最好的 reference，胜过截图和文档）、实施计划（把你最可能改的决策放最前面）。",
-    "**实施中 1 招**：让 Claude 维护 implementation-notes.md，遇到偏离计划的边缘情况就选保守方案、记录在 Deviations 下继续干——承认再多计划也挡不住潜伏的 unknown unknowns。",
-    "**实施后 2 招**：pitch/explainer 文档（加速评审者从你同样的 unknowns 起点快速理解）+ 测验（让 Claude 出题考你这次改动，满分才 merge——对抗「代码 diff 只能给你浅层理解」）。",
-    "**实战案例**：Fable 发布视频完全由 Claude Code 剪辑。Thariq 不懂视频剪辑，靠「让 Claude 教我 transcription 原理 → Remotion 原型验证 → 发现自己不知道什么是 color grading → 让 Claude 先教我建立判断力再动手」走通全程——完整演示了 unknowns 驱动的工作流。"
+    "**瓶颈从模型能力转向澄清 unknowns**：地图与领土的差距逼 agent 猜，猜错累积就是长任务跑偏的根源。",
+    "**四象限里 Unknown Knowns 最危险**：你觉得太显然而从不写下的隐性标准，正是 agent 猜错最多的地方。",
+    "**系统性挖 unknowns 的实战招法**：盲区扫描、反向访谈、原型试错、实施笔记、事后测验，本质是隐性知识显性化。"
   ],
-  "insight": "这篇文章的真正价值在于把「prompt 工程」的重心从「怎么写指令」翻转成「怎么发现自己不知道什么」——这是一个认识论层面的转变。四象限里最危险的是 Unknown Knowns（隐性知识）：你觉得太显然而从不写下来的判断标准，恰恰是 agent 猜错最多的地方。这和企业知识管理的核心困境完全同构——组织里最值钱的知识往往是老员工「觉得不用说」的那部分。Thariq 给出的解法（盲区扫描、反向访谈、原型试错）本质上都是「隐性知识显性化」的工程化手段，只不过挖掘对象从组织变成了你自己。对企业 AI 落地的直接启发：与其无限堆 context，不如建立一套系统性的 unknowns 发现流程；agent 时代的核心人才技能不是写 prompt，而是快速定位自己认知盲区的元认知能力。另一个值得注意的信号：文章反复强调「太具体会僵化、太模糊会瞎猜」的平衡——这正是给 agent 授权的 governance 问题，具体到什么程度、留多少 improvise 空间，本身就是需要经营的资产。",
+  "insight": "agent 时代核心人才技能不是写 prompt，而是快速定位自己认知盲区的元认知能力。",
   "bilingual": [
     {
       "en": "## The Map Is Not the Territory\n\nWorking with Claude Fable 5 keeps re-teaching me an old lesson: the map is not the territory.\n\nThe map, a representation of the work to be done, is my prompts and skills and context, it's what I give Claude. The territory is where the work needs to happen, the codebase, the real world, its actual constraints.\n\nThe difference between the map and the territory is what I call unknowns. When Claude runs into an unknown, it needs to make a decision based on its best guess of what I want. The more work being done, the more unknowns Claude might run into.\n\nFable is the first model where I find the quality of the work is bottlenecked by my ability to clarify its unknowns.\n\nImportantly, just planning ahead isn't always enough. You can find unknowns deep in implementation, or your unknowns may point you to the fact that you should actually be solving the problem in a different way altogether.\n\nI've found that working with Fable is an iterative process of discovering my unknowns before, during, and after implementation.",

@@ -16,18 +16,13 @@
     "Test-time Scaling",
     "Sakana AI"
   ],
-  "summary": "Sakana AI 几乎同期放出两篇主题相同、作者高度重叠的论文，都在回答同一个问题：不改任何模型权重，如何让一群不同厂商的前沿大模型协同把单个模型干不了的难题解出来。两篇给出了两条截然不同的技术路线——TRINITY 用一个 0.6B 小模型 + 不到 2 万参数的轻量头，靠进化策略（sep-CMA-ES）学会在 Thinker/Worker/Verifier 三角色间分派，LiveCodeBench 刷到 86.2% 新纪录；Conductor 则是一个 7B 模型，用强化学习（GRPO）直接学会用自然语言『指挥』一支模型乐队——拆解任务、设计通信拓扑、给每个 worker 写定向 prompt，甚至能把自己当 worker 递归调用。两条路线殊途同归：都证明了『协调』本身可以被当成一个可学习、可泛化的能力，而非手工搭的脚手架。对正在做企业级多智能体编排的人，这是两种范式的直接对照样本。",
+  "summary": "Sakana 同期两篇论文两条路线，都证明「协调」本身可被当成可学习、可泛化的能力。",
   "keyPoints": [
-    "**同一个问题，两条路线**：两篇都拒绝『权重合并』（架构不兼容 + 闭源模型拿不到权重），转而做『test-time 协调』——不动任何 worker 权重，只训练一个轻量协调器在推理时把多个前沿模型组合起来。这是 Sakana 在多模型组合上的统一立场。",
-    "**TRINITY = 进化策略 + 隐状态路由**：协调器 = 一个 0.6B 小语言模型（提供输入的隐状态上下文表征）+ 一个约 10K 参数的轻量头，总可学习参数 <20K。每一轮给选中的 LLM 分派 Thinker（拆解策略）/ Worker（执行计算）/ Verifier（校验答案）三种角色之一，Verifier 接受答案即停。",
-    "**TRINITY 为什么用进化策略而非 RL**：在『高维 + 参数间弱耦合 + 每步评估成本极高（要真实跑一遍被协调的模型）』这个特殊 regime 下，REINFORCE 的逐参数梯度信噪比太低。论文用 sep-CMA-ES（对角协方差的无导数进化策略），并给出理论+实验证明：在 1.5k–40k 次评估解 10k 维问题的极紧预算下，它显著优于 RL、模仿学习和随机搜索，关键在目标函数的『块-ε-可分性』。",
-    "**TRINITY 的成绩**：四个分布内基准（MATH500/MMLU/RLPR/LiveCodeBench）相对次优方法平均降错 21.9%；LiveCodeBench V6 pass@1 刷到 86.2%（GPT-5 0.838 / Gemini 2.5-Pro 0.672 / Claude-4-Sonnet 0.465）；零样本迁移到 AIME/BigCodeBench/MT-Bench/GPQA-D 四个未见任务，平均分超过池中每个单模型。",
-    "**Conductor = 强化学习 + 自然语言指挥**：一个 7B 模型（从 Qwen2.5 起训），用 GRPO 直接学会输出一串『工作流步骤』——每步含一条自然语言指令、指派的 worker、以及各 agent 对彼此的可见性。Prompt engineering、refinement、debate 轮次这些策略全是从端到端奖励里自然涌现的，而非手工设计。",
-    "**Conductor 的两个杀手锏**：① 随机化 worker 池训练 → 能泛化到任意开/闭源模型组合，用户全用开源也能逼近 SOTA（纯开源池下甚至比 Claude Sonnet 4 高近 10%）；② 允许把自己指定为 worker → 涌现『递归拓扑』，成为一种新的 test-time scaling 轴，在 BigCodeBench 这种 GPT-5 表现反常的任务上靠递归动态重分派（转向 Claude 4 / Gemini 2.5）显著提分。",
-    "**Conductor 的成绩**：7B Conductor 在 LiveCodeBench 和 GPQA Diamond 上超过所有 worker 单模型，达到在线榜 SOTA（超过未纳入池的 OpenAI O 系列）；AIME25 和 GPQA-D 上约 3% 的提升相当于一整代模型升级（类比 o3→GPT-5 的跨度），且只用 200 次 GRPO 迭代、batch 256、无 KL 正则即收敛。",
-    "**两条路线的核心取舍**：TRINITY 走『极小协调器 + 隐状态信号 + 离散角色分派 + 进化策略』，优势是参数极少、训练廉价、可分性强；Conductor 走『中等协调器 + 自然语言工作流 + 灵活拓扑 + RL』，优势是表达力强、可定制、能递归自指。前者像精密的调度开关，后者像会写 prompt 的乐队指挥。"
+    "**TRINITY = 进化策略+隐状态路由**：0.6B 小模型+<2 万参数轻量头分派三角色，LiveCodeBench 刷到 86.2%。",
+    "**Conductor = RL+自然语言指挥**：7B 模型学会拆任务、设计拓扑、写定向 prompt，甚至递归自指涌现新 scaling 轴。",
+    "**殊途同归的判断**：单模型 scaling 边际递减，下一个增量来自把已有模型组合得更好，编排是可训练资产。"
   ],
-  "insight": "把这两篇放一起读，最大的价值不是任何单一基准分数，而是 Sakana 同时押注两条路线这件事本身传递的判断：随着前沿模型趋于同质化、单模型 scaling 边际递减，下一个增量很可能来自『如何把已有模型组合得更好』，而协调能力本身可以被当成一个独立的、可学习、可泛化的能力来训练——不再依赖人工搭的 agentic scaffold。两条路线的分野也很有启发：TRINITY 证明在预算极紧、参数弱耦合的场景里，进化策略能干掉 RL；Conductor 证明当你愿意让协调器用自然语言『说话』时，RL 能让 prompt engineering 和拓扑设计自然涌现。对企业落地的直接启示有三点：① 多智能体系统的价值越来越在『编排层』而非『模型层』，值得把编排当成可训练资产而非硬编码流程；② Conductor 的随机化 worker 池思路意味着可以用一个协调器适配你手上任意的模型组合（含纯开源、纯私有部署），缓解成本-性能权衡；③ 递归自指带来的 test-time scaling 是个被低估的新维度——同一个协调器在难任务上多花点推理预算就能换性能，且能在线纠偏。需要警惕的是：两篇都在精选的难推理基准上验证，真实企业任务的可验证奖励信号往往没这么干净，协调器训练所需的『每步真实跑模型』成本在生产环境会被放大，落地时要先算清楚这笔账。",
+  "insight": "多智能体价值在编排层而非模型层，但生产环境「每步真跑模型」的训练成本要先算清。",
   "bilingual": [
     {
       "en": "## TRINITY — Abstract\n\nCombining diverse foundation models is promising, but weight-merging is limited by mismatched architectures and closed APIs. TRINITY addresses this with a lightweight coordinator that orchestrates collaboration among large language models (LLMs). The coordinator, comprising a compact language model (~0.6B parameters) and a lightweight head (~10K parameters), is optimized with an evolutionary strategy for efficient and adaptive delegation. TRINITY processes queries over multiple turns, where at each turn the coordinator assigns one of three roles (Thinker, Worker, or Verifier) to a selected LLM, effectively offloading complex skill acquisition from the coordinator itself.",

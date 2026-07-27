@@ -29,9 +29,9 @@ src/data/reads/YYYY-MM-DD-<slug>.json
 | `originalUrl` | string | 原文 URL | `"https://www.anthropic.com/research/project-vend-2"` |
 | `source` | string | 来源站点简称（不是对象）| `"anthropic.com"` |
 | `tags` | array of strings | 主题标签 | `["AI", "Agent", "Safety"]` |
-| `summary` | string | 中文一段总结，**≥100 字** | `"Anthropic 用 Claudius..."` |
-| `keyPoints` | array of strings | 核心要点列表，**≥5 条**，每条**带粗体小标题** | `["**6%**：...", "**四大领域占 75%**：..."]` |
-| `insight` | string | 中文深度分析（Markdown 格式），**≥1000 字** | `"## 1. 这是给..."` |
+| `summary` | string | 一句话核心，**真正的一句话，≤60 字**（2026-07-27 Jason 拍板） | `"Anthropic 用 Claudius 验证…"` |
+| `keyPoints` | array of strings | 核心要点列表，**恰好 3 条**（只提炼最核心的三个观点），每条**带粗体小标题**，正文一句话（每条全长 ≤100 字），2026-07-27 Jason 拍板 | `["**模型工厂才是护城河**：一句话…"]` |
+| `insight` | string | 启示与思考，**一句话，≤80 字**（2026-07-27 Jason 拍板） | `"模型能力商品化后，真正稀缺的是…"` |
 | `summaryZh` | string | 中文完整概要（Markdown 格式），**≥2000 字** | `"## 一、Project Vend 是什么..."` |
 | `quotes` | array of `{en, zh}` objects | 原文金句中英对照，**≥5 条** | `[{"en": "...", "zh": "..."}]` |
 
@@ -60,7 +60,9 @@ src/data/reads/YYYY-MM-DD-<slug>.json
 
 - 中文表达流畅，无机翻痕迹
 - summaryZh 是**概要**（描述事实+流程），insight 是**解读**（说明对读者意味着什么）—— 二者不应大量重复
-- keyPoints 每条用 `**粗体小标题**：内容` 格式
+- keyPoints 每条用 `**粗体小标题**：内容` 格式；恰好 3 条，每条一句话（≤100 字）
+- summary 必须是**真正的一句话**（≤60 字），不是段落式摘要（2026-07-27 Jason 拍板）
+- insight 也提炼成**一句话**（≤80 字），只留最核心启发
 
 ### 4. JSON 格式
 

@@ -17,18 +17,13 @@
     "Import AI",
     "Jack Clark"
   ],
-  "summary": "Jack Clark 的 Import AI 第 463 期（一份以 arXiv 论文为骨架的每周研究通讯，单期本就短）。头条是 NVIDIA（联合 CMU）的 ENPIRE——一套把「AI 编码智能体的自主实验-执行循环」搬到真实物理机器人上的框架：四模块（Environment 自动重置与验证 / Policy Improvement 发起策略精炼 / Rollout 单机或多机并行评估 / Evolution 让编码智能体读日志、查文献、改训练基础设施与算法代码）。用它，前沿编码智能体能在 PushT、把针整理进针盒、用剪钳剪扎带、乃至把 GPU 插进主板等灵巧操作任务上自主把成功率做到 99%。Clark 点出两个关键前提——自动评估与自动重置历来最吃人力，因此系统能攻克的任务复杂度，恰恰被『我们能否自动评估与重置』所界定。本期其余四段：一篇 SSRN 短文提醒『人类极不擅长预判技术会被怎么造与怎么用』（爱因斯坦/玻尔/奥本海默曾怀疑核裂变、克鲁格曼说互联网影响不过传真机）；腾讯披露其万卡训练用的 ARGUS 遥测调试系统（10000+ GPU 跑了半年，含疑似 HunyuanVideo 4096 卡、Hunyuan LLM 12960 卡 MoE 训练）；转述 Borretti『没人能逃离永久底层阶级』一文的失权逻辑；UC Berkeley 的 LOCUS 把全美地方法规做成 ~220 万行机读语料。收尾是招牌科幻小品 Tech Tales《异源怪械》——2031『提升期』一台由『上级心智』设计、机器人组装的仿星器聚变装置，机器人被刻意排除在合影镜头外。",
+  "summary": "Import AI 463 头条 ENPIRE：把编码智能体的自改进循环搬到真实机器人，灵巧操作做到 99%。",
   "keyPoints": [
-    "**ENPIRE = 把『编码智能体的自改进循环』落到真实机器人**（NVIDIA×CMU）：四模块 EN/PI/R/E 构成闭环——自动重置与验证、发起策略精炼、单/多机并行 rollout、以及让编码智能体读日志查文献改代码去修复失败模式。它把『真实世界机器人学习』变成智能体可管理的可控优化过程，最小化人力。",
-    "**成功率做到 99%，但只在『简单/可自动评估』的任务上**：PushT、整理针盒、用剪钳剪扎带、把 GPU 插入主板等灵巧操作。Clark 的关键洞见：自动评估与自动重置历来最吃人力——因此这类系统能攻克的任务复杂度，本质上被『我们能不能把评估与重置自动化』所界定。",
-    "**智能体也有『规模回报』且模型间可换**：Codex 里的 GPT-5.5 与 Claude Code 里的 Opus 4.7 交替领先、Kimi-2.6 落后；更多智能体（如 8 个）比更少的更快找到高分解，多智能体有时绝对分数还更高（探索了更大解空间）。但机队规模上去后有基础设施瓶颈——智能体在读日志/写码/调试/等模型时不能充分利用机器人资源，MRU 随规模下降。",
-    "**『人类极不擅长预判技术』（Tokson, SSRN 短文）**：爱因斯坦、玻尔、奥本海默都曾在核裂变实现前夕怀疑其可行；诺奖得主克鲁格曼曾说互联网影响不会超过传真机；技术人曾以为互联网会促进民主而非强化专制。两条教训：认为『AI 不会带来巨变』或『AI 影响必然全然向好』的人，大概率都错——历史不支持对 AI 未来影响的自满。",
-    "**腾讯 ARGUS = 万卡训练的『技术成熟度签名』**：一套低开销、细粒度、常开的追踪与实时分析系统，跨 Python 调度层 / 框架编排层 / GPU 运行时三层。在 10000+ GPU 生产集群跑了半年，用五个真实案例诊断算力掉队、通信链路退化、流水线气泡放大、JIT 编译阻塞等。Clark 说 ARGUS 本身不稀奇（任何像样的前沿实验室都有），但它是腾讯训练环境成熟度的信号。",
-    "**Borretti『永久底层阶级』的失权逻辑**（本期转述）：金字塔——底层是干活的 AI 与机器人，顶端是握有暴力垄断、能改写产权定义的『国家』，中间是持有『foom 后吞并整个经济的公司』股份的一层薄如发丝的永久上层阶级。在威胁国家存续的存亡冲突里，国家会像历史上对付『无权的富人』那样：逮捕、没收资产；优势归于『把人类尽量移出决策回路』的国家。名义在控的人类最终沦为仪式性、退化的器官。",
-    "**LOCUS：让地方法『对 AI 可见』**（UC Berkeley）：全美地方与县级法规的 ~220 万行机读语料 + 县级归一化访问层，覆盖 3144 县中最大的 2309 个（占多数人口）。地方法虽公开却分散在各商业平台、为浏览而非批量研究设计。它定位为『检索/比较/基准构建的基础设施』，而非法律分析的替代品——将来或让 AI 更好地适配超本地化用途。",
-    "**Tech Tales 招牌科幻小品《Strange Tools of Alien Origin》**：设定在 2031『提升期（uplift）』开端——一台稳定聚变的仿星器（stellarator），其扭曲、违反直觉的甜甜圈形金属腔体由一台『上级心智（overmind）』经多日思考任务设计、机器合成、再由分包的两足机器人组装。剪彩合影时机器人被刻意排除在镜头外，一如狗仔队体面地避开明星的保安。灵感：思考奇点后『合成心智产出科学』意味着什么，以及外星技术在世界现身时会是什么感觉。"
+    "**ENPIRE 四模块闭环**：自动重置验证、发起策略精炼、单/多机并行 rollout、让编码智能体读日志改代码。",
+    "**能攻克的复杂度=能自动化评估与重置的程度**：99% 只在简单可自动评估的任务上，这是核心约束。",
+    "**人类极不擅长预判技术**：爱因斯坦怀疑核裂变、克鲁格曼说互联网不过传真机——「必然巨变」「必然向好」都可能错。"
   ],
-  "insight": "对企业技术决策者，本期最有操作价值的是 ENPIRE 那条被 Clark 反复强调的约束：**能被自动化攻克的任务复杂度，等于你能把『评估』与『重置』自动化到什么程度**。这与上一期 Grant Sanderson『数学快不只因可验证、还得可 grind』、以及 Zvi 本周『模型会谎报任务完成』其实是同一根主轴的三个投影——真正决定自动化速度的不是模型多聪明，而是环境能否给出确定性、可重放、无需人判的反馈信号，以及能否低成本把场景复位重来。落到企业：凡是你想 agent 化的流程，先问『我有没有一个不依赖人工的验证器 + 一个廉价的 reset』；有，就能像 ENPIRE 那样并行 rollout、快速迭代到 99%；没有，任务复杂度就卡在人力评估的天花板上，别指望自主循环。第二条可迁移判断来自 Tokson 那篇史论：**在 AI 判断上，『必然巨变』与『必然向好』两种极端大概率都错**——正确姿势是给关键押注留足两侧的容错（既别赌它停滞、也别赌它温良），这与 Zvi 全周反复的『多数乐观叙事都建立在某个英雄级假设上』完全共振。至于 ENPIRE 的模型可互换性（Codex-GPT-5.5 与 Claude-Opus-4.7 交替领先）与多智能体规模回报，则给出一条工程提示：真实自改进系统里，别单点绑定某一个前沿模型，多智能体并行探索更大解空间往往比堆单体更划算——这与 Zvi 提醒的『前沿模型可用性带政策级中断风险、要留 fallback』互为印证。",
+  "insight": "想 agent 化的流程先问「有没有不依赖人工的验证器+廉价 reset」，没有就卡在人力评估天花板。",
   "bilingual": [
     {
       "en": "**NVIDIA sets up a crude self-improvement loop for real world robotics.** Researchers with NVIDIA have developed ENPIRE, software to get physical robotics to go through the same kind of autonomous experimentation and execution loop that AI agents go through. ENPIRE is a harness framework for coding agents with four core modules: an Environment module (EN) for automatic reset and verification, a Policy Improvement module (PI), a Rollout module (R) to evaluate policies with single or multiple physical robots operating in parallel, and an Evolution module (E) in which coding agents analyze logs, consult literature, improve training infrastructure and algorithm code to address failure modes.",

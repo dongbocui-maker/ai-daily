@@ -71,7 +71,7 @@ const podStat = splitStat(withPodcast);
               <div class="byline"><b>{a.author}</b>{a.authorTitle && <span> · {a.authorTitle}</span>}</div>
               <p>{summaryPreview(a.summary)}</p>
               <div class="acts">
-                <a href={`${base}reads/${a.slug}/`}>进入精读</a>
+                <a class="stretch" href={`${base}reads/${a.slug}/`}>进入精读</a>
                 {a.originalUrl && <a class="dim" href={a.originalUrl} target="_blank" rel="noopener noreferrer">原文 ↗</a>}
               </div>
             </article>

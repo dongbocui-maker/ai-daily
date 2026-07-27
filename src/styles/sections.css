@@ -92,6 +92,9 @@
 .sec-page .acts a { color: var(--acc-deep); }
 .sec-page .acts a:hover { text-decoration: underline; }
 .sec-page .acts a.dim { color: var(--gray-4); margin-left: auto; }
+/* 整卡可点：给主链接加 .stretch，透明覆盖层铺满整张卡片；其他链接用 z-index 抬到覆盖层之上保持可点 */
+.sec-page .card .acts a.stretch::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.sec-page .card .acts a.dim { position: relative; z-index: 2; }
 
 /* ---------- 排行条（GitHub / LMArena） ---------- */
 .sec-page .rlist { display: flex; flex-direction: column; gap: 10px; }

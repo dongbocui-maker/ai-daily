@@ -148,7 +148,6 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                 </div>
                 <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
                 <p class="text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
-                <p class="text-sm text-accent-gray-500 leading-relaxed line-clamp-3">{item.summaryEn}</p>
                 <div class="mt-4 flex items-center justify-between gap-3 text-xs text-accent-gray-500">
                   <span>{meta.date || meta.metrics}</span>
                   {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="font-semibold text-accent-purple hover:text-accent-purple-deep">Source ↗</a>}
@@ -182,9 +181,6 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                         </div>
                         <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
                         <p class="text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
-                        <div class="insight-block">
-                          <span class="font-semibold text-accent-ink">Original signal: </span>{item.summaryEn}
-                        </div>
                         <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
                           <div class="flex flex-wrap gap-2">
                             {(item.tags ?? []).map((tag) => <span class="px-2 py-1 bg-accent-gray-50 text-xs font-medium text-accent-gray-700 border border-accent-gray-100">{tag}</span>)}

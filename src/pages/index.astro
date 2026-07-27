@@ -112,7 +112,6 @@ function xSource(item: XSignalItem) {
                     <p class="body">{item.body}</p>
                     {item.insight && <div class="insight"><b>洞察</b><span class="middot">·</span>{item.insight}</div>}
                     <div class="card-foot">
-                      <button class="more-btn" type="button" aria-expanded="false"><span>展开全文</span><svg class="ic toggle-icon"><use href="#i-chevron-down"></use></svg></button>
                       <a class="orig" href={item.url || `${base}about/`} target="_blank" rel="noreferrer">阅读原文<svg class="ic"><use href="#i-ext"></use></svg></a>
                     </div>
                   </article>
@@ -138,9 +137,7 @@ function xSource(item: XSignalItem) {
                 <div class="tag-row"><span class="pill"><svg class="ic"><use href="#i-radio"></use></svg>{xKindLabel(item)}</span><span class="src">{xSource(item)}</span></div>
                 <h3><a href={item.url} target="_blank" rel="noreferrer">{item.title}</a></h3>
                 <p class="body body-zh">{item.insightZh}</p>
-                {item.summaryEn && <p class="body body-en" lang="en">{item.summaryEn}</p>}
                 <div class="card-foot">
-                  <button class="more-btn" type="button" aria-expanded="false"><span>展开全文</span><svg class="ic toggle-icon"><use href="#i-chevron-down"></use></svg></button>
                   <a class="orig" href={item.url || `${base}x/`} target="_blank" rel="noreferrer">阅读原文<svg class="ic"><use href="#i-ext"></use></svg></a>
                 </div>
               </article>
@@ -164,20 +161,6 @@ function xSource(item: XSignalItem) {
   <footer class="home-footer">aidigest.club · AI 日报与 Builder Intelligence</footer>
 </Base>
 
-<script is:inline>
-  document.querySelectorAll('.home-v13 .more-btn').forEach((button) => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.card');
-      if (!card) return;
-      const expanded = card.classList.toggle('expand');
-      button.setAttribute('aria-expanded', String(expanded));
-      const label = button.querySelector('span');
-      const use = button.querySelector('use');
-      if (label) label.textContent = expanded ? '收起' : '展开全文';
-      if (use) use.setAttribute('href', expanded ? '#i-chevron-up' : '#i-chevron-down');
-    });
-  });
-</script>
 
 <style>
   :global(body){background:#fff;color:#17171c}
@@ -208,9 +191,9 @@ function xSource(item: XSignalItem) {
   .card.lead{border-top:3px solid var(--purple)}.card.lead:before{display:none}
   .tag-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;min-width:0}.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:3px;background:var(--purple-ghost);color:var(--purple-deep);white-space:nowrap}.pill .ic{font-size:11px}.src{font-size:11.5px;color:var(--gray-4);margin-left:auto;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .card h3{font-size:17.5px;font-weight:750;line-height:1.45;letter-spacing:-.01em;margin:0 0 8px;color:var(--ink)}.card h3 a:hover{color:var(--purple-deep)}
-  .card p.body{margin:0;font-size:15.5px;color:var(--gray-7);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.card.expand p.body{-webkit-line-clamp:unset;display:block}.x-card .body-en{display:none;margin-top:10px;color:var(--gray-5)}.x-card.expand .body-en{display:block}
+  .card p.body{margin:0;font-size:15.5px;color:var(--gray-7)}
   .insight{margin-top:11px;padding:9px 13px;background:var(--gray-1);border-left:3px solid var(--purple);font-size:14.5px;color:var(--gray-7)}.insight b{color:var(--purple-deep);font-weight:800;letter-spacing:.03em}.middot{margin:0 5px}
-  .card-foot{display:flex;align-items:center;margin-top:auto;padding-top:11px}.more-btn{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--gray-5);font-weight:700;background:none;border:0;cursor:pointer;padding:0}.more-btn:hover{color:var(--purple-deep)}.toggle-icon{font-size:12px}.orig{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--purple-deep)}.orig:hover{text-decoration:underline}.orig .ic{font-size:12px}
+  .card-foot{display:flex;align-items:center;margin-top:auto;padding-top:11px}.orig{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--purple-deep)}.orig:hover{text-decoration:underline}.orig .ic{font-size:12px}
   .x-more{display:flex;justify-content:center;margin-top:18px}.x-more a{display:inline-flex;align-items:center;gap:9px;color:#fff;font-size:13.5px;font-weight:800;background:var(--purple);padding:12px 26px;border-radius:3px;transition:.15s}.x-more a:hover{background:var(--purple-deep)}
   .closing{margin:38px 0 8px;background:#fff;border:1px solid var(--gray-2);border-top:3px solid var(--ink);border-radius:6px;padding:22px 20px}.closing h2{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:800;margin:0 0 10px;color:var(--ink)}.closing h2 .ic{color:var(--purple)}.closing p{font-size:15.5px;color:var(--gray-7);margin:0 0 8px}.closing p:last-child{margin-bottom:0}
   .home-footer{margin-top:38px;padding:28px 16px 42px;text-align:center;color:#9d9daa;font-size:12px;border-top:1px solid #e8e8ee}

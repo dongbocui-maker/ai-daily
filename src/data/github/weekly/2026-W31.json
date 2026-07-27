@@ -1,0 +1,607 @@
+{
+  "general": [
+    {
+      "rank": 1,
+      "name": "bojieli/ai-agent-book",
+      "url": "https://github.com/bojieli/ai-agent-book",
+      "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "language": "Python",
+      "stars": 20907,
+      "stars_period": 15909,
+      "forks": 2079,
+      "description_zh": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "features": [
+        "开源全书正文与配套示例代码，围绕 Agent = LLM + 上下文 + 工具 展开",
+        "覆盖上下文工程、RAG、工具、Coding Agent、评估、模型后训练等主题",
+        "配套代码按十章组织，多数 demo 已对接真实 LLM API 跑通",
+        "提供中文、英文、泰米尔语、越南语多语言 PDF 电子书",
+        "项目分为可独立运行、复现指南、设计文档三类"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "koala73/worldmonitor",
+      "url": "https://github.com/koala73/worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "language": "TypeScript",
+      "stars": 74778,
+      "stars_period": 12615,
+      "forks": 11231,
+      "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面",
+      "features": [
+        "AI 驱动的新闻聚合与地缘政治实时监控",
+        "统一的态势感知界面，整合全球情报与基础设施追踪",
+        "提供 Tech、Finance、Commodity、Energy 等多种主题变体",
+        "可通过 npm 安装并支持 CLI 使用",
+        "集成 MCP server，支持 AI agent 接入"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "tirth8205/code-review-graph",
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "description": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+      "language": "Python",
+      "stars": 26616,
+      "stars_period": 6006,
+      "forks": 2484,
+      "description_zh": "面向 MCP 和 CLI 的本地优先代码智能图谱。为你的代码库构建持久化映射，让 AI 编码工具只读取关键内容，在代码评审和大型仓库工作流中实现经基准测试验证的上下文缩减。",
+      "features": [
+        "用 Tree-sitter 构建代码结构图谱，精准定位上下文",
+        "增量追踪代码变更，仅读取相关部分",
+        "通过 MCP 为 AI 助手提供精准代码上下文",
+        "一条命令自动检测并配置所有支持的平台",
+        "大幅减少 review 任务的 token 消耗"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "1jehuang/jcode",
+      "url": "https://github.com/1jehuang/jcode",
+      "description": "The most intelligent agent harness for code",
+      "language": "Rust",
+      "stars": 11670,
+      "stars_period": 2909,
+      "forks": 1294,
+      "description_zh": "最智能的代码 agent harness",
+      "features": []
+    },
+    {
+      "rank": 5,
+      "name": "diegosouzapw/OmniRoute",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors",
+      "language": "TypeScript",
+      "stars": 31065,
+      "stars_period": 10912,
+      "forks": 4035,
+      "description_zh": "永不停止编码。免费 MIT AI 网关：一个端点，290+ 个 provider（90+ 免费），500+ 个模型——Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax。兼容 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。配额感知自动回退，RTK+Caveman 压缩节省 15-95% token，支持 MCP/A2A、桌面端/PWA。由 500+ 位贡献者共建",
+      "features": [
+        "通过单一 endpoint 连接 236 个 AI providers，其中 50+ 免费",
+        "将 Claude Code、Cursor、Copilot 等工具接入免费 Claude/GPT/Gemini",
+        "支持 provider 故障自动 fallback 切换",
+        "RTK + Caveman 压缩技术节省 15-95% tokens",
+        "内置 17 种 routing 策略灵活调度请求"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "agegr/pi-web",
+      "url": "https://github.com/agegr/pi-web",
+      "description": "Web UI for the pi coding agent",
+      "language": "TypeScript",
+      "stars": 2876,
+      "stars_period": 1551,
+      "forks": 386,
+      "description_zh": "pi 编程 agent 的 Web UI",
+      "features": [
+        "浏览按项目组织的 pi session 历史对话记录",
+        "从任意消息继续或 fork session 进入独立分支",
+        "侧边栏切换 Git worktrees 联动新 session 与 Explorer",
+        "左侧浏览文件，右侧预览源码、文档、图片与 PDF",
+        "从 Web UI 管理 model、API key、model 测试与 skill 开关"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "earendil-works/pi",
+      "url": "https://github.com/earendil-works/pi",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+      "language": "TypeScript",
+      "stars": 78097,
+      "stars_period": 5389,
+      "forks": 9614,
+      "description_zh": "AI agent 工具包：统一 LLM API、agent 循环、TUI、编码 agent CLI",
+      "features": [
+        "自扩展的交互式 coding agent CLI",
+        "提供支持 tool calling 与状态管理的 agent runtime",
+        "统一的多 provider LLM API（OpenAI、Anthropic、Google 等）",
+        "支持差分渲染的终端 UI 库",
+        "支持通过容器或沙箱隔离运行 Pi"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 189633,
+      "stars_period": 12238,
+      "forks": 16284,
+      "description_zh": "面向真正工程师的技能。直接来自我的 .agents 目录。",
+      "features": [
+        "提供小巧、可组合、易于适配的 agent skills，适用于任意 model",
+        "通过 skills.sh 一行命令安装并配置 skills",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 grilling session 让 agent 主动追问需求以消除误解",
+        "适配 Claude Code、Codex 等多种 coding agent"
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars": 86653,
+      "stars_period": 5497,
+      "forks": 11528,
+      "description_zh": "π RuView 将普通 WiFi 信号转化为实时空间感知、生命体征监测和存在检测——无需任何视频画面。",
+      "features": []
+    },
+    {
+      "rank": 10,
+      "name": "rohitg00/ai-engineering-from-scratch",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "description": "Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 43776,
+      "stars_period": 4317,
+      "forks": 7366,
+      "description_zh": "学会它。构建它。分享给他人。",
+      "features": []
+    },
+    {
+      "rank": 11,
+      "name": "Pumpkin-MC/Pumpkin",
+      "url": "https://github.com/Pumpkin-MC/Pumpkin",
+      "description": "Empowering everyone to host fast and efficient Minecraft servers.",
+      "language": "Rust",
+      "stars": 10014,
+      "stars_period": 1883,
+      "forks": 672,
+      "description_zh": "让每个人都能搭建快速高效的 Minecraft 服务器。",
+      "features": [
+        "用 Rust 构建的高性能多线程 Minecraft 服务器",
+        "支持最新版 Java 与 Bedrock 版并遵循原版机制",
+        "支持 Vanilla、Linear、Pump 多种 chunk 加载与保存",
+        "内置 RCON、Query 及 Bungeecord proxy 支持",
+        "高度可配置（toml），并提供 plugin 开发基础"
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "language": "Python",
+      "stars": 30094,
+      "stars_period": 2199,
+      "forks": 3963,
+      "description_zh": "DeepTutor：终身个性化辅导。https://deeptutor.info/。",
+      "features": [
+        "提供终身个性化 AI 辅导 (personalized tutoring) 体验",
+        "支持多语言界面，覆盖英、中、日等 11 种语言",
+        "基于 Python 3.11+ 构建的 tutoring framework"
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "MoonshotAI/kimi-code",
+      "url": "https://github.com/MoonshotAI/kimi-code",
+      "description": "Kimi Code CLI — The Starting Point for Next-Gen Agents",
+      "language": "TypeScript",
+      "stars": 5194,
+      "stars_period": 1380,
+      "forks": 760,
+      "description_zh": "Kimi Code CLI — 下一代智能体的起点",
+      "features": []
+    },
+    {
+      "rank": 14,
+      "name": "schollz/croc",
+      "url": "https://github.com/schollz/croc",
+      "description": "Easily and securely send things from one computer to another 🐊 📦",
+      "language": "Go",
+      "stars": 38668,
+      "stars_period": 2993,
+      "forks": 1541,
+      "description_zh": "在计算机之间轻松安全地传输文件 🐊 📦",
+      "features": [
+        "支持任意两台计算机通过 relay 传输文件和文件夹",
+        "采用 PAKE 实现 end-to-end 加密",
+        "跨平台传输，支持 Windows、Linux、Mac",
+        "支持多文件传输及断点续传",
+        "IPv6 优先并回退 IPv4，可通过 Tor 等 proxy"
+      ]
+    },
+    {
+      "rank": 15,
+      "name": "every-app/open-seo",
+      "url": "https://github.com/every-app/open-seo",
+      "description": "Open source alternative to Semrush and Ahrefs",
+      "language": "TypeScript",
+      "stars": 8244,
+      "stars_period": 3639,
+      "forks": 896,
+      "description_zh": "Semrush 和 Ahrefs 的开源替代品",
+      "features": []
+    },
+    {
+      "rank": 16,
+      "name": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 18255,
+      "stars_period": 4932,
+      "forks": 921,
+      "description_zh": "为 Claude Code、Cursor 和 Codex 打造的反 AI 劣质设计技能。",
+      "features": [
+        "为 Claude Code、Cursor、Codex 提供拒绝 AI 感的 design skill",
+        "内置 20 种主题、57 项 slop-test 检测门与 pre-emit 自我审查",
+        "支持 audit、redesign、study 与默认 build 四种操作",
+        "从截图或 URL 提取设计 DNA 并导出可移植的 design.md",
+        "按 brief 自动选择宏结构、主题与工艺，非模板套用"
+      ]
+    },
+    {
+      "rank": 17,
+      "name": "MoonshotAI/kimi-cli",
+      "url": "https://github.com/MoonshotAI/kimi-cli",
+      "description": "Kimi Code CLI is your next CLI agent.",
+      "language": "Python",
+      "stars": 10896,
+      "stars_period": 1200,
+      "forks": 1255,
+      "description_zh": "Kimi Code CLI 是你的下一代 CLI agent。",
+      "features": []
+    },
+    {
+      "rank": 18,
+      "name": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.",
+      "language": "TypeScript",
+      "stars": 29750,
+      "stars_period": 7392,
+      "forks": 2114,
+      "description_zh": "Orca 是用于管理并行 agent 集群的 ADE。用你自己的订阅运行任意编码 agent。支持桌面、移动端和 VPS。",
+      "features": [
+        "手机伴侣 App 远程监控和操控 agent，任务完成即通知",
+        "并行运行 Codex、ClaudeCode、OpenCode、Pi 等多种 AI agent",
+        "每个 agent 在独立 git worktree 中运行并集中追踪",
+        "一个 prompt 分发给多个 agent，对比结果并合并最优",
+        "支持 macOS、Windows、Linux 跨平台运行"
+      ]
+    },
+    {
+      "rank": 19,
+      "name": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "language": "Python",
+      "stars": 34175,
+      "stars_period": 1768,
+      "forks": 5757,
+      "description_zh": "Kronos：金融市场语言的基础模型",
+      "features": []
+    },
+    {
+      "rank": 20,
+      "name": "earthtojake/text-to-cad",
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "description": "A collection of agent skills for CAD, robotics and hardware design",
+      "language": "JavaScript",
+      "stars": 10550,
+      "stars_period": 2169,
+      "forks": 1151,
+      "description_zh": "面向 CAD、机器人和硬件设计的 agent 技能集合",
+      "features": [
+        "从自然语言或图像请求生成并编辑 CAD 模型",
+        "支持导出 STEP、STL、3MF、GLB 等多种格式",
+        "为 CAD、机器人与硬件设计 agent 提供 skills 库",
+        "支持 URDF、SDF、SRDF 等机器人描述文件工作流",
+        "涵盖建模、检查、采购、切片与本地评审流程"
+      ]
+    },
+    {
+      "rank": 21,
+      "name": "CoreBunch/Instatic",
+      "url": "https://github.com/CoreBunch/Instatic",
+      "description": "The open-source alternative to Webflow, Framer and WordPress. Agentic self-hosted visual CMS outputting clean static pages. Users, roles, plugins, content, database, it's all there.",
+      "language": "TypeScript",
+      "stars": 5679,
+      "stars_period": 1893,
+      "forks": 520,
+      "description_zh": "Webflow、Framer 和 WordPress 的开源替代品。自托管的 Agentic 可视化 CMS，输出干净的静态页面。用户、角色、插件、内容、数据库，一应俱全。",
+      "features": []
+    },
+    {
+      "rank": 22,
+      "name": "ComposioHQ/awesome-claude-skills",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+      "language": "Python",
+      "stars": 70910,
+      "stars_period": 2820,
+      "forks": 7959,
+      "description_zh": "精选的 Claude Skills、资源与工具列表，用于定制 Claude AI 工作流",
+      "features": [
+        "精选 1000+ 生产级实用 Claude Skills 与 Plugins",
+        "支持 Claude Code、Codex、Cursor、Gemini CLI 等编码 agent",
+        "connect-apps 插件让 Claude 通过 Composio 连接 500+ 应用",
+        "支持发邮件、创建 issue、发 Slack 等真实操作"
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "pingdotgg/t3code",
+      "url": "https://github.com/pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 15051,
+      "stars_period": 793,
+      "forks": 3309,
+      "features": []
+    }
+  ],
+  "ai": [
+    {
+      "rank": 1,
+      "name": "bojieli/ai-agent-book",
+      "url": "https://github.com/bojieli/ai-agent-book",
+      "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "language": "Python",
+      "stars": 20907,
+      "stars_period": 15909,
+      "forks": 2079,
+      "description_zh": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "features": [
+        "开源全书正文与配套示例代码，围绕 Agent = LLM + 上下文 + 工具 展开",
+        "覆盖上下文工程、RAG、工具、Coding Agent、评估、模型后训练等主题",
+        "配套代码按十章组织，多数 demo 已对接真实 LLM API 跑通",
+        "提供中文、英文、泰米尔语、越南语多语言 PDF 电子书",
+        "项目分为可独立运行、复现指南、设计文档三类"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "koala73/worldmonitor",
+      "url": "https://github.com/koala73/worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "language": "TypeScript",
+      "stars": 74778,
+      "stars_period": 12615,
+      "forks": 11231,
+      "description_zh": "实时全球情报仪表盘。AI 驱动的新闻聚合、地缘政治监控与基础设施追踪，统一呈现的态势感知界面",
+      "features": [
+        "AI 驱动的新闻聚合与地缘政治实时监控",
+        "统一的态势感知界面，整合全球情报与基础设施追踪",
+        "提供 Tech、Finance、Commodity、Energy 等多种主题变体",
+        "可通过 npm 安装并支持 CLI 使用",
+        "集成 MCP server，支持 AI agent 接入"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "tirth8205/code-review-graph",
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "description": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+      "language": "Python",
+      "stars": 26616,
+      "stars_period": 6006,
+      "forks": 2484,
+      "description_zh": "面向 MCP 和 CLI 的本地优先代码智能图谱。为你的代码库构建持久化映射，让 AI 编码工具只读取关键内容，在代码评审和大型仓库工作流中实现经基准测试验证的上下文缩减。",
+      "features": [
+        "用 Tree-sitter 构建代码结构图谱，精准定位上下文",
+        "增量追踪代码变更，仅读取相关部分",
+        "通过 MCP 为 AI 助手提供精准代码上下文",
+        "一条命令自动检测并配置所有支持的平台",
+        "大幅减少 review 任务的 token 消耗"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "1jehuang/jcode",
+      "url": "https://github.com/1jehuang/jcode",
+      "description": "The most intelligent agent harness for code",
+      "language": "Rust",
+      "stars": 11670,
+      "stars_period": 2909,
+      "forks": 1294,
+      "description_zh": "最智能的代码 agent harness",
+      "features": []
+    },
+    {
+      "rank": 5,
+      "name": "diegosouzapw/OmniRoute",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors",
+      "language": "TypeScript",
+      "stars": 31065,
+      "stars_period": 10912,
+      "forks": 4035,
+      "description_zh": "永不停止编码。免费 MIT AI 网关：一个端点，290+ 个 provider（90+ 免费），500+ 个模型——Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax。兼容 Claude Code、Codex、Cursor、OpenCode、Cline 和 Copilot。配额感知自动回退，RTK+Caveman 压缩节省 15-95% token，支持 MCP/A2A、桌面端/PWA。由 500+ 位贡献者共建",
+      "features": [
+        "通过单一 endpoint 连接 236 个 AI providers，其中 50+ 免费",
+        "将 Claude Code、Cursor、Copilot 等工具接入免费 Claude/GPT/Gemini",
+        "支持 provider 故障自动 fallback 切换",
+        "RTK + Caveman 压缩技术节省 15-95% tokens",
+        "内置 17 种 routing 策略灵活调度请求"
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "agegr/pi-web",
+      "url": "https://github.com/agegr/pi-web",
+      "description": "Web UI for the pi coding agent",
+      "language": "TypeScript",
+      "stars": 2876,
+      "stars_period": 1551,
+      "forks": 386,
+      "description_zh": "pi 编程 agent 的 Web UI",
+      "features": [
+        "浏览按项目组织的 pi session 历史对话记录",
+        "从任意消息继续或 fork session 进入独立分支",
+        "侧边栏切换 Git worktrees 联动新 session 与 Explorer",
+        "左侧浏览文件，右侧预览源码、文档、图片与 PDF",
+        "从 Web UI 管理 model、API key、model 测试与 skill 开关"
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "earendil-works/pi",
+      "url": "https://github.com/earendil-works/pi",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+      "language": "TypeScript",
+      "stars": 78097,
+      "stars_period": 5389,
+      "forks": 9614,
+      "description_zh": "AI agent 工具包：统一 LLM API、agent 循环、TUI、编码 agent CLI",
+      "features": [
+        "自扩展的交互式 coding agent CLI",
+        "提供支持 tool calling 与状态管理的 agent runtime",
+        "统一的多 provider LLM API（OpenAI、Anthropic、Google 等）",
+        "支持差分渲染的终端 UI 库",
+        "支持通过容器或沙箱隔离运行 Pi"
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 189633,
+      "stars_period": 12238,
+      "forks": 16284,
+      "description_zh": "面向真正工程师的技能。直接来自我的 .agents 目录。",
+      "features": [
+        "提供小巧、可组合、易于适配的 agent skills，适用于任意 model",
+        "通过 skills.sh 一行命令安装并配置 skills",
+        "支持 GitHub、Linear 或本地文件作为 issue tracker",
+        "提供 grilling session 让 agent 主动追问需求以消除误解",
+        "适配 Claude Code、Codex 等多种 coding agent"
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "rohitg00/ai-engineering-from-scratch",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "description": "Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 43776,
+      "stars_period": 4317,
+      "forks": 7366,
+      "description_zh": "学会它。构建它。分享给他人。",
+      "features": []
+    },
+    {
+      "rank": 13,
+      "name": "MoonshotAI/kimi-code",
+      "url": "https://github.com/MoonshotAI/kimi-code",
+      "description": "Kimi Code CLI — The Starting Point for Next-Gen Agents",
+      "language": "TypeScript",
+      "stars": 5194,
+      "stars_period": 1380,
+      "forks": 760,
+      "description_zh": "Kimi Code CLI — 下一代智能体的起点",
+      "features": []
+    },
+    {
+      "rank": 16,
+      "name": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 18255,
+      "stars_period": 4932,
+      "forks": 921,
+      "description_zh": "为 Claude Code、Cursor 和 Codex 打造的反 AI 劣质设计技能。",
+      "features": [
+        "为 Claude Code、Cursor、Codex 提供拒绝 AI 感的 design skill",
+        "内置 20 种主题、57 项 slop-test 检测门与 pre-emit 自我审查",
+        "支持 audit、redesign、study 与默认 build 四种操作",
+        "从截图或 URL 提取设计 DNA 并导出可移植的 design.md",
+        "按 brief 自动选择宏结构、主题与工艺，非模板套用"
+      ]
+    },
+    {
+      "rank": 17,
+      "name": "MoonshotAI/kimi-cli",
+      "url": "https://github.com/MoonshotAI/kimi-cli",
+      "description": "Kimi Code CLI is your next CLI agent.",
+      "language": "Python",
+      "stars": 10896,
+      "stars_period": 1200,
+      "forks": 1255,
+      "description_zh": "Kimi Code CLI 是你的下一代 CLI agent。",
+      "features": []
+    },
+    {
+      "rank": 18,
+      "name": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.",
+      "language": "TypeScript",
+      "stars": 29750,
+      "stars_period": 7392,
+      "forks": 2114,
+      "description_zh": "Orca 是用于管理并行 agent 集群的 ADE。用你自己的订阅运行任意编码 agent。支持桌面、移动端和 VPS。",
+      "features": [
+        "手机伴侣 App 远程监控和操控 agent，任务完成即通知",
+        "并行运行 Codex、ClaudeCode、OpenCode、Pi 等多种 AI agent",
+        "每个 agent 在独立 git worktree 中运行并集中追踪",
+        "一个 prompt 分发给多个 agent，对比结果并合并最优",
+        "支持 macOS、Windows、Linux 跨平台运行"
+      ]
+    },
+    {
+      "rank": 20,
+      "name": "earthtojake/text-to-cad",
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "description": "A collection of agent skills for CAD, robotics and hardware design",
+      "language": "JavaScript",
+      "stars": 10550,
+      "stars_period": 2169,
+      "forks": 1151,
+      "description_zh": "面向 CAD、机器人和硬件设计的 agent 技能集合",
+      "features": [
+        "从自然语言或图像请求生成并编辑 CAD 模型",
+        "支持导出 STEP、STL、3MF、GLB 等多种格式",
+        "为 CAD、机器人与硬件设计 agent 提供 skills 库",
+        "支持 URDF、SDF、SRDF 等机器人描述文件工作流",
+        "涵盖建模、检查、采购、切片与本地评审流程"
+      ]
+    },
+    {
+      "rank": 22,
+      "name": "ComposioHQ/awesome-claude-skills",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+      "language": "Python",
+      "stars": 70910,
+      "stars_period": 2820,
+      "forks": 7959,
+      "description_zh": "精选的 Claude Skills、资源与工具列表，用于定制 Claude AI 工作流",
+      "features": [
+        "精选 1000+ 生产级实用 Claude Skills 与 Plugins",
+        "支持 Claude Code、Codex、Cursor、Gemini CLI 等编码 agent",
+        "connect-apps 插件让 Claude 通过 Composio 连接 500+ 应用",
+        "支持发邮件、创建 issue、发 Slack 等真实操作"
+      ]
+    }
+  ]
+}

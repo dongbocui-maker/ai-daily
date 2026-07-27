@@ -3664,5 +3664,70 @@
     ],
     "sourceHash": "633ff05f",
     "ts": 1784512820411
+  },
+  "bojieli/ai-agent-book": {
+    "features": [
+      "开源全书正文与配套示例代码，围绕 Agent = LLM + 上下文 + 工具 展开",
+      "覆盖上下文工程、RAG、工具、Coding Agent、评估、模型后训练等主题",
+      "配套代码按十章组织，多数 demo 已对接真实 LLM API 跑通",
+      "提供中文、英文、泰米尔语、越南语多语言 PDF 电子书",
+      "项目分为可独立运行、复现指南、设计文档三类"
+    ],
+    "sourceHash": "76bed342",
+    "ts": 1785115242388
+  },
+  "agegr/pi-web": {
+    "features": [
+      "浏览按项目组织的 pi session 历史对话记录",
+      "从任意消息继续或 fork session 进入独立分支",
+      "侧边栏切换 Git worktrees 联动新 session 与 Explorer",
+      "左侧浏览文件，右侧预览源码、文档、图片与 PDF",
+      "从 Web UI 管理 model、API key、model 测试与 skill 开关"
+    ],
+    "sourceHash": "70f8cbd3",
+    "ts": 1785115246456
+  },
+  "Pumpkin-MC/Pumpkin": {
+    "features": [
+      "用 Rust 构建的高性能多线程 Minecraft 服务器",
+      "支持最新版 Java 与 Bedrock 版并遵循原版机制",
+      "支持 Vanilla、Linear、Pump 多种 chunk 加载与保存",
+      "内置 RCON、Query 及 Bungeecord proxy 支持",
+      "高度可配置（toml），并提供 plugin 开发基础"
+    ],
+    "sourceHash": "4f7cd1d0",
+    "ts": 1785115251316
+  },
+  "schollz/croc": {
+    "features": [
+      "支持任意两台计算机通过 relay 传输文件和文件夹",
+      "采用 PAKE 实现 end-to-end 加密",
+      "跨平台传输，支持 Windows、Linux、Mac",
+      "支持多文件传输及断点续传",
+      "IPv6 优先并回退 IPv4，可通过 Tor 等 proxy"
+    ],
+    "sourceHash": "-c6d0aab",
+    "ts": 1785115254785
+  },
+  "earthtojake/text-to-cad": {
+    "features": [
+      "从自然语言或图像请求生成并编辑 CAD 模型",
+      "支持导出 STEP、STL、3MF、GLB 等多种格式",
+      "为 CAD、机器人与硬件设计 agent 提供 skills 库",
+      "支持 URDF、SDF、SRDF 等机器人描述文件工作流",
+      "涵盖建模、检查、采购、切片与本地评审流程"
+    ],
+    "sourceHash": "-4d71d7df",
+    "ts": 1785115260516
+  },
+  "ComposioHQ/awesome-claude-skills": {
+    "features": [
+      "精选 1000+ 生产级实用 Claude Skills 与 Plugins",
+      "支持 Claude Code、Codex、Cursor、Gemini CLI 等编码 agent",
+      "connect-apps 插件让 Claude 通过 Composio 连接 500+ 应用",
+      "支持发邮件、创建 issue、发 Slack 等真实操作"
+    ],
+    "sourceHash": "581c5688",
+    "ts": 1785115265156
   }
 }

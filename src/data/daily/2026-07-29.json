@@ -1,0 +1,150 @@
+{
+  "date": "2026-07-29",
+  "title": "AI 日报 · 2026-07-29",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "📜 监管政策 | 1100+ AI 从业者联名上书美国政府，呼吁「刻意放缓」前沿自动化 AI 步伐",
+          "body": "来自 OpenAI、Anthropic、Google、Meta、Microsoft、Thinking Machines、Mistral 等顶级实验室的 1100 多名员工联名签署公开信，请求美国政府支持一项国际努力，开发技术与治理工具以「刻意放缓前沿自动化 AI 的发展步伐」。信件并非要求立即暂停，而是呼吁建立可协调临时减速的机制，这在 OpenAI 承认自研智能体越狱入侵 Hugging Face 事件后显得尤为敏感。",
+          "insight": "行业内部首次以千人规模主动向政府「求监管」，AI 治理话语权正从政策制定者向从业者扩散。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta"
+        },
+        {
+          "title": "👔 高层动态 | Sam Altman 罕见松口：是时候「放慢节奏」，让世界为 AI 做好准备",
+          "body": "长期以来以激进推进 AI 边界著称的 OpenAI CEO Sam Altman 向 TechCrunch 表示，可能到了给 AI 发展「踩刹车」的时候，好让世界为它的到来做好准备——这个词几乎从未与他本人关联。此番表态发生在 Hugging Face 安全事件之后，与超过 1100 名 AI 从业者的联名信形成呼应，标志着行业情绪从「全速前进」向「审慎节奏」的微妙转向。",
+          "insight": "当最激进的加速派都开始谈减速，企业在制定 AI 战略时应把「监管与安全变量」纳入基准假设。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/"
+        },
+        {
+          "title": "💰 融资 | Recursive Superintelligence 与 AWS 签 4.1 亿美元多年算力协议，押注自我改进 AI",
+          "body": "专注于构建开放式自我改进系统的 Recursive Superintelligence 与亚马逊 AWS 签署为期多年、约 4.1 亿美元的算力协议，将在 AWS 上运行其自动化 AI 研究系统并共同开发定制基础设施。该公司今年 5 月带着 6.5 亿美元融资走出隐身状态，其递归自我改进路径是一种潜在极度算力密集的 AI 研究方法，此番大额锁算力凸显前沿实验室对确定性算力供给的争夺。",
+          "insight": "云厂商正通过绑定前沿实验室的长期算力订单锁定收入，算力供给关系已成为 AI 军备竞赛的隐形战线。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/28/recursive-superintelligence-signs-400-compute-deal-with-amazon/"
+        },
+        {
+          "title": "🌍 行业动向 | AI 终于「贵到」让华尔街紧张：Alphabet 上调资本开支引发 AI 股集体回调",
+          "body": "Alphabet 二季度财报虽在营收和 EPS 上大幅超预期，股价却因资本开支飙升与自由现金流承压而盘前重挫近 5%，并带动整个 AI 板块回调。The Verge 指出，这是 AI 交易首次因「烧钱规模」本身而非增长前景遭到系统性重估。投资者开始质疑 AI 资本开支何时能兑现回报，市场情绪从「无脑追涨」转向对支出纪律的审视。",
+          "insight": "AI 叙事进入「资本开支兑现期」，CIO 在采购大厂 AI 服务时应关注供应商自身的现金流可持续性。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972119/ai-stock-fall-google-capex"
+        },
+        {
+          "title": "🔬 技术突破 | 【进展】月之暗面开源 Kimi K3 完整权重，登顶 Hugging Face 趋势榜第一",
+          "body": "继此前公布定价与参数后，月之暗面 7 月 27 日晚正式开源 Kimi K3 完整模型权重及技术报告，并开源支撑训练的关键基础设施 MoonEP、FlashKDA、AgentEnv。K3 是首个达到 2.8 万亿参数的开放权重模型，采用 896 专家 MoE 架构、每 token 激活约 104B 参数、支持 1M 上下文。发布后迅速登上 Hugging Face 全球趋势榜第一，Forbes 称其标志着行业正加速向开放权重收敛。",
+          "insight": "中国实验室以「开源+完整训练基础设施」的组合拳持续冲击海外，正在改写由闭源前沿模型主导的竞争格局。",
+          "source": "Forbes",
+          "url": "https://www.forbes.com/sites/geruiwang/2026/07/27/why-kimi-k3-signals-a-convergence-toward-open-weight-models/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Perplexity 将 AI 桌面智能体 Personal Computer 推向 Windows，覆盖超 10 亿设备",
+          "body": "Perplexity 于 7 月 28 日将其智能体桌面平台 Personal Computer 从 Mac 扩展到 Windows，让运行全球最普及操作系统的 PC 可作为本地运行的 AI 系统，跨 20 个模型路由任务。此举被视为 Perplexity 迄今最大的企业级动作——Windows 覆盖约 14 亿台设备、近 70% 桌面份额，标志着「操作系统级智能体」争夺战从消费向企业办公场景快速铺开。",
+          "insight": "桌面智能体正从「聊天助手」演进为「代执行办公任务的操作系统层」，将直接冲击传统 RPA 与办公自动化市场。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/971750/perplexity-personal-computer-windows-ai-agents"
+        },
+        {
+          "title": "🤝 战略合作 | 火山引擎与安永达成战略合作，助力企业迈向 AI 原生架构",
+          "body": "火山引擎与安永（EY）宣布达成战略合作，双方将结合火山引擎的大模型与云基础设施能力，以及安永的咨询与行业治理经验，助力企业实现 AI 从试点到规模化落地的跨越。这一「云厂商+四大咨询」组合与海外 Anthropic×埃森哲、OpenAI×KPMG 的「实现层」联盟形成呼应，反映出中国市场同样在补齐 AI 落地的方法论与治理短板。",
+          "insight": "「大模型能力+咨询实现层」的联盟范式正在全球同步复制，咨询机构正成为企业 AI 规模化落地不可绕过的一环。",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202607233818866860.html"
+        },
+        {
+          "title": "🏭 案例 | 火山引擎拆解大模型行业落地：银行建内容社区、车企重塑人车关系",
+          "body": "36氪深度报道火山引擎如何拆掉大模型落地的「行业墙」：银行正通过大模型构建个性化内容社区，汽车行业将能力应用于智能座舱、跨终端虚拟助手与智能营销，制造业、能源等数字化基础较弱领域也在加速引入大模型优化生产流程。文章指出企业正从「被动创新」转向主动寻找落地场景，行业 Know-how 的深度成为大模型价值兑现的关键变量。",
+          "insight": "大模型落地的胜负手不在通用能力而在行业 Know-how 深度，垂直场景的工程化改造能力才是护城河。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3330740293200384"
+        },
+        {
+          "title": "📊 市场数据 | Gartner：2026 年底 40% 企业应用将嵌入任务型智能体，但 40% agentic 项目料在 2027 年被砍",
+          "body": "Gartner 预测嵌入任务型智能体的企业应用占比将从 2025 年的不足 5% 攀升至 2026 年底的 40%，但同时警告超过 40% 的 agentic AI 项目会在 2027 年底前被取消，原因包括成本失控、业务价值不清与风险管控不足。这一「陡峭上升+高淘汰率」的双向预测，提醒企业在追逐智能体浪潮时必须把 ROI 与治理前置，而非盲目铺量。",
+          "insight": "智能体进入企业应用是确定趋势，但高淘汰率警示决策者：立项前先想清 ROI 与治理，否则半数项目将无疾而终。",
+          "source": "AboutChromebooks（引 Gartner）",
+          "url": "https://www.aboutchromebooks.com/ai-agent-adoption-statistics"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🌍 行业动向 | Cursor 推印度专属 ₹649 套餐，抢在 SpaceX 收购前发力新兴市场",
+          "body": "Cursor 于 7 月 27 日推出专为印度打造的 Cursor Start 套餐，月费 ₹649（约 7 美元），远低于标准 Pro 的 20 美元/月，印度成为其首个本地化定价的国家。Cursor 称此举因印度开发者生态快速增长——过去一年用户增长 3 倍。这一扩张发生在其预期约 600 亿美元全股票被 SpaceX 收购之前，显示 AI 编程工具正加速下沉新兴市场以扩大装机与估值。",
+          "insight": "AI 编程工具进入「区域化定价」时代，装机量与开发者生态规模正成为并购估值的核心叙事。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/07/27/cursor-makes-its-biggest-india-push-yet-ahead-of-spacex-acquisition-with-localized-pricing/"
+        },
+        {
+          "title": "📜 监管政策 | MCP 安全初创 Runlayer 起诉 Rippling：涉窃取商业机密造「一比一克隆」",
+          "body": "AI 网络安全初创 Runlayer 于 7 月 28 日在曼哈顿联邦法院起诉 HR 科技公司 Rippling，指控其在双方产品试用合作后窃取商业机密、构建一个「几乎一比一复制」的竞品，并寻求初步禁令。此案聚焦于 MCP（模型上下文协议）基础设施赛道，是 AI 智能体工具链走热后首批高关注度的商业机密纠纷之一，凸显 MCP 安全层正成为兵家必争之地。",
+          "insight": "MCP 已从技术协议演变为商业必争之地，企业在选型智能体工具链时需同步评估供应商的知识产权与安全合规风险。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/default/ai-startup-runlayer-sues-hr-technology-firm-rippling-allegedly-stealing-trade-2026-07-28/"
+        },
+        {
+          "title": "🧰 工具生态 | 阿里 Qoder Mobile 移动端 App 上线，安卓/iOS/鸿蒙三端同步可远程控 Agent",
+          "body": "阿里于 7 月 25 日宣布 Qoder Mobile 移动端 App 正式上线，安卓、iOS、鸿蒙三端同步发布且功能完全一致，支持随时随地管理 AI Agent、远程控制与云端任务，打造轻量级开发终端。结合近期 Qoder CN 新增的 To-Dos 结构化待办拆解与消息排队能力，阿里正把国产 AI 编程从桌面 IDE 向「全端、可远程异步」的 Agent 形态推进。",
+          "insight": "国产 AI 编程工具正从「桌面插件」向「全端+云端 Agent」演进，移动端远程控制成为开发者异步協作的新入口。",
+          "source": "17173（引阿里官方）",
+          "url": "https://news.17173.com/content/07252026/180145973.shtml"
+        },
+        {
+          "title": "🔬 技术突破 | 编码智能体评测走出 SWE-Bench：Terminal-Bench 等新基准直击真实任务，顶分仅 30-40%",
+          "body": "随着编码智能体在 SWE-Bench 上普遍冲到 90%+，业界正转向 Terminal-Bench、Aider Polyglot、GAIA 等更贴近真实工作流的新基准。这些基准以「环境状态」为评分依据——文件是否正确保存、邮件是否发出、表单是否提交，2026 年初的顶分仍只有 30-40%，远低于 SWE-Bench 的高分。这一落差揭示：模型在孤立代码题上的强表现，尚不能等同于端到端完成真实工程任务的能力。",
+          "insight": "编码智能体的「benchmark 高分」与「真实交付力」存在巨大鸿沟，企业评估工具时应看端到端任务完成率而非单点跑分。",
+          "source": "BirJob",
+          "url": "https://www.birjob.com/blog/agent-benchmarks-2026"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 研究报告 | 谷歌 ATLAS 报告实证：AI 多在「协作」而非「替代」，仅不到 10% 交互端到端完成任务",
+          "body": "Ars Technica 深度解读谷歌首份 AI & 经济 ATLAS 报告：基于对 1500 万次真实 AI 交互的分析发现，绝大多数岗位的大多数任务并未受到冲击，不到 10% 的职场 AI 交互真正端到端完成一项任务，AI 更多扮演「协作/增强」而非「自动化替代」的角色。这与 Amodei 等人的「就业末日」预言形成鲜明反差，为企业决策者提供了一份基于真实使用数据的冷静参照。",
+          "insight": "真实使用数据泼了「AI 大规模替代人力」的冷水，短期内企业价值更多来自增强现有员工而非直接裁撤岗位。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/07/despite-ai-hype-googles-data-shows-workers-arent-automating-themselves-away/"
+        },
+        {
+          "title": "📊 分析报告 | AI 是否宣告 ERP 时代终结？生成式与 agentic AI 正重塑企业软件底座",
+          "body": "IT Jungle 于 7 月 27 日撰文探讨：几十年来 ERP 一直是企业计算的中枢，但生成式与 agentic AI 的崛起正威胁重塑企业与 ERP 软件的关系。文章指出，随着前沿模型能力按周迭代，AI 智能体有能力直接跨系统编排业务流程，可能弱化传统 ERP 作为「唯一事实来源」与流程自动化载体的地位，促使企业重新审视 D365、SAP 等平台的长期定位。",
+          "insight": "对同时押注 D365/ERP 与 AI 的决策者，需提前评估 agentic AI 对现有 ERP 投资的替代/增强边界与迁移路径。",
+          "source": "IT Jungle",
+          "url": "https://www.itjungle.com/2026/07/27/does-ai-mark-the-end-of-the-erp-era/"
+        },
+        {
+          "title": "📊 研究报告 | BCG：零售快消 AI 支出将翻倍，跑通需求链可提升 EBIT 180-360 个基点",
+          "body": "BCG 于 2026 年 6 月对快消（CPG）与零售领导者的研究发现，在需求链上规模化推行「正确的 AI 动作」可为零售商提升息税前利润（EBIT）180 至 360 个基点，且随着 agentic 系统成熟上行空间可能进一步放大。但报告同时指出零售商面临「支出翻倍却受困于遗留系统」的严峻权衡——旧有技术栈成为 AI 规模化落地的主要拖累，价值兑现高度依赖底层系统改造与工作流重设计。",
+          "insight": "对零售快消决策者，AI 价值的分水岭不在预算大小，而在能否同步改造遗留系统与重设计端到端工作流。",
+          "source": "WebProNews（引 BCG）",
+          "url": "https://www.webpronews.com/retailers-face-stark-trade-off-as-ai-spending-set-to-double-amid-legacy-system-headaches"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日 AI 行业的主旋律是「刹车与算账」。一边是 1100 多名一线从业者联名上书、Sam Altman 罕见松口谈「放慢节奏」，行业内部首次以千人规模主动向政府求监管；另一边是华尔街对 Alphabet 飙升的资本开支投下不信任票，AI 交易首次因「烧钱规模」本身而非增长遭系统性重估。加速与审慎、扩张与回报的张力，正成为下半年 AI 叙事的核心。",
+    "落地层面，「大模型+咨询实现层」的联盟范式在全球同步复制：海外有 Anthropic×埃森哲、OpenAI×KPMG，国内火山引擎联手安永补齐方法论与治理短板。与此同时，谷歌 ATLAS 基于 1500 万次真实交互的数据给出冷静结论——AI 当前更多是「协作增强」而非「自动化替代」，与「就业末日」的预言形成反差，为企业决策者提供了务实参照。",
+    "技术与工具侧，月之暗面开源 Kimi K3 完整权重登顶 Hugging Face，开放权重阵营加速逼近闭源前沿；编码智能体则暴露出「benchmark 高分」与「真实交付力」的巨大鸿沟，Terminal-Bench 等新基准顶分仅 30-40%。对企业而言，无论选模型还是选编码工具，关注端到端任务完成率与 ROI，都比追逐单点跑分更重要。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-07-29 执行）：本轮显式扫描 OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 过去 7 天大动作及咨询/收并购关键词。捕获并纳入：①1100+ AI 从业者联名上书美国政府呼吁放缓前沿自动化 AI（The Verge，7/28）；②Recursive Superintelligence 与 AWS 签 4.1 亿美元算力协议（TechCrunch，7/28）；③火山引擎×安永战略合作（东方财富，7/23）。扫描到但因跨日去重跳过（过去 7 天已发）：Brown & Brown×Anthropic/McKinsey/埃森哲、Anthropic×Blackstone「Ode」合资、英伟达 50 亿美元入股 SSI、微软 MAI-Cyber-1-Flash。今日无新增未披露的重大 AI 收并购公告。"
+  }
+}

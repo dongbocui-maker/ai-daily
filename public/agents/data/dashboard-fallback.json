@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-07 07:05:01 +08",
+  "generated_at": "2026-08-07 21:05:01 +08",
   "today": "2026-08-07",
   "grand": {
-    "tok": 2316359793,
-    "cost": 3941.1,
-    "calls": 4349,
-    "save": 9206.66,
-    "today_tok": 795528,
-    "today_cost": 1.15,
-    "today_save": 3.13,
-    "last7d_tok": 113262229,
-    "last7d_cost": 223.57
+    "tok": 2338412760,
+    "cost": 4002.55,
+    "calls": 4382,
+    "save": 9366.73,
+    "today_tok": 22848495,
+    "today_cost": 62.6,
+    "today_save": 163.19,
+    "last7d_tok": 135315196,
+    "last7d_cost": 285.02
   },
   "trend": [
     {
@@ -204,15 +204,36 @@
     },
     {
       "date": "2026-08-07",
-      "tok": 795528,
-      "cost": 1.15,
+      "tok": 22848495,
+      "cost": 62.6,
       "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 20406356,
+          "cost": 59.19
+        },
+        "aima": {
+          "name": "银月",
+          "mark": "P.E.P.P.E.R.",
+          "emoji": "🌶️",
+          "tok": 389038,
+          "cost": 1.14
+        },
         "mk2": {
           "name": "MK2",
           "mark": "MARK II",
           "emoji": "🦐",
-          "tok": 795528,
-          "cost": 1.15
+          "tok": 902239,
+          "cost": 1.52
+        },
+        "mk46": {
+          "name": "Mark 46",
+          "mark": "MARK XLVI",
+          "emoji": "🛡",
+          "tok": 1150862,
+          "cost": 0.75
         }
       }
     }
@@ -225,20 +246,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "IDLE",
-      "idle_min": 454,
-      "last_ts": "2026-08-06T15:30:43.392Z",
-      "total_tok": 1397730953,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 31969926,
-      "last7d_cost": 96.85,
-      "cost": 2763.47,
-      "save": 5731.07,
-      "calls": 2988,
+      "status": "ONLINE",
+      "idle_min": 4,
+      "last_ts": "2026-08-07T13:00:56.014Z",
+      "total_tok": 1418137309,
+      "today_tok": 20406356,
+      "today_cost": 59.19,
+      "last7d_tok": 52376282,
+      "last7d_cost": 156.03,
+      "cost": 2822.65,
+      "save": 5887.73,
+      "calls": 3016,
       "active_model": "aigw-claude-48-main/claude-fable-5",
-      "cache_eff": 80.2,
-      "today_cache_eff": 0,
+      "cache_eff": 80.3,
+      "today_cache_eff": 85.8,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -248,9 +269,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 303418622,
-          "cost": 1066.95,
-          "calls": 576
+          "tok": 323824978,
+          "cost": 1126.13,
+          "calls": 604
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -298,25 +319,25 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "IDLE",
-      "idle_min": 1325,
-      "last_ts": "2026-08-06T01:00:16.356Z",
-      "total_tok": 440332718,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 57327512,
-      "last7d_cost": 98.44,
-      "cost": 727.62,
-      "save": 1666.36,
-      "calls": 947,
-      "active_model": "aigw-claude-48-main/claude-opus-4-8",
+      "idle_min": 550,
+      "last_ts": "2026-08-07T03:55:38.381Z",
+      "total_tok": 440721756,
+      "today_tok": 389038,
+      "today_cost": 1.14,
+      "last7d_tok": 57716550,
+      "last7d_cost": 99.58,
+      "cost": 728.76,
+      "save": 1667.38,
+      "calls": 950,
+      "active_model": "aigw-claude-48-main/claude-opus-5",
       "cache_eff": 82.3,
-      "today_cache_eff": 0,
+      "today_cache_eff": 58.4,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
-          "tok": 262921269,
-          "cost": 430.83,
-          "calls": 528
+          "tok": 263179471,
+          "cost": 431.52,
+          "calls": 530
         },
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -359,6 +380,12 @@
           "tok": 411607,
           "cost": 0.18,
           "calls": 4
+        },
+        {
+          "name": "aigw-claude-48-main/claude-opus-5",
+          "tok": 130836,
+          "cost": 0.45,
+          "calls": 1
         }
       ]
     },
@@ -369,20 +396,20 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "ONLINE",
-      "idle_min": 3,
-      "last_ts": "2026-08-06T23:02:42.248Z",
-      "total_tok": 433630679,
-      "today_tok": 795528,
-      "today_cost": 1.15,
-      "last7d_tok": 19592444,
-      "last7d_cost": 21.85,
-      "cost": 381.26,
-      "save": 1687.74,
-      "calls": 269,
-      "active_model": "aigw-claude-48-main/claude-opus-4-8",
+      "status": "IDLE",
+      "idle_min": 635,
+      "last_ts": "2026-08-07T02:30:13.651Z",
+      "total_tok": 433737390,
+      "today_tok": 902239,
+      "today_cost": 1.52,
+      "last7d_tok": 19699155,
+      "last7d_cost": 22.23,
+      "cost": 381.64,
+      "save": 1687.97,
+      "calls": 270,
+      "active_model": "aigw-claude-48-main/claude-opus-5",
       "cache_eff": 93.9,
-      "today_cache_eff": 88.3,
+      "today_cache_eff": 83.7,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -425,6 +452,12 @@
           "tok": 205008,
           "cost": 1.03,
           "calls": 2
+        },
+        {
+          "name": "aigw-claude-48-main/claude-opus-5",
+          "tok": 106711,
+          "cost": 0.38,
+          "calls": 1
         }
       ]
     },
@@ -435,26 +468,26 @@
       "emoji": "🛡",
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
-      "status": "OFFLINE",
-      "idle_min": 9207,
-      "last_ts": "2026-07-31T13:38:34.799Z",
-      "total_tok": 15114254,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 0,
-      "last7d_cost": 0.0,
-      "cost": 12.53,
-      "save": 27.15,
-      "calls": 31,
+      "status": "IDLE",
+      "idle_min": 547,
+      "last_ts": "2026-08-07T03:57:51.666Z",
+      "total_tok": 16265116,
+      "today_tok": 1150862,
+      "today_cost": 0.75,
+      "last7d_tok": 1150862,
+      "last7d_cost": 0.75,
+      "cost": 13.28,
+      "save": 29.31,
+      "calls": 32,
       "active_model": "qwen/qwen3.7-max",
-      "cache_eff": 78.9,
-      "today_cache_eff": 0,
+      "cache_eff": 79.3,
+      "today_cache_eff": 83.7,
       "models": [
         {
           "name": "qwen/qwen3.7-max",
-          "tok": 14772765,
-          "cost": 11.98,
-          "calls": 30
+          "tok": 15923627,
+          "cost": 12.73,
+          "calls": 31
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -471,8 +504,8 @@
       "emoji": "🛰️",
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
-      "status": "IDLE",
-      "idle_min": 936,
+      "status": "OFFLINE",
+      "idle_min": 1776,
       "last_ts": "2026-08-06T07:29:21.564Z",
       "total_tok": 29551189,
       "today_tok": 0,
@@ -1294,14 +1327,14 @@
         "over": true
       },
       "t2": {
-        "kb": 286,
-        "files": 33
+        "kb": 292,
+        "files": 34
       },
       "t1": {
-        "kb": 954,
-        "files": 176
+        "kb": 958,
+        "files": 177
       },
-      "daily_files": 80
+      "daily_files": 81
     },
     "aima": {
       "t3": {
@@ -1358,8 +1391,8 @@
       "human": "每天 21:00",
       "human_en": "Daily 21:00",
       "kind": "cron",
-      "next_run_ms": 1786107600000,
-      "last_run_ms": 1786021200012,
+      "next_run_ms": 1786194000000,
+      "last_run_ms": 1786107600007,
       "last_status": "ok",
       "core": false
     },
@@ -1423,9 +1456,9 @@
   "models": [
     {
       "name": "aigw-claude-48-main/claude-opus-4-8",
-      "tok": 819342476,
-      "cost": 1212.31,
-      "calls": 1307
+      "tok": 819600678,
+      "cost": 1213.01,
+      "calls": 1309
     },
     {
       "name": "azure-claude/claude-opus-4-7",
@@ -1435,9 +1468,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 326567834,
-      "cost": 1134.29,
-      "calls": 608
+      "tok": 346974190,
+      "cost": 1193.47,
+      "calls": 636
     },
     {
       "name": "azure-openai-responses/gpt-5.5",
@@ -1465,9 +1498,15 @@
     },
     {
       "name": "qwen/qwen3.7-max",
-      "tok": 20934725,
-      "cost": 20.81,
-      "calls": 76
+      "tok": 22085587,
+      "cost": 21.56,
+      "calls": 77
+    },
+    {
+      "name": "aigw-claude-48-main/claude-opus-5",
+      "tok": 237547,
+      "cost": 0.82,
+      "calls": 2
     }
   ]
 }

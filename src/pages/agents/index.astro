@@ -694,16 +694,17 @@ body.hud-scrub{cursor:grabbing}body.hud-scrub .hudnav,body.hud-scrub .hudnav *,b
 // CHAINS: 优先用 build 时从 openclaw.json 生成的 AGENT_CHAINS（single source of truth）；
 // 若 JSON 缺失/损坏则回退到硬编码 literal（仅兜底，可能过时）。
 const CHAINS = AGENT_CHAINS || {
-  main:['fable-5','opus-4.8','gpt-5.6-sol','qwen3.7-max'],
-  aima:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
-  mk2:['opus-4.8','gpt-5.6-sol','qwen3.7-max'],
-  mk46:['qwen3.7-max','opus-4.8','gpt-5.6-sol'],
-  'claude-researcher':['gpt-5.6-sol','opus-4.8','qwen3.7-max'],
+  main:['fable-5','opus-5','gpt-5.6-sol','qwen3.7-max'],
+  aima:['opus-5','gpt-5.6-sol','qwen3.7-max'],
+  mk2:['opus-5','gpt-5.6-sol','qwen3.7-max'],
+  mk46:['qwen3.7-max','opus-5','gpt-5.6-sol'],
+  'claude-researcher':['gpt-5.6-sol','opus-5','qwen3.7-max'],
 };
 // CHAIN_MODEL_KEYS(short→fullname): 优先用生成的 AGENT_CHAIN_KEYS（single source of truth，
 // 由 gen-agent-chains.py 从 openclaw.json 推导），JSON 缺失/损坏时回退硬编码 literal（可能过时）。
 const CHAIN_MODEL_KEYS = AGENT_CHAIN_KEYS || {
   'opus-4.8':'aigw-claude-48-main/claude-opus-4-8',
+  'opus-5':'aigw-claude-48-main/claude-opus-5',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
   'gpt-5.6-sol':'azure-openai-responses/gpt-5.6-sol-2026-07-09',
@@ -1009,8 +1010,8 @@ function render(DATA){
         <div class="arch-tier t3">
           <span class="tts-badge"><span class="ttsd"></span>TTS</span>
           <div class="ep-node healthy" id="ep-opus">
-            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">OPUS48</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">PRIMARY</span></div><div class="epn-ep sb"><span class="eed sb"></span><span class="eec">CL48</span><span class="ees">STANDBY</span></div></div></div>
-            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">OPUS48</div><div class="em-ep">AIGW·CL48</div></div>
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">OPUS5</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">PRIMARY</span></div><div class="epn-ep sb"><span class="eed sb"></span><span class="eec">CL48</span><span class="ees">STBY·4.8</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">OPUS5</div><div class="em-ep">AIGW·CL48</div></div>
           </div>
           <div class="ep-node healthy" id="ep-gpt">
             <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">GPT56</span><span class="epn-tag">AZURE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">ACAI</span><span class="ees">ONLINE</span></div></div></div>
@@ -1104,6 +1105,7 @@ const ARCH_TIER1 = new Set(['main','aima']);
 // deepseek 暂不处理（不映射，落配置链外时回退画配置 primary 实线）。
 const ARCH_MODEL_EP = {
   'aigw-claude-48-main/claude-opus-4-8':'ep-opus',
+  'aigw-claude-48-main/claude-opus-5':'ep-opus',
   'aigw-claude-48-main/claude-fable-5':'ep-fable',
   'azure-claude-48/claude-opus-4-8':'ep-opus',
   'azure-claude/claude-opus-4-7':'ep-opus',

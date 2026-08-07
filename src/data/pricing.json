@@ -6,58 +6,114 @@
   },
   "models": {
     "azure-claude-48/claude-opus-4-8": {
-      "price": [5.00, 25.00, 6.25, 0.50],
+      "price": [
+        5.0,
+        25.0,
+        6.25,
+        0.5
+      ],
       "source": "https://www.anthropic.com/pricing (Opus tier; cache write=1.25x in, read=0.1x in)",
       "verified": "2026-07-21",
       "confidence": "official"
     },
     "aigw-claude-48-main/claude-opus-4-8": {
-      "price": [5.00, 25.00, 6.25, 0.50],
+      "price": [
+        5.0,
+        25.0,
+        6.25,
+        0.5
+      ],
       "source": "same model as azure-claude-48, aigw internal endpoint (Accenture EA may discount)",
       "verified": "2026-07-06",
       "confidence": "internal"
     },
+    "aigw-claude-48-main/claude-opus-5": {
+      "price": [
+        5.0,
+        25.0,
+        6.25,
+        0.5
+      ],
+      "source": "https://www.anthropic.com/pricing (Opus 5: $5 in / $25 out, same as Opus 4.8 tier; cache write=1.25x in, read=0.1x in; cross-checked eesel/layer3labs/aipricing 2026-08-07)",
+      "verified": "2026-08-07",
+      "confidence": "official"
+    },
     "aigw-claude-48-main/claude-fable-5": {
-      "price": [10.00, 50.00, 12.50, 1.00],
+      "price": [
+        10.0,
+        50.0,
+        12.5,
+        1.0
+      ],
       "source": "aigw internal endpoint, no public pricing page; value set by Jason 2026-07-06",
       "verified": "2026-07-06",
       "confidence": "internal"
     },
     "azure-claude/claude-opus-4-7": {
-      "price": [5.00, 25.00, 6.25, 0.50],
+      "price": [
+        5.0,
+        25.0,
+        6.25,
+        0.5
+      ],
       "source": "https://www.anthropic.com/pricing (Opus tier)",
       "verified": "2026-07-21",
       "confidence": "official"
     },
     "azure-openai-responses/gpt-5.5": {
-      "price": [1.25, 10.00, 1.25, 0.125],
+      "price": [
+        1.25,
+        10.0,
+        1.25,
+        0.125
+      ],
       "source": "https://azure.microsoft.com/en-us/pricing/details/azure-openai/ (legacy, deprecated in chains)",
       "verified": "2026-06-04",
       "confidence": "official",
       "deprecated": true
     },
     "azure-openai-responses/gpt-5.6-sol-2026-07-09": {
-      "price": [5.00, 30.00, 5.00, 0.50],
+      "price": [
+        5.0,
+        30.0,
+        5.0,
+        0.5
+      ],
       "source": "OpenAI gpt-5.6 sol official API (2026-07-09 launch): $5 in / $30 out; cache read 90% off = $0.50; cache write estimated at input price",
       "verified": "2026-07-09",
       "confidence": "official"
     },
     "anthropic/claude-sonnet-4-6": {
-      "price": [3.00, 15.00, 3.75, 0.30],
+      "price": [
+        3.0,
+        15.0,
+        3.75,
+        0.3
+      ],
       "source": "https://www.anthropic.com/pricing (Sonnet tier)",
       "verified": "2026-06-04",
       "confidence": "official",
       "deprecated": true
     },
     "deepseek/DeepSeek-V4-Pro": {
-      "price": [0.435, 0.87, 0.435, 0.003625],
+      "price": [
+        0.435,
+        0.87,
+        0.435,
+        0.003625
+      ],
       "source": "https://api-docs.deepseek.com/quick_start/pricing (deprecated in chains, kept for history)",
       "verified": "2026-06-04",
       "confidence": "official",
       "deprecated": true
     },
     "qwen/qwen3.7-max": {
-      "price": [2.50, 7.50, 2.50, 0.25],
+      "price": [
+        2.5,
+        7.5,
+        2.5,
+        0.25
+      ],
       "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.7-max List price $2.5 in / $7.5 out; cache read est 10% of in)",
       "verified": "2026-07-21",
       "confidence": "official"

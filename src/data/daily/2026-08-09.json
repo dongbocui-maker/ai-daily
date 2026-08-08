@@ -1,0 +1,178 @@
+{
+  "date": "2026-08-09",
+  "title": "AI 日报 · 2026-08-09",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 收并购 | OpenAI 收购演示文稿初创 NextSlide，把「做 PPT」直接塞进 ChatGPT",
+          "body": "OpenAI 于 8 月 8 日确认收购 AI 演示文稿创业公司 NextSlide，创始人 Ahmed Beshry 及整个团队并入 ChatGPT 产品线，公司在官网发布公告称「正在加入 OpenAI」。业界普遍判断这是一笔典型的 acqui-hire——OpenAI 买的不是产品本身，而是一支已经把「自然语言生成与编辑幻灯片」这条链路跑通的团队。这是 OpenAI 近期在生产力工具方向的又一次收编：继无限文字对话向免费用户开放、Agent Plugins 开放标准落地之后，把 PowerPoint 级别的文档生成能力直接内化进 ChatGPT，意味着它正从「对话入口」向「办公套件替代者」推进，与微软 M365 Copilot 的边界开始出现实质性重叠。",
+          "insight": "对企业客户而言，「ChatGPT 能不能直接产出可交付的 deck」将成为下一轮生产力工具选型的关键变量，采购方需要重新评估 ChatGPT Enterprise 与 M365 Copilot 的功能重叠度与议价空间。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/"
+        },
+        {
+          "title": "🌍 行业动向 | 亚马逊德州数据中心配套燃气电厂获批年排 3300 万吨，或成全美最大单一污染源",
+          "body": "亚马逊 8 月 7 日确认，正在为其西德州数据中心出资建设一座位于 Pecos County、代号 GW Ranch 的大型私营燃气发电厂。该项目已获得州级排放许可，允许年排放 3300 万吨二氧化碳，超过美国现存最大燃煤电厂，将成为全美单点最大的温室气体排放源。这座电厂初期不接入公共电网，属于专供 AI 算力的「表后自建电源」模式。NYT、The Verge、SCMP 同步报道，该项目也成为 TechCrunch 与 The Verge 双榜头条，反映出 AI 基建的能源账正在从财务成本外溢为公共政治议题。",
+          "insight": "AI 算力扩张的瓶颈正从芯片转向电力与排放许可，企业在做多云与算力选址决策时必须把 ESG 披露风险与地方政治阻力纳入模型。",
+          "source": "The New York Times",
+          "url": "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html"
+        },
+        {
+          "title": "🔬 技术突破 | DeepMind WeatherNext 登上 Nature 并开源：热带气旋预警提前整整一天",
+          "body": "Google DeepMind 发布 WeatherNext 2 气旋预测模型的 Nature 论文，并宣布开源该模型。论文数据显示，WeatherNext 在热带气旋路径与快速增强预测上，比现有全球顶级数值预报系统平均提前约 24 小时给出可用预警，并在 2025 年飓风 Melissa 的实战中得到了美国国家飓风中心（NHC）的验证。DeepMind 同时把模型权重开放给全球研究机构使用。该条目在 HN 获 345 分讨论，并同时占据 Ars Technica AI 头条第 1 位——是本周少见的「一手厂商博客 + 顶刊论文 + 编辑头版 + 社区热度」四重信号叠加的科研突破。",
+          "insight": "气象是 AI for Science 中最容易量化社会 ROI 的场景，「提前一天」直接对应撤离窗口与保险赔付规模，这类可货币化的公共价值案例将成为主权 AI 与政府采购的重点样板。",
+          "source": "Google DeepMind Blog",
+          "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/"
+        },
+        {
+          "title": "📜 监管政策 | 美国能源部启动 Genesis 开放模型计划：用国家实验室数据训练科学基础模型",
+          "body": "美国能源部（DOE）科学副部长办公室正式启动 Genesis Open Models Initiative 并开放申请。该计划隶属于更大的 Genesis Mission，目标是依托国家实验室的科学数据与超算资源，训练一批「强大、透明、可扩展」的开放科学基础模型，覆盖能源、材料、半导体、生物技术与国家安全等领域。首批 Genesis Mission 项目已选定，德州大学奥斯汀分校 5 个团队、俄克拉荷马州立大学等陆续入选，Domino Data Lab 等企业加入模型开发与验证工作组。该条目在 HN 获 337 分。",
+          "insight": "美国正把「开放权重」从产业竞争议题上升为国家科研基础设施战略，这将直接改变企业获取领域专用基础模型的路径——未来垂直行业模型可能不再只来自商业厂商。",
+          "source": "U.S. Department of Energy",
+          "url": "https://www.energy.gov/undersecretaryforscience/articles/us-department-energy-launches-genesis-open-models-initiative"
+        },
+        {
+          "title": "🚀 产品发布 | 阿里 Wan3.0 视频大模型开启公测：doc、xls、ppt、pdf 都能直接变视频",
+          "body": "阿里巴巴于 8 月 6 日宣布视频生成大模型 Wan3.0 开启公测。相比前代，Wan3.0 最大的变化是在文本、图片、音频、视频四种基础模态之外，首次支持 doc、xls、ppt、pdf、md 等文档格式作为输入——用户可以把一份完整的报告或 PPT 直接转成视频。模型支持最长 30 秒生成，具备参考、编辑、复制、驱动等一体化能力。公测入口覆盖万相官网、万镜一刻、千问 App 灰度以及阿里云百炼 API（模型 ID：wan3.0-video）。该条目位列量子位今日头版第 7 位。",
+          "insight": "「文档即素材」把视频生成从创意工具挪进了企业内容生产流水线，对营销、培训、投资者关系等大量以 deck 为交付物的岗位，内容再利用的边际成本正在趋近于零。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/08/467877.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🤝 战略合作 | 印度快消巨头 Dabur 携手埃森哲：先建统一数据底座，再谈全流程 AI",
+          "body": "印度百年快消集团 Dabur 宣布与埃森哲达成合作，由埃森哲帮助其构建统一的企业数据基础——将结构化与非结构化数据整合进中央数据湖，进而在财务、采购、供应链、销售等核心环节支撑 AI 驱动的决策。这个案例的价值在于其明确的先后顺序：不是先上智能体、再补数据，而是把数据地基当作 AI 规模化的前置条件。在大量企业困于「PoC 成功、生产失败」的当下，Dabur 的路径与近期多份调研（Forbes 74% 已投产但半数无法证明有效、Deloitte 仅 34% 真正围绕 AI 重构业务）指向的结论一致。",
+          "insight": "AI 项目失败往往不是模型问题而是数据资产问题，CIO 在启动智能体规划前，应先回答「跨系统的统一语义层是否存在」这一问题。",
+          "source": "TechCircle",
+          "url": "https://www.techcircle.in/2026/08/04/dabur-taps-accenture-to-scale-ai-across-core-operations"
+        },
+        {
+          "title": "📊 市场数据 | Salesforce《2026 智能体企业指数》：客户智能体部署规模同比翻倍以上",
+          "body": "Salesforce 发布第二份年度 Agentic Enterprise Index，基于 Agentforce 平台过去五个季度的聚合使用数据。核心发现是客户的「智能体劳动力」规模同比翻倍以上，并引入了 AWU（Agentic Work Unit，智能体完成的一个离散任务）作为衡量单位——截至 2026 年 4 月，Agentforce 的 AWU 产出以 15% 的复合月增长率（CMGR）攀升。这是目前少有的、由平台方基于真实生产数据而非问卷给出的智能体规模化指标，CIO 杂志同步做了独立解读。",
+          "insight": "AWU 这类「任务级产出」计量方式，正在取代席位数和 token 消耗成为智能体项目的价值汇报口径，值得企业在设计内部 AI ROI 看板时直接借鉴。",
+          "source": "Salesforce",
+          "url": "https://www.salesforce.com/news/stories/agentic-enterprise-index-insights-2026/"
+        },
+        {
+          "title": "📊 研究报告 | Caylent 调研：98% 企业高管愿意让 AI Agent 跑生产，但全都附带条件",
+          "body": "AWS 顶级合作伙伴、Anthropic Preferred Services Partner 的 Caylent 发布 2026 Enterprise Readiness for Agentic Engineering & Autonomous Cloud Operations 调研。结论是「要不要用智能体」的争论已经结束——98% 的企业高管表示愿意让 AI Agent 直接运行生产环境，前提是具备合适的条件。真正的开放问题已转向：在工程与云运维中走向完全自治，究竟需要哪些护栏。Redmond Magazine 的解读指出，企业正把重心从试点迁移到治理机制建设。",
+          "insight": "智能体采纳的决策焦点已从「是否可信」转为「如何设护栏」，安全审批、回滚路径、权限边界的设计能力将成为区分厂商与集成商的核心竞争力。",
+          "source": "Caylent",
+          "url": "https://www.prnewswire.com/news-releases/98-of-enterprise-leaders-would-let-ai-agents-run-production-under-the-right-conditions-caylent-survey-reveals-302844574.html"
+        },
+        {
+          "title": "🏭 案例 | AI 正在走出对话框：肯德基与理想汽车跑通 A2A 智能体点餐闭环",
+          "body": "36氪梳理了国内 AI 从对话框走向真实业务流的一批案例，其中最具代表性的是餐饮领域的 A2A（Agent to Agent）落地：用户在理想汽车车内发出语音指令后，由理想的智能体「理想同学」直接把需求传递给肯德基的智能体「小 K」，两个属于不同企业的智能体在对话中完成整个点餐流程，无需用户切换 App 或重复输入。这标志着国内智能体协作已从单企业内部的工作流自动化，走向跨组织的服务对接。",
+          "insight": "跨企业 A2A 一旦规模化，「谁的智能体是用户的第一入口」将成为新的流量入口之争，传统渠道与会员体系的价值需要重新定价。",
+          "source": "36氪",
+          "url": "https://36kr.com/p/3866759935572612"
+        },
+        {
+          "title": "🌍 行业动向 | Bloomberg：微软 AI 收入绝大部分来自 OpenAI，披露文件揭开真实结构",
+          "body": "Bloomberg 依据微软新披露的财务文件报道，微软的人工智能收入中绝大部分实际来自 OpenAI 本身——即 OpenAI 在 Azure 上采购算力所贡献的收入，而非广义的第三方企业 AI 采购。这一披露为近期关于「AI 循环融资」的讨论提供了新的实证：超大规模厂商的 AI 收入增长，有相当比例来自其自身投资的模型公司回流。此前微软 Copilot 已突破 3000 万付费席位，但周活率与转化率仍被质疑，两条信息叠加后企业侧的真实付费规模更值得推敲。",
+          "insight": "评估云厂商 AI 业务的健康度时，必须区分「模型公司回流收入」与「独立企业客户收入」，前者的可持续性高度依赖单一客户的融资节奏。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🧰 工具生态 | Databricks 公开内部 AI 编码成本治理手册：开放模型 + 智能路由最高省 90%",
+          "body": "Databricks 联合创始人兼工程副总裁 Patrick Wendell 撰文，系统拆解了大规模团队中 AI 编码成本失控的机理与对策。文章指出企业通常面临两条路径：要么要求开发者手动切换 harness 来调整成本结构，要么采用「元 harness」——对开发者呈现统一界面、在后台按任务复杂度路由到不同模型。Databricks 自身依赖 Unity AI Gateway 实现模型路由、成本可见性与预算管控，并称通过引入开放模型与高效路由，AI 成本最高可削减 90%。文章明确表态：AI 编码成本的指数增长不是宿命，而是一个可解的工程问题。该条目在 HN 获 296 分。",
+          "insight": "「模型路由 + 成本看板」正在成为 AI 工程平台的标配层，企业若仍按人头采购单一编码工具，未来 12 个月的账单弹性将完全不可控。",
+          "source": "Databricks Blog",
+          "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale"
+        },
+        {
+          "title": "🚀 产品发布 | GitHub Copilot 周更：桌面端、CLI 与 VS Code 打通「续跑与上下文不丢」",
+          "body": "GitHub 发布本周 Copilot 更新，核心是跨端会话连续性：桌面 App、CLI 与 VS Code 中的 Copilot 现在可以恢复与组织此前的工作、审阅变更、并在不丢失上下文的前提下继续提问。同期 GitHub 还把 agent app 活动纳入 Copilot 用量指标 API，在企业与组织视图中按第三方智能体分别拆分报表，帮助团队追踪采纳率、横向对比不同智能体，并据此做推广与许可决策。这与微软近期开源 Agent Host Protocol（一个 agent 会话可被多窗口同时连接渲染）在方向上一脉相承。",
+          "insight": "编码智能体的竞争正从「单次生成质量」转向「会话可移植性与可观测性」，企业在选型时应把跨端续跑与用量归因能力列为硬指标。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3/"
+        },
+        {
+          "title": "🌍 行业动向 | AI「垃圾漏洞报告」轰炸苹果赏金计划，苹果被迫给提交量设上限",
+          "body": "据 FT 报道并经 AppleInsider、MacRumors 等跟进，苹果因大量 AI 幻觉生成的低质量安全报告涌入，已限制安全研究员可提交的漏洞数量。苹果表示其漏洞审核系统正承受大量来自业余猎手借助 AI 生成的劣质提交。这不是孤例：curl 创始人称 2026 年前三周收到 20 份漏洞报告、真实漏洞为 0；Google 3 月起不再接受 AI 生成的漏洞报告；Nextcloud 4 月暂停赏金计划；GitHub 7 月大幅削减公开赏金并设立仅限受邀研究员的 VIP 通道。",
+          "insight": "AI 把「提交成本」压到接近零之后，任何开放式众包机制都会被噪声淹没——依赖外部投稿、工单或需求收集的企业流程都需要提前重建信噪比防线。",
+          "source": "AppleInsider",
+          "url": "https://appleinsider.com/articles/26/08/04/ai-slop-security-reports-are-clogging-up-apples-bug-bounty-program"
+        },
+        {
+          "title": "🔬 技术突破 | 100 倍价差：开源小模型在检索任务上跑赢 GPT-5.6 Sol",
+          "body": "Neon 团队发布实测报告，展示其 Castform 方案如何用成本低两个数量级的开源模型，在检索类任务上达到甚至超过前沿模型 GPT-5.6 Sol 的表现。核心论点是：检索与结构化抽取这类任务的能力天花板并不由通用推理能力决定，针对性微调的小模型在精度不降的前提下，可以把单次调用成本压到百分之一量级。该文在 HN 获 432 分，与同期 Databricks 的成本治理文章、DeepSeek V4 Flash 的性价比讨论构成同一条主线。",
+          "insight": "「用最贵的模型跑所有任务」正在被证明是最昂贵的架构错误，任务分层与模型分级应当成为 AI 应用架构评审的强制检查项。",
+          "source": "Neon Blog",
+          "url": "https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency"
+        },
+        {
+          "title": "🌍 行业动向 | 业余编程社区为何集体抵制 LLM：一篇引爆 HN 的「反 AI 宣言」",
+          "body": "资深开发者 Michael Fogus 撰文《Born Against》，解释为什么爱好者编程社区（hobby programming communities）对 LLM 的抵触远比商业团队强烈。他的核心论点是：对以编程为职业的人来说，AI 是效率工具；但对以编程为乐趣的人来说，把思考过程外包给模型恰恰摧毁了活动本身的价值来源。文章在 HN 获 437 分并引发长篇讨论，与同期高踞 HN 榜首的《LLMs reward expertise》（1409 分）、Noema 的《为什么科技圈都这么丧》形成了一组关于「AI 时代工作意义」的连锁讨论。",
+          "insight": "AI 推广的阻力常被误判为技能问题，实际上很大一部分是意义感与身份认同问题——企业变革管理若只做培训不做叙事，落地阻力会被系统性低估。",
+          "source": "Fogus Blog",
+          "url": "https://blog.fogus.me/llm/born-against.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Science 论文：基因组语言模型 Evo 设计出 16 种自然界不存在且真能存活的噬菌体",
+          "body": "斯坦福大学与 Arc Institute 团队在 Science 发表论文，使用基因组语言模型 Evo 1 与 Evo 2 生成了完整的噬菌体基因组，并在实验室中成功合成出 16 种自然界从未出现、却真实具备感染大肠杆菌 C 株能力的病毒。研究团队先用超过 200 万碱基的噬菌体 DNA 序列做增量训练，再用 Microviridae 类群序列微调，最终以仅 11 个基因、约 5000 个碱基的 PhiX174 为验证靶点。Ars Technica 将其列为 AI 板块头条，ABC News、Science 官方同步报道。",
+          "insight": "生成式模型已跨过「设计可存活生命体」的门槛，生物安全审查将从「谁能拿到病原体」转向「谁能拿到模型权重」，这对生命科学企业的合规架构是根本性变化。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/science/2026/08/large-genome-models-used-to-design-new-viruses/"
+        },
+        {
+          "title": "📊 权威报告 | 中国信通院：2025 年中国 AI 产业规模超 1.2 万亿元，同比增长 40%",
+          "body": "中国信息通信研究院 8 月 3 日披露最新测算结果：2025 年中国人工智能产业规模超过 1.2 万亿元人民币，同比增长 40%。截至 2026 年 6 月，中国人工智能企业数量超过 6600 家，全球占比达 15%，已形成覆盖基础底座、模型框架、行业应用的完整产业体系。信通院表示，系统性开展产业监测、量化分析产业规模，是科学有序推动产业高质量发展的基础性工作。这是目前中国官方口径下最权威的 AI 产业规模数据。",
+          "insight": "1.2 万亿的产业口径与 6600 家企业的密度意味着中国 AI 的竞争已进入分层期，跨国企业在华 AI 战略需要从「引入总部方案」转向「本地生态选型」。",
+          "source": "新浪财经 / 中国信通院",
+          "url": "https://finance.sina.com.cn/roll/2026-08-03/doc-inikzzhc6151279.shtml"
+        },
+        {
+          "title": "📊 分析报告 | Noema 长文：如果整整一代知识工作者对职业彻底失去信心",
+          "body": "Noema Magazine 发表长文《Why Is Everyone In Tech So Sad?》，探讨科技从业者情绪普遍低落的结构性根源。文章的核心追问是：过去每当一批人离开，总有新一批工作者补上；但如果一场走偏的 AI 转型让最看重「体验与手艺」的顶尖人才集体丧失对 Workism（工作至上主义）的信仰，人才还会回来吗？该文在 HN 获 949 分高分讨论，与同期 Lenny 的调研数据形成互证——科技从业者的显著倦怠率从 2025 年的 44.7% 升至 2026 年的 54.7%，对职业前景的乐观度从 54.8% 降至 48.7%。",
+          "insight": "AI 转型的最大隐性成本可能不是工具支出而是人才留存，管理者需要主动重建「人做什么才有意义」的组织叙事，否则效率收益会被流失率吃掉。",
+          "source": "Noema Magazine",
+          "url": "https://www.noemamag.com/why-is-everyone-in-tech-so-sad/"
+        },
+        {
+          "title": "📜 监管政策 | 丹麦全国要求书面作业配口头答辩，用「当面讲清楚」对冲 AI 代写",
+          "body": "丹麦教育系统推行新规：学生的书面作业必须配合口头答辩，由教师当面就作业内容提问，以此判断学生是否真正掌握了自己提交的内容。该政策的逻辑不是去检测文本是否由 AI 生成——业界已基本承认检测工具不可靠——而是转而验证「人是否具备该产出所对应的能力」。这条思路正在成为 AI 时代评估体系改革的主流方向。该条目在 HN 获 398 分讨论。",
+          "insight": "「验证能力而非验证产出」的思路同样适用于企业招聘与绩效考核，当交付物可以被模型批量生成，面对面的能力验证环节的权重必须显著上调。",
+          "source": "Mezha",
+          "url": "https://mezha.net/eng/bukvy/ca117584_denmark_requires_oral/"
+        },
+        {
+          "title": "🔬 技术突破 | 中国 NeoLab 时刻：EverMind 用三篇论文交出「全栈自进化」首份答卷",
+          "body": "量子位报道，由盛大集团孵化、延续当年盛大创新院研究基因的团队 EverMind，连续发表三篇论文，在自进化 AI（self-evolving AI）方向给出了一份覆盖记忆方法、可复用算法与基准证据的全栈方案。其开源项目 Raven 定位为「memory-first、可自我改进的 agent harness」，构建在 EverOS 之上，并集成 MiroThinker 驱动的深度研究与推理能力。文章的对照点在于：当海外 NeoLab（新型研究实验室）仍主要靠叙事融资数亿美元时，这支中国团队选择先用论文与开源代码交作业。该条目位列量子位今日头版第 2 位。",
+          "insight": "持续学习与自进化是当前大模型范式最明确的下一个瓶颈，企业在评估长期 AI 伙伴时应关注其在「记忆与自我改进」上的工程积累，而非仅看基准分数。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/08/468555.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天最值得注意的是「AI 的物理账单开始显性化」。亚马逊为德州数据中心自建的燃气电厂拿到年排 3300 万吨的许可，一举成为全美最大单一污染源；与此同时 Bloomberg 披露微软的 AI 收入绝大部分实际来自 OpenAI 自身的算力采购。一边是实打实的电力与排放，一边是循环流转的收入结构——AI 基建的成本正在变得越来越真实，而收入的成色却越来越需要拆解。企业在做长期算力承诺时，必须同时评估能源政治风险与供应商的收入可持续性。",
+    "第二条主线是「成本工程正在取代模型崇拜」。Databricks 公开内部手册，称通过开放模型与智能路由可把 AI 编码成本削减最高 90%；Neon 实测用便宜两个数量级的开源小模型在检索任务上跑赢 GPT-5.6 Sol。加上此前微软内部叫停 Tokenmaxxing、DeepSeek 预告涨价，行业共识正在收敛：用最贵的模型跑所有任务是最昂贵的架构错误。任务分层与模型分级应当立即进入架构评审的强制清单。",
+    "第三条主线是「AI 让开放机制失效，也让人的意义感承压」。苹果因 AI 生成的垃圾漏洞报告被迫给赏金计划设上限，丹麦则用口头答辩对冲 AI 代写——两者的共同逻辑是：当产出成本趋近于零，验证的重心必须从「检查产出」转向「验证能力」。而 HN 上《LLMs reward expertise》（1409 分）、Noema 的《为什么科技圈都这么丧》（949 分）与《Born Against》（437 分）连续霸榜，说明真正的落地阻力已经不只是技术或预算，而是从业者对自身价值的重新定位。变革管理若只做培训不做叙事，效率收益会被流失率吃掉。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-08-09 执行）：(1) 'OpenAI partnership OR joint venture OR acquisition' 限定 Reuters/Bloomberg —— 命中 OpenAI 收购 NextSlide（TechCrunch 8/8，已纳入热点头条）、Bloomberg 披露微软 AI 收入主要来自 OpenAI（已纳入企业级板块）、Sequoia 拟投 100 亿美元于 AI 与再工业化（Bloomberg 8/5，已用于趋势判断未单列）、Noam Shazeer 已于 6 月自 Google 转投 OpenAI（事件日期超 7 天，按铁律 1 淘汰）。(2) 'Anthropic Accenture OR Deloitte OR consulting' —— 命中 Anthropic 与 Blackstone 合资 15 亿美元设立实施公司 Ode（该事件已于 2026-08-02 日报发布，按铁律 6.2 跳过）；Claude Partner Network 相关信息为 2026-03 旧闻，按铁律 1 淘汰；新增命中埃森哲与印度 Dabur 的数据底座合作（TechCircle 8/4，含 Accenture 关键词，按 Step C 强制保留并纳入企业级板块）。(3) 'AI consulting services launch enterprise' —— 命中 AWS Forward Deployed Engineering 组织（CRN 报道，属上月已发事件，跳过）、Caylent 企业智能体就绪度调研（新，已纳入）。(4) 'OpenAI Anthropic Google DeepMind Meta Microsoft' 过去 7 天大动作 —— Google DeepMind 领导层变动（Hassabis 转任 Chair、Jeff Dean 出走）已于 2026-08-06 日报发布，跳过；Anthropic 自研芯片已于 2026-08-06 发布，跳过；OpenAI 暂停 Astra 已于 2026-08-08 发布，跳过；DeepMind WeatherNext 开源为今日新增，已纳入热点。结论：今日无此前未报道的重大收并购或合资公告，唯一新增 M&A 为 OpenAI 收购 NextSlide（acqui-hire 量级），已置于热点新闻首条。"
+  }
+}

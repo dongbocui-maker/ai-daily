@@ -222,6 +222,59 @@ def reformat_insight(text: str) -> str:
 
 # ===================== 健康度报告 =====================
 
+def bilingual_to_zh_body(article: dict) -> str:
+    """【2026-08-16 新增】把新格式 bilingual[] 的中文侧提炼成深度解读正文。
+
+    背景：2026-06-22 起精读正文从 summaryZh（纯中文解读）升级为 bilingual（英中对照全文）。
+    播客 source 只需要中文侧——英文原文会让 NotebookLM 语言混乱、且严重稀释 token 预算。
+
+    处理：
+      - 只取每个 block 的 zh
+      - 剥离播客稿的发言人标记行（**Name** 独占一行）——NotebookLM 双主持人会混淆身份
+      - 保留 markdown 小节标题（## xxx）作为章节锚点，给主持人换气位
+      - 每段仍过段落规整层
+    """
+    blocks = article.get("bilingual") or []
+    if not blocks:
+        return ""
+
+    def strip_links(t: str) -> str:
+        # [锚文本](url) → 锚文本；裸 URL → 删。NotebookLM 用不上链接，
+        # 且长 URL 会把行长撑爆、触发段落规整层误判。
+        t = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', t)
+        t = re.sub(r'(?<![\w/])https?://\S+', '', t)
+        return t
+
+    out = []
+    for b in blocks:
+        zh = strip_links((b.get("zh") or "")).strip()
+        if not zh:
+            continue
+        for raw in zh.split("\n"):
+            line = raw.rstrip()
+            if not line.strip():
+                out.append("")
+                continue
+            # 剥离独占一行的发言人标记（如 **Dwarkesh Patel**）
+            if re.fullmatch(r'\*\*[^*]{1,40}\*\*[:：]?', line.strip()):
+                continue
+            stripped = line.lstrip()
+            # 标题/列表/引用行保持原样，不进段落规整
+            if stripped.startswith(("#", "-", "*", ">", "|")) or re.match(r'^\s*\d+\.\s', line):
+                out.append(line)
+                continue
+            out.extend(split_long_paragraph(line))
+        out.append("")
+
+    # 压掉连续空行
+    body = []
+    for line in out:
+        if line == "" and body and body[-1] == "":
+            continue
+        body.append(line)
+    return "\n".join(body).strip()
+
+
 def health_report(md: str, article: dict) -> dict:
     """对生成的 markdown 做健康度统计，stderr 输出
 
@@ -251,7 +304,9 @@ def health_report(md: str, article: dict) -> dict:
     # 估时（粗略经验值）
     n_keypoints = len(article.get("keyPoints", []))
     n_quotes = len(article.get("quotes", []))
-    summary_zh_chars = len(article.get("summaryZh", ""))
+    summary_zh_chars = len(article.get("summaryZh") or "")
+    if not summary_zh_chars and article.get("bilingual"):
+        summary_zh_chars = sum(len(b.get("zh") or "") for b in article["bilingual"])
 
     est_min = round(
         n_keypoints * 0.6        # 每个观点 ~36 秒
@@ -320,11 +375,19 @@ def build_md(article: dict) -> str:
         parts.append(reformat_insight(article["insight"]))
         parts.append("")
 
-    # 中文深度解读（v2: 自动段落规整 - 这是最重要的修复点）
+    # 中文深度解读
+    #   v2 (2026-05-09): 自动段落规整 - 截断事件后的最重要修复点
+    #   v3 (2026-08-16): 兼容新格式 —— summaryZh 缺失时从 bilingual 中文侧提取
     if article.get("summaryZh"):
         parts.append("## 完整深度解读")
         parts.append(reformat_paragraph_block(article["summaryZh"]))
         parts.append("")
+    elif article.get("bilingual"):
+        zh_body = bilingual_to_zh_body(article)
+        if zh_body:
+            parts.append("## 完整深度解读")
+            parts.append(zh_body)
+            parts.append("")
 
     # 金句
     if article.get("quotes"):

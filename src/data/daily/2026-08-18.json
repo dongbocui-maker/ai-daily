@@ -1,0 +1,157 @@
+{
+  "date": "2026-08-18",
+  "title": "AI 日报 · 2026-08-18",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "💰 融资 | Nvidia 斥资 15 亿美元入股软银旗下 SB Energy，直插 OpenAI 数据中心电力命脉",
+          "body": "Nvidia 宣布向软银旗下数据中心开发商 SB Energy 投资 15 亿美元。SB Energy 正是 OpenAI 俄亥俄州超大规模数据中心项目的开发方，Nvidia 同时为该项目背书了规模高达 1050 亿美元的配套融资。这笔交易把 Nvidia 的资本触角从芯片、云服务进一步延伸到发电与园区开发环节——在 AI 算力扩张已被电力供给而非 GPU 产能卡住脖子的当下，谁能锁定并网容量与土地，谁就掌握了下一轮扩产的定价权。",
+          "insight": "AI 基建的瓶颈已从「买不到卡」转向「接不上电」，芯片厂商正被迫向上游能源资产做垂直整合。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/17/nvidia-investing-1-5b-in-softbank-data-center-developer-behind-openai-project/"
+        },
+        {
+          "title": "💰 融资 | Groq 融资 3.5 亿美元，估值较去年腰斩至 35 亿美元并转型 neocloud",
+          "body": "AI 推理芯片公司 Groq 完成 3.5 亿美元新融资，投后估值 35 亿美元——相比去年约 69 亿美元的高点近乎腰斩，Nvidia 出现在投资方名单中。Groq 同时明确战略转向：从卖 LPU 推理芯片，转做以自有硬件为底座的 neocloud（新型算力云），直接对外售卖推理 token 而非硬件本身。降估值融资叠加商业模式重构，说明纯芯片挑战者路线在 Nvidia 生态压制下已很难独立成立。",
+          "insight": "非 Nvidia 阵营的推理芯片公司正被迫从「卖硬件」退守「卖算力服务」，硬件差异化难以直接兑现为溢价。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/"
+        },
+        {
+          "title": "💰 融资 | Wispr 完成 2.8 亿美元 B 轮，九个月估值翻近三倍至 20 亿美元",
+          "body": "语音输入工具公司 Wispr（Wispr Flow）宣布完成由 Menlo Ventures 领投的 2.8 亿美元 B 轮融资，估值达 20 亿美元，九个月内接近翻三倍，官方称营收保持每季度 150% 以上增长。公司同时发布首个自研语音模型，并明确要把产品从「听写工具」扩展为跨应用的通用语音交互层。在键盘与聊天框之外，语音正在成为智能体时代被严重低估的高频入口。",
+          "insight": "当模型能力趋同，输入方式与交互层的重构会成为下一批高增长应用公司的真实护城河。",
+          "source": "Fortune",
+          "url": "https://fortune.com/2026/08/17/wispr-2-billion-valuation-dictations-only-the-beginning/"
+        },
+        {
+          "title": "🌍 行业动向 | Anthropic 传拟 10 月 IPO，目标估值 2 万亿美元或创史上最大纪录",
+          "body": "据 8 月 17 日投融资市场汇总消息，Anthropic 计划最快于今年 10 月启动上市，目标估值高达 2 万亿美元，若成行将刷新史上最大规模 IPO 纪录。此前该公司已披露第二季度营收超过 115 亿美元。与此同时资本市场另一侧，软银出售了逾七成台积电持仓，显示头部资金正在 AI 产业链内部做大规模换仓——从上游制造转向模型层与应用层的稀缺标的。",
+          "insight": "模型公司正从「只能私募定价的烧钱资产」变成公开市场可定价的基础设施，整个行业的估值锚将被重写。",
+          "source": "投资界",
+          "url": "https://news.pedaily.cn/202608/567739.shtml"
+        },
+        {
+          "title": "🌍 行业动向 | 智能体创业公司 Relay 关停，团队整体并入 Google Chrome",
+          "body": "AI 工作流自动化公司 Relay 宣布停止运营，创始团队整体加入 Google 的 Chrome 团队。Relay 由前 Google Gmail 与 Calendar 产品负责人 Jacob Bank 创办，其上一家公司 Timeful 同样被 Google 收购。这类「关停 + 团队回流大厂」的准 acqui-hire 结构，正在成为智能体赛道中腰部公司的主流退出方式：产品被大厂原生能力覆盖后，人才价值远高于产品本身。",
+          "insight": "浏览器正在成为智能体的默认宿主，独立自动化工具的生存空间被大厂原生能力快速挤压。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "1. AWS Continuum 打通 Claude Code 与 OpenAI Codex，把编码智能体纳入企业安全管控",
+          "body": "AWS 发布 Continuum 与 Anthropic Claude Code、OpenAI Codex 及 Kiro IDE 的集成，将第三方编码智能体纳入统一的企业安全与治理平面：包括凭证托管、操作审计、数据出境控制与权限边界。这标志着云厂商开始把「智能体治理」当作独立产品层来卖，而不是让每个团队各自拼装。对已经放任开发者自带 AI 工具的企业而言，这类管控层将很快从可选项变为合规必选项。",
+          "insight": "企业采纳编码智能体的真正门槛不是模型能力，而是审计、权限与数据边界的可证明性。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/security/aws-continuum-integrates-with-openai-codex-and-anthropic-claude-code-in-major-ai-security-push"
+        },
+        {
+          "title": "2. 阿里千问办公公测，阿里腾讯百度字节四家在企业 Agent 工作台正面开战",
+          "body": "阿里企业级 Agent 产品「千问办公」（QwenWork）开启公测，由 QoderWork、MuleRun、悟空三款产品整合而来并接入新一代基座模型 Qwen3.8，宣称是业内首款同时支持桌面端 Agent、云端 Agent 与企业协同 Agent 的产品。至此腾讯 WorkBuddy、百度 DuMate、字节豆包办公与 TRAE Work、阿里千问办公全部到位，四家头部厂商围绕「谁是企业默认 AI 工作台」的争夺战正式开打。",
+          "insight": "企业 AI 入口之争已从模型 API 下沉到办公工作台，谁占住日常工作流谁就掌握了续费权。",
+          "source": "网易科技",
+          "url": "https://www.163.com/dy/article/L4548HPV0534A4SC.html"
+        },
+        {
+          "title": "3. Salesforce 与 SAP 把自主智能体嵌进核心工作流，治理权归属成新难题",
+          "body": "CIO 杂志分析指出，Salesforce 与 SAP 正在把具备自主决策能力的智能体直接嵌入 CRM、ERP 等核心业务流程，而非作为旁挂助手存在；Gartner 预计到 2026 年 80% 的企业应用将内置此类能力。随之而来的核心问题是「谁有权对智能体说不」——当审批、下单、调价动作由厂商内置智能体发起，企业内部的责任边界与否决机制尚未建立。",
+          "insight": "智能体进入核心系统后，企业最缺的不是能力清单，而是明确的否决权与责任归属设计。",
+          "source": "CIO",
+          "url": "https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html"
+        },
+        {
+          "title": "4. Oracle OCI 率先支持 NVIDIA Nemotron 3.5 Lightning，面向常驻智能体优化",
+          "body": "Oracle 在 8 月 AI 更新中宣布，OCI Enterprise AI 成为首批支持 NVIDIA Nemotron 3.5 Lightning 的云平台之一，该开源可定制模型专为「常驻式（always-on）智能体」场景设计，强调低延迟与持续在线的成本可控性。对企业而言，这类模型的意义在于把智能体从「按需调用的问答」变成「7×24 常驻监控与执行」，从而进入运维、风控、供应链等真正高价值场景。",
+          "insight": "常驻智能体的经济性由单位时间推理成本决定，小而快的专用模型比通用旗舰更适合生产环境。",
+          "source": "Oracle Blog",
+          "url": "https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-august-2026"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "1. OpenAI 放开 Codex 百万 token 上下文至 ChatGPT 账号，但官方警告默认值更优",
+          "body": "OpenAI Codex 负责人 Tibo 公布配置方法，将 GPT-5.6 Sol 在 Codex 中的上下文窗口提升至 100 万 token，并确认该能力已从仅限 API key 扩展到 ChatGPT 账号用户。官方同时明确警示：默认 272k 窗口是围绕性能与成本精细调优的结果，超过 272k 输入按 2 倍计价、输出按 1.5 倍计价，盲目开大反而更慢更贵。社区实测反馈也普遍认为编码任务并不需要百万上下文。",
+          "insight": "上下文长度已不再是编码智能体的竞争焦点，检索与压缩策略比窗口大小更决定实际效果与成本。",
+          "source": "Codex 团队（X @thsottiaux）",
+          "url": "https://x.com/thsottiaux/status/2089143488696705077"
+        },
+        {
+          "title": "2. GitHub Copilot for JetBrains 引入记忆能力并支持本地 Ollama 模型",
+          "body": "GitHub 更新 JetBrains 版 Copilot，新增 Copilot memory（跨会话记住项目约定与用户偏好）并支持接入本地 Ollama 模型，同时恢复了 Copilot、Claude 与 Codex 聊天输入框中的文件与文件夹 # 引用能力。记忆意味着智能体不再每次从零理解代码库上下文，本地模型接入则给出了代码不出内网的合规选项，两者叠加正把 JetBrains 侧的体验拉到与 VS Code 同一水平线。",
+          "insight": "记忆与本地模型正成为编码智能体的标配，敏感代码库的企业采纳门槛因此显著降低。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
+        },
+        {
+          "title": "3. Cursor 全量启用环境预构建：8 月 17 日起新老环境默认开启且不额外收费",
+          "body": "Cursor 更新说明确认，自 8 月 17 日起所有新建与既有云端环境将默认使用 builds（环境预构建），且不额外收费。此前智能体每次启动都需重新克隆仓库、安装依赖、执行 install 脚本，冷启动耗时严重侵蚀实际可用时间；预构建把这部分固化为镜像，让智能体一开工就处于就绪状态。start 命令仍会在每次会话运行，用于拉起 Docker 等长驻进程。",
+          "insight": "编码智能体的效率瓶颈正从模型推理转向工程环境冷启动，基础设施优化的边际收益开始超过换模型。",
+          "source": "Cursor Changelog",
+          "url": "https://releasebot.io/updates/cursor"
+        },
+        {
+          "title": "4. 国产 Coding Plan 横评上线：智谱、Kimi、MiniMax、百炼、方舟等 13 家同台比价",
+          "body": "开源项目 codingplan 对国内外 13 家平台的 Coding Plan / Token Plan 做了系统性横向对比，覆盖智谱 GLM-5.3、Kimi K3、MiniMax M3、阿里百炼 Qwen3.8-Max、字节方舟 Doubao-Seed-2.0、小米 MiMo-V2.5-Pro 以及 Codex、Claude Code 等海外方案，逐项拉平额度、限速与实际单价。在国产模型编码能力快速逼近的当下，选型正从「哪个更聪明」转为「同等预算下谁给的有效 token 更多」。",
+          "insight": "国产编码模型进入价格战阶段，套餐设计与限速策略对团队实际产出的影响已不亚于模型能力本身。",
+          "source": "GitHub",
+          "url": "https://github.com/wmpeng/codingplan"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "1. 斯坦福数字经济实验室：AI 冲击下年轻从业者就业缺口扩大至 19%",
+          "body": "斯坦福数字经济实验室（Digital Economy Lab）更新其「矿井里的金丝雀」系列研究，基于 ADP 大样本薪资数据发现：在 AI 高暴露岗位中，22–25 岁年轻从业者的相对就业缺口进一步扩大至约 19%，而同岗位的资深从业者就业几乎未受影响。研究团队强调该分化在控制行业与企业固定效应后依然稳健，指向 AI 对入门级岗位的结构性替代，而非普遍性裁员。",
+          "insight": "AI 冲击的第一受害者是入门级岗位而非整体就业，企业的人才梯队断层风险将在 3–5 年后集中爆发。",
+          "source": "Stanford Digital Economy Lab",
+          "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/"
+        },
+        {
+          "title": "2. 《The Verge》：AI 对数学的接管已经开始，菲尔兹奖得主转投 AI 研究",
+          "body": "《The Verge》长文梳理了 AI 在数学领域的突破节奏：哈佛数学家 Levent Alpöge 公布 Anthropic Claude Fable 5 用一个极小的反例推翻了长期悬而未决的雅可比猜想，New Scientist 同期报道菲尔兹奖得主 Jacob Tsimerman 决定转向 AI 研究。争议同样激烈——有研究者认为模型是在「记忆」而非「思考」，靠海量文献检索拼接出人类未察觉的组合，而非真正的数学直觉。",
+          "insight": "AI 在数学上的价值目前体现为超人类的组合搜索能力，这恰恰是企业研发中最耗人力的环节。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/977273/the-ai-takeover-of-mathematics-has-begun"
+        },
+        {
+          "title": "3. 中国产业 AI 转型范式研究：从「能演示」走向「能算账」的四位一体路径",
+          "body": "该研究提出「AI 陪伴式转型」框架，用两条主线概括中国产业侧的真实进展。其一是产业边界消融：宝钢集团把大模型送入高炉核心，自研 L1–L5「智驾」分级标准，从能演示走向能算账，对外输出的不再只是钢材而是智能化冶炼服务能力。其二是价值重心迁移：蜜雪冰城自建十大生产基地，用 AI 预测销量准确率超 90%、存货一年周转 7 次，已从茶饮零售转型为产业供应链服务平台。",
+          "insight": "中国企业 AI 落地的分水岭在于能否把模型能力转成可计价的服务，而不是停留在效率演示。",
+          "source": "新浪财经",
+          "url": "https://finance.sina.com.cn/stock/t/2026-08-15/doc-ininkrwr8656415.shtml"
+        },
+        {
+          "title": "4. 亚马逊被曝销毁稀有藏书用于训练 AI 模型，版权与文化保存争议再起",
+          "body": "TechCrunch 报道，曾以在线书店起家的亚马逊，正在拆解并销毁其收购渠道获得的稀有纸质书籍，将其扫描数字化后用于训练 AI 模型。这一「破坏性数字化」做法在版权界与图书馆界引发强烈争议：一方面被销毁的孤本不可再生，另一方面扫描内容用于商业模型训练的授权基础仍存疑。事件把高质量训练语料的枯竭焦虑摆到了台面上。",
+          "insight": "优质语料稀缺正在逼出破坏性的数据获取手段，数据来源合规将成为模型厂商下一个法律风险高地。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天最值得注意的信号是资本流向的转折：Nvidia 拿出 15 亿美元入股软银旗下的数据中心开发商 SB Energy，并为 OpenAI 俄亥俄项目背书千亿级配套融资——这说明 AI 扩张的真实瓶颈已经从 GPU 产能转移到电力与土地。与此同时 Groq 以腰斩估值融资并转型算力云，Anthropic 传闻中的 2 万亿美元 IPO 又在另一端拉高天花板，整个产业链正在同时经历上游硬件的价值挤压与模型层的价值集中。",
+    "企业侧的主线是「治理」压过「能力」。AWS Continuum 把 Claude Code 与 OpenAI Codex 纳入统一安全平面，Salesforce 与 SAP 把自主智能体直接嵌进核心业务流，随之暴露的问题不是模型够不够聪明，而是谁有权对智能体的动作说不。国内四大厂商同期把企业 Agent 工作台全部摆上牌桌，入口之争已从模型 API 下沉到日常工作流本身，而 TCL 华星 95% 缺陷判定准确率的案例提醒我们，真正跑出 ROI 的仍是小模型加闭环流程，而非通用大模型硬塞产线。",
+    "开发者与研究端则出现了一次共同的降温。OpenAI 放开 Codex 百万 token 上下文的同时明确警告默认值更优、超限计价翻倍，社区实测也认为编码任务并不需要那么长的窗口；GitHub Agent Plugins 1.0 联合五大厂商统一插件容器，竞争焦点正从模型能力转向工具分发标准。斯坦福最新数据则给出更冷峻的一面：AI 高暴露岗位中 22–25 岁年轻人的就业缺口已扩大到 19%，而资深从业者几乎未受影响——企业该担心的不是当下裁员，而是三五年后的人才梯队断层。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-08-18 执行）：本轮显式扫描 OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 过去 7 天的合作、合资与收并购动向，以及 AI 咨询服务落地类公告。关键发现：(1) OpenAI 将旗下估值约 100 亿美元、由其控股的 The Deployment Company 与自身 partner initiative 合并，深入企业 AI 交付服务（WSJ 报道）；(2) Nvidia 15 亿美元入股软银系 SB Energy 并为 OpenAI 俄亥俄数据中心背书 1050 亿美元融资（已纳入热点头部）；(3) Anthropic 传闻最快 10 月 IPO、目标估值 2 万亿美元（已纳入热点）；(4) Relay 关停、团队整体并入 Google Chrome，属准 acqui-hire（已纳入热点）。以下条目命中过去 7 天已发布黑名单，按铁律 6 淘汰不再重复：Stripe 70 亿美元收购 OpenRouter、Anthropic Q2 营收 115 亿美元、Dario Amodei 信任危机表态、IBM×OpenAI 企业 AI 合作、Anthropic 洽购 Decart AI、Gemini 3.7 Flash 发布、Qwen3.8-27B 开源、GLM-5.3 发布、DeepSeek Harness 与涨价、Anthropic 隐形水印争议、Codex 232x kernel 自动研究。未发现涉及 Accenture/埃森哲的重大 AI 公告。"
+  }
+}

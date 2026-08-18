@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-18 07:05:01 +08",
+  "generated_at": "2026-08-18 21:05:01 +08",
   "today": "2026-08-18",
   "grand": {
-    "tok": 2390920936,
-    "cost": 4108.5,
-    "calls": 4461,
-    "save": 9649.89,
-    "today_tok": 1245591,
-    "today_cost": 1.48,
-    "today_save": 5.12,
-    "last7d_tok": 65344878,
-    "last7d_cost": 103.51
+    "tok": 2391170314,
+    "cost": 4109.54,
+    "calls": 4462,
+    "save": 9651.56,
+    "today_tok": 1494969,
+    "today_cost": 2.52,
+    "today_save": 6.78,
+    "last7d_tok": 65594256,
+    "last7d_cost": 104.55
   },
   "trend": [
     {
@@ -155,9 +155,16 @@
     },
     {
       "date": "2026-08-18",
-      "tok": 1245591,
-      "cost": 1.48,
+      "tok": 1494969,
+      "cost": 2.52,
       "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 249378,
+          "cost": 1.04
+        },
         "mk2": {
           "name": "MK2",
           "mark": "MARK II",
@@ -176,20 +183,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "IDLE",
-      "idle_min": 604,
-      "last_ts": "2026-08-17T13:01:04.125Z",
-      "total_tok": 1435703277,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 10035318,
-      "last7d_cost": 39.17,
-      "cost": 2880.83,
-      "save": 6017.37,
-      "calls": 3052,
+      "status": "ONLINE",
+      "idle_min": 4,
+      "last_ts": "2026-08-18T13:00:49.614Z",
+      "total_tok": 1435952655,
+      "today_tok": 249378,
+      "today_cost": 1.04,
+      "last7d_tok": 10284696,
+      "last7d_cost": 40.21,
+      "cost": 2881.87,
+      "save": 6019.04,
+      "calls": 3053,
       "active_model": "aigw-claude-48-main/claude-fable-5",
       "cache_eff": 80.3,
-      "today_cache_eff": 0,
+      "today_cache_eff": 74.8,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -199,9 +206,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 341390946,
-          "cost": 1184.31,
-          "calls": 640
+          "tok": 341640324,
+          "cost": 1185.35,
+          "calls": 641
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -249,7 +256,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "OFFLINE",
-      "idle_min": 2000,
+      "idle_min": 2840,
       "last_ts": "2026-08-16T13:45:07.906Z",
       "total_tok": 465122289,
       "today_tok": 0,
@@ -326,8 +333,8 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "ONLINE",
-      "idle_min": 2,
+      "status": "IDLE",
+      "idle_min": 842,
       "last_ts": "2026-08-17T23:03:29.216Z",
       "total_tok": 452684703,
       "today_tok": 1245591,
@@ -399,7 +406,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 15547,
+      "idle_min": 16387,
       "last_ts": "2026-08-07T03:57:51.666Z",
       "total_tok": 10113128,
       "today_tok": 0,
@@ -429,7 +436,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "OFFLINE",
-      "idle_min": 5246,
+      "idle_min": 6086,
       "last_ts": "2026-08-14T07:39:06.701Z",
       "total_tok": 27297539,
       "today_tok": 0,
@@ -1255,7 +1262,7 @@
         "files": 34
       },
       "t1": {
-        "kb": 980,
+        "kb": 981,
         "files": 192
       },
       "daily_files": 85
@@ -1315,8 +1322,8 @@
       "human": "每天 21:00",
       "human_en": "Daily 21:00",
       "kind": "cron",
-      "next_run_ms": 1787058000000,
-      "last_run_ms": 1786971600004,
+      "next_run_ms": 1787144400000,
+      "last_run_ms": 1787058000013,
       "last_status": "ok",
       "core": false
     },
@@ -1392,9 +1399,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 364540158,
-      "cost": 1251.65,
-      "calls": 672
+      "tok": 364789536,
+      "cost": 1252.69,
+      "calls": 673
     },
     {
       "name": "azure-openai-responses/gpt-5.5",

@@ -219,26 +219,93 @@ def handle_queued(state: dict) -> dict:
     return state
 
 
+def probe_format(path: Path) -> str:
+    """返回 ffprobe format_name（失败返回空串）"""
+    r = run([
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=format_name",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        str(path),
+    ], timeout=60)
+    return (r.stdout or "").strip()
+
+
+def probe_duration(path: Path) -> float:
+    r = run([
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        str(path),
+    ], timeout=60)
+    try:
+        return round(float((r.stdout or "").strip()), 2)
+    except ValueError:
+        return 0.0
+
+
+def transcode_to_mp3(src: Path, dst: Path) -> tuple[bool, str]:
+    """🚨 铁律 0：NotebookLM 导出的是 DASH 分片 MP4(fMP4)，浏览器拖不动进度条。
+
+    必须转成带 Xing 头的真 MP3 后才能上线。返回 (ok, 说明)。
+    """
+    src_dur = probe_duration(src)
+    if src_dur <= 0:
+        return False, f"源文件时长探测失败: {src}"
+
+    r = run([
+        "ffmpeg", "-y", "-i", str(src),
+        "-vn", "-c:a", "libmp3lame", "-b:a", "96k",
+        "-ar", "44100", "-ac", "2",
+        "-write_xing", "1", "-id3v2_version", "3",
+        str(dst),
+    ], timeout=900)
+    if not r.ok:
+        return False, f"ffmpeg rc={r.rc}: {(r.stderr or r.stdout)[-500:]}"
+    if not dst.exists() or dst.stat().st_size == 0:
+        return False, "ffmpeg 报成功但输出文件缺失/为空"
+
+    fmt = probe_format(dst)
+    if fmt != "mp3":
+        return False, f"转码后 format_name={fmt!r}（期望 mp3）"
+
+    dst_dur = probe_duration(dst)
+    if abs(dst_dur - src_dur) > max(2.0, src_dur * 0.01):
+        return False, f"时长不一致：源 {src_dur}s vs 输出 {dst_dur}s"
+
+    return True, f"format=mp3 duration={dst_dur}s size={dst.stat().st_size}"
+
+
 def handle_audio_ready(state: dict) -> dict:
-    """下载 m4a"""
+    """下载 m4a，并强制转码成真 MP3（铁律 0）"""
     task_id = state["data"]["task_id"]
     work_dir = Path(state["data"].get("work_dir", f"/tmp/podcast-{state['slug']}"))
     work_dir.mkdir(parents=True, exist_ok=True)
-    audio_path = work_dir / "podcast.m4a"
+    raw_path = work_dir / "podcast.m4a"
 
-    r = nblm("download", "audio", "-a", task_id, str(audio_path), timeout=300)
-    if not r.ok:
-        log.info(f"  [{state['slug']}] download 失败: {r.stderr[:200]}")
-        S.record_attempt_failure(state, f"download rc={r.rc}: {r.stderr[:200]}")
-        return state
-    if not audio_path.exists():
-        S.record_attempt_failure(state, "download 报成功但文件不存在")
+    if not raw_path.exists():
+        r = nblm("download", "audio", "-a", task_id, str(raw_path), timeout=300)
+        if not r.ok:
+            log.info(f"  [{state['slug']}] download 失败: {r.stderr[:200]}")
+            S.record_attempt_failure(state, f"download rc={r.rc}: {r.stderr[:200]}")
+            return state
+        if not raw_path.exists():
+            S.record_attempt_failure(state, "download 报成功但文件不存在")
+            return state
+
+    # 🚨 铁律 0：必须转码，绝不能把 fMP4 直接上线
+    mp3_path = work_dir / "podcast.mp3"
+    ok, detail = transcode_to_mp3(raw_path, mp3_path)
+    if not ok:
+        log.info(f"  [{state['slug']}] 转码失败: {detail}")
+        S.record_attempt_failure(state, f"transcode: {detail}")
         return state
 
-    size_mb = audio_path.stat().st_size // (1024 * 1024)
-    log.info(f"  [{state['slug']}] audio_ready → downloaded ✅ ({size_mb} MB)")
+    size_mb = mp3_path.stat().st_size // (1024 * 1024)
+    log.info(f"  [{state['slug']}] audio_ready → downloaded ✅ ({size_mb} MB, {detail})")
     S.advance(state, "downloaded",
-              audio_path=str(audio_path),
+              audio_path=str(mp3_path),
+              raw_audio_path=str(raw_path),
+              transcode_detail=detail,
               audio_size_mb=size_mb)
     return state
 
@@ -247,8 +314,17 @@ def handle_downloaded(state: dict) -> dict:
     """上传 COS——复用现有 publish-audio.sh"""
     audio_path = state["data"]["audio_path"]
     if not Path(audio_path).exists():
-        # m4a 没了——可能 /tmp 被清理了。回退到 audio_ready 重下
-        log.info(f"  [{state['slug']}] m4a 丢失，回退到 audio_ready: {audio_path}")
+        # 音频没了——可能 /tmp 被清理了。回退到 audio_ready 重下 + 重转码
+        log.info(f"  [{state['slug']}] 音频丢失，回退到 audio_ready: {audio_path}")
+        state["step"] = "audio_ready"
+        state["attempts"] = 0
+        S.save_atomic(state)
+        return state
+
+    # 上传前最后一道闸：绝不允许 fMP4 上线（铁律 0）
+    fmt = probe_format(Path(audio_path))
+    if fmt != "mp3":
+        log.info(f"  [{state['slug']}] 上传前校验失败 format_name={fmt!r}，回退重转码")
         state["step"] = "audio_ready"
         state["attempts"] = 0
         S.save_atomic(state)

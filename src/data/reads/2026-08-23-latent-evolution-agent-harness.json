@@ -1,0 +1,135 @@
+{
+  "slug": "latent-evolution-agent-harness",
+  "savedDate": "2026-08-23",
+  "publishDate": "2026-08-21",
+  "titleZh": "Agent Harness 的演化——模型吃掉外壳之后，剩下的是通往人类注意力的接口",
+  "titleEn": "The Evolution of the Agent Harness",
+  "author": "Dan McAteer",
+  "authorTitle": "AI 工程师、Latent Space 客座作者——本文提出「注意力接口（attention-interface）」概念并给出一年期可证伪预测",
+  "originalUrl": "https://www.latent.space/p/attention-interface",
+  "source": "manual",
+  "tags": [
+    "Agent",
+    "Harness",
+    "AI 工程",
+    "上下文工程",
+    "人机协作",
+    "AI"
+  ],
+  "summary": "agent 变好用是模型与 harness 曲线交叉的结果，而模型吸收 harness 后只剩「注意力接口」。",
+  "keyPoints": [
+    "**跃迁来自两条曲线交叉**：harness 的要求 vs 模型能交付，落差在 AutoGPT 时最大、被 IDE 压平，Claude Code 在 o1 反转后抓住交叉点。",
+    "**一半的 agent 是 harness**：Harness-Bench 同模型换 harness，106 任务得分 52.4→76.2，差 23.8 分，模型零改动。",
+    "**吸收不是终结 harness 而是翻转它**：训练→吸收→卸载→重复，删无可删后只剩权限、身份、信任这类面向人的能力。"
+  ],
+  "insight": "AGENTS.md 教 agent 怎么用你的代码库，下一份文件要教它怎么用你——何时可打断、哪些决策要你批。",
+  "bilingual": [
+    {
+      "en": "Sometime around Christmas 2025, AI engineers noticed a change in agents. They started to work! It’s hard to pin down exactly why. Maybe we finally had holiday downtime to try the newest agents with the newest models. Maybe the models had crossed some **capability threshold**. Maybe **the wrappers** around the models had matured.\n\nWhat I’ll argue in this post is that it was the confluence of the last two. **The model and the harness improving together** and then their curves of improvement crossing at the right moment. And that dynamic helps to explain what comes next: models keep absorbing the harness into their weights, engineers keep deleting what got absorbed, and **what remains is a harness for human attention rather than for the model.**",
+      "zh": "2025 年圣诞节前后的某个时刻，AI 工程师们注意到 agent 变了。**它们开始真的能用了！**至于为什么，很难说清。也许是我们终于有了假期的空闲，去试最新的 agent 配最新的模型；也许是模型跨过了某个**能力阈值**；也许是模型外面那层**壳（wrapper）**成熟了。\n\n本文要论证的是：真正的原因是后两者的**合流**——**模型和 harness 一起变好**，然后两条改进曲线在恰当的时点交叉。而这个动态也解释了接下来会发生什么：模型不断把 harness 吸收进自己的权重，工程师不断删掉被吸收的部分，**最后剩下的，是一个面向人类注意力、而不是面向模型的 harness。**"
+    },
+    {
+      "en": "Lukasz Kaiser, one of the people who invented the Transformer, said on [“Unsupervised Learning”](https://www.youtube.com/watch?v=N1geOimmdDo) in June:\n\n> “The change last winter, last Christmas — it’s a little hard to pin down. I mean, the harness changed and a little post-training changed and then new pre-trained models came… but it felt like a **big jump** which is not that easy to pin down what did it.”\n\nThe answer to **“What happened?”** isn’t solely in the model weights. It’s in the system that grew up around the weights.\n\n**The answer is in the agent harness.**",
+      "zh": "Transformer 的发明人之一 Lukasz Kaiser，六月在[《Unsupervised Learning》](https://www.youtube.com/watch?v=N1geOimmdDo)播客上说：\n\n> 「去年冬天、去年圣诞节的那次变化——它有点难以归因。我是说，harness 变了，post-training 也变了一点，然后新的预训练模型来了……但那感觉像是一次**大跳跃**，而你并不容易说清到底是什么造成的。」\n\n**「到底发生了什么？」**的答案，并不只在模型权重里。它在围绕权重生长起来的那整个系统里。\n\n**答案在 agent harness 里。**"
+    },
+    {
+      "en": "Think back to November 2022, when ChatGPT was the most advanced AI tool. The only capability at its disposal was next-token prediction and some Reinforcement Learning from Human Feedback (RLHF) that allowed it to act like a helpful assistant. No tools, no search, and no reasoning.\n\nThe original ChatGPT was confined to its training data and the prompt you sent it. No more, no less. **It was a brain in a vat.**\n\nThe agent harness is a way for the LLM to **break free from that confinement** and interact with real digital information space.",
+      "zh": "回想 2022 年 11 月，当时 ChatGPT 还是最先进的 AI 工具。它手上能用的能力只有下一个 token 预测，加上一点让它表现得像个乐于助人的助手的 RLHF。没有工具，没有搜索，没有推理。\n\n最初的 ChatGPT 被囚禁在它的训练数据和你发给它的 prompt 之内。多一分没有，少一分也没有。**它是一颗缸中之脑。**\n\nagent harness 就是让 LLM **挣脱这层囚禁**、去和真实的数字信息空间发生交互的方式。"
+    },
+    {
+      "en": "**An agent harness is everything besides the model weights that makes the agent work.** The environment, tools, context and guardrails that surround the model. Without the harness the model is a brain in a vat. It can take an epistemic action, but needs the harness to actuate that decision in real digital space.\n\n**The harness is like giving the mind of the model a body.** With the harness, the model can perceive (context), act (tools), persist information (memory and compaction), and enforce its boundaries (permissions and guardrails).",
+      "zh": "**agent harness 就是除模型权重之外、让 agent 得以运转的一切。**围绕模型的环境、工具、上下文和护栏。没有 harness，模型就是缸中之脑——它能做出一个认知层面的决策，但需要 harness 才能把这个决策在真实数字空间中执行出来。\n\n**harness 就像是给模型的心智配上一副身体。**有了 harness，模型就能感知（上下文）、行动（工具）、留存信息（记忆与压缩），并守住自己的边界（权限与护栏）。"
+    },
+    {
+      "en": "Two curves run through the path of model / harness evolution. **What the harness asks of the model, and what the model can deliver in practice.**\n\nThe gap between these two curves is equal to the effectiveness of an agent, and the closing of that gap is what I’ll argue led to the tangible improvement in agents that Lukasz Kaiser referenced.\n\nHere’s how the gap closes, in stages:",
+      "zh": "在模型 / harness 的演化路径上，跑着**两条曲线**：**harness 对模型的要求，和模型在实践中真正能交付的能力。**\n\n这两条曲线之间的**落差**，就等于一个 agent 的有效性；而这个落差的收窄，正是我要论证的、造成 Lukasz Kaiser 所说的那次 agent 实质性改善的原因。\n\n落差是这样一步步收窄的："
+    },
+    {
+      "en": "1.  **ReAct, “The Harness on Paper”** (October 2022): [ReAct](https://arxiv.org/pdf/2210.03629) is a prompting technique to get models to reason through prompting. It’s the agentic loop on paper, external to the model weights. It defines the idea of an “agent loop” where a model reasons -> acts -> observes -> repeats. Again, **the ReAct loop exists only as a prompting method.** Prompting is the only reasoning method that exists at this time and no one calls it a “harness.” Toolformer (Meta, Feb. 2023), that same winter, hints that tool use could be trained in rather than prompted. It’s a bit like Alan Turing’s idea of the computer before it was instantiated in a physical substrate. A powerful idea that is only later made manifest. (ReAct predates ChatGPT by a month — October 2022 vs. November 2022). Both the curves are near zero at this point. The gap is small because we are just getting started.",
+      "zh": "1.  **ReAct，「纸面上的 harness」**（2022 年 10 月）：[ReAct](https://arxiv.org/pdf/2210.03629) 是一种通过 prompt 让模型进行推理的提示技巧。它是**写在纸面上的 agentic 循环**，存在于模型权重之外。它定义了「agent 循环」这个概念——模型推理 → 行动 → 观察 → 再重复。再说一遍，**ReAct 循环当时只以一种提示方法的形式存在。**在那个时点，提示是唯一存在的推理方法，也没有人把它叫作「harness」。同一个冬天出现的 Toolformer（Meta，2023 年 2 月）暗示了工具使用可以被「训练进去」而不是「提示出来」。这有点像图灵在计算机被真正造出物理形态之前就提出了计算机的构想——一个强有力的想法，直到很久以后才被实现出来。（ReAct 比 ChatGPT 早一个月——2022 年 10 月 vs. 2022 年 11 月。）此时两条曲线都接近于零，落差很小，因为我们才刚刚起步。"
+    },
+    {
+      "en": "2.  **AutoGPT/BabyAGI, “Premature Autonomy”** (Spring 2023): With AutoGPT/BabyAGI, the harness curve sprints ahead of the model capability curve. Both hand the model full autonomy, asking the model to act as an “autonomous employee,” but the models at this point are still little more than brittle next-token predictors. **A loop doesn’t add capability to a model.** A loop amplifies the capability a model has, and below some threshold the loop amplifies errors rather than reliability. Consider the power of compounding in the negative: 95% reliability per-step over a 20-step task results in a ~36% average success rate. The harness hands the model an assignment it has no realistic chance of completing. **This is where the gap is at its widest** and the next 18 months are a reaction and attempt to close that gap.",
+      "zh": "2.  **AutoGPT / BabyAGI，「早产的自主性」**（2023 年春）：到了 AutoGPT / BabyAGI，harness 曲线一路冲到了模型能力曲线前面。两者都把完全的自主权交给模型，要求模型扮演一个「自主员工」，但此时的模型仍然不过是脆弱的下一 token 预测器。**一个循环并不会给模型增加能力。**循环只会放大模型已有的能力，而在某个阈值以下，循环放大的是错误而不是可靠性。想想复利在负方向上的威力：每步 95% 的可靠性，跑一个 20 步的任务，平均成功率只剩约 36%。harness 交给模型的，是一份它根本没有现实机会完成的任务。**这就是落差最大的时刻**——而接下来的 18 个月，都是对这个落差的反应和收窄尝试。"
+    },
+    {
+      "en": "3.  **Cursor/Copilot, “Retreat to Human in the Loop”** (2023 - 2024): The first AI-powered IDEs recognize the failure-mode of giving the model too much autonomy. They close the gap by pulling the harness curve down below the model curve. **Don’t give the model the loop directly; give the human the loop** and empower the human to orchestrate the loop while the model speeds the human up. The first version of Devin tries to hand the autonomy back to the model. A [test from the team at Answer.AI](https://www.answer.ai/posts/2025-01-08-devin.html) shows that is still premature, with a ~15% success rate. It’s evidence that the move from the IDEs to retreat from full autonomy is not cowardly, but the correct move. However, while the prevailing tactic is to pull the harness down below the model, **models continue to improve**. Near the end of 2024, with the introduction of o1 — the first reasoning model — for the first time the gap _**inverts**_ and we begin to see the first signs of a model capability overhang.",
+      "zh": "3.  **Cursor / Copilot，「退回人在环路中」**（2023 - 2024）：第一批 AI 驱动的 IDE 认识到了「给模型太多自主权」这个失败模式。它们收窄落差的方式，是把 harness 曲线**压到模型曲线以下**。**不要把循环直接交给模型；把循环交给人**，让人来编排循环，而模型负责让人更快。第一版 Devin 试图把自主权重新交还给模型。[Answer.AI 团队的一次测试](https://www.answer.ai/posts/2025-01-08-devin.html)显示这仍然太早了——成功率约 15%。这证明 IDE 们从完全自主上撤退并不是怯懦，而是正确的选择。然而，在「把 harness 压到模型之下」成为主流打法的同时，**模型仍在持续变强**。2024 年接近尾声时，随着 o1——第一个推理模型——的出现，落差第一次**反转**了，我们开始看到模型能力过剩（capability overhang）的最初迹象。"
+    },
+    {
+      "en": "4.  **Claude Code, “The Curves Cross”** (February 2025): The inversion at the end of 2024 sets up an opportunity that someone has to seize: if the model is now ahead of the harness, then a harness intentionally riding the brakes of the model is leaving capability on the table. **Claude Code is the first coding agent built to seize that opportunity.** It abandons the IDE for the terminal, gives the model bash and file read/write access, and replaces the need for human approval on every change with **permission rules**. The model is handed the loop again, and this time it understands the assignment. **Boris Cherny and team build Claude Code with the next model’s capabilities in mind, not the current one.** It is such a hit not because it’s the first product to give the model autonomy, but because it’s the first product to do so at the right _**time.**_ That time is **the crossover point where the model has gotten reliable enough to succeed with autonomy**. Claude Code grows to roughly $1B ARR within six months, all because Anthropic seized the opportunity available when the curves begin to meet.",
+      "zh": "4.  **Claude Code，「两条曲线交叉」**（2025 年 2 月）：2024 年底的这次反转，制造了一个必须有人抓住的机会：如果模型已经跑到了 harness 前面，那么一个刻意替模型踩刹车的 harness，就是在白白浪费能力。**Claude Code 是第一个为抓住这个机会而生的编码 agent。**它抛弃 IDE 转向终端，给模型 bash 和文件读写权限，并用**权限规则**取代了「每次改动都要人类批准」。循环再一次被交回模型手里，而这一次，模型听懂了任务。**Boris Cherny 和团队是照着下一代模型的能力、而不是当前模型的能力来造 Claude Code 的。**它之所以爆火，不是因为它是第一个给模型自主权的产品，而是因为它是第一个在**正确的时机**这么做的产品。那个时机，就是**模型终于可靠到足以在自主状态下成功的交叉点**。Claude Code 在六个月内做到了约 10 亿美元 ARR——全都源于 Anthropic 抓住了两条曲线开始相遇时出现的那个机会。"
+    },
+    {
+      "en": "What happens next is that the curves don’t just meet, they begin to _**braid**_ together.\n\n**Today the harness matters, and in a way we can measure.** [Harness-Bench](https://arxiv.org/html/2605.27922v1) ran the same model over the same 106 tasks in different harnesses, and scores ranged from 52.4 to 76.2: a 23.8-point spread with zero change to the model. **Half the agent is the harness.**\n\n[OpenAI achieved a similar result](https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/) on ARC-AGI-3 with harness changes. Adding only retained reasoning and compaction, GPT-5.6 Sol’s ARC-AGI-3 score tripled from 13.3% to 38.3%.",
+      "zh": "接下来发生的是：两条曲线不只是相遇，它们开始**互相编织（braid）**在一起。\n\n**今天，harness 是重要的，而且重要到可以被测量。**[Harness-Bench](https://arxiv.org/html/2605.27922v1) 把同一个模型放进不同的 harness 里跑同样的 106 个任务，得分区间从 52.4 到 76.2：**在模型零改动的情况下，拉开了 23.8 分的差距。一半的 agent 是 harness。**\n\n[OpenAI 在 ARC-AGI-3 上也用 harness 改动取得了类似结果](https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/)。仅仅加上「保留推理」和「上下文压缩」两项，GPT-5.6 Sol 的 ARC-AGI-3 得分就从 13.3% 翻了三倍到 38.3%。"
+    },
+    {
+      "en": "What’s happening under the hood is that Reinforcement Learning (RL) has moved _**inside**_ the harness. From OpenAI’s codex-1 release announcement in May 2025: “codex-1 was trained using reinforcement learning on real-world coding tasks in a variety of environments.”\n\n**The two curves join and start to braid as one unified system.**\n\nThis is the dream of Toolformer manifesting in reality. Rather than a tool prompted from the outside, now tool calling is trained from within the _**environment**_ of the model.\n\nThen, as the models are trained in the environment of the harness, **they start to absorb the harness capabilities into the model weights**, learning how to auto-compact with knowledge of their own context window, for example.\n\nGPT-5.1-Codex-Max launch:\n\n> “The first model natively trained to operate across multiple context windows through compaction.”",
+      "zh": "引擎盖底下真正在发生的是：**强化学习（RL）搬进了 harness 内部。**引用 OpenAI 2025 年 5 月 codex-1 发布公告：「codex-1 是在多种环境下、用真实世界的编码任务、通过强化学习训练出来的。」\n\n**两条曲线汇合，并开始作为一个统一系统彼此编织。**\n\n这是 Toolformer 的梦想照进现实。工具调用不再是从外部提示出来的，而是从模型所处的**环境**内部训练出来的。\n\n然后，随着模型在 harness 的环境里被训练，**它们开始把 harness 的能力吸收进模型权重**——比如学会在了解自己上下文窗口的前提下自动压缩。\n\nGPT-5.1-Codex-Max 发布时：\n\n> 「第一个原生训练成能够通过压缩、跨多个上下文窗口工作的模型。」"
+    },
+    {
+      "en": "**Once the models absorb the harness capabilities, the harness can shed the scaffold.** It’s production by reduction. Thariq Shihipar from Anthropic said that the team [recently deleted 80%](https://x.com/trq212/status/2080710971228918066?s=20) of Claude Code’s system prompt.\n\nThe measure of the pace of agent harness evolution is **how much of the harness you get to delete**, while retaining the same capability level. This is the future we need to build towards as AI engineers.\n\nThis, then, is the loop of model / harness evolution: **train** -> **absorb** -> **shed** -> **repeat**. The model climbs to the next thing it can’t do yet.",
+      "zh": "**一旦模型把 harness 的能力吸收掉，harness 就可以卸掉那层脚手架。**这是「以减法完成生产」。Anthropic 的 Thariq Shihipar 说，团队[最近删掉了 Claude Code 系统提示的 80%](https://x.com/trq212/status/2080710971228918066?s=20)。\n\n**衡量 agent harness 演化速度的标尺，是你在保持同等能力水平的前提下能删掉多少 harness。**这是我们身为 AI 工程师需要建设的未来方向。\n\n于是，这就是模型 / harness 演化的循环：**训练 → 吸收 → 卸载 → 重复。**模型爬向下一件它还做不到的事。"
+    },
+    {
+      "en": "The jump that Kaiser pointed out is hard to pin down because it’s not a discrete event. A pre-training leap is noticeable because you can articulate it in a model card. A model / harness co-evolution jump is less so, because there’s no documentation of the evolution process. That’s the answer to the jump last Winter: **it happened in the space between the model and harness working together.**\n\nWe need to ask: if every harness capability will eventually get absorbed into the model, what does that leave us with?\n\nKeep deleting everything that the model can absorb. Imagine what your agent looks like at the conclusion of that process. What are you left with in your hand when you’ve deleted everything?\n\nWhat do the model weights absorb next? Multi-agent orchestration, tool selection, memory...to name a few possibilities. Researchers are building [self-improving harnesses](https://arxiv.org/html/2606.09498v1) that can themselves be trained in a similar way to models.",
+      "zh": "Kaiser 指出的那次跳跃之所以难以归因，是因为它根本不是一个离散事件。预训练的飞跃是可察觉的，因为你能把它写进模型卡里。而模型 / harness 协同演化的跳跃就不行，因为这个演化过程没有任何文档。这就是去年冬天那次跳跃的答案：**它发生在模型与 harness 协同工作的那片空隙里。**\n\n我们该问的是：如果每一项 harness 能力最终都会被吸收进模型，那我们手里还剩下什么？\n\n把模型能吸收的东西统统删掉。想象一下这个过程走到尽头时，你的 agent 长什么样。当你把能删的都删完，手里还握着什么？\n\n模型权重接下来会吸收什么？多智能体编排、工具选择、记忆……可能性还有很多。研究者们正在造[能自我改进的 harness](https://arxiv.org/html/2606.09498v1)，它们本身也能用类似训练模型的方式被训练。"
+    },
+    {
+      "en": "What’s left at the end of this deletion and absorption process are **the human-centric agent capabilities**. Things like **permissions, identity, trust and legibility**. A model that absorbs permissions into itself has dissolved permissions. Absorption doesn’t end the harness. Absorption inverts the harness.\n\n_**The harness becomes the agent’s interface to the human that operates it.**_\n\nThe harness was born as the human interface to the model. We grew from chatbox to IDE to the terminal. If the model absorbs the computer-facing capabilities, the next stage of evolution becomes one layer of abstraction up. The harness becomes the model’s interface to our human attention.\n\nIt becomes the **attention-interface.**",
+      "zh": "在这场删除与吸收的过程走完之后，剩下的是**以人为中心的 agent 能力**。诸如**权限、身份、信任与可读性（legibility）**这类东西。一个把权限吸收进自身的模型，等于把权限消解掉了。**吸收并不会终结 harness，吸收是把 harness 翻转过来。**\n\n***harness 会变成 agent 面向操作它的那个人的接口。***\n\nharness 诞生之初，本来就是人类通往模型的接口。我们从聊天框长到 IDE，再长到终端。如果模型把面向计算机的那些能力都吸收走了，那么演化的下一阶段就会**上升一个抽象层**：harness 会变成模型通往我们人类注意力的接口。\n\n它变成了**注意力接口（attention-interface）。**"
+    },
+    {
+      "en": "Ryan Lopopolo said on the “[Extreme Harness Engineering for Token Billionaires](https://www.latent.space/p/harness-eng)” episode of Latent Space:\n\n> “The only fundamentally scarce thing is the synchronous human attention of my team.”\n\nTokens became abundant and reliable, yet **we remain bottlenecked on scarce human attention.**\n\nWe see sparks of this already, with Anthropic’s long-running agent progress files and agentic approval queues.\n\nThe gap between the model and harness curve doesn’t disappear when the model absorbs the harness. It migrates across the human boundary and creates a new pair of curves with a new gap. **The new gap** is the space between what the agent asks of the _human_, and **what the human is able to answer**.",
+      "zh": "Ryan Lopopolo 在 Latent Space 的[《Extreme Harness Engineering for Token Billionaires》](https://www.latent.space/p/harness-eng)那期里说：\n\n> 「唯一从根本上稀缺的东西，是我团队里人的同步注意力。」\n\ntoken 变得廉价而可靠了，但**我们依然卡在稀缺的人类注意力这个瓶颈上。**\n\n这件事已经能看到火星：Anthropic 的长时运行 agent 进度文件、agentic 审批队列，都是征兆。\n\n模型与 harness 两条曲线之间的落差，并不会因为模型吸收了 harness 就消失。**它迁移到了人这一侧的边界之外，生成了一对新的曲线和一个新的落差。这个新落差，是「agent 对人类提出的要求」与「人类实际能给出的回应」之间的空间。**"
+    },
+    {
+      "en": "I predict that within a year, **every company building agentic AI will ship a human attention policy surface** in the way that every agentic AI company shipped [AGENTS.md](http://agents.md/).\n\nAGENTS.md tells the agent how to work with your codebase. **The attention-interface will tell the agent how to work with** _**you**_**.** It will govern when it’s allowed to interrupt you, when it should keep working, which decisions it can make alone and which decisions need your approval. And like everything else in the agentic system, **it will become a learnable component of the system that can learn with more data.** Every correction becomes useful data.\n\nThe model began as a brain in a vat. The harness gave the brain a body, then the body started to dissolve into the brain. What’s left for us to build is the thing no future model will ever absorb. The interface to the one true scarce resource: _**human attention.**_",
+      "zh": "我的预测是：**一年之内，每一家做 agentic AI 的公司都会推出一个「人类注意力策略面（human attention policy surface）」**——就像每一家 agentic AI 公司当初都推出了 [AGENTS.md](http://agents.md/) 一样。\n\nAGENTS.md 告诉 agent 该怎么跟你的代码库打交道。**注意力接口则会告诉 agent 该怎么跟*你本人*打交道。**它会规定：什么时候允许打断你、什么时候该继续埋头干、哪些决策它可以自己拍板、哪些决策必须你批准。而且，就像这个 agentic 系统里的其他一切一样，**它也会成为系统中一个可学习的组件，随着数据增多而变强。每一次纠正，都是有用的数据。**\n\n模型最初是缸中之脑。harness 给了这颗大脑一副身体，然后这副身体开始溶解回大脑里。留给我们去建造的，是那件未来任何模型都吸收不走的东西——**通往唯一真正稀缺资源的接口：人类的注意力。**"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "The model and the harness improving together and then their curves of improvement crossing at the right moment.",
+      "zh": "模型和 harness 一起变好，然后它们的改进曲线在恰当的时点交叉。"
+    },
+    {
+      "en": "A loop doesn't add capability to a model. A loop amplifies the capability a model has, and below some threshold the loop amplifies errors rather than reliability.",
+      "zh": "循环并不给模型增加能力。循环只放大模型已有的能力；而在某个阈值以下，循环放大的是错误，不是可靠性。"
+    },
+    {
+      "en": "Half the agent is the harness.",
+      "zh": "一半的 agent 就是 harness。"
+    },
+    {
+      "en": "Absorption doesn't end the harness. Absorption inverts the harness.",
+      "zh": "吸收并不终结 harness。吸收是把 harness 翻转过来。"
+    },
+    {
+      "en": "The only fundamentally scarce thing is the synchronous human attention of my team.",
+      "zh": "唯一从根本上稀缺的东西，是我团队里人的同步注意力。"
+    },
+    {
+      "en": "AGENTS.md tells the agent how to work with your codebase. The attention-interface will tell the agent how to work with you.",
+      "zh": "AGENTS.md 告诉 agent 该怎么跟你的代码库打交道；注意力接口则会告诉 agent 该怎么跟你本人打交道。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Harness-Bench（arXiv 2605.27922）",
+      "url": "https://arxiv.org/abs/2605.27922",
+      "pov": "本文「一半的 agent 是 harness」这句断言的数据出处。论文用 106 个沙箱化离线任务、6 种可配置 harness × 8 个模型后端做全因子矩阵，跑出 5,194 条执行轨迹，结论是：**agent 能力必须按「配置级」而不是「基座模型」来报告**。它还补了本文没展开的一层——harness 依赖度并不均匀：数据分析、工作区工具使用、软件工程这类任务跨 harness 方差最大，而偏语言生成的商务沟通类方差最小。换句话说，harness 的价值出现在「推理、工具、状态与可验证产物需要保持对齐」的地方。"
+    },
+    {
+      "source": "OpenAI《Harness engineering: leveraging Codex in an agent-first world》",
+      "url": "https://openai.com/index/harness-engineering/",
+      "pov": "本文引用的 Ryan Lopopolo 那句「唯一稀缺的是人类同步注意力」的完整语境。OpenAI Frontier 团队用五个月、零行手写代码交付了约百万行的内部产品，其工程范式转向与本文高度同构：agent 失败时不再「换个说法再提示一次」，而是问「缺的是什么能力、什么上下文、什么结构」。它给了本文的抽象论证一个生产级注脚——当写代码不再是工程师的主业，主业变成设计环境、明确意图、搭反馈回路，而团队自陈要最大化的唯一稀缺资源正是「人的时间与注意力」。"
+    },
+    {
+      "source": "Latent Space《Extreme Harness Engineering for Token Billionaires》",
+      "url": "https://www.latent.space/p/harness-eng",
+      "pov": "本文所引金句的原始播客。它把「注意力才是瓶颈」这件事推到了极端形态：>100 万行代码库、每天 10 亿 token、0% 人类写码、且合并前 0% 人类评审。与本文形成有意思的张力——本文预测注意力接口会成为下一个 AGENTS.md，而这一期展示的是另一种极端解法：把人类审阅这一环几乎整个移除，让注意力只花在环境与规格设计上。两者共同指向同一个判断：token 已经过剩，人的注意力没有。"
+    }
+  ]
+}

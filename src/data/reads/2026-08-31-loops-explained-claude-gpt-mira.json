@@ -1,0 +1,156 @@
+{
+  "slug": "loops-explained-claude-gpt-mira",
+  "savedDate": "2026-08-31",
+  "publishDate": "2026-06-20",
+  "titleZh": "把 Loop 讲清楚——prompt 给一条指令，loop 给一份工作、一道闸门和一条退出规则",
+  "titleEn": "Loops explained: Claude, GPT, Mira and what actually works",
+  "author": "Anatoli Kopadze",
+  "authorTitle": "AI 内容作者 @AnatoliKopadze——本文为 X 上传播最广的 agent loop 科普长贴之一",
+  "originalUrl": "https://x.com/AnatoliKopadze/status/2068328135611822149",
+  "source": "manual",
+  "tags": [
+    "Agent",
+    "Loop",
+    "AI 工程",
+    "Claude Code",
+    "自动化",
+    "AI"
+  ],
+  "summary": "prompt 给一条指令，loop 给一份工作、一道能判不合格的闸门和一条退出规则——没闸门就是烧钱。",
+  "keyPoints": [
+    "**五阶段里只有三步会出错**：VERIFY（没硬闸门=让 agent 自己批作业）、STATE（不记住试过什么就永远重复同一个错）、STOP（没硬上限就能空转一整晚）。",
+    "**四格测试决定该不该建**：周频以上重复 + 有东西能自动否决坏产出 + agent 能端到端干完 + 「完成」客观可判。少一格就老实用手动 prompt。",
+    "**成本按复利涨，不是按次涨**：上下文每轮重发且逐轮变大，maker-checker 再翻倍；真正该看的指标是 cost per accepted change，接受率低于 50% 即负收益。",
+    "**上生产的顺序不可跳**：手动跑通 → 存成 skill → 包成 loop（加闸门+停止条件）→ 才挂调度。跳步就是「loop 在你睡觉时炸掉」的标准姿势。"
+  ],
+  "insight": "这篇科普贴的五大件（automation / skill / sub-agents / connectors / verifier）其实就是企业多 agent 生产架构的通俗版——而它点破的那件事，正是大多数团队做 agent 时真正翻车的地方：**大家都在堆编排，没人在建闸门**。maker-checker 分离之所以「构成质量的大部分」，不是因为多了一个模型，而是因为它把「判定权」从执行者手里拿走了；同理，四格测试里那条「有东西能自动否决坏产出」，本质是在问「这个业务场景到底有没有可自动化的验收标准」——答案是「没有」的场景，堆再多 agent 也只是把人工审阅成本换个地方付。真正可迁移的是那条落地顺序：先让一次手动跑通、再固化成 skill、再加闸门包成 loop、最后才上调度——POC 直接排期上线的项目，炸的从来不是模型能力，是没人做过第一步。",
+  "bilingual": [
+    {
+      "en": "AI has been in everyone's hands for years. Most people who use it every day still use it the slowest way there is: type a request, wait, fix it, ask again, all by hand.\n\nNot because the faster way is complicated, because nobody showed them what it looks like.\n\nThe faster way is a loop, and right now it is the one thing the best AI engineers in the world care about. This article fixes the part nobody explained.\n\nBy the end you will understand loops better than almost anyone on your timeline: what they are, how they actually work under the hood, when they are worth it and when they are a trap, how to build a basic one yourself in Claude or ChatGPT, the simple ones worth running in your own life.",
+      "zh": "AI 已经在所有人手里好几年了。绝大多数每天用它的人，仍然在用最慢的那种方式：敲一段需求、等结果、手动改、再问一遍——全靠手工。\n\n不是因为更快的方式有多复杂，而是因为**没人给他们看过那东西长什么样**。\n\n更快的方式是 **loop（循环）**，而此刻，它正是全世界最好的 AI 工程师唯一在乎的东西。这篇文章要补上的，就是没人讲清楚的那一块。\n\n读完之后，你对 loop 的理解会超过你时间线上几乎所有人：它是什么、引擎盖底下到底怎么跑、什么时候值得做、什么时候是个坑、怎么在 Claude 或 ChatGPT 里自己搭一个最基础的，以及哪些简单的 loop 值得放进你自己的生活里跑起来。"
+    },
+    {
+      "en": "Look closely at the one-request-at-a-time habit, because it is the whole problem. Every step runs through you. You decide what to ask, you judge the answer, you decide what comes next. The AI never moves unless you push it, and the moment you stop, it stops.\n\nThis is fine, but it has a ceiling. You are the engine. The AI is only the tool in your hand, and a tool does nothing on its own.\n\nThere is another way to work, and it is the reason the best engineers in the world are changing how they build. Instead of walking the AI through every step, you give it the goal once and let it run the steps itself. It plans, does the work, checks its own result, fixes what is weak, and repeats until the goal is met. You step out. The work keeps going.",
+      "zh": "仔细看看「一次一个请求」这个习惯，因为问题全出在这儿：**每一步都要过你这道关。**问什么由你定，答得好不好由你判，下一步做什么还是由你决定。你不推，AI 就不动；你一停，它就停。\n\n这样用没问题，但它有天花板。**你才是发动机**，AI 只是你手里的工具——而工具自己什么也做不了。\n\n还有另一种工作方式，这正是全世界最好的工程师正在改变构建方式的原因。**你不再牵着 AI 走每一步，而是把目标一次性交给它，让它自己去跑完这些步骤。**它做计划、干活、检查自己的产出、修补薄弱处，然后不断重复，直到达成目标。你抽身离开，活儿还在继续。"
+    },
+    {
+      "en": "Two of the most respected engineers, saying the same thing in different words. Most people read lines like these and quietly had no idea what they meant in practice. So let's break it down properly.\n\nA prompt is a single instruction. A loop is a goal the AI keeps working toward until it gets there. Think of it as a recursive goal: you define a purpose, and the AI iterates until it is complete.\n\nA prompt gives you one answer and then waits for you to decide what is next. A loop runs the full cycle on its own:\n\n    DISCOVER  →  work out what needs doing\n    PLAN      →  decide how to do it\n    EXECUTE   →  do the work\n    VERIFY    →  check it against the goal\n    ITERATE   →  not there yet? feed the result back in and repeat\n\nThree of these five do all the real work, and they are where people get loops wrong.",
+      "zh": "作者称，这是「两位最受尊敬的工程师，用不同的话说同一件事」。（编者注：原帖此处以截图方式引用，未给出可核实的原始出处与链接，故只如实转述作者的说法。）大多数人读到这类句子，其实心里根本不知道它落到实处是什么意思。所以我们把它拆开讲清楚。\n\n**prompt 是一条指令。loop 是一个目标——AI 会一直朝它干，直到抵达为止。**你可以把它理解成一个**递归的目标**：你定义一个目的，AI 就不断迭代，直到它被完成。\n\nprompt 给你一个答案，然后停下来等你决定下一步。而 loop 会自己把整个循环跑完：\n\n（五阶段代码块保留英文原样，中文为注释性翻译：）\n\n- **DISCOVER 发现** → 搞清楚到底要做什么\n- **PLAN 计划** → 决定怎么做\n- **EXECUTE 执行** → 把活儿干了\n- **VERIFY 校验** → 拿结果对照目标检查一遍\n- **ITERATE 迭代** → 还没到位？把结果喂回去，再来一轮\n\n**这五步里，真正干活的是其中三步——而人们把 loop 做错，恰恰全错在这三步上。**"
+    },
+    {
+      "en": "**Verify is the heart of the loop.** Without a real check on the result, you do not have a loop, you have the agent agreeing with itself on repeat. The check is what turns repetition into progress. It can be a hard test (\"does the code pass\"), a measurable condition (\"is the number above X\"), or a rubric the model scores against. No gate means the agent grades its own homework, and the model that did the work is far too generous a grader.",
+      "zh": "**VERIFY 是 loop 的心脏。**如果没有对结果的真实检查，你手里的就不是一个 loop，而是**一个反复跟自己点头称是的 agent**。检查这一环，才是把「重复」变成「进展」的东西。它可以是一条硬性测试（「代码过不过」）、一个可度量的条件（「这个数字有没有超过 X」），或者一份让模型按项打分的评分量表（rubric）。\n\n**没有 gate（闸门），就等于让 agent 自己批自己的作业**——而写作业的那个模型，当阅卷老师实在太宽容了。"
+    },
+    {
+      "en": "**State is what makes the loop learn.** Each pass, the AI has to remember what it already tried, or it repeats the same mistake forever. A real loop keeps a small record on the side: what is done, what failed, what is next. Tomorrow's run resumes instead of starting from zero. This is also exactly where it starts getting expensive, which we will get to.",
+      "zh": "**State（状态）是让 loop 能「学」的东西。**每跑一轮，AI 必须记住自己已经试过什么，否则它会**永远重复同一个错误**。一个真正的 loop 会在旁边维护一份小小的记录：什么做完了、什么失败了、下一步是什么。这样明天那一轮是**接着跑**，而不是从零开始。\n\n而这里，也正是成本开始变贵的地方——后面会讲到。"
+    },
+    {
+      "en": "**A stop condition is what keeps it sane.** A loop with no exit runs until it succeeds, breaks, or drains your account. Every serious loop has two ways to stop: success, and a hard limit (\"after 8 tries, stop and report\"). Skip this and you have built a machine that can run all night for nothing.\n\nA prompt hands the AI an instruction. A loop hands the AI a job, a way to know when the job is done, and a rule for when to give up.",
+      "zh": "**Stop condition（停止条件）是让它保持理智的东西。**一个没有出口的 loop，会一直跑到成功、跑到崩、或者跑到把你的账户余额抽干为止。**每个严肃的 loop 都有两条退出路径：成功，以及一条硬上限**（「试满 8 次就停下来报告」）。省掉这一条，你造出来的就是一台能通宵空转一整晚、却什么也没产出的机器。\n\nprompt 交给 AI 的是**一条指令**。loop 交给 AI 的是**一份工作、一套判断这份工作何时算完成的方法，以及一条何时该放弃的规则。**"
+    },
+    {
+      "en": "Most articles sell you the loop before they tell you when it is a mistake. Here is the test the serious people actually use. A loop is worth building only when all four of these are true:\n\n*   **The task repeats, at least weekly.** Less than that and the setup cost never pays itself back. A one-off is still better served by one good prompt.\n*   **Something can automatically reject bad output.** A test, a type check, a build, a linter, a hard rule. If nothing can fail the work for you, the loop just spins.\n*   **The agent can actually do the work itself,** end to end, not hand half of it back to you.\n*   **\"Done\" is objective, not a judgment call.** If quality is a matter of taste, a human still wins.\n\nMiss one box, keep it as a manual prompt. The honest version of this whole topic: loop engineering is real, and most people do not need the heavy version yet. **What everyone can use is the light version, which we will get to.** But you should know where the line is.",
+      "zh": "大多数文章都是先把 loop 卖给你，然后才告诉你它什么时候是个错误。下面是真正做事的人实际在用的那道测试题——**只有当这四条同时成立，loop 才值得建：**\n\n- **任务是重复发生的，至少每周一次。**低于这个频率，搭建成本永远赚不回来。一次性的活儿，还是一条好 prompt 更划算。\n- **存在某种能自动否决坏产出的东西。**一条测试、一次类型检查、一次构建、一个 linter，或者一条硬性规则。**如果没有任何东西能替你判这活儿不合格，那 loop 就只是在空转。**\n- **agent 真的能自己端到端把活儿干完**，而不是干到一半又扔回给你。\n- **「完成」是客观的，不是一个主观判断。**如果质量是个品味问题，那还是人赢。\n\n**少勾一个框，就老老实实留着手动 prompt。**\n\n关于这整个话题的诚实版本是：loop engineering 是真东西，但**大多数人现在还用不上那个重型版本**。人人都能用上的是轻量版——后面会讲到。不过你应该知道这条线画在哪儿。"
+    },
+    {
+      "en": "Loops took off in software first, because code is the easiest thing in the world to verify. A test passes or it fails. There is no arguing with it, so the AI always knows whether it is finished.\n\nA coding loop is given a goal and a strict way to check it:\n\n    ▸ LOOP SPEC\n    GOAL: every test in /tests/auth passes, lint is clean, no type errors.\n\n    EACH ITERATION:\n      1. run the test suite and read every failure\n      2. pick the single highest-impact failure\n      3. write the smallest change that fixes it\n      4. re-run the tests, lint, and type checker\n\n    VERIFY: green tests + zero lint warnings + zero type errors\n    STOP WHEN: verify passes, OR 8 iterations reached\n    ON STOP: summarize what changed and what still fails",
+      "zh": "loop 最先在软件领域起飞，原因很简单：**代码是这世界上最容易被验证的东西。**一个测试要么过、要么不过，没得争。所以 AI 永远知道自己到底完事了没有。\n\n一个编码 loop，被给到的是**一个目标 + 一套严格的检查方式：**\n\n（loop spec 代码块保留英文原样，中文为注释性翻译：）\n\n**▸ LOOP SPEC（循环规格）**\n\n- **GOAL 目标**：`/tests/auth` 下每个测试都通过、lint 干净、零类型错误。\n- **EACH ITERATION 每轮迭代**：① 跑测试套件，把每一条失败都读一遍；② 挑出影响最大的那**一个**失败；③ 写下能修好它的**最小**改动；④ 重跑测试、lint 和类型检查。\n- **VERIFY 校验**：测试全绿 + 零 lint 警告 + 零类型错误。\n- **STOP WHEN 何时停**：校验通过，**或者**跑满 8 轮迭代。\n- **ON STOP 停下时**：总结改了什么、还有什么没修好。\n\n注意这份规格的形态：目标可判定、每轮只改一件事、校验是硬指标、停止条件带硬上限、停下来还要交一份可读的收尾报告。"
+    },
+    {
+      "en": "Under the hood, a real loop is assembled from five building blocks. Claude Code and Codex now ship all five.\n\n**1. The automation (the heartbeat)**\n\nThis is the trigger that makes it a loop and not a one-off you ran once. You define a prompt, a cadence, and a goal, and it runs on schedule without you starting it. In Claude Code, _/loop_ re-runs a prompt on an interval, _/goal_ keeps a session going until a condition you wrote is actually true, hooks fire commands at points in the agent's lifecycle, and pushing it to a cron job or GitHub Actions keeps it running after you close the laptop. Findings come to you. You are not the one going around checking.",
+      "zh": "引擎盖底下，**一个真正的 loop 由五块积木拼成**。Claude Code 和 Codex 现在这五块全都自带了。\n\n**1. 自动化（心跳）**\n\n这是让它成为「loop」而不是「你手动跑过一次的一次性任务」的触发器。你定义一条 prompt、一个节奏、一个目标，它就按时自己跑，不用你去启动。在 Claude Code 里：`/loop` 按间隔重跑一条 prompt；`/goal` 让一个会话持续下去，直到你写下的那个条件**真的**成立；hooks 在 agent 生命周期的各个节点触发命令；再把它推到 cron job 或 GitHub Actions 上，你合上笔记本它照跑。\n\n**结果会主动来找你，而不是你到处去查。**"
+    },
+    {
+      "en": "**2. The skill (reusable instructions)**\n\nInstead of pasting a wall of instructions into every run, you save them once as a file the loop reads every time: the rules, the patterns to follow, and a hard list of what it must never touch. Now the automation just calls the skill by name, and the recurring job stays maintainable instead of rotting inside a schedule nobody updates.",
+      "zh": "**2. Skill（可复用的指令）**\n\n与其每次跑之前都粘贴一大坨指令，不如**把它们存成一个文件、让 loop 每次自己去读**：规则、要遵循的模式，以及一份「绝对不许碰什么」的硬清单。\n\n这样自动化那一层只要**按名字调用这个 skill** 就行，于是这个周期性任务能一直保持可维护——而不是烂在某个再也没人更新的定时任务里。"
+    },
+    {
+      "en": "**3. Sub-agents (keep the maker away from the checker)**\n\nThe single most useful structural trick in a loop is splitting the agent that does the work from the agent that checks it. The model that wrote the code is too nice grading its own homework. A second agent, with different instructions and sometimes a stronger model on higher effort, catches the things the first one talked itself into. Your writer can be fast and cheap, your reviewer slow and strict. That separation is most of the quality.",
+      "zh": "**3. 子 agent（让「做的人」离「查的人」远一点）**\n\n**loop 里最有用的一个结构性技巧，就是把干活的 agent 和检查的 agent 拆开。**写代码的那个模型，批自己的作业时太仁慈了。\n\n第二个 agent——用不同的指令，有时候还配更强的模型、开更高的思考强度——才能抓出第一个 agent 自己说服自己接受的那些东西。**你的写手可以又快又便宜，你的审查者可以又慢又严。这个「分离」本身，就构成了质量的大部分。**"
+    },
+    {
+      "en": "**4. Connectors (so it acts, not suggests)**\n\nThis is the difference between an agent that says \"here is the fix\" and a loop that opens the pull request, links the ticket, and pings the channel once the build is green, by itself. Connectors are what let the loop act inside your real environment instead of just describing what it would do if it could.\n\n**5. The verifier (the gate)**\n\nThe test, type check, or build that automatically rejects bad work. This is the one block that decides whether the loop helps you or just spends your money. Everything else is plumbing. This is the part that makes it real.",
+      "zh": "**4. Connectors 连接器（让它「动手」，而不是「建议」）**\n\n这是「一个只会说『喏，这就是修法』的 agent」和「一个会自己开 PR、关联工单、并在构建变绿后往频道里发通知的 loop」之间的差别。**连接器，就是让 loop 能在你真实的环境里动手，而不是光描述『如果我能做，我会怎么做』。**\n\n**5. Verifier 校验器（那道闸门）**\n\n那条自动否决劣质产出的测试、类型检查或构建。**这是唯一一块决定「loop 到底在帮你、还是只在烧你的钱」的积木。其他四块都是管道，这一块才让它成为真的。**"
+    },
+    {
+      "en": "Stack those together and you get what big teams now run at scale: fleets of agents looping on the same job, dozens or thousands at once. One engineer used a loop like this to rewrite an entire codebase from one programming language to another in about six days, work that would have taken close to a year by hand. It is a genuine change in how serious software gets built. And it comes with a catch the demos never show.",
+      "zh": "把这五块叠起来，你就得到了大团队现在在规模化运行的东西：**成建制的 agent 舰队，几十上千个同时对着同一份工作跑 loop。**作者称，曾有一位工程师用这样一个 loop，在约六天内把整个代码库从一门编程语言重写成了另一门——这活儿手写要接近一年。\n\n这是严肃软件的构建方式发生的一次真实变化。**但它带着一个所有 demo 都不会给你看的坑。**"
+    },
+    {
+      "en": "Loops run on tokens, and tokens are money. The problem is not that each step costs something. The problem is how the cost compounds.\n\nEvery time the loop goes around, the agent re-reads its context: the goal, the code, the last result, what failed. That whole pile is sent through the model again on every iteration, and it grows each pass. A loop that runs ten times does not cost ten prompts. It costs ten prompts that each keep getting bigger. The maker-and-checker trick that lifts quality also doubles the bill, because now two models read the work instead of one.",
+      "zh": "loop 烧的是 token，而 token 就是钱。**问题不在于每一步都要花钱，问题在于这个成本是怎么复利叠加的。**\n\n每转一圈，agent 都要把自己的上下文重读一遍：目标、代码、上一轮结果、哪里失败了。**这一整坨东西每轮迭代都要重新过一遍模型，而且每过一轮还在变大。**\n\n所以，一个跑十轮的 loop，**不是花掉十条 prompt 的钱，而是花掉十条『一条比一条更大』的 prompt 的钱。**而那个提升质量的「做-审分离」技巧，同时也把账单翻倍了——因为现在是两个模型在读这份工作，而不是一个。"
+    },
+    {
+      "en": "    ▸ ROUGH COST OF ONE LOOP\n    single agent, one medium task:      ~50,000 – 200,000 tokens\n    context re-sent every iteration:    grows each pass\n    a fleet of agents in parallel:      multiply all of the above\n\nThe metric that actually matters, and almost nobody tracks, is cost per accepted change. Not tokens spent or loops run. If the loop gives you ten results and you toss six, you are doing the review work it was meant to save. Below a 50% accept rate, it costs more than it gives back.",
+      "zh": "（成本估算代码块保留英文原样，中文为注释性翻译：）\n\n**▸ 一个 loop 的粗略成本**\n\n- 单 agent、一个中等难度任务：**约 5 万 – 20 万 token**\n- 上下文每轮迭代重发一次：**每过一轮还在增长**\n- 一支并行的 agent 舰队：**以上全部再乘一遍**\n\n**真正重要、却几乎没人追踪的指标是：每一个「被采纳的改动」花了多少钱（cost per accepted change）。**不是烧了多少 token，也不是跑了多少轮 loop。\n\n如果 loop 给你十份结果、你扔掉六份，那你其实正在干它本来要替你省掉的那份审阅工作。**接受率低于 50%，它的花费就超过了它的回报。**"
+    },
+    {
+      "en": "Loops also fail quietly. Engineer Geoffrey Huntley calls it the \"Ralph Wiggum loop\": the agent decides it is done too early, exits on a half-finished job, and the loop keeps running and spending while producing nothing. Without a hard gate that can fail the work, loops do not crash, they bill you in silence.\n\nThat is why the heavy version belongs to teams with the budget and guardrails to run it: iteration caps, token budgets, cheap models on the boring steps, monitoring. If that is not you, you are not missing out, the core idea works at a fraction of the cost and none of the setup.",
+      "zh": "**而且 loop 的失败是无声的。**工程师 Geoffrey Huntley 把这种情况叫作 **「Ralph Wiggum loop」**：agent 过早地认定自己干完了，在一份半成品上退出，而 loop 还在继续跑、继续花钱，却什么也没产出。\n\n**没有一道能判活儿不合格的硬闸门，loop 不会崩溃——它只会安静地给你计费。**\n\n这就是为什么**重型版本属于那些既有预算、又有护栏来跑它的团队**：迭代次数上限、token 预算、无聊步骤上便宜模型、以及监控。\n\n如果这不是你，你也没错过什么——**这个核心想法在极小的成本、零搭建量的情况下同样成立。**\n\n（编者注：「Ralph Wiggum loop」在 Huntley 本人的原文里并非纯粹的失败模式——他把这种「while 循环反复喂同一份 prompt」当作自己主推的方法论，原话是它「确定性地糟糕」但缺陷可控可解。本文作者引用时只取了失败面，两种读法并存，Huntley 原文见延伸阅读。）"
+    },
+    {
+      "en": "If you do build one, the order matters more than the tools. The people who ship loops that survive in production all do it the same way:\n\n    1. Get ONE manual run reliable first.\n    2. Turn that into a skill (save the instructions).\n    3. Wrap the skill in a loop (add the gate + stop condition).\n    4. THEN put it on a schedule.\n\nSkipping ahead, scheduling something you have not made reliable by hand, is exactly how loops blow up while you sleep. Prove it once, harden it, then automate it.",
+      "zh": "如果你真要建一个，**顺序比工具重要**。那些能把 loop 送上生产并且活下来的人，做法都一样：\n\n1. **先让「一次手动运行」变得可靠。**\n2. **把它变成一个 skill**（把指令存下来）。\n3. **用 loop 把这个 skill 包起来**（加上闸门 + 停止条件）。\n4. **然后**才把它挂上定时调度。\n\n**跳步——把一件你还没用手证明过可靠的事直接挂上定时——正是 loop 在你睡觉时炸掉的标准姿势。先证明一次，再加固，最后自动化。**"
+    },
+    {
+      "en": "You do not need a coding agent to feel how this works. You can run a simple loop by hand inside any LLM right now, with nothing but a prompt. The trick is to give the model all three loop parts at once: a goal, strict success criteria, and a protocol that forces it to check itself before it is allowed to stop.\n\n    ▸ SELF-CHECKING LOOP  (paste into Claude or ChatGPT)\n    You will work in a loop until the task meets the bar.\n\n    TASK:\n    [describe exactly what you want produced]\n\n    SUCCESS CRITERIA (be strict, no soft passes):\n    - [criterion 1]\n    - [criterion 2]\n    - [criterion 3]\n\n    LOOP PROTOCOL, repeat every turn:\n    1. PLAN   - state the single next step.\n    2. DO     - produce or improve the work.\n    3. VERIFY - score the result 1-10 on each criterion.\n                Be brutally honest. List exactly what is still weak.\n    4. DECIDE - if every criterion is 8+, print \"FINAL\" and stop.\n                Otherwise print \"ITERATING\" and go again, fixing\n                the weakest point first.\n\n    RULES:\n    - Never call it done until every criterion is 8 or higher.\n    - Each pass must fix the weakest score from the last VERIFY.\n    - Do not ask me questions. Make a sensible assumption, note it,\n      and keep going.\n\n    Begin. Run the loop until FINAL.",
+      "zh": "你不需要一个编码 agent 才能体会到这东西怎么工作。**你现在就能在任何一个 LLM 里，用一条 prompt 手动跑一个简单的 loop。**诀窍是：把 loop 的三个部件**一次性**全交给模型——一个目标、一套严格的成功标准，以及一条**逼它在被允许停下之前必须先自查**的协议。\n\n（下方 prompt 保留英文原样，中文为注释性翻译：）\n\n**▸ 自检 LOOP（粘进 Claude 或 ChatGPT 即可）**\n\n> 你要以循环方式工作，直到任务达标为止。\n>\n> **任务**：[准确描述你想要产出什么]\n>\n> **成功标准（要严，不许放水）**：[标准 1] / [标准 2] / [标准 3]\n>\n> **循环协议，每一轮都重复**：① **PLAN 计划** — 说出下一个**单一**步骤；② **DO 执行** — 产出或改进这份工作；③ **VERIFY 校验** — 按每条标准给结果打 1-10 分，**要残酷地诚实**，明确列出还有哪里薄弱；④ **DECIDE 决策** — 如果每条标准都 ≥8 分，打印「FINAL」并停止；否则打印「ITERATING」，**先修最弱的那一项**，再来一轮。\n>\n> **规则**：在每条标准都达到 8 分以上之前，绝不许宣称完成；每一轮必须修掉上一次 VERIFY 里分数最低的那项；不要向我提问——做一个合理的假设、标注出来，然后继续干。\n>\n> 开始。一直跑这个循环，直到 FINAL。"
+    },
+    {
+      "en": "Watch what happens. The model drafts, grades its own work against your criteria, finds the weak spot, and rewrites, over and over, until it actually clears the bar instead of handing you the first thing that looked close. That is a loop. You just built one with a paragraph.\n\nBut notice what is still missing, because it is the whole point of what comes next. You are the trigger. You opened the chat, you pasted the prompt, you are sitting there watching it iterate. Close the tab and it is gone. There is no schedule. There is no \"do this every morning,\" no \"wake up when an email arrives.\" It cannot reach out to you, because it only exists while you are looking at it.",
+      "zh": "看看会发生什么：模型起草、按你的标准给自己打分、找出薄弱点、重写，一遍又一遍，**直到它真的越过了那道杠，而不是把第一个「看着差不多」的东西丢给你。这就是一个 loop——你刚刚用一段话搭出来了一个。**\n\n但请注意**还缺什么**，因为这正是接下来那部分的全部要点：**你才是那个触发器。**是你打开了对话框、是你粘贴了 prompt、是你坐在那儿看着它迭代。关掉标签页，它就没了。没有调度，没有「每天早上做这件事」，没有「来邮件时醒过来」。**它无法主动来找你，因为它只在你盯着它的时候才存在。**"
+    },
+    {
+      "en": "[Editor's note — the remaining ~40% of the original thread is a product pitch for Mira, a Telegram bot the author is promoting. It is not covered in this bilingual reading.]",
+      "zh": "**编者注：原帖后 40% 为 Mira 产品导流内容，本精读略去。**\n\n那部分的大意是：作者主张，对 99% 的日常任务而言，无需自己搭重型 loop——他推荐一个叫 **Mira** 的 Telegram 机器人，用自然语言描述即可创建「Skill」（即轻量 loop），号称通过 Composio 连接 500+ 应用、具备跨会话长期记忆、且模型无关，并给出了工作 / 创作 / 语音 / 生活四类使用示例与注册引导。这属于作者的推广内容，我们不做对照精读，读者可自行判断。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "A prompt hands the AI an instruction. A loop hands the AI a job, a way to know when the job is done, and a rule for when to give up.",
+      "zh": "prompt 交给 AI 的是一条指令。loop 交给 AI 的是一份工作、一套判断工作何时算完成的方法，以及一条何时该放弃的规则。"
+    },
+    {
+      "en": "No gate means the agent grades its own homework, and the model that did the work is far too generous a grader.",
+      "zh": "没有闸门，就等于让 agent 自己批自己的作业——而写作业的那个模型，当阅卷老师实在太宽容了。"
+    },
+    {
+      "en": "If nothing can fail the work for you, the loop just spins.",
+      "zh": "如果没有任何东西能替你判这活儿不合格，那 loop 就只是在空转。"
+    },
+    {
+      "en": "Your writer can be fast and cheap, your reviewer slow and strict. That separation is most of the quality.",
+      "zh": "你的写手可以又快又便宜，你的审查者可以又慢又严。这个「分离」本身，就构成了质量的大部分。"
+    },
+    {
+      "en": "A loop that runs ten times does not cost ten prompts. It costs ten prompts that each keep getting bigger.",
+      "zh": "一个跑十轮的 loop，不是花掉十条 prompt 的钱，而是花掉十条「一条比一条更大」的 prompt 的钱。"
+    },
+    {
+      "en": "Without a hard gate that can fail the work, loops do not crash, they bill you in silence.",
+      "zh": "没有一道能判活儿不合格的硬闸门，loop 不会崩溃——它只会安静地给你计费。"
+    },
+    {
+      "en": "Prove it once, harden it, then automate it.",
+      "zh": "先证明一次，再加固，最后自动化。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Geoffrey Huntley《Ralph Wiggum as a \"software engineer\"》",
+      "url": "https://ghuntley.com/ralph/",
+      "pov": "本文提到的「Ralph Wiggum loop」的原始出处，但读完会发现本文的引用方向被反转了。在 Huntley 原文里，Ralph 并不是一个失败模式的名字，而是他主推的一项技术——最纯粹的形态就是一行 Bash：`while :; do cat PROMPT.md | claude-code ; done`。他的原话是「Ralph 的美妙之处在于：这项技术在一个非确定性的世界里是确定性地糟糕」，缺陷可识别、可通过各种提示风格解决，并称它能替代多数公司在绿地项目上的大部分外包。他甚至用它造出了一门训练数据里根本不存在的全新编程语言。换句话说，本文把 Ralph 当作「无声失败」的反面教材，而原作者把同一个东西当作「需要信念与最终一致性」的正面方法论——同一现象的两种读法，值得对照。"
+    },
+    {
+      "source": "Anthropic《Building Effective AI Agents》",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "pov": "本文五大件的工程学原版，也是对「什么时候不该建 loop」这个问题更克制的回答。Anthropic 在与数十个团队合作后的结论是：最成功的实现都没有用复杂框架或专用库，而是用简单、可组合的模式。它给出了本文没做的那层关键区分——workflow（LLM 与工具通过预定义代码路径被编排）vs agent（LLM 自己动态决定流程与工具使用）：本文讲的 loop spec 其实更接近前者，而「fleets of agents」才是后者。想把这套东西落到企业生产里，从这份文档开始比从推特长贴开始更靠谱。"
+    },
+    {
+      "source": "OpenAI《A Practical Guide to Building Agents》",
+      "url": "https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf",
+      "pov": "本文结尾提到「这就是 OpenAI 用来构建 AI agent 的架构，他们刚发了一份 34 页指南」——指的就是这份 PDF 原件。直接读原文的价值在于：它对护栏（guardrails）与人类介入（human intervention）的处理远比本文详尽，明确把「失败阈值触发人工接管」和「高风险操作前置人工确认」写成设计要求，而不是像本文那样只用一条 8 次迭代上限带过。本文把它压成了一页，代价是丢掉了最需要工程判断的那部分。"
+    }
+  ]
+}

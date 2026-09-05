@@ -10,7 +10,7 @@ slug: "zvi-ai-149-age-of-coding-agent"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/zvi-ai-149-age-of-coding-agent.m4a"
 fetch_status: "error"
-fetched_at: "2026-09-05T06:50:48.950Z"
+fetched_at: "2026-09-05T14:48:53.942Z"
 fetch_type: "placeholder"
 tags:
   - "编码-Agent"

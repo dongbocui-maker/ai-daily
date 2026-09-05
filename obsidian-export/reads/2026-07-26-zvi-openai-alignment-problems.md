@@ -10,7 +10,7 @@ slug: "zvi-openai-alignment-problems"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/zvi-openai-alignment-problems.m4a"
 fetch_status: "error"
-fetched_at: "2026-08-30T18:12:13.225Z"
+fetched_at: "2026-09-05T06:06:19.057Z"
 fetch_type: "placeholder"
 tags:
   - "AI-对齐"

@@ -10,7 +10,7 @@ slug: "import-ai-465-open-vs-closed"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/import-ai-465-open-vs-closed.m4a"
 fetch_status: "error"
-fetched_at: "2026-08-30T18:12:11.684Z"
+fetched_at: "2026-09-05T06:06:17.477Z"
 fetch_type: "placeholder"
 tags:
   - "Kimi-K3"

@@ -1,0 +1,12 @@
+import { chromium } from '/root/.npm/_npx/e41f203b7505f1fb/node_modules/playwright-core/index.mjs';
+const exe = '/root/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome';
+const out = '/root/.openclaw/workspace/projects/ai-daily/docs/shots';
+const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
+const p = await ctx.newPage();
+await p.goto('https://aidigest.club/about/', { waitUntil: 'networkidle', timeout: 30000 });
+await p.screenshot({ path: `${out}/live-about-desktop.png` });
+await p.goto('https://aidigest.club/', { waitUntil: 'networkidle', timeout: 30000 });
+await p.screenshot({ path: `${out}/live-nav-rename-desktop.png`, clip: { x: 0, y: 0, width: 1440, height: 400 } });
+await browser.close();
+console.log('done');

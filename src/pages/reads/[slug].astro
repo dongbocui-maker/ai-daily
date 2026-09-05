@@ -25,6 +25,12 @@ function renderMd(md: string): string {
     .map((para) => {
       const trimmed = para.trim();
       if (!trimmed) return '';
+      // 图片（独立段落：![alt](url)，可选后跟 *图注* 行）
+      const imgMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(?:\n\*([^*]+)\*)?$/);
+      if (imgMatch) {
+        const cap = imgMatch[3] ? `<figcaption class="text-sm text-accent-gray-500 mt-2 text-center">${escapeHtml(imgMatch[3])}</figcaption>` : '';
+        return `<figure class="my-6"><img src="${escapeHtml(imgMatch[2])}" alt="${escapeHtml(imgMatch[1])}" class="w-full rounded border border-accent-gray-200 bg-white" loading="lazy" />${cap}</figure>`;
+      }
       // 标题
       if (trimmed.startsWith('### ')) {
         return `<h3 class="text-lg lg:text-xl font-bold mt-8 mb-3">${escapeHtml(trimmed.slice(4))}</h3>`;
@@ -103,6 +109,11 @@ function formatInline(s: string): string {
         <a class="btn-acc" href={article.originalUrl} target="_blank" rel="noopener noreferrer">
           <svg class="ic"><use href="#i-ext"/></svg>阅读英文原文
         </a>
+        {article.sourcePdfUrl && (
+          <a class="btn-ghost" href={`${base}${article.sourcePdfUrl.replace(/^\//, '')}`} target="_blank" rel="noopener noreferrer">
+            <svg class="ic"><use href="#i-deck"/></svg>下载原文 PDF
+          </a>
+        )}
         {article.deckPdfUrl && (
           <a class="btn-ghost" href={`${base}${article.deckPdfUrl}`} target="_blank" rel="noopener noreferrer">
             <svg class="ic"><use href="#i-deck"/></svg>精读概要 PPT

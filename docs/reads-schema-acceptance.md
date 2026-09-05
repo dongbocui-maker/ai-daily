@@ -40,6 +40,9 @@ src/data/reads/YYYY-MM-DD-<slug>.json
 | 字段 | 类型 | 何时存在 |
 |---|---|---|
 | `audio` | object `{url, duration_seconds}` | 已生成播客时填，未生成不填（**不要写空对象**，会导致渲染 NaN）|
+| `sourcePdfUrl` | string | 源提供官方 PDF 下载版时填（相对 public/ 路径，不带前导 `/`，如 `reads/<slug>/xxx.pdf`）；源不提供不自制不填（2026-09-05 规范）|
+| `bilingual` | array of `{en, zh}` | 中英对照全文（新格式，与 `summaryZh` 二选一，渲染层优先 bilingual）；zh/en 内支持图片段落 `![alt](url)` + 可选 `*图注*` 行（图片资产存 `public/reads/<slug>/`）|
+| `secondaryReads` | array of `{source, url, pov}` | 有二手解读/延伸视角时填，pov 须提炼观点非贴链接 |
 
 ## 内容质量标准（QC 审查重点）
 

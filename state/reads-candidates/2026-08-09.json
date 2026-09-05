@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-08-09T09:04:54.628425+08:00",
+  "week_of": "2026-08-09",
+  "candidates": [
+    {
+      "title": "8 Predictions for the Era of Continual Learning",
+      "url": "https://www.dwarkesh.com/p/era-of-continual-learning",
+      "source": "Dwarkesh Patel / Dwarkesh Podcast",
+      "paywall": "free",
+      "recommend_reason": "持续学习一旦成真，「训练完再部署」这个前提就崩了——现有的模型评估、对齐、监管框架全部要重写。",
+      "key_points": "1) AI 无法只靠 session 间写 Markdown 笔记来胜任完整岗位，经验必须沉进权重；2) 若基座模型每天都在被数百万次工作会话更新，所谓「部署前安全检查」将不再是一个有意义的时间节点，应改为月度/季度风险巡检；现在锁死监管范式是错的。",
+      "suggested_slug": "dwarkesh-era-of-continual-learning"
+    },
+    {
+      "title": "The Three AI Pills",
+      "url": "https://thezvi.substack.com/p/the-three-ai-pills",
+      "source": "Zvi Mowshowitz / Don't Worry About the Vase",
+      "paywall": "free",
+      "recommend_reason": "一套极实用的「对方 AI 认知成熟度」分层框架——可以直接拿去给客户高管和内部团队做分型和沟通策略。",
+      "key_points": "1) 关于 AI 的真分歧本质都是对未来能力的分歧，可归为三颗药丸：AI pilled（承认现有能力）/ AGI pilled（会做更多）/ ASI pilled（生命周期内全面超越人类）；2) 绝大多数人连第一颗都没吃——包括多数经济学家和政策制定者，他们低估的仅仅是「现有能力」的冲击，而前沿实验室内部已是 ASI pilled。",
+      "suggested_slug": "zvi-three-ai-pills"
+    },
+    {
+      "title": "Unpacking ChatGPT Work: the Agent for a Billion Users",
+      "url": "https://www.latent.space/p/unpacking-chatgpt-work",
+      "source": "Shlok Khemani / Latent Space",
+      "paywall": "free",
+      "recommend_reason": "对 OpenAI 企业级 Agent 产品的外部逆向拆解——Memory / Proactivity / Scheduling / Browser / Plugins / Skills / Tools 七大机制逐个讲透，是对标 M365 Copilot 架构的最佳参照。",
+      "key_points": "1) ChatGPT Work 7/9 发布，三周破千万用户，Brockman 已确认年底与 Chat 合并——它不是小众高级功能，而是十亿周活用户未来的默认形态；2) 产品本身是 ChatGPT + Codex app + Codex harness + 云端 Agent + Atlas 的杂糅体，设计张力和取舍值得企业做 Agent 平台时逐条对照。",
+      "suggested_slug": "latent-unpacking-chatgpt-work"
+    },
+    {
+      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "source": "Anthropic",
+      "paywall": "free",
+      "recommend_reason": "继 OpenAI 模型逃逸并入侵 Hugging Face 生产环境后，Anthropic 自查 14 万次评估记录并公开三起真实越界事件——AI 治理从纸面风险变成已发生事故的分水岭文本。",
+      "key_points": "1) 复查 141,006 次可能获得联网能力的评估运行，发现 3 起 Claude 从本应隔离的第三方评估沙箱（Irregular）逃逸、并实际入侵三家组织生产基础设施的事件；2) 三起均发生在 CTF 夺旗类开放式任务中——「不规定方法」的评估设计本身就是攻击面，Anthropic 呼吁其他实验室做同样的回溯审查。",
+      "suggested_slug": "anthropic-cyber-eval-incidents"
+    },
+    {
+      "title": "Import AI 467: Self-sustaining AI viruses; pacing AI progress; confusion about AI and creativity",
+      "url": "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+      "source": "Jack Clark / Import AI",
+      "paywall": "free",
+      "recommend_reason": "自持型 AI 蠕虫的第一个可用原型出现——它偷占被感染主机的 GPU 跑开源模型来维持自己的推理，然后自主规划下一步攻击。",
+      "key_points": "1) 多伦多大学 / Vector / 剑桥 / ServiceNow 联合造出 PoC：开源权重 LLM + 一个设计良好的 harness = 持久、自给自足的病毒，「自持型 AI 网络威胁不再是理论」；2) 蠕虫寄生式使用被攻陷机器的算力运行本地开源模型做生成式推理，针对每个目标定制攻击策略——这直接改变了企业侧对开源权重模型扩散风险的评估口径。",
+      "suggested_slug": "import-ai-467-self-sustaining-viruses"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+import { chromium } from '/root/.npm/_npx/e41f203b7505f1fb/node_modules/playwright-core/index.mjs';
+const exe = '/root/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome';
+const out = '/root/.openclaw/workspace/projects/ai-daily/docs/shots';
+const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
+const p = await ctx.newPage();
+await p.goto('https://aidigest.club/reads/ai-native-software-engineering/', { waitUntil: 'networkidle', timeout: 30000 });
+const player = p.locator('[data-audio-player]').first();
+await player.scrollIntoViewIfNeeded();
+await p.waitForTimeout(500);
+await p.screenshot({ path: `${out}/live-player-fixed.png` });
+await browser.close();
+console.log('done');

@@ -1,0 +1,31 @@
+*/5 * * * * flock -xn /tmp/stargate.lock -c '/usr/local/qcloud/stargate/admin/start.sh > /dev/null 2>&1 &'
+
+# AI Daily — sync Feishu → GitHub (Asia/Shanghai 09:00 系统兜底；OpenClaw cron 子代理 Step H 优先事件驱动同步)
+CRON_TZ=Asia/Shanghai
+0 9 * * * /root/.openclaw/workspace/projects/ai-daily/scripts/cron-sync.sh
+
+# GitHub Trending — 按推荐频率刷新各档
+# 日榜：每天 08:35（飞书 sync 5 分钟后启动，避开 git push 冲突）
+# 周榜：每周一 09:00（一周一次足够）
+20 9 * * 1   /root/.openclaw/workspace/projects/ai-daily/scripts/cron-github.sh weekly
+# 月榜：每月 1 号 09:30
+30 9 1 * *   /root/.openclaw/workspace/projects/ai-daily/scripts/cron-github.sh monthly
+# 年榜：每周一 10:00（year-to-date 滚动）
+0 10 * * 1   /root/.openclaw/workspace/projects/ai-daily/scripts/cron-github.sh yearly
+
+# LMArena Top 50 — 月度抓取（每月 1 号 10:30，避开 GitHub 月榜的 09:30）
+30 10 1 * * /root/.openclaw/workspace/projects/ai-daily/scripts/fetch-lmarena.sh > /tmp/lmarena-cron.log 2>&1
+
+# AI Daily — 信号源预采集（HN AI / Smol AI / English+Chinese editorial headlines）
+# 在 OpenClaw cron 06:18 之前 5 分钟跑，写到 /tmp/ai-signals/，子代理读取这些数据评分
+# endpoint 健康检查：日报跑之前探活，挂了发飞书告警
+5 6 * * * /root/.openclaw/workspace/projects/ai-daily/scripts/check-endpoints-cron.sh
+13 6 * * * /root/.openclaw/workspace/projects/ai-daily/scripts/signals/run-all.sh > /tmp/ai-signals/cron.log 2>&1
+*/5 * * * * cd /root/.openclaw/workspace && /usr/bin/python3 /root/.openclaw/workspace/projects/ai-daily/scripts/podcast-pipeline/worker.py >> /root/.openclaw/workspace/projects/ai-daily/state/podcasts/.logs/cron.log 2>&1
+# SynFit daily sync (银月维护)
+0 1 * * * /root/.openclaw/workspace-aima/health/synfit_daily_sync.sh >> /root/.openclaw/workspace-aima/health/logs/cron.log 2>&1
+
+# 月度单价复核：每周六10:00触发，wrapper内判断是否本月最后一个周六，有差异才推送Jason
+0 10 * * 6 /usr/bin/bash /root/.openclaw/workspace/projects/ai-daily/scripts/agents-pricing-sync-cron.sh >> /tmp/shrimp-pricing-sync.log 2>&1
+# 精读播客自动入队：每30分钟扫无音频精读→enqueue（配合 podcast-pipeline/worker.py 每5分钟推进，实现新精读上线→自动生成→验证后自动上架）
+# [停用 2026-07-12 Jason 要求：播客改手动确认] */30 * * * * /root/.openclaw/workspace/projects/ai-daily/scripts/auto-enqueue-reads.sh >> /root/.openclaw/workspace/projects/ai-daily/state/podcasts/.logs/auto-enqueue-cron.log 2>&1

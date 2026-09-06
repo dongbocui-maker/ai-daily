@@ -173,6 +173,7 @@ MODEL_LABELS = {
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'azure-openai-responses/gpt-5.6-sol-2026-07-09': 'GPT-5.6 SOL',
+    'azure-openai-responses/gpt-6-astra-2026-09-03': 'GPT-6 ASTRA',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
     'qwen/qwen3.7-max': 'QWEN3.7 MAX',
     'anthropic/claude-sonnet-4-6': 'SONNET 4.6',

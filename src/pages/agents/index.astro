@@ -694,11 +694,11 @@ body.hud-scrub{cursor:grabbing}body.hud-scrub .hudnav,body.hud-scrub .hudnav *,b
 // CHAINS: 优先用 build 时从 openclaw.json 生成的 AGENT_CHAINS（single source of truth）；
 // 若 JSON 缺失/损坏则回退到硬编码 literal（仅兜底，可能过时）。
 const CHAINS = AGENT_CHAINS || {
-  main:['fable-5','opus-5','gpt-5.6-sol','qwen3.7-max'],
-  aima:['opus-5','gpt-5.6-sol','qwen3.7-max'],
-  mk2:['opus-5','gpt-5.6-sol','qwen3.7-max'],
-  mk46:['qwen3.7-max','opus-5','gpt-5.6-sol'],
-  'claude-researcher':['gpt-5.6-sol','opus-5','qwen3.7-max'],
+  main:['fable-5','opus-5','gpt-6-astra','qwen3.7-max'],
+  aima:['opus-5','gpt-6-astra','qwen3.7-max'],
+  mk2:['opus-5','gpt-6-astra','qwen3.7-max'],
+  mk46:['qwen3.7-max','opus-5','gpt-6-astra'],
+  'claude-researcher':['gpt-6-astra','opus-5','qwen3.7-max'],
 };
 // CHAIN_MODEL_KEYS(short→fullname): 优先用生成的 AGENT_CHAIN_KEYS（single source of truth，
 // 由 gen-agent-chains.py 从 openclaw.json 推导），JSON 缺失/损坏时回退硬编码 literal（可能过时）。
@@ -708,6 +708,7 @@ const CHAIN_MODEL_KEYS = AGENT_CHAIN_KEYS || {
   'fable-5':'aigw-claude-48-main/claude-fable-5',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
   'gpt-5.6-sol':'azure-openai-responses/gpt-5.6-sol-2026-07-09',
+  'gpt-6-astra':'azure-openai-responses/gpt-6-astra-2026-09-03',
   'qwen3.7-max':'qwen/qwen3.7-max',
   'sonnet-4.6':'anthropic/claude-sonnet-4-6',
 };
@@ -1112,6 +1113,7 @@ const ARCH_MODEL_EP = {
   'anthropic/claude-sonnet-4-6':'ep-opus',
   'azure-openai-responses/gpt-5.5':'ep-gpt',
   'azure-openai-responses/gpt-5.6-sol-2026-07-09':'ep-gpt',
+  'azure-openai-responses/gpt-6-astra-2026-09-03':'ep-gpt',
   'qwen/qwen3.7-max':'ep-qwen',
 };
 // 运行时「各 agent 当前实际在用的 ep-id」映射，由 render(DATA) 从 active_model 填充。

@@ -1,46 +1,18 @@
 {
-  "generated_at": "2026-09-08 21:05:01 +08",
-  "today": "2026-09-08",
+  "generated_at": "2026-09-09 07:05:01 +08",
+  "today": "2026-09-09",
   "grand": {
     "tok": 2571379967,
     "cost": 4521.43,
     "calls": 4715,
     "save": 10676.6,
-    "today_tok": 6070635,
-    "today_cost": 15.62,
-    "today_save": 39.89,
-    "last7d_tok": 75370484,
-    "last7d_cost": 199.5
+    "today_tok": 0,
+    "today_cost": 0.0,
+    "today_save": 0.0,
+    "last7d_tok": 65058568,
+    "last7d_cost": 178.21
   },
   "trend": [
-    {
-      "date": "2026-09-02",
-      "tok": 10311916,
-      "cost": 21.29,
-      "by_agent": {
-        "main": {
-          "name": "钢铁虾",
-          "mark": "MARK I",
-          "emoji": "🦐",
-          "tok": 6623160,
-          "cost": 17.57
-        },
-        "mk2": {
-          "name": "MK2",
-          "mark": "MARK II",
-          "emoji": "🦐",
-          "tok": 2317170,
-          "cost": 2.98
-        },
-        "mk46": {
-          "name": "Mark 46",
-          "mark": "MARK XLVI",
-          "emoji": "🛡",
-          "tok": 1371586,
-          "cost": 0.73
-        }
-      }
-    },
     {
       "date": "2026-09-03",
       "tok": 253272,
@@ -201,6 +173,12 @@
           "cost": 1.26
         }
       }
+    },
+    {
+      "date": "2026-09-09",
+      "tok": 0,
+      "cost": 0.0,
+      "by_agent": {}
     }
   ],
   "agents": {
@@ -211,20 +189,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "ONLINE",
-      "idle_min": 5,
+      "status": "IDLE",
+      "idle_min": 605,
       "last_ts": "2026-09-08T13:00:43.326Z",
       "total_tok": 1521499524,
-      "today_tok": 4977447,
-      "today_cost": 14.36,
-      "last7d_tok": 50221423,
-      "last7d_cost": 164.21,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 43598263,
+      "last7d_cost": 146.64,
       "cost": 3173.43,
       "save": 6637.12,
       "calls": 3223,
       "active_model": "aigw-claude-48-main/claude-fable-5",
       "cache_eff": 80.3,
-      "today_cache_eff": 83.1,
+      "today_cache_eff": 0,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -290,7 +268,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "OFFLINE",
-      "idle_min": 2884,
+      "idle_min": 3484,
       "last_ts": "2026-09-06T13:01:07.751Z",
       "total_tok": 547200918,
       "today_tok": 0,
@@ -367,20 +345,20 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "IDLE",
-      "idle_min": 842,
+      "status": "OFFLINE",
+      "idle_min": 1442,
       "last_ts": "2026-09-07T23:03:00.231Z",
       "total_tok": 459778344,
-      "today_tok": 1093188,
-      "today_cost": 1.26,
-      "last7d_tok": 10889359,
-      "last7d_cost": 13.17,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 8572189,
+      "last7d_cost": 10.19,
       "cost": 407.79,
       "save": 1798.24,
       "calls": 289,
       "active_model": "aigw-claude-48-main/claude-opus-5",
       "cache_eff": 94.0,
-      "today_cache_eff": 92.4,
+      "today_cache_eff": 0,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -440,13 +418,13 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 2915,
+      "idle_min": 3515,
       "last_ts": "2026-09-06T12:30:41.724Z",
       "total_tok": 8609734,
       "today_tok": 0,
       "today_cost": 0.0,
-      "last7d_tok": 5266231,
-      "last7d_cost": 2.96,
+      "last7d_tok": 3894645,
+      "last7d_cost": 2.23,
       "cost": 4.92,
       "save": 16.98,
       "calls": 12,
@@ -469,8 +447,8 @@
       "emoji": "🛰️",
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
-      "status": "IDLE",
-      "idle_min": 1319,
+      "status": "OFFLINE",
+      "idle_min": 1919,
       "last_ts": "2026-09-07T15:06:41.541Z",
       "total_tok": 34291447,
       "today_tok": 0,
@@ -1308,8 +1286,8 @@
         "files": 36
       },
       "t1": {
-        "kb": 1045,
-        "files": 223
+        "kb": 1046,
+        "files": 224
       },
       "daily_files": 95
     },
@@ -1340,8 +1318,8 @@
       "human": "每天 06:18",
       "human_en": "Daily 06:18",
       "kind": "cron",
-      "next_run_ms": 1788905880000,
-      "last_run_ms": 1788819480005,
+      "next_run_ms": 1788992280000,
+      "last_run_ms": 1788905880015,
       "last_status": "ok",
       "core": true
     },
@@ -1354,8 +1332,8 @@
       "human": "每天 07:00",
       "human_en": "Daily 07:00",
       "kind": "cron",
-      "next_run_ms": 1788908400000,
-      "last_run_ms": 1788822000006,
+      "next_run_ms": 1788994800000,
+      "last_run_ms": 1788908400008,
       "last_status": "ok",
       "core": true
     },

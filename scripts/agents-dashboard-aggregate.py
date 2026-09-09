@@ -14,10 +14,16 @@ _CAP_WS = {
     'claude-researcher': '/root/.openclaw/workspace-mk51/skills',
 }
 _CAP_AGENT_LABEL = {'main':'MAIN','mk2':'MK2','mk46':'MK46','aima':'AIMA','claude-researcher':'MK51'}
-# bundled/extension skills（全 agent 共享）扫描根；通配 openclaw 安装目录
+# Installed inventory, not runtime eligibility (no allowlist/dependency filtering).
+# Runtime precedence, low -> high: extension, bundled, managed, personal .agents,
+# project .agents, workspace skills. Keep existing bundled/extension glob coverage.
 _CAP_BUNDLED_GLOBS = [
-    '/root/.local/share/pnpm/global/*/.pnpm/openclaw@*/node_modules/openclaw/skills',
     '/root/.local/share/pnpm/global/*/.pnpm/openclaw@*/node_modules/openclaw/dist/extensions/*/skills',
+    '/root/.local/share/pnpm/global/*/.pnpm/openclaw@*/node_modules/openclaw/skills',
+]
+_CAP_SHARED_DIRS = [
+    os.path.expanduser('~/.openclaw/skills'),
+    os.path.expanduser('~/.agents/skills'),
 ]
 # 能力域顺序（全大写英文）
 _CAP_ORDER = ['DOCS & KB','WEB & RESEARCH','COMMS','OPS & AUTO','MEDIA & DESIGN','UTILITY']
@@ -54,29 +60,43 @@ def _cap_scan(root):
                 out[info['name'] or d]=info
     return out
 
+def _cap_scan_roots(roots):
+    # Last source wins by skill name; scan repeated/symlinked roots only once,
+    # at their highest priority. Dedupe within a scope, not across agents.
+    out={}; seen=set()
+    for root in reversed(list(roots)):
+        real=os.path.realpath(root)
+        if real in seen: continue
+        seen.add(real)
+        for name, info in _cap_scan(root).items():
+            out.setdefault(name, info)
+    return out
+
 def _cap_domain(name, info):
     n=(name+' '+(info.get('cat') or '')+' '+(info.get('desc') or '')).lower()
     if any(k in n for k in ['feishu','wiki','tencent-doc','docs','notion','obsidian','bear','apple-notes','dws','knowledge']): return 'DOCS & KB'
-    if any(k in n for k in ['web','tavily','research','browser','search','blogwatch','xurl']): return 'WEB & RESEARCH'
+    if any(k in n for k in ['web','tavily','research','browser','search','blogwatch','xurl','调研','研究']): return 'WEB & RESEARCH'
     if any(k in n for k in ['discord','slack','message','imsg','bluebubble','voice-call','wacli','himalaya','mail']): return 'COMMS'
     if any(k in n for k in ['cron','healthcheck','governance','acp','tmux','node-connect','mcporter','taskflow','clawhub','skill-creator','lighthouse','oracle','session']): return 'OPS & AUTO'
     if any(k in n for k in ['ppt','brand','diagram','excalidraw','frontend','design','sag','tts','whisper','video','gif','song','spotify','canvas','camsnap','peekaboo','nano-pdf']): return 'MEDIA & DESIGN'
     return 'UTILITY'
 
 def build_capabilities():
-    agent_skills={a:_cap_scan(p) for a,p in _CAP_WS.items()}
-    bundled={}
-    for pat in _CAP_BUNDLED_GLOBS:
-        for root in glob.glob(pat):
-            bundled.update(_cap_scan(root))
+    agent_skills={a:_cap_scan_roots([
+        os.path.join(os.path.dirname(p), '.agents', 'skills'), p,
+    ]) for a,p in _CAP_WS.items()}
+    shared_roots=[root for pat in _CAP_BUNDLED_GLOBS for root in sorted(glob.glob(pat))]
+    shared=_cap_scan_roots(shared_roots + _CAP_SHARED_DIRS)
     skills={}
+    # Keep the first workspace representative (agent order) for the single row.
+    # shared=True denotes availability to all agents; agents lists local installs.
     for a, s in agent_skills.items():
         for name, info in s.items():
-            skills.setdefault(name, {'info':info,'agents':set(),'bundled':False})
+            skills.setdefault(name, {'info':info,'agents':set(),'shared':False})
             skills[name]['agents'].add(a)
-    for name, info in bundled.items():
-        skills.setdefault(name, {'info':info,'agents':set(),'bundled':False})
-        skills[name]['bundled']=True
+    for name, info in shared.items():
+        skills.setdefault(name, {'info':info,'agents':set(),'shared':False})
+        skills[name]['shared']=True
     groups={}
     for name, d in skills.items():
         groups.setdefault(_cap_domain(name, d['info']), []).append((name,d))
@@ -88,13 +108,13 @@ def build_capabilities():
             info=d['info']
             return {'name':name.upper(),'desc':(info.get('desc') or '').upper(),
                     'emoji':info.get('emoji') or '▣',
-                    'shared':d['bundled'],
+                    'shared':d['shared'],
                     'agents':sorted(_CAP_AGENT_LABEL.get(a,a.upper()) for a in d['agents'])}
-        ws=[srlow(n,d) for n,d in items if not d['bundled']]
-        bd=[srow for srow in (srlow(n,d) for n,d in items if d['bundled'])]
+        ws=[srlow(n,d) for n,d in items if not d['shared']]
+        bd=[srow for srow in (srlow(n,d) for n,d in items if d['shared'])]
         domains.append({'domain':g,'total':len(items),'ws':len(ws),'shared':len(bd),
                         'ws_skills':ws,'shared_skills':bd})
-    total=len(skills); shared=sum(1 for d in skills.values() if d['bundled'])
+    total=len(skills); shared=sum(1 for d in skills.values() if d['shared'])
     return {'domains':domains,'total':total,'shared':shared,'ws_scoped':total-shared,
             'ndomains':len(domains)}
 

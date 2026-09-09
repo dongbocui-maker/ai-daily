@@ -506,18 +506,9 @@
       {
         "domain": "DOCS & KB",
         "total": 14,
-        "ws": 3,
-        "shared": 11,
+        "ws": 2,
+        "shared": 12,
         "ws_skills": [
-          {
-            "name": "DWS",
-            "desc": "管理钉钉产品能力(AI表格/AI搜问/日历/通讯录/群聊与机器人/待办/审批/考勤/日志/DING消息/开放平台文档/钉钉文档/钉钉云盘/AI听记/邮箱/在线电子表格/知识库等)。",
-            "emoji": "▣",
-            "shared": false,
-            "agents": [
-              "MK51"
-            ]
-          },
           {
             "name": "ONTOLOGY",
             "desc": "TYPED KNOWLEDGE GRAPH FOR STRUCTURED AGENT MEMORY AND COMPOSABLE SKILLS. USE WHEN CREATING",
@@ -555,6 +546,15 @@
             "emoji": "▣",
             "shared": true,
             "agents": []
+          },
+          {
+            "name": "DWS",
+            "desc": "管理钉钉产品能力(AI表格/AI搜问/日历/通讯录/群聊与机器人/待办/审批/考勤/日志/DING消息/开放平台文档/钉钉文档/钉钉云盘/AI听记/邮箱/在线电子表格/知识库等)。",
+            "emoji": "▣",
+            "shared": true,
+            "agents": [
+              "MK51"
+            ]
           },
           {
             "name": "FEISHU-DOC",
@@ -623,9 +623,9 @@
       },
       {
         "domain": "WEB & RESEARCH",
-        "total": 18,
+        "total": 19,
         "ws": 5,
-        "shared": 13,
+        "shared": 14,
         "ws_skills": [
           {
             "name": "AGENT-BROWSER",
@@ -740,6 +740,13 @@
             "agents": []
           },
           {
+            "name": "STORM",
+            "desc": "STORM · 深度调研：以真实取证驱动多视角扫描、矛盾地图、综合简报与自我复核。用户说“用 STORM”“STORM 调研”“深度调研”，或需要围绕技术选型、战略取舍、行业认知、",
+            "emoji": "▣",
+            "shared": true,
+            "agents": []
+          },
+          {
             "name": "SUMMARIZE",
             "desc": "SUMMARIZE URLS OR FILES WITH THE SUMMARIZE CLI (WEB, PDFS, IMAGES, AUDIO, YOUTUBE).",
             "emoji": "▣",
@@ -782,11 +789,18 @@
       },
       {
         "domain": "COMMS",
-        "total": 5,
+        "total": 6,
         "ws": 0,
-        "shared": 5,
+        "shared": 6,
         "ws_skills": [],
         "shared_skills": [
+          {
+            "name": "AGENTLY-MAIL",
+            "desc": "通过 AGENTLY-CLI 命令行工具操作邮件：发送、回复、转发、搜索、读取、下载附件、管理收件箱。当用户需要进行任何邮件相关操作时使用此 SKILL。",
+            "emoji": "▣",
+            "shared": true,
+            "agents": []
+          },
           {
             "name": "BLUEBUBBLES",
             "desc": "SEND AND MANAGE IMESSAGES VIA BLUEBUBBLES, INCLUDING ATTACHMENTS, TAPBACKS, EDITS, REPLIES",
@@ -1269,9 +1283,9 @@
         ]
       }
     ],
-    "total": 89,
-    "shared": 67,
-    "ws_scoped": 22,
+    "total": 91,
+    "shared": 70,
+    "ws_scoped": 21,
     "ndomains": 6
   },
   "knowledge": {

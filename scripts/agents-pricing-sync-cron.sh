@@ -5,6 +5,9 @@
 # 设计：不自动改价，只提醒；Jason 确认后改 src/data/pricing.json 一处。
 set -uo pipefail
 
+# cron 裸 PATH 没有 node，openclaw CLI (pnpm shim) 需要它（2026-09-12 修：node: not found 导致飞书推送失败）
+export PATH="/root/.nvm/versions/node/v22.22.2/bin:$PATH"
+
 REPO=/root/.openclaw/workspace/projects/ai-daily
 JASON_OPENID="ou_dbee86fe0e62ee834c7d7225015a1317"
 REPORT=/tmp/shrimp-pricing-report.txt

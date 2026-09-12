@@ -22,7 +22,8 @@
 
 @layer components {
   .container-x {
-    @apply mx-auto max-w-8xl px-6 lg:px-12;
+    /* 2026-09-12 宽度统一：与 sec-page .wrap (1080px/16px padding) 对齐，原 max-w-8xl(1408px) 导致 Header/X/Demo/Learn 比其他页宽 328px */
+    @apply mx-auto max-w-[1080px] px-4;
   }
 
   .btn-primary {

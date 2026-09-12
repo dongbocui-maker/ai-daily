@@ -26,8 +26,11 @@ FETCHERS = {
     # NOTE: openai.com/api/pricing 是 JS SPA，curl 抓到空壳 → 误报，故不列入抓取器。
     # gpt-5.6-sol 靠 STALE_DAYS 到期提醒人工核对，不做 HTML diff。
     'azure-claude-48/claude-opus-4-8': {
-        'url': 'https://www.anthropic.com/pricing',
-        'hint': 'Opus $5 in / $25 out',
+        # 2026-09-12 换 URL：www.anthropic.com/pricing 会 302 到 region-block 页（长度>500 骗过守卫→误报变价）；
+        # platform.claude.com 文档页带 UA + 代理可稳定抓到完整价格表
+        'url': 'https://platform.claude.com/docs/en/about-claude/pricing',
+        'hint': 'Opus 4.8 $5 in / $25 out',
+        'guard': 'Claude Opus 4.8',  # 页面必须含此字串才算抓对了页（防 region-block 空壳）
     },
 }
 PROXY = os.environ.get('MIHOMO_PROXY', 'http://127.0.0.1:7890')
@@ -37,7 +40,9 @@ def _fetch(url):
     """curl through mihomo proxy; return text or None."""
     for args in ([ '-x', PROXY ], []):  # 先走代理，失败再直连
         try:
-            r = subprocess.run(['curl', '-sL', '--max-time', '20', *args, url],
+            r = subprocess.run(['curl', '-sL', '--max-time', '20',
+                                '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+                                *args, url],
                                capture_output=True, text=True, timeout=30)
             if r.returncode == 0 and len(r.stdout) > 500:
                 return r.stdout
@@ -90,12 +95,16 @@ def main():
         if k not in models:
             continue
         html = _fetch(fc['url'])
-        if not html:
-            lines.append(f'  ⚠️ {k}: 抓取失败（{fc["url"]}）— 跳过，未判定变动')
+        if not html or (fc.get('guard') and fc['guard'] not in html):
+            reason = '抓取失败' if not html else f'页面不含守卫串「{fc["guard"]}」（可能被 region-block/改版）'
+            lines.append(f'  ⚠️ {k}: {reason}（{fc["url"]}）— 跳过，未判定变动')
             continue
         cur_in = models[k]['price'][0]
-        # 在页面里找我们记录的 input 价字符串（含 $ 前缀或裸数字），命中即视为「仍一致」
-        pat = re.compile(r'\$?\s*' + re.escape(f'{cur_in}') + r'\b')
+        # 在页面里找我们记录的 input 价；整数价同时匹配「$5」与「$5.0」写法（2026-09-12 修：官方页写 $5 / MTok，旧正则只匹 $5.0 必误报）
+        variants = {f'{cur_in}'}
+        if float(cur_in) == int(float(cur_in)):
+            variants.add(str(int(float(cur_in))))
+        pat = re.compile(r'\$\s*(' + '|'.join(re.escape(v) for v in sorted(variants)) + r')\b')
         if pat.search(html):
             lines.append(f'  ✅ {k}: 官方页仍含 ${cur_in} in — 一致')
         else:

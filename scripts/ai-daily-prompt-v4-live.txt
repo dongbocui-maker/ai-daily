@@ -1,3 +1,5 @@
+# ⚠️ 本文件是 cron payload 镜像（2026-09-13 同步）。修改必须走 openclaw cron edit，改完再刷本镜像。
+
 请生成今日《AI 日报》。
 
 【⚠️ 发布前自查铁律 — 任一不通过就重新搜并重写，绝不放过】
@@ -34,9 +36,9 @@ A. 国际一手源（重点）：
 B. 厂商官方一手源：
    OpenAI / Anthropic / Google DeepMind / Microsoft / Meta / NVIDIA 官方博客；arXiv；GitHub Trending
 C. 🇨🇳 中文源（每板块 ≥1 条，但不允许任一中文源 ≥ 2 条）：
-   36氪 (36kr.com) / 机器之心 (jiqizhixin.com) / 量子位 (qbitai.com) / 虎嗅 (huxiu.com) / 晚点 LatePost (latepost.com) / 极客公园 (geekpark.net) / InfoQ 中国 (infoq.cn) / 雷峰网 (leiphone.com) / PingWest 品玩 (pingwest.com) / 钛媒体 (tmtpost.com) / IT之家 (ithome.com) / 智东西 (zhidx.com) / 36氪出海 (kr-asia.com) / 华尔街见闻 (wallstreetcn.com)
+   36氪 (36kr.com) / 机器之心 (jiqizhixin.com) / 量子位 (qbitai.com) / 虎嗅 (huxiu.com) / 晚点 LatePost (latepost.com) / 极客公园 (geekpark.net) / InfoQ 中国 (infoq.cn) / 雷峰网 (leiphone.com) / PingWest 品玩 (pingwest.com) / 钛媒体 (tmtpost.com) / IT之家 (ithome.com) / 智东西 (zhidx.com) / 36氪出海 (kr-asia.com) / 华尔街见闻 (wallstreetcn.com) / 新智元 (公众号「新智元」，2026-07 新增，二者共用：快讯入日报)
 D. 咨询与研究机构：
-   Accenture / McKinsey / BCG / Gartner / IDC / Deloitte / PwC / Stanford HAI / MIT Technology Review / OECD.AI / Brookings AIET / 中国信通院 CAICT
+   Accenture / McKinsey / BCG / Gartner / IDC / Deloitte / PwC / Stanford HAI / MIT Technology Review / OECD.AI / Brookings AIET / 中国信通院 CAICT / Exponential View (exponentialview.co，Azeem Azhar，AI 经济/资本开支/企业 ROI 战略数据，2026-07 新增，二者共用：宏观周更入日报)
 E. 投融资专源：
    Crunchbase News / Sifted（欧洲） / 投中网（国内）
 
@@ -73,6 +75,16 @@ E. 投融资专源：
 
 【执行步骤】
 
+【⚠️ 上下文预算护栏 — 防止单次 session token 溢出（2026-06-11 新增，对应 6/10 context overflow 事故）】
+本任务在 isolated session 单 turn 内累积全部上下文，极易触顶模型窗口。务必遵守：
+  - 预读信号文件只 read 轻量版：dedup 用 /tmp/ai-signals/recent-published-light.txt（人类可读），
+    **严禁用 read 工具读 /tmp/ai-signals/recent-published.json（约 95KB）整文件进上下文**——
+    它只通过 step F 的 dedup-filter.py 子进程消费（脚本自己读，不进你的上下文）。
+  - hn-ai.json / smol-ai.md / editorial-*.md 每份只取前 ~2000 字摘要判读，不要整文件反复读。
+  - web_search 总轮次 ≤ 18 轮（含铁律 4 强制扫描）；单条候选最多 1 次软验证搜索，不要循环重搜。
+  - web_fetch 只在确需正文时用，且**只取标题+首段摘要**，禁止把整页正文堆进上下文；同一 URL 不重复 fetch。
+  - 若中途发现上下文将满，优先放弃低分候选的深挖，保证 4 板块各 ≥3 条 + closing 完整产出。
+
 A.0 【必读热度信号源 — 优先从这些权威数据中选题】
 今日五份热度数据已被预采集在 /tmp/ai-signals/，使用 read 工具读取：
 
@@ -101,9 +113,10 @@ A.0 【必读热度信号源 — 优先从这些权威数据中选题】
   - **/tmp/ai-signals/recent-published-light.txt** ⚠️ 必读
     过去 7 天已发布条目黑名单（人类可读列表，按日期分组）
     用于执行铁律 6 的跨日去重——选题前**必须**先读这份文件，记住过去 7 天发过哪些 URL/事件
-    对应结构化数据：/tmp/ai-signals/recent-published.json（含 by_url 表 + items 列表 + 关键词指纹）
+    对应结构化数据：/tmp/ai-signals/recent-published.json（含 by_url 表 + items 列表 + 关键词指纹）——
+    ⚠️ 这份 JSON 约 95KB，**只用 step F 的 dedup-filter.py 子进程消费，禁止用 read 工具整文件读进上下文**（防溢出）。
 
-读取顺序：先读 4 份热度数据 + 已发布黑名单 → 形成"今日热点候选 ∩ 非过去 7 天已发"的有效候选集 → 再用主观评分挑出最佳。
+读取顺序：先读 4 份热度数据（每份取前 ~2000 字摘要）+ 已发布黑名单（只读 recent-published-light.txt）→ 形成"今日热点候选 ∩ 非过去 7 天已发"的有效候选集 → 再用主观评分挑出最佳。
 如果 /tmp/ai-signals/ 不存在或为空（预采集 cron 未跑成功），才走完全依赖 web_search 的后备路径，但**仍然要去 src/data/daily/ 自查最近 3 天 JSON 做去重**。
 
 A.5 【被限制顶级源的 web_search 后备】
@@ -157,42 +170,63 @@ C.5. 【Twitter / X 热度软验证】
    - 或 web_search "<公司名> <关键词>" + reddit.com / news.ycombinator.com
    完全无人讨论的边角条目降权或删除；有 KOL（带认证 / 高粉丝）转发的条目可以提分。
 
-D. 整合成全量稿（约 1500 字），用 feishu_doc 的 append action 写入**当月飞书归档文档**：
+D. 【直接生成结构化数据写入本地 JSON —— 不再经飞书文档中转】（2026-07-12 改造：砍掉飞书文档往返，日报直接产出本地 JSON）
 
-   D-1. 读取状态文件确定当月文档 token：
-   ```bash
-   STATE=/root/.openclaw/workspace/projects/ai-daily/.archive-doc-state.json
-   THIS_MONTH=$(date +%Y-%m)
-   CURRENT_MONTH=$(python3 -c "import json;print(json.load(open('$STATE'))['currentMonth'])")
-   CURRENT_TOKEN=$(python3 -c "import json;print(json.load(open('$STATE'))['currentDocToken'])")
+   你在前面步骤已经完成选题、评分、去重，现在把最终入选条目**直接组织成符合 schema 的 JSON**，用 write 工具写入：
+   ```
+   /root/.openclaw/workspace/projects/ai-daily/src/data/daily/YYYY-MM-DD.json
+   ```
+   （YYYY-MM-DD 用 today 实际日期，如 2026-07-12。参考现有 src/data/daily/*.json 的结构。）
+
+   D-1. JSON schema（严格遵守，否则 Step F 校验会拦截、网站当天不更新）：
+   ```json
+   {
+     "date": "YYYY-MM-DD",
+     "title": "AI 日报 · YYYY-MM-DD",
+     "sections": [
+       {
+         "key": "news",        // 4 个板块固定 key: news / enterprise / coding / report
+         "title": "🔥 AI 热点新闻",
+         "items": [
+           {
+             "title": "<emoji> <类型> | <标题>",   // 格式 A，见文末标题格式约定
+             "body": "核心内容 2-3 句，≥100 字（正常 150-200 字）",
+             "insight": "对行业的启示 1 句",
+             "source": "媒体名",
+             "url": "https://真实来源链接"
+           }
+           // 每板块 4-5 条
+         ]
+       }
+       // enterprise / coding / report 三个板块同理
+     ],
+     "closing": [
+       "本期小结第 1 段（≥50 字，面向读者的核心趋势总结）",
+       "第 2 段",
+       "第 3 段"
+     ],   // 2-3 段（数组 3-10 元素），⚠️ 绝不写「铁律 4 扫描结果」「审计日志」等内部元数据
+     "audit": {
+       "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（YYYY-MM-DD 执行）：<扫描声明，无重大事件也要写>"
+     }
+   }
    ```
 
-   D-2. **月初切换检测**（首日自动建当月新文档）：
-   - 如果 `$THIS_MONTH != $CURRENT_MONTH`：
-     a) 用 feishu_doc action=create 建新文档 `AI 日报存档 - $THIS_MONTH`，得到 `$NEW_DOC_TOKEN`（**MK2 自己建的文档 MK2 有完整权限，后续 D-3 可直接 feishu_doc append，不需要 append-to-doc.sh**）
-     b) 用 **exec** 跑 `bash /root/.openclaw/workspace/projects/ai-daily/scripts/append-to-doc.sh` 向索引文档 `Sv9jdufmIoZHvGxSTClc75fRnIb` 追加一行（用主 App 权限，MK2 自己 feishu_doc append 索引文档已知会 forBidden）。写一个临时 md 文件，内容是单行：`> 📌 $THIS_MONTH 月归档：[AI 日报存档 - $THIS_MONTH](https://feishu.cn/docx/$NEW_DOC_TOKEN)`，然后调脚本。
-     c) 用 write 工具更新 `.archive-doc-state.json`：把旧月条目 push 到 history（frozen: true）、`currentMonth` 改为 $THIS_MONTH、`currentDocToken` 改为 $NEW_DOC_TOKEN。
-     d) 用 **exec** 跑 `bash append-to-doc.sh` 向旧月文档 `$CURRENT_TOKEN`（变成 $OLD_TOKEN）末尾追加一行：`> 📚 本月归档完成，查看 [索引](https://feishu.cn/docx/Sv9jdufmIoZHvGxSTClc75fRnIb)`（用主 App 权限）。
-     e) 后续 D-3 用 $NEW_DOC_TOKEN 作为 `$CURRENT_TOKEN`，**但要注意：新建文档 MK2 自己有权限，可以二选一**：直接 feishu_doc append（更快）或 append-to-doc.sh（统一接口）。推荐用 append-to-doc.sh 保持一致。
-   - 如果同月：跳过 D-2，直接用 `$CURRENT_TOKEN` 当目标文档
+   D-2. 硬性要求：
+   - 4 板块固定 key：`news` / `enterprise` / `coding` / `report`，顺序不限但四个都要有
+   - 每板块 items ≥ 3 条（正常 4-5 条）
+   - 每条 item 五字段齐全：title / body / insight / source / url，缺一不可
+   - body ≥ 100 字；closing 每段 ≥ 50 字、共 3-10 段
+   - audit.tieluFourScan 必填（铁律 4 扫描结果的唯一归属字段，前端不渲染，仅供审计追溯）
+   - url 必须真实来自信号源，禁止编造
 
-   D-3. 把全量稿（含分隔标题 `## 📅 YYYY-MM-DD AI 日报`）写到 `/tmp/ai-daily-YYYY-MM-DD.md`，然后用 **exec** 工具跑：
-   ```bash
-   bash /root/.openclaw/workspace/projects/ai-daily/scripts/append-to-doc.sh /tmp/ai-daily-YYYY-MM-DD.md $CURRENT_TOKEN
-   ```
-   该脚本用主钢铁虾 App tenant token 调用飞书 docx convert + children/create，**绕开 MK2 App 对部分文档无写权限的问题**（2026-05-29 立，因 5/26-5/29 cron feishu_doc append 反复 1770032 forBidden）。
-   - 退出码 0 = 成功
-   - 退出码非 0 = 失败：**不要 retry** `feishu_doc append`（已知会 forBidden）。在 jsonl notes 里详细记录 stderr，继续执行 Step E。
-   - **绝对禁止虚假报告成功**：append-to-doc.sh 退出码必须真实反映在 jsonl 的 status 字段。失败就 status=error，不能写 ok。
+   D-3. ⚠️ 不再有任何飞书文档操作：
+   - ❌ 不调用 append-to-doc.sh
+   - ❌ 不建月度归档飞书文档、不写索引文档、不读 .archive-doc-state.json
+   - ❌ 不做月初切换检测
+   - 唯一产出物就是上面这份本地 JSON。写完即进入 Step E。
 
-   【⚠️ 文档本体禁忌】全量稿（写入飞书文档的内容）严禁包含以下元素，因为它们是给飞书摘要消息用的、不属于文档本身的内容：
-   - ❌ 不要在文档末尾加 '📄 完整文档：https://feishu.cn/docx/...' 之类的自指链接（这条链接是给摘要消息用的，文档内出现该链接会形成自指悖论）
-   - ❌ 不要在文档里加 '查看完整版' '阅读全文' '点此跳转' 之类的引导文字
-   - ❌ 不要在文档末尾粘任何引向飞书 docx URL 的链接
-   - ✅ 文档本体只包含：标题 + 4 大板块条目 + 📝 本期小结。结束就结束，不需要额外的导航链接。
-
-E. 生成飞书摘要消息（注意：这是用 message 工具发的独立消息，不是写入文档的内容）：每板块精选 3 条标题+1 句话，约 600 字，末尾附**当月文档**链接 `https://feishu.cn/docx/$CURRENT_TOKEN`（用 D-1 / D-2 拿到的 token）以及索引链接 `https://feishu.cn/docx/Sv9jdufmIoZHvGxSTClc75fRnIb`。
-   ⚠️ 这条 URL 只能出现在 step G 的 message.send 消息体里，绝不允许出现在 step D 写入的文档内容里。step D 和 step E 的产出物是两个独立物件：D 写文档（不带 URL），E/G 发摘要（带 URL）。
+E. 生成飞书摘要消息（注意：这是用 message 工具发的独立消息，与本地 JSON 是两个独立物件）：每板块精选 3 条标题+1 句话，约 600 字，格式不变。**末尾附当天日报的网站链接** `https://aidigest.club/`。
+   ⚠️ 摘要末尾只放 `https://aidigest.club/`（当天日报站点首页），**不再附任何飞书文档链接 / 索引链接**（飞书文档中转已于 2026-07-12 弃用）。
 
 F. 【发布前 self-audit — 必做】
    1. 数来源分布：列出每个 URL 的次数，确认无单一来源 > 25% 总条数；中文聚合媒体每板块最多 1 条
@@ -251,12 +285,11 @@ F. 【发布前 self-audit — 必做】
       - audit.tieluFourScan 必须填写——铁律 4 扫描结果声明的唯一归属字段（前端不渲染，仅供内部审计追溯）
    - 任一项不通过 → 必须重新搜索 / 重写 / 替换条目，不允许跳过自查
 
-G. 用 message 工具 action=send，target=user:ou_dbee86fe0e62ee834c7d7225015a1317，channel=feishu 发送摘要
+G. 用 message 工具 action=send 发送摘要：**target 必须留空（省略 target）让 OpenClaw 自动回当前 cron 会话的投递目标**，或显式写 target=user:ou_e718dd4f12e305d4ae960d6564d0397a（这是 Jason 在 MK2 App 视角的 open_id，⚠️ 绝不能用主钢铁虾 App 的 ou_dbee86... 否则飞书报 400 invalid openid）。channel=feishu。
 
-H. 【⚠️ 必做：事件驱动同步到 aidigest.club】
-完成 Step G（摘要推送）后，立刻用 exec 工具跑下面这段 shell，把刚写好的飞书文档同步到 GitHub 触发网站更新。
-**不要跳过这一步**——这是替代每天 09:30 系统 crontab 拉飞书的事件驱动版本，
-因为飞书文档刚写完就 sync 比定时拉更可靠（避免 sync 跑在子代理之前）。
+H. 【⚠️ 必做：同步本地 JSON 到 aidigest.club】
+完成 Step G（摘要推送）后，立刻用 exec 工具跑下面这段 shell，把 Step D 刚写好的本地 JSON 校验后 commit + push 到 GitHub 触发网站更新。
+**不要跳过这一步**——本地 JSON 已由 Step D 直接写好，本步只负责 schema 校验 → commit → push（不再拉飞书解析）。
 
 exec 命令（一次性）：
 ```bash
@@ -264,14 +297,16 @@ bash /root/.openclaw/workspace/projects/ai-daily/scripts/cron-sync-event.sh 2>&1
 ```
 
 行为说明：
-- 该脚本是 cron-sync.sh 的事件驱动版本——跳过 git fetch（避免 GitHub 国内网络问题阻塞）
-- 直接拉飞书 → 落本地 src/data/daily → commit → push（带 5 次重试）
-- push 失败也不算 cron 失败——系统 crontab 09:30 兜底版会再跑一次
+- 该脚本对 src/data/daily 里已改动的 JSON 跑 schema 校验（validate-daily-schema.py --changed）
+- 校验 PASS → commit src/data/daily → push（带 5 次重试）
+- 校验 FAIL → 拒绝 commit（坏数据不上线），退出但不算整体失败
+- push 失败也不算 cron 失败——系统 crontab 兜底版会再跑一次
 - 成功输出：`[event-sync] pushed (attempt N)` 或 `[event-sync] no changes`
 
 执行后自查：
-- 看脚本输出是否有「[sync] Sanitizing $(date +%Y-%m-%d)」和「[sync] wrote ... 2026-MM-DD.json」
+- 看脚本输出是否有「schema 校验」PASS 和「committed」「pushed」字样
 - 如果有「pushed」字样 → ✅ 网站会在 GitHub Actions build 完成后（2-3 分钟）更新
+- 如果 schema 校验 FAIL → 回 Step D 修本地 JSON 后重跑本步
 - 如果连续 5 次 push 都失败 → 在自归档 JSONL 的 notes 加 "github_push_failed_event_driven"，等系统 cron 兜底
 
 兜底：当日确无重磅，用次要内容凑齐 3 条/板块（不许低于 3）；链接失效标 [链接已失效]。
@@ -282,7 +317,7 @@ bash /root/.openclaw/workspace/projects/ai-daily/scripts/cron-sync-event.sh 2>&1
 模板（exec 工具调用）：
   mkdir -p /root/.openclaw/workspace/memory/agent-actions
   cat >> /root/.openclaw/workspace/memory/agent-actions/$(date +%Y-%m-%d).jsonl <<'JSONL'
-  {"ts":"<ISO8601 时间>","session_kind":"cron-isolated","session_id":"<本 session uuid 或 unknown>","agent_id":"main","agent_name":"钢铁虾","task_id":"c24f6b6f-3cdd-4773-a61c-3d3b624def52","task_name":"ai-daily-report","action":"delivered_message","recipient":"user:ou_dbee86fe0e62ee834c7d7225015a1317","channel":"feishu","summary":"今日 AI 日报已写入文档并推送摘要","outputs":{"files_written":["feishu_docx:$CURRENT_TOKEN"]},"status":"ok"}
+  {"ts":"<ISO8601 时间>","session_kind":"cron-isolated","session_id":"<本 session uuid 或 unknown>","agent_id":"mk2","agent_name":"钢铁虾 MK2","task_id":"c24f6b6f-3cdd-4773-a61c-3d3b624def52","task_name":"ai-daily-report","action":"delivered_message","recipient":"user:ou_e718dd4f12e305d4ae960d6564d0397a","channel":"feishu","summary":"今日 AI 日报已写入本地 JSON 并推送摘要","outputs":{"files_written":["src/data/daily/YYYY-MM-DD.json"]},"status":"ok"}
   JSONL
 
 要求：
@@ -296,3 +331,80 @@ bash /root/.openclaw/workspace/projects/ai-daily/scripts/cron-sync-event.sh 2>&1
   格式 A（推荐）：`<emoji> <类目> | <标题>`，如 `💰 融资 | Google 加码 400 亿美元投资 Anthropic`
   格式 B（兜底）：`1. <标题>`、`2. <标题>` 等数字编号
 不要发明其他格式（如 `[融资]` `《融资》` `融资—` 等），sync 不识别会导致整天数据丢失。
+
+【Step I：发布结果校验 + 有限自愈（方案 A，2026-06-19 立 — 不改 A-H，只在收尾加这一层）】
+
+⚠️ 适用前提：本段只在 Step H(cron-sync-event.sh) 已经跑过之后执行。本段只负责"确认真的发成功了 + 偶发技术故障的有限自愈"，绝不重新生成内容。
+
+I.1 等待 + 确定性校验
+  1) 先 sleep 180（等 GitHub Actions build 完成，约 3 分钟）。用 exec 跑：`sleep 180`
+  2) 跑校验脚本（机器判定，不靠你感觉）：
+     bash /root/.openclaw/workspace/projects/ai-daily/scripts/verify-publish.sh 2>&1
+  3) 读退出码：
+     - exit 0 → 全绿，直接跳到 I.3 发成功简报
+     - exit 2 → 有失败项（脚本已列出哪一项 + 修复指引），进入 I.2 自愈
+     - exit 1 → 脚本自身异常（环境问题），不自愈，直接 I.3 发"异常升级"简报给 main
+
+I.2 有限自愈（硬上限 2 轮，绝不无限循环）
+  ⚠️ 幂等铁律：自愈只重跑 sync / 重试推送，**绝不重新生成或重写当天日报内容**。内容已在本地 JSON，重试只是把它推上去。
+  按脚本输出的失败项，对照下表只修「确定性问题」；遇到主观/内容质量问题不要自己改，直接升级 main：
+
+  | 失败项（脚本输出关键字） | 自愈动作 | 修不好 |
+  |---|---|---|
+  | schema FAIL（[MISSING_TOP_FIELD]/[ITEM_MISSING_FIELD]/[BODY_TOO_SHORT]/[MISSING_SECTION]/[CLOSING_TOO_FEW] 等，见 validate-daily-schema.py 输出的 [TAG]）| 按缺失项补本地 JSON src/data/daily/<日期>.json → 重跑 cron-sync-event.sh | 升级 main |
+  | git push 未完成（未提交改动 / 无 commit）| 重跑一次 cron-sync-event.sh（它自带 5 次重试 push）| 交系统 cron 兜底 + 报 main |
+  | 站点未含当天日期（build 未完成/失败）| 再 sleep 120 重新 verify 一次（给 build 多点时间）；仍 FAIL 查 GitHub Actions 是否失败 | 报 main，**不要自己改 CI** |
+  | 线上首页抓取失败（代理问题）| 确认 ss -tlnp \| grep 7890；重试一次 verify | 报 main |
+
+  自愈流程：修对应项 → 重新跑 verify-publish.sh → 看退出码
+    - 变 exit 0 → I.3 成功简报（注明自愈了第几项、重试几轮）
+    - 第 2 轮仍 exit 2 → 停手，I.3 发"升级"简报给 main（带完整诊断），不进第 3 轮
+
+I.3 给 main 发简报（你最初要的"最终在 main 反馈"）
+  无论成功或升级，都用 sessions_send 工具发给 main 主 Agent（不是发飞书给 Jason —— 由 main 居中汇总）：
+    sessions_send(agentId="main", message="<下面格式>")
+
+  成功格式：
+    ✅ AI 日报发布成功 <日期>
+    - 内容：<板块数> 板块 <总条数> 条
+    - 站点：已更新 https://aidigest.club（线上首页已含当日日期）
+    - 自愈：本次重试 <0/1/2> 轮<，自愈了 X 项>
+    - 简报：<一句话今日最值得关注的头条>
+
+  升级格式：
+    ⚠️ AI 日报发布需人工介入 <日期>
+    - 失败项：<verify 脚本列出的具体 FAIL 项>
+    - 已尝试：<自愈动作 + 重试 N 轮>
+    - 当前状态：<本地 JSON 是否就绪 / push 是否成功 / 站点是否更新>
+    - 建议：<具体下一步，如"查 GitHub Actions #编号 build 日志">
+
+I.4 把 Step I 的结果补进自归档 JSONL
+  在已有的自归档记录里（或追加一条），把 verify 结果写进去：
+    在 outputs 里加 "verify_result":"pass" 或 "fail_escalated"，
+    重试轮数加 "self_heal_rounds":<0/1/2>。
+  失败升级的，status 仍按实际：站点最终没更新就 status=error。
+
+【Step I 边界（防 overkill）】
+- 只自愈"发布技术故障"（schema/push/build/网络），不碰"内容质量/选题"——那类直接升级人工。
+- 重试硬上限 2 轮，超限必停 + 升级，绝不无限循环。
+- 幂等：重试只推不重写，永不重复发布当天日报。
+- A-H 主流程一字不改，Step I 是纯增量收尾层。
+
+【Step I.0 防截断与收尾硬校验（2026-09-13 新增，优先级最高）】
+
+背景：2026-09-13 06:18 run 因单轮响应撞 output token 上限（stopReason=length）静默终止，日报未产出但状态误报 ok。以下纪律防止复发：
+
+1. 防截断输出纪律：
+   - 大段内容（>3000 字的 JSON/正文）一律用 write/edit 工具直接写磁盘，绝不在对话回复里流式展开。
+   - 每轮回复保持简短（只写下一步动作和必要结论），避免任何一轮撞输出上限。
+   - 如果察觉上一轮输出被截断（典型信号：输出以不完整的 JSON/句子结尾、计划中的步骤没有对应产出、工具调用没有发出就结束），下一轮立即以更小步幅重做该步骤，禁止跳过或当作已完成。
+
+2. 收尾硬校验（发成功播报前的必要条件，缺一不可）：
+   a. ls -la src/data/daily/<今日日期>.json 文件存在且 >8KB（bytes）；
+   b. git log --oneline -1 确认当日日报 commit 已生成（push 到远端的最终确认以 verify-publish.sh 为准）；
+   c. verify-publish.sh 通过（即已有 Step I 流程）。
+   三项任一不满足 → 必须走「⚠️ 需人工介入」升级格式，绝不允许发成功播报。
+
+3. 中途进度播报纪律：
+   - 任务过程中的进度类消息（如「找到 X 条，正在验证」）一律不作为最终交付；
+   - 最终 announce 只能是 Step I 定义的「成功格式」或「升级格式」二选一，且必须在收尾硬校验之后发出。

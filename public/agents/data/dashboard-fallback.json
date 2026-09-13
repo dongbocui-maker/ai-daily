@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-13 07:05:01 +08",
+  "generated_at": "2026-09-13 10:44:15 +08",
   "today": "2026-09-13",
   "grand": {
-    "tok": 2598372491,
-    "cost": 4587.56,
-    "calls": 4763,
-    "save": 10832.76,
-    "today_tok": 0,
-    "today_cost": 0.0,
-    "today_save": 0.0,
-    "last7d_tok": 48791553,
-    "last7d_cost": 135.73
+    "tok": 2606519754,
+    "cost": 4601.91,
+    "calls": 4771,
+    "save": 10880.12,
+    "today_tok": 8147263,
+    "today_cost": 14.35,
+    "today_save": 47.36,
+    "last7d_tok": 56938816,
+    "last7d_cost": 150.08
   },
   "trend": [
     {
@@ -176,9 +176,31 @@
     },
     {
       "date": "2026-09-13",
-      "tok": 0,
-      "cost": 0.0,
-      "by_agent": {}
+      "tok": 8147263,
+      "cost": 14.35,
+      "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 3851314,
+          "cost": 10.11
+        },
+        "mk2": {
+          "name": "MK2",
+          "mark": "MARK II",
+          "emoji": "🦐",
+          "tok": 3836356,
+          "cost": 3.92
+        },
+        "mk46": {
+          "name": "Mark 46",
+          "mark": "MARK XLVI",
+          "emoji": "🛡",
+          "tok": 459593,
+          "cost": 0.32
+        }
+      }
     }
   ],
   "agents": {
@@ -189,20 +211,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "IDLE",
-      "idle_min": 604,
-      "last_ts": "2026-09-12T13:01:44.514Z",
-      "total_tok": 1538552550,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 29817645,
-      "last7d_cost": 105.9,
-      "cost": 3225.67,
-      "save": 6756.3,
-      "calls": 3256,
+      "status": "ONLINE",
+      "idle_min": 37,
+      "last_ts": "2026-09-13T02:07:31.432Z",
+      "total_tok": 1542403864,
+      "today_tok": 3851314,
+      "today_cost": 10.11,
+      "last7d_tok": 33668959,
+      "last7d_cost": 116.01,
+      "cost": 3235.78,
+      "save": 6786.66,
+      "calls": 3261,
       "active_model": "aigw-claude-48-main/claude-fable-5",
-      "cache_eff": 80.3,
-      "today_cache_eff": 0,
+      "cache_eff": 80.4,
+      "today_cache_eff": 88.1,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -212,9 +234,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 434686688,
-          "cost": 1503.22,
-          "calls": 821
+          "tok": 438538002,
+          "cost": 1513.33,
+          "calls": 826
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -274,7 +296,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "IDLE",
-      "idle_min": 1182,
+      "idle_min": 1401,
       "last_ts": "2026-09-12T03:23:49.892Z",
       "total_tok": 548310787,
       "today_tok": 0,
@@ -351,20 +373,20 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "OFFLINE",
-      "idle_min": 1474,
-      "last_ts": "2026-09-11T22:31:42.081Z",
-      "total_tok": 465732392,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 9184373,
-      "last7d_cost": 13.05,
-      "cost": 416.77,
-      "save": 1824.33,
-      "calls": 295,
+      "status": "ONLINE",
+      "idle_min": 52,
+      "last_ts": "2026-09-13T01:52:30.597Z",
+      "total_tok": 469568748,
+      "today_tok": 3836356,
+      "today_cost": 3.92,
+      "last7d_tok": 13020729,
+      "last7d_cost": 16.97,
+      "cost": 420.7,
+      "save": 1840.47,
+      "calls": 297,
       "active_model": "aigw-claude-48-main/claude-opus-5",
       "cache_eff": 93.9,
-      "today_cache_eff": 0,
+      "today_cache_eff": 94.3,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -374,9 +396,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-opus-5",
-          "tok": 95576672,
-          "cost": 98.59,
-          "calls": 56
+          "tok": 99413028,
+          "cost": 102.51,
+          "calls": 58
         },
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -429,26 +451,26 @@
       "emoji": "🛡",
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
-      "status": "IDLE",
-      "idle_min": 1099,
-      "last_ts": "2026-09-12T04:45:57.878Z",
-      "total_tok": 11194236,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 2584502,
-      "last7d_cost": 1.84,
-      "cost": 6.76,
-      "save": 21.77,
-      "calls": 17,
+      "status": "ONLINE",
+      "idle_min": 42,
+      "last_ts": "2026-09-13T02:02:20.215Z",
+      "total_tok": 11653829,
+      "today_tok": 459593,
+      "today_cost": 0.32,
+      "last7d_tok": 3044095,
+      "last7d_cost": 2.15,
+      "cost": 7.07,
+      "save": 22.64,
+      "calls": 18,
       "active_model": "qwen/qwen3.7-max",
-      "cache_eff": 87.3,
-      "today_cache_eff": 0,
+      "cache_eff": 87.2,
+      "today_cache_eff": 84.4,
       "models": [
         {
           "name": "qwen/qwen3.7-max",
-          "tok": 11194236,
-          "cost": 6.76,
-          "calls": 17
+          "tok": 11653829,
+          "cost": 7.07,
+          "calls": 18
         }
       ]
     },
@@ -460,7 +482,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "OFFLINE",
-      "idle_min": 5339,
+      "idle_min": 5558,
       "last_ts": "2026-09-09T06:06:52.231Z",
       "total_tok": 34582526,
       "today_tok": 0,
@@ -1312,10 +1334,10 @@
         "files": 36
       },
       "t1": {
-        "kb": 1057,
-        "files": 229
+        "kb": 1060,
+        "files": 231
       },
-      "daily_files": 97
+      "daily_files": 98
     },
     "aima": {
       "t3": {
@@ -1336,20 +1358,6 @@
   },
   "crons": [
     {
-      "id": "13b75ab4-6c80-43d0-bcf9-052457cc7c48",
-      "name": "Follow Builders Digest",
-      "agent": "mk2",
-      "enabled": true,
-      "expr": "0 7 * * *",
-      "human": "每天 07:00",
-      "human_en": "Daily 07:00",
-      "kind": "cron",
-      "next_run_ms": 1789254000000,
-      "last_run_ms": 1789167600007,
-      "last_status": "ok",
-      "core": true
-    },
-    {
       "id": "c24f6b6f-3cdd-4773-a61c-3d3b624def52",
       "name": "ai-daily-report",
       "agent": "mk2",
@@ -1359,37 +1367,23 @@
       "human_en": "Daily 06:18",
       "kind": "cron",
       "next_run_ms": 1789337880000,
-      "last_run_ms": 1789251480015,
+      "last_run_ms": 1789264179412,
       "last_status": "ok",
       "core": true
     },
     {
-      "id": "d6c0bf92-c884-4b73-9cc5-da028e3b7b11",
-      "name": "ai-daily-reads-candidates",
+      "id": "13b75ab4-6c80-43d0-bcf9-052457cc7c48",
+      "name": "Follow Builders Digest",
       "agent": "mk2",
       "enabled": true,
-      "expr": "0 9 * * 0",
-      "human": "每周日 09:00",
-      "human_en": "Weekly Sun 09:00",
+      "expr": "0 7 * * *",
+      "human": "每天 07:00",
+      "human_en": "Daily 07:00",
       "kind": "cron",
-      "next_run_ms": 1789261200000,
-      "last_run_ms": 1788656400007,
+      "next_run_ms": 1789340400000,
+      "last_run_ms": 1789254000008,
       "last_status": "ok",
-      "core": false
-    },
-    {
-      "id": "e6b8f79c-cd32-46a4-ac9f-a1498453b076",
-      "name": "memory-audit-weekly",
-      "agent": "main",
-      "enabled": true,
-      "expr": "0 10 * * 0",
-      "human": "每周日 10:00",
-      "human_en": "Weekly Sun 10:00",
-      "kind": "cron",
-      "next_run_ms": 1789264800000,
-      "last_run_ms": 1788660000011,
-      "last_status": "ok",
-      "core": false
+      "core": true
     },
     {
       "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
@@ -1416,6 +1410,34 @@
       "kind": "cron",
       "next_run_ms": 1789347600000,
       "last_run_ms": 1788742800006,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "d6c0bf92-c884-4b73-9cc5-da028e3b7b11",
+      "name": "ai-daily-reads-candidates",
+      "agent": "mk2",
+      "enabled": true,
+      "expr": "0 9 * * 0",
+      "human": "每周日 09:00",
+      "human_en": "Weekly Sun 09:00",
+      "kind": "cron",
+      "next_run_ms": 1789866000000,
+      "last_run_ms": 1789261200006,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "e6b8f79c-cd32-46a4-ac9f-a1498453b076",
+      "name": "memory-audit-weekly",
+      "agent": "main",
+      "enabled": true,
+      "expr": "0 10 * * 0",
+      "human": "每周日 10:00",
+      "human_en": "Weekly Sun 10:00",
+      "kind": "cron",
+      "next_run_ms": 1789869600000,
+      "last_run_ms": 1789264806378,
       "last_status": "ok",
       "core": false
     },
@@ -1449,15 +1471,15 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 457835900,
-      "cost": 1570.56,
-      "calls": 853
+      "tok": 461687214,
+      "cost": 1580.67,
+      "calls": 858
     },
     {
       "name": "aigw-claude-48-main/claude-opus-5",
-      "tok": 205154566,
-      "cost": 249.29,
-      "calls": 183
+      "tok": 208990922,
+      "cost": 253.22,
+      "calls": 185
     },
     {
       "name": "azure-openai-responses/gpt-5.5",
@@ -1485,9 +1507,9 @@
     },
     {
       "name": "qwen/qwen3.7-max",
-      "tok": 17389349,
-      "cost": 15.67,
-      "calls": 64
+      "tok": 17848942,
+      "cost": 15.98,
+      "calls": 65
     },
     {
       "name": "azure-openai-responses/gpt-6-astra-2026-09-03",

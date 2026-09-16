@@ -1,0 +1,178 @@
+{
+  "date": "2026-09-17",
+  "title": "AI 日报 · 2026-09-17",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 战略合作 | Mistral 与 Mozilla 结盟，Firefox Smart Window 改由 Mistral 模型驱动",
+          "body": "Mistral 与 Mozilla 于 9 月 16 日同时在各自官方博客宣布多年期合作：Firefox 的 AI 浏览助手 Smart Window（beta）底层模型全面切换为 Mistral 系列，主打隐私、可控与多语种能力，首批在北美与法国上线，随后扩展到英国与德国。Mozilla 方面把这次合作定义为「用一个独立浏览器把一家具备全球竞争力的欧洲 AI 公司送到用户面前」，明确对抗 Google/OpenAI 在浏览器入口的双头格局。Mistral 背靠 30 亿欧元融资，此前主要做 API 与政企私有化，这是它第一次拿到亿级消费级分发入口。该条目在 Hacker News 拿到 500 分讨论。",
+          "insight": "浏览器正在成为 AI 的第二个操作系统入口，而「数据不出境 + 多语种 + 非美系供应商」将成为欧洲与受监管行业选型的硬指标。",
+          "source": "Mistral AI 官方博客",
+          "url": "https://mistral.ai/news/mistral-x-mozilla/"
+        },
+        {
+          "title": "📜 监管政策 | 【进展】OpenAI 承认与 Anthropic、Google DeepMind 已密谈数周，三方拟共建安全评估机制",
+          "body": "继 Amodei 上周发文呼吁「给前沿踩刹车」、Altman 当天公开附议之后，OpenAI 本周向 CNBC 确认：三家前沿实验室围绕安全协作的闭门讨论已持续数周，核心议题是把第三方评估员以「员工级访问权限」嵌入公司内部，用来核验安全承诺是否被真正执行。但 CNBC 与 TechCrunch 同步给出冷水：无论 Anthropic 的提案还是 OpenAI 现有的第三方评估框架，都没有赋予外部评估员叫停模型开发或部署的独立权力——评估员看得见，但按不了暂停键。",
+          "insight": "行业自律正在从「发白皮书」走向「派人进驻」，但缺少否决权的审计等于没有牙齿，企业采购方仍需自建模型风险验收流程，不能把安全外包给厂商的自愿承诺。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+        },
+        {
+          "title": "💰 资本动向 | 10 家银行为 Blackstone 与 Alphabet 合资云企业 Crux AI 组团放贷 220 亿美元",
+          "body": "彭博 9 月 16 日独家披露，一个由 10 家银行组成的银团正在为 Blackstone 与 Alphabet 新成立的云计算合资公司 Crux AI 提供 220 亿美元芯片抵押贷款，用于采购 AI 训练与推理所需的加速卡。这是 AI 算力融资史上规模最大的一批债务交易之一，标志着 GPU 从「资本开支科目」正式变成「可抵押的金融资产」。同期软银也拿到 118.7 亿美元贷款用于追加投资 OpenAI，规模较原定 100 亿上浮。",
+          "insight": "算力军备竞赛的融资方式已从股权转向杠杆，这意味着一旦推理需求增速放缓，风险将通过银行资产负债表快速传导，CIO 在评估云厂商长期报价时需要把这层债务成本考虑进去。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-16/banks-line-up-22-billion-chip-loan-tied-to-blackstone-alphabet"
+        },
+        {
+          "title": "🚀 产品发布 | TypeSafe 结束两年隐身发布 Jev：不聊天、只在软件内部做决策的「System One 模型」",
+          "body": "由 Diogo Almeida 创立的 TypeSafe AI 于 9 月 15 日出山，发布首个公开模型 Jev，并提出「System One Model」这一新品类定义——不做对话，专门在软件流程内部完成分类、路由、打分、分支判断，并行返回带类型的概率值，训练方法称为 RLCD（面向校准决策的强化学习）。官方称结构化输出场景下速度比通用大模型快约 200 倍，目标是干掉生产系统里长期存在的「解析—校验—重试」税。该帖以 1777 分成为当日 Hacker News 全站最高热度。",
+          "insight": "大模型正在分化出「对话层」与「决策层」两条产品线，企业在做 Agent 架构时应把高频确定性判断从昂贵的通用模型里剥离出来，这是目前最直接的降本路径之一。",
+          "source": "TypeSafe AI 官方博客",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+        },
+        {
+          "title": "🇨🇳 中国动态 | 飞书发布 8.0 for Agent 版并推出「豆包工作伙伴」，字节把协同办公整体重构给智能体",
+          "body": "9 月 15 日，2026 飞书未来无限大会暨豆包工作开工大会在北京举行。字节同时发布飞书 8.0——整个协同平台为适配 Agent 做系统性重构，权限、群聊、文档、审批等基础对象都向智能体开放；以及国内首个「团队智能体」产品豆包工作伙伴，与豆包工作原生融合。飞书 CEO 谢欣表示，飞书与豆包工作的组合是 AI 时代协同办公的最优解。此前一周，阿里与腾讯也相继在 AI 办公入口上收兵整合。",
+          "insight": "国内协同办公赛道已从「加一个 AI 助手」升级为「为智能体重写底座权限模型」，这对中国区企业的 IT 部门意味着要重新评估账号、数据边界与审计口径，而不只是换个客户端版本。",
+          "source": "智东西（凤凰网转载）",
+          "url": "https://tech.ifeng.com/c/8wRMH4mNFWS"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Salesforce 在 Dreamforce '26 抛出 AIforce：「AI 取代 UI」，同步发布 Koa 推理模型",
+          "body": "9 月 15 日 Dreamforce 2026 主题演讲上，Salesforce 发布 AIforce——一个「活的界面层」，把 Data 360 的上下文、Customer 360 的应用与语义智能、以及 Agentforce 的执行能力，投送到人和智能体实际工作的任何界面里。官方口径直接打出「AI 替代 UI」：用户不再翻记录找洞察，而是由智能体跨全部数据与会话推理后主动给结论。同场还发布了自研 Koa 推理模型，并扩大了与 Google Cloud 和 AWS 的合作。",
+          "insight": "SaaS 的价值锚点正在从「界面与工作流」迁移到「上下文与语义层」，这意味着企业过去围绕字段与页面配置积累的定制资产会快速贬值，数据治理质量将直接决定 AI 层的上限。",
+          "source": "Salesforce 官方新闻室",
+          "url": "https://www.salesforce.com/news/stories/aiforce-announcement/"
+        },
+        {
+          "title": "🏠 生态开放 | Google Home 开放 MCP 服务器，Claude、ChatGPT 等第三方智能体可直接操控智能家居",
+          "body": "Google 于 9 月 16 日推出 Google Home MCP 早期访问：任何支持 Model Context Protocol 的 AI 智能体——包括 Claude、ChatGPT、Antigravity、OpenClaw 等——都能用自然语言控制已连接设备、调阅摄像头摘要、查询智能家居活动记录并代为执行动作。这是 Google 首次把自家消费级硬件生态的控制面直接交给竞争对手的智能体，而非只服务 Gemini。",
+          "insight": "MCP 正在成为事实上的「智能体接口标准」，平台方主动开放的逻辑是：与其守住入口不如守住设备安装量——企业在做系统集成选型时，应优先要求供应商提供 MCP 端点而非私有 SDK。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date"
+        },
+        {
+          "title": "📊 治理落差 | EY 调研：26% 用上智能体的企业，压根检测不到内部有未授权 AI 智能体在跑",
+          "body": "安永 9 月 15 日发布《EY US AI Risk and Governance Survey》，对高级 AI 负责人的调研显示：尽管绝大多数组织已经把 AI 政策文件形式化，但流程与控制手段的建设速度明显跟不上自主系统的部署速度。其中最刺眼的一项是，在已使用 agentic AI 的组织里，约四分之一（26%）承认无法检测到内部正在运行的未授权 AI 智能体。安永把这一现象命名为「AI 治理缺口」，并指出影子 AI、网络安全暴露面与监管压力正在同时施压。",
+          "insight": "「有政策 ≠ 有控制」将是未来两年审计与合规的主战场，企业应尽快建立智能体资产清单与运行时身份体系，否则影子 AI 会以比影子 IT 快得多的速度扩散。",
+          "source": "EY 官方新闻室",
+          "url": "https://www.ey.com/en_us/newsroom/2026/09/ey-survey-finds-that-autonomous-ai-implementation-outpaces-oversight-yielding-an-ai-governance-gap"
+        },
+        {
+          "title": "🇨🇳 中国实践 | 联想《算力实战图鉴》：超 86% 企业自建 GPU 利用率不足 50%，仅 26% 能实时看清 AI 成本",
+          "body": "9 月 16 日联想发布《算力实战图鉴》，收录 15 个算力建设案例，覆盖制造、医疗、教育、金融、互联网等行业。图鉴援引国家数据局数据：2026 年 6 月我国日均词元调用量已突破 500 万亿；IDC 预测到 2031 年中国企业活跃智能体数量将达 3.5 亿个，年复合增长率超过 135%。但落地侧数据并不乐观——VentureBeat Research 对 573 名企业技术负责人调研显示超 86% 的企业自建 GPU 利用率不超过 50%，KPMG Q2 2026 AI Pulse 调研显示仅 26% 的组织对 AI 系统运行成本具备完整实时可见性。",
+          "insight": "调用量爆发与资源利用率低下同时存在，说明中国企业 AI 的瓶颈已经从「能不能用」转到「算得清不清」，成本可观测性正在成为规模化前必须补的基础设施课。",
+          "source": "凤凰网科技",
+          "url": "https://tech.ifeng.com/c/8wTAXgMob5b"
+        },
+        {
+          "title": "🚀 产品整合 | Anthropic 砍掉独立的 Claude Cowork，合并进主应用并上线 Claude Docs 与 Claude Slides",
+          "body": "9 月 16 日 Anthropic 宣布把独立的智能体工作区 Cowork 折叠回 Claude 主聊天界面，任何一次对话都可以直接派生出长周期任务；同时以 beta 形式推出协作文档产品 Claude Docs 和演示文稿产品 Claude Slides，并把 Claude Design 能力直接注入任意会话。生成的文档与幻灯片可通过链接分享、在手机上继续编辑，桌面端发起的任务可在移动端查看进度。功能先向 Pro 与 Max 订阅用户推送。",
+          "insight": "Anthropic 正面撞进 Google Workspace 与 M365 的腹地，知识工作者的产出物（文档/PPT）正在从「人写 AI 改」翻转为「AI 产人审」，企业需要提前规划这类 AI 原生产出物的版本管理与合规留痕。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/anthropic-is-killing-off-cowork-and-folding-it-into-claude-launching-claude-docs-and-claude-slides"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "📊 行业调研 | BairesDev 调研：用 AI 写一半以上代码的开发者一年内从 12% 涨到 42%，但 67% 花更多时间在 review",
+          "body": "VentureBeat 9 月 16 日报道的 BairesDev 最新年度调研显示，使用 AI 生成过半代码的开发者比例同比从 12% 跃升至 42%。但生产率账单的另一面同样清晰：67% 的开发者表示比一年前花更多时间审查 AI 生成的代码，52% 报告花更多时间调试由 AI 引入的问题；开发者平均每周投入 9 小时学习 AI 工具与新技术，较一年前的 4 小时翻倍有余。",
+          "insight": "AI 编码的产能收益正在被 review 与调试成本大量回吞，工程效能度量必须从「代码产出量」切换到「变更交付周期与缺陷逃逸率」，否则管理层看到的会是虚假的提速。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/data/the-share-of-developers-using-ai-to-write-half-or-more-code-jumped-from-12-to-42-yoy-in-latest-bairesdev-survey"
+        },
+        {
+          "title": "📊 角色变迁 | 一年四个季度的追踪数据：近 80% 开发者每周编码时间已不足一半，51% 说 AI 代码的责任落在自己头上",
+          "body": "9 月 15 日发布的一份跨四个季度的持续追踪研究显示，近 80% 的开发者现在每周花在实际写代码上的时间已不到工作时间的一半，其余被评审、协调、验证与工具学习占据。更关键的一项是，早在 2026 年 Q1，就已有 51% 的开发者报告称 AI 生成代码的责任归属落在他们个人身上——开发者正在从「生产者」变成「问责层」。",
+          "insight": "当责任归属明确落到个人而产出却由模型完成时，组织必须重新设计代码所有权、评审签核与事故追责机制，否则高级工程师会因为无限连带责任而系统性抵制 AI 工具。",
+          "source": "GlobeNewswire",
+          "url": "https://www.globenewswire.com/news-release/2026/09/15/3362300/0/en/nearly-80-of-developers-now-spend-less-than-half-their-week-coding-one-year-of-quarterly-data-shows.html"
+        },
+        {
+          "title": "🇨🇳 中国开源 | 阿里开源 open-code-review：确定性流水线 + LLM Agent 混合架构，内部已服务数万开发者",
+          "body": "阿里巴巴开源了其内部官方 AI 代码评审助手 open-code-review。该项目采用混合架构：确定性检查流水线负责可枚举缺陷（空指针、线程安全、XSS、SQL 注入等内置多语言规则集），LLM Agent 负责语义级判断，输出精确到行级的结构化评审意见。官方称该工具在阿里内部运行两年，服务数万名开发者，累计识别数百万处代码缺陷，经大规模验证后才孵化开源，兼容 OpenAI 与 Anthropic 接口，配置一个模型端点即可接入。",
+          "insight": "「规则引擎兜底确定性、大模型补足语义」的混合架构正在成为生产级 AI 代码工具的共识范式，纯 LLM 方案在误报率与可解释性上仍无法通过大厂工程规范的验收。",
+          "source": "GitHub（阿里巴巴）",
+          "url": "https://github.com/alibaba/open-code-review"
+        },
+        {
+          "title": "🔬 技术观察 | 用 4B 小模型生成比 PostgreSQL 原生优化器快 81% 的查询计划",
+          "body": "独立研究者 Rohan Bansal 发布实验报告：通过强化学习训练一个仅 40 亿参数的小模型来生成 SQL 查询计划，结果在测试集上产出的执行计划比 PostgreSQL 内置的基于代价的优化器快 81%。该工作的意义不在于取代数据库优化器，而在于证明了「用小模型替代几十年积累的启发式算法组件」这条路径在特定窄域上已经跑通，且推理成本足以进生产。该帖在 Hacker News 获得 266 分讨论。",
+          "insight": "AI 进入基础软件内核的方式不是重写整个系统，而是逐个替换其中的启发式决策点——这为企业的存量中间件与数据库优化提供了一条低风险、高回报的渐进改造路线。",
+          "source": "Rohan Bansal 个人博客",
+          "url": "https://rohanbansal.com/qorl"
+        },
+        {
+          "title": "🌍 社区治理 | PS5 Linux 移植负责人退出：开源项目正变成「一群用着自己都看不懂的 LLM 的新手」",
+          "body": "PlayStation 5 Linux 移植项目的技术负责人公开宣布退出并给出理由：开源协作生态正在退化成「一群用着他们自己都不理解的 LLM 的新手」，维护者的时间被大量低质量、看起来合理但经不起推敲的 AI 生成补丁吞噬。该帖在 Hacker News 获得 296 分，评论区大量核心维护者跟帖印证同类困境，与本月早些时候 GCC 社区决定不再接受 AI 生成的「具法律重要性」代码贡献形成呼应，但属两个独立事件。",
+          "insight": "AI 降低了贡献门槛却抬高了审核成本，开源供应链的真实瓶颈已从「没人写代码」变成「没人有能力审代码」，依赖开源组件的企业需要重新评估上游维护者的可持续性风险。",
+          "source": "FRVR Blog",
+          "url": "https://frvr.com/blog/news/ps5-linux-lead-quits-as-open-source-projects-have-become-a-bunch-of-noobs-using-llms-that-they-dont-even-understand/"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Claude Fable 5.1 破解 370 年历史的 Cyphral Distich 密码",
+          "body": "评测机构 Vals AI 披露，Claude Fable 5.1 在一次长周期推理任务中成功破解了 Cyphral Distich——一段有 370 年历史、此前未被公开破译的密文。研究者强调破解过程并非单次提示，而是模型在长时程假设生成、验证与回溯循环中自主完成的，这类任务此前被认为需要人类密码学家数年的专业投入。该帖在 Hacker News 拿到 1212 分与 567 条评论，是当日争议最集中的技术话题之一，怀疑方主要质疑训练数据泄漏的可能性。",
+          "insight": "前沿模型在「长时程、无标准答案、需要大量试错」的任务上开始展现真实价值，这类能力恰好对应企业中最贵的专家型工作，但同时也把「如何证明不是记忆而是推理」变成了评估必答题。",
+          "source": "Vals AI",
+          "url": "https://www.vals.ai/blogs/fable-solves-cyphral-distich"
+        },
+        {
+          "title": "📊 权威报告 | MIT 特设委员会报告警告：AI 正在造成「认知投降」，大学陷入两难",
+          "body": "MIT「AI 在教学、学习与科研训练中的使用」特设委员会发布历时五个月的调研报告，核心结论是 AI 正在侵蚀它自己所依赖的教育体系。报告用「认知投降（cognitive surrender）」描述学生与部分教师在面对 AI 输出时主动放弃独立判断的倾向，并指出高校陷入两难：全面禁用会让学生与真实职场脱节，放任使用则会系统性削弱批判性思维与基础技能的养成。报告同时记录了教师群体对作弊与评估失效的普遍焦虑。",
+          "insight": "「认知投降」不是校园独有现象——企业里同样存在员工对 AI 结论不做验证即采信的风险，把人类审核环节形式化的组织，最终会失去发现模型系统性错误的能力。",
+          "source": "MIT Ad Hoc Committee on AI Use",
+          "url": "https://aiandeducation.mit.edu/report/"
+        },
+        {
+          "title": "🔬 研究论文 | Dream-RSI：让模型在自我演化的虚拟世界中完成递归自我改进",
+          "body": "新发布的 arXiv 论文 Dream-RSI 提出一条递归自我改进（RSI）路径：不依赖固定的人造基准，而是让模型持续生成并演化训练环境（「世界」），在自己造出来的越来越难的世界中训练自己，形成能力与任务难度共同上升的闭环。作者认为这绕开了 RSI 长期面临的「评测饱和」问题——一旦基准被刷穿，改进信号就消失。论文在 Hacker News 获得 169 分讨论，与本月早些时候关于 DeepMind 是否已破解 RSI 的争论形成直接呼应。",
+          "insight": "递归自我改进正在从哲学讨论变成有具体工程路径的研究方向，对企业的直接含义是：模型能力曲线可能不再由厂商发布节奏决定，长期技术选型需要留出「能力突然跳变」的预案。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2609.14858"
+        },
+        {
+          "title": "🇨🇳 中国研究 | 清华与稳准智能联合发布 LimiX-2，结构化数据基础模型登顶国际评测榜单",
+          "body": "9 月 16 日，清华大学与稳准智能联合发布 LimiX-2，定位为「结构化数据基础模型」——不同于以文本与多模态为主的通用大模型，它直接面向表格、时序、关系型数据等企业核心数据形态做预训练，并在国际评测榜单上取得第一。团队的核心主张是：企业里 80% 以上的高价值数据仍然是结构化的，而通用大模型在这类数据上的表现长期不及传统梯度提升树等专用方法。",
+          "insight": "结构化数据基础模型如果成立，将直接冲击企业现有的 BI 与机器学习平台栈——这是比对话式 AI 更贴近企业核心业务系统、也更容易量化 ROI 的一条落地路线。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/09/490400.html"
+        },
+        {
+          "title": "📉 深度分析 | 「在 Navier-Stokes 之后我依然看空 LLM」：一篇高热度的反方长文",
+          "body": "在 OpenAI 智能体被宣称攻克千禧年难题 Navier-Stokes 引发学界震动之后，一篇题为《Why I'm still bearish on LLMs after Navier-Stokes》的长文在 Hacker News 拿到 448 分。作者的核心论点是：单点的、被大量算力与人工筛选包裹的数学突破，无法证明模型具备可靠的通用推理能力；真正的判据应当是模型在无人筛选输出的连续任务流中的错误率，而当前所有公开证据在这个维度上都不乐观。文章同时批评了业界用「最佳单次结果」代替「期望表现」的宣传惯例。",
+          "insight": "对决策者而言，判断模型能力的正确姿势是看「未经挑选的平均表现与失败模式」而非厂商展示的最佳案例，这直接决定了 PoC 结果能否在生产环境复现。",
+          "source": "dank.systems",
+          "url": "https://dank.systems/posts/2026-09-15-ai-bear.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天最值得注意的一条暗线是「入口重新洗牌」。Mistral 拿下 Firefox Smart Window、Google 把 Home 的控制面通过 MCP 开放给 Claude 和 ChatGPT、Anthropic 把 Cowork 折叠进主应用并补上 Docs 与 Slides、Salesforce 喊出「AI 取代 UI」、字节把飞书整个重构为 Agent 底座——五件事发生在同一周，指向同一个判断：平台方已经不再试图独占智能体入口，而是抢着把自己变成智能体能调用的能力面。对企业选型的直接含义是，MCP 端点的有无，正在取代私有 SDK 成为集成能力的第一道筛子。",
+    "第二条主线是治理与成本同时见底。安永调研给出了今年最刺眼的一个数字——26% 已用上智能体的企业无法检测内部运行的未授权智能体；联想的图鉴则显示超 86% 的企业自建 GPU 利用率不到一半、仅 26% 的组织能实时看清 AI 成本。一边是影子智能体在企业内自发生长，一边是算力账本一片模糊，这两件事叠加意味着大量企业正在为看不见的东西付看不清的钱。智能体资产清单与成本可观测性，已经不是加分项而是规模化的前置条件。",
+    "第三条是能力叙事的分层。TypeSafe 用 Jev 明确切出「不聊天、只做结构化决策」的 System One 品类，4B 小模型生成的查询计划比 PostgreSQL 优化器快 81%，阿里的开源代码评审工具坚持用确定性流水线兜底、只让 LLM 补语义——三件事共同说明，生产系统正在把昂贵的通用推理从高频路径上剥离。与此同时 Fable 5.1 破译 370 年密码与 Dream-RSI 论文又在另一端抬高上限，而 HN 上 448 分的看空长文和 MIT 的「认知投降」报告提醒我们：判断模型能力要看未经挑选的平均表现，判断组织能力要看人类审核环节是否还真的在审。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-09-17 执行）：① 『OpenAI partnership OR joint venture OR acquisition』——命中 OpenAI 确认与 Anthropic、Google DeepMind 就安全评估机制密谈数周（TechCrunch/CNBC，已纳入热点头部第 2 条）；软银获 118.7 亿美元贷款追加投资 OpenAI（Bloomberg，已在正文第 3 条中提及）。② 『Anthropic Accenture OR Deloitte OR consulting』——今日无新的 Anthropic 与四大/咨询机构合作公告；上周已发布的埃森哲-Google Cloud Gemini Enterprise 业务集团为 9/12 旧闻，不重复纳入。③ 『AI consulting services launch enterprise』——无重大新咨询服务发布；Salesforce Dreamforce '26 的 AIforce 与 Koa 模型属产品线发布，已纳入企业级板块。④ 『OpenAI Anthropic Google DeepMind Meta Microsoft 过去 7 天大动作』——命中 Google 通过 Home MCP 向第三方智能体开放智能家居控制面（已纳入）、Anthropic 合并 Cowork 并发布 Docs/Slides（已纳入）、Blackstone 与 Alphabet 合资 Crux AI 获 220 亿美元银团芯片贷款（Bloomberg，已纳入热点第 3 条）；Meta、Microsoft 本周无达到入选门槛的重大收并购或战略合作公告。⑤ 收并购专项：本周无新的 10 亿美元级 AI 标的收购完成公告（Bending Spoons 收购 Miro 为 9/10 旧闻，已过窗口且非 AI 主线）。结论：今日无未覆盖的重大新合作/收并购遗漏。"
+  }
+}

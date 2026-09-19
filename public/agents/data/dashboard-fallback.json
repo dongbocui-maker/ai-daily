@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-19 07:05:01 +08",
+  "generated_at": "2026-09-19 21:05:01 +08",
   "today": "2026-09-19",
   "grand": {
-    "tok": 2615297019,
-    "cost": 4644.49,
-    "calls": 4798,
-    "save": 10974.75,
-    "today_tok": 918071,
-    "today_cost": 1.2,
-    "today_save": 3.73,
-    "last7d_tok": 40573668,
-    "last7d_cost": 78.0
+    "tok": 2624596587,
+    "cost": 4662.46,
+    "calls": 4810,
+    "save": 11016.19,
+    "today_tok": 10217639,
+    "today_cost": 19.17,
+    "today_save": 45.17,
+    "last7d_tok": 49873236,
+    "last7d_cost": 95.96
   },
   "trend": [
     {
@@ -148,9 +148,16 @@
     },
     {
       "date": "2026-09-19",
-      "tok": 918071,
-      "cost": 1.2,
+      "tok": 10217639,
+      "cost": 19.17,
       "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 9299568,
+          "cost": 17.96
+        },
         "mk2": {
           "name": "MK2",
           "mark": "MARK II",
@@ -169,20 +176,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "IDLE",
-      "idle_min": 431,
-      "last_ts": "2026-09-18T15:54:19.801Z",
-      "total_tok": 1559094522,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 20541972,
-      "last7d_cost": 57.61,
-      "cost": 3283.28,
-      "save": 6915.11,
-      "calls": 3293,
+      "status": "ONLINE",
+      "idle_min": 4,
+      "last_ts": "2026-09-19T13:00:48.669Z",
+      "total_tok": 1568394090,
+      "today_tok": 9299568,
+      "today_cost": 17.96,
+      "last7d_tok": 29841540,
+      "last7d_cost": 75.57,
+      "cost": 3301.24,
+      "save": 6956.55,
+      "calls": 3305,
       "active_model": "aigw-claude-48-main/claude-fable-5",
       "cache_eff": 80.4,
-      "today_cache_eff": 0,
+      "today_cache_eff": 86.1,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -192,9 +199,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 455228660,
-          "cost": 1560.83,
-          "calls": 858
+          "tok": 457116287,
+          "cost": 1570.65,
+          "calls": 865
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -221,6 +228,12 @@
           "calls": 37
         },
         {
+          "name": "aigw-claude-48-main/claude-opus-5",
+          "tok": 9308126,
+          "cost": 12.97,
+          "calls": 11
+        },
+        {
           "name": "azure-openai-responses/gpt-6-astra-2026-09-03",
           "tok": 7716791,
           "cost": 20.86,
@@ -237,12 +250,6 @@
           "tok": 4213127,
           "cost": 10.43,
           "calls": 14
-        },
-        {
-          "name": "aigw-claude-48-main/claude-opus-5",
-          "tok": 1896185,
-          "cost": 4.82,
-          "calls": 6
         }
       ]
     },
@@ -254,7 +261,7 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "OFFLINE",
-      "idle_min": 7804,
+      "idle_min": 8644,
       "last_ts": "2026-09-13T13:00:59.271Z",
       "total_tok": 548393681,
       "today_tok": 0,
@@ -331,8 +338,8 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "ONLINE",
-      "idle_min": 3,
+      "status": "IDLE",
+      "idle_min": 843,
       "last_ts": "2026-09-18T23:02:43.765Z",
       "total_tok": 462415269,
       "today_tok": 918071,
@@ -410,7 +417,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 8375,
+      "idle_min": 9215,
       "last_ts": "2026-09-13T03:30:23.961Z",
       "total_tok": 10811021,
       "today_tok": 0,
@@ -440,7 +447,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "OFFLINE",
-      "idle_min": 13978,
+      "idle_min": 14818,
       "last_ts": "2026-09-09T06:06:52.231Z",
       "total_tok": 34582526,
       "today_tok": 0,
@@ -1352,22 +1359,8 @@
       "human": "每天 07:10",
       "human_en": "Daily 07:10",
       "kind": "cron",
-      "next_run_ms": 1789773000000,
-      "last_run_ms": 1789686600004,
-      "last_status": "ok",
-      "core": false
-    },
-    {
-      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
-      "name": "agent-model-monitor-daily",
-      "agent": "main",
-      "enabled": true,
-      "expr": "0 21 * * *",
-      "human": "每天 21:00",
-      "human_en": "Daily 21:00",
-      "kind": "cron",
-      "next_run_ms": 1789822800000,
-      "last_run_ms": 1789736400013,
+      "next_run_ms": 1789859400000,
+      "last_run_ms": 1789773000006,
       "last_status": "ok",
       "core": false
     },
@@ -1396,6 +1389,20 @@
       "kind": "cron",
       "next_run_ms": 1789869600000,
       "last_run_ms": 1789264806378,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
+      "name": "agent-model-monitor-daily",
+      "agent": "main",
+      "enabled": true,
+      "expr": "0 21 * * *",
+      "human": "每天 21:00",
+      "human_en": "Daily 21:00",
+      "kind": "cron",
+      "next_run_ms": 1789909200000,
+      "last_run_ms": 1789822800009,
       "last_status": "ok",
       "core": false
     },
@@ -1443,15 +1450,15 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 478377872,
-      "cost": 1628.17,
-      "calls": 890
+      "tok": 480265499,
+      "cost": 1637.99,
+      "calls": 897
     },
     {
       "name": "aigw-claude-48-main/claude-opus-5",
-      "tok": 202222184,
-      "cost": 248.93,
-      "calls": 180
+      "tok": 209634125,
+      "cost": 257.07,
+      "calls": 185
     },
     {
       "name": "azure-openai-responses/gpt-5.5",

@@ -2,11 +2,28 @@
   "$schema_version": "1.0",
   "items": [
     {
+      "slug": "agentic-design-patterns",
+      "tag": "深度精读",
+      "title": "Agentic Design Patterns · 21 个 Agent 设计模式",
+      "desc": "Google Cloud CTO 办公室工程总监 Antonio Gulli 的 482 页原著精读。管理者视角提炼每个模式的定义、适用场景与架构取舍（跳过代码），中英对照，并补充 2026 新书增量与「书写于 2025、现在怎么样了」的现状对照。附 2025 / 2026 两本原版 PDF 全文下载。",
+      "meta": [
+        "📕 Antonio Gulli · Springer",
+        "21 个模式 · 482 页",
+        "中英对照 + 原版 PDF"
+      ],
+      "href": "/learn/agentic-design-patterns/",
+      "external": false
+    },
+    {
       "slug": "stanford-storm-method",
       "tag": "技术资料",
       "title": "Stanford STORM 研究法（四提示词工作流）",
       "desc": "从 NAACL 2024 的 STORM 系统出发，拆解「多视角提问」为什么比单轮提问强，并给出可直接复用的四步提示词（多视角扫描 / 矛盾地图 / 综合简报 / 自我复核），中英对照可一键复制。附官方论文指标口径核实与本站实践建议。",
-      "meta": ["📖 X · Nav Toor", "2026-06-17", "中文导读 + 事实核对"],
+      "meta": [
+        "📖 X · Nav Toor",
+        "2026-06-17",
+        "中文导读 + 事实核对"
+      ],
       "href": "/learn/stanford-storm-method/",
       "external": false
     },
@@ -15,7 +32,11 @@
       "tag": "技术资料",
       "title": "The AI-Native SDLC Playbook（Anthropic 官方）",
       "desc": "Anthropic Applied AI 团队的六阶段 Playbook：代码不再是瓶颈后，如何用 intent.md → spec.md → plan.md 的 artifact 链重构 SDLC。含十余个 play、受监管企业 managed settings 实例与平台团队 rollout 清单。",
-      "meta": ["📚 Anthropic 官方博客", "2026-08-21", "中文导读"],
+      "meta": [
+        "📚 Anthropic 官方博客",
+        "2026-08-21",
+        "中文导读"
+      ],
       "href": "/learn/ai-native-sdlc-playbook/",
       "external": false
     },
@@ -24,7 +45,11 @@
       "tag": "技术资料",
       "title": "Building Effective AI Agents（Anthropic 官方）",
       "desc": "Agent 架构领域被引用最多的官方文章，'workflow first, agent only when needed' 原则的出处。Workflow vs Agent 架构区分 + 五种 workflow 模式目录 + Agent 适用边界 + ACI 工具打磨方法论。",
-      "meta": ["📚 Anthropic 官方", "5 种 workflow 模式", "中文导读"],
+      "meta": [
+        "📚 Anthropic 官方",
+        "5 种 workflow 模式",
+        "中文导读"
+      ],
       "href": "/learn/anthropic-building-effective-agents/",
       "external": false
     },
@@ -33,7 +58,11 @@
       "tag": "技术资料",
       "title": "A Practical Guide to Building Agents（OpenAI 官方）",
       "desc": "OpenAI 34 页企业级 Agent 构建白皮书。三条 agent 适用判据（不满足就用确定性方案）+ 模型/工具/指令三要素 + 单/多 agent 编排模式 + Guardrails 分层防御与人工干预机制。",
-      "meta": ["📑 OpenAI 官方白皮书", "~34 页", "中文导读"],
+      "meta": [
+        "📑 OpenAI 官方白皮书",
+        "~34 页",
+        "中文导读"
+      ],
       "href": "/learn/openai-practical-guide-agents/",
       "external": false
     },
@@ -42,7 +71,11 @@
       "tag": "技术资料",
       "title": "Maximizing Claude Code Sessions（Anthropic 官方）",
       "desc": "Anthropic 官方拆解 Claude Code session 的完整成本模型：输入/输出定价原理、prompt cache 机制与打破场景、context 累积规律，以及 /clear、/rewind、@-mention、静默 flag、subagent 隔离等高杠杆实操。",
-      "meta": ["📚 Anthropic 官方博客", "2026-08-14", "中文导读"],
+      "meta": [
+        "📚 Anthropic 官方博客",
+        "2026-08-14",
+        "中文导读"
+      ],
       "href": "/learn/maximizing-claude-code-sessions/",
       "external": false
     },
@@ -51,7 +84,11 @@
       "tag": "技术资料",
       "title": "Claude Code 最佳实践（官方）",
       "desc": "Anthropic 官方发布的 Claude Code 通用最佳实践。涵盖上下文管理、CLAUDE.md 配置、探索→计划→实施工作流、子代理、自动化与扩展等九大主题 + 反模式警示。",
-      "meta": ["📚 Anthropic 官方", "9 大章节", "agentic coding"],
+      "meta": [
+        "📚 Anthropic 官方",
+        "9 大章节",
+        "agentic coding"
+      ],
       "href": "/learn/claude-code-best-practices/",
       "external": false
     },
@@ -60,7 +97,11 @@
       "tag": "技术资料",
       "title": "Anthropic 10 个团队怎么用 Claude Code",
       "desc": "Anthropic 内部 10 个团队（数据基础架构 / 产品研发 / 安全 / 推理 / 数据科学 / API / 增长营销 / 产品设计 / RL 工程 / 法务）的 Claude Code 实战用法。",
-      "meta": ["📑 Anthropic 官方 PDF", "10 个团队", "实战案例"],
+      "meta": [
+        "📑 Anthropic 官方 PDF",
+        "10 个团队",
+        "实战案例"
+      ],
       "href": "/learn/anthropic-teams-claude-code/",
       "external": false
     },
@@ -69,7 +110,11 @@
       "tag": "深度研究",
       "title": "Agentic AI 企业落地 · 七柱深度",
       "desc": "一个数据底座 + 七大基础设施的完整研究。面向 MD / CIO / CTO / CSO / CHRO / CFO，基于 60 个权威源，含成熟度评估表与 90/180/365 落地路线图。",
-      "meta": ["📝 11 份文档", "~118K 字", "296 引用"],
+      "meta": [
+        "📝 11 份文档",
+        "~118K 字",
+        "296 引用"
+      ],
       "href": "/learn/agentic-ai-seven-pillars/",
       "external": false
     },
@@ -78,7 +123,10 @@
       "tag": "学习计划",
       "title": "Anthropic Academy",
       "desc": "17 门课程，5 天完整规划，从入门到进阶。基于 Jas Wong 的 Builders 路径，结合 AWS 企业背景定制。",
-      "meta": ["🗓 May 1–5, 2026", "~35 hrs"],
+      "meta": [
+        "🗓 May 1–5, 2026",
+        "~35 hrs"
+      ],
       "href": "/learn/anthropic-academy/",
       "external": false
     },
@@ -87,7 +135,10 @@
       "tag": "工程实践",
       "title": "The unreasonable effectiveness of HTML",
       "desc": "Twenty self-contained .html files an agent produced instead of a wall of markdown. Each one trades a document you'd skim for one you'd actually read. Grouped by the kind of work they replace.",
-      "meta": ["🌐 thariqs.github.io", "20 demos"],
+      "meta": [
+        "🌐 thariqs.github.io",
+        "20 demos"
+      ],
       "href": "https://thariqs.github.io/html-effectiveness/",
       "external": true
     }

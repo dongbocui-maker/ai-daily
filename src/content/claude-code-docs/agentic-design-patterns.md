@@ -49,6 +49,46 @@ updated: "2026-09-20"
 
 ---
 
+<nav class="not-prose my-8 px-6 py-6 bg-white border border-accent-gray-200 rounded" aria-label="模式导航">
+<h3 class="text-sm font-bold text-accent-ink tracking-wide uppercase mb-4">🧭 快速导航 · 21 个模式直达</h3>
+<div class="mb-4">
+<div class="text-[12px] font-semibold tracking-widest uppercase text-accent-purple mb-2"><a href="#第一组--基础编排模式pattern-1-7" class="hover:underline">A · 基础编排（1-7）</a></div>
+<div class="flex flex-wrap gap-2">
+<a href="#pattern-1--prompt-chaining提示链--管道模式" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">1 提示链</a>
+<a href="#pattern-2--routing路由--条件分流" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">2 路由</a>
+<a href="#pattern-3--parallelization并行化" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">3 并行化</a>
+<a href="#pattern-4--reflection反思--自我批判" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">4 反思</a>
+<a href="#pattern-5--tool-use--function-calling工具使用--函数调用" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">5 工具使用</a>
+<a href="#pattern-6--planning规划" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">6 规划</a>
+<a href="#pattern-7--multi-agent-collaboration多智能体协作" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">7 多智能体</a>
+</div>
+</div>
+<div class="mb-4">
+<div class="text-[12px] font-semibold tracking-widest uppercase text-accent-purple mb-2"><a href="#第二组--认知与状态模式pattern-8-14" class="hover:underline">B · 认知与状态（8-14）</a></div>
+<div class="flex flex-wrap gap-2">
+<a href="#pattern-8--memory-management记忆管理" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">8 记忆管理</a>
+<a href="#pattern-9--learning-and-adaptation学习与适应" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">9 学习适应</a>
+<a href="#pattern-10--model-context-protocolmcp--模型上下文协议" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">10 MCP</a>
+<a href="#pattern-11--goal-setting-and-monitoring目标设定与监控" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">11 目标监控</a>
+<a href="#pattern-12--exception-handling-and-recovery异常处理与恢复" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">12 异常恢复</a>
+<a href="#pattern-13--human-in-the-loop人在回路" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">13 人在回路</a>
+<a href="#pattern-14--knowledge-retrieval--rag知识检索" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">14 RAG</a>
+</div>
+</div>
+<div>
+<div class="text-[12px] font-semibold tracking-widest uppercase text-accent-purple mb-2"><a href="#第三组--协同与治理模式pattern-15-21" class="hover:underline">C · 协同与治理（15-21）</a></div>
+<div class="flex flex-wrap gap-2">
+<a href="#pattern-15--inter-agent-communicationa2a--跨框架智能体通信" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">15 A2A 通信</a>
+<a href="#pattern-16--resource-aware-optimization资源感知优化" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">16 资源优化</a>
+<a href="#pattern-17--reasoning-techniques推理技术" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">17 推理技术</a>
+<a href="#pattern-18--guardrails--safety-patterns护栏--安全模式" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">18 护栏安全</a>
+<a href="#pattern-19--evaluation-and-monitoring评估与监控" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">19 评估监控</a>
+<a href="#pattern-20--prioritization优先级排序" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">20 优先级</a>
+<a href="#pattern-21--exploration-and-discovery探索与发现" class="px-3 py-1 text-[13px] bg-accent-gray-50 border border-accent-gray-200 rounded hover:border-accent-purple hover:text-accent-purple transition">21 探索发现</a>
+</div>
+</div>
+</nav>
+
 # 第一组 · 基础编排模式（Pattern 1-7）
 
 ## Pattern 1 · Prompt Chaining（提示链 / 管道模式）

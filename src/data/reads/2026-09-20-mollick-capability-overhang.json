@@ -1,0 +1,126 @@
+{
+  "slug": "mollick-capability-overhang",
+  "savedDate": "2026-09-20",
+  "publishDate": "2026-09-17",
+  "titleZh": "能力悬差：模型早就超纲了，卡住的是人——深度知识、广度知识、品味、能动性",
+  "titleEn": "The Overhang",
+  "author": "Ethan Mollick",
+  "authorTitle": "沃顿商学院管理学教授，《Co-Intelligence》作者，One Useful Thing 主理人",
+  "originalUrl": "https://www.oneusefulthing.org/p/the-overhang",
+  "source": "manual",
+  "tags": [
+    "能力悬差",
+    "Capability Overhang",
+    "Jagged Frontier",
+    "人机协作",
+    "AI 落地",
+    "组织变革",
+    "Ethan Mollick"
+  ],
+  "summary": "模型能干的和人们真正在用的之间存在巨大落差；瓶颈不在模型，在人的深度知识、广度知识、品味与能动性。",
+  "keyPoints": [
+    "**能力悬差（capability overhang）是当下最大的机会**：即便所有实验室明天停止训练新模型，GPT-6 Astra 和 Fable 5.1 的现有能力也已足以改变大块经济的运作方式——差距在于几乎没人在用它们做这些事。",
+    "**深度知识（deep knowledge）**：专家的直觉让你几秒内看出 AI 哪里走偏，也是唯一能真正理解「锯齿状边界」形状的方式；Anthropic 的研究显示专业度会塑造 AI 回馈的质量——专家不仅从 AI 那里拿到更好的成果，也拿到更多的成果。",
+    "**广度知识（wide knowledge）**：LLM 学过设计思维、贝叶斯推理、丰田生产方式、罗杰斯疗法，但除非你知道该问，它不会主动端出来——不懂设计就不知道要让它别再「加眉毛」（在标题上再叠小标题）。",
+    "**品味（taste）**：过去稀缺的是「做出足够多的东西」，现在制造又快又便宜，稀缺的是从中挑选的能力。生成式 AI 确实会带来大量同质化的 slop，但 slop 可以被品味打败。",
+    "**能动性（agency）**：在所有人对 AI 能力同等困惑的时候，愿意去试边界。锯齿边界在你的领域尚未被绘制，能动性就是去当探险家——而不是等别人告诉你 AI 现在能做什么了。"
+  ],
+  "insight": "企业 AI 落地卡住的从来不是模型能力，而是没把领域专家的判断力接进流程：POC 跑得飞快、规模化推不动，根因是把 AI 当产能工具，而不是当放大专家品味的杠杆。团队能力盘点该从「会不会用 AI」换成「深度知识 / 广度知识 / 品味 / 能动性」四维——前者能培训，后三者决定同一个模型在不同人手里差出一个数量级。",
+  "bilingual": [
+    {
+      "en": "We are still on an exponential curve of AI development. I try to put out a Substack post every couple weeks or so, yet, as the pace speeds up, that sometimes feels too slow. In the weeks since my last post, we had the apparent cracking of one of the most famous problems in math by an AI (accompanied by controversy) and widespread discussions about the risks posed by AI and what to do about it (also accompanied by controversy). I think these concerns, along with a mounting set of other worries, come down to the same problem I have with my posts: how slowly our very human systems and processes work to keep up with the pace of AI development.\n\nI don't think the people worried about this are wrong, but I also think a sole focus on future AIs, as important as that is, ignores the fact that AI, right now, is already incredibly capable. In fact, the new GPT-6 Astra and Fable 5.1 are already enough for transformative impact in large sections of the economy and they can reliably do weeks worth of human work when properly guided and harnessed.",
+      "zh": "我们仍然处在 AI 发展的指数曲线上。我试着每两周左右发一篇 Substack，但随着节奏加快，这有时都显得太慢了。在我上一篇文章之后的这几周里，AI 看上去攻克了数学中最著名的问题之一（伴随着争议），围绕 AI 所带来的风险以及应该怎么办也出现了广泛讨论（同样伴随着争议）。我认为这些担忧，连同越积越多的其他忧虑，归根结底和我写文章遇到的是同一个问题：我们这些非常「人类」的系统与流程，跟上 AI 发展节奏的速度实在太慢了。\n\n我不认为那些担忧的人是错的，但我也认为——只盯着未来的 AI（尽管这确实重要）会忽略一个事实：此时此刻的 AI 就已经强得惊人。事实上，新的 GPT-6 Astra 和 Fable 5.1 已经足以在大片经济领域产生变革性影响；只要被恰当地引导和驾驭，它们能可靠地完成人类数周的工作量。"
+    },
+    {
+      "en": "A few fun examples of that: I had GPT-6 Astra turn a 1977 text adventure game called Zork into a full 3D action-adventure game you can play. Zork has no graphics and each location is a paragraph of prose, so the AI had to decide what the white house looks like, what a grue looks like (the original only tells you that you are likely to be eaten by one in the dark), and how to turn \"fight the troll\" into an action sequence. I also had Fable 5.1 try to reconstruct Italian author Umberto Eco's library in 3D. Eco kept tens of thousands of books in his Milan apartment and the AI could not find a floor plan, so it instead decided to work from a dozen videos, the foundation's photographs of each bookcase, and two library catalogues. It read spines frame by frame, inferred the rooms, and placed the 5,000 or so books it could identify among 27,000 shelf slots. It marked every book certain, guess, or unknown, and drew the bookcases the cameras never reached in fog. This task, like the Zork game and a lot of real-world work I have had the AI do recently, would have taken weeks of human work involving researchers, coders, and designers. But here we are.\n\nMy point is that, while there is a lot of debate over what future models will do, the current capabilities of existing models are barely being used, and are often not even well understood. For example, I did not know GPT-6 Astra could operate Blender (a sophisticated piece of 3D modelling software) until it did.",
+      "zh": "举几个有意思的例子：我让 GPT-6 Astra 把 1977 年的文字冒险游戏《Zork》变成了一款可以真玩的完整 3D 动作冒险游戏。《Zork》没有任何图形，每个场景就是一段散文，所以 AI 必须自己决定「白房子」长什么样、grue 长什么样（原作只告诉你在黑暗中很可能被它吃掉），以及怎么把「和巨怪战斗」变成一段动作序列。我还让 Fable 5.1 尝试用 3D 重建意大利作家翁贝托·艾柯的藏书室。艾柯在米兰的公寓里藏了数万册书，AI 找不到平面图，于是它转而依据十几段视频、基金会为每个书架拍的照片，以及两份图书馆目录来工作。它逐帧辨读书脊，推断出房间结构，把能识别出的约 5000 本书安放进 27000 个书架格位中。它为每一本书标注「确定」「猜测」或「未知」，并把摄像机从未拍到的书架画成雾状。这项任务，和 Zork 那个游戏以及我最近让 AI 做的很多真实工作一样，放在过去需要研究员、程序员和设计师投入数周的人力。但现在，它就摆在这儿了。\n\n我想说的是：尽管关于未来模型能做什么的争论铺天盖地，现有模型的当下能力却几乎没被用起来，甚至常常没被理解。举个例子，在 GPT-6 Astra 真的动手之前，我都不知道它会操作 Blender（一款相当复杂的 3D 建模软件）。"
+    },
+    {
+      "en": "I gave it a copy of my upcoming book, Co-Existence, and asked it to create a trailer for the book from the perspective of an AI. Without clear instructions from me, it proceeded to use Blender and build out an entire animated 3D scene (not an easy task), along with a script with some jokes and reveals (I did reject the first joke it added, but the second was quite good). It then figured out how to generate voices and music and sound effects and gave me this film 45 minutes later. The final product feels a little more ominous than I would like, but that was the AI's decision, not mine.\n\nTo see how much further it could go, I prompted: \"That's good, but I actually want you to make an action movie trailer based on Co-Existence. Have fun with it. No more than 30 seconds.\" Again, it wrote a script and made a 3D prototype in Blender. After I asked for a more cinematic version, it used the Blender animation as a storyboard, operated a video generator through my browser, and edited the generated shots into the final trailer. I gave some minor creative feedback, but never touched any production decision or even knew exactly how it was accomplishing its tasks.",
+      "zh": "我把我即将出版的新书《Co-Existence》的稿子给了它，让它以 AI 的视角为这本书做一支预告片。在我没有给出明确指示的情况下，它自行用起了 Blender，搭建出一整个 3D 动画场景（这不是件容易的事），还写了一份带笑点和反转的脚本（它加的第一个笑话被我否掉了，但第二个相当不错）。接着它自己搞明白了怎么生成人声、音乐和音效，45 分钟后交给我这样一部片子。成片的气氛比我想要的更阴森了一点，但那是 AI 的决定，不是我的。\n\n为了看看它还能走多远，我提示道：「不错，但我其实想要一支基于《Co-Existence》的动作片预告。放开玩，不超过 30 秒。」它再次写了脚本，并在 Blender 里做出 3D 原型。在我要求一个更有电影感的版本之后，它把 Blender 动画当作分镜脚本，通过我的浏览器操作一个视频生成器，再把生成的镜头剪成最终的预告片。我给了一些小的创意反馈，但从未插手任何制作决策，甚至根本不清楚它究竟是怎么完成这些任务的。"
+    },
+    {
+      "en": "There are plenty of flaws in these efforts that you can spot. But they are also examples of the AI exercising a kind of judgement and creativity, things that not long ago were considered uniquely human traits. And they were all done with just a fraction of the token budget of the ChatGPT account I pay for. I think these are fun demonstrations, but they are also a bit scary because AI is getting better at things that were once purely human. Still, none of these projects happened on their own. I chose them, I knew enough about Zork and Eco and my own book to see where the AI went wrong, and to ask for a second version when the first wasn't right. The capability overhang, the gap between what these models can do and what almost anyone is doing with them, is an opportunity because most people don't bring their own advantages to AI, and those who do get much more out of it.\n\nThat is why I think we will need to focus on the individual traits we have that remain useful even as AI abilities improve. You are not trying to compete with AI in producing outputs, that is a losing game. Instead, you want to use your human advantages as basis of working with AI to do things that neither of you could do alone. In my book, I outline four particular personal advantages that matter a lot if you want to use AI in unique and enhancing ways: deep knowledge, wide knowledge, taste, and agency.",
+      "zh": "这些尝试里有大量你能挑出来的瑕疵。但它们同时也是 AI 在行使某种判断力与创造力的例证——而这些在不久之前还被视为人类独有的特质。而且这一切只消耗了我付费 ChatGPT 账户 token 预算的一小部分。我觉得这些演示很好玩，但也有点吓人，因为 AI 正在一些曾经纯属人类的事情上越做越好。不过话说回来，这些项目没有一个是自己发生的。是我挑的题，是我对 Zork、对艾柯、对自己的书了解得足够多，才能看出 AI 在哪里跑偏了，才能在第一版不对时要求第二版。所谓**能力悬差**——这些模型能做到的事，与几乎所有人实际拿它们在做的事之间的落差——之所以是一个机会，正是因为大多数人并没有把自己的优势带进 AI；而那些带进去的人，收获要大得多。\n\n这也是为什么我认为，我们需要聚焦于那些即便 AI 能力继续提升、仍然有用的个人特质。你不该试图在「产出东西」上和 AI 竞争，那是一场必输的游戏。相反，你要把自己的人类优势当作基础，去和 AI 一起做那些你们任何一方单独都做不成的事。在我的书里，我梳理了四项个人优势——如果你想以独特且增强性的方式使用 AI，它们至关重要：深度知识、广度知识、品味和能动性。"
+    },
+    {
+      "en": "The first two advantages come from what you know. **Deep knowledge** is the expertise that comes from understanding a field or subject so well that you build intuition around it to quickly and accurately make decisions. It is how an experienced accountant can glance at a spreadsheet and know something is wrong, or how a golf pro can watch a swing and instantly understand the mistake the golfer is making. It is also why I could tell within seconds that the first trailer was more ominous than the book actually is. Deep knowledge is the realm of the specialist, and it is the only way to truly understand the shape of the Jagged Frontier, because only experts can understand the patterns of where AI succeeds or fails, at least in their area of expertise. It also helps you adapt to change because deep knowledge makes it easier to switch from being someone who does the work to someone who manages it. And recent work from Anthropic suggests that expertise also shapes the quality of what AI gives back. Experts not only get better work out of AI, they get more work out of it.",
+      "zh": "前两项优势来自你所知道的东西。**深度知识**，是指你对一个领域或主题理解到足以建立直觉、从而快速准确做出判断的那种专业能力。它让一位资深会计扫一眼表格就知道哪里不对，让一位高尔夫教练看一眼挥杆就立刻明白球员错在哪儿。它也是为什么我能在几秒内判断出第一版预告片比这本书本身更阴森。深度知识属于专才的领地，也是真正理解「锯齿状边界」（Jagged Frontier）形状的唯一途径——因为只有专家才能看懂 AI 在哪里成功、在哪里失败的模式，至少在他自己的专业领域内是如此。它还帮助你适应变化，因为深度知识让你更容易从「干活的人」切换成「管活的人」。而 Anthropic 近期的研究表明，专业度同样塑造了 AI 回馈给你的质量：专家不仅能从 AI 那里得到更好的成果，还能得到更多的成果。"
+    },
+    {
+      "en": "But you don't just need deep knowledge, you also want **wide knowledge.** The training data for LLMs is a large swath of humanity's vast output. The AI has learned something of design thinking and Bayesian reasoning and the Toyota Production System and Rogerian therapy and Marxist literary criticism. But AI tends not to volunteer any of these patterns unless you know to ask.\n\nThis is where wide knowledge comes in. Lets take one example: the way AI handles design work. If you ever ask AI to create a webpage, it will have certain preferences, including a very annoying habit of adding little headlines on top of your headlines. If you don't have any grounding in design, you may not realize that you need to ask the AI to stop \"adding eyebrows\" to the work. It is also how I knew that using a Blender animation as a storyboard for a video generator was a sensible way to make a film, and not the AI wandering off. If you do know the right terms, asking for changes is easy. To gain wide knowledge you need to read and study widely, across fields and formats and traditions. This is valuable in and of itself (the return of the liberal arts!) but doubly so in the age of AI.",
+      "zh": "但你需要的不只是深度知识，你还想要**广度知识**。LLM 的训练数据是人类海量产出的一大片切面。AI 多少学过设计思维、贝叶斯推理、丰田生产方式、罗杰斯疗法和马克思主义文学批评。可是除非你知道该开口问，AI 一般不会主动端出这些模式。\n\n这正是广度知识发挥作用的地方。举一个例子：AI 处理设计工作的方式。如果你让 AI 做一个网页，它会有某些固定偏好，包括一个非常烦人的习惯——在你的标题上面再加一个小标题。如果你没有任何设计功底，你可能根本意识不到自己需要让 AI 别再给作品「加眉毛」（adding eyebrows）。同样，正因为有广度知识，我才知道「把 Blender 动画当作视频生成器的分镜脚本」是一条合理的制片路径，而不是 AI 在跑偏。只要你知道正确的术语，提出修改要求就变得很容易。要获得广度知识，你需要广泛地阅读与学习，跨领域、跨形式、跨传统。这件事本身就有价值（人文通识教育的回归！），在 AI 时代更是加倍有价值。"
+    },
+    {
+      "en": "Now let's go back the videos and projects I demonstrated above... You may have reacted viscerally to one or another, or hated them all. You may have found a theme or idea you would like to see more of. In doing this, you are using the third human differentiator in the age of AI, **taste.** Before AI, making things was hard and slow. Writing a draft took hours. Generating twenty product concepts took a team a week. An academic paper could take years. The constraint was always _making enough stuff_. Now making is fast and cheap. The scarce resource is your ability to select among stuff using your own taste. Again, in the trailers, I rejected the first joke and kept the second. I asked for a more cinematic version. Those were the only decisions I made on the trailer, but they were based on my taste.\n\nSome people have a taste for things that many people will find popular, others have a taste that is unique to them, and still others have a taste for what is novel and new. Yes, generative AI leads mostly to slop: a flood of work that is very similar to each other. But slop can be defeated by taste. Making great things with AI means knowing which AI outputs to keep, which to discard, and which to use as raw material for something the AI would never have generated on its own.",
+      "zh": "现在回到我上面演示的那些视频和项目……你可能对其中某一个产生了本能的反应，也可能全都讨厌。你也可能发现了某个自己想看到更多的主题或想法。当你这么做的时候，你正在动用 AI 时代第三项人类差异化优势：**品味**。在 AI 之前，「做东西」既难又慢。写一份草稿要花几个小时。生成二十个产品概念要一个团队花一周。一篇学术论文可能要好几年。约束条件永远是「_做出足够多的东西_」。现在制造变得又快又便宜，稀缺资源变成了你用自己的品味从中挑选的能力。还是那两支预告片：我否掉了第一个笑话、留下了第二个；我要求了一个更有电影感的版本。这是我在整支预告片上做的仅有的决策，但它们都基于我的品味。\n\n有些人的品味是大众会觉得受欢迎的那一类，有些人的品味是独属于自己的，还有些人的品味偏好新奇与创新。是的，生成式 AI 带来的大多是 slop：一大片彼此高度雷同的作品洪流。但 slop 是可以被品味打败的。用 AI 做出伟大的东西，意味着知道哪些 AI 产出该留、哪些该丢，以及哪些可以当作原料，去做成 AI 自己永远不会生成出来的东西。"
+    },
+    {
+      "en": "The final human advantage, **agency**, might be the most important and the hardest to talk about, because it is difficult to define and the subject of a lot of debate. But in the context of AI, I think it is a willingness to test the boundaries of what's possible when everybody is equally confused about what AI can do. The jagged frontier is unmapped in your field, so agency is about becoming an explorer. It's the difference between waiting for someone to tell you that AI can now do something, and discovering it yourself by trying. That is part of why I do so many weird AI experiments — like trying to get the AI to play games — it teaches me a lot about what AI can do.",
+      "zh": "最后一项人类优势是**能动性（agency）**，它可能是最重要、也最难谈论的一项——因为它难以定义，而且本身充满争议。但放在 AI 的语境里，我认为它是指：当所有人对「AI 到底能干什么」同等困惑时，你愿意去试探可能性的边界。锯齿状边界在你所处的领域尚未被绘制，所以能动性就是去成为一名探险者。它是「等着别人来告诉你 AI 现在能做某件事」和「自己动手试出来」之间的区别。这也是我做那么多稀奇古怪的 AI 实验的部分原因——比如试着让 AI 去玩游戏——它教会了我大量关于 AI 能力边界的东西。"
+    },
+    {
+      "en": "Most of the anxiety about AI right now is about future models and whether we will be able to control them. It seems reasonable for governments and AI labs to be arguing about how to manage the speed of development to mitigate these risks. But a slowdown does not undo what already exists. If every lab stopped training new models tomorrow, that wouldn't change the fact that GPT-6 Astra and Fable 5.1 are already enough to change how large parts of the economy work. The capability overhang between what those models can do today and what most folks are using them for is massive.",
+      "zh": "眼下关于 AI 的焦虑，大多集中在未来的模型以及我们能否控制它们。政府和 AI 实验室争论如何管理发展速度以缓解这些风险，看上去是合理的。但放慢速度并不会撤销已经存在的东西。哪怕明天所有实验室都停止训练新模型，也改变不了一个事实：GPT-6 Astra 和 Fable 5.1 已经足以改变大块经济领域的运作方式。这些模型今天能做到的事，与大多数人实际拿它们在做的事之间，能力悬差大得惊人。"
+    },
+    {
+      "en": "So change is coming no matter how the frontier is paced. It will not happen all at once and it will be uneven, but it is inevitable. Yet inevitable change does not mean the type of change is inevitable. It is increasingly important that we, as a society, develop and share models of AI-human work that enhance, rather than only replace, human labor. And it is equally important that we, as individuals, use AI in ways that enhance, rather than only replace, our own efforts. I don't think there are bright lines we can point to and say AI will never cross them (see above). But your four advantages are a place to start today.",
+      "zh": "所以无论前沿的节奏如何，变化终将到来。它不会一次性发生，而且会是不均匀的，但它不可避免。然而「变化不可避免」并不意味着「变化的类型不可避免」。越来越重要的是：我们作为一个社会，要发展并分享那些「增强」而非仅仅「替代」人类劳动的人机协作模式；同样重要的是，我们作为个体，要以「增强」而非仅仅「替代」自身努力的方式去使用 AI。我不认为存在什么泾渭分明的红线，可以让我们指着说 AI 永远跨不过去（见上文）。但你的这四项优势，是今天就可以开始的地方。"
+    },
+    {
+      "en": "I discuss these four advantages, and a lot more, in _Co-Existence_, which comes out October 20. If you pre-order it and let me know at co-existence.ai (pre-ordering really helps authors), we will send you a link to a free voice interview with an AI within a day or two. It asks you about what you know, what you like, and what you have tried, and then gives you a report on your own deep knowledge, wide knowledge, taste, and agency, along with use cases and prompts built around them.\n\n> An example of the report the interview produces. The interviewee here was an LLM with an otter obsession; yours will be about you, obviously.\n\n_The Zork project and Library project are both open source, feel free to modify them if you want (Zork is itself open source)._",
+      "zh": "我在 10 月 20 日出版的《Co-Existence》中详细讨论了这四项优势，以及更多内容。如果你预订并在 co-existence.ai 上告诉我（预订对作者真的很有帮助），我们会在一两天内给你发一个链接，让你免费和一个 AI 做一次语音访谈。它会问你「你知道什么」「你喜欢什么」「你尝试过什么」，然后给你一份关于你自己的深度知识、广度知识、品味和能动性的报告，并附上围绕它们定制的用例与提示词。\n\n> 这是该访谈生成的报告示例。这里的受访者是一个痴迷水獭的 LLM；你的那份显然会是关于你自己的。\n\n_Zork 项目和藏书室项目都是开源的，如果你想改就尽管改（Zork 本身就是开源的）。_"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "The capability overhang, the gap between what these models can do and what almost anyone is doing with them, is an opportunity because most people don't bring their own advantages to AI, and those who do get much more out of it.",
+      "zh": "能力悬差——模型能做到的事与几乎所有人实际拿它们在做的事之间的落差——是一个机会，因为大多数人并没有把自己的优势带进 AI；而那些带进去的人，收获要大得多。"
+    },
+    {
+      "en": "You are not trying to compete with AI in producing outputs, that is a losing game.",
+      "zh": "你不该试图在「产出东西」上和 AI 竞争，那是一场必输的游戏。"
+    },
+    {
+      "en": "Yes, generative AI leads mostly to slop: a flood of work that is very similar to each other. But slop can be defeated by taste.",
+      "zh": "是的，生成式 AI 带来的大多是 slop：一大片彼此高度雷同的作品洪流。但 slop 是可以被品味打败的。"
+    },
+    {
+      "en": "The constraint was always making enough stuff. Now making is fast and cheap. The scarce resource is your ability to select among stuff using your own taste.",
+      "zh": "约束条件永远是「做出足够多的东西」。现在制造变得又快又便宜，稀缺资源变成了你用自己的品味从中挑选的能力。"
+    },
+    {
+      "en": "Experts not only get better work out of AI, they get more work out of it.",
+      "zh": "专家不仅能从 AI 那里得到更好的成果，还能得到更多的成果。"
+    },
+    {
+      "en": "It's the difference between waiting for someone to tell you that AI can now do something, and discovering it yourself by trying.",
+      "zh": "它是「等着别人来告诉你 AI 现在能做某件事」和「自己动手试出来」之间的区别。"
+    },
+    {
+      "en": "If every lab stopped training new models tomorrow, that wouldn't change the fact that GPT-6 Astra and Fable 5.1 are already enough to change how large parts of the economy work.",
+      "zh": "哪怕明天所有实验室都停止训练新模型，也改变不了一个事实：GPT-6 Astra 和 Fable 5.1 已经足以改变大块经济领域的运作方式。"
+    },
+    {
+      "en": "Inevitable change does not mean the type of change is inevitable.",
+      "zh": "「变化不可避免」并不意味着「变化的类型不可避免」。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged",
+      "pov": "**《Centaurs and Cyborgs on the Jagged Frontier》**——本文反复引用的「锯齿状边界」概念出处，也是它的前置阅读。那篇基于 BCG 758 名顾问的实地实验给出了机制层面的解释：边界之内 AI 大幅提升质量与速度，边界之外反而让人做得更差；并区分了「半人马」（人机分工）与「赛博格」（人机交织）两种协作形态。本文相当于在此基础上追问下一步——既然边界形状只有专家能看懂，那么个人优势本身就成了使用 AI 的前提条件。"
+    },
+    {
+      "source": "Anthropic",
+      "url": "https://cdn.sanity.io/files/4zrzovbb/website/b93c7465925dc052b9102209b29b58f11df4fe55.pdf",
+      "pov": "**Anthropic 关于专业度与 AI 产出质量的研究（本文直接引用）**——提供了「深度知识」这一论点的实证锚点：专业能力不只是让人更会用 AI，它实际改变了 AI 回馈内容的质量。这把 Mollick 略带轶事色彩的个人经验（几秒看出预告片走偏）接到了可量化的证据上，也意味着企业里「谁来用 AI」的人选问题，比「买哪个模型」更决定产出水位。"
+    },
+    {
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "pov": "**Anthropic R&D Automation Index（实验室内部视角）**——与本文形成「内 vs 外」的对照。实验室衡量的是模型在前沿研发任务上的自动化速度，本文衡量的是这些能力在真实经济中的渗透速度。两条曲线之间的缺口，正是 Mollick 所说的能力悬差；换句话说，前沿指标跑得再快，也不会自动兑现成组织收益。"
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+# 第三组 · 协同、资源与治理（Pattern 15–21）
+
+这一组回答的不是「Agent 能不能完成任务」，而是：多个 Agent 能否可靠交接，有限资源应花在哪里，推理结果如何验证，系统如何守住边界，以及什么时候值得探索未知。
+
+**阅读口径**：以 2025 年《Agentic Design Patterns》第 15–21 章为主干；英文短引文在前，中文提炼在后。中文「管理者速读」「Trade-off」「评审追问」包含编辑分析，不冒充作者原话。标记为「🆕 2026 视角补充」的内容仅来自本地《AI Design》原稿，表示书内补充视角，不表示这些能力在 2026 年已经成为行业事实。引文编号与逐条定位见 `batch-3-evidence.md`。未加入外部企业案例；书内场景和系统描述也不等同于已核实的客户部署。
+
+---
+
+## Pattern 15 · Inter-Agent Communication (A2A)（智能体间通信）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>把任务分给不同 Agent，并不意味着它们就能协作。对方有什么能力、任务是否已接受、还缺什么输入、结果交到哪里，都需要双方理解一致的通信契约。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>确实存在跨框架、独立部署的 Agent，需要发现能力、委派任务、跟踪长任务和接收产物；不是为了给同一程序里的每次函数调用加一层协议。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>标准接口有助于减少逐对定制集成，但不会自动解决语义、身份和责任问题。管理者要验收的是「任务交接闭环」，而非「两个 Agent 能互发消息」。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> The Agent2Agent (A2A) protocol is an open standard designed to enable communication and collaboration between different AI agent frameworks.
+
+**中文提炼**：本章用 A2A 这一具体协议解释跨 Agent 通信：让不同框架的 Agent 通过共同约定协作，而不要求对方采用同一内部实现。[P15-Q1]
+
+与 Pattern 7 的区别是：**多 Agent 协作规定怎样分工；A2A 规定独立参与者怎样互相发现、交接和跟踪工作。** 角色划分和通信契约缺一不可，但也不必把所有多 Agent 系统都改造成跨网络协议系统。
+
+### 核心结构 · 从能力声明到产物交付
+
+依据本章 Core Concepts，可把通信过程压缩为五个管理问题：[P15-F1]
+
+| 对象 / 机制 | 原书含义 | 管理者应验收什么（编辑判断） |
+|---|---|---|
+| Client / Remote Agent | 客户端代表用户发出请求；远端 Agent 提供接口，内部可以保持不透明 | 谁委派、谁执行、谁对最终交付负责 |
+| Agent Card | 声明身份、地址、版本、技能、输入输出方式及认证要求 | 声明是否可信、是否过期；声明有能力不等于已获授权 |
+| Discovery | 可采用公开约定位置、集中目录或直接配置 | 私有能力是否需要公开发现；目录由谁维护 |
+| Task / Message / Artifact | Task 是工作单元；Message 承载交互；Artifact 是任务产物 | 能区分「接受任务」「进行中」「已交付」；不能把一条回复当成交付证明 |
+| 交互机制 | 同步响应、异步轮询、SSE 流式更新、Webhook 通知 | 按任务时长与网络条件选择，而不是所有任务都保持长连接 |
+
+长任务尤其需要区分**通信成功**与**业务成功**。收到任务标识只说明交接进入流程；收到产物仍需要验收。超时、重复通知、取消与重试后的副作用如何处理，是本节提出的工程评审项，不是声称协议已替应用完成这些工作。
+
+### A2A 与 MCP · 协作对象不同
+
+> While MCP focuses on structuring context for agents and their interaction with external data and tools, A2A facilitates coordination and communication among agents, enabling task delegation and collaboration.
+
+**中文提炼**：原书把二者视为互补：MCP 侧重 Agent 与外部数据、工具的连接，A2A 侧重 Agent 之间的任务协调。[P15-Q2] 架构评审不应把它们当作非此即彼的替代品；应先判断对面是供调用的能力，还是承接任务、管理自己工作过程的参与者。
+
+### 适用场景与 Trade-off
+
+原书场景包括跨框架协作、数据收集—分析—报告的任务交接，以及向专门 Agent 请求动态信息。这些是应用场景说明，不是实际企业采用证明。[P15-F2]
+
+**编辑判断：**
+- **互操作性换取协议治理成本。** 当多个独立团队反复集成时，共同契约有价值；如果只有一个封闭应用，内部编排可能更简单。
+- **实现不透明换取更强的边界验收。** 无须知道远端如何工作，不等于无须知道它依据什么给出结果。应要求可核验产物、来源和错误状态，而非仅接受自然语言自报成功。
+- **动态发现换取更大的信任管理负担。** 能找到一个 Agent，不代表应该把数据或权限交给它。身份认证、任务授权、数据最小化必须分别评审。
+
+**版本边界：**本章不同段落出现了不同风格的方法命名，且原稿中的字段、发现路径均有版本敏感性。本文保留任务与能力契约的概念，不把示例当作现行接口规范；更不据此宣布 A2A 已在 2026 年成为事实标准。[P15-U1]
+
+### 何时使用 · Rule of Thumb（原文节选）
+
+> Use this pattern when you need to orchestrate collaboration between two or more AI agents, especially if they are built using different frameworks (e.g., Google ADK, LangGraph, CrewAI).
+
+**中文提炼**：需要组织两个以上 Agent 协作，尤其跨框架时，考虑本模式。[P15-Q3] **管理者判据（编辑判断）：先证明独立部署与互操作的需求，再支付协议化成本；不要反过来为了使用协议而拆 Agent。**
+
+---
+
+## Pattern 16 · Resource-Aware Optimization（资源感知优化）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>始终调用最强模型可能浪费资源，始终调用最便宜模型又可能制造返工。资源感知优化把质量、时间、费用与可用性放进同一个决策过程。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>任务难度差异明显，存在预算或响应时限，或者流程包含多种成本不同的工具与推理步骤。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>省钱不能只看单次调用价格，还要计入分类、检索、复核、重试与人工返工。目标应是「在可接受风险下完成一项任务的总成本」，不是把平均 token 单价压到最低。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> Resource-Aware Optimization enables intelligent agents to dynamically monitor and manage computational, temporal, and financial resources during operation.
+
+**中文提炼**：资源优化不是运行之后做账，而是在执行过程中监测并管理计算、时间和财务资源。[P16-Q1] 它与 Planning 的差别是：规划回答「按什么步骤达成目标」，本模式继续问「这些步骤值得花多少资源，以什么质量和时限完成」。
+
+原书用即时初步分析与高要求预测作对照，说明服务要求不同可以采用不同资源配置；这是概念示例，不是对任何模型预测能力的实测保证。[P16-F1]
+
+### 三类决策 · 分配、校验、退路
+
+1. **分配资源。** 根据请求需求选择模型或工具。原书不仅区分简单与复杂问题，还在一个示例中单列需要互联网信息的请求：缺资料和缺推理能力不是同一个瓶颈。[P16-F2]
+2. **校验分配是否正确。** Critique Agent 评估答案质量，帮助发现复杂题错给小模型、简单题过度使用大模型等问题。原书明确说它不直接管预算，而是通过反馈改进资源分配。[P16-F3]
+3. **预设可接受的退路。** 首选模型不可用时可切换备选；但是「继续提供服务」与「保持原质量」是两回事。能否降级、降到何种结果，需要由任务风险决定，而不是把 fallback 当作无条件成功。
+
+> Graceful Degradation and Fallback Mechanisms ensure that intelligent agent systems can continue to function, albeit perhaps at a reduced capacity, even when resource constraints are severe, gracefully degrading performance and falling back to alternative strategies to maintain operation and provide essential functionality.
+
+**中文提炼**：原书明确承认降级可能伴随能力下降，其目标是保住必要功能，不是保证输出等价。[P16-Q2] **编辑判断：涉及对外交付或重要决策时，应让验收方知道采用了何种降级；无法达到最低质量时，暂停或转人工可能优于勉强交付。**
+
+### 不只是模型路由 · 优化对象清单
+
+本章还列出工具选择、上下文剪裁与摘要、资源需求预测、协作通信成本、能耗、分布式计算及学习型分配策略。[P16-F4]
+
+| 优化对象 | 可能收益 | Trade-off / 评审追问（编辑判断） |
+|---|---|---|
+| 模型与推理深度 | 简单任务减少不必要开销 | 分错类后的补救成本多大？是否有质量基线？ |
+| 工具与检索 | 避免不必要调用与全量下载 | 是否因节省一次检索而失去关键证据？ |
+| 上下文裁剪 | 减少输入规模、延迟和费用 | 约束、来源及未解决问题是否被摘要掉？ |
+| 并行与通信 | 缩短部分任务的墙钟时间 | 总消耗是否上升？协调成本是否超过收益？ |
+| 降级与回退 | 在受限条件下维持必要服务 | 哪些任务允许降级？谁接受降级结果？ |
+
+**不要混淆两种升级：**发现问题本身复杂，属于能力升级；发现事实材料不足，应补资料。只换更强模型却不补证据，可能得到更流畅而非更可信的答案。这是基于本章多路径设计提出的编辑判断，不是书内实验结论。
+
+### 何时使用 · Rule of Thumb（原文）
+
+> Use this pattern when operating under strict financial budgets for API calls or computational power, building latency-sensitive applications where quick response times are critical, deploying agents on resource-constrained hardware such as edge devices with limited battery life, programmatically balancing the trade-off between response quality and operational cost, and managing complex, multi-step workflows where different tasks have varying resource requirements.
+
+**中文提炼**：有严格费用、算力、时延或设备资源约束，或者多步骤任务的资源需求差异很大时，使用本模式。[P16-Q3]
+
+**管理者判据（编辑判断）：**先定义最低质量、单任务预算与超限处置，再优化调用组合。没有这些边界，所谓智能路由可能只是把成本从模型账单转移到返工账单。本章已经在 2025 主干中讨论模型路由与 fallback，不应把它们误写成 2026 才出现的增量。
+
+---
+
+## Pattern 17 · Reasoning Techniques（推理技术）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>有些问题不能一次生成答案就结束，需要分解、比较备选路径、调用工具、依据结果纠错。本章是这些推理方法的工具箱，不是一种万能提示词。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>多跳问答、需要精确计算的问题、复杂计划与研究，以及必须用外部反馈逐步缩小不确定性的任务。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>更多推理可能提高质量，也可能只是延长错误路径。要用有依据的中间产物、外部检验和任务级评估判断收益；不要把推理篇幅或模型彼此同意当作正确性证明。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> A core principle among these advanced methods is the allocation of increased computational resources during inference.
+
+**中文提炼**：本章的重要共性是在推理阶段投入更多计算，而非仅扩大模型：给系统时间拆题、检查、搜索备选方案或使用工具。[P17-Q1] 但原书关于推理时间提升性能的积极表述，应作为设计方向理解，不应转写成「每增加一轮思考就必然更准确」。
+
+### 方法地图 · 先辨认问题缺什么
+
+下表依据本章 Reasoning techniques 与 Scaling Inference Law 段落；第三列是编辑判断。[P17-F1]
+
+| 方法 | 原书机制 | 适用判断与边界 |
+|---|---|---|
+| Chain-of-Thought（CoT） | 将复杂问题拆成中间步骤 | 有助组织多步问题；生成的解释不能单独证明内部过程或答案正确 |
+| Tree-of-Thought（ToT） | 分支探索多个路径，允许评估与回退 | 值得比较方案时使用；分支数与搜索深度需要预算 |
+| Self-Correction | 检查初稿、中间结果并修订 | 有检查标准或新反馈时更有意义；无新增证据的反复改写不等于验证 |
+| Program-Aided Language Models（PAL） | 把计算与符号操作交给可执行程序 | 需要精确计算时使用；程序执行正确不代表输入、假设与模型选的算法正确 |
+| ReAct | 行动、观察与后续推理交替 | 需要通过工具接触外部环境时使用；观察结果要进入下一轮，而非计划写完就不再改变 |
+| CoD / GoD | 多参与者辩论；或以支持、反驳关系组织论证网络 | 适合需要比较论证的任务；共识不等于独立事实验证 |
+
+原书还讨论 RLVR 训练与 MASS 的提示/协作拓扑优化。[P17-F2] **需要区分层级：**RLVR 是训练机制，MASS 是系统设计优化，不能把它们与运行时「多问一次」视为可随意互换的按钮。本稿不展开代码与算法细节，也不沿用未独立核实的性能优越性结论。
+
+### 最值得理解的闭环 · ReAct 不只是「先想后做」
+
+> ReAct operates in an interleaved manner: the agent executes an action, observes the outcome, and incorporates this observation into subsequent reasoning.
+
+**中文提炼**：关键是交替：执行动作，观察实际结果，再据此修正下一步。[P17-Q2] 如果工具调用失败、检索结果相互矛盾，Agent 仍沿原计划输出，形式上虽然调用了工具，实质上却没有利用反馈。
+
+**管理者追问（编辑判断）：**新增推理究竟补了什么？是多找一份证据、验证一个计算、排除一个方案，还是只是让答案更长？可审计记录应围绕输入、来源、工具动作、结果、决策理由摘要与验收结论组织，而不是要求完整暴露模型隐藏思维链。
+
+### 🆕 2026 视角补充 · 把研究计划变成人可审阅的产物
+
+> This plan, which you can review and modify or accept as is, is shown in Fig. 1.
+
+**中文提炼**：2026 原稿 Appendix L 在 Deep Research 示例中，进一步展示了检索开始前生成、可由用户审阅和修改的计划。[P17-26Q1] 这是书内示例提供的补充视角；Deep Research 本身已在 2025 第 17 章出现，不是 2026 才有的新模式。
+
+**编辑判断：**计划、证据表与验证结果比一段冗长的自述更适合治理。任务开始前可审阅范围与约束，任务完成后可检查结论与来源。此处没有核验该产品目前的 UI、账号权限、速度或连接器支持，不能据此作现行功能承诺。
+
+### Trade-off · 思考预算如何批准
+
+- **复杂度与成本：**多路径、多轮复核和多 Agent 辩论可能同时增加延迟与消耗，需和 Pattern 16 共同设计预算。
+- **推理与取证：**事实不足时先补资料；正确计算与一致投票都无法拯救错误的事实前提。
+- **透明与可信：**清晰解释有利于审阅，但可信度仍来自证据、测试和边界控制。原书将显式推理与信任联系起来，本文不把这种联系升级为充分条件。
+
+### 何时使用 · Rule of Thumb（原文节选）
+
+> Use these reasoning techniques when a problem is too complex for a single-pass answer and requires decomposition, multi-step logic, interaction with external data sources or tools, or strategic planning and adaptation.
+
+**中文提炼**：一次回答无法处理，需要拆解、多步逻辑、外部工具或动态规划时，选取相应推理方法。[P17-Q3] **管理者判据（编辑判断）：按错误类型选机制，按验证收益追加预算，而不是按答案长度购买「深度」。**
+
+---
+
+## Pattern 18 · Guardrails/Safety Patterns（护栏与安全模式）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>Agent 不仅可能回答错误，还可能调用工具、暴露敏感信息或把错误快速传播。护栏要覆盖输入、输出、工具动作和人工接管，而非只在最后检查措辞。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>输出或动作会影响用户、系统、业务声誉时就需要；敏感数据与高影响动作应采用更强控制。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>拦得更严可能增加误拒与人工处理，拦得更松可能漏掉风险。应按业务影响设计不同的处置路径，不能用一个安全分数替代权限控制与责任归属。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> They serve as a protective layer, guiding the agent's behavior and output to prevent harmful, biased, irrelevant, or otherwise undesirable responses.
+
+**中文提炼**：护栏是引导行为与输出的保护层，用来减少有害、偏见、离题或其他不希望出现的结果。[P18-Q1] 本章随后将其展开为输入校验、输出过滤、提示约束、工具限制、外部审核与人工监督等多层机制。[P18-F1] **不要把原书的目标表述误读为安全保证：设置护栏并不等于已经证明不存在违规路径。**
+
+### 防线应落在哪里 · 从内容过滤到动作约束
+
+下表前两列依据原书；最后一列为编辑评审建议。
+
+| 防线 | 原书机制 | 评审时要问 |
+|---|---|---|
+| 输入 | 校验结构、筛查恶意或不适当内容 | 用户输入与外部工具内容是否分别处理？不可信资料能否被当成授权指令？ |
+| 生成与输出 | 角色/目标约束、内容审核、后处理 | 是提示性的要求，还是系统可以强制执行的规则？ |
+| 工具执行前 | 限制工具、检查调用参数与身份 | 模型给出的账号或对象 ID 是否与真实会话权限一致？ |
+| 运行与恢复 | 日志、监测、状态检查点、错误处理 | 能否停止后续动作、恢复已保存状态，识别已发生的外部副作用？ |
+| 人工监督 | 关键决策与异常升级 | 交给谁、何时必须等待、审批覆盖哪些具体动作？ |
+
+本章 ADK 示例在工具执行前，将工具参数中的用户标识与会话保存的用户标识比较，不一致就阻止调用。[P18-F2] **中文提炼：这是「模型提出请求，执行层核验资格」的具体例子，不是让模型自行承诺不会越权。** 但本稿只解释机制，没有运行或认证该示例的 SDK 兼容性。
+
+> An agent should be granted the absolute minimum set of permissions required to perform its task.
+
+**中文提炼**：只授予完成任务所需的最小权限。[P18-Q2] 比起先赋予全能权限再依赖自然语言劝阻，缩小 Agent 能触及的系统范围，可以从结构上限制错误影响。这与 Pattern 13 的人工审批互补，不是二选一。
+
+### 对原书示例也要保持审慎
+
+原书安全提示样例把竞争品牌讨论等业务限制与内容安全放在一起，并在边界不明时选择放行。[P18-U1] **编辑判断：这不是可以直接复制的企业安全政策。** 品牌偏好、法律义务、真实安全风险和业务相关性需要分别定义；不确定时放行、拒绝还是转人工，必须依据影响等级决定。
+
+同样，检查点能恢复软件状态，不代表已经发出的消息、执行的付款或其他外部副作用可以自动撤回。原书以事务作类比，本稿不把类比扩展成端到端原子性承诺。[P18-F3]
+
+### 🆕 2026 视角补充 · 对齐目标与运行时控制不是一层
+
+> It should be honest, giving real information and not just making stuff up.
+
+**中文提炼**：2026 原稿第 13 章以 Helpful、Honest、Harmless 解释对齐，其中「诚实」包括提供真实信息而非编造。[P18-26Q1] 这一章重点讨论训练与人类偏好，补充的是护栏要服务什么价值目标，而不是提供一个替代执行层权限检查的新组件。
+
+**编辑判断：**更符合人类偏好的模型与更可靠的运行控制应同时存在。不能因为模型接受过对齐训练，就跳过身份校验、最小权限和高影响动作审批；也不能因为规则严格，就认为系统已经理解了用户真实意图。
+
+### Trade-off · 控制不能只考核「拦截率」
+
+- **误拒与漏检：**单看拦截数量会奖励过度拒绝；需要同时看正常任务受阻和危险任务漏过的情况。
+- **开销与纵深：**增加一个小模型审核器可能降低部分审核成本，但它本身仍可能误判，也有额外延迟，不能当唯一防线。
+- **审计与隐私：**本章倡导记录动作、工具与数据；编辑建议对敏感字段脱敏并限制访问，避免把日志变成新的泄露面。
+- **检测与处置：**发现异常不等于风险被控制。高影响路径需要明确暂停、阻断、升级与恢复条件；护栏失败如何处理也应纳入测试。
+
+### 何时使用 · Rule of Thumb（原文节选）
+
+> Guardrails should be implemented in any application where an AI agent's output can impact users, systems, or business reputation.
+
+**中文提炼**：只要输出会影响用户、系统或业务声誉，就应设计护栏。[P18-Q3] **管理者判据（编辑判断）：先画清潜在伤害与权限边界，再决定过滤、审批和监测落在哪一层；不要从购买某个「安全模型」开始倒推治理。**
+
+---
+
+## Pattern 19 · Evaluation and Monitoring（评估与监测）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>一次演示答对，无法说明 Agent 在长期运行、版本变化与复杂协作中仍然有效。需要持续测量结果质量、执行过程、资源消耗与违规行为。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>上线运行、模型或策略变更、受监管或高影响应用，以及可能受数据/环境变化影响的场景。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>自动指标容易扩展但可能量错东西；模型裁判适合语义评价但有能力边界；人工可处理细微判断但昂贵。需要组合证据，而非寻找一个包办质量的总分。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> This includes defining metrics, establishing feedback loops, and implementing reporting systems to ensure agent performance aligns with expectations in operational environments (see Fig.1)
+
+**中文提炼**：定义指标、建立反馈、形成报告，让运行表现能够与预期对照。[P19-Q1] 原书明确区分本章与 Pattern 11：后者围绕目标与进度，本章更强调持续、往往来自外部的效果、效率和符合要求程度的测量。[P19-F1]
+
+**编辑判断：**监测回答「发生了什么」，评估回答「是否足够好」，治理还要回答「不足够好时谁采取什么动作」。有日志不是有验收；有告警也不等于已经完成纠正。
+
+### 第一层 · 结果正确，不等于字面相同
+
+本章先展示严格字符串比较的局限：两句表达相同事实的话，只因词序不同被判为不一致。随后列出字符串相似度、关键词、语义相似度、模型裁判，以及 RAG 的忠实性/相关性等候选度量。[P19-F2]
+
+**中文提炼**：选什么指标，取决于业务需要验证什么。数值计算或结构字段可以严格校验；开放文本需要评估含义，但「语义相似」同样不能自动证明事实准确。对 RAG，引用存在、回答忠于材料、材料本身可信，也是不同问题。最后这些区分属于编辑判断，而非原书给出的统一评分公式。
+
+### 第二层 · 检查轨迹，而不只检查最终答案
+
+> Analyzing trajectory and tool use includes evaluating the steps an agent employs to achieve a goal, such as tool selection, strategies, and task efficiency.
+
+**中文提炼**：轨迹评估关心工具选择、行动策略与任务效率。[P19-Q2] 最后一句话看起来正确，仍可能掩盖错误对象上的工具动作、无效重试或必要检查缺失。
+
+原书列出 exact match、in-order match、any-order match，以及动作 precision、recall、特定工具是否调用等方法。[P19-F3] **编辑判断：**评估可观察的调用与结果，不要求唯一的隐藏思考过程。依法或按业务规则必须按序完成的步骤，可以严格比对；允许多种有效方法的任务，应校验关键约束和结果，避免惩罚合理的新路径。
+
+多 Agent 还要看团队级表现：交接的数据对不对、是否遵守任务依赖、是否选中合适的专家、增加 Agent 后是否真的改善整体表现。[P19-F4] 这与 Pattern 15 连起来：消息成功送达只是技术事件，交接后的任务正确完成才是业务证据。
+
+### 第三层 · 谁来评价裁判
+
+| 方法 | 原书列出的优势 | 原书列出的限制 |
+|---|---|---|
+| 人工评估 | 捕捉细微行为与主观因素 | 难扩展、昂贵、耗时 |
+| LLM-as-a-Judge | 高效、可扩展，判断可保持一定一致性 | 可能遗漏中间步骤，受自身能力限制 |
+| 自动化指标 | 高效、可扩展、相对客观 | 难覆盖完整能力 |
+
+本章法律调查问题示例给出五项 rubric：清晰精确、中立性、相关性、完整性、受众适切性。[P19-F5] 它展示的是可解释的评分维度，不是法律意见质量已经被某企业认证。
+
+**编辑建议：**能确定性验证的字段先用规则；主观质量交给有明确 rubric 的模型或人工；关键样本让专家复核并校准裁判。版本比较应保持测试集、规则与裁判条件可追踪。不能只看平均分，还要区分高风险失败和普通表达问题。
+
+### 本章的管理增量 · 从 Agent 到 Contractor
+
+> This contract explicitly defines the required deliverables, their precise specifications, the acceptable data sources, the scope of work, and even the expected computational cost and completion time, making the outcome objectively verifiable.
+
+**中文提炼**：任务契约写清交付物、规格、可用数据、范围、预期计算成本和完成时间，使验收有据可依。[P19-Q3] 这是 **2025 原书已经提出的框架**，不是本稿自创，也不需要借 2026 标签包装。
+
+原书提出四个支柱：正式任务契约、协商与反馈的动态生命周期、以质量为中心的迭代执行、通过子契约分层拆解。[P19-F6] 例如来源不可访问时，应在执行前提出限制并协商替代，而不是到结束时用一份外观完整的报告掩盖缺口。
+
+**编辑判断：**这里的 contract 应理解为任务规格与验收约定，不自动构成法律合同、服务保证或执行确定性。它减少歧义，不会消除模型不确定性；若验收条件本身写错，也只能更稳定地完成错误目标。
+
+### 🆕 2026 视角补充 · AI 评价 AI 可能继承盲点
+
+> The student model will learn and potentially amplify any biases, flaws, or blind spots that exist in the instructor model.
+
+**中文提炼**：2026 原稿第 14 章在 RLAIF 的局限中指出，学生模型可能学习甚至放大教师的偏差、缺陷与盲点。[P19-26Q1] 这是训练反馈语境的警告，不是对所有运行时模型裁判的实测结论。
+
+**编辑判断：**它对本章的启发是：自动反馈可以扩大覆盖面，但不能免除校准与人工抽验。换一个模型担任裁判也不自动产生独立真值；需要看它是否真的识别目标任务中的错误。
+
+### Trade-off · 把评价成本花在决策上
+
+1. **覆盖面与成本：**全量记录基础运行指标，针对关键动作、版本变更与疑难样本增加深评；这是编辑建议，不是书中给定的固定抽检比例。
+2. **平均表现与失败尾部：**总体质量改善不能抵消少量高影响违规。上线门槛应单列不可接受失败类型。
+3. **观测与隐私：**轨迹有利排障，也可能包含敏感数据；需要适当脱敏、留存期限和访问权限。
+4. **评价与改进：**新增指标应能支持上线、回退、改路由或补数据等明确决策；否则只是仪表盘负担。
+
+### 何时使用 · Rule of Thumb（原文节选）
+
+> Use this pattern when deploying agents in live, production environments where real-time performance and reliability are critical.
+
+**中文提炼**：Agent 进入真实运行、且实时表现与可靠性重要时，需要系统化评估与监测。[P19-Q4] **管理者判据（编辑判断）：上线前先约定「什么算成功、什么绝不能发生、谁有权停下」，再讨论模型跑了多少分。**
+
+---
+
+## Pattern 20 · Prioritization（优先级管理）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>多个目标同时争夺有限时间与资源时，Agent 需要决定先做什么、暂缓什么，以及何时改变顺序。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>动态任务队列、紧急事件分诊、有前后依赖的项目任务，以及资源不足以同时满足所有目标的场景。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>固定规则可预测，但难处理新情况；模型能解读模糊意图，却不能替组织决定什么价值更重要。排序标准、变更权限与例外处置应由业务方明确。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> The prioritization pattern addresses this issue by enabling agents to assess and rank tasks, objectives, or actions based on their significance, urgency, dependencies, and established criteria.
+
+**中文提炼**：按照重要性、紧迫性、依赖关系和既定标准，对任务、目标或动作评估排序。[P20-Q1] 三个关键词不能混淆：**重要**是对目标的影响，**紧急**是时间敏感性，**依赖**是别的任务能否开始的前提。高优先级不等于任何时候都可以立即执行。
+
+### 四个环节 · 把「谁最急」变成显式规则
+
+原书的机制可以拆成四步。[P20-F1]
+
+1. **定义标准。** 不只看截止时间，还包括对主目标的影响、前置条件、资源可用性、成本收益和用户偏好。
+2. **评估任务。** 可以用简单规则，也可以用复杂评分或模型推理；模型只是实现手段之一。
+3. **选择/调度。** 根据评价决定下一项或任务序列，可能使用队列，也可能交给规划组件。
+4. **动态重排。** 新事件、临近的期限或变化的环境触发重新判断。
+
+**编辑判断：**建议先分「不允许做」「条件尚未满足」「可以做」三类，再对可执行任务排序。安全、权限与必需审批应作为约束，而不是可以被商业收益抵消的低权重评分项。原书没有给出这套三分法，它是基于本章与 Pattern 18 的组合建议。
+
+### 与相邻模式的分工
+
+| 模式 | 核心问题 | 与优先级的关系（编辑归纳） |
+|---|---|---|
+| Pattern 6 · Planning | 怎样完成目标 | 规划给出任务结构；优先级在多个可选动作中决定先后 |
+| Pattern 16 · Resource-Aware | 用什么资源、付出多少成本 | 优先级决定哪些任务优先获得资源；资源模式决定执行的投入档位 |
+| Pattern 11 · Goal Setting | 要达成什么、进度如何 | 目标是排序的参照，不能让短期紧急事件持续挤掉真正目标 |
+| Pattern 19 · Evaluation | 排得好不好、效果如何 | 需要验证是否缩短关键任务等待、减少重要目标失约，而非仅提高处理件数 |
+
+### 适用场景与示例边界
+
+原书举了客服紧急请求、云资源调度、项目管理、安全告警与个人助理等应用场景。[P20-F2] 这里提炼的是共同结构：**不同任务的重要性、紧迫性与资源条件不同，不能无差别地先进先出。** 这些是书内场景，不代表已验证的企业部署。
+
+书中的 Project Manager Agent 演示创建任务、设置优先级、分配人员；缺少信息时采用默认 P1 与 Worker A。[P20-F3] **编辑判断：它展示了优先级字段如何进入工作流，但不证明完成了全局最优排程、负载平衡或公平调度。** 当实际业务缺少严重性或责任人信息时，应显式标记不确定并补充确认，不能把演示中的默认值包装成治理规则。
+
+### 动态重排的另一面 · 防止永远在换方向
+
+> Finally, dynamic re-prioritization allows the agent to modify priorities as circumstances change, such as the emergence of a new critical event or an approaching deadline, ensuring agent adaptability and responsiveness.
+
+**中文提炼**：环境变化时可以重排，这是适应性的重要来源。[P20-Q2] 但本章并未证明重排越频繁越好。
+
+**Trade-off 与管理建议（编辑判断）：**
+
+- **响应性 vs 稳定性：**为紧急任务插队时，要考虑中断与恢复成本；明确哪些任务可抢占、哪些进入执行后不宜频繁打断。
+- **重要性 vs 饥饿风险：**长期低优先级任务可能一直被推迟。应监测等待时间、逾期风险和持续积压，必要时由人调整策略。
+- **局部收益 vs 总目标：**高分任务不一定是关键路径任务。依赖关系和资源占用必须进入判断，不能只把单项分数从大到小排序。
+- **自动化 vs 问责：**记录优先级变更原因与授权范围；改变战略目标或客户承诺应升级，不默许 Agent 用一次临时排序替组织作价值判断。
+
+### 何时使用 · Rule of Thumb（原文）
+
+> Use the Prioritization pattern when an Agentic system must autonomously manage multiple, often conflicting, tasks or goals under resource constraints to operate effectively in a dynamic environment.
+
+**中文提炼**：需要在资源约束下，自主管理多个、往往相互冲突的任务与目标时，使用优先级模式。[P20-Q3] **管理者判据（编辑判断）：让 Agent 自动执行已经明确的取舍，不让它悄悄发明组织的取舍标准。**
+
+*版本边界：本节没有强行加入 2026 增量；排序与动态重排均已在 2025 本章展开。以上管理建议是编辑判断，不是未经核验的 2026 行业现状。*
+
+---
+
+## Pattern 21 · Exploration and Discovery（探索与发现）
+
+<aside class="not-prose my-6 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
+<h3 class="text-sm font-bold text-accent-purple tracking-wide uppercase mb-3">📌 管理者速读</h3>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>解决什么问题：</strong>目标不是在已知选项中选最优，而是发现此前未考虑的信息、假设或方案，扩大可讨论的解决空间。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed mb-2"><strong>何时用：</strong>问题开放、知识快速变化、方案尚未定义清楚的研究与创新任务；不适合把要求稳定执行的标准流程无故改成探索。</p>
+<p class="text-[15px] text-accent-gray-800 leading-relaxed"><strong>架构取舍：</strong>新颖想法多，不代表证据强。应区分假设生成、候选排序、外部验证和正式采用，并对探索范围、预算、安全与人工裁决设置边界。</p>
+</aside>
+
+### 模式定义 · Pattern Overview
+
+> Exploration and discovery differ from reactive behaviors or optimization within a predefined solution space.
+
+**中文提炼**：探索不只是响应请求，也不只是在预先确定的解空间中优化。[P21-Q1] 它主动寻找新信息、尝试新路径，帮助识别此前连问题都没列出来的「未知的未知」。本章的价值是给开放研究提供结构，而不是承诺系统总能产生真实突破。
+
+### 原书的核心示例 · 从生成假设到多轮筛选
+
+2025 本章用 Google Co-Scientist 说明一种分工方式。[P21-F1] 以下是**书内架构描述**，没有追加外部案例或核验当前产品部署。
+
+| 角色 | 原书描述的职责 | 管理者应辨认的产物（编辑归纳） |
+|---|---|---|
+| Generation | 通过文献与模拟讨论生成假设 | 有来源与前提的候选想法 |
+| Reflection | 评议正确性、新颖性与质量 | 缺陷、反例与待补证据 |
+| Ranking | 通过 Elo 式比较对假设排序 | 候选之间的相对优先顺序 |
+| Evolution | 简化、综合与改进高排名假设 | 修改后的候选及修改理由 |
+| Proximity | 聚类相近想法、构造关联图 | 重复方向与可能尚未覆盖的区域 |
+| Meta-review | 综合评审、提炼共性并反馈 | 下一轮搜索应调整的策略 |
+
+这里值得借鉴的是**生成、评议、排序、改进之间有清晰分工**，不意味着任何研究项目都应复制六个 Agent。原书另以 Agent Laboratory 展示文献回顾、实验、报告撰写与知识共享的流程。[P21-F2] 这两组示例都强调辅助人类研究，不应被改写成「企业已经实现无人研发」。
+
+### 最重要的分界 · 排名高，不等于已验证
+
+本章在候选生成与内部评价之后，另设 Validation and Results，讨论自动评估、专家评审及实验验证。[P21-F3] **中文提炼**：内部排名只是筛选机制，真正的验证还需要另一类证据。
+
+**编辑判断：**Elo 高说明在指定比较规则下胜过其他候选，不直接说明事实成立、科学新颖性得到确认或具备商业可行性。候选表应分开记录「为什么值得继续研究」和「已经有哪些外部支持」。不能把多 Agent 互相认可变成对客户承诺。
+
+本稿不复述原书的具体生物医学效果、benchmark 数字、速度优势或专家胜率：虽然原书有这些叙述，本轮没有逐项回到对应研究和实验材料验证，不应拿来作效果背书。
+
+### 原书自己指出的限制 · 负结果缺失尤其关键
+
+> It also has limited access to negative experimental results, which are rarely published but crucial for experienced scientists.
+
+**中文提炼**：系统难以获得许多不被发表的阴性或失败实验结果，但这些对资深研究者很重要。[P21-Q2] 原书还指出公开文献范围、付费墙和基础模型幻觉等限制。[P21-F4]
+
+**管理含义（编辑判断）：**一个看似新颖的方案，可能只是系统没看到别人试过且失败的记录。组织内部的失败实验、约束条件和专家反例，可能比再增加一轮公开网页检索更有价值。使用这些材料必须先确认授权与保密边界，不能默认开放给任何研究 Agent。
+
+### Trade-off · 以可验证学习，而非漂亮报告验收
+
+- **广度 vs 深度：**搜得更广能增加候选，但也分散预算；建议先生成候选池，再按价值、可验证性和风险选择少数方向深入。
+- **新颖性 vs 正确性：**不寻常的答案可能只是错误。必须给出可检验的假设、验证方法以及什么证据会推翻它。
+- **探索 vs 交付：**开放问题可能没有终点。应约定阶段性产物、资源上限和停止条件；诚实地报告「现有证据不足以支持」也是合法结果。
+- **自动化 vs 安全：**文献分析与执行现实实验、访问敏感系统的风险不同。后者必须经过明确授权和适当专业审核，不让研究自主性自动扩张为操作权限。
+
+以上均是管理建议，而非原书已经证明有效的标准流程。可把本章与 Pattern 16 的预算、Pattern 18 的边界、Pattern 19 的验证以及 Pattern 20 的候选优先级组合使用，不是只增加一个名为「研究员」的角色。
+
+### 何时使用 · Rule of Thumb（原文节选）
+
+> Use the Exploration and Discovery pattern when operating in open-ended, complex, or rapidly evolving domains where the solution space is not fully defined.
+
+**中文提炼**：解决空间尚未完全定义、问题开放复杂或变化很快时，采用探索与发现。[P21-Q3] **管理者判据（编辑判断）：为减少重要的不确定性投入预算，不为制造「发现很多」的观感投入预算。**
+
+*版本边界：不为本节强凑 2026 新架构。2026 原稿的 Deep Research 示例已在 Pattern 17 中按原稿定位补充；检索并综合报告，与产生并验证新知识不能等同。*
+
+---
+
+## 全书决策收束 · 21 个模式不是 21 项采购清单
+
+**以下为编辑归纳，不是作者原文或经过验证的成熟度模型。** 三组模式可作为架构评审的不同问题清单，不要求每个系统集齐全部模式。
+
+| 先问什么 | 可关联的模式 | 不宜直接跳到的结论 |
+|---|---|---|
+| 流程是否已知、哪里需要分支或反馈？ | 1 提示链、2 路由、3 并行、4 反思、5 工具、6 规划、7 多 Agent | 不因任务复杂就默认拆成多个 Agent |
+| 目标、知识、状态与失败如何管理？ | 8 记忆、9 学习适应、10 MCP、11 目标监测、12 异常恢复、13 人在回路、14 RAG | 能接工具和资料，不代表已具备正确权限与可验证知识 |
+| 跨 Agent 如何协同，投入多少推理资源？ | 15 A2A、16 资源优化、17 推理 | 有协议不等于业务语义一致；算得更多不等于更可靠 |
+| 哪些动作不允许，什么结果可验收？ | 18 护栏、19 评估监测 | 有拒绝提示或裁判分数，不等于风险得到治理 |
+| 多目标冲突时先做什么，是否值得探索？ | 20 优先级、21 探索发现 | 排名不是价值共识，候选假设不是验证后的事实 |
+
+本批最值得带入评审会的五个问题：
+
+1. **交付契约：**交付物、可用数据、质量门槛、预算与截止条件是否明确？来源缺失时是否先协商？
+2. **边界与问责：**谁可以提出动作，谁核验权限，谁接受最终结果，谁有权暂停？
+3. **可验证过程：**能否追溯工具调用、关键交接、证据与失败，而不是只看到一段完整回答？
+4. **增量收益：**增加模型、分支、评审轮次或 Agent 后，在相同验收标准下是否更好？
+5. **停止条件：**预算耗尽、证据不足、护栏触发或目标改变时，系统是暂停并解释，还是继续生成直到看起来成功？
+
+**最终判断（编辑建议）：Agent 架构的成熟度，不在于采用了多少模式，而在于能否明确说明何时值得自主、何时必须受约束，以及凭什么相信这一次任务真正完成。**

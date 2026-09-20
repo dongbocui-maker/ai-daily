@@ -1,0 +1,197 @@
+# 批次三 · 证据与核验记录
+
+## 范围与方法
+
+- 主干来源：`/root/.openclaw/workspace/obsidian-export/books/agentic-design-patterns-2025.txt`；逐章读取辅助分章 `chapters/ch15.txt`–`chapters/ch21.txt`。
+- 增量来源：同目录 `ai-design-2026.txt` 原稿；仅使用确有相关性的 Agent / Alignment 等段落，不引入经典 ML 教材主体。
+- 本次不做外部检索，不证明产品现状、标准采纳率或真实企业部署。英文短引文只证明「原稿如此写」，不自动证明其判断准确。
+- `Q` 为逐字英文短引文，`F` 为正文转述依据，`U` 为限制或未确认事项。中文管理判断与建议均与作者引文分开。
+- 所有 Q 引文已回到全文做完整字符串匹配；仅折叠 PDF 文本空白，不改词、大小写或标点，不用前缀命中代替全文命中。最终自动核验区列出每条完整引文、全文行号、分章行号及结果。
+- 行号统一使用文件的 LF 换行计数（与 `nl -ba` 相同）；PDF 页号不与全文行号混用。PDF 换页符本身不增加行号。
+- Context Pack 实查共有六个 Markdown 文件（含 INDEX），均已读取；未虚构第七个文件。已查阅站点 `docs/learn-template.md` 与已有批次一的 Pattern 1–7 结构，沿用标题、速读 aside、引文—中文提炼结构，不沿用未经验证的「2026 现状」断言。
+
+## Pattern 15 · 转述与限制
+
+- **P15-F1**：`chapters/ch15.txt` 的 Core Concepts of A2A / Core Actors / Agent Card / Agent discovery / Communications and Tasks / Interaction Mechanisms / Security。支持参与者、能力声明、发现方式、任务与产物及交互机制的转述。全文精确定位在最终「事实锚点」表。
+- **P15-F2**：同章 Practical Applications & Use Cases，三类场景为 Multi-Framework Collaboration、Automated Workflow Orchestration、Dynamic Information Retrieval；均按书内应用示例处理。
+- **P15-U1**：同章正文例子使用 `sendTask` / `sendTaskSubscribe`，Key Takeaways 使用 `tasks/send` / `tasks/sendSubscribe`；正文 contextId 与示例 sessionId 也有差异。本次不裁定哪个是现行标准，不复制为实现指导。Agent Card 路径、认证字段、SSE/Webhook 等均按该稿版本描述，不声称现行协议必选能力。
+- **未确认**：2026 年 A2A 具体版本、行业采用情况、厂商支持状态、安全机制是否被某实现默认启用，均未外查，因此未作现状结论。2026 原稿未为本章硬加新观点。
+- **编辑判断**：通信成功不等于业务成功；能力声明不等于授权；任务重复、取消、副作用、验收与问责均为本稿提出的管理评审要求，不冒充原书保证。
+
+## Pattern 16 · 转述与限制
+
+- **P16-F1**：第 16 章开篇定义与金融分析师概念示例；原书对「更强、更准确」的模型描述不转成实测能力结论。
+- **P16-F2**：Hands-On Code with OpenAI 前的解释段明确分 simple / reasoning / internet_search；只转述决策分流，不复制代码或把示例当已部署系统。
+- **P16-F3**：The Critique Agent evaluates responses... 及后文 While not directly managing the budget...，支持质量反馈间接改进路由而非直接预算控制的区别。
+- **P16-F4**：Beyond Dynamic Model Switching: A Spectrum of Agent Resource Optimizations，支持正文优化对象清单。
+- **未确认**：现行模型名称、费用、供应商功能、路由节省幅度与 fallback 等价性均未核实，不作事实断言。未发现需要为本节添加的实质 2026 增量，故不硬凑。
+- **编辑判断**：成功任务总成本、降级透明、暂停/转人工、复杂度与知识缺口分别处理，均为管理分析。2025 主干已有模型路由的事实也提醒主 Agent：批次一把模型路由描述成书外的 2026 新变体应另行复核，本次不改生产正文。
+
+## Pattern 17 · 转述与限制
+
+- **P17-F1**：Reasoning techniques 下 CoT、ToT、Self-correction、Program-Aided Language Models、ReAct、CoD、GoD；后文 Scaling Inference Law 区分训练规模与推理计算投入。原书 PAL 段使用 PALMs 字样，本稿采用描述性 PAL 简称，不暗示具体 PaLM 产品。
+- **P17-F2**：Reinforcement Learning with Verifiable Rewards (RLVR) 与 MASS (optional advanced topic) 两节。只区分训练/设计/运行时机制，不重述 MASS 性能结论或 CoD 提出机构等未独立核实信息。
+- **P17-26Q1**：2026 原稿 Appendix L: Google Deep Research，Introduction 末尾研究计划段。只证明原稿展示可审阅计划，不证明当前产品功能或行业采纳。
+- **未确认**：推理计算的收益曲线、各方法通用优劣、当前推理模型实现与 Deep Research 产品能力未外查。原书把多模型共识列为某类支持信息，本文明确不把共识当事实证据；不沿用「更多计算直接保证更可靠」或「可完全无监督信任」的强表述。
+- **编辑判断**：可审计中间产物不等于暴露隐藏思维链；按错误类型选方法、按可验证收益增加预算；2026 示例的治理启发与产品叙述分开。
+
+## Pattern 18 · 转述与限制
+
+- **P18-F1**：开篇六类护栏及 Hands-On Code CrewAI Example 前置机制说明：输入清理/校验、日志、错误处理、人工监督、角色配置。
+- **P18-F2**：ADK 代码之后的 `This code defines an agent and a validation callback for tool execution.` 段，比较 user_id_param 与 session_user_id，失败阻止调用。本稿不运行代码、不保证当前 SDK 兼容性。
+- **P18-F3**：Engineering Reliable Agents 节，checkpoint / rollback、模块化、结构化日志、最小权限。外部副作用不一定可撤回、日志脱敏是编辑补充，不是原书已经实现的能力。
+- **P18-U1**：CrewAI Safety Policy Directives 第4项与 Evaluation Process 第3项；ADK 示例 Brand Disparagement or Competitive Discussion 与 Decision Protocol 第3项。原书确实把品牌政策与安全政策合写，并对模糊请求放行；本文明确不直接推荐复制该样例。
+- **P18-26Q1**：2026 第13章 What is AI Alignment?，三项原则中 Honest 的完整一句。原稿提供价值/训练视角，不证明运行时系统已合规。
+- **未确认**：护栏防护有效性、特定模型审核能力、合规认证、框架版本与实际部署均未核实。任何「保证安全/合规」的强结论均不作为本文结论。
+- **编辑判断**：误拒/漏检双指标、风险分级、外部输入信任边界、规则失败处置、日志隐私与明确审批责任。
+
+## Pattern 19 · 转述与限制
+
+- **P19-F1**：开篇与 Practical Applications & Use Cases，明确区别 Chapter 11 目标进度与本章外部持续评测；支持上线跟踪、A/B、审计、漂移和异常等场景。
+- **P19-F2**：Agent Response Assessment，exact match 示例及其局限、语义/RAG 等候选指标；不能将语义相似度当事实真实性保证。
+- **P19-F3**：Agents trajectories，列出 exact / in-order / any-order / precision / recall / single-tool use。本章不同轨迹适用不同标准；本稿不主张所有任务强制复现唯一轨迹。
+- **P19-F4**：Multi-agents 段的四类问题：协作交接、计划依赖、选择合适 Agent、扩展后的净收益。均为原书说明性场景，不是企业案例。
+- **P19-F5**：Evaluation Method 表以及 LEGAL_SURVEY_RUBRIC 中五项维度；本稿不复制法律问卷或代码、不声称裁判经过法律认证。
+- **P19-F6**：From Agents to Advanced Contractors 四个支柱；原书明确是提出的框架。没有验证真实系统已经达到确定性、可靠性或自治项目交付能力。
+- **P19-26Q1**：2026 第14章 Weaknesses of RLAIF / Inherited Bias。原始适用范围是训练中的教师/学生；对运行时裁判的启发清晰标为编辑类比。
+- **未确认**：各模型裁判的精度、偏差大小、合规证书、监控产品现行功能、contractor 框架实测成效、2026 行业采纳未核实。
+- **编辑判断**：指标—决策—处置的分工；规则/模型/人工混合评价；尾部风险与版本可追踪；任务契约不是法律合同或确定性保证。
+
+## Pattern 20 · 转述与限制
+
+- **P20-F1**：Prioritization Pattern Overview 中 fundamental aspects：criteria definition / task evaluation / scheduling or selection / dynamic re-prioritization；随后定义目标、子任务、动作三个层级。
+- **P20-F2**：Practical Applications & Use Cases 七类场景；本稿只作原书情境分类，不暗示实际企业部署。原书客户价值优先只是其举例，未升格为普适公平或安全政策。
+- **P20-F3**：Hands-On 示例后的解释段：创建任务、设置优先级、分配人员；明确缺省 P1 与 Worker A。未验证该实现具有全局排程最优、抢占、持续动态重排或持久化保障。
+- **未确认**：本节无实质新增 2026 引文；模型调度效果、生产系统采纳、默认优先级正确性未核验。
+- **编辑判断**：先硬约束再排序、等待时间与饥饿监测、抢占成本、战略目标变更权限，以及与 P6/P11/P16/P19 的分工表。
+
+## Pattern 21 · 转述与限制
+
+- **P21-F1**：Google Co-Scientist / System Architecture and Methodology，六种角色、supervisor 与 generate/debate/evolve 循环。只作为 2025 书内架构示例；未外查产品现状与部署。
+- **P21-F2**：Agent Laboratory 的四阶段（Literature Review / Experimentation / Report Writing / Knowledge Sharing），以及 augment human research 与 human oversight 定位。不把框架设计意图描述为已验证的企业成效。
+- **P21-F3**：Validation and Results 及下属 Automated and Expert Evaluation / End-to-End Experimental Validation，证明原书区分内部排序、专家评价与实验验证。具体医学结论、性能数字、专家评审得分与安全测试数量均未纳入正文，不作效果背书。
+- **P21-F4**：Augmentation, and Limitations，公开文献/付费墙、阴性结果缺失、基础模型幻觉、scientist-in-the-loop。只对照原书限制，不新增外部证据。
+- **未确认**：原书研究结果的独立重复、医学适用性、当前开放范围/产品版本、真实企业采用、2026新增架构均未核验。
+- **编辑判断**：排名不是真值、失败知识的价值、阶段性验收与停止条件、安全授权；全书决策收束为模式组合建议，不是作者的成熟度模型。
+
+## 完整引文与全文核验（最终实查）
+
+方法：从草稿逐个提取 `>` 英文引文，以紧随其后的 `Pxx-Qx` / `Pxx-26Qx` 作为编号。仅将连续空白（含换行、PDF 换页符）折叠为一个空格；**不改词、不改大小写、不改标点、不使用前缀代替完整引文**。每个引文完整字符串在相应全文检索，2025 引文再在对应分章复核。行号只计 `\n`（LF），与 `nl -ba` 一致，不用 `splitlines()`。每次命中均将原始字符区间反向提取，再做完整字符串相等校验。
+
+结果：**25 条引文全部完整匹配 PASS**；其中 2025 年 22 条（全文＋分章双重匹配），2026 年 3 条（2026 全文匹配）；0 条未匹配。
+
+| 编号 | 年份 | 全文 LF 行号（起–止） | 分章 LF 行号 | 完整匹配 |
+|---|---|---|---|---|
+| P15-Q1 | 2025 | 8867–8868 | ch15: 15–16 | PASS（完整字符串） |
+| P15-Q2 | 2025 | 9130–9132 | ch15: 278–280 | PASS（完整字符串） |
+| P15-Q3 | 2025 | 9357–9359 | ch15: 505–507 | PASS（完整字符串） |
+| P16-Q1 | 2025 | 9448–9449 | ch16: 3–4 | PASS（完整字符串） |
+| P16-Q2 | 2025 | 10000–10003 | ch16: 555–558 | PASS（完整字符串） |
+| P16-Q3 | 2025 | 10029–10034 | ch16: 584–589 | PASS（完整字符串） |
+| P17-Q1 | 2025 | 10103–10104 | ch17: 10–11 | PASS（完整字符串） |
+| P17-Q2 | 2025 | 10558–10559 | ch17: 465–466 | PASS（完整字符串） |
+| P17-26Q1 | 2026 | 13745–13745 | — | PASS（完整字符串） |
+| P17-Q3 | 2025 | 10966–10968 | ch17: 873–875 | PASS（完整字符串） |
+| P18-Q1 | 2025 | 11080–11082 | ch18: 4–6 | PASS（完整字符串） |
+| P18-Q2 | 2025 | 11864–11865 | ch18: 788–789 | PASS（完整字符串） |
+| P18-26Q1 | 2026 | 6414–6415 | — | PASS（完整字符串） |
+| P18-Q3 | 2025 | 11897–11898 | ch18: 821–822 | PASS（完整字符串） |
+| P19-Q1 | 2025 | 11963–11965 | ch19: 7–9 | PASS（完整字符串） |
+| P19-Q2 | 2025 | 12399–12401 | ch19: 443–445 | PASS（完整字符串） |
+| P19-Q3 | 2025 | 12489–12492 | ch19: 533–536 | PASS（完整字符串） |
+| P19-26Q1 | 2026 | 7008–7009 | — | PASS（完整字符串） |
+| P19-Q4 | 2025 | 12596–12597 | ch19: 640–641 | PASS（完整字符串） |
+| P20-Q1 | 2025 | 12682–12684 | ch20: 5–7 | PASS（完整字符串） |
+| P20-Q2 | 2025 | 12706–12709 | ch20: 29–32 | PASS（完整字符串） |
+| P20-Q3 | 2025 | 13044–13046 | ch20: 367–369 | PASS（完整字符串） |
+| P21-Q1 | 2025 | 13105–13106 | ch21: 4–5 | PASS（完整字符串） |
+| P21-Q2 | 2025 | 13243–13245 | ch21: 142–144 | PASS（完整字符串） |
+| P21-Q3 | 2025 | 13579–13581 | ch21: 478–480 | PASS（完整字符串） |
+
+### 引文全文（便于不依赖草稿复查）
+
+- **P15-Q1**：`The Agent2Agent (A2A) protocol is an open standard designed to enable communication and collaboration between different AI agent frameworks.`
+- **P15-Q2**：`While MCP focuses on structuring context for agents and their interaction with external data and tools, A2A facilitates coordination and communication among agents, enabling task delegation and collaboration.`
+- **P15-Q3**：`Use this pattern when you need to orchestrate collaboration between two or more AI agents, especially if they are built using different frameworks (e.g., Google ADK, LangGraph, CrewAI).`
+- **P16-Q1**：`Resource-Aware Optimization enables intelligent agents to dynamically monitor and manage computational, temporal, and financial resources during operation.`
+- **P16-Q2**：`Graceful Degradation and Fallback Mechanisms ensure that intelligent agent systems can continue to function, albeit perhaps at a reduced capacity, even when resource constraints are severe, gracefully degrading performance and falling back to alternative strategies to maintain operation and provide essential functionality.`
+- **P16-Q3**：`Use this pattern when operating under strict financial budgets for API calls or computational power, building latency-sensitive applications where quick response times are critical, deploying agents on resource-constrained hardware such as edge devices with limited battery life, programmatically balancing the trade-off between response quality and operational cost, and managing complex, multi-step workflows where different tasks have varying resource requirements.`
+- **P17-Q1**：`A core principle among these advanced methods is the allocation of increased computational resources during inference.`
+- **P17-Q2**：`ReAct operates in an interleaved manner: the agent executes an action, observes the outcome, and incorporates this observation into subsequent reasoning.`
+- **P17-26Q1**：`This plan, which you can review and modify or accept as is, is shown in Fig. 1.`
+- **P17-Q3**：`Use these reasoning techniques when a problem is too complex for a single-pass answer and requires decomposition, multi-step logic, interaction with external data sources or tools, or strategic planning and adaptation.`
+- **P18-Q1**：`They serve as a protective layer, guiding the agent's behavior and output to prevent harmful, biased, irrelevant, or otherwise undesirable responses.`
+- **P18-Q2**：`An agent should be granted the absolute minimum set of permissions required to perform its task.`
+- **P18-26Q1**：`It should be honest, giving real information and not just making stuff up.`
+- **P18-Q3**：`Guardrails should be implemented in any application where an AI agent's output can impact users, systems, or business reputation.`
+- **P19-Q1**：`This includes defining metrics, establishing feedback loops, and implementing reporting systems to ensure agent performance aligns with expectations in operational environments (see Fig.1)`
+- **P19-Q2**：`Analyzing trajectory and tool use includes evaluating the steps an agent employs to achieve a goal, such as tool selection, strategies, and task efficiency.`
+- **P19-Q3**：`This contract explicitly defines the required deliverables, their precise specifications, the acceptable data sources, the scope of work, and even the expected computational cost and completion time, making the outcome objectively verifiable.`
+- **P19-26Q1**：`The student model will learn and potentially amplify any biases, flaws, or blind spots that exist in the instructor model.`
+- **P19-Q4**：`Use this pattern when deploying agents in live, production environments where real-time performance and reliability are critical.`
+- **P20-Q1**：`The prioritization pattern addresses this issue by enabling agents to assess and rank tasks, objectives, or actions based on their significance, urgency, dependencies, and established criteria.`
+- **P20-Q2**：`Finally, dynamic re-prioritization allows the agent to modify priorities as circumstances change, such as the emergence of a new critical event or an approaching deadline, ensuring agent adaptability and responsiveness.`
+- **P20-Q3**：`Use the Prioritization pattern when an Agentic system must autonomously manage multiple, often conflicting, tasks or goals under resource constraints to operate effectively in a dynamic environment.`
+- **P21-Q1**：`Exploration and discovery differ from reactive behaviors or optimization within a predefined solution space.`
+- **P21-Q2**：`It also has limited access to negative experimental results, which are rarely published but crucial for experienced scientists.`
+- **P21-Q3**：`Use the Exploration and Discovery pattern when operating in open-ended, complex, or rapidly evolving domains where the solution space is not fully defined.`
+
+### 分章与 2025 全文的一致性
+
+每份 ch15–ch21 的**完整原始字符串**均在 2025 全文中逐字匹配（本项甚至不折叠空白）。因此下表范围可按 `全文行号 = 分章行号 + 起始行号 − 1` 复核。文件尾部空行不计入叙述范围。
+
+| 分章 | 全文起始 LF 行 | 完整分章匹配 |
+|---|---:|---|
+| ch15.txt | 8853 | PASS（26,113 原始字符） |
+| ch16.txt | 9446 | PASS（28,944 原始字符） |
+| ch17.txt | 10094 | PASS（49,467 原始字符） |
+| ch18.txt | 11077 | PASS（41,838 原始字符） |
+| ch19.txt | 11957 | PASS（37,518 原始字符） |
+| ch20.txt | 12678 | PASS（18,933 原始字符） |
+| ch21.txt | 13102 | PASS（28,830 原始字符） |
+
+### 转述证据锚点（与前文编号对应）
+
+以下范围是支持转述的原文段落，不是引号内引用；每个范围的**完整字符区间**均已与全文对应行区间相等校验。定位正确不等于书中主张已获独立实证，限制仍按前文执行。
+
+| 证据编号 | 分章 LF 行段 | 2025 全文 LF 行段 | 区间核验 |
+|---|---|---|---|
+| P15-F1 | ch15: 31–286 | 8883–9138 | PASS（完整区间） |
+| P15-F2 | ch15: 295–322 | 9147–9174 | PASS（完整区间） |
+| P15-U1 | ch15: 157–163；199–204；221–234；528–538 | 9009–9015；9051–9056；9073–9086；9380–9390 | PASS（完整区间） |
+| P16-F1 | ch16: 1–62 | 9446–9507 | PASS（完整区间） |
+| P16-F2 | ch16: 219–245 | 9664–9690 | PASS（完整区间） |
+| P16-F3 | ch16: 166–200 | 9611–9645 | PASS（完整区间） |
+| P16-F4 | ch16: 506–563 | 9951–10008 | PASS（完整区间） |
+| P17-F1 | ch17: 58–78；211–245；373–422；445–510；603–685 | 10151–10171；10304–10338；10466–10515；10538–10603；10696–10778 | PASS（完整区间） |
+| P17-F2 | ch17: 424–443；512–603 | 10517–10536；10605–10696 | PASS（完整区间） |
+| P18-F1 | ch18: 1–89 | 11077–11165 | PASS（完整区间） |
+| P18-F2 | ch18: 577–638 | 11653–11714 | PASS（完整区间） |
+| P18-F3 | ch18: 754–795 | 11830–11871 | PASS（完整区间） |
+| P18-U1 | ch18: 181–210；709–734 | 11257–11286；11785–11810 | PASS（完整区间） |
+| P19-F1 | ch19: 1–45 | 11957–12001 | PASS（完整区间） |
+| P19-F2 | ch19: 54–109 | 12010–12065 | PASS（完整区间） |
+| P19-F3 | ch19: 428–457 | 12384–12413 | PASS（完整区间） |
+| P19-F4 | ch19: 481–509 | 12437–12465 | PASS（完整区间） |
+| P19-F5 | ch19: 203–257；410–426 | 12159–12213；12366–12382 | PASS（完整区间） |
+| P19-F6 | ch19: 510–605 | 12466–12561 | PASS（完整区间） |
+| P20-F1 | ch20: 1–44 | 12678–12721 | PASS（完整区间） |
+| P20-F2 | ch20: 45–96 | 12722–12773 | PASS（完整区间） |
+| P20-F3 | ch20: 247–261；310–343 | 12924–12938；12987–13020 | PASS（完整区间） |
+| P21-F1 | ch21: 39–95 | 13140–13196 | PASS（完整区间） |
+| P21-F2 | ch21: 158–201 | 13259–13302 | PASS（完整区间） |
+| P21-F3 | ch21: 97–135 | 13198–13236 | PASS（完整区间） |
+| P21-F4 | ch21: 136–155 | 13237–13256 | PASS（完整区间） |
+
+### 来源文件指纹
+
+- `/root/.openclaw/workspace/obsidian-export/books/agentic-design-patterns-2025.txt`：SHA-256 `d7cc188e780447bb177b5a475dcb7496a8079c58049beca9e0d330553d9783c1`
+- `/root/.openclaw/workspace/obsidian-export/books/ai-design-2026.txt`：SHA-256 `82f7da59da2a02efa45e8e8d40919ca955a2afe7b4b41eb058ad94305816f22f`
+
+### 最终未确认项 / 合并注意
+
+- 这是本地文本证据核验，不是对原书实验结果、参考链接、API 当前有效性、供应商采用率或法律合规性的外部验证。相关未知均保留，不纳入事实结论。
+- 不混用 PDF 页码与提取文本行号；本稿提供的是 LF 行号。没有重做 PDF 页码映射。
+- 2026 引文是书内补充；P19 从 RLAIF 延伸至运行时评价已标明编辑类比。P15、P20、P21 没有强凑增量。
+- 摘录按短引文选择，中文分析与编辑判断分离。HTML aside 沿用已有正文样式，但没有改生产正文、页面或入口，也没有运行站点构建；需 main 合并后再做渲染检查与 MK46 独立 QC。
+- 本次仅更新两份工作草稿，另按任务要求追加 isolated 行动日志；没有 commit/push、发送外部消息、调用其他 Agent 或修改任何来源文件。

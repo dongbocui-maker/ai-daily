@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-21 07:05:02 +08",
+  "generated_at": "2026-09-21 21:05:01 +08",
   "today": "2026-09-21",
   "grand": {
-    "tok": 2672596192,
-    "cost": 4766.39,
-    "calls": 4863,
-    "save": 11318.81,
-    "today_tok": 6525681,
-    "today_cost": 6.0,
-    "today_save": 27.88,
-    "last7d_tok": 80328347,
-    "last7d_cost": 167.36
+    "tok": 2673244923,
+    "cost": 4769.34,
+    "calls": 4867,
+    "save": 11323.04,
+    "today_tok": 7174412,
+    "today_cost": 8.95,
+    "today_save": 32.12,
+    "last7d_tok": 80977078,
+    "last7d_cost": 170.31
   },
   "trend": [
     {
@@ -148,9 +148,16 @@
     },
     {
       "date": "2026-09-21",
-      "tok": 6525681,
-      "cost": 6.0,
+      "tok": 7174412,
+      "cost": 8.95,
       "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 648731,
+          "cost": 2.95
+        },
         "mk2": {
           "name": "MK2",
           "mark": "MARK II",
@@ -169,20 +176,20 @@
       "emoji": "🦐",
       "ac": "#e8b923",
       "lit": "#7fdfff",
-      "status": "IDLE",
-      "idle_min": 428,
-      "last_ts": "2026-09-20T15:57:18.144Z",
-      "total_tok": 1591916985,
-      "today_tok": 0,
-      "today_cost": 0.0,
-      "last7d_tok": 44503523,
-      "last7d_cost": 121.8,
-      "cost": 3371.42,
-      "save": 7127.57,
-      "calls": 3339,
+      "status": "ONLINE",
+      "idle_min": 4,
+      "last_ts": "2026-09-21T13:00:45.465Z",
+      "total_tok": 1592565716,
+      "today_tok": 648731,
+      "today_cost": 2.95,
+      "last7d_tok": 45152254,
+      "last7d_cost": 124.75,
+      "cost": 3374.37,
+      "save": 7131.8,
+      "calls": 3343,
       "active_model": "aigw-claude-48-main/claude-fable-5",
       "cache_eff": 80.5,
-      "today_cache_eff": 0,
+      "today_cache_eff": 73.2,
       "models": [
         {
           "name": "azure-claude/claude-opus-4-7",
@@ -192,9 +199,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
-          "tok": 477220166,
-          "cost": 1631.26,
-          "calls": 889
+          "tok": 477868897,
+          "cost": 1634.21,
+          "calls": 893
         },
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -253,8 +260,8 @@
       "emoji": "🌶️",
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
-      "status": "IDLE",
-      "idle_min": 605,
+      "status": "OFFLINE",
+      "idle_min": 1445,
       "last_ts": "2026-09-20T13:00:46.113Z",
       "total_tok": 548981696,
       "today_tok": 0,
@@ -337,8 +344,8 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "ONLINE",
-      "idle_min": 3,
+      "status": "IDLE",
+      "idle_min": 843,
       "last_ts": "2026-09-20T23:02:39.795Z",
       "total_tok": 486303964,
       "today_tok": 6525681,
@@ -416,7 +423,7 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "OFFLINE",
-      "idle_min": 11255,
+      "idle_min": 12095,
       "last_ts": "2026-09-13T03:30:23.961Z",
       "total_tok": 10811021,
       "today_tok": 0,
@@ -446,7 +453,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "OFFLINE",
-      "idle_min": 16858,
+      "idle_min": 17698,
       "last_ts": "2026-09-09T06:06:52.231Z",
       "total_tok": 34582526,
       "today_tok": 0,
@@ -1298,10 +1305,10 @@
         "files": 44
       },
       "t1": {
-        "kb": 1081,
-        "files": 242
+        "kb": 1083,
+        "files": 243
       },
-      "daily_files": 101
+      "daily_files": 102
     },
     "aima": {
       "t3": {
@@ -1358,37 +1365,9 @@
       "human": "每天 07:10",
       "human_en": "Daily 07:10",
       "kind": "cron",
-      "next_run_ms": 1789945800000,
-      "last_run_ms": 1789859400006,
+      "next_run_ms": 1790032200000,
+      "last_run_ms": 1789945800007,
       "last_status": "ok",
-      "core": false
-    },
-    {
-      "id": "842964de-fb2b-406d-ab79-7bd3afae20fe",
-      "name": "disk-watch-95",
-      "agent": "main",
-      "enabled": true,
-      "expr": "0 9 * * 1",
-      "human": "每周一 09:00",
-      "human_en": "Weekly Mon 09:00",
-      "kind": "cron",
-      "next_run_ms": 1789952400000,
-      "last_run_ms": 1789347600006,
-      "last_status": "ok",
-      "core": false
-    },
-    {
-      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
-      "name": "agent-model-monitor-daily",
-      "agent": "main",
-      "enabled": true,
-      "expr": "0 21 * * *",
-      "human": "每天 21:00",
-      "human_en": "Daily 21:00",
-      "kind": "cron",
-      "next_run_ms": 1789995600000,
-      "last_run_ms": 1789909246396,
-      "last_status": "error",
       "core": false
     },
     {
@@ -1403,6 +1382,20 @@
       "next_run_ms": 1790040600000,
       "last_run_ms": null,
       "last_status": null,
+      "core": false
+    },
+    {
+      "id": "d75de426-5150-40e1-8e3f-1168efba6d5c",
+      "name": "agent-model-monitor-daily",
+      "agent": "main",
+      "enabled": true,
+      "expr": "0 21 * * *",
+      "human": "每天 21:00",
+      "human_en": "Daily 21:00",
+      "kind": "cron",
+      "next_run_ms": 1790082000000,
+      "last_run_ms": 1789995600010,
+      "last_status": "ok",
       "core": false
     },
     {
@@ -1430,6 +1423,20 @@
       "kind": "cron",
       "next_run_ms": 1790474400000,
       "last_run_ms": 1789869600008,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "842964de-fb2b-406d-ab79-7bd3afae20fe",
+      "name": "disk-watch-95",
+      "agent": "main",
+      "enabled": true,
+      "expr": "0 9 * * 1",
+      "human": "每周一 09:00",
+      "human_en": "Weekly Mon 09:00",
+      "kind": "cron",
+      "next_run_ms": 1790557200000,
+      "last_run_ms": 1789952400005,
       "last_status": "ok",
       "core": false
     },
@@ -1463,9 +1470,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5",
-      "tok": 507118058,
-      "cost": 1710.27,
-      "calls": 922
+      "tok": 507766789,
+      "cost": 1713.22,
+      "calls": 926
     },
     {
       "name": "aigw-claude-48-main/claude-opus-5",

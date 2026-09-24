@@ -2,6 +2,19 @@
   "$schema_version": "1.0",
   "items": [
     {
+      "slug": "scaling-agent-systems",
+      "tag": "深度研究",
+      "title": "Towards a Science of Scaling Agent Systems · 迈向智能体系统规模化的科学",
+      "desc": "Agent 越多效果越好吗？Google Research / DeepMind 主导、MIT 参与的团队在 6 个基准、5 类架构、3 个模型家族共 260 种配置上做受控评估：相对单 Agent 基线，性能变化区间从可拆分金融推理任务的 +80.8% 一直到顺序规划任务的 -70.0%。单 Agent 已足够强时协调收益递减，工具密集型任务可能承受协作开销，缺乏集中验证的架构更倾向于传播错误。作者拟合的性能预测模型交叉验证 R²=0.373–0.413（取决于所用能力指标），据此导出的架构选择规则在留出配置上 87% 命中最佳架构（随机为 20%）。结论：按任务结构选协作架构，而非堆 Agent 数量。",
+      "meta": [
+        "📄 arXiv:2512.08296 · Google Research / DeepMind + MIT",
+        "260 种配置 · 6 基准 / 5 架构 / 3 模型家族",
+        "2025-12-09 首发 · v3 2026-04-08"
+      ],
+      "href": "https://arxiv.org/abs/2512.08296",
+      "external": true
+    },
+    {
       "slug": "aliyun-ai-agent-handbook",
       "tag": "技术资料",
       "title": "阿里云《AI Agent Handbook》白皮书导读",

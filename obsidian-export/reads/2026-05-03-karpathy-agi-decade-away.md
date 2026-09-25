@@ -9,7 +9,7 @@ slug: "karpathy-agi-decade-away"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-agi-decade-away.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:45:08.404Z"
+fetched_at: "2026-09-25T03:03:44.443Z"
 fetch_type: "html"
 content_length: 151936
 tags:

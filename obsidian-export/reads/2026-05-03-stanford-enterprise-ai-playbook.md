@@ -9,7 +9,7 @@ slug: "stanford-enterprise-ai-playbook"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/stanford-enterprise-ai-playbook.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:46:18.993Z"
+fetched_at: "2026-09-25T03:04:34.210Z"
 fetch_type: "pdf"
 content_length: 173274
 tags:

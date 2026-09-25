@@ -9,7 +9,7 @@ slug: "dario-amodei-end-of-exponential"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/dario-amodei-end-of-exponential.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:44:59.010Z"
+fetched_at: "2026-09-25T03:03:41.183Z"
 fetch_type: "html"
 content_length: 122884
 tags:

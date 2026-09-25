@@ -37,7 +37,9 @@ site_ok(){
 
 push_daily(){
   # 幂等：只提交日报相关文件；无变更时跳过 commit 直接 push
-  git add "$JSON" "state/reads-candidates/${TODAY}.json" 2>/dev/null
+  # 分开 add：git add 多 pathspec 时任一不存在会整体失败（2026-09-24 血泪教训）
+  git add "$JSON" 2>/dev/null || true
+  git add "state/reads-candidates/${TODAY}.json" 2>/dev/null || true
   if ! git diff --cached --quiet 2>/dev/null; then
     git commit -m "feat(daily): AI 日报 ${TODAY}（watchdog 代推）" >>"$LOG" 2>&1
   fi

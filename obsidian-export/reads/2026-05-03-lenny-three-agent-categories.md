@@ -10,7 +10,7 @@ slug: "lenny-three-agent-categories"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/lenny-three-agent-categories.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:45:14.022Z"
+fetched_at: "2026-09-25T03:03:49.341Z"
 fetch_type: "html"
 content_length: 18829
 tags:

@@ -10,7 +10,7 @@ slug: "andrew-ng-generalists"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/andrew-ng-generalists.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:44:44.320Z"
+fetched_at: "2026-09-25T03:03:29.250Z"
 fetch_type: "html"
 content_length: 3968
 tags:
@@ -21,7 +21,7 @@ tags:
   - "PM"
   - "工程师"
 ---
-# AI-Native Software Development Needs Generalists
+# AI-Native Software Development Needs Generalists: As AI accelerates software development, teammates must play a wider variey of roles
 *Analytics DeepLearning.AI*
 > 🔗 原文：[https://www.deeplearning.ai/the-batch/ai-native-software-development-needs-generalists/](https://www.deeplearning.ai/the-batch/ai-native-software-development-needs-generalists/)
 ---

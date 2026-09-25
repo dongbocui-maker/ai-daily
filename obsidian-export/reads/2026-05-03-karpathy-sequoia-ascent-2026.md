@@ -10,9 +10,9 @@ slug: "karpathy-sequoia-ascent-2026"
 source: "auto"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/karpathy-sequoia-ascent-2026.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:45:11.626Z"
+fetched_at: "2026-09-25T03:03:46.482Z"
 fetch_type: "html"
-content_length: 36368
+content_length: 36369
 tags:
   - "AI"
   - "Software-3.0"

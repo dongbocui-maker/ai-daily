@@ -9,9 +9,9 @@ slug: "stanford-ai-index-2026"
 source: "manual"
 audio_url: "https://ai-daily-audio-1302925971.cos.ap-hongkong.myqcloud.com/audio/reads/stanford-ai-index-2026.m4a"
 fetch_status: "ok"
-fetched_at: "2026-05-17T14:45:41.577Z"
+fetched_at: "2026-09-25T03:04:29.865Z"
 fetch_type: "pdf"
-content_length: 2085281
+content_length: 2085351
 tags:
   - "AI"
   - "行业研究"
@@ -255,10 +255,10 @@ Nestor Maslej, Russ Altman, Erik Brynjolfsson, Carla Brodley, Jack Clark, Virgin
 James Landay, Terah Lyons, James Manyika, Juan Carlos Niebles, Yoav Shoham, Elham Tabassi, Russell
 Wald, Toby Walsh, Dan Weld. “The AI Index 2026 Annual Report,” AI Index Steering Committee, Institute for
 Human-Centered AI, Stanford University, Stanford, CA, April 2026.
+https://doi.org/10.48550/arXiv.2606.15708
 
 The AI Index 2026 Annual Report by Stanford University is licensed under
 Attribution-NoDerivatives 4.0 International.
-
 
 
 
@@ -495,7 +495,7 @@ Top Takeaways
       substantial value from tools they often access for free. Generative AI reached 53%
       population adoption within three years, faster than the PC or the internet, though the pace
       varies by country and correlates strongly with GDP per capita. Some show higher-than-expected
-      adoption, such as Singapore (61%) and the United Arab Emirates (54%), while the U.S. ranks 24th at
+      adoption, such as Singapore (61%) and the United Arab Emirates (64%), while the U.S. ranks 24th at
       28.3%. The estimated value of generative AI tools to U.S. consumers reached $172 billion annually
       by early 2026, with the median value per user tripling between 2025 and 2026.
 
@@ -10231,7 +10231,7 @@ H I G H L I G H T:
 
 
      Toyota Research
-        Institute                    Japan           Teleoperated systems          Retail, logistics   Focus on teleoperated manipulation
+        Institute                United States              Various                   Research         Diffusion policy and large behavior models
 
 
 
@@ -15314,9 +15314,9 @@ Contents
 
   6   Generative AI reached 53% adoption in three years, faster than the personal computer or the
       internet. Adoption varies widely across countries and correlates strongly with GDP per capita,
-      though some outpace what income would predict, including Singapore at 61% and the United Arab
-      Emirates at 54%. Despite its lead in AI investment and model development, the United States ranks
-      24th at 28.3%.`
+      though some outpace what income would predict, including Singapore at 61% and the United
+      Arab Emirates at 64%. Despite its lead in AI investment and model development, the United States
+      ranks 24th at 28.3%.`
 
 
   7   AI’s labor market effects are showing up unevenly, concentrated in hiring pipelines and the
@@ -17175,13 +17175,13 @@ H I G H L I G H T:
 
 
 
-Another broad signal comes from survey-based estimates of AI usage across countries (Figure 4.3.10).
+Another broad signal comes from Microsoft’s telemetry data of AI usage across countries (Figure 4.3.10).
 Adoption varies widely, and shows a strong, statistically significant positive correlation with GDP per capita
 (Misra et al., 2025) (Figure 4.3.11). Most high-income economies cluster between 25% and 45% adoption, with
 European and North American averages reaching approximately 27% and 22%, respectively. Lower usage
 is reported in South Asia and sub-Saharan Africa, where GDP per capita is also lower. However, there are
 exceptions to the relationship between GDP and AI adoption. The United Arab Emirates and Singapore report
-adoption levels above 54% and 61%, respectively, well above what their GDP per capita would predict. Some
+adoption levels above 64% and 61%, respectively, well above what their GDP per capita would predict. Some
 wealthy economies, such as the United States and Denmark, fall below the trend.
 
 
@@ -17269,48 +17269,65 @@ Chapter 9.
 
                                                  First half 2025                       Second half 2025
 
+
                     United Arab Emirates, 59.40%         1                                     1    United Arab Emirates, 64.00% (+4.60%)
+
                                  Singapore, 58.60%       2                                     2    Singapore, 60.90% (+2.30%)
 
                                     Norway, 45.30%       3                                     3    Norway, 46.40% (+1.10%)
+
                                      Ireland, 41.70%     4                                     4    Ireland, 44.60% (+2.90%)
 
                                      France, 40.90%      5                                     5    France, 44.00% (+3.10%)
+
                                        Spain, 39.70%     6                                     6    Spain, 41.80% (+2.10%)
 
                               New Zealand, 37.60%        7                                     7    New Zealand, 40.50% (+2.90%)
+
                           United Kingdom, 36.40%         8                                     8    Netherlands, 38.90% (+2.60%)
+
                               Netherlands, 36.30%        9                                     9    United Kingdom, 38.90% (+2.50%)
 
                                        Qatar, 35.70% 10                                        10   Qatar, 38.30% (+2.60%)
+
                                    Australia, 34.50% 11                                        11   Australia, 36.90% (+2.40%)
 
                                       Israel, 33.90%    12                                     12   Israel, 36.10% (+2.20%)
-                                   Belgium, 33.50% 13                                          13   Belgium, 36.00% (+2.50%)
 
-                                    Canada, 33.50% 14                                          14   Canada, 35.00% (+1.50%)
+                                    Canada, 33.50% 13                                          13   Belgium, 36.00% (+2.50%)
+
+                                   Belgium, 33.50% 14                                          14   Canada, 35.00% (+1.50%)
+
                                Switzerland, 32.40% 15                                          15   Switzerland, 34.80% (+2.50%)
 
-                                    Sweden, 31.20% 16                                          16   Sweden, 33.30% (+2.20%)
-                                     Austria, 29.10%    17                                     17   Austria, 31.40% (+2.20%)
+                                    Sweden, 31.20% 16                                          16   Sweden, 33.30% (+2.10%)
+
+                                     Austria, 29.10%    17                                     17   Austria, 31.40% (+2.30%)
 
                                    Hungary, 27.90% 18                                          18   South Korea, 30.70% (+4.80%)
+
                                   Denmark, 26.60% 19                                           19   Hungary, 29.80% (+1.90%)
 
                                   Germany, 26.50% 20                                           20   Denmark, 28.70% (+2.10%)
+
                                      Poland, 26.40% 21                                         21   Germany, 28.60% (+2.10%)
 
                                      Taiwan, 26.40%     22                                     22   Poland, 28.50% (+2.10%)
+
                              United States, 26.30% 23                                          23   Taiwan, 28.40% (+2.00%)
+
                            Czech Republic, 26.00% 24                                           24   United States, 28.30% (+2.10%)
 
                               South Korea, 25.90% 25                                           25   Czech Republic, 27.80% (+1.80%)
+
                                         Italy, 25.80% 26                                       26   Italy, 27.80% (+2.00%)
 
                                     Finland, 25.60%     27                                     27   Bulgaria, 27.30% (+1.90%)
+
                                    Bulgaria, 25.40% 28                                         28   Finland, 27.30% (+1.70%)
 
                                      Jordan, 25.40% 29                                         29   Jordan, 27.00% (+1.60%)
+
                                  Costa Rica, 25.10% 30                                         30   Costa Rica, 26.50% (+1.40%)
 
 

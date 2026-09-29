@@ -190,6 +190,8 @@ MODEL_LABELS = {
     'azure-claude-48/claude-opus-4-8': 'AZURE CLAUDE 4.8',
     'aigw-claude-48-main/claude-opus-4-8': 'OPUS-4.8',
     'aigw-claude-48-main/claude-fable-5': 'AIGW FABLE 5',
+    'aigw-claude-48-main/claude-opus-5': 'OPUS 5',
+    'aigw-claude-48-main/claude-opus-5-5': 'OPUS 5.5',
     'azure-claude/claude-opus-4-7': 'AZURE CLAUDE 4.7',
     'azure-openai-responses/gpt-5.5': 'GPT-5.5',
     'azure-openai-responses/gpt-5.6-sol-2026-07-09': 'GPT-5.6 SOL',

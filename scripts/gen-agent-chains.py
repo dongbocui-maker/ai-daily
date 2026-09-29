@@ -42,6 +42,7 @@ KNOWN_AGENTS = ['main', 'aima', 'mk2', 'mk46', 'claude-researcher']
 FULL_TO_SHORT = {
     'aigw-claude-48-main/claude-opus-4-8': 'opus-4.8',
     'aigw-claude-48-main/claude-opus-5': 'opus-5',
+    'aigw-claude-48-main/claude-opus-5-5': 'opus-5.5',
     'aigw-claude-48-main/claude-fable-5': 'fable-5',
     'azure-claude-48/claude-opus-4-8': 'opus-4.8',
     'azure-claude/claude-opus-4-7': 'opus-4.7',
@@ -59,6 +60,7 @@ FULL_TO_SHORT = {
 CHAIN_MODEL_KEYS = {
     'opus-4.8': 'aigw-claude-48-main/claude-opus-4-8',
     'opus-5': 'aigw-claude-48-main/claude-opus-5',
+    'opus-5.5': 'aigw-claude-48-main/claude-opus-5-5',
     'fable-5': 'aigw-claude-48-main/claude-fable-5',
     'gpt-5.5': 'azure-openai-responses/gpt-5.5',
     'gpt-5.6-sol': 'azure-openai-responses/gpt-5.6-sol-2026-07-09',
@@ -72,6 +74,7 @@ CHAIN_MODEL_KEYS = {
 MODEL_EP = {
     'aigw-claude-48-main/claude-opus-4-8': 'ep-opus',
     'aigw-claude-48-main/claude-opus-5': 'ep-opus',
+    'aigw-claude-48-main/claude-opus-5-5': 'ep-opus',
     'aigw-claude-48-main/claude-fable-5': 'ep-fable',
     'azure-claude-48/claude-opus-4-8': 'ep-opus',
     'azure-claude/claude-opus-4-7': 'ep-opus',

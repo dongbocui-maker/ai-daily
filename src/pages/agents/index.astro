@@ -694,11 +694,11 @@ body.hud-scrub{cursor:grabbing}body.hud-scrub .hudnav,body.hud-scrub .hudnav *,b
 // CHAINS: 优先用 build 时从 openclaw.json 生成的 AGENT_CHAINS（single source of truth）；
 // 若 JSON 缺失/损坏则回退到硬编码 literal（仅兜底，可能过时）。
 const CHAINS = AGENT_CHAINS || {
-  main:['fable-5','opus-5.5','gpt-6-astra','qwen3.7-max'],
-  aima:['opus-5.5','gpt-6-astra','qwen3.7-max'],
-  mk2:['opus-5.5','gpt-6-astra','qwen3.7-max'],
-  mk46:['qwen3.7-max','opus-5.5','gpt-6-astra'],
-  'claude-researcher':['gpt-6-astra','opus-5.5','qwen3.7-max'],
+  main:['fable-5','opus-5.5','gpt-6-astra','qwen3.8-max'],
+  aima:['opus-5.5','gpt-6-astra','qwen3.8-max'],
+  mk2:['opus-5.5','gpt-6-astra','qwen3.8-max'],
+  mk46:['qwen3.8-max','opus-5.5','gpt-6-astra'],
+  'claude-researcher':['gpt-6-astra','opus-5.5','qwen3.8-max'],
 };
 // CHAIN_MODEL_KEYS(short→fullname): 优先用生成的 AGENT_CHAIN_KEYS（single source of truth，
 // 由 gen-agent-chains.py 从 openclaw.json 推导），JSON 缺失/损坏时回退硬编码 literal（可能过时）。
@@ -711,6 +711,7 @@ const CHAIN_MODEL_KEYS = AGENT_CHAIN_KEYS || {
   'gpt-5.6-sol':'azure-openai-responses/gpt-5.6-sol-2026-07-09',
   'gpt-6-astra':'azure-openai-responses/gpt-6-astra-2026-09-03',
   'qwen3.7-max':'qwen/qwen3.7-max',
+  'qwen3.8-max':'qwen/qwen3.8-max',
   'sonnet-4.6':'anthropic/claude-sonnet-4-6',
 };
 const CARD_NAME_OVERRIDES={
@@ -1020,8 +1021,8 @@ function render(DATA){
             <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">ASTRA</div><div class="em-ep">ACAI</div></div>
           </div>
           <div class="ep-node healthy" id="ep-qwen">
-            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">QWEN37</span><span class="epn-tag">ALI</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">DASH</span><span class="ees">ONLINE</span></div></div></div>
-            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">QWEN37</div><div class="em-ep">DASH</div></div>
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">QWEN38</span><span class="epn-tag">ALI</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">DASH</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">QWEN38</div><div class="em-ep">DASH</div></div>
           </div>
           <div class="ep-node healthy" id="ep-fable">
             <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">FABLE5</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">ONLINE</span></div></div></div>
@@ -1117,6 +1118,7 @@ const ARCH_MODEL_EP = {
   'azure-openai-responses/gpt-5.6-sol-2026-07-09':'ep-gpt',
   'azure-openai-responses/gpt-6-astra-2026-09-03':'ep-gpt',
   'qwen/qwen3.7-max':'ep-qwen',
+  'qwen/qwen3.8-max':'ep-qwen',
 };
 // 运行时「各 agent 当前实际在用的 ep-id」映射，由 render(DATA) 从 active_model 填充。
 let _archActiveEp = {};

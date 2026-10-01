@@ -198,6 +198,7 @@ MODEL_LABELS = {
     'azure-openai-responses/gpt-6-astra-2026-09-03': 'GPT-6 ASTRA',
     'deepseek/DeepSeek-V4-Pro': 'DEEPSEEK V4 PRO',
     'qwen/qwen3.7-max': 'QWEN3.7 MAX',
+    'qwen/qwen3.8-max': 'QWEN3.8 MAX',
     'anthropic/claude-sonnet-4-6': 'SONNET 4.6',
 }
 EVENT_TARGETS = [

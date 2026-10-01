@@ -50,6 +50,7 @@ FULL_TO_SHORT = {
     'azure-openai-responses/gpt-5.6-sol-2026-07-09': 'gpt-5.6-sol',
     'azure-openai-responses/gpt-6-astra-2026-09-03': 'gpt-6-astra',
     'qwen/qwen3.7-max': 'qwen3.7-max',
+    'qwen/qwen3.8-max': 'qwen3.8-max',
     'anthropic/claude-sonnet-4-6': 'sonnet-4.6',
     'deepseek/DeepSeek-V4-Pro': 'deepseek-v4-pro',
 }
@@ -66,6 +67,7 @@ CHAIN_MODEL_KEYS = {
     'gpt-5.6-sol': 'azure-openai-responses/gpt-5.6-sol-2026-07-09',
     'gpt-6-astra': 'azure-openai-responses/gpt-6-astra-2026-09-03',
     'qwen3.7-max': 'qwen/qwen3.7-max',
+    'qwen3.8-max': 'qwen/qwen3.8-max',
     'sonnet-4.6': 'anthropic/claude-sonnet-4-6',
 }
 
@@ -83,6 +85,7 @@ MODEL_EP = {
     'azure-openai-responses/gpt-5.6-sol-2026-07-09': 'ep-gpt',
     'azure-openai-responses/gpt-6-astra-2026-09-03': 'ep-gpt',
     'qwen/qwen3.7-max': 'ep-qwen',
+    'qwen/qwen3.8-max': 'ep-qwen',
 }
 
 

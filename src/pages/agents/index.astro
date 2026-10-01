@@ -697,7 +697,7 @@ const CHAINS = AGENT_CHAINS || {
   main:['fable-5','opus-5.5','gpt-6-astra','qwen3.8-max'],
   aima:['opus-5.5','gpt-6-astra','qwen3.8-max'],
   mk2:['opus-5.5','gpt-6-astra','qwen3.8-max'],
-  mk46:['qwen3.8-max','opus-5.5','gpt-6-astra'],
+  mk46:['opus-5.5','gpt-6-astra','qwen3.8-max'],
   'claude-researcher':['gpt-6-astra','opus-5.5','qwen3.8-max'],
 };
 // CHAIN_MODEL_KEYS(short→fullname): 优先用生成的 AGENT_CHAIN_KEYS（single source of truth，
@@ -1093,7 +1093,7 @@ const ARCH_AGENT_EP = AGENT_ARCH_EP || {
   main:                {primary:'ep-fable', fallback:['ep-opus','ep-gpt','ep-qwen']},
   aima:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   mk2:                 {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
-  mk46:                {primary:'ep-qwen', fallback:['ep-opus','ep-gpt']},
+  mk46:                {primary:'ep-opus', fallback:['ep-gpt','ep-qwen']},
   'claude-researcher': {primary:'ep-gpt', fallback:['ep-opus','ep-qwen']},
 };
 // 持久「当前激活 agent」状态（点击切换）

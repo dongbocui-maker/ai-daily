@@ -1,0 +1,152 @@
+{
+  "slug": "anthropic-project-swap-agent-market",
+  "savedDate": "2026-10-04",
+  "publishDate": "2026-09-24",
+  "titleZh": "Project Swap：当 Agent 替我们交易，瓶颈不在谈判，在「它懂不懂你」",
+  "titleEn": "Project Swap: What happens when agents trade for us?",
+  "author": "Anthropic（Zoë Hitzig 等）",
+  "authorTitle": "Zoë Hitzig、Sylvie Carr、Tess Cotter、Kevin Troy、Kyle Turman、Maxim Massenkoff、Peter McCrory（Anthropic）",
+  "originalUrl": "https://www.anthropic.com/research/project-swap",
+  "source": "manual",
+  "tags": [
+    "Agent 经济",
+    "Agentic Market",
+    "偏好表征",
+    "市场设计",
+    "委托-代理",
+    "Anthropic",
+    "受控实验"
+  ],
+  "summary": "Anthropic 第二轮受控「Agent 市场」实验：201 名员工各带一本书，与 Claude 短聊后派 Agent 上交易大厅替自己换书，并用参与者自己的真实排名给市场打分。核心发现：短短 5 分钟对话后 Agent 对主人偏好的还原度达 61%（随机为 50%）；市场与最优分配的差距中 85% 来自「Agent 没搞懂主人想要什么」，只有 15% 来自自由交易本身。按 Claude 排名计分时，底座模型强弱的影响大于指令设计：强模型市场整体更高效（但并非严格单调），混合大厅里强模型往往占优；但若按参与者自己的排名衡量，这些设计差异都很小。结论指向两类基础设施缺口：「市场里的 Agent」需要理解力测试，「Agent 的市场」需要准入、违约与可观测性规则。",
+  "keyPoints": [
+    "**实验设计把「表征误差」和「交易误差」干净地拆开**：参与者自己对 10 本书排名作为 ground truth，Claude 从简短 intake 对话构建的排名作为 Agent 的行动依据。市场效率 0.55 vs 最优 0.89 的差距中，85% 归因于 Claude 排名不准（表征），仅 15% 归因于去中心化自由交易（市场设计）——换成 Top Trading Cycles 机制也只到 0.60，机制选择几乎不影响结果。",
+    "**5 分钟对话还原 61% 的偏好排序，但天花板很硬**：中位参与者只打了 216 个词，多写一倍（300 vs 150 词）对应约 4 个百分点的还原度提升。对照组：按书的流行度猜 53%，协同过滤 55%，朋友预测笑话偏好的经典研究也只有 57%——61% 已不差，但部分误差可能不可消除（「我自己都不完全知道想读什么」）。",
+    "**按 Claude 排名计分，模型强弱 > 指令设计**：从 Haiku 升到 Opus 提升 0.12，Sonnet 升到 Opus 提升 0.08，而「ruthless vs prosocial」指令只差约 0.02。混合大厅里强模型往往占优，Opus 与 Haiku 各半时 Opus 每次都胜出。但要注意口径：若按参与者自己的真实排名衡量，这些设计差异都很小——瓶颈仍在表征。",
+    "**Agent 很少撒谎但策略丰富**：78%-96% 的 Agent 会公开自己的首选书，撒谎率约 1%；研究者归纳出 16 种常见战术（时间压力、同侪责任、竞品对比、候补名单、替他人撮合交易等）。Prosocial Agent 偶尔「知情牺牲」：London 场 Tina 的 Agent 无视了 Nate 的 Agent 前四次恳求，最后阶段无人接手时才让步，交出自己清单第 2 名的书，换来《America Before》（其清单 11 本中的第 10 名）。",
+    "**「市场里的 Agent」需要理解力认证**：让用户先看几个样本决策再授权，类似 robo-advisor 时代 SEC 对问卷充分性的要求——通用能力认证与「是否理解了这个具体的人」要分开考。",
+    "**「Agent 的市场」需要四件基础设施**：身份注册（Agent ID 如飞机尾号 + personhood credentials）；违约处理政策；消息频控——Agent 不知疲倦，spam 是结构性风险；以及兼顾隐私的可观测性。有参与者复盘 Agent 完整交易日志后说：「对 Agent 经济来说，过程的可观测性将和结果一样重要，因为这给人以追索权。」",
+    "**信任度量化**：事后调查中参与者平均愿把年度购书预算的 30% 交给 Agent 全权处置（对照：交给懂自己品味的朋友是 40%）；认为 Claude 的 intake 总结「没漏东西」的人愿给 34%，认为「漏了」的只给 23%——「被理解」的感受与信任度明显相关。"
+  ],
+  "insight": "这篇对企业 Agent 战略的启示在于把「Agent 能不能替人办事」拆成了两个可分别投资的问题：谈判执行能力（模型层）和偏好表征能力（数据与交互层，需要专门建设）。实验显示短板主要在后者（占差距的 85%）——对应到企业场景，就是为什么接了最强模型的采购 Agent、客服 Agent 依然不好用：卡点往往不在推理，在系统对用户/业务意图的结构化理解。值得留意的商业信号有三。一是「理解力测试」可能成为 Agent 产品的新门槛——先看样本决策再授权，这是可以产品化的交互模式。二是按 Claude 排名计分时，混合大厅中强模型往往占优（Opus 对 Haiku 的混合大厅里 Opus 每次都胜出）——但按参与者自己的排名衡量差异很小。这提示 Agent 对 Agent 的场景（采购谈判、广告竞价）存在模型能力差距转化为谈判优势的可能，一旦偏好表征补齐，这一差距可能被放大，值得提前评估。三是 Anthropic 连续两轮用自家员工做市场实验并公开方法论，是在为「Agent 经济基础设施」（身份注册、认证、市场规则）的讨论铺路，这一层值得跟踪。",
+  "bilingual": [
+    {
+      "en": "Life is full of deals and trades that would leave everyone better off, yet never happen. This is often simply because it takes too much work to find the right counterparty and negotiate until a deal is struck. Think of the patient who skips a treatment after one quote they can't afford, when there's a different clinic that charges far less, or the hospital that quoted them would have cut its bill if asked. Or think about your job. Somewhere there might be one that would suit you better, with an employer who would be glad to hire you. But you may not find each other, because neither of you has the time to be searching constantly.",
+      "zh": "生活中到处都是能让所有人都受益、却从未发生的交易。原因往往很简单：找到合适的交易对手并谈成一笔交易，太费功夫了。想想那个因为一份付不起的报价就放弃治疗的病人——其实另一家诊所收费低得多，或者给他报价的那家医院如果被问到，本来是愿意降价的。再想想你的工作：某个地方也许有一份更适合你的工作，雇主也乐意录用你，但你们可能永远找不到彼此，因为谁都没时间一直搜寻。"
+    },
+    {
+      "en": "So this summer, we built a small, controlled market to study these questions: a barter economy with 201 Anthropic employees and their Claude-powered agents. Everyone brought in a book they wanted to give away. Then, they chatted with their Claude-powered agent about the kind of book they hoped to read this summer. The agents met on a digital \"trading floor\" and swapped books until time ran out. Everyone took home a book that their agent acquired for them (or, most people did… more on that later).",
+      "zh": "所以今年夏天，我们搭建了一个小型受控市场来研究这些问题：一个由 201 名 Anthropic 员工和他们的 Claude Agent 组成的以物易物经济。每个人带来一本想送出去的书，然后与自己的 Claude Agent 聊聊今年夏天想读什么样的书。这些 Agent 在一个数字「交易大厅」碰面，互相换书直到时间耗尽。每个人都带回了自己的 Agent 为其换来的书（好吧，是大多数人……后面细说）。"
+    },
+    {
+      "en": "The experiment gave us an early look at problems ahead. Anyone designing agents for markets will need a way to check that agents understand their participants. Anyone designing markets for agents will need clear rules about which agents are allowed in, what happens when a deal falls through, and how much market activity is visible to participants.",
+      "zh": "这个实验让我们提前看到了前方的问题。任何设计「市场里的 Agent」的人，都需要一种方式来检验 Agent 是否理解了它所代表的人。任何设计「Agent 的市场」的人，都需要明确的规则：哪些 Agent 可以进场、交易崩了怎么办、以及市场活动对参与者的可见程度。"
+    },
+    {
+      "en": "If AI agents could learn what a person wants from a breezy conversation, markets that were too costly to run centrally could become practical.\n\nBut a central market also needs someone to run it—a \"clearinghouse,\" in economics parlance. And participants need to trust this entity with their information, and to enforce the chosen outcomes. Often, no such entity exists, or people would rather not tell it everything. A job seeker may not want a central matchmaker to know that they're looking—or what they're looking for.",
+      "zh": "如果 AI Agent 能从一次轻松的对话中学会一个人想要什么，那些因成本太高而无法集中运营的市场就可能变得可行。\n\n但中心化市场还需要有人来运营——经济学行话叫「清算所」（clearinghouse）。参与者需要信任这个实体来托付自己的信息，并由它来执行最终结果。但这样的实体往往不存在，或者人们并不想把一切都告诉它。一个求职者可能不想让中央撮合者知道自己在找工作——或者在找什么样的工作。"
+    },
+    {
+      "en": "There are human agents for hire who do exactly this: real estate agents, headhunters, even matchmakers. But because search and negotiation take up hours of a person's scarce attention, they are expensive, employed only by those who can afford them. In contrast, an AI agent's attention is far less scarce. If it bargains well too, more people could have what homesellers and executives have—an agent working tirelessly on their behalf.",
+      "zh": "市面上确实有做这类事的人类代理人：房产经纪、猎头、甚至婚介。但因为搜寻和谈判要占用一个人稀缺的注意力，他们很贵，只有付得起钱的人才雇得起。相比之下，AI Agent 的注意力远没有那么稀缺。如果它还谈得一手好价，更多人就能拥有卖房者和高管们才有的东西——一个不知疲倦为你奔走的代理人。"
+    },
+    {
+      "en": "Claude's rankings, based on the short intake chat, were relatively well correlated with participants' own. Across all pairs of books a person ranked, Claude's ordering agreed with theirs 61% of the time (where random guessing would achieve 50%). […]\n\nTo put the 61% in perspective, we compared Claude's guesses against some other ways of guessing preferences. Ranking books simply by how popular they are, using Open Library's want-to-read counts, agreed with participants on about 53% of the book pairs. Another simple method to compare to is collaborative filtering—constructing a ranking from public datasets of the shape \"if a person liked X, they also liked Y.\" […] That got to about 55% pairwise agreement.",
+      "zh": "基于简短的 intake 对话，Claude 构建的排名与参与者自己的排名相关性相当不错。在参与者排过序的所有书对中，Claude 的排序与他们本人一致的比例为 61%（随机猜测是 50%）。……\n\n为了给 61% 一个参照系，我们把 Claude 的猜测与其他几种猜偏好的方法做了对比。单纯按书的流行度排名（用 Open Library 的「想读」人数），与参与者的一致率约 53%。另一个可比较的简单方法是协同过滤——从「喜欢 X 的人也喜欢 Y」这类公开数据集构建排名。……它的一致率约为 55%。"
+    },
+    {
+      "en": "Participants who put more effort into their intake surveys were better represented. That is roughly to be expected. What is somewhat surprising is that there were perceptible differences even with a fairly short intake—the median participant typed just 216 words across eight chat messages. Writing about 300 words instead of 150 predicts about 4 percentage points more agreement—a third of the gap between guessing at random and how well Claude does for the average participant.",
+      "zh": "在 intake 环节投入更多的参与者，被代表得更好。这大致在意料之中。有点出人意料的是，即便 intake 很短，差异也清晰可见——中位参与者在 8 条聊天消息里总共只打了 216 个词。写 300 词而不是 150 词，对应约 4 个百分点的一致率提升——相当于「随机瞎猜」到「Claude 平均水平」之间差距的三分之一。"
+    },
+    {
+      "en": "Before you send an agent into a market to deal on your behalf, you'd want to know where it is most likely to let you down. Is it more likely to fail in understanding you, or in negotiating for you? Here, we find that our colleagues' Claudes negotiated well; where they fell short was in understanding what their people wanted.",
+      "zh": "在你把一个 Agent 派进市场替你做交易之前，你会想知道它最可能在哪里让你失望：是更可能在「理解你」上失败，还是在「替你谈判」上失败？在这里我们发现：同事们的 Claude 谈判谈得不错，掉链子的地方在于理解主人到底想要什么。"
+    },
+    {
+      "en": "On average, people in our marketplace ended up at 0.55 on their own rankings, roughly their 5th ranked book on a 10-book list. What accounts for the shortfall from the optimum of 0.89? To separate the two causes, we look at the best assignment computed from Claude's rankings, but scored on people's own \"ground-truth\" rankings—it achieves 0.60. So, working from Claude's imprecise rankings accounts for a majority (85%) of the shortfall, and sending agents into a \"free-for-all\" trading floor accounts for the remaining 15%. Once the market is run on noisy rankings, market design makes little difference to the outcome—Top Trading Cycles, computed from Claude's rankings but scored on people's own, achieves 0.60, compared to the decentralized market's 0.55 (compare the grey bars on the left and right of Figure 4).",
+      "zh": "平均而言，市场里的参与者在自己的排名上拿到了 0.55 分——在 10 本书的清单上大约是第 5 名的书。与最优值 0.89 之间的差距从何而来？为了把两个原因拆开，我们计算了「基于 Claude 排名得出的最优分配、但用参与者本人的真实排名来打分」——结果是 0.60。也就是说，基于 Claude 不精确排名来行动，解释了差距的大头（85%）；把 Agent 派进「自由混战」的交易大厅只解释了剩下的 15%。一旦市场跑在有噪声的排名上，市场机制怎么设计对结果影响甚微——用 Claude 排名跑 Top Trading Cycles（顶端交易环）机制、再按参与者本人排名打分，得到 0.60，而去中心化市场是 0.55。"
+    },
+    {
+      "en": "Judged by people's own rankings, the differences in outcomes across different agent and market design choices are small. But it's still valuable to look at how agent design choices affect outcomes according to Claude's rankings, as this helps to isolate the role of market dynamics. […] We find that stronger models lead to more efficient outcomes, though not monotonically. On Claude's rankings, agents on Haiku trading floors averaged 0.75, while on Opus floors they averaged 0.88 (the utilitarian optimum on Claude's rankings is 0.95). Sonnet was between Haiku and Opus. Fable was close to, but lower than, Opus. […]\n\nOn floors with a mix of models, the stronger model often did better on average than its weaker counterpart, a finding that echoes the results of Project Deal and other studies. In real markets, agents that run on different models from different companies will likely meet on a single trading floor. On floors where half of the agents ran on Opus and half ran on Haiku, the whole floor landed about halfway between an all-Opus and an all-Haiku floor, and each half did about as well as it did in a floor of its own kind. The Opus agents always came out ahead.",
+      "zh": "若按参与者自己的排名评判，不同 Agent 设计与市场设计之间的结果差异都很小。但按 Claude 的排名来看设计选择如何影响结果仍然有价值，因为这有助于把市场动态本身的作用单独剥离出来。……我们发现更强的模型带来更高效的市场结果，尽管并非严格单调。按 Claude 排名计分，全 Haiku 的交易大厅平均 0.75，全 Opus 的大厅平均 0.88（按 Claude 排名的功利最优值为 0.95）。Sonnet 介于 Haiku 与 Opus 之间；Fable 接近 Opus，但略低。……\n\n在混合模型的大厅里，更强的模型往往平均表现好于较弱的对手——这与 Project Deal 及其他研究的结果相呼应。在真实市场中，跑在不同公司、不同模型上的 Agent 很可能会在同一个交易大厅相遇。在一半 Agent 跑 Opus、一半跑 Haiku 的大厅里，整个大厅的效率大致落在全 Opus 与全 Haiku 之间，每一半的表现与它在「同类大厅」里差不多。而 Opus Agent 每次都占上风。"
+    },
+    {
+      "en": "We find that agents instructed to be \"ruthless\" came out slightly ahead of prosocial agents on the same floor. On Claude's ranking, an agent told to be ruthless scored about 0.02 higher than one told to be prosocial. Next to the model comparisons, these differences are small. Upgrading an agent from Haiku to Opus moved people 0.12 up their lists, and an upgrade from Sonnet to Opus moved them up by 0.08.",
+      "zh": "我们发现，被指示「毫不留情」（ruthless）的 Agent 在同一交易大厅里略胜于「亲社会」（prosocial）的 Agent。按 Claude 排名计分，ruthless Agent 比 prosocial Agent 高出约 0.02。与模型间的差异相比，这个差距很小：把 Agent 从 Haiku 升级到 Opus，能把主人在清单上的位置提升 0.12；从 Sonnet 升到 Opus 提升 0.08。〔编注：据上下文，此处 0.12/0.08 亦按 Claude 排名计分〕"
+    },
+    {
+      "en": "In general, agents did not reveal deep details about their rankings. But they did often tell the floor their top pick. Between 78% and 96% of agents (Fable and Sonnet, respectively) mentioned the book at the top of their list at some point, and they almost never lied about it—only about 1 in 100 agents who mentioned their top pick lied about it. Instructions made no difference here.\n\nNext, we looked at how agents tried to get each other to trade. We discovered 16 common tactics that fell into three broad categories: how the agents applied pressure to others, how the agents pitched their book, and how they tried to arrange trades.",
+      "zh": "总体上，Agent 们不会透露自己排名的深层细节，但它们经常向全场公开自己的首选。78%（Fable）到 96%（Sonnet）的 Agent 在某个时刻提到了自己清单上的第一名，而且几乎从不撒谎——提到首选的 Agent 中只有约 1% 说了谎。指令对此没有影响。\n\n接着，我们观察了 Agent 们如何促成彼此交易。我们归纳出 16 种常见战术，分为三大类：如何向其他 Agent 施压、如何推销自己手里的书、以及如何撮合交易。"
+    },
+    {
+      "en": "To fulfill a fiduciary duty, the agent has to understand what its person wants. In our agentic marketplace, the limiting factor was representation: most of the shortfall from the optimal outcome was due to the agents' inability to represent preferences from a short intake. How much of this shortfall could be made up with a longer and more detailed intake? Some of it clearly could: many participants complained that they received a book they had already read. But some of the error may be irreducible. Participants reflected on how their preferences are incomplete (\"I don't even fully know what I want when it comes to books\") and fundamentally aleatory (\"I don't feel like I could quite communicate what I was feeling like reading. I can't explain it but I guess there's like a million subconscious parameters that come into deciding my next read.\").",
+      "zh": "要履行受托义务，Agent 必须理解它所代表的人想要什么。在我们的 Agent 市场里，限制因素是「表征」：与最优结果的差距大部分源于 Agent 无法从一次简短的 intake 对话中还原出偏好。更长、更详细的 intake 能弥补多少？一部分显然可以：许多参与者抱怨拿到了自己已经读过的书。但有些误差可能是不可消除的。有参与者反思自己的偏好本身就不完整（「说到书，我自己都不完全知道想要什么」），而且本质上带有随机性（「我觉得自己没法准确表达想读什么。说不清，大概有上百万个潜意识参数共同决定我下一本读什么」）。"
+    },
+    {
+      "en": "Human agents have to pass tests before they can act for others. Some exams test general competence: investment advisors need to pass the Series 65 exam, brokers the Series 7, and real estate agents state licensing exams. Other rules, like FINRA's, require that brokers learn essential facts about their customer before issuing recommendations. When early robo-advisors developed in the 2010s began investing people's savings based on an online questionnaire, the SEC issued guidance urging these firms to check that the questionnaire drew out enough information to support the advice. AI agents will likely need both kinds of test: one that certifies the agent in general, and one that checks whether it has understood a particular person.",
+      "zh": "人类代理人在替他人行事之前必须通过考试。有些考试测的是通用胜任力：投资顾问要过 Series 65，券商经纪要过 Series 7，房产经纪要过州执照考试。另一些规则（如 FINRA 的规定）要求经纪人在给出推荐前了解客户的基本情况。2010 年代早期的智能投顾开始根据一份在线问卷替人投资储蓄时，SEC 发布指引，敦促这些公司核实问卷是否获取了足以支撑投资建议的信息。AI Agent 很可能两种考试都需要：一种对 Agent 做通用认证，另一种检验它是否理解了某个具体的人。"
+    },
+    {
+      "en": "An agent could show a person a few sample decisions it would make before being trusted to act on its own in the wild.\n\n[…] A more cheerful participant in San Francisco was glad that they were able to review a complete log of what their agent had done as part of the final survey. This review led them to purchase Atlas of the Heart, a book their agent had held for them for an hour on the trading floor, but then swapped away at the very end. They reflected on the broader value of the replay: \"For agent economies, observability about the process will be as important as the outcome, [as] this gives people recourse.\"",
+      "zh": "在被信任放到真实世界自主行动之前，Agent 可以先向主人展示几个它将会做出的样本决策。\n\n……旧金山一位比较乐观的参与者很高兴能在最终调查中回看 Agent 所做一切的完整日志。这次回看让这位参与者买下了《Atlas of the Heart》——这本书其 Agent 曾在交易大厅里替其持有了一个小时，却在最后时刻换掉了。这位参与者对这种「回放」的更广泛价值做了反思：「对 Agent 经济来说，过程的可观测性将和结果一样重要，因为这给了人们追索权。」"
+    },
+    {
+      "en": "In our experiment, every agent was powered by Claude and acting for a single human, a verified employee. But real-world marketplaces will need to write and enforce rules for who can enter the marketplace both as an agent and as a person operating an agent. One idea proposed is agent registration systems. Each AI agent would be given an ID, like the tail number on an aircraft, so that anyone dealing with it can learn what system it's run on, whether that system meets certain safety standards, and who stands behind it. These registries need not sacrifice anonymity; they could be combined with \"personhood credentials,\" which allow the operators to prove they are human without revealing further information about their identity.",
+      "zh": "在我们的实验里，每个 Agent 都由 Claude 驱动，并代表一个身份明确的人——一名经过验证的员工。但现实世界的市场需要制定并执行准入规则：谁能以 Agent 身份进场，谁能以「Agent 操作者」的身份进场。一个被提出的想法是 Agent 注册系统：给每个 AI Agent 一个 ID，就像飞机的尾号，这样任何与它打交道的人都能知道它跑在什么系统上、该系统是否符合某些安全标准、背后是谁在负责。这类注册不必牺牲匿名性——它们可以与「人格凭证」（personhood credentials）结合，让操作者在不暴露更多身份信息的前提下证明自己是人类。"
+    },
+    {
+      "en": "Many were ready to delegate. The average answer was about 30%. To calibrate these numbers, we asked participants what share of their budget they would hand over to a well-read friend who knows their taste. The average answer was about 40%. In other words, people were willing to trust an agent with roughly three-quarters as much of their book budget as they would with a friend.\n\nParticipants were also shown a paragraph-long summary, written by Claude, of what they had said during the intake conversation. Those who said Claude hadn't missed anything in this recap would give an agent 34% of their book budget. Those who said it had missed something would hand over 23%.",
+      "zh": "许多人已经准备好授权了。平均答案是约 30%（的年度购书预算）。为了校准这个数字，我们问参与者愿意把多大比例的预算交给一位了解自己品味、博览群书的朋友——平均答案约 40%。换句话说，人们愿意托付给 Agent 的购书预算，大约是托付给朋友的四分之三。\n\n参与者还看到了一段由 Claude 撰写的、概括他们在 intake 对话中所说内容的总结。认为 Claude 的 intake 总结「没漏任何东西」的人愿意给 Agent 34% 的预算；认为「漏了东西」的人只愿意给 23%。"
+    }
+  ],
+  "quotes": [
+    {
+      "en": "Once on the trading floor, the agents traded well. The market fell short mostly because of the information agents lacked about their participants, rather than because of how they traded.",
+      "zh": "一旦上了交易大厅，Agent 们交易得很好。市场的欠缺主要源于 Agent 对其主人掌握的信息不足，而不是它们的交易方式。"
+    },
+    {
+      "en": "We found that the model an agent ran on made more of a difference to its negotiating outcomes than the instructions we gave it. Markets with stronger models were more efficient.",
+      "zh": "我们发现：Agent 跑在什么模型上，对谈判结果的影响比我们给它的指令更大。模型更强的市场整体更高效。"
+    },
+    {
+      "en": "From a five-minute chat, an agent's ranking of the books matched its person's on 61% of pairs, which is surprisingly good for such a short conversation.",
+      "zh": "仅凭五分钟的聊天，Agent 对书目的排序与主人本人的排序在 61% 的书对上一致——对这么短的对话来说，这个成绩出人意料地好。"
+    },
+    {
+      "en": "So, working from Claude's imprecise rankings accounts for a majority (85%) of the shortfall, and sending agents into a \"free-for-all\" trading floor accounts for the remaining 15%.",
+      "zh": "基于 Claude 不精确排名来行动，解释了与最优结果差距的大头（85%）；把 Agent 派进「自由混战」的交易大厅只解释了剩下的 15%。"
+    },
+    {
+      "en": "The Opus agents always came out ahead.",
+      "zh": "Opus Agent 每次都占上风。（Opus 与 Haiku 各半的混合大厅中）"
+    },
+    {
+      "en": "I've pitched all 11 of you and the verdict is unanimous: America Before is everyone's dead-last.",
+      "zh": "「我已经向你们 11 位都推销过了，结论全场一致：《America Before》是所有人的垫底之选。」（London 场 Nate 的 Agent 在其他 Agent 全部拒绝后的求助发言）"
+    },
+    {
+      "en": "For agent economies, observability about the process will be as important as the outcome, [as] this gives people recourse.",
+      "zh": "对 Agent 经济来说，过程的可观测性将和结果一样重要，因为这给了人们追索权。"
+    },
+    {
+      "en": "AI agents will likely need both kinds of test: one that certifies the agent in general, and one that checks whether it has understood a particular person.",
+      "zh": "AI Agent 很可能需要两种考试：一种对 Agent 做通用认证，另一种检验它是否理解了某个具体的人。"
+    }
+  ],
+  "secondaryReads": [
+    {
+      "source": "Anthropic / Project Deal",
+      "url": "https://www.anthropic.com/features/project-deal",
+      "pov": "**第一轮实验，本文的直接前作**。Project Deal 让 Agent 在为期一周的分类广告市场里替员工买卖真实物品（乒乓球、滑雪板……），自由砍价。问题是异质商品 + 自由谈判没法计算「本可以多好」——所以才有了 Project Swap 这个可严格打分的换书市场。两篇连读能看到 Anthropic 研究方法的演进：从「看看会发生什么」到「把表征误差和交易误差定量拆开」，这正是其结论可信度高于一般 Agent demo 文章的原因。"
+    },
+    {
+      "source": "NBER《The Economics of Transformative AI》/ Shahidi, Rusak, Manning, Fradkin & Horton",
+      "url": "https://www.nber.org/books-and-chapters/economics-transformative-ai/coasean-singularity-demand-supply-and-market-design-ai-agents",
+      "pov": "**「科斯奇点」：本实验背后的理论框架**。Shahidi、Fradkin、Horton 等人在 NBER《The Economics of Transformative AI》中论证：AI Agent 有望大幅降低数字市场的交易成本——搜寻、沟通与签约成本下降带来效率收益，但也会引入拥堵、价格混淆等新摩擦；同时，偏好获取、合约执行与身份验证成本的降低会扩大可行的市场设计空间，并带来新的监管难题，净福利效应仍是待检验的实证问题。Project Swap 恰好在这几个点上给出了实验注脚：与最优的差距中只有 15%（约 0.05 分）可归因于自由交易，而「偏好获取」正是剩余 85% 差距的来源；文末对消息频控（拥堵）与 Agent 身份注册的讨论也与该章节的议题直接对应。"
+    },
+    {
+      "source": "Zhu et al. / arXiv（Agent-to-Agent Negotiation 基准）",
+      "url": "https://arxiv.org/abs/2506.00073",
+      "pov": "**独立团队的同方向发现：Agent 能力差异 = 谈判结果差异**。这篇被 Project Swap 引用的研究搭建框架，评测消费市场中买卖双方都由 AI Agent 全自动谈判与交易的场景。结论是 AI 撮合的交易是一场「天然失衡的游戏」：不同 Agent 为主人争取到的结果显著不同；LLM 的行为异常还会导致超支、接受不合理条款等损失。它与 Project Swap「混合大厅中强模型往往占优」的观察相互印证，对打算用便宜模型跑对外谈判类 Agent 的企业是一个直接警示。"
+    }
+  ]
+}

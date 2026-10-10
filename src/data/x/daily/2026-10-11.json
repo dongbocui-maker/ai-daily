@@ -1,0 +1,372 @@
+{
+  "date": "2026-10-11",
+  "title": "Builder Signals · 2026-10-11",
+  "generatedAt": "2026-10-10T23:00:17.876Z",
+  "feedGeneratedAt": "2026-10-10T06:42:38.645Z",
+  "summary": "Follow Builders 今日捕捉到 27 条 X 动态、1 集播客、3 篇博客；本站精选 14 条高信号内容。",
+  "stats": {
+    "xBuilders": 15,
+    "totalTweets": 27,
+    "selectedXTweets": 10,
+    "podcastEpisodes": 1,
+    "blogPosts": 3,
+    "selectedItems": 14
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch shared striking agent-traffic stats: 58.18% of traffic across the Vercel network is bot-originated over the last 30 days (vs. 32% in Jan 2024); 60%+ of Vercel deployments are now agentic (up from ~3% in Jan 2026); and up to 83% of pageviews on Vercel's own docs come from agents, rising further the more content is optimized for them. He expects direct human traffic to become a rounding error — the web will thrive, but be built for and by agents. Separately, he noted agents are already buy…",
+      "insightZh": "Vercel CEO Guillermo Rauch 晒出一组 Vercel 网络上的机器/Agent 流量数据：过去 30 天全网 58.18% 的流量来自 bot（2024 年 1 月为 32%）；Vercel 上 60% 以上的部署已经是 agentic 的（2026 年 1 月约 3%）；Vercel 自家文档站最多 83% 的页面浏览来自 Agent，而且内容越针对 Agent 优化，这个比例越高。他判断“直接的人类流量”未来几年会变成舍入误差——Web 会继续繁荣，但会为 Agent 而建、由 Agent 来建。另一条推文提到 Agent 已经频繁通过 Vercel CLI 在其 Marketplace 上直接购买基础设施服务，Vercel 现在把这一能力扩展到域名购买，Agent 可以从想法一路做到上线一个在线业务。",
+      "tags": [
+        "Agent",
+        "Product",
+        "Infrastructure"
+      ],
+      "url": "https://x.com/rauchg/status/2108733051283050964",
+      "publishedAt": "2026-10-10T01:35:12.000Z",
+      "metrics": {
+        "likes": 277,
+        "retweets": 14,
+        "replies": 66,
+        "score": 465
+      }
+    },
+    {
+      "id": "digest-x-1-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie argues that agents spawning agents, background agents on every task, and agent swarms will consume 1,000x more tokens than people prompting agents one at a time. Chat-style AI that works only as fast as you can prompt it will look like a relic within a year or two; the vast majority of tokens will go to agents doing continuous background work in our workflows. That's why he believes we're still early on the agent adoption curve, with far more compute and infrastructure build-out ahead.",
+      "insightZh": "Box CEO Aaron Levie 认为：Agent 生成 Agent、后台在每个任务上持续运行的 Agent、以及 Agent 集群，消耗的 token 会是“人一次 prompt 一个 Agent”模式的 1000 倍。只能按你 prompt 速度为你干活的聊天式 AI，一两年内就会显得像古董；绝大部分 token 将被在后台和工作流里持续干活的 Agent 消耗。这也是为什么他认为 Agent 采用仍处在曲线很早期，后续需要的算力和基础设施建设还远远不够。",
+      "tags": [
+        "Agent",
+        "Infrastructure"
+      ],
+      "url": "https://x.com/levie/status/2108750943680630893",
+      "publishedAt": "2026-10-10T02:46:18.000Z",
+      "metrics": {
+        "likes": 530,
+        "retweets": 41,
+        "replies": 93,
+        "score": 880
+      }
+    },
+    {
+      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "No Priors",
+      "title": "Beam: The Great American Open Model with ReflectionAI CEO Misha Laskin",
+      "summaryEn": "Reflection AI shipped Beam, its first open-weight model (500B total / 23B active), trained with what Misha Laskin calls the largest documented open RL run to deliver 3–4x reasoning efficiency; he argues enterprises will move from renting to owning intelligence, open tokens have already flipped to ~70% share on gateways, and Western open models are a must-have for enterprise and sovereign buyers. Misha Laskin, co-founder and CEO of Reflection AI and a former DeepMind researcher on the Gemini RL team, said the company grew from ~30 to ~300 people in a year, building pre-training, mid-training and RL teams end to end. Beam's pre-training used 6,000 GB300s (now ~12 days), while RL used 10,000+ GB300s for four weeks — more FLOPs on RL than pre-training. He says RL systems \"never stop learning,\" turning capability into an economic question of how much compute to spend. Catching up to the fron…",
+      "insightZh": "Reflection AI 发布首个开源权重模型 Beam（总参 500B / 激活 23B），用迄今公开最大规模的开源 RL 训练换来 3-4 倍推理效率；Misha Laskin 认为企业会从“租用智能”走向“拥有智能”，开源 token 占比已从 30% 翻到约 70%，而 Western 开源模型是企业与主权客户的刚需。 Reflection AI 联合创始人兼 CEO Misha Laskin（前 Google DeepMind 研究员，曾参与 Gemini 1/1.5 的 RL 团队）介绍，公司一年前从约 30 人扩张到约 300 人，搭起预训练、中训练、强化学习全套团队，发布了首个开源模型 Beam。Beam 预训练用了 6000 张 GB300（现在约 12 天可完成），强化学习用了 1 万多张 GB300 跑四周——RL 消耗的算力反而超过预训练。他认为 RL 系统“从不停止进步”，问题已从科学问题变成“投多少钱换多少提升”的经济问题；Beam 在同等能力级别下推理效率高 3-4 倍。他还给出追赶前沿的资金量级：一年半前约数亿美元，半年前约数十亿美元，下一代（约 10 万张 Vera Rubin）将到数百亿美元；模型自我改进让 RL 效率提升可达每年约 30 倍。 商业上，他把闭源与开源的区别比作“租房 vs 买房”：企业在闭源模型上年花费上亿美元后，会出于控制权和成本考虑转向自有部署，且由于算力短缺出现了 on-prem 回潮（如通过 Dell 部署裸金属）。他观察到 OpenRouter、Vercel 等网关上的闭源/开源 token 比例在半年内从 70:30 翻转为约 30:70，并预计最终会像 Linux 主导服务器那样。与 AI 原生公司不同，企业多数 token 将来自“定制化系统”（围绕开源模型构建 agentic harness，比如 KYC 流程）而非微调模型。Reflection 为大型企业与主权客户提供推理、集群管理、harness 和服务，重点场景包括金融 KYC/合规、网络安全防御和法律。竞争公式是：智能密度 × 算力 ×…",
+      "tags": [
+        "Agent",
+        "Product",
+        "Startup",
+        "Research"
+      ],
+      "url": "https://www.youtube.com/@NoPriorsPodcast",
+      "publishedAt": "2026-10-09T17:24:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch shared striking agent-traffic stats: 58.18% of traffic across the Vercel network is bot-originated over the last 30 days (vs. 32% in Jan 2024); 60%+ of Vercel deployments are now agentic (up from ~3% in Jan 2026); and up to 83% of pageviews on Vercel's own docs come from agents, rising further the more content is optimized for them. He expects direct human traffic to become a rounding error — the web will thrive, but be built for and by agents. Separately, he noted agents are already buy…",
+          "insightZh": "Vercel CEO Guillermo Rauch 晒出一组 Vercel 网络上的机器/Agent 流量数据：过去 30 天全网 58.18% 的流量来自 bot（2024 年 1 月为 32%）；Vercel 上 60% 以上的部署已经是 agentic 的（2026 年 1 月约 3%）；Vercel 自家文档站最多 83% 的页面浏览来自 Agent，而且内容越针对 Agent 优化，这个比例越高。他判断“直接的人类流量”未来几年会变成舍入误差——Web 会继续繁荣，但会为 Agent 而建、由 Agent 来建。另一条推文提到 Agent 已经频繁通过 Vercel CLI 在其 Marketplace 上直接购买基础设施服务，Vercel 现在把这一能力扩展到域名购买，Agent 可以从想法一路做到上线一个在线业务。",
+          "tags": [
+            "Agent",
+            "Product",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/rauchg/status/2108733051283050964",
+          "publishedAt": "2026-10-10T01:35:12.000Z",
+          "metrics": {
+            "likes": 277,
+            "retweets": 14,
+            "replies": 66,
+            "score": 465
+          }
+        },
+        {
+          "id": "digest-x-1-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues that agents spawning agents, background agents on every task, and agent swarms will consume 1,000x more tokens than people prompting agents one at a time. Chat-style AI that works only as fast as you can prompt it will look like a relic within a year or two; the vast majority of tokens will go to agents doing continuous background work in our workflows. That's why he believes we're still early on the agent adoption curve, with far more compute and infrastructure build-out ahead.",
+          "insightZh": "Box CEO Aaron Levie 认为：Agent 生成 Agent、后台在每个任务上持续运行的 Agent、以及 Agent 集群，消耗的 token 会是“人一次 prompt 一个 Agent”模式的 1000 倍。只能按你 prompt 速度为你干活的聊天式 AI，一两年内就会显得像古董；绝大部分 token 将被在后台和工作流里持续干活的 Agent 消耗。这也是为什么他认为 Agent 采用仍处在曲线很早期，后续需要的算力和基础设施建设还远远不够。",
+          "tags": [
+            "Agent",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/levie/status/2108750943680630893",
+          "publishedAt": "2026-10-10T02:46:18.000Z",
+          "metrics": {
+            "likes": 530,
+            "retweets": 41,
+            "replies": 93,
+            "score": 880
+          }
+        },
+        {
+          "id": "digest-x-2-TWFkaHUgR3",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Madhu Guru",
+          "title": "Madhu Guru · Meta AI 高级总监，前 Google Gemini/Veo/Nano Banana 负责人",
+          "summaryEn": "Madhu Guru, Sr Director of AI at Meta and former Google lead on Gemini, Veo and Nano Banana, argues open-weight models didn't start the drop in price per unit of intelligence — they're a tailwind on a trend already underway. The drivers: distilling the best models into smaller, cheaper-to-serve ones; infra efficiency; and competition between providers. Across every model company, version x of the mid-size model roughly equals version x-1 of the large model — same intelligence for less money.",
+          "insightZh": "Meta AI 高级总监、前 Google Gemini / Veo / Nano Banana 负责人 Madhu Guru 指出：单位智能价格下降并不是开源权重模型开启的，开源模型只是给一个早已开始的趋势加了一把顺风。过去几年推动降价的主要因素是：1）模型厂商把最强模型蒸馏成推理更便宜的小模型；2）基础设施效率提升；3）模型供应商之间的竞争。各家都呈现同样规律：第 x 代中号模型 ≈ 第 x-1 代大模型的智能水平，同样的智能、更少的钱。",
+          "tags": [
+            "Research"
+          ],
+          "url": "https://x.com/realmadhuguru/status/2108618266776387886",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-3-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · Anthropic Claude Code",
+          "summaryEn": "Thariq from Anthropic's Claude Code team shared that before joining Anthropic he spent about two weeks hacking a side project with Opus 4 on the Agent SDK — it needed a constantly running process and didn't work that well. One prompt to Opus 5.5 ported it to Claude Managed Agents and made it far more reliable. It now lives on his new-tab page, and he's merging PRs from others.",
+          "insightZh": "Anthropic Claude Code 团队的 Thariq 分享了一个小实验：加入 Anthropic 之前，他花了约两周用 Opus 4 + Agent SDK 做了一个副业项目，因为需要常驻进程，效果并不好；现在一条 prompt 让 Opus 5.5 把它移植到 Claude Managed Agents 上，可靠性大幅提升。他已经把它放在自己的浏览器新标签页上，并合并了别人提交的 PR。这是“托管 Agent 运行时 + 新一代模型”组合带来可靠性跃迁的一个具体案例。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/trq212/status/2108689101503566319",
+          "publishedAt": "2026-10-09T22:40:34.000Z",
+          "metrics": {
+            "likes": 852,
+            "retweets": 30,
+            "replies": 80,
+            "score": 1132
+          }
+        },
+        {
+          "id": "digest-x-4-TmFuIFl1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品，前 Linear 产品负责人",
+          "summaryEn": "Nan Yu, product at OpenAI Codex and former head of product at Linear, raved about a new feature: first we wrote code by hand, then tab-completed code, then prompted agents — and now we tab-complete the prompts to agents too. He jokingly asked whether this counts as recursive self-improvement.",
+          "insightZh": "OpenAI Codex 产品、前 Linear 产品负责人 Nan Yu 对 Codex 的一个新功能赞不绝口：最早我们手写代码，然后用 Tab 补全代码；后来进化到给 Agent 写 prompt——现在连给 Agent 的 prompt 也能 Tab 补全了。他半开玩笑地问：这算不算递归自我改进？",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thenanyu/status/2108671762984731037",
+          "publishedAt": "2026-10-09T21:31:40.000Z",
+          "metrics": {
+            "likes": 75,
+            "retweets": 2,
+            "replies": 6,
+            "score": 95
+          }
+        },
+        {
+          "id": "digest-x-5-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "Thibault Sottiaux of OpenAI Codex & ChatGPT posted two product updates: \"Your ChatGPT subscription is now also a Devin subscription,\" signaling a subscription-level tie-up with Cognition's Devin, and a significant upgrade to Dots.",
+          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 发了两条产品动态：“你的 ChatGPT 订阅现在也是一个 Devin 订阅了”，显示 OpenAI 与 Cognition 的 Devin 在订阅层面打通；另外 Dots 迎来一次较大升级。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thsottiaux/status/2108777962053292398",
+          "publishedAt": "2026-10-10T04:33:40.000Z",
+          "metrics": {
+            "likes": 2528,
+            "retweets": 130,
+            "replies": 492,
+            "score": 4032
+          }
+        },
+        {
+          "id": "digest-x-6-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "title": "Peter Yang · AI 教程创作者",
+          "summaryEn": "AI tutorials creator Peter Yang offered a practical tip for using a Grok Bot as chief of staff: don't register its email under your own name — \"let me copy in Peter to find a time\" makes no sense — give it its own name. He also urged founders to build fewer email-managing personal assistants and more AI startups that cure diseases.",
+          "insightZh": "AI 教程创作者 Peter Yang 给 Grok Bot 当“幕僚长”用的人一个实用建议：别把 Bot 的邮箱注册成你自己的名字，否则“我抄送一下 Peter 来约时间”这种话会很别扭，最好给它另起一个名字。另一条他吐槽：别再做更多管邮件的个人助理了，多做些用 AI 治病的创业公司吧。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/petergyang/status/2108624122339287335",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "title": "Swyx · Latent Space / AI Engineer",
+          "summaryEn": "Swyx of Latent Space and AI Engineer said AIE NYC tickets will sell out this weekend — the biggest technical conference in New York and the first with a finance mainstage, which he calls the final unification of his two careers (banking/hedge fund and big tech/startup). He also re-promoted his Coding Career book from six years ago, now available free.",
+          "insightZh": "Latent Space、AI Engineer 大会组织者 Swyx 提醒：AIE NYC 门票本周末将售罄，这是纽约规模最大的技术大会，也是首次设立金融主会场——他称这在某种意义上是他投行/对冲基金与大厂/创业两段职业的“最终统一”。他还顺手重新推了 6 年前写的《Coding Career》一书，现可免费获取。",
+          "tags": [
+            "Coding",
+            "Startup"
+          ],
+          "url": "https://x.com/swyx/status/2108780918060036335",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-8-TWF0dCBUdX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Matt Turck",
+          "handle": "mattturck",
+          "title": "Matt Turck · FirstMark Capital 合伙人",
+          "summaryEn": "FirstMark VC and MAD Podcast host Matt Turck was blown away by Synthesia's new capability: one prompt to build a professional-level video for your company or product in your style, now available to everyone — the vision Synthesia has pursued since day one, happening slowly then all at once.",
+          "insightZh": "FirstMark Capital 合伙人、MAD Podcast 主持人 Matt Turck 对 Synthesia 新功能感到震撼：一条 prompt 就能按你的风格为公司或产品生成专业级视频，今天起对所有人开放。他说这正是 Synthesia 从早期就追求的愿景——“慢慢地，然后突然间”。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/mattturck/status/2108561284635480443",
+          "publishedAt": "2026-10-09T14:12:40.000Z",
+          "metrics": {
+            "likes": 26,
+            "retweets": 4,
+            "replies": 7,
+            "score": 56
+          }
+        },
+        {
+          "id": "digest-x-9-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad asked: some communities are excited by AI's impact on their field while others are petrified — what's the deciding factor?",
+          "insightZh": "Replit CEO Amjad Masad 抛出一个问题：有些行业社群对 AI 带来的冲击感到兴奋，另一些则感到恐惧——决定因素是什么？",
+          "tags": [],
+          "url": "https://x.com/amasad/status/2108597112707686552",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "No Priors",
+          "title": "Beam: The Great American Open Model with ReflectionAI CEO Misha Laskin",
+          "summaryEn": "Reflection AI shipped Beam, its first open-weight model (500B total / 23B active), trained with what Misha Laskin calls the largest documented open RL run to deliver 3–4x reasoning efficiency; he argues enterprises will move from renting to owning intelligence, open tokens have already flipped to ~70% share on gateways, and Western open models are a must-have for enterprise and sovereign buyers. Misha Laskin, co-founder and CEO of Reflection AI and a former DeepMind researcher on the Gemini RL team, said the company grew from ~30 to ~300 people in a year, building pre-training, mid-training and RL teams end to end. Beam's pre-training used 6,000 GB300s (now ~12 days), while RL used 10,000+ GB300s for four weeks — more FLOPs on RL than pre-training. He says RL systems \"never stop learning,\" turning capability into an economic question of how much compute to spend. Catching up to the fron…",
+          "insightZh": "Reflection AI 发布首个开源权重模型 Beam（总参 500B / 激活 23B），用迄今公开最大规模的开源 RL 训练换来 3-4 倍推理效率；Misha Laskin 认为企业会从“租用智能”走向“拥有智能”，开源 token 占比已从 30% 翻到约 70%，而 Western 开源模型是企业与主权客户的刚需。 Reflection AI 联合创始人兼 CEO Misha Laskin（前 Google DeepMind 研究员，曾参与 Gemini 1/1.5 的 RL 团队）介绍，公司一年前从约 30 人扩张到约 300 人，搭起预训练、中训练、强化学习全套团队，发布了首个开源模型 Beam。Beam 预训练用了 6000 张 GB300（现在约 12 天可完成），强化学习用了 1 万多张 GB300 跑四周——RL 消耗的算力反而超过预训练。他认为 RL 系统“从不停止进步”，问题已从科学问题变成“投多少钱换多少提升”的经济问题；Beam 在同等能力级别下推理效率高 3-4 倍。他还给出追赶前沿的资金量级：一年半前约数亿美元，半年前约数十亿美元，下一代（约 10 万张 Vera Rubin）将到数百亿美元；模型自我改进让 RL 效率提升可达每年约 30 倍。 商业上，他把闭源与开源的区别比作“租房 vs 买房”：企业在闭源模型上年花费上亿美元后，会出于控制权和成本考虑转向自有部署，且由于算力短缺出现了 on-prem 回潮（如通过 Dell 部署裸金属）。他观察到 OpenRouter、Vercel 等网关上的闭源/开源 token 比例在半年内从 70:30 翻转为约 30:70，并预计最终会像 Linux 主导服务器那样。与 AI 原生公司不同，企业多数 token 将来自“定制化系统”（围绕开源模型构建 agentic harness，比如 KYC 流程）而非微调模型。Reflection 为大型企业与主权客户提供推理、集群管理、harness 和服务，重点场景包括金融 KYC/合规、网络安全防御和法律。竞争公式是：智能密度 × 算力 ×…",
+          "tags": [
+            "Agent",
+            "Product",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://www.youtube.com/@NoPriorsPodcast",
+          "publishedAt": "2026-10-09T17:24:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": [
+        {
+          "id": "digest-blog-0-QW50aHJvcG",
+          "kind": "blog",
+          "source": "Blog",
+          "sourceName": "Anthropic Engineering",
+          "title": "How we contain Claude across products",
+          "summaryEn": "Anthropic Engineering detailed how it contains Claude across claude.ai (ephemeral gVisor containers), Claude Code (human-in-the-loop plus OS-level sandbox) and Claude Cowork (local VM). The thesis: failure likelihood is falling but blast radius grows with capability and access, so environmental containment — sandboxes, VMs, egress controls — matters more than supervising each action. Users approved ~93% of permission prompts, showing approval fatigue; the Seatbelt/bubblewrap sandbox cut prompts by 84%, and auto mode catches ~83% of overeager actions. Candid failures include hooks in a cloned repo's.claude/settings.json executing before the trust dialog, and an internal red-team phish where a pasted prompt exfiltrated AWS credentials in 24 of 25 runs — only egress and filesystem boundaries reliably stop that. Cowork keeps credentials in the host keychain, never inside the VM.",
+          "insightZh": "Anthropic 工程团队系统披露了 claude.ai、Claude Code、Claude Cowork 三款产品的 Agent 隔离架构。核心观点：故障概率在下降，但“爆炸半径”随能力和权限增长而扩大，因此重点是用环境边界（沙箱、VM、出网控制）限制 Agent“能做什么”，而不是只监督它“做了什么”。数据显示用户批准了约 93% 的权限请求，审批疲劳让人在环监督失效；Claude Code 的 OS 级沙箱（macOS Seatbelt / Linux bubblewrap）让权限弹窗减少 84%，auto mode 可在执行前拦下约 83% 的越界行为；Opus 4.7 在 Gray Swan 提示注入基准上单次攻击成功率约 0.1%。文章也坦白了踩过的坑：信任对话框弹出前就解析项目.claude/settings.json 的 hook 漏洞；以及一次内部红队演练中，通过钓鱼让员工把恶意 prompt 粘进 Claude Code，25 次中 24 次成功外传 AWS 凭证——唯一可靠的防线是出网控制与文件系统边界。Cowork 面向非技术用户，因此采用完整本地 VM，凭证留在宿主机钥匙串中，从不进入虚拟机。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+          "publishedAt": null,
+          "author": "",
+          "handle": ""
+        },
+        {
+          "id": "digest-blog-1-QW50aHJvcG",
+          "kind": "blog",
+          "source": "Blog",
+          "sourceName": "Anthropic Engineering",
+          "title": "An update on recent Claude Code quality reports",
+          "summaryEn": "Anthropic's postmortem on Claude Code quality reports traced degradation to three separate changes (API and inference unaffected): lowering default reasoning effort from high to medium on March 4 (reverted April 7); a bug in clearing old thinking from idle sessions that fired every turn, making Claude seem forgetful (fixed April 10); and a verbosity-reducing system prompt that hurt coding quality (reverted April 20). Because each hit different traffic slices on different schedules, it looked like broad, inconsistent degradation that internal evals initially missed. Usage limits were reset for all subscribers.",
+          "insightZh": "Anthropic 对 Claude Code 质量下降的用户反馈做了复盘，定位到三处独立改动（API 与推理层未受影响）：3 月 4 日把默认推理强度从 high 降到 medium 以降低延迟，事后承认是错误取舍，4 月 7 日回滚；3 月 26 日为空闲超过一小时的会话清理旧思考内容，但 bug 导致此后每一轮都在清理，让 Claude 显得健忘、重复，4 月 10 日修复；4 月 16 日新增降低冗长度的系统提示，与其他提示改动叠加后损害了编码质量，4 月 20 日回滚。由于三处改动影响不同流量切片、时间不同，整体表现为广泛而不一致的退化，内部评测起初也未能复现。Anthropic 为所有订阅用户重置了用量额度。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Eval"
+          ],
+          "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+          "publishedAt": null,
+          "author": "",
+          "handle": ""
+        },
+        {
+          "id": "digest-blog-2-QW50aHJvcG",
+          "kind": "blog",
+          "source": "Blog",
+          "sourceName": "Anthropic Engineering",
+          "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+          "summaryEn": "Anthropic explained the design of Claude Managed Agents: harnesses encode assumptions about what Claude can't do, and those go stale as models improve (context resets added for Sonnet 4.5's \"context anxiety\" became dead weight on Opus 4.5). So, like an OS virtualizing hardware, they split an agent into a session (append-only event log), a harness (the loop calling Claude and routing tools) and a sandbox. Decoupling the brain from the hands turned containers and harnesses into cattle — a crashed harness resumes via wake(sessionId) from the log; credentials live in a vault outside the sandbox and are used via an MCP proxy, so generated code never touches tokens; and the session acts as durable context outside the context window, queryable with getEvents(), avoiding irreversible compaction losses.",
+          "insightZh": "Anthropic 介绍了 Claude Managed Agents 的架构思路：harness 编码了“Claude 做不到什么”的假设，而这些假设会随模型进步而过时（例如为 Sonnet 4.5 的“上下文焦虑”加的上下文重置，在 Opus 4.5 上成了累赘）。因此他们像操作系统虚拟化硬件一样，把 Agent 拆成三个可独立替换的接口：session（只追加的事件日志）、harness（调用 Claude 并路由工具调用的循环）、sandbox（执行环境）。把“大脑”（Claude + harness）与“双手”（沙箱和工具）解耦后，容器和 harness 都从“宠物”变成“牲口”，崩溃后可通过 wake(sessionId) 从日志恢复；凭证存放在沙箱外的 vault 中，经代理调用 MCP 工具，生成代码的沙箱永远接触不到 token；session 作为上下文窗口之外的持久对象，可通过 getEvents() 按需回溯，避免压缩带来的不可逆信息丢失。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.anthropic.com/engineering/managed-agents",
+          "publishedAt": null,
+          "author": "",
+          "handle": ""
+        }
+      ]
+    }
+  ]
+}

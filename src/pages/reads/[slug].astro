@@ -28,15 +28,15 @@ function renderMd(md: string): string {
       // 图片（独立段落：![alt](url)，可选后跟 *图注* 行）
       const imgMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(?:\n\*([^*]+)\*)?$/);
       if (imgMatch) {
-        const cap = imgMatch[3] ? `<figcaption class="text-sm text-accent-gray-500 mt-2 text-center">${escapeHtml(imgMatch[3])}</figcaption>` : '';
+        const cap = imgMatch[3] ? `<figcaption class="text-[length:var(--fs-sub)] text-accent-gray-500 mt-2 text-center">${escapeHtml(imgMatch[3])}</figcaption>` : '';
         return `<figure class="my-6"><img src="${escapeHtml(imgMatch[2])}" alt="${escapeHtml(imgMatch[1])}" class="w-full rounded border border-accent-gray-200 bg-white" loading="lazy" />${cap}</figure>`;
       }
       // 标题
       if (trimmed.startsWith('### ')) {
-        return `<h3 class="text-lg lg:text-xl font-bold mt-8 mb-3">${escapeHtml(trimmed.slice(4))}</h3>`;
+        return `<h3 class="text-[length:var(--fs-h3)] lg:text-[length:var(--fs-h2)] font-bold mt-8 mb-3">${escapeHtml(trimmed.slice(4))}</h3>`;
       }
       if (trimmed.startsWith('## ')) {
-        return `<h2 class="text-xl lg:text-2xl font-extrabold mt-10 mb-4">${escapeHtml(trimmed.slice(3))}</h2>`;
+        return `<h2 class="text-[length:var(--fs-h2)] font-extrabold mt-10 mb-4">${escapeHtml(trimmed.slice(3))}</h2>`;
       }
       // 引用
       if (trimmed.startsWith('> ')) {
@@ -265,12 +265,12 @@ function formatInline(s: string): string {
   .sec-page .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--gray-5); margin-bottom: 16px; transition: .15s; }
   .sec-page .back-link:hover { color: var(--acc-deep); }
   .sec-page .back-link .ic { font-size: 15px; }
-  .sec-page .read-h1 { margin: 0; font-size: clamp(26px, 5vw, 40px); font-weight: 850; letter-spacing: -.03em; line-height: 1.15; color: var(--ink); }
-  .sec-page .read-sub { font-size: 15.5px; color: var(--gray-5); font-style: italic; margin: 12px 0 0; max-width: 720px; line-height: 1.5; }
-  .sec-page .read-byline { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; font-size: 13.5px; color: var(--gray-5); }
+  .sec-page .read-h1 { margin: 0; font-size: var(--fs-hero); font-weight: 850; letter-spacing: -.03em; line-height: 1.15; color: var(--ink); }
+  .sec-page .read-sub { font-size: var(--fs-body); color: var(--gray-5); font-style: italic; margin: 12px 0 0; max-width: 720px; line-height: 1.5; }
+  .sec-page .read-byline { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; font-size: var(--fs-sub); color: var(--gray-5); }
   .sec-page .read-byline b { color: var(--gray-7); font-weight: 750; }
   .sec-page .read-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0 0; }
-  .sec-page .read-tags .tag { font-size: 11.5px; padding: 3px 10px; border-radius: 999px; background: var(--acc-ghost); color: var(--acc-deep); font-weight: 600; }
+  .sec-page .read-tags .tag { font-size: var(--fs-meta); padding: 3px 10px; border-radius: 999px; background: var(--acc-ghost); color: var(--acc-deep); font-weight: 600; }
   .sec-page .read-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
   .sec-page .btn-acc, .sec-page .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 750; padding: 10px 18px; border-radius: 4px; transition: .15s; }
   .sec-page .btn-acc { background: var(--acc); color: #fff; }
@@ -284,23 +284,23 @@ function formatInline(s: string): string {
   .sec-page .reads-body-section { padding: 10px 0 20px; }
   .sec-page .reads-content { max-width: 780px; }
   .sec-page .rd-block { margin-top: 8px; }
-  .sec-page .rd-note { font-size: 13px; color: var(--gray-4); margin: -8px 0 16px; }
+  .sec-page .rd-note { font-size: var(--fs-sub); color: var(--gray-4); margin: -8px 0 16px; }
 
   /* 紧凑版 sec-head（用于核心 callout） */
   .sec-page .sec-head.compact { margin: 0 0 12px; }
 
   /* 一句话核心 callout */
   .sec-page .core-callout { margin-top: 20px; padding: 22px 24px; background: var(--acc-band); border-left: 4px solid var(--acc); border-radius: 0 6px 6px 0; }
-  .sec-page .core-text { font-size: 19px; font-weight: 600; line-height: 1.7; color: var(--ink); margin: 0; }
+  .sec-page .core-text { font-size: var(--fs-h3); font-weight: 600; line-height: 1.7; color: var(--ink); margin: 0; }
 
   /* 核心观点列表 */
   .sec-page .keypoints { list-style: decimal; padding-left: 26px; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-  .sec-page .keypoints li { font-size: 16px; line-height: 1.75; color: var(--gray-7); padding-left: 4px; }
+  .sec-page .keypoints li { font-size: var(--fs-body); line-height: 1.75; color: var(--gray-7); padding-left: 4px; }
   .sec-page .keypoints li::marker { color: var(--acc); font-weight: 800; }
 
   /* 启示面板 */
   .sec-page .insight-panel { background: var(--gray-1); border: 1px solid var(--gray-2); border-left: 3px solid var(--acc); border-radius: 0 6px 6px 0; padding: 18px 20px; }
-  .sec-page .insight-panel p { font-size: 16px; line-height: 1.8; color: var(--gray-7); margin: 0; }
+  .sec-page .insight-panel p { font-size: var(--fs-body); line-height: 1.8; color: var(--gray-7); margin: 0; }
 
   /* 中英对照 */
   .sec-page .space-y-8 > * + * { margin-top: 30px; }
@@ -309,14 +309,14 @@ function formatInline(s: string): string {
   /* 金句 */
   .sec-page .quotes { display: flex; flex-direction: column; gap: 14px; }
   .sec-page .quote-card { padding: 18px 20px; background: #fff; border: 1px solid var(--gray-2); border-left: 4px solid var(--acc); border-radius: 0 6px 6px 0; }
-  .sec-page .quote-card .q-en { font-style: italic; color: var(--gray-5); margin: 0 0 8px; line-height: 1.65; font-size: 15px; }
-  .sec-page .quote-card .q-zh { color: var(--ink); font-weight: 600; line-height: 1.7; margin: 0; font-size: 16px; }
+  .sec-page .quote-card .q-en { font-style: italic; color: var(--gray-5); margin: 0 0 8px; line-height: 1.65; font-size: var(--fs-body); }
+  .sec-page .quote-card .q-zh { color: var(--ink); font-weight: 600; line-height: 1.7; margin: 0; font-size: var(--fs-body); }
 
   /* 延伸视角卡片 */
   .sec-page .sec-card { cursor: pointer; }
   .sec-page .sec-card .meta { justify-content: flex-start; }
-  .sec-page .sec-card .ext { font-size: 13px; color: var(--gray-4); }
-  .sec-page .sec-card p { -webkit-line-clamp: unset; display: block; font-size: 14.5px; color: var(--gray-7); line-height: 1.7; }
+  .sec-page .sec-card .ext { font-size: var(--fs-sub); color: var(--gray-4); }
+  .sec-page .sec-card p { -webkit-line-clamp: unset; display: block; font-size: var(--fs-sub); color: var(--gray-7); line-height: 1.7; }
 
   /* 底部 */
   .sec-page .rd-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--gray-2); }
@@ -328,16 +328,16 @@ function formatInline(s: string): string {
   .sec-page .rd-foot .ic, .sec-page .foot-back .ic { font-size: 15px; }
 
   @media (max-width: 480px) {
-    .sec-page .core-text { font-size: 17.5px; }
+    .sec-page .core-text { font-size: var(--fs-h3); }
   }
 </style>
 
 <style is:global>
   /* 同步全站卡片字号加大：正文 16→17.5px，小字 14→15px（set:html 内容需 global） */
-  .reads-content { font-size: 17.5px; }
-  .reads-content .text-sm { font-size: 15px; }
-  .reads-content .text-xs { font-size: 13px; }
+  .reads-content { font-size: var(--fs-h3); }
+  .reads-content .text-[length:var(--fs-sub)] { font-size: var(--fs-body); }
+  .reads-content .text-[length:var(--fs-meta)] { font-size: var(--fs-sub); }
   /* renderMd 输出的正文段落对齐放大后基准 */
-  .reads-content .reads-body p { font-size: 16.5px; line-height: 1.85; }
-  .reads-content .reads-body li { font-size: 16.5px; }
+  .reads-content .reads-body p { font-size: var(--fs-body); line-height: 1.85; }
+  .reads-content .reads-body li { font-size: var(--fs-body); }
 </style>

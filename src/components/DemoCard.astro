@@ -33,21 +33,21 @@ const { item } = Astro.props;
 
     {/* Header：标题 + repo */}
     <div class="mb-5 pb-5 border-b border-accent-gray-100">
-      <h2 class="text-2xl lg:text-3xl font-extrabold tracking-tight mb-2
+      <h2 class="text-[length:var(--fs-h2)] lg:text-3xl font-extrabold tracking-tight mb-2
                  group-hover:text-accent-purple transition-colors">
         {item.title}
       </h2>
-      <div class="text-sm text-accent-gray-500 font-mono">{item.repo}</div>
+      <div class="text-[length:var(--fs-sub)] text-accent-gray-500 font-mono">{item.repo}</div>
     </div>
 
     {/* 简介 + Purpose 两栏（桌面）/ 堆叠（移动） */}
     <div class={`grid gap-6 mb-6 ${item.purpose ? 'lg:grid-cols-2' : 'grid-cols-1'}`}>
       {/* 简介 */}
       <div>
-        <div class="text-[10px] font-bold uppercase tracking-wider text-accent-purple mb-2">
+        <div class="text-[length:var(--fs-micro)] font-bold uppercase tracking-wider text-accent-purple mb-2">
           简介
         </div>
-        <p class="text-sm lg:text-[15px] text-accent-ink leading-relaxed">
+        <p class="text-[length:var(--fs-sub)] lg:text-[length:var(--fs-body)] text-accent-ink leading-relaxed">
           {item.intro}
         </p>
       </div>
@@ -55,10 +55,10 @@ const { item } = Astro.props;
       {/* Purpose（可选） */}
       {item.purpose && (
         <div>
-          <div class="text-[10px] font-bold uppercase tracking-wider text-accent-purple mb-2">
+          <div class="text-[length:var(--fs-micro)] font-bold uppercase tracking-wider text-accent-purple mb-2">
             Purpose
           </div>
-          <p class="text-sm lg:text-[15px] text-accent-ink leading-relaxed">
+          <p class="text-[length:var(--fs-sub)] lg:text-[length:var(--fs-body)] text-accent-ink leading-relaxed">
             {item.purpose}
           </p>
         </div>
@@ -68,12 +68,12 @@ const { item } = Astro.props;
     {/* Key Features */}
     {item.keyFeatures && item.keyFeatures.length > 0 && (
       <div class="mb-6 pl-4 border-l-2 border-accent-purple/30">
-        <div class="text-[10px] font-bold uppercase tracking-wider text-accent-purple mb-3">
+        <div class="text-[length:var(--fs-micro)] font-bold uppercase tracking-wider text-accent-purple mb-3">
           Key Features
         </div>
         <ul class="space-y-2">
           {item.keyFeatures.map((f) => (
-            <li class="text-sm lg:text-[15px] text-accent-ink leading-relaxed flex gap-2">
+            <li class="text-[length:var(--fs-sub)] lg:text-[length:var(--fs-body)] text-accent-ink leading-relaxed flex gap-2">
               <span class="text-accent-purple flex-shrink-0 mt-1">▪</span>
               <span>{f}</span>
             </li>
@@ -110,7 +110,7 @@ const { item } = Astro.props;
       </a>
 
       {/* 添加日期，小字 */}
-      <span class="ml-auto text-xs text-accent-gray-400">
+      <span class="ml-auto text-[length:var(--fs-meta)] text-accent-gray-400">
         {item.addedDate}
       </span>
     </div>

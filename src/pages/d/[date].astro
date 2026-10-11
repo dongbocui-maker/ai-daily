@@ -167,7 +167,7 @@ const next = idx > 0 ? dates[idx - 1] : null;
   .sec-page .dn-cur { font-size: 12px; font-weight: 600; color: var(--gray-4); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; flex: none; }
 
   /* 卡片内洞察条 */
-  .sec-page .d-insight { margin-top: 11px; padding: 9px 13px; background: var(--gray-1); border-left: 3px solid var(--acc); font-size: 14.5px; color: var(--gray-7); line-height: 1.6; }
+  .sec-page .d-insight { margin-top: 11px; padding: 9px 13px; background: var(--gray-1); border-left: 3px solid var(--acc); font-size: var(--fs-sub); color: var(--gray-7); line-height: 1.6; }
   .sec-page .d-insight b { color: var(--acc-deep); font-weight: 800; letter-spacing: .03em; margin-right: 8px; }
 
   /* 卡片正文不截断（详情页要看全文） */
@@ -175,8 +175,8 @@ const next = idx > 0 ? dates[idx - 1] : null;
 
   /* 收盘点评面板 */
   .sec-page .closing-panel { margin: 40px 0 12px; background: #fff; border: 1px solid var(--gray-2); border-top: 3px solid var(--ink); border-radius: 6px; padding: 22px 22px; }
-  .sec-page .closing-panel h3 { margin: 0 0 12px; font-size: 12px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-5); }
-  .sec-page .closing-panel p { font-size: 15.5px; color: var(--gray-7); line-height: 1.75; margin: 0 0 10px; }
+  .sec-page .closing-panel h3 { margin: 0 0 12px; font-size: var(--fs-meta); font-weight: 850; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-5); }
+  .sec-page .closing-panel p { font-size: var(--fs-body); color: var(--gray-7); line-height: 1.75; margin: 0 0 10px; }
   .sec-page .closing-panel p:last-child { margin-bottom: 0; }
 
   @media (max-width: 480px) {

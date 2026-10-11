@@ -24,16 +24,16 @@ const base = import.meta.env.BASE_URL;
           <span class="mx-2">/</span>
           <span class="text-accent-gray-300">Scaling Agent Systems</span>
         </nav>
-        <span class="inline-block bg-accent-purple text-white px-3 py-1 text-[11px] font-semibold tracking-widest uppercase mb-4 rounded-sm">深度研究 · 智能体系统规模化</span>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.15] tracking-tight mb-4 max-w-4xl">
+        <span class="inline-block bg-accent-purple text-white px-3 py-1 text-[length:var(--fs-meta)] font-semibold tracking-widest uppercase mb-4 rounded-sm">深度研究 · 智能体系统规模化</span>
+        <h1 class="text-[length:var(--fs-hero)] font-extrabold leading-[1.15] tracking-tight mb-4 max-w-4xl">
           {doc.data.title}
         </h1>
         {doc.data.subtitle && (
-          <p class="text-base lg:text-lg text-accent-gray-300 max-w-3xl leading-relaxed mb-6">
+          <p class="text-[length:var(--fs-body)] lg:text-[length:var(--fs-h3)] text-accent-gray-300 max-w-3xl leading-relaxed mb-6">
             {doc.data.subtitle}
           </p>
         )}
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-accent-gray-400">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[length:var(--fs-meta)] text-accent-gray-400">
           <span>📄 来源：<a href={doc.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-accent-purple-light hover:underline">{doc.data.sourceLabel}</a></span>
           <span>·</span>
           <span>🔖 中文精读与事实核对：钢铁虾</span>
@@ -48,7 +48,7 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     {/* 正文 — markdown 渲染 */}
-    <article class="container-x max-w-4xl py-10 prose prose-lg prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-a:text-accent-purple prose-a:no-underline hover:prose-a:underline prose-strong:text-accent-ink prose-table:text-sm prose-table:my-4 prose-th:bg-accent-gray-50 prose-th:font-semibold prose-th:px-3 prose-th:py-2 prose-td:px-3 prose-td:py-2 prose-td:border prose-th:border prose-td:border-accent-gray-200 prose-th:border-accent-gray-200 prose-code:text-accent-purple prose-code:bg-accent-gray-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-accent-gray-900 prose-pre:text-accent-gray-100 prose-pre:text-[13px] prose-pre:leading-[1.5] prose-blockquote:border-accent-purple prose-blockquote:font-normal prose-blockquote:text-accent-gray-700 prose-hr:border-accent-gray-200">
+    <article class="container-x max-w-4xl py-10 prose prose-lg text-[length:var(--fs-body)] prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-3xl prose-h2:text-[length:var(--fs-h2)] prose-h3:text-[length:var(--fs-h2)] prose-a:text-accent-purple prose-a:no-underline hover:prose-a:underline prose-strong:text-accent-ink prose-table:text-[length:var(--fs-sub)] prose-table:my-4 prose-th:bg-accent-gray-50 prose-th:font-semibold prose-th:px-3 prose-th:py-2 prose-td:px-3 prose-td:py-2 prose-td:border prose-th:border prose-td:border-accent-gray-200 prose-th:border-accent-gray-200 prose-code:text-accent-purple prose-code:bg-accent-gray-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-accent-gray-900 prose-pre:text-accent-gray-100 prose-pre:text-[length:var(--fs-sub)] prose-pre:leading-[1.5] prose-blockquote:border-accent-purple prose-blockquote:font-normal prose-blockquote:text-accent-gray-700 prose-hr:border-accent-gray-200">
       <Content />
     </article>
 

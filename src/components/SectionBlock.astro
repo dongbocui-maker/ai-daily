@@ -38,7 +38,7 @@ function hostnameOf(url?: string): string | null {
                 {String(idx + 1).padStart(2, '0')}
               </span>
               {item.source && (
-                <span class="text-xs text-accent-gray-500 font-medium">{item.source}</span>
+                <span class="text-[length:var(--fs-meta)] text-accent-gray-500 font-medium">{item.source}</span>
               )}
             </div>
 
@@ -63,7 +63,7 @@ function hostnameOf(url?: string): string | null {
 
             {item.insight && (
               <div class="insight-block">
-                <span class="block text-xs uppercase tracking-wider font-bold text-accent-purple mb-1">
+                <span class="block text-[length:var(--fs-meta)] uppercase tracking-wider font-bold text-accent-purple mb-1">
                   行业启示
                 </span>
                 {item.insight}
@@ -76,14 +76,14 @@ function hostnameOf(url?: string): string | null {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-purple
+                  class="inline-flex items-center gap-1.5 text-[length:var(--fs-sub)] font-semibold text-accent-purple
                          hover:text-accent-purple-deep transition-colors group/link"
                 >
                   <span>点击查看更多</span>
                   <span class="transition-transform group-hover/link:translate-x-1">→</span>
                 </a>
                 {host && (
-                  <span class="text-xs text-accent-gray-500 font-mono truncate max-w-[180px]">
+                  <span class="text-[length:var(--fs-meta)] text-accent-gray-500 font-mono truncate max-w-[180px]">
                     {host}
                   </span>
                 )}

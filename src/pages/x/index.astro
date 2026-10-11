@@ -78,27 +78,27 @@ function itemCard(item: XSignalItem, featuredCard = false) {
         <span class="badge bg-accent-purple text-white mb-4">BUILDER SIGNALS</span>
         <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end relative">
           <div>
-            <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4">X</h1>
-            <p class="text-lg lg:text-xl text-accent-gray-300 max-w-3xl leading-relaxed">
+            <h1 class="text-[length:var(--fs-hero)] font-extrabold tracking-tight mb-4">X</h1>
+            <p class="text-[length:var(--fs-h3)] lg:text-[length:var(--fs-h2)] text-accent-gray-300 max-w-3xl leading-relaxed">
               从全球 AI builders / founders / researchers 的 X、Podcasts、Blogs 中提炼高信号观点，形成中文可读的 Builder Intelligence。
             </p>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3">
             <div class="border border-white/15 bg-white/5 p-4">
-              <div class="text-2xl font-extrabold">{report.stats.totalTweets}</div>
-              <div class="text-xs uppercase tracking-wider text-accent-gray-300">X Posts</div>
+              <div class="text-[length:var(--fs-h2)] font-extrabold">{report.stats.totalTweets}</div>
+              <div class="text-[length:var(--fs-meta)] uppercase tracking-wider text-accent-gray-300">X Posts</div>
             </div>
             <div class="border border-white/15 bg-white/5 p-4">
-              <div class="text-2xl font-extrabold">{report.stats.xBuilders}</div>
-              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Builders</div>
+              <div class="text-[length:var(--fs-h2)] font-extrabold">{report.stats.xBuilders}</div>
+              <div class="text-[length:var(--fs-meta)] uppercase tracking-wider text-accent-gray-300">Builders</div>
             </div>
             <div class="border border-white/15 bg-white/5 p-4">
-              <div class="text-2xl font-extrabold">{report.stats.podcastEpisodes}</div>
-              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Podcasts</div>
+              <div class="text-[length:var(--fs-h2)] font-extrabold">{report.stats.podcastEpisodes}</div>
+              <div class="text-[length:var(--fs-meta)] uppercase tracking-wider text-accent-gray-300">Podcasts</div>
             </div>
             <div class="border border-white/15 bg-white/5 p-4">
-              <div class="text-2xl font-extrabold">{report.stats.blogPosts}</div>
-              <div class="text-xs uppercase tracking-wider text-accent-gray-300">Blogs</div>
+              <div class="text-[length:var(--fs-h2)] font-extrabold">{report.stats.blogPosts}</div>
+              <div class="text-[length:var(--fs-meta)] uppercase tracking-wider text-accent-gray-300">Blogs</div>
             </div>
           </div>
         </div>
@@ -108,8 +108,8 @@ function itemCard(item: XSignalItem, featuredCard = false) {
     <section class="border-b border-accent-gray-200 bg-white">
       <div class="container-x py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
         <div>
-          <div class="text-sm font-bold text-accent-ink">{report.title}</div>
-          <div class="text-xs text-accent-gray-500 mt-1">
+          <div class="text-[length:var(--fs-sub)] font-bold text-accent-ink">{report.title}</div>
+          <div class="text-[length:var(--fs-meta)] text-accent-gray-500 mt-1">
             Feed: {report.feedGeneratedAt ? formatDateTime(report.feedGeneratedAt) : 'N/A'} · Site: {formatDateTime(report.generatedAt)}
           </div>
         </div>
@@ -133,9 +133,9 @@ function itemCard(item: XSignalItem, featuredCard = false) {
         <div class="flex items-baseline justify-between gap-4 mb-5">
           <div>
             <span class="badge bg-accent-ink text-white mb-3">FEATURED</span>
-            <h2 class="text-2xl lg:text-3xl font-extrabold tracking-tight">今日高信号</h2>
+            <h2 class="text-[length:var(--fs-h2)] lg:text-3xl font-extrabold tracking-tight">今日高信号</h2>
           </div>
-          <a href="#x-list" class="hidden sm:inline-flex text-sm font-semibold text-accent-purple hover:text-accent-purple-deep">查看全部 signals ↓</a>
+          <a href="#x-list" class="hidden sm:inline-flex text-[length:var(--fs-sub)] font-semibold text-accent-purple hover:text-accent-purple-deep">查看全部 signals ↓</a>
         </div>
         <div class="grid md:grid-cols-3 gap-4 lg:gap-5 mb-10">
           {featured.map((item) => {
@@ -144,11 +144,11 @@ function itemCard(item: XSignalItem, featuredCard = false) {
               <article class="bg-white border border-accent-gray-200 p-5 lg:p-6 hover:border-accent-purple transition-colors">
                 <div class="flex items-center gap-2 mb-4">
                   <span class={`badge ${kindClass(item.kind)}`}>{kindLabel(item.kind)}</span>
-                  <span class="text-xs text-accent-gray-500">{item.sourceName}{item.handle ? ` · @${item.handle}` : ''}</span>
+                  <span class="text-[length:var(--fs-meta)] text-accent-gray-500">{item.sourceName}{item.handle ? ` · @${item.handle}` : ''}</span>
                 </div>
                 <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
                 <p class="text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
-                <div class="mt-4 flex items-center justify-between gap-3 text-xs text-accent-gray-500">
+                <div class="mt-4 flex items-center justify-between gap-3 text-[length:var(--fs-meta)] text-accent-gray-500">
                   <span>{meta.date || meta.metrics}</span>
                   {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="font-semibold text-accent-purple hover:text-accent-purple-deep">Source ↗</a>}
                 </div>
@@ -161,10 +161,10 @@ function itemCard(item: XSignalItem, featuredCard = false) {
             {displaySections.map((section) => (
               <section data-section={section.key}>
                 <div class="flex items-baseline gap-3 mb-4">
-                  <h2 class="text-xl lg:text-2xl font-extrabold tracking-tight">{section.label}</h2>
-                  <span class="text-sm text-accent-gray-500">{section.items.length} 条</span>
+                  <h2 class="text-[length:var(--fs-h2)] font-extrabold tracking-tight">{section.label}</h2>
+                  <span class="text-[length:var(--fs-sub)] text-accent-gray-500">{section.items.length} 条</span>
                 </div>
-                {section.description && <p class="text-sm text-accent-gray-600 mb-5">{section.description}</p>}
+                {section.description && <p class="text-[length:var(--fs-sub)] text-accent-gray-600 mb-5">{section.description}</p>}
                 <div class="grid gap-4">
                   {section.items.map((item) => {
                     const meta = itemCard(item);
@@ -173,19 +173,19 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
                           <div class="flex flex-wrap items-center gap-2">
                             <span class={`badge ${kindClass(section.key)}`}>{kindLabel(section.key)}</span>
-                            <span class="text-sm font-semibold text-accent-ink">{item.sourceName}</span>
-                            {item.handle && <span class="text-xs text-accent-gray-500">@{item.handle}</span>}
-                            {meta.date && <span class="text-xs text-accent-gray-500">{meta.date}</span>}
+                            <span class="text-[length:var(--fs-sub)] font-semibold text-accent-ink">{item.sourceName}</span>
+                            {item.handle && <span class="text-[length:var(--fs-meta)] text-accent-gray-500">@{item.handle}</span>}
+                            {meta.date && <span class="text-[length:var(--fs-meta)] text-accent-gray-500">{meta.date}</span>}
                           </div>
-                          {meta.metrics && <span class="text-xs text-accent-gray-500 whitespace-nowrap">{meta.metrics}</span>}
+                          {meta.metrics && <span class="text-[length:var(--fs-meta)] text-accent-gray-500 whitespace-nowrap">{meta.metrics}</span>}
                         </div>
                         <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
                         <p class="text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
                         <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
                           <div class="flex flex-wrap gap-2">
-                            {(item.tags ?? []).map((tag) => <span class="px-2 py-1 bg-accent-gray-50 text-xs font-medium text-accent-gray-700 border border-accent-gray-100">{tag}</span>)}
+                            {(item.tags ?? []).map((tag) => <span class="px-2 py-1 bg-accent-gray-50 text-[length:var(--fs-meta)] font-medium text-accent-gray-700 border border-accent-gray-100">{tag}</span>)}
                           </div>
-                          {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="text-sm font-semibold text-accent-purple hover:text-accent-purple-deep">Read source ↗</a>}
+                          {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="text-[length:var(--fs-sub)] font-semibold text-accent-purple hover:text-accent-purple-deep">Read source ↗</a>}
                         </div>
                       </article>
                     );

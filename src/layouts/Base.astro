@@ -18,6 +18,9 @@ const fullTitle = title === SITE_NAME ? `${SITE_NAME} · 每日 AI 行业速览`
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      (function(){try{var v=localStorage.getItem('aid-fs');document.documentElement.dataset.fs=(v==='s'||v==='l')?v:'m';}catch(e){document.documentElement.dataset.fs='m';}})();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content="noindex,nofollow" />

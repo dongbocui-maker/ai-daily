@@ -103,10 +103,10 @@ const playerId = `audio-player-${date}`;
     <!-- 中部：标题 + 进度条 + 时间 -->
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 mb-1.5">
-        <span class="text-[10px] font-bold tracking-wider text-accent-purple uppercase">
+        <span class="text-[length:var(--fs-micro)] font-bold tracking-wider text-accent-purple uppercase">
           🎧 AUDIO
         </span>
-        <span class="text-xs font-medium text-accent-gray-700 truncate">
+        <span class="text-[length:var(--fs-meta)] font-medium text-accent-gray-700 truncate">
           听一段语音版日报
         </span>
       </div>
@@ -139,7 +139,7 @@ const playerId = `audio-player-${date}`;
       </div>
 
       <!-- 时间显示 -->
-      <div class="flex items-center justify-between mt-1.5 text-[11px] tabular-nums text-accent-gray-500">
+      <div class="flex items-center justify-between mt-1.5 text-[length:var(--fs-meta)] tabular-nums text-accent-gray-500">
         <span data-time="current">0:00</span>
         <span data-time="duration">{initialDuration}</span>
       </div>

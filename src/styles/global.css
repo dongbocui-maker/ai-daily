@@ -54,3 +54,31 @@
            text-accent-gray-700 leading-relaxed;
   }
 }
+
+/* ============================================================
+   字号 7 级统一 + A/A/A 三档切换（2026-10-11，Jason 拍板）
+   默认 = 中档；html[data-fs="s"|"l"] 覆盖。只作用于内容区，chrome 固定 px。
+   ============================================================ */
+:root { /* 默认 = 中档 */
+  --fs-hero: clamp(32px, 6.4vw, 50px);
+  --fs-h2: 24px; --fs-h3: 19px; --fs-body: 16.5px;
+  --fs-sub: 14.5px; --fs-meta: 12.5px; --fs-micro: 11px;
+}
+html[data-fs="s"] {
+  --fs-hero: clamp(30px, 6vw, 46px);
+  --fs-h2: 22px; --fs-h3: 17.5px; --fs-body: 15px;
+  --fs-sub: 13.5px; --fs-meta: 11.5px; --fs-micro: 10.5px;
+}
+html[data-fs="l"] {
+  --fs-hero: clamp(35px, 7vw, 54px);
+  --fs-h2: 26px; --fs-h3: 20.5px; --fs-body: 18px;
+  --fs-sub: 16px; --fs-meta: 13.5px; --fs-micro: 12px;
+}
+
+/* A/A/A 字号切换钮（chrome：固定 px，不随档位缩放） */
+.fs-switch { display: inline-flex; border: 1px solid #e8e8ee; border-radius: 6px; overflow: hidden; }
+.fs-switch button { border: 0; background: #fff; padding: 4px 9px; cursor: pointer; font-weight: 700; color: #696973; line-height: 1; font-family: inherit; }
+.fs-switch button:nth-child(1) { font-size: 11px; }
+.fs-switch button:nth-child(2) { font-size: 13px; border-left: 1px solid #e8e8ee; border-right: 1px solid #e8e8ee; }
+.fs-switch button:nth-child(3) { font-size: 15px; }
+.fs-switch button.on { background: #A100FF; color: #fff; }

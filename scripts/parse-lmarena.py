@@ -1,184 +1,219 @@
 #!/usr/bin/env python3
-"""parse-lmarena.py — 从 lmarena HTML 提取 RSC payload，生成 snapshot
+"""Validate Arena's Text/Overall/style-controlled RSC leaderboard, fail closed.
 
-用法：python3 parse-lmarena.py <input-html> <output-json> <snapshot-date>
-
-输入：arena.ai/leaderboard 的 HTML（含 inline RSC payload）
-输出：snapshot JSON（含 Top 50 模型 + 27 维度 + 优势赛道 + 简述）
+Usage: parse-lmarena.py INPUT_HTML FETCH_METADATA OUTPUT_JSON
+FETCH_METADATA is written by fetch-lmarena.sh; dates come from the capture, not
+an arbitrary filename. Output is atomic. No networking or repository writes.
 """
-import sys
-import re
+import hashlib
 import json
+import math
+import re
+import sys
+from datetime import datetime, timedelta
+from html.parser import HTMLParser
 from pathlib import Path
 
-# ============== 配置 ==============
-CATEGORY_LABELS = {
-    'overall': '综合', 'exclude-ties': '排除平局',
-    'hard-prompts': '难题', 'hard-prompts-english': '英文难题',
-    'longer-query': '长查询', 'multi-turn': '多轮对话',
-    'multi-turn-context': '多轮上下文', 'instruction-following': '指令遵循',
-    'creative-writing': '创意写作', 'expert': '专家级',
-    'coding': '代码', 'math': '数学',
-    'english': '英文', 'non-english': '非英文', 'chinese': '中文',
-    'korean': '韩文', 'japanese': '日文', 'french': '法文',
-    'german': '德文', 'spanish': '西文', 'russian': '俄文', 'polish': '波兰文',
-    'industry-life-and-physical-and-social-science': '科学行业',
-    'industry-software-and-it-services': '软件IT行业',
-    'industry-writing-and-literature-and-language': '文学写作行业',
-    'industry-medicine-and-healthcare': '医疗行业',
-    'industry-business-and-management-and-financial-operations': '商业金融行业',
-    'industry-mathematical': '数学行业',
-    'industry-legal-and-government': '法律政府行业',
-    'industry-entertainment-and-sports-and-media': '娱乐媒体行业',
-}
-
-CATEGORY_PRIORITY = {
-    'hard-prompts': 0, 'coding': 0, 'math': 0, 'creative-writing': 0,
-    'instruction-following': 0, 'multi-turn': 0, 'multi-turn-context': 0,
-    'expert': 0, 'longer-query': 0, 'hard-prompts-english': 0,
-    'english': 1, 'non-english': 1, 'chinese': 1,
-    'industry-software-and-it-services': 2,
-    'industry-medicine-and-healthcare': 2,
-    'industry-business-and-management-and-financial-operations': 2,
-    'industry-legal-and-government': 2,
-    'industry-mathematical': 2,
-    'industry-life-and-physical-and-social-science': 2,
-    'industry-writing-and-literature-and-language': 2,
-    'industry-entertainment-and-sports-and-media': 2,
-    'korean': 3, 'japanese': 3, 'french': 3, 'german': 3,
-    'spanish': 3, 'russian': 3, 'polish': 3,
-}
-
-NON_HIGHLIGHT = ['overall', 'exclude-ties']
+SOURCE_URL = 'https://arena.ai/leaderboard/chat/text'
+BASIS = 'arena-text-overall-style-control-v1'
+LEADERBOARD_ID = 'leaderboard-sets/public/leaderboards/text-overall-style_control/leaderboard-snapshots/latest'
 TOP_N = 50
+MIN_MODELS = 100
+MAX_MODELS = 5000
 
 
-def extract_models(html_text):
-    """从 HTML 中提取所有模型对象"""
-    pattern = re.compile(r'\{\\"name\\":\\"([^\\"]+)\\",\\"organization\\":\\"([^\\"]+)\\"([^{}]+?)\}')
-    seen = set()
+class InvalidSource(ValueError):
+    pass
+
+
+def require(condition, message):
+    if not condition:
+        raise InvalidSource(message)
+
+
+class Scripts(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.inside = False
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        self.inside = tag == 'script'
+
+    def handle_endtag(self, tag):
+        if tag == 'script':
+            self.inside = False
+
+    def handle_data(self, data):
+        if self.inside:
+            self.parts.append(data)
+
+
+def walk(node):
+    if isinstance(node, dict):
+        yield node
+        for value in node.values():
+            yield from walk(value)
+    elif isinstance(node, list):
+        for value in node:
+            yield from walk(value)
+
+
+def extract_leaderboard(html):
+    scripts = Scripts()
+    scripts.feed(html)
+    chunks = []
+    decoder = json.JSONDecoder()
+    for script in scripts.parts:
+        for match in re.finditer(r'self\.__next_f\.push\(', script):
+            try:
+                value, _ = decoder.raw_decode(script[match.end():])
+            except ValueError as exc:
+                raise InvalidSource('Malformed Next.js Flight chunk') from exc
+            if isinstance(value, list) and len(value) == 2 and value[0] == 1:
+                require(isinstance(value[1], str), 'Non-string Flight chunk')
+                chunks.append(value[1])
+    require(chunks, 'No Next.js Flight data (HTTP 200 may be an empty shell)')
+    boards = []
+    for match in re.finditer(r'^[0-9a-f]+:(.+)$', ''.join(chunks), re.M):
+        # Flight module/text records are not JSON trees; never eval JS.
+        payload = match[1]
+        if not payload.startswith(('[', '{')):
+            continue
+        try:
+            root = json.loads(payload)
+        except ValueError:
+            continue
+        for node in walk(root):
+            board = node.get('leaderboard')
+            if isinstance(board, dict) and board.get('arenaSlug') == 'text':
+                boards.append(board)
+    require(len(boards) == 1, f'Expected one text leaderboard, got {len(boards)}')
+    return boards[0]
+
+
+def integer(value, label, low, high):
+    require(type(value) is int and low <= value <= high, f'Invalid {label}: {value!r}')
+
+
+def number(value, label):
+    require(type(value) in (int, float) and math.isfinite(value) and 0 < value < 10000,
+            f'Invalid {label}: {value!r}')
+
+
+def timestamp(value, label):
+    require(isinstance(value, str), f'Missing {label}')
+    try:
+        result = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    except ValueError as exc:
+        raise InvalidSource(f'Invalid {label}') from exc
+    require(result.tzinfo is not None, f'{label} must have timezone')
+    return result
+
+
+def validate_entries(board):
+    require(board.get('id') == LEADERBOARD_ID, 'Unexpected leaderboard ID / ranking basis')
+    require(board.get('leaderboardSlug') == 'overall', 'Not overall leaderboard')
+    require(board.get('params') == {'category': 'overall', 'styleControl': True},
+            'Unexpected category or style-control setting')
+    total = board.get('totalModels')
+    integer(total, 'totalModels', MIN_MODELS, MAX_MODELS)
+    integer(board.get('totalVotes'), 'totalVotes', 1, 10**12)
+    entries = board.get('entries')
+    require(isinstance(entries, list), 'Missing entries')
+    by_key, by_name = {}, {}
+    for entry in entries:
+        require(isinstance(entry, dict), 'Entry is not an object')
+        for field in ('modelKey', 'modelDisplayName'):
+            require(isinstance(entry.get(field), str) and entry[field].strip(), f'Missing {field}')
+        # 50 legacy models have a source-provided empty org. Preserve as unknown,
+        # but a missing field is schema breakage, not permission to invent an org.
+        require(isinstance(entry.get('modelOrganization'), str), 'Missing modelOrganization')
+        key, name = entry['modelKey'], entry['modelDisplayName']
+        if key in by_key:
+            require(by_key[key] == entry, f'Conflicting duplicate key: {key}')
+            continue
+        require(name not in by_name, f'Duplicate display name: {name}')
+        for field in ('rank', 'rankUpper', 'rankLower'):
+            integer(entry.get(field), field, 1, total)
+        require(entry['rankUpper'] <= entry['rank'] <= entry['rankLower'], 'Invalid rank interval')
+        for field in ('rating', 'ratingUpper', 'ratingLower'):
+            number(entry.get(field), field)
+        require(entry['ratingLower'] <= entry['rating'] <= entry['ratingUpper'], 'Invalid rating interval')
+        integer(entry.get('votes'), 'votes', 1, 10**12)
+        by_key[key], by_name[name] = entry, key
+    require(len(by_key) == total, f'Unique entries {len(by_key)} != declared totalModels {total}')
+    ordered = sorted(by_key.values(), key=lambda m: m['rank'])
+    require([m['rank'] for m in ordered] == list(range(1, total + 1)),
+            'Ranks must be unique, complete positions 1..totalModels (schema changes need review)')
+    require(all(a['rating'] >= b['rating'] for a, b in zip(ordered, ordered[1:])),
+            'Ratings are inconsistent with ranks')
+    return ordered
+
+
+def build_snapshot(raw, metadata):
+    require(metadata.get('curlExitCode') == 0, 'Capture transport did not complete successfully')
+    require(metadata.get('httpStatus') == 200, 'Capture was not HTTP 200')
+    require(metadata.get('sourceUrl') == SOURCE_URL and metadata.get('effectiveUrl') == SOURCE_URL,
+            'Capture URL must be the official Text leaderboard; unexpected redirects rejected')
+    digest = hashlib.sha256(raw).hexdigest()
+    require(metadata.get('sha256') == digest, 'Source SHA-256 mismatch')
+    require(metadata.get('bytes') == len(raw), 'Source byte count mismatch')
+    captured = timestamp(metadata.get('fetchedAt'), 'fetchedAt')
+    board = extract_leaderboard(raw.decode('utf-8'))
+    entries = validate_entries(board)
+    cutoff = board.get('voteCutoffISOString')
+    if cutoff is not None:
+        cutoff_time = timestamp(cutoff, 'voteCutoffISOString')
+        require(cutoff_time <= captured + timedelta(minutes=5), 'Source cutoff is in the future')
+        require(captured - cutoff_time <= timedelta(days=45), 'Source data is over 45 days old')
     models = []
-    for name, org, rest in pattern.findall(html_text):
-        if name in seen:
-            continue
-        seen.add(name)
-        m = {'name': name, 'organization': org}
-        for k, v in re.findall(r'\\"([a-z-]+)\\":(\d+)', rest):
-            m[k] = int(v)
-        if 'overall' in m:
-            models.append(m)
-    return models
-
-
-def gen_highlight(model):
-    """A+B 混合：Top 10 优先 + 自身亮点补足；核心维度优先于行业/小语种"""
-    items = []
-    for cat, rank in model.items():
-        if cat in ('name', 'organization'):
-            continue
-        if cat in NON_HIGHLIGHT:
-            continue
-        if not isinstance(rank, int):
-            continue
-        priority = CATEGORY_PRIORITY.get(cat, 9)
-        items.append((cat, rank, priority))
-    items.sort(key=lambda x: (x[2], x[1]))
-
-    top10 = [(c, r) for c, r, _ in items if r <= 10]
-    others = [(c, r) for c, r, _ in items if r > 10]
-
-    highlight = []
-    for cat, rank in top10[:3]:
-        highlight.append({
-            'category': cat,
-            'label': CATEGORY_LABELS.get(cat, cat),
-            'rank': rank,
-            'isTop10': True,
+    for entry in entries[:TOP_N]:
+        models.append({
+            'rank': entry['rank'], 'name': entry['modelDisplayName'], 'modelKey': entry['modelKey'],
+            'org': entry['modelOrganization'] or '未披露',
+            'scores': {'overall': entry['rank']},
+            'rating': entry['rating'], 'ratingLower': entry['ratingLower'],
+            'ratingUpper': entry['ratingUpper'], 'rankUpper': entry['rankUpper'],
+            'rankLower': entry['rankLower'], 'votes': entry['votes'],
+            'highlight': [], 'summary': f'文本总榜 #{entry["rank"]}（风格控制）',
         })
-    if len(highlight) < 3:
-        for cat, rank in others[:(3 - len(highlight))]:
-            highlight.append({
-                'category': cat,
-                'label': CATEGORY_LABELS.get(cat, cat),
-                'rank': rank,
-                'isTop10': False,
-            })
-    return highlight
-
-
-def gen_summary(highlight, overall_rank):
-    """根据 highlight 生成中文简述"""
-    if not highlight:
-        return f'综合 #{overall_rank}'
-    top10_items = [h for h in highlight if h['isTop10']]
-    other_items = [h for h in highlight if not h['isTop10']]
-    parts = []
-    if top10_items:
-        parts.append(' · '.join(f'{h["label"]} #{h["rank"]}' for h in top10_items))
-    if other_items:
-        parts.append('相对擅长 ' + ' · '.join(f'{h["label"]} #{h["rank"]}' for h in other_items))
-    return ' | '.join(parts)
-
-
-def build_snapshot(models, snapshot_date, is_baseline=False):
-    """构建 snapshot 结构"""
-    models_sorted = sorted(models, key=lambda x: x.get('overall', 9999))
-    top = models_sorted[:TOP_N]
-
-    out_models = []
-    for m in top:
-        scores = {k: v for k, v in m.items()
-                  if k not in ('name', 'organization') and isinstance(v, int)}
-        record = {'name': m['name'], 'organization': m['organization']}
-        record.update(scores)
-        highlight = gen_highlight(record)
-        out_models.append({
-            'rank': m['overall'],
-            'name': m['name'],
-            'org': m['organization'],
-            'scores': scores,
-            'highlight': highlight,
-            'summary': gen_summary(highlight, m['overall']),
-        })
-
     return {
-        'snapshotDate': snapshot_date,
-        'isBaseline': is_baseline,
-        'totalModelsObserved': len(models),
-        'totalModelsShown': len(out_models),
-        'categoryLabels': CATEGORY_LABELS,
-        'sourceUrl': 'https://arena.ai/leaderboard',
-        'models': out_models,
+        'schemaVersion': 2, 'snapshotDate': captured.date().isoformat(),
+        'fetchedAt': metadata['fetchedAt'], 'sourceUpdatedAt': cutoff,
+        'sourceTimeMeaning': 'vote cutoff' if cutoff else 'unknown',
+        'sourceTimeNote': '源站投票截止时间；不是抓取日期' if cutoff else '源站未提供数据时间，不能确认数据新鲜度',
+        'rankingBasis': BASIS, 'rankingLabel': '文本总榜（风格控制）',
+        'sourceLeaderboardId': board['id'], 'styleControl': True,
+        'totalModelsObserved': len(entries),
+        'totalModelsShown': len(models), 'sourceTotalVotes': board['totalVotes'],
+        'categoryLabels': {'overall': '文本综合'},
+        'sourceUrl': SOURCE_URL, 'sourceSha256': digest, 'sourceBytes': len(raw),
+        'sourceFormat': 'Next.js Flight leaderboard.entries',
+        'coverageNote': '仅文本总榜；新页面不含旧版跨分项排名，不生成优势赛道。与无 rankingBasis 的历史快照不直接比较。',
+        'models': models,
     }
 
 
 def main():
     if len(sys.argv) != 4:
-        print('Usage: parse-lmarena.py <input-html> <output-json> <snapshot-date>',
-              file=sys.stderr)
-        sys.exit(1)
-
-    input_html = sys.argv[1]
-    output_json = sys.argv[2]
-    snapshot_date = sys.argv[3]
-
-    text = Path(input_html).read_text(encoding='utf-8')
-    models = extract_models(text)
-    if len(models) < 100:
-        print(f'❌ 解析出的模型数过少（{len(models)}），可能页面结构变化',
-              file=sys.stderr)
-        sys.exit(2)
-
-    # 检查是否是首次（没有上月 snapshot）
-    snapshots_dir = Path(output_json).parent
-    existing = sorted(f for f in snapshots_dir.glob('*.json') if f.stem != snapshot_date)
-    is_baseline = len(existing) == 0
-
-    snapshot = build_snapshot(models, snapshot_date, is_baseline=is_baseline)
-    Path(output_json).write_text(
-        json.dumps(snapshot, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f'✅ {output_json} ({snapshot["totalModelsShown"]} models, baseline={is_baseline})')
+        print(__doc__, file=sys.stderr)
+        return 1
+    source, metadata_path, output_path = map(Path, sys.argv[1:])
+    try:
+        snapshot = build_snapshot(source.read_bytes(), json.loads(metadata_path.read_text()))
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        # Do not truncate an existing candidate if parsing/validation fails.
+        temporary = output_path.with_name(output_path.name + '.tmp')
+        temporary.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        temporary.replace(output_path)
+    except (ValueError, OSError, KeyError, TypeError) as exc:
+        print(f'ARENA_PARSE_FAILED {exc}; raw source retained: {source}', file=sys.stderr)
+        return 2
+    print(f'ARENA_CANDIDATE_OK observed={snapshot["totalModelsObserved"]} shown={snapshot["totalModelsShown"]} '
+          f'captured={snapshot["fetchedAt"]} cutoff={snapshot["sourceUpdatedAt"]} output={output_path}')
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

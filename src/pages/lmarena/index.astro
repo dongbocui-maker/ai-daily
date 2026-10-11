@@ -23,11 +23,16 @@ const previous = previousFile
   ? JSON.parse(fs.readFileSync(path.join(snapshotsDir, previousFile), 'utf-8'))
   : null;
 
+// Only compare snapshots with an explicitly matching source/ranking basis.
+// Legacy snapshots have unknown style-control semantics.
+const comparablePrevious = previous && latest?.rankingBasis
+  && previous.rankingBasis === latest.rankingBasis ? previous : null;
+
 // 计算月度对比
 type DeltaInfo = { type: 'baseline' | 'new' | 'up' | 'down' | 'same'; delta?: number };
 function computeDelta(modelName: string, currentRank: number): DeltaInfo {
-  if (!previous) return { type: 'baseline' };
-  const prev = previous.models?.find((m: any) => m.name === modelName);
+  if (!comparablePrevious) return { type: 'baseline' };
+  const prev = comparablePrevious.models?.find((m: any) => m.name === modelName);
   if (!prev) return { type: 'new' };
   const d = prev.rank - currentRank;
   if (d > 0) return { type: 'up', delta: d };
@@ -36,8 +41,8 @@ function computeDelta(modelName: string, currentRank: number): DeltaInfo {
 }
 
 // 退出 Top 50 的模型（在上月榜单但本月不在）
-const exitedModels = previous && latest
-  ? previous.models.filter((p: any) => !latest.models.find((c: any) => c.name === p.name))
+const exitedModels = comparablePrevious && latest
+  ? comparablePrevious.models.filter((p: any) => !latest.models.find((c: any) => c.name === p.name))
   : [];
 
 // 厂商分布统计
@@ -49,7 +54,7 @@ const orgRanking = Object.entries(orgCounts).sort((a, b) => b[1] - a[1]);
 
 // 单项分区数（categoryLabels 里排除综合类维度后的可比对分区）
 const totalShown = latest?.totalModelsShown ?? (latest?.models?.length ?? 0);
-const categoryCount = latest?.categoryLabels ? Object.keys(latest.categoryLabels).length : 0;
+const categoryCount = latest?.categoryLabels ? Object.keys(latest.categoryLabels).filter(k => k !== 'overall').length : 0;
 
 function splitStat(n: number): { head: string; tail: string } {
   const s = String(n);
@@ -65,7 +70,7 @@ const shownStat = splitStat(totalShown);
     <section class="hero"><div class="wrap">
       <span class="badge"><svg class="ic"><use href="#i-trophy"/></svg>Arena</span>
       <h1>模型<span class="pu">竞技场</span></h1>
-      <p class="hero-sub">基于 <a href="https://arena.ai/leaderboard" target="_blank" rel="noopener">arena.ai</a> 真实人类盲测对战数据的全球大模型排行，含总榜与各单项分区，每月 1 日快照留档可回溯。</p>
+      <p class="hero-sub">基于 <a href="https://arena.ai/leaderboard" target="_blank" rel="noopener">arena.ai</a> 真实人类盲测对战数据的全球大模型排行，按月抓取、审核后发布；以实际抓取日期留档可回溯。</p>
       {latest && (
         <div class="stats">
           <div class="stat"><b>{shownStat.head}<i>{shownStat.tail}</i></b><span>上榜模型</span></div>
@@ -94,13 +99,20 @@ const shownStat = splitStat(totalShown);
         {/* 总榜 */}
         <div class="sec-head">
           <span class="sq"><svg class="ic"><use href="#i-trophy"/></svg></span>
-          <div class="tt"><span class="eyebrow">Overall</span><h2>总榜 Top {totalShown}</h2></div>
+          <div class="tt"><span class="eyebrow">Overall</span><h2>{latest.rankingLabel ?? '总榜'} Top {totalShown}</h2></div>
           <span class="rule"></span>
           <span class="cnt">
             {latest.snapshotDate} 快照
             {latest.isBaseline ? ' · 基线' : ''}
           </span>
         </div>
+        {latest.fetchedAt && (
+          <div class="panel">
+            <p><strong>抓取时间</strong>：{latest.fetchedAt}；<strong>源站投票截止时间</strong>：{latest.sourceUpdatedAt ?? '未知（源站未提供，不能确认数据新鲜度）'}。</p>
+            <p>{latest.coverageNote}</p>
+            {!comparablePrevious && <p>本期为新口径对比基线；不计算与旧快照的升降或退出榜单。</p>}
+          </div>
+        )}
         <div class="rlist">
           {latest.models.map((m: any) => {
             const delta = computeDelta(m.name, m.rank);
@@ -110,7 +122,7 @@ const shownStat = splitStat(totalShown);
                 <span class="rank-num">{m.rank}</span>
                 <div class="rank-main">
                   <div class="rank-name">{m.name}</div>
-                  <div class="rank-sub">{m.org}</div>
+                  <div class="rank-sub">{m.org}{typeof m.rating === 'number' && ` · Arena rating ${m.rating.toFixed(1)} · ${m.votes.toLocaleString('zh-CN')} 票`}</div>
                   <div class="rank-bar"><i style={`width:${pct}%`}></i></div>
                   <div class="rank-tags">
                     {m.highlight.length === 0 ? (
@@ -152,10 +164,10 @@ const shownStat = splitStat(totalShown);
         {/* 说明 */}
         <div class="panel">
           <h3>说明</h3>
-          <p><strong>数据来源</strong>：<a href="https://arena.ai/leaderboard" target="_blank" rel="noopener">arena.ai 官方排行榜</a>，基于全球用户盲测投票。排名为相对位次（rank position），非 ELO 分数。</p>
-          <p><strong>优势赛道</strong>：从该模型 27 个评测维度中优先展示进入 Top 10 的核心维度（最多 3 个），不足时用其自身相对最强维度补足。</p>
-          <p><strong>月度变化</strong>：与上月快照对比。↑ 上升 / ↓ 下降 / 新进 Top {totalShown} / 基线（首期或上月不在榜）。</p>
-          <p><strong>更新频率</strong>：每月 1 日 09:00（北京时间）自动抓取并发布。</p>
+          <p><strong>数据来源</strong>：<a href={latest.sourceUrl} target="_blank" rel="noopener">arena.ai 官方排行榜</a>，基于全球用户盲测投票。榜单序号为相对位次（rank position）；有源数据时另列 Arena rating。</p>
+          <p><strong>优势赛道</strong>：仅在源数据包含分项排名时展示；当前文本总榜不提供旧版跨分项排名，不补造优势标签。</p>
+          <p><strong>月度变化</strong>：仅与上一份同口径快照对比。↑ 上升 / ↓ 下降 / 新进 Top {totalShown} / 基线（无同口径前期数据）。</p>
+          <p><strong>更新频率</strong>：每月 1 日 10:30（北京时间）抓取候选，经审核后发布；补抓按实际日期留档。</p>
         </div>
       </div>
     )}

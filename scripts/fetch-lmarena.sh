@@ -1,130 +1,157 @@
 #!/usr/bin/env bash
-# fetch-lmarena.sh — LMArena 月度抓取脚本（决策 3：完全自动化）
-#
-# 流程：开 mihomo → 抓 arena.ai/leaderboard → 解析 RSC payload → 写 snapshot →
-#       关 mihomo → git commit + push
-#
-# 触发：OpenClaw cron 每月 1 日 09:00
-# 失败：以非零退出码退出，stderr 日志会被 cron 捕获给 heartbeat 通知
-
+# Arena monthly job: default = fetch a QC candidate ONLY (no build/commit/push).
+# System crontab: 10:30 Asia/Shanghai, day 1. Scheduling is not managed here.
+# Uses the ALREADY RUNNING proxy; never starts/stops/kills shared services.
+# See docs/arena-pipeline.md for review/publish and local status/alert limitations.
 set -euo pipefail
-
-# 路径配置
-# cron 环境 PATH 不含 nvm/pnpm（2026-07-01 build 失败教训），显式补 PATH
 export PATH="/root/.nvm/versions/node/v22.22.2/bin:$PATH"
-PROJECT_DIR="/root/.openclaw/workspace/projects/ai-daily"
-SNAPSHOTS_DIR="$PROJECT_DIR/src/data/lmarena/snapshots"
-MIHOMO_BIN="/usr/local/bin/mihomo"
-MIHOMO_CONFIG_DIR="/root/.config/mihomo"
-LOG_FILE="$MIHOMO_CONFIG_DIR/fetch-lmarena.log"
-DATE=$(date +%Y-%m-%d)
-SNAPSHOT_FILE="$SNAPSHOTS_DIR/${DATE}.json"
-TMP_HTML="/tmp/lmarena-fetch-${DATE}.html"
-TMP_JSON="/tmp/lmarena-fetch-${DATE}.json"
+export TZ=Asia/Shanghai
+PROJECT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+STATE_DIR=${ARENA_STATE_DIR:-"$PROJECT_DIR/.cron-logs/lmarena"}
+PROXY="http://127.0.0.1:7890"
+SOURCE_URL="https://arena.ai/leaderboard/chat/text"
+MODE=${1:-fetch}
+RUN_DIR=""
+PHASE=initializing
+RESULT=failed
+ROLLBACK_FILE=""
+mkdir -p "$STATE_DIR"
 
-# 日志函数
-log() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+finish() {
+  local rc=$?
+  trap - EXIT
+  if [[ -n "$ROLLBACK_FILE" ]]; then
+    # Only a new file created by THIS invocation, and never a pre-existing file.
+    git -C "$PROJECT_DIR" restore --staged -- "$ROLLBACK_FILE" 2>/dev/null || true
+    rm -f -- "$PROJECT_DIR/$ROLLBACK_FILE"
+  fi
+  python3 - "$STATE_DIR" "$RUN_DIR" "$MODE" "$PHASE" "$RESULT" "$rc" <<'PY'
+import json, sys
+from datetime import datetime
+from pathlib import Path
+state, run, mode, phase, result, code = sys.argv[1:]
+record = {'finishedAt': datetime.now().astimezone().isoformat(), 'mode': mode,
+          'phase': phase, 'status': result if code == '0' else 'failed',
+          'exitCode': int(code), 'runDir': run,
+          'notificationDelivered': False}
+for dest in [Path(state) / 'latest-status.json'] + ([Path(run) / 'status.json'] if run else []):
+    tmp = dest.with_suffix('.tmp')
+    tmp.write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
+    tmp.replace(dest)
+PY
+  local status_rc=$?
+  if [[ "$status_rc" -ne 0 ]]; then rc=$status_rc; fi
+  if [[ "$rc" -eq 0 ]]; then
+    echo "ARENA_${RESULT^^} run=$RUN_DIR (local status only; no notification sent)"
+  else
+    echo "ARENA_FAILED mode=$MODE phase=$PHASE exit=$rc raw=$RUN_DIR (local status only)" >&2
+  fi
+  exit "$rc"
+}
+trap finish EXIT
+fail() { echo "$*" >&2; exit 2; }
+parse() {
+  python3 "$PROJECT_DIR/scripts/parse-lmarena.py" "$RUN_DIR/source.html" \
+    "$RUN_DIR/fetch.json" "$1"
+}
+check_proxy() {
+  PHASE=proxy-check
+  python3 - <<'PY'
+import socket
+try:
+    with socket.create_connection(('127.0.0.1', 7890), timeout=3): pass
+except OSError as exc:
+    raise SystemExit(f'Existing proxy unavailable at 127.0.0.1:7890: {exc}; no service changes attempted')
+PY
 }
 
-cleanup() {
-  log "🧹 清理：关闭 mihomo + 删除临时文件"
-  pkill mihomo 2>/dev/null || true
-  rm -f "$TMP_HTML" "$TMP_JSON"
-}
-trap cleanup EXIT
-
-log "===== LMArena 月度抓取启动（$DATE）====="
-
-# Step 1: 启动 mihomo
-log "🚀 Step 1: 启动 mihomo 代理"
-if [ ! -x "$MIHOMO_BIN" ]; then
-  log "❌ mihomo 二进制不存在：$MIHOMO_BIN"
-  exit 2
-fi
-nohup "$MIHOMO_BIN" -d "$MIHOMO_CONFIG_DIR" > "$MIHOMO_CONFIG_DIR/mihomo.log" 2>&1 &
-sleep 5
-
-# 验证代理启动
-if ! ss -tlnp 2>/dev/null | grep -q "127.0.0.1:7890"; then
-  log "❌ mihomo 启动失败（端口 7890 未监听）"
-  tail -20 "$MIHOMO_CONFIG_DIR/mihomo.log" | tee -a "$LOG_FILE"
-  exit 3
-fi
-log "✅ mihomo 已启动，监听 127.0.0.1:7890"
-
-# Step 2: 抓 leaderboard
-# 注：2026-06 LMArena 域名从 lmarena.ai 迁移到 arena.ai（301 永久重定向）。
-# 加 -L 跟随重定向作为双保险，万一域名再变也能跟上。
-log "🌐 Step 2: 抓 arena.ai/leaderboard"
-HTTP_CODE=$(curl -sS -L -o "$TMP_HTML" -w "%{http_code}" \
-  -x http://127.0.0.1:7890 \
-  -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36" \
-  --max-time 60 \
-  "https://arena.ai/leaderboard")
-
-if [ "$HTTP_CODE" != "200" ]; then
-  log "❌ 抓取失败：HTTP $HTTP_CODE"
-  exit 4
-fi
-
-SIZE=$(stat -c%s "$TMP_HTML")
-log "✅ 抓取成功：HTTP $HTTP_CODE，大小 $SIZE bytes"
-
-if [ "$SIZE" -lt 1000000 ]; then
-  log "⚠️  文件大小异常（< 1MB），可能页面结构变化"
-  exit 5
-fi
-
-# Step 3: 解析 + 写 snapshot
-log "🔍 Step 3: 解析 RSC payload + 生成 snapshot"
-python3 "$PROJECT_DIR/scripts/parse-lmarena.py" "$TMP_HTML" "$SNAPSHOT_FILE" "$DATE"
-
-if [ ! -f "$SNAPSHOT_FILE" ]; then
-  log "❌ snapshot 文件未生成：$SNAPSHOT_FILE"
-  exit 6
-fi
-
-MODEL_COUNT=$(python3 -c "import json; d=json.load(open('$SNAPSHOT_FILE')); print(d['totalModelsShown'])")
-log "✅ snapshot 写入完成：$SNAPSHOT_FILE（Top $MODEL_COUNT）"
-
-# 注：mihomo 不在这里关！GitHub push 走 mihomo 代理（127.0.0.1:7890），
-# 提前关会导致 Step 6 push 无代理失败。统一在 push 之后关（trap 也会兑底）。
-
-# Step 5: build + commit + push
-log "🛠️  Step 5: pnpm build"
-cd "$PROJECT_DIR"
-if ! pnpm build > /tmp/lmarena-build.log 2>&1; then
-  log "❌ build 失败"
-  tail -30 /tmp/lmarena-build.log | tee -a "$LOG_FILE"
-  exit 7
-fi
-log "✅ build 通过"
-
-log "📤 Step 6: git commit + push"
-cd "$PROJECT_DIR"
-git add "src/data/lmarena/snapshots/${DATE}.json"
-if git diff --cached --quiet; then
-  log "ℹ️  无新增/变更，跳过 commit"
-else
-  git commit -m "chore(lmarena): 月度榜单 ${DATE}" -m "🤖 自动抓取自 arena.ai/leaderboard"
-  # push 重试 3 次（国内 GitHub push 不稳定）
-  for i in 1 2 3; do
-    if git push origin main; then
-      log "✅ push 成功（第 $i 次尝试）"
-      break
+# Serialize invocations without touching the shared proxy or daemon.
+exec 8>"$STATE_DIR/run.lock"
+flock -n 8 || fail 'Another Arena invocation is running'
+case "$MODE" in
+  fetch)
+    [[ $# -le 1 ]] || fail 'Usage: fetch-lmarena.sh [fetch]'
+    RUN_DIR=$(mktemp -d "$STATE_DIR/$(date +%Y-%m-%dT%H%M%S)-XXXXXX")
+    check_proxy
+    PHASE=fetch
+    CAPTURED=$(date --iso-8601=seconds)
+    # Preserve the body and headers even for non-200 or parser failure.
+    curl_rc=0
+    curl --silent --show-error --location --proto '=https' --proto-redir '=https' \
+      --proxy "$PROXY" --connect-timeout 15 --max-time 90 \
+      --dump-header "$RUN_DIR/response.headers" --output "$RUN_DIR/source.html" \
+      --write-out '%{http_code}\n%{url_effective}\n' "$SOURCE_URL" \
+      > "$RUN_DIR/transport.txt" || curl_rc=$?
+    python3 - "$RUN_DIR" "$CAPTURED" "$SOURCE_URL" "$curl_rc" <<'PY'
+import hashlib, json, sys
+from pathlib import Path
+run, captured, url, code = sys.argv[1:]
+p = Path(run)
+raw = (p/'source.html').read_bytes() if (p/'source.html').exists() else b''
+transport = (p/'transport.txt').read_text().splitlines()
+meta = {'fetchedAt': captured, 'sourceUrl': url,
+        'effectiveUrl': transport[1] if len(transport)>1 else '',
+        'httpStatus': int(transport[0]) if transport and transport[0].isdigit() else 0,
+        'curlExitCode': int(code), 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+(p/'fetch.json').write_text(json.dumps(meta, indent=2)+'\n')
+PY
+    [[ "$curl_rc" -eq 0 ]] || exit "$curl_rc"
+    PHASE=parse
+    parse "$RUN_DIR/candidate.json"
+    RESULT=candidate_ready
+    ;;
+  parse)
+    [[ $# -eq 2 ]] || fail 'Usage: fetch-lmarena.sh parse RUN_DIR'
+    RUN_DIR=$(cd "$2" && pwd)
+    PHASE=parse
+    parse "$RUN_DIR/candidate.json"
+    RESULT=candidate_ready
+    ;;
+  publish)
+    [[ $# -eq 4 && "$3" == --approved-sha256 ]] || fail 'Usage: fetch-lmarena.sh publish RUN_DIR --approved-sha256 QC_APPROVED_CANDIDATE_SHA256'
+    RUN_DIR=$(cd "$2" && pwd)
+    PHASE=qc-gate
+    [[ "$4" =~ ^[a-f0-9]{64}$ ]] || fail 'Invalid approval hash'
+    ACTUAL=$(sha256sum "$RUN_DIR/candidate.json" | cut -d' ' -f1)
+    [[ "$ACTUAL" == "$4" ]] || fail 'QC approval hash does not match candidate'
+    parse "$RUN_DIR/revalidated.json"
+    cmp "$RUN_DIR/candidate.json" "$RUN_DIR/revalidated.json" || fail 'Candidate differs from raw source reparse'
+    check_proxy
+    PHASE=repository-gate
+    cd "$PROJECT_DIR"
+    # Same publication lock as daily-watchdog; never autostash/rebase a dirty tree.
+    exec 9>/tmp/ai-daily-publish.lock
+    flock -w 300 9 || fail 'Publication lock timed out'
+    [[ "$(git branch --show-current)" == main ]] || fail 'Publish requires main branch'
+    [[ -z "$(git status --porcelain)" ]] || fail 'Publish requires a clean working tree (including untracked files)'
+    DATE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["snapshotDate"])' "$RUN_DIR/candidate.json")
+    TARGET="src/data/lmarena/snapshots/$DATE.json"
+    if [[ -e "$TARGET" ]]; then
+      cmp "$RUN_DIR/candidate.json" "$TARGET" || fail 'A different snapshot already exists for this date; refusing overwrite'
+    else
+      ROLLBACK_FILE="$TARGET"
+      cp "$RUN_DIR/candidate.json" "$TARGET"
     fi
-    log "⚠️  push 失败（第 $i 次），pull --rebase 后 10 秒重试"
-    git pull --rebase --autostash origin main || log "⚠️  rebase 失败（仍将重试 push）"
-    sleep 10
-  done
-fi
-
-# Step 7: 关 mihomo（push 完成后才关）
-log "🔌 Step 7: 关闭 mihomo"
-pkill mihomo 2>/dev/null || true
-sleep 1
-
-log "===== ✅ LMArena 月度抓取完成 ====="
-echo "::lmarena-snapshot-date::$DATE"
-echo "::lmarena-model-count::$MODEL_COUNT"
+    PHASE=build
+    # Avoid package prebuild's unrelated agent-chain data writes.
+    pnpm exec astro build > "$RUN_DIR/build.log" 2>&1
+    PHASE=commit
+    git add -- "$TARGET"
+    if ! git diff --cached --quiet; then
+      git commit -m "chore(lmarena): reviewed snapshot $DATE" -- "$TARGET"
+    fi
+    ROLLBACK_FILE=""
+    PHASE=push
+    # No pull/rebase/autostash. Non-fast-forward => human reconciliation.
+    for attempt in 1 2 3; do
+      if git -c http.proxy="$PROXY" push origin main; then
+        RESULT=published
+        exit 0
+      fi
+      echo "ARENA_PUSH_RETRY attempt=$attempt/3 (no rebase)" >&2
+      if [[ "$attempt" -lt 3 ]]; then sleep 10; fi
+    done
+    fail 'All 3 pushes failed; reviewed local commit retained for manual retry'
+    ;;
+  *) fail 'Modes: fetch (default), parse RUN_DIR, publish RUN_DIR --approved-sha256 SHA256' ;;
+esac

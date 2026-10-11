@@ -28,7 +28,7 @@ function renderMd(md: string): string {
       // 图片（独立段落：![alt](url)，可选后跟 *图注* 行）
       const imgMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*(?:\n\*([^*]+)\*)?$/);
       if (imgMatch) {
-        const cap = imgMatch[3] ? `<figcaption class="text-[length:var(--fs-sub)] text-accent-gray-500 mt-2 text-center">${escapeHtml(imgMatch[3])}</figcaption>` : '';
+        const cap = imgMatch[3] ? `<figcaption class="text-accent-gray-500 mt-2 text-center">${escapeHtml(imgMatch[3])}</figcaption>` : '';
         return `<figure class="my-6"><img src="${escapeHtml(imgMatch[2])}" alt="${escapeHtml(imgMatch[1])}" class="w-full rounded border border-accent-gray-200 bg-white" loading="lazy" />${cap}</figure>`;
       }
       // 标题
@@ -335,8 +335,9 @@ function formatInline(s: string): string {
 <style is:global>
   /* 同步全站卡片字号加大：正文 16→17.5px，小字 14→15px（set:html 内容需 global） */
   .reads-content { font-size: var(--fs-h3); }
-  .reads-content .text-[length:var(--fs-sub)] { font-size: var(--fs-body); }
-  .reads-content .text-[length:var(--fs-meta)] { font-size: var(--fs-sub); }
+  /* 原 .text-sm 放大规则仅命中 renderMd 图注；保留字号迁移后的 sub→body 映射，
+     用元素选择器避免任意值类名转义问题。原 .text-xs 在此容器内无目标，移除空规则。 */
+  .reads-content figcaption { font-size: var(--fs-body); }
   /* renderMd 输出的正文段落对齐放大后基准 */
   .reads-content .reads-body p { font-size: var(--fs-body); line-height: 1.85; }
   .reads-content .reads-body li { font-size: var(--fs-body); }

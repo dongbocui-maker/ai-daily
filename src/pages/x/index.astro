@@ -133,7 +133,7 @@ function itemCard(item: XSignalItem, featuredCard = false) {
         <div class="flex items-baseline justify-between gap-4 mb-5">
           <div>
             <span class="badge bg-accent-ink text-white mb-3">FEATURED</span>
-            <h2 class="text-[length:var(--fs-h2)] lg:text-3xl font-extrabold tracking-tight">今日高信号</h2>
+            <h2 class="text-[length:var(--fs-h2)] font-extrabold tracking-tight">今日高信号</h2>
           </div>
           <a href="#x-list" class="hidden sm:inline-flex text-[length:var(--fs-sub)] font-semibold text-accent-purple hover:text-accent-purple-deep">查看全部 signals ↓</a>
         </div>
@@ -146,8 +146,8 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                   <span class={`badge ${kindClass(item.kind)}`}>{kindLabel(item.kind)}</span>
                   <span class="text-[length:var(--fs-meta)] text-accent-gray-500">{item.sourceName}{item.handle ? ` · @${item.handle}` : ''}</span>
                 </div>
-                <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
-                <p class="text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
+                <h3 class="text-[length:var(--fs-h3)] font-semibold mb-3 text-balance leading-snug">{item.title}</h3>
+                <p class="text-[length:var(--fs-body)] text-accent-gray-700 leading-relaxed mb-4">{item.insightZh}</p>
                 <div class="mt-4 flex items-center justify-between gap-3 text-[length:var(--fs-meta)] text-accent-gray-500">
                   <span>{meta.date || meta.metrics}</span>
                   {item.url && <a href={item.url} target="_blank" rel="noreferrer" class="font-semibold text-accent-purple hover:text-accent-purple-deep">Source ↗</a>}
@@ -179,8 +179,8 @@ function itemCard(item: XSignalItem, featuredCard = false) {
                           </div>
                           {meta.metrics && <span class="text-[length:var(--fs-meta)] text-accent-gray-500 whitespace-nowrap">{meta.metrics}</span>}
                         </div>
-                        <h3 class="text-h3 mb-3 text-balance leading-snug">{item.title}</h3>
-                        <p class="text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
+                        <h3 class="text-[length:var(--fs-h3)] font-semibold mb-3 text-balance leading-snug">{item.title}</h3>
+                        <p class="text-[length:var(--fs-body)] text-accent-gray-800 leading-relaxed mb-4">{item.insightZh}</p>
                         <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
                           <div class="flex flex-wrap gap-2">
                             {(item.tags ?? []).map((tag) => <span class="px-2 py-1 bg-accent-gray-50 text-[length:var(--fs-meta)] font-medium text-accent-gray-700 border border-accent-gray-100">{tag}</span>)}

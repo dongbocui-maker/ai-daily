@@ -33,7 +33,7 @@ function renderMd(md: string): string {
       }
       // 标题
       if (trimmed.startsWith('### ')) {
-        return `<h3 class="text-[length:var(--fs-h3)] lg:text-[length:var(--fs-h2)] font-bold mt-8 mb-3">${escapeHtml(trimmed.slice(4))}</h3>`;
+        return `<h3 class="text-[length:var(--fs-h3)] lg:text-[length:var(--fs-h3lg)] font-bold mt-8 mb-3">${escapeHtml(trimmed.slice(4))}</h3>`;
       }
       if (trimmed.startsWith('## ')) {
         return `<h2 class="text-[length:var(--fs-h2)] font-extrabold mt-10 mb-4">${escapeHtml(trimmed.slice(3))}</h2>`;

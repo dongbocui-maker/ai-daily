@@ -61,17 +61,17 @@
    ============================================================ */
 :root { /* 默认 = 中档 */
   --fs-hero: clamp(32px, 6.4vw, 50px);
-  --fs-h2: 24px; --fs-h3: 19px; --fs-body: 16.5px;
+  --fs-h2: 24px; --fs-h3lg: 21px; --fs-h3: 19px; --fs-body: 16.5px;
   --fs-sub: 14.5px; --fs-meta: 12.5px; --fs-micro: 11px;
 }
 html[data-fs="s"] {
   --fs-hero: clamp(30px, 6vw, 46px);
-  --fs-h2: 22px; --fs-h3: 17.5px; --fs-body: 15px;
+  --fs-h2: 22px; --fs-h3lg: 19.5px; --fs-h3: 17.5px; --fs-body: 15px;
   --fs-sub: 13.5px; --fs-meta: 11.5px; --fs-micro: 10.5px;
 }
 html[data-fs="l"] {
   --fs-hero: clamp(35px, 7vw, 54px);
-  --fs-h2: 26px; --fs-h3: 20.5px; --fs-body: 18px;
+  --fs-h2: 26px; --fs-h3lg: 22.5px; --fs-h3: 20.5px; --fs-body: 18px;
   --fs-sub: 16px; --fs-meta: 13.5px; --fs-micro: 12px;
 }
 

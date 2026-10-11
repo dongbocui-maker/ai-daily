@@ -480,8 +480,41 @@ def handle_uploaded(state: dict) -> dict:
         cleanup_worktree(worktree)
 
 
+def notify_published(state: dict) -> None:
+    """播客成功上线时通知 Jason（2026-10-11 Jason 要求）；每个 state 只通知一次，失败不阻塞归档。"""
+    data = state.setdefault("data", {})
+    if data.get("published_notified"):
+        return
+    slug = state.get("slug", "unknown")
+    meta = data.get("audio_meta") or {}
+    dur = meta.get("duration_seconds")
+    dur_txt = f"{int(dur // 60)} 分 {int(dur % 60)} 秒" if isinstance(dur, (int, float)) else "未知"
+    title = data.get("source_title") or slug
+    message = (
+        f"🎧 精读播客已上线\n"
+        f"《{title}》\n"
+        f"时长: {dur_txt}\n"
+        f"页面: https://aidigest.club/reads/{slug}/\n"
+        f"（站点部署约需 1-3 分钟生效）"
+    )
+    r = run([
+        "openclaw", "message", "send",
+        "--channel", "feishu",
+        "--target", JASON_FEISHU_TARGET,
+        "--message", message,
+    ], timeout=60)
+    if r.ok:
+        data["published_notified"] = True
+        S.save_atomic(state)
+        append_agent_action(state, "podcast_published_notified", "ok", f"精读播客 {slug} 上线，已通知 Jason")
+    else:
+        log.info(f"  [{slug}] 上线通知发送失败: {(r.stderr or r.stdout)[:300]}")
+        append_agent_action(state, "podcast_published_notify_failed", "error", f"精读播客 {slug} 上线，但通知发送失败", (r.stderr or r.stdout or ""))
+
+
 def handle_published(state: dict) -> dict:
     """归档 state，标 done"""
+    notify_published(state)
     log.info(f"  [{state['slug']}] published → done 🎉")
     S.advance(state, "done")
     # 归档

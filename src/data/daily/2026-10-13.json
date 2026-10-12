@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-13",
+  "title": "AI 日报 · 2026-10-13",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Meta 发布首个前沿模型 Muse Wonder，超级智能实验室正式交卷",
+          "body": "Meta Superintelligence Lab 于本周一发布 Muse Wonder 及更大规格的 Wonder Full，这是该实验室成立以来首个对标 OpenAI、Anthropic、Google 的前沿模型，官方重点强调编码与智能体任务能力的提升，并将作为其 Muse 智能体产品的底座。TechCrunch 与 The Verge 均将其列为当日 AI 头条，意味着 Meta 在经历组织重组与高额人才投入后，首次拿出可正面比较的旗舰级成果。",
+          "insight": "前沿模型阵营从「三强」扩为「四强」，企业在模型选型与多供应商策略上将获得更多议价空间。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
+        },
+        {
+          "title": "🚀 产品发布 | 微软第三代自研推理芯片 Maia 300 亮相，计划大规模部署以降低对英伟达依赖",
+          "body": "微软公布第三代自研 AI 推理芯片 Maia 300，宣称相较上一代在性价比上提升约 40%，计划 2027 年投产并在 Azure 数据中心大规模部署，用于承载 Copilot 与 OpenAI 模型的推理负载。Reuters 同日报道称，微软准备「巨量部署」自研芯片以节省成本。在推理需求快速超过训练需求的背景下，云厂商自研芯片正从试点走向主力算力。",
+          "insight": "推理成本将成为云厂商竞争主战场，Azure 客户未来可能获得更具弹性的推理定价。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout"
+        },
+        {
+          "title": "📜 监管政策 | 英国大臣：英国已获得对最新前沿 AI 模型进行安全测试的权限",
+          "body": "据 Reuters 10 月 12 日报道，英国大臣表示，英国已获得对最新一代前沿 AI 模型进行上线前安全测试的权限，由英国 AI 安全研究机构对主要实验室的新模型开展评估。同日微软总裁在接受采访时称，英国最有条件主导全球 AI 监管规则的制定。在美国监管趋松、欧盟 AI 法案执行承压的背景下，英国正试图以「技术评测」而非「立法管控」路线占据国际规则话语权。",
+          "insight": "「上线前第三方评测」可能成为前沿模型的事实标准，跨国企业需关注合规评测带来的发布节奏变化。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/legal/litigation/uk-given-access-safety-test-latest-ai-models-minister-says-2026-10-12/"
+        },
+        {
+          "title": "🌍 行业动向 | 智能体厂商竞相承诺隐私保护：OpenAI Dots 与 Meta Muse 打响「安全牌」之争",
+          "body": "The Verge 梳理指出，OpenAI 在 DevDay 推出新智能体 Dots 时，Sam Altman 宣称要「为前沿 AI 树立隐私新标准」，并暗指 Meta Muse 数据保护不足；而 Muse 上线时同样以「从底层为隐私和安全而建」为卖点，用户数据存于隔离虚拟机中。随着智能体需要访问邮件、文件、浏览器等更多个人数据，隐私承诺已成为各家抢夺用户的核心竞争点，但能否兑现仍待验证。",
+          "insight": "企业引入个人/办公智能体时，应把数据隔离、审计与可撤销授权列为采购硬指标，而非依赖厂商承诺。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots"
+        },
+        {
+          "title": "🌍 行业动向 | 十一假期国内大模型发布集体降温，厂商转向 Agent、算力与融资布局",
+          "body": "虎嗅观察到，今年国庆假期前后国内大模型并未出现往年的密集发布潮：市场期待的 DeepSeek V4.1 Pro 未如期亮相，字节豆包 2.2 也迟迟未发布。头部厂商的精力明显转向智能体产品化、算力储备与资本运作，DeepSeek、Kimi 相继传出大额融资与 IPO 计划。国产模型竞争正从「刷榜发版」进入「产品+资本+基础设施」的综合比拼阶段。",
+          "insight": "国产模型的选型窗口将更看重生态与可持续交付能力，而非单次发布的榜单分数。",
+          "source": "虎嗅",
+          "url": "https://www.huxiu.com/article/4896186.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🤝 战略合作 | 埃森哲与戴尔扩大合作，成立 Accenture Dell Business Group 推动私有 AI 规模化",
+          "body": "埃森哲与戴尔科技 10 月 8 日宣布扩大战略合作，成立专门的 Accenture Dell Business Group，面向企业提供私有 AI 部署与基础设施现代化服务，结合戴尔 AI Factory 的软硬件栈与埃森哲的行业解决方案、交付和运维能力，帮助客户在本地或混合环境中安全地规模化运行 AI 工作负载。这是继公有云合作之后，咨询巨头在「私有 AI」赛道的又一重要布局。",
+          "insight": "数据主权与成本压力正推动企业 AI 从「全上公有云」走向「公私混合」，集成商的基础设施交付能力价值上升。",
+          "source": "Accenture Newsroom",
+          "url": "https://newsroom.accenture.com/news/2026/accenture-and-dell-technologies-expand-collaboration-to-help-enterprises-scale-private-ai-and-modernize-infrastructure"
+        },
+        {
+          "title": "📊 中国实践 | 98 家企业 AI 落地调研：85.7% 已用 AI 知识库，仅 20.4% 形成企业级体系",
+          "body": "36氪对 98 家国内企业的调研显示，85.7% 的企业已在使用 AI 搜索或知识库，42.9% 已部署 Agent，80.6% 计划继续加大投入；但仅有 20.4% 形成了企业级 AI 体系，60.2% 的企业员工使用率不足 30%，30.6% 尚无任何 AI 治理机制。调研揭示国内企业 AI 普遍处于「点状试用多、体系化落地少」的阶段，组织与治理而非技术成为主要瓶颈。",
+          "insight": "下一阶段企业 AI 的价值释放取决于治理框架、流程重构与员工赋能，而非继续堆叠工具。",
+          "source": "36氪",
+          "url": "https://www.36kr.com/p/4022136308649860"
+        },
+        {
+          "title": "🏗️ 落地模式 | Epic Games 推迟迪士尼合作射击游戏，要求团队转向「AI 优先」开发",
+          "body": "据 Bloomberg 10 月 12 日报道，Epic Games 推迟了与迪士尼合作、包含漫威与星战角色的射击游戏发布，并告知开发团队该项目将改为「AI 优先」生产模式，由 AI 模型承担大部分代码编写并指导美术工作。Ars Technica、Kotaku 等跟进报道称部分开发者对此感到震惊。这是头部内容公司首次在重量级 IP 项目上强制推行 AI 主导的研发流程。",
+          "insight": "AI 优先的生产流程正从工具辅助升级为组织强制，人员技能重塑与 IP 合规审查将成为落地关键。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-12/epic-games-delays-disney-project-asks-developers-to-use-more-ai"
+        },
+        {
+          "title": "🏭 自动化 | 亚马逊仓储机器人突破 100 万台，机械臂成为下一轮自动化焦点",
+          "body": "Ars Technica 深度报道显示，亚马逊仓库中已有超过 100 万台机器人全天候运行，支撑每日数千万件当日与次日达包裹，公司正建设新工厂生产能力更强的机械臂，但目前机械臂规模仍在数千台量级。与此同时，亚马逊仍雇佣约 150 万名一线员工。报道对比了公司「减轻体力负担」的说法与研究者对「机器决定工作节奏」的担忧，呈现物理 AI 规模化落地中的人机协作张力。",
+          "insight": "物理 AI 规模化的关键不只是机器数量，而是人机协同流程设计与劳动关系管理。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🇨🇳 国内工具 | 智谱 GLM-5.3 HighSpeed 在 ZCode 灰度上线，生成速度超 490 tokens/s",
+          "body": "据智东西 10 月 12 日报道，智谱在其编程工具 ZCode 中灰度上线 GLM-5.3 HighSpeed 版本，输出速度超过 490 tokens/s，支持 1M 上下文与最大 131072 token 输出。高速推理对编码智能体意义重大：长链路的多步规划、反复读写代码与测试的循环中，延迟直接决定开发者体验与任务吞吐量。国产模型厂商正将「速度」作为编码场景的差异化卖点。",
+          "insight": "编码智能体竞争正从「能不能写对」延伸到「多快完成闭环」，推理速度将成为工具选型新维度。",
+          "source": "智东西",
+          "url": "https://tech.ifeng.com/c/8xA7UIdeYOZ"
+        },
+        {
+          "title": "🧩 开发工具 | Claude Code 2.1.296 发布：子智能体自动压缩、超大文件读取与网关控制",
+          "body": "Anthropic 10 月 9 日发布 Claude Code 2.1.296，本次更新包含近 80 项改动：为子智能体新增 autoCompactWindow 自动压缩上下文，Read 工具新增 allow_large 选项以单次读取超限文本文件，并加入工作流级模型与网关控制；同时修复了钩子、权限、插件与 MCP 等大量稳定性问题，改进云端、VS Code、Slack、Windows 与自托管 runner 体验。",
+          "insight": "编码智能体正在补齐企业级治理能力（网关、权限、自托管），为大规模团队部署铺路。",
+          "source": "Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "title": "🧩 开发工具 | Codex CLI 0.162 默认切换至 GPT-6.1 Sol，智能体编码成本降至约五分之一",
+          "body": "OpenAI 在 Claude Code 新版发布后 48 小时内推出 Codex CLI 0.162，将默认模型切换为 GPT-6.1 Sol。OpenAI 称该模型在智能体编码任务上的表现接近旗舰 GPT-6 Astra，但价格约为其五分之一，缓存输入还享有 95% 折扣。两大命令行编码智能体几乎同步迭代，竞争焦点已从能力上限转向长时间运行的单位成本。",
+          "insight": "长时运行的编码智能体对 token 成本极度敏感，「够用的智能+低价」将主导团队级规模化采用。",
+          "source": "Tech Insider",
+          "url": "https://tech-insider.org/codex-cli-0-162-vs-claude-code-2-1-296-2026/"
+        },
+        {
+          "title": "🧩 平台生态 | OutSystems 开放平台：Agent Experience 正式可用，接入 Claude Code、Cursor 与 Codex",
+          "body": "低代码平台 OutSystems 宣布其 Agent Experience 正式可用，允许开发者使用 Claude Code、Cursor、Codex 等外部 AI 编码智能体来设计应用，再由 OutSystems 平台生成并托管符合企业治理要求的应用。这意味着传统低代码厂商不再试图以自有助手对抗主流编码智能体，而是转向成为其背后的「受治理运行底座」。",
+          "insight": "低代码平台与编码智能体正从竞争走向互补，企业可在治理可控的前提下引入主流 AI 开发工具。",
+          "source": "MSP Channel",
+          "url": "https://www.msp-channel.com/news/24189-outsystems-opens-platform-to-claude-code-cursor-and-codex"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 权威调研 | Stack Overflow 2026 开发者调查：Claude Code 使用率 66%，Copilot 59%",
+          "body": "Stack Overflow 10 月 6 日发布 2026 年开发者调查结果。在 AI 编码智能体使用方面，Claude Code 以 66% 的使用占比领先，GitHub Copilot 为 59%，AI 编码工具已成为绝大多数专业开发者的日常配置。调查同时反映出开发者对 AI 产出准确性与可信度仍有顾虑，「使用率高、信任度有限」的格局延续，代码审查与验证环节的重要性进一步上升。",
+          "insight": "AI 编码工具已成标配，企业治理重点应从「是否使用」转向「如何验证与度量产出质量」。",
+          "source": "Stack Overflow Blog",
+          "url": "https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/"
+        },
+        {
+          "title": "🔬 论文 | Google AMIE 登上《柳叶刀》：AI 问诊在真实门诊中零安全中断",
+          "body": "Google 与贝斯以色列女执事医疗中心（BIDMC）合作的研究在《柳叶刀》主刊发表，这也是 Google 首篇柳叶刀主刊论文。在真实的初级保健门诊中，98 名患者在急诊就诊前先与诊断 AI 聊天机器人 AMIE 对话，监督医生实时监控，按预设安全标准无一次对话需要中断，临床医生也认为其有助于改善医患沟通。这是医疗对话式 AI 从模拟评测迈向真实临床的重要一步。",
+          "insight": "医疗 AI 落地的关键证据正从基准分数转向真实世界临床研究，「人在回路」仍是准入前提。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/"
+        },
+        {
+          "title": "📈 宏观研究 | 【进展】IMF：AI 投资支撑全球增长约 3%，但是一场「缓慢移动的海啸」",
+          "body": "据 Reuters 10 月 12 日报道，IMF 最新判断认为，强劲的 AI 基础设施投资正支撑全球经济增长维持在 3% 左右，亚洲经济体受益尤为明显；但 IMF 同时警告，AI 是一场「缓慢移动的海啸」，将深刻改变人们的工作与生活方式，甚至影响政府的税收来源。相比此前关于 AI 投资占 GDP 比重的表态，本次进一步给出了增长贡献与区域受益格局的判断。",
+          "insight": "AI 资本开支已成为宏观增长变量，企业规划需同时考虑其对劳动力结构与税制的中长期冲击。",
+          "source": "Reuters",
+          "url": "https://finance.yahoo.com/technology/ai/articles/imf-says-ai-investment-keeps-035003028.html"
+        },
+        {
+          "title": "📊 研究报告 | 中国信通院发布《面向词元（Token）服务的智算基础设施发展研究报告（2026 年）》",
+          "body": "中国信通院产业与规划研究所在第十六届智慧城市与智能经济博览会上发布《面向词元（Token）服务的智算基础设施发展研究报告（2026 年）》，作为智算基础设施系列研究的延续，围绕态势特征、政策导向、区域布局、技术突破、产业生态五个环节，阐述以 Token 为服务单元的智算基础设施最新趋势与典型实践。报告反映国内算力建设正从「卖卡时」转向「卖 Token」的服务化逻辑。",
+          "insight": "以 Token 计量的算力服务化将重塑智算中心的商业模式与企业的 AI 成本核算方式。",
+          "source": "东方财富网",
+          "url": "https://finance.eastmoney.com/a/202610093891083695.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "前沿模型格局再度扩容：Meta 以 Muse Wonder 正式进入前沿模型第一梯队，微软则以 Maia 300 加速推理算力自主化。模型层与芯片层的竞争同时加剧，意味着企业在多模型、多云策略上将拥有更大的选择空间与议价能力。",
+    "企业 AI 正从工具试用迈向组织重构。埃森哲与戴尔押注私有 AI，Epic Games 在重量级项目强推「AI 优先」，亚马逊机器人突破百万台；而国内调研显示仅两成企业形成体系化能力，治理、流程与人员赋能成为真正的分水岭。",
+    "编码智能体进入「成本与治理」竞争阶段：Claude Code 与 Codex CLI 两天内相继更新，低代码平台转身拥抱外部智能体，国产模型以速度突围。开发者调查显示 AI 编码已成标配，下一步的关键是如何度量与验证产出质量。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-10-13 执行）：已扫描 OpenAI/Anthropic 合作与收购、Anthropic×咨询公司、AI 咨询服务上线、Reuters/Bloomberg 收并购。结果：埃森哲×戴尔成立 Accenture Dell Business Group（10/8，已入选企业板块头条）；施耐德电气收购 PTC（10/5，超出 7 天窗口未纳入）；英伟达-Reflection AI、博通-OpenAI 500 亿融资、OpenAI-Atlassian 合作均已在过去 7 天发布，按去重规则跳过；今日无其他新的重大收并购或 Anthropic/OpenAI 咨询合作公告。"
+  }
+}

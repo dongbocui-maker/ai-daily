@@ -1,82 +1,80 @@
 {
-  "date": "2026-10-13",
-  "title": "Builder Signals · 2026-10-13",
-  "generatedAt": "2026-10-12T23:00:17.001Z",
-  "feedGeneratedAt": "2026-10-12T07:04:13.260Z",
-  "summary": "Follow Builders 今日捕捉到 20 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
+  "date": "2026-10-14",
+  "title": "Builder Signals · 2026-10-14",
+  "generatedAt": "2026-10-13T23:00:18.685Z",
+  "feedGeneratedAt": "2026-10-13T06:50:13.445Z",
+  "summary": "Follow Builders 今日捕捉到 31 条 X 动态、1 集播客、0 篇博客；本站精选 12 条高信号内容。",
   "stats": {
-    "xBuilders": 13,
-    "totalTweets": 20,
-    "selectedXTweets": 8,
+    "xBuilders": 15,
+    "totalTweets": 31,
+    "selectedXTweets": 11,
     "podcastEpisodes": 1,
     "blogPosts": 0,
-    "selectedItems": 9
+    "selectedItems": 12
   },
   "featured": [
     {
-      "id": "digest-x-0-QW5kcmVqIE",
-      "kind": "x",
-      "source": "X",
-      "sourceName": "Andrej Karpathy",
-      "handle": "karpathy",
-      "title": "Andrej Karpathy · OpenAI 联合创始人、前 Tesla AI 负责人",
-      "summaryEn": "Karpathy resurfaced an April tweet, arguing the gap in shared understanding of LLM capability is widening into a sharp funnel: ~6B people (~75%) have barely touched LLMs; ~1-2B (~20%) are casual free-tier users who see \"derpy chatbots\" used like a better Google — including many professionals outside math & code, such as execs whose understanding is second-hand and abstract; ~20M (0.2%) professionally use frontier models in math & code and have seen weeks-to-months projects completed by agents from a prompt; and ~5…",
-      "insightZh": "Karpathy 重提 4 月那条推文，说人们对 LLM 能力的认知鸿沟正在“扩大”，已经从“两拨人各说各话”变成一个陡峭的漏斗：约 60 亿人（~75%）几乎没接触过 LLM；约 10-20 亿人（~20%）是免费版 ChatGPT 类产品的轻度用户，把它当更好的搜索或写作助手，很多数学和代码以外的专业人士（包括主要时间花在与人沟通上的高管）也在这一层，对变化的理解是“二手的、抽象的”；约 2000 万人（0.2%）在数学和代码领域专业使用前沿模型，亲眼看到过去要几周几个月的大项目一个 prompt 就交给 agent 完成；最后约 5000 人能接触到前沿实验室内部系统，看到的是数千个 agent 协作数周的软件巨型项目、机器速度的攻防、新科学发现，而人类的审查和理解正在跟不上。他把漏斗归因于三点：影响随问题的野心、规模和时间跨度放大；能力的“锯齿性”——在数字化、可验证、经济价值高的领域最强，因为能力来自按收入潜力挑选环境做可验证奖励的强化学习；以及访问层级（免费、付费、内部）。结论是：公众多半没用过，大多数专业人士只感到温和的提升，一小撮人正经历曲线垂直上升的眩晕——而这一切同时发生。",
-      "tags": [
-        "OpenAI",
-        "Agent",
-        "Coding",
-        "Research"
-      ],
-      "url": "https://x.com/karpathy/status/2109361546505966046",
-      "publishedAt": "2026-10-11T19:12:37.000Z",
-      "metrics": {
-        "likes": 30115,
-        "retweets": 3852,
-        "replies": 1357,
-        "score": 48237
-      }
-    },
-    {
-      "id": "digest-x-1-QWFyb24gTG",
+      "id": "digest-x-0-QWFyb24gTG",
       "kind": "x",
       "source": "X",
       "sourceName": "Aaron Levie",
       "handle": "levie",
       "title": "Aaron Levie · Box CEO",
-      "summaryEn": "Using Karpathy's funnel, Levie argues AI diffusion is still very early: most people use AI as a chatbot approximating next-gen search, which is useful but vastly underrepresents its capability. At the other end, agent swarms may be the ultimate form factor for agents in workflows — any field with valuable parallelizable tasks where compute accelerates work (math, cyber, bio, materials, software, finance). Few use AI this way today due to model capability vs. domain, cost, available harnesses and frontier-model acc…",
-      "insightZh": "Levie 借 Karpathy 的漏斗说明 AI 扩散还处在非常早期：绝大多数人把 AI 当聊天机器人做近似下一代搜索的简单交互，很有用，但远远低估了 AI 的完整能力；光谱另一端的 agent 集群（agent swarms）可能是 agent 进入工作流的终极形态，数学、网络安全、生物、材料、软件工程、金融等凡是可并行、能靠算力加速的高价值任务都适用。目前只有极小比例的人这样用，原因是模型能力与领域的匹配、成本、可用的 harness、以及前沿模型对公众的开放程度。要让软件和 AI 研究以外的工作受益，还需要大量变革管理：升级工作流、把数据集成迁移到现代平台、跑通合规治理和安全框架。他认为这正是企业应用层 AI 的机会所在，因为这类工作有很强的领域特异性。",
+      "summaryEn": "Box CEO Aaron Levie posted three takes on agent architecture and compute. First, he called a new piece of research a preview of where agent architecture must end up: once AI sees the task at hand, it will be better at choosing its own harness than humans designing one in advance. Second, he expects agent swarms to become core to enterprise workflows, because massively parallelizable problems will be too valuable not to throw compute at. Cyber is a prime beneficiary, since exploring a huge space of attack permutati…",
+      "insightZh": "Box CEO Aaron Levie 今天连发三条，主线是「Agent 架构与算力消耗」。第一，他认为一项新研究指出了 Agent 的终局架构：AI 在看到具体任务后自己决定 harness，最终一定比人提前设计得更好。第二，他判断 Agent Swarm 会成为企业工作流的核心，能大规模并行的问题都值得砸算力，其中网络安全受益最大：攻击路径的排列组合搜索空间巨大，需要把多个场景串成完整利用链，这会成为大企业最大的 token 消耗场景之一。第三，Meta 全面进入前沿模型竞争后，多家同时推动 SOTA，会进一步加速进步，同时压低最高能力档位的 token 价格。",
       "tags": [
         "Agent",
-        "Product",
-        "Research",
-        "Infrastructure"
+        "Research"
       ],
-      "url": "https://x.com/levie/status/2109467575025578330",
-      "publishedAt": "2026-10-12T02:13:56.000Z",
+      "url": "https://x.com/levie/status/2109788979952558255",
+      "publishedAt": "2026-10-12T23:31:05.000Z",
       "metrics": {
-        "likes": 343,
-        "retweets": 46,
-        "replies": 88,
-        "score": 703
+        "likes": 289,
+        "retweets": 22,
+        "replies": 43,
+        "score": 463
       }
     },
     {
-      "id": "digest-podcast-0-Tm8gUHJpb3",
-      "kind": "podcast",
-      "source": "Podcast",
-      "sourceName": "No Priors",
-      "title": "Frontier Chips for Frontier AI Labs, with Walter Goodwin (Fractile)",
-      "summaryEn": "The real prize of fast inference isn't a snappier chatbot but making long-running agents radically faster — which requires chips that combine extreme memory bandwidth with economical high-capacity memory. Walter Goodwin, founder/CEO of Fractile, builds very fast inference chips for the largest models. Founded in summer 2022 with ~150 people, Fractile is full-stack — architecture, front-end, physical design, back-end implementation and advanced packaging. He notes most AI ASICs (TPU, MTIA, Maia, OpenAI's Jalapeno) are similar, built with ASIC houses like Broadcom on HBM, Tensor Cores and TSMC packaging — joking that first-party chips mainly lower the price paid to NVIDIA. Fractile initially bet on SRAM like Groq and Cerebras but worried about scaling as parameters and context grew, pivoting to work with memory vendors on very high-bandwidth DRAM access; the new platform ramps in H2 next…",
-      "insightZh": "推理速度的真正价值不是“更快的聊天机器人”，而是让长时间运行的 agent 快几个数量级——这需要同时具备极高内存带宽和低成本大容量内存的芯片。 Fractile 创始人兼 CEO Walter Goodwin 做的是面向全球最大模型的超高速推理芯片，公司 2022 年夏成立，约 150 人，从架构、前端设计、物理设计、后端实现到先进封装全栈自研。他指出当前 AI ASIC 高度同质化：Google TPU、Meta MTIA、微软 Maia、OpenAI Jalapeno 等大多与 Broadcom 等 ASIC 公司合作交付，都用 HBM、Tensor Core 和台积电先进封装；他甚至调侃第一方自研芯片的主要作用是压低给 NVIDIA 的价格。Fractile 早期也像 Groq、Cerebras 一样押 SRAM，但 2023-2024 年担心随着参数量和上下文长度增长无法扩展，于是转向与存储厂商合作，获取对 DRAM 的极高带宽，新平台计划明年下半年量产爬坡。他强调现有高速推理芯片带宽高但容量极低，长上下文 attention 仍要回到 GPU 跑；而数据中心规模推理的经济性最终归结为每 GB 内存成本。 在技术判断上，他提出“带宽的 scaling law”：过去二十年 FLOPs 增长约百万倍，内存带宽只增长约 40 倍。Fractile 单芯片带宽约为 HBM 芯片的 25 倍，能让 MoE 做得更稀疏（从 1/16 到 1/128、1/256）、采用更省 FLOPs 的 attention，从而在同等智能下大幅减少算力消耗。关于 AI 设计芯片，他的经验法则是“把你的时间预期除以 4”，但布局布线等 NP-hard 环节和 3-5 个月的流片周期仍是硬瓶颈，类似 AI 自我改进研究被实验耗时卡住；芯片还需 3 年以上的摊销期，因此快速迭代的价值在于“更多射门机会”，结构性地取得 3-6 个月领先就能赢下部署。他还认为前沿实验室若全押某种自研硬件风险极大，因此第三方前沿芯片厂商会长期存在。",
+      "id": "digest-x-1-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch argued that coding CLIs are getting too complicated, with daemons, three layers of TUIs, and client-server architectures. The point of a CLI is to deliver intelligence with zero friction and stay Unix-like, so he pointed to a 6MB, millisecond-startup, model-agnostic CLI with MCP, Skills, Subagents and ACP built in. He also announced that Meta's Muse Wonder is now available on Vercel AI Gateway via `fx --model meta/muse-wonder-1.0`.",
+      "insightZh": "Vercel CEO Guillermo Rauch 吐槽现在的编程 CLI 越做越复杂：守护进程、三层 TUI、客户端-服务端架构。他认为 CLI 的意义是零摩擦地交付智能、保持 Unix 风格，并推荐了一个 6MB、毫秒级启动、模型无关的极简 CLI，内置 MCP、Skills、Subagents 和 ACP。另外他宣布 Meta 的 Muse Wonder 已上线 Vercel AI Gateway，可通过 `fx --model meta/muse-wonder-1.0` 直接调用。",
       "tags": [
-        "OpenAI",
         "Agent",
+        "Coding",
         "Product",
         "Startup"
       ],
-      "url": "https://www.youtube.com/watch?v=OpeCP4wCxkA",
-      "publishedAt": "2026-10-02T10:00:00.000Z",
+      "url": "https://x.com/rauchg/status/2109734766107099312",
+      "publishedAt": "2026-10-12T19:55:39.000Z",
+      "metrics": {
+        "likes": 539,
+        "retweets": 27,
+        "replies": 102,
+        "score": 851
+      }
+    },
+    {
+      "id": "digest-podcast-0-QUkgJiBJIG",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "AI & I by Every",
+      "title": "How Sam Altman Uses Dots to Take Back His Time",
+      "summaryEn": "At OpenAI Dev Day, Sam Altman says Dots, the new always-on background agent, gave him back his mornings for deep work. He frames AI as a human-centered Renaissance rather than an Industrial Revolution that turns people into cogs, and says OpenAI now aims to democratize speed the way it has driven down the price of intelligence. In the first episode under the new Every Podcast name, Dan Shipper interviews Altman live at Dev Day, where OpenAI launched about 22 things (versus about 9 last year) and still cut more. Altman says strong coding models have brought more developers, not fewer, because latent demand and expectations are enormous and people stay at the center: we care far more about other people than about what machines do. On platform strategy, OpenAI bets on a boom of one-person and small-team companies, so it opened apps in ChatGPT and plugin extensions and lets users bring thei…",
+      "insightZh": "Sam Altman 在 OpenAI Dev Day 现场说，新发布的常驻后台 Agent「Dots」帮他夺回了早晨的深度工作时间。他认为 AI 带来的应该是以人为中心的「文艺复兴」，而不是把人变成齿轮的「工业革命」；接下来 OpenAI 要像过去压低智能价格那样，把「速度」也普惠化。 这一期是 Every 播客改名后的首集，Dan Shipper 在 Dev Day 现场采访 Sam Altman。今年 Dev Day 发布了约 22 项新东西（去年约 9 项），Altman 说这本身就是 AI 提效的证明，而且还砍掉了一批。他认为编程模型再强，开发者反而更多了，因为人们的期待和潜在需求远超预期，人始终处在中心：我们对机器做了什么不太在意，而是痴迷于其他人。他拿「1 万个 Agent 协作四天解决 Navier-Stokes 问题」举例，公众讨论几乎都在「人」而不是问题本身。平台策略上，OpenAI 押注一人公司、小团队大量涌现，所以开放 ChatGPT 内应用、插件扩展，并允许用户把 ChatGPT 订阅额度带到第三方 App。开发者因此不用担心「用户用太多 AI 会把我用破产」。 Altman 重点讲了 Dots。以前早上一看手机就被各种突发事件污染大脑，现在他信任 Dot 判断什么需要他看，紧急的才提醒，其余代为处理。具体例子：Dev Day 前 5 分钟，同事的 Dot 主动提醒线上问题会让演示失败并询问是否修复；Dot 在会议间隙提醒他一件差点漏掉的事；他随手语音记想法，Dot 自己做出五六个版本供他迭代；一次他用 Codex 搜 Slack 没找到某条内容，Dot 第二天主动告诉他「我想了一晚，找到了」，原来那是一张截图。他认为背后最关键的是 Astra 模型跨过了智能门槛。新的 Space 套件则是为人与 AI 协作重新设计的 office 工具，「活文档」会随着多人和多个 Dot 的交互自动更新，他自己的业务看板也变成了只为他定制、持续更新的版本。 关于速度与价格，Altman 承认自己所有 prompt 都用 Ultrafast。他引用 Bret…",
+      "tags": [
+        "OpenAI",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+      "publishedAt": "2026-09-30T20:05:56.000Z",
       "handle": ""
     }
   ],
@@ -87,174 +85,222 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-QW5kcmVqIE",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Andrej Karpathy",
-          "handle": "karpathy",
-          "title": "Andrej Karpathy · OpenAI 联合创始人、前 Tesla AI 负责人",
-          "summaryEn": "Karpathy resurfaced an April tweet, arguing the gap in shared understanding of LLM capability is widening into a sharp funnel: ~6B people (~75%) have barely touched LLMs; ~1-2B (~20%) are casual free-tier users who see \"derpy chatbots\" used like a better Google — including many professionals outside math & code, such as execs whose understanding is second-hand and abstract; ~20M (0.2%) professionally use frontier models in math & code and have seen weeks-to-months projects completed by agents from a prompt; and ~5…",
-          "insightZh": "Karpathy 重提 4 月那条推文，说人们对 LLM 能力的认知鸿沟正在“扩大”，已经从“两拨人各说各话”变成一个陡峭的漏斗：约 60 亿人（~75%）几乎没接触过 LLM；约 10-20 亿人（~20%）是免费版 ChatGPT 类产品的轻度用户，把它当更好的搜索或写作助手，很多数学和代码以外的专业人士（包括主要时间花在与人沟通上的高管）也在这一层，对变化的理解是“二手的、抽象的”；约 2000 万人（0.2%）在数学和代码领域专业使用前沿模型，亲眼看到过去要几周几个月的大项目一个 prompt 就交给 agent 完成；最后约 5000 人能接触到前沿实验室内部系统，看到的是数千个 agent 协作数周的软件巨型项目、机器速度的攻防、新科学发现，而人类的审查和理解正在跟不上。他把漏斗归因于三点：影响随问题的野心、规模和时间跨度放大；能力的“锯齿性”——在数字化、可验证、经济价值高的领域最强，因为能力来自按收入潜力挑选环境做可验证奖励的强化学习；以及访问层级（免费、付费、内部）。结论是：公众多半没用过，大多数专业人士只感到温和的提升，一小撮人正经历曲线垂直上升的眩晕——而这一切同时发生。",
-          "tags": [
-            "OpenAI",
-            "Agent",
-            "Coding",
-            "Research"
-          ],
-          "url": "https://x.com/karpathy/status/2109361546505966046",
-          "publishedAt": "2026-10-11T19:12:37.000Z",
-          "metrics": {
-            "likes": 30115,
-            "retweets": 3852,
-            "replies": 1357,
-            "score": 48237
-          }
-        },
-        {
-          "id": "digest-x-1-QWFyb24gTG",
+          "id": "digest-x-0-QWFyb24gTG",
           "kind": "x",
           "source": "X",
           "sourceName": "Aaron Levie",
           "handle": "levie",
           "title": "Aaron Levie · Box CEO",
-          "summaryEn": "Using Karpathy's funnel, Levie argues AI diffusion is still very early: most people use AI as a chatbot approximating next-gen search, which is useful but vastly underrepresents its capability. At the other end, agent swarms may be the ultimate form factor for agents in workflows — any field with valuable parallelizable tasks where compute accelerates work (math, cyber, bio, materials, software, finance). Few use AI this way today due to model capability vs. domain, cost, available harnesses and frontier-model acc…",
-          "insightZh": "Levie 借 Karpathy 的漏斗说明 AI 扩散还处在非常早期：绝大多数人把 AI 当聊天机器人做近似下一代搜索的简单交互，很有用，但远远低估了 AI 的完整能力；光谱另一端的 agent 集群（agent swarms）可能是 agent 进入工作流的终极形态，数学、网络安全、生物、材料、软件工程、金融等凡是可并行、能靠算力加速的高价值任务都适用。目前只有极小比例的人这样用，原因是模型能力与领域的匹配、成本、可用的 harness、以及前沿模型对公众的开放程度。要让软件和 AI 研究以外的工作受益，还需要大量变革管理：升级工作流、把数据集成迁移到现代平台、跑通合规治理和安全框架。他认为这正是企业应用层 AI 的机会所在，因为这类工作有很强的领域特异性。",
+          "summaryEn": "Box CEO Aaron Levie posted three takes on agent architecture and compute. First, he called a new piece of research a preview of where agent architecture must end up: once AI sees the task at hand, it will be better at choosing its own harness than humans designing one in advance. Second, he expects agent swarms to become core to enterprise workflows, because massively parallelizable problems will be too valuable not to throw compute at. Cyber is a prime beneficiary, since exploring a huge space of attack permutati…",
+          "insightZh": "Box CEO Aaron Levie 今天连发三条，主线是「Agent 架构与算力消耗」。第一，他认为一项新研究指出了 Agent 的终局架构：AI 在看到具体任务后自己决定 harness，最终一定比人提前设计得更好。第二，他判断 Agent Swarm 会成为企业工作流的核心，能大规模并行的问题都值得砸算力，其中网络安全受益最大：攻击路径的排列组合搜索空间巨大，需要把多个场景串成完整利用链，这会成为大企业最大的 token 消耗场景之一。第三，Meta 全面进入前沿模型竞争后，多家同时推动 SOTA，会进一步加速进步，同时压低最高能力档位的 token 价格。",
           "tags": [
             "Agent",
-            "Product",
-            "Research",
-            "Infrastructure"
+            "Research"
           ],
-          "url": "https://x.com/levie/status/2109467575025578330",
-          "publishedAt": "2026-10-12T02:13:56.000Z",
+          "url": "https://x.com/levie/status/2109788979952558255",
+          "publishedAt": "2026-10-12T23:31:05.000Z",
           "metrics": {
-            "likes": 343,
-            "retweets": 46,
-            "replies": 88,
-            "score": 703
+            "likes": 289,
+            "retweets": 22,
+            "replies": 43,
+            "score": 463
           }
         },
         {
-          "id": "digest-x-2-VGhpYmF1bH",
+          "id": "digest-x-1-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch argued that coding CLIs are getting too complicated, with daemons, three layers of TUIs, and client-server architectures. The point of a CLI is to deliver intelligence with zero friction and stay Unix-like, so he pointed to a 6MB, millisecond-startup, model-agnostic CLI with MCP, Skills, Subagents and ACP built in. He also announced that Meta's Muse Wonder is now available on Vercel AI Gateway via `fx --model meta/muse-wonder-1.0`.",
+          "insightZh": "Vercel CEO Guillermo Rauch 吐槽现在的编程 CLI 越做越复杂：守护进程、三层 TUI、客户端-服务端架构。他认为 CLI 的意义是零摩擦地交付智能、保持 Unix 风格，并推荐了一个 6MB、毫秒级启动、模型无关的极简 CLI，内置 MCP、Skills、Subagents 和 ACP。另外他宣布 Meta 的 Muse Wonder 已上线 Vercel AI Gateway，可通过 `fx --model meta/muse-wonder-1.0` 直接调用。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Product",
+            "Startup"
+          ],
+          "url": "https://x.com/rauchg/status/2109734766107099312",
+          "publishedAt": "2026-10-12T19:55:39.000Z",
+          "metrics": {
+            "likes": 539,
+            "retweets": 27,
+            "replies": 102,
+            "score": 851
+          }
+        },
+        {
+          "id": "digest-x-2-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper tested Meta's new Muse Wonder by having it make a video explaining personal benchmarks. His verdict: pretty rough, and every video so far has been narrated in an Australian accent. He clarified that this was Muse Wonder Standard, since Wonder Full is inexplicably not on the API, and said he would run it again later. The service went down and came back up, but was \"still bad.\"",
+          "insightZh": "Every CEO Dan Shipper 上手实测了 Meta 新模型 Muse Wonder，用它生成一段讲解「个人 benchmark」的视频，评价直接：效果相当粗糙，而且目前生成的视频全是澳洲口音旁白。他补充说明测的是 Muse Wonder Standard，Wonder Full 版本莫名其妙没有开放 API，之后会再跑一轮。服务中途宕机又恢复，但「依然不行」。",
+          "tags": [
+            "Eval"
+          ],
+          "url": "https://x.com/danshipper/status/2109778026091209087",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-3-VGhpYmF1bH",
           "kind": "x",
           "source": "X",
           "sourceName": "Thibault Sottiaux",
           "handle": "thsottiaux",
-          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT 负责人",
-          "summaryEn": "OpenAI Codex lead Thibault shared a \"Day 7\" update: the default context length for GPT-6.1 Sol in Codex & Work rises from 272k to 500k (~80% more), reducing compactions and helping tasks that need lots of context and nuance over time; it was carefully tested as the new sweet spot, and users can still override up to the 1M max. Long-context fees are waived when usage draws from the subscription. He also said a poll confused him — he expected Pro 100/200/500 users to favor 2X usage in exchange for bringing back 5-ho…",
-          "insightZh": "OpenAI Codex 负责人 Thibault 发布“Day 7”更新：GPT-6.1 Sol 在 Codex 和 Work 中的默认上下文长度从 272k 提到 500k（约增加 80%），用于减少 compaction 发生次数、更好地支持需要长时间保持大量上下文和细节的任务，经过仔细测试被认为是多数用户的新甜点位；用户仍可自行调高或调低，模型最大上下文为 1M。同时宣布通过订阅额度使用 GPT-6.1 Sol 时不收长上下文费用。另外他坦言一项投票结果让他困惑：原以为 Pro 100/200/500 用户会更倾向“2 倍额度、但恢复 5 小时限额以平滑需求曲线”的方案，结果并非如此。",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux announced that usage limits have been reset (\"What would you like with your side of reset? It's done.\") and teased a simple plan that should give everyone significantly more usage, which he hopes to ship soon.",
+          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 宣布用量额度已经重置（\"What would you like with your side of reset? It's done.\"），并预告手上有一个「简单的好计划」，落地后所有人可用的用量会显著增加，希望尽快完成。",
           "tags": [
             "OpenAI",
             "Coding"
           ],
-          "url": "https://x.com/thsottiaux/status/2109430343346581527",
-          "publishedAt": "2026-10-11T23:45:59.000Z",
+          "url": "https://x.com/thsottiaux/status/2109873287853707513",
+          "publishedAt": "2026-10-13T05:06:06.000Z",
           "metrics": {
-            "likes": 10608,
-            "retweets": 454,
-            "replies": 1320,
-            "score": 15064
+            "likes": 2741,
+            "retweets": 88,
+            "replies": 898,
+            "score": 4889
           }
         },
         {
-          "id": "digest-x-3-VGhhcmlxIM",
+          "id": "digest-x-4-UGV0ZXIgU3",
           "kind": "x",
           "source": "X",
-          "sourceName": "Thariq",
-          "handle": "trq212",
-          "title": "Thariq · Anthropic Claude Code",
-          "summaryEn": "Thariq from Anthropic's Claude Code team agreed with Terence Tao that we shouldn't settle for an opaque superintelligence. Communication is a key signal of intelligence, and products and models should build understanding with humans rather than disintermediate them.",
-          "insightZh": "Claude Code 团队的 Thariq 表示认同陶哲轩的方向：我们不应满足于一个不透明的超级智能。他认为智能的关键信号之一是沟通能力，应该努力打造能与人类共建理解、而不是把人类“中间层去掉”的产品和模型。",
+          "sourceName": "Peter Steinberger",
+          "handle": "steipete",
+          "title": "Peter Steinberger · OpenClaw 作者、OpenAI",
+          "summaryEn": "OpenClaw creator Peter Steinberger (now at OpenAI) shared a hands-on take: 6.1 Sol ultrafast is far better than 6 Astra at roughly the same cost, and at 250 tpm it feels like a whole different game. He also repeated last year's point that \"vibe coding\" is a slur.",
+          "insightZh": "OpenClaw 作者 Peter Steinberger（现在 OpenAI）给出一个模型使用体感：6.1 Sol ultrafast 明显强于 6 Astra，成本差不多，但 250 tpm 的速度让体验「完全是另一个游戏」。他还重申去年的观点：「vibe coding」这个说法是一种贬低。",
           "tags": [
-            "Claude",
+            "OpenAI",
             "Coding",
-            "Product",
-            "Research"
+            "Startup"
           ],
-          "url": "https://x.com/trq212/status/2109329495341867391",
-          "publishedAt": "2026-10-11T17:05:15.000Z",
+          "url": "https://x.com/steipete/status/2109730774593487009",
+          "publishedAt": "2026-10-12T19:39:48.000Z",
           "metrics": {
-            "likes": 1219,
-            "retweets": 59,
-            "replies": 205,
-            "score": 1865
+            "likes": 2153,
+            "retweets": 42,
+            "replies": 150,
+            "score": 2621
           }
         },
         {
-          "id": "digest-x-4-UGV0ZXIgWW",
+          "id": "digest-x-5-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "title": "Aditya Agarwal · South Park Commons 合伙人、前 Dropbox CTO",
+          "summaryEn": "South Park Commons GP and former Dropbox CTO Aditya Agarwal noted a big delta between how frontier lab employees use AI and how even the top 1% of AI orgs use it, and that is with public capabilities only. He expects the gap to persist for a while and sees a company opportunity in a horizontal accelerant that closes it.",
+          "insightZh": "South Park Commons 普通合伙人、前 Dropbox CTO Aditya Agarwal 观察到：前沿实验室员工使用 AI 的方式，和哪怕是最顶尖 1% 的 AI 组织之间都存在巨大落差，而且这还是只用公开能力的情况下。他认为这个差距会持续一段时间，其中藏着一个「横向加速器」式的创业机会。",
+          "tags": [],
+          "url": "https://x.com/adityaag/status/2109748501982872003",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-6-UGV0ZXIgWW",
           "kind": "x",
           "source": "X",
           "sourceName": "Peter Yang",
           "handle": "petergyang",
           "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
-          "summaryEn": "Peter Yang shared an interview with Micky (@Rasmic), who has taught 100K+ people to build with AI. Micky doesn't yet fully trust agents, especially for things people use, so manual review is the final step — after the agent presents as much evidence as possible via before/after evidence-driven testing and greploop, explaining what was done and why it's good. This builds trust and reduces the friction of review, \"probably the worst part\" of a developer's job. Peter also showed building a ModRetro game with his daug…",
-          "insightZh": "Peter Yang 分享了对教过 10 万+ 人用 AI 开发的 Micky（@Rasmic）的访谈：Micky 说自己还没到完全信任 agent 的程度，尤其是有真实用户在用的东西。他的做法是让人工 review 成为最后一步——在此之前尽可能让 agent 拿出证据：用前后对比的证据驱动测试、greploop 等方式，让 agent 说明“做了什么、为什么是好的”，以此建立信任，也减轻开发者最讨厌的 review 负担。Peter 另外晒了和女儿用 Codex 一起做 ModRetro 游戏。",
+          "summaryEn": "AI tutorials creator Peter Yang explained why Grok Bot is his favorite agent right now: it is built on personas instead of chat threads, so it feels like hiring employees who each own a job. Behind the Growth handles customer support, YouTube Producer does research and prep, Loving Husband runs family errands, and Health Coach keeps workouts on track. New features include free X access, its own email, and Opus. He also lamented that the new StarCraft won't arrive until 2030 and urged Blizzard to double down on the…",
+          "insightZh": "AI 教程创作者 Peter Yang 解释了为什么 Grok Bot 是他目前最喜欢的 Agent：它的组织方式是「角色」而不是对话线程，感觉像雇了几个员工，各管一摊。他的 Behind the Growth 负责客服，YouTube Producer 负责调研和准备，Loving Husband 负责家庭杂事，Health Coach 盯训练。新功能包括免费 X 访问、独立邮箱和 Opus 模型。另外他感慨 StarCraft 新作要到 2030 年，呼吁暴雪加码这个 IP。",
           "tags": [
             "Agent",
-            "Coding"
+            "Product",
+            "Startup",
+            "Research"
           ],
-          "url": "https://x.com/petergyang/status/2109433961223180517",
-          "publishedAt": "2026-10-12T00:00:22.000Z",
+          "url": "https://x.com/petergyang/status/2109803399332213090",
+          "publishedAt": "2026-10-13T00:28:23.000Z",
           "metrics": {
-            "likes": 24,
+            "likes": 77,
+            "retweets": 6,
+            "replies": 18,
+            "score": 137
+          }
+        },
+        {
+          "id": "digest-x-7-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "handle": "zarazhangrui",
+          "title": "Zara Zhang · Builder、Follow Builders 作者",
+          "summaryEn": "Builder Zara Zhang shared a touching AI coding story. A friend grew up in a home full of cockroaches, and her mom turned killing them into a game. Another friend vibe coded a game from that story where you catch cockroaches and compete against Mom, and she cried while playing it. The game isn't technically sophisticated and any model can build it quickly now. What gives it a soul is the human story and emotion behind it. Code is the new medium for storytelling.",
+          "insightZh": "Builder Zara Zhang 分享了一个让她很触动的 AI coding 故事：朋友小时候家里蟑螂多，妈妈把打蟑螂变成游戏。另一个朋友听了这个故事后，vibe code 了一个「在房间里抓蟑螂、和妈妈比赛」的小游戏，当事人边玩边哭。游戏技术上并不复杂，任何模型都能很快做出来，真正赋予它灵魂的是背后的人、经历和情感。她的结论是：代码是新的讲故事媒介。",
+          "tags": [
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2109673430245421415",
+          "publishedAt": "2026-10-12T15:51:56.000Z",
+          "metrics": {
+            "likes": 64,
             "retweets": 1,
-            "replies": 9,
-            "score": 46
+            "replies": 16,
+            "score": 100
           }
         },
         {
-          "id": "digest-x-5-R2FycnkgVG",
+          "id": "digest-x-8-UnlvIEx1IM",
           "kind": "x",
           "source": "X",
-          "sourceName": "Garry Tan",
-          "handle": "garrytan",
-          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "Garry Tan said replacing LLM calls with deterministic code is a no-brainer and yields better code that better matches what users want. Echoing Karpathy's \"5,000\" tier, he called it the greatest alpha fountain in history, expecting prices to fall so more people get access.",
-          "insightZh": "Garry Tan 表示，把 LLM 调用替换成确定性代码是显而易见的选择，而且会得到更好、更符合用户需求的代码。他还呼应了 Karpathy“5000 人”的说法，称这是“人类历史上最大的 alpha 源泉”，并认为价格会下降、更多人将有机会接触。",
+          "sourceName": "Ryo Lu",
+          "handle": "ryolu_",
+          "title": "Ryo Lu · Cursor 设计负责人",
+          "summaryEn": "Cursor designer Ryo Lu shipped two new apps on ryOS: Dictionary (vocabulary, pronunciation, kanji) and Fitness (AI-planned workouts plus body and food tracking). Both sync to your ryOS account and were built with Cursor.",
+          "insightZh": "Cursor 设计负责人 Ryo Lu 在个人项目 ryOS 上新增了两个应用：Dictionary（学单词、发音、汉字）和 Fitness（用 AI 规划训练、记录身体和饮食数据），都同步到 ryOS 账户，用 Cursor 等工具做出来。",
           "tags": [
-            "Coding"
+            "Product"
           ],
-          "url": "https://x.com/garrytan/status/2109410082769482174",
-          "publishedAt": "2026-10-11T22:25:29.000Z",
+          "url": "https://x.com/ryolu_/status/2109568690358555064",
+          "publishedAt": "2026-10-12T08:55:44.000Z",
           "metrics": {
-            "likes": 1624,
-            "retweets": 71,
-            "replies": 129,
-            "score": 2166
+            "likes": 338,
+            "retweets": 9,
+            "replies": 16,
+            "score": 406
           }
         },
         {
-          "id": "digest-x-6-TWF0dCBUdX",
+          "id": "digest-x-9-Sm9zaCBXb2",
           "kind": "x",
           "source": "X",
-          "sourceName": "Matt Turck",
-          "handle": "mattturck",
-          "title": "Matt Turck · FirstMark Capital 合伙人、MAD Podcast 主持人",
-          "summaryEn": "Matt Turck put AI job anxiety in historical context: people went from punch card operators to Lotus Notes admins, Flash developers and Dreamweaver webmasters, then DevOps and Tableau analysts, and now agent managers and harness engineers. \"It will work out just fine.\"",
-          "insightZh": "Matt Turck 用职业演变史给 AI 焦虑降温：人们曾是打孔卡操作员、Lotus Notes 管理员、Flash 开发者和 Dreamweaver 站长，后来是 DevOps 和 Tableau 分析师，现在正在变成 agent 管理者和 harness 工程师——“一切都会好的”。",
+          "sourceName": "Josh Woodward",
+          "handle": "joshwoodward",
+          "title": "Josh Woodward · Google Labs / Gemini App VP",
+          "summaryEn": "Google Labs and Gemini App VP Josh Woodward appeared on Lenny's podcast. He had learned from Lenny for years but they had never met, and he praised Lenny as prepared and deeply curious, saying the conversation went to places he has never discussed in public.",
+          "insightZh": "Google Labs / Gemini App VP Josh Woodward 上了 Lenny 的播客。他说跟 Lenny 学习多年但这是第一次见面，Lenny 准备充分、好奇心强，把对话带到了他从未公开谈过的话题。",
           "tags": [
-            "Agent",
-            "Coding"
+            "Product"
           ],
-          "url": "https://x.com/mattturck/status/2109345191010472332",
-          "publishedAt": "2026-10-11T18:07:37.000Z",
+          "url": "https://x.com/joshwoodward/status/2109646793713786970",
+          "publishedAt": "2026-10-12T14:06:05.000Z",
           "metrics": {
-            "likes": 54,
-            "retweets": 0,
-            "replies": 12,
-            "score": 78
+            "likes": 342,
+            "retweets": 15,
+            "replies": 7,
+            "score": 416
           }
         },
         {
-          "id": "digest-x-7-RGFuIFNoaX",
+          "id": "digest-x-10-U3d5eCDCty",
           "kind": "x",
           "source": "X",
-          "sourceName": "Dan Shipper",
-          "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Dan Shipper built a feed that automatically tracks the books he's reading (going back to 2012) and floated making one for everybody on Every.",
-          "insightZh": "Dan Shipper 做了一个自动追踪自己在读书目的 feed（可回溯到 2012 年），并考虑在 Every 上给每个人都做一个这样的 feed。",
+          "sourceName": "Swyx",
+          "title": "Swyx · Latent Space、AI Engineer 主理人",
+          "summaryEn": "Latent Space and AI Engineer host Swyx announced that the workshop writeup from AI Engineer NY is live, and noted a packed room for the Arize AI workshop. He called bringing out the best in AI in each city one of the best parts of his job.",
+          "insightZh": "Latent Space、AI Engineer 主理人 Swyx 宣布 AI Engineer NY 的 workshop 总结文章已发布，Arize AI 的 workshop 也座无虚席。他说这份工作最好的部分之一，就是把每个城市里最好的 AI 实践带出来。",
           "tags": [],
-          "url": "https://x.com/danshipper/status/2109331798282915907",
+          "url": "https://x.com/swyx/status/2109837651893485844",
           "publishedAt": null,
           "handle": ""
         }
@@ -266,21 +312,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "id": "digest-podcast-0-QUkgJiBJIG",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "No Priors",
-          "title": "Frontier Chips for Frontier AI Labs, with Walter Goodwin (Fractile)",
-          "summaryEn": "The real prize of fast inference isn't a snappier chatbot but making long-running agents radically faster — which requires chips that combine extreme memory bandwidth with economical high-capacity memory. Walter Goodwin, founder/CEO of Fractile, builds very fast inference chips for the largest models. Founded in summer 2022 with ~150 people, Fractile is full-stack — architecture, front-end, physical design, back-end implementation and advanced packaging. He notes most AI ASICs (TPU, MTIA, Maia, OpenAI's Jalapeno) are similar, built with ASIC houses like Broadcom on HBM, Tensor Cores and TSMC packaging — joking that first-party chips mainly lower the price paid to NVIDIA. Fractile initially bet on SRAM like Groq and Cerebras but worried about scaling as parameters and context grew, pivoting to work with memory vendors on very high-bandwidth DRAM access; the new platform ramps in H2 next…",
-          "insightZh": "推理速度的真正价值不是“更快的聊天机器人”，而是让长时间运行的 agent 快几个数量级——这需要同时具备极高内存带宽和低成本大容量内存的芯片。 Fractile 创始人兼 CEO Walter Goodwin 做的是面向全球最大模型的超高速推理芯片，公司 2022 年夏成立，约 150 人，从架构、前端设计、物理设计、后端实现到先进封装全栈自研。他指出当前 AI ASIC 高度同质化：Google TPU、Meta MTIA、微软 Maia、OpenAI Jalapeno 等大多与 Broadcom 等 ASIC 公司合作交付，都用 HBM、Tensor Core 和台积电先进封装；他甚至调侃第一方自研芯片的主要作用是压低给 NVIDIA 的价格。Fractile 早期也像 Groq、Cerebras 一样押 SRAM，但 2023-2024 年担心随着参数量和上下文长度增长无法扩展，于是转向与存储厂商合作，获取对 DRAM 的极高带宽，新平台计划明年下半年量产爬坡。他强调现有高速推理芯片带宽高但容量极低，长上下文 attention 仍要回到 GPU 跑；而数据中心规模推理的经济性最终归结为每 GB 内存成本。 在技术判断上，他提出“带宽的 scaling law”：过去二十年 FLOPs 增长约百万倍，内存带宽只增长约 40 倍。Fractile 单芯片带宽约为 HBM 芯片的 25 倍，能让 MoE 做得更稀疏（从 1/16 到 1/128、1/256）、采用更省 FLOPs 的 attention，从而在同等智能下大幅减少算力消耗。关于 AI 设计芯片，他的经验法则是“把你的时间预期除以 4”，但布局布线等 NP-hard 环节和 3-5 个月的流片周期仍是硬瓶颈，类似 AI 自我改进研究被实验耗时卡住；芯片还需 3 年以上的摊销期，因此快速迭代的价值在于“更多射门机会”，结构性地取得 3-6 个月领先就能赢下部署。他还认为前沿实验室若全押某种自研硬件风险极大，因此第三方前沿芯片厂商会长期存在。",
+          "sourceName": "AI & I by Every",
+          "title": "How Sam Altman Uses Dots to Take Back His Time",
+          "summaryEn": "At OpenAI Dev Day, Sam Altman says Dots, the new always-on background agent, gave him back his mornings for deep work. He frames AI as a human-centered Renaissance rather than an Industrial Revolution that turns people into cogs, and says OpenAI now aims to democratize speed the way it has driven down the price of intelligence. In the first episode under the new Every Podcast name, Dan Shipper interviews Altman live at Dev Day, where OpenAI launched about 22 things (versus about 9 last year) and still cut more. Altman says strong coding models have brought more developers, not fewer, because latent demand and expectations are enormous and people stay at the center: we care far more about other people than about what machines do. On platform strategy, OpenAI bets on a boom of one-person and small-team companies, so it opened apps in ChatGPT and plugin extensions and lets users bring thei…",
+          "insightZh": "Sam Altman 在 OpenAI Dev Day 现场说，新发布的常驻后台 Agent「Dots」帮他夺回了早晨的深度工作时间。他认为 AI 带来的应该是以人为中心的「文艺复兴」，而不是把人变成齿轮的「工业革命」；接下来 OpenAI 要像过去压低智能价格那样，把「速度」也普惠化。 这一期是 Every 播客改名后的首集，Dan Shipper 在 Dev Day 现场采访 Sam Altman。今年 Dev Day 发布了约 22 项新东西（去年约 9 项），Altman 说这本身就是 AI 提效的证明，而且还砍掉了一批。他认为编程模型再强，开发者反而更多了，因为人们的期待和潜在需求远超预期，人始终处在中心：我们对机器做了什么不太在意，而是痴迷于其他人。他拿「1 万个 Agent 协作四天解决 Navier-Stokes 问题」举例，公众讨论几乎都在「人」而不是问题本身。平台策略上，OpenAI 押注一人公司、小团队大量涌现，所以开放 ChatGPT 内应用、插件扩展，并允许用户把 ChatGPT 订阅额度带到第三方 App。开发者因此不用担心「用户用太多 AI 会把我用破产」。 Altman 重点讲了 Dots。以前早上一看手机就被各种突发事件污染大脑，现在他信任 Dot 判断什么需要他看，紧急的才提醒，其余代为处理。具体例子：Dev Day 前 5 分钟，同事的 Dot 主动提醒线上问题会让演示失败并询问是否修复；Dot 在会议间隙提醒他一件差点漏掉的事；他随手语音记想法，Dot 自己做出五六个版本供他迭代；一次他用 Codex 搜 Slack 没找到某条内容，Dot 第二天主动告诉他「我想了一晚，找到了」，原来那是一张截图。他认为背后最关键的是 Astra 模型跨过了智能门槛。新的 Space 套件则是为人与 AI 协作重新设计的 office 工具，「活文档」会随着多人和多个 Dot 的交互自动更新，他自己的业务看板也变成了只为他定制、持续更新的版本。 关于速度与价格，Altman 承认自己所有 prompt 都用 Ultrafast。他引用 Bret…",
           "tags": [
             "OpenAI",
             "Agent",
-            "Product",
-            "Startup"
+            "Coding",
+            "Product"
           ],
-          "url": "https://www.youtube.com/watch?v=OpeCP4wCxkA",
-          "publishedAt": "2026-10-02T10:00:00.000Z",
+          "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+          "publishedAt": "2026-09-30T20:05:56.000Z",
           "handle": ""
         }
       ]

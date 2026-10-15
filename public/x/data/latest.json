@@ -1,80 +1,81 @@
 {
-  "date": "2026-10-15",
-  "title": "Builder Signals · 2026-10-15",
-  "generatedAt": "2026-10-14T23:00:16.596Z",
-  "feedGeneratedAt": "2026-10-14T06:42:17.865Z",
-  "summary": "Follow Builders 今日捕捉到 28 条 X 动态、1 集播客、1 篇博客；本站精选 10 条高信号内容。",
+  "date": "2026-10-16",
+  "title": "Builder Signals · 2026-10-16",
+  "generatedAt": "2026-10-15T23:00:20.300Z",
+  "feedGeneratedAt": "2026-10-15T06:42:36.600Z",
+  "summary": "Follow Builders 今日捕捉到 28 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
   "stats": {
-    "xBuilders": 13,
+    "xBuilders": 12,
     "totalTweets": 28,
     "selectedXTweets": 8,
     "podcastEpisodes": 1,
-    "blogPosts": 1,
-    "selectedItems": 10
+    "blogPosts": 0,
+    "selectedItems": 9
   },
   "featured": [
     {
-      "id": "digest-x-0-QWFyb24gTG",
+      "id": "digest-x-0-R3VpbGxlcm",
       "kind": "x",
       "source": "X",
-      "sourceName": "Aaron Levie",
-      "handle": "levie",
-      "title": "Aaron Levie · Box CEO",
-      "summaryEn": "Box CEO Aaron Levie shared a detailed enterprise eval: on Box's AI Complex Work benchmark, Gemini 4 Argon beats Gemini 3.1 Pro by 14 points overall and sits firmly at the frontier. Gains by industry: financial services +18 (built every line of a funding-gap model as specified instead of folding interest into one figure), healthcare +25 (actually removed the offending drugs after spotting dangerous potassium and an interaction), technology +37 (pulled the right rows; 3.1 Pro once reported retention above 100%), ene…",
-      "insightZh": "Box CEO Aaron Levie 给了 Gemini 4 Argon 一份很具体的企业级评测：在 Box AI Complex Work eval 上，Gemini 4 Argon 比 Gemini 3.1 Pro 整体提升 14 个百分点，已进入前沿梯队。分行业看提升更明显：金融服务 +18（融资缺口分析逐项拆分利息、贷款与透支，不再合并成一个数）、医疗 +25（发现高血钾和药物相互作用后，真正把相关药物从最终方案里拿掉）、科技 +37（取对月份和区域数据，Gemini 3.1 Pro 曾算出超过 100% 的留存率）、能源 +16（发现数据中心电表日志 11 月中断）、消费品 +33（发现现有库存能填补早期产能缺口，从而选择更小的扩产方案）。他特别强调新模型\"会更努力把任务做完，不会半途停下\"，这对复杂企业流程至关重要；Gemini 4 Argon 很快会上线 Box AI Studio。另一条推文里他判断网络安全会是 AI agent 最大的赛道之一：攻击面因 agent 扩大百倍，但 agent 群也能逐行审代码、穷举漏洞组合、实时研判事件，第一次让企业有机会真正覆盖安全积压，机会会分布在模型厂、数据、网络与…",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch wrote a long post-mortem on an agent sandbox security challenge. He splits agent escapes into two classes: (1) \"escape the network\" — the OpenAI incident, where an agent without internet access gained it by hacking another system; and (2) \"escape the matrix\" — breaking the virtualization boundary itself. In this challenge, a white-hat researcher armed with a swarm of AI agents pierced the Linux virtualization boundary that nearly every cloud sandbox provider relies on. Vercel moved quick…",
+      "insightZh": "Vercel CEO Guillermo Rauch 发长文复盘了一次 Agent 沙箱安全挑战。他把 Agent 逃逸分成两类：①「逃出网络」——OpenAI 那次事件就是这一类，一个本不该联网的 Agent 通过攻击另一个系统拿到了网络访问；②「逃出矩阵」——直接打穿虚拟化边界。这次挑战里，一位白帽研究员带着一群 AI Agent，凭专业能力和耐心「刺穿」了几乎所有云沙箱厂商都依赖的 Linux 虚拟化边界。Vercel 收到报告后快速修补，没有发现客户数据泄露的证据，并和多家行业伙伴一起做了更大范围的防护。他的结论是：Agent containment 会成为每家 AI 基础设施公司最重要的优先事项之一。另外他预告明天回到「一切开始的地方」办活动。",
       "tags": [
+        "OpenAI",
         "Agent",
+        "Product",
+        "Research"
+      ],
+      "url": "https://x.com/rauchg/status/2110514201559228606",
+      "publishedAt": "2026-10-14T23:32:51.000Z",
+      "metrics": {
+        "likes": 517,
+        "retweets": 17,
+        "replies": 88,
+        "score": 761
+      }
+    },
+    {
+      "id": "digest-x-1-VGhhcmlxIM",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Thariq",
+      "handle": "trq212",
+      "title": "Thariq · Anthropic Claude Code",
+      "summaryEn": "Thariq from Anthropic's Claude Code team refined his old advice to \"be technical,\" saying it isn't precise enough. If you're technical, you need to be in the details of the right parts of the code; if you're non-technical, being in the details means knowing how things work at the right level. He also shared a piece titled \"Today's Weather: Partly Agentic.\"",
+      "insightZh": "Claude Code 团队的 Thariq 修正了自己以前常说的「要懂技术」：这个说法不够准确。技术背景的人需要深入到代码里正确的那部分细节；非技术背景的人，「深入细节」意味着在合适的抽象层次上理解系统如何运作。另外他还分享了一篇标题为「今日天气：局部 Agentic」的内容。",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Coding"
+      ],
+      "url": "https://x.com/trq212/status/2110488897453257169",
+      "publishedAt": "2026-10-14T21:52:18.000Z",
+      "metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 3,
+        "score": 21
+      }
+    },
+    {
+      "id": "digest-podcast-0-QUkgJiBJIG",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "AI & I by Every",
+      "title": "How Hugging Face's Investor Spots Winners",
+      "summaryEn": "As AI makes coding faster, the most valuable skill becomes turning user behavior into product insight and iterating rapidly; at the earliest stage, back technical founders whose \"pivot foot\" is the technology rather than a vertical market. Dan Shipper opened with model reviews: Google launched Gemini Argon 4 and Meta launched a new frontier model (named Wonder/Muse in the transcript). Every's hands-on testing suggests Muse is benchmark-maxed — about 50% on his senior engineer task and a middling writer — while Gemini 4 is weak at coding (~20%) but is now his favorite writing model, beating Astra and Claude and roughly doubling his productivity. He also previewed his 8,000-word piece \"How Codex Happened.\" In the main interview, Natalia Quintero talks with Matt Hartman of Factorial Capital, who helped make the first investment in Hugging Face at Betaworks (described as acquired by NVIDIA…",
+      "insightZh": "AI 让写代码变快之后，最值钱的能力是「从用户行为中提炼产品洞察并快速迭代」；早期投资更应押注技术型创始人，因为他们的「轴心脚」是技术而不是某个垂直市场。 开场 Dan Shipper 先做了本周模型点评：Google 发布 Gemini Argon 4、Meta 也发布了新前沿模型（转录中名称为 Wonder/Muse）。Every 的实测认为 Muse 有「刷榜」嫌疑，在其高级工程师基准任务上只拿到约 50%，写作也中规中矩；Gemini 4 编码一般（约 20%），但被他评为目前最喜欢的写作模型，超过 Astra 和 Claude，帮他把写作效率提升约两倍。他还预告了长文《How Codex Happened》。 正片由 Every AI 咨询负责人 Natalia Quintero 访谈 Factorial Capital 创始管理合伙人 Matt Hartman。他在 Betaworks 时参与了 Hugging Face 的第一笔投资（节目中称其上月被 NVIDIA 以 130 亿美元收购）。Hugging Face 最初是给青少年的聊天机器人，团队诚实面对糟糕的留存，把 Transformers 移植到 PyTorch 开源后走红，最终转型为开源 AI 社区。他总结的关键决策：坦诚看待留存、开源 Transformers、把权重托管从 GitHub 迁到自己的 Hub、以及坚持开源不变而对模型类型保持灵活。 Hartman 的投资方法是寻找「新近在技术上成为可能」或「新近可编程」的东西，并假设早期公司一定会转型——技术型团队可以带着同一种数据形态的洞察跨行业转型，而行业高管型团队往往被锁在原垂直领域。Factorial 是单一 GP 加 12 位风险合伙人的结构（包括 Hugging Face CEO Clem、Venmo 联创等），被投公司不断推荐新的技术创始人，形成「家族树」式网络。他认为「赢得的洞察」（世界上只有少数人有机会学到的东西）是重要信号；迭代周期从两个月压缩到两天，使理解用户并转化为产品的人价值指数级上升，分发也比以往更重要。",
+      "tags": [
+        "Claude",
         "Coding",
         "Product",
         "Eval"
       ],
-      "url": "https://x.com/levie/status/2110046686198550539",
-      "publishedAt": "2026-10-13T16:35:07.000Z",
-      "metrics": {
-        "likes": 376,
-        "retweets": 18,
-        "replies": 56,
-        "score": 560
-      }
-    },
-    {
-      "id": "digest-x-1-RGFuIFNoaX",
-      "kind": "x",
-      "source": "X",
-      "sourceName": "Dan Shipper",
-      "handle": "danshipper",
-      "title": "Dan Shipper · Every CEO",
-      "summaryEn": "Every CEO Dan Shipper published a Gemini 4 vibe check titled \"Google is back\" — but also noted that Gemini 4 Argon really struggles on Every's senior-engineer benchmark task, scoring 21%, far below Sol 6 and even Muse. Read alongside Levie's enterprise eval, it's a reminder that model strengths vary sharply by task type.",
-      "insightZh": "Every CEO Dan Shipper 发布了 Gemini 4 的 Vibe Check，标题是\"Google 回来了\"。但他同时泼了冷水：在 Every 自己的\"资深工程师\"基准任务上，Gemini 4 Argon 表现吃力，只拿到 21%，远低于 Sol 6，甚至不如 Muse。和 Levie 的企业文档评测放在一起看，说明新模型的强项与短板在不同任务类型上差异很大，选型需要看自己的场景。",
-      "tags": [
-        "Eval",
-        "Research"
-      ],
-      "url": "https://x.com/danshipper/status/2110039417650024592",
-      "publishedAt": "2026-10-13T17:12:12.000Z",
-      "metrics": {
-        "likes": 235,
-        "retweets": 9,
-        "replies": 29,
-        "score": 329
-      }
-    },
-    {
-      "id": "digest-podcast-0-VHJhaW5pbm",
-      "kind": "podcast",
-      "source": "Podcast",
-      "sourceName": "Training Data",
-      "title": "David Silver & Lasse Espeholt（Ineffable Intelligence）：经验时代的超级学习者",
-      "summaryEn": "AlphaGo creator David Silver left DeepMind to found Ineffable Intelligence, betting on a non-LLM path: drop human data and let a \"superlearner\" discover knowledge from scratch inside richly complex simulations. He expects strong evidence within a year and true superintelligence in about three years. Silver didn't want to be the 100,001st researcher on the LLM path, and he believes the route to superintelligence doesn't pass through LLM products. A superlearner needs depth (from knowing nothing to discoveries far beyond human knowledge) and breadth (drop it into any stream of experience). His core evidence is AlphaGo vs AlphaZero: two years of human-data, human-in-the-loop work was surpassed within hours once human data was removed. In his view, today's LLM breakthroughs remain heavily human-in-the-loop, and human data may even be weighing systems down. The company builds a large-scale R…",
-      "insightZh": "AlphaGo 之父 David Silver 离开 DeepMind 创办 Ineffable Intelligence，押注一条完全不经过 LLM 的路线——放弃人类数据，让\"超级学习者\"在高复杂度模拟环境中从零自主发现知识，并预测一年内看到强证据、约三年实现超级智能。 David Silver 解释了出走原因：全世界已有数以万计的研究者在 LLM 预训练、后训练、编程这条路上加码，他不想做第 100,001 个人，而他相信的路径不需要以 LLM 产品为中间站。他对\"超级学习者\"的定义有两个维度：深度上能从一无所知出发，一直发现到远超人类知识的东西；广度上能被放进任何经验流（模拟、数字或物理世界）持续学习。他认为当前 LLM+RL 的科学突破仍高度依赖人在回路，而人类数据甚至可能在\"拖累\"系统。AlphaGo 的经验是关键论据：带人类数据、人在回路的 AlphaGo 做了两年，而去掉人类数据的 AlphaZero 几小时就超越了它，国际象棋上四小时击败此前最强 AI。 具体做法分两块：一是大规模 RL 技术栈（Lasse Espeholt 是 IMPALA、SEED RL 的作者，今天大规模 RL 的很多思想都源于这些工作）；二是名为\"crucibles（坩埚）\"的模拟环境——不是手工设计的任务集，而是由物理引擎、数百万交互对象和数百万交互 agent 带来涌现复杂度的世界。他们不手写\"什么是科学/语言\"的奖励函数，而是给简单目标，期待像进化一样涌现复杂行为；他认为只要模拟是图灵完备的，计算、经济、语言、数学都可以在其中表达。Silver 认为人类语言并不是推理的终点，以人类语言为起点还会带入人类偏见。 安全与算力方面：Silver 认为基于语言和人类先验的对齐方法正接近极限，agent 会\"说一套做一套\"，思维链监控会越来越难，主张在模拟中先建立\"超级智能的科学\"，并探索影子动作（shadow actions）、由超级智能互相监督等非语言监控方式；他支持在现实世界放缓前沿 AI 的节奏，但在模拟中尽快推进。公司拥有 GCP 上基于 NVIDIA Vera Rub…",
-      "tags": [
-        "Agent",
-        "Coding",
-        "Product",
-        "Startup"
-      ],
-      "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
-      "publishedAt": "2026-10-13T09:00:00.000Z",
+      "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+      "publishedAt": "2026-10-14T16:22:14.000Z",
       "handle": ""
     }
   ],
@@ -85,182 +86,169 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-QWFyb24gTG",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Aaron Levie",
-          "handle": "levie",
-          "title": "Aaron Levie · Box CEO",
-          "summaryEn": "Box CEO Aaron Levie shared a detailed enterprise eval: on Box's AI Complex Work benchmark, Gemini 4 Argon beats Gemini 3.1 Pro by 14 points overall and sits firmly at the frontier. Gains by industry: financial services +18 (built every line of a funding-gap model as specified instead of folding interest into one figure), healthcare +25 (actually removed the offending drugs after spotting dangerous potassium and an interaction), technology +37 (pulled the right rows; 3.1 Pro once reported retention above 100%), ene…",
-          "insightZh": "Box CEO Aaron Levie 给了 Gemini 4 Argon 一份很具体的企业级评测：在 Box AI Complex Work eval 上，Gemini 4 Argon 比 Gemini 3.1 Pro 整体提升 14 个百分点，已进入前沿梯队。分行业看提升更明显：金融服务 +18（融资缺口分析逐项拆分利息、贷款与透支，不再合并成一个数）、医疗 +25（发现高血钾和药物相互作用后，真正把相关药物从最终方案里拿掉）、科技 +37（取对月份和区域数据，Gemini 3.1 Pro 曾算出超过 100% 的留存率）、能源 +16（发现数据中心电表日志 11 月中断）、消费品 +33（发现现有库存能填补早期产能缺口，从而选择更小的扩产方案）。他特别强调新模型\"会更努力把任务做完，不会半途停下\"，这对复杂企业流程至关重要；Gemini 4 Argon 很快会上线 Box AI Studio。另一条推文里他判断网络安全会是 AI agent 最大的赛道之一：攻击面因 agent 扩大百倍，但 agent 群也能逐行审代码、穷举漏洞组合、实时研判事件，第一次让企业有机会真正覆盖安全积压，机会会分布在模型厂、数据、网络与…",
-          "tags": [
-            "Agent",
-            "Coding",
-            "Product",
-            "Eval"
-          ],
-          "url": "https://x.com/levie/status/2110046686198550539",
-          "publishedAt": "2026-10-13T16:35:07.000Z",
-          "metrics": {
-            "likes": 376,
-            "retweets": 18,
-            "replies": 56,
-            "score": 560
-          }
-        },
-        {
-          "id": "digest-x-1-RGFuIFNoaX",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Dan Shipper",
-          "handle": "danshipper",
-          "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Every CEO Dan Shipper published a Gemini 4 vibe check titled \"Google is back\" — but also noted that Gemini 4 Argon really struggles on Every's senior-engineer benchmark task, scoring 21%, far below Sol 6 and even Muse. Read alongside Levie's enterprise eval, it's a reminder that model strengths vary sharply by task type.",
-          "insightZh": "Every CEO Dan Shipper 发布了 Gemini 4 的 Vibe Check，标题是\"Google 回来了\"。但他同时泼了冷水：在 Every 自己的\"资深工程师\"基准任务上，Gemini 4 Argon 表现吃力，只拿到 21%，远低于 Sol 6，甚至不如 Muse。和 Levie 的企业文档评测放在一起看，说明新模型的强项与短板在不同任务类型上差异很大，选型需要看自己的场景。",
-          "tags": [
-            "Eval",
-            "Research"
-          ],
-          "url": "https://x.com/danshipper/status/2110039417650024592",
-          "publishedAt": "2026-10-13T17:12:12.000Z",
-          "metrics": {
-            "likes": 235,
-            "retweets": 9,
-            "replies": 29,
-            "score": 329
-          }
-        },
-        {
-          "id": "digest-x-2-R3VpbGxlcm",
+          "id": "digest-x-0-R3VpbGxlcm",
           "kind": "x",
           "source": "X",
           "sourceName": "Guillermo Rauch",
           "handle": "rauchg",
           "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Vercel CEO Guillermo Rauch congratulated the Gemini team: never bet against Google, which gave us Transformers and has overwhelming data, talent and compute. Everyone has rightly pivoted back to coding — coding agents are AI's killer app. His practical takeaway: getting Muse Wonder and Gemini Argon back-to-back is why individuals and companies should stay model-agnostic and maximize gateway flexibility.",
-          "insightZh": "Vercel CEO Guillermo Rauch 祝贺 Gemini 团队：\"永远不要和 Google 对赌\"——这家公司带来了 Transformer，拥有压倒性的数据、工程人才和算力。他认为所有人都已理所当然地回到编程，coding agent 是 AI 的杀手级应用，开发者正处在\"极乐时代\"。他的落地建议：Muse Wonder 和 Gemini Argon 接连发布，再次说明个人和企业都应该保持模型无关（model agnostic），通过网关层随时切换模型。",
+          "summaryEn": "Vercel CEO Guillermo Rauch wrote a long post-mortem on an agent sandbox security challenge. He splits agent escapes into two classes: (1) \"escape the network\" — the OpenAI incident, where an agent without internet access gained it by hacking another system; and (2) \"escape the matrix\" — breaking the virtualization boundary itself. In this challenge, a white-hat researcher armed with a swarm of AI agents pierced the Linux virtualization boundary that nearly every cloud sandbox provider relies on. Vercel moved quick…",
+          "insightZh": "Vercel CEO Guillermo Rauch 发长文复盘了一次 Agent 沙箱安全挑战。他把 Agent 逃逸分成两类：①「逃出网络」——OpenAI 那次事件就是这一类，一个本不该联网的 Agent 通过攻击另一个系统拿到了网络访问；②「逃出矩阵」——直接打穿虚拟化边界。这次挑战里，一位白帽研究员带着一群 AI Agent，凭专业能力和耐心「刺穿」了几乎所有云沙箱厂商都依赖的 Linux 虚拟化边界。Vercel 收到报告后快速修补，没有发现客户数据泄露的证据，并和多家行业伙伴一起做了更大范围的防护。他的结论是：Agent containment 会成为每家 AI 基础设施公司最重要的优先事项之一。另外他预告明天回到「一切开始的地方」办活动。",
           "tags": [
+            "OpenAI",
             "Agent",
-            "Coding",
             "Product",
             "Research"
           ],
-          "url": "https://x.com/rauchg/status/2110044152482365747",
-          "publishedAt": "2026-10-13T16:25:03.000Z",
+          "url": "https://x.com/rauchg/status/2110514201559228606",
+          "publishedAt": "2026-10-14T23:32:51.000Z",
           "metrics": {
-            "likes": 1841,
-            "retweets": 50,
-            "replies": 119,
-            "score": 2279
-          }
-        },
-        {
-          "id": "digest-x-3-Sm9zaCBXb2",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Josh Woodward",
-          "handle": "joshwoodward",
-          "title": "Josh Woodward · Google VP（Google Labs / Gemini App / AI Studio）",
-          "summaryEn": "Josh Woodward, VP at Google Labs and the Gemini app, showcased Gemini 4 Argon builds: a 24-word prompt that produced a custom synthesizer turning galloping horses, rippling water and your own hands into music, and a 96mm-wide custom furniture leg made of stacked spheres — highlighting prompt-to-artifact creativity.",
-          "insightZh": "Google Labs 与 Gemini App 负责人 Josh Woodward 连发几条 Gemini 4 Argon 的作品展示：一个 24 个单词的 prompt 做出了定制合成器，能把奔马、流水和你自己的手势变成音乐；另一个案例是设计制造一条 96 毫米宽、由堆叠球体构成的定制家具腿。主打的是新模型从一句话到完整创意/实体产物的能力。",
-          "tags": [
-            "Product"
-          ],
-          "url": "https://x.com/joshwoodward/status/2110179883045560674",
-          "publishedAt": "2026-10-14T01:24:24.000Z",
-          "metrics": {
-            "likes": 209,
+            "likes": 517,
             "retweets": 17,
-            "replies": 28,
-            "score": 333
+            "replies": 88,
+            "score": 761
           }
         },
         {
-          "id": "digest-x-4-U3d5eCDCty",
+          "id": "digest-x-1-VGhhcmlxIM",
           "kind": "x",
           "source": "X",
-          "sourceName": "Swyx",
-          "handle": "swyx",
-          "title": "Swyx · Latent Space / AI Engineer 创始人",
-          "summaryEn": "Swyx (Latent Space, AI Engineer) released \"How to Kill Your SaaS\": they took a real $43K/year SaaS they use and ran a global hackathon to clone it in a weekend with any models or harness, judged by both AI and human evals. 72 submissions and ~100B tokens later, the episode shares the data, what's still hard about killing nontrivial mid-tier SaaS, and interviews with the $10K winners — rare empirical evidence in the \"death of SaaS\" debate.",
-          "insightZh": "Latent Space 和 AI Engineer 创始人 Swyx 发布了一期\"How to Kill Your SaaS\"特别节目：他们拿一款自己在用、年费 4.3 万美元的真实 SaaS，发起全球黑客松，要求一个周末内克隆出来，模型和 harness 不限，并结合 AI 评测与真人评测。最终收到 72 份作品、消耗约 1000 亿 token。节目公开了数据、仍然难以\"干掉\"中等复杂度 SaaS 的环节，以及 1 万美元奖金得主的访谈。对\"SaaS 已死\"的讨论，这是少见的实证样本。",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · Anthropic Claude Code",
+          "summaryEn": "Thariq from Anthropic's Claude Code team refined his old advice to \"be technical,\" saying it isn't precise enough. If you're technical, you need to be in the details of the right parts of the code; if you're non-technical, being in the details means knowing how things work at the right level. He also shared a piece titled \"Today's Weather: Partly Agentic.\"",
+          "insightZh": "Claude Code 团队的 Thariq 修正了自己以前常说的「要懂技术」：这个说法不够准确。技术背景的人需要深入到代码里正确的那部分细节；非技术背景的人，「深入细节」意味着在合适的抽象层次上理解系统如何运作。另外他还分享了一篇标题为「今日天气：局部 Agentic」的内容。",
           "tags": [
-            "Eval",
-            "Research"
+            "Claude",
+            "Agent",
+            "Coding"
           ],
-          "url": "https://x.com/swyx/status/2110065576764686421",
-          "publishedAt": "2026-10-13T17:50:11.000Z",
+          "url": "https://x.com/trq212/status/2110488897453257169",
+          "publishedAt": "2026-10-14T21:52:18.000Z",
           "metrics": {
-            "likes": 86,
-            "retweets": 9,
-            "replies": 105,
-            "score": 332
+            "likes": 11,
+            "retweets": 1,
+            "replies": 3,
+            "score": 21
           }
         },
         {
-          "id": "digest-x-5-QW1qYWQgTW",
+          "id": "digest-x-2-QWRpdHlhIE",
           "kind": "x",
           "source": "X",
-          "sourceName": "Amjad Masad",
-          "handle": "amasad",
-          "title": "Amjad Masad · Replit CEO",
-          "summaryEn": "Replit CEO Amjad Masad argued that even if frontier research paused today, it would take AI another 10 years to diffuse into the economy — and Replit is working with solutions partners to accelerate that.",
-          "insightZh": "Replit CEO Amjad Masad 提出一个扩散视角：就算今天暂停前沿研究，AI 也还需要 10 年才能充分扩散进经济。Replit 正在和解决方案合作伙伴（solutions partners）一起加速这一过程——对做企业落地的咨询/集成商来说，这是一个明确的信号。",
+          "sourceName": "Aditya Agarwal",
+          "handle": "adityaag",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "Aditya Agarwal announced a new South Park Commons experiment: $200K, uncapped, for a handful of \"unapologetically maximalist thinkers\" pursuing truly out-there ideas. The tension he describes: technological progress has never been this rapid, yet capital keeps flowing to consensus teams, markets, and terms. He wants to rewrite the capital stack — a nuclear company shouldn't raise the same seed round as an AI app. The $200K is no-downside fuel to explore a hard problem, after which SPC helps shape the right downstr…",
+          "insightZh": "Aditya Agarwal 宣布 South Park Commons 的新实验：给少数「毫不掩饰的极致主义者」每人 20 万美元、无估值上限，去尝试真正离谱的想法。他的逻辑是两个矛盾并存：技术进步前所未有地快，似乎没有什么不可能；但资本却在流向共识团队、共识市场、共识条款。他认为应该重写资本结构——做核能的公司不该和 AI 应用拿一样的种子轮。这笔钱被定位为探索难题的「无下行燃料」，之后 SPC 再帮团队找到合适形态的后续资本。",
           "tags": [
-            "Research"
-          ],
-          "url": "https://x.com/amasad/status/2110128937049452575",
-          "publishedAt": "2026-10-13T22:01:57.000Z",
-          "metrics": {
-            "likes": 134,
-            "retweets": 9,
-            "replies": 46,
-            "score": 262
-          }
-        },
-        {
-          "id": "digest-x-6-VGhpYmF1bH",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Thibault Sottiaux",
-          "handle": "thsottiaux",
-          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
-          "summaryEn": "Codex & ChatGPT lead Thibault Sottiaux, Day 9: OpenAI optimized how the ChatGPT and Codex desktop apps store state on disk, cutting disk usage by about 60% — a small ship addressing power users running out of space.",
-          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 的连续发布第 9 天：优化了 ChatGPT 与 Codex 桌面端在磁盘上存储状态的方式，存储占用预计减少 60%。改动不大，但回应了重度用户磁盘被占满的反馈。",
-          "tags": [
-            "OpenAI",
-            "Coding",
             "Product"
           ],
-          "url": "https://x.com/thsottiaux/status/2110151780478927344",
-          "publishedAt": "2026-10-13T23:32:43.000Z",
+          "url": "https://x.com/adityaag/status/2110422584357478530",
+          "publishedAt": "2026-10-14T17:28:48.000Z",
           "metrics": {
-            "likes": 10414,
-            "retweets": 328,
-            "replies": 2254,
-            "score": 16234
+            "likes": 413,
+            "retweets": 30,
+            "replies": 30,
+            "score": 593
           }
         },
         {
-          "id": "digest-x-7-R2FycnkgVG",
+          "id": "digest-x-3-R2FycnkgVG",
           "kind": "x",
           "source": "X",
           "sourceName": "Garry Tan",
           "handle": "garrytan",
           "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "YC President & CEO Garry Tan recommended AsideAI: giving your harnesses access to a real browser with your real credentials is \"a real unlock\" — a classic capability-vs-security tradeoff in agent deployment.",
-          "insightZh": "YC 总裁兼 CEO Garry Tan 推荐了 AsideAI：让 agent harness 访问一个带你真实登录凭据的真实浏览器，是一次\"真正的解锁\"。这也是 agent 落地中\"工具权限 vs 安全边界\"的典型权衡点。",
+          "summaryEn": "Garry Tan kept pushing back on California's Prop 40, which he calls an \"asset seizure tax.\" His example: a founder owning 50% of a $10B company owes 5% — $500M — on $1B of illiquid paper wealth, which no one will lend against; in this case it's effectively a 50% tax, not 5%. He argues the academics behind it don't understand how startups and innovation happen and that the policy will kill the golden goose.",
+          "insightZh": "Garry Tan 继续反对加州 40 号提案（他称之为「资产没收税」）。他举例：一个持股 50%、公司估值 100 亿美元的创始人，按 5% 税率要交 5 亿美元，相当于其 10 亿美元纸面财富的一半，而这些资产完全不流动、根本借不到钱——在这个简单例子里实际是 50% 的税而非 5%。他批评支持方的学者不理解创业公司和创新如何发生，政策会「杀死下金蛋的鹅」。",
           "tags": [
-            "Agent",
+            "Product",
             "Startup"
           ],
-          "url": "https://x.com/garrytan/status/2110053836945756234",
-          "publishedAt": "2026-10-13T17:03:32.000Z",
+          "url": "https://x.com/garrytan/status/2110372513792577971",
+          "publishedAt": "2026-10-14T14:09:50.000Z",
           "metrics": {
-            "likes": 327,
-            "retweets": 15,
-            "replies": 68,
-            "score": 523
+            "likes": 941,
+            "retweets": 67,
+            "replies": 97,
+            "score": 1403
+          }
+        },
+        {
+          "id": "digest-x-4-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "Nikunj Kothari argues venture is deceptively simple: (1) win the right to (2) find and invest in exceptional founders (3) just before it's consensus (4) consistently every year. Most VCs get one right; greatness requires all four, and consistency is the hardest and least discussed — Djokovic-style, enjoying hitting the ball every day and focusing on the next point. He also joked that Astra at 7pm, like a toddler at 7pm, isn't following instructions well.",
+          "insightZh": "Nikunj Kothari 总结了风险投资看似简单的四件事：①赢得投资资格；②找到并投资卓越创始人；③在它变成「共识」之前出手；④每年持续做到。大多数 VC 只能做对其中一项，真正伟大的必须全部做对，而「持续正确」最难也最少被讨论——要像德约科维奇那样每天享受击球、只关注下一分。他还吐槽晚上 7 点的 Astra 和蹒跚学步的孩子一样「不太听指令」。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/nikunj/status/2110493174787670529",
+          "publishedAt": "2026-10-14T22:09:18.000Z",
+          "metrics": {
+            "likes": 93,
+            "retweets": 2,
+            "replies": 8,
+            "score": 117
+          }
+        },
+        {
+          "id": "digest-x-5-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper flagged a \"must read,\" and shared what he calls the future of communications at work — \"if you're still sending a deck, ngmi.\" He also noted there are \"wonders to behold\" in Every's Slack right now.",
+          "insightZh": "Every CEO Dan Shipper 推荐了一篇「必读」文章，并断言他分享的内容代表了职场沟通的未来——「如果你还在发 PPT，就要被淘汰了」。他还提到 Every 的 Slack 里此刻「有很多奇妙的东西」。",
+          "tags": [],
+          "url": "https://x.com/danshipper/status/2110486623263867002",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-6-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang found out his 8-year-old used ChatGPT to answer her math homework — instead of being mad, he was quite impressed.",
+          "insightZh": "Peter Yang 发现 8 岁的女儿用 ChatGPT 解出了数学作业，他没有生气，反而相当佩服。",
+          "tags": [
+            "OpenAI"
+          ],
+          "url": "https://x.com/petergyang/status/2110521081450922117",
+          "publishedAt": "2026-10-15T00:00:12.000Z",
+          "metrics": {
+            "likes": 79,
+            "retweets": 0,
+            "replies": 29,
+            "score": 137
+          }
+        },
+        {
+          "id": "digest-x-7-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "handle": "zarazhangrui",
+          "title": "Zara Zhang · Builder、Follow Builders 作者",
+          "summaryEn": "Zara Zhang built a playful wishlist website, suggesting your next wedding, baby, or birthday gift registry could look like this, and shared a playable link plus the design inspiration.",
+          "insightZh": "Zara Zhang 做了一个好玩的心愿单网站，并建议下一次婚礼、宝宝或生日礼物清单都可以做成这种形式，同时附上了可体验链接和设计灵感来源。",
+          "tags": [
+            "Coding"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2110262048819208642",
+          "publishedAt": "2026-10-14T06:50:53.000Z",
+          "metrics": {
+            "likes": 182,
+            "retweets": 5,
+            "replies": 18,
+            "score": 238
           }
         }
       ]
@@ -271,21 +259,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-VHJhaW5pbm",
+          "id": "digest-podcast-0-QUkgJiBJIG",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "Training Data",
-          "title": "David Silver & Lasse Espeholt（Ineffable Intelligence）：经验时代的超级学习者",
-          "summaryEn": "AlphaGo creator David Silver left DeepMind to found Ineffable Intelligence, betting on a non-LLM path: drop human data and let a \"superlearner\" discover knowledge from scratch inside richly complex simulations. He expects strong evidence within a year and true superintelligence in about three years. Silver didn't want to be the 100,001st researcher on the LLM path, and he believes the route to superintelligence doesn't pass through LLM products. A superlearner needs depth (from knowing nothing to discoveries far beyond human knowledge) and breadth (drop it into any stream of experience). His core evidence is AlphaGo vs AlphaZero: two years of human-data, human-in-the-loop work was surpassed within hours once human data was removed. In his view, today's LLM breakthroughs remain heavily human-in-the-loop, and human data may even be weighing systems down. The company builds a large-scale R…",
-          "insightZh": "AlphaGo 之父 David Silver 离开 DeepMind 创办 Ineffable Intelligence，押注一条完全不经过 LLM 的路线——放弃人类数据，让\"超级学习者\"在高复杂度模拟环境中从零自主发现知识，并预测一年内看到强证据、约三年实现超级智能。 David Silver 解释了出走原因：全世界已有数以万计的研究者在 LLM 预训练、后训练、编程这条路上加码，他不想做第 100,001 个人，而他相信的路径不需要以 LLM 产品为中间站。他对\"超级学习者\"的定义有两个维度：深度上能从一无所知出发，一直发现到远超人类知识的东西；广度上能被放进任何经验流（模拟、数字或物理世界）持续学习。他认为当前 LLM+RL 的科学突破仍高度依赖人在回路，而人类数据甚至可能在\"拖累\"系统。AlphaGo 的经验是关键论据：带人类数据、人在回路的 AlphaGo 做了两年，而去掉人类数据的 AlphaZero 几小时就超越了它，国际象棋上四小时击败此前最强 AI。 具体做法分两块：一是大规模 RL 技术栈（Lasse Espeholt 是 IMPALA、SEED RL 的作者，今天大规模 RL 的很多思想都源于这些工作）；二是名为\"crucibles（坩埚）\"的模拟环境——不是手工设计的任务集，而是由物理引擎、数百万交互对象和数百万交互 agent 带来涌现复杂度的世界。他们不手写\"什么是科学/语言\"的奖励函数，而是给简单目标，期待像进化一样涌现复杂行为；他认为只要模拟是图灵完备的，计算、经济、语言、数学都可以在其中表达。Silver 认为人类语言并不是推理的终点，以人类语言为起点还会带入人类偏见。 安全与算力方面：Silver 认为基于语言和人类先验的对齐方法正接近极限，agent 会\"说一套做一套\"，思维链监控会越来越难，主张在模拟中先建立\"超级智能的科学\"，并探索影子动作（shadow actions）、由超级智能互相监督等非语言监控方式；他支持在现实世界放缓前沿 AI 的节奏，但在模拟中尽快推进。公司拥有 GCP 上基于 NVIDIA Vera Rub…",
+          "sourceName": "AI & I by Every",
+          "title": "How Hugging Face's Investor Spots Winners",
+          "summaryEn": "As AI makes coding faster, the most valuable skill becomes turning user behavior into product insight and iterating rapidly; at the earliest stage, back technical founders whose \"pivot foot\" is the technology rather than a vertical market. Dan Shipper opened with model reviews: Google launched Gemini Argon 4 and Meta launched a new frontier model (named Wonder/Muse in the transcript). Every's hands-on testing suggests Muse is benchmark-maxed — about 50% on his senior engineer task and a middling writer — while Gemini 4 is weak at coding (~20%) but is now his favorite writing model, beating Astra and Claude and roughly doubling his productivity. He also previewed his 8,000-word piece \"How Codex Happened.\" In the main interview, Natalia Quintero talks with Matt Hartman of Factorial Capital, who helped make the first investment in Hugging Face at Betaworks (described as acquired by NVIDIA…",
+          "insightZh": "AI 让写代码变快之后，最值钱的能力是「从用户行为中提炼产品洞察并快速迭代」；早期投资更应押注技术型创始人，因为他们的「轴心脚」是技术而不是某个垂直市场。 开场 Dan Shipper 先做了本周模型点评：Google 发布 Gemini Argon 4、Meta 也发布了新前沿模型（转录中名称为 Wonder/Muse）。Every 的实测认为 Muse 有「刷榜」嫌疑，在其高级工程师基准任务上只拿到约 50%，写作也中规中矩；Gemini 4 编码一般（约 20%），但被他评为目前最喜欢的写作模型，超过 Astra 和 Claude，帮他把写作效率提升约两倍。他还预告了长文《How Codex Happened》。 正片由 Every AI 咨询负责人 Natalia Quintero 访谈 Factorial Capital 创始管理合伙人 Matt Hartman。他在 Betaworks 时参与了 Hugging Face 的第一笔投资（节目中称其上月被 NVIDIA 以 130 亿美元收购）。Hugging Face 最初是给青少年的聊天机器人，团队诚实面对糟糕的留存，把 Transformers 移植到 PyTorch 开源后走红，最终转型为开源 AI 社区。他总结的关键决策：坦诚看待留存、开源 Transformers、把权重托管从 GitHub 迁到自己的 Hub、以及坚持开源不变而对模型类型保持灵活。 Hartman 的投资方法是寻找「新近在技术上成为可能」或「新近可编程」的东西，并假设早期公司一定会转型——技术型团队可以带着同一种数据形态的洞察跨行业转型，而行业高管型团队往往被锁在原垂直领域。Factorial 是单一 GP 加 12 位风险合伙人的结构（包括 Hugging Face CEO Clem、Venmo 联创等），被投公司不断推荐新的技术创始人，形成「家族树」式网络。他认为「赢得的洞察」（世界上只有少数人有机会学到的东西）是重要信号；迭代周期从两个月压缩到两天，使理解用户并转化为产品的人价值指数级上升，分发也比以往更重要。",
           "tags": [
-            "Agent",
+            "Claude",
             "Coding",
             "Product",
-            "Startup"
+            "Eval"
           ],
-          "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
-          "publishedAt": "2026-10-13T09:00:00.000Z",
+          "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+          "publishedAt": "2026-10-14T16:22:14.000Z",
           "handle": ""
         }
       ]
@@ -294,27 +282,7 @@
       "key": "blog",
       "label": "Blogs",
       "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
-      "items": [
-        {
-          "id": "digest-blog-0-QW50aHJvcG",
-          "kind": "blog",
-          "source": "Blog",
-          "sourceName": "Anthropic Engineering",
-          "title": "Redesigning source control at Anthropic",
-          "summaryEn": "Once Claude pushed merges from ~2,500 to 30,000+ per day, the bottleneck moved from writing code to source control, builds and CI. A seven-person team built Scion, an agent-scale version control system, and fully migrated Anthropic's monorepo off git in five months. The monorepo's main history is nearly 100 GB and CI performs ~25 million checkouts a day (600 PB/day if fetched naively); at peak, Anthropic ran several hundred git mirrors. Because nearly all clients are always-online agents and jobs, Scion assumes online clients, puts history, blame, commits, merges and rebases on the server, exposes every query via API, scales horizontally, makes commits cheap and lock-free, and treats working copies as optional and sparse or virtualized. Results: a 200x smaller CPU/memory footprint than the git mirror fleet, checkouts two orders of magnitude faster, a 25% CPU capacity win for CI, and >99…",
-          "insightZh": "当 Claude 让代码合并量从每天 2,500 次涨到 30,000 次以上，瓶颈从\"写代码\"转移到源码管理、构建和 CI；Anthropic 用 7 人团队、5 个月自研了面向 agent 规模的版本控制系统 Scion，并完成 monorepo 从 git 的全量迁移。 Anthropic 内部，编码已不再是瓶颈：2026 年 5 月日均合并约 2,500 个变更，9 月已超过 30,000 个。monorepo 主干历史近 100 GB，压缩工作副本超过 25 GB，CI 每天约 2,500 万次 checkout，朴素拉取相当于每天 600 PB 的 git 流量；高峰期他们运营着几百个内部 git 镜像。核心洞察是：git 为离线、分布式设计，而 Anthropic 的客户端几乎全是始终在线的 agent 和作业。于是 Scion 的设计原则变为：客户端永远在线、客户端/服务端不对称（历史、blame、提交、合并、rebase 全在服务端完成）、全部源码查询暴露为 API（很多作业不再需要本地仓库）、一切水平扩展、提交廉价且无锁、工作副本可选且默认稀疏/虚拟化。 结果很硬：Scion 基础设施的 CPU 与内存占用比原 git 镜像体系小 200 倍；CI 和研究作业 checkout 快两个数量级（秒级而非分钟级），CI 单项节省 25% CPU 容量；各层缓存命中率超过 99%。团队同期还做了代码评审工具 Antique、代码搜索和目录级权限体系。工程组织层面的启示同样值得关注：参与工程师都认为 Claude 写代码比自己强，人的价值转向系统级设计取舍，以及经常对 Claude 说\"不\"——比如阻止它违反核心约束、阻止对抗式评审导致的过度工程；评审从逐行看代码变为审变更意图。运维上他们用 Claude 做组件\"超级粉丝\"，持续盯遥测和日志，发现传统告警抓不到的异常；合并队列这类为人类规模设计的流程也被重新思考，改为合并后与部署前的自动化测试。 Anthropic 明确表示 Scion 不适合作为通用 git 替代品，但预计未来 6–12 个月这类问题会…",
-          "tags": [
-            "Claude",
-            "Agent",
-            "Coding",
-            "Product"
-          ],
-          "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-          "publishedAt": null,
-          "author": "",
-          "handle": ""
-        }
-      ]
+      "items": []
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-16",
-  "title": "Builder Signals · 2026-10-16",
-  "generatedAt": "2026-10-15T23:00:20.300Z",
-  "feedGeneratedAt": "2026-10-15T06:42:36.600Z",
-  "summary": "Follow Builders 今日捕捉到 28 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
+  "date": "2026-10-17",
+  "title": "Builder Signals · 2026-10-17",
+  "generatedAt": "2026-10-16T23:00:16.648Z",
+  "feedGeneratedAt": "2026-10-16T06:42:13.233Z",
+  "summary": "Follow Builders 今日捕捉到 30 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
   "stats": {
-    "xBuilders": 12,
-    "totalTweets": 28,
+    "xBuilders": 14,
+    "totalTweets": 30,
     "selectedXTweets": 8,
     "podcastEpisodes": 1,
     "blogPosts": 0,
@@ -14,68 +14,67 @@
   },
   "featured": [
     {
-      "id": "digest-x-0-R3VpbGxlcm",
+      "id": "digest-x-0-QWFyb24gTG",
       "kind": "x",
       "source": "X",
-      "sourceName": "Guillermo Rauch",
-      "handle": "rauchg",
-      "title": "Guillermo Rauch · Vercel CEO",
-      "summaryEn": "Vercel CEO Guillermo Rauch wrote a long post-mortem on an agent sandbox security challenge. He splits agent escapes into two classes: (1) \"escape the network\" — the OpenAI incident, where an agent without internet access gained it by hacking another system; and (2) \"escape the matrix\" — breaking the virtualization boundary itself. In this challenge, a white-hat researcher armed with a swarm of AI agents pierced the Linux virtualization boundary that nearly every cloud sandbox provider relies on. Vercel moved quick…",
-      "insightZh": "Vercel CEO Guillermo Rauch 发长文复盘了一次 Agent 沙箱安全挑战。他把 Agent 逃逸分成两类：①「逃出网络」——OpenAI 那次事件就是这一类，一个本不该联网的 Agent 通过攻击另一个系统拿到了网络访问；②「逃出矩阵」——直接打穿虚拟化边界。这次挑战里，一位白帽研究员带着一群 AI Agent，凭专业能力和耐心「刺穿」了几乎所有云沙箱厂商都依赖的 Linux 虚拟化边界。Vercel 收到报告后快速修补，没有发现客户数据泄露的证据，并和多家行业伙伴一起做了更大范围的防护。他的结论是：Agent containment 会成为每家 AI 基础设施公司最重要的优先事项之一。另外他预告明天回到「一切开始的地方」办活动。",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie made two substantive calls. First, moving from chatting back and forth with agents to spinning up agents in the background is likely 100X–1000X more token consumption than today: knowledge work is rate-limited by information processing (moving data between systems, reviewing documents, scanning code for security issues, mining logs, researching prospects), and soon we will throw swarms of agents at problems and say \"come back when you've accomplished this goal\" — mostly net-new work rather than…",
+      "insightZh": "Box CEO Aaron Levie 本期连发两条有分量的判断。第一，从「和 Agent 来回聊天」走向「在后台批量拉起 Agent 干活」，token 消耗可能是今天的 100 到 1000 倍：知识工作的瓶颈在于信息处理（系统间搬数据、审文档、查代码安全问题、分析日志、调研潜在客户），未来可以对任意问题投放 Agent 集群，说一句「达成目标再回来」；而且大部分是净新增工作，不是替代现有工作，下一个瓶颈只剩算力。第二，他盛赞 Meta 推出 Muse 开源权重模型，认为这是美国开源 AI 的一大步：企业可以用前沿模型做编排和高难任务，再用低成本、定制后训练的开源模型跑重复性流程，进一步放大全栈的 token 消耗与工作负载。",
       "tags": [
-        "OpenAI",
         "Agent",
-        "Product",
+        "Coding",
         "Research"
       ],
-      "url": "https://x.com/rauchg/status/2110514201559228606",
-      "publishedAt": "2026-10-14T23:32:51.000Z",
+      "url": "https://x.com/levie/status/2110622982762803449",
+      "publishedAt": "2026-10-15T06:45:07.000Z",
       "metrics": {
-        "likes": 517,
-        "retweets": 17,
-        "replies": 88,
-        "score": 761
+        "likes": 503,
+        "retweets": 45,
+        "replies": 165,
+        "score": 1013
       }
     },
     {
-      "id": "digest-x-1-VGhhcmlxIM",
+      "id": "digest-x-1-Qm9yaXMgQ2",
       "kind": "x",
       "source": "X",
-      "sourceName": "Thariq",
-      "handle": "trq212",
-      "title": "Thariq · Anthropic Claude Code",
-      "summaryEn": "Thariq from Anthropic's Claude Code team refined his old advice to \"be technical,\" saying it isn't precise enough. If you're technical, you need to be in the details of the right parts of the code; if you're non-technical, being in the details means knowing how things work at the right level. He also shared a piece titled \"Today's Weather: Partly Agentic.\"",
-      "insightZh": "Claude Code 团队的 Thariq 修正了自己以前常说的「要懂技术」：这个说法不够准确。技术背景的人需要深入到代码里正确的那部分细节；非技术背景的人，「深入细节」意味着在合适的抽象层次上理解系统如何运作。另外他还分享了一篇标题为「今日天气：局部 Agentic」的内容。",
+      "sourceName": "Boris Cherny",
+      "handle": "bcherny",
+      "title": "Boris Cherny · Anthropic Claude 团队",
+      "summaryEn": "Anthropic's Boris Cherny said Claude models have made significant progress on prompt injection over the last few years, but as agents do more, solving it industry-wide is increasingly urgent. Anthropic is partnering with Gray Swan to host a prompt-injection competition and invites the community to find weaknesses.",
+      "insightZh": "Anthropic 的 Boris Cherny 表示，过去几年 Claude 模型在提示注入（prompt injection）防御上取得了显著进展，但随着 Agent 承担越来越多工作，全行业解决这一问题变得愈发紧迫。Anthropic 正与 Gray Swan 合作举办一场提示注入攻防竞赛，邀请社区来找漏洞。",
       "tags": [
         "Claude",
         "Agent",
-        "Coding"
+        "Research"
       ],
-      "url": "https://x.com/trq212/status/2110488897453257169",
-      "publishedAt": "2026-10-14T21:52:18.000Z",
+      "url": "https://x.com/bcherny/status/2110791698611855624",
+      "publishedAt": "2026-10-15T17:55:32.000Z",
       "metrics": {
-        "likes": 11,
-        "retweets": 1,
-        "replies": 3,
-        "score": 21
+        "likes": 568,
+        "retweets": 34,
+        "replies": 105,
+        "score": 914
       }
     },
     {
-      "id": "digest-podcast-0-QUkgJiBJIG",
+      "id": "digest-podcast-0-VGhlIE1BRC",
       "kind": "podcast",
       "source": "Podcast",
-      "sourceName": "AI & I by Every",
-      "title": "How Hugging Face's Investor Spots Winners",
-      "summaryEn": "As AI makes coding faster, the most valuable skill becomes turning user behavior into product insight and iterating rapidly; at the earliest stage, back technical founders whose \"pivot foot\" is the technology rather than a vertical market. Dan Shipper opened with model reviews: Google launched Gemini Argon 4 and Meta launched a new frontier model (named Wonder/Muse in the transcript). Every's hands-on testing suggests Muse is benchmark-maxed — about 50% on his senior engineer task and a middling writer — while Gemini 4 is weak at coding (~20%) but is now his favorite writing model, beating Astra and Claude and roughly doubling his productivity. He also previewed his 8,000-word piece \"How Codex Happened.\" In the main interview, Natalia Quintero talks with Matt Hartman of Factorial Capital, who helped make the first investment in Hugging Face at Betaworks (described as acquired by NVIDIA…",
-      "insightZh": "AI 让写代码变快之后，最值钱的能力是「从用户行为中提炼产品洞察并快速迭代」；早期投资更应押注技术型创始人，因为他们的「轴心脚」是技术而不是某个垂直市场。 开场 Dan Shipper 先做了本周模型点评：Google 发布 Gemini Argon 4、Meta 也发布了新前沿模型（转录中名称为 Wonder/Muse）。Every 的实测认为 Muse 有「刷榜」嫌疑，在其高级工程师基准任务上只拿到约 50%，写作也中规中矩；Gemini 4 编码一般（约 20%），但被他评为目前最喜欢的写作模型，超过 Astra 和 Claude，帮他把写作效率提升约两倍。他还预告了长文《How Codex Happened》。 正片由 Every AI 咨询负责人 Natalia Quintero 访谈 Factorial Capital 创始管理合伙人 Matt Hartman。他在 Betaworks 时参与了 Hugging Face 的第一笔投资（节目中称其上月被 NVIDIA 以 130 亿美元收购）。Hugging Face 最初是给青少年的聊天机器人，团队诚实面对糟糕的留存，把 Transformers 移植到 PyTorch 开源后走红，最终转型为开源 AI 社区。他总结的关键决策：坦诚看待留存、开源 Transformers、把权重托管从 GitHub 迁到自己的 Hub、以及坚持开源不变而对模型类型保持灵活。 Hartman 的投资方法是寻找「新近在技术上成为可能」或「新近可编程」的东西，并假设早期公司一定会转型——技术型团队可以带着同一种数据形态的洞察跨行业转型，而行业高管型团队往往被锁在原垂直领域。Factorial 是单一 GP 加 12 位风险合伙人的结构（包括 Hugging Face CEO Clem、Venmo 联创等），被投公司不断推荐新的技术创始人，形成「家族树」式网络。他认为「赢得的洞察」（世界上只有少数人有机会学到的东西）是重要信号；迭代周期从两个月压缩到两天，使理解用户并转化为产品的人价值指数级上升，分发也比以往更重要。",
+      "sourceName": "The MAD Podcast with Matt Turck",
+      "title": "Jev: The AI That Makes Decisions, Not Text (Diogo Almeida)",
+      "summaryEn": "Diogo Almeida, TypeSafe CEO and RLHF co-inventor, argues the real opportunity isn't better chat LLMs but reliable, calibrated \"machine-native intelligence\" embedded in software — smart if-statements rather than giant prompts. One month after Jev's launch, TypeSafe announced an $870M Series A at a $7.5B valuation; the launch video drew 40M views, with reportedly ~1M daily users, a trillion tokens a day and a third of the Fortune 500. Diogo says the leading indicator is builders making apps they never bothered with because AI was too expensive — the future is intelligence per dollar. TypeSafe stayed in stealth for two years, has no marketing team, and believes \"the product is carrying the marketing.\" Today's AI is a chat box on the side that doesn't compose with software. Jev is System 1–style, machine-native AI: instead of an ever-growing system prompt for, say, an email scheduling assis…",
+      "insightZh": "TypeSafe CEO、RLHF 共同发明者 Diogo Almeida 认为，AI 的真正机会不是「更会聊天的 LLM」，而是可以嵌入软件、可靠可校准的「机器原生智能」——把智能变成软件里的「智能 if 语句」。 Jev 发布一个月：TypeSafe 刚宣布 8.7 亿美元 A 轮、估值 75 亿美元，发布视频 4000 万播放，据称日均约百万用户、万亿 token、覆盖三分之一财富 500 强，同时也成了被抄得最多的模型。Diogo 说这些数字不是重点，真正的信号是 builder 开始用它做以前因 AI 太贵而懒得做的应用——他认为未来的核心指标是「单位成本智能」（intelligence per dollar），而非单位时间智能。他自称团队隐身两年、坚持「少承诺多交付」，没有市场团队，「是产品在扛营销」。 核心论点：今天的 AI 像「侧边栏里的聊天框」，自成主角却不能与软件良好组合。Jev 是机器原生 AI，更像 System 1——快速、直觉式判断。以邮件日程助理为例，LLM 方案是不断膨胀的系统提示词，复杂度越高错误率越高；Jev 的做法是为「是否投资人」「是否 inbound」等每个判断单独建分类器，形成可逐项度量、可设阈值、开发者可控的「智能 if 语句」系统。他反驳「只是个分类器」的批评：分类器是把智能放进软件的接口形态，Facebook、TikTok、Google 都靠它；且通用分类/验证器是「AI 完备」的。 关于训练：RLHF 让模型擅长聊天和讨好人，带来谄媚、拒答等隐性代价；RLVR 能刷爆基准，却没真正改变自动化——模型「95% 爱因斯坦、5% 憨豆先生」，如果它不告诉你何时是憨豆，就无法自动化，关键在校准。TypeSafe 用自研的 RLCD 为机器原生智能优化，训练数据内部构建，基于多个开源权重模型而非自研预训练（他称预训练是「资源浪费的垃圾火」）。他直言「基准测试伤害的恰恰是没时间亲自试用的用户」；对跟风者（包括 OpenAI 刚发布的 Decisions）表示复制接口很容易、复制可靠性很难。展望上，他不认同递归自我改进（RSI）叙…",
       "tags": [
-        "Claude",
-        "Coding",
+        "OpenAI",
         "Product",
-        "Eval"
+        "Eval",
+        "Startup"
       ],
-      "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
-      "publishedAt": "2026-10-14T16:22:14.000Z",
+      "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+      "publishedAt": "2026-10-15T11:30:01.000Z",
       "handle": ""
     }
   ],
@@ -86,50 +85,49 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-R3VpbGxlcm",
+          "id": "digest-x-0-QWFyb24gTG",
           "kind": "x",
           "source": "X",
-          "sourceName": "Guillermo Rauch",
-          "handle": "rauchg",
-          "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Vercel CEO Guillermo Rauch wrote a long post-mortem on an agent sandbox security challenge. He splits agent escapes into two classes: (1) \"escape the network\" — the OpenAI incident, where an agent without internet access gained it by hacking another system; and (2) \"escape the matrix\" — breaking the virtualization boundary itself. In this challenge, a white-hat researcher armed with a swarm of AI agents pierced the Linux virtualization boundary that nearly every cloud sandbox provider relies on. Vercel moved quick…",
-          "insightZh": "Vercel CEO Guillermo Rauch 发长文复盘了一次 Agent 沙箱安全挑战。他把 Agent 逃逸分成两类：①「逃出网络」——OpenAI 那次事件就是这一类，一个本不该联网的 Agent 通过攻击另一个系统拿到了网络访问；②「逃出矩阵」——直接打穿虚拟化边界。这次挑战里，一位白帽研究员带着一群 AI Agent，凭专业能力和耐心「刺穿」了几乎所有云沙箱厂商都依赖的 Linux 虚拟化边界。Vercel 收到报告后快速修补，没有发现客户数据泄露的证据，并和多家行业伙伴一起做了更大范围的防护。他的结论是：Agent containment 会成为每家 AI 基础设施公司最重要的优先事项之一。另外他预告明天回到「一切开始的地方」办活动。",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie made two substantive calls. First, moving from chatting back and forth with agents to spinning up agents in the background is likely 100X–1000X more token consumption than today: knowledge work is rate-limited by information processing (moving data between systems, reviewing documents, scanning code for security issues, mining logs, researching prospects), and soon we will throw swarms of agents at problems and say \"come back when you've accomplished this goal\" — mostly net-new work rather than…",
+          "insightZh": "Box CEO Aaron Levie 本期连发两条有分量的判断。第一，从「和 Agent 来回聊天」走向「在后台批量拉起 Agent 干活」，token 消耗可能是今天的 100 到 1000 倍：知识工作的瓶颈在于信息处理（系统间搬数据、审文档、查代码安全问题、分析日志、调研潜在客户），未来可以对任意问题投放 Agent 集群，说一句「达成目标再回来」；而且大部分是净新增工作，不是替代现有工作，下一个瓶颈只剩算力。第二，他盛赞 Meta 推出 Muse 开源权重模型，认为这是美国开源 AI 的一大步：企业可以用前沿模型做编排和高难任务，再用低成本、定制后训练的开源模型跑重复性流程，进一步放大全栈的 token 消耗与工作负载。",
           "tags": [
-            "OpenAI",
             "Agent",
-            "Product",
+            "Coding",
             "Research"
           ],
-          "url": "https://x.com/rauchg/status/2110514201559228606",
-          "publishedAt": "2026-10-14T23:32:51.000Z",
+          "url": "https://x.com/levie/status/2110622982762803449",
+          "publishedAt": "2026-10-15T06:45:07.000Z",
           "metrics": {
-            "likes": 517,
-            "retweets": 17,
-            "replies": 88,
-            "score": 761
+            "likes": 503,
+            "retweets": 45,
+            "replies": 165,
+            "score": 1013
           }
         },
         {
-          "id": "digest-x-1-VGhhcmlxIM",
+          "id": "digest-x-1-Qm9yaXMgQ2",
           "kind": "x",
           "source": "X",
-          "sourceName": "Thariq",
-          "handle": "trq212",
-          "title": "Thariq · Anthropic Claude Code",
-          "summaryEn": "Thariq from Anthropic's Claude Code team refined his old advice to \"be technical,\" saying it isn't precise enough. If you're technical, you need to be in the details of the right parts of the code; if you're non-technical, being in the details means knowing how things work at the right level. He also shared a piece titled \"Today's Weather: Partly Agentic.\"",
-          "insightZh": "Claude Code 团队的 Thariq 修正了自己以前常说的「要懂技术」：这个说法不够准确。技术背景的人需要深入到代码里正确的那部分细节；非技术背景的人，「深入细节」意味着在合适的抽象层次上理解系统如何运作。另外他还分享了一篇标题为「今日天气：局部 Agentic」的内容。",
+          "sourceName": "Boris Cherny",
+          "handle": "bcherny",
+          "title": "Boris Cherny · Anthropic Claude 团队",
+          "summaryEn": "Anthropic's Boris Cherny said Claude models have made significant progress on prompt injection over the last few years, but as agents do more, solving it industry-wide is increasingly urgent. Anthropic is partnering with Gray Swan to host a prompt-injection competition and invites the community to find weaknesses.",
+          "insightZh": "Anthropic 的 Boris Cherny 表示，过去几年 Claude 模型在提示注入（prompt injection）防御上取得了显著进展，但随着 Agent 承担越来越多工作，全行业解决这一问题变得愈发紧迫。Anthropic 正与 Gray Swan 合作举办一场提示注入攻防竞赛，邀请社区来找漏洞。",
           "tags": [
             "Claude",
             "Agent",
-            "Coding"
+            "Research"
           ],
-          "url": "https://x.com/trq212/status/2110488897453257169",
-          "publishedAt": "2026-10-14T21:52:18.000Z",
+          "url": "https://x.com/bcherny/status/2110791698611855624",
+          "publishedAt": "2026-10-15T17:55:32.000Z",
           "metrics": {
-            "likes": 11,
-            "retweets": 1,
-            "replies": 3,
-            "score": 21
+            "likes": 568,
+            "retweets": 34,
+            "replies": 105,
+            "score": 914
           }
         },
         {
@@ -139,117 +137,110 @@
           "sourceName": "Aditya Agarwal",
           "handle": "adityaag",
           "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
-          "summaryEn": "Aditya Agarwal announced a new South Park Commons experiment: $200K, uncapped, for a handful of \"unapologetically maximalist thinkers\" pursuing truly out-there ideas. The tension he describes: technological progress has never been this rapid, yet capital keeps flowing to consensus teams, markets, and terms. He wants to rewrite the capital stack — a nuclear company shouldn't raise the same seed round as an AI app. The $200K is no-downside fuel to explore a hard problem, after which SPC helps shape the right downstr…",
-          "insightZh": "Aditya Agarwal 宣布 South Park Commons 的新实验：给少数「毫不掩饰的极致主义者」每人 20 万美元、无估值上限，去尝试真正离谱的想法。他的逻辑是两个矛盾并存：技术进步前所未有地快，似乎没有什么不可能；但资本却在流向共识团队、共识市场、共识条款。他认为应该重写资本结构——做核能的公司不该和 AI 应用拿一样的种子轮。这笔钱被定位为探索难题的「无下行燃料」，之后 SPC 再帮团队找到合适形态的后续资本。",
+          "summaryEn": "SPC General Partner Aditya Agarwal said Goodfire may be one of the most important companies to come out of South Park Commons, showing that interpretability and alignment can be approached as engineering problems.",
+          "insightZh": "South Park Commons 普通合伙人 Aditya Agarwal 称，Goodfire 可能是 SPC 孵化出的最重要的公司之一——它证明了可解释性与对齐可以被当作工程问题来解决，而不只是研究课题。",
           "tags": [
             "Product"
           ],
-          "url": "https://x.com/adityaag/status/2110422584357478530",
-          "publishedAt": "2026-10-14T17:28:48.000Z",
+          "url": "https://x.com/adityaag/status/2110779602453066224",
+          "publishedAt": "2026-10-15T17:07:28.000Z",
           "metrics": {
-            "likes": 413,
-            "retweets": 30,
-            "replies": 30,
-            "score": 593
+            "likes": 52,
+            "retweets": 3,
+            "replies": 4,
+            "score": 72
           }
         },
         {
-          "id": "digest-x-3-R2FycnkgVG",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Garry Tan",
-          "handle": "garrytan",
-          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "Garry Tan kept pushing back on California's Prop 40, which he calls an \"asset seizure tax.\" His example: a founder owning 50% of a $10B company owes 5% — $500M — on $1B of illiquid paper wealth, which no one will lend against; in this case it's effectively a 50% tax, not 5%. He argues the academics behind it don't understand how startups and innovation happen and that the policy will kill the golden goose.",
-          "insightZh": "Garry Tan 继续反对加州 40 号提案（他称之为「资产没收税」）。他举例：一个持股 50%、公司估值 100 亿美元的创始人，按 5% 税率要交 5 亿美元，相当于其 10 亿美元纸面财富的一半，而这些资产完全不流动、根本借不到钱——在这个简单例子里实际是 50% 的税而非 5%。他批评支持方的学者不理解创业公司和创新如何发生，政策会「杀死下金蛋的鹅」。",
-          "tags": [
-            "Product",
-            "Startup"
-          ],
-          "url": "https://x.com/garrytan/status/2110372513792577971",
-          "publishedAt": "2026-10-14T14:09:50.000Z",
-          "metrics": {
-            "likes": 941,
-            "retweets": 67,
-            "replies": 97,
-            "score": 1403
-          }
-        },
-        {
-          "id": "digest-x-4-TmlrdW5qIE",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Nikunj Kothari",
-          "handle": "nikunj",
-          "title": "Nikunj Kothari · FPV Ventures 合伙人",
-          "summaryEn": "Nikunj Kothari argues venture is deceptively simple: (1) win the right to (2) find and invest in exceptional founders (3) just before it's consensus (4) consistently every year. Most VCs get one right; greatness requires all four, and consistency is the hardest and least discussed — Djokovic-style, enjoying hitting the ball every day and focusing on the next point. He also joked that Astra at 7pm, like a toddler at 7pm, isn't following instructions well.",
-          "insightZh": "Nikunj Kothari 总结了风险投资看似简单的四件事：①赢得投资资格；②找到并投资卓越创始人；③在它变成「共识」之前出手；④每年持续做到。大多数 VC 只能做对其中一项，真正伟大的必须全部做对，而「持续正确」最难也最少被讨论——要像德约科维奇那样每天享受击球、只关注下一分。他还吐槽晚上 7 点的 Astra 和蹒跚学步的孩子一样「不太听指令」。",
-          "tags": [
-            "Startup"
-          ],
-          "url": "https://x.com/nikunj/status/2110493174787670529",
-          "publishedAt": "2026-10-14T22:09:18.000Z",
-          "metrics": {
-            "likes": 93,
-            "retweets": 2,
-            "replies": 8,
-            "score": 117
-          }
-        },
-        {
-          "id": "digest-x-5-RGFuIFNoaX",
+          "id": "digest-x-3-RGFuIFNoaX",
           "kind": "x",
           "source": "X",
           "sourceName": "Dan Shipper",
           "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Every CEO Dan Shipper flagged a \"must read,\" and shared what he calls the future of communications at work — \"if you're still sending a deck, ngmi.\" He also noted there are \"wonders to behold\" in Every's Slack right now.",
-          "insightZh": "Every CEO Dan Shipper 推荐了一篇「必读」文章，并断言他分享的内容代表了职场沟通的未来——「如果你还在发 PPT，就要被淘汰了」。他还提到 Every 的 Slack 里此刻「有很多奇妙的东西」。",
-          "tags": [],
-          "url": "https://x.com/danshipper/status/2110486623263867002",
+          "summaryEn": "Every CEO Dan Shipper riffed on Good Will Hunting to poke at interpretability: read about polysemanticity and you think it's all untangling superposition; find a neuron that lights up for the Eiffel Tower and you think you can align a superintelligence — but knowing it recognizes the Eiffel Tower doesn't tell you what it's planning. He also announced that an Every piece featuring several OpenAI folks (gdb, Thibault Sottiaux and others) is live.",
+          "insightZh": "Every CEO Dan Shipper 用《心灵捕手》经典台词的格式调侃了一把可解释性研究：读完多义性（polysemanticity）就以为可解释性等于解开叠加态，找到一个对埃菲尔铁塔亮起的神经元就以为能对齐超级智能——但「知道它认出了埃菲尔铁塔，并不能告诉你它在计划什么」。另外他宣布 Every 与 OpenAI 多位成员（gdb、Thibault Sottiaux 等）合作的内容已上线。",
+          "tags": [
+            "OpenAI"
+          ],
+          "url": "https://x.com/danshipper/status/2110831666587713810",
           "publishedAt": null,
           "handle": ""
         },
         {
-          "id": "digest-x-6-UGV0ZXIgWW",
+          "id": "digest-x-4-TmFuIFl1IM",
           "kind": "x",
           "source": "X",
-          "sourceName": "Peter Yang",
-          "handle": "petergyang",
-          "title": "Peter Yang · 产品负责人、AI 教程创作者",
-          "summaryEn": "Peter Yang found out his 8-year-old used ChatGPT to answer her math homework — instead of being mad, he was quite impressed.",
-          "insightZh": "Peter Yang 发现 8 岁的女儿用 ChatGPT 解出了数学作业，他没有生气，反而相当佩服。",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品、前 Linear 产品负责人",
+          "summaryEn": "Nan Yu, product at OpenAI Codex, argued that taste does not mean taste in aesthetics — that is the shallowest, least interesting definition precisely because it is so common.",
+          "insightZh": "OpenAI Codex 产品的 Nan Yu 指出：「品味」不等于审美品味——那是最浅、最无趣的定义，因为太常见了。言下之意，产品品味更关乎判断什么值得做、该怎么取舍。",
           "tags": [
-            "OpenAI"
+            "OpenAI",
+            "Coding",
+            "Product"
           ],
-          "url": "https://x.com/petergyang/status/2110521081450922117",
-          "publishedAt": "2026-10-15T00:00:12.000Z",
+          "url": "https://x.com/thenanyu/status/2110730151222980849",
+          "publishedAt": "2026-10-15T13:50:58.000Z",
           "metrics": {
-            "likes": 79,
-            "retweets": 0,
-            "replies": 29,
-            "score": 137
+            "likes": 34,
+            "retweets": 2,
+            "replies": 8,
+            "score": 58
           }
+        },
+        {
+          "id": "digest-x-5-TWF0dCBUdX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Matt Turck",
+          "handle": "mattturck",
+          "title": "Matt Turck · FirstMark 合伙人、MAD Podcast 主持人",
+          "summaryEn": "FirstMark's Matt Turck released a new MAD Podcast episode marking one month since Jev's launch, unpacking with TypeSafe CEO Diogo Almeida what Jev is, how it fixes what's broken in AI, and why fast-followers miss the hard part — covering \"95% Einstein, 5% Mr. Bean\", intelligence per dollar, the hidden costs of RLHF, why RLVR hasn't delivered reliable automation, and \"Build prod, not God\". See the Podcasts section below.",
+          "insightZh": "FirstMark 的 Matt Turck 发布了 MAD Podcast 新一期：在 Jev 发布一个月之际，与 TypeSafe CEO Diogo Almeida 拆解 Jev 是什么、它如何修复 AI 的问题、以及为什么跟风者抓不住最难的部分。章节涵盖「95% 爱因斯坦、5% 憨豆先生」、单位成本智能、RLHF 的隐性代价、RLVR 为何没带来可靠自动化、以及「Build prod, not God」。详见下方 Podcasts 板块。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product",
+            "Eval"
+          ],
+          "url": "https://x.com/mattturck/status/2110799882952831302",
+          "publishedAt": "2026-10-15T18:28:03.000Z",
+          "metrics": {
+            "likes": 88,
+            "retweets": 10,
+            "replies": 8,
+            "score": 144
+          }
+        },
+        {
+          "id": "digest-x-6-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC's Garry Tan briefly noted \"Open weight models rising\", echoing this cycle's discussion around Meta's open-weights release.",
+          "insightZh": "YC 的 Garry Tan 简短转发并点评「开源权重模型正在崛起」，与本期 Meta 发布开源模型的讨论相呼应。",
+          "tags": [
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2110838867213668587",
+          "publishedAt": null,
+          "handle": ""
         },
         {
           "id": "digest-x-7-WmFyYSBaaG",
           "kind": "x",
           "source": "X",
           "sourceName": "Zara Zhang",
-          "handle": "zarazhangrui",
-          "title": "Zara Zhang · Builder、Follow Builders 作者",
-          "summaryEn": "Zara Zhang built a playful wishlist website, suggesting your next wedding, baby, or birthday gift registry could look like this, and shared a playable link plus the design inspiration.",
-          "insightZh": "Zara Zhang 做了一个好玩的心愿单网站，并建议下一次婚礼、宝宝或生日礼物清单都可以做成这种形式，同时附上了可体验链接和设计灵感来源。",
-          "tags": [
-            "Coding"
-          ],
-          "url": "https://x.com/zarazhangrui/status/2110262048819208642",
-          "publishedAt": "2026-10-14T06:50:53.000Z",
-          "metrics": {
-            "likes": 182,
-            "retweets": 5,
-            "replies": 18,
-            "score": 238
-          }
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Builder Zara Zhang made a Harry Potter–style newspaper, \"The Toddler Times\", where the images come alive, and shared the link.",
+          "insightZh": "Builder Zara Zhang 做了一份哈利·波特风格的报纸《The Toddler Times》，报纸上的图片可以「活」起来动起来，并分享了作品链接。",
+          "tags": [],
+          "url": "https://x.com/zarazhangrui/status/2110984552743309530",
+          "publishedAt": null,
+          "handle": ""
         }
       ]
     },
@@ -259,21 +250,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-QUkgJiBJIG",
+          "id": "digest-podcast-0-VGhlIE1BRC",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "AI & I by Every",
-          "title": "How Hugging Face's Investor Spots Winners",
-          "summaryEn": "As AI makes coding faster, the most valuable skill becomes turning user behavior into product insight and iterating rapidly; at the earliest stage, back technical founders whose \"pivot foot\" is the technology rather than a vertical market. Dan Shipper opened with model reviews: Google launched Gemini Argon 4 and Meta launched a new frontier model (named Wonder/Muse in the transcript). Every's hands-on testing suggests Muse is benchmark-maxed — about 50% on his senior engineer task and a middling writer — while Gemini 4 is weak at coding (~20%) but is now his favorite writing model, beating Astra and Claude and roughly doubling his productivity. He also previewed his 8,000-word piece \"How Codex Happened.\" In the main interview, Natalia Quintero talks with Matt Hartman of Factorial Capital, who helped make the first investment in Hugging Face at Betaworks (described as acquired by NVIDIA…",
-          "insightZh": "AI 让写代码变快之后，最值钱的能力是「从用户行为中提炼产品洞察并快速迭代」；早期投资更应押注技术型创始人，因为他们的「轴心脚」是技术而不是某个垂直市场。 开场 Dan Shipper 先做了本周模型点评：Google 发布 Gemini Argon 4、Meta 也发布了新前沿模型（转录中名称为 Wonder/Muse）。Every 的实测认为 Muse 有「刷榜」嫌疑，在其高级工程师基准任务上只拿到约 50%，写作也中规中矩；Gemini 4 编码一般（约 20%），但被他评为目前最喜欢的写作模型，超过 Astra 和 Claude，帮他把写作效率提升约两倍。他还预告了长文《How Codex Happened》。 正片由 Every AI 咨询负责人 Natalia Quintero 访谈 Factorial Capital 创始管理合伙人 Matt Hartman。他在 Betaworks 时参与了 Hugging Face 的第一笔投资（节目中称其上月被 NVIDIA 以 130 亿美元收购）。Hugging Face 最初是给青少年的聊天机器人，团队诚实面对糟糕的留存，把 Transformers 移植到 PyTorch 开源后走红，最终转型为开源 AI 社区。他总结的关键决策：坦诚看待留存、开源 Transformers、把权重托管从 GitHub 迁到自己的 Hub、以及坚持开源不变而对模型类型保持灵活。 Hartman 的投资方法是寻找「新近在技术上成为可能」或「新近可编程」的东西，并假设早期公司一定会转型——技术型团队可以带着同一种数据形态的洞察跨行业转型，而行业高管型团队往往被锁在原垂直领域。Factorial 是单一 GP 加 12 位风险合伙人的结构（包括 Hugging Face CEO Clem、Venmo 联创等），被投公司不断推荐新的技术创始人，形成「家族树」式网络。他认为「赢得的洞察」（世界上只有少数人有机会学到的东西）是重要信号；迭代周期从两个月压缩到两天，使理解用户并转化为产品的人价值指数级上升，分发也比以往更重要。",
+          "sourceName": "The MAD Podcast with Matt Turck",
+          "title": "Jev: The AI That Makes Decisions, Not Text (Diogo Almeida)",
+          "summaryEn": "Diogo Almeida, TypeSafe CEO and RLHF co-inventor, argues the real opportunity isn't better chat LLMs but reliable, calibrated \"machine-native intelligence\" embedded in software — smart if-statements rather than giant prompts. One month after Jev's launch, TypeSafe announced an $870M Series A at a $7.5B valuation; the launch video drew 40M views, with reportedly ~1M daily users, a trillion tokens a day and a third of the Fortune 500. Diogo says the leading indicator is builders making apps they never bothered with because AI was too expensive — the future is intelligence per dollar. TypeSafe stayed in stealth for two years, has no marketing team, and believes \"the product is carrying the marketing.\" Today's AI is a chat box on the side that doesn't compose with software. Jev is System 1–style, machine-native AI: instead of an ever-growing system prompt for, say, an email scheduling assis…",
+          "insightZh": "TypeSafe CEO、RLHF 共同发明者 Diogo Almeida 认为，AI 的真正机会不是「更会聊天的 LLM」，而是可以嵌入软件、可靠可校准的「机器原生智能」——把智能变成软件里的「智能 if 语句」。 Jev 发布一个月：TypeSafe 刚宣布 8.7 亿美元 A 轮、估值 75 亿美元，发布视频 4000 万播放，据称日均约百万用户、万亿 token、覆盖三分之一财富 500 强，同时也成了被抄得最多的模型。Diogo 说这些数字不是重点，真正的信号是 builder 开始用它做以前因 AI 太贵而懒得做的应用——他认为未来的核心指标是「单位成本智能」（intelligence per dollar），而非单位时间智能。他自称团队隐身两年、坚持「少承诺多交付」，没有市场团队，「是产品在扛营销」。 核心论点：今天的 AI 像「侧边栏里的聊天框」，自成主角却不能与软件良好组合。Jev 是机器原生 AI，更像 System 1——快速、直觉式判断。以邮件日程助理为例，LLM 方案是不断膨胀的系统提示词，复杂度越高错误率越高；Jev 的做法是为「是否投资人」「是否 inbound」等每个判断单独建分类器，形成可逐项度量、可设阈值、开发者可控的「智能 if 语句」系统。他反驳「只是个分类器」的批评：分类器是把智能放进软件的接口形态，Facebook、TikTok、Google 都靠它；且通用分类/验证器是「AI 完备」的。 关于训练：RLHF 让模型擅长聊天和讨好人，带来谄媚、拒答等隐性代价；RLVR 能刷爆基准，却没真正改变自动化——模型「95% 爱因斯坦、5% 憨豆先生」，如果它不告诉你何时是憨豆，就无法自动化，关键在校准。TypeSafe 用自研的 RLCD 为机器原生智能优化，训练数据内部构建，基于多个开源权重模型而非自研预训练（他称预训练是「资源浪费的垃圾火」）。他直言「基准测试伤害的恰恰是没时间亲自试用的用户」；对跟风者（包括 OpenAI 刚发布的 Decisions）表示复制接口很容易、复制可靠性很难。展望上，他不认同递归自我改进（RSI）叙…",
           "tags": [
-            "Claude",
-            "Coding",
+            "OpenAI",
             "Product",
-            "Eval"
+            "Eval",
+            "Startup"
           ],
-          "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
-          "publishedAt": "2026-10-14T16:22:14.000Z",
+          "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+          "publishedAt": "2026-10-15T11:30:01.000Z",
           "handle": ""
         }
       ]

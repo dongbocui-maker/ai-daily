@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-17",
+  "title": "Builder Signals · 2026-10-17",
+  "generatedAt": "2026-10-16T23:00:16.648Z",
+  "feedGeneratedAt": "2026-10-16T06:42:13.233Z",
+  "summary": "Follow Builders 今日捕捉到 30 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
+  "stats": {
+    "xBuilders": 14,
+    "totalTweets": 30,
+    "selectedXTweets": 8,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 9
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie made two substantive calls. First, moving from chatting back and forth with agents to spinning up agents in the background is likely 100X–1000X more token consumption than today: knowledge work is rate-limited by information processing (moving data between systems, reviewing documents, scanning code for security issues, mining logs, researching prospects), and soon we will throw swarms of agents at problems and say \"come back when you've accomplished this goal\" — mostly net-new work rather than…",
+      "insightZh": "Box CEO Aaron Levie 本期连发两条有分量的判断。第一，从「和 Agent 来回聊天」走向「在后台批量拉起 Agent 干活」，token 消耗可能是今天的 100 到 1000 倍：知识工作的瓶颈在于信息处理（系统间搬数据、审文档、查代码安全问题、分析日志、调研潜在客户），未来可以对任意问题投放 Agent 集群，说一句「达成目标再回来」；而且大部分是净新增工作，不是替代现有工作，下一个瓶颈只剩算力。第二，他盛赞 Meta 推出 Muse 开源权重模型，认为这是美国开源 AI 的一大步：企业可以用前沿模型做编排和高难任务，再用低成本、定制后训练的开源模型跑重复性流程，进一步放大全栈的 token 消耗与工作负载。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2110622982762803449",
+      "publishedAt": "2026-10-15T06:45:07.000Z",
+      "metrics": {
+        "likes": 503,
+        "retweets": 45,
+        "replies": 165,
+        "score": 1013
+      }
+    },
+    {
+      "id": "digest-x-1-Qm9yaXMgQ2",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Boris Cherny",
+      "handle": "bcherny",
+      "title": "Boris Cherny · Anthropic Claude 团队",
+      "summaryEn": "Anthropic's Boris Cherny said Claude models have made significant progress on prompt injection over the last few years, but as agents do more, solving it industry-wide is increasingly urgent. Anthropic is partnering with Gray Swan to host a prompt-injection competition and invites the community to find weaknesses.",
+      "insightZh": "Anthropic 的 Boris Cherny 表示，过去几年 Claude 模型在提示注入（prompt injection）防御上取得了显著进展，但随着 Agent 承担越来越多工作，全行业解决这一问题变得愈发紧迫。Anthropic 正与 Gray Swan 合作举办一场提示注入攻防竞赛，邀请社区来找漏洞。",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Research"
+      ],
+      "url": "https://x.com/bcherny/status/2110791698611855624",
+      "publishedAt": "2026-10-15T17:55:32.000Z",
+      "metrics": {
+        "likes": 568,
+        "retweets": 34,
+        "replies": 105,
+        "score": 914
+      }
+    },
+    {
+      "id": "digest-podcast-0-VGhlIE1BRC",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "The MAD Podcast with Matt Turck",
+      "title": "Jev: The AI That Makes Decisions, Not Text (Diogo Almeida)",
+      "summaryEn": "Diogo Almeida, TypeSafe CEO and RLHF co-inventor, argues the real opportunity isn't better chat LLMs but reliable, calibrated \"machine-native intelligence\" embedded in software — smart if-statements rather than giant prompts. One month after Jev's launch, TypeSafe announced an $870M Series A at a $7.5B valuation; the launch video drew 40M views, with reportedly ~1M daily users, a trillion tokens a day and a third of the Fortune 500. Diogo says the leading indicator is builders making apps they never bothered with because AI was too expensive — the future is intelligence per dollar. TypeSafe stayed in stealth for two years, has no marketing team, and believes \"the product is carrying the marketing.\" Today's AI is a chat box on the side that doesn't compose with software. Jev is System 1–style, machine-native AI: instead of an ever-growing system prompt for, say, an email scheduling assis…",
+      "insightZh": "TypeSafe CEO、RLHF 共同发明者 Diogo Almeida 认为，AI 的真正机会不是「更会聊天的 LLM」，而是可以嵌入软件、可靠可校准的「机器原生智能」——把智能变成软件里的「智能 if 语句」。 Jev 发布一个月：TypeSafe 刚宣布 8.7 亿美元 A 轮、估值 75 亿美元，发布视频 4000 万播放，据称日均约百万用户、万亿 token、覆盖三分之一财富 500 强，同时也成了被抄得最多的模型。Diogo 说这些数字不是重点，真正的信号是 builder 开始用它做以前因 AI 太贵而懒得做的应用——他认为未来的核心指标是「单位成本智能」（intelligence per dollar），而非单位时间智能。他自称团队隐身两年、坚持「少承诺多交付」，没有市场团队，「是产品在扛营销」。 核心论点：今天的 AI 像「侧边栏里的聊天框」，自成主角却不能与软件良好组合。Jev 是机器原生 AI，更像 System 1——快速、直觉式判断。以邮件日程助理为例，LLM 方案是不断膨胀的系统提示词，复杂度越高错误率越高；Jev 的做法是为「是否投资人」「是否 inbound」等每个判断单独建分类器，形成可逐项度量、可设阈值、开发者可控的「智能 if 语句」系统。他反驳「只是个分类器」的批评：分类器是把智能放进软件的接口形态，Facebook、TikTok、Google 都靠它；且通用分类/验证器是「AI 完备」的。 关于训练：RLHF 让模型擅长聊天和讨好人，带来谄媚、拒答等隐性代价；RLVR 能刷爆基准，却没真正改变自动化——模型「95% 爱因斯坦、5% 憨豆先生」，如果它不告诉你何时是憨豆，就无法自动化，关键在校准。TypeSafe 用自研的 RLCD 为机器原生智能优化，训练数据内部构建，基于多个开源权重模型而非自研预训练（他称预训练是「资源浪费的垃圾火」）。他直言「基准测试伤害的恰恰是没时间亲自试用的用户」；对跟风者（包括 OpenAI 刚发布的 Decisions）表示复制接口很容易、复制可靠性很难。展望上，他不认同递归自我改进（RSI）叙…",
+      "tags": [
+        "OpenAI",
+        "Product",
+        "Eval",
+        "Startup"
+      ],
+      "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+      "publishedAt": "2026-10-15T11:30:01.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie made two substantive calls. First, moving from chatting back and forth with agents to spinning up agents in the background is likely 100X–1000X more token consumption than today: knowledge work is rate-limited by information processing (moving data between systems, reviewing documents, scanning code for security issues, mining logs, researching prospects), and soon we will throw swarms of agents at problems and say \"come back when you've accomplished this goal\" — mostly net-new work rather than…",
+          "insightZh": "Box CEO Aaron Levie 本期连发两条有分量的判断。第一，从「和 Agent 来回聊天」走向「在后台批量拉起 Agent 干活」，token 消耗可能是今天的 100 到 1000 倍：知识工作的瓶颈在于信息处理（系统间搬数据、审文档、查代码安全问题、分析日志、调研潜在客户），未来可以对任意问题投放 Agent 集群，说一句「达成目标再回来」；而且大部分是净新增工作，不是替代现有工作，下一个瓶颈只剩算力。第二，他盛赞 Meta 推出 Muse 开源权重模型，认为这是美国开源 AI 的一大步：企业可以用前沿模型做编排和高难任务，再用低成本、定制后训练的开源模型跑重复性流程，进一步放大全栈的 token 消耗与工作负载。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2110622982762803449",
+          "publishedAt": "2026-10-15T06:45:07.000Z",
+          "metrics": {
+            "likes": 503,
+            "retweets": 45,
+            "replies": 165,
+            "score": 1013
+          }
+        },
+        {
+          "id": "digest-x-1-Qm9yaXMgQ2",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Boris Cherny",
+          "handle": "bcherny",
+          "title": "Boris Cherny · Anthropic Claude 团队",
+          "summaryEn": "Anthropic's Boris Cherny said Claude models have made significant progress on prompt injection over the last few years, but as agents do more, solving it industry-wide is increasingly urgent. Anthropic is partnering with Gray Swan to host a prompt-injection competition and invites the community to find weaknesses.",
+          "insightZh": "Anthropic 的 Boris Cherny 表示，过去几年 Claude 模型在提示注入（prompt injection）防御上取得了显著进展，但随着 Agent 承担越来越多工作，全行业解决这一问题变得愈发紧迫。Anthropic 正与 Gray Swan 合作举办一场提示注入攻防竞赛，邀请社区来找漏洞。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Research"
+          ],
+          "url": "https://x.com/bcherny/status/2110791698611855624",
+          "publishedAt": "2026-10-15T17:55:32.000Z",
+          "metrics": {
+            "likes": 568,
+            "retweets": 34,
+            "replies": 105,
+            "score": 914
+          }
+        },
+        {
+          "id": "digest-x-2-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "handle": "adityaag",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "SPC General Partner Aditya Agarwal said Goodfire may be one of the most important companies to come out of South Park Commons, showing that interpretability and alignment can be approached as engineering problems.",
+          "insightZh": "South Park Commons 普通合伙人 Aditya Agarwal 称，Goodfire 可能是 SPC 孵化出的最重要的公司之一——它证明了可解释性与对齐可以被当作工程问题来解决，而不只是研究课题。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/adityaag/status/2110779602453066224",
+          "publishedAt": "2026-10-15T17:07:28.000Z",
+          "metrics": {
+            "likes": 52,
+            "retweets": 3,
+            "replies": 4,
+            "score": 72
+          }
+        },
+        {
+          "id": "digest-x-3-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper riffed on Good Will Hunting to poke at interpretability: read about polysemanticity and you think it's all untangling superposition; find a neuron that lights up for the Eiffel Tower and you think you can align a superintelligence — but knowing it recognizes the Eiffel Tower doesn't tell you what it's planning. He also announced that an Every piece featuring several OpenAI folks (gdb, Thibault Sottiaux and others) is live.",
+          "insightZh": "Every CEO Dan Shipper 用《心灵捕手》经典台词的格式调侃了一把可解释性研究：读完多义性（polysemanticity）就以为可解释性等于解开叠加态，找到一个对埃菲尔铁塔亮起的神经元就以为能对齐超级智能——但「知道它认出了埃菲尔铁塔，并不能告诉你它在计划什么」。另外他宣布 Every 与 OpenAI 多位成员（gdb、Thibault Sottiaux 等）合作的内容已上线。",
+          "tags": [
+            "OpenAI"
+          ],
+          "url": "https://x.com/danshipper/status/2110831666587713810",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-4-TmFuIFl1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品、前 Linear 产品负责人",
+          "summaryEn": "Nan Yu, product at OpenAI Codex, argued that taste does not mean taste in aesthetics — that is the shallowest, least interesting definition precisely because it is so common.",
+          "insightZh": "OpenAI Codex 产品的 Nan Yu 指出：「品味」不等于审美品味——那是最浅、最无趣的定义，因为太常见了。言下之意，产品品味更关乎判断什么值得做、该怎么取舍。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thenanyu/status/2110730151222980849",
+          "publishedAt": "2026-10-15T13:50:58.000Z",
+          "metrics": {
+            "likes": 34,
+            "retweets": 2,
+            "replies": 8,
+            "score": 58
+          }
+        },
+        {
+          "id": "digest-x-5-TWF0dCBUdX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Matt Turck",
+          "handle": "mattturck",
+          "title": "Matt Turck · FirstMark 合伙人、MAD Podcast 主持人",
+          "summaryEn": "FirstMark's Matt Turck released a new MAD Podcast episode marking one month since Jev's launch, unpacking with TypeSafe CEO Diogo Almeida what Jev is, how it fixes what's broken in AI, and why fast-followers miss the hard part — covering \"95% Einstein, 5% Mr. Bean\", intelligence per dollar, the hidden costs of RLHF, why RLVR hasn't delivered reliable automation, and \"Build prod, not God\". See the Podcasts section below.",
+          "insightZh": "FirstMark 的 Matt Turck 发布了 MAD Podcast 新一期：在 Jev 发布一个月之际，与 TypeSafe CEO Diogo Almeida 拆解 Jev 是什么、它如何修复 AI 的问题、以及为什么跟风者抓不住最难的部分。章节涵盖「95% 爱因斯坦、5% 憨豆先生」、单位成本智能、RLHF 的隐性代价、RLVR 为何没带来可靠自动化、以及「Build prod, not God」。详见下方 Podcasts 板块。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product",
+            "Eval"
+          ],
+          "url": "https://x.com/mattturck/status/2110799882952831302",
+          "publishedAt": "2026-10-15T18:28:03.000Z",
+          "metrics": {
+            "likes": 88,
+            "retweets": 10,
+            "replies": 8,
+            "score": 144
+          }
+        },
+        {
+          "id": "digest-x-6-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC's Garry Tan briefly noted \"Open weight models rising\", echoing this cycle's discussion around Meta's open-weights release.",
+          "insightZh": "YC 的 Garry Tan 简短转发并点评「开源权重模型正在崛起」，与本期 Meta 发布开源模型的讨论相呼应。",
+          "tags": [
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2110838867213668587",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Builder Zara Zhang made a Harry Potter–style newspaper, \"The Toddler Times\", where the images come alive, and shared the link.",
+          "insightZh": "Builder Zara Zhang 做了一份哈利·波特风格的报纸《The Toddler Times》，报纸上的图片可以「活」起来动起来，并分享了作品链接。",
+          "tags": [],
+          "url": "https://x.com/zarazhangrui/status/2110984552743309530",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-VGhlIE1BRC",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "The MAD Podcast with Matt Turck",
+          "title": "Jev: The AI That Makes Decisions, Not Text (Diogo Almeida)",
+          "summaryEn": "Diogo Almeida, TypeSafe CEO and RLHF co-inventor, argues the real opportunity isn't better chat LLMs but reliable, calibrated \"machine-native intelligence\" embedded in software — smart if-statements rather than giant prompts. One month after Jev's launch, TypeSafe announced an $870M Series A at a $7.5B valuation; the launch video drew 40M views, with reportedly ~1M daily users, a trillion tokens a day and a third of the Fortune 500. Diogo says the leading indicator is builders making apps they never bothered with because AI was too expensive — the future is intelligence per dollar. TypeSafe stayed in stealth for two years, has no marketing team, and believes \"the product is carrying the marketing.\" Today's AI is a chat box on the side that doesn't compose with software. Jev is System 1–style, machine-native AI: instead of an ever-growing system prompt for, say, an email scheduling assis…",
+          "insightZh": "TypeSafe CEO、RLHF 共同发明者 Diogo Almeida 认为，AI 的真正机会不是「更会聊天的 LLM」，而是可以嵌入软件、可靠可校准的「机器原生智能」——把智能变成软件里的「智能 if 语句」。 Jev 发布一个月：TypeSafe 刚宣布 8.7 亿美元 A 轮、估值 75 亿美元，发布视频 4000 万播放，据称日均约百万用户、万亿 token、覆盖三分之一财富 500 强，同时也成了被抄得最多的模型。Diogo 说这些数字不是重点，真正的信号是 builder 开始用它做以前因 AI 太贵而懒得做的应用——他认为未来的核心指标是「单位成本智能」（intelligence per dollar），而非单位时间智能。他自称团队隐身两年、坚持「少承诺多交付」，没有市场团队，「是产品在扛营销」。 核心论点：今天的 AI 像「侧边栏里的聊天框」，自成主角却不能与软件良好组合。Jev 是机器原生 AI，更像 System 1——快速、直觉式判断。以邮件日程助理为例，LLM 方案是不断膨胀的系统提示词，复杂度越高错误率越高；Jev 的做法是为「是否投资人」「是否 inbound」等每个判断单独建分类器，形成可逐项度量、可设阈值、开发者可控的「智能 if 语句」系统。他反驳「只是个分类器」的批评：分类器是把智能放进软件的接口形态，Facebook、TikTok、Google 都靠它；且通用分类/验证器是「AI 完备」的。 关于训练：RLHF 让模型擅长聊天和讨好人，带来谄媚、拒答等隐性代价；RLVR 能刷爆基准，却没真正改变自动化——模型「95% 爱因斯坦、5% 憨豆先生」，如果它不告诉你何时是憨豆，就无法自动化，关键在校准。TypeSafe 用自研的 RLCD 为机器原生智能优化，训练数据内部构建，基于多个开源权重模型而非自研预训练（他称预训练是「资源浪费的垃圾火」）。他直言「基准测试伤害的恰恰是没时间亲自试用的用户」；对跟风者（包括 OpenAI 刚发布的 Decisions）表示复制接口很容易、复制可靠性很难。展望上，他不认同递归自我改进（RSI）叙…",
+          "tags": [
+            "OpenAI",
+            "Product",
+            "Eval",
+            "Startup"
+          ],
+          "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+          "publishedAt": "2026-10-15T11:30:01.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

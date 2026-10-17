@@ -1,0 +1,352 @@
+{
+  "date": "2026-10-18",
+  "title": "Builder Signals · 2026-10-18",
+  "generatedAt": "2026-10-17T23:00:17.089Z",
+  "feedGeneratedAt": "2026-10-17T06:37:54.211Z",
+  "summary": "Follow Builders 今日捕捉到 37 条 X 动态、1 集播客、0 篇博客；本站精选 14 条高信号内容。",
+  "stats": {
+    "xBuilders": 17,
+    "totalTweets": 37,
+    "selectedXTweets": 13,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 14
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie argues we have reached the threshold where AI being better than humans at training models is practical, far sooner than expected — recursive self-improvement felt distant one day and showed early signs the next. He breaks the flywheel into model capability now exceeding most human engineers, better harness and infra for long-running agents, a growing array of data, and massive agent parallelism across tasks and tests. His conclusion: this will almost certainly accelerate model progress faster t…",
+      "insightZh": "Box CEO Aaron Levie 认为，AI 训练模型的能力超过人类的门槛来得比预期快得多：昨天还觉得递归自我改进（RSI）很遥远，今天已经能看到它的雏形。他把驱动力拆成四个要素——模型能力已超过大多数人类工程师、长时运行 Agent 的 harness 与基础设施在进步、数据持续增长、Agent 可大规模并行跑远超人力的任务与实验——共同构成一个飞轮。他的结论很直接：这个飞轮几乎必然让模型进步远快于以往，「如果你还没把 RSI 的后果计入定价，那多半是个错误」。",
+      "tags": [
+        "Agent",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2111312141609586862",
+      "publishedAt": "2026-10-17T04:23:35.000Z",
+      "metrics": {
+        "likes": 125,
+        "retweets": 12,
+        "replies": 34,
+        "score": 241
+      }
+    },
+    {
+      "id": "digest-x-1-Qm9yaXMgQ2",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Boris Cherny",
+      "handle": "bcherny",
+      "title": "Boris Cherny · Anthropic Claude 团队",
+      "summaryEn": "Boris Cherny of the Claude team at Anthropic highlighted two tools he relies on: Claude Slides, now how he builds all his decks (no more googling \"iphone frame svg\"), and Claude Code Review, which runs on all his PRs and catches almost every bug before merge — part of the secret sauce that lets his team move fast while raising the quality bar.",
+      "insightZh": "Anthropic Claude 团队的 Boris Cherny 推荐了两个自己的日常工具：一是 Claude Slides，他现在做 deck 全靠它，不用再像以前那样去搜「iPhone frame svg」；二是 Claude Code Review，跑在他所有 PR 上，几乎能在合并前抓到所有 bug，他称这是团队能在提高质量门槛的同时保持极快节奏的「秘方」之一。",
+      "tags": [
+        "Claude",
+        "Coding",
+        "Eval"
+      ],
+      "url": "https://x.com/bcherny/status/2111158659971699136",
+      "publishedAt": "2026-10-16T18:13:42.000Z",
+      "metrics": {
+        "likes": 3025,
+        "retweets": 100,
+        "replies": 128,
+        "score": 3681
+      }
+    },
+    {
+      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "No Priors",
+      "title": "OpenAI 总裁 Greg Brockman：网络安全与药物研发的「物理规律」正在改变",
+      "summaryEn": "Greg Brockman argues AI can now undeniably generate new knowledge, drug discovery is the clearest next frontier, and cybersecurity's physics are changing — we are in a limited \"defender's window\", and security spend should ultimately vastly outstrip software spend. On No Priors, OpenAI co-founder and president Greg Brockman started with this week's math results: OpenAI published resolutions to almost 400 important open problems, which he says definitively answers whether AI can generate new knowledge. Unlike machine-checked brute force such as the four color theorem, mathematicians are finding surprising insights in these proofs. He tied this to oversight techniques like debate and iterative amplification (discussed since 2017) that keep humans in the driver's seat even when results are too hard to check directly. Extending to science, he says data is the crux: math and theoretical phys…",
+      "insightZh": "Greg Brockman 认为 AI 已无可否认地能产生新知识，下一站是药物研发；同时网络安全的「物理规律」正在改变，我们处在一个有限的「防御者窗口期」，安全支出最终应远超软件支出。 OpenAI 联合创始人兼总裁 Greg Brockman 做客 No Priors，从本周的数学成果谈起：OpenAI 公布了近 400 个重要开放问题的解答，他认为「AI 能否产生新知识」已经有了确定答案。与四色定理那种机器穷举式证明不同，数学界正在从这些证明中发现令人意外的洞见。他还提到 2017 年就提出的 debate 与 iterative amplification 等方法，让人类在无法直接验证 AI 结果时仍能保持监督，这与「人类坐在驾驶座」的理念一致。对于科学外溢，他认为关键在数据：数学、理论物理数据充足，生物则受数据瓶颈约束，需要湿实验与模拟方面的创新；但药物研发是最清晰的第一优先级，而且临床试验申报文书这类「非生物学」环节就能被 AI 大幅压缩，N-of-1 罕见病场景也可能出现短期突破。 产品层面，他介绍 DOTS 是一个「始终在线、主动工作」的 Agent：基于 Astra 级模型、拥有自己的云电脑，会读邮箱、Slack 与日历，每天早上给他列出该回复和该做的事，甚至发现他没让它留意的日程冲突。他认为消费级与企业级助手终将融合，差别主要在成本与管理员、安全团队等干系人；OpenAI 同时拥有 12 亿 ChatGPT 用户和领先的编码/企业业务，战略是两条线合一。他说「最好的 UI 是没有 UI」，配合 GPT-6 的「先快答、再深想」和生成式 UI 按需生成界面。 安全是本期最重的观点。他认为当前处于「防御者窗口期」：前沿网络能力尚未扩散，但普遍可得的能力在随每次模型发布上升（韩国已出现由模型驱动的银行入侵事件）。OpenAI 通过 Daybreak 计划向防御方开放能力，并与 CrowdStrike 等合作；内部曾抽调约 25 名生产工程师暂停所有项目，用当时最强模型扫描全部基础设施直至问题「饱和」，每次新模型发布都要重复此流程。他还提出形式化验证可借助模…",
+      "tags": [
+        "OpenAI",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://www.youtube.com/@NoPriorsPodcast",
+      "publishedAt": "2026-10-15T10:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues we have reached the threshold where AI being better than humans at training models is practical, far sooner than expected — recursive self-improvement felt distant one day and showed early signs the next. He breaks the flywheel into model capability now exceeding most human engineers, better harness and infra for long-running agents, a growing array of data, and massive agent parallelism across tasks and tests. His conclusion: this will almost certainly accelerate model progress faster t…",
+          "insightZh": "Box CEO Aaron Levie 认为，AI 训练模型的能力超过人类的门槛来得比预期快得多：昨天还觉得递归自我改进（RSI）很遥远，今天已经能看到它的雏形。他把驱动力拆成四个要素——模型能力已超过大多数人类工程师、长时运行 Agent 的 harness 与基础设施在进步、数据持续增长、Agent 可大规模并行跑远超人力的任务与实验——共同构成一个飞轮。他的结论很直接：这个飞轮几乎必然让模型进步远快于以往，「如果你还没把 RSI 的后果计入定价，那多半是个错误」。",
+          "tags": [
+            "Agent",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2111312141609586862",
+          "publishedAt": "2026-10-17T04:23:35.000Z",
+          "metrics": {
+            "likes": 125,
+            "retweets": 12,
+            "replies": 34,
+            "score": 241
+          }
+        },
+        {
+          "id": "digest-x-1-Qm9yaXMgQ2",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Boris Cherny",
+          "handle": "bcherny",
+          "title": "Boris Cherny · Anthropic Claude 团队",
+          "summaryEn": "Boris Cherny of the Claude team at Anthropic highlighted two tools he relies on: Claude Slides, now how he builds all his decks (no more googling \"iphone frame svg\"), and Claude Code Review, which runs on all his PRs and catches almost every bug before merge — part of the secret sauce that lets his team move fast while raising the quality bar.",
+          "insightZh": "Anthropic Claude 团队的 Boris Cherny 推荐了两个自己的日常工具：一是 Claude Slides，他现在做 deck 全靠它，不用再像以前那样去搜「iPhone frame svg」；二是 Claude Code Review，跑在他所有 PR 上，几乎能在合并前抓到所有 bug，他称这是团队能在提高质量门槛的同时保持极快节奏的「秘方」之一。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Eval"
+          ],
+          "url": "https://x.com/bcherny/status/2111158659971699136",
+          "publishedAt": "2026-10-16T18:13:42.000Z",
+          "metrics": {
+            "likes": 3025,
+            "retweets": 100,
+            "replies": 128,
+            "score": 3681
+          }
+        },
+        {
+          "id": "digest-x-2-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "Thibault Sottiaux (Codex & ChatGPT, OpenAI) promoted ChatGPT Space — introduced by the actual team, \"endearingly awkward at times\" — and asked what users want next. He also noted ChatGPT added slides support yesterday, available in Pro, Business and Enterprise while the team learns from feedback. Together with Claude Slides and Replit's \"Frontier Slides\", slide generation became a same-week battleground.",
+          "insightZh": "OpenAI Codex & ChatGPT 的 Thibault Sottiaux 宣传了 ChatGPT Space（介绍视频由真实产品团队出镜，「时而尴尬得可爱」），并征集下一步功能需求；同时透露 ChatGPT 昨天刚上线 slides 支持，目前向 Pro、Business、Enterprise 用户开放，边收集反馈边迭代。加上 Boris 的 Claude Slides 和 Amjad 的 Replit「Frontier Slides」，幻灯片生成成了本周各家的同步战场。",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Coding"
+          ],
+          "url": "https://x.com/thsottiaux/status/2111249534072529256",
+          "publishedAt": "2026-10-17T00:14:48.000Z",
+          "metrics": {
+            "likes": 1744,
+            "retweets": 73,
+            "replies": 494,
+            "score": 3024
+          }
+        },
+        {
+          "id": "digest-x-3-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad announced that Replit can now be deployed into a customer's own cloud so data never leaves home, designed for high-stakes environments like government, finance and healthcare. He also showed off \"Frontier Slides, super fast\", and observed mathematicians going through all five stages of grief in a compressed window — now at the tail end of depression and entering acceptance.",
+          "insightZh": "Replit CEO Amjad Masad 发布私有化部署：Replit 可部署到客户自己的云上，数据不出域，面向政府、金融、医疗等高敏感场景——这对受监管行业的企业客户是关键信号。他还晒了 Replit 的「Frontier Slides」，并评论数学家们正在极短时间内走完「否认、愤怒、讨价还价、抑郁、接受」的悲伤五阶段，目前处于抑郁尾声、正进入接受期。",
+          "tags": [],
+          "url": "https://x.com/amasad/status/2111267314012496121",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-4-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper put it simply: generation is now cheap and high quality — the big capability bump we need next is editing and oversight. He also shared a show-and-tell demo where a colleague turned his Codex piece into a visual novel.",
+          "insightZh": "Every CEO Dan Shipper 给出一个简短判断：生成已经又便宜又高质量，下一个真正需要的能力跃迁是「编辑与监督」（editing and oversight）。他还分享了团队 show and tell 上的案例：同事把他写的 Codex 文章改编成了一部视觉小说。",
+          "tags": [
+            "Coding",
+            "Eval"
+          ],
+          "url": "https://x.com/danshipper/status/2111174407637139668",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-5-U2FtIEFsdG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Sam Altman",
+          "handle": "sama",
+          "title": "Sam Altman · OpenAI CEO",
+          "summaryEn": "OpenAI CEO Sam Altman shared that the back of the Navier-Stokes milestone shirt carries the last line of the chain-of-thought from the solution. He also complimented Elon Musk on the new Roadster and said he was very happy to see news from Nick.",
+          "insightZh": "OpenAI CEO Sam Altman 晒出 Navier-Stokes 里程碑纪念 T 恤：背面印的是该解答思维链（chain-of-thought）的最后一行。他另外夸了 Elon Musk 新款 Roadster「看起来相当惊艳」，并对 Nick 的一则消息表示高兴。",
+          "tags": [
+            "OpenAI",
+            "Product"
+          ],
+          "url": "https://x.com/sama/status/2111139227761266699",
+          "publishedAt": "2026-10-16T16:56:29.000Z",
+          "metrics": {
+            "likes": 9023,
+            "retweets": 410,
+            "replies": 564,
+            "score": 11791
+          }
+        },
+        {
+          "id": "digest-x-6-Q2xhdWRlIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Claude",
+          "handle": "claudeai",
+          "title": "Claude · Anthropic 官方账号",
+          "summaryEn": "The official Claude account showcased two builds: Haiku 5.5 wrote twenty haiku and then drew every frame in JavaScript, and a cardiology fellow built a 3D tool to help trainees learn to read coronary angiograms. It also asked what people are making with Claude this weekend.",
+          "insightZh": "Claude 官方账号分享了两个用户作品：Haiku 5.5 写了二十首俳句，并用 JavaScript 逐帧画出每一首的画面；一位心内科 fellow 用 Claude 做了一个 3D 工具，帮助住院医师学习判读冠状动脉造影。官方同时发问：这个周末你在用 Claude 做什么？",
+          "tags": [
+            "Claude"
+          ],
+          "url": "https://x.com/claudeai/status/2111177845846495646",
+          "publishedAt": "2026-10-16T19:29:56.000Z",
+          "metrics": {
+            "likes": 644,
+            "retweets": 10,
+            "replies": 2,
+            "score": 688
+          }
+        },
+        {
+          "id": "digest-x-7-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch rebuilt the Roadster demo as a playable, highly accurate simulation retaining many real-life details, and joked \"TypeScript is the new TypeScript\" — when scriptc-compiled, it outperforms tsgo by 2–4x.",
+          "insightZh": "Vercel CEO Guillermo Rauch 把 Roadster 发布演示重做成了一个可玩、高精度的模拟，保留了大量现实细节；另一条则调侃「TypeScript is the new TypeScript」——经 scriptc 编译后，性能比 tsgo 快 2–4 倍。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2111313462987231519",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-8-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "title": "Swyx · Latent Space / AI Engineer",
+          "summaryEn": "Swyx (Latent Space, AI Engineer) launched a show he had been waiting almost a year to release, sharing behind-the-scenes from the shoot. He also praised a video as \"near-kurzgesagt level clarity of explanation (not yet illustration)\" and asked for its prompts, and shared a full write-up of a talk.",
+          "insightZh": "Latent Space、AI Engineer 主理人 Swyx 宣布筹备近一年的新节目上线，并分享了拍摄幕后；他还盛赞某个视频的讲解清晰度已接近 Kurzgesagt 水准（插画尚未达到），想要拿到它背后的 prompt；另附上一场演讲的完整文字整理。",
+          "tags": [],
+          "url": "https://x.com/swyx/status/2111245359125266915",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-9-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC President & CEO Garry Tan pointed to a hosted option as the easiest way to try GBrain, and said his favorite thing when starting a new project is using Capy with Aside so his agents can both code the first version and set up DevOps in one go.",
+          "insightZh": "YC 总裁兼 CEO Garry Tan 推荐了 GBrain 的托管版作为最简单的上手方式；他还提到开新项目时最喜欢的组合是 Capy 配合 Aside——让 Agent 一次性既写出第一版代码，又把 DevOps 配置搞定。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Startup"
+          ],
+          "url": "https://x.com/garrytan/status/2111282839740432423",
+          "publishedAt": "2026-10-16T23:19:02.000Z",
+          "metrics": {
+            "likes": 187,
+            "retweets": 6,
+            "replies": 48,
+            "score": 307
+          }
+        },
+        {
+          "id": "digest-x-10-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari shared that seven months after writing his \"prediction\" for a space and meeting ~50 startups in it, he finally found the one his firm gets to lead the Series A for. He also joked about founders trying to dodge his \"how do you actually calculate this revenue\" question.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 分享：7 个月前他写下对某个赛道的「预测」，之后见了约 50 家相关创业公司，终于找到并领投了其中一家的 A 轮。另一条则调侃创始人们总想回避他那句「这个收入到底是怎么算的」。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/nikunj/status/2111292452414103892",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-11-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人",
+          "summaryEn": "Aditya Agarwal (GP at South Park Commons, ex-Dropbox CTO) announced a fireside chat and Q&A with Sriram Krishnan at SPC next week — he helped build Azure, scaled Meta's mobile ads, led a16z's international expansion, then helped write the U.S. AI Action Plan at the White House.",
+          "insightZh": "South Park Commons GP、前 Dropbox CTO Aditya Agarwal 预告下周 SPC 邀请 Sriram Krishnan 做炉边对话与问答。Sriram 参与过 Azure 建设、扩张 Meta 移动广告、主导 a16z 国际化，之后进入白宫参与撰写美国《AI 行动计划》。",
+          "tags": [],
+          "url": "https://x.com/adityaag/status/2111162109933535673",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-12-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang framed the evolution of communication as \"docs → slides → video → rap battle\", the ultimate form, and asked whether he should make another one like it.",
+          "insightZh": "Peter Yang 把沟通形式的进化链总结为「文档 → 幻灯片 → 视频 → 说唱对决」，称后者是终极沟通形式，并询问粉丝要不要再做一期类似内容。",
+          "tags": [],
+          "url": "https://x.com/petergyang/status/2111263176163783167",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "No Priors",
+          "title": "OpenAI 总裁 Greg Brockman：网络安全与药物研发的「物理规律」正在改变",
+          "summaryEn": "Greg Brockman argues AI can now undeniably generate new knowledge, drug discovery is the clearest next frontier, and cybersecurity's physics are changing — we are in a limited \"defender's window\", and security spend should ultimately vastly outstrip software spend. On No Priors, OpenAI co-founder and president Greg Brockman started with this week's math results: OpenAI published resolutions to almost 400 important open problems, which he says definitively answers whether AI can generate new knowledge. Unlike machine-checked brute force such as the four color theorem, mathematicians are finding surprising insights in these proofs. He tied this to oversight techniques like debate and iterative amplification (discussed since 2017) that keep humans in the driver's seat even when results are too hard to check directly. Extending to science, he says data is the crux: math and theoretical phys…",
+          "insightZh": "Greg Brockman 认为 AI 已无可否认地能产生新知识，下一站是药物研发；同时网络安全的「物理规律」正在改变，我们处在一个有限的「防御者窗口期」，安全支出最终应远超软件支出。 OpenAI 联合创始人兼总裁 Greg Brockman 做客 No Priors，从本周的数学成果谈起：OpenAI 公布了近 400 个重要开放问题的解答，他认为「AI 能否产生新知识」已经有了确定答案。与四色定理那种机器穷举式证明不同，数学界正在从这些证明中发现令人意外的洞见。他还提到 2017 年就提出的 debate 与 iterative amplification 等方法，让人类在无法直接验证 AI 结果时仍能保持监督，这与「人类坐在驾驶座」的理念一致。对于科学外溢，他认为关键在数据：数学、理论物理数据充足，生物则受数据瓶颈约束，需要湿实验与模拟方面的创新；但药物研发是最清晰的第一优先级，而且临床试验申报文书这类「非生物学」环节就能被 AI 大幅压缩，N-of-1 罕见病场景也可能出现短期突破。 产品层面，他介绍 DOTS 是一个「始终在线、主动工作」的 Agent：基于 Astra 级模型、拥有自己的云电脑，会读邮箱、Slack 与日历，每天早上给他列出该回复和该做的事，甚至发现他没让它留意的日程冲突。他认为消费级与企业级助手终将融合，差别主要在成本与管理员、安全团队等干系人；OpenAI 同时拥有 12 亿 ChatGPT 用户和领先的编码/企业业务，战略是两条线合一。他说「最好的 UI 是没有 UI」，配合 GPT-6 的「先快答、再深想」和生成式 UI 按需生成界面。 安全是本期最重的观点。他认为当前处于「防御者窗口期」：前沿网络能力尚未扩散，但普遍可得的能力在随每次模型发布上升（韩国已出现由模型驱动的银行入侵事件）。OpenAI 通过 Daybreak 计划向防御方开放能力，并与 CrowdStrike 等合作；内部曾抽调约 25 名生产工程师暂停所有项目，用当时最强模型扫描全部基础设施直至问题「饱和」，每次新模型发布都要重复此流程。他还提出形式化验证可借助模…",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.youtube.com/@NoPriorsPodcast",
+          "publishedAt": "2026-10-15T10:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

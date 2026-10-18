@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-19",
+  "title": "Builder Signals · 2026-10-19",
+  "generatedAt": "2026-10-18T23:00:17.977Z",
+  "feedGeneratedAt": "2026-10-18T06:38:12.951Z",
+  "summary": "Follow Builders 今日捕捉到 15 条 X 动态、1 集播客、0 篇博客；本站精选 6 条高信号内容。",
+  "stats": {
+    "xBuilders": 8,
+    "totalTweets": 15,
+    "selectedXTweets": 5,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 6
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie argues the biggest misread behind \"end of software engineering\" predictions was assuming the world needs a fixed amount of software, so automation would reduce labor demand. The opposite is happening: because agents can use tools, operate computers, write software on the fly and process data like humans (only faster), we can now throw software at problems that could never reasonably be digitized before. Engineering therefore grows in economic importance — from new trading at banks, to increasin…",
+      "insightZh": "Box CEO Aaron Levie 认为，预言“软件工程终结”的人犯了最大的误判：他们以为世界只需要固定数量的软件，自动化会减少人力需求。实际情况恰恰相反——由于 Agent 能调用工具、操作电脑、即时写代码、像人一样（但快得多）处理数据，大量过去无法合理数字化的问题现在都可以“扔软件”去解决，几乎所有事情都在变成软件。结果是工程在经济中的地位反而上升：银行做新型交易、生命科学的研究与实验、制造业的供应链自动化，越来越多的工作长成了“软件问题”的形状。他的结论：未来我们不会再手写代码，但几乎一切都会是代码，懂代码的人会处于有利位置。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Product",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2111525362446520466",
+      "publishedAt": "2026-10-17T18:30:51.000Z",
+      "metrics": {
+        "likes": 806,
+        "retweets": 92,
+        "replies": 116,
+        "score": 1406
+      }
+    },
+    {
+      "id": "digest-x-1-QW1qYWQgTW",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Amjad Masad",
+      "handle": "amasad",
+      "title": "Amjad Masad · Replit CEO",
+      "summaryEn": "Replit CEO Amjad Masad clarified his TC Disrupt remarks: Replit remains model-agnostic, and users can still choose Anthropic and many other supported models. What he meant is that OpenAI is now the preferred partner powering Replit Agent, based on performance, cost and the strength of the partnership. The strategy: keep model choice for users while optimizing the default experience for the best performance at the best price.",
+      "insightZh": "Replit CEO Amjad Masad 澄清了他在 TC Disrupt 上的表态：Replit 依然保持模型中立，用户仍可选择 Anthropic 及其他多种模型；他的意思是，OpenAI 现在是驱动 Replit Agent 的“首选合作伙伴”，理由是性能、成本和双方合作关系的强度。Replit 的策略是：保留用户的模型选择权，同时把默认体验按“最佳性能 × 最佳价格”来优化。对企业客户而言，这是“默认模型 ≠ 唯一模型”的典型平台打法。",
+      "tags": [
+        "Claude",
+        "OpenAI",
+        "Agent",
+        "Research"
+      ],
+      "url": "https://x.com/amasad/status/2111494912562888939",
+      "publishedAt": "2026-10-17T16:29:51.000Z",
+      "metrics": {
+        "likes": 415,
+        "retweets": 19,
+        "replies": 128,
+        "score": 747
+      }
+    },
+    {
+      "id": "digest-podcast-0-VGhlIE1BRC",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "The MAD Podcast with Matt Turck",
+      "title": "What Happens When Billions of AI Agents Hit Your Database? (Andy Pavlo)",
+      "summaryEn": "In the agent era, databases face old problems at larger scale — guardrails, permissions and a 10–100x jump in query volume. Postgres remains the default; standalone vector and graph databases are overrated. CMU database professor Andy Pavlo, who just joined ClickHouse to found ClickHouse Labs, says vector databases' moat was \"just an index\" that every vendor added within a year, though hyper-specialized players like Turbopuffer are doing well. Agents now create, branch and even drop databases; branching (copy-on-write snapshots) is mostly used for agent-driven development and testing. The monthly \"agent deleted prod\" stories are, in his words, a Wild West for people who don't know database history — the controls have long existed, but teams share one password and hand it to the agent. He hasn't seen agents access data fundamentally differently from humans, beyond running 24/7, and expec…",
+      "insightZh": "Agent 时代数据库的核心问题不是“新技术”，而是老问题放大——护栏、权限和 10~100 倍的查询量；Postgres 仍是默认选择，专用的向量库与图数据库被高估。 本期嘉宾是卡内基梅隆大学数据库教授 Andy Pavlo，他刚加入 ClickHouse 创办 ClickHouse Labs。他认为向量数据库的护城河本质上只是一个索引，一年内几乎所有数据库都内置了向量索引，已成为标配；只有 Turbopuffer 这类在性价比上极度专精的玩家做得很好。Agent 现在会创建、分支甚至删除数据库——Databricks 收购 Neon 时披露 Agent 创建的分支占比大增，主要用于开发和测试中的写时复制快照。几乎每个月都有“Agent 删掉生产库”的事故，他直言这是“不懂数据库历史的人的西部荒野”：权限和护栏早就存在，问题在于大家偷懒共用密码，再把同一个密码交给 Agent。他至今没看到 Agent 与人类在数据访问上有本质区别，差异主要是 7×24 运行带来的量——他预计查询量会增长 10 到 100 倍。 关于 Agent 记忆，他的观点是“文件系统也是数据库”，上下文最终都是人类可读文本，但数据库能提供并发、安全写入和多 Agent 共享状态等保障。模型在新建应用时几乎总推荐 Postgres，曾有两家数据库公司问他如何让 Agent 优先推荐自家产品（类似 SEO）。他对图数据库很不看好：SQL:2023 已支持属性图查询，服务端遍历的关系型引擎可以轻松胜出。MCP 在他看来只是一个标准化的 REST 式接口，不是银弹，安全护栏与 SQL 请求并无不同。Text-to-SQL 方面，某大型银行现成方案准确率约 60%，花数年和数百万美元构建语义层后提升到约 95%。 在“AI 为数据库做什么”上：自 Anthropic 的 Opus 4 起，Agent 已能完成他 CMU 课程的全部数据库项目；他的 dbdb.io 统计显示超过 60% 的开源数据库已有 Agent 提交的代码。LLM 调优可达到约 80~85% 的效果，15 分钟内就能给出“够用”的配置…",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+      "publishedAt": "2026-10-08T11:30:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues the biggest misread behind \"end of software engineering\" predictions was assuming the world needs a fixed amount of software, so automation would reduce labor demand. The opposite is happening: because agents can use tools, operate computers, write software on the fly and process data like humans (only faster), we can now throw software at problems that could never reasonably be digitized before. Engineering therefore grows in economic importance — from new trading at banks, to increasin…",
+          "insightZh": "Box CEO Aaron Levie 认为，预言“软件工程终结”的人犯了最大的误判：他们以为世界只需要固定数量的软件，自动化会减少人力需求。实际情况恰恰相反——由于 Agent 能调用工具、操作电脑、即时写代码、像人一样（但快得多）处理数据，大量过去无法合理数字化的问题现在都可以“扔软件”去解决，几乎所有事情都在变成软件。结果是工程在经济中的地位反而上升：银行做新型交易、生命科学的研究与实验、制造业的供应链自动化，越来越多的工作长成了“软件问题”的形状。他的结论：未来我们不会再手写代码，但几乎一切都会是代码，懂代码的人会处于有利位置。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2111525362446520466",
+          "publishedAt": "2026-10-17T18:30:51.000Z",
+          "metrics": {
+            "likes": 806,
+            "retweets": 92,
+            "replies": 116,
+            "score": 1406
+          }
+        },
+        {
+          "id": "digest-x-1-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "handle": "amasad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad clarified his TC Disrupt remarks: Replit remains model-agnostic, and users can still choose Anthropic and many other supported models. What he meant is that OpenAI is now the preferred partner powering Replit Agent, based on performance, cost and the strength of the partnership. The strategy: keep model choice for users while optimizing the default experience for the best performance at the best price.",
+          "insightZh": "Replit CEO Amjad Masad 澄清了他在 TC Disrupt 上的表态：Replit 依然保持模型中立，用户仍可选择 Anthropic 及其他多种模型；他的意思是，OpenAI 现在是驱动 Replit Agent 的“首选合作伙伴”，理由是性能、成本和双方合作关系的强度。Replit 的策略是：保留用户的模型选择权，同时把默认体验按“最佳性能 × 最佳价格”来优化。对企业客户而言，这是“默认模型 ≠ 唯一模型”的典型平台打法。",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Research"
+          ],
+          "url": "https://x.com/amasad/status/2111494912562888939",
+          "publishedAt": "2026-10-17T16:29:51.000Z",
+          "metrics": {
+            "likes": 415,
+            "retweets": 19,
+            "replies": 128,
+            "score": 747
+          }
+        },
+        {
+          "id": "digest-x-2-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux shared a real multi-agent workflow: his work agent \"Burger\" coordinated over email with his personal agent \"Dorito\" (at Dorito's request) to fetch documents, then worked with his CPA to file some tax items — all in about 20 minutes. \"We're still so early.\" He also said a release would land by end of day PST.",
+          "insightZh": "OpenAI Codex / ChatGPT 负责人 Thibault Sottiaux 分享了一个多 Agent 协作的真实案例：他工作用的 Agent “Burger” 应他个人 Agent “Dorito” 的请求，通过邮件协调获取文件，再与他的会计师（CPA）对接，完成了一些报税事务，全程约 20 分钟。他的评价是“我们还非常早期”。另外他预告某项更新将在太平洋时间当天下班前上线。",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/thsottiaux/status/2111495392559067199",
+          "publishedAt": "2026-10-17T16:31:45.000Z",
+          "metrics": {
+            "likes": 4351,
+            "retweets": 77,
+            "replies": 737,
+            "score": 6133
+          }
+        },
+        {
+          "id": "digest-x-3-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang shared two practical items. First, praise for the Claude Code app (crediting @amorriscode's team): it's much faster now and arguably simpler to use than ChatGPT; still missing are better browser/computer use, remote control for all threads, and live voice. Second, with 45 apps and agents connected to his Google account, he shared a prompt to audit them: review every app, distinguish plain Google sign-in from access to Gmail/Drive/Calendar data, flag broad permissions, unfamiliar providers and duplicates…",
+          "insightZh": "Peter Yang 这周给了两条实用内容。一是称赞 Claude Code 应用（点名 @amorriscode 团队）：现在速度快了很多，使用上甚至可以说比 ChatGPT 更简单，仍缺的是更好的浏览器/电脑操作能力、对所有线程的远程控制以及实时语音。二是分享了一个清理 Google 账号授权的 Agent 提示词——他自己连了 45 个应用和 Agent：让 AI 逐个审查所有已连接应用、区分“仅 Google 登录”与“可访问 Gmail/Drive/Calendar 数据”的权限、标记权限过宽/来源不明/重复的条目，并且必须先给出建议、只断开他明确批准的应用，不删除账号、不取消订阅。这对 Agent 泛滥后的权限治理很有参考价值。",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/petergyang/status/2111496600522805624",
+          "publishedAt": "2026-10-17T16:36:33.000Z",
+          "metrics": {
+            "likes": 225,
+            "retweets": 5,
+            "replies": 58,
+            "score": 361
+          }
+        },
+        {
+          "id": "digest-x-4-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "handle": "swyx",
+          "title": "Swyx · Latent Space / AI Engineer / Cognition",
+          "summaryEn": "Swyx shared Latent Space's YouTube numbers: since AIE EU in May the channel has served over 1M unique viewers a month almost nonstop, yet 58% of monthly viewers are new and 68% aren't subscribed; viewing peaks 7–11am PT and almost nobody watches after 5pm. The channel got \"no love for 2 years\" before slowly being recommended via browsing, and its CTR \"sucks.\" His goal now is to collaborate with every creator in his channel-affinity list, such as ThePrimeagen and Jeff Delaney.",
+          "insightZh": "Swyx 公开了 Latent Space YouTube 频道的增长数据：自 AIE EU（5 月）之后，频道几乎持续保持每月超过 100 万独立观众，但其中 58% 每月都是新观众、68% 的观众未订阅；观看高峰集中在太平洋时间早 7 点到 11 点，下午 5 点后几乎没人看。他坦言频道前两年几乎没有流量，之后才慢慢靠“浏览推荐”起量，点击率（CTR）仍然很差。他的下一步目标是与观众重合度高的创作者（如 ThePrimeagen、Jeff Delaney）逐一合作。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/swyx/status/2111350966419411070",
+          "publishedAt": "2026-10-17T06:57:52.000Z",
+          "metrics": {
+            "likes": 2,
+            "retweets": 0,
+            "replies": 1,
+            "score": 4
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-VGhlIE1BRC",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "The MAD Podcast with Matt Turck",
+          "title": "What Happens When Billions of AI Agents Hit Your Database? (Andy Pavlo)",
+          "summaryEn": "In the agent era, databases face old problems at larger scale — guardrails, permissions and a 10–100x jump in query volume. Postgres remains the default; standalone vector and graph databases are overrated. CMU database professor Andy Pavlo, who just joined ClickHouse to found ClickHouse Labs, says vector databases' moat was \"just an index\" that every vendor added within a year, though hyper-specialized players like Turbopuffer are doing well. Agents now create, branch and even drop databases; branching (copy-on-write snapshots) is mostly used for agent-driven development and testing. The monthly \"agent deleted prod\" stories are, in his words, a Wild West for people who don't know database history — the controls have long existed, but teams share one password and hand it to the agent. He hasn't seen agents access data fundamentally differently from humans, beyond running 24/7, and expec…",
+          "insightZh": "Agent 时代数据库的核心问题不是“新技术”，而是老问题放大——护栏、权限和 10~100 倍的查询量；Postgres 仍是默认选择，专用的向量库与图数据库被高估。 本期嘉宾是卡内基梅隆大学数据库教授 Andy Pavlo，他刚加入 ClickHouse 创办 ClickHouse Labs。他认为向量数据库的护城河本质上只是一个索引，一年内几乎所有数据库都内置了向量索引，已成为标配；只有 Turbopuffer 这类在性价比上极度专精的玩家做得很好。Agent 现在会创建、分支甚至删除数据库——Databricks 收购 Neon 时披露 Agent 创建的分支占比大增，主要用于开发和测试中的写时复制快照。几乎每个月都有“Agent 删掉生产库”的事故，他直言这是“不懂数据库历史的人的西部荒野”：权限和护栏早就存在，问题在于大家偷懒共用密码，再把同一个密码交给 Agent。他至今没看到 Agent 与人类在数据访问上有本质区别，差异主要是 7×24 运行带来的量——他预计查询量会增长 10 到 100 倍。 关于 Agent 记忆，他的观点是“文件系统也是数据库”，上下文最终都是人类可读文本，但数据库能提供并发、安全写入和多 Agent 共享状态等保障。模型在新建应用时几乎总推荐 Postgres，曾有两家数据库公司问他如何让 Agent 优先推荐自家产品（类似 SEO）。他对图数据库很不看好：SQL:2023 已支持属性图查询，服务端遍历的关系型引擎可以轻松胜出。MCP 在他看来只是一个标准化的 REST 式接口，不是银弹，安全护栏与 SQL 请求并无不同。Text-to-SQL 方面，某大型银行现成方案准确率约 60%，花数年和数百万美元构建语义层后提升到约 95%。 在“AI 为数据库做什么”上：自 Anthropic 的 Opus 4 起，Agent 已能完成他 CMU 课程的全部数据库项目；他的 dbdb.io 统计显示超过 60% 的开源数据库已有 Agent 提交的代码。LLM 调优可达到约 80~85% 的效果，15 分钟内就能给出“够用”的配置…",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+          "publishedAt": "2026-10-08T11:30:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

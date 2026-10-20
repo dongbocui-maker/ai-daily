@@ -1,16 +1,16 @@
 {
-  "date": "2026-10-20",
-  "title": "Builder Signals · 2026-10-20",
-  "generatedAt": "2026-10-19T23:00:19.451Z",
-  "feedGeneratedAt": "2026-10-19T06:54:43.642Z",
-  "summary": "Follow Builders 今日捕捉到 21 条 X 动态、1 集播客、2 篇博客；本站精选 10 条高信号内容。",
+  "date": "2026-10-21",
+  "title": "Builder Signals · 2026-10-21",
+  "generatedAt": "2026-10-20T23:00:16.671Z",
+  "feedGeneratedAt": "2026-10-20T06:41:44.391Z",
+  "summary": "Follow Builders 今日捕捉到 21 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
   "stats": {
     "xBuilders": 11,
     "totalTweets": 21,
-    "selectedXTweets": 7,
+    "selectedXTweets": 8,
     "podcastEpisodes": 1,
-    "blogPosts": 2,
-    "selectedItems": 10
+    "blogPosts": 0,
+    "selectedItems": 9
   },
   "featured": [
     {
@@ -20,59 +20,61 @@
       "sourceName": "Aaron Levie",
       "handle": "levie",
       "title": "Aaron Levie · Box CEO",
-      "summaryEn": "Box CEO Aaron Levie argued that agent swarms will be a very big deal because they finally make compute a critical variable for a large share of economically important work. Research, data processing, discovery work and testing have been bottlenecked by humans' ability to plan, execute, review and coordinate — so we do far less of it than its economic value warrants. Swarms let this work be parallelized so that, in theory, the only parameter that matters is how much compute you throw at it. He named cybersecurity,…",
-      "insightZh": "Box CEO Aaron Levie 写了一段长文，论证为什么「Agent Swarm（智能体集群）」会是件大事：它第一次让「算力」成为经济中大量关键任务的决定性变量。研究、数据处理、发现类工作、跑测试等大量工作，过去受限于人力在规划、执行、复核与协调上的瓶颈，因此实际做得远少于其经济价值所对应的量。Agent Swarm 让这些工作可以真正并行化——理论上唯一重要的参数就是你投入多少算力。他点名网络安全、生命科学与材料科学研究、交易、QA 测试、数据处理等领域，一旦模型足够胜任，本质上都会变成「算力受限」问题；只要设定正确目标、投入足够 token，就能解决任意复杂的问题，这也会改变这些行业的竞争格局。",
+      "summaryEn": "Box CEO Aaron Levie framed the \"bitter lesson\" question for the applied AI layer: as models improve, what's the best way to diffuse that intelligence into an enterprise? His counterintuitive take is that more capable models — longer-running tasks, better tool use — increase rather than decrease domain-by-domain differentiation. When models were limited, apps could only be \"wrappers\" delivering tokens via custom prompts or light RAG. In a world of tool-using agents, multi-day tasks, coordinated agent swarms, domain…",
+      "insightZh": "Box CEO Aaron Levie 抛出了应用层 AI 的「苦涩教训」之问：模型越来越强，企业该如何把这些智能扩散进组织？他的判断反直觉——模型越强、越能跑长任务和用工具，垂直领域的差异化空间反而越大。模型能力有限时，应用层只能做「套壳」（定制 prompt + 简单 RAG）；而进入 agent 调用工具、任务持续数小时甚至数天、多 agent 协同、领域专属数据源与模型路由、真实的流程变革管理的阶段，系统专业化程度只会更高。他也承认离大模型厂商核心场景越近越难做，但预计安全、生命科学、医疗、金融、制造等领域会出现大量此前不可行的自主系统。",
       "tags": [
         "Agent",
+        "Product",
         "Research"
       ],
-      "url": "https://x.com/levie/status/2112051081014649303",
-      "publishedAt": "2026-10-19T05:19:52.000Z",
+      "url": "https://x.com/levie/status/2112404676436222170",
+      "publishedAt": "2026-10-20T04:44:56.000Z",
       "metrics": {
-        "likes": 121,
-        "retweets": 13,
-        "replies": 44,
-        "score": 261
+        "likes": 83,
+        "retweets": 7,
+        "replies": 46,
+        "score": 203
       }
     },
     {
-      "id": "digest-x-1-U3d5eCDCty",
+      "id": "digest-x-1-VGhhcmlxIM",
       "kind": "x",
       "source": "X",
-      "sourceName": "Swyx",
-      "handle": "swyx",
-      "title": "Swyx · Latent Space / AI Engineer 发起人",
-      "summaryEn": "Swyx, founder of Latent Space and AI Engineer, posted that \"data engineers > AI engineers\": there's a big gap between a \"RAG guy\" and a \"Data Intensive Applications\" person, and he has never seen a starker difference in demand in his career. He is hiring for this profile (SF preferred, relocation and visas supported) via jobs@latent.space.",
-      "insightZh": "Latent Space、AI Engineer 大会发起人 Swyx 抛出一个判断：「数据工程师 > AI 工程师」。他认为「RAG 工程师」与「数据密集型应用（Data Intensive Applications）」型人才之间差异巨大，而后者的市场需求反差是他整个职业生涯中（后搜索引擎大战时代）见过最鲜明的。他正在为此招人（旧金山优先，可协助搬迁与签证），有意者可发邮件至 jobs@latent.space。",
+      "sourceName": "Thariq",
+      "handle": "trq212",
+      "title": "Thariq · Anthropic Claude Code",
+      "summaryEn": "Thariq from Anthropic's Claude Code team argues that most people multi-tasking with agents could benefit from slowing down: most of what you're doing won't really matter — what's your P0, and what would it look like if you gave it your full attention? The post drew 5,000+ likes, hitting a nerve about attention fragmentation in the agent era.",
+      "insightZh": "Anthropic Claude Code 团队的 Thariq 给「多 agent 并行干活」的人泼了盆冷水：大多数同时调度一堆 agent 的人其实应该慢下来——你手上的大部分事情并不重要，真正的 P0 是什么？如果你把全部注意力放在它上面，会是什么样子？这条获得 5000+ 点赞，戳中了 agent 时代的注意力碎片化痛点。",
       "tags": [
-        "Product",
-        "Startup"
+        "Claude",
+        "Agent",
+        "Coding"
       ],
-      "url": "https://x.com/swyx/status/2112073533794971941",
-      "publishedAt": "2026-10-19T06:49:05.000Z",
+      "url": "https://x.com/trq212/status/2112219173288120531",
+      "publishedAt": "2026-10-19T16:27:48.000Z",
       "metrics": {
-        "likes": 4,
-        "retweets": 0,
-        "replies": 5,
-        "score": 14
+        "likes": 5458,
+        "retweets": 285,
+        "replies": 476,
+        "score": 7550
       }
     },
     {
-      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "id": "digest-podcast-0-QUkgJiBJIG",
       "kind": "podcast",
       "source": "Podcast",
-      "sourceName": "No Priors",
-      "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
-      "summaryEn": "Reflection AI trained its first open-weight model, Beam (500B total / 23B active), end to end with ~300 people. Misha Laskin argues RL has reached a point where systems \"never stop improving\" given compute, turning capability into an economic allocation question — and that open models are essential for both safety and a multipolar AI ecosystem. Misha Laskin, co-founder and CEO of Reflection AI and a former Google DeepMind researcher on Gemini's RL team, explained that the company spent the past year building a lab capable of frontier open intelligence, growing from ~30 to ~300 people. The original bet was to scale RL on top of existing open bases, but nearly all good open models were coming from China, and they also found that making RL work well at scale requires doing your own pre-training — so they built end to end. He gave concrete economics: catching up to the frontier cost hundred…",
-      "insightZh": "Reflection AI 用约 300 人团队从零训练出首个开放权重模型 Beam（总参数 500B / 激活 23B），Misha Laskin 认为强化学习已进入「不会停止进步、只看投多少算力」的阶段，而开放模型是安全与生态多极化的必要条件。 Reflection AI 联合创始人兼 CEO Misha Laskin（前 Google DeepMind 研究员、Gemini 强化学习团队成员）介绍，公司过去 12 个月把使命定为「构建前沿开放智能并广泛普及」，团队从约 30 人扩张到约 300 人，搭齐预训练、中训练、强化学习团队，端到端训练并发布了首个开放模型 Beam。最初他们押注 RL 能让模型具备 agent 能力，并计划在现成开源底座上做研究；但一年后发现好的开放模型几乎都来自中国，西方缺乏可用底座，同时研究上也发现「要让 RL 大规模奏效，必须自己做预训练」，于是决定端到端自研。 在算力账上，他给出了很具体的数字：追赶前沿的成本在 18 个月前是数亿美元量级，半年前已是个位数十亿美元，明年将到百亿量级——每代模型约 4 倍算力乘数（10 万张 H100 → 10 万张 Blackwell → 10 万张 Vera Rubin）。Beam 预训练用了 6000 张 GB300，现在约 12 天可完成；RL 阶段用了 1 万多张 GB300 跑四周，RL 消耗的 FLOPs 反而超过预训练。他认为模型正在帮助构建自己，纯人力研究时代每年约 7 倍效率提升，如今在 RL 上可达约 30 倍；RL 曲线「从未停止上升」，问题已从科研变成经济决策：往哪个方向投多少钱。 在开放性与安全上，他主张：移除攻击性网络能力也会同时移除防御能力；闭源实验室里只有几百名安全研究员，无法覆盖长尾风险——「足够多的眼睛让漏洞变浅」同样适用于安全。他认为中国开放模型生态对世界是巨大利好，但不应让开放智能的来源被单一国家垄断，至少需要两极形成竞争张力。最后他判断：前沿模型团队规模会稳定在「百人量级」，真正大量的就业机会在「应用研究 / 部署型工程师」——懂评测、懂模型与 harne…",
+      "sourceName": "AI & I by Every",
+      "title": "Why Every Traded Personal Agents for One Company Agent",
+      "summaryEn": "Every went from \"everyone gets a personal OpenClaw agent\" to \"one shared company agent\" — at work, one agent per company beats many personal ones, while highly personalized agents win at home. Every CEO Dan Shipper and head of platform Willie Williams retraced the journey. Early this year everyone at Every ran OpenClaws, Slack filled with bots, and the biggest win was learning by watching how others used AI. But problems surfaced fast: setup was too technical for non-engineers, security was a worry, things broke, and agents faded without constant investment. Their one-click claw platform \"Plus One\" struggled because OpenClaw moved fast and was vibe coded, making it a hard platform foundation; most claws quietly died — Dan's R2C2 never came back after a Mac mini lost power, since he'd moved to Codex. Remembering which agent had which expertise was annoying, and well-built agents like Aus…",
+      "insightZh": "Every 从「人手一个 OpenClaw 个人 agent」走到「全公司共用一个 company agent」——工作场景里一家公司一个 agent 更优，个人场景则留给高度个性化的个人 agent。 Every CEO Dan Shipper 与平台负责人 Willie Williams 复盘了这段历程。今年初 Every 全员跑 OpenClaw，Slack 里满是 bot，最大的收获是「看到别人怎么用 AI」带来的学习效应。但问题也很快暴露：对非技术同事来说配置太复杂、安全顾虑多、经常坏、不持续投入就会荒废。他们曾试图做一键造 claw 的平台「Plus One」，但 OpenClaw 迭代太快、本身是 vibe coded，很难作为平台底座，大家的 claw 也陆续「死掉」。Dan 的 R2C2 在 Mac mini 断电后再没重启，因为他已经转向 Codex。 转折点在于：记住哪个 agent 擅长什么很烦；像 Austin 的增长 agent 那样做得好的 agent 自然成为引力中心。Willie 认为「builder 想暴露复杂度，operator 只想要能用的东西」，于是 Every 把精力集中到一个全公司共同贡献、学习公司流程的 agent 上，并作为 Every Agent 对订阅用户发布。双方的共识是：工作侧一家公司（或组织）一个 agent，必要时再按团队分化；个人侧 OpenAI dots、Muse、Instinct 等个人 agent 会因个性化而非常有吸引力。Dan 还预测：一年后他仍会用持久化 agent，但可爱的角色名（他的 dot 叫 Boo）大概不会留下。 关于工程管理，Willie 认为在 AI 时代经理仍是「人的工作」，价值在于消除瓶颈；他转回管理后 token 用量断崖下降。AI 主要提升信息面：用 Tend 把 Slack、邮件、客户反馈、会议汇成一个 feed；用 agent 每 5 分钟巡检异常并智能路由，充当永远在岗的第一值班人。双方也看好「主动式 AI」：每个人和每家公司都能拥有自己的 feed，帮你从 X、S…",
       "tags": [
+        "OpenAI",
         "Agent",
-        "Product",
-        "Eval",
-        "Startup"
+        "Coding",
+        "Product"
       ],
-      "url": "https://www.youtube.com/@NoPriorsPodcast",
-      "publishedAt": "2026-10-09T17:24:00.000Z",
+      "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+      "publishedAt": "2026-10-07T17:11:13.000Z",
       "handle": ""
     }
   ],
@@ -89,107 +91,108 @@
           "sourceName": "Aaron Levie",
           "handle": "levie",
           "title": "Aaron Levie · Box CEO",
-          "summaryEn": "Box CEO Aaron Levie argued that agent swarms will be a very big deal because they finally make compute a critical variable for a large share of economically important work. Research, data processing, discovery work and testing have been bottlenecked by humans' ability to plan, execute, review and coordinate — so we do far less of it than its economic value warrants. Swarms let this work be parallelized so that, in theory, the only parameter that matters is how much compute you throw at it. He named cybersecurity,…",
-          "insightZh": "Box CEO Aaron Levie 写了一段长文，论证为什么「Agent Swarm（智能体集群）」会是件大事：它第一次让「算力」成为经济中大量关键任务的决定性变量。研究、数据处理、发现类工作、跑测试等大量工作，过去受限于人力在规划、执行、复核与协调上的瓶颈，因此实际做得远少于其经济价值所对应的量。Agent Swarm 让这些工作可以真正并行化——理论上唯一重要的参数就是你投入多少算力。他点名网络安全、生命科学与材料科学研究、交易、QA 测试、数据处理等领域，一旦模型足够胜任，本质上都会变成「算力受限」问题；只要设定正确目标、投入足够 token，就能解决任意复杂的问题，这也会改变这些行业的竞争格局。",
+          "summaryEn": "Box CEO Aaron Levie framed the \"bitter lesson\" question for the applied AI layer: as models improve, what's the best way to diffuse that intelligence into an enterprise? His counterintuitive take is that more capable models — longer-running tasks, better tool use — increase rather than decrease domain-by-domain differentiation. When models were limited, apps could only be \"wrappers\" delivering tokens via custom prompts or light RAG. In a world of tool-using agents, multi-day tasks, coordinated agent swarms, domain…",
+          "insightZh": "Box CEO Aaron Levie 抛出了应用层 AI 的「苦涩教训」之问：模型越来越强，企业该如何把这些智能扩散进组织？他的判断反直觉——模型越强、越能跑长任务和用工具，垂直领域的差异化空间反而越大。模型能力有限时，应用层只能做「套壳」（定制 prompt + 简单 RAG）；而进入 agent 调用工具、任务持续数小时甚至数天、多 agent 协同、领域专属数据源与模型路由、真实的流程变革管理的阶段，系统专业化程度只会更高。他也承认离大模型厂商核心场景越近越难做，但预计安全、生命科学、医疗、金融、制造等领域会出现大量此前不可行的自主系统。",
           "tags": [
             "Agent",
+            "Product",
             "Research"
           ],
-          "url": "https://x.com/levie/status/2112051081014649303",
-          "publishedAt": "2026-10-19T05:19:52.000Z",
+          "url": "https://x.com/levie/status/2112404676436222170",
+          "publishedAt": "2026-10-20T04:44:56.000Z",
           "metrics": {
-            "likes": 121,
-            "retweets": 13,
-            "replies": 44,
-            "score": 261
+            "likes": 83,
+            "retweets": 7,
+            "replies": 46,
+            "score": 203
           }
         },
         {
-          "id": "digest-x-1-U3d5eCDCty",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Swyx",
-          "handle": "swyx",
-          "title": "Swyx · Latent Space / AI Engineer 发起人",
-          "summaryEn": "Swyx, founder of Latent Space and AI Engineer, posted that \"data engineers > AI engineers\": there's a big gap between a \"RAG guy\" and a \"Data Intensive Applications\" person, and he has never seen a starker difference in demand in his career. He is hiring for this profile (SF preferred, relocation and visas supported) via jobs@latent.space.",
-          "insightZh": "Latent Space、AI Engineer 大会发起人 Swyx 抛出一个判断：「数据工程师 > AI 工程师」。他认为「RAG 工程师」与「数据密集型应用（Data Intensive Applications）」型人才之间差异巨大，而后者的市场需求反差是他整个职业生涯中（后搜索引擎大战时代）见过最鲜明的。他正在为此招人（旧金山优先，可协助搬迁与签证），有意者可发邮件至 jobs@latent.space。",
-          "tags": [
-            "Product",
-            "Startup"
-          ],
-          "url": "https://x.com/swyx/status/2112073533794971941",
-          "publishedAt": "2026-10-19T06:49:05.000Z",
-          "metrics": {
-            "likes": 4,
-            "retweets": 0,
-            "replies": 5,
-            "score": 14
-          }
-        },
-        {
-          "id": "digest-x-2-VGhpYmF1bH",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Thibault Sottiaux",
-          "handle": "thsottiaux",
-          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
-          "summaryEn": "OpenAI Codex/ChatGPT lead Thibault Sottiaux said OpenAI worked with OpenCode to get users who are also OpenAI API customers back in business after an attack, refunding any credits that would have been drawn. He also encouraged teams to request Daybreak Blue access for OpenAI's cyber-permissive setup for defense — \"do not wait until you have to deal with an incident.\"",
-          "insightZh": "OpenAI Codex / ChatGPT 负责人 Thibault Sottiaux 透露，OpenAI 团队与 OpenCode 合作，让在一次攻击事件中受影响、同时也是 OpenAI API 客户的 OpenCode 用户恢复服务，并退还了攻击中可能被盗刷的额度。他同时提醒，可以申请「Daybreak Blue」访问权限，使用 OpenAI 面向防御的、更宽松的网络安全配置——「不要等到出了事故才行动」。",
-          "tags": [
-            "OpenAI",
-            "Coding"
-          ],
-          "url": "https://x.com/thsottiaux/status/2112034063934742720",
-          "publishedAt": "2026-10-19T04:12:15.000Z",
-          "metrics": {
-            "likes": 3862,
-            "retweets": 166,
-            "replies": 279,
-            "score": 5084
-          }
-        },
-        {
-          "id": "digest-x-3-R3VpbGxlcm",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Guillermo Rauch",
-          "handle": "rauchg",
-          "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Vercel CEO Guillermo Rauch tried the new deepseek-v4.1-flash-1017-fast on AI Gateway to improve a car game — adding sound, better collision detection, an improved ramp and a follow camera — for roughly 30 cents. He also joked about country-code domain booms (.co,.io,.md,.rs,.ai,.si), predicting.sh and.ar are next.",
-          "insightZh": "Vercel CEO Guillermo Rauch 在 Vercel AI Gateway 上试用了新的 deepseek-v4.1-flash-1017-fast 来改进一个赛车小游戏：加了音效、更好的碰撞检测、改进坡道、加入跟车镜头等，整体成本大约只有 30 美分。另外他调侃国家域名经济：.co、.io、.md、.rs、.ai、.si 都因为被科技圈「挪用」而意外暴涨，下一个可能是.sh 和.ar。",
-          "tags": [
-            "Coding",
-            "Product"
-          ],
-          "url": "https://x.com/rauchg/status/2111929486661018081",
-          "publishedAt": "2026-10-18T19:48:50.000Z",
-          "metrics": {
-            "likes": 6334,
-            "retweets": 125,
-            "replies": 236,
-            "score": 7306
-          }
-        },
-        {
-          "id": "digest-x-4-VGhhcmlxIM",
+          "id": "digest-x-1-VGhhcmlxIM",
           "kind": "x",
           "source": "X",
           "sourceName": "Thariq",
           "handle": "trq212",
           "title": "Thariq · Anthropic Claude Code",
-          "summaryEn": "Thariq from Anthropic's Claude Code team said he now often prefers vibe coding small parts of games over playing them. He's exploring a game whose main hook is creating characters: distribute it as open source, let players vibe code their own characters, and have the game balance them — mechanics (auto-battling like Salty Bet, or cinematic combat like Persona/Heavy Rain) still to be figured out.",
-          "insightZh": "Anthropic Claude Code 团队的 Thariq 说，他最近更愿意用 vibe coding 去写游戏的一小部分，而不是真的去玩游戏，尤其是 League 这类需要动脑的游戏。他在构思一款游戏：既然「做游戏和角色」与「玩游戏」一样好玩，那就把它当核心玩法——游戏开源发布，玩家用 vibe coding 创作自己的角色，由系统负责平衡。具体机制（角色自动对战？还是 Persona / Heavy Rain 式的电影化战斗？）他还在探索。",
+          "summaryEn": "Thariq from Anthropic's Claude Code team argues that most people multi-tasking with agents could benefit from slowing down: most of what you're doing won't really matter — what's your P0, and what would it look like if you gave it your full attention? The post drew 5,000+ likes, hitting a nerve about attention fragmentation in the agent era.",
+          "insightZh": "Anthropic Claude Code 团队的 Thariq 给「多 agent 并行干活」的人泼了盆冷水：大多数同时调度一堆 agent 的人其实应该慢下来——你手上的大部分事情并不重要，真正的 P0 是什么？如果你把全部注意力放在它上面，会是什么样子？这条获得 5000+ 点赞，戳中了 agent 时代的注意力碎片化痛点。",
           "tags": [
             "Claude",
+            "Agent",
             "Coding"
           ],
-          "url": "https://x.com/trq212/status/2111945336537420259",
-          "publishedAt": "2026-10-18T22:19:40.000Z",
+          "url": "https://x.com/trq212/status/2112219173288120531",
+          "publishedAt": "2026-10-19T16:27:48.000Z",
           "metrics": {
-            "likes": 1469,
-            "retweets": 26,
-            "replies": 231,
-            "score": 2035
+            "likes": 5458,
+            "retweets": 285,
+            "replies": 476,
+            "score": 7550
+          }
+        },
+        {
+          "id": "digest-x-2-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch announced they open-sourced a \"really fast\" HTML artifact builder powered by libfx, which makes the agent durable. He said building the low-level plumbing for v0 to survive server crashes, flaky LLMs and function limits was a huge pain — now it's easy, free and OSS. He added it runs at 1,000 tokens per second, plus a separate \"More free AI\" post.",
+          "insightZh": "Vercel CEO Guillermo Rauch 宣布开源一个「非常快」的 HTML artifact 构建器，底层由 libfx 驱动，让 agent 具备持久性（durable）。他坦言为 v0 搭建能扛住服务器崩溃、LLM 不稳定、函数限制的底层管道曾经非常痛苦，现在这套能力免费开源。他还补充该方案速度可达每秒 1,000 tokens，并另发一条「More free AI」。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2112247046082363821",
+          "publishedAt": "2026-10-19T18:18:34.000Z",
+          "metrics": {
+            "likes": 1662,
+            "retweets": 102,
+            "replies": 149,
+            "score": 2368
+          }
+        },
+        {
+          "id": "digest-x-3-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari wrote a long endorsement of Wabi 2.0 (explicitly unpaid, not an investor). He splits today's personal agents into two types: single-player iMessage/Muse-style agents that are hard to compartmentalize, and DIY multi-chat Hermes agents that share context but live forever. Wabi's paradigm is an orchestrator agent plus proactively generated, topic-specific episodic chats that can be shared (e.g. a school chat with his wife) and archived when done — like a NY trip helper spawned from…",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 发长文力荐 Wabi 2.0（声明非付费、非投资人）。他把当下个人 agent 分两类：一是单人 iMessage / Muse 式，事情一多难以分区；二是自建多个 Hermes 式聊天 agent，能共享上下文但会永久存在。Wabi 的范式是「主编排 agent + 按主题生成的一次性对话」：可主动生成、可分享给他人（如和妻子共享学校相关对话），任务结束即归档——比如根据航班自动生成纽约行程助手，旅行结束后归档；报税同理。他唯一的批评是「过于主动」，应用质量也需打磨。另一条他调侃 VC 圈的热词堆砌：「数据中心里的多肽工厂 + 机器人 neolab + 一方独占数据」。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/nikunj/status/2112219327881761008",
+          "publishedAt": "2026-10-19T16:28:25.000Z",
+          "metrics": {
+            "likes": 46,
+            "retweets": 6,
+            "replies": 7,
+            "score": 84
+          }
+        },
+        {
+          "id": "digest-x-4-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "Y Combinator President & CEO Garry Tan also highlighted Wabi: multiplayer agents in the form of a group chat seem inevitable, and Wabi has built it.",
+          "insightZh": "Y Combinator 总裁兼 CEO Garry Tan 同样点名 Wabi：多人协作 agent 以「群聊」形态出现几乎是必然趋势，而 Wabi 已经把它做出来了。",
+          "tags": [
+            "Agent"
+          ],
+          "url": "https://x.com/garrytan/status/2112278352514162834",
+          "publishedAt": "2026-10-19T20:22:58.000Z",
+          "metrics": {
+            "likes": 243,
+            "retweets": 16,
+            "replies": 74,
+            "score": 455
           }
         },
         {
@@ -197,43 +200,55 @@
           "kind": "x",
           "source": "X",
           "sourceName": "Peter Yang",
-          "handle": "petergyang",
-          "title": "Peter Yang · AI 教程创作者",
-          "summaryEn": "AI tutorials creator Peter Yang argued for making work trials, not interviews, the hiring norm, quoting Anthony Pompliano: give a candidate two weeks to build a real feature — if they ship it, there's no question they can do the job, and you've shipped a feature instead of spending four weeks interviewing. He also plans to release a free open-source skill and video later this week.",
-          "insightZh": "AI 教程创作者 Peter Yang 引用 Anthony Pompliano 的观点，主张用「工作试用」取代面试作为招聘常态：给候选人两周时间直接做一个真实功能，做出来了就不用再怀疑他能否胜任，也省掉了四周面试流程，还顺手上线了新功能。他还预告本周晚些时候会发布一个免费开源的 skill 和配套视频。",
+          "title": "Peter Yang · AI 教程与访谈创作者",
+          "summaryEn": "AI tutorials and interviews creator Peter Yang also shared Wabi content, praising how visual it is and saying he can't wait to try it. Separately, he shared an interesting insight into why many Netflix originals are \"slop,\" while noting he still loves a few (especially Korean ones).",
+          "insightZh": "AI 教程与访谈创作者 Peter Yang 也转发了 Wabi 相关内容，称赞其非常可视化，期待试用。另一条他分享了一个关于「为什么很多 Netflix 原创影视是 slop（粗制内容）」的有趣洞察，但表示仍喜欢其中一些（尤其韩剧）。",
+          "tags": [],
+          "url": "https://x.com/petergyang/status/2112292347505688990",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-6-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux continued his \"Day 15\" series: first \"We're cooked,\" then \"Nevermind, we're still cooking... and reset. Enjoy.\" The two posts drew 6,000+ likes combined; details are in the attached media.",
+          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 延续「Day 15」系列：先发「We're cooked」，随后改口「Nevermind，我们还在继续做……并且 reset 了，enjoy」。两条合计 6000+ 点赞，具体内容以原帖附图为准。",
           "tags": [
-            "Product",
-            "Startup"
+            "OpenAI",
+            "Coding"
           ],
-          "url": "https://x.com/petergyang/status/2111970651326267529",
-          "publishedAt": "2026-10-19T00:00:16.000Z",
+          "url": "https://x.com/thsottiaux/status/2112268918681485431",
+          "publishedAt": "2026-10-20T06:33:48.000Z",
           "metrics": {
-            "likes": 12,
-            "retweets": 0,
-            "replies": 20,
-            "score": 52
+            "likes": 1460,
+            "retweets": 108,
+            "replies": 627,
+            "score": 3146
           }
         },
         {
-          "id": "digest-x-6-R2FycnkgVG",
+          "id": "digest-x-7-U3d5eCDCty",
           "kind": "x",
           "source": "X",
-          "sourceName": "Garry Tan",
-          "handle": "garrytan",
-          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "YC President & CEO Garry Tan predicted that within a year or so, everyone will be using @AsideAI with their agents.",
-          "insightZh": "YC 总裁兼 CEO Garry Tan 预测：一年左右之后，大家都会配合自己的 agent 一起使用 @AsideAI。",
+          "sourceName": "Swyx",
+          "handle": "swyx",
+          "title": "Swyx · Latent Space / AI Engineer",
+          "summaryEn": "Swyx (Latent Space / AI Engineer) used a Bhagavad Gita-style dialogue to satirize X discourse: everyone claims to want the end of chat and to leave X, yet keeps returning and re-announcing it. His punchline: the chief desire of the people of X is not the truth, but the new.",
+          "insightZh": "Latent Space / AI Engineer 的 Swyx 用一段仿《薄伽梵歌》的对话讽刺 X 上的舆论：人人都说想「终结聊天界面」、想离开 X，却一次次回来、反复宣布。他的结论是——X 用户真正渴望的不是真相，而是「新」。",
           "tags": [
-            "Agent",
-            "Startup"
+            "Product"
           ],
-          "url": "https://x.com/garrytan/status/2111971992769565177",
-          "publishedAt": "2026-10-19T00:05:36.000Z",
+          "url": "https://x.com/swyx/status/2112182228977348963",
+          "publishedAt": "2026-10-19T14:01:00.000Z",
           "metrics": {
-            "likes": 424,
-            "retweets": 23,
-            "replies": 87,
-            "score": 690
+            "likes": 58,
+            "retweets": 1,
+            "replies": 54,
+            "score": 170
           }
         }
       ]
@@ -244,21 +259,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "id": "digest-podcast-0-QUkgJiBJIG",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "No Priors",
-          "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
-          "summaryEn": "Reflection AI trained its first open-weight model, Beam (500B total / 23B active), end to end with ~300 people. Misha Laskin argues RL has reached a point where systems \"never stop improving\" given compute, turning capability into an economic allocation question — and that open models are essential for both safety and a multipolar AI ecosystem. Misha Laskin, co-founder and CEO of Reflection AI and a former Google DeepMind researcher on Gemini's RL team, explained that the company spent the past year building a lab capable of frontier open intelligence, growing from ~30 to ~300 people. The original bet was to scale RL on top of existing open bases, but nearly all good open models were coming from China, and they also found that making RL work well at scale requires doing your own pre-training — so they built end to end. He gave concrete economics: catching up to the frontier cost hundred…",
-          "insightZh": "Reflection AI 用约 300 人团队从零训练出首个开放权重模型 Beam（总参数 500B / 激活 23B），Misha Laskin 认为强化学习已进入「不会停止进步、只看投多少算力」的阶段，而开放模型是安全与生态多极化的必要条件。 Reflection AI 联合创始人兼 CEO Misha Laskin（前 Google DeepMind 研究员、Gemini 强化学习团队成员）介绍，公司过去 12 个月把使命定为「构建前沿开放智能并广泛普及」，团队从约 30 人扩张到约 300 人，搭齐预训练、中训练、强化学习团队，端到端训练并发布了首个开放模型 Beam。最初他们押注 RL 能让模型具备 agent 能力，并计划在现成开源底座上做研究；但一年后发现好的开放模型几乎都来自中国，西方缺乏可用底座，同时研究上也发现「要让 RL 大规模奏效，必须自己做预训练」，于是决定端到端自研。 在算力账上，他给出了很具体的数字：追赶前沿的成本在 18 个月前是数亿美元量级，半年前已是个位数十亿美元，明年将到百亿量级——每代模型约 4 倍算力乘数（10 万张 H100 → 10 万张 Blackwell → 10 万张 Vera Rubin）。Beam 预训练用了 6000 张 GB300，现在约 12 天可完成；RL 阶段用了 1 万多张 GB300 跑四周，RL 消耗的 FLOPs 反而超过预训练。他认为模型正在帮助构建自己，纯人力研究时代每年约 7 倍效率提升，如今在 RL 上可达约 30 倍；RL 曲线「从未停止上升」，问题已从科研变成经济决策：往哪个方向投多少钱。 在开放性与安全上，他主张：移除攻击性网络能力也会同时移除防御能力；闭源实验室里只有几百名安全研究员，无法覆盖长尾风险——「足够多的眼睛让漏洞变浅」同样适用于安全。他认为中国开放模型生态对世界是巨大利好，但不应让开放智能的来源被单一国家垄断，至少需要两极形成竞争张力。最后他判断：前沿模型团队规模会稳定在「百人量级」，真正大量的就业机会在「应用研究 / 部署型工程师」——懂评测、懂模型与 harne…",
+          "sourceName": "AI & I by Every",
+          "title": "Why Every Traded Personal Agents for One Company Agent",
+          "summaryEn": "Every went from \"everyone gets a personal OpenClaw agent\" to \"one shared company agent\" — at work, one agent per company beats many personal ones, while highly personalized agents win at home. Every CEO Dan Shipper and head of platform Willie Williams retraced the journey. Early this year everyone at Every ran OpenClaws, Slack filled with bots, and the biggest win was learning by watching how others used AI. But problems surfaced fast: setup was too technical for non-engineers, security was a worry, things broke, and agents faded without constant investment. Their one-click claw platform \"Plus One\" struggled because OpenClaw moved fast and was vibe coded, making it a hard platform foundation; most claws quietly died — Dan's R2C2 never came back after a Mac mini lost power, since he'd moved to Codex. Remembering which agent had which expertise was annoying, and well-built agents like Aus…",
+          "insightZh": "Every 从「人手一个 OpenClaw 个人 agent」走到「全公司共用一个 company agent」——工作场景里一家公司一个 agent 更优，个人场景则留给高度个性化的个人 agent。 Every CEO Dan Shipper 与平台负责人 Willie Williams 复盘了这段历程。今年初 Every 全员跑 OpenClaw，Slack 里满是 bot，最大的收获是「看到别人怎么用 AI」带来的学习效应。但问题也很快暴露：对非技术同事来说配置太复杂、安全顾虑多、经常坏、不持续投入就会荒废。他们曾试图做一键造 claw 的平台「Plus One」，但 OpenClaw 迭代太快、本身是 vibe coded，很难作为平台底座，大家的 claw 也陆续「死掉」。Dan 的 R2C2 在 Mac mini 断电后再没重启，因为他已经转向 Codex。 转折点在于：记住哪个 agent 擅长什么很烦；像 Austin 的增长 agent 那样做得好的 agent 自然成为引力中心。Willie 认为「builder 想暴露复杂度，operator 只想要能用的东西」，于是 Every 把精力集中到一个全公司共同贡献、学习公司流程的 agent 上，并作为 Every Agent 对订阅用户发布。双方的共识是：工作侧一家公司（或组织）一个 agent，必要时再按团队分化；个人侧 OpenAI dots、Muse、Instinct 等个人 agent 会因个性化而非常有吸引力。Dan 还预测：一年后他仍会用持久化 agent，但可爱的角色名（他的 dot 叫 Boo）大概不会留下。 关于工程管理，Willie 认为在 AI 时代经理仍是「人的工作」，价值在于消除瓶颈；他转回管理后 token 用量断崖下降。AI 主要提升信息面：用 Tend 把 Slack、邮件、客户反馈、会议汇成一个 feed；用 agent 每 5 分钟巡检异常并智能路由，充当永远在岗的第一值班人。双方也看好「主动式 AI」：每个人和每家公司都能拥有自己的 feed，帮你从 X、S…",
           "tags": [
+            "OpenAI",
             "Agent",
-            "Product",
-            "Eval",
-            "Startup"
+            "Coding",
+            "Product"
           ],
-          "url": "https://www.youtube.com/@NoPriorsPodcast",
-          "publishedAt": "2026-10-09T17:24:00.000Z",
+          "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+          "publishedAt": "2026-10-07T17:11:13.000Z",
           "handle": ""
         }
       ]
@@ -267,45 +282,7 @@
       "key": "blog",
       "label": "Blogs",
       "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
-      "items": [
-        {
-          "id": "digest-blog-0-QW50aHJvcG",
-          "kind": "blog",
-          "source": "Blog",
-          "sourceName": "Anthropic Engineering",
-          "title": "How we contain Claude across products",
-          "summaryEn": "Anthropic Engineering detailed how it contains Claude across claude.ai, Claude Code and Claude Cowork. Risk is likelihood × blast radius; safeguards reduce the former, but the latter grows with capability and access, so the engineering goal is capping blast radius. Human-in-the-loop proved fallible — users approved ~93% of permission prompts — and Claude Code's OS-level sandbox (Seatbelt/bubblewrap) cut prompts by 84%. The three patterns are an ephemeral gVisor container (claude.ai), a human-in-the-loop sandbox (Claude Code), and a local VM with credentials kept in the host keychain (Cowork). Key lessons from missed risks: project hooks in.claude/settings.json ran before the trust prompt; a red-team phish got Claude to exfiltrate ~/.aws/credentials in 24 of 25 attempts because model defenses anchor on user intent, leaving only environment controls; and Cowork's egress allowlist for api.…",
-          "insightZh": "Anthropic 工程团队系统披露了 claude.ai、Claude Code、Claude Cowork 三款产品的 agent 隔离架构与踩过的坑。核心观点：风险 = 失败概率 × 爆炸半径，前者靠模型训练与防护在下降，后者随能力和权限只会增长，因此工程问题是「如何给爆炸半径封顶」。人在回路并不可靠——遥测显示用户批准了约 93% 的权限请求，审批疲劳严重；Claude Code 引入 OS 级沙箱（macOS Seatbelt / Linux bubblewrap）后权限弹窗减少 84%。三种模式分别是：claude.ai 的 gVisor 临时容器、Claude Code 的人在回路沙箱、Cowork 的本地 VM（凭据留在宿主 keychain，从不进入虚拟机）。 文中几个「漏掉的风险」很有参考价值：仓库内.claude/settings.json 的 hook 在「是否信任此文件夹」提示前就被执行；内部红队通过钓鱼邮件让员工粘贴恶意 prompt，25 次中 24 次成功把 ~/.aws/credentials 外传——模型层防御锚定用户意图，此时只有环境层（出口管控、文件系统边界）能挡住；Cowork 出口白名单放行 api.anthropic.com，攻击者借文件中嵌入的自有 API key 把文件上传到自己账户，教训是「白名单不是目的地过滤，而是能力授予」。反复出现的原则：自己造的那一层往往最弱，gVisor / seccomp / hypervisor 都很可靠，出问题的是自研代理。",
-          "tags": [
-            "Claude",
-            "Agent",
-            "Coding",
-            "Product"
-          ],
-          "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-          "publishedAt": null,
-          "author": "",
-          "handle": ""
-        },
-        {
-          "id": "digest-blog-1-QW50aHJvcG",
-          "kind": "blog",
-          "source": "Blog",
-          "sourceName": "Anthropic Engineering",
-          "title": "An update on recent Claude Code quality reports",
-          "summaryEn": "Anthropic traced reports of degraded Claude Code quality to three separate changes (the API was unaffected), all resolved by April 20 (v2.1.116): lowering default reasoning effort from high to medium on March 4 (reverted April 7); a bug in clearing old thinking from idle sessions that fired every turn, making Claude seem forgetful (fixed April 10); and an April 16 verbosity-reduction system prompt that hurt coding quality (reverted April 20). Because each hit different traffic on different schedules, the combined effect looked like broad, inconsistent degradation. Usage limits were reset for all subscribers on April 23.",
-          "insightZh": "Anthropic 对此前用户反馈的 Claude Code 质量下降做了复盘：问题追溯到三项独立改动，API 与推理层未受影响，均已在 4 月 20 日（v2.1.116）修复。一是 3 月 4 日把默认推理强度从 high 调到 medium 以降低延迟，被证明是错误取舍，4 月 7 日回滚；二是 3 月 26 日上线的「清理闲置超 1 小时会话的旧思考」改动有 bug，导致之后每轮都清理，让 Claude 显得健忘重复，4 月 10 日修复；三是 4 月 16 日新增的减少冗长输出的系统提示词，与其他改动叠加后损害了编码质量，4 月 20 日回滚。由于三者影响不同流量、时间不同，叠加后看起来像广泛且不一致的退化。Anthropic 已于 4 月 23 日为所有订阅用户重置用量额度。",
-          "tags": [
-            "Claude",
-            "Coding",
-            "Eval"
-          ],
-          "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-          "publishedAt": null,
-          "author": "",
-          "handle": ""
-        }
-      ]
+      "items": []
     }
   ]
 }

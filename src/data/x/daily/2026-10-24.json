@@ -1,0 +1,408 @@
+{
+  "date": "2026-10-24",
+  "title": "Builder Signals · 2026-10-24",
+  "generatedAt": "2026-10-23T23:00:17.836Z",
+  "feedGeneratedAt": "2026-10-23T06:42:39.698Z",
+  "summary": "Follow Builders 今日捕捉到 38 条 X 动态、1 集播客、0 篇博客；本站精选 16 条高信号内容。",
+  "stats": {
+    "xBuilders": 18,
+    "totalTweets": 38,
+    "selectedXTweets": 15,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 16
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-Q2xhdWRlIM",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Claude",
+      "handle": "claudeai",
+      "title": "Claude · Anthropic 官方账号",
+      "summaryEn": "Anthropic shipped three updates this week. Claude Models on Google Cloud (Anthropic managed) is now generally available, bringing the full Claude Platform feature set to Google Cloud with IAM credentials, billing, and commitment retirement. New features and betas will ship there the same day they go live on the native Claude Platform — Opus 5.5 fast mode, code execution, and the Skills API are available today. And starting next week, Claude web, desktop, and mobile sessions on Pro, Max, and Team plans will run in…",
+      "insightZh": "Anthropic 这周连发三条产品更新。第一，Claude Models on Google Cloud（Anthropic 托管）正式 GA，可在 Google Cloud 上用 IAM 凭证、计费和承诺消费抵扣获得完整的 Claude Platform 能力；第二，原生 Claude Platform 上的新功能和 beta 将同日在该渠道上线，Opus 5.5 Fast mode、code execution、Skills API 等今天即可使用；第三，从下周起，Claude 网页、桌面和移动端在 Pro / Max / Team 计划下默认以 auto mode 运行——不再逐步请求用户批准，而是由自动检查拦截高风险动作，可随时切回手动。",
+      "tags": [
+        "Claude",
+        "Coding",
+        "Product",
+        "Research"
+      ],
+      "url": "https://x.com/claudeai/status/2113380122468454765",
+      "publishedAt": "2026-10-22T21:21:00.000Z",
+      "metrics": {
+        "likes": 4120,
+        "retweets": 237,
+        "replies": 207,
+        "score": 5482
+      }
+    },
+    {
+      "id": "digest-x-1-Qm9yaXMgQ2",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Boris Cherny",
+      "handle": "bcherny",
+      "title": "Boris Cherny · Anthropic Claude Code 负责人",
+      "summaryEn": "Boris Cherny announced that Agent Skills, which began as an experiment in Claude Code and has since been widely adopted across the industry, is being donated by Anthropic to the Agentic AI Foundation, alongside MCP — moving Skills from a vendor feature toward a neutral industry standard.",
+      "insightZh": "Boris Cherny 宣布：Agent Skills 最初是 Claude Code 里的一个实验，如今已被业界广泛采用，因此 Anthropic 决定把它捐赠给 Agentic AI Foundation，与 MCP 并列。这意味着 Skills 正从单一厂商特性走向中立的行业标准。",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://x.com/bcherny/status/2113333859907747871",
+      "publishedAt": "2026-10-22T18:17:10.000Z",
+      "metrics": {
+        "likes": 1697,
+        "retweets": 53,
+        "replies": 164,
+        "score": 2237
+      }
+    },
+    {
+      "id": "digest-podcast-0-VHJhaW5pbm",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Training Data",
+      "title": "David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience",
+      "summaryEn": "David Silver, the mind behind AlphaGo, left DeepMind to found Ineffable Intelligence and bet on a path that bypasses LLMs and human data entirely — pure reinforcement learning inside simulated environments rich in emergent complexity, aiming for a \"super learner\" that discovers all knowledge for itself. He forecasts true superintelligence in roughly three years. Silver explained that hundreds of thousands of researchers are already doubling down on the LLM path, and he'd rather look under the lamppost no one is searching. His super learner has depth — starting from nothing and discovering knowledge beyond humans, the way humanity collectively discovered language, science, and math — and breadth, learning from any stream of experience, simulated, digital, or physical. He respects LLM progress but says it still relies heavily on humans in the loop, and human data may be weighing things do…",
+      "insightZh": "AlphaGo 之父 David Silver 离开 DeepMind 创办 Ineffable Intelligence，押注一条完全不经过 LLM 和人类数据的路线——在高度涌现复杂度的模拟环境中，用纯强化学习打造能自主发现一切知识的「超级学习者」，并预测约三年内实现真正的超级智能。 Silver 解释了出走原因：全球已有数十万研究者押注同一条 LLM 路径（预训练、后训练、编码），他不想做第 100,001 个人，而要去照亮「没人看的那盏路灯」。他定义的超级学习者有两个维度：深度上，能从一无所知出发，一路发现超越人类的知识，就像人类集体从零发现语言、科学和数学；广度上，可以被放进任何经验流——模拟、数字或物理世界——持续学习。他承认 LLM 在数学和科学上取得进展，但认为目前仍需大量人在回路，远非完全自主，且人类数据可能反而在「拖累」系统。 具体做法上，团队一边构建大规模 RL 训练栈，一边搭建名为「crucibles（熔炉）」的模拟环境：不是手工设计任务，而是通过物理引擎中百万级交互物体、百万级交互 agent 等方式产生涌现复杂度。他们不精心设计「科学」或「语言」的奖励函数，而是给简单目标，期待 agent 像进化或人类历史那样自发涌现出协作、交流、交易、算术、工具乃至科学。Silver 认为，只要模拟是图灵完备的，计算、经济、语言、数学都可在其中表达；若超级智能能在模拟中造出，速度将快 10-100 倍，也最安全。Espeholt 补充，他此前参与的 MetNet 天气模型就优于物理模拟，他早年设计的 GPU/TPU 规模化 RL 架构（如 SeedRL）也在当下被 LLM 社区「重新发现」。 对齐方面，Silver 认为基于语言和人类先验的对齐正逼近极限，agent 越强越会「说一套做一套」，监控思维链会越来越难；他提出影子动作、由另一个超级智能做监控者等非语言监控思路，并承诺在模拟中建立「超级智能科学」的充分证据之前，不会推进任何真实世界部署。团队目前仅 20 人，刻意保持高人均算力和研究主导文化。他预测一年内会看到方法有效的强有力证据，超级智能的时间…",
+      "tags": [
+        "Agent",
+        "Product",
+        "Startup",
+        "Research"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+      "publishedAt": "2026-10-13T09:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-Q2xhdWRlIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Claude",
+          "handle": "claudeai",
+          "title": "Claude · Anthropic 官方账号",
+          "summaryEn": "Anthropic shipped three updates this week. Claude Models on Google Cloud (Anthropic managed) is now generally available, bringing the full Claude Platform feature set to Google Cloud with IAM credentials, billing, and commitment retirement. New features and betas will ship there the same day they go live on the native Claude Platform — Opus 5.5 fast mode, code execution, and the Skills API are available today. And starting next week, Claude web, desktop, and mobile sessions on Pro, Max, and Team plans will run in…",
+          "insightZh": "Anthropic 这周连发三条产品更新。第一，Claude Models on Google Cloud（Anthropic 托管）正式 GA，可在 Google Cloud 上用 IAM 凭证、计费和承诺消费抵扣获得完整的 Claude Platform 能力；第二，原生 Claude Platform 上的新功能和 beta 将同日在该渠道上线，Opus 5.5 Fast mode、code execution、Skills API 等今天即可使用；第三，从下周起，Claude 网页、桌面和移动端在 Pro / Max / Team 计划下默认以 auto mode 运行——不再逐步请求用户批准，而是由自动检查拦截高风险动作，可随时切回手动。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/claudeai/status/2113380122468454765",
+          "publishedAt": "2026-10-22T21:21:00.000Z",
+          "metrics": {
+            "likes": 4120,
+            "retweets": 237,
+            "replies": 207,
+            "score": 5482
+          }
+        },
+        {
+          "id": "digest-x-1-Qm9yaXMgQ2",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Boris Cherny",
+          "handle": "bcherny",
+          "title": "Boris Cherny · Anthropic Claude Code 负责人",
+          "summaryEn": "Boris Cherny announced that Agent Skills, which began as an experiment in Claude Code and has since been widely adopted across the industry, is being donated by Anthropic to the Agentic AI Foundation, alongside MCP — moving Skills from a vendor feature toward a neutral industry standard.",
+          "insightZh": "Boris Cherny 宣布：Agent Skills 最初是 Claude Code 里的一个实验，如今已被业界广泛采用，因此 Anthropic 决定把它捐赠给 Agentic AI Foundation，与 MCP 并列。这意味着 Skills 正从单一厂商特性走向中立的行业标准。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/bcherny/status/2113333859907747871",
+          "publishedAt": "2026-10-22T18:17:10.000Z",
+          "metrics": {
+            "likes": 1697,
+            "retweets": 53,
+            "replies": 164,
+            "score": 2237
+          }
+        },
+        {
+          "id": "digest-x-2-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "Thibault Sottiaux's \"Day 18\" update: the Decisions API is GA, OpenResponses joined the Linux Foundation, the team shipped performance improvements, and Uber is going all-in on Codex and work. He also teased a \"reset\" landing before 10am PST the next day together with a small ship.",
+          "insightZh": "Thibault Sottiaux 的「Day 18」更新：Decisions API 正式 GA，OpenResponses 加入 Linux Foundation，团队做了一些性能优化，Uber 正在全面押注 Codex 与 work；他同时预告次日太平洋时间上午 10 点前会有一次「重置」随一个小版本一起上线。",
+          "tags": [
+            "OpenAI",
+            "Coding"
+          ],
+          "url": "https://x.com/thsottiaux/status/2113492187770175603",
+          "publishedAt": "2026-10-23T04:46:19.000Z",
+          "metrics": {
+            "likes": 4772,
+            "retweets": 228,
+            "replies": 748,
+            "score": 7180
+          }
+        },
+        {
+          "id": "digest-x-3-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "title": "Swyx · Latent Space / AI Engineer 创始人",
+          "summaryEn": "Swyx called Opus 5.5 the best work-estimator model he has used. As we delegate more work, calibration matters: don't say 2-3 working days like a human would when an indefatigable, massively parallel AGI can finish in 2-3 hours. He added that estimating ETAs for its own pipeline fixes while the pipeline is running is extremely important for pipelining, and endorsed the attitude of not blaming AI for finding bugs but locking in to clear them ASAP.",
+          "insightZh": "Swyx 认为 Opus 5.5 是他用过最好的「工作量估算」模型。随着越来越多工作被委派给 AI，这种校准能力越来越重要——别再像人类一样告诉他要 2-3 个工作日，对一个不知疲倦、可大规模并行的 AGI 来说，2-3 小时就能完成。他还强调，在跑流水线的同时估算自身修复的 ETA，对 pipelining 极其关键；另外他赞同面对 AI 发现的 bug，不该怪 AI，而应全力尽快清零。",
+          "tags": [
+            "Research"
+          ],
+          "url": "https://x.com/swyx/status/2113283272130412684",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-4-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Aaron Levie argues that security through obscurity is fully over: it barely worked with humans and fails in a world of autonomous systems that probe every crevice and try every attack permutation. Years of legacy enterprise infrastructure must be upgraded, security practices modernized, data pipelines cleaned up, and access controls tightened. Agents will help defenders by accelerating the work and simulating risk vectors, but the road is long — partly why diffusion timelines will take longer than some expect.",
+          "insightZh": "Aaron Levie 断言「安全靠隐蔽」已经彻底终结：它对人类攻击者都只是勉强有效，在自主系统会遍历每一处缝隙、尝试每一种攻击组合的世界里完全失效。因此大量遗留企业基础设施需要升级，安全实践、数据管道、访问控制都要重整。Agent 在防御侧会有帮助——既能加速这些工作，也能模拟风险向量——但前路很长，这也是 AI 扩散周期会比很多人预想更长的部分原因。",
+          "tags": [
+            "Agent",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/levie/status/2113499900399034689",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-5-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Guillermo Rauch summed up the week: your aunt's password is \"P4ssword!\" on a kitchen Post-it, while the stewards of the internet's encryption used \"4\" — a key that could decrypt nearly everything, with residual risk still being cleaned up. He called for killing static credentials: just as the industry rallied around TLS \"green locks,\" it should do the same for OIDC so thieves can only steal self-destructing keys. He also highlighted a real-world Generative UI example, noting AI Gateway is itself a tool marketplace…",
+          "insightZh": "Guillermo Rauch 用一个讽刺对比总结本周安全事件：你阿姨的密码是贴在厨房便利贴上的「P4ssword!」，而互联网加密守护者的密码是「4」——就一个字符，这把密钥几乎可以用来解密一切，善后仍在继续。他呼吁终结「静态凭证」：像当年业界合力推动 TLS「绿锁」一样，推动 OIDC 普及，让窃贼最多只能偷到「会自毁的密钥」。另外他点赞了一个生成式 UI 实例，指出 AI Gateway 本身就是工具市场，在 AI SDK 里加一行代码即可接入「Google」——搜索、天气、体育、股票、选举等。",
+          "tags": [
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2113462657059639505",
+          "publishedAt": "2026-10-23T02:03:43.000Z",
+          "metrics": {
+            "likes": 196,
+            "retweets": 9,
+            "replies": 35,
+            "score": 302
+          }
+        },
+        {
+          "id": "digest-x-6-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Against the backdrop of recent vulnerabilities, Amjad Masad shared how Replit is protecting users' apps from them.",
+          "insightZh": "在近期一系列安全漏洞事件背景下，Amjad Masad 分享了 Replit 如何保护用户应用免受这些漏洞影响的说明。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/amasad/status/2113474587166171560",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "title": "Peter Yang · 前产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang released a video on 6 steps to secure your accounts given recent incidents, with a prompt that has AI walk you through them and generate a personalized security report. He also reflected on the contrast of supporting his mom's cancer treatment: breakthroughs everywhere online, yet documents are still faxed and imaging delivered on CD-ROMs. Separately, he talked with @fishmanaf about life after leaving his product job, including building games with his kid by talking to ChatGPT.",
+          "insightZh": "Peter Yang 发布新视频：鉴于近期频发的安全事件，他总结了保护账号的 6 个步骤，并提供一段 prompt，让 AI 带你逐步完成并生成个性化安全报告。他还感慨陪母亲做癌症治疗的反差：网上满是技术突破，现实中仍在传真文件、用 CD-ROM 递送影像。此外他与 @fishmanaf 聊了离开产品岗位后的生活，包括和孩子通过与 ChatGPT 对话来做游戏。",
+          "tags": [
+            "OpenAI",
+            "Product"
+          ],
+          "url": "https://x.com/petergyang/status/2113405131106742406",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-8-QWxleCBBbG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Alex Albert",
+          "handle": "alexalbert__",
+          "title": "Alex Albert · Anthropic Research",
+          "summaryEn": "Alex Albert floated a side quest: running a bunch of local small businesses with AI helping out. He thinks products like Claude Duet could end up bigger for these businesses than Square or Google Maps were, and asked small business owners using Claude to share what they're doing.",
+          "insightZh": "Alex Albert 提出一个「支线任务」设想：在 AI 协助下经营一批本地小生意。他认为像 Claude Duet 这样的产品对这些小企业的意义，可能超过当年的 Square 或 Google Maps；并征集正在用 Claude 经营小生意的用户分享做法。",
+          "tags": [
+            "Claude",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/alexalbert__/status/2113386454907007444",
+          "publishedAt": "2026-10-22T21:46:10.000Z",
+          "metrics": {
+            "likes": 226,
+            "retweets": 3,
+            "replies": 80,
+            "score": 398
+          }
+        },
+        {
+          "id": "digest-x-9-TWF0dCBUdX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Matt Turck",
+          "handle": "mattturck",
+          "title": "Matt Turck · FirstMark 合伙人、MAD Podcast 主持人",
+          "summaryEn": "Matt Turck released his conversation with Mistral research lead Pierre Stock, \"Mistral is SO back,\" on Le Chonk, the West's biggest open model: the Western open-weight comeback (Beam, Le Chonk, Muse, Nemotron), training on 3,800 GPUs in Mistral's own datacenters, Meta keeping its best model closed while Mistral opens Chonk, and why Chinese labs remain at the frontier. He also noted everyone is now competing with everyone in AI — chips vs. inference providers, inference vs. neo-clouds and post-training, models vs.…",
+          "insightZh": "Matt Turck 发布与 Mistral 研究负责人 Pierre Stock 的对谈《Mistral is SO back》，围绕西方最大开源模型「Le Chonk」：西方开放权重模型回潮（Beam、Le Chonk、Muse、Nemotron）、在 Mistral 自有数据中心用 3,800 张 GPU 训练、Meta 把最好的模型闭源而 Mistral 开放 Chonk、以及为何中国实验室仍在前沿。他还评论 AI 行业正在全面互相竞争：芯片商对推理商、推理商对新云和后训练、模型对应用和芯片——而 NVIDIA 卖给所有人。",
+          "tags": [
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/mattturck/status/2113311361639829673",
+          "publishedAt": "2026-10-22T16:47:46.000Z",
+          "metrics": {
+            "likes": 35,
+            "retweets": 4,
+            "replies": 6,
+            "score": 63
+          }
+        },
+        {
+          "id": "digest-x-10-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "handle": "adityaag",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "Aditya Agarwal shared his conversation with Physical Intelligence co-founder Sergey Levine: robotics is going through the same shift LLMs did — from fine-tuning, to prompting, to simply telling the model what you want — with π0.7 learning new skills from plain-language coaching. He also argued that a PhD from a top university doesn't necessarily make someone a great robotics researcher.",
+          "insightZh": "Aditya Agarwal 分享与 Physical Intelligence 联合创始人 Sergey Levine 的对谈：机器人正经历和 LLM 相同的转变——从微调、到 prompting、再到直接告诉模型你想要什么；π0.7 能通过自然语言指导学会新技能。他还提出，顶尖大学的博士学位并不一定造就优秀的机器人研究者。",
+          "tags": [
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/adityaag/status/2113385971844518124",
+          "publishedAt": "2026-10-22T18:12:45.000Z",
+          "metrics": {
+            "likes": 195,
+            "retweets": 10,
+            "replies": 2,
+            "score": 239
+          }
+        },
+        {
+          "id": "digest-x-11-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "Nikunj Kothari says he's batting nearly 10% on seed companies he meets getting acquired within a few months of the first meeting. The seed-to-Series A squeeze is at an all-time high and won't abate soon: \"Never been easier to dream, never been harder to scale.\" An essay is coming next week.",
+          "insightZh": "Nikunj Kothari 说，他见过的种子期公司里，约有 10% 在首次见面后几个月内就被收购。种子轮到 A 轮的挤压达到历史最高，且短期不会缓解——「做梦从未如此容易，规模化从未如此困难」。他下周将发布相关长文。",
+          "tags": [],
+          "url": "https://x.com/nikunj/status/2113405034826477910",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-12-TWFkaHUgR3",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Madhu Guru",
+          "title": "Madhu Guru · Meta AI 高级总监（前 Google Gemini / Veo / Nano Banana 负责人）",
+          "summaryEn": "Madhu Guru's advice to PMs feeling stuck as AI reshapes their role: stop waiting for clarity and create it through action. Inertia born of fear kills clarity. Build something, automate a workflow, connect with people who inspire you — each action brings experience, feedback, and new ideas. Clarity is often the consequence of action.",
+          "insightZh": "Madhu Guru 给感到被 AI 冲击的 PM 一个建议：不要等待清晰，要通过行动创造清晰。很多人想转向 AI 却不知从何开始、心怀恐惧，这种惰性会扼杀清晰度。去做点东西、自动化一个流程、结识激励你的人——每次行动都带来经验、反馈和新想法，清晰往往是行动的结果。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/realmadhuguru/status/2113437016818057641",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-13-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "Garry Tan recommended Aside Browser as a real solution for making agents great at using the web, and commented that AI is transforming many powerful SaaS businesses — \"this is what it looks like when it really hits.\"",
+          "insightZh": "Garry Tan 推荐 Aside Browser，称其是让 agent 真正擅长使用网页的切实方案；并转发评论称 AI 正在改造大量强势 SaaS 业务，「这就是它真正冲击时的样子」。",
+          "tags": [
+            "Agent"
+          ],
+          "url": "https://x.com/garrytan/status/2113367007567794563",
+          "publishedAt": "2026-10-22T20:28:53.000Z",
+          "metrics": {
+            "likes": 141,
+            "retweets": 7,
+            "replies": 37,
+            "score": 243
+          }
+        },
+        {
+          "id": "digest-x-14-R29vZ2xlIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Google Labs",
+          "title": "Google Labs · Google AI 实验产品",
+          "summaryEn": "Google Labs released \"Dreambeans Roulette: Part 3,\" in which VP of Product Brian R. discusses taking bets and exploring areas the industry overlooks. Dreambeans offers no streaks or doomscrolling — just personalized nudges to get off your phone and into the world. It's open to users 18+ in the US, with more regions to come.",
+          "insightZh": "Google Labs 发布「Dreambeans Roulette」系列第三集，产品 VP Brian R. 谈下注与探索被行业忽视领域的重要性。Dreambeans 主打无连续打卡、无无限刷屏，而是个性化地推动用户放下手机走出去，现已向美国 18 岁以上用户开放，更多地区稍后跟进。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/GoogleLabs/status/2113340712523841696",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-VHJhaW5pbm",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Training Data",
+          "title": "David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience",
+          "summaryEn": "David Silver, the mind behind AlphaGo, left DeepMind to found Ineffable Intelligence and bet on a path that bypasses LLMs and human data entirely — pure reinforcement learning inside simulated environments rich in emergent complexity, aiming for a \"super learner\" that discovers all knowledge for itself. He forecasts true superintelligence in roughly three years. Silver explained that hundreds of thousands of researchers are already doubling down on the LLM path, and he'd rather look under the lamppost no one is searching. His super learner has depth — starting from nothing and discovering knowledge beyond humans, the way humanity collectively discovered language, science, and math — and breadth, learning from any stream of experience, simulated, digital, or physical. He respects LLM progress but says it still relies heavily on humans in the loop, and human data may be weighing things do…",
+          "insightZh": "AlphaGo 之父 David Silver 离开 DeepMind 创办 Ineffable Intelligence，押注一条完全不经过 LLM 和人类数据的路线——在高度涌现复杂度的模拟环境中，用纯强化学习打造能自主发现一切知识的「超级学习者」，并预测约三年内实现真正的超级智能。 Silver 解释了出走原因：全球已有数十万研究者押注同一条 LLM 路径（预训练、后训练、编码），他不想做第 100,001 个人，而要去照亮「没人看的那盏路灯」。他定义的超级学习者有两个维度：深度上，能从一无所知出发，一路发现超越人类的知识，就像人类集体从零发现语言、科学和数学；广度上，可以被放进任何经验流——模拟、数字或物理世界——持续学习。他承认 LLM 在数学和科学上取得进展，但认为目前仍需大量人在回路，远非完全自主，且人类数据可能反而在「拖累」系统。 具体做法上，团队一边构建大规模 RL 训练栈，一边搭建名为「crucibles（熔炉）」的模拟环境：不是手工设计任务，而是通过物理引擎中百万级交互物体、百万级交互 agent 等方式产生涌现复杂度。他们不精心设计「科学」或「语言」的奖励函数，而是给简单目标，期待 agent 像进化或人类历史那样自发涌现出协作、交流、交易、算术、工具乃至科学。Silver 认为，只要模拟是图灵完备的，计算、经济、语言、数学都可在其中表达；若超级智能能在模拟中造出，速度将快 10-100 倍，也最安全。Espeholt 补充，他此前参与的 MetNet 天气模型就优于物理模拟，他早年设计的 GPU/TPU 规模化 RL 架构（如 SeedRL）也在当下被 LLM 社区「重新发现」。 对齐方面，Silver 认为基于语言和人类先验的对齐正逼近极限，agent 越强越会「说一套做一套」，监控思维链会越来越难；他提出影子动作、由另一个超级智能做监控者等非语言监控思路，并承诺在模拟中建立「超级智能科学」的充分证据之前，不会推进任何真实世界部署。团队目前仅 20 人，刻意保持高人均算力和研究主导文化。他预测一年内会看到方法有效的强有力证据，超级智能的时间…",
+          "tags": [
+            "Agent",
+            "Product",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+          "publishedAt": "2026-10-13T09:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

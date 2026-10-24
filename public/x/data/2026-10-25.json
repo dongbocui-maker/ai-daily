@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-25",
+  "title": "Builder Signals · 2026-10-25",
+  "generatedAt": "2026-10-24T23:00:17.143Z",
+  "feedGeneratedAt": "2026-10-24T06:39:06.255Z",
+  "summary": "Follow Builders 今日捕捉到 28 条 X 动态、1 集播客、0 篇博客；本站精选 11 条高信号内容。",
+  "stats": {
+    "xBuilders": 14,
+    "totalTweets": 28,
+    "selectedXTweets": 10,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 11
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-VGhhcmlxIM",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Thariq",
+      "handle": "trq212",
+      "title": "Thariq · Anthropic Claude Code 团队",
+      "summaryEn": "Thariq, a core member of the Claude Code team, announced he has left Anthropic after more than a year of watching Claude Code scale beyond what he imagined. He praised Anthropic's \"race to the top\" mission and the talent and earnestness of his colleagues, said he'll take a break before starting something new, and pointed followers to @addyosmani, @lydiahallie, @_catwu, @ClaudeDevs and Claude Code creator @bcherny for future Claude Code content.",
+      "insightZh": "Claude Code 核心成员 Thariq 宣布离开 Anthropic。他在 Claude Code 团队工作了一年多，亲眼看着产品规模远超预期；他称赞 Anthropic 的「race to the top」理念和同事的专业与真诚，表示自己会先休息一段时间再投入新事情，并推荐大家继续关注 @addyosmani、@lydiahallie、@_catwu、@ClaudeDevs 以及 Claude Code 的发起人 @bcherny 获取 Claude Code 内容。",
+      "tags": [
+        "Claude",
+        "Coding"
+      ],
+      "url": "https://x.com/trq212/status/2113844051938054167",
+      "publishedAt": "2026-10-24T04:04:29.000Z",
+      "metrics": {
+        "likes": 10516,
+        "retweets": 356,
+        "replies": 967,
+        "score": 13874
+      }
+    },
+    {
+      "id": "digest-x-1-VGhpYmF1bH",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Thibault Sottiaux",
+      "handle": "thsottiaux",
+      "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT 负责人",
+      "summaryEn": "OpenAI Codex lead Thibault Sottiaux shipped Codex CLI updates: reusable prompt presets, inline model and permission settings, enterprise MCP sign-in, a fix for failures when resuming long sessions, and Windows corporate-proxy authentication. He noted CLI usage has grown 2x since DevDay, and changing reasoning mid-conversation in Codex no longer invalidates the cache. He also warned that the line between having a tool and being a tool is subtle these days — don't build yourself into being one.",
+      "insightZh": "OpenAI Codex 负责人 Thibault Sottiaux 更新了 Codex CLI：新增可复用的 prompt 预设、内联模型与权限设置、企业级 MCP 登录，修复了恢复长会话失败的问题，并支持 Windows 企业代理认证。他透露 Codex CLI 用量自 DevDay 以来翻了一倍。另外在 Codex 中途切换推理强度不再导致缓存失效。他还留下一句提醒：「拥有工具」和「沦为工具」之间的界限很微妙，别不小心把自己做成了工具。",
+      "tags": [
+        "OpenAI",
+        "Coding",
+        "Research"
+      ],
+      "url": "https://x.com/thsottiaux/status/2113770862860222611",
+      "publishedAt": "2026-10-23T23:13:40.000Z",
+      "metrics": {
+        "likes": 1281,
+        "retweets": 25,
+        "replies": 165,
+        "score": 1711
+      }
+    },
+    {
+      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "No Priors",
+      "title": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
+      "summaryEn": "AI is driving a \"vuln apocalypse\" — Log4j-scale events that used to happen yearly now happen weekly, and over half of engineering time may go to security in the next 18 months. But AI is also the cure: Cloudflare's answer is more red teams, smaller attack surfaces, and new micropayment and content-discovery rails for the agentic web. Cloudflare CTO Dane Knecht says reported CVEs have grown exponentially over the past three to six months; many major finds come not from nation states but from high schoolers pointing agents at targets for bug bounties. He expects more than 50% of engineering time to go to security over the next 18 months, but sees it as a transition after which productivity rebounds. He rejects air-gap doomsday thinking, crediting the shift to zero trust. For safer software, he returns to first principles — reduce attack surface and code footprint — noting today's verbose…",
+      "insightZh": "AI 正在引发一场「漏洞末日」——过去一年一次的 Log4j 级事件如今每周都在发生，未来 18 个月企业过半工程时间将投入安全；但同一个 AI 也是解药，Cloudflare 的应对是多红队、缩小攻击面，以及为 agent 网络建立微支付与内容发现新基础设施。 Cloudflare CTO Dane Knecht 指出，过去三到六个月上报的 CVE 呈指数级增长，以前一年一次的 Log4j、Shellshock 级事件现在几乎每周发生。发现者往往不是国家级黑客，而是把 agent 指向目标、拿漏洞赏金的高中生（主持人戏称「agent kitties」）。他预计未来 18 个月内超过 50% 的工程时间会花在安全上，但这是过渡期：AI 扫完大部分代码后，生产力将大幅回升。他不认同「把一切物理隔离」的末日论，认为零信任架构让很多企业处于更有利位置。关于如何写出更安全的软件，他回到第一性原理：缩小攻击面、减少代码量；而当前 AI 偏啰嗦、爱制造复杂度，这正需要人的判断。Cloudflare 内部有一份名为「Codex」的工程原则汇编，并提炼成 agent 在每个评审环节都遵循的「十诫」。内部他们计划把红队从 1 个扩到 4-5 个，主张「发现优先」，靠危机倒逼修复流程自动化，同时坚持「不发布就是等死」，安全与新功能两手都要。 关于 agent 网络：人类和 agent 正处在「混乱的中间态」，同走一套为人设计的网络。他认为会出现面向 agent 的内容交付方式，内容站点可按 CPM 向 agent 收费，这需要每秒百万级的微支付通道——他看好 Stripe 推动的 x402（复用 HTTP 402 状态码）。Cloudflare 已推出内容变现网关（含 agent 钱包与稳定币），并与 OpenAI 合作「signals」项目，让 agent 无需反复爬全网即可发现新内容。他还介绍了 Cloudflare OS：内部员工安全使用 AI 的平台，同时作为参考架构开放供他人 fork；它在 GTM 和职能团队中的使用率反而高于工程团队。 组织层面：Cloudflare 今年…",
+      "tags": [
+        "OpenAI",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://www.youtube.com/@NoPriorsPodcast",
+      "publishedAt": "2026-10-23T10:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · Anthropic Claude Code 团队",
+          "summaryEn": "Thariq, a core member of the Claude Code team, announced he has left Anthropic after more than a year of watching Claude Code scale beyond what he imagined. He praised Anthropic's \"race to the top\" mission and the talent and earnestness of his colleagues, said he'll take a break before starting something new, and pointed followers to @addyosmani, @lydiahallie, @_catwu, @ClaudeDevs and Claude Code creator @bcherny for future Claude Code content.",
+          "insightZh": "Claude Code 核心成员 Thariq 宣布离开 Anthropic。他在 Claude Code 团队工作了一年多，亲眼看着产品规模远超预期；他称赞 Anthropic 的「race to the top」理念和同事的专业与真诚，表示自己会先休息一段时间再投入新事情，并推荐大家继续关注 @addyosmani、@lydiahallie、@_catwu、@ClaudeDevs 以及 Claude Code 的发起人 @bcherny 获取 Claude Code 内容。",
+          "tags": [
+            "Claude",
+            "Coding"
+          ],
+          "url": "https://x.com/trq212/status/2113844051938054167",
+          "publishedAt": "2026-10-24T04:04:29.000Z",
+          "metrics": {
+            "likes": 10516,
+            "retweets": 356,
+            "replies": 967,
+            "score": 13874
+          }
+        },
+        {
+          "id": "digest-x-1-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT 负责人",
+          "summaryEn": "OpenAI Codex lead Thibault Sottiaux shipped Codex CLI updates: reusable prompt presets, inline model and permission settings, enterprise MCP sign-in, a fix for failures when resuming long sessions, and Windows corporate-proxy authentication. He noted CLI usage has grown 2x since DevDay, and changing reasoning mid-conversation in Codex no longer invalidates the cache. He also warned that the line between having a tool and being a tool is subtle these days — don't build yourself into being one.",
+          "insightZh": "OpenAI Codex 负责人 Thibault Sottiaux 更新了 Codex CLI：新增可复用的 prompt 预设、内联模型与权限设置、企业级 MCP 登录，修复了恢复长会话失败的问题，并支持 Windows 企业代理认证。他透露 Codex CLI 用量自 DevDay 以来翻了一倍。另外在 Codex 中途切换推理强度不再导致缓存失效。他还留下一句提醒：「拥有工具」和「沦为工具」之间的界限很微妙，别不小心把自己做成了工具。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/thsottiaux/status/2113770862860222611",
+          "publishedAt": "2026-10-23T23:13:40.000Z",
+          "metrics": {
+            "likes": 1281,
+            "retweets": 25,
+            "replies": 165,
+            "score": 1711
+          }
+        },
+        {
+          "id": "digest-x-2-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch commented on a class of timing attacks on shared-host VMs surfaced by OpenAI, which he calls a \"noisy neighbor\" attack: when two agents share a machine, one can make enough noise through CPU caches that the other detects it by timing its own computation and cache accesses. These attacks have been known since at least 2015 without a full solution; the world relied on \"theoretically possible, but who'd go that far\" — until agents. The only complete fix is dedicated hardware per agent, with…",
+          "insightZh": "Vercel CEO Guillermo Rauch 评论 OpenAI 最新发现的一类针对共享主机 VM 的时序攻击，他称之为「吵闹邻居」攻击：两个 agent 跑在同一台机器上时，一方可以通过 CPU 缓存制造「噪声」，另一方通过计时自身的计算和缓存访问来感知它——像在云端玩「通灵板」。这类攻击至少从 2015 年就已知且无完整解法，过去大家默认「理论上可行但没人有这本事去做」，而 agent 改变了这一前提。唯一「完整」的方案是每个 agent 独占硬件，但经济代价巨大；Vercel Sandbox 已部署所有可行缓解措施，并配合常态化监控与红队测试。",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2113759533801877920",
+          "publishedAt": "2026-10-23T22:28:39.000Z",
+          "metrics": {
+            "likes": 169,
+            "retweets": 7,
+            "replies": 101,
+            "score": 399
+          }
+        },
+        {
+          "id": "digest-x-3-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues agent swarms for cyber defense will be one of the biggest categories in AI — agents reviewing code and infra, testing every permutation of risk, and processing huge volumes of data. Security is an ideal swarm use case because more compute in clearly means more value out, and agents can tackle the wide range of testing humans never get to quickly enough.",
+          "insightZh": "Box CEO Aaron Levie 认为「用于网络防御的 agent 集群」将成为 AI 里最大的品类之一：agent 会审查代码和基础设施、穷举各种风险组合、处理海量数据。安全是集群最好的用例之一，因为在这里「投入更多算力 = 产出更多价值」非常直接——大量人类一直来不及做的测试，agent 可以毫无障碍地去做。",
+          "tags": [
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/levie/status/2113738768645808277",
+          "publishedAt": "2026-10-23T21:06:08.000Z",
+          "metrics": {
+            "likes": 358,
+            "retweets": 43,
+            "replies": 75,
+            "score": 680
+          }
+        },
+        {
+          "id": "digest-x-4-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "handle": "amasad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad announced that Jeff and the Chroma team are joining Replit — pioneers who built RAG before it was a thing — to help give agents the context and memory they need for real work, a step toward the \"self-driving company.\" He also launched Replit for Government, welcoming Michael Greenwald, who previously led AWS's public sector business.",
+          "insightZh": "Replit CEO Amjad Masad 宣布两件事：一是 Chroma 团队（Jeff 等人）加入 Replit，他们在 RAG 成为热词之前就在做，将帮助解决 AI 中最难的问题之一——给 agent 提供做真实工作所需的上下文与记忆，迈向「自动驾驶公司」；二是推出 Replit for Government，并迎来曾负责 AWS 公共部门业务的 Michael Greenwald。",
+          "tags": [
+            "Agent"
+          ],
+          "url": "https://x.com/amasad/status/2113736007111827606",
+          "publishedAt": "2026-10-23T20:55:10.000Z",
+          "metrics": {
+            "likes": 330,
+            "retweets": 19,
+            "replies": 89,
+            "score": 584
+          }
+        },
+        {
+          "id": "digest-x-5-Q2xhdWRlIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Claude",
+          "handle": "claudeai",
+          "title": "Claude · Anthropic 官方账号",
+          "summaryEn": "Anthropic published a deeper look at how Claude Duet handles safety, privacy, and security. Investor Nikunj Kothari also noted Anthropic grew revenue 10x even without launching Duet, and recommended trying it via texting.",
+          "insightZh": "Anthropic 官方发布了一篇深度说明，介绍 Claude Duet 在安全、隐私和安全防护方面的处理方式。投资人 Nikunj Kothari 也评论称，Anthropic 即便没推 Duet 收入也已增长 10 倍，并推荐体验 Duet 的发短信交互。",
+          "tags": [
+            "Claude"
+          ],
+          "url": "https://x.com/claudeai/status/2113736176737845353",
+          "publishedAt": "2026-10-23T20:55:50.000Z",
+          "metrics": {
+            "likes": 98,
+            "retweets": 15,
+            "replies": 15,
+            "score": 188
+          }
+        },
+        {
+          "id": "digest-x-6-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "title": "Aditya Agarwal · SPC 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "SPC General Partner Aditya Agarwal shared a conversation with Sergey Levine (Physical Intelligence): many of the biggest AI advances came from solving many problems together rather than training specialized systems per task, and the same principle applies to robotics — make the problem bigger. He also posted another conversation with Cognition's Scott Wu.",
+          "insightZh": "SPC 普通合伙人 Aditya Agarwal 分享与 Physical Intelligence 的 Sergey Levine 的对话：AI 的许多重大突破来自「同时解决很多问题」，而不是为单个任务训练专用系统，机器人领域同样适用——「把问题做大」。他还发布了与 Cognition 的 Scott Wu 的另一段对话。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/adityaag/status/2113666947766169868",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang reflects that most ambitious people never stop to realize that at some point their time is worth more than their money. Being in the sandwich generation with young kids and aging parents made him see this sooner and choose agency over his time — and he thinks many tech people are in the same position but don't pause to reflect.",
+          "insightZh": "Peter Yang 反思：大多数有野心的人不会停下来意识到，在某个阶段自己的时间已经比钱更值钱。上有老下有小的「夹心层」处境让他更早看清这一点，并选择追求对时间的自主权；他认为很多科技人其实也处在同样位置，只是没停下来想过。",
+          "tags": [],
+          "url": "https://x.com/petergyang/status/2113672812909191292",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-8-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper argues the best team configuration in AI is just two kinds of people: pirates and architects.",
+          "insightZh": "Every CEO Dan Shipper 提出：AI 时代最好的团队配置只有两种人——「海盗」和「建筑师」。",
+          "tags": [],
+          "url": "https://x.com/danshipper/status/2113693510629281895",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-9-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Zara Zhang is hosting a build-your-personal-website event in San Mateo (Bay Area) on Saturday, Nov 7, showcasing great personal sites; zero coding or design experience needed, beginners preferred.",
+          "insightZh": "Zara Zhang 将于 11 月 7 日（周六）在湾区 San Mateo 举办活动，带大家搭建或重做个人网站，会展示最酷的个人站点案例，零代码/零设计经验也可参加（更欢迎新手）。",
+          "tags": [
+            "Coding"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2113676956885807406",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "No Priors",
+          "title": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
+          "summaryEn": "AI is driving a \"vuln apocalypse\" — Log4j-scale events that used to happen yearly now happen weekly, and over half of engineering time may go to security in the next 18 months. But AI is also the cure: Cloudflare's answer is more red teams, smaller attack surfaces, and new micropayment and content-discovery rails for the agentic web. Cloudflare CTO Dane Knecht says reported CVEs have grown exponentially over the past three to six months; many major finds come not from nation states but from high schoolers pointing agents at targets for bug bounties. He expects more than 50% of engineering time to go to security over the next 18 months, but sees it as a transition after which productivity rebounds. He rejects air-gap doomsday thinking, crediting the shift to zero trust. For safer software, he returns to first principles — reduce attack surface and code footprint — noting today's verbose…",
+          "insightZh": "AI 正在引发一场「漏洞末日」——过去一年一次的 Log4j 级事件如今每周都在发生，未来 18 个月企业过半工程时间将投入安全；但同一个 AI 也是解药，Cloudflare 的应对是多红队、缩小攻击面，以及为 agent 网络建立微支付与内容发现新基础设施。 Cloudflare CTO Dane Knecht 指出，过去三到六个月上报的 CVE 呈指数级增长，以前一年一次的 Log4j、Shellshock 级事件现在几乎每周发生。发现者往往不是国家级黑客，而是把 agent 指向目标、拿漏洞赏金的高中生（主持人戏称「agent kitties」）。他预计未来 18 个月内超过 50% 的工程时间会花在安全上，但这是过渡期：AI 扫完大部分代码后，生产力将大幅回升。他不认同「把一切物理隔离」的末日论，认为零信任架构让很多企业处于更有利位置。关于如何写出更安全的软件，他回到第一性原理：缩小攻击面、减少代码量；而当前 AI 偏啰嗦、爱制造复杂度，这正需要人的判断。Cloudflare 内部有一份名为「Codex」的工程原则汇编，并提炼成 agent 在每个评审环节都遵循的「十诫」。内部他们计划把红队从 1 个扩到 4-5 个，主张「发现优先」，靠危机倒逼修复流程自动化，同时坚持「不发布就是等死」，安全与新功能两手都要。 关于 agent 网络：人类和 agent 正处在「混乱的中间态」，同走一套为人设计的网络。他认为会出现面向 agent 的内容交付方式，内容站点可按 CPM 向 agent 收费，这需要每秒百万级的微支付通道——他看好 Stripe 推动的 x402（复用 HTTP 402 状态码）。Cloudflare 已推出内容变现网关（含 agent 钱包与稳定币），并与 OpenAI 合作「signals」项目，让 agent 无需反复爬全网即可发现新内容。他还介绍了 Cloudflare OS：内部员工安全使用 AI 的平台，同时作为参考架构开放供他人 fork；它在 GTM 和职能团队中的使用率反而高于工程团队。 组织层面：Cloudflare 今年…",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.youtube.com/@NoPriorsPodcast",
+          "publishedAt": "2026-10-23T10:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

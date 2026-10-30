@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-31",
+  "title": "AI 日报 · 2026-10-31",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | OpenAI 公布数学、计算机科学与物理三项新发现，转向与学术社区协作验证",
+          "body": "OpenAI 10 月 30 日发布《与学术社区共建科学理解》，披露其模型在数学、计算机科学和物理三个领域取得的新发现，并强调这些结果已交由相关领域研究者共同审阅、验证和发表，而非由实验室单方面宣布。该文在 Hacker News 获得超过 1100 分、700 余条讨论，是当日硅谷工程师圈最热的 AI 话题之一。此前前沿实验室“推翻指数时间假说”的说法曾引发学界质疑，此次 OpenAI 明显调整了发布方式，把同行评审与学术合作放到台前。",
+          "insight": "前沿模型的“科研产出”正在从营销口径走向学术规范，企业评估 AI for Science 能力时应同样关注可验证性与同行认可。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+        },
+        {
+          "title": "💰 融资 | FT：Anthropic IPO 后或仅获高收益“垃圾级”信用评级，Blackstone 称难拿投资级",
+          "body": "据《金融时报》报道，Anthropic 在推进 IPO 的同时正准备进入债务市场，但信用评级机构预计只会给出高收益（俗称“垃圾级”）评级，Blackstone 方面也表示其短期内难以获得投资级评级。核心原因在于公司仍处于巨额亏损、算力承诺高企、收入集中度较高的阶段。TechCrunch 等媒体跟进报道，HN 上亦有约 250 分讨论。这意味着头部大模型公司即便估值高企，在传统信用体系中仍被视为高风险借款人。",
+          "insight": "大模型公司的融资结构正从股权转向“股+债”，企业选择长期 AI 供应商时需把对方的资产负债表健康度纳入供应商风险评估。",
+          "source": "Financial Times",
+          "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f"
+        },
+        {
+          "title": "🌍 行业动向 | AI 支出热潮现裂痕：四巨头资本开支逾 7400 亿美元，市场开始追问回报",
+          "body": "TechCrunch 10 月 30 日分析指出，在最新一季财报中，微软、谷歌、Meta、亚马逊合计规划的 AI 相关资本开支已超过 7400 亿美元，但投资者对回报周期的耐心明显下降，多家公司股价在财报后大幅波动，美股科技板块也因“AI 成本担忧”出现集体下跌。同日英特尔股价暴跌，美国政府持股市值缩水约 120 亿美元。文章认为，算力军备竞赛的叙事正从“投多少”转向“赚多少”。",
+          "insight": "资本市场对 AI 投入的审视将传导到企业侧——CIO 们的 AI 预算同样会被要求给出更清晰的 ROI 证据。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/"
+        },
+        {
+          "title": "📜 监管政策 | OpenAI、谷歌、微软、Anthropic 共同支持 IETF 新标准，网站可统一声明拒绝 AI 抓取",
+          "body": "The Verge 报道，OpenAI、Google、Microsoft 与 Anthropic 等 AI 头部公司宣布支持 IETF 正在制定的爬取 opt-out 标准，网站可通过统一的策略标记声明内容是否允许被用于 AI 训练或检索，而不必再逐家维护各自的 robots 规则。这是行业首次在数据使用授权上形成跨厂商的技术共识，被视为对出版商诉讼压力与各国版权监管的回应。不过标准的约束力仍取决于各方自愿遵守。",
+          "insight": "企业在发布官网与知识内容时应尽快评估并部署统一的 AI 使用声明，把“内容是否进模型”纳入数据治理策略。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+        },
+        {
+          "title": "🚀 产品发布 | 百度 APP 发布四大 AI 升级：称搜索实现“递归自我进化”，搜索 AI API 低至 4.9 元/千次",
+          "body": "10 月 30 日，百度 APP 在北京举办产品升级沟通会，宣布搜索通过“检索—反馈—再训练”闭环实现多 Agent 协同的递归自我进化；文心助手可直接交付成果物并持续跟踪长期任务，覆盖 170 余种场景；AI 镜头支持多目标动态追踪与 9 种方言实时对话。同时，百度全新升级搜索 AI API，活动期最低每千次查询 4.9 元，低于 DeepSeek 同类 API 价格，直指开发者与企业的联网检索需求。",
+          "insight": "国内“搜索即 Agent 基础设施”的价格战已开打，企业构建 RAG 与联网智能体的检索成本有望进一步下降。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/10/506771.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🛒 智能体商业 | DoorDash 坦言：外部 AI 智能体至今只带来“几百单”，Agentic Commerce 仍处早期",
+          "body": "DoorDash 在财报沟通中透露，自开放给外部 AI 智能体下单以来，来自 ChatGPT 等第三方智能体的订单仅有“几百单”，与其数千万级的日常订单相比几乎可以忽略不计。Ars Technica 等媒体也以“基本没人用 AI 智能体点外卖”为题跟进。这与过去一年各大平台大力宣传的“智能体代购”叙事形成明显反差，说明消费者在支付、偏好确认与信任层面仍不愿把交易完全交给 AI。",
+          "insight": "Agentic Commerce 的瓶颈不在技术接口而在用户信任与交互习惯，企业布局时应先从高频、低风险、可撤销的场景切入。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/"
+        },
+        {
+          "title": "☕ 零售落地 | 星巴克将用 AI 在得来速提供“个性化数字菜单”，按会员偏好实时推荐",
+          "body": "据 The Verge 报道，星巴克计划在得来速（drive-thru）渠道部署 AI 驱动的个性化数字菜单，结合会员历史订单、时间段、天气及门店库存等数据实时调整展示内容与推荐，目标是提升客单价和点单效率，并缓解门店高峰期排队压力。这是星巴克近两年数字化转型和运营效率改造的延续，也是快消零售行业把生成式 AI 与推荐系统落到线下一线触点的典型案例。",
+          "insight": "零售快消的 AI 价值正在从后台运营走向门店一线触点，数据打通与库存联动是决定个性化推荐能否兑现 ROI 的关键。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru"
+        },
+        {
+          "title": "📄 办公协同 | Gemini 支持在对话中直接生成并编辑 Docs、Sheets、幻灯片与 PDF 文件",
+          "body": "谷歌宣布，Gemini 用户现在可以在聊天界面内直接生成、预览并编辑 PDF、Google Docs、Google Sheets、演示文稿、Markdown、TXT 及代码文件，所有 Gemini 用户即日起可用；PDF 预览与编辑同时支持网页和移动端，其他格式暂时仅限网页版。此前 Gemini 已支持生成和下载文件，这次升级把“生成—修改—交付”闭环收进对话窗口，与 Microsoft 365 Copilot 在办公场景的竞争进一步加剧。",
+          "insight": "办公 AI 的竞争焦点从“写一段文字”转向“交付可编辑文档”，企业在 M365 Copilot 与 Gemini 之间的选型需关注文件格式兼容与治理能力。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs"
+        },
+        {
+          "title": "💼 中国案例 | 联想天禧 AI 4.5 登陆 AIPC：“超能模式”打通连接器与技能，主打办公、会议、差旅三大职场场景",
+          "body": "10 月 30 日，联想天禧 AI 4.5 在 AIPC 端正式发布，继 10 月 20 日手机端、27 日平板端之后完成多端覆盖。新版本以“职场超能搭档”为定位，推出“超能模式”，打通连接器与技能，可一句话串联完成跨应用的复杂办公任务；同时强化会议纪要与跟进、差旅规划等高频场景，并依托端侧算力与跨端协同保障数据安全。联想正试图把端侧智能体作为企业终端采购的新卖点。",
+          "insight": "端侧智能体正成为 PC 厂商切入企业办公的抓手，企业在终端换新周期中需同步评估端侧 AI 的数据合规与管理能力。",
+          "source": "新浪新闻",
+          "url": "https://news.sina.cn/ai/2026-10-30/detail-iniwzazs2296044.d.html?vt=4"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🛡️ 供应链安全 | Cursor 扩展市场中的 Claude Code 插件 2.1.313 遭篡改，近 12 小时内植入 SSH 后门",
+          "body": "安全公司 Phorion 披露，Cursor 的 VS Code 扩展市场中，Anthropic 官方 Claude Code 扩展的 2.1.313 版本被恶意篡改，在约 10 月 29 日 09:27 至 20:35（UTC）期间可被下载，安装后会尝试写入持久化 SSH 后门。Cursor 已发布安全通告确认“发生了某种形式的入侵”，Sophos 等厂商也给出排查指引，但入侵路径与攻击者身份尚未公开。该事件在 HN 获近 700 分，是 AI 编程工具链迄今最严重的供应链攻击之一。",
+          "insight": "AI 编程插件拥有代码与凭据级权限，企业必须把扩展市场纳入软件供应链治理：白名单、版本锁定与终端检测缺一不可。",
+          "source": "Phorion",
+          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/"
+        },
+        {
+          "title": "🚀 产品发布 | Cursor 开放 Agent SDK：把 Bugbot、安全审查等内部智能体框架交给开发者“以代码定义 Agent”",
+          "body": "Cursor 正式发布 Agent SDK，这是其内部用于构建 Bugbot、Security Reviewer、Rollouts 等托管智能体的框架。开发者可在项目目录中用 instructions 文件定义提示、用 TypeScript 编写工具动作，借助内置评测测试工具调用，再部署到 Cursor 云端或以单个 Node 进程容器化运行在自有基础设施上。智能体可由 PR、告警等事件触发，覆盖代码评审、合规流程、故障调查等研发全生命周期任务。",
+          "insight": "AI 编程工具正从“个人助手”走向“团队级可编排 Agent 平台”，研发组织应把自建 Agent 当作软件资产来做版本、评测与权限管理。",
+          "source": "Cursor 官方博客",
+          "url": "https://cursor.com/blog/agent-sdk"
+        },
+        {
+          "title": "🔬 技术突破 | 开发者把 32 位 RISC-V CPU 编进千问 Qwen3.5 权重，大模型内部直接运行 C 与 MicroPython",
+          "body": "独立开发者 Divyansh Agrawal 基于阿里 Qwen3.5-4B 推出 Qwenputer：不重新训练模型，而是在原有网络前增加 11 层，用编译器把 32 位 RISC-V CPU 的运算规则直接写成权重，并把 Gated DeltaNet 注意力层当作精确可寻址内存。模型可在前向推理中执行 C 和 MicroPython，通过 riscv-tests 且与 QEMU 结果一致；在 DeepMind 数学集上准确率达 97.5%–100%，接近外挂 Python 工具水平。项目在 HN 获近 700 分，Qwen 官方账号亦转发。",
+          "insight": "“权重即硬件”的实验表明，精确计算有望内化进模型本身，未来 Agent 对外部工具调用的依赖与安全边界都可能被重新设计。",
+          "source": "鉅亨網",
+          "url": "https://m.cnyes.com/news/id/6640772"
+        },
+        {
+          "title": "✍️ 工程文化 | Martin Fowler 撰文《LLM Voice》：批评网络上泛滥的“大模型腔调”，呼吁作者守住自己的表达",
+          "body": "软件工程权威 Martin Fowler 10 月 29 日在其 bliki 发表《LLM Voice》，指出 AI 普及带来的一大困扰是网络上越来越多“LLM 腔调”的文字——结构工整、措辞圆滑却缺乏真实观点，读起来像进入了文字的“恐怖谷”。他认为技术写作者应把 LLM 当作辅助而非代笔，保留个人判断与语气。该文在 HN 获近 600 分、300 余条评论，引发开发者社区对 AI 生成文档、代码注释与技术博客质量的广泛讨论。",
+          "insight": "AI 辅助写作与编码提效的同时，团队需要为文档与评审设立“人类观点”的质量门槛，避免知识资产被同质化内容稀释。",
+          "source": "martinfowler.com",
+          "url": "https://martinfowler.com/bliki/LLM-Voice.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📄 研究论文 | Google Research 提出“睡眠”框架：让大模型在服务间隙巩固新知识、缓解灾难性遗忘",
+          "body": "Google Research 的 Ali Behrouz 与 Vahab Mirrokni 10 月 27 日发布“睡眠框架”（Sleep Framework）：部署中的大模型在“清醒”阶段正常处理请求，在离线“睡眠”阶段把脆弱的上下文短期记忆蒸馏进新解锁的低秩专家参数，再通过“做梦”阶段用合成数据复习以防遗忘。论文报告其在持续学习、1000 万 token 的 BABILong 召回、知识融合与数学推理上均有提升，为突破静态知识截止日期提供了新路径。",
+          "insight": "持续学习若走向实用，企业私有模型将能“边用边学”，知识库更新与模型治理流程都需要随之重构。",
+          "source": "Google Research",
+          "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
+        },
+        {
+          "title": "🧪 多智能体研究 | YC Labs 联合 Olam Labs 在 Minecraft、Mindustry 中运行 AI 智能体群，观察分工与协作涌现",
+          "body": "Y Combinator 旗下 YC Labs 与为前沿实验室构建多智能体环境的 Olam Labs 合作，在 Minecraft 和 Mindustry 中开展一系列智能体群（swarm）实验，目前仍在直播一个由 25 个 GPT-6.1 Terra 智能体组成的 Minecraft 殖民地。研究关注多智能体如何自发形成角色、层级和协调模式，并指出这种涌现能力既可能极其有用，也可能带来风险，是 AI 对齐领域亟需的形式化与实证研究方向。HN 讨论近 400 分。",
+          "insight": "企业在部署多 Agent 协作系统前，应借鉴此类沙盒实验思路，先在受控环境中观察涌现行为再放权上线。",
+          "source": "YC Labs",
+          "url": "https://labs.ycombinator.com/projects/games/index.html"
+        },
+        {
+          "title": "🔍 可信研究 | Trakkr 追溯 AI 助手引用的统计数字：大量“僵尸数据”查无原始研究",
+          "body": "Trakkr 研究团队向 ChatGPT、Perplexity、Gemini、Claude 和 Google AI Overviews 提出 200 个需要给出具体数字的日常问题，并逐层点击引用链接追溯来源。结果发现，大量被 AI 反复引用的统计数字（如“44% 的销售人员跟进一次就放弃”）最终只能追溯到无研究支撑的营销页面或多年前的样稿，形成在互联网与 AI 之间循环传播的“僵尸统计”。五款助手常给出相同数字，只有少数会提示证据不足。",
+          "insight": "企业在用 AI 生成报告、方案与对外材料时，必须建立数据溯源核查环节，避免“僵尸数字”进入决策和客户交付物。",
+          "source": "Trakkr",
+          "url": "https://trakkr.ai/trakkr-research/zombie-stats"
+        },
+        {
+          "title": "⚙️ 运维观察 | SigNoz 长文：AI 没有取代 SRE，却在让他们“去技能化”",
+          "body": "可观测性公司 SigNoz 在其 newsletter 中提出一个更现实的问题：当 AI 处理了 95% 的故障响应后，SRE 是否会在真正关键的 5% 场景里变得更无能？文章结合航空自动驾驶、医疗等领域的“自动化悖论”研究，认为过度依赖 AI 排障会侵蚀工程师的系统直觉与应急能力，建议团队有意识地保留人工演练、复盘与“无 AI”值班。该文在 HN 获超 400 分、300 余条评论。",
+          "insight": "AIOps 提效的同时要为关键岗位设计“技能保鲜”机制，否则组织韧性会在 AI 失灵时暴露短板。",
+          "source": "SigNoz",
+          "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling"
+        },
+        {
+          "title": "🤖 具身智能 | 清华联合无问芯穹、智元提出“群体经验学习”范式，96 台真机集群验证机器人互学",
+          "body": "据证券时报 10 月 30 日报道，清华大学联合无问芯穹、智元提出群体经验学习（Collective Experience Learning，CEL）范式，让机器人不只依赖人类示范，还能共享和复用同伴的成功经验，并在 96 台真实机器人组成的集群中完成规模化验证。实验中机器人在家庭服务与工业生产任务上的成功率达到 97.5%，手机包装任务成功率从 79.2% 提升至 98.3%，且参与机器人越多提升越明显。",
+          "insight": "具身智能的数据瓶颈正从“人工示范”转向“集群自学习”，制造企业规划机器人部署时应把群体数据回流能力作为关键指标。",
+          "source": "证券时报（凤凰网）",
+          "url": "https://finance.ifeng.com/c/8xdnytFdKqj"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本期最鲜明的信号是“AI 账本”被摆上桌面：四巨头资本开支逾 7400 亿美元却遭市场追问回报，Anthropic 上市后或只能拿到垃圾级评级，DoorDash 的智能体订单只有几百单。行业正从比拼投入规模转向比拼可验证的商业回报。",
+    "与此同时，AI 工具链的安全与可信问题集中爆发：Claude Code 插件在 Cursor 市场被植入 SSH 后门，AI 助手反复引用查无出处的“僵尸数据”，头部厂商则联手支持 IETF 抓取 opt-out 标准。对企业而言，插件供应链、数据溯源和内容授权需要纳入正式的治理体系。",
+    "技术前沿仍在快速推进：OpenAI 以学术协作方式发布科学新发现，Google 用“睡眠”框架探索持续学习，清华与智元验证机器人群体互学，百度把搜索 API 价格打到每千次 4.9 元。建议决策者在控制投入节奏的同时，优先布局可度量、可治理的场景。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-10-31 执行，Tavily 替代额度耗尽的 Brave）：查询 OpenAI partnership/joint venture/acquisition、Anthropic Accenture/Deloitte/consulting、AI consulting services launch enterprise、Reuters/Bloomberg AI 大厂动向。结果：过去 24 小时无新的重大收并购或咨询类战略合作公告；Anthropic 本周 630 亿美元融资、Accenture×TÜV SÜD 物理 AI 合作等均已在过去 7 天发布过，不重复收录。今日纳入的大厂动向为 Anthropic IPO 后信用评级（FT）、四巨头 AI 资本开支裂痕（TechCrunch）、OpenAI/Google/Microsoft/Anthropic 联合支持 IETF 抓取 opt-out 标准（The Verge）。Reuters 独家 'Anthropic IPO prospectus lays bare deep dependence on Big Tech partners' 因无法获取正文未单独收录。"
+  }
+}

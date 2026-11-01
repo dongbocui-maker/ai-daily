@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-02",
+  "title": "Builder Signals · 2026-11-02",
+  "generatedAt": "2026-11-01T23:00:16.427Z",
+  "feedGeneratedAt": "2026-11-01T06:26:17.261Z",
+  "summary": "Follow Builders 今日捕捉到 13 条 X 动态、1 集播客、0 篇博客；本站精选 3 条高信号内容。",
+  "stats": {
+    "xBuilders": 8,
+    "totalTweets": 13,
+    "selectedXTweets": 2,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 3
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie offered a simple litmus test for whether you're pushing AI hard enough: if you could have done what you're doing before AI, you're probably not pushing it enough. Until roughly six months ago, the best AI could do was help you produce what you already would have, just faster. Now the output should dramatically exceed what was previously possible, in a fraction of the time — prototypes that are fully functional and meaningfully better-featured, architectures that unlock performance gains you cou…",
+      "insightZh": "Box CEO Aaron Levie 给出了一个衡量「你用 AI 是否用到位」的简单试金石：如果你现在做的事情在没有 AI 之前也能做出来，那大概率说明你还没把 AI 推到极限。他认为大约半年前，AI 最多只是让你把原本就能产出的东西做得快一点；而现在，AI 协作的产出应当在极短时间内显著超越过去的能力上限——产品原型不仅要完整可交互，还应有明显更好的功能；工程架构应能拿下过去够不着的性能收益；项目调研应穷尽所有维度的事实；用 AI 实现的业务流程应以完全不同的方式运转，并能像人类做不到的那样从过往失败中持续学习。他的判断是：AI 智能虽然仍是「锯齿状」的，但已在足够多的维度上超越人类，与人的长处结合后会带来质变式的结果。",
+      "tags": [
+        "Product",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2116652002830963114",
+      "publishedAt": "2026-10-31T22:02:17.000Z",
+      "metrics": {
+        "likes": 618,
+        "retweets": 53,
+        "replies": 107,
+        "score": 1044
+      }
+    },
+    {
+      "id": "digest-x-1-U3d5eCDCty",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Swyx",
+      "handle": "swyx",
+      "title": "Swyx · Latent Space 主播、smol.ai / Cognition / AI Engineer 相关",
+      "summaryEn": "Latent Space host Swyx weighed in on how to set model effort levels: he noted that Karpathy used Opus 5.5 on medium for his newly launched project Hackertube, and joked that strong opinions on effort levels are \"the tabs vs spaces of our time\" — just tweak to taste. His own stance: for throughput-constrained work, low effort plus a critique loop beats cranking to the maximum setting, pointing to babysit-runs in his swyxio/skills repo as a reference.",
+      "insightZh": "Latent Space 主播 Swyx 聊起了模型「effort level（推理力度）」该怎么设：他透露 Karpathy 在当天上线的新项目 Hackertube 中用的是 Opus 5.5 的 medium 档，并调侃对 effort 档位的执念就像这个时代的「Tab vs 空格之争」，按口味调即可。他自己的立场很明确：对吞吐受限的场景，「低 effort + 批评/复核循环」优于一味拉满到最高档，并指向其开源的 swyxio/skills 中的 babysit-runs 作为实践参考。",
+      "tags": [
+        "Research"
+      ],
+      "url": "https://x.com/swyx/status/2116773135668404286",
+      "publishedAt": "2026-11-01T06:03:37.000Z",
+      "metrics": {
+        "likes": 35,
+        "retweets": 0,
+        "replies": 29,
+        "score": 93
+      }
+    },
+    {
+      "id": "digest-podcast-0-TGF0ZW50IF",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Latent Space",
+      "title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
+      "summaryEn": "Arca isn't a SaaS company — it is the wealth management firm itself, using agents to run all the work around human advisors so that \"agents prompt people more than people prompt agents,\" backed by deterministic guardrails, human-in-the-loop for money movement, and auditability by default. Recorded at AI Engineer New York 2026, Latent Space speaks with Aman Singh, who leads the AI platform team at Arca, an AI-native wealth management firm that recently raised $64M. AI doesn't replace advisors; it replaces the back-office machinery around them, so clients experience proactive, responsive service delivered through a human. Claude is the primary model after iterations through Gemini and OpenAI, with choices driven purely by internal benchmarks (he notes Luna looked great externally but was too slow and costly for them). Arca runs its own model-agnostic harness and routes tasks to model tier…",
+      "insightZh": "AI 原生财富管理公司 Arca 不是卖 SaaS，而是「自己就是那家公司」——让 Agent 承担顾问背后的全部后台工作，「Agent 提示人多于人提示 Agent」，并用确定性护栏、人在环路和默认可审计来支撑长周期金融任务。 本期是 Latent Space 在 AI Engineer New York 2026 现场对 Arca AI 平台负责人 Aman Singh 的访谈。Arca 刚融资 6400 万美元，提供理财建议、财务规划、税务、保险和遗产规划等服务。其定位是：AI 不替代理财顾问，而是替代顾问周围的所有工作，客户并不直接与 AI 交互，只感受到行业此前做不到的主动、及时的服务。模型层面以 Claude 为主力，历经 Gemini → OpenAI → Anthropic 的迭代，选型完全由内部 benchmark 驱动（他提到 Luna 外部榜单很好看，但在他们场景下又慢又贵），坚持自建、模型无关的 harness，按任务复杂度分层路由模型，税务分析等用最重的一档。 在长周期任务上（例如一个横跨 10 天的税单筹款案例），Agent 负责「从哪些持仓变现 10 万美元最优」这类分析，但任何资金划转、资产变现、直接对客户沟通都强制人在环路。跨天续接依赖每个客户的持久化记忆（当前在做什么、谁负责什么、近期与长期跟踪事项），外加一个夜间「做梦式」反思流程更新记忆；新信号（如一通电话）会唤醒新 Agent，从记忆快速了解状态再介入。安全上：护栏全部确定性、不交给 Agent 决策；每次写库都有快速 LLM 校验；入口检测 prompt injection；数据出境时既有 PII 确定性检查，也有小模型共识防外泄；沙箱只用于卸载计算，代码产出会被转译成严格格式再过护栏。合规方面「可审计是默认的」——每个 Agent 和人类动作都生成变更日志，同时也作为 Agent 的感知信号。 反馈闭环上，员工每次修改或取消都要附原因并成为 eval，夜间由元 Agent 分析真实 trace 并提出 harness 改进建议，但 prompt 变更仍需人工工程师把关——A…",
+      "tags": [
+        "Claude",
+        "OpenAI",
+        "Agent",
+        "Coding"
+      ],
+      "url": "https://www.youtube.com/@LatentSpacePod",
+      "publishedAt": "2026-10-31T16:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie offered a simple litmus test for whether you're pushing AI hard enough: if you could have done what you're doing before AI, you're probably not pushing it enough. Until roughly six months ago, the best AI could do was help you produce what you already would have, just faster. Now the output should dramatically exceed what was previously possible, in a fraction of the time — prototypes that are fully functional and meaningfully better-featured, architectures that unlock performance gains you cou…",
+          "insightZh": "Box CEO Aaron Levie 给出了一个衡量「你用 AI 是否用到位」的简单试金石：如果你现在做的事情在没有 AI 之前也能做出来，那大概率说明你还没把 AI 推到极限。他认为大约半年前，AI 最多只是让你把原本就能产出的东西做得快一点；而现在，AI 协作的产出应当在极短时间内显著超越过去的能力上限——产品原型不仅要完整可交互，还应有明显更好的功能；工程架构应能拿下过去够不着的性能收益；项目调研应穷尽所有维度的事实；用 AI 实现的业务流程应以完全不同的方式运转，并能像人类做不到的那样从过往失败中持续学习。他的判断是：AI 智能虽然仍是「锯齿状」的，但已在足够多的维度上超越人类，与人的长处结合后会带来质变式的结果。",
+          "tags": [
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2116652002830963114",
+          "publishedAt": "2026-10-31T22:02:17.000Z",
+          "metrics": {
+            "likes": 618,
+            "retweets": 53,
+            "replies": 107,
+            "score": 1044
+          }
+        },
+        {
+          "id": "digest-x-1-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "handle": "swyx",
+          "title": "Swyx · Latent Space 主播、smol.ai / Cognition / AI Engineer 相关",
+          "summaryEn": "Latent Space host Swyx weighed in on how to set model effort levels: he noted that Karpathy used Opus 5.5 on medium for his newly launched project Hackertube, and joked that strong opinions on effort levels are \"the tabs vs spaces of our time\" — just tweak to taste. His own stance: for throughput-constrained work, low effort plus a critique loop beats cranking to the maximum setting, pointing to babysit-runs in his swyxio/skills repo as a reference.",
+          "insightZh": "Latent Space 主播 Swyx 聊起了模型「effort level（推理力度）」该怎么设：他透露 Karpathy 在当天上线的新项目 Hackertube 中用的是 Opus 5.5 的 medium 档，并调侃对 effort 档位的执念就像这个时代的「Tab vs 空格之争」，按口味调即可。他自己的立场很明确：对吞吐受限的场景，「低 effort + 批评/复核循环」优于一味拉满到最高档，并指向其开源的 swyxio/skills 中的 babysit-runs 作为实践参考。",
+          "tags": [
+            "Research"
+          ],
+          "url": "https://x.com/swyx/status/2116773135668404286",
+          "publishedAt": "2026-11-01T06:03:37.000Z",
+          "metrics": {
+            "likes": 35,
+            "retweets": 0,
+            "replies": 29,
+            "score": 93
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-TGF0ZW50IF",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Latent Space",
+          "title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
+          "summaryEn": "Arca isn't a SaaS company — it is the wealth management firm itself, using agents to run all the work around human advisors so that \"agents prompt people more than people prompt agents,\" backed by deterministic guardrails, human-in-the-loop for money movement, and auditability by default. Recorded at AI Engineer New York 2026, Latent Space speaks with Aman Singh, who leads the AI platform team at Arca, an AI-native wealth management firm that recently raised $64M. AI doesn't replace advisors; it replaces the back-office machinery around them, so clients experience proactive, responsive service delivered through a human. Claude is the primary model after iterations through Gemini and OpenAI, with choices driven purely by internal benchmarks (he notes Luna looked great externally but was too slow and costly for them). Arca runs its own model-agnostic harness and routes tasks to model tier…",
+          "insightZh": "AI 原生财富管理公司 Arca 不是卖 SaaS，而是「自己就是那家公司」——让 Agent 承担顾问背后的全部后台工作，「Agent 提示人多于人提示 Agent」，并用确定性护栏、人在环路和默认可审计来支撑长周期金融任务。 本期是 Latent Space 在 AI Engineer New York 2026 现场对 Arca AI 平台负责人 Aman Singh 的访谈。Arca 刚融资 6400 万美元，提供理财建议、财务规划、税务、保险和遗产规划等服务。其定位是：AI 不替代理财顾问，而是替代顾问周围的所有工作，客户并不直接与 AI 交互，只感受到行业此前做不到的主动、及时的服务。模型层面以 Claude 为主力，历经 Gemini → OpenAI → Anthropic 的迭代，选型完全由内部 benchmark 驱动（他提到 Luna 外部榜单很好看，但在他们场景下又慢又贵），坚持自建、模型无关的 harness，按任务复杂度分层路由模型，税务分析等用最重的一档。 在长周期任务上（例如一个横跨 10 天的税单筹款案例），Agent 负责「从哪些持仓变现 10 万美元最优」这类分析，但任何资金划转、资产变现、直接对客户沟通都强制人在环路。跨天续接依赖每个客户的持久化记忆（当前在做什么、谁负责什么、近期与长期跟踪事项），外加一个夜间「做梦式」反思流程更新记忆；新信号（如一通电话）会唤醒新 Agent，从记忆快速了解状态再介入。安全上：护栏全部确定性、不交给 Agent 决策；每次写库都有快速 LLM 校验；入口检测 prompt injection；数据出境时既有 PII 确定性检查，也有小模型共识防外泄；沙箱只用于卸载计算，代码产出会被转译成严格格式再过护栏。合规方面「可审计是默认的」——每个 Agent 和人类动作都生成变更日志，同时也作为 Agent 的感知信号。 反馈闭环上，员工每次修改或取消都要附原因并成为 eval，夜间由元 Agent 分析真实 trace 并提出 harness 改进建议，但 prompt 变更仍需人工工程师把关——A…",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://www.youtube.com/@LatentSpacePod",
+          "publishedAt": "2026-10-31T16:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

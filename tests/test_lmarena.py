@@ -1,15 +1,18 @@
 """Offline, deterministic regression tests; no real proxy/service/GitHub writes.
-Run: python3 -m unittest discover -s tests -p 'test_lmarena.py' -v
+Run with the dedicated venv (HF parser needs pyarrow; missing pyarrow FAILS, never skips):
+  /root/.venvs/arena/bin/python -m unittest discover -s tests -p 'test_lmarena.py' -v
 """
 import copy
 import gzip
 import hashlib
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -137,6 +140,208 @@ class ParserTests(unittest.TestCase):
             self.assertEqual((tmp/'source.html').read_bytes(), raw)
 
 
+# ---- HF parquet path (default since 2026-11) -------------------------------
+import pyarrow as pa  # noqa: E402  (hard dependency: ImportError fails the suite, no skip)
+import pyarrow.parquet as pq  # noqa: E402
+
+hf_spec = importlib.util.spec_from_file_location('arena_hf_parser', ROOT / 'scripts/parse-lmarena-hf.py')
+hf = importlib.util.module_from_spec(hf_spec)
+hf_spec.loader.exec_module(hf)
+HF_RAW = (FIXTURE / 'hf-text-style-control-2026-11-02.parquet').read_bytes()
+HF_META = json.loads((FIXTURE / 'hf-text-style-control-2026-11-02.fetch.json').read_text())
+HF_TABLE = pq.read_table(pa.BufferReader(HF_RAW))
+HF_ROWS = HF_TABLE.to_pylist()
+HF_OVERALL = sorted((r for r in HF_ROWS if r['category'] == 'overall'), key=lambda r: r['rank'])
+
+
+def hf_bytes(rows, schema=None):
+    sink = io.BytesIO()
+    pq.write_table(pa.Table.from_pylist(rows, schema=schema or HF_TABLE.schema), sink)
+    return sink.getvalue()
+
+
+def hf_synthetic(rows, schema=None, **meta_changes):
+    raw = hf_bytes(rows, schema)
+    meta = dict(HF_META, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw),
+                hubLinkedEtag=hashlib.sha256(raw).hexdigest(), hubLinkedSize=len(raw))
+    meta.update(meta_changes)
+    return raw, meta
+
+
+def today_str():
+    # Same clock/zone as fetch-lmarena.sh's capture timestamp.
+    return subprocess.run(['date', '+%Y-%m-%d'], env=dict(os.environ, TZ='Asia/Shanghai'),
+                          capture_output=True, text=True, check=True).stdout.strip()
+
+
+def overall_copy():
+    return copy.deepcopy(HF_OVERALL)
+
+
+class HFParserTests(unittest.TestCase):
+    def test_real_hf_capture(self):
+        self.assertEqual(hashlib.sha256(HF_RAW).hexdigest(), HF_META['sha256'])
+        snapshot = hf.build_snapshot(HF_RAW, HF_META)
+        candidate = json.loads((ROOT/'state/lmarena-candidates/2026-11-02.json').read_text())
+        self.assertEqual(snapshot, candidate)
+        self.assertEqual(snapshot['totalModelsObserved'], 419)
+        self.assertEqual(snapshot['totalModelsShown'], 50)
+        self.assertEqual(snapshot['sourceUpdatedAt'], '2026-10-28')
+        self.assertEqual(snapshot['sourceTimeMeaning'], 'leaderboard publish date')
+        self.assertEqual(snapshot['snapshotDate'], '2026-11-02')
+        self.assertEqual([m['name'] for m in snapshot['models'][:3]],
+                         ['Gemini 4 Carbon (High)', 'Gemini 4 Argon (High)', 'Claude Opus 5.5 (High)'])
+        self.assertIsNone(snapshot['sourceTotalVotes'])
+        self.assertTrue(all(m['modelKey'] is None and m['rankUpper'] is None for m in snapshot['models']))
+        self.assertEqual(snapshot['unmappedOrganizations'], [])
+        self.assertNotIn('未披露', {m['org'] for m in snapshot['models']})
+        self.assertTrue(all(type(m['votes']) is int for m in snapshot['models']))
+        # Multi-category shard: only 'overall' is used.
+        self.assertGreater(len(HF_ROWS), 10 * len(HF_OVERALL))
+
+    def test_same_statistics_as_arena_page_on_shared_publish(self):
+        """HF 2026-10-08 publish == arena.ai capture with voteCutoff 2026-10-08, row-for-row."""
+        rows = pq.read_table(FIXTURE/'hf-full-overall-2026-10-08.derived.parquet').to_pylist()
+        web = sorted(BOARD['entries'], key=lambda e: e['rank'])
+        self.assertEqual(len(rows), len(web))
+        for row, entry in zip(sorted(rows, key=lambda r: r['rank']), web):
+            self.assertEqual((row['model_name'], row['rank'], row['rating'], row['rating_lower'],
+                              row['rating_upper'], int(row['vote_count'])),
+                             (entry['modelDisplayName'], entry['rank'], entry['rating'],
+                              entry['ratingLower'], entry['ratingUpper'], entry['votes']))
+            self.assertEqual(hf.ORG_DISPLAY.get(row['organization'], row['organization']),
+                             entry['modelOrganization'])
+        # And the whole v2 pipeline accepts it (capture date inside the 45-day window).
+        result = hf.build_snapshot(*hf_synthetic(rows, fetchedAt='2026-10-11T23:41:46+08:00'))
+        expected = parser.build_snapshot(RAW, META)
+        for new, old in zip(result['models'], expected['models']):
+            for key in ('rank', 'name', 'org', 'rating', 'ratingLower', 'ratingUpper', 'votes'):
+                self.assertEqual(new[key], old[key], key)
+
+    def test_non_parquet_bodies(self):
+        for raw in (b'', b'<html>Just a moment...</html>', b'PAR1garbagePAR1', b'{"error":"x"}'):
+            with self.subTest(raw=raw[:20]), self.assertRaises(hf.InvalidSource):
+                hf.build_snapshot(raw, dict(HF_META, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest(),
+                                            hubLinkedEtag=None, hubLinkedSize=None))
+
+    def test_metadata_failure(self):
+        for changes in ({'curlExitCode': 28}, {'httpStatus': 403}, {'sha256': '0'*64}, {'bytes': 1},
+                        {'hubLinkedEtag': '1'*64}, {'hubLinkedSize': 5}, {'hubRepoCommit': 'main'},
+                        {'sourceKind': None}, {'sourceUrl': hf.SOURCE_URL.replace('text_style_control', 'text')},
+                        {'effectiveUrl': 'https://evil.example/x.parquet'},
+                        {'effectiveUrl': 'http://us.aws.cdn.hf.co/x'},
+                        {'effectiveUrl': 'https://huggingface.co.evil.example/x'},
+                        {'fetchedAt': '2026-11-02'},
+                        {'fetchedAt': '2026-10-27T23:00:00+08:00'},   # publish date in the future
+                        {'fetchedAt': '2026-12-13T10:30:00+08:00'}):  # > 45 days old
+            with self.subTest(changes=changes), self.assertRaises(hf.InvalidSource):
+                hf.build_snapshot(HF_RAW, dict(HF_META, **changes))
+        # Boundaries that must pass: same day, exactly 45 days, Hub headers absent.
+        for changes in ({'fetchedAt': '2026-10-28T00:00:00+08:00'},
+                        {'fetchedAt': '2026-12-12T23:59:59+08:00'},
+                        {'hubLinkedEtag': None, 'hubLinkedSize': None, 'hubRepoCommit': None},
+                        {'effectiveUrl': hf.SOURCE_URL}):
+            with self.subTest(ok=changes):
+                hf.build_snapshot(HF_RAW, dict(HF_META, **changes))
+
+    def test_missing_or_retyped_columns(self):
+        for column in hf.REQUIRED_COLUMNS:
+            table = HF_TABLE.drop_columns([column])
+            with self.subTest(drop=column), self.assertRaises(hf.InvalidSource):
+                hf.build_snapshot(*hf_synthetic(table.to_pylist(), table.schema))
+        schema = HF_TABLE.schema.set(HF_TABLE.schema.get_field_index('rank'), pa.field('rank', pa.float64()))
+        with self.assertRaises(hf.InvalidSource):
+            hf.build_snapshot(*hf_synthetic(HF_OVERALL, schema))
+
+    def test_model_count_and_category(self):
+        for rows in ([], HF_OVERALL[:99], [dict(r, category='english') for r in HF_OVERALL]):
+            with self.subTest(n=len(rows)), self.assertRaises(hf.InvalidSource):
+                hf.build_snapshot(*hf_synthetic(rows))
+        # Exactly 100 contiguous ranks is accepted; other categories are ignored.
+        noise = [dict(r, category='coding', rank=999) for r in HF_OVERALL[:5]]
+        self.assertEqual(hf.build_snapshot(*hf_synthetic(HF_OVERALL[:100] + noise))['totalModelsObserved'], 100)
+
+    def test_invalid_rows(self):
+        cases = (('rank', 0), ('rank', 3), ('rank', 999), ('rank', None),
+                 ('rating', float('nan')), ('rating', float('inf')), ('rating', -1.0), ('rating', None),
+                 ('rating_lower', 9000.0), ('rating_upper', 1.0),
+                 ('vote_count', 0.0), ('vote_count', 1.5), ('vote_count', float('nan')), ('vote_count', None),
+                 ('model_name', ''), ('model_name', '  '), ('model_name', None),
+                 ('organization', None), ('leaderboard_publish_date', None),
+                 ('leaderboard_publish_date', '2026-13-01'), ('leaderboard_publish_date', '20261028'),
+                 ('leaderboard_publish_date', '2026-10-27'))  # mixed publish dates
+        for field, value in cases:
+            rows = overall_copy()
+            rows[1][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(hf.InvalidSource):
+                hf.build_snapshot(*hf_synthetic(rows))
+
+    def test_rank_rating_consistency_and_duplicates(self):
+        rows = overall_copy()
+        for field in ('rating', 'rating_lower', 'rating_upper'):
+            rows[1][field] += 100  # each interval valid, order contradicts rank
+        with self.assertRaises(hf.InvalidSource):
+            hf.build_snapshot(*hf_synthetic(rows))
+        rows = overall_copy()
+        rows[1]['model_name'] = rows[0]['model_name']
+        with self.assertRaises(hf.InvalidSource):
+            hf.build_snapshot(*hf_synthetic(rows))
+        rows = overall_copy() + [copy.deepcopy(HF_OVERALL[0])]  # exact duplicate row also rejected
+        with self.assertRaises(hf.InvalidSource):
+            hf.build_snapshot(*hf_synthetic(rows))
+        rows = overall_copy()
+        rows[1]['rank'] = 1  # tie: needs human adaptation, never silently re-ranked
+        with self.assertRaises(hf.InvalidSource):
+            hf.build_snapshot(*hf_synthetic(rows))
+        # Equal ratings with distinct ranks remain monotone and are accepted.
+        rows = overall_copy()
+        rows[1].update(rating=rows[0]['rating'], rating_lower=rows[0]['rating_lower'] - 1,
+                       rating_upper=rows[0]['rating_upper'] + 1)
+        hf.build_snapshot(*hf_synthetic(rows))
+
+    def test_organization_mapping_is_not_guessed(self):
+        rows = overall_copy()
+        rows[0]['organization'] = ''
+        rows[1]['organization'] = 'brand-new-lab'
+        result = hf.build_snapshot(*hf_synthetic(rows))
+        self.assertEqual(result['models'][0]['org'], '未披露')
+        self.assertIsNone(result['models'][0]['orgId'])
+        self.assertEqual(result['models'][1]['org'], 'brand-new-lab')
+        self.assertEqual(result['unmappedOrganizations'], ['brand-new-lab'])
+
+    def test_missing_pyarrow_is_explicit_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            (tmp/'pyarrow').mkdir()
+            (tmp/'pyarrow/__init__.py').write_text('raise ImportError("simulated missing pyarrow")\n')
+            (tmp/'source.parquet').write_bytes(HF_RAW)
+            (tmp/'meta.json').write_text(json.dumps(HF_META))
+            cmd = [sys.executable, str(ROOT/'scripts/parse-lmarena-hf.py'),
+                   str(tmp/'source.parquet'), str(tmp/'meta.json'), str(tmp/'out.json')]
+            result = subprocess.run(cmd, capture_output=True, text=True, env=dict(os.environ, PYTHONPATH=str(tmp)))
+            self.assertEqual(result.returncode, 3, result.stderr)
+            self.assertIn('pyarrow', result.stderr)
+            self.assertFalse((tmp/'out.json').exists())
+
+    def test_cli_atomic_and_preserves_raw(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            raw = b'<html>cf challenge</html>'
+            (tmp/'source.parquet').write_bytes(raw)
+            (tmp/'meta.json').write_text(json.dumps(dict(HF_META, bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest(),
+                                                         hubLinkedEtag=None, hubLinkedSize=None)))
+            output = tmp/'output.json'
+            cmd = [sys.executable, str(ROOT/'scripts/parse-lmarena-hf.py'), str(tmp/'source.parquet'),
+                   str(tmp/'meta.json'), str(output)]
+            self.assertEqual(subprocess.run(cmd, capture_output=True).returncode, 2)
+            self.assertFalse(output.exists())
+            output.write_text('previous candidate')
+            self.assertEqual(subprocess.run(cmd, capture_output=True).returncode, 2)
+            self.assertEqual(output.read_text(), 'previous candidate')
+            self.assertEqual((tmp/'source.parquet').read_bytes(), raw)
+            self.assertFalse((tmp/'output.json.tmp').exists())
+
+
 class ShellTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -144,7 +349,7 @@ class ShellTests(unittest.TestCase):
         self.repo = self.base/'repo'
         (self.repo/'scripts').mkdir(parents=True)
         (self.repo/'src/data/lmarena/snapshots').mkdir(parents=True)
-        for name in ('fetch-lmarena.sh', 'parse-lmarena.py'):
+        for name in ('fetch-lmarena.sh', 'parse-lmarena.py', 'parse-lmarena-hf.py'):
             shutil.copyfile(ROOT/'scripts'/name, self.repo/'scripts'/name)
         # In the sandbox only, keep mock executables ahead of the host's pnpm
         # and use a private publish lock. Production script is not altered.
@@ -160,7 +365,9 @@ class ShellTests(unittest.TestCase):
         self.real_python = shutil.which('python3')
         self.env = dict(os.environ, PATH=str(self.bin)+':'+os.environ['PATH'],
                         MOCK_LOG=str(self.log), MOCK_RAW=str(self.base/'source.html'),
-                        REAL_GIT=self.real_git, REAL_PYTHON=self.real_python)
+                        REAL_GIT=self.real_git, REAL_PYTHON=self.real_python,
+                        # The test interpreter is the pyarrow venv; mirrors production ARENA_PYTHON.
+                        ARENA_PYTHON=sys.executable)
         (self.base/'source.html').write_bytes(RAW)
         self.stub('python3', '''if [[ "$1" == - ]]; then
   script=$(cat)
@@ -174,11 +381,13 @@ else exec "$REAL_PYTHON" "$@"; fi''')
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --output) cp "$MOCK_RAW" "$2"; shift 2;;
-    --dump-header) echo 'HTTP/2 200' > "$2"; shift 2;;
+    --dump-header)
+      if [[ -n "${MOCK_HEADERS:-}" ]]; then cp "$MOCK_HEADERS" "$2"; else echo 'HTTP/2 200' > "$2"; fi
+      shift 2;;
     *) shift;;
   esac
 done
-printf '%s\\n%s\\n' "${MOCK_HTTP:-200}" 'https://arena.ai/leaderboard/chat/text'
+printf '%s\\n%s\\n' "${MOCK_HTTP:-200}" "${MOCK_EFFECTIVE:-https://arena.ai/leaderboard/chat/text}"
 exit "${MOCK_CURL_FAIL:-0}"''')
         self.stub('git', '''echo "git $*" >> "$MOCK_LOG"
 if [[ "$*" == *'push origin main'* ]]; then exit "${MOCK_PUSH_FAIL:-0}"; fi
@@ -229,7 +438,7 @@ exec "$REAL_GIT" "$@"''')
         board = copy.deepcopy(BOARD)
         del board['voteCutoffISOString']
         (self.base/'source.html').write_bytes(synthetic(board)[0])
-        result = self.run_script()
+        result = self.run_script('fetch')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(self.status()['status'], 'candidate_ready')
         self.assertFalse(self.status()['notificationDelivered'])
@@ -314,6 +523,120 @@ exec "$REAL_GIT" "$@"''')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(self.status()['status'], 'published')
         self.assertEqual(self.git('rev-list', '--count', 'HEAD').stdout, commits)
+        self.assertEqual(self.git('status', '--porcelain').stdout, '')
+
+
+    # ---- fetch-hf (default) -------------------------------------------------
+    def hf_env(self, raw=HF_RAW, etag=None, size=None, commit=HF_META['hubRepoCommit'], **env):
+        (self.base/'source.parquet').write_bytes(raw)
+        headers = self.base/'hf.headers'
+        etag = hashlib.sha256(raw).hexdigest() if etag is None else etag
+        size = len(raw) if size is None else size
+        headers.write_text('HTTP/1.1 200 Connection established\r\n\r\nHTTP/2 302\r\n'
+                           f'x-repo-commit: {commit}\r\nx-linked-size: {size}\r\n'
+                           f'x-linked-etag: "{etag}"\r\nlocation: https://us.aws.cdn.hf.co/x\r\n\r\n'
+                           'HTTP/2 200\r\ncontent-length: 1\r\n\r\n')
+        return dict({'MOCK_EFFECTIVE': 'https://us.aws.cdn.hf.co/xet-bridge-us/abc?Signature=x'},
+                    MOCK_RAW=str(self.base/'source.parquet'), MOCK_HEADERS=str(headers), **env)
+
+    def test_default_mode_is_fetch_hf_and_never_publishes(self):
+        # Fixture rows re-dated to "today" so the 45-day freshness gate is exercised for real.
+        rows = [dict(r, leaderboard_publish_date=today_str()) for r in HF_ROWS]
+        result = self.run_script(**self.hf_env(hf_bytes(rows)))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        status = self.status()
+        self.assertEqual((status['mode'], status['status']), ('fetch-hf', 'candidate_ready'))
+        run = Path(status['runDir'])
+        meta = json.loads((run/'fetch.json').read_text())
+        self.assertEqual(meta['sourceKind'], 'hf-parquet')
+        self.assertEqual(meta['sha256'], hashlib.sha256((run/'source.parquet').read_bytes()).hexdigest())
+        self.assertEqual(meta['hubLinkedEtag'], meta['sha256'])
+        self.assertEqual(meta['hubRepoCommit'], HF_META['hubRepoCommit'])
+        self.assertEqual(meta['sourceUrl'], hf.SOURCE_URL)
+        candidate = json.loads((run/'candidate.json').read_text())
+        self.assertEqual(candidate['totalModelsObserved'], 419)
+        self.assertFalse((run/'source.html').exists())
+        log = self.log.read_text()
+        self.assertIn('proxy-check', log)
+        self.assertNotIn('git ', log)
+        self.assertNotIn('pnpm', log)
+        self.assertEqual(list((self.repo/'src/data/lmarena/snapshots').glob('*.json')), [])
+
+    def test_fetch_hf_failures_preserve_raw_and_are_nonzero(self):
+        # Lazy: hf_env writes the shared mock body, so build each env right before its run.
+        fresh = [dict(r, leaderboard_publish_date=today_str()) for r in HF_ROWS]
+        cases = {
+            'cloudflare-html-200': lambda: self.hf_env(b'<html>Just a moment...</html>'),
+            'hub-etag-mismatch': lambda: self.hf_env(hf_bytes(fresh), etag='0'*64),
+            'stale-data': lambda: self.hf_env(),  # fixture publish 2026-10-28 vs today's capture
+            'http-403': lambda: self.hf_env(hf_bytes(fresh), MOCK_HTTP='403'),
+            'offsite-redirect': lambda: self.hf_env(hf_bytes(fresh), MOCK_EFFECTIVE='https://evil.example/x.parquet'),
+            'unexpected-category-shape': lambda: self.hf_env(hf_bytes([dict(r, category='english') for r in fresh])),
+        }
+        if today_str() < '2026-12-13':
+            del cases['stale-data']  # only meaningful once the fixture is >45 days old
+        for name, make_env in cases.items():
+            with self.subTest(name):
+                result = self.run_script('fetch-hf', **make_env())
+                self.assertNotEqual(result.returncode, 0)
+                status = self.status()
+                self.assertEqual((status['status'], status['phase']), ('failed', 'parse'))
+                run = Path(status['runDir'])
+                self.assertTrue((run/'source.parquet').exists())
+                self.assertTrue((run/'fetch.json').exists())
+                self.assertFalse((run/'candidate.json').exists())
+
+    def test_fetch_hf_curl_failure_and_proxy_missing(self):
+        result = self.run_script('fetch-hf', **self.hf_env(MOCK_CURL_FAIL='28'))
+        self.assertEqual(result.returncode, 28)
+        self.assertEqual(self.status()['phase'], 'fetch')
+        self.assertTrue((Path(self.status()['runDir'])/'fetch.json').exists())
+        self.log.unlink()
+        result = self.run_script('fetch-hf', MOCK_PROXY_FAIL='3', **self.hf_env())
+        self.assertEqual(result.returncode, 3)
+        self.assertNotIn('curl', self.log.read_text())
+
+    def test_fetch_hf_missing_dependency_fails_before_network(self):
+        result = self.run_script('fetch-hf', ARENA_PYTHON=str(self.base/'no-such-python'), **self.hf_env())
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(self.status()['phase'], 'dependency-check')
+        self.assertFalse(self.log.exists())
+        result = self.run_script('fetch-hf', ARENA_PYTHON=self.real_python, **self.hf_env())  # system python, no pyarrow
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('pyarrow', result.stderr)
+        self.assertFalse(self.log.exists())
+
+    def hf_prepared(self):
+        run = self.repo/'.cron-logs/lmarena/offline-hf'
+        run.mkdir(parents=True)
+        (run/'source.parquet').write_bytes(HF_RAW)
+        (run/'fetch.json').write_text(json.dumps(HF_META))
+        result = self.run_script('parse', run)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return run, hashlib.sha256((run/'candidate.json').read_bytes()).hexdigest()
+
+    def test_hf_parse_replay_and_publish_gates(self):
+        run, sha = self.hf_prepared()
+        self.assertEqual((run/'candidate.json').read_bytes(),
+                         (ROOT/'state/lmarena-candidates/2026-11-02.json').read_bytes())
+        candidate = json.loads((run/'candidate.json').read_text())
+        candidate['models'][0]['rating'] += 1
+        (run/'candidate.json').write_text(json.dumps(candidate))
+        tampered = hashlib.sha256((run/'candidate.json').read_bytes()).hexdigest()
+        result = self.run_script('publish', run, '--approved-sha256', tampered)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(self.status()['phase'], 'qc-gate')
+        self.assertFalse(self.log.exists())
+        (run/'source.html').write_text('x')
+        self.assertNotEqual(self.run_script('parse', run).returncode, 0)
+
+    def test_hf_publish_success_path(self):
+        run, sha = self.hf_prepared()
+        result = self.run_script('publish', run, '--approved-sha256', sha)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.status()['status'], 'published')
+        self.assertEqual((self.repo/'src/data/lmarena/snapshots/2026-11-02.json').read_bytes(),
+                         (run/'candidate.json').read_bytes())
         self.assertEqual(self.git('status', '--porcelain').stdout, '')
 
 

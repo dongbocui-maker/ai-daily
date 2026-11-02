@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Arena monthly job: default = fetch a QC candidate ONLY (no build/commit/push).
-# System crontab: 10:30 Asia/Shanghai, day 1. Scheduling is not managed here.
+# Default source (since 2026-11): LMArena's official Hugging Face dataset parquet
+# (`fetch-hf`). The arena.ai page path (`fetch`) is blocked by Cloudflare since
+# 2026-11-01 and is kept only as a fallback.
+# System crontab: 10:30 Asia/Shanghai, day 1 (no args => fetch-hf). Scheduling is not managed here.
 # Uses the ALREADY RUNNING proxy; never starts/stops/kills shared services.
 # See docs/arena-pipeline.md for review/publish and local status/alert limitations.
 set -euo pipefail
@@ -10,7 +13,10 @@ PROJECT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 STATE_DIR=${ARENA_STATE_DIR:-"$PROJECT_DIR/.cron-logs/lmarena"}
 PROXY="http://127.0.0.1:7890"
 SOURCE_URL="https://arena.ai/leaderboard/chat/text"
-MODE=${1:-fetch}
+HF_SOURCE_URL="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/main/text_style_control/latest-00000-of-00001.parquet"
+# Dedicated venv with pyarrow (never the TTS venv). Missing => explicit failure.
+ARENA_PYTHON=${ARENA_PYTHON:-/root/.venvs/arena/bin/python}
+MODE=${1:-fetch-hf}
 RUN_DIR=""
 PHASE=initializing
 RESULT=failed
@@ -50,9 +56,25 @@ PY
 }
 trap finish EXIT
 fail() { echo "$*" >&2; exit 2; }
+check_python() {
+  PHASE=dependency-check
+  [[ -x "$ARENA_PYTHON" ]] || fail "Arena python not found: $ARENA_PYTHON (create /root/.venvs/arena with pyarrow)"
+  "$ARENA_PYTHON" -c 'import pyarrow.parquet' 2>/dev/null \
+    || fail "pyarrow missing in $ARENA_PYTHON; install: $ARENA_PYTHON -m pip install -i https://pypi.org/simple --proxy http://127.0.0.1:7890 pyarrow"
+}
+# Dispatch on the raw artifact kind present in RUN_DIR (never both).
 parse() {
-  python3 "$PROJECT_DIR/scripts/parse-lmarena.py" "$RUN_DIR/source.html" \
-    "$RUN_DIR/fetch.json" "$1"
+  if [[ -e "$RUN_DIR/source.parquet" ]]; then
+    [[ ! -e "$RUN_DIR/source.html" ]] || fail 'Run directory has both HTML and parquet sources'
+    local caller_phase=$PHASE
+    check_python
+    PHASE=$caller_phase
+    "$ARENA_PYTHON" "$PROJECT_DIR/scripts/parse-lmarena-hf.py" "$RUN_DIR/source.parquet" \
+      "$RUN_DIR/fetch.json" "$1"
+  else
+    python3 "$PROJECT_DIR/scripts/parse-lmarena.py" "$RUN_DIR/source.html" \
+      "$RUN_DIR/fetch.json" "$1"
+  fi
 }
 check_proxy() {
   PHASE=proxy-check
@@ -69,8 +91,50 @@ PY
 exec 8>"$STATE_DIR/run.lock"
 flock -n 8 || fail 'Another Arena invocation is running'
 case "$MODE" in
+  fetch-hf)
+    [[ $# -le 1 ]] || fail 'Usage: fetch-lmarena.sh [fetch-hf]'
+    RUN_DIR=$(mktemp -d "$STATE_DIR/$(date +%Y-%m-%dT%H%M%S)-XXXXXX")
+    check_python
+    check_proxy
+    PHASE=fetch
+    CAPTURED=$(date --iso-8601=seconds)
+    # Hub /resolve/ answers 302 to its CDN; follow HTTPS-only redirects.
+    # Body + headers are kept even on failure for traceability.
+    curl_rc=0
+    curl --silent --show-error --location --proto '=https' --proto-redir '=https' \
+      --proxy "$PROXY" --connect-timeout 15 --max-time 180 --max-filesize 104857600 \
+      --dump-header "$RUN_DIR/response.headers" --output "$RUN_DIR/source.parquet" \
+      --write-out '%{http_code}\n%{url_effective}\n' "$HF_SOURCE_URL" \
+      > "$RUN_DIR/transport.txt" || curl_rc=$?
+    python3 - "$RUN_DIR" "$CAPTURED" "$HF_SOURCE_URL" "$curl_rc" <<'PY'
+import hashlib, json, re, sys
+from pathlib import Path
+run, captured, url, code = sys.argv[1:]
+p = Path(run)
+raw = (p/'source.parquet').read_bytes() if (p/'source.parquet').exists() else b''
+transport = (p/'transport.txt').read_text().splitlines() if (p/'transport.txt').exists() else []
+headers = (p/'response.headers').read_text(errors='replace') if (p/'response.headers').exists() else ''
+def header(name):
+    found = re.findall(r'^' + name + r':\s*(.+?)\s*$', headers, re.I | re.M)
+    return found[-1].strip('"') if found else None
+size = header('x-linked-size')
+meta = {'sourceKind': 'hf-parquet', 'fetchedAt': captured, 'sourceUrl': url,
+        'effectiveUrl': transport[1] if len(transport)>1 else '',
+        'httpStatus': int(transport[0]) if transport and transport[0].isdigit() else 0,
+        'curlExitCode': int(code), 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
+        # Hub-declared object identity from the 302 hop; verified by the parser.
+        'hubRepoCommit': header('x-repo-commit'), 'hubLinkedEtag': header('x-linked-etag'),
+        'hubLinkedSize': int(size) if size and size.isdigit() else None}
+(p/'fetch.json').write_text(json.dumps(meta, indent=2)+'\n')
+PY
+    [[ "$curl_rc" -eq 0 ]] || exit "$curl_rc"
+    PHASE=parse
+    parse "$RUN_DIR/candidate.json"
+    RESULT=candidate_ready
+    ;;
   fetch)
-    [[ $# -le 1 ]] || fail 'Usage: fetch-lmarena.sh [fetch]'
+    # Legacy arena.ai page path. Blocked by Cloudflare challenge since 2026-11-01; kept as fallback.
+    [[ $# -le 1 ]] || fail 'Usage: fetch-lmarena.sh fetch'
     RUN_DIR=$(mktemp -d "$STATE_DIR/$(date +%Y-%m-%dT%H%M%S)-XXXXXX")
     check_proxy
     PHASE=fetch
@@ -153,5 +217,5 @@ PY
     done
     fail 'All 3 pushes failed; reviewed local commit retained for manual retry'
     ;;
-  *) fail 'Modes: fetch (default), parse RUN_DIR, publish RUN_DIR --approved-sha256 SHA256' ;;
+  *) fail 'Modes: fetch-hf (default), fetch (legacy arena.ai page), parse RUN_DIR, publish RUN_DIR --approved-sha256 SHA256' ;;
 esac

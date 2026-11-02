@@ -1,4 +1,10 @@
-# Arena 数据管线（2026-10-11 修复候选，待独立 QC）
+# Arena 数据管线
+
+**2026-11-02 状态**：默认数据源已切换为 LMArena 官方 HuggingFace 数据集（`lmarena-ai/leaderboard-dataset`，`fetch-hf` 模式），因 arena.ai 收紧 Cloudflare 防护导致网页抓取失效。详见 docs/arena-pipeline.md 顶部「2026-11 起」节。rankingBasis 升 v2（HF 用 display name，与 v1 slug 不兼容），2026-11 为新基线。旧网页路径保留备用。
+
+---
+
+（以下为 2026-10-11 修复时的历史记录）
 
 详见 [运行手册与证据](../docs/arena-pipeline.md)。该文件是本任务新建；未修改同日由主会话新建的其他 Context Pack 文件。
 

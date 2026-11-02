@@ -1,6 +1,24 @@
 # Arena 月更：抓取候选 → 独立 QC → 发布
 
-更新：2026-10-11。实现以 `scripts/fetch-lmarena.sh` / `scripts/parse-lmarena.py` 为准。
+更新：2026-11-02。实现以 `scripts/fetch-lmarena.sh` / `scripts/parse-lmarena-hf.py`（HF 数据源，默认）/ `scripts/parse-lmarena.py`（旧网页源，备用）为准。
+
+## 2026-11 起：默认数据源改为 HuggingFace 官方 parquet
+
+- **背景**：2026-10 中旬后 arena.ai 收紧 Cloudflare bot 防护（代理出口 403 challenge，直连 block），curl 抓网页路径失效（证据 `.cron-logs/lmarena/2026-11-01T103001-UVSZ8W/`）。旧网页 `fetch` 模式代码保留备用，但已被 Cloudflare 封锁，恢复使用需人工验证。
+- **新源**：LMArena 官方 HF 数据集 `lmarena-ai/leaderboard-dataset` 的 `text_style_control/latest-00000-of-00001.parquet`，口径同为 Text / Overall / style control。同源性已验证：HF 2026-10-08 发布（414 模型）与 10-11 arena.ai 网页抓取逐行一致（名称/rank/rating/CI/votes），固化为永久测试 `test_same_statistics_as_arena_page_on_shared_publish`。
+- **模式**：`fetch-hf` 为默认模式（无参数即走 HF，crontab 入口不变）；`parse RUN_DIR` 按目录内原始文件自动分流 HF/网页解析器，两种原始文件共存时拒绝。
+- **依赖**：pyarrow，专用 venv `/root/.venvs/arena`（腾讯 PyPI 镜像无 pyarrow，需官方源+代理安装）。fetch-hf 在任何网络请求前先检查 venv/pyarrow，缺失即 fail（exit 3）。
+- **传输校验**：`fetch.json` 记录 sha256/bytes/HTTP/URL 及 HF 声明的 commit/checksum/size（来自 Hub 响应头 `x-linked-etag`/`x-linked-size`）；存在时必须与下载内容一致，redirect 必须留在 HF 域。待加固：将 etag/size 改为必备（当前缺头不拦，QC 2026-11-02 建议）。
+- **字段映射（schema v2）**：
+  - `modelKey`/`rankUpper`/`rankLower` → null（HF 无此字段，页面不读 modelKey，月度对比用 name；不捆造）。
+  - `sourceTotalVotes` → null + 注释（逐模型 votes 求和会双计 battle：10-08 期求和 12,587,863 vs 官方总票 8,734,330，语义不同不冒充）。
+  - `sourceUpdatedAt` = HF `leaderboard_publish_date`（date-only）；`sourceTimeMeaning='leaderboard publish date'`，页面标签「官方榜单发布日期」；HF 比官网滞后几天（约每周发 1-2 次），45 天新鲜度门槛对 HF 更紧：HF 停更超六周则月更 fail-closed。
+  - `rankingBasis` → `arena-text-overall-style-control-v2`：HF 自 10-15 起用 display name（如 `Gemini 4 Argon (High)`），与 v1 快照的 slug（`gemini-4-argon-high`） 0 匹配；沿用 v1 会假标 50 全「新进」+ 上月 50 全「掉榜」。v2 让 2026-11 成为新基线（无升降箭头）。跨 v1/v2 趋势需另行批准 slug↔display name 映射表（HF 10-13/10-15 两次发布可交叉对照）。
+  - 并列名次拒绝（同旧规则）；HF 将来如出并列需人工适配。
+- **页面**：`src/pages/lmarena/index.astro` 改读快照新字段 `sourceTimeLabel`/`sourceLabel`/`sourcePage`，旧快照缺字段时回退旧文案（「源站投票截止时间」/「arena.ai 官方排行榜」），渲染不回归。
+- **QC/发布门禁不变**：fetch-hf 同样只产候选不写生产；publish 仍要求 approved-sha256/干净树/main 分支/不 rebase push。
+
+原 2026-10-11 版本内容如下（网页源时代，仍适用于备用路径与历史追溯）：
 
 ## 根因与永久约束
 

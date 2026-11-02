@@ -108,7 +108,8 @@ const shownStat = splitStat(totalShown);
         </div>
         {latest.fetchedAt && (
           <div class="panel">
-            <p><strong>抓取时间</strong>：{latest.fetchedAt}；<strong>源站投票截止时间</strong>：{latest.sourceUpdatedAt ?? '未知（源站未提供，不能确认数据新鲜度）'}。</p>
+            <p><strong>抓取时间</strong>：{latest.fetchedAt}；<strong>{latest.sourceTimeLabel ?? '源站投票截止时间'}</strong>：{latest.sourceUpdatedAt ?? '未知（源站未提供，不能确认数据新鲜度）'}。</p>
+            {latest.sourceTimeLabel && latest.sourceTimeNote && <p>{latest.sourceTimeNote}</p>}
             <p>{latest.coverageNote}</p>
             {!comparablePrevious && <p>本期为新口径对比基线；不计算与旧快照的升降或退出榜单。</p>}
           </div>
@@ -164,7 +165,7 @@ const shownStat = splitStat(totalShown);
         {/* 说明 */}
         <div class="panel">
           <h3>说明</h3>
-          <p><strong>数据来源</strong>：<a href={latest.sourceUrl} target="_blank" rel="noopener">arena.ai 官方排行榜</a>，基于全球用户盲测投票。榜单序号为相对位次（rank position）；有源数据时另列 Arena rating。</p>
+          <p><strong>数据来源</strong>：<a href={latest.sourcePage ?? latest.sourceUrl} target="_blank" rel="noopener">{latest.sourceLabel ?? 'arena.ai 官方排行榜'}</a>，基于全球用户盲测投票。榜单序号为相对位次（rank position）；有源数据时另列 Arena rating。</p>
           <p><strong>优势赛道</strong>：仅在源数据包含分项排名时展示；当前文本总榜不提供旧版跨分项排名，不补造优势标签。</p>
           <p><strong>月度变化</strong>：仅与上一份同口径快照对比。↑ 上升 / ↓ 下降 / 新进 Top {totalShown} / 基线（无同口径前期数据）。</p>
           <p><strong>更新频率</strong>：每月 1 日 10:30（北京时间）抓取候选，经审核后发布；补抓按实际日期留档。</p>

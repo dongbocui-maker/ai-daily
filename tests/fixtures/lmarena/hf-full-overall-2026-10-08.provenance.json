@@ -1,0 +1,11 @@
+{
+  "derivedFrom": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/main/text_style_control/full-00000-of-00001.parquet",
+  "hubRepoCommit": "323062f70843f40e3f739865c3fe9d806126e412",
+  "fullShardSha256": "669e6c2a2743bbbb0022b27b7f6b1ef2dcc9715428a41c927a4b9f281aba4aaf",
+  "fullShardBytes": 55387146,
+  "downloadedAt": "2026-11-02 ~07:35+08:00 (one-off probe download via existing 127.0.0.1:7890)",
+  "filter": "category == 'overall' AND leaderboard_publish_date == '2026-10-08' (pyarrow read_table filters, rows unmodified)",
+  "rows": 414,
+  "purpose": "Cross-source equivalence test: the HF 2026-10-08 publish must equal arena.ai text-2026-10-11 fixture (voteCutoff 2026-10-08) row-for-row (name, rank, rating, CI, votes, org).",
+  "note": "Derived fixture; not a raw capture. The full shard itself (55MB) is not committed."
+}

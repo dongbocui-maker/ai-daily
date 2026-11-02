@@ -1,77 +1,79 @@
 {
-  "date": "2026-11-02",
-  "title": "Builder Signals · 2026-11-02",
-  "generatedAt": "2026-11-01T23:00:16.427Z",
-  "feedGeneratedAt": "2026-11-01T06:26:17.261Z",
-  "summary": "Follow Builders 今日捕捉到 13 条 X 动态、1 集播客、0 篇博客；本站精选 3 条高信号内容。",
+  "date": "2026-11-03",
+  "title": "Builder Signals · 2026-11-03",
+  "generatedAt": "2026-11-02T23:00:16.783Z",
+  "feedGeneratedAt": "2026-11-02T06:35:38.590Z",
+  "summary": "Follow Builders 今日捕捉到 22 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
   "stats": {
-    "xBuilders": 8,
-    "totalTweets": 13,
-    "selectedXTweets": 2,
+    "xBuilders": 11,
+    "totalTweets": 22,
+    "selectedXTweets": 8,
     "podcastEpisodes": 1,
     "blogPosts": 0,
-    "selectedItems": 3
+    "selectedItems": 9
   },
   "featured": [
     {
-      "id": "digest-x-0-QWFyb24gTG",
+      "id": "digest-x-0-QW5kcmVqIE",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Andrej Karpathy",
+      "handle": "karpathy",
+      "title": "Andrej Karpathy · 前 Tesla AI 负责人、OpenAI 创始成员",
+      "summaryEn": "Karpathy built HackerTube as a weekend hack: annoyed with YouTube recommendations, he had Claude filter 43M comments from 20 years of HN down to 6,454 repeatedly recommended videos. The site needs no login (state lives in the local browser), uses a mid-video frame instead of A/B-optimized thumbnails, and ships the underlying analysis as a zip so you can point your own Claude at it. It took ~2 hours with Claude Code desktop on Opus 5.5 (Medium effort); his only manual steps were a Google Cloud API key, booting a VP…",
+      "insightZh": "Karpathy 周末做了个小项目 HackerTube：嫌 YouTube 推荐太烂，他让 Claude 过滤了 HN 二十年、4300 万条评论，挑出 6,454 个被反复推荐的视频，做成一个免登录（状态存在本地浏览器）、缩略图取视频中段真实画面而非 A/B 测试优化封面的观影站，底层评论分析数据也打包公开，可以让自己的 Claude 据此做个人版本。全程约 2 小时，用 Claude Code 桌面版 + Opus 5.5 Medium effort，他只和 Claude 对话；手工部分仅限申请 Google Cloud API key、开 VPS、买域名，之后把 IP 交给 Claude，让它完成更新、加固、部署和优化。他的结论：很多原本要几周甚至几个月的项目，现在「早饭前就能 few-shot 出来」。",
+      "tags": [
+        "Claude",
+        "OpenAI",
+        "Coding"
+      ],
+      "url": "https://x.com/karpathy/status/2116957135661945283",
+      "publishedAt": "2026-11-01T18:14:46.000Z",
+      "metrics": {
+        "likes": 36797,
+        "retweets": 3269,
+        "replies": 1497,
+        "score": 52867
+      }
+    },
+    {
+      "id": "digest-x-1-QWFyb24gTG",
       "kind": "x",
       "source": "X",
       "sourceName": "Aaron Levie",
       "handle": "levie",
       "title": "Aaron Levie · Box CEO",
-      "summaryEn": "Box CEO Aaron Levie offered a simple litmus test for whether you're pushing AI hard enough: if you could have done what you're doing before AI, you're probably not pushing it enough. Until roughly six months ago, the best AI could do was help you produce what you already would have, just faster. Now the output should dramatically exceed what was previously possible, in a fraction of the time — prototypes that are fully functional and meaningfully better-featured, architectures that unlock performance gains you cou…",
-      "insightZh": "Box CEO Aaron Levie 给出了一个衡量「你用 AI 是否用到位」的简单试金石：如果你现在做的事情在没有 AI 之前也能做出来，那大概率说明你还没把 AI 推到极限。他认为大约半年前，AI 最多只是让你把原本就能产出的东西做得快一点；而现在，AI 协作的产出应当在极短时间内显著超越过去的能力上限——产品原型不仅要完整可交互，还应有明显更好的功能；工程架构应能拿下过去够不着的性能收益；项目调研应穷尽所有维度的事实；用 AI 实现的业务流程应以完全不同的方式运转，并能像人类做不到的那样从过往失败中持续学习。他的判断是：AI 智能虽然仍是「锯齿状」的，但已在足够多的维度上超越人类，与人的长处结合后会带来质变式的结果。",
+      "summaryEn": "Levie argues that \"helping agents do their work\" is becoming the new job description for many roles beyond coding. We are shifting from agents making us incrementally faster to us enabling agents — turning individual contributors into managers of agent teams. The biggest impact will hit information-heavy jobs: coding, cybersecurity, legal, biotech, engineering. Crucially, leverage decouples from hours worked, since agents can parallelize execution; people and organizations that reorganize around this sooner will s…",
+      "insightZh": "Levie 认为「人帮 agent 干活」正在成为大量岗位的新职位描述，不只是写代码：我们正从「agent 让人做得稍快稍好」转向「人去帮助 agent 完成工作」，每个人都变成一支 agent 团队的管理者，而非只是被 AI 加了点杠杆的个人贡献者。受冲击最大的是信息密集型岗位——编程、网络安全、法律、生物科技、工程等。关键变化在于：知识工作的产出第一次与投入工时脱钩，因为 agent 可以并行执行；越早发现并围绕这一点重组运营的个人和组织，越能获得复利式收益。",
       "tags": [
-        "Product",
-        "Research"
-      ],
-      "url": "https://x.com/levie/status/2116652002830963114",
-      "publishedAt": "2026-10-31T22:02:17.000Z",
-      "metrics": {
-        "likes": 618,
-        "retweets": 53,
-        "replies": 107,
-        "score": 1044
-      }
-    },
-    {
-      "id": "digest-x-1-U3d5eCDCty",
-      "kind": "x",
-      "source": "X",
-      "sourceName": "Swyx",
-      "handle": "swyx",
-      "title": "Swyx · Latent Space 主播、smol.ai / Cognition / AI Engineer 相关",
-      "summaryEn": "Latent Space host Swyx weighed in on how to set model effort levels: he noted that Karpathy used Opus 5.5 on medium for his newly launched project Hackertube, and joked that strong opinions on effort levels are \"the tabs vs spaces of our time\" — just tweak to taste. His own stance: for throughput-constrained work, low effort plus a critique loop beats cranking to the maximum setting, pointing to babysit-runs in his swyxio/skills repo as a reference.",
-      "insightZh": "Latent Space 主播 Swyx 聊起了模型「effort level（推理力度）」该怎么设：他透露 Karpathy 在当天上线的新项目 Hackertube 中用的是 Opus 5.5 的 medium 档，并调侃对 effort 档位的执念就像这个时代的「Tab vs 空格之争」，按口味调即可。他自己的立场很明确：对吞吐受限的场景，「低 effort + 批评/复核循环」优于一味拉满到最高档，并指向其开源的 swyxio/skills 中的 babysit-runs 作为实践参考。",
-      "tags": [
-        "Research"
-      ],
-      "url": "https://x.com/swyx/status/2116773135668404286",
-      "publishedAt": "2026-11-01T06:03:37.000Z",
-      "metrics": {
-        "likes": 35,
-        "retweets": 0,
-        "replies": 29,
-        "score": 93
-      }
-    },
-    {
-      "id": "digest-podcast-0-TGF0ZW50IF",
-      "kind": "podcast",
-      "source": "Podcast",
-      "sourceName": "Latent Space",
-      "title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
-      "summaryEn": "Arca isn't a SaaS company — it is the wealth management firm itself, using agents to run all the work around human advisors so that \"agents prompt people more than people prompt agents,\" backed by deterministic guardrails, human-in-the-loop for money movement, and auditability by default. Recorded at AI Engineer New York 2026, Latent Space speaks with Aman Singh, who leads the AI platform team at Arca, an AI-native wealth management firm that recently raised $64M. AI doesn't replace advisors; it replaces the back-office machinery around them, so clients experience proactive, responsive service delivered through a human. Claude is the primary model after iterations through Gemini and OpenAI, with choices driven purely by internal benchmarks (he notes Luna looked great externally but was too slow and costly for them). Arca runs its own model-agnostic harness and routes tasks to model tier…",
-      "insightZh": "AI 原生财富管理公司 Arca 不是卖 SaaS，而是「自己就是那家公司」——让 Agent 承担顾问背后的全部后台工作，「Agent 提示人多于人提示 Agent」，并用确定性护栏、人在环路和默认可审计来支撑长周期金融任务。 本期是 Latent Space 在 AI Engineer New York 2026 现场对 Arca AI 平台负责人 Aman Singh 的访谈。Arca 刚融资 6400 万美元，提供理财建议、财务规划、税务、保险和遗产规划等服务。其定位是：AI 不替代理财顾问，而是替代顾问周围的所有工作，客户并不直接与 AI 交互，只感受到行业此前做不到的主动、及时的服务。模型层面以 Claude 为主力，历经 Gemini → OpenAI → Anthropic 的迭代，选型完全由内部 benchmark 驱动（他提到 Luna 外部榜单很好看，但在他们场景下又慢又贵），坚持自建、模型无关的 harness，按任务复杂度分层路由模型，税务分析等用最重的一档。 在长周期任务上（例如一个横跨 10 天的税单筹款案例），Agent 负责「从哪些持仓变现 10 万美元最优」这类分析，但任何资金划转、资产变现、直接对客户沟通都强制人在环路。跨天续接依赖每个客户的持久化记忆（当前在做什么、谁负责什么、近期与长期跟踪事项），外加一个夜间「做梦式」反思流程更新记忆；新信号（如一通电话）会唤醒新 Agent，从记忆快速了解状态再介入。安全上：护栏全部确定性、不交给 Agent 决策；每次写库都有快速 LLM 校验；入口检测 prompt injection；数据出境时既有 PII 确定性检查，也有小模型共识防外泄；沙箱只用于卸载计算，代码产出会被转译成严格格式再过护栏。合规方面「可审计是默认的」——每个 Agent 和人类动作都生成变更日志，同时也作为 Agent 的感知信号。 反馈闭环上，员工每次修改或取消都要附原因并成为 eval，夜间由元 Agent 分析真实 trace 并提出 harness 改进建议，但 prompt 变更仍需人工工程师把关——A…",
-      "tags": [
-        "Claude",
-        "OpenAI",
         "Agent",
         "Coding"
       ],
-      "url": "https://www.youtube.com/@LatentSpacePod",
-      "publishedAt": "2026-10-31T16:00:00.000Z",
+      "url": "https://x.com/levie/status/2117134917847093491",
+      "publishedAt": "2026-11-02T06:01:13.000Z",
+      "metrics": {
+        "likes": 67,
+        "retweets": 9,
+        "replies": 31,
+        "score": 165
+      }
+    },
+    {
+      "id": "digest-podcast-0-VW5zdXBlcn",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Unsupervised Learning",
+      "title": "Ep 95: Modal CEO on the Future of Inference, the Chaos of the GPU Market & Origins of the Sandbox Bet",
+      "summaryEn": "Plain token-serving inference is a race to the bottom; the durable moat is a multi-product platform spanning sandboxes, inference, training and storage — while GPU procurement remains a Wild West of WhatsApp groups and hotel-lobby deals. Redpoint GP Patrick Chase hosts Modal founder and CEO Eric for a second time. On compute: Modal closes two to three compute deals a week across 25 clouds. He describes GTC as \"an open-air drug market, but for GPUs,\" with capacity found through late-night WhatsApp groups and personal connections. Compute is heterogeneous in location, disk, networking and reliability, so it can't trade like a fungible contract; many neoclouds are ex-crypto miners with shaky operations, and Modal's value lies in aggregating demand and pulling failing capacity out of rotation. He flags a structural risk: GPU commitments often require only ~30% upfront, so raising $1B can lo…",
+      "insightZh": "裸卖 token 的推理市场会是一场向下竞争，真正持久的壁垒是「沙箱 + 推理 + 训练 + 存储」的多产品平台；而 GPU 市场仍是一个靠 WhatsApp 群和酒店大堂交易的「狂野西部」。 Redpoint GP Patrick Chase 再次对话 Modal 创始人兼 CEO Eric。关于算力：Modal 现在每周要谈两到三笔算力交易，接入 25 家云。他形容 GTC 像「露天 GPU 黑市」，靠深夜 WhatsApp 群、酒店大堂交换号码甚至销售 VP 表亲的高尔夫球友拿到卡。算力因地域、磁盘、网络、可靠性差异巨大，不是可在交易所买卖的标准化合约；不少 neocloud 由前加密矿工转型，可靠性堪忧，Modal 的价值正是聚合需求、自动剔除故障节点。他还提醒结构性风险：GPU 承诺通常只需预付约 30%，融 10 亿美元就能锁 30 亿算力，形成隐性杠杆并依赖后续融资；若 VC 收紧，部分 neolab 可能转型为 neocloud 转售算力（Mistral 已有先例）。 产品层面：沙箱产品 2023 年推出，过去 12 个月增长近千倍，已占收入约三分之一、独立年化收入 3 亿美元；LLM 推理在 DeepSeek 时刻后发力，也占约三分之一，并刚推出专用推理与训练产品。客户包括 Cognition（推理 + RL rollout 沙箱）、Ramp（后台编码 agent）、Suno、Runway、Decagon、DoorDash 及生物计算、机器人公司。他判断推理市场「straight down the middle 卖 token」会被 OpenRouter 商品化，kernel/KV cache 优化会被快速复制，持久差异化在平台组合；Modal 积极向 vLLM、SGLang 贡献，因为 alpha 在自动扩缩容等基础设施层。 组织与人才：Modal 合并的代码约 95% 由 agent 参与编写，但基础设施的长尾可靠性风险仍需人类监督；出乎意料的是资深工程师比初级更积极采用 agent——相当于拥有 10 个实习生，给一套 POSIX 文件系统测试…",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Product",
+        "Startup"
+      ],
+      "url": "https://www.youtube.com/@RedpointAI",
+      "publishedAt": "2026-10-28T13:03:16.000Z",
       "handle": ""
     }
   ],
@@ -82,47 +84,172 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-QWFyb24gTG",
+          "id": "digest-x-0-QW5kcmVqIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Andrej Karpathy",
+          "handle": "karpathy",
+          "title": "Andrej Karpathy · 前 Tesla AI 负责人、OpenAI 创始成员",
+          "summaryEn": "Karpathy built HackerTube as a weekend hack: annoyed with YouTube recommendations, he had Claude filter 43M comments from 20 years of HN down to 6,454 repeatedly recommended videos. The site needs no login (state lives in the local browser), uses a mid-video frame instead of A/B-optimized thumbnails, and ships the underlying analysis as a zip so you can point your own Claude at it. It took ~2 hours with Claude Code desktop on Opus 5.5 (Medium effort); his only manual steps were a Google Cloud API key, booting a VP…",
+          "insightZh": "Karpathy 周末做了个小项目 HackerTube：嫌 YouTube 推荐太烂，他让 Claude 过滤了 HN 二十年、4300 万条评论，挑出 6,454 个被反复推荐的视频，做成一个免登录（状态存在本地浏览器）、缩略图取视频中段真实画面而非 A/B 测试优化封面的观影站，底层评论分析数据也打包公开，可以让自己的 Claude 据此做个人版本。全程约 2 小时，用 Claude Code 桌面版 + Opus 5.5 Medium effort，他只和 Claude 对话；手工部分仅限申请 Google Cloud API key、开 VPS、买域名，之后把 IP 交给 Claude，让它完成更新、加固、部署和优化。他的结论：很多原本要几周甚至几个月的项目，现在「早饭前就能 few-shot 出来」。",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Coding"
+          ],
+          "url": "https://x.com/karpathy/status/2116957135661945283",
+          "publishedAt": "2026-11-01T18:14:46.000Z",
+          "metrics": {
+            "likes": 36797,
+            "retweets": 3269,
+            "replies": 1497,
+            "score": 52867
+          }
+        },
+        {
+          "id": "digest-x-1-QWFyb24gTG",
           "kind": "x",
           "source": "X",
           "sourceName": "Aaron Levie",
           "handle": "levie",
           "title": "Aaron Levie · Box CEO",
-          "summaryEn": "Box CEO Aaron Levie offered a simple litmus test for whether you're pushing AI hard enough: if you could have done what you're doing before AI, you're probably not pushing it enough. Until roughly six months ago, the best AI could do was help you produce what you already would have, just faster. Now the output should dramatically exceed what was previously possible, in a fraction of the time — prototypes that are fully functional and meaningfully better-featured, architectures that unlock performance gains you cou…",
-          "insightZh": "Box CEO Aaron Levie 给出了一个衡量「你用 AI 是否用到位」的简单试金石：如果你现在做的事情在没有 AI 之前也能做出来，那大概率说明你还没把 AI 推到极限。他认为大约半年前，AI 最多只是让你把原本就能产出的东西做得快一点；而现在，AI 协作的产出应当在极短时间内显著超越过去的能力上限——产品原型不仅要完整可交互，还应有明显更好的功能；工程架构应能拿下过去够不着的性能收益；项目调研应穷尽所有维度的事实；用 AI 实现的业务流程应以完全不同的方式运转，并能像人类做不到的那样从过往失败中持续学习。他的判断是：AI 智能虽然仍是「锯齿状」的，但已在足够多的维度上超越人类，与人的长处结合后会带来质变式的结果。",
+          "summaryEn": "Levie argues that \"helping agents do their work\" is becoming the new job description for many roles beyond coding. We are shifting from agents making us incrementally faster to us enabling agents — turning individual contributors into managers of agent teams. The biggest impact will hit information-heavy jobs: coding, cybersecurity, legal, biotech, engineering. Crucially, leverage decouples from hours worked, since agents can parallelize execution; people and organizations that reorganize around this sooner will s…",
+          "insightZh": "Levie 认为「人帮 agent 干活」正在成为大量岗位的新职位描述，不只是写代码：我们正从「agent 让人做得稍快稍好」转向「人去帮助 agent 完成工作」，每个人都变成一支 agent 团队的管理者，而非只是被 AI 加了点杠杆的个人贡献者。受冲击最大的是信息密集型岗位——编程、网络安全、法律、生物科技、工程等。关键变化在于：知识工作的产出第一次与投入工时脱钩，因为 agent 可以并行执行；越早发现并围绕这一点重组运营的个人和组织，越能获得复利式收益。",
           "tags": [
-            "Product",
-            "Research"
+            "Agent",
+            "Coding"
           ],
-          "url": "https://x.com/levie/status/2116652002830963114",
-          "publishedAt": "2026-10-31T22:02:17.000Z",
+          "url": "https://x.com/levie/status/2117134917847093491",
+          "publishedAt": "2026-11-02T06:01:13.000Z",
           "metrics": {
-            "likes": 618,
-            "retweets": 53,
-            "replies": 107,
-            "score": 1044
+            "likes": 67,
+            "retweets": 9,
+            "replies": 31,
+            "score": 165
           }
         },
         {
-          "id": "digest-x-1-U3d5eCDCty",
+          "id": "digest-x-2-UGV0ZXIgWW",
           "kind": "x",
           "source": "X",
-          "sourceName": "Swyx",
-          "handle": "swyx",
-          "title": "Swyx · Latent Space 主播、smol.ai / Cognition / AI Engineer 相关",
-          "summaryEn": "Latent Space host Swyx weighed in on how to set model effort levels: he noted that Karpathy used Opus 5.5 on medium for his newly launched project Hackertube, and joked that strong opinions on effort levels are \"the tabs vs spaces of our time\" — just tweak to taste. His own stance: for throughput-constrained work, low effort plus a critique loop beats cranking to the maximum setting, pointing to babysit-runs in his swyxio/skills repo as a reference.",
-          "insightZh": "Latent Space 主播 Swyx 聊起了模型「effort level（推理力度）」该怎么设：他透露 Karpathy 在当天上线的新项目 Hackertube 中用的是 Opus 5.5 的 medium 档，并调侃对 effort 档位的执念就像这个时代的「Tab vs 空格之争」，按口味调即可。他自己的立场很明确：对吞吐受限的场景，「低 effort + 批评/复核循环」优于一味拉满到最高档，并指向其开源的 swyxio/skills 中的 babysit-runs 作为实践参考。",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang shared his current AI tool split: browser/computer use goes to ChatGPT + Codex, design/video editing/\"taste\" to Claude, 24/7 agents and scheduled jobs to Grok Bot — and Gemini is underrated for writing. He also quoted Google Labs product director @jacalulu: creating, learning and entertainment still need a human in the UI, but many products she'd happily stop using directly — raising the question of whether your product needs a UI at all. He previewed upcoming Behind the Craft guests: OpenAI VP of Produ…",
+          "insightZh": "Peter Yang 给出了他当前的「AI 工具分工表」：浏览器 / 电脑操作用 ChatGPT + Codex，设计、视频剪辑和「品味」类工作用 Claude，7×24 agent 与定时任务用 Grok Bot，并认为 Gemini 在写作上被低估。他还引用 Google Labs 产品总监 @jacalulu 的观点：创造类、学习类、娱乐消费类产品仍需要人来操作 UI，但很多现有产品人其实乐于「不再亲自用」——这逼问产品团队：你的产品到底需不需要 UI？另外他预告了 Behind the Craft 新一期嘉宾，包括 OpenAI 产品 VP Ashley Alexander、Claude Design 背后的 Anthropic 设计师 Nate Parrott、coding agent 技能 GitHub 30 万+ star 的 Matt Pocock，以及仅 10 人、每年 3200 万美元 Claude 花费的游戏公司创始人 Jacob Sansbury。",
           "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/petergyang/status/2116946320674152810",
+          "publishedAt": "2026-11-01T17:31:48.000Z",
+          "metrics": {
+            "likes": 190,
+            "retweets": 6,
+            "replies": 82,
+            "score": 378
+          }
+        },
+        {
+          "id": "digest-x-3-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Rauch's message: \"Own your intelligence\" — anyone opposing it likely wants to sell your intelligence back to you. Massive models may not run locally yet, but local models must keep proliferating; keep your options open by owning your harness, data, connections and runtime — your agents — and embrace open source. He also noted Gemini is doing well on two high-complexity projects he's testing.",
+          "insightZh": "Rauch 喊出「Own your intelligence」：反对者多半是想把你自己的智能再卖回给你。超大模型短期内难以本地运行，但本地模型需要继续扩散，最好的策略是保持选择权——拥有自己的 harness、数据、连接、运行时，也就是自己的 agent，拥抱开源。他也提到正在两个高复杂度项目上测试 Gemini，表现不错。",
+          "tags": [
+            "Agent",
+            "Product",
             "Research"
           ],
-          "url": "https://x.com/swyx/status/2116773135668404286",
-          "publishedAt": "2026-11-01T06:03:37.000Z",
+          "url": "https://x.com/rauchg/status/2117000819623243925",
+          "publishedAt": "2026-11-01T21:08:22.000Z",
           "metrics": {
-            "likes": 35,
-            "retweets": 0,
-            "replies": 29,
-            "score": 93
+            "likes": 2251,
+            "retweets": 222,
+            "replies": 242,
+            "score": 3623
           }
+        },
+        {
+          "id": "digest-x-4-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Masad warned that anyone on a subsidized AI subscription should prepare to get rug-pulled. He also highlighted a one-toggle Replit feature: enable the \"feedback widget\" on your site and user feedback becomes prompts for the agents to build — closing the loop from user input to shipped changes.",
+          "insightZh": "Masad 警告：正在享受补贴价 AI 订阅的用户要做好被「抽地毯」的准备。另外他介绍了 Replit 的一个开关功能：站点启用「feedback widget」后，用户反馈会直接变成 agent 的构建 prompt，形成从用户声音到产品迭代的自动闭环。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/amasad/status/2117010858845089805",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-5-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "Garry Tan highlighted Particle-1, which matches much larger models on agentic retrieval at 1/23 the price. He also said practical robotics is near, and that YC is the YC for hard tech.",
+          "insightZh": "Garry Tan 转推 Particle-1：在 agentic retrieval（智能体检索）上效果媲美大得多的模型，价格却只有 1/23。他同时表示「实用机器人时代将至」，并称 YC 也是 hard tech 领域的 YC。",
+          "tags": [
+            "Agent",
+            "Eval",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2117137390016073977",
+          "publishedAt": "2026-11-02T06:11:02.000Z",
+          "metrics": {
+            "likes": 30,
+            "retweets": 3,
+            "replies": 14,
+            "score": 70
+          }
+        },
+        {
+          "id": "digest-x-6-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code 成员",
+          "summaryEn": "Thariq continues building his game: a new fire-wielding taekwondo master character, an art switch from 3D models to generated sprites, and a highlight intro video — aiming for a vertical slice next week.",
+          "insightZh": "Thariq 在持续推进自己的游戏项目：新增一个用火焰战斗的跆拳道大师角色，美术从 3D 模型改为生成式 sprite，还做了一段角色高光开场视频，目标是下周做出一个可玩的 vertical slice。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/trq212/status/2116976789046350040",
+          "publishedAt": "2026-11-01T19:32:52.000Z",
+          "metrics": {
+            "likes": 990,
+            "retweets": 16,
+            "replies": 93,
+            "score": 1240
+          }
+        },
+        {
+          "id": "digest-x-7-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Zara Zhang shared a playful build: what if your Linktree were an actual tree.",
+          "insightZh": "Zara Zhang 发布了一个趣味小作品：把 Linktree 做成一棵「真正的树」。",
+          "tags": [],
+          "url": "https://x.com/zarazhangrui/status/2117086544586780867",
+          "publishedAt": null,
+          "handle": ""
         }
       ]
     },
@@ -132,21 +259,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-TGF0ZW50IF",
+          "id": "digest-podcast-0-VW5zdXBlcn",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "Latent Space",
-          "title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
-          "summaryEn": "Arca isn't a SaaS company — it is the wealth management firm itself, using agents to run all the work around human advisors so that \"agents prompt people more than people prompt agents,\" backed by deterministic guardrails, human-in-the-loop for money movement, and auditability by default. Recorded at AI Engineer New York 2026, Latent Space speaks with Aman Singh, who leads the AI platform team at Arca, an AI-native wealth management firm that recently raised $64M. AI doesn't replace advisors; it replaces the back-office machinery around them, so clients experience proactive, responsive service delivered through a human. Claude is the primary model after iterations through Gemini and OpenAI, with choices driven purely by internal benchmarks (he notes Luna looked great externally but was too slow and costly for them). Arca runs its own model-agnostic harness and routes tasks to model tier…",
-          "insightZh": "AI 原生财富管理公司 Arca 不是卖 SaaS，而是「自己就是那家公司」——让 Agent 承担顾问背后的全部后台工作，「Agent 提示人多于人提示 Agent」，并用确定性护栏、人在环路和默认可审计来支撑长周期金融任务。 本期是 Latent Space 在 AI Engineer New York 2026 现场对 Arca AI 平台负责人 Aman Singh 的访谈。Arca 刚融资 6400 万美元，提供理财建议、财务规划、税务、保险和遗产规划等服务。其定位是：AI 不替代理财顾问，而是替代顾问周围的所有工作，客户并不直接与 AI 交互，只感受到行业此前做不到的主动、及时的服务。模型层面以 Claude 为主力，历经 Gemini → OpenAI → Anthropic 的迭代，选型完全由内部 benchmark 驱动（他提到 Luna 外部榜单很好看，但在他们场景下又慢又贵），坚持自建、模型无关的 harness，按任务复杂度分层路由模型，税务分析等用最重的一档。 在长周期任务上（例如一个横跨 10 天的税单筹款案例），Agent 负责「从哪些持仓变现 10 万美元最优」这类分析，但任何资金划转、资产变现、直接对客户沟通都强制人在环路。跨天续接依赖每个客户的持久化记忆（当前在做什么、谁负责什么、近期与长期跟踪事项），外加一个夜间「做梦式」反思流程更新记忆；新信号（如一通电话）会唤醒新 Agent，从记忆快速了解状态再介入。安全上：护栏全部确定性、不交给 Agent 决策；每次写库都有快速 LLM 校验；入口检测 prompt injection；数据出境时既有 PII 确定性检查，也有小模型共识防外泄；沙箱只用于卸载计算，代码产出会被转译成严格格式再过护栏。合规方面「可审计是默认的」——每个 Agent 和人类动作都生成变更日志，同时也作为 Agent 的感知信号。 反馈闭环上，员工每次修改或取消都要附原因并成为 eval，夜间由元 Agent 分析真实 trace 并提出 harness 改进建议，但 prompt 变更仍需人工工程师把关——A…",
+          "sourceName": "Unsupervised Learning",
+          "title": "Ep 95: Modal CEO on the Future of Inference, the Chaos of the GPU Market & Origins of the Sandbox Bet",
+          "summaryEn": "Plain token-serving inference is a race to the bottom; the durable moat is a multi-product platform spanning sandboxes, inference, training and storage — while GPU procurement remains a Wild West of WhatsApp groups and hotel-lobby deals. Redpoint GP Patrick Chase hosts Modal founder and CEO Eric for a second time. On compute: Modal closes two to three compute deals a week across 25 clouds. He describes GTC as \"an open-air drug market, but for GPUs,\" with capacity found through late-night WhatsApp groups and personal connections. Compute is heterogeneous in location, disk, networking and reliability, so it can't trade like a fungible contract; many neoclouds are ex-crypto miners with shaky operations, and Modal's value lies in aggregating demand and pulling failing capacity out of rotation. He flags a structural risk: GPU commitments often require only ~30% upfront, so raising $1B can lo…",
+          "insightZh": "裸卖 token 的推理市场会是一场向下竞争，真正持久的壁垒是「沙箱 + 推理 + 训练 + 存储」的多产品平台；而 GPU 市场仍是一个靠 WhatsApp 群和酒店大堂交易的「狂野西部」。 Redpoint GP Patrick Chase 再次对话 Modal 创始人兼 CEO Eric。关于算力：Modal 现在每周要谈两到三笔算力交易，接入 25 家云。他形容 GTC 像「露天 GPU 黑市」，靠深夜 WhatsApp 群、酒店大堂交换号码甚至销售 VP 表亲的高尔夫球友拿到卡。算力因地域、磁盘、网络、可靠性差异巨大，不是可在交易所买卖的标准化合约；不少 neocloud 由前加密矿工转型，可靠性堪忧，Modal 的价值正是聚合需求、自动剔除故障节点。他还提醒结构性风险：GPU 承诺通常只需预付约 30%，融 10 亿美元就能锁 30 亿算力，形成隐性杠杆并依赖后续融资；若 VC 收紧，部分 neolab 可能转型为 neocloud 转售算力（Mistral 已有先例）。 产品层面：沙箱产品 2023 年推出，过去 12 个月增长近千倍，已占收入约三分之一、独立年化收入 3 亿美元；LLM 推理在 DeepSeek 时刻后发力，也占约三分之一，并刚推出专用推理与训练产品。客户包括 Cognition（推理 + RL rollout 沙箱）、Ramp（后台编码 agent）、Suno、Runway、Decagon、DoorDash 及生物计算、机器人公司。他判断推理市场「straight down the middle 卖 token」会被 OpenRouter 商品化，kernel/KV cache 优化会被快速复制，持久差异化在平台组合；Modal 积极向 vLLM、SGLang 贡献，因为 alpha 在自动扩缩容等基础设施层。 组织与人才：Modal 合并的代码约 95% 由 agent 参与编写，但基础设施的长尾可靠性风险仍需人类监督；出乎意料的是资深工程师比初级更积极采用 agent——相当于拥有 10 个实习生，给一套 POSIX 文件系统测试…",
           "tags": [
-            "Claude",
-            "OpenAI",
             "Agent",
-            "Coding"
+            "Coding",
+            "Product",
+            "Startup"
           ],
-          "url": "https://www.youtube.com/@LatentSpacePod",
-          "publishedAt": "2026-10-31T16:00:00.000Z",
+          "url": "https://www.youtube.com/@RedpointAI",
+          "publishedAt": "2026-10-28T13:03:16.000Z",
           "handle": ""
         }
       ]

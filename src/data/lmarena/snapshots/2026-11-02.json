@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 2,
+  "snapshotDate": "2026-11-02",
+  "fetchedAt": "2026-11-02T07:42:13+08:00",
+  "sourceUpdatedAt": "2026-10-28",
+  "sourceTimeMeaning": "leaderboard publish date",
+  "sourceTimeLabel": "官方榜单发布日期",
+  "sourceTimeNote": "HF 数据集 leaderboard_publish_date：官方榜单发布日期（仅日期、无时刻/时区）；不是投票截止时间，也不是抓取日期。HF 发布通常滞后 arena.ai 官网数天。",
+  "rankingBasis": "arena-text-overall-style-control-v2",
+  "rankingLabel": "文本总榜（风格控制）",
+  "rankingBasisNote": "与 arena-text-overall-style-control-v1 统计口径相同（2026-10-08 发布逐行一致），但模型名改为 HF 展示名且无 modelKey，名称不可与 v1 快照直接比对，故不计算跨口径升降。",
+  "sourceLeaderboardId": "hf:lmarena-ai/leaderboard-dataset/text_style_control/latest-00000-of-00001.parquet#category=overall",
+  "styleControl": true,
+  "totalModelsObserved": 419,
+  "totalModelsShown": 50,
+  "sourceTotalVotes": null,
+  "sourceTotalVotesNote": "HF 数据集不提供全局对战总票数；逐模型 vote_count 之和会重复计票（每场对战计入两个模型），不能当作总票数，故置空。",
+  "categoryLabels": {
+    "overall": "文本综合"
+  },
+  "sourceUrl": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/main/text_style_control/latest-00000-of-00001.parquet",
+  "sourcePage": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+  "sourceLabel": "LMArena 官方 Hugging Face 数据集",
+  "sourceRevision": "323062f70843f40e3f739865c3fe9d806126e412",
+  "sourceSha256": "7e575fc4ab7c78f75d02c4ec86dba4d5ecbfc02f21e14372fe22de1113d952ee",
+  "sourceBytes": 623963,
+  "sourceFormat": "Hugging Face parquet (lmarena-ai/leaderboard-dataset text_style_control/latest-00000-of-00001.parquet, category=overall)",
+  "unmappedOrganizations": [],
+  "coverageNote": "仅文本总榜（风格控制），来自 LMArena 官方 HF 数据集；不含分项排名，不生成优势赛道；不含名次置信区间。与不同 rankingBasis 的历史快照不直接比较。",
+  "models": [
+    {
+      "rank": 1,
+      "name": "Gemini 4 Carbon (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 1
+      },
+      "rating": 1527.5065447464403,
+      "ratingLower": 1518.0976265288389,
+      "ratingUpper": 1536.9154629640418,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 4403,
+      "highlight": [],
+      "summary": "文本总榜 #1（风格控制）"
+    },
+    {
+      "rank": 2,
+      "name": "Gemini 4 Argon (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 2
+      },
+      "rating": 1520.254646597456,
+      "ratingLower": 1513.9807620604795,
+      "ratingUpper": 1526.5285311344326,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 11889,
+      "highlight": [],
+      "summary": "文本总榜 #2（风格控制）"
+    },
+    {
+      "rank": 3,
+      "name": "Claude Opus 5.5 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 3
+      },
+      "rating": 1508.697590625909,
+      "ratingLower": 1502.0905562675373,
+      "ratingUpper": 1515.304624984281,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 11415,
+      "highlight": [],
+      "summary": "文本总榜 #3（风格控制）"
+    },
+    {
+      "rank": 4,
+      "name": "Muse Wonder (Max)",
+      "modelKey": null,
+      "org": "Meta",
+      "orgId": "meta",
+      "scores": {
+        "overall": 4
+      },
+      "rating": 1507.0976650433042,
+      "ratingLower": 1499.7594852426907,
+      "ratingUpper": 1514.4358448439177,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 7749,
+      "highlight": [],
+      "summary": "文本总榜 #4（风格控制）"
+    },
+    {
+      "rank": 5,
+      "name": "Claude Fable 5.1 (Max)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 5
+      },
+      "rating": 1504.3663236556554,
+      "ratingLower": 1498.5536609399205,
+      "ratingUpper": 1510.1789863713905,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 17178,
+      "highlight": [],
+      "summary": "文本总榜 #5（风格控制）"
+    },
+    {
+      "rank": 6,
+      "name": "Claude Fable 5 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 6
+      },
+      "rating": 1503.8924288671988,
+      "ratingLower": 1499.7175670435072,
+      "ratingUpper": 1508.06729069089,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 45341,
+      "highlight": [],
+      "summary": "文本总榜 #6（风格控制）"
+    },
+    {
+      "rank": 7,
+      "name": "Claude Opus 4.6 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 7
+      },
+      "rating": 1503.162754839902,
+      "ratingLower": 1499.8981177710511,
+      "ratingUpper": 1506.4273919087525,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 84512,
+      "highlight": [],
+      "summary": "文本总榜 #7（风格控制）"
+    },
+    {
+      "rank": 8,
+      "name": "Claude Opus 4.7 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 8
+      },
+      "rating": 1501.0497826033693,
+      "ratingLower": 1497.2938059584974,
+      "ratingUpper": 1504.8057592482412,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 65110,
+      "highlight": [],
+      "summary": "文本总榜 #8（风格控制）"
+    },
+    {
+      "rank": 9,
+      "name": "Claude Opus 4.6",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 9
+      },
+      "rating": 1496.0960670372383,
+      "ratingLower": 1492.91127015639,
+      "ratingUpper": 1499.2808639180864,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 89324,
+      "highlight": [],
+      "summary": "文本总榜 #9（风格控制）"
+    },
+    {
+      "rank": 10,
+      "name": "Gemini 3.8 Flash (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 10
+      },
+      "rating": 1495.9450931791241,
+      "ratingLower": 1491.5081295194072,
+      "ratingUpper": 1500.382056838841,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 47803,
+      "highlight": [],
+      "summary": "文本总榜 #10（风格控制）"
+    },
+    {
+      "rank": 11,
+      "name": "Muse Spark 1.3 (Max)",
+      "modelKey": null,
+      "org": "Meta",
+      "orgId": "meta",
+      "scores": {
+        "overall": 11
+      },
+      "rating": 1495.0456185334651,
+      "ratingLower": 1489.8004460490702,
+      "ratingUpper": 1500.29079101786,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 22134,
+      "highlight": [],
+      "summary": "文本总榜 #11（风格控制）"
+    },
+    {
+      "rank": 12,
+      "name": "Claude Opus 4.7",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 12
+      },
+      "rating": 1493.7218399926346,
+      "ratingLower": 1489.961792976673,
+      "ratingUpper": 1497.4818870085965,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 66140,
+      "highlight": [],
+      "summary": "文本总榜 #12（风格控制）"
+    },
+    {
+      "rank": 13,
+      "name": "Muse Spark 1.2 (xHigh)",
+      "modelKey": null,
+      "org": "Meta",
+      "orgId": "meta",
+      "scores": {
+        "overall": 13
+      },
+      "rating": 1492.188040510066,
+      "ratingLower": 1485.840798516926,
+      "ratingUpper": 1498.5352825032057,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 11724,
+      "highlight": [],
+      "summary": "文本总榜 #13（风格控制）"
+    },
+    {
+      "rank": 14,
+      "name": "Claude Opus 5 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 14
+      },
+      "rating": 1491.5506057614894,
+      "ratingLower": 1487.971519852062,
+      "ratingUpper": 1495.1296916709166,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 73167,
+      "highlight": [],
+      "summary": "文本总榜 #14（风格控制）"
+    },
+    {
+      "rank": 15,
+      "name": "Claude Opus 5 (Max)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 15
+      },
+      "rating": 1490.5040398730391,
+      "ratingLower": 1485.8089547287518,
+      "ratingUpper": 1495.1991250173262,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 35531,
+      "highlight": [],
+      "summary": "文本总榜 #15（风格控制）"
+    },
+    {
+      "rank": 16,
+      "name": "Muse Spark 1.1",
+      "modelKey": null,
+      "org": "Meta",
+      "orgId": "meta",
+      "scores": {
+        "overall": 16
+      },
+      "rating": 1490.2351603730194,
+      "ratingLower": 1486.085534840864,
+      "ratingUpper": 1494.3847859051748,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 46354,
+      "highlight": [],
+      "summary": "文本总榜 #16（风格控制）"
+    },
+    {
+      "rank": 17,
+      "name": "Gemini 3.7 Flash (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 17
+      },
+      "rating": 1489.5500575529784,
+      "ratingLower": 1484.875869523599,
+      "ratingUpper": 1494.2242455823578,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 32289,
+      "highlight": [],
+      "summary": "文本总榜 #17（风格控制）"
+    },
+    {
+      "rank": 18,
+      "name": "Muse Spark",
+      "modelKey": null,
+      "org": "Meta",
+      "orgId": "meta",
+      "scores": {
+        "overall": 18
+      },
+      "rating": 1489.0250787876926,
+      "ratingLower": 1483.2951987364586,
+      "ratingUpper": 1494.7549588389263,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 14140,
+      "highlight": [],
+      "summary": "文本总榜 #18（风格控制）"
+    },
+    {
+      "rank": 19,
+      "name": "Kimi K3 (Max)",
+      "modelKey": null,
+      "org": "Moonshot",
+      "orgId": "moonshot",
+      "scores": {
+        "overall": 19
+      },
+      "rating": 1488.1894728804475,
+      "ratingLower": 1483.7478823920198,
+      "ratingUpper": 1492.6310633688752,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 36780,
+      "highlight": [],
+      "summary": "文本总榜 #19（风格控制）"
+    },
+    {
+      "rank": 20,
+      "name": "Gemini 3.1 Pro Preview",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 20
+      },
+      "rating": 1486.8999611035829,
+      "ratingLower": 1483.975929845154,
+      "ratingUpper": 1489.8239923620117,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 132547,
+      "highlight": [],
+      "summary": "文本总榜 #20（风格控制）"
+    },
+    {
+      "rank": 21,
+      "name": "Gemini 3 Pro",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 21
+      },
+      "rating": 1485.4329182845129,
+      "ratingLower": 1481.6427948059036,
+      "ratingUpper": 1489.2230417631222,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 42057,
+      "highlight": [],
+      "summary": "文本总榜 #21（风格控制）"
+    },
+    {
+      "rank": 22,
+      "name": "GPT-5.6 Sol (xHigh)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 22
+      },
+      "rating": 1484.910477373644,
+      "ratingLower": 1480.674920209976,
+      "ratingUpper": 1489.1460345373118,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 43796,
+      "highlight": [],
+      "summary": "文本总榜 #22（风格控制）"
+    },
+    {
+      "rank": 23,
+      "name": "Gemini 3.6 Flash (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 23
+      },
+      "rating": 1483.155122800798,
+      "ratingLower": 1478.7318340137006,
+      "ratingUpper": 1487.5784115878955,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 36028,
+      "highlight": [],
+      "summary": "文本总榜 #23（风格控制）"
+    },
+    {
+      "rank": 24,
+      "name": "Qwen3.8-Max",
+      "modelKey": null,
+      "org": "Alibaba",
+      "orgId": "alibaba",
+      "scores": {
+        "overall": 24
+      },
+      "rating": 1482.4121421338182,
+      "ratingLower": 1477.6209730159067,
+      "ratingUpper": 1487.2033112517297,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 31915,
+      "highlight": [],
+      "summary": "文本总榜 #24（风格控制）"
+    },
+    {
+      "rank": 25,
+      "name": "Claude Opus 4.8 (High)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 25
+      },
+      "rating": 1481.711070665865,
+      "ratingLower": 1477.8452796687382,
+      "ratingUpper": 1485.5768616629919,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 63994,
+      "highlight": [],
+      "summary": "文本总榜 #25（风格控制）"
+    },
+    {
+      "rank": 26,
+      "name": "GPT-5.5 (High)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 26
+      },
+      "rating": 1481.6951264151023,
+      "ratingLower": 1477.9742509598316,
+      "ratingUpper": 1485.416001870373,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 69377,
+      "highlight": [],
+      "summary": "文本总榜 #26（风格控制）"
+    },
+    {
+      "rank": 27,
+      "name": "GPT-6.1 Sol (Max)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 27
+      },
+      "rating": 1481.3279556386954,
+      "ratingLower": 1474.2787467779222,
+      "ratingUpper": 1488.3771644994686,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 9367,
+      "highlight": [],
+      "summary": "文本总榜 #27（风格控制）"
+    },
+    {
+      "rank": 28,
+      "name": "GLM-5.3 (Max)",
+      "modelKey": null,
+      "org": "Z.ai",
+      "orgId": "zai",
+      "scores": {
+        "overall": 28
+      },
+      "rating": 1480.5693804560872,
+      "ratingLower": 1475.6177544855943,
+      "ratingUpper": 1485.5210064265802,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 26606,
+      "highlight": [],
+      "summary": "文本总榜 #28（风格控制）"
+    },
+    {
+      "rank": 29,
+      "name": "MiMo-V2.6-Pro",
+      "modelKey": null,
+      "org": "Xiaomi",
+      "orgId": "xiaomi",
+      "scores": {
+        "overall": 29
+      },
+      "rating": 1479.6978910104858,
+      "ratingLower": 1470.2777430485708,
+      "ratingUpper": 1489.1180389724009,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 4037,
+      "highlight": [],
+      "summary": "文本总榜 #29（风格控制）"
+    },
+    {
+      "rank": 30,
+      "name": "Gemini 3.5 Flash (High)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 30
+      },
+      "rating": 1477.6273768777826,
+      "ratingLower": 1473.738227625252,
+      "ratingUpper": 1481.5165261303132,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 48376,
+      "highlight": [],
+      "summary": "文本总榜 #30（风格控制）"
+    },
+    {
+      "rank": 31,
+      "name": "Claude Sonnet 5.5 (xHigh)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 31
+      },
+      "rating": 1477.1495460775536,
+      "ratingLower": 1470.3716071551614,
+      "ratingUpper": 1483.927484999946,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 10033,
+      "highlight": [],
+      "summary": "文本总榜 #31（风格控制）"
+    },
+    {
+      "rank": 32,
+      "name": "GPT-5.5",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 32
+      },
+      "rating": 1476.6501726608242,
+      "ratingLower": 1472.9661985423302,
+      "ratingUpper": 1480.3341467793184,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 70949,
+      "highlight": [],
+      "summary": "文本总榜 #32（风格控制）"
+    },
+    {
+      "rank": 33,
+      "name": "GLM-5.3-Flash",
+      "modelKey": null,
+      "org": "Z.ai",
+      "orgId": "zai",
+      "scores": {
+        "overall": 33
+      },
+      "rating": 1476.515607263063,
+      "ratingLower": 1471.8592041682025,
+      "ratingUpper": 1481.1720103579232,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 41642,
+      "highlight": [],
+      "summary": "文本总榜 #33（风格控制）"
+    },
+    {
+      "rank": 34,
+      "name": "Gemini 3.5 Flash (Medium)",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 34
+      },
+      "rating": 1476.4083888193472,
+      "ratingLower": 1472.263373011409,
+      "ratingUpper": 1480.5534046272853,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 47196,
+      "highlight": [],
+      "summary": "文本总榜 #34（风格控制）"
+    },
+    {
+      "rank": 35,
+      "name": "DeepSeek-V4.1-Flash-20260910 (Max)",
+      "modelKey": null,
+      "org": "DeepSeek",
+      "orgId": "deepseek",
+      "scores": {
+        "overall": 35
+      },
+      "rating": 1476.2276332489914,
+      "ratingLower": 1470.1293852029012,
+      "ratingUpper": 1482.3258812950814,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 13657,
+      "highlight": [],
+      "summary": "文本总榜 #35（风格控制）"
+    },
+    {
+      "rank": 36,
+      "name": "GPT-5.2 Chat (20260210)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 36
+      },
+      "rating": 1475.663943245187,
+      "ratingLower": 1471.6238131578846,
+      "ratingUpper": 1479.7040733324898,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 35974,
+      "highlight": [],
+      "summary": "文本总榜 #36（风格控制）"
+    },
+    {
+      "rank": 37,
+      "name": "GPT-6 Astra (Max)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 37
+      },
+      "rating": 1475.647885100779,
+      "ratingLower": 1469.7245375654447,
+      "ratingUpper": 1481.571232636113,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 15038,
+      "highlight": [],
+      "summary": "文本总榜 #37（风格控制）"
+    },
+    {
+      "rank": 38,
+      "name": "GLM-5.2 (Max)",
+      "modelKey": null,
+      "org": "Z.ai",
+      "orgId": "zai",
+      "scores": {
+        "overall": 38
+      },
+      "rating": 1475.289755722248,
+      "ratingLower": 1471.2124673862706,
+      "ratingUpper": 1479.3670440582252,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 53702,
+      "highlight": [],
+      "summary": "文本总榜 #38（风格控制）"
+    },
+    {
+      "rank": 39,
+      "name": "GPT-5.4 (High)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 39
+      },
+      "rating": 1475.2741681865632,
+      "ratingLower": 1471.5108937519087,
+      "ratingUpper": 1479.037442621218,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 64748,
+      "highlight": [],
+      "summary": "文本总榜 #39（风格控制）"
+    },
+    {
+      "rank": 40,
+      "name": "Grok 4.20 Beta 1",
+      "modelKey": null,
+      "org": "SpaceXAI",
+      "orgId": "xai",
+      "scores": {
+        "overall": 40
+      },
+      "rating": 1474.613310067447,
+      "ratingLower": 1470.0463058314608,
+      "ratingUpper": 1479.1803143034329,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 27889,
+      "highlight": [],
+      "summary": "文本总榜 #40（风格控制）"
+    },
+    {
+      "rank": 41,
+      "name": "Claude Opus 4.8",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 41
+      },
+      "rating": 1474.4403985039223,
+      "ratingLower": 1470.5955126683966,
+      "ratingUpper": 1478.285284339448,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 65121,
+      "highlight": [],
+      "summary": "文本总榜 #41（风格控制）"
+    },
+    {
+      "rank": 42,
+      "name": "Qwen3.7-Max-Preview",
+      "modelKey": null,
+      "org": "Alibaba",
+      "orgId": "alibaba",
+      "scores": {
+        "overall": 42
+      },
+      "rating": 1473.7034427077983,
+      "ratingLower": 1463.9687689777431,
+      "ratingUpper": 1483.4381164378538,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 3932,
+      "highlight": [],
+      "summary": "文本总榜 #42（风格控制）"
+    },
+    {
+      "rank": 43,
+      "name": "Claude Opus 4.5 (High, 32K, 20251101)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 43
+      },
+      "rating": 1473.6904735629234,
+      "ratingLower": 1469.859096717867,
+      "ratingUpper": 1477.5218504079799,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 37484,
+      "highlight": [],
+      "summary": "文本总榜 #43（风格控制）"
+    },
+    {
+      "rank": 44,
+      "name": "GPT-5.5 Instant",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 44
+      },
+      "rating": 1473.1665868835428,
+      "ratingLower": 1468.162452193461,
+      "ratingUpper": 1478.1707215736249,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 27128,
+      "highlight": [],
+      "summary": "文本总榜 #44（风格控制）"
+    },
+    {
+      "rank": 45,
+      "name": "Gemini 3 Flash",
+      "modelKey": null,
+      "org": "Google",
+      "orgId": "google",
+      "scores": {
+        "overall": 45
+      },
+      "rating": 1472.7476280219503,
+      "ratingLower": 1468.4059119538974,
+      "ratingUpper": 1477.0893440900034,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 31301,
+      "highlight": [],
+      "summary": "文本总榜 #45（风格控制）"
+    },
+    {
+      "rank": 46,
+      "name": "Claude Sonnet 4.6",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 46
+      },
+      "rating": 1471.9506765539006,
+      "ratingLower": 1468.4397956081814,
+      "ratingUpper": 1475.4615574996196,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 70916,
+      "highlight": [],
+      "summary": "文本总榜 #46（风格控制）"
+    },
+    {
+      "rank": 47,
+      "name": "Grok 4.20 Beta (Reasoning, 0309)",
+      "modelKey": null,
+      "org": "SpaceXAI",
+      "orgId": "xai",
+      "scores": {
+        "overall": 47
+      },
+      "rating": 1471.7400417518265,
+      "ratingLower": 1468.0682230090126,
+      "ratingUpper": 1475.4118604946405,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 66422,
+      "highlight": [],
+      "summary": "文本总榜 #47（风格控制）"
+    },
+    {
+      "rank": 48,
+      "name": "Grok 4.20 Multi-Agent Beta (0309)",
+      "modelKey": null,
+      "org": "SpaceXAI",
+      "orgId": "xai",
+      "scores": {
+        "overall": 48
+      },
+      "rating": 1470.7060855161687,
+      "ratingLower": 1467.0052862511059,
+      "ratingUpper": 1474.4068847812318,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 64917,
+      "highlight": [],
+      "summary": "文本总榜 #48（风格控制）"
+    },
+    {
+      "rank": 49,
+      "name": "Claude Opus 4.5 (20251101)",
+      "modelKey": null,
+      "org": "Anthropic",
+      "orgId": "anthropic",
+      "scores": {
+        "overall": 49
+      },
+      "rating": 1469.675572905361,
+      "ratingLower": 1466.544945688652,
+      "ratingUpper": 1472.80620012207,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 72825,
+      "highlight": [],
+      "summary": "文本总榜 #49（风格控制）"
+    },
+    {
+      "rank": 50,
+      "name": "GPT-5.6 Terra (xHigh)",
+      "modelKey": null,
+      "org": "OpenAI",
+      "orgId": "openai",
+      "scores": {
+        "overall": 50
+      },
+      "rating": 1467.337294227145,
+      "ratingLower": 1463.1916387657736,
+      "ratingUpper": 1471.4829496885166,
+      "rankUpper": null,
+      "rankLower": null,
+      "votes": 48166,
+      "highlight": [],
+      "summary": "文本总榜 #50（风格控制）"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-04",
+  "title": "AI 日报 · 2026-11-04",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 战略合作 | Anthropic 携手伦敦私募 Hg 在欧洲设立独立 AI 咨询公司，直接切入埃森哲与四大的腹地",
+          "body": "据《金融时报》报道，Anthropic 与伦敦私募股权机构 Hg 已同意成立一家独立的 AI 咨询公司，在伦敦和柏林设立枢纽，预计 2026 年底前开始运营。新公司的模式是把 AI 顾问和工程师直接派驻进企业内部，围绕 Claude 重构业务流程并开发 AI 驱动的工作方式。The Hindu 的解读指出，这是模型厂商从“卖 API”走向“卖交付”的又一信号，与 OpenAI 近期的部署服务布局形成呼应，而这类嵌入式转型工作正是埃森哲和四大当前的核心业务。",
+          "insight": "模型厂商下场做交付已成趋势，咨询与集成商需要把差异化从“会用模型”转向行业流程知识、变革管理和多模型中立性。",
+          "source": "The Hindu（援引 Financial Times）",
+          "url": "https://www.thehindu.com/business/explained-anthropics-new-consulting-venture-why-are-ai-model-companies-moving-into-the-services-business/article71660465.ece"
+        },
+        {
+          "title": "💰 融资 | 推理云平台 Fal 完成 13 亿美元融资，估值翻倍至 160 亿美元",
+          "body": "彭博社 11 月 3 日报道，为创作者和开发者托管图像、视频与音频生成模型的 AI 推理初创公司 Fal 完成 13 亿美元新一轮融资，由老股东 Bessemer Venture Partners 领投，估值较上一轮翻倍至 160 亿美元。TechCrunch 指出，这家成立五年的公司此轮融资主要受推理需求激增驱动，资金将用于扩充推理算力容量。多模态生成内容的商业化正把推理基础设施推成独立的高估值赛道。",
+          "insight": "AI 价值链的钱正在从训练端向推理端迁移，多模态推理平台成为继模型厂商、算力云之后的第三类资本热点。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-03/ai-inference-startup-fal-raises-capital-at-16-billion-valuation"
+        },
+        {
+          "title": "🌍 行业动向 | 【进展】Anthropic 修订版招股书揭示算力毛利不升反降：营收冲到 170 亿美元，算力成本吃掉更多收入",
+          "body": "TechCrunch 11 月 3 日分析 Anthropic 周一提交的 S-1 修订稿：第三季度营收达到 170 亿美元，较上一季度的 115 亿美元大幅增长，但本应随规模改善的算力毛利却在恶化。文件解释称，需求增长过快导致公司不得不紧急采购额外算力，只能支付高于长期合约的价格。这是 Anthropic 首次较完整地披露营收中有多少被算力成本吞噬，也是二级市场评估前沿实验室商业模式可持续性的关键数据。",
+          "insight": "前沿模型的单位经济仍受算力采购节奏左右，企业客户应预期 API 价格和配额政策短期内难有大幅松动。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/"
+        },
+        {
+          "title": "📜 监管政策 | Google 明年起默认关闭 K-12 学生 AI 功能，但拒绝 AI 的学校将同时失去搜索",
+          "body": "《纽约时报》11 月 3 日报道，Google 宣布明年起将默认对 K-12 学生关闭 AI 工具，除非学校管理员主动开启，调整范围覆盖 Gemini、NotebookLM、Classroom 中的 Gemini 以及 Google 搜索。代价是：由于 AI 功能已深度集成进搜索，选择彻底限制 AI 的学校将无法再让学生使用 Google 搜索。Google 教育副总裁 Chris Phillips 表示“搜索与 AI 已深度融合”。该消息在 Hacker News 获得近 500 分热议。",
+          "insight": "当 AI 与基础产品深度绑定，“可选关闭”实际变成“全有或全无”，企业在制定 AI 使用政策时同样会面临这种平台捆绑难题。",
+          "source": "The New York Times",
+          "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html"
+        },
+        {
+          "title": "📜 监管政策 | 国家发改委宣布加快人工智能立法，建立覆盖模型全生命周期的安全标准与伦理规范",
+          "body": "国家发展改革委创新和高技术发展司副司长王若蒙 11 月 3 日在新闻发布会上表示，将加快人工智能立法，支持数据、算力、算法等核心要素发展，规范重点应用场景，建立覆盖人工智能全生命周期的安全标准和伦理规范，并定期评估规则实施情况、及时修订过时条款。同时将通过过渡期和配套指引减轻企业合规负担，推出分行业监管沙盒；开发者和运营者则需加强风险管理，主动披露安全风险、事件和漏洞。彭博社将其解读为中国为 AI 装上“安全阀”。",
+          "insight": "“立法 + 沙盒 + 过渡期”的组合意味着在华 AI 业务的合规要求将系统化，跨国企业应提前把风险披露与事件上报纳入 AI 治理流程。",
+          "source": "凤凰网",
+          "url": "https://original.ifeng.com/c/8xkgQJofIDY"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🏦 金融落地 | 高盛收紧 AI 编程工具：多数交易员和银行家被禁用 Claude Code 与 GitHub 工具，仅工程师保留权限",
+          "body": "彭博社 11 月 2 日报道，高盛在审视生产力收益与风险后，禁止大部分员工使用 Anthropic 的 Claude Code、微软 GitHub 等高级 AI 编程工具，此前数月这些工具对银行家开放。据 The Decoder 援引彭博报道，依据 10 月的内部指引，目前只有工程师仍可使用。此举引发部分员工不满。这是华尔街头部机构在“全员 vibe coding”热潮后首次公开收缩非技术岗位的 AI 编程权限。",
+          "insight": "受监管行业的 AI 落地正从“普惠开放”回到“按角色授权”，企业需要为非工程岗位的 AI 编程建立单独的风险评估与审计边界。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-02/goldman-restricts-traders-and-bankers-from-using-some-ai-tools"
+        },
+        {
+          "title": "📈 企业支出 | Menlo Ventures《2026 企业 AI 现状》：企业 AI 支出一年增 5.4 倍至 1770 亿美元，智能体接管主战场",
+          "body": "Menlo Ventures 11 月 3 日发布年度《State of Enterprise AI》报告，测算 2026 年企业在生成式 AI 上的支出达到 1770 亿美元，一年增长 5.4 倍，报告标题直指“智能体正在接管”。作为长期跟踪企业 AI 采购的风险投资机构，Menlo 的年度数据常被用来衡量企业 AI 预算从试点走向规模化的速度。支出结构正从模型调用和副驾驶类工具，加速转向能够端到端执行任务的智能体应用。",
+          "insight": "企业 AI 预算已进入千亿美元量级，CIO 的核心问题正从“要不要投”转向“智能体预算该如何治理和计量回报”。",
+          "source": "Menlo Ventures / GlobeNewswire",
+          "url": "https://www.globenewswire.com/news-release/2026/11/03/3394279/0/en/menlo-ventures-2026-state-of-enterprise-ai-report-enterprise-ai-spending-hits-177b-up-5-4x-in-one-year-as-agents-take-over.html"
+        },
+        {
+          "title": "🏭 内部实践 | Anthropic 招股书披露：按零售价计算，公司内部 Claude 用量已超过员工薪酬总额",
+          "body": "Business Insider 报道，Anthropic 的 IPO 文件披露了一个标志性节点：按对外零售价格折算，公司内部使用 Claude 的价值在 4 月份已超过当月员工薪酬（不含股票奖励）。这意味着在这家前沿实验室内部，“AI 劳动力”的名义成本已高于人类员工的现金薪酬。该话题在 Hacker News 获得近 350 分，Reddit 上有工程师表示自己每月消耗的 token 零售价也已超过月薪，所在组织开始约谈“负责任的 token 使用”。",
+          "insight": "token 支出正成为与人力成本同量级的预算科目，企业需要建立类似人力编制的 AI 用量预算、分摊与 ROI 管理机制。",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11"
+        },
+        {
+          "title": "🇨🇳 中国案例 | 民营银行加速部署智能体：微众银行获客成本降约 20%，苏商银行审核时间从 1 天压缩到 5 分钟",
+          "body": "虎嗅梳理了国内民营银行近期的智能体落地进展：微众银行通过 AI 智能体优化获客与营销链路，获客成本下降约 20%；苏商银行把智能体引入信贷审核流程，单笔审核时间从原来的约 1 天压缩到 5 分钟左右。文章认为，民营银行没有庞大线下网点，天然依赖线上化与自动化，因此成为国内金融业智能体规模化落地的先行者，但同时也面临模型可解释性、风控合规与人机责任边界等落地难点。",
+          "insight": "中国银行业智能体已从客服问答走进获客与信贷审批等核心链路，可量化的时效与成本指标是推动规模化的关键抓手。",
+          "source": "虎嗅",
+          "url": "https://www.huxiu.com/article/4901410.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🔬 技术突破 | “权重空间编程”实验刷屏：GPT-6 Astra 直接读写 Qwen 权重，小模型 MATH-500 从 7.9% 提升至 48.1%",
+          "body": "一篇题为《Weight-Space Programming》的博客文章登上 Hacker News 当日第一（近 2900 分）：作者让 GPT-6 Astra 作为智能体直接分析并修改 Qwen3.5-0.8B 的模型权重，而非通过训练或提示词，使其在 MATH-500 上的得分从 7.9% 提升到 48.1%。实验随即引发激烈争论：spaCy 作者 Matthew Honnibal 撰文称该帖结论具有误导性，Simon Willison 则发现本地运行的 Qwen 3.8 27B 同样能在一定程度上解读模型权重。",
+          "insight": "让模型直接“编辑另一个模型”打开了新的调优想象空间，但在可复现性得到验证前，企业不宜把它当作微调的替代方案。",
+          "source": "rikiyat.github.io（作者博客）",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+        },
+        {
+          "title": "🛡️ 供应链安全 | Postman 桌面版被曝静默向 Claude Code 与 Codex 安装插件，并为自己的启动钩子写入信任记录",
+          "body": "Postman GitHub 仓库的一个 issue 在 Hacker News 获得超 850 分：用户发现 10 月 24 日 Postman 桌面版 12.33.4 在例行自动升级时，未经任何确认就向 Claude Code 和 Codex 安装了 MCP 插件，修改了 ~/.claude/settings.json 与 ~/.codex/config.toml，安装程序还替自己的 SessionStart 钩子写入了信任记录，使任意 API 工程任务都被路由到 Postman 的技能。报告者明确表示，由于远程 MCP 认证失败，未证实有 API 数据外泄。",
+          "insight": "编程智能体的配置目录已成新的供应链攻击面，安全团队应把 ~/.claude、~/.codex 等目录纳入终端基线监控，并禁止第三方安装器自我授信。",
+          "source": "GitHub（postmanlabs issue）",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+        },
+        {
+          "title": "🌍 行业动向 | AI 找 bug 的速度超过人类修复速度：PostgreSQL 19 推迟至 11 月 19 日发布",
+          "body": "PostgreSQL 19 的发布已推迟到 11 月 19 日，超出项目惯常的 9 月中至 10 月中发布窗口。核心提交者 Robert Haas 在博客中直言原因在于大模型：不是 AI 写了坏代码，而是 LLM 辅助审查以远超以往的速度挖出了大量陈年 bug，导致回溯补丁提交增加约 61%，多个大型特性在后期被迫回滚。他写道，审查这些代码的人类在 2025 到 2026 年间并没有变得更聪明。该讨论在 Hacker News 获得 840 余分。",
+          "insight": "AI 正把软件工程的瓶颈从“发现问题”转移到“人工审查与修复”，研发组织需要相应扩充审查产能和自动化回归能力。",
+          "source": "Hardware Busters",
+          "url": "https://hwbusters.com/news/postgresql-19-slips-to-november-19-as-ai-found-bugs-swamp-its-human-reviewers/"
+        },
+        {
+          "title": "🧩 工程基础设施 | OpenAI 自研 Git 后端 Pando：为应对 Codex 带来的海量并发提交重构单体仓库",
+          "body": "OpenAI 官方工程博客披露，过去一年其单体仓库的规模和负载急剧增长，Codex 带来的并发开发量迫使团队重构源代码管理系统。为此 OpenAI 自研了 Git 仓库新后端 Pando，在不中断工程工作、不改变团队 Git 使用习惯的前提下完成迁移，目前已支撑 OpenAI 单体仓库的全部开发。Pando 的两个设计目标是：面向多分支并发推送的水平可扩展写入，以及让客户端下载速度跑满可用带宽的读吞吐，同时保持与 Git 的兼容。",
+          "insight": "当编程智能体成为主力“开发者”，版本控制、CI 等基础设施的并发能力将成为新的瓶颈，大型研发组织需提前评估。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/scaling-git-at-openai/"
+        },
+        {
+          "title": "🚀 产品发布 | DeepSeek Harness 推出创作者模式：一句话生成可安装插件，公开七组演示提示词",
+          "body": "澎湃新闻报道，DeepSeek 11 月 2 日为其智能体平台 DeepSeek Harness 推出 Creator Mode（创作者模式），用户切换模式后用自然语言描述需求，智能体即可现场编写、安装并运行一个插件，以独立面板形式从侧栏或会话中打开，体现 Harness“一切皆插件”的设计理念。DeepSeek 同步发布演示视频并公开七组中英文提示词，覆盖设计工作台、沙盒游戏、3D 建筑展示、Transformer 运算可视化、视频编辑等场景。",
+          "insight": "国产智能体平台正从“对话”走向“即时生成工具”，低代码与内部工具开发的门槛将进一步下移。",
+          "source": "澎湃新闻",
+          "url": "https://www.thepaper.cn/newsDetail_forward_34397117"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📈 机构报告 | Gartner 三季度新兴风险调查：“AI 战略误判”与“AI 驱动的竞争替代”首次进入企业五大新兴风险",
+          "body": "Gartner 11 月 2 日发布 2026 年第三季度新兴风险调查结果：两项与 AI 相关的新风险——AI 战略误判，以及由 AI 驱动的竞争替代——首次进入企业前五大新兴风险。Gartner 警告，企业如果在 AI 投入方向、节奏和治理上判断失误，AI 可能从战略机遇转变为企业风险敞口的来源；而竞争对手借助 AI 重塑成本结构和产品形态，也可能使行业格局在短期内被改写。",
+          "insight": "AI 风险的讨论正从技术安全上升到战略层面，董事会需要把“AI 押错方向”和“被 AI 原生对手替代”同时纳入风险地图。",
+          "source": "Gartner",
+          "url": "https://www.gartner.com/en/newsroom/press-releases/2026-11-02-gartner-survey-finds-two-new-ai-related-risks-emerge-in-3q26"
+        },
+        {
+          "title": "🔍 评测分析 | Artificial Analysis 改用私有题库后，中国开源模型与 Anthropic、OpenAI 差距明显拉大",
+          "body": "Business Insider 报道，独立评测机构 Artificial Analysis 改版其测试体系、引入不公开答案的私有题库后，中国 AI 模型的排名明显落后于美国对手，引发外界对开源权重模型真实能力的重新审视。据 Dealroom 汇总，新指数中 Claude Opus 5.5 以 58 分领先，GPT-6 Astra 57 分、GPT-6.1 Sol 55 分，前五名均由 Anthropic 与 OpenAI 占据，中国开源模型落后约 26 分。这也说明公开基准的“刷榜”效应可能高估了部分模型的实际水平。",
+          "insight": "企业选型应更多依赖私有评测集和自身业务数据验证，而不是公开排行榜分数。",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/chinese-ai-models-rankings-artificial-analysis-private-tests-anthropic-openai-2026-11"
+        },
+        {
+          "title": "🧠 观点长文 | 陶哲轩博客客座文章《AI 时代的无我数学》：当机器能产出结果，数学工作的价值何在",
+          "body": "陶哲轩博客 11 月 2 日刊发由 Karthik C. S.、Amit Sahai 和 Jie Xue 撰写的客座长文《Egoless Mathematics in the AI Era》。文章认为，AI 的发展迫使数学家重新思考自身工作的目的：大部分讨论聚焦于哪些任务会被机器接管，但更根本的问题是，如果我们对数学价值的理解已与“产出结果、展示个人能力”密不可分，那么当下的不确定性暴露的其实是这种认知本身的局限。文章主张以更“无我”的协作视角看待人机共同推进知识。",
+          "insight": "顶尖知识工作者对 AI 的反思正从“会不会被替代”转向“工作价值如何重新定义”，这对专业服务业的组织与激励设计同样适用。",
+          "source": "Terence Tao 博客",
+          "url": "https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/"
+        },
+        {
+          "title": "📈 机构报告 | 世界经济论坛金融业 AI 报告：71% 银行客户想要 AI 助手，但 82% 要求智能体行动前须经本人批准",
+          "body": "新浪科技解读世界经济论坛最新金融服务业 AI 报告：该报告基于 150 余名金融业高管、100 多家机构的实践及香港、纽约、伦敦、新加坡等地调研，判断金融机构正从 AI 试点转向规模化部署。数据显示，71% 的银行客户希望在主要银行 App 中使用 AI 助手，但 82% 要求 AI 代理在执行操作前获得本人批准。报告把机构演进分为试点、规模化、颠覆三阶段，并强调衡量 AI 价值需同时看收入增长、决策质量、人工干预率与模型事件率等指标。",
+          "insight": "金融 AI 的商业化瓶颈在“信任”而非“效率”，人机协同审批与可审计的智能体设计将是规模化的前提。",
+          "source": "新浪科技",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-11-02/doc-inixhstf2481122.shtml"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "模型厂商正在全面下沉到交付层：Anthropic 联手 Hg 在欧洲设立嵌入式咨询公司，与此前 OpenAI 的部署服务布局形成合围之势；同时 Anthropic 修订版招股书显示营收猛增但算力毛利恶化，说明前沿实验室的增长仍被算力采购成本牵制，向高毛利的服务和交付延伸也有财务上的现实动因。",
+    "企业侧的 AI 使用正进入“精细化治理”阶段。一方面，Menlo 测算企业 AI 支出一年增长 5.4 倍至 1770 亿美元，Anthropic 内部 token 用量的零售价值已超过员工薪酬；另一方面，高盛收回非工程岗位的 AI 编程权限，Gartner 首次把“AI 战略误判”列入五大新兴风险。投入加速与权限收紧并行，按角色授权和用量预算将成为标配。",
+    "编程智能体的副作用开始外溢到软件生态：Postman 静默改写 Claude Code 与 Codex 配置暴露出新的供应链攻击面，PostgreSQL 19 因 AI 发现的 bug 太多而延期，OpenAI 为承载 Codex 的并发量不得不重写 Git 后端。研发组织需要同步升级审查产能、终端安全基线和工程基础设施，才能真正吃到 AI 编程的红利。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-04 执行）：查询『OpenAI Anthropic enterprise services consulting joint venture partnership』『AI acquisition merger site:reuters.com』『Anthropic Accenture OR Deloitte OR consulting』『site:bloomberg.com AI』『Anthropic Hg Europe consultancy』。命中：Anthropic×Hg 欧洲独立咨询公司（FT 报道，已纳入热点头条）；Fal 13 亿美元融资（已纳入）；Marvell-Lumentum 并购、OpenAI-Oracle/ServiceNow 合作、Anthropic S-1 三季报均已在过去 7 天发布过（S-1 以算力毛利新角度标【进展】纳入 1 条）。Accenture 相关：AFS×Google Public Sector Gemini Launchpads 为 10-19 事件超 7 天，招聘 AI 智能体已发布过，今日无新 Accenture 事件。"
+  }
+}

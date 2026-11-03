@@ -1,0 +1,321 @@
+{
+  "date": "2026-11-04",
+  "title": "Builder Signals · 2026-11-04",
+  "generatedAt": "2026-11-03T23:00:18.333Z",
+  "feedGeneratedAt": "2026-11-03T06:27:49.784Z",
+  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 11 条高信号内容。",
+  "stats": {
+    "xBuilders": 12,
+    "totalTweets": 29,
+    "selectedXTweets": 10,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 11
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch argued that stateless sandboxes are the wrong benchmark — agents are only useful if they carry their workspace with them (identity, skills, repos, memories). He said the Vercel Sandbox team has hit its latency and throughput SLOs while prioritizing reliability and security, shipping clusters in 19 global regions with new features weekly under double-digit weekly demand growth. He also said he is \"so bullish on WebMCP.\"",
+      "insightZh": "Vercel CEO Guillermo Rauch 认为，用无状态沙箱来做基准测试本身就测错了对象：Agent 只有带着自己的工作区（身份、skills、代码仓库、记忆等）才真正有用。他提到 Vercel Sandbox 团队一边守住延迟和吞吐的 SLO，一边把可靠性和安全放在优先位置，同时在 19 个全球区域上线集群、每周发布新功能，客户需求每周以两位数百分比增长。另外他表示自己非常看好 WebMCP。",
+      "tags": [
+        "Agent",
+        "Product",
+        "Eval"
+      ],
+      "url": "https://x.com/rauchg/status/2117338179535810957",
+      "publishedAt": "2026-11-02T19:28:54.000Z",
+      "metrics": {
+        "likes": 230,
+        "retweets": 6,
+        "replies": 123,
+        "score": 500
+      }
+    },
+    {
+      "id": "digest-x-1-QW1qYWQgTW",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Amjad Masad",
+      "title": "Amjad Masad · Replit CEO",
+      "summaryEn": "Replit CEO Amjad Masad argued that AI agents should operate in dedicated, organization-controlled environments with access limited to the resources each task requires. Quoting a separate post, he noted the practice in question is widespread in finance and that \"the ban hammer is coming down.\"",
+      "insightZh": "Replit CEO Amjad Masad 主张，AI Agent 应该运行在专用的、由组织掌控的环境里，并且只授予每个任务所需的有限资源访问权限。他还转评了一条与金融行业相关的内容，称这种情况在金融业很普遍，“封禁的大锤要落下来了”。",
+      "tags": [
+        "Agent"
+      ],
+      "url": "https://x.com/amasad/status/2117499074496872882",
+      "publishedAt": null,
+      "handle": ""
+    },
+    {
+      "id": "digest-podcast-0-TGF0ZW50IF",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Latent Space",
+      "title": "Building Legal Agents When You Can't See the Data — Jacob Lauritzen, CTO of Legora",
+      "summaryEn": "In legal AI, the moat isn't the model — it's an eval system built under the constraint of never seeing customer data, a small set of reusable product primitives, and a bench of lawyer-engineers who can configure and teach the product. Legora CTO Jacob Lauritzen traced the product from \"ChatGPT with Swedish laws and a search tool\" to an agent that researches, drafts, edits Word files, organizes documents and runs complex analyses. Tabular Review lays out thousands of contracts as rows and questions as columns, handles up to roughly a million cells, cites back to sources, and runs the first 10 rows before fanning out; the agent itself can spin one up, flag red issues and draft a client memo. Lists — a Linear/Notion-database-like primitive — glues everything together: agents create and read lists, lists trigger agents, and products such as Intake (a Slack front door) and fact intelligence…",
+      "insightZh": "法律 AI 的护城河不在模型，而在“看不见数据”约束下的评测体系、可复用的产品原语（Lists / Projects / Agent / Tabular Review）和一支懂法律又懂技术的 legal engineer 队伍。 Legora CTO Jacob Lauritzen 回顾了产品演进：最初只是“带瑞典法律检索工具的 ChatGPT”，从法律研究起步，逐步扩展为能起草、编辑 Word、整理文件、做复杂分析的 Agent。核心功能 Tabular Review 把上万份合同按行排列、按列提问（终止期、IP 转让条款、薪酬等），单日可处理约百万单元格，结果带引用可回溯；先跑前 10 行验证再全量铺开。Agent 也可以自己拉起 Tabular Review、分析红旗并起草备忘录。Lists（类似 Linear / Notion 数据库）作为“胶水”原语，Agent 能创建、读取 List，List 也能触发 Agent，Intake（Slack 入口）、事实情报等产品都建在这些原语之上。 最大的业务难点是看不到任何 trace：客户数据本身属于律所的客户，高度保密。为此 Legora 组建了约 3 名工程师 + 3 名律师的评测团队，外加约 100 名 legal engineer（在 Big Law 工作 3-4 年、常有 CS 背景的律师），在模拟的数据室环境中按执业领域和任务类型做热力图评测；他们发现新模型发布常常是部分提升、部分回退。早期则几乎不做评测——比如引用格式问题，下一个模型发布直接从 70% 提到 99%。基础设施全部在 Azure 上，因为律所早年只信任已通过安全审查的微软；如今上云已成共识，on-prem 讨论几乎消失。模型策略是“模型套利”：按任务、成本、延迟、合规和区域可用性选模型，开放权重模型开始用于法律检索等有边界的扇出检索任务做后训练，但不打算训练自己的主 Agent 模型。 关于行业：Lauritzen 认为约 60% 的法律工作当前模型已能做好，剩下的复杂分析仍需更强智能；初级律师并没有被淘汰，而是优秀者价值更高、分化更大；…",
+      "tags": [
+        "OpenAI",
+        "Agent",
+        "Product",
+        "Eval"
+      ],
+      "url": "https://www.youtube.com/@LatentSpacePod",
+      "publishedAt": "2026-11-02T20:50:24.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch argued that stateless sandboxes are the wrong benchmark — agents are only useful if they carry their workspace with them (identity, skills, repos, memories). He said the Vercel Sandbox team has hit its latency and throughput SLOs while prioritizing reliability and security, shipping clusters in 19 global regions with new features weekly under double-digit weekly demand growth. He also said he is \"so bullish on WebMCP.\"",
+          "insightZh": "Vercel CEO Guillermo Rauch 认为，用无状态沙箱来做基准测试本身就测错了对象：Agent 只有带着自己的工作区（身份、skills、代码仓库、记忆等）才真正有用。他提到 Vercel Sandbox 团队一边守住延迟和吞吐的 SLO，一边把可靠性和安全放在优先位置，同时在 19 个全球区域上线集群、每周发布新功能，客户需求每周以两位数百分比增长。另外他表示自己非常看好 WebMCP。",
+          "tags": [
+            "Agent",
+            "Product",
+            "Eval"
+          ],
+          "url": "https://x.com/rauchg/status/2117338179535810957",
+          "publishedAt": "2026-11-02T19:28:54.000Z",
+          "metrics": {
+            "likes": 230,
+            "retweets": 6,
+            "replies": 123,
+            "score": 500
+          }
+        },
+        {
+          "id": "digest-x-1-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad argued that AI agents should operate in dedicated, organization-controlled environments with access limited to the resources each task requires. Quoting a separate post, he noted the practice in question is widespread in finance and that \"the ban hammer is coming down.\"",
+          "insightZh": "Replit CEO Amjad Masad 主张，AI Agent 应该运行在专用的、由组织掌控的环境里，并且只授予每个任务所需的有限资源访问权限。他还转评了一条与金融行业相关的内容，称这种情况在金融业很普遍，“封禁的大锤要落下来了”。",
+          "tags": [
+            "Agent"
+          ],
+          "url": "https://x.com/amasad/status/2117499074496872882",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-2-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux said \"your dot\" will choose the best model for the task, drawing on different models for different parts of the work. He also said the team \"knows some Git-fu\" and is finally able to talk about it, giving props to @tnm and team.",
+          "insightZh": "OpenAI Codex / ChatGPT 负责人 Thibault Sottiaux 透露了产品方向：用户的 “dot” 会为任务自动挑选最合适的模型，并在同一项工作的不同部分调用不同模型。他还表示团队“懂点 Git 功夫”，终于可以对外聊一些相关工作，并向 @tnm 及团队致敬。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/thsottiaux/status/2117283355427495983",
+          "publishedAt": "2026-11-02T15:51:03.000Z",
+          "metrics": {
+            "likes": 2176,
+            "retweets": 34,
+            "replies": 267,
+            "score": 2846
+          }
+        },
+        {
+          "id": "digest-x-3-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · AI 教程与访谈创作者",
+          "summaryEn": "AI tutorials creator Peter Yang compared copy-editing suggestions from ChatGPT and Gemini: ChatGPT's were almost entirely bad, while Gemini's were great. But Antigravity doesn't seem to have working browser use, so he has to paste Gemini's edits back into ChatGPT to apply them — \"the best model for writing & editing is held back by its harness.\" He also highlighted a product's \"insane growth\" as what an AI-native product looks like.",
+          "insightZh": "AI 教程创作者 Peter Yang 做了一次写作编辑对比：让 ChatGPT 和 Gemini 同时给文章提修改建议，ChatGPT 的建议几乎全不好用，Gemini 的却相当出色。问题在于 Antigravity 的浏览器操作似乎不可用，他只能把 Gemini 的修改再贴回 ChatGPT 去在浏览器里执行——“最好的写作模型被它的 harness 拖累了”。他另外转评了一个产品，称这种疯狂增长就是 AI 原生产品该有的样子。",
+          "tags": [
+            "OpenAI",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/petergyang/status/2117333424403042330",
+          "publishedAt": "2026-11-02T19:10:01.000Z",
+          "metrics": {
+            "likes": 200,
+            "retweets": 3,
+            "replies": 62,
+            "score": 336
+          }
+        },
+        {
+          "id": "digest-x-4-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "handle": "danshipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper explained his preference: partly Argon is just that good, and partly Antigravity is \"stuck in 2025\" without all the crazy features and complexity. He pointed readers to Every's vibe check of Argon.",
+          "insightZh": "Every CEO Dan Shipper 在解释自己的工具偏好时说：一方面是 Argon 本身很好用，另一方面是 Antigravity “还停留在 2025 年”，没有那些疯狂的新功能和复杂度。他推荐阅读 Every 对 Argon 的 vibe check 测评。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/danshipper/status/2117363007340609556",
+          "publishedAt": "2026-11-02T21:07:34.000Z",
+          "metrics": {
+            "likes": 42,
+            "retweets": 0,
+            "replies": 6,
+            "score": 54
+          }
+        },
+        {
+          "id": "digest-x-5-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code",
+          "summaryEn": "Former Anthropic Claude Code member Thariq shared his one-week takeaway: you don't need unlimited tokens to do great work, the $200 plans are amazing, and \"this is the most expensive intelligence will ever be.\"",
+          "insightZh": "前 Anthropic Claude Code 成员 Thariq 分享了一周使用后的结论：做出好工作并不需要无限 token，200 美元档的订阅方案就非常好用，而且“这是智能有史以来最贵的时候”——之后只会更便宜。",
+          "tags": [
+            "Claude",
+            "Coding"
+          ],
+          "url": "https://x.com/trq212/status/2117305792923889731",
+          "publishedAt": "2026-11-02T17:20:13.000Z",
+          "metrics": {
+            "likes": 6728,
+            "retweets": 133,
+            "replies": 409,
+            "score": 8078
+          }
+        },
+        {
+          "id": "digest-x-6-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC President & CEO Garry Tan said Capy Captains increased his issue-fixing throughput by about 5x overnight, calling cross-captain and subthread coordination an insane unlock. He flagged an interesting new use of smaller models: direct manipulation of weights. He also renewed his call to repeal CEQA, calling it the primary NIMBY tool blocking hospitals, high-speed rail and housing.",
+          "insightZh": "YC 总裁兼 CEO Garry Tan 表示，Capy Captains 让他的 issue 修复吞吐量一夜之间提升约 5 倍，能够跨多个 captain 和子线程协调是巨大的解锁。他还指出小模型的一个有趣新用法：直接操控权重。此外他再次呼吁废除加州 CEQA，认为它是阻挠医院、高铁、住房建设的主要 NIMBY 工具。",
+          "tags": [
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2117410016730964358",
+          "publishedAt": "2026-11-03T00:14:22.000Z",
+          "metrics": {
+            "likes": 90,
+            "retweets": 7,
+            "replies": 47,
+            "score": 212
+          }
+        },
+        {
+          "id": "digest-x-7-TmFuIFl1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品",
+          "summaryEn": "OpenAI Codex product lead and former Linear head of product Nan Yu said that, except in rare circumstances, group chat is a terrible multiplayer AI experience — \"literally guaranteed slop.\"",
+          "insightZh": "OpenAI Codex 产品负责人、前 Linear 产品负责人 Nan Yu 下了一个直白判断：除少数情况外，群聊是一种糟糕的多人 AI 体验，“几乎保证产出垃圾内容”。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thenanyu/status/2117432599559716940",
+          "publishedAt": "2026-11-03T01:44:06.000Z",
+          "metrics": {
+            "likes": 76,
+            "retweets": 0,
+            "replies": 12,
+            "score": 100
+          }
+        },
+        {
+          "id": "digest-x-8-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari quipped that the gap between a startup or CEO vague-posting revenue numbers and kicking off the fundraise they \"weren't going to do till early next year\" is about 11 days (n=17). He also launched Slice for Thought, an IRL SF series every Wednesday lunch: 60 minutes, 45 of him asking the guest spicy questions and 15 of the guest asking him about venture, under Chatham House rules with 10-12 listeners. First guest: OpenRouter head of insights Peter Walker, Nov 4 at noon.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 半开玩笑地统计：创业公司（或 CEO）含糊晒营收数字，到启动一轮“本来说明年初才融”的融资，间隔约 11 天（样本 n=17）。他还在旧金山发起线下系列活动 Slice for Thought：每周三午餐，60 分钟，前 45 分钟他向嘉宾提尖锐问题，后 15 分钟嘉宾反问他风投问题，Chatham House 规则，10-12 人旁听；首期嘉宾是 OpenRouter 洞察负责人 Peter Walker，11 月 4 日中午。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/nikunj/status/2117362283223687621",
+          "publishedAt": "2026-11-02T21:04:41.000Z",
+          "metrics": {
+            "likes": 68,
+            "retweets": 0,
+            "replies": 11,
+            "score": 90
+          }
+        },
+        {
+          "id": "digest-x-9-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人",
+          "summaryEn": "South Park Commons GP and former Dropbox CTO Aditya Agarwal announced SPC alum @tankots will join them on Nov 12. He is a four-time founder and IOI medalist, now co-founder and CEO of Wispr Flow, which recently raised a $280M Series B at a $2B valuation. Spots are limited and by request.",
+          "insightZh": "South Park Commons 普通合伙人、前 Dropbox CTO Aditya Agarwal 宣布 SPC 校友 @tankots 将于 11 月 12 日回访。他是四次创业者、IOI 奖牌得主，现任 Wispr Flow 联合创始人兼 CEO，公司近期完成 2.8 亿美元 B 轮融资，估值 20 亿美元。名额有限，需申请。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/adityaag/status/2117313674981355761",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-TGF0ZW50IF",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Latent Space",
+          "title": "Building Legal Agents When You Can't See the Data — Jacob Lauritzen, CTO of Legora",
+          "summaryEn": "In legal AI, the moat isn't the model — it's an eval system built under the constraint of never seeing customer data, a small set of reusable product primitives, and a bench of lawyer-engineers who can configure and teach the product. Legora CTO Jacob Lauritzen traced the product from \"ChatGPT with Swedish laws and a search tool\" to an agent that researches, drafts, edits Word files, organizes documents and runs complex analyses. Tabular Review lays out thousands of contracts as rows and questions as columns, handles up to roughly a million cells, cites back to sources, and runs the first 10 rows before fanning out; the agent itself can spin one up, flag red issues and draft a client memo. Lists — a Linear/Notion-database-like primitive — glues everything together: agents create and read lists, lists trigger agents, and products such as Intake (a Slack front door) and fact intelligence…",
+          "insightZh": "法律 AI 的护城河不在模型，而在“看不见数据”约束下的评测体系、可复用的产品原语（Lists / Projects / Agent / Tabular Review）和一支懂法律又懂技术的 legal engineer 队伍。 Legora CTO Jacob Lauritzen 回顾了产品演进：最初只是“带瑞典法律检索工具的 ChatGPT”，从法律研究起步，逐步扩展为能起草、编辑 Word、整理文件、做复杂分析的 Agent。核心功能 Tabular Review 把上万份合同按行排列、按列提问（终止期、IP 转让条款、薪酬等），单日可处理约百万单元格，结果带引用可回溯；先跑前 10 行验证再全量铺开。Agent 也可以自己拉起 Tabular Review、分析红旗并起草备忘录。Lists（类似 Linear / Notion 数据库）作为“胶水”原语，Agent 能创建、读取 List，List 也能触发 Agent，Intake（Slack 入口）、事实情报等产品都建在这些原语之上。 最大的业务难点是看不到任何 trace：客户数据本身属于律所的客户，高度保密。为此 Legora 组建了约 3 名工程师 + 3 名律师的评测团队，外加约 100 名 legal engineer（在 Big Law 工作 3-4 年、常有 CS 背景的律师），在模拟的数据室环境中按执业领域和任务类型做热力图评测；他们发现新模型发布常常是部分提升、部分回退。早期则几乎不做评测——比如引用格式问题，下一个模型发布直接从 70% 提到 99%。基础设施全部在 Azure 上，因为律所早年只信任已通过安全审查的微软；如今上云已成共识，on-prem 讨论几乎消失。模型策略是“模型套利”：按任务、成本、延迟、合规和区域可用性选模型，开放权重模型开始用于法律检索等有边界的扇出检索任务做后训练，但不打算训练自己的主 Agent 模型。 关于行业：Lauritzen 认为约 60% 的法律工作当前模型已能做好，剩下的复杂分析仍需更强智能；初级律师并没有被淘汰，而是优秀者价值更高、分化更大；…",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Product",
+            "Eval"
+          ],
+          "url": "https://www.youtube.com/@LatentSpacePod",
+          "publishedAt": "2026-11-02T20:50:24.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

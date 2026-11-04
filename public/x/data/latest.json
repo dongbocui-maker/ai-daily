@@ -1,72 +1,80 @@
 {
-  "date": "2026-11-04",
-  "title": "Builder Signals · 2026-11-04",
-  "generatedAt": "2026-11-03T23:00:18.333Z",
-  "feedGeneratedAt": "2026-11-03T06:27:49.784Z",
-  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 11 条高信号内容。",
+  "date": "2026-11-05",
+  "title": "Builder Signals · 2026-11-05",
+  "generatedAt": "2026-11-04T23:00:19.221Z",
+  "feedGeneratedAt": "2026-11-04T06:28:22.825Z",
+  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 13 条高信号内容。",
   "stats": {
-    "xBuilders": 12,
+    "xBuilders": 18,
     "totalTweets": 29,
-    "selectedXTweets": 10,
+    "selectedXTweets": 12,
     "podcastEpisodes": 1,
     "blogPosts": 0,
-    "selectedItems": 11
+    "selectedItems": 13
   },
   "featured": [
     {
-      "id": "digest-x-0-R3VpbGxlcm",
+      "id": "digest-x-0-Q2F0IFd1IM",
       "kind": "x",
       "source": "X",
-      "sourceName": "Guillermo Rauch",
-      "handle": "rauchg",
-      "title": "Guillermo Rauch · Vercel CEO",
-      "summaryEn": "Vercel CEO Guillermo Rauch argued that stateless sandboxes are the wrong benchmark — agents are only useful if they carry their workspace with them (identity, skills, repos, memories). He said the Vercel Sandbox team has hit its latency and throughput SLOs while prioritizing reliability and security, shipping clusters in 19 global regions with new features weekly under double-digit weekly demand growth. He also said he is \"so bullish on WebMCP.\"",
-      "insightZh": "Vercel CEO Guillermo Rauch 认为，用无状态沙箱来做基准测试本身就测错了对象：Agent 只有带着自己的工作区（身份、skills、代码仓库、记忆等）才真正有用。他提到 Vercel Sandbox 团队一边守住延迟和吞吐的 SLO，一边把可靠性和安全放在优先位置，同时在 19 个全球区域上线集群、每周发布新功能，客户需求每周以两位数百分比增长。另外他表示自己非常看好 WebMCP。",
+      "sourceName": "Cat Wu",
+      "handle": "_catwu",
+      "title": "Cat Wu · Anthropic Claude Code / Cowork 产品负责人",
+      "summaryEn": "Cat Wu, product lead for Claude Code and Cowork, announced that last Friday was her final day at Anthropic. Two years ago, when Claude Code was a small internal tool, she had it build an RL environment—steering it for tens of hours without writing a line of code—and joined the team. She highlighted the core shift: at launch most users manually approved every permission prompt and mainly used Claude for Q&A and tests; today the default is trusting Claude to auto-approve, with Claude handling large migrations and bu…",
+      "insightZh": "Claude Code 与 Cowork 的产品负责人 Cat Wu 宣布上周五是她在 Anthropic 的最后一天。她回顾：两年前 Claude Code 还只是内部小工具，她让它构建一个 RL 环境，引导了几十个小时却一行代码都没手写，就此入坑加入团队。她点出了两年间最关键的范式变化——上线之初大多数人手动批准每一个权限请求、主要用 Claude 答问题和写测试；如今默认是信任 Claude 的判断自动批准，Claude 承担大型迁移、直接构建新产品。",
       "tags": [
-        "Agent",
-        "Product",
-        "Eval"
+        "Claude",
+        "Coding",
+        "Product"
       ],
-      "url": "https://x.com/rauchg/status/2117338179535810957",
-      "publishedAt": "2026-11-02T19:28:54.000Z",
+      "url": "https://x.com/_catwu/status/2117731934340337676",
+      "publishedAt": "2026-11-03T21:33:33.000Z",
       "metrics": {
-        "likes": 230,
-        "retweets": 6,
-        "replies": 123,
-        "score": 500
+        "likes": 9473,
+        "retweets": 260,
+        "replies": 830,
+        "score": 12173
       }
     },
     {
-      "id": "digest-x-1-QW1qYWQgTW",
+      "id": "digest-x-1-VGhhcmlxIM",
       "kind": "x",
       "source": "X",
-      "sourceName": "Amjad Masad",
-      "title": "Amjad Masad · Replit CEO",
-      "summaryEn": "Replit CEO Amjad Masad argued that AI agents should operate in dedicated, organization-controlled environments with access limited to the resources each task requires. Quoting a separate post, he noted the practice in question is widespread in finance and that \"the ban hammer is coming down.\"",
-      "insightZh": "Replit CEO Amjad Masad 主张，AI Agent 应该运行在专用的、由组织掌控的环境里，并且只授予每个任务所需的有限资源访问权限。他还转评了一条与金融行业相关的内容，称这种情况在金融业很普遍，“封禁的大锤要落下来了”。",
+      "sourceName": "Thariq",
+      "handle": "trq212",
+      "title": "Thariq · 前 Anthropic Claude Code 团队",
+      "summaryEn": "Thariq, formerly of the Claude Code team, argued this is \"basically the bitter lesson at work\": the smartest models will need fewer and fewer tokens, won't need to verify their work or check for bugs—they will just be right. It's a bold stance that contrasts with the prevailing \"every loop needs independent verification\" view.",
+      "insightZh": "刚离开 Claude Code 团队的 Thariq 说，这基本就是「苦涩的教训」在起作用：最聪明的模型需要的 token 会越来越少，它们不需要再验证自己的工作或查 bug，而是直接就是对的。这是一个相当激进的判断——与当下业界主流强调「每个循环都需要独立验证」的思路形成鲜明对照（见下方 Swyx 一条）。",
       "tags": [
-        "Agent"
+        "Claude",
+        "Coding",
+        "Research"
       ],
-      "url": "https://x.com/amasad/status/2117499074496872882",
-      "publishedAt": null,
-      "handle": ""
+      "url": "https://x.com/trq212/status/2117670540148347273",
+      "publishedAt": "2026-11-03T17:29:35.000Z",
+      "metrics": {
+        "likes": 6154,
+        "retweets": 207,
+        "replies": 241,
+        "score": 7464
+      }
     },
     {
-      "id": "digest-podcast-0-TGF0ZW50IF",
+      "id": "digest-podcast-0-VW5zdXBlcn",
       "kind": "podcast",
       "source": "Podcast",
-      "sourceName": "Latent Space",
-      "title": "Building Legal Agents When You Can't See the Data — Jacob Lauritzen, CTO of Legora",
-      "summaryEn": "In legal AI, the moat isn't the model — it's an eval system built under the constraint of never seeing customer data, a small set of reusable product primitives, and a bench of lawyer-engineers who can configure and teach the product. Legora CTO Jacob Lauritzen traced the product from \"ChatGPT with Swedish laws and a search tool\" to an agent that researches, drafts, edits Word files, organizes documents and runs complex analyses. Tabular Review lays out thousands of contracts as rows and questions as columns, handles up to roughly a million cells, cites back to sources, and runs the first 10 rows before fanning out; the agent itself can spin one up, flag red issues and draft a client memo. Lists — a Linear/Notion-database-like primitive — glues everything together: agents create and read lists, lists trigger agents, and products such as Intake (a Slack front door) and fact intelligence…",
-      "insightZh": "法律 AI 的护城河不在模型，而在“看不见数据”约束下的评测体系、可复用的产品原语（Lists / Projects / Agent / Tabular Review）和一支懂法律又懂技术的 legal engineer 队伍。 Legora CTO Jacob Lauritzen 回顾了产品演进：最初只是“带瑞典法律检索工具的 ChatGPT”，从法律研究起步，逐步扩展为能起草、编辑 Word、整理文件、做复杂分析的 Agent。核心功能 Tabular Review 把上万份合同按行排列、按列提问（终止期、IP 转让条款、薪酬等），单日可处理约百万单元格，结果带引用可回溯；先跑前 10 行验证再全量铺开。Agent 也可以自己拉起 Tabular Review、分析红旗并起草备忘录。Lists（类似 Linear / Notion 数据库）作为“胶水”原语，Agent 能创建、读取 List，List 也能触发 Agent，Intake（Slack 入口）、事实情报等产品都建在这些原语之上。 最大的业务难点是看不到任何 trace：客户数据本身属于律所的客户，高度保密。为此 Legora 组建了约 3 名工程师 + 3 名律师的评测团队，外加约 100 名 legal engineer（在 Big Law 工作 3-4 年、常有 CS 背景的律师），在模拟的数据室环境中按执业领域和任务类型做热力图评测；他们发现新模型发布常常是部分提升、部分回退。早期则几乎不做评测——比如引用格式问题，下一个模型发布直接从 70% 提到 99%。基础设施全部在 Azure 上，因为律所早年只信任已通过安全审查的微软；如今上云已成共识，on-prem 讨论几乎消失。模型策略是“模型套利”：按任务、成本、延迟、合规和区域可用性选模型，开放权重模型开始用于法律检索等有边界的扇出检索任务做后训练，但不打算训练自己的主 Agent 模型。 关于行业：Lauritzen 认为约 60% 的法律工作当前模型已能做好，剩下的复杂分析仍需更强智能；初级律师并没有被淘汰，而是优秀者价值更高、分化更大；…",
+      "sourceName": "Unsupervised Learning",
+      "title": "Ep 96: Nebius CTO on Racing the Hyperscalers Before AWS Wakes Up",
+      "summaryEn": "Nebius CTO Danila argues the AI cloud moat is software and execution, not hoarding GPUs; hyperscalers haven't fully committed due to chip shortages and internal demand, and Nebius aims to scale enough to fight AWS as an equal before it \"wakes up.\" In conversation with Redpoint's Jacob Efron, Danila traces Nebius's spin-out from Yandex (finalized in 2024) and rejects the \"Neo Cloud\" label, now stretched across 300–500 players—Nebius is \"the AI Cloud,\" competing next with AWS and Google Cloud despite ~1% of AWS revenue. He expects demand to grow 10–100x in three years. Its edge is software: one platform serving 10k+ GPU clusters and a self-service user on one GPU for half an hour; in 2024 hardware was 40–50 people vs. 200 in software. Workloads are just training or inference; the real differentiator is customer maturity—billion-dollar new labs care only about GPUs, storage and availabilit…",
+      "insightZh": "Nebius CTO Danila 认为 AI 云的真正护城河是软件与执行力而非 GPU 囤货，超大云厂商因芯片短缺和内部算力争夺暂未全力进场，Nebius 要赶在 AWS「醒来」之前成长到能与之正面对抗的体量。 Redpoint 投资人 Jacob Efron 对话 Nebius CTO Danila。Nebius 脱胎于 Yandex，2024 年完成分拆。Danila 明确拒绝「Neo Cloud」标签——这个圈子已从最初五七家膨胀到三五百家，Nebius 自称「AI Cloud」，下一个对手是 AWS 和 Google Cloud。尽管收入只有 AWS 的约 1%，他判断未来三年整体需求会增长十倍乃至百倍。差异化在于「软件即护城河」：同一平台既能服务数万 GPU 互联集群的大客户，也能像零售一样服务只跑一张卡半小时的自助用户；2024 年硬件团队仅 40–50 人，软件团队已达 200 人。 关于客户分层，他认为工作负载本质只有训练和推理两类，真正的分化在于成熟度：手握数十亿种子轮的新实验室签十亿美元合同，只关心 GPU、存储、性能，连 GPU 在哪个国家都不在乎；而企业客户合同小得多，却要合规认证、安全审查甚至看源码。存储被严重低估——客户常态化从单一共享文件系统拉取 700GB/s 吞吐。推理侧他直言「行业根本没优化好」：95% 客户跑的是微调过的开源模型，面向限定领域，模型剪枝、选择性压缩、内核优化潜力巨大；PD 分离（disaggregated prefill/decode）「人人在谈，没人做好」，Nebius 仅对最高需求客户手工部署。 为什么超大云没吃下这个市场？芯片短缺下他们要在内部训练与对外出租间权衡，这块业务相对其体量太小，且需要为网络、存储性能重构既有基础设施；他预计 2–5 年芯片短缺缓解后巨头会全力进场。他还提到 OpenAI、Anthropic 正投资前置部署团队，去做传统上属于德勤、埃森哲的业务。对内他对 AI 编码保持保守：不限 token 预算，但 agent 产出仍是提交者本人的责任，完全自主 agent 产出须标记且不得触碰…",
       "tags": [
+        "Claude",
         "OpenAI",
         "Agent",
-        "Product",
-        "Eval"
+        "Coding"
       ],
-      "url": "https://www.youtube.com/@LatentSpacePod",
-      "publishedAt": "2026-11-02T20:50:24.000Z",
+      "url": "https://www.youtube.com/@RedpointAI",
+      "publishedAt": "2026-11-02T13:54:35.000Z",
       "handle": ""
     }
   ],
@@ -77,212 +85,263 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-R3VpbGxlcm",
+          "id": "digest-x-0-Q2F0IFd1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Cat Wu",
+          "handle": "_catwu",
+          "title": "Cat Wu · Anthropic Claude Code / Cowork 产品负责人",
+          "summaryEn": "Cat Wu, product lead for Claude Code and Cowork, announced that last Friday was her final day at Anthropic. Two years ago, when Claude Code was a small internal tool, she had it build an RL environment—steering it for tens of hours without writing a line of code—and joined the team. She highlighted the core shift: at launch most users manually approved every permission prompt and mainly used Claude for Q&A and tests; today the default is trusting Claude to auto-approve, with Claude handling large migrations and bu…",
+          "insightZh": "Claude Code 与 Cowork 的产品负责人 Cat Wu 宣布上周五是她在 Anthropic 的最后一天。她回顾：两年前 Claude Code 还只是内部小工具，她让它构建一个 RL 环境，引导了几十个小时却一行代码都没手写，就此入坑加入团队。她点出了两年间最关键的范式变化——上线之初大多数人手动批准每一个权限请求、主要用 Claude 答问题和写测试；如今默认是信任 Claude 的判断自动批准，Claude 承担大型迁移、直接构建新产品。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/_catwu/status/2117731934340337676",
+          "publishedAt": "2026-11-03T21:33:33.000Z",
+          "metrics": {
+            "likes": 9473,
+            "retweets": 260,
+            "replies": 830,
+            "score": 12173
+          }
+        },
+        {
+          "id": "digest-x-1-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code 团队",
+          "summaryEn": "Thariq, formerly of the Claude Code team, argued this is \"basically the bitter lesson at work\": the smartest models will need fewer and fewer tokens, won't need to verify their work or check for bugs—they will just be right. It's a bold stance that contrasts with the prevailing \"every loop needs independent verification\" view.",
+          "insightZh": "刚离开 Claude Code 团队的 Thariq 说，这基本就是「苦涩的教训」在起作用：最聪明的模型需要的 token 会越来越少，它们不需要再验证自己的工作或查 bug，而是直接就是对的。这是一个相当激进的判断——与当下业界主流强调「每个循环都需要独立验证」的思路形成鲜明对照（见下方 Swyx 一条）。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/trq212/status/2117670540148347273",
+          "publishedAt": "2026-11-03T17:29:35.000Z",
+          "metrics": {
+            "likes": 6154,
+            "retweets": 207,
+            "replies": 241,
+            "score": 7464
+          }
+        },
+        {
+          "id": "digest-x-2-Qm9yaXMgQ2",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Boris Cherny",
+          "title": "Boris Cherny · Anthropic Claude Code 负责人",
+          "summaryEn": "Boris Cherny, who leads Claude Code, announced that Claude now auto-connects to company plugins instead of requiring one-by-one sign-ins. Team and Enterprise admins set them up, and teammates are connected automatically the first time they use them—a classic friction reducer for enterprise rollout.",
+          "insightZh": "Claude Code 负责人 Boris Cherny 宣布：Claude 现在可以自动连接公司插件，不用再一个个登录。Team 和 Enterprise 管理员统一配置后，成员首次使用插件时即自动连上。这是面向企业部署的一个典型「降摩擦」改进。",
+          "tags": [
+            "Claude",
+            "Coding"
+          ],
+          "url": "https://x.com/bcherny/status/2117693181651542387",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-3-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues that AI output divergence may be the highest it's ever been even as adoption is the broadest. A few years ago, even in coding, the best gains were maybe 30–50%—you spent time cleaning up model mistakes, context windows were limited, and interfaces were synchronous. Now models run far longer tasks with limited human interaction, harnesses support agentic work, and systems support many agents at once. In two years the ceiling has gone from 30–50% to likely 5–10X, so living at the frontier…",
+          "insightZh": "Box CEO Aaron Levie 认为，AI 采用面是史上最广，但 AI 产出的分化可能也是史上最大。几年前即便在最契合的编码领域，高手也只能拿到 30–50% 的效率提升——要花大量时间收拾模型错误、上下文窗口太短、交互必须高度同步。如今模型能在极少人工干预下完成更长任务，harness 支持 agentic 工作，训练数据覆盖更多领域，还能同时调度多个 agent。两年间效率提升上限从 30–50% 变成了 5–10 倍，「站在前沿」和「完全不关注」之间的产出差距已达一个数量级，并且随着递归自我改进（RSI）只会继续拉大。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2117505799937577263",
+          "publishedAt": "2026-11-03T06:34:58.000Z",
+          "metrics": {
+            "likes": 391,
+            "retweets": 34,
+            "replies": 177,
+            "score": 881
+          }
+        },
+        {
+          "id": "digest-x-4-R3VpbGxlcm",
           "kind": "x",
           "source": "X",
           "sourceName": "Guillermo Rauch",
           "handle": "rauchg",
           "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Vercel CEO Guillermo Rauch argued that stateless sandboxes are the wrong benchmark — agents are only useful if they carry their workspace with them (identity, skills, repos, memories). He said the Vercel Sandbox team has hit its latency and throughput SLOs while prioritizing reliability and security, shipping clusters in 19 global regions with new features weekly under double-digit weekly demand growth. He also said he is \"so bullish on WebMCP.\"",
-          "insightZh": "Vercel CEO Guillermo Rauch 认为，用无状态沙箱来做基准测试本身就测错了对象：Agent 只有带着自己的工作区（身份、skills、代码仓库、记忆等）才真正有用。他提到 Vercel Sandbox 团队一边守住延迟和吞吐的 SLO，一边把可靠性和安全放在优先位置，同时在 19 个全球区域上线集群、每周发布新功能，客户需求每周以两位数百分比增长。另外他表示自己非常看好 WebMCP。",
+          "summaryEn": "Vercel CEO Guillermo Rauch launched Vercel Security Review, opening up an internal security agent (\"@hacker\") that is \"astonishingly effective\"—every line of code is audited automatically, whether or not you host on Vercel. His reasoning: you can't bank on engineers having a skill installed, prompting \"please make secure\", or rolling the weights' dice. Built entirely by Vercel's security team, it's \"the closest you get today\" to downloading a security team as software. He also recommended shipping `doctor` subcomm…",
+          "insightZh": "Vercel CEO Guillermo Rauch 发布 Vercel Security Review：把内部一个「效果惊人」的安全 agent（内部昵称 @hacker）开放给所有人，每一行代码都被自动审计，且不论是否托管在 Vercel 都能用。他的逻辑是：不能指望工程师装了某个 skill、写一句「请保证安全」或赌模型权重一次写对。该产品完全由 Vercel 安全团队开发，他称之为「目前最接近把一个安全团队当软件下载下来」的东西。同时他还推荐 CLI 都应该内置 `doctor` 子命令（如 `vercel doctor`），并提到 Vercel CI 加速任意仓库。",
           "tags": [
             "Agent",
-            "Product",
-            "Eval"
+            "Coding",
+            "Product"
           ],
-          "url": "https://x.com/rauchg/status/2117338179535810957",
-          "publishedAt": "2026-11-02T19:28:54.000Z",
+          "url": "https://x.com/rauchg/status/2117734833824948373",
+          "publishedAt": "2026-11-03T21:45:04.000Z",
           "metrics": {
-            "likes": 230,
-            "retweets": 6,
-            "replies": 123,
-            "score": 500
+            "likes": 694,
+            "retweets": 26,
+            "replies": 108,
+            "score": 1014
           }
         },
         {
-          "id": "digest-x-1-QW1qYWQgTW",
+          "id": "digest-x-5-U3d5eCDCty",
           "kind": "x",
           "source": "X",
-          "sourceName": "Amjad Masad",
-          "title": "Amjad Masad · Replit CEO",
-          "summaryEn": "Replit CEO Amjad Masad argued that AI agents should operate in dedicated, organization-controlled environments with access limited to the resources each task requires. Quoting a separate post, he noted the practice in question is widespread in finance and that \"the ban hammer is coming down.\"",
-          "insightZh": "Replit CEO Amjad Masad 主张，AI Agent 应该运行在专用的、由组织掌控的环境里，并且只授予每个任务所需的有限资源访问权限。他还转评了一条与金融行业相关的内容，称这种情况在金融业很普遍，“封禁的大锤要落下来了”。",
+          "sourceName": "Swyx",
+          "handle": "swyx",
+          "title": "Swyx · Latent Space / AI Engineer 大会主理人",
+          "summaryEn": "Swyx announced the final AIE track theme, \"Raising your Ambition\", featuring jxnlco, trq212, Jarred Sumner, sqs, mitsuhiko, dexhorthy, BuiltByJustin (StrongDM Dark Factory), and a keynote from echelon after he cloned the entire Adobe suite last month—1,000 top agentic engineers in SF, livestreamed to 2M MAU. He also highlighted an AIE NYC talk: Addy Osmani on how Anthropic ships 30k code changes a day in a dark-factory approach, with Sonar's kapmani on why every loop needs independent verification.",
+          "insightZh": "Swyx 公布 2026 年末 AIE 大会的最后一个主题赛道「Raising your Ambition」，嘉宾包括 jxnlco、trq212、Jarred Sumner、sqs、mitsuhiko、dexhorthy、StrongDM Dark Factory 的 BuiltByJustin，以及上月「克隆了整套 Adobe」的 echelon 的主题演讲；现场汇聚 1000 名顶尖 agentic 工程师，YouTube 直播覆盖 200 万月活。他还推荐了 AIE NYC 的热门演讲：Addy Osmani 讲 Anthropic 如何以「黑灯工厂」方式每天推进 3 万次代码变更，Sonar 的 kapmani 补充研究论证为什么每个循环都需要独立验证。",
           "tags": [
-            "Agent"
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
           ],
-          "url": "https://x.com/amasad/status/2117499074496872882",
+          "url": "https://x.com/swyx/status/2117679157035602065",
+          "publishedAt": "2026-11-03T18:03:50.000Z",
+          "metrics": {
+            "likes": 83,
+            "retweets": 7,
+            "replies": 41,
+            "score": 193
+          }
+        },
+        {
+          "id": "digest-x-6-U2FtIEFsdG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Sam Altman",
+          "title": "Sam Altman · OpenAI CEO",
+          "summaryEn": "Sam Altman stated that people should always be in control of the future. OpenAI opposes the notion that humans could acceptably be relegated to doing what \"AI systems think makes sense to reward in humans.\" People should not cede control of the future to superintelligence, and that requirement should ultimately constrain AI progress.",
+          "insightZh": "Sam Altman 表态：人类应始终掌控未来。OpenAI 反对「人类被降格为去做 AI 系统认为值得奖励的事」这种观念；人们不应把未来的控制权让渡给超级智能，而且这一要求最终应当约束 AI 的发展进程。",
+          "tags": [
+            "OpenAI"
+          ],
+          "url": "https://x.com/sama/status/2117794005165748448",
           "publishedAt": null,
           "handle": ""
         },
         {
-          "id": "digest-x-2-VGhpYmF1bH",
+          "id": "digest-x-7-VGhpYmF1bH",
           "kind": "x",
           "source": "X",
           "sourceName": "Thibault Sottiaux",
           "handle": "thsottiaux",
           "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
-          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux said \"your dot\" will choose the best model for the task, drawing on different models for different parts of the work. He also said the team \"knows some Git-fu\" and is finally able to talk about it, giving props to @tnm and team.",
-          "insightZh": "OpenAI Codex / ChatGPT 负责人 Thibault Sottiaux 透露了产品方向：用户的 “dot” 会为任务自动挑选最合适的模型，并在同一项工作的不同部分调用不同模型。他还表示团队“懂点 Git 功夫”，终于可以对外聊一些相关工作，并向 @tnm 及团队致敬。",
+          "summaryEn": "Thibault Sottiaux of OpenAI Codex said things will keep changing; we're still very early—agents are incredible yet still frustrating. He can't wait to crack things and get the flow state back. Long journey ahead.",
+          "insightZh": "OpenAI Codex 负责人 Thibault Sottiaux 坦言：事情会一变再变，我们仍处在非常早期——今天的 agent 很惊艳，但也依然让人沮丧；他期待攻克难题、找回「心流」状态，前路还很长。",
           "tags": [
             "OpenAI",
-            "Coding",
-            "Research"
+            "Agent",
+            "Coding"
           ],
-          "url": "https://x.com/thsottiaux/status/2117283355427495983",
-          "publishedAt": "2026-11-02T15:51:03.000Z",
+          "url": "https://x.com/thsottiaux/status/2117746467058405665",
+          "publishedAt": "2026-11-03T22:31:18.000Z",
           "metrics": {
-            "likes": 2176,
-            "retweets": 34,
-            "replies": 267,
-            "score": 2846
+            "likes": 8425,
+            "retweets": 192,
+            "replies": 1340,
+            "score": 11873
           }
         },
         {
-          "id": "digest-x-3-UGV0ZXIgWW",
+          "id": "digest-x-8-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "handle": "amasad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad says we're deep in the chaotic phase of enterprise adoption of agents and vibe coding.",
+          "insightZh": "Replit CEO Amjad Masad 判断：企业对 agent 和 vibe coding 的采用正深陷「混乱期」。",
+          "tags": [
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/amasad/status/2117761721750475146",
+          "publishedAt": "2026-11-03T23:31:55.000Z",
+          "metrics": {
+            "likes": 468,
+            "retweets": 37,
+            "replies": 100,
+            "score": 816
+          }
+        },
+        {
+          "id": "digest-x-9-UGV0ZXIgWW",
           "kind": "x",
           "source": "X",
           "sourceName": "Peter Yang",
           "handle": "petergyang",
-          "title": "Peter Yang · AI 教程与访谈创作者",
-          "summaryEn": "AI tutorials creator Peter Yang compared copy-editing suggestions from ChatGPT and Gemini: ChatGPT's were almost entirely bad, while Gemini's were great. But Antigravity doesn't seem to have working browser use, so he has to paste Gemini's edits back into ChatGPT to apply them — \"the best model for writing & editing is held back by its harness.\" He also highlighted a product's \"insane growth\" as what an AI-native product looks like.",
-          "insightZh": "AI 教程创作者 Peter Yang 做了一次写作编辑对比：让 ChatGPT 和 Gemini 同时给文章提修改建议，ChatGPT 的建议几乎全不好用，Gemini 的却相当出色。问题在于 Antigravity 的浏览器操作似乎不可用，他只能把 Gemini 的修改再贴回 ChatGPT 去在浏览器里执行——“最好的写作模型被它的 harness 拖累了”。他另外转评了一个产品，称这种疯狂增长就是 AI 原生产品该有的样子。",
-          "tags": [
-            "OpenAI",
-            "Product",
-            "Research"
-          ],
-          "url": "https://x.com/petergyang/status/2117333424403042330",
-          "publishedAt": "2026-11-02T19:10:01.000Z",
-          "metrics": {
-            "likes": 200,
-            "retweets": 3,
-            "replies": 62,
-            "score": 336
-          }
-        },
-        {
-          "id": "digest-x-4-RGFuIFNoaX",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Dan Shipper",
-          "handle": "danshipper",
-          "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Every CEO Dan Shipper explained his preference: partly Argon is just that good, and partly Antigravity is \"stuck in 2025\" without all the crazy features and complexity. He pointed readers to Every's vibe check of Argon.",
-          "insightZh": "Every CEO Dan Shipper 在解释自己的工具偏好时说：一方面是 Argon 本身很好用，另一方面是 Antigravity “还停留在 2025 年”，没有那些疯狂的新功能和复杂度。他推荐阅读 Every 对 Argon 的 vibe check 测评。",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang recommended Grok's new phone-call feature with 5 use cases: negotiating bills, cancelling subscriptions and refusing retention offers, waiting on hold for refunds, making reservations, and collecting contractor quotes into a table (US numbers only for now). He also noted it's increasingly normal for top talent to leave AI-native companies after 1–2 years or less, questioning how sustainable these jobs are, especially for parents.",
+          "insightZh": "Peter Yang 推荐 Grok 新上线的「代打电话」功能，并给出 5 个场景：谈判降账单（如拿竞品 $49 去压 Comcast 的 $84）、取消订阅并拒绝挽留、替你排队等人工客服要退款、订餐厅、同时问 3 个承包商报价并整理成表格；目前仅支持美国号码。另外他观察到，顶尖人才在 AI 原生公司干 1–2 年甚至更短就离开正变得越来越常见，并质疑这类岗位的可持续性，尤其对有孩子的人。",
           "tags": [
             "Product"
           ],
-          "url": "https://x.com/danshipper/status/2117363007340609556",
-          "publishedAt": "2026-11-02T21:07:34.000Z",
+          "url": "https://x.com/petergyang/status/2117783921748558185",
+          "publishedAt": "2026-11-04T01:00:08.000Z",
           "metrics": {
-            "likes": 42,
+            "likes": 29,
             "retweets": 0,
-            "replies": 6,
-            "score": 54
+            "replies": 20,
+            "score": 69
           }
         },
         {
-          "id": "digest-x-5-VGhhcmlxIM",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Thariq",
-          "handle": "trq212",
-          "title": "Thariq · 前 Anthropic Claude Code",
-          "summaryEn": "Former Anthropic Claude Code member Thariq shared his one-week takeaway: you don't need unlimited tokens to do great work, the $200 plans are amazing, and \"this is the most expensive intelligence will ever be.\"",
-          "insightZh": "前 Anthropic Claude Code 成员 Thariq 分享了一周使用后的结论：做出好工作并不需要无限 token，200 美元档的订阅方案就非常好用，而且“这是智能有史以来最贵的时候”——之后只会更便宜。",
-          "tags": [
-            "Claude",
-            "Coding"
-          ],
-          "url": "https://x.com/trq212/status/2117305792923889731",
-          "publishedAt": "2026-11-02T17:20:13.000Z",
-          "metrics": {
-            "likes": 6728,
-            "retweets": 133,
-            "replies": 409,
-            "score": 8078
-          }
-        },
-        {
-          "id": "digest-x-6-R2FycnkgVG",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Garry Tan",
-          "handle": "garrytan",
-          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "YC President & CEO Garry Tan said Capy Captains increased his issue-fixing throughput by about 5x overnight, calling cross-captain and subthread coordination an insane unlock. He flagged an interesting new use of smaller models: direct manipulation of weights. He also renewed his call to repeal CEQA, calling it the primary NIMBY tool blocking hospitals, high-speed rail and housing.",
-          "insightZh": "YC 总裁兼 CEO Garry Tan 表示，Capy Captains 让他的 issue 修复吞吐量一夜之间提升约 5 倍，能够跨多个 captain 和子线程协调是巨大的解锁。他还指出小模型的一个有趣新用法：直接操控权重。此外他再次呼吁废除加州 CEQA，认为它是阻挠医院、高铁、住房建设的主要 NIMBY 工具。",
-          "tags": [
-            "Startup",
-            "Research"
-          ],
-          "url": "https://x.com/garrytan/status/2117410016730964358",
-          "publishedAt": "2026-11-03T00:14:22.000Z",
-          "metrics": {
-            "likes": 90,
-            "retweets": 7,
-            "replies": 47,
-            "score": 212
-          }
-        },
-        {
-          "id": "digest-x-7-TmFuIFl1IM",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Nan Yu",
-          "handle": "thenanyu",
-          "title": "Nan Yu · OpenAI Codex 产品",
-          "summaryEn": "OpenAI Codex product lead and former Linear head of product Nan Yu said that, except in rare circumstances, group chat is a terrible multiplayer AI experience — \"literally guaranteed slop.\"",
-          "insightZh": "OpenAI Codex 产品负责人、前 Linear 产品负责人 Nan Yu 下了一个直白判断：除少数情况外，群聊是一种糟糕的多人 AI 体验，“几乎保证产出垃圾内容”。",
-          "tags": [
-            "OpenAI",
-            "Coding",
-            "Product"
-          ],
-          "url": "https://x.com/thenanyu/status/2117432599559716940",
-          "publishedAt": "2026-11-03T01:44:06.000Z",
-          "metrics": {
-            "likes": 76,
-            "retweets": 0,
-            "replies": 12,
-            "score": 100
-          }
-        },
-        {
-          "id": "digest-x-8-TmlrdW5qIE",
+          "id": "digest-x-10-TmlrdW5qIE",
           "kind": "x",
           "source": "X",
           "sourceName": "Nikunj Kothari",
           "handle": "nikunj",
           "title": "Nikunj Kothari · FPV Ventures 合伙人",
-          "summaryEn": "FPV Ventures partner Nikunj Kothari quipped that the gap between a startup or CEO vague-posting revenue numbers and kicking off the fundraise they \"weren't going to do till early next year\" is about 11 days (n=17). He also launched Slice for Thought, an IRL SF series every Wednesday lunch: 60 minutes, 45 of him asking the guest spicy questions and 15 of the guest asking him about venture, under Chatham House rules with 10-12 listeners. First guest: OpenRouter head of insights Peter Walker, Nov 4 at noon.",
-          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 半开玩笑地统计：创业公司（或 CEO）含糊晒营收数字，到启动一轮“本来说明年初才融”的融资，间隔约 11 天（样本 n=17）。他还在旧金山发起线下系列活动 Slice for Thought：每周三午餐，60 分钟，前 45 分钟他向嘉宾提尖锐问题，后 15 分钟嘉宾反问他风投问题，Chatham House 规则，10-12 人旁听；首期嘉宾是 OpenRouter 洞察负责人 Peter Walker，11 月 4 日中午。",
+          "summaryEn": "Nikunj Kothari shared two under-used Claude Code default skills: `/insights`, which he runs via cron every two weeks to get setup-upgrade recommendations, paired with X bookmarks on software-factory patterns for a self-improving loop; and `/playground`, for visualizing workflows and esoteric repo architectures—lately pairing Codex + Claude Code on it to find dead code, hot paths and latency wins. He also noted he reaches for Codex, Claude desktop and other AI apps daily, each pushing the frontier.",
+          "insightZh": "Nikunj Kothari 分享两个被低估的 Claude Code 默认 skill：一是 `/insights`，他用 cron 每两周跑一次，告诉他如何升级自己的配置，再结合 X 收藏的「软件工厂」新玩法，形成自我改进闭环；二是 `/playground`，用来可视化工作流、解析冷门 GitHub 仓库架构，他最近喜欢让 Codex 和 Claude Code 搭配跑这个 skill 去找死代码、热路径和延迟优化点。他还感慨同时在用 Codex、Claude 桌面端等多个 AI 应用，各家都在模型和体验上推前沿。",
           "tags": [
-            "Startup"
+            "Claude",
+            "Coding",
+            "Product"
           ],
-          "url": "https://x.com/nikunj/status/2117362283223687621",
-          "publishedAt": "2026-11-02T21:04:41.000Z",
+          "url": "https://x.com/nikunj/status/2117773647868018897",
+          "publishedAt": "2026-11-04T00:19:18.000Z",
           "metrics": {
-            "likes": 68,
+            "likes": 80,
             "retweets": 0,
-            "replies": 11,
-            "score": 90
+            "replies": 44,
+            "score": 168
           }
         },
         {
-          "id": "digest-x-9-QWRpdHlhIE",
+          "id": "digest-x-11-TWF0dCBUdX",
           "kind": "x",
           "source": "X",
-          "sourceName": "Aditya Agarwal",
-          "title": "Aditya Agarwal · South Park Commons 普通合伙人",
-          "summaryEn": "South Park Commons GP and former Dropbox CTO Aditya Agarwal announced SPC alum @tankots will join them on Nov 12. He is a four-time founder and IOI medalist, now co-founder and CEO of Wispr Flow, which recently raised a $280M Series B at a $2B valuation. Spots are limited and by request.",
-          "insightZh": "South Park Commons 普通合伙人、前 Dropbox CTO Aditya Agarwal 宣布 SPC 校友 @tankots 将于 11 月 12 日回访。他是四次创业者、IOI 奖牌得主，现任 Wispr Flow 联合创始人兼 CEO，公司近期完成 2.8 亿美元 B 轮融资，估值 20 亿美元。名额有限，需申请。",
+          "sourceName": "Matt Turck",
+          "handle": "mattturck",
+          "title": "Matt Turck · FirstMark Capital 合伙人",
+          "summaryEn": "Matt Turck hailed SurrealDB 4: building a database is a grind, and after the open-source pop come years of unglamorous work. SurrealDB 4 is multi-model (vector, graph, document), ACID compliant, with a rebuilt engine, native Postgres/MySQL support and massive scalability via Cloudflare handling 10B+ peak rows/sec—\"the modern database for the agentic era.\"",
+          "insightZh": "Matt Turck 力挺 SurrealDB 4 发布：做数据库是苦活，开源走红之后是多年不光鲜的打磨。SurrealDB 4 是多模型（向量、图、文档）、ACID 兼容的数据库，重写了引擎，原生支持 Postgres/MySQL，借助 Cloudflare 实现峰值每秒 100 亿+ 行的扩展，定位「agentic 时代的现代数据库」。",
           "tags": [
-            "Startup"
+            "Agent",
+            "Research",
+            "Infrastructure"
           ],
-          "url": "https://x.com/adityaag/status/2117313674981355761",
-          "publishedAt": null,
-          "handle": ""
+          "url": "https://x.com/mattturck/status/2117741948609949932",
+          "publishedAt": "2026-11-03T22:13:20.000Z",
+          "metrics": {
+            "likes": 42,
+            "retweets": 7,
+            "replies": 11,
+            "score": 92
+          }
         }
       ]
     },
@@ -292,21 +351,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-TGF0ZW50IF",
+          "id": "digest-podcast-0-VW5zdXBlcn",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "Latent Space",
-          "title": "Building Legal Agents When You Can't See the Data — Jacob Lauritzen, CTO of Legora",
-          "summaryEn": "In legal AI, the moat isn't the model — it's an eval system built under the constraint of never seeing customer data, a small set of reusable product primitives, and a bench of lawyer-engineers who can configure and teach the product. Legora CTO Jacob Lauritzen traced the product from \"ChatGPT with Swedish laws and a search tool\" to an agent that researches, drafts, edits Word files, organizes documents and runs complex analyses. Tabular Review lays out thousands of contracts as rows and questions as columns, handles up to roughly a million cells, cites back to sources, and runs the first 10 rows before fanning out; the agent itself can spin one up, flag red issues and draft a client memo. Lists — a Linear/Notion-database-like primitive — glues everything together: agents create and read lists, lists trigger agents, and products such as Intake (a Slack front door) and fact intelligence…",
-          "insightZh": "法律 AI 的护城河不在模型，而在“看不见数据”约束下的评测体系、可复用的产品原语（Lists / Projects / Agent / Tabular Review）和一支懂法律又懂技术的 legal engineer 队伍。 Legora CTO Jacob Lauritzen 回顾了产品演进：最初只是“带瑞典法律检索工具的 ChatGPT”，从法律研究起步，逐步扩展为能起草、编辑 Word、整理文件、做复杂分析的 Agent。核心功能 Tabular Review 把上万份合同按行排列、按列提问（终止期、IP 转让条款、薪酬等），单日可处理约百万单元格，结果带引用可回溯；先跑前 10 行验证再全量铺开。Agent 也可以自己拉起 Tabular Review、分析红旗并起草备忘录。Lists（类似 Linear / Notion 数据库）作为“胶水”原语，Agent 能创建、读取 List，List 也能触发 Agent，Intake（Slack 入口）、事实情报等产品都建在这些原语之上。 最大的业务难点是看不到任何 trace：客户数据本身属于律所的客户，高度保密。为此 Legora 组建了约 3 名工程师 + 3 名律师的评测团队，外加约 100 名 legal engineer（在 Big Law 工作 3-4 年、常有 CS 背景的律师），在模拟的数据室环境中按执业领域和任务类型做热力图评测；他们发现新模型发布常常是部分提升、部分回退。早期则几乎不做评测——比如引用格式问题，下一个模型发布直接从 70% 提到 99%。基础设施全部在 Azure 上，因为律所早年只信任已通过安全审查的微软；如今上云已成共识，on-prem 讨论几乎消失。模型策略是“模型套利”：按任务、成本、延迟、合规和区域可用性选模型，开放权重模型开始用于法律检索等有边界的扇出检索任务做后训练，但不打算训练自己的主 Agent 模型。 关于行业：Lauritzen 认为约 60% 的法律工作当前模型已能做好，剩下的复杂分析仍需更强智能；初级律师并没有被淘汰，而是优秀者价值更高、分化更大；…",
+          "sourceName": "Unsupervised Learning",
+          "title": "Ep 96: Nebius CTO on Racing the Hyperscalers Before AWS Wakes Up",
+          "summaryEn": "Nebius CTO Danila argues the AI cloud moat is software and execution, not hoarding GPUs; hyperscalers haven't fully committed due to chip shortages and internal demand, and Nebius aims to scale enough to fight AWS as an equal before it \"wakes up.\" In conversation with Redpoint's Jacob Efron, Danila traces Nebius's spin-out from Yandex (finalized in 2024) and rejects the \"Neo Cloud\" label, now stretched across 300–500 players—Nebius is \"the AI Cloud,\" competing next with AWS and Google Cloud despite ~1% of AWS revenue. He expects demand to grow 10–100x in three years. Its edge is software: one platform serving 10k+ GPU clusters and a self-service user on one GPU for half an hour; in 2024 hardware was 40–50 people vs. 200 in software. Workloads are just training or inference; the real differentiator is customer maturity—billion-dollar new labs care only about GPUs, storage and availabilit…",
+          "insightZh": "Nebius CTO Danila 认为 AI 云的真正护城河是软件与执行力而非 GPU 囤货，超大云厂商因芯片短缺和内部算力争夺暂未全力进场，Nebius 要赶在 AWS「醒来」之前成长到能与之正面对抗的体量。 Redpoint 投资人 Jacob Efron 对话 Nebius CTO Danila。Nebius 脱胎于 Yandex，2024 年完成分拆。Danila 明确拒绝「Neo Cloud」标签——这个圈子已从最初五七家膨胀到三五百家，Nebius 自称「AI Cloud」，下一个对手是 AWS 和 Google Cloud。尽管收入只有 AWS 的约 1%，他判断未来三年整体需求会增长十倍乃至百倍。差异化在于「软件即护城河」：同一平台既能服务数万 GPU 互联集群的大客户，也能像零售一样服务只跑一张卡半小时的自助用户；2024 年硬件团队仅 40–50 人，软件团队已达 200 人。 关于客户分层，他认为工作负载本质只有训练和推理两类，真正的分化在于成熟度：手握数十亿种子轮的新实验室签十亿美元合同，只关心 GPU、存储、性能，连 GPU 在哪个国家都不在乎；而企业客户合同小得多，却要合规认证、安全审查甚至看源码。存储被严重低估——客户常态化从单一共享文件系统拉取 700GB/s 吞吐。推理侧他直言「行业根本没优化好」：95% 客户跑的是微调过的开源模型，面向限定领域，模型剪枝、选择性压缩、内核优化潜力巨大；PD 分离（disaggregated prefill/decode）「人人在谈，没人做好」，Nebius 仅对最高需求客户手工部署。 为什么超大云没吃下这个市场？芯片短缺下他们要在内部训练与对外出租间权衡，这块业务相对其体量太小，且需要为网络、存储性能重构既有基础设施；他预计 2–5 年芯片短缺缓解后巨头会全力进场。他还提到 OpenAI、Anthropic 正投资前置部署团队，去做传统上属于德勤、埃森哲的业务。对内他对 AI 编码保持保守：不限 token 预算，但 agent 产出仍是提交者本人的责任，完全自主 agent 产出须标记且不得触碰…",
           "tags": [
+            "Claude",
             "OpenAI",
             "Agent",
-            "Product",
-            "Eval"
+            "Coding"
           ],
-          "url": "https://www.youtube.com/@LatentSpacePod",
-          "publishedAt": "2026-11-02T20:50:24.000Z",
+          "url": "https://www.youtube.com/@RedpointAI",
+          "publishedAt": "2026-11-02T13:54:35.000Z",
           "handle": ""
         }
       ]

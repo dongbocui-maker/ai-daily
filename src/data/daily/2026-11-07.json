@@ -1,0 +1,157 @@
+{
+  "date": "2026-11-07",
+  "title": "AI 日报 · 2026-11-07",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 收并购 | Palo Alto Networks 洽谈以约 5 亿美元收购 AI 智能体安全初创公司 Clutch",
+          "body": "据 TechCrunch 11 月 6 日报道，网络安全巨头 Palo Alto Networks 正在洽谈收购专注 AI 智能体安全的初创公司 Clutch，交易对价约 5 亿美元。Clutch 背后投资方包括 Lightspeed 与 SignalFire，上一轮估值仅约 8500 万美元，意味着本次收购溢价接近 6 倍。Clutch 聚焦企业内部智能体与非人类身份（NHI）的发现、权限治理与行为监控，正是企业大规模上线 Agent 后最先暴露的安全盲区。这也是继今年多起“AI 安全”并购后，传统安全厂商再次用现金换取智能体时代的身份治理能力。",
+          "insight": "智能体身份与权限治理正在成为安全大厂的必争之地，企业在规划 Agent 平台时应把“非人类身份”纳入 IAM 体系统一设计。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/"
+        },
+        {
+          "title": "🔬 技术突破 | METR 首次高权限评估 Anthropic：内部未发布模型“Model 4”已让 AI 研发提速约 2 倍",
+          "body": "独立评估机构 METR 于 11 月 5 日发布对 Anthropic 的高权限评估报告，首次披露三个未发布的内部模型 Model 2/3/4，分别于今年 7 月至 10 月完成训练；其中最强的 Model 4 在全部基准上得分均超过 50%，综合能力指数已超过 Opus 5.5。报告估算 Anthropic 内部 AI 研发整体提速约 1.9 倍，其中约 80% 的加速来自“用 AI 做 AI 研发”而非算力扩张；员工自报最高 12 倍效率提升，访谈结果更支持约 2 倍。METR 同时认为，Anthropic 关于尚未触及其 RSP“2 倍加速阈值”的论证有所高估。",
+          "insight": "前沿实验室内部能力已明显领先公开模型，企业做模型路线规划时应按“季度级代差”预期来设计可替换架构。",
+          "source": "METR",
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+        },
+        {
+          "title": "🚀 产品发布 | Perplexity 推出 7×24 小时工作的“Teammates”智能体，正面对标 OpenAI 与 Anthropic",
+          "body": "Perplexity 发布面向工作场景的常驻智能体“Teammates”，可在同一工作空间中承担多个角色，并直接继承用户在 Perplexity 已有的项目、技能与记忆。Teammates 构建在此前发布的 Perplexity Computer 之上，强调持续协作与“长期、大规模工作”的执行能力，多个 Teammate 可同时并行处理不同任务，用户可逐个追踪进度。The Verge 指出，这与 OpenAI Dots、Claude Duet 属同一产品形态，但 Perplexity 的版本门槛更高，需订阅每月 200 美元的 Max 套餐。",
+          "insight": "“常驻型数字同事”已成为三家头部厂商的标配形态，企业需要提前设计智能体的权限边界、审计与成本分摊机制。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work"
+        },
+        {
+          "title": "📜 监管政策 | 中期选举民意反弹后，OpenAI 承诺数据中心项目不再与官员签署保密协议",
+          "body": "在本周美国中期选举中，多地选民明确表达对数据中心扩张的反对，OpenAI 随即发布面向数据中心所在社区的一系列新承诺，其中最受关注的一条是：不再与公职人员签署保密协议（NDA）。此前大量数据中心项目因依赖 NDA 隐藏开发商与地方官员之间的沟通而饱受质疑；OpenAI 表示今后只保留覆盖正当商业机密的“窄口径保护”。同期 Bloomberg 也报道称，民主党胜选后 AI 公司正面临更严格的地方审查与能源议题压力。",
+          "insight": "算力基建的社会许可正在成为与电力、芯片同等重要的约束条件，企业选址与云容量规划需把社区和政策风险纳入评估。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda"
+        },
+        {
+          "title": "💰 融资 | DeepSeek 带火稀疏计算，国产推理芯片公司墨芯五个月内再融近 10 亿元",
+          "body": "量子位报道，专注稀疏推理芯片的墨芯在距上一轮近 10 亿元融资仅 5 个月后再次完成近 10 亿元融资。随着 MoE 架构在 DeepSeek 等国产大模型中加速普及，大模型推理呈现明显的条件计算特征，权重与激活中的稀疏结构为减少冗余计算提供了空间。墨芯自研“权重稀疏化+激活稀疏化”双稀疏算法，S30 计算卡在 MLPerf Inference 部分类别中连续三届夺冠，并已在海上风电绿电算力等项目中落地，从芯片侧降低单 Token 推理成本。",
+          "insight": "推理成本正成为国产算力的主战场，“算法-编译器-硬件”协同的专用芯片有望在 MoE 时代获得差异化空间。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/508155.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🏭 制造落地 | 首钢股份上线 45 个 AI 智能体、落地 929 个场景，赛意信息 AI 项目占比超 20%",
+          "body": "据《证券日报》报道，中国电子信息产业发展研究院 10 月 31 日发布的趋势报告显示，我国 AI 推理数据量首次超过训练数据量，AI 正从“喂模型”全面转入“用模型”阶段；国产大模型已在钢铁、汽车等 20 个行业落地 1000 多个应用场景。具体企业层面，首钢股份围绕生产提效、质量提升、设备运维等核心场景上线 45 个 AI 智能体，累计落地 929 个智能化场景；赛意信息截至三季度末累计交付含 AI 应用项目 255 个，占整体交付比例超过 20%；金杯汽车与自变量合作研发的首台工业具身机器人也已在沈阳下线。",
+          "insight": "中国制造业 AI 已进入“场景数量 × 存量系统改造”的规模化阶段，交付能力与行业 Know-how 比模型本身更决定成败。",
+          "source": "新浪财经（证券日报）",
+          "url": "https://finance.sina.com.cn/jjxw/2026-11-03/doc-inixkzyf0014123.shtml"
+        },
+        {
+          "title": "🏗️ 组织变革 | SK Ecoplant 推行“一人一智能体”：用工作数据诊断岗位瓶颈，先落地半导体与 AI 数据中心工地",
+          "body": "韩国 SK 集团旗下工程建设公司 SK Ecoplant 加速推进内部 AX（AI 转型），推出“一人一个 AI 智能体”体系。与以往依赖问卷或访谈不同，公司让 AI 直接分析内部系统中积累的真实工作数据，诊断每位员工的岗位特征与效率瓶颈，再部署定制化智能体。首批将应用于半导体工厂和 AI 数据中心等大型项目现场，自动化复杂工序记录、报告汇总等重复性文档工作，让现场人员聚焦核心任务；公司已培养 318 名内部 AI 专家支撑推广。",
+          "insight": "以真实工作数据而非主观调研来识别 AI 改造点，是让“全员智能体”从口号走向 ROI 的关键方法论。",
+          "source": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/finance/2026/11/02/sk-ecoplant-rolls-out-one-ai-agent-per-employee"
+        },
+        {
+          "title": "✈️ 行业落地 | Airbnb 财报宣布 2027 上半年推出 AI 旅行规划智能体，明确放弃传统聊天框交互",
+          "body": "Airbnb 在 2026 年第三季度致股东信中宣布，将于 2027 年上半年推出帮助用户规划和预订旅行的 AI 智能体。公司认为当下的 AI 智能体擅长订餐厅、约时间等简单任务，但旅行规划要复杂得多；Airbnb 的优势在于房东与房客匹配经验以及已深度参与预订流程。值得注意的是，Airbnb 明确表示“传统聊天机器人不是规划旅行的正确方式”，将构建 AI 原生体验，根据用户问题从数百个旅行专用界面组件（如地图等）中动态生成界面，而不是一个聊天窗口。",
+          "insight": "面向消费者的智能体正在从“对话框”走向“生成式界面”，行业垂直数据与交易闭环才是平台对抗通用助手的护城河。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings"
+        },
+        {
+          "title": "📞 销售自动化 | ElevenLabs 现场 CTO 披露内部 SDR 智能体战绩：处理 3000+ 线索、九成以上无需人工完成资格审核",
+          "body": "Fortune 专访 ElevenLabs 现场 CTO（field CTO），详解这家语音 AI 公司如何在内部推广 AI 智能体。其中最具代表性的是入站销售开发代表（SDR）智能体：今年以来已处理超过 3000 条客户线索，以 32 种语言完成其中 90% 以上潜在客户的资格审核，全程无需人工介入。同期 ElevenLabs 还宣布 ElevenAgents 与 NiCE CXone、Genesys Cloud、Amazon Connect、Five9 等联络中心平台原生打通，企业可把语音智能体直接接入现有呼叫系统，处理常规请求并在必要时转接人工。CTO 认为更大的效率红利仍在后面。",
+          "insight": "多语种销售线索资格审核是智能体最易量化 ROI 的切入点之一，且与现有联络中心平台集成已基本无门槛。",
+          "source": "Fortune",
+          "url": "https://fortune.com/2026/11/04/waters-new-ai-tool-targets-one-of-the-pharmaceutical-industrys-most-tedious-tasks-2/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "👔 高层动态 | Claude Code 产品负责人 Cat Wu 转投 OpenAI，两周内核心团队三人离职",
+          "body": "36氪报道，Claude Code 前产品负责人 Cat Wu 于 11 月 5 日宣布加入 OpenAI，负责核心产品的产品管理，并与 Codex 负责人 Thibault Sottiaux 团队协作。这已是她第二次离开：2025 年 7 月她曾与 Claude Code 创始人 Boris Cherny 一同转投 Cursor，两周后双双回归 Anthropic；如今 Boris 留守，Cat Wu 则投向最大对手。此前 10 月 23 日 Claude Code 桌面客户端作者 Anthony Morris 离职，次日核心工程师 Thariq Shihipar 也宣布离开，恰逢 Anthropic 公开递交招股书之际。",
+          "insight": "AI 编程工具的竞争已延伸到核心产品人才争夺，企业选型时应关注厂商团队稳定性对路线图连续性的影响。",
+          "source": "36氪",
+          "url": "https://eu.36kr.com/en/p/4056380039435140"
+        },
+        {
+          "title": "🎹 Vibe Coding | Akai、Moog 母公司 inMusic 开源设备代码并发布 SDK，拥抱“vibe-coded”改装社区",
+          "body": "拥有 Akai、Moog、Native Instruments 等品牌的 inMusic 宣布拥抱改装社区。CEO Jack O’Donnell 在接受 The Verge 采访时表示，公司将向社区提供“工具箱”，包括开源即将发布的 MPC Sample Key 等设备代码，并提供 SDK 降低改装门槛、减少设备变砖风险，且已提前向开发者寄送样机。推动这一转变的背景是：AI 编程让大量非专业开发者也能为硬件“vibe code”新功能。公司同时强调官方固件仍须保证舞台演出级的稳定性，社区改装与官方软件将分轨管理。",
+          "insight": "AI 编程降低了二次开发门槛，硬件和平台厂商“开放 SDK + 官方稳定版分轨”可能成为拥抱长尾开发者的新范式。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai"
+        },
+        {
+          "title": "🧪 测试智能体 | YC 公司 Momentic 发布 QA 智能体 Mo：自主探索应用找 Bug，并把运行转成回归测试",
+          "body": "YC W24 公司 Momentic 在 Hacker News 发布 Launch HN（166 分），推出能“像用户一样使用你的应用”来发现缺陷的 QA 智能体 Mo，覆盖 Web、iOS、Android，桌面端即将支持。创始人指出，随着编码智能体普及，软件变更失败率上升更快——LLM 擅长生成代码，却会强化自身假设、写出大量自洽但有缺陷的测试。Mo 可从一句提示自主规划和探索用户流程，输出复现步骤与录屏，并把运行结果沉淀为每个 PR 的回归测试；同时提供 MCP 服务器供编码智能体直接调用。官方还发布了 Mo 与 Codex、Claude Code、Devin 在 1396 个标注 Bug 上的对比基准。",
+          "insight": "“写代码的 Agent”需要“验代码的 Agent”来制衡，独立 QA 智能体将成为 AI 研发流水线的标准一环。",
+          "source": "Hacker News / Momentic",
+          "url": "https://momentic.ai/"
+        },
+        {
+          "title": "🚀 产品发布 | Google Gemini Canvas 支持“手绘草图直接变应用”，上传图纸即可生成并迭代代码",
+          "body": "Google 于 11 月 5 日在官方博客宣布，Gemini 应用的 Canvas 工具支持将手绘草图转化为可运行的应用：用户只需上传纸面或白板上的界面草图，Gemini 即可识别布局与交互意图，生成对应前端代码并在 Canvas 中实时预览，随后可通过自然语言继续修改和完善。这一功能把多模态理解与代码生成直接串联，进一步降低从想法到原型的门槛，面向产品经理、设计师和非专业开发者等人群。",
+          "insight": "“草图到原型”的时间压缩到分钟级，企业的产品设计与需求评审流程可以直接用可交互原型替代静态稿。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/turn-drawings-into-apps-gemini/"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📈 支出数据 | Ramp 数据：企业 AI token 支出 8-9 月仅增 1.5%，增长在 Anthropic 临近 IPO 时明显放缓",
+          "body": "TechCrunch 11 月 6 日援引企业支付平台 Ramp 的交易数据报道，美国企业在 AI 模型 token 上的支出增长出现明显停滞：7 月环比增幅仍高达 42%，而 8 月至 9 月仅增长 1.5%。Ramp 经济学家 Ara Kharazian 分析认为，部分企业在完成首轮大规模采购后进入消化与评估期，预算开始向能证明产出的具体场景收缩。这一数据出现在 Anthropic 推进 IPO 的关键时间窗口，引发市场对模型厂商收入增速可持续性的讨论。",
+          "insight": "企业 AI 预算正从“先买再说”转向“按产出计费”，供应商和集成商都需要用可量化的业务指标来争取下一轮预算。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+        },
+        {
+          "title": "🏦 行业报告 | 凯捷《2027 金融服务世界云报告》：59% 金融机构试点或部署多智能体，仅 10% 实现全企业编排",
+          "body": "凯捷研究院 11 月 5 日发布《World Cloud Report for Financial Services 2027》指出，金融机构正从孤立的智能体实验转向覆盖核心银行与保险流程的多智能体 AI。调查显示，59% 的机构已在试点或在生产中部署多智能体系统，但只有十分之一实现了在全企业范围内自主运行所需的完整编排。报告认为，数据与云底座、跨系统集成、治理与风控框架是阻碍多智能体从局部提效走向利润贡献的主要瓶颈，并建议机构以业务价值为导向重构云与数据架构。",
+          "insight": "多智能体落地的瓶颈已从模型能力转向编排、数据与治理，这正是云与集成服务商的下一块主战场。",
+          "source": "Capgemini",
+          "url": "https://www.capgemini.com/news/press-releases/financial-institutions-accelerate-transition-to-multi-agent-ai-in-drive-for-bottom-line-value/"
+        },
+        {
+          "title": "🔬 【进展】研究争议 | HN 千分热帖质疑“Astra 读写权重提升 Qwen”实验：多种技巧混用，结论具误导性",
+          "body": "针对此前刷屏的“GPT-6 Astra 直接读写 Qwen 权重、将 MATH-500 从 7.9% 提升至 48.1%”实验，spaCy 作者 Matthew Honnibal 发文质疑，在 Hacker News 获得超过 1000 分。他将该实验比作魔术师用不同手法反复表演同一个戏法：各项实验实际依赖不同的技巧与条件，读者却容易误以为是同一种“读懂权重”的通用能力在起作用，因而结论具有误导性。同期 Simon Willison 也演示本地 Qwen 3.8 27B 同样能解读模型权重（HN 735 分），进一步削弱了“只有前沿模型才能做到”的叙事。",
+          "insight": "前沿模型的“惊艳实验”需要看清实验设计与对照，决策者在引用此类结论做技术判断前应等待独立复现。",
+          "source": "Hacker News / honnibal.dev",
+          "url": "https://honnibal.dev/blog/astra-read-write-misleading"
+        },
+        {
+          "title": "💸 行业分析 | 国产大模型价格战结束、成本战开始：竞争单位从“每百万 Token 标价”变为“每任务实际成本”",
+          "body": "投资界长文梳理国产大模型定价两年演变：2024 年 5 月 DeepSeek-V2 把输入价格压到每百万 Token 一元后厂商轮番跟进，但今年上半年同口径归一化均价反而升至 13.46 元、涨幅约 97.9%，市场按模型档次分化。各家较量的计量单位已从模型标价换成客户完成一个任务实际花掉的钱：DeepSeek 单任务成本从 0.40 美元降至 0.26 美元，MiniMax 把 Agent 成本压低七成，阶跃将单任务成本打到 Claude Opus 5 的八分之一。文章同时指出 MiniMax 上半年收入增长 283% 但毛利率仅 17.8%。",
+          "insight": "评估大模型采购时应以“单任务完成成本”而非 token 单价为核心指标，token 冗长度会显著吞噬低价优势。",
+          "source": "投资界",
+          "url": "https://news.pedaily.cn/202611/571282.shtml"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "智能体正在从“工具”变成“同事”，而配套的安全与治理成为资本追逐的新焦点。Perplexity Teammates 加入 OpenAI Dots、Claude Duet 的常驻智能体阵营，SK Ecoplant 推行一人一智能体；与此同时，Palo Alto Networks 以约 6 倍溢价洽购 Clutch，说明智能体身份与权限治理已经是企业上线 Agent 前必须补齐的一课。",
+    "另一条主线是“加速与降速”并存。METR 报告显示 Anthropic 内部 AI 研发已提速约 2 倍，前沿能力的代差以季度计；但 Ramp 数据显示企业 token 支出在 8-9 月几乎停滞，凯捷调研也发现只有一成金融机构实现多智能体全企业编排。实验室的能力曲线与企业的价值兑现曲线之间，正出现一段需要用流程改造和数据底座来填补的鸿沟。",
+    "在国内，竞争焦点正从价格战转向成本战和场景深度：单任务成本取代 token 标价成为核心指标，稀疏推理芯片获得资本持续加注，首钢、赛意等制造业案例显示 AI 已进入规模化场景改造阶段。对企业决策者而言，下一阶段的关键不是选哪家模型，而是能否把智能体嵌入核心流程并量化其产出。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-07 执行）：已检索 consulting JV / AI acquisition (reuters/bloomberg) / Anthropic Accenture Deloitte / OpenAI IPO / Bloomberg AI 等查询。今日新增重大事件：Palo Alto Networks 洽购 Clutch（约 5 亿美元，已纳入热点头条）。Anthropic×Hg 欧洲咨询合资、OpenAI 收购 Pierre、Dropbox 收购 Tigris、Meta 收购 Conductor、Factory 收购 HumanLayer 等均已在过去 7 天发布，按铁律 6 跳过。Anthropic Claude Frontier Academy（含 Accenture cohort）经核实发布于 2026-10-02，超出 7 天窗口未纳入；今日无新的 Accenture 相关一手事件。"
+  }
+}

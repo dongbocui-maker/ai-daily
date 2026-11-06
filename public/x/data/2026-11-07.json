@@ -1,0 +1,283 @@
+{
+  "date": "2026-11-07",
+  "title": "Builder Signals · 2026-11-07",
+  "generatedAt": "2026-11-06T23:00:21.010Z",
+  "feedGeneratedAt": "2026-11-06T06:29:10.275Z",
+  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
+  "stats": {
+    "xBuilders": 13,
+    "totalTweets": 29,
+    "selectedXTweets": 8,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 9
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch argues that \"doing stuff for you over time\" is the killer app of agents — Muse and Instinct consolidate memories at night, remind you in the morning, and message you after N days without interaction. He pitches Vercel Schedules as \"Cron on steroids\": definable at runtime, infinitely scalable, and living outside the Sandbox so compute can be invoked cost-efficiently on demand. Vercel also announced a SpaceXSI partnership letting Grok and Cursor build, deploy and scale apps, which he frame…",
+      "insightZh": "Vercel CEO Guillermo Rauch 认为「随时间推移替你做事」才是 Agent 的杀手级应用——比如 Muse、Instinct 这类 Agent 会在夜里整理记忆、早上提醒你、在你多日未互动后主动来找你。他借此推 Vercel Schedules：可以在运行时动态定义、无限扩展、并且运行在 Sandbox 之外，从而按需、低成本地调起算力，「相当于打了激素的 Cron」。同时 Vercel 宣布与 SpaceXSI 合作，Grok 和 Cursor 现在可以直接构建、部署、扩展应用，他把这串成一个闭环：订阅 X → 用 Bot/Cursor 开发 → 部署到 Vercel → 在 X 上发布分发 → 用 X Money / Creators 变现。",
+      "tags": [
+        "Agent",
+        "Product"
+      ],
+      "url": "https://x.com/rauchg/status/2118440831355068671",
+      "publishedAt": "2026-11-05T20:30:27.000Z",
+      "metrics": {
+        "likes": 256,
+        "retweets": 6,
+        "replies": 87,
+        "score": 454
+      }
+    },
+    {
+      "id": "digest-x-1-VGhhcmlxIM",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Thariq",
+      "handle": "trq212",
+      "title": "Thariq · 前 Anthropic Claude Code 成员",
+      "summaryEn": "Former Anthropic Claude Code team member Thariq shared one of his favorite prompts for agents like Instinct: location-based reminders. For example: \"Keep track of when I've done my laundry. If it's been more than 5 days, remind me 30 minutes after I get home on a weekday and bug me until I confirm or delay.\" It's a concrete example of the long-running, proactive agent pattern Rauch describes.",
+      "insightZh": "前 Anthropic Claude Code 团队成员 Thariq 分享了他最喜欢给 Instinct 这类 Agent 下的一种指令：基于位置的提醒。例如：「记录我上次洗衣服的时间，如果超过 5 天，工作日到家 30 分钟后提醒我，并持续催促直到我确认或推迟。」这正好印证了 Rauch 所说的「长时、主动型 Agent」场景。",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Coding"
+      ],
+      "url": "https://x.com/trq212/status/2118399561324699655",
+      "publishedAt": "2026-11-05T17:46:28.000Z",
+      "metrics": {
+        "likes": 2351,
+        "retweets": 45,
+        "replies": 165,
+        "score": 2861
+      }
+    },
+    {
+      "id": "digest-podcast-0-VW5zdXBlcn",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Unsupervised Learning",
+      "title": "Ep 97: Jev Creator on Decision Models, Benchmark Fatigue & Why the Labs Missed It",
+      "summaryEn": "LLMs excel at producing human-pleasing outputs, but software actually needs vast numbers of reliable, cheap, machine-native micro-decisions. The bottleneck for AI adoption is reliability, not raw smarts; coding agents deliver only a 20–40% average speedup, and market pricing of \"building god\" may be systematically miscalibrated. Redpoint investor Jacob Efron talks with the founder and CEO of Jev, a former OpenAI researcher. His core thesis: if you treat LLMs as submodules called by software, most calls are for machine consumption rather than human consumption, so the future is machine-native. He frames Jev as \"System 1\" decision models — the shape he believes AI ultimately compresses to — asking \"why can we solve Millennium Prize problems in math but not automate anything touching accounting?\" He wants intelligence to be as reliable and provider-agnostic as SQL, so developers don't have…",
+      "insightZh": "LLM 擅长生成取悦人类的输出，但软件真正需要的是大量可靠、廉价、机器原生的「小决策」——AI 落地的瓶颈不是更聪明，而是可靠性；编码 Agent 平均只带来 20–40% 提速，资本市场对「造神」的定价可能存在系统性误判。 Redpoint 投资人 Jacob Efron 对话 Jev 的创始人兼 CEO（前 OpenAI 成员）。他的核心论点是：如果把 LLM 当作被软件调用的子模块，绝大多数调用其实是给机器消费而非给人看的，因此未来是「机器原生」的。他把 Jev 定位为「System 1」决策模型，并坦言这是 AI 最终被压缩成的形态——「为什么我们能解千禧年数学难题，却连会计相关的工作都自动化不了？」他希望智能像 SQL 一样可靠到与供应商无关，开发者不必为每个模型建立「心智模型」，也不必在模型升级的跑步机上追逐。他批评行业过度造新「任务形态」、过度优化 benchmark，造成「过度承诺、交付不足」，消耗了开发者的信任；他甚至认为其他厂商发布 benchmark 导向的模型是在「替我们挖护城河」。 在技术层面，他谈到编码 Agent 被「KV cache 的暴政」所限：几乎所有 UX 设计都围绕只追加的 KV cache，这让路由、子 Agent 传递上下文、压缩（compaction）都很难做好。他畅想的方向包括：多个 Agent 共享同一上下文（如用便宜模型实时可视化昂贵模型在做什么）、基于语义的按任务压缩、对历史会话做廉价 MapReduce 并与同事共享、自然语言描述属性的「语义依赖类型」，以及在每次工具调用上叠加符合组织语义的安全检查。他还提到 OpenAI 时期写过一篇文档《我们本可以在一年前就有 AGI》，认为 GPT-3.5 级别模型早已具备大量自动化能力却未被用起来。 对商业与安全议题，他估计编码 Agent 的平均提速在 20–40%，取决于场景和使用者水平；编程和数学之所以适合 Agent，是因为副作用可控（有 git、可回滚），而大多数知识工作缺乏这种保障——这也是为什么连「得来速点餐」都还没被自动化。关于 Anthropic IPO…",
+      "tags": [
+        "Claude",
+        "OpenAI",
+        "Agent",
+        "Coding"
+      ],
+      "url": "https://www.youtube.com/@RedpointAI",
+      "publishedAt": "2026-11-05T14:05:50.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch argues that \"doing stuff for you over time\" is the killer app of agents — Muse and Instinct consolidate memories at night, remind you in the morning, and message you after N days without interaction. He pitches Vercel Schedules as \"Cron on steroids\": definable at runtime, infinitely scalable, and living outside the Sandbox so compute can be invoked cost-efficiently on demand. Vercel also announced a SpaceXSI partnership letting Grok and Cursor build, deploy and scale apps, which he frame…",
+          "insightZh": "Vercel CEO Guillermo Rauch 认为「随时间推移替你做事」才是 Agent 的杀手级应用——比如 Muse、Instinct 这类 Agent 会在夜里整理记忆、早上提醒你、在你多日未互动后主动来找你。他借此推 Vercel Schedules：可以在运行时动态定义、无限扩展、并且运行在 Sandbox 之外，从而按需、低成本地调起算力，「相当于打了激素的 Cron」。同时 Vercel 宣布与 SpaceXSI 合作，Grok 和 Cursor 现在可以直接构建、部署、扩展应用，他把这串成一个闭环：订阅 X → 用 Bot/Cursor 开发 → 部署到 Vercel → 在 X 上发布分发 → 用 X Money / Creators 变现。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2118440831355068671",
+          "publishedAt": "2026-11-05T20:30:27.000Z",
+          "metrics": {
+            "likes": 256,
+            "retweets": 6,
+            "replies": 87,
+            "score": 454
+          }
+        },
+        {
+          "id": "digest-x-1-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code 成员",
+          "summaryEn": "Former Anthropic Claude Code team member Thariq shared one of his favorite prompts for agents like Instinct: location-based reminders. For example: \"Keep track of when I've done my laundry. If it's been more than 5 days, remind me 30 minutes after I get home on a weekday and bug me until I confirm or delay.\" It's a concrete example of the long-running, proactive agent pattern Rauch describes.",
+          "insightZh": "前 Anthropic Claude Code 团队成员 Thariq 分享了他最喜欢给 Instinct 这类 Agent 下的一种指令：基于位置的提醒。例如：「记录我上次洗衣服的时间，如果超过 5 天，工作日到家 30 分钟后提醒我，并持续催促直到我确认或推迟。」这正好印证了 Rauch 所说的「长时、主动型 Agent」场景。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://x.com/trq212/status/2118399561324699655",
+          "publishedAt": "2026-11-05T17:46:28.000Z",
+          "metrics": {
+            "likes": 2351,
+            "retweets": 45,
+            "replies": 165,
+            "score": 2861
+          }
+        },
+        {
+          "id": "digest-x-2-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie predicts enterprises will have 100X more AI agents working with their data and systems than they have people today, and every agent deployment hinges on getting the critical context needed to decide, research or execute. With 90% of enterprise data unstructured — living in contracts, marketing assets, research, financial plans and design files — Box is partnering with NVIDIA on advanced context retrieval that combines lexical and semantic search, while respecting enterprise security, access con…",
+          "insightZh": "Box CEO Aaron Levie 判断，企业里协同处理数据和系统的 AI Agent 数量将达到今天员工数量的 100 倍，而每一次 Agent 部署的成败都取决于它能否拿到做决策、做研究、执行任务所需的关键上下文。企业 90% 的数据是非结构化的，藏在合同、营销素材、研究材料、财务计划和设计文件里。Box 宣布与 NVIDIA 合作，在 Box 中结合词法检索与语义检索提供高级上下文检索，并且遵循企业的安全、访问控制和数据治理策略，确保 Agent 只接触被授权的数据——「Files 🤝 GPUs」。",
+          "tags": [
+            "Agent",
+            "Eval",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2118498574497665316",
+          "publishedAt": "2026-11-06T00:19:54.000Z",
+          "metrics": {
+            "likes": 140,
+            "retweets": 18,
+            "replies": 56,
+            "score": 324
+          }
+        },
+        {
+          "id": "digest-x-3-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT 负责人",
+          "summaryEn": "OpenAI Codex & ChatGPT lead Thibault Sottiaux made two calls: formal proofs of tens of millions of lines of code are no longer ridiculous and should be on the table when designing new systems; and humans were never very good at writing secure infrastructure — the end state is hypersecure infrastructure and software for all, but there will be turbulence before we get there.",
+          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 抛出两个判断：一是对数千万行代码做形式化证明已经「不再荒谬」，在设计新系统时应该被纳入考虑；二是人类其实并不擅长写安全的基础设施，终局会是「人人可用的超安全基础设施和软件」，但在到达那里之前会经历一段动荡期。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/thsottiaux/status/2118569441860723112",
+          "publishedAt": "2026-11-06T05:01:30.000Z",
+          "metrics": {
+            "likes": 543,
+            "retweets": 20,
+            "replies": 55,
+            "score": 733
+          }
+        },
+        {
+          "id": "digest-x-4-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad says that amid a flood of Linux zero-day vulnerabilities, Replit avoids 96% of them thanks to a custom kernel build, and published a write-up on its new sandbox design. He also claims Replit is the only collaborative AI coding system out there.",
+          "insightZh": "Replit CEO Amjad Masad 表示，如今 Linux 零日漏洞层出不穷，而 Replit 通过定制内核构建规避了其中 96%，并发布了新的沙箱设计文章。他同时宣称 Replit 是目前唯一的「协作式 AI 编程系统」。",
+          "tags": [
+            "Coding"
+          ],
+          "url": "https://x.com/amasad/status/2118503241390665776",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-5-Q2xhdWRlIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Claude",
+          "handle": "claudeai",
+          "title": "Claude · Anthropic 官方账号",
+          "summaryEn": "Anthropic launched Personal Finance in Claude, in beta in the US. Users connect the accounts they choose and Claude answers money questions in everyday language based on their own balances and transactions. Access is read-only — Claude can't move, manage or invest money — and there are no ads or sponsored recommendations; it's built to help you understand your money, not to give investment advice. Rolling out gradually to Pro, Max and Ultra plans in the US.",
+          "insightZh": "Anthropic 在美国推出 Claude「Personal Finance」测试版：用户自选连接账户后，Claude 能基于你自己的余额和交易记录，用日常语言回答理财问题。访问是只读的，Claude 无法转账、管理或投资你的资金；没有广告和赞助推荐，定位是帮助理解财务状况，而非提供投资建议。正在向美国的 Pro、Max 和 Ultra 计划逐步开放。",
+          "tags": [
+            "Claude"
+          ],
+          "url": "https://x.com/claudeai/status/2118403114890137895",
+          "publishedAt": "2026-11-05T18:00:35.000Z",
+          "metrics": {
+            "likes": 30096,
+            "retweets": 1488,
+            "replies": 1058,
+            "score": 38164
+          }
+        },
+        {
+          "id": "digest-x-6-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC President & CEO Garry Tan says this week's results make him optimistic: there's an unprecedented bipartisan opportunity to take on Big Tech's abuse of market power and open markets for the next generation of founders. Inventing powerful AI is only half the job — people must be able to use it, which gets harder when a few trillion-dollar companies can block new products from reaching them. Let thousands of startups compete and spread AI's gains widely. He also flagged the first long-horizon benchmark for PE/IB w…",
+          "insightZh": "YC 总裁兼 CEO Garry Tan 认为本周的结果让他乐观：现在有一个前所未有的两党机会去对付大科技公司滥用市场力量，为下一代创业者打开市场。他的观点是，发明强大的 AI 只是一半工作，人们还必须能用上它；当少数万亿美元公司能阻止新产品触达用户时，这就更难了——应该让成千上万家初创公司竞争，把 AI 的收益尽可能广泛地分配出去。他还转发了首个面向 PE/投行工作的长时程 benchmark，称「解决高端金融是通往 AGI 的必经之路」。",
+          "tags": [
+            "Product",
+            "Eval",
+            "Startup"
+          ],
+          "url": "https://x.com/garrytan/status/2118557763156733984",
+          "publishedAt": "2026-11-06T04:15:06.000Z",
+          "metrics": {
+            "likes": 114,
+            "retweets": 11,
+            "replies": 30,
+            "score": 218
+          }
+        },
+        {
+          "id": "digest-x-7-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "South Park Commons GP and former Dropbox CTO Aditya Agarwal shared his conversation with Trae Stephens at SPC, with one key reminder: just because someone is willing to invest at a certain valuation doesn't mean it's the right valuation for your company.",
+          "insightZh": "South Park Commons 普通合伙人、前 Dropbox CTO Aditya Agarwal 分享了与 Trae Stephens 在 SPC 的对谈，核心提醒一句：有人愿意按某个估值投资，并不代表那就是适合你公司的估值。",
+          "tags": [],
+          "url": "https://x.com/adityaag/status/2118477020325884357",
+          "publishedAt": null,
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-VW5zdXBlcn",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Unsupervised Learning",
+          "title": "Ep 97: Jev Creator on Decision Models, Benchmark Fatigue & Why the Labs Missed It",
+          "summaryEn": "LLMs excel at producing human-pleasing outputs, but software actually needs vast numbers of reliable, cheap, machine-native micro-decisions. The bottleneck for AI adoption is reliability, not raw smarts; coding agents deliver only a 20–40% average speedup, and market pricing of \"building god\" may be systematically miscalibrated. Redpoint investor Jacob Efron talks with the founder and CEO of Jev, a former OpenAI researcher. His core thesis: if you treat LLMs as submodules called by software, most calls are for machine consumption rather than human consumption, so the future is machine-native. He frames Jev as \"System 1\" decision models — the shape he believes AI ultimately compresses to — asking \"why can we solve Millennium Prize problems in math but not automate anything touching accounting?\" He wants intelligence to be as reliable and provider-agnostic as SQL, so developers don't have…",
+          "insightZh": "LLM 擅长生成取悦人类的输出，但软件真正需要的是大量可靠、廉价、机器原生的「小决策」——AI 落地的瓶颈不是更聪明，而是可靠性；编码 Agent 平均只带来 20–40% 提速，资本市场对「造神」的定价可能存在系统性误判。 Redpoint 投资人 Jacob Efron 对话 Jev 的创始人兼 CEO（前 OpenAI 成员）。他的核心论点是：如果把 LLM 当作被软件调用的子模块，绝大多数调用其实是给机器消费而非给人看的，因此未来是「机器原生」的。他把 Jev 定位为「System 1」决策模型，并坦言这是 AI 最终被压缩成的形态——「为什么我们能解千禧年数学难题，却连会计相关的工作都自动化不了？」他希望智能像 SQL 一样可靠到与供应商无关，开发者不必为每个模型建立「心智模型」，也不必在模型升级的跑步机上追逐。他批评行业过度造新「任务形态」、过度优化 benchmark，造成「过度承诺、交付不足」，消耗了开发者的信任；他甚至认为其他厂商发布 benchmark 导向的模型是在「替我们挖护城河」。 在技术层面，他谈到编码 Agent 被「KV cache 的暴政」所限：几乎所有 UX 设计都围绕只追加的 KV cache，这让路由、子 Agent 传递上下文、压缩（compaction）都很难做好。他畅想的方向包括：多个 Agent 共享同一上下文（如用便宜模型实时可视化昂贵模型在做什么）、基于语义的按任务压缩、对历史会话做廉价 MapReduce 并与同事共享、自然语言描述属性的「语义依赖类型」，以及在每次工具调用上叠加符合组织语义的安全检查。他还提到 OpenAI 时期写过一篇文档《我们本可以在一年前就有 AGI》，认为 GPT-3.5 级别模型早已具备大量自动化能力却未被用起来。 对商业与安全议题，他估计编码 Agent 的平均提速在 20–40%，取决于场景和使用者水平；编程和数学之所以适合 Agent，是因为副作用可控（有 git、可回滚），而大多数知识工作缺乏这种保障——这也是为什么连「得来速点餐」都还没被自动化。关于 Anthropic IPO…",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://www.youtube.com/@RedpointAI",
+          "publishedAt": "2026-11-05T14:05:50.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "date": "2026-11-08",
+  "title": "Builder Signals · 2026-11-08",
+  "generatedAt": "2026-11-07T23:00:19.857Z",
+  "feedGeneratedAt": "2026-11-07T06:25:13.003Z",
+  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 8 条高信号内容。",
+  "stats": {
+    "xBuilders": 13,
+    "totalTweets": 29,
+    "selectedXTweets": 7,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 8
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R2FycnkgVG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Garry Tan",
+      "handle": "garrytan",
+      "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+      "summaryEn": "Y Combinator President & CEO Garry Tan argued that eval-driven development loops are necessary for agent skills: every new model gets better, so you can remove scaffolding you no longer need. He just deleted his /investigate skill because Opus 5.5 does it better without it — \"you can feel the AGI tide rising.\" He also praised computer use on Aside, noting it is a real Chromium browser that almost no site can block, and highlighted research showing that just 3 million tokens of advice from ordinary people facing mo…",
+      "insightZh": "YC 总裁兼 CEO Garry Tan 本周给出一个很实操的观点：Agent skill 的开发需要「评测驱动」的迭代循环——每代新模型都更强，很多过去必须手写的 skill 可以直接删掉。他刚把自己的 /investigate skill 移除了，因为 Opus 5.5 不用它反而做得更好，「能感觉到 AGI 的潮水在上涨」。另外他推荐了 Aside 的 computer use 能力，亮点是它本身就是一个真实的 Chromium 浏览器，几乎没有网站能屏蔽；他还转引了一项研究：仅用约 300 万 token 的普通人道德困境建议做训练，就能把模型的恶意行为降到 0%，且跨模型代际效率提升 28 倍。",
+      "tags": [
+        "Agent",
+        "Eval",
+        "Startup",
+        "Research"
+      ],
+      "url": "https://x.com/garrytan/status/2118920030243139596",
+      "publishedAt": "2026-11-07T04:14:37.000Z",
+      "metrics": {
+        "likes": 217,
+        "retweets": 9,
+        "replies": 58,
+        "score": 369
+      }
+    },
+    {
+      "id": "digest-x-1-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch showcased generative UI for conversational agents: combining the AI SDK with Chat SDK and json-render lets you go straight from LLM output to UI on platforms like Slack and Teams. He believes this will become the dominant Human-Agent Interaction (HAI) paradigm.",
+      "insightZh": "Vercel CEO Guillermo Rauch 推介「对话式 Agent 的生成式 UI」：把 AI SDK、Chat SDK 和 json-render 组合起来，可以从 LLM 输出直接生成 UI，并跑在 Slack、Teams 这类平台上。他判断这会成为人与 Agent 交互（Human-Agent Interaction, HAI）的主流范式。对做企业协同场景 Agent 的团队来说，这是一个值得关注的技术栈方向。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Product",
+        "Infrastructure"
+      ],
+      "url": "https://x.com/rauchg/status/2118856239719608353",
+      "publishedAt": "2026-11-07T00:01:08.000Z",
+      "metrics": {
+        "likes": 1147,
+        "retweets": 60,
+        "replies": 131,
+        "score": 1649
+      }
+    },
+    {
+      "id": "digest-podcast-0-TGF0ZW50IF",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Latent Space",
+      "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+      "summaryEn": "Virtual cells are moving from mapping to prediction to actively steering experiments — and data scale, sound metrics and the wet-lab loop matter more than model complexity alone. On Latent Space's AI for Science series, Fabian Theis, who leads the Computational Health Center at Helmholtz Munich (the team behind Scanpy, AnnData and scverse), argues pharma interest in virtual cells will rise again, driven by an explosion in data generation — single experiments now measure ten million transcriptomes, and the perturbation space is no longer scarce. Biohub's $1.8B collaboration with the DOE, NIH, Meta and Google to collect open multi-scale biological data is one signal. He considers equating virtual cells with perturbation prediction a bit simplistic, but notes perturbation-prediction models and startups (in Europe and China alike) are taking off because pharma badly needs cell-type- and con…",
+      "insightZh": "虚拟细胞正从「绘图」走向「预测」再走向「引导实验」——数据规模化、正确的评测指标和湿实验闭环，比单纯堆模型更重要。 本期是 Latent Space 的 AI for Science 系列，嘉宾是 Helmholtz Munich 计算健康中心负责人 Fabian Theis（Scanpy、AnnData、scverse 等常用工具背后的团队）。他认为，制药业对「虚拟细胞」的兴趣会重新升温，核心驱动力是数据生成规模的爆发：单次实验就能测上千万个转录组，扰动空间的采样也不再稀缺。Biohub 联合 DOE、NIH、Meta、Google 投入 18 亿美元采集开放多尺度生物数据，就是这一趋势的信号。他也指出，把虚拟细胞等同于「扰动预测」略显简化，但扰动预测类模型以及相关创业（欧洲和中国都很活跃）确实在快速起量，因为药企急需在筛选中做到细胞类型和上下文特异。 方法论上，他强调「先把 baseline 做对」：Arc Institute 的虚拟细胞挑战赛给领域泼了冷水——部分指标可被钻空子，线性模型在一些任务上就能打平复杂模型；但最终获胜方案是基于 flow matching 的非线性方法，说明更难的任务（如他们 NicheFormer 中预测相邻细胞表达）确实需要更强模型。他的做法是：用对比学习模型 scConcert 学习表征（Hugging Face 上已有 3.5 亿细胞、约 1 亿参数、覆盖 16 个物种的版本，并开始呈现 scaling law），再用 flow matching 做沿「动作」的生成推演——本质上就是转录组空间里的世界模型 f(x, a)→x′，CellFlow 论文已被 Nature Methods 接收。 更前沿的是 Lab Compass：一个「逆向生成模型」，在已有正向世界模型的前提下，告诉你要做什么实验才能让细胞到达目标状态，并已与剑桥的造血研究团队做了快速闭环验证。终极愿景是「把一切都 RL 化」，把实验室本身纳入 RL 环境，但目前实验周期仍偏长，现阶段更多是主动学习。商业层面，他认为护城河在「模型 + 独特数据」的组合，例如与多家…",
+      "tags": [
+        "Product",
+        "Eval",
+        "Startup",
+        "Research"
+      ],
+      "url": "https://www.youtube.com/@LatentSpacePod",
+      "publishedAt": "2026-11-06T14:48:24.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "Y Combinator President & CEO Garry Tan argued that eval-driven development loops are necessary for agent skills: every new model gets better, so you can remove scaffolding you no longer need. He just deleted his /investigate skill because Opus 5.5 does it better without it — \"you can feel the AGI tide rising.\" He also praised computer use on Aside, noting it is a real Chromium browser that almost no site can block, and highlighted research showing that just 3 million tokens of advice from ordinary people facing mo…",
+          "insightZh": "YC 总裁兼 CEO Garry Tan 本周给出一个很实操的观点：Agent skill 的开发需要「评测驱动」的迭代循环——每代新模型都更强，很多过去必须手写的 skill 可以直接删掉。他刚把自己的 /investigate skill 移除了，因为 Opus 5.5 不用它反而做得更好，「能感觉到 AGI 的潮水在上涨」。另外他推荐了 Aside 的 computer use 能力，亮点是它本身就是一个真实的 Chromium 浏览器，几乎没有网站能屏蔽；他还转引了一项研究：仅用约 300 万 token 的普通人道德困境建议做训练，就能把模型的恶意行为降到 0%，且跨模型代际效率提升 28 倍。",
+          "tags": [
+            "Agent",
+            "Eval",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2118920030243139596",
+          "publishedAt": "2026-11-07T04:14:37.000Z",
+          "metrics": {
+            "likes": 217,
+            "retweets": 9,
+            "replies": 58,
+            "score": 369
+          }
+        },
+        {
+          "id": "digest-x-1-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch showcased generative UI for conversational agents: combining the AI SDK with Chat SDK and json-render lets you go straight from LLM output to UI on platforms like Slack and Teams. He believes this will become the dominant Human-Agent Interaction (HAI) paradigm.",
+          "insightZh": "Vercel CEO Guillermo Rauch 推介「对话式 Agent 的生成式 UI」：把 AI SDK、Chat SDK 和 json-render 组合起来，可以从 LLM 输出直接生成 UI，并跑在 Slack、Teams 这类平台上。他判断这会成为人与 Agent 交互（Human-Agent Interaction, HAI）的主流范式。对做企业协同场景 Agent 的团队来说，这是一个值得关注的技术栈方向。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Product",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/rauchg/status/2118856239719608353",
+          "publishedAt": "2026-11-07T00:01:08.000Z",
+          "metrics": {
+            "likes": 1147,
+            "retweets": 60,
+            "replies": 131,
+            "score": 1649
+          }
+        },
+        {
+          "id": "digest-x-2-VGhhcmlxIM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code 团队",
+          "summaryEn": "Thariq, formerly on Claude Code at Anthropic, highlighted a pattern he likes: creator apps like Instagram Edits and Roblox Studio shipping with built-in MCPs, so agents can do part of the work while power users collaborate and continue in the tools they already use.",
+          "insightZh": "前 Anthropic Claude Code 成员 Thariq 观察到一个他很喜欢的模式：Instagram Edits、Roblox Studio 这类创作者工具开始内置 MCP，让 Agent 先完成一部分工作，同时高级用户还能在自己熟悉的工具里接着协作和精修。这是「Agent + 人」在既有专业软件内协同的一种落地形态。",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/trq212/status/2118822238262853904",
+          "publishedAt": "2026-11-06T21:46:02.000Z",
+          "metrics": {
+            "likes": 1130,
+            "retweets": 22,
+            "replies": 107,
+            "score": 1432
+          }
+        },
+        {
+          "id": "digest-x-3-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · AI 教程与访谈创作者",
+          "summaryEn": "AI tutorials and interviews creator Peter Yang noted that apps able to use models from multiple labs, like Conductor and Cursor, keep getting acquired by the labs themselves, while the remaining ones such as T3 Code and Orca are open source. He believes there is still strong user and enterprise demand for multi-lab apps. He also teased an interview with @jsnnsa, calling him the most mind-blowing guest since @steipete, with the episode being expedited.",
+          "insightZh": "AI 教程与访谈创作者 Peter Yang 注意到一个行业趋势：能调用多家实验室模型的应用（如 Conductor、Cursor 等）正一个个被模型厂商收购，剩下的如 T3 Code、Orca 则是开源项目。他认为用户和企业对「可跨厂商使用模型」的应用仍有大量需求，这一格局如何演变值得观察。他还预告刚采访了 @jsnnsa，称这是继 @steipete 之后最让他震撼的嘉宾，节目将加急上线。",
+          "tags": [
+            "Coding",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/petergyang/status/2118811231545122998",
+          "publishedAt": "2026-11-06T21:02:17.000Z",
+          "metrics": {
+            "likes": 49,
+            "retweets": 2,
+            "replies": 39,
+            "score": 135
+          }
+        },
+        {
+          "id": "digest-x-4-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "handle": "swyx",
+          "title": "Swyx · Latent Space / AI Engineer 发起人",
+          "summaryEn": "Swyx, founder of Latent Space and AI Engineer, committed to weekly coverage of the Anthropic IPO until it does or doesn't happen. Having covered mega-IPOs from $BABA to $TEAM, he is dusting off his equity hedge fund analyst hat alongside his AI Engineer hat, together with Jamin Ball.",
+          "insightZh": "Latent Space 与 AI Engineer 发起人 Swyx 宣布将对 Anthropic IPO 进行每周跟踪报道，直到 IPO 落地或告吹为止。他曾报道过从阿里巴巴到 Atlassian 的超级 IPO，这次会重拾股票对冲基金分析师的视角，结合 AI 工程师身份，与 Jamin Ball 一起做这个系列。",
+          "tags": [
+            "Claude",
+            "Product",
+            "Startup"
+          ],
+          "url": "https://x.com/swyx/status/2118905788915982341",
+          "publishedAt": "2026-11-07T03:18:02.000Z",
+          "metrics": {
+            "likes": 78,
+            "retweets": 0,
+            "replies": 44,
+            "score": 166
+          }
+        },
+        {
+          "id": "digest-x-5-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari reintroduced texts wrapped: iMessage, WhatsApp and phone calls analyzed with one terminal command, running 100% locally on Mac, no AI, open source (or run via Claude Code / Codex), with a refreshed UI, new insights and better accuracy. He also posted a satirical thread on today's startup froth — raising $2M mostly for a launch video, its promotion and token spend, vibe coding a semblance of a product and trading it for friendly LOIs and cARR.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 重新发布了开源工具 texts wrapped：一条终端命令即可分析 iMessage、WhatsApp 和通话记录，纯本地运行在 Mac 上、不用 AI，也可以交给 Claude Code / Codex 来跑，新版改进了界面、洞察和准确度。另外他发了一篇长文讽刺当下的创业泡沫：融 200 万美元、大头花在发布视频推广和 token 上，靠 vibe coding 拼出产品雏形、换取「友情」客户的 LOI 和 cARR。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Product",
+            "Startup"
+          ],
+          "url": "https://x.com/nikunj/status/2118840414853861627",
+          "publishedAt": "2026-11-06T22:58:15.000Z",
+          "metrics": {
+            "likes": 5,
+            "retweets": 0,
+            "replies": 2,
+            "score": 9
+          }
+        },
+        {
+          "id": "digest-x-6-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "handle": "zarazhangrui",
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Builder Zara Zhang reiterated that your personal website is the new resume: LinkedIn shows a list of titles, while a personal website shows your taste, thinking and actual work — you don't need to be confined by existing social platforms.",
+          "insightZh": "Builder Zara Zhang 重申她的观点：个人网站就是新的简历。LinkedIn 只展示一串头衔，而个人网站能展示你的品味、思考方式和真实作品，不必被现有社交平台的形态所限制。",
+          "tags": [
+            "Product",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2118939184841052386",
+          "publishedAt": "2026-11-07T05:30:44.000Z",
+          "metrics": {
+            "likes": 28,
+            "retweets": 2,
+            "replies": 5,
+            "score": 46
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-TGF0ZW50IF",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Latent Space",
+          "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+          "summaryEn": "Virtual cells are moving from mapping to prediction to actively steering experiments — and data scale, sound metrics and the wet-lab loop matter more than model complexity alone. On Latent Space's AI for Science series, Fabian Theis, who leads the Computational Health Center at Helmholtz Munich (the team behind Scanpy, AnnData and scverse), argues pharma interest in virtual cells will rise again, driven by an explosion in data generation — single experiments now measure ten million transcriptomes, and the perturbation space is no longer scarce. Biohub's $1.8B collaboration with the DOE, NIH, Meta and Google to collect open multi-scale biological data is one signal. He considers equating virtual cells with perturbation prediction a bit simplistic, but notes perturbation-prediction models and startups (in Europe and China alike) are taking off because pharma badly needs cell-type- and con…",
+          "insightZh": "虚拟细胞正从「绘图」走向「预测」再走向「引导实验」——数据规模化、正确的评测指标和湿实验闭环，比单纯堆模型更重要。 本期是 Latent Space 的 AI for Science 系列，嘉宾是 Helmholtz Munich 计算健康中心负责人 Fabian Theis（Scanpy、AnnData、scverse 等常用工具背后的团队）。他认为，制药业对「虚拟细胞」的兴趣会重新升温，核心驱动力是数据生成规模的爆发：单次实验就能测上千万个转录组，扰动空间的采样也不再稀缺。Biohub 联合 DOE、NIH、Meta、Google 投入 18 亿美元采集开放多尺度生物数据，就是这一趋势的信号。他也指出，把虚拟细胞等同于「扰动预测」略显简化，但扰动预测类模型以及相关创业（欧洲和中国都很活跃）确实在快速起量，因为药企急需在筛选中做到细胞类型和上下文特异。 方法论上，他强调「先把 baseline 做对」：Arc Institute 的虚拟细胞挑战赛给领域泼了冷水——部分指标可被钻空子，线性模型在一些任务上就能打平复杂模型；但最终获胜方案是基于 flow matching 的非线性方法，说明更难的任务（如他们 NicheFormer 中预测相邻细胞表达）确实需要更强模型。他的做法是：用对比学习模型 scConcert 学习表征（Hugging Face 上已有 3.5 亿细胞、约 1 亿参数、覆盖 16 个物种的版本，并开始呈现 scaling law），再用 flow matching 做沿「动作」的生成推演——本质上就是转录组空间里的世界模型 f(x, a)→x′，CellFlow 论文已被 Nature Methods 接收。 更前沿的是 Lab Compass：一个「逆向生成模型」，在已有正向世界模型的前提下，告诉你要做什么实验才能让细胞到达目标状态，并已与剑桥的造血研究团队做了快速闭环验证。终极愿景是「把一切都 RL 化」，把实验室本身纳入 RL 环境，但目前实验周期仍偏长，现阶段更多是主动学习。商业层面，他认为护城河在「模型 + 独特数据」的组合，例如与多家…",
+          "tags": [
+            "Product",
+            "Eval",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://www.youtube.com/@LatentSpacePod",
+          "publishedAt": "2026-11-06T14:48:24.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

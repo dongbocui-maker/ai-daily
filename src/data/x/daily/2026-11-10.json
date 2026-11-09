@@ -1,0 +1,292 @@
+{
+  "date": "2026-11-10",
+  "title": "Builder Signals · 2026-11-10",
+  "generatedAt": "2026-11-09T23:00:17.722Z",
+  "feedGeneratedAt": "2026-11-09T06:36:37.960Z",
+  "summary": "Follow Builders 今日捕捉到 21 条 X 动态、1 集播客、0 篇博客；本站精选 9 条高信号内容。",
+  "stats": {
+    "xBuilders": 10,
+    "totalTweets": 21,
+    "selectedXTweets": 8,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 9
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie argued in two long posts that AI is shifting from output bounded by chat speed to setting a problem for a swarm of agents that fan out and do arbitrarily large amounts of work in parallel — taking productivity gains from 20-50% to gains with no real upper limit. Coding has already shown this; cyber is next, then scientific fields like life sciences, and eventually any domain where computer-based work can be parallelized. Our intuition that time invested correlates with output is \"changing forev…",
+      "insightZh": "Box CEO Aaron Levie 连发两条长推，核心判断是：AI 正在从「你聊多快它就产出多快」的对话模式，转向「给一群 agent 布置问题、让它们并行去做任意规模工作」的模式，生产力提升将从 20-50% 变成没有明显上限。他认为编码领域已经验证了这一点，下一个是网络安全（更多 agent 审更多东西 = 更好的结果），再往后是生命科学等科研领域；凡是能把基于计算机的工作并行化的地方，都会出现质的变化——人类习惯了「投入时间与产出相关」，这个规律正在永久改变。第二条推文提醒：AI 能力每 3-6 个月就要重新试一次。过去半年在 computer/tool use、context rot 减少、推理、多模态和领域专业度上的进步，意味着 agent 可以调用几乎任何带 API 的现有系统（安全数据源、IT 工作流、数据迁移、CAD 设计工具等），而不再只靠模型「从零生成」，这为每个职能和行业带来自主协作者。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Product",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2119592025440092192",
+      "publishedAt": "2026-11-09T00:44:53.000Z",
+      "metrics": {
+        "likes": 256,
+        "retweets": 18,
+        "replies": 81,
+        "score": 490
+      }
+    },
+    {
+      "id": "digest-x-1-TmFuIFl1IM",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Nan Yu",
+      "handle": "thenanyu",
+      "title": "Nan Yu · OpenAI Codex 产品负责人（前 Linear 产品负责人）",
+      "summaryEn": "OpenAI Codex product lead Nan Yu argued for picking the \"dumbest\" architecture and design that works, rather than the \"simplest\" — simple is something you iterate toward, dumb is the right starting point, and cleverness forces users to be equally clever. He also noted that software got much easier if you know what you want to build and much harder if you don't: without clarity you'll ship a pile of junk at great expense, whereas pre-AI you'd have shipped nothing, which was an improvement.",
+      "insightZh": "OpenAI Codex 产品负责人 Nan Yu 给了一个反直觉的工程原则：选「最笨」的架构、「最笨」的设计，而不是「最简单」的——简单是迭代出来的，笨才是正确的起点，否则你会聪明反被聪明误；你越聪明，用户也得一样聪明才能理解你。另一条更扎心：AI 时代，如果你清楚自己要做什么，软件变得容易得多；如果不清楚，你会花大钱交付一堆垃圾——而在前 AI 时代你至少什么都交付不了，那反而更好。",
+      "tags": [
+        "OpenAI",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://x.com/thenanyu/status/2119462979179892925",
+      "publishedAt": "2026-11-08T16:12:06.000Z",
+      "metrics": {
+        "likes": 263,
+        "retweets": 11,
+        "replies": 22,
+        "score": 351
+      }
+    },
+    {
+      "id": "digest-podcast-0-TGF0ZW50IF",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Latent Space",
+      "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+      "summaryEn": "A well-trained AI-native engineer can be among the most valuable assets at any company, but the entry bar is now near senior level — standing out requires solid systems fundamentals, rigorous context engineering and much bigger ambition. In this AI Engineer channel one-million-subscriber special, Mihail Eric — instructor of Stanford's CS 146S \"The Modern Software Developer\" and Head of AI at Monaco — explains how the course, first taught in fall 2025, has been heavily refreshed. Last year was a broad survey of where coding agents fit across the SDLC; this year principles have solidified around careful context engineering and using design and architecture to handle complex tasks. He tells students every company needs them, but the floor is much higher than a junior level. A highlight this year is partnering with open-source projects so students make real OSS contributions instead of pure…",
+      "insightZh": "AI 原生工程师可以是任何公司最有价值的资产，但入行门槛已经抬到接近资深水平——要靠扎实的系统基础、严谨的上下文工程和更大的野心脱颖而出。 本期是 AI Engineer YouTube 频道百万订阅特辑，嘉宾 Mihail Eric 是斯坦福 CS 146S「现代软件开发者」课程的讲师，同时任 Monaco 的 AI 负责人。课程从 2024 年 11 月开始酝酿，2025 年秋首次开课，今年第二次开课时大幅改版：去年更像是「编码 agent 能用在 SDLC 哪些环节」的巡礼，今年一些原则已经固化——精细的上下文工程、用设计与架构应对复杂任务。他直言对学生说「每家公司都需要你，但门槛高得多」：新人不能只是 L3，必须接近资深水平。今年课程一大亮点是与开源项目合作，让学生做真实的开源贡献，取代去年偏教学化的练习。 在方法论上，他强调业界很少有人超越「帮我把这事做了」的朴素提示；面对百万行级代码库，应走「研究 → 方案提案（多个备选，由人类拍板）→ 规格/计划 → 实现 → 测试」的流程，与 Dex 的 RPI 框架类似。他观察到 Claude Code 早期走红源于「少而强的工具」（Bash、SQL 等瑞士军刀），而其系统提示近来变短，很多 Git、任务管理等知识已被「烘焙」进模型权重，这引出模型与 harness 之间如何取舍的问题。关于 skills，他认为除了作为可复用流程，更持久的价值是把组织级最佳实践（API 定义方式、服务边界）编码给 agent 和代码审查系统。 企业场景方面，他点名 Resolve 和 Night Shift 在 AI SRE / 后台 agent 方向做得好：价值最大的是服务依赖极其复杂、Kubernetes/Helm 文件散落各处、「仓库比开发者还多」的大型企业。安全上，主持人 swyx 指出问题不只是模型写 bug，而是人对产出的代码缺乏感知；数据存储、计费、鉴权这些部分要格外谨慎。对学生的建议：多思考整体系统而非单一环节，工程师角色会向产品工程师融合；要更有野心（「拍照生成 App」已不够，像写一个浏览器才算），并且去做 be…",
+      "tags": [
+        "Claude",
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://www.youtube.com/watch?v=dpY7YzZo4kE",
+      "publishedAt": "2026-11-08T21:23:29.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argued in two long posts that AI is shifting from output bounded by chat speed to setting a problem for a swarm of agents that fan out and do arbitrarily large amounts of work in parallel — taking productivity gains from 20-50% to gains with no real upper limit. Coding has already shown this; cyber is next, then scientific fields like life sciences, and eventually any domain where computer-based work can be parallelized. Our intuition that time invested correlates with output is \"changing forev…",
+          "insightZh": "Box CEO Aaron Levie 连发两条长推，核心判断是：AI 正在从「你聊多快它就产出多快」的对话模式，转向「给一群 agent 布置问题、让它们并行去做任意规模工作」的模式，生产力提升将从 20-50% 变成没有明显上限。他认为编码领域已经验证了这一点，下一个是网络安全（更多 agent 审更多东西 = 更好的结果），再往后是生命科学等科研领域；凡是能把基于计算机的工作并行化的地方，都会出现质的变化——人类习惯了「投入时间与产出相关」，这个规律正在永久改变。第二条推文提醒：AI 能力每 3-6 个月就要重新试一次。过去半年在 computer/tool use、context rot 减少、推理、多模态和领域专业度上的进步，意味着 agent 可以调用几乎任何带 API 的现有系统（安全数据源、IT 工作流、数据迁移、CAD 设计工具等），而不再只靠模型「从零生成」，这为每个职能和行业带来自主协作者。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2119592025440092192",
+          "publishedAt": "2026-11-09T00:44:53.000Z",
+          "metrics": {
+            "likes": 256,
+            "retweets": 18,
+            "replies": 81,
+            "score": 490
+          }
+        },
+        {
+          "id": "digest-x-1-TmFuIFl1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品负责人（前 Linear 产品负责人）",
+          "summaryEn": "OpenAI Codex product lead Nan Yu argued for picking the \"dumbest\" architecture and design that works, rather than the \"simplest\" — simple is something you iterate toward, dumb is the right starting point, and cleverness forces users to be equally clever. He also noted that software got much easier if you know what you want to build and much harder if you don't: without clarity you'll ship a pile of junk at great expense, whereas pre-AI you'd have shipped nothing, which was an improvement.",
+          "insightZh": "OpenAI Codex 产品负责人 Nan Yu 给了一个反直觉的工程原则：选「最笨」的架构、「最笨」的设计，而不是「最简单」的——简单是迭代出来的，笨才是正确的起点，否则你会聪明反被聪明误；你越聪明，用户也得一样聪明才能理解你。另一条更扎心：AI 时代，如果你清楚自己要做什么，软件变得容易得多；如果不清楚，你会花大钱交付一堆垃圾——而在前 AI 时代你至少什么都交付不了，那反而更好。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thenanyu/status/2119462979179892925",
+          "publishedAt": "2026-11-08T16:12:06.000Z",
+          "metrics": {
+            "likes": 263,
+            "retweets": 11,
+            "replies": 22,
+            "score": 351
+          }
+        },
+        {
+          "id": "digest-x-2-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch built a physical simulation of a record player with WebGL2 and Web Audio. Instead of playing a song, it converts audio into the physical shape of a groove, then a simulated stylus rides those walls 384,000 times per second and you hear the voltage that motion would induce in a cartridge — so crackle, pops, wow/flutter and dull inner grooves emerge naturally. You can also \"DJ\" the record; songs are public domain or CC-licensed and the code is open to remix.",
+          "insightZh": "Vercel CEO Guillermo Rauch 用 WebGL2 + Web Audio 做了一个黑胶唱机的物理仿真，准确度「惊人」：它不是直接播放歌曲，而是把歌曲转换成唱片沟槽的物理形状，再让模拟唱针以每秒 38.4 万次的频率沿沟壁运动，输出该运动在唱头中感应出的电压。因此噼啪声、爆音、抖晃、内圈发闷都是仿真自然产生的副产物，还可以「打碟」。曲目均为公有领域或 CC 授权，代码开放可 remix 和重新部署。",
+          "tags": [
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2119536313712230802",
+          "publishedAt": "2026-11-08T21:03:30.000Z",
+          "metrics": {
+            "likes": 2242,
+            "retweets": 143,
+            "replies": 187,
+            "score": 3188
+          }
+        },
+        {
+          "id": "digest-x-3-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC CEO Garry Tan said his gstack-evals project tried to replicate a Jev Engineering article and found it does replicate — and particle-1, which he also had it test, did even better. He added that \"you're really going to want your own software factory\": once you realize frontier models make software so easy to change, everyday bugs become unbearable, and personal just-in-time software looks inevitable.",
+          "insightZh": "YC CEO Garry Tan 用自己的 gstack-evals 项目复现了一篇 Jev Engineering 的文章，结论是文章结果可复现，并且他额外让它测试的 particle-1 表现更好。他同时判断：「你会非常想要拥有自己的软件工厂」；一旦意识到前沿模型让改软件变得如此容易，日常软件里的 bug 就变得难以忍受——个人化、即时生成的软件（just-in-time software）将不可避免。",
+          "tags": [
+            "Eval",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/garrytan/status/2119624260675350605",
+          "publishedAt": "2026-11-09T02:52:59.000Z",
+          "metrics": {
+            "likes": 140,
+            "retweets": 8,
+            "replies": 24,
+            "score": 220
+          }
+        },
+        {
+          "id": "digest-x-4-UnlvIEx1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Ryo Lu",
+          "handle": "ryolu_",
+          "title": "Ryo Lu · Cursor 设计负责人",
+          "summaryEn": "Ryo Lu, designer behind Cursor, Notion and Stripe, released his full AI Engineer Shanghai talk on the question: \"when we can do anything, do we still know what we want?\" Every slide was handmade in Keynote, with Chinese and English subtitles.",
+          "insightZh": "曾设计 Cursor、Notion、Stripe 的 Ryo Lu 放出了他在 AI Engineer 上海站的完整演讲，主题是「当我们什么都能做的时候，我们还知道自己想要什么吗？」。每页幻灯片都是在 Keynote 里手工制作，配中英双语字幕。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/ryolu_/status/2119586846657454152",
+          "publishedAt": "2026-11-09T00:24:18.000Z",
+          "metrics": {
+            "likes": 704,
+            "retweets": 70,
+            "replies": 29,
+            "score": 1042
+          }
+        },
+        {
+          "id": "digest-x-5-WmFyYSBaaG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Zara Zhang",
+          "handle": "zarazhangrui",
+          "title": "Zara Zhang · Builder",
+          "summaryEn": "Builder Zara Zhang has almost stopped using \"vibe coding\" because it implies low effort and AI slop, while many people pour heart and soul into work built with AI coding tools — we need a better word. She also observed that the joy of building products comes from the collision between the predictability of technology and the unpredictability of humans.",
+          "insightZh": "Builder Zara Zhang 说她几乎不再用「vibe coding」这个词，因为它带有负面含义——暗示产出没花心思、只是 AI slop。但很多人用 AI 编码工具时同样倾注了心血，两者并不矛盾，需要一个更好的词。她另一条感悟：做产品的乐趣，来自技术行为的可预测性与人类行为的不可预测性之间的碰撞。",
+          "tags": [
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2119592080318341128",
+          "publishedAt": "2026-11-08T08:13:03.000Z",
+          "metrics": {
+            "likes": 168,
+            "retweets": 7,
+            "replies": 32,
+            "score": 260
+          }
+        },
+        {
+          "id": "digest-x-6-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari listed phrases to drop if you want to meet people in SF — \"swap notes,\" \"synergies,\" \"pick your brain,\" \"networking,\" \"san fran,\" \"grab coffee if you're free.\" Instead, show your work: a thoughtful cold email, a pointed five-line DM, a shipped side project or a meetup you organize. Even in the AI era effort shows, and amid so much slop he goes out of his way to meet people who make it.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 给来旧金山想结识人的人一份「词汇黑名单」：swap notes、synergies、pick your brain、networking、「san fran」、「有空喝杯咖啡」。他的建议是「展示你的作品」——一封用心的冷邮件、五行有针对性的私信、做过的 side project 或组织的 meetup。即使在 AI 时代，用心依然看得出来；他收到的 slop 太多，看到有人真正花心思就会主动去见。",
+          "tags": [],
+          "url": "https://x.com/nikunj/status/2119670529254981756",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · Roblox 产品负责人、AI 教程创作者",
+          "summaryEn": "Peter Yang shared a clip from his interview with OpenAI VP of Product Ashley Yuki, whose parents were each diagnosed with two cancers within a week. She took a month off to care for them — \"one of the best things I could have done\" — and stressed that caregivers must budget time for their own mental health given the cognitive, emotional and time load.",
+          "insightZh": "Peter Yang 分享了访谈片段：OpenAI 产品副总裁 Ashley Yuki 讲到父母在一周内各自被确诊两种癌症后，她决定休假一个月照顾父母，「这是那一刻我能做的最好的决定之一」。她强调照护者也要照顾自己——照护在认知、情绪和时间上都是巨大负担，必须为自己的心理健康留出时间。",
+          "tags": [
+            "OpenAI",
+            "Product"
+          ],
+          "url": "https://x.com/petergyang/status/2119595860057288967",
+          "publishedAt": "2026-11-09T01:00:07.000Z",
+          "metrics": {
+            "likes": 46,
+            "retweets": 8,
+            "replies": 2,
+            "score": 82
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-TGF0ZW50IF",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Latent Space",
+          "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+          "summaryEn": "A well-trained AI-native engineer can be among the most valuable assets at any company, but the entry bar is now near senior level — standing out requires solid systems fundamentals, rigorous context engineering and much bigger ambition. In this AI Engineer channel one-million-subscriber special, Mihail Eric — instructor of Stanford's CS 146S \"The Modern Software Developer\" and Head of AI at Monaco — explains how the course, first taught in fall 2025, has been heavily refreshed. Last year was a broad survey of where coding agents fit across the SDLC; this year principles have solidified around careful context engineering and using design and architecture to handle complex tasks. He tells students every company needs them, but the floor is much higher than a junior level. A highlight this year is partnering with open-source projects so students make real OSS contributions instead of pure…",
+          "insightZh": "AI 原生工程师可以是任何公司最有价值的资产，但入行门槛已经抬到接近资深水平——要靠扎实的系统基础、严谨的上下文工程和更大的野心脱颖而出。 本期是 AI Engineer YouTube 频道百万订阅特辑，嘉宾 Mihail Eric 是斯坦福 CS 146S「现代软件开发者」课程的讲师，同时任 Monaco 的 AI 负责人。课程从 2024 年 11 月开始酝酿，2025 年秋首次开课，今年第二次开课时大幅改版：去年更像是「编码 agent 能用在 SDLC 哪些环节」的巡礼，今年一些原则已经固化——精细的上下文工程、用设计与架构应对复杂任务。他直言对学生说「每家公司都需要你，但门槛高得多」：新人不能只是 L3，必须接近资深水平。今年课程一大亮点是与开源项目合作，让学生做真实的开源贡献，取代去年偏教学化的练习。 在方法论上，他强调业界很少有人超越「帮我把这事做了」的朴素提示；面对百万行级代码库，应走「研究 → 方案提案（多个备选，由人类拍板）→ 规格/计划 → 实现 → 测试」的流程，与 Dex 的 RPI 框架类似。他观察到 Claude Code 早期走红源于「少而强的工具」（Bash、SQL 等瑞士军刀），而其系统提示近来变短，很多 Git、任务管理等知识已被「烘焙」进模型权重，这引出模型与 harness 之间如何取舍的问题。关于 skills，他认为除了作为可复用流程，更持久的价值是把组织级最佳实践（API 定义方式、服务边界）编码给 agent 和代码审查系统。 企业场景方面，他点名 Resolve 和 Night Shift 在 AI SRE / 后台 agent 方向做得好：价值最大的是服务依赖极其复杂、Kubernetes/Helm 文件散落各处、「仓库比开发者还多」的大型企业。安全上，主持人 swyx 指出问题不只是模型写 bug，而是人对产出的代码缺乏感知；数据存储、计费、鉴权这些部分要格外谨慎。对学生的建议：多思考整体系统而非单一环节，工程师角色会向产品工程师融合；要更有野心（「拍照生成 App」已不够，像写一个浏览器才算），并且去做 be…",
+          "tags": [
+            "Claude",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://www.youtube.com/watch?v=dpY7YzZo4kE",
+          "publishedAt": "2026-11-08T21:23:29.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

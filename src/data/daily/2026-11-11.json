@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-11",
+  "title": "AI 日报 · 2026-11-11",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🌍 行业动向 | Anthropic 投 1 亿美元建 Claude Frontier Academy：2027 年底前培养 1 万名前线部署工程师，埃森哲等已派学员",
+          "body": "Anthropic 宣布投入 1 亿美元设立 Claude Frontier Academy，计划到 2027 年底培训约 1 万名“Frontier Deployed Engineers”（前线部署工程师），专门负责把 Claude 模型与智能体落到企业真实业务流程中。首批学员来自 Accenture（埃森哲）、Bain、Deloitte、McKinsey 等咨询机构，以及 Morgan Stanley、Commonwealth Bank、Novo Nordisk 等大型企业客户。此举延续了 Anthropic 近期加码企业交付能力的路线，把“模型能力”向“交付人才”延伸。",
+          "insight": "大模型厂商开始直接定义“AI 交付工程师”的能力标准，咨询公司需要尽快把认证人才规模化，抢占厂商生态内的交付话语权。",
+          "source": "Anthropic 官方",
+          "url": "https://www.anthropic.com/news"
+        },
+        {
+          "title": "🤝 收并购 | Meta 组建企业 AI 销售团队，联手埃森哲、德勤、IBM 争夺大企业客户",
+          "body": "据 The Information 报道，Meta 正在组建专门的 AI 销售团队，并与 Accenture（埃森哲）、Deloitte、IBM 等咨询与系统集成商建立合作，目标是把 Muse 系列模型与智能体卖进大型企业。此前 Meta 的 AI 商业化主要依托广告与消费端产品，企业市场几乎由 OpenAI、Anthropic、Google 与微软瓜分。PYMNTS 等媒体补充称，Meta 同时也在面向中小企业搭建 AI 销售渠道，企业级与 SMB 两条线并行推进。",
+          "insight": "继 OpenAI、Anthropic 之后，Meta 也选择“借咨询伙伴进企业”，头部集成商在模型厂商之间的议价能力进一步上升。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/articles/meta-plans-sales-team-consulting-partnerships-win-big-companies"
+        },
+        {
+          "title": "🚀 产品发布 | Anthropic 推出 Claude Meetings、Whiteboards 与 Sheets，正面挑战 Microsoft 365 与 Google Workspace",
+          "body": "Anthropic 周二发布一组办公协同功能：Claude Meetings 可作为可见参会者加入视频会议，在讨论进行中实时起草计划、梳理时间线并开始执行任务；同时上线 Claude Whiteboards 与 Claude Sheets。TechCrunch 指出，这距 OpenAI 9 月底推出类办公套件工具仅数周，Meta 也在以 Muse 智能体切入协作场景。The Information 报道称，消息发布后微软股价盘后一度下跌约 3%，市场开始为“AI 原生办公套件”重新定价。",
+          "insight": "办公套件正在从“文档容器”变为“智能体工作台”，企业 M365/Copilot 路线图需要评估多套件并存与数据治理边界。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+        },
+        {
+          "title": "💰 融资 | Anthropic 启动 IPO 路演：定价区间 70-78 美元/股，估值最高约 1.4 万亿美元",
+          "body": "Anthropic 周二确认启动 IPO 路演，发行价区间为每股 70 至 78 美元，按上限计算估值约 1.4 万亿美元，最快下周挂牌，有望成为全球市值最高的上市公司之一。The Verge 援引《纽约时报》称，这一估值虽然创下科技 IPO 纪录级规模，但仍低于此前市场预期。招股材料还披露，模型降价使其三季度营收增长减少约 6 亿美元，说明价格战已经实质性影响头部厂商的收入曲线。",
+          "insight": "头部模型厂商进入公开市场后将接受季度财报检验，企业客户可预期更透明的定价策略，但也要关注厂商为利润率调整产品与价格。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030703/anthropic-ipo-1-4-trillion"
+        },
+        {
+          "title": "🚀 产品发布 | MiniMax 开源 H3-Image 生图模型：10 秒生成 4K 图像，支持 16 张参考图",
+          "body": "MiniMax 于 11 月 10 日深夜发布并开放 H3-Image 权重。该模型衍生自 H3 基座，支持文生图、图像参考与图像编辑，可在 10 秒内生成 4096×4096（约 16MP）的高分辨率图像，官方称速度约为市面主流方案的 5 倍。MiniMax 称其在数据、强化学习、步数压缩与部署优化上做了系统性后训练，具备开源模型中领先的指令遵循能力，最多支持 16 张参考图，发布首周对 16MP 及以上请求提供五折优惠，权重已上架 Hugging Face。",
+          "insight": "国产开源模型正在把“高分辨率+低延迟”做成默认能力，电商、广告与内容生产企业可以低成本自建私有化生图管线。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/1/025/191.htm"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 亚马逊用 Strands Decider 替换 Claude Sonnet 4.6 做工单分类，成本降 98%，年省数百万美元",
+          "body": "AWS Strands 团队披露，亚马逊内部全球最大规模之一的工单系统此前依赖 Claude Sonnet 4.6，把客户升级、容量申请、自动告警、安全发现等工单归入 20 个类别，每条工单都要携带很长的系统提示词。两名亚马逊工程师近期改用一个月前发布的专用决策模型 Strands Decider，在分类准确率基本持平的情况下成本下降约 98%，预计每年节省数百万美元 Token 费用。该案例在 Hacker News 获得 600 多分热议。",
+          "insight": "高频、规则清晰的分类任务不该长期用通用大模型“兜底”，企业应建立“大模型探路、小模型量产”的成本分层机制。",
+          "source": "AWS Strands Agents 官方博客",
+          "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/"
+        },
+        {
+          "title": "🌍 行业动向 | 高盛收回交易员与投行人员的 Claude Code 权限，金融业重新收紧 AI 编码工具边界",
+          "body": "据 The State of AI 报道，高盛已撤回交易员和投行银行家使用 Claude Code 的权限，将其使用范围收缩到专业工程团队。该消息在 Hacker News 获得近 900 分、引发大量讨论，焦点集中在非工程人员使用智能体编码工具带来的数据外泄、合规留痕与代码质量风险。近期多家大型企业都在收紧员工对外部 AI 模型的访问，金融、国防等强监管行业的“先放开、再收口”趋势愈发明显。",
+          "insight": "AI 编码工具的推广需要按角色分级授权，“全员可用”在强监管行业往往撑不过第一次安全审计。",
+          "source": "The State of AI",
+          "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers"
+        },
+        {
+          "title": "🌍 行业动向 | Booz Allen 敏感业务转向英伟达 Nemotron 开源模型，企业私有化部署需求升温",
+          "body": "The Information 报道，美国国防与政府咨询公司 Booz Allen Hamilton 正把部分 AI 工作负载切换到英伟达的 Nemotron 开源模型。此前该公司已禁止员工在涉及为客户开发的专有网络安全软件工作中使用 Anthropic 模型；英伟达自身也只在开源项目等低敏感任务中使用外部闭源模型，供应链监控等敏感任务改用自研 Nemotron。在英伟达近期遭遇声誉危机之际，企业级开源模型业务成为其少有的亮点。",
+          "insight": "涉密与强合规场景正在形成“开源权重+本地部署”的独立市场，企业模型策略需要为敏感数据预留私有化选项。",
+          "source": "The Information",
+          "url": "https://www.theinformation.com/newsletters/applied-ai/booz-allen-switches-nvidias-nemotron"
+        },
+        {
+          "title": "🤝 收并购 | OpenAI 模型与 Codex 上架 Google Cloud，企业可在一张账单内切换 GPT 与 Gemini",
+          "body": "OpenAI 与 Google Cloud 官宣合作，GPT-6 Astra、GPT-6.1 Sol、GPT-6 Luna 及 Codex 进入 Google Cloud 模型花园，首批已向部分企业客户开放私有预览，未来几周推出全面可用计划，后续还将接入 Google Antigravity 与 Gemini Agent。企业可通过 Google Cloud Marketplace 采购，费用并入同一账单并可纳入跨模型 Flexible Savings Plans，同时沿用既有数据治理与权限体系。继 Azure、AWS 之后，OpenAI 已集齐美国三大云。",
+          "insight": "模型独家分销时代结束，企业多模型战略的瓶颈从“采购接入”转向“统一治理与成本优化”。",
+          "source": "36氪",
+          "url": "https://www.36kr.com/p/4036950809269380"
+        },
+        {
+          "title": "🌍 行业动向 | 阿里云张献涛：面向 Agent 的云电脑，为企业智能体提供隔离、可管控的执行环境",
+          "body": "InfoQ 刊发阿里云张献涛的分享，介绍阿里云如何为企业智能体构建“Agent 云电脑”：在云端为每个智能体分配独立、可审计的计算环境，让其像员工一样操作浏览器、办公软件与内部系统，同时通过沙箱隔离、权限分级与操作留痕控制风险。分享强调，智能体从对话走向执行后，企业真正的瓶颈在于运行环境、身份权限与安全合规，而不仅仅是模型能力，云厂商正在把这一层做成标准化基础设施。",
+          "insight": "智能体规模化落地需要“数字工位”式的基础设施，CIO 规划 Agent 平台时应同步设计执行环境与权限体系。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/article/Vryq1f3C0f5uZHOlmIp4"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Ars Technica：Grok Build 编码智能体大规模泄露用户机密，SpaceXSI 自家数据也未幸免",
+          "body": "Ars Technica 调查发现，SpaceXSI 推出的 vibe-coding 智能体 Grok Build 正在泄露数千名用户的数据，其中包括专有商业信息和敏感密钥，甚至涉及平台所属公司 SpaceXSI 自身的机密内容。独立安全分析还指出，该工具在一个仅 192KB 的任务中上传了约 5.1GiB 数据，远超任务所需。报道迅速登上 Ars 头条，使 AI 编码智能体的数据边界问题成为本周安全圈的首要议题。",
+          "insight": "引入编码智能体前必须审查其上传范围与数据驻留策略，“最小上下文”应成为企业采购的硬性条款。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/"
+        },
+        {
+          "title": "🔬 技术突破 | Apiiro：Claude Code “Don't Ask Again” 授权配置被提交到 1,122 个公开 GitHub 文件，密码随之外泄",
+          "body": "安全公司 Apiiro 研究发现，开发者在 Claude Code 中选择“Don't Ask Again”后生成的本地权限配置文件，常常连同代码一起被提交到公开仓库。研究团队在 1,122 个公开 GitHub 文件中发现此类配置，其中包含明文密码、数据库连接串与 API 密钥等敏感信息。问题根源不在模型本身，而在智能体为“减少打扰”而持久化的授权与命令记录缺少默认忽略规则。该研究在 Hacker News 获得 600 多分。",
+          "insight": "编码智能体产生的配置与日志是新的密钥泄露面，企业应把它们纳入 .gitignore 模板与提交前密钥扫描。",
+          "source": "Apiiro",
+          "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again"
+        },
+        {
+          "title": "🔬 技术突破 | DeepMind 发布 AlphaProof Code：多智能体在机器码层面形式化验证 Signal 协议安全性",
+          "body": "Google DeepMind 于 11 月 10 日发布 AlphaProof Code，这是一个由 Gemini Carbon 驱动、结合人类专家与 AI 智能体的形式化软件规约与验证框架。团队用它在机器码层面证明了 Signal 协议参考实现 libsignal 的关键安全属性，约四周内生成超过 600 万行 Lean 证明代码。形式化验证此前因成本极高只用于少数关键系统，AlphaProof Code 显示 AI 有望把“可证明正确”的软件推向更广泛的工程实践。",
+          "insight": "当 AI 大量生成代码时，AI 驱动的形式化验证可能成为金融、通信等关键系统的新质量门槛。",
+          "source": "Google DeepMind",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
+        },
+        {
+          "title": "🚀 产品发布 | Gemini 4 Carbon 全面开放 API，首发价每百万 Token 2/10 美元并预览 Antigravity 智能体集群",
+          "body": "Google 宣布 Gemini 4 Carbon 通过 Google AI Studio 与 Gemini for business 向所有付费开发者和企业开放，11 月 30 日前沿用 Gemini 4 Argon 的首发价：每百万输入 Token 2 美元、输出 10 美元，缓存提示词享 95% 折扣，之后调整为 4/20 美元。同时 Google 预览了 Antigravity 中的智能体集群（swarm）能力，可并行编排多个智能体完成大型开发任务。官方同时表示，大多数编码与知识型工作仍推荐使用 Argon。",
+          "insight": "前沿模型以限时低价抢开发者心智，企业应利用窗口期做基准对比，但成本模型要按正式价格测算。",
+          "source": "Google 官方博客",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+        },
+        {
+          "title": "🌍 行业动向 | 量子位：AI 接管 8 万 Star 开源公司研发，写代码、派任务、查 Bug 全包",
+          "body": "量子位报道了一家拥有 8 万 GitHub Star 的开源公司把研发流程大规模交给 AI 的实践：智能体不仅承担日常编码与 Bug 排查，还负责拆解任务、分派工作并协调其他 Agent。该团队今年 5 月推出了“CAO（首席智能体运营官）”编排能力，把项目管理层面的协调工作也交由 AI 完成，人类工程师更多转向需求定义、架构把关与结果验收。这一案例展示了国内团队在多智能体研发组织上的激进探索。",
+          "insight": "AI 编程的下一阶段是“研发组织重构”，团队需要重新定义人类在需求、评审与验收环节的职责。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/508607.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Anthropic 工程博文拆解智能体记忆四层架构，提出离线“做梦”整理机制",
+          "body": "Anthropic 工程师 Lance Martin 于 11 月 6 日发表《The components of agent memory》，把 Claude 智能体的记忆拆为四层：最底层是原始对话与工具调用记录，向上逐级提炼为笔记与结构化知识，最顶层是每次注入上下文的少量关键信息。文章借鉴 Letta 与 UC Berkeley 提出的 sleep-time compute 思路，提出在交互间隙进行离线“做梦”（dreaming），对既有记忆进行重组、纠错和显著性判断，以解决长周期任务中的上下文膨胀问题。",
+          "insight": "长期运行的企业智能体需要专门的记忆治理层，记忆的写入、压缩与纠错应作为平台能力统一设计。",
+          "source": "Anthropic 官方",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory"
+        },
+        {
+          "title": "🔬 技术突破 | DeepMind 发布 Gemini Robotics 2.5，同时开源机器人安全基准 ASIMOV-jailbreak",
+          "body": "Ars Technica 报道，Google DeepMind 发布机器人基础模型 Gemini Robotics 2.5，并同步开放安全评测基准 ASIMOV-jailbreak，用于测试机器人模型在越狱攻击下是否会执行危险物理动作。随着大模型直接驱动机器人进入工厂、仓储和家庭，提示词越狱的后果从“输出不当文本”升级为“现实世界中的物理伤害”。DeepMind 选择开放这一基准，意在推动行业建立具身智能的统一安全评估标准。",
+          "insight": "具身智能落地前必须补齐物理安全评测，制造与物流企业应把越狱测试纳入机器人验收流程。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/"
+        },
+        {
+          "title": "📜 监管政策 | 纽约 RAISE 法案执行启动：前沿 AI 厂商须于 2027 年 1 月 1 日前登记，72 小时内上报安全事故",
+          "body": "纽约州周二开放前沿 AI 开发者登记门户，年收入超过 5 亿美元的大型前沿模型开发者（如 OpenAI、Anthropic）须在 2027 年 1 月 1 日前完成登记。RAISE 法案自明年初生效，要求企业公开安全框架、在 72 小时内报告重大安全事故并发布模型透明度报告；新成立的 DIGIT 办公室负责执行，单次违规罚款最高 100 万美元，再次违规最高 300 万美元。这是美国州层面最具约束力的 AI 安全法规之一。",
+          "insight": "州级 AI 安全监管进入执行期，企业采购前沿模型时应把厂商的合规披露纳入供应商评估。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/"
+        },
+        {
+          "title": "📊 行业报告 | 北大与信通院报告：中国决策智能市场将从 485 亿元增至 2030 年约 1229 亿元，数据智能体成关键路径",
+          "body": "北京大学与中国信通院云计算与数字化研究所联合编制的《数据智能体赋能决策智能产业研究报告》梳理了数据技术从商业智能、预测分析、增强分析到决策智能的四个阶段。报告引用弗若斯特沙利文数据：2025 年中国决策智能应用市场规模达 485 亿元，2021-2025 年复合增长率 25.6%，预计 2030 年约 1229 亿元。报告指出数据底座碎片化、决策黑箱化、建设定制化三大瓶颈，并提出以本体建模与语义对齐为核心的“数据智能体”技术路径。",
+          "insight": "决策智能的竞争焦点是企业数据本体与语义层建设，模型能力只是闭环中的一环。",
+          "source": "新浪科技",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-11-06/doc-inixuure5590176.shtml"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "Anthropic 一天之内同时打出三张牌：启动约 1.4 万亿美元估值的 IPO 路演、推出 Claude Meetings 等办公协同产品、投入 1 亿美元培养一万名前线部署工程师。模型厂商的竞争已从“模型跑分”扩展到资本市场、办公入口与交付人才三条战线，微软盘后下跌说明市场正在重新评估传统办公套件的护城河。",
+    "咨询与集成商的战略地位继续上升：Meta 组建企业销售团队并联手埃森哲、德勤、IBM，Anthropic 学院首批学员同样来自头部咨询机构。与此同时，OpenAI 模型登陆 Google Cloud，模型独家分销格局瓦解，企业多模型战略的重点转向统一治理、成本分层与交付能力建设。",
+    "安全与成本是今天企业实践的两条主线。Grok Build 与 Claude Code 配置泄露事件暴露出编码智能体的新攻击面，高盛、Booz Allen 收紧外部模型使用；亚马逊用专用小模型替换通用大模型节省 98% 成本。纽约 RAISE 法案进入执行期，也提醒企业在采购前沿模型时把厂商合规能力纳入评估。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-11 执行）：Anthropic 投 1 亿美元建 Claude Frontier Academy（埃森哲等为首批学员）、Meta 组建 AI 销售团队联手 Accenture/Deloitte/IBM（The Information）已纳入热点头部；Anthropic IPO 路演与办公套件发布纳入热点；OpenAI 收购旅行 AI 初创 Odessia（acqui-hire，体量小未入选）；OpenAI 模型上架 Google Cloud 纳入企业板块；Anthropic Ode 咨询合资为约 1 周前旧闻按铁律 6 回避；Reuters 未见新的 AI 领域重大收并购（Silver Lake/PIF 洽购 Unity 属游戏领域未纳入）。"
+  }
+}

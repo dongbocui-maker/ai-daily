@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-13",
+  "title": "AI 日报 · 2026-11-13",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "👔 高层动态 | 【进展】黄仁勋辞任 NVIDIA CEO，CFO Colette Kress 出任临时 CEO",
+          "body": "NVIDIA 董事会 11 月 12 日宣布，黄仁勋即刻辞去总裁、首席执行官及董事职务；现任执行副总裁兼 CFO Colette Kress 出任临时 CEO 并继续兼任 CFO，Harvey C. Jones 成为公司史上首位独立董事会主席，董事会同步启动正式 CEO 遴选。此前董事会已于本周初就黄仁勋私人关系问题启动独立调查（本刊 11-09 已报道），此次为调查后的正式人事决定。HN 讨论热度超 400 分，NYT、CNBC 全程直播跟进。",
+          "insight": "全球 AI 算力龙头遭遇创始人突然离任，短期看供应链与客户关系连续性，长期看 NVIDIA 能否从「创始人驱动」平稳过渡到制度化治理，企业算力采购需关注路线图与定价策略是否生变。",
+          "source": "NVIDIA Newsroom",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+        },
+        {
+          "title": "🤝 收并购 | Marvell 拟以 1150 亿美元全股票收购 Lumentum，押注 AI 数据中心光互联",
+          "body": "Marvell 宣布以约 1150 亿美元全股票方式收购光器件厂商 Lumentum，合并后公司将同时供应 AI 数据中心 scale-up 与 scale-in 场景所需的光学互联方案，补齐从定制 ASIC、DSP 到光模块与激光器的完整链条。Bloomberg Law 援引市场定价分析指出，在 AI 交易情绪波动、监管审查不确定的背景下，市场对交易最终完成的概率判断接近「抛硬币」，套利价差显著。",
+          "insight": "AI 集群规模化瓶颈正从 GPU 转向互联与光通信，半导体行业「算力 + 互联」垂直整合进入千亿美元级并购阶段，监管审批将成为关键变量。",
+          "source": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/mergers-and-acquisitions/marvell-lumentum-deal-odds-near-coin-flip-as-ai-trade-shakes-1"
+        },
+        {
+          "title": "🚀 产品发布 | Google 发布 Gemini 4 Hydrogen，全面取代 3.8 Flash 面向所有用户开放",
+          "body": "Google 11 月 12 日发布 Gemini 4 Hydrogen，定位为面向日常编码与智能体工作流的高速高效模型，与主打长程深度推理的 Gemini 4 Carbon、Gemini 4 Argon 形成梯队。Hydrogen 支持四档可配置思考级别，在 Google AI Studio 全部层级、Gemini 应用与搜索中同步上线，正式替代 Gemini 3.8 Flash 成为默认模型；Google 称其指令遵循更紧、虚构陈述更少，可单独运行也可与前沿模型协同。HN 热度约 390 分，Ars Technica 头版第二。",
+          "insight": "前沿厂商的竞争焦点正从单一旗舰转向「快模型 + 强模型」分层编排，企业应按任务难度设计模型路由以平衡成本与质量。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "title": "🌍 行业动向 | Nebius 计划 2027 年支出 400 亿美元，新型云厂商模式迎压力测试",
+          "body": "据 TechCrunch 报道，AI 云厂商 Nebius 在 11 月 12 日发布的三季度财报中披露，计划 2027 年资本开支约 400 亿美元，用于扩建 GPU 数据中心与算力容量。这一规模远超公司当前营收体量，意味着其增长高度依赖大客户长期合约与外部融资。报道指出，Nebius 正在成为检验「neocloud」商业模式的样本：在算力需求高涨期通过激进扩张锁定份额，但同时承担利用率、融资成本与芯片折旧的多重风险。",
+          "insight": "新型 GPU 云厂商的激进资本开支放大了 AI 基建的信用分化，企业在多云算力采购中需评估供应商的财务韧性与合约保障。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/"
+        },
+        {
+          "title": "🚀 产品发布 | 百度世界 2026：文心 5.5 Flash Preview 发布，推出大模型交易平台「词元所」",
+          "body": "11 月 12 日百度世界 2026 在北京举办，百度发布文心 5.5 Flash 预览版：总参数 2800 亿、每 Token 激活 140 亿参数、支持 100 万 Token 上下文，在 Terminal-Bench 等编程与智能体基准上表现突出；同时发布文心闪电深度思考模型、文心一镜微表情大模型，并推出大模型交易平台「词元所」，以模型指纹比对、能力与可用性测试为模型 Token 提供「验真」和「征信」。李彦宏提出「智能组织」与组织进化三原则，披露百度内部日活智能体数一年从 0.5 万增至 3.7 万。",
+          "insight": "国内大模型竞争从参数比拼延伸到 Token 交易基础设施与组织级智能体落地，「模型可信采购」可能成为企业 AI 治理的新环节。",
+          "source": "新浪科技",
+          "url": "https://k.sina.cn/article_7458232418_1bc8b986200103t5q6.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 美联航禁止 AI 智能体代用户预订机票，智能体商务遭遇平台反制",
+          "body": "据 CBS News 报道，美国联合航空明确禁止 AI 智能体代替用户在其渠道预订机票，理由涉及自动化访问对系统稳定性、票价规则与客户身份核验的影响。随着各类浏览器智能体与个人助理可直接完成搜索、比价和下单，航空、酒店等高价值交易平台开始以服务条款和技术手段限制非官方自动化访问。该消息在 Hacker News 获得约 656 分热度，引发关于「智能体是否应被视为用户本人」的广泛讨论。",
+          "insight": "Agentic Commerce 的落地瓶颈不在模型能力，而在平台准入与责任界定，企业推进代理式交易需提前与渠道方谈好 API 与授权机制。",
+          "source": "CBS News",
+          "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/"
+        },
+        {
+          "title": "📜 监管政策 | Notion 披露第三方 AI 供应商 Fireworks AI 安全事件，波及不足 1% 工作区",
+          "body": "Notion 发布安全通告，披露其第三方 AI 推理供应商 Fireworks AI 发生安全事件，部分经由该供应商处理的 Notion AI 数据可能受到影响，涉及工作区占比不足 1%。Notion 表示已暂停相关数据流向、通知受影响客户并配合调查。这是继多起 SaaS 供应链事件后，又一起由 AI 模型托管/推理服务商引发的数据安全事件，暴露出 SaaS 产品「内嵌 AI」背后多层子处理方链条的风险敞口。",
+          "insight": "企业在采购内嵌 AI 功能的 SaaS 时，需要把模型推理子处理方纳入第三方风险评估与数据处理协议，而不只审查 SaaS 主供应商。",
+          "source": "Notion",
+          "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor"
+        },
+        {
+          "title": "📊 行业调研 | Genpact 调研 2000 名高管：79% 企业已上线 AI 智能体，仅 15% 与 P&L 挂钩",
+          "body": "Genpact 发布报告《Autonomy in Practice》，基于 17 个行业 2000 多名企业高管调研发现：79% 的企业已有 AI 智能体投入生产，但仅 20% 在各职能中广泛、持续使用，只有 15% 将 AI 投资与损益结果完全挂钩。报告认为，AI 价值兑现的障碍主要在运营而非技术——智能体进入生产的速度快于企业重新设计运营方式的速度，多数企业尚未获得「自主化红利」，领先者正通过「智能体化运营」重构流程与考核。",
+          "insight": "智能体规模化的关键是运营模式重构与价值度量体系，咨询与服务商的机会在于把「智能体上线」转化为可审计的 P&L 成果。",
+          "source": "PR Newswire / Genpact",
+          "url": "https://www.prnewswire.com/news-releases/79-of-enterprises-report-ai-agents-in-production-but-only-15-have-fully-tied-ai-investment-to-pl-outcomes-302937385.html"
+        },
+        {
+          "title": "🏬 落地案例 | 百联、康师傅、宜家中国等消费零售高管共议 AI 规模化：跳出「微效陷阱」",
+          "body": "第九届进博会期间，消费品论坛 CGF 与贝恩公司在上海举办 AI 规模化创新闭门会，40 余位消费品、零售与平台企业高管参会。百联集团董事长濮韶华分享集团围绕会员营销、门店服务、生鲜管控等一线痛点落地 AI，并坚持业务与数据双中台底座先行；贝恩建议企业聚焦 3-5 个能显著改善经营绩效的重点领域，避免铺开上百个分散用例陷入「微效陷阱」。康师傅、宜家中国、淘天、全家中国等围绕食安合规、供应链与碳管理分享实践。",
+          "insight": "零售快消 AI 进入「少而深」阶段，端到端流程重构与专有数据飞轮取代零散工具部署，成为衡量 AI 投入产出的主线。",
+          "source": "网易号 / 消费品论坛",
+          "url": "https://www.163.com/dy/article/LBHJRBT1055040N3.html"
+        },
+        {
+          "title": "🚀 产品发布 | Nectar 推出 Creator Agent，用智能体自动化品牌达人营销全流程",
+          "body": "据 TechCrunch 报道，AI 营销操作系统 Nectar 于 11 月 12 日推出「Creator Agent」，可自动搜索合适达人、审核其内容与过往品牌合作、发送个性化邀约、协调合作并追踪营销活动效果。Nectar 由两位前 Meta 员工 Misbah 与 Farah Uraizee 姐妹创立，去年结束隐身模式，已用 AI 智能体帮助品牌管理社媒、客户对话、内容审核和竞品研究。此次发布把以往依赖代理公司和人工的大量网红营销流程交给智能体执行。",
+          "insight": "营销职能是智能体替代人工流程的高频场景，品牌方可借此降低代理成本，但需建立审批与品牌安全护栏。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🔬 技术观察 | 前 Meta 工程师：AI 生成 90% 代码却只带来脆弱代码库",
+          "body": "前 Meta 工程师 Evan X. Merz 撰文称，其在 Meta 最后几个月至少 90% 代码由 AI 生成（这是获得合格绩效的最低要求），但 AI 并未让产出翻十倍，甚至不到两倍。他观察到重度依赖 AI 的同事提交的代码普遍脆弱，存在大量将累积为技术债的细微问题，连优秀工程师也会忽略明显的反模式。文章在 Hacker News 获得约 638 分，引发关于「AI 编码配额考核」与代码质量治理的激烈讨论。",
+          "insight": "以 AI 代码占比作为考核指标会扭曲工程激励，团队应把评审质量、可维护性与缺陷率纳入 AI 编码成效度量。",
+          "source": "evanxmerz.com",
+          "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/"
+        },
+        {
+          "title": "🛠️ 开源工具 | Jane Street 开源「苏格拉底导师」Agent Skill，让编码智能体教人而非代劳",
+          "body": "量化交易公司 Jane Street 在 GitHub 开源 agent_skills 仓库中的 socratic-tutor 技能，用于在用户明确要求「教我、考我」时，让 AI 智能体以苏格拉底式提问引导学习：先做诊断定级，再构建 0-5 级技能地图，配合间隔复习与最终评估，强调通过提问迫使用户推理、预测和解释，而不是直接讲解。该技能在 Hacker News 获得约 641 分，被视为对冲「AI 代写导致能力退化」的实践范例。",
+          "insight": "Agent Skill 正成为企业沉淀方法论的载体，工程团队可借此把导师制和知识传承封装进编码助手。",
+          "source": "GitHub / Jane Street",
+          "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md"
+        },
+        {
+          "title": "🛠️ 开源工具 | Atuin 推出 Threads：跨工具、跨机器同步所有编码智能体会话",
+          "body": "终端历史工具 Atuin 发布 Threads 功能，为 Claude Code、Codex 等编码智能体会话提供统一的可搜索、可同步历史记录。开发者可在一台机器上用 Claude Code 开始任务，再在另一台机器上用 Codex 恢复，且上下文完整保留，只需执行 atuin resume。作者指出，如今其机器上超过一半的命令并非本人编写，而智能体会话却分散在不同工具与设备上，Threads 旨在让智能体工作像 shell 历史一样可追溯、可迁移。",
+          "insight": "多智能体并用已成开发常态，会话可移植与可审计将成为 AI 编码工具链的新基础设施需求。",
+          "source": "Atuin Blog",
+          "url": "https://blog.atuin.sh/threads-agent-sessions/"
+        },
+        {
+          "title": "🚀 产品发布 | 曝苹果开发 Mac 应用 Harbor，把多台 Mac 变成私有 AI 推理服务器",
+          "body": "据 9to5Mac 报道，爆料者 Aaron Perris 发现苹果正在开发名为 Harbor 的新 Mac 应用，可让用户在一台或多台 Mac 上便捷运行本地 AI 模型，官方描述为「把你的 Mac 变成私有 AI 推理服务器」。今年 Mac Studio、Mac mini 已成为开发者本地跑大模型的热门硬件，Harbor 意味着苹果计划官方化这一场景，降低本地部署与多机组网推理门槛。该消息在 Hacker News 获得约 550 分。",
+          "insight": "本地私有推理成为数据敏感型企业与开发者的现实选项，端侧硬件厂商正借此切入 AI 开发工具链。",
+          "source": "9to5Mac",
+          "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/"
+        },
+        {
+          "title": "🔬 技术观察 | 信通院郭雪：「人工智能+软件」进入规模化爆发起点，软件生产主体首次由人转向机器",
+          "body": "在 11 月 10 日举行的 2026 OSCAR 开源产业大会上，中国信通院云计算与数字化研究所开源与智能安全部主任郭雪发布《「人工智能+软件」发展洞察》。她认为技术、基础设施、工程化、制度四条线索已同步就绪，「人工智能+软件」由技术验证期转入规模化应用爆发起点；大模型与智能体构成软件工程新抽象层，在人确定目标与边界的前提下，由智能体完成执行、验证、修正闭环，软件首次成为生产主体。工信部近期已出台《「人工智能+软件」专项行动实施方案》。",
+          "insight": "政策与工程化同步推进，国内软件企业的研发流程与人员结构将围绕「人定目标、机器执行」加速重构。",
+          "source": "澎湃新闻",
+          "url": "https://www.thepaper.cn/newsDetail_forward_34457953"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 安全研究 | VulnCheck：Anthropic Glasswing 7 个月报告近 3.8 万漏洞，仅 217 个被修复",
+          "body": "VulnCheck 发布对 Anthropic Project Glasswing 的追踪更新：7 个月来可归因于 Anthropic 的 CVE 共 442 个，约占今年全部 CVE 的 0.5%，仅 2 个被确认在野利用。Anthropic 报告的 37966 项发现中只有 19.4% 公开、217 项标记修复；9 月以来新增近 1.2 万项发现却仅新增 15 项修复，重复项约为已修复数的 8 倍。curl 维护者在 34 份已公开报告中驳回 19 份，质疑 AI 扫描将验证成本转嫁给开源维护者。",
+          "insight": "AI 漏洞挖掘的瓶颈已从发现转向验证与修复，企业引入 AI 安全扫描需同步配置分诊与修复产能，避免告警洪水。",
+          "source": "VulnCheck",
+          "url": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update"
+        },
+        {
+          "title": "📊 行业调研 | Podqi 研究：ChatGPT、Gemini、Perplexity 购物回答中频繁推荐仿冒零售网站",
+          "body": "The Verge 独家披露，知识产权保护公司 Podqi 针对 151 个品牌（含 Lululemon、Birkenstock、Le Creuset 等）设计购物类提示词，在 9 月两轮测试中收集 ChatGPT、Gemini、Perplexity 共 6795 条回答，发现三款 AI 引擎均会引用并展示仿冒或高风险网站，其中 Perplexity 表现最差，15% 的回答出现风险网站。研究提示 AI 搜索正在成为假冒电商新的流量入口。",
+          "insight": "品牌方需把「生成式引擎可见度与品牌安全」纳入数字营销与知识产权监测体系，零售快消企业尤为紧迫。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations"
+        },
+        {
+          "title": "📊 行业调研 | GDC 年度调查：游戏开发者生成式 AI 使用率继续上升，裁员阴影仍在",
+          "body": "据 The Verge 报道，GDC Festival of Gaming 11 月 12 日发布最新年度游戏行业调查，显示游戏开发者中使用生成式 AI 的比例较上一年进一步上升，AI 工具正更多进入美术、代码与制作流程；与此同时，行业裁员与对 AI 替代岗位的担忧仍是受访者关注焦点。此前独立游戏 Big Walk 用 AI 修复 bug 已在独立游戏圈引发争议，显示创意产业对 AI 的接受度与伦理边界仍在拉锯。",
+          "insight": "创意产业的 AI 渗透在提速但伴随强烈劳资与声誉争议，企业推广生成式 AI 需同步设计员工沟通与透明披露机制。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs"
+        },
+        {
+          "title": "📊 行业报告 | Menlo Ventures：美国企业开源模型支出 89% 流向中国模型，Kimi 独占 61%",
+          "body": "《科创板日报》解读 Menlo Ventures《2026 年企业 AI 发展现状》报告：2026 年全球企业 AI 支出预计达 1768 亿美元；美国企业开源模型支出中 89% 流向中国模型，其中月之暗面 Kimi 占 61%、DeepSeek 占 15%、智谱 GLM 占 11%。但开源模型在企业 Token 消耗中占比由 11% 升至 19%，支出占比却从 6% 降至 4%，用量与收入剪刀差扩大。报道同时指出智谱、MiniMax、Kimi 年内多次上调 API 价格而需求未受抑制。",
+          "insight": "中国模型已深度嵌入全球企业工作流，下一阶段竞争是把调用份额转化为利润，企业选型需同时评估合规与长期价格走势。",
+          "source": "虎嗅 / 科创板日报",
+          "url": "https://www.huxiu.com/article/4904904.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今日最大变量来自算力产业链：NVIDIA 创始人黄仁勋突然辞任 CEO，由 CFO 临时接棒；Marvell 以 1150 亿美元收购 Lumentum 押注光互联；Nebius 计划 2027 年支出 400 亿美元。AI 基建正同时经历治理震荡、垂直整合与资本开支的信用分化。",
+    "模型层面，Google 以 Gemini 4 Hydrogen 补齐「快模型」并全面替换旧版 Flash，百度在百度世界 2026 发布文心 5.5 Flash Preview 与大模型交易平台「词元所」，「快强分层 + 可信采购」成为模型供给侧的新关键词；Menlo Ventures 数据显示中国开源模型已拿下美国企业开源支出近九成。",
+    "企业落地端，Genpact 调研显示 79% 企业已有智能体上线但仅 15% 与 P&L 挂钩，美联航封禁订票智能体、Notion 第三方 AI 供应商安全事件则提醒：智能体规模化的真正门槛在运营重构、平台准入和供应链安全，而非模型能力本身。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-13 执行）：新发现 Marvell 1150 亿美元全股票收购 Lumentum（已纳入热点头部）；NVIDIA CEO 交接（11-09 调查条目的进展，已纳入）；SpaceX-Tesla 合并谈判进展（Bloomberg/Reuters 11-12，尚无正式公告，未入选）。Anthropic 咨询合资、TSMC 投资 Anthropic/OpenAI、Accenture-Mondelēz 合作均为旧闻或过去 7 天已发；OpenAI 秘密递交 IPO 申请疑为 6 月旧事件未入选；今日无 OpenAI/Anthropic 新增咨询类合资或收购公告。"
+  }
+}

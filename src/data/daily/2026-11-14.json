@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-14",
+  "title": "AI 日报 · 2026-11-14",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | 研究称中国四家头部实验室开源模型权重带有 Blackwell“硬件指纹”，指向出口管制芯片",
+          "body": "前 OpenAI 研究员 Will DePue 领导的非营利项目 Unemployment Labs 于 11 月 12 日发布“checkpoint forensics”研究，称模型初始权重的排布模式取决于训练所用 GPU 与随机种子，且能穿越训练过程保留下来；该方法已在 24 个公开披露硬件的开源模型上验证。研究点名 DeepSeek、月之暗面、MiniMax 与蚂蚁集团的 6 款近期模型与被禁运的 NVIDIA Blackwell 架构吻合，估算四家合计 Blackwell 支出超过 5 亿美元。TechCrunch 指出，这一结论叠加黄仁勋因涉 Megaspeed 走私案相关关系离任，使英伟达面临的出口管制合规风险进一步放大。",
+          "insight": "“权重取证”若被监管采纳，开源模型将首次可被追溯算力来源，出口管制执法从查货物延伸到查模型，跨境模型选型需纳入合规审查。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 推出 ChatGPT Wallet：Dots 智能体可替用户比价并直接完成结账",
+          "body": "OpenAI 周五上线 ChatGPT Wallet，让其个人智能体 Dots 在帮助用户决定买什么之后直接代为下单付款。首批仅向美国 18 岁以上、持美国发行 Visa / Mastercard / American Express 的 ChatGPT Pro 用户小范围开放；结账前用户可核对商品、总价与支付卡，并需通过 Face ID 或指纹等安全校验确认，形成交易记录。此前 DoorDash、Uber 披露智能体下单量极低，而 Meta Muse 已有超千万用户且购物成为头部用途，OpenAI 此举意在抢占“代理式电商”的支付入口。",
+          "insight": "智能体支付闭环落地后，零售与品牌商需要为“AI 买手”优化商品数据、价格与结账 API，否则将在新的流量入口中被跳过。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+        },
+        {
+          "title": "💰 融资 | LangChain 完成 3 亿美元 C 轮，估值 30 亿美元，CapitalG 领投",
+          "body": "智能体管理公司 LangChain 周五宣布完成 3 亿美元 C 轮融资，估值 30 亿美元，由 Alphabet 旗下 CapitalG 领投，新加坡 GIC、DFJ Growth、IVP、Sapphire Ventures 跟投；估值较一年前 12.5 亿美元翻倍有余。LangChain 2022 年以开源框架起家，随着前沿实验室自带 harness 覆盖了搜索、API 调用等早期能力，公司已转向智能体创建与管理平台 LangSmith，以“让企业拥有自己的智能”、不绑定任何单一模型厂商为主要卖点。",
+          "insight": "模型厂商纷纷下场做智能体平台之际，资本仍押注“模型中立”的智能体治理层，企业多模型架构的需求正在成为独立赛道。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/"
+        },
+        {
+          "title": "🌍 行业动向 | 美联储最新调查：AI 跃升为金融体系首要风险担忧",
+          "body": "路透社 11 月 13 日报道，美联储最新一期调查显示，人工智能已迅速攀升为受访者眼中金融体系面临的首要担忧。这一变化发生在 AI 相关资产估值波动加剧、市场对大规模 AI 资本开支与数据中心融资可持续性争议升温的背景下。调查结果意味着 AI 已不再只是技术或就业议题，相关估值、信贷敞口与集中度风险开始进入金融稳定监测的核心视野。",
+          "insight": "当 AI 被央行列为头号金融风险，企业 AI 投资将面临更严格的融资成本与 ROI 审视，资本开支叙事需要更扎实的收入证据支撑。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/finance/ai-rockets-top-worries-about-financial-system-latest-fed-survey-2026-11-13/"
+        },
+        {
+          "title": "🚀 产品发布 | DeepSeek 开放“全家桶应用 API”：联网搜索、文件解析、语音能力全部开放给开发者",
+          "body": "DeepSeek 11 月 13 日晚宣布，将 App 中的联网搜索、图片搜索、深度思考搜索、文件输入、链接阅读、安全校验和语音交互等能力整合进原有 API，开发者开启对应参数即可调用，可“1:1 复刻 DeepSeek App”；同时推出 deepseek-flash（V4.1-Flash-1017）模型，并提供 Search、Fetch、OCR、ASR、TTS 等独立 API。在思考模式下开启 web_search 工具后，模型可在多步推理中自主联网检索与阅读链接。",
+          "insight": "国产模型厂商从卖 Token 转向卖“应用能力栈”，中小开发者构建搜索型与语音型智能体的门槛与成本将显著下降。",
+          "source": "智东西（凤凰网科技）",
+          "url": "https://tech.ifeng.com/c/8y1rTaWQviD"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🤝 战略合作 | IBM 与微软联合推出 Imagine Enterprise 行业智能体平台，自带 6000+ 预置 Agent 与前线部署工程师",
+          "body": "IBM 与微软 11 月 10 日发布 Imagine Enterprise，面向受监管行业帮助企业构建、运行和治理执行行业流程的 AI 智能体。IBM Consulting 贡献 6000 多个预置智能体与资产及行业经验，微软提供 AI、云与安全技术；符合条件的项目还配备双方的前线部署工程（FDE）支持。发布中以金融服务公司 SEI 的企业转型为示例，强调把企业知识、数据与上下文连接到人和智能体身上。",
+          "insight": "咨询商与云厂商“资产+平台+FDE”的打包交付成为企业智能体落地主流形态，系统集成市场竞争将从人力规模转向可复用智能体资产库。",
+          "source": "Microsoft Source",
+          "url": "https://news.microsoft.com/source/2026/11/10/ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation/"
+        },
+        {
+          "title": "🌍 行业动向 | 美国 FAA 把 AI 流量管理建议扩展至全美空域，用于缓解空中交通拥堵",
+          "body": "据 Ars Technica 报道，美国联邦航空管理局（FAA）正将基于 AI 的空中交通流量管理建议能力扩展至覆盖全美空域，用于帮助缓解航班拥堵、优化流量调度。此举意味着 AI 从局部试点走向国家级关键基础设施的常态化应用；从报道定位看，系统以向管制和流量管理人员提供“建议”为主，属于辅助决策型部署，是高安全等级场景中 AI 规模化落地的标志性案例。",
+          "insight": "高风险行业的 AI 落地路径正在定型：先做建议型辅助、保留人工决策权，再按效果逐步扩面，这一模式对金融、能源等受监管行业同样适用。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/"
+        },
+        {
+          "title": "🚀 产品发布 | ElevenLabs 推出团队应用 ElevenAI：会议纪要、听写与智能体集成三合一",
+          "body": "语音 AI 公司 ElevenLabs 在纽约 11/11 Summit 上发布实验性应用 ElevenAI，把会议记录、语音听写和智能体集成整合到一个面向团队的产品中。近几个月 Fireflies、Wispr Flow、Granola 等纷纷向“听写+会议纪要”融合方向扩展，ElevenLabs 凭借语音模型底座直接切入办公协作场景，与这些应用层玩家正面竞争。",
+          "insight": "语音正成为企业智能体的新输入层，会议与口述内容直接驱动后续自动化任务，企业需提前规划录音数据的合规与留存策略。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/"
+        },
+        {
+          "title": "💰 融资 | 青葵智造完成亿元 A 轮：用“AI 设计—自动执行—数据回流”闭环打造自驱动实验室",
+          "body": "面向科学研发的 Physical AI 公司青葵智造完成亿元 A 轮融资，由创东方投资、飞荣达股份及金辉大数据参与，资金用于核心技术研发、重点行业拓展及云实验室建设。公司面向生物医药、化工、先进材料、新能源等领域，提供干湿实验闭环方案：硬件层 NexoLab 将化学实验动作标准化、模块化；调度层 AI-LabOS 把物理设备抽象为可调用的智能体；顶层由科学大模型做实验设计决策，以真实湿实验数据弥合“执行鸿沟”与“数据鸿沟”。",
+          "insight": "AI for Science 的竞争焦点正从模型转向高质量私有实验数据，制造与材料企业可通过自动化实验室构建难以复制的数据护城河。",
+          "source": "36氪",
+          "url": "https://www.36kr.com/p/4067548192576389"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🤝 收并购 | OpenAI 收购 Pierre Computer Company，强化 Codex 的 Git 工作流与代码审阅能力",
+          "body": "OpenAI 宣布达成协议收购 Pierre Computer Company。Pierre 开发了 Code Storage 及多款开源开发工具，其中 Trees（浏览大型仓库文件结构）与 Diffs（审阅版本间代码变更）两个开源库已被 Codex 应用采用。此次收购将把 Pierre 在 Git 工作流、源码管理、代码导航与审阅方面的能力并入 OpenAI 的 AI 编程生态，目标是改善开发者与编码智能体之间的协作体验。",
+          "insight": "当智能体生成代码的速度远超人工审阅速度，代码审阅与版本管理成为 AI 编程的新瓶颈，工具链竞争正从“写代码”转向“审代码、管代码”。",
+          "source": "Pulse 2.0",
+          "url": "https://pulse2.com/openai-to-acquire-pierre-computer-company-to-expand-codex-and-ai-powered-software-development-capabilities/"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 开源 Codex Security CLI 与 SDK：一条命令完成漏洞发现、验证与修复",
+          "body": "OpenAI 在 GitHub 开源 Codex Security，提供命令行工具与 TypeScript SDK，用于发现、验证并修复代码中的安全漏洞，采用 Apache-2.0 协议。扫描分 Standard 与 Deep 两档，在速度与成本间权衡，并会读取仓库根目录及组件的 SECURITY.md 作为策略输入；除 OpenAI 外还支持 Amazon Bedrock、OpenRouter、Fireworks AI 等第三方推理来源。项目 11 月 11 日冲上 GitHub 全语言日榜第 9，星标已超 1.1 万。",
+          "insight": "AI 安全扫描进入“开源工具+自带模型”模式，企业可把漏洞修复嵌入 CI 流水线，但需同步建立对自动补丁的人工复核机制。",
+          "source": "GitHub",
+          "url": "https://github.com/openai/codex-security"
+        },
+        {
+          "title": "🌍 行业动向 | OpenAI 对 Cursor 断供期限 11 月 12 日到期：SpaceX 旗下 Cursor 转向 Claude 等模型",
+          "body": "OpenAI 8 月 28 日以 Cursor 被 SpaceX 收购为由，提出终止向 Cursor 直接供应模型，并将 11 月 12 日定为截止日。据 CIO 报道，Cursor CEO Michael Truell 称 OpenAI 模型约占其流量 5%，影响有限；Anthropic 模型不受影响，Cursor 已在 11 月 9 日首发接入 Claude Fable 5.2。CIO 同时提醒，Claude Code、Codex 与 Cursor 已在大量企业中未经正式审批就成为软件供应链的一部分，模型供应关系的变动会直接影响开发团队。",
+          "insight": "AI 编程工具的底层模型可能因资本关系一夜改变，企业应把编码助手纳入供应商风险管理，并保留多模型切换能力。",
+          "source": "CIO",
+          "url": "https://www.cio.com/article/4245820/claude-code-codex-and-cursor-have-become-part-of-your-software-supply-chain-without-approval.html"
+        },
+        {
+          "title": "🔧 工具更新 | 月之暗面 Kimi Code CLI 密集迭代至 2.7 Canary：通过 ACP 接入 Zed、JetBrains 等 IDE",
+          "body": "月之暗面开源的编码智能体 Kimi Code CLI 本周连续发版：11 月 10 日发布 2.5.3，11 月 12 日发布 2.6.0 正式版，11 月 13 日已推出 2.7.0 Canary。项目定位为“下一代智能体的起点”，支持通过 kimi acp 以 Agent Client Protocol 接入 Zed 的 Agent 面板及 JetBrains 系列 IDE，底层可调用 Kimi K3.1 Pro 等模型。国产编码智能体正以开源 CLI + 标准协议的方式进入主流开发环境。",
+          "insight": "ACP 等开放协议让编码智能体与 IDE 解耦，国产模型可以低成本嵌入海外主流开发工具，开发者选型将更看重模型性价比而非生态绑定。",
+          "source": "GitHub",
+          "url": "https://github.com/MoonshotAI/kimi-code"
+        },
+        {
+          "title": "🚀 产品发布 | 国产桌面 AI 编程工具 OwnCoder 0.2.0 发布：敏感信息自动脱敏、索引与向量检索全本地",
+          "body": "开源中国报道，面向开发者的桌面端 AI 编程工具 OwnCoder 发布 0.2.0 版本。该工具从设计之初就把安全与隐私放在首位：敏感信息在发送给大模型前自动脱敏，代码索引与向量检索均在本地完成；同时针对上下文管理策略做了优化，以压低模型调用成本。项目托管于 Gitee，主打对代码外泄敏感的国内企业与个人开发者。",
+          "insight": "数据不出域仍是国内企业引入 AI 编程的首要顾虑，“本地索引+脱敏上云”的混合架构将成为国产编程工具的差异化方向。",
+          "source": "OSCHINA 开源中国",
+          "url": "https://www.oschina.net/news/503518"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | AI Futures Project 更新时间线：超人 AI 研究员最早或于 2027 年出现",
+          "body": "《AI 2027》作者团队 AI Futures Project 发布 Q3.5 时间线更新，依据 METR 对 Anthropic 研发提速约 2 倍（区间 1.3–3 倍）且约 80% 来自 AI 自身贡献的估计，认为 AI 驱动的加速已比此前情景提前约 5 个月。按其模型推算，“超人 AI 研究员”（SAR）有相当概率在 2027 年 5 月至 11 月间出现，这是该团队迄今最激进的一次提前，扭转了此前不断后移时间线的趋势。",
+          "insight": "前沿实验室“用 AI 造 AI”的加速效应已被外部量化，企业 AI 战略规划周期需要从 3–5 年缩短为滚动 12–18 个月。",
+          "source": "AI Futures Project",
+          "url": "https://blog.aifutures.org/p/q35-timelines-update-looks-like-the"
+        },
+        {
+          "title": "🌍 行业动向 | Ars Technica 深度访谈：OpenAI 董事会成员警告 AI“接管”社会可能只在数月之后",
+          "body": "Ars Technica 发布长篇特稿，一位 OpenAI 董事会成员公开表达对 AI 风险的强烈担忧，认为 AI 对社会的“接管”可能在数月之内就会出现，并称 AI 是普通人最可能的死因之一。在 METR 报告和 AI Futures Project 时间线提前的同一周，来自 OpenAI 治理层内部的悲观表态格外引人注目，也凸显了头部实验室在商业化提速与安全治理之间的内部张力。",
+          "insight": "前沿实验室治理层的风险判断正在公开化，企业在采购前沿模型时需关注供应商的安全治理承诺，这将影响长期合作的稳定性。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/features/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/"
+        },
+        {
+          "title": "🔬 技术突破 | AI 智能体“发现”玛雅遗址遭考古学界打脸：遗址早在去年已发表",
+          "body": "The Verge 报道，一名 Google 研究员本周宣称借助一组 AI 智能体在墨西哥发现了一处可能未被记录的玛雅遗址，但该遗址早已在去年的学术期刊中发表，当地社区也早已知晓。事件在考古学界引发批评，折射出科学领域日益突出的矛盾：手握强大 AI 工具的“业余者”空降专业领域，却缺乏判断成果是否真正新颖的领域知识，AI 辅助科研的验证与同行评议机制亟需补位。",
+          "insight": "AI 智能体能放大产出，却无法替代领域专家对“新颖性”和真实性的判断，企业部署研究型智能体必须配套专家复核环节。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery"
+        },
+        {
+          "title": "📊 行业分析 | 21 世纪经济报道：大模型公司上市首年，定价逻辑经历三次迁移",
+          "body": "21 世纪经济报道梳理智谱、MiniMax 等大模型公司港股上市首年股价轨迹，认为其定价逻辑经历三次迁移：先是“供给稀缺溢价”，继而转向“ARR 成长叙事”，最终回归“全球比价与盈利质量”。文中数据显示，智谱首日涨 13.17%、MiniMax 首日涨 109.09%，公开发售分别超购 1159 倍和 1837 倍；但随后的配售价已显著折价，部分配售投资者浮亏约 65%。随着月之暗面进入排队序列，稀缺性溢价正在收缩。",
+          "insight": "资本市场对大模型公司的估值锚正回归毛利率与盈利路径，国产模型厂商将更有动力从价格战转向高附加值的企业级产品。",
+          "source": "21 世纪经济报道",
+          "url": "https://m.21jingji.com/article/20261113/herald/e15cb067aea723a14287a5ee50371891.html"
+        },
+        {
+          "title": "📊 行业分析 | 虎嗅：电商平台借双十一转向 AI 经营与 Token 销售，AI 降本却未改善商家利润",
+          "body": "虎嗅分析指出，双十一第十八年，天猫、京东不再把大促当主战场，转而用 AI、Token 和经营服务争夺下一轮需求入口：天猫谈 AI 发现需求并卖 Token，京东推出上百项消费服务与 200 余项企业服务。文章同时指出，AI 制图、客服显著降低了商家显性成本，但 AI 视频转化率仅为人工剪辑的 67.3%，广告支出又流向主播与新渠道，效率红利被瓜分，商家利润并未随之改善。",
+          "insight": "AI 降本不等于增利，零售企业评估 AI 投入时应以转化率和利润为核心指标，而非仅看人力与制作成本的节省。",
+          "source": "虎嗅",
+          "url": "https://www.huxiu.com/article/4904857.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本周的主线是“智能体走向交易与交付”。OpenAI 用 ChatGPT Wallet 把智能体推到支付环节，IBM 与微软用 6000 多个预置智能体加前线部署工程师打包交付行业方案，LangChain 以 30 亿美元估值证明模型中立的智能体治理层仍有独立价值。智能体的竞争正在从“能不能做”转向“谁来承担交易、合规与运维的最后一公里”。",
+    "算力与合规风险同步抬头。研究者用权重取证将多家中国实验室的开源模型与禁运的 Blackwell 芯片关联，美联储调查则把 AI 列为金融体系头号担忧。对企业而言，模型来源可追溯、算力供应链合规、AI 投资回报可证明，正在从加分项变成采购与融资的门槛。",
+    "AI 编程的竞争焦点正在下移到工具链与供应关系。OpenAI 收购 Pierre 补强代码审阅与 Git 工作流，开源 Codex Security 把漏洞修复带进流水线；而 OpenAI 对 Cursor 断供则提醒企业，编码助手的底层模型可能因资本关系突然变化，多模型切换能力应成为标配。",
+    "国内方面，DeepSeek 开放全家桶应用 API、Kimi Code 以开放协议接入主流 IDE，显示国产厂商正从卖 Token 转向卖能力栈；但资本市场对大模型公司的定价已回归盈利质量，电商 AI 降本也未必转化为利润。下一阶段，能把 AI 效率真正落到收入和毛利上的企业，才会拿到估值溢价。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-14 执行，web_search 4 轮：OpenAI/Anthropic partnership、Anthropic Accenture/Deloitte consulting、site:reuters.com AI、site:bloomberg.com AI M&A）：① OpenAI 宣布收购 Pierre Computer Company（Codex 工具链，约 11-09），已纳入 coding 板块头条；② IBM×微软 Imagine Enterprise（11-10）纳入 enterprise 板块；③ Anthropic 咨询合资及 Accenture/四大 AI 竞争报道（FT 11-06，经 big4news 转述）事件日期早于 7 天窗口，未纳入；④ Marvell–Lumentum、TSMC 投资 Anthropic/OpenAI、Anthropic IPO 路演均已在过去 7 天发布，按去重规则不重复；⑤ Bloomberg 中国阻止软银收购 ABB 机器人业务（11-05）超出时效窗口。今日无含 Accenture 的 7 天内新事件。"
+  }
+}

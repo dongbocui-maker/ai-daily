@@ -1,0 +1,278 @@
+{
+  "date": "2026-11-15",
+  "title": "Builder Signals · 2026-11-15",
+  "generatedAt": "2026-11-14T23:00:19.745Z",
+  "feedGeneratedAt": "2026-11-14T06:25:34.902Z",
+  "summary": "Follow Builders 今日捕捉到 21 条 X 动态、1 集播客、0 篇博客；本站精选 8 条高信号内容。",
+  "stats": {
+    "xBuilders": 9,
+    "totalTweets": 21,
+    "selectedXTweets": 7,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 8
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R2FycnkgVG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Garry Tan",
+      "handle": "garrytan",
+      "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+      "summaryEn": "Y Combinator President & CEO Garry Tan open-sourced his harness eval repo and shared a finding: on 52 coding tasks in Claude Code 2.1.322, Fable 5.2 solved about as many as Opus 5.5 (82.7% vs 84.6%) but cost 2.80x as much per solved task — so he recommends keeping Opus 5.5 as the coding default. He notes Opus already solves most of these tasks, so harder ones are needed to separate the two. He also signed the #standwithjensen letter, saying Jensen deserves due process.",
+      "insightZh": "YC 总裁 Garry Tan 公开了自己的开源 harness 评测仓库，并给出结论：在 Claude Code 2.1.322 中跑 52 个编码任务，Fable 5.2 的解决率（82.7%）与 Opus 5.5（84.6%）相当，但每个已解决任务的成本是后者的 2.80 倍，因此建议继续把 Opus 5.5 作为 Claude Code 的默认编码模型。他也坦言，Opus 已经能解决大部分这类任务，要真正拉开差距还需要更难的题。另外，他签署了 #standwithjensen 公开信，称 Jensen 应获得正当程序（due process）。",
+      "tags": [
+        "Claude",
+        "Coding",
+        "Eval",
+        "Startup"
+      ],
+      "url": "https://x.com/garrytan/status/2121464508225053153",
+      "publishedAt": "2026-11-14T04:45:28.000Z",
+      "metrics": {
+        "likes": 154,
+        "retweets": 10,
+        "replies": 69,
+        "score": 332
+      }
+    },
+    {
+      "id": "digest-x-1-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch announced Workflow SDK 5 and Vercel Workflows as \"a monumental step forward for agents\": much faster time-to-first-step and time-between-steps, doubled-down encryption and security, reliability proven at massive scale with many disaster-recovery scenarios exercised, and the underlying durability log made reusable for any agent harness — giving birth to durable-harness. He also posted that \"Vercel Sandbox is inevitable.\"",
+      "insightZh": "Vercel CEO Guillermo Rauch 发布 Workflow SDK 5 与 Vercel Workflows，称其是 Agent 领域的\"巨大一步\"：「首步耗时」与「步间耗时」大幅改善；加强了加密与安全；系统可靠性已在大规模场景和多种灾备演练中得到验证；并把底层的持久化日志抽象为可复用于任意 Agent harness 的组件，即新开源的 durable-harness。他还表示\"Vercel Sandbox is inevitable\"。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Product"
+      ],
+      "url": "https://x.com/rauchg/status/2121277727940776114",
+      "publishedAt": "2026-11-13T16:23:16.000Z",
+      "metrics": {
+        "likes": 345,
+        "retweets": 8,
+        "replies": 101,
+        "score": 579
+      }
+    },
+    {
+      "id": "digest-podcast-0-VHJhaW5pbm",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Training Data",
+      "title": "A Model For Everyone: How Ronak From Trajectory Is Building Products For Continual Learning",
+      "summaryEn": "Continual learning is the next learning paradigm, and Trajectory wants to collapse training, eval and deployment into one click so any company can turn its production trajectories into its own model. Ronak, founder of Trajectory (ex-Windsurf), frames today's AI as AAA paper maps — batch, offline updates. Trajectory's first step is \"MapQuest\" (democratized training and customization); the end state is \"Google Maps,\" learning from every trip. The missing layer isn't architecture (already evolving, e.g. fast/slow memory in DeepSeek v4.1 flash) but translating what \"good\" looks like into model improvements — something that used to take hundreds of millions in compute, a large research team and 6–9 months. The recipe: trace all production trajectories (including sub-agents and user feedback), make them replayable in an environment, then apply the training algorithm. Research pushes on two bo…",
+      "insightZh": "持续学习（continual learning）是下一代学习范式——Trajectory 想把\"训练 + 评测 + 部署\"打包成一键闭环，让每家公司都能用自己的生产轨迹训练专属模型。 Trajectory 创始人 Ronak（前 Windsurf，曾参与其自研模型训练）用地图做类比：今天的 AI 像拿着 AAA 纸质地图自驾，想改路线就得整批离线更新；Trajectory 先做\"MapQuest\"——让人人都能训练和定制模型；终局是\"Google Maps\"——每一次使用都在实时学习。他认为架构层的变化（如 DeepSeek v4.1 flash 中的快慢记忆、跨层跳连）已在发生，而缺失的一层是把企业心中\"好是什么样\"翻译成模型的实际改进。过去这需要数亿美元算力、庞大研究团队和 6-9 个月时间。 他拆解了持续学习的三要素：①追踪生产环境中的全部轨迹（含子 Agent 与用户反馈，可借助 LangChain、Braintrust、Raindrop 等）；②让轨迹可回放（环境，如 Dockerfile）；③训练算法（损失与奖励函数）。研究上重点攻两难点：把 GRPO 改造为\"group size 1\"，从 1 万条不同任务的单次轨迹中学习，从而省掉环境构建；以及从 1 万条轨迹中智能挑选 100 条由客户精细标注，再训练\"元评分器\"把奖励推广到全量。案例：Harvey 训练出的法律模型比前沿模型便宜 6 倍，准确率从开源模型约 4% 提升到约 18%；Rogo 追求\"智能密度\"，训出了 token 效率高数倍、更便宜更快的金融 Agent；NVIDIA 也在使用该平台。 他还设想未来 10% 任务用 Fable 这类前沿模型、90% 路由到自训模型；并区分持续学习与递归自我改进（RSI）——前者从与人类的交互中学习、保持人在回路，更利于对齐。他把好奇心形式化为对 MDP 中\"状态转移函数\"的未知探索。最后用《国富论》作比：今天的 AI 还处于\"咨询单一神谕\"的前工业时代，只有专业化才能带来丰裕；仅约 1% 的企业真正用上了 AI。",
+      "tags": [
+        "Agent",
+        "Product",
+        "Eval",
+        "Startup"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+      "publishedAt": "2026-11-05T10:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R2FycnkgVG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "Y Combinator President & CEO Garry Tan open-sourced his harness eval repo and shared a finding: on 52 coding tasks in Claude Code 2.1.322, Fable 5.2 solved about as many as Opus 5.5 (82.7% vs 84.6%) but cost 2.80x as much per solved task — so he recommends keeping Opus 5.5 as the coding default. He notes Opus already solves most of these tasks, so harder ones are needed to separate the two. He also signed the #standwithjensen letter, saying Jensen deserves due process.",
+          "insightZh": "YC 总裁 Garry Tan 公开了自己的开源 harness 评测仓库，并给出结论：在 Claude Code 2.1.322 中跑 52 个编码任务，Fable 5.2 的解决率（82.7%）与 Opus 5.5（84.6%）相当，但每个已解决任务的成本是后者的 2.80 倍，因此建议继续把 Opus 5.5 作为 Claude Code 的默认编码模型。他也坦言，Opus 已经能解决大部分这类任务，要真正拉开差距还需要更难的题。另外，他签署了 #standwithjensen 公开信，称 Jensen 应获得正当程序（due process）。",
+          "tags": [
+            "Claude",
+            "Coding",
+            "Eval",
+            "Startup"
+          ],
+          "url": "https://x.com/garrytan/status/2121464508225053153",
+          "publishedAt": "2026-11-14T04:45:28.000Z",
+          "metrics": {
+            "likes": 154,
+            "retweets": 10,
+            "replies": 69,
+            "score": 332
+          }
+        },
+        {
+          "id": "digest-x-1-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch announced Workflow SDK 5 and Vercel Workflows as \"a monumental step forward for agents\": much faster time-to-first-step and time-between-steps, doubled-down encryption and security, reliability proven at massive scale with many disaster-recovery scenarios exercised, and the underlying durability log made reusable for any agent harness — giving birth to durable-harness. He also posted that \"Vercel Sandbox is inevitable.\"",
+          "insightZh": "Vercel CEO Guillermo Rauch 发布 Workflow SDK 5 与 Vercel Workflows，称其是 Agent 领域的\"巨大一步\"：「首步耗时」与「步间耗时」大幅改善；加强了加密与安全；系统可靠性已在大规模场景和多种灾备演练中得到验证；并把底层的持久化日志抽象为可复用于任意 Agent harness 的组件，即新开源的 durable-harness。他还表示\"Vercel Sandbox is inevitable\"。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2121277727940776114",
+          "publishedAt": "2026-11-13T16:23:16.000Z",
+          "metrics": {
+            "likes": 345,
+            "retweets": 8,
+            "replies": 101,
+            "score": 579
+          }
+        },
+        {
+          "id": "digest-x-2-QW1qYWQgTW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Amjad Masad",
+          "handle": "amasad",
+          "title": "Amjad Masad · Replit CEO",
+          "summaryEn": "Replit CEO Amjad Masad said the partnership with Visa on agentic commerce has been great, with more features and use cases coming. He also urged people to read and sign the Stand with Jensen letter, noting the page is built and hosted on Replit and that he worked with its owner to raise the rate limit so it can scale.",
+          "insightZh": "Replit CEO Amjad Masad 表示与 Visa 在 Agentic Commerce（智能体商务）上的合作进展顺利，更多功能和用例即将推出。同时他呼吁大家阅读并联署 Stand with Jensen 公开信，并透露该联署页面正是在 Replit 上构建和托管的，他已与页面所有者合作提高了限流阈值以应对流量。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/amasad/status/2121428406764204199",
+          "publishedAt": "2026-11-14T02:22:01.000Z",
+          "metrics": {
+            "likes": 105,
+            "retweets": 6,
+            "replies": 35,
+            "score": 199
+          }
+        },
+        {
+          "id": "digest-x-3-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · AI 教程与访谈创作者",
+          "summaryEn": "Peter Yang shared a free /fuck-cancer skill: upload all of a patient's medical records to a folder (e.g., Google Drive), tell ChatGPT or Claude to install the skill, and point it at the folder to produce a one-page brief, research clinical trials, and more — forkable for other long-term conditions. He also posted about the Jensen situation, calling out what he sees as questionable WSJ reporting (it's still unclear Alice Huang is a spy), citing the Singapore government and a story from an NVIDIA employee, and encou…",
+          "insightZh": "AI 教程创作者 Peter Yang 分享了一个免费的 /fuck-cancer skill：把患者全部病历上传到一个文件夹（如 Google Drive），让 ChatGPT 或 Claude 安装该 skill，再指向文件夹即可生成一页纸病情简报、检索临床试验等；也欢迎 fork 后改造用于其他长期疾病。另外他就 Jensen 相关事件发帖，认为 WSJ 的报道存在可疑之处（例如尚不清楚 Alice Huang 是否为间谍），引用了新加坡政府信息和一位 NVIDIA 员工的讲述，并提醒读者自行查证。",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Research"
+          ],
+          "url": "https://x.com/petergyang/status/2121430386685395022",
+          "publishedAt": "2026-11-14T02:29:53.000Z",
+          "metrics": {
+            "likes": 434,
+            "retweets": 36,
+            "replies": 7,
+            "score": 592
+          }
+        },
+        {
+          "id": "digest-x-4-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "handle": "danshipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper wrote about why teams still pay for software even when Fable 5.2 can vibe code anything, and shared a musing on \"the most important formula in AI.\" He also flagged an incident he says is becoming more common, arguing it's extremely important it gets fixed and everyone in AI should be willing to help.",
+          "insightZh": "Every CEO Dan Shipper 发文探讨：即便 Fable 5.2 已经能\"vibe code\"出任何东西，为什么团队仍然愿意为软件付费；同时分享了一则关于\"AI 领域最重要公式\"的思考。他还转发了一起事件，认为这类情况正变得越来越常见，必须修复，AI 圈的每个人都应愿意出力。",
+          "tags": [
+            "Coding"
+          ],
+          "url": "https://x.com/danshipper/status/2121248233510818003",
+          "publishedAt": "2026-11-13T14:26:04.000Z",
+          "metrics": {
+            "likes": 83,
+            "retweets": 7,
+            "replies": 18,
+            "score": 147
+          }
+        },
+        {
+          "id": "digest-x-5-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari lamented that benchmark-maxxing is back as a flex after seemingly fading post-Llama 4. Only very few benchmarks truly matter; the rest is posturing or hill-climbing for marketing. There's no substitute for using models in your own workflows. He also noted the FAA nationwide ground stop is only the third in modern history (after 9/11 and the 2023 NOTAM outage), with reasons unclear.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 吐槽\"刷榜\"风气卷土重来：原以为 Llama 4 之后大家不再以 benchmark-maxxing 为荣，但现在又回来了。他认为真正重要的 benchmark 极少，其余多是姿态或为营销而爬坡；唯一可靠的方法是在自己的工作流里真实使用模型。他还提到美国 FAA 全国机场地面停飞，这在现代史上仅是第三次（前两次为 9/11 和 2023 年 NOTAM 系统故障），原因尚不明确。",
+          "tags": [
+            "Eval",
+            "Research"
+          ],
+          "url": "https://x.com/nikunj/status/2121320899161010360",
+          "publishedAt": "2026-11-13T19:14:49.000Z",
+          "metrics": {
+            "likes": 5,
+            "retweets": 0,
+            "replies": 0,
+            "score": 5
+          }
+        },
+        {
+          "id": "digest-x-6-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "handle": "adityaag",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人",
+          "summaryEn": "SPC General Partner and former Dropbox CTO Aditya Agarwal congratulated portfolio companies named to the AI 100: Baseten, Render, Profound, Replit, Gamma, Cog and Density. He also remarked that \"we are in an extremely weird timeline right now.\"",
+          "insightZh": "SPC 普通合伙人、前 Dropbox CTO Aditya Agarwal 为入选 AI 100 的被投企业点赞：Baseten、Render、Profound、Replit、Gamma、Cog 和 Density。他同时感叹\"我们正处在一条极其怪异的时间线上\"。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/adityaag/status/2121281677238604148",
+          "publishedAt": "2026-11-13T16:38:58.000Z",
+          "metrics": {
+            "likes": 29,
+            "retweets": 3,
+            "replies": 0,
+            "score": 41
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-VHJhaW5pbm",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Training Data",
+          "title": "A Model For Everyone: How Ronak From Trajectory Is Building Products For Continual Learning",
+          "summaryEn": "Continual learning is the next learning paradigm, and Trajectory wants to collapse training, eval and deployment into one click so any company can turn its production trajectories into its own model. Ronak, founder of Trajectory (ex-Windsurf), frames today's AI as AAA paper maps — batch, offline updates. Trajectory's first step is \"MapQuest\" (democratized training and customization); the end state is \"Google Maps,\" learning from every trip. The missing layer isn't architecture (already evolving, e.g. fast/slow memory in DeepSeek v4.1 flash) but translating what \"good\" looks like into model improvements — something that used to take hundreds of millions in compute, a large research team and 6–9 months. The recipe: trace all production trajectories (including sub-agents and user feedback), make them replayable in an environment, then apply the training algorithm. Research pushes on two bo…",
+          "insightZh": "持续学习（continual learning）是下一代学习范式——Trajectory 想把\"训练 + 评测 + 部署\"打包成一键闭环，让每家公司都能用自己的生产轨迹训练专属模型。 Trajectory 创始人 Ronak（前 Windsurf，曾参与其自研模型训练）用地图做类比：今天的 AI 像拿着 AAA 纸质地图自驾，想改路线就得整批离线更新；Trajectory 先做\"MapQuest\"——让人人都能训练和定制模型；终局是\"Google Maps\"——每一次使用都在实时学习。他认为架构层的变化（如 DeepSeek v4.1 flash 中的快慢记忆、跨层跳连）已在发生，而缺失的一层是把企业心中\"好是什么样\"翻译成模型的实际改进。过去这需要数亿美元算力、庞大研究团队和 6-9 个月时间。 他拆解了持续学习的三要素：①追踪生产环境中的全部轨迹（含子 Agent 与用户反馈，可借助 LangChain、Braintrust、Raindrop 等）；②让轨迹可回放（环境，如 Dockerfile）；③训练算法（损失与奖励函数）。研究上重点攻两难点：把 GRPO 改造为\"group size 1\"，从 1 万条不同任务的单次轨迹中学习，从而省掉环境构建；以及从 1 万条轨迹中智能挑选 100 条由客户精细标注，再训练\"元评分器\"把奖励推广到全量。案例：Harvey 训练出的法律模型比前沿模型便宜 6 倍，准确率从开源模型约 4% 提升到约 18%；Rogo 追求\"智能密度\"，训出了 token 效率高数倍、更便宜更快的金融 Agent；NVIDIA 也在使用该平台。 他还设想未来 10% 任务用 Fable 这类前沿模型、90% 路由到自训模型；并区分持续学习与递归自我改进（RSI）——前者从与人类的交互中学习、保持人在回路，更利于对齐。他把好奇心形式化为对 MDP 中\"状态转移函数\"的未知探索。最后用《国富论》作比：今天的 AI 还处于\"咨询单一神谕\"的前工业时代，只有专业化才能带来丰裕；仅约 1% 的企业真正用上了 AI。",
+          "tags": [
+            "Agent",
+            "Product",
+            "Eval",
+            "Startup"
+          ],
+          "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+          "publishedAt": "2026-11-05T10:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

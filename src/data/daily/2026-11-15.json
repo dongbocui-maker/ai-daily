@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-15",
+  "title": "AI 日报 · 2026-11-15",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "👔 高层动态 | 【进展】超 11.5 万人联署请愿要求英伟达复职黄仁勋，马斯克、Replit 与 Epic CEO 公开站台",
+          "body": "据 TechCrunch 11 月 14 日报道，一份要求英伟达董事会让刚被免去 CEO 职务的黄仁勋复职的请愿书，截至当地周六下午已获得超过 11.5 万个签名。请愿网站显示，签署者包括 5965 名英伟达现任员工、1108 名前员工以及 63063 名股东；特斯拉与 SpaceX CEO 马斯克、Replit CEO Amjad Masad、Epic Games CEO Tim Sweeney 均公开支持。请愿书称黄仁勋“在缺乏正当程序的情况下被免职”，要求董事会在独立调查查明事实期间先让其回归，并向公众披露更多信息。量子位将此形容为英伟达版的“奥特曼 2.0”事件。",
+          "insight": "全球最关键的 AI 算力供应商陷入治理拉锯，企业客户需评估其路线图、供货与对华合规政策在领导层真空期的不确定性。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/"
+        },
+        {
+          "title": "🌍 行业动向 | 亚马逊秘密打造“World Product Graph”：要把全网商品数据收进自家索引，抢占 AI 购物智能体入口",
+          "body": "The Verge 援引路透社 11 月 13 日的报道称，亚马逊正在推进名为“World Product Graph”的项目，计划为互联网上销售的每一件商品建立数据库——包括亚马逊自己并不销售的商品——并在亚马逊站内提供这些信息。项目目标是减少消费者跳转到 Reddit 或 Google 做购前研究，同时让 AI 购物智能体在检索商品时优先依赖亚马逊的索引，从而即便用户用机器人购物，流量最终也落回亚马逊页面。此前亚马逊已对多家第三方 AI 购物智能体采取封堵措施。",
+          "insight": "AI 智能体正在重塑电商流量分发，零售与快消品牌需要尽快管理自己在各大“商品知识图谱”中的数据呈现与归属权。",
+          "source": "The Verge（援引 Reuters）",
+          "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search"
+        },
+        {
+          "title": "📜 监管政策 | 白宫工作组建议放宽网络安全责任条款，鼓励 AI 公司主动上报关键安全事件",
+          "body": "据彭博社 11 月 14 日报道，白宫相关工作组建议联邦机构放宽网络安全责任政策，以激励 AI 公司主动报告关键事故（critical incidents）。这一思路与此前强调强制披露与处罚的监管路径不同，核心是用“降低披露后的法律风险”换取更及时、更完整的安全事件信息共享。在纽约 RAISE 法案等州级法规已要求前沿模型厂商限时上报安全事故的背景下，联邦层面开始尝试以“安全港”式激励补齐信息透明度。",
+          "insight": "美国 AI 安全治理正在从“惩罚式披露”转向“激励式披露”，企业应提前建立 AI 事故分级与上报流程，以便在新规则下获取责任豁免。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-14/white-house-urges-easing-liability-to-encourage-ai-disclosure"
+        },
+        {
+          "title": "🌍 行业动向 | 埃森哲研究报告被指含多达 15 处虚构引用与案例，公司称系“人为失误”并将更正",
+          "body": "据《金融时报》报道，AI 检测公司 GPTZero 指出埃森哲发布的一份重要研究报告中存在多达 15 处无法核实的引用与案例研究，质疑其为生成式 AI “幻觉”产物。埃森哲回应称，内部审查发现问题源于人为失误，“没有证据支持这些内容是由 AI 幻觉生成的”，并表示将对报告进行更正。此事件在咨询行业引发广泛讨论：当头部咨询公司自身大规模使用 AI 辅助研究写作时，事实核查与引用溯源流程能否跟上，正成为客户与监管关注的新焦点。",
+          "insight": "AI 辅助内容生产必须配套强制性的引用核验与人工审校机制，这既是咨询行业的声誉底线，也是企业客户采购研究服务时的新评估维度。",
+          "source": "Financial Times",
+          "url": "https://www.ft.com/content/874e3f05-0be3-4a2d-b2a2-7b5823441794"
+        },
+        {
+          "title": "🚀 产品发布 | 蔡浩宇 AI 公司 Anuttacon 发布 17B 实时角色表演大模型 LPM 1.0，瞄准对话代理与游戏 NPC",
+          "body": "据 36 氪报道，米哈游联合创始人蔡浩宇创办的 AI 公司 Anuttacon 团队成员在 X 上公布了 LPM 1.0——一个面向单人全双工音视频对话的角色表演大模型，能够实时说话、唱歌、倾听、反应和做表情。团队以人为中心的多模态数据集训练了 17B 参数的 Base LPM，并蒸馏为低延迟流式的 Online LPM，实现实时视频生成与无限时长的身份一致性；同时推出首个交互角色表演基准 LPM-Bench。模型支持写实、2D 动漫、3D 游戏等多种风格输入，无需微调，可作为对话代理、直播角色和游戏 NPC 的通用视觉引擎。",
+          "insight": "实时、可交互的数字人正在从“视频生成”走向“对话界面”，客服、营销与游戏行业的人机交互形态将迎来新一轮升级。",
+          "source": "36氪",
+          "url": "https://www.36kr.com/p/3761880764645892"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 埃森哲推出 Data-as-a-Service，把 AI 业务延伸至模型训练数据、评测与企业级测试",
+          "body": "埃森哲于 11 月 9 日在其新闻中心宣布推出 Data-as-a-Service 新服务，将其 AI 战略从应用落地进一步延伸至模型训练数据供给、模型评测与企业级测试环节。市场分析指出，埃森哲 2026 财年来自八家新兴 AI 与数据合作伙伴的收入较上年翻倍以上，相关订单增长超过三倍；第四财季有近 100 家客户首次与埃森哲开展高级 AI 项目，全年累计超过 400 家。新服务意在承接企业在私有数据治理、模型评估与上线前测试上的大量需求。",
+          "insight": "企业 AI 竞争的瓶颈正从“选哪个模型”转向“用什么数据训练、如何证明模型可靠”，数据与评测服务将成为咨询与集成商的新增长极。",
+          "source": "ad-hoc-news",
+          "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/accenture-stock-adds-data-as-a-service-to-ai-push/70499761"
+        },
+        {
+          "title": "👔 高层动态 | 埃森哲任命 Richard Halkett 为北美 OpenAI 业务负责人，深化 Frontier Alliances 合作",
+          "body": "据 EdTech Innovation Hub 报道，Richard Halkett 加入埃森哲，出任北美区 OpenAI 业务负责人。这一任命延续了 OpenAI 于 2026 年 2 月建立的 Frontier Alliances 合作框架——埃森哲与凯捷、波士顿咨询、麦肯锡一同被列为多年期合作伙伴，覆盖企业 AI 战略、部署与变革管理。设立专门的区域性厂商业务负责人，意味着埃森哲正在把与前沿模型厂商的合作从项目层面提升到独立业务线运营。",
+          "insight": "头部咨询公司正按“模型厂商”维度组建专职团队，企业在选择集成伙伴时可重点考察其与目标模型厂商的联合交付能力与资源深度。",
+          "source": "EdTech Innovation Hub",
+          "url": "https://www.edtechinnovationhub.com/news/richard-halkett-joins-accenture-to-lead-openai-business-in-north-america"
+        },
+        {
+          "title": "🌍 行业动向 | 谷歌 1000 万美元收购 Spirit 航空数据用于 AI 训练，为平息工会争议追加员工隐私保护条款",
+          "body": "据 Quartz 援引《华尔街日报》11 月 12 日报道，谷歌同意为其以 1000 万美元收购破产的 Spirit 航空数据的交易追加员工隐私保护条款。此前 Spirit 飞行员与空乘工会警告，员工个人记录可能被用于训练商用 AI 工具。修订后的协议排除了病历、药物与酒精检测结果、劳动调查、申诉仲裁、绩效评估与薪资等大量员工数据，并引入独立核查方监督数据使用、确认保密与安全义务得到履行。交易仍需破产法院批准。",
+          "insight": "企业数据资产正在成为 AI 训练的可交易标的，数据出售与采购方都需提前处理员工与客户隐私、工会及监管审查等合规问题。",
+          "source": "Quartz（援引 WSJ）",
+          "url": "https://qz.com/google-spirit-airlines-data-privacy-safeguards-111226"
+        },
+        {
+          "title": "🏭 中国落地 | 新华社：中兴南京基地 80 多名“数字员工”上岗，蒙牛一线员工自建 AI 兽医智能体诊疗时效从 1.5 天缩至 2 小时",
+          "body": "新华社 11 月 12 日报道，中兴通讯南京滨江基地已有 80 多个智能体在业务线上运行，负责排产计划、订单流转和产品全生命周期管理；其中仓储优化智能体通过夜间预编排将月拣选距离从 40 多万米降至 16 万米，仅供应链场景每天 Token 消耗量就超过 90 亿。蒙牛奶源事业部一名无编程背景的员工借助腾讯 WorkBuddy 搭建奶牛诊疗智能体，单牧场诊疗时效由 1.5 天缩短至 2 小时。报道援引调研称，中国企业智能体采纳率已从 2024 年底的 17.3% 升至 2026 年上半年的 40.3%。",
+          "insight": "中国企业智能体已进入“生产力验证”阶段，制造与供应链场景的可量化收益最先跑通，业务人员自建智能体正成为新的落地路径。",
+          "source": "新华网",
+          "url": "https://www.news.cn/fortune/20261112/36bca7cc3bc847d6bacfb196a1d50a64/c.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🔬 技术突破 | 安全研究：15.9 万个 Lovable 项目中大量应用无需登录即可读取数据库，泄露护照信息与 20 万条私信",
+          "body": "德国安全公司 Crissy Field 与《商报》联合研究发现，借助 Common Crawl 识别出的 159041 个 Lovable 项目中，有 34545 个使用 Supabase 数据库，其中 24664 个网站在页面加载时即直接下发数据库记录。研究人员仅用页面自带的同一 API Key 发起只读请求，就在 7403 个网站的 10560 张表中检索到含邮箱地址的记录，占深入检查站点的 30%，暴露数据还包括护照号码、支付信息和超过 20 万条私人消息。该研究在 Hacker News 获得逾 500 分热议。",
+          "insight": "“Vibe coding”生成的应用默认安全配置不足，企业在推广低代码/AI 建站工具时必须把数据库访问策略审计纳入上线门禁。",
+          "source": "Crissy Field",
+          "url": "https://www.crissyfield.de/research/lovable-en/"
+        },
+        {
+          "title": "🚀 产品发布 | Edge0 开源 145B 端侧大模型：笔记本 29GB 内存即可本地运行，主打编码与智能体任务",
+          "body": "Edge0 宣布开源 Edge0-145B 与 Edge0-120B 两款模型及统一推理框架和部署工具，称 Edge0-145B 是全球首个 1450 亿参数的开源端侧模型。官方数据显示，该模型在兼容笔记本上峰值内存约 29GB，提示处理速度超过 1100 tokens/s、生成速度 80 tokens/s 以上，上下文窗口 256K，在编码、推理与指令遵循上对标前沿云端模型。本地推理意味着无云端 Token 费用、数据不出设备，也不依赖网络连接。",
+          "insight": "前沿级编码能力开始下沉到个人设备，对数据敏感行业而言，“本地编码智能体”正成为替代云端 API 的现实选项。",
+          "source": "Edge0 官方博客",
+          "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+        },
+        {
+          "title": "🔧 工具更新 | Unsloth 为 Qwen3.8-27B 推出 Dynamic v3.1 量化：17GB 显存本地跑，Terminal Bench 等基准提升 5-10%",
+          "body": "Unsloth 于 11 月 11 日将 Qwen3.8-27B 的 GGUF 量化版本升级到 Dynamic v3.1，称在同等体积下平均准确率提升 5%-10%，涵盖 Terminal Bench、DeepSWE 等编码与智能体基准。Qwen3.8-27B 是带视觉与推理能力的 27B 稠密模型，支持 256K 上下文，可在 17GB 内存/显存设备上本地运行，擅长智能体编码任务。新版量化还加入对 Codex 等智能体工具的 Developer Role 支持，并改进嵌套对象的工具调用解析成功率，相关讨论在 Hacker News 获得 237 分。",
+          "insight": "中国开源模型叠加社区量化优化，已能在消费级硬件上支撑智能体编码工作流，开发团队的模型选型应纳入本地开源方案。",
+          "source": "Unsloth Documentation",
+          "url": "https://unsloth.ai/docs/models/qwen3.8"
+        },
+        {
+          "title": "⚠️ 服务故障 | Claude.ai、Claude Code 与开发者平台 11 月 13 日出现认证故障，约两小时后恢复",
+          "body": "Anthropic 状态页显示，11 月 13 日 09:58（UTC）起，用户登录 Claude.ai 和 Claude Code 出现认证问题，故障波及 claude.ai、Claude Console（platform.claude.com）、Claude Code 与 Claude Cowork；11:05 部署修复进入监控，11:58 宣告解决，全程约两小时。该事件在 Hacker News 获得近 500 分讨论，大量开发者反映编码工作流被迫中断。随着 Claude Code 成为众多团队的主力编码工具，单一厂商服务可用性对研发效率的影响正被放大。",
+          "insight": "AI 编码工具已成为研发关键路径，团队应建立多模型/多厂商的降级预案，避免单点故障导致整条交付流水线停摆。",
+          "source": "Claude Status",
+          "url": "https://status.claude.com/incidents/nn11wk485zfn"
+        },
+        {
+          "title": "🇨🇳 国产工具 | openJiuwen 发布 RSI 原生 AgentOS：让 Agent 自己开发并热插拔新功能，支持版本管理与回退",
+          "body": "据量子位报道，openJiuwen 发布 RSI（递归自我改进）原生 AgentOS，为 Agent 根据任务反馈动手改进自身能力提供运行环境。该系统在界面、网关、服务端和 Agent 执行等环节提供不同类型的扩展点，覆盖运行全周期；新功能可热插拔接入，无需改动应用原有代码，扩展包按版本管理、出问题可回退。基于该 AgentOS 构建的 WorkSwarm 应用中，用户可直接把需求告诉 Agent，由 Agent 自行开发成扩展包并作为系统插件启用，实现“Agent 所想即所得”。",
+          "insight": "Agent 正从“写业务代码”走向“改写自身能力”，企业引入此类自扩展系统时需同步设计权限边界、版本审计与回滚机制。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/509653.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔬 技术突破 | 《卫报》：Claude 数日读完哥德尔 1009 页速记笔记，挖出数百条未发表定理，约 400 条通过 Coq 验证",
+          "body": "《卫报》11 月 13 日报道，赫尔辛基大学逻辑学家 Jan von Plato 自 2017 年起主持解读哥德尔 1940 年代初写下的 16 本工作笔记，共 1009 页，大部分以早已淘汰的 Gabelsberger 德文速记写成，过去进度约每周一页。今年 9 月他引入 Anthropic 的 Claude，后者在几天内就完成全部材料的综述，揭示哥德尔曾证明数百条未发表的定理。据后续分析，Claude 共整理出 663 条定理候选，其中约 400 条已通过 Coq 证明助手形式化验证。",
+          "insight": "“大模型提取 + 形式化工具验证”的组合为档案、法务、科研等海量非结构化文献的知识挖掘提供了可复制且可信的范式。",
+          "source": "The Guardian",
+          "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths"
+        },
+        {
+          "title": "📊 行业报告 | 微软 × IDC 前沿企业研究：领先者 AI 回报达 4 倍，仅 20% 企业有全组织技能培养战略",
+          "body": "微软 11 月 12 日发布与 IDC 合作的研究显示，“前沿企业”（Frontier Firms）的 AI 平均回报为投入的 4 倍，而后 30% 的慢速采用者为 2.7 倍；39% 的前沿企业获得 5 倍以上回报，慢速采用者仅 4%。度量能力成为分水岭：仅 61% 的组织对衡量 AI 业务价值有高度信心，前沿企业则为 93%。65% 的组织已建立智能体治理流程，但仅 60% 对应对 AI 安全与治理风险有信心；67% 称员工高度信任 AI，但仅 20% 拥有全组织层面的技能培养战略。企业平均在 6.5 个业务领域使用 AI。",
+          "insight": "AI 价值规模化的关键不在加大投入，而在把投资、模型、智能体、治理与技能作为一个整体来管理，并建立可信的 ROI 度量体系。",
+          "source": "Microsoft Official Blog",
+          "url": "https://blogs.microsoft.com/blog/2026/11/12/scaling-ai-value-without-losing-control-lessons-from-frontier-firms/"
+        },
+        {
+          "title": "📜 监管政策 | 美联储理事巴尔耶鲁演讲：AI 快速普及短期内或加剧不平等，需防范就业市场严重冲击",
+          "body": "据彭博社报道，美联储理事迈克尔·巴尔 11 月 12 日在耶鲁大学演讲时警告，人工智能的快速采用在短期内存在加深不平等的风险，政策制定者需要为就业市场可能出现的严重短期扰动做好准备。他强调，若缺乏相应的护栏，AI 带来的生产率收益可能集中于少数群体，而受冲击的劳动者在技能转换期面临更大压力。这是继美联储金融稳定报告点名 AI 相关资产估值风险后，美联储高层再次就 AI 的宏观影响公开表态。",
+          "insight": "AI 对就业结构的冲击已进入央行政策视野，企业推进 AI 自动化时需同步规划员工再培训与转岗，以降低社会与声誉风险。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-12/fed-s-barr-warns-ai-without-guardrails-risks-widening-inequality"
+        },
+        {
+          "title": "🇨🇳 行业报告 | 红帽 × CIO 时代年度调研：近七成中国企业推进智能体，正式治理框架覆盖率不足 15%",
+          "body": "据《中国经营报》11 月 14 日报道，红帽与 CIO 时代联合发布的《2026 中国企业级 AI 实践调研分析年度报告》显示，接近 70% 的受访企业正在推进智能体，但正式治理框架覆盖率不到 15%，形成明显“剪刀差”。在六维度 AI 基础架构成熟度评估中（5 分制、3 分及格），仅“安全隔离与访问控制”达标，MLOps 交付效率、算力调度、多模型统一管理、AI FinOps 与可观测性均未及格。报告还指出，AI 价值衡量正从 CIO 的任务转为 CFO 需要回答的问题，“烟囱式”建设导致模型与智能体使用割裂。",
+          "insight": "中国企业 AI 落地已从“能不能用”转向“管不管得住、算不算得清”，治理框架与 FinOps 能力将决定智能体能否规模化。",
+          "source": "新浪财经（转载中国经营网）",
+          "url": "https://finance.sina.com.cn/jjxw/2026-11-14/doc-iniytfyw7126877.shtml"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本周 AI 产业的焦点从模型能力转向治理与信任。英伟达领导层危机演变为员工、股东与硅谷名人联署请愿的公开拉锯，埃森哲研究报告的引用争议则提醒所有使用 AI 生产内容的机构：速度提升之后，事实核验与问责流程必须同步升级。",
+    "企业侧的信号高度一致：AI 价值的分化正在拉大。微软与 IDC 的研究显示前沿企业回报可达 4 倍，而红帽在中国的调研发现近七成企业推进智能体、治理覆盖却不足 15%。中兴、蒙牛等案例证明制造与供应链场景已能算清账，下一步的竞争在于度量体系、FinOps 与技能培养。",
+    "数据正成为 AI 时代的新战场。亚马逊试图建立覆盖全网的商品知识图谱以锁定购物智能体入口，谷歌购买 Spirit 航空数据训练 AI 时被迫加上隐私护栏，埃森哲则推出 Data-as-a-Service 切入训练与评测环节。谁掌握高质量、合规的数据，谁就掌握智能体时代的分发权。",
+    "开发者生态呈现“本地化”与“安全债”并行的态势。Edge0-145B 与 Qwen3.8 量化版让前沿级编码能力跑在笔记本上，而 Lovable 应用大规模数据暴露与 Claude 服务中断，则暴露出 AI 生成应用的安全基线和对单一云服务的依赖风险，团队需要同时规划安全门禁与多模型降级方案。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-15 执行）：已检索 OpenAI partnership/JV/acquisition、Anthropic Accenture/Deloitte/consulting、AI consulting services launch enterprise、site:reuters.com / site:bloomberg.com AI 过去 7 天。今日无新的重大收并购公告；Anthropic IPO 路演、台积电投资 Anthropic/OpenAI、黄仁勋辞任、Claude 办公套件等大动作均已在过去 7 天发布，本期仅以【进展】形式收录英伟达复职请愿一条。埃森哲相关：Data-as-a-Service 新服务（11-09）、北美 OpenAI 业务负责人任命、FT 报道研究报告引用争议，三条均已纳入。Anthropic-Accenture 独立评估合作首发时间超 7 天，未纳入。"
+  }
+}

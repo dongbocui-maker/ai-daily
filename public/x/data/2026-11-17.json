@@ -1,0 +1,254 @@
+{
+  "date": "2026-11-17",
+  "title": "Builder Signals · 2026-11-17",
+  "generatedAt": "2026-11-16T23:01:14.612Z",
+  "feedGeneratedAt": "2026-11-16T06:42:15.797Z",
+  "summary": "Follow Builders 今日捕捉到 19 条 X 动态、1 集播客、0 篇博客；本站精选 7 条高信号内容。",
+  "stats": {
+    "xBuilders": 11,
+    "totalTweets": 19,
+    "selectedXTweets": 6,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "selectedItems": 7
+  },
+  "featured": [
+    {
+      "id": "digest-x-0-R3VpbGxlcm",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Guillermo Rauch",
+      "handle": "rauchg",
+      "title": "Guillermo Rauch · Vercel CEO",
+      "summaryEn": "Vercel CEO Guillermo Rauch introduced xeet, a hermetic, pixel-perfect X post renderer in safe Rust/wasm with zero browser, network, filesystem or system-font dependencies, rendering a post to PNG in ~1ms — 100x–1000x faster than booting a browser for a screenshot. It reproduces Blink & HarfBuzz text shaping, 1/64px line breaking, RTL bidi, 28 Chirp font subsets, CJK/Math/Emoji fallbacks and \"Show more\" rules. The interesting part is the method: xeet is an \"autorepo\" — an oracle boots Chrome to verify tens of thous…",
+      "insightZh": "Vercel CEO Guillermo Rauch 发布了开源项目 xeet：一个用安全 Rust / wasm 写的、像素级精确的 X 帖子渲染器，不依赖浏览器、网络、文件系统或系统字体，约 1ms 就能把一条帖子渲染成 PNG，比启动浏览器截图快 100–1000 倍。它复刻了 Blink 与 HarfBuzz 的文字排版、1/64px 断行、RTL 双向文本、28 个 Chirp 字体子集以及 CJK/数学/Emoji 回退和“Show more”规则。更值得关注的是工程方法：xeet 是一个“autorepo”——由一个启动 Chrome 的 oracle 验证数万条排版规则，CI canary 持续监控原版变化并为 agent 提交签名 PR，整个项目围绕“验证工程（verification engineering）”构建，Rauch 认为这类工作对人类工程师而言几乎不可能完成。另一条里他顺带调侃：AI 给他写的系统卡顿诊断 CLI 起名叫 hog 🐖，“命名”这一计算机科学难题似乎也被 AI 解决了。",
+      "tags": [
+        "Agent",
+        "Product"
+      ],
+      "url": "https://x.com/rauchg/status/2122184794209714368",
+      "publishedAt": "2026-11-16T04:27:37.000Z",
+      "metrics": {
+        "likes": 629,
+        "retweets": 27,
+        "replies": 81,
+        "score": 899
+      }
+    },
+    {
+      "id": "digest-x-1-RGFuIFNoaX",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Dan Shipper",
+      "handle": "danshipper",
+      "title": "Dan Shipper · Every CEO",
+      "summaryEn": "Every CEO Dan Shipper says the team has been working on \"compounding skills\" — skills that get better every time you use them — and thinks @hammer_mt finally cracked it. This weekend he built a skill for writing context-window summaries and used autoresearch to iterate until it hit 80% of his taste versus a no-skill baseline. The full writeup is on Every's frontier feed, formatted for agents.",
+      "insightZh": "Every CEO Dan Shipper 表示团队最近在做“复利型技能”（compounding skills，即每次使用都会变得更好的 agent skill），并认为 @hammer_mt 终于把它做通了。他本周末做了一个帮团队撰写上下文窗口摘要的 skill，用 autoresearch 反复迭代，直到在摘要质量上相对无 skill 基线达到他本人品味的 80%。完整方法论已发布在 Every 的 frontier feed 上，供 agent 直接读取。",
+      "tags": [
+        "Agent",
+        "Research"
+      ],
+      "url": "https://x.com/danshipper/status/2122091033001337134",
+      "publishedAt": "2026-11-15T22:15:03.000Z",
+      "metrics": {
+        "likes": 143,
+        "retweets": 4,
+        "replies": 30,
+        "score": 219
+      }
+    },
+    {
+      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "No Priors",
+      "title": "Robinhood CEO Vlad Tenev：代币化、Agent 交易与 Harmonic",
+      "summaryEn": "Vlad Tenev frames Robinhood as \"the ownership company\" — using tokenization, publicly traded venture funds, prediction markets and agentic trading to put institutional-grade financial capabilities and early-stage ownership into ordinary people's hands — while arguing AI-driven math and science should not be centralized inside a few AI labs. Agentic trading has clear product-market fit: over 150,000 customers opened agentic trading accounts within months of the Robinhood MCP launch, with tool calls growing on a smooth exponential to roughly 30M per day. The newly announced Robinhood Agents puts the harness and UI inside the Robinhood account — \"like Claude Code or Codex, optimized for trading\" — with daily strategy loops, rebalancing, skills and an agent app store (e.g., satellite data to count cars in retailer parking lots). Safeguards include segregated sandboxed accounts and trade app…",
+      "insightZh": "Vlad Tenev 把 Robinhood 定义为“所有权公司”——用代币化、私募基金化、预测市场和 Agent 交易，把机构级金融能力和早期资产所有权下放给普通人；同时认为 AI 做数学/科研不应被少数 AI 实验室中心化垄断。 Agent 交易已明确跑出 PMF：Robinhood 年初上线的 Robinhood MCP（Agentic Trading）几个月内已有超过 15 万客户开户，工具调用量沿平滑指数曲线增长至每天约 3000 万次。近期在 Hood Summit 发布的 Robinhood Agents 把 harness 和 UI 都放进 Robinhood 账户，类似“为交易优化的 Claude Code / Codex”：可设定每日循环执行策略、调仓，支持 skills 和 agent 应用商店（如接入卫星数据数停车场车辆）。安全上采用独立隔离账户、默认需逐笔审批（可关闭）。北极星是把对冲基金/量化机构的能力装进普通人口袋；Vlad 认为交易所和做市商早已适应 HFT，基础设施暂无需大改，目前 Agent 交易占比仍低，会有预警时间。 代币化方面，Robinhood 今年在欧洲重新上线完全 DeFi 化的股票代币，并推出面向真实世界资产的 Robinhood Chain，开发者活跃度增长迅速，用户已经把股票代币与 NFT、meme 币组合成新产品；他认为股票代币会像稳定币之于美元一样，成为新兴市场普通人获取美股敞口的默认方式。在 AI 财富分配上，他指出头部 AI 公司都在私募市场、上市估值已达万亿级，散户难以分享收益，这也是公众对数据中心反感的根源；对策包括在纽交所上市、可交易的 Robinhood Ventures Fund I（含 OpenAI 等后期标的）、与 YC 合作的种子/A 轮 Fund II、私募股权代币化，并推动放宽合格投资者规则。预测市场被他视为“新闻的进化”，并将推出可直接交易公司 EPS/营收的 KPI 合约。他还介绍了作为唯一初始受托方承建的 Trump 账户（新生儿获 1000 美元注资投资标普 500）。 在 Ha…",
+      "tags": [
+        "Claude",
+        "OpenAI",
+        "Agent",
+        "Coding"
+      ],
+      "url": "https://www.youtube.com/@NoPriorsPodcast",
+      "publishedAt": "2026-11-05T11:00:00.000Z",
+      "handle": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "x",
+      "label": "X Signals",
+      "description": "来自 builders / founders / researchers 的实时短信号。",
+      "items": [
+        {
+          "id": "digest-x-0-R3VpbGxlcm",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Guillermo Rauch",
+          "handle": "rauchg",
+          "title": "Guillermo Rauch · Vercel CEO",
+          "summaryEn": "Vercel CEO Guillermo Rauch introduced xeet, a hermetic, pixel-perfect X post renderer in safe Rust/wasm with zero browser, network, filesystem or system-font dependencies, rendering a post to PNG in ~1ms — 100x–1000x faster than booting a browser for a screenshot. It reproduces Blink & HarfBuzz text shaping, 1/64px line breaking, RTL bidi, 28 Chirp font subsets, CJK/Math/Emoji fallbacks and \"Show more\" rules. The interesting part is the method: xeet is an \"autorepo\" — an oracle boots Chrome to verify tens of thous…",
+          "insightZh": "Vercel CEO Guillermo Rauch 发布了开源项目 xeet：一个用安全 Rust / wasm 写的、像素级精确的 X 帖子渲染器，不依赖浏览器、网络、文件系统或系统字体，约 1ms 就能把一条帖子渲染成 PNG，比启动浏览器截图快 100–1000 倍。它复刻了 Blink 与 HarfBuzz 的文字排版、1/64px 断行、RTL 双向文本、28 个 Chirp 字体子集以及 CJK/数学/Emoji 回退和“Show more”规则。更值得关注的是工程方法：xeet 是一个“autorepo”——由一个启动 Chrome 的 oracle 验证数万条排版规则，CI canary 持续监控原版变化并为 agent 提交签名 PR，整个项目围绕“验证工程（verification engineering）”构建，Rauch 认为这类工作对人类工程师而言几乎不可能完成。另一条里他顺带调侃：AI 给他写的系统卡顿诊断 CLI 起名叫 hog 🐖，“命名”这一计算机科学难题似乎也被 AI 解决了。",
+          "tags": [
+            "Agent",
+            "Product"
+          ],
+          "url": "https://x.com/rauchg/status/2122184794209714368",
+          "publishedAt": "2026-11-16T04:27:37.000Z",
+          "metrics": {
+            "likes": 629,
+            "retweets": 27,
+            "replies": 81,
+            "score": 899
+          }
+        },
+        {
+          "id": "digest-x-1-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "handle": "danshipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper says the team has been working on \"compounding skills\" — skills that get better every time you use them — and thinks @hammer_mt finally cracked it. This weekend he built a skill for writing context-window summaries and used autoresearch to iterate until it hit 80% of his taste versus a no-skill baseline. The full writeup is on Every's frontier feed, formatted for agents.",
+          "insightZh": "Every CEO Dan Shipper 表示团队最近在做“复利型技能”（compounding skills，即每次使用都会变得更好的 agent skill），并认为 @hammer_mt 终于把它做通了。他本周末做了一个帮团队撰写上下文窗口摘要的 skill，用 autoresearch 反复迭代，直到在摘要质量上相对无 skill 基线达到他本人品味的 80%。完整方法论已发布在 Every 的 frontier feed 上，供 agent 直接读取。",
+          "tags": [
+            "Agent",
+            "Research"
+          ],
+          "url": "https://x.com/danshipper/status/2122091033001337134",
+          "publishedAt": "2026-11-15T22:15:03.000Z",
+          "metrics": {
+            "likes": 143,
+            "retweets": 4,
+            "replies": 30,
+            "score": 219
+          }
+        },
+        {
+          "id": "digest-x-2-UGV0ZXIgWW",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Yang",
+          "handle": "petergyang",
+          "title": "Peter Yang · AI 教程与访谈创作者",
+          "summaryEn": "Peter Yang shared clips from his interview with Anthropic designer Nate Parrott. First: Claude designs from a fresh context and thinks it's inventing a brilliant style, so it keeps producing serif text, off-white backgrounds, orange and bars on card edges — in its mind it's only done this once. The Claude Design prompt explicitly tells the model it over-biases toward those fonts and colors and not to use them unless asked, which helps a lot. Second: at The Browser Company, building each Arc idea took weeks; at Ant…",
+          "insightZh": "Peter Yang 发布了对 Anthropic 设计师 Nate Parrott 的访谈片段，有两个实用观点。第一，Claude 生成界面时总在“全新上下文”里，以为自己在发明最出彩的视觉风格，结果总是衬线字体、米白背景、橙色和卡片边条——因为在它看来这是第一次做，所以觉得很原创；Claude Design 的 prompt 里会直接告诉模型“你倾向于过度使用这两种字体和颜色，除非用户要求否则别用”，效果明显。第二，Nate 曾在 The Browser Company 做 Arc，当时每个想法要几周才能做出来验证，在 Anthropic 已压缩到一两天；但被压缩的只是“构建”环节，“把东西交到用户手里、理解他们是否会用”的周期并没有缩短。",
+          "tags": [
+            "Claude",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://x.com/petergyang/status/2122132596352327816",
+          "publishedAt": "2026-11-16T01:00:12.000Z",
+          "metrics": {
+            "likes": 51,
+            "retweets": 1,
+            "replies": 24,
+            "score": 103
+          }
+        },
+        {
+          "id": "digest-x-3-VGhpYmF1bH",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "Thibault Sottiaux, who works on Codex & ChatGPT at OpenAI, said the Codex team may have actually fixed the \"model at capacity\" errors that have been pestering users.",
+          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 表示，Codex 团队可能已经修复了长期困扰用户的“model at capacity”（模型容量已满）报错。",
+          "tags": [
+            "OpenAI",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/thsottiaux/status/2122206990101536852",
+          "publishedAt": "2026-11-16T05:55:49.000Z",
+          "metrics": {
+            "likes": 2500,
+            "retweets": 84,
+            "replies": 795,
+            "score": 4426
+          }
+        },
+        {
+          "id": "digest-x-4-TmFuIFl1IM",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nan Yu",
+          "handle": "thenanyu",
+          "title": "Nan Yu · OpenAI Codex 产品（前 Linear 产品负责人）",
+          "summaryEn": "Nan Yu (product on Codex at OpenAI, formerly head of product at Linear) asked for the best home automation hub if he just wants Codex to control everything — ideally something plug-and-play that Codex sees as just another computer.",
+          "insightZh": "OpenAI Codex 产品、前 Linear 产品负责人 Nan Yu 在征集最适合用 Codex 控制全屋的智能家居中枢：希望是即插即用、让 Codex 把它当成“另一台电脑”来操作的设备——一个把编码 agent 延伸到物理世界控制的使用场景。",
+          "tags": [
+            "OpenAI",
+            "Agent",
+            "Coding",
+            "Product"
+          ],
+          "url": "https://x.com/thenanyu/status/2122096965865664924",
+          "publishedAt": "2026-11-15T22:38:37.000Z",
+          "metrics": {
+            "likes": 18,
+            "retweets": 0,
+            "replies": 10,
+            "score": 38
+          }
+        },
+        {
+          "id": "digest-x-5-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari announced the next guest in his weekly series: @kanavg1, cofounder of Core Automation, on Friday Nov 20 at noon in SF, discussing all things RL (methods, synthetic data, loops, automation). Format: 60-minute IRL-only, off-the-record sessions under Chatham House rules — 45 minutes of questions for the guest, 15 minutes of the guest asking about venture — open to 15 listeners.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 的每周线下系列活动下一期嘉宾是 Core Automation 联合创始人 @kanavg1，时间 11 月 20 日（周五）中午，地点旧金山，主题是强化学习（方法、合成数据、训练循环、自动化等）。形式为 60 分钟、仅限线下、Chatham House 规则不对外记录，前 45 分钟由 Nikunj 提问，后 15 分钟嘉宾反问风投话题，限 15 位听众。",
+          "tags": [
+            "Startup"
+          ],
+          "url": "https://x.com/nikunj/status/2122042319419609105",
+          "publishedAt": "2026-11-15T19:01:29.000Z",
+          "metrics": {
+            "likes": 58,
+            "retweets": 1,
+            "replies": 4,
+            "score": 70
+          }
+        }
+      ]
+    },
+    {
+      "key": "podcast",
+      "label": "Podcasts",
+      "description": "长访谈与播客，适合判断技术路线和战略假设。",
+      "items": [
+        {
+          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "No Priors",
+          "title": "Robinhood CEO Vlad Tenev：代币化、Agent 交易与 Harmonic",
+          "summaryEn": "Vlad Tenev frames Robinhood as \"the ownership company\" — using tokenization, publicly traded venture funds, prediction markets and agentic trading to put institutional-grade financial capabilities and early-stage ownership into ordinary people's hands — while arguing AI-driven math and science should not be centralized inside a few AI labs. Agentic trading has clear product-market fit: over 150,000 customers opened agentic trading accounts within months of the Robinhood MCP launch, with tool calls growing on a smooth exponential to roughly 30M per day. The newly announced Robinhood Agents puts the harness and UI inside the Robinhood account — \"like Claude Code or Codex, optimized for trading\" — with daily strategy loops, rebalancing, skills and an agent app store (e.g., satellite data to count cars in retailer parking lots). Safeguards include segregated sandboxed accounts and trade app…",
+          "insightZh": "Vlad Tenev 把 Robinhood 定义为“所有权公司”——用代币化、私募基金化、预测市场和 Agent 交易，把机构级金融能力和早期资产所有权下放给普通人；同时认为 AI 做数学/科研不应被少数 AI 实验室中心化垄断。 Agent 交易已明确跑出 PMF：Robinhood 年初上线的 Robinhood MCP（Agentic Trading）几个月内已有超过 15 万客户开户，工具调用量沿平滑指数曲线增长至每天约 3000 万次。近期在 Hood Summit 发布的 Robinhood Agents 把 harness 和 UI 都放进 Robinhood 账户，类似“为交易优化的 Claude Code / Codex”：可设定每日循环执行策略、调仓，支持 skills 和 agent 应用商店（如接入卫星数据数停车场车辆）。安全上采用独立隔离账户、默认需逐笔审批（可关闭）。北极星是把对冲基金/量化机构的能力装进普通人口袋；Vlad 认为交易所和做市商早已适应 HFT，基础设施暂无需大改，目前 Agent 交易占比仍低，会有预警时间。 代币化方面，Robinhood 今年在欧洲重新上线完全 DeFi 化的股票代币，并推出面向真实世界资产的 Robinhood Chain，开发者活跃度增长迅速，用户已经把股票代币与 NFT、meme 币组合成新产品；他认为股票代币会像稳定币之于美元一样，成为新兴市场普通人获取美股敞口的默认方式。在 AI 财富分配上，他指出头部 AI 公司都在私募市场、上市估值已达万亿级，散户难以分享收益，这也是公众对数据中心反感的根源；对策包括在纽交所上市、可交易的 Robinhood Ventures Fund I（含 OpenAI 等后期标的）、与 YC 合作的种子/A 轮 Fund II、私募股权代币化，并推动放宽合格投资者规则。预测市场被他视为“新闻的进化”，并将推出可直接交易公司 EPS/营收的 KPI 合约。他还介绍了作为唯一初始受托方承建的 Trump 账户（新生儿获 1000 美元注资投资标普 500）。 在 Ha…",
+          "tags": [
+            "Claude",
+            "OpenAI",
+            "Agent",
+            "Coding"
+          ],
+          "url": "https://www.youtube.com/@NoPriorsPodcast",
+          "publishedAt": "2026-11-05T11:00:00.000Z",
+          "handle": ""
+        }
+      ]
+    },
+    {
+      "key": "blog",
+      "label": "Blogs",
+      "description": "工程博客与长文，关注能力边界、复盘和落地经验。",
+      "items": []
+    }
+  ]
+}

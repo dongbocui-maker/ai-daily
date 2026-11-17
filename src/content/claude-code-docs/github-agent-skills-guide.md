@@ -19,7 +19,7 @@ updated: "2026-11-17"
 <li><strong>Skill 承载指令，不承载权限</strong>。agent skill 是以 <code>SKILL.md</code> 为中心的版本化目录，描述何时、如何做一件可重复的事；指令可以跨 agent 共享，工具、凭证、权限仍由运行环境提供。</li>
 <li><strong>一个 skill 一件事，且自我验证不算验证</strong>。Proof Agent 示例用独立验证者核对 AI 生成的改动。在其 GitHub Actions 工作流中（见「检查与审批点」一节），验证者拿到原始需求和代码改动，拿不到 coding agent 的自我评估，结论为 <code>PASS</code> / <code>FAIL</code> / <code>PARTIAL</code> 并须引用变更文件中的证据。</li>
 <li><strong>大工作流拆成职责清晰的多个 skill，共享同一份上下文</strong>。Data Forge 示例中 <code>forge-init</code> 发现项目细节并写入 resolved manifest，<code>forge-builder</code> 从 issue 编排到 pull request，<code>forge-dbx</code> 统一访问数据平台，<code>forge-lint</code> 套用团队标准；某一步变了只改一个 skill。</li>
-<li><strong>项目配置外置到 manifest</strong>。检查可移植性时，原文建议问：另一个团队带上自己的 manifest，能否不重写 skill 直接用。仓库里发现的模式不自动等于要保留的规则，需要人确认。</li>
+<li><strong>项目配置外置到 manifest</strong>。检查可移植性时，原文建议问：另一个团队带上自己的 manifest，能否不重写 skill 直接用。仓库里发现的模式不自动等于要保留的规则；发现的细节要可审阅，涉及业务判断处由人确认或修改。</li>
 <li><strong>检查点和审批点写进工作流，强制力留给仓库规则</strong>。support-desk 工作流七个阶段各有人工检查点，schema 变更前要审批；必须阻断合并或部署的检查，在仓库的 CI 检查与规则里配置。</li>
 <li><strong>多客户端支持：Data Forge 示例用单一源打包生成</strong>。该示例以 <code>skills/*/SKILL.md</code> 为源，脚本生成 Claude Code、Cursor、GitHub Copilot 各自的文件，并带 CI 用的 <code>--check</code> 模式；原文建议安装后逐个客户端确认 skill 能被识别、引用能加载、所需工具可用、能返回 skill 要求的证据。</li>
 <li><strong>Skill 有适用边界</strong>。适合有边界、可重复、受益于可复用判断的工作（checklist、发布、迁移、指标管道）；需要稳定接口、共享状态、审计链、长时运行控制或模型外强制权限的，做成应用更合适。</li>
@@ -100,7 +100,7 @@ Keep discovered project details separate from team standards. The `forge-init` i
 
 <aside class="not-prose my-8 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
 <h3 class="text-[length:var(--fs-sub)] font-bold text-accent-purple tracking-wide uppercase mb-2">📌 章节导读 · skill 之间共用一条执行路径</h3>
-<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed"><code>forge-dbx</code> 给其他 Data Forge skill 提供一种统一的数据平台访问方式：它读取 manifest，再选择 Databricks 或 DuckDB 适配器，其他 skill 不必各自维护连接和查询逻辑。本节再次强调开篇那条边界：manifest 可以为本地 demo 选择 DuckDB，但装不了 DuckDB CLI，也给不了数据库权限。原文的总结是：manifest 选引擎，宿主给访问权。</p>
+<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed"><code>forge-dbx</code> 给其他 Data Forge skill 提供一种统一的数据平台访问方式：它读取 manifest，再选择 Databricks 或 DuckDB 适配器，其他 skill 不必各自维护连接和查询逻辑。原文同时说明：manifest 可以为本地 demo 选择 DuckDB，但装不了 DuckDB CLI，也给不了数据库权限。原文的总结是：manifest 选引擎，宿主给访问权。</p>
 </aside>
 
 ## Share execution paths between skills
@@ -122,7 +122,7 @@ The Proof Agent example applies the same principle to code review. A GitHub Acti
 
 <aside class="not-prose my-8 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
 <h3 class="text-[length:var(--fs-sub)] font-bold text-accent-purple tracking-wide uppercase mb-2">📌 章节导读 · 按客户端打包，再逐个验证</h3>
-<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed">原文指出，支持多个客户端可能意味着要让同一份指令的多个副本保持同步。Data Forge 示例的做法是以 <code>skills/*/SKILL.md</code> 为源，用打包脚本生成各客户端专用文件——Claude Code 的 <code>.claude-plugin/plugin.json</code>、Cursor 的 <code>.cursor-plugin/plugin.json</code>、GitHub Copilot 的 <code>.github/agents/*.agent.md</code>，脚本还带一个给 CI 用的 check 模式。各客户端在可用模型、工具、凭证和权限上都可能不同，所以安装后还要确认四件事：客户端能否针对目标任务识别该 skill、能否加载它的引用文件、能否使用所需工具、能否返回 skill 要求的证据。</p>
+<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed">原文指出，支持多个客户端可能意味着要让同一份指令的多个副本保持同步。Data Forge 示例的做法是以 <code>skills/*/SKILL.md</code> 为源，用打包脚本生成各客户端专用文件——Claude Code 的 <code>.claude-plugin/plugin.json</code>、Cursor 的 <code>.cursor-plugin/plugin.json</code>、GitHub Copilot 的 <code>.github/agents/*.agent.md</code>，脚本还带一个给 CI 用的 check 模式。各客户端在可用模型、工具、凭证和权限上都可能不同。原文建议安装后确认四件事：客户端能否针对目标任务识别该 skill、能否加载它的引用文件、能否使用所需工具、能否返回 skill 要求的证据。</p>
 </aside>
 
 ## Package for each agent client, then verify its setup
@@ -137,7 +137,7 @@ Clients can differ in their available models, tools, credentials, and permission
 
 <aside class="not-prose my-8 px-6 py-5 bg-accent-purple/5 border-l-4 border-accent-purple rounded-r">
 <h3 class="text-[length:var(--fs-sub)] font-bold text-accent-purple tracking-wide uppercase mb-2">📌 章节导读 · 三条实践</h3>
-<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed">全文收束为三条：业务上下文放进一个文件（manifest），让团队只有一处需要更新；相关 skill 用同一种方式使用平台，访问路径更容易理解，各客户端下的行为也更容易检查；用指令引导工作、用检查验证工作——skill 可以告诉 agent 遵循什么标准、何时请求审批，但如果某项检查必须阻断合并或部署，要在仓库规则里配置。最后的起步建议是从你已经解释烦了的那件任务开始，写下它需要什么、在哪里停、评审者能看到什么，再换一个 agent 试跑并迭代。</p>
+<p class="text-[length:var(--fs-sub)] text-accent-gray-800 leading-relaxed">全文收束为三条：业务上下文放进一个文件（manifest），让团队有一个看得见的地方更新配置；相关 skill 用同一种方式使用平台，访问路径更容易理解，各客户端下的行为也更容易检查；用指令引导工作、用检查验证工作——skill 可以告诉 agent 遵循什么标准、何时请求审批，但如果某项检查必须阻断合并或部署，要在仓库规则里配置。最后的起步建议是从你已经解释烦了的那件任务开始，写下它需要什么、在哪里停、评审者能看到什么，再换一个 agent 试跑并迭代。</p>
 </aside>
 
 ## Three practices for building agent skills

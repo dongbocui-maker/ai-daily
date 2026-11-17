@@ -1,78 +1,81 @@
 {
-  "date": "2026-11-17",
-  "title": "Builder Signals · 2026-11-17",
-  "generatedAt": "2026-11-16T23:01:14.612Z",
-  "feedGeneratedAt": "2026-11-16T06:42:15.797Z",
-  "summary": "Follow Builders 今日捕捉到 19 条 X 动态、1 集播客、0 篇博客；本站精选 7 条高信号内容。",
+  "date": "2026-11-18",
+  "title": "Builder Signals · 2026-11-18",
+  "generatedAt": "2026-11-17T23:00:18.903Z",
+  "feedGeneratedAt": "2026-11-17T06:29:04.786Z",
+  "summary": "Follow Builders 今日捕捉到 29 条 X 动态、1 集播客、0 篇博客；本站精选 11 条高信号内容。",
   "stats": {
-    "xBuilders": 11,
-    "totalTweets": 19,
-    "selectedXTweets": 6,
+    "xBuilders": 14,
+    "totalTweets": 29,
+    "selectedXTweets": 10,
     "podcastEpisodes": 1,
     "blogPosts": 0,
-    "selectedItems": 7
+    "selectedItems": 11
   },
   "featured": [
     {
-      "id": "digest-x-0-R3VpbGxlcm",
+      "id": "digest-x-0-QWFyb24gTG",
+      "kind": "x",
+      "source": "X",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie argues the chart of token spend per employee still has no ceiling in sight, and those closest to AI feel we are still early on the adoption curve. His chain of reasoning: coding was basically unusable 12 months ago and is only now getting good; working coding unlocks tool and computer use, which opens knowledge-work domains like finance, life sciences and cyber to agents. Next come new form factors — agent swarms and background agents running across enterprise workflows for data processing, val…",
+      "insightZh": "Box CEO Aaron Levie 认为「人均 token 消耗」这条曲线依然看不到天花板，越接近 AI 的人越觉得我们还在采用曲线的早期。他的逻辑链很清晰：编码在 12 个月前基本还不能用，现在才真正变好；编码能力一旦成立，就带来了工具调用和 computer use，进而能把 agent 推向金融、生命科学、网络安全等此前难以自动化的知识工作领域。再往后是新的形态——agent swarm 和后台 agent 会在企业流程里跑数据处理、校验、研究和决策支持，消耗远超想象的 token。结论：token 用量只会往上走。",
+      "tags": [
+        "Agent",
+        "Coding",
+        "Research"
+      ],
+      "url": "https://x.com/levie/status/2122508098351038532",
+      "publishedAt": "2026-11-17T01:52:19.000Z",
+      "metrics": {
+        "likes": 192,
+        "retweets": 18,
+        "replies": 57,
+        "score": 378
+      }
+    },
+    {
+      "id": "digest-x-1-R3VpbGxlcm",
       "kind": "x",
       "source": "X",
       "sourceName": "Guillermo Rauch",
       "handle": "rauchg",
       "title": "Guillermo Rauch · Vercel CEO",
-      "summaryEn": "Vercel CEO Guillermo Rauch introduced xeet, a hermetic, pixel-perfect X post renderer in safe Rust/wasm with zero browser, network, filesystem or system-font dependencies, rendering a post to PNG in ~1ms — 100x–1000x faster than booting a browser for a screenshot. It reproduces Blink & HarfBuzz text shaping, 1/64px line breaking, RTL bidi, 28 Chirp font subsets, CJK/Math/Emoji fallbacks and \"Show more\" rules. The interesting part is the method: xeet is an \"autorepo\" — an oracle boots Chrome to verify tens of thous…",
-      "insightZh": "Vercel CEO Guillermo Rauch 发布了开源项目 xeet：一个用安全 Rust / wasm 写的、像素级精确的 X 帖子渲染器，不依赖浏览器、网络、文件系统或系统字体，约 1ms 就能把一条帖子渲染成 PNG，比启动浏览器截图快 100–1000 倍。它复刻了 Blink 与 HarfBuzz 的文字排版、1/64px 断行、RTL 双向文本、28 个 Chirp 字体子集以及 CJK/数学/Emoji 回退和“Show more”规则。更值得关注的是工程方法：xeet 是一个“autorepo”——由一个启动 Chrome 的 oracle 验证数万条排版规则，CI canary 持续监控原版变化并为 agent 提交签名 PR，整个项目围绕“验证工程（verification engineering）”构建，Rauch 认为这类工作对人类工程师而言几乎不可能完成。另一条里他顺带调侃：AI 给他写的系统卡顿诊断 CLI 起名叫 hog 🐖，“命名”这一计算机科学难题似乎也被 AI 解决了。",
+      "summaryEn": "Vercel CEO Guillermo Rauch posted three related takes on owning your AI stack: use open SDKs and harnesses, own model choice via gateways, own your traces and data with enforced ZDR, and own your models with private inference. He also framed a shift in product method: the old way treated users as humans (interviews, user journeys); the new way treats users as agents — you run evals, and evals drive the engineering loop, pointing to a write-up on how Vercel does evals. Finally, he declared a new era of software tha…",
+      "insightZh": "Vercel CEO Guillermo Rauch 今天连发三条，核心是「拥有自己的 AI 能力栈」：用开放的 SDK 和 harness、通过 Gateway 掌握模型选择权、自己掌握 trace 和数据并强制零数据保留（ZDR）、用私有推理掌握自己的模型。他还提出产品方法论的转变：过去用户是人，你做用户访谈、画用户旅程；现在用户是 agent，你跑 eval，由 eval 驱动软件工程循环，并推荐了 Vercel 内部做 eval 的文章。另外他断言新一代软件将是个性化、完全自有、开源的，且质量高于它所替代的东西。",
       "tags": [
         "Agent",
-        "Product"
+        "Coding",
+        "Product",
+        "Eval"
       ],
-      "url": "https://x.com/rauchg/status/2122184794209714368",
-      "publishedAt": "2026-11-16T04:27:37.000Z",
+      "url": "https://x.com/rauchg/status/2122458782294847807",
+      "publishedAt": "2026-11-16T22:36:21.000Z",
       "metrics": {
-        "likes": 629,
-        "retweets": 27,
-        "replies": 81,
-        "score": 899
+        "likes": 273,
+        "retweets": 10,
+        "replies": 60,
+        "score": 433
       }
     },
     {
-      "id": "digest-x-1-RGFuIFNoaX",
-      "kind": "x",
-      "source": "X",
-      "sourceName": "Dan Shipper",
-      "handle": "danshipper",
-      "title": "Dan Shipper · Every CEO",
-      "summaryEn": "Every CEO Dan Shipper says the team has been working on \"compounding skills\" — skills that get better every time you use them — and thinks @hammer_mt finally cracked it. This weekend he built a skill for writing context-window summaries and used autoresearch to iterate until it hit 80% of his taste versus a no-skill baseline. The full writeup is on Every's frontier feed, formatted for agents.",
-      "insightZh": "Every CEO Dan Shipper 表示团队最近在做“复利型技能”（compounding skills，即每次使用都会变得更好的 agent skill），并认为 @hammer_mt 终于把它做通了。他本周末做了一个帮团队撰写上下文窗口摘要的 skill，用 autoresearch 反复迭代，直到在摘要质量上相对无 skill 基线达到他本人品味的 80%。完整方法论已发布在 Every 的 frontier feed 上，供 agent 直接读取。",
-      "tags": [
-        "Agent",
-        "Research"
-      ],
-      "url": "https://x.com/danshipper/status/2122091033001337134",
-      "publishedAt": "2026-11-15T22:15:03.000Z",
-      "metrics": {
-        "likes": 143,
-        "retweets": 4,
-        "replies": 30,
-        "score": 219
-      }
-    },
-    {
-      "id": "digest-podcast-0-Tm8gUHJpb3",
+      "id": "digest-podcast-0-TGF0ZW50IF",
       "kind": "podcast",
       "source": "Podcast",
-      "sourceName": "No Priors",
-      "title": "Robinhood CEO Vlad Tenev：代币化、Agent 交易与 Harmonic",
-      "summaryEn": "Vlad Tenev frames Robinhood as \"the ownership company\" — using tokenization, publicly traded venture funds, prediction markets and agentic trading to put institutional-grade financial capabilities and early-stage ownership into ordinary people's hands — while arguing AI-driven math and science should not be centralized inside a few AI labs. Agentic trading has clear product-market fit: over 150,000 customers opened agentic trading accounts within months of the Robinhood MCP launch, with tool calls growing on a smooth exponential to roughly 30M per day. The newly announced Robinhood Agents puts the harness and UI inside the Robinhood account — \"like Claude Code or Codex, optimized for trading\" — with daily strategy loops, rebalancing, skills and an agent app store (e.g., satellite data to count cars in retailer parking lots). Safeguards include segregated sandboxed accounts and trade app…",
-      "insightZh": "Vlad Tenev 把 Robinhood 定义为“所有权公司”——用代币化、私募基金化、预测市场和 Agent 交易，把机构级金融能力和早期资产所有权下放给普通人；同时认为 AI 做数学/科研不应被少数 AI 实验室中心化垄断。 Agent 交易已明确跑出 PMF：Robinhood 年初上线的 Robinhood MCP（Agentic Trading）几个月内已有超过 15 万客户开户，工具调用量沿平滑指数曲线增长至每天约 3000 万次。近期在 Hood Summit 发布的 Robinhood Agents 把 harness 和 UI 都放进 Robinhood 账户，类似“为交易优化的 Claude Code / Codex”：可设定每日循环执行策略、调仓，支持 skills 和 agent 应用商店（如接入卫星数据数停车场车辆）。安全上采用独立隔离账户、默认需逐笔审批（可关闭）。北极星是把对冲基金/量化机构的能力装进普通人口袋；Vlad 认为交易所和做市商早已适应 HFT，基础设施暂无需大改，目前 Agent 交易占比仍低，会有预警时间。 代币化方面，Robinhood 今年在欧洲重新上线完全 DeFi 化的股票代币，并推出面向真实世界资产的 Robinhood Chain，开发者活跃度增长迅速，用户已经把股票代币与 NFT、meme 币组合成新产品；他认为股票代币会像稳定币之于美元一样，成为新兴市场普通人获取美股敞口的默认方式。在 AI 财富分配上，他指出头部 AI 公司都在私募市场、上市估值已达万亿级，散户难以分享收益，这也是公众对数据中心反感的根源；对策包括在纽交所上市、可交易的 Robinhood Ventures Fund I（含 OpenAI 等后期标的）、与 YC 合作的种子/A 轮 Fund II、私募股权代币化，并推动放宽合格投资者规则。预测市场被他视为“新闻的进化”，并将推出可直接交易公司 EPS/营收的 KPI 合约。他还介绍了作为唯一初始受托方承建的 Trump 账户（新生儿获 1000 美元注资投资标普 500）。 在 Ha…",
+      "sourceName": "Latent Space",
+      "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+      "summaryEn": "The entry bar for AI-native engineers is now near senior level; the core skills shift from writing code to context engineering, agent-ready codebases, verifiability and system-level judgment. In this special celebrating one million subscribers on the AI Engineer YouTube channel, Mihail Eric — instructor of Stanford's CS146S \"The Modern Software Developer\" and Head of AI at Monaco — walks through the course's second edition. Versus last year's broad survey of coding agents across the SDLC, this year focuses on solidifying principles: building a coding agent from scratch in week one, then context engineering at scale and MCP tool design, skills, agent customization (AGENTS.md, CLAUDE.md, hooks, sub-agents), agent-ready codebases, agentic code review, security, background agents (citing Stripe Minions, Ramp Inspect, Spotify), and team-level infra like LLM gateways and MCP portals, plus ope…",
+      "insightZh": "AI 原生工程师的「入门门槛」已接近资深级别，核心能力从写代码转向上下文工程、agent-ready 代码库、可验证性与系统级判断。 这期是 AI Engineer YouTube 频道百万订阅特辑，嘉宾 Mihail Eric 是斯坦福 CS146S「现代软件开发者」课程讲师、Monaco 的 AI 负责人。课程第二次开设，相比去年「各环节都能用 coding agent」的广度巡览，今年聚焦已沉淀下来的原则：第一周从零构建 coding agent（harness 内部原理），之后依次是规模化上下文工程与 MCP 工具设计、skills、agent 配置（AGENTS.md / CLAUDE.md / hooks / 子 agent）、agent-ready 代码库、agentic code review、安全、后台 agent（参考 Stripe Minions、Ramp Inspect、Spotify 等案例），以及团队级基础设施（LLM 网关、MCP 门户）与角色演进。课程还引入开源贡献作为作业。他对学生直言：每个公司都需要你，但门槛高了，应届生要接近资深水平。 实践层面，他观察到 Claude Code 的成功源于「更少工具做更多事」（重用 Bash 等瑞士军刀式工具），而其系统提示词已缩减——Git 用法等知识被内化进模型权重，引发「模型 vs harness」投入的权衡。他认为大多数从业者仍停留在原始 prompting，代码评审已成为新瓶颈，Monaco 把 PR 描述写成带文件级指针的规格说明。在自建与采购上，他的原则是「买来学习，自建保留」：代码评审最终选了 Devin，而后台 agent 与 Slack 机器人 Hal（兼任 SRE、客服与 QA）则自建。关于未来角色，他认为工程师会走向产品+工程的混合型「agent 管理者」，需要系统性思维与判断力。",
       "tags": [
         "Claude",
-        "OpenAI",
         "Agent",
-        "Coding"
+        "Coding",
+        "Product"
       ],
-      "url": "https://www.youtube.com/@NoPriorsPodcast",
-      "publishedAt": "2026-11-05T11:00:00.000Z",
+      "url": "https://www.youtube.com/@LatentSpacePod",
+      "publishedAt": "2026-11-08T21:23:29.000Z",
       "handle": ""
     }
   ],
@@ -83,139 +86,220 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-R3VpbGxlcm",
+          "id": "digest-x-0-QWFyb24gTG",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie argues the chart of token spend per employee still has no ceiling in sight, and those closest to AI feel we are still early on the adoption curve. His chain of reasoning: coding was basically unusable 12 months ago and is only now getting good; working coding unlocks tool and computer use, which opens knowledge-work domains like finance, life sciences and cyber to agents. Next come new form factors — agent swarms and background agents running across enterprise workflows for data processing, val…",
+          "insightZh": "Box CEO Aaron Levie 认为「人均 token 消耗」这条曲线依然看不到天花板，越接近 AI 的人越觉得我们还在采用曲线的早期。他的逻辑链很清晰：编码在 12 个月前基本还不能用，现在才真正变好；编码能力一旦成立，就带来了工具调用和 computer use，进而能把 agent 推向金融、生命科学、网络安全等此前难以自动化的知识工作领域。再往后是新的形态——agent swarm 和后台 agent 会在企业流程里跑数据处理、校验、研究和决策支持，消耗远超想象的 token。结论：token 用量只会往上走。",
+          "tags": [
+            "Agent",
+            "Coding",
+            "Research"
+          ],
+          "url": "https://x.com/levie/status/2122508098351038532",
+          "publishedAt": "2026-11-17T01:52:19.000Z",
+          "metrics": {
+            "likes": 192,
+            "retweets": 18,
+            "replies": 57,
+            "score": 378
+          }
+        },
+        {
+          "id": "digest-x-1-R3VpbGxlcm",
           "kind": "x",
           "source": "X",
           "sourceName": "Guillermo Rauch",
           "handle": "rauchg",
           "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Vercel CEO Guillermo Rauch introduced xeet, a hermetic, pixel-perfect X post renderer in safe Rust/wasm with zero browser, network, filesystem or system-font dependencies, rendering a post to PNG in ~1ms — 100x–1000x faster than booting a browser for a screenshot. It reproduces Blink & HarfBuzz text shaping, 1/64px line breaking, RTL bidi, 28 Chirp font subsets, CJK/Math/Emoji fallbacks and \"Show more\" rules. The interesting part is the method: xeet is an \"autorepo\" — an oracle boots Chrome to verify tens of thous…",
-          "insightZh": "Vercel CEO Guillermo Rauch 发布了开源项目 xeet：一个用安全 Rust / wasm 写的、像素级精确的 X 帖子渲染器，不依赖浏览器、网络、文件系统或系统字体，约 1ms 就能把一条帖子渲染成 PNG，比启动浏览器截图快 100–1000 倍。它复刻了 Blink 与 HarfBuzz 的文字排版、1/64px 断行、RTL 双向文本、28 个 Chirp 字体子集以及 CJK/数学/Emoji 回退和“Show more”规则。更值得关注的是工程方法：xeet 是一个“autorepo”——由一个启动 Chrome 的 oracle 验证数万条排版规则，CI canary 持续监控原版变化并为 agent 提交签名 PR，整个项目围绕“验证工程（verification engineering）”构建，Rauch 认为这类工作对人类工程师而言几乎不可能完成。另一条里他顺带调侃：AI 给他写的系统卡顿诊断 CLI 起名叫 hog 🐖，“命名”这一计算机科学难题似乎也被 AI 解决了。",
+          "summaryEn": "Vercel CEO Guillermo Rauch posted three related takes on owning your AI stack: use open SDKs and harnesses, own model choice via gateways, own your traces and data with enforced ZDR, and own your models with private inference. He also framed a shift in product method: the old way treated users as humans (interviews, user journeys); the new way treats users as agents — you run evals, and evals drive the engineering loop, pointing to a write-up on how Vercel does evals. Finally, he declared a new era of software tha…",
+          "insightZh": "Vercel CEO Guillermo Rauch 今天连发三条，核心是「拥有自己的 AI 能力栈」：用开放的 SDK 和 harness、通过 Gateway 掌握模型选择权、自己掌握 trace 和数据并强制零数据保留（ZDR）、用私有推理掌握自己的模型。他还提出产品方法论的转变：过去用户是人，你做用户访谈、画用户旅程；现在用户是 agent，你跑 eval，由 eval 驱动软件工程循环，并推荐了 Vercel 内部做 eval 的文章。另外他断言新一代软件将是个性化、完全自有、开源的，且质量高于它所替代的东西。",
           "tags": [
             "Agent",
-            "Product"
+            "Coding",
+            "Product",
+            "Eval"
           ],
-          "url": "https://x.com/rauchg/status/2122184794209714368",
-          "publishedAt": "2026-11-16T04:27:37.000Z",
+          "url": "https://x.com/rauchg/status/2122458782294847807",
+          "publishedAt": "2026-11-16T22:36:21.000Z",
           "metrics": {
-            "likes": 629,
-            "retweets": 27,
-            "replies": 81,
-            "score": 899
+            "likes": 273,
+            "retweets": 10,
+            "replies": 60,
+            "score": 433
           }
         },
         {
-          "id": "digest-x-1-RGFuIFNoaX",
+          "id": "digest-x-2-VGhhcmlxIM",
           "kind": "x",
           "source": "X",
-          "sourceName": "Dan Shipper",
-          "handle": "danshipper",
-          "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Every CEO Dan Shipper says the team has been working on \"compounding skills\" — skills that get better every time you use them — and thinks @hammer_mt finally cracked it. This weekend he built a skill for writing context-window summaries and used autoresearch to iterate until it hit 80% of his taste versus a no-skill baseline. The full writeup is on Every's frontier feed, formatted for agents.",
-          "insightZh": "Every CEO Dan Shipper 表示团队最近在做“复利型技能”（compounding skills，即每次使用都会变得更好的 agent skill），并认为 @hammer_mt 终于把它做通了。他本周末做了一个帮团队撰写上下文窗口摘要的 skill，用 autoresearch 反复迭代，直到在摘要质量上相对无 skill 基线达到他本人品味的 80%。完整方法论已发布在 Every 的 frontier feed 上，供 agent 直接读取。",
+          "sourceName": "Thariq",
+          "handle": "trq212",
+          "title": "Thariq · 前 Anthropic Claude Code 成员",
+          "summaryEn": "Former Claude Code team member Thariq argues software factories feel like a temporary problem — models will learn to build them for you. The more interesting question, he says, is how to build a workspace where agents collaborate with you, and he shared an example of working with agents on a new character for his game. The post drew nearly 5,000 likes.",
+          "insightZh": "前 Anthropic Claude Code 成员 Thariq 认为「软件工厂」只是一个暂时性问题——模型自己会学会替你搭建它们。他更关心的问题是：如何构建一个让 agent 与人协作的工作空间。他附上了自己和 agent 一起为游戏设计新角色的实例。这条获得近 5000 赞，是今天互动最高的观点之一。",
           "tags": [
+            "Claude",
             "Agent",
+            "Coding",
             "Research"
           ],
-          "url": "https://x.com/danshipper/status/2122091033001337134",
-          "publishedAt": "2026-11-15T22:15:03.000Z",
+          "url": "https://x.com/trq212/status/2122438326431154210",
+          "publishedAt": "2026-11-16T21:15:04.000Z",
           "metrics": {
-            "likes": 143,
-            "retweets": 4,
-            "replies": 30,
-            "score": 219
+            "likes": 4841,
+            "retweets": 200,
+            "replies": 374,
+            "score": 6389
           }
         },
         {
-          "id": "digest-x-2-UGV0ZXIgWW",
+          "id": "digest-x-3-UGV0ZXIgWW",
           "kind": "x",
           "source": "X",
           "sourceName": "Peter Yang",
           "handle": "petergyang",
-          "title": "Peter Yang · AI 教程与访谈创作者",
-          "summaryEn": "Peter Yang shared clips from his interview with Anthropic designer Nate Parrott. First: Claude designs from a fresh context and thinks it's inventing a brilliant style, so it keeps producing serif text, off-white backgrounds, orange and bars on card edges — in its mind it's only done this once. The Claude Design prompt explicitly tells the model it over-biases toward those fonts and colors and not to use them unless asked, which helps a lot. Second: at The Browser Company, building each Arc idea took weeks; at Ant…",
-          "insightZh": "Peter Yang 发布了对 Anthropic 设计师 Nate Parrott 的访谈片段，有两个实用观点。第一，Claude 生成界面时总在“全新上下文”里，以为自己在发明最出彩的视觉风格，结果总是衬线字体、米白背景、橙色和卡片边条——因为在它看来这是第一次做，所以觉得很原创；Claude Design 的 prompt 里会直接告诉模型“你倾向于过度使用这两种字体和颜色，除非用户要求否则别用”，效果明显。第二，Nate 曾在 The Browser Company 做 Arc，当时每个想法要几周才能做出来验证，在 Anthropic 已压缩到一两天；但被压缩的只是“构建”环节，“把东西交到用户手里、理解他们是否会用”的周期并没有缩短。",
+          "title": "Peter Yang · AI 教程创作者",
+          "summaryEn": "AI tutorials creator Peter Yang shared five takeaways from Nate Parrott on getting Claude to design without AI slop: give context upfront (screenshots, pages you like, past work; for existing products have Claude rebuild real screens from code); research familiar UX patterns from products solving similar problems; make Claude aware of its own design biases in design.md (serif text, off-white backgrounds, card-edge bars); start with wireframes to nail core flows before fonts and colors; and ask for 5 options on key…",
+          "insightZh": "AI 教程创作者 Peter Yang 总结了与 Nate Parrott 对谈中「让 Claude 做设计而不出 AI slop」的五条要点：一是先给足上下文（截图、喜欢的页面、过往作品，已有产品可让 Claude 从代码重建真实界面）；二是让 Claude 调研解决类似问题的熟悉产品的 UX 模式；三是在 design.md 里明确提醒模型自身的设计偏好（如衬线字体、米白背景、卡片边条）；四是先做线框图、把核心用户流程打磨好再谈字体配色；五是让 Claude 对关键页面给出 5 个方案，挑选喜欢的部分再 remix 出 5 个新方案。",
           "tags": [
             "Claude",
-            "Startup",
-            "Research"
-          ],
-          "url": "https://x.com/petergyang/status/2122132596352327816",
-          "publishedAt": "2026-11-16T01:00:12.000Z",
-          "metrics": {
-            "likes": 51,
-            "retweets": 1,
-            "replies": 24,
-            "score": 103
-          }
-        },
-        {
-          "id": "digest-x-3-VGhpYmF1bH",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Thibault Sottiaux",
-          "handle": "thsottiaux",
-          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
-          "summaryEn": "Thibault Sottiaux, who works on Codex & ChatGPT at OpenAI, said the Codex team may have actually fixed the \"model at capacity\" errors that have been pestering users.",
-          "insightZh": "OpenAI Codex & ChatGPT 负责人 Thibault Sottiaux 表示，Codex 团队可能已经修复了长期困扰用户的“model at capacity”（模型容量已满）报错。",
-          "tags": [
-            "OpenAI",
             "Coding",
+            "Product",
             "Research"
           ],
-          "url": "https://x.com/thsottiaux/status/2122206990101536852",
-          "publishedAt": "2026-11-16T05:55:49.000Z",
+          "url": "https://x.com/petergyang/status/2122347721298510021",
+          "publishedAt": "2026-11-16T15:15:02.000Z",
           "metrics": {
-            "likes": 2500,
-            "retweets": 84,
-            "replies": 795,
-            "score": 4426
+            "likes": 138,
+            "retweets": 12,
+            "replies": 43,
+            "score": 272
           }
         },
         {
-          "id": "digest-x-4-TmFuIFl1IM",
+          "id": "digest-x-4-R2FycnkgVG",
           "kind": "x",
           "source": "X",
-          "sourceName": "Nan Yu",
-          "handle": "thenanyu",
-          "title": "Nan Yu · OpenAI Codex 产品（前 Linear 产品负责人）",
-          "summaryEn": "Nan Yu (product on Codex at OpenAI, formerly head of product at Linear) asked for the best home automation hub if he just wants Codex to control everything — ideally something plug-and-play that Codex sees as just another computer.",
-          "insightZh": "OpenAI Codex 产品、前 Linear 产品负责人 Nan Yu 在征集最适合用 Codex 控制全屋的智能家居中枢：希望是即插即用、让 Codex 把它当成“另一台电脑”来操作的设备——一个把编码 agent 延伸到物理世界控制的使用场景。",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC President Garry Tan previewed an upcoming GBrain project: using Vorflux as his software factory to write a GBrain backend engine in Rust, replacing postgres+pgvector or pglite as the store for vector search, graph search, embeddings, RAG and HNSW. He also noted GBrain's hosted option supports rolling individual employee brains up into team brains and a company brain out of the box. Separately, he highlighted Degla, which brings true drone autonomy to almost any flight platform and already works with government…",
+          "insightZh": "YC 总裁 Garry Tan 透露 GBrain 未来几周的新项目：用 Vorflux 作为软件工厂，以 Rust 编写 GBrain 后端引擎，替代 postgres+pgvector 或 pglite，承担向量搜索、图搜索、embedding、RAG 和 HNSW 的存储。他还指出 GBrain 托管版原生支持「个人大脑 → 团队大脑 → 公司大脑」逐级汇总的记忆结构。此外他推荐了 Degla——可在几乎任何飞行平台上实现真正无人机自主飞行，已与政府关键机构合作搜救任务。",
+          "tags": [
+            "Product",
+            "Startup",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/garrytan/status/2122576951080792543",
+          "publishedAt": "2026-11-17T02:30:24.000Z",
+          "metrics": {
+            "likes": 317,
+            "retweets": 18,
+            "replies": 51,
+            "score": 491
+          }
+        },
+        {
+          "id": "digest-x-5-UGV0ZXIgU3",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Peter Steinberger",
+          "handle": "steipete",
+          "title": "Peter Steinberger · OpenClaw 创始人、OpenAI",
+          "summaryEn": "OpenClaw creator Peter Steinberger poked at Apple: people asked for fewer permission alerts so agents can work on macOS without constant babysitting, and Apple responded with new, scarier alerts — a sign of ongoing friction between desktop OS permission models and autonomous agents.",
+          "insightZh": "OpenClaw 创始人 Peter Steinberger 吐槽苹果：大家希望减少 macOS 权限弹窗，让 agent 不用一直被人看着就能干活；苹果的回应却是又加了一批更吓人的新弹窗。这反映了桌面 OS 权限模型与 agent 自主运行之间的持续摩擦。",
           "tags": [
             "OpenAI",
             "Agent",
-            "Coding",
-            "Product"
+            "Product",
+            "Research"
           ],
-          "url": "https://x.com/thenanyu/status/2122096965865664924",
-          "publishedAt": "2026-11-15T22:38:37.000Z",
+          "url": "https://x.com/steipete/status/2122463466304971068",
+          "publishedAt": "2026-11-16T22:54:58.000Z",
           "metrics": {
-            "likes": 18,
-            "retweets": 0,
-            "replies": 10,
-            "score": 38
+            "likes": 1089,
+            "retweets": 42,
+            "replies": 143,
+            "score": 1543
           }
         },
         {
-          "id": "digest-x-5-TmlrdW5qIE",
+          "id": "digest-x-6-RGFuIFNoaX",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Dan Shipper",
+          "title": "Dan Shipper · Every CEO",
+          "summaryEn": "Every CEO Dan Shipper mused that the best way to rank a feed in the AI age might be proof of work: let agents report how many tokens they have spent on a piece of content, and use that to rank it in a feed read by both humans and agents.",
+          "insightZh": "Every CEO Dan Shipper 抛出一个设想：AI 时代信息流的最佳排序方式或许是「工作量证明」——允许 agent 上报它们基于某条内容消耗了多少 token，并以此在一个人和 agent 共同阅读的 feed 中排序内容。",
+          "tags": [
+            "Agent"
+          ],
+          "url": "https://x.com/danshipper/status/2122541401804054826",
+          "publishedAt": null,
+          "handle": ""
+        },
+        {
+          "id": "digest-x-7-TmlrdW5qIE",
           "kind": "x",
           "source": "X",
           "sourceName": "Nikunj Kothari",
           "handle": "nikunj",
           "title": "Nikunj Kothari · FPV Ventures 合伙人",
-          "summaryEn": "FPV Ventures partner Nikunj Kothari announced the next guest in his weekly series: @kanavg1, cofounder of Core Automation, on Friday Nov 20 at noon in SF, discussing all things RL (methods, synthetic data, loops, automation). Format: 60-minute IRL-only, off-the-record sessions under Chatham House rules — 45 minutes of questions for the guest, 15 minutes of the guest asking about venture — open to 15 listeners.",
-          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 的每周线下系列活动下一期嘉宾是 Core Automation 联合创始人 @kanavg1，时间 11 月 20 日（周五）中午，地点旧金山，主题是强化学习（方法、合成数据、训练循环、自动化等）。形式为 60 分钟、仅限线下、Chatham House 规则不对外记录，前 45 分钟由 Nikunj 提问，后 15 分钟嘉宾反问风投话题，限 15 位听众。",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari summarized 2026's infra wars: vibe coding in Q1, harnesses in Q2, sandboxes in Q3, agentic CI in Q4 — with more providers than he can track — and asked what comes next. In another post he said the internet will burn down like a phoenix and emerge stronger, sending hugops to every infra company.",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 用一句话概括 2026 年 AI 基础设施之争：Q1 是 vibe coding，Q2 是 harness，Q3 是 sandbox，Q4 是 agentic CI，供应商多到跟不过来，并问下一波是什么。他另一条则感慨整个互联网将「如凤凰般烧毁再重生」，向所有基础设施公司致意。",
           "tags": [
-            "Startup"
+            "Agent",
+            "Coding"
           ],
-          "url": "https://x.com/nikunj/status/2122042319419609105",
-          "publishedAt": "2026-11-15T19:01:29.000Z",
+          "url": "https://x.com/nikunj/status/2122543500814336281",
+          "publishedAt": "2026-11-17T04:13:00.000Z",
           "metrics": {
-            "likes": 58,
-            "retweets": 1,
-            "replies": 4,
-            "score": 70
+            "likes": 109,
+            "retweets": 0,
+            "replies": 59,
+            "score": 227
           }
+        },
+        {
+          "id": "digest-x-8-QWRpdHlhIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Aditya Agarwal",
+          "handle": "adityaag",
+          "title": "Aditya Agarwal · South Park Commons 普通合伙人、前 Dropbox CTO",
+          "summaryEn": "SPC General Partner Aditya Agarwal announced leading BharatSemi's $24M seed round with Redstart Ventures and IndusBridge, with two theses: embedding AI as close to the silicon as possible will be critical for hardtech, and India can build semiconductors despite the skeptics. He also said their interpretability work has reached the point where it can be applied to leading frontier models.",
+          "insightZh": "South Park Commons 普通合伙人 Aditya Agarwal 宣布领投印度半导体公司 BharatSemi 的 2400 万美元种子轮（Redstart Ventures、IndusBridge 跟投），观点有二：把 AI 尽可能嵌入靠近芯片的位置对硬科技至关重要；印度能造半导体，正在证明质疑者是错的。他还表示其可解释性工作已经发展到可以应用于前沿模型的程度。",
+          "tags": [
+            "Product",
+            "Research"
+          ],
+          "url": "https://x.com/adityaag/status/2122386958101959118",
+          "publishedAt": "2026-11-16T16:33:49.000Z",
+          "metrics": {
+            "likes": 41,
+            "retweets": 2,
+            "replies": 2,
+            "score": 53
+          }
+        },
+        {
+          "id": "digest-x-9-R29vZ2xlIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Google Labs / Josh Woodward",
+          "title": "Google Labs / Josh Woodward · Google Labs 与 Gemini 负责人",
+          "summaryEn": "Google Labs welcomed the Howie team, who spent years on scheduling and calendar management, to build next-generation intuitive AI tools for small businesses. Josh Woodward, VP of Google Labs and the Gemini App, welcomed the team and showed a new NotebookLM capability that turns sources into interactive, shareable sites — e.g. one covering all the periodic table names.",
+          "insightZh": "Google Labs 宣布 Howie 团队加入——该团队多年专注日程与日历管理，将与 Google Labs 一起为中小企业打造新一代直观 AI 工具。Google Labs / Gemini App 副总裁 Josh Woodward 同时欢迎了新团队，并展示 NotebookLM 新能力：可将资料源转成可交互网站，例如一个包含全部元素周期表名称的站点，易做易分享。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/GoogleLabs/status/2122461899178820069",
+          "publishedAt": null,
+          "handle": ""
         }
       ]
     },
@@ -225,21 +309,21 @@
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
       "items": [
         {
-          "id": "digest-podcast-0-Tm8gUHJpb3",
+          "id": "digest-podcast-0-TGF0ZW50IF",
           "kind": "podcast",
           "source": "Podcast",
-          "sourceName": "No Priors",
-          "title": "Robinhood CEO Vlad Tenev：代币化、Agent 交易与 Harmonic",
-          "summaryEn": "Vlad Tenev frames Robinhood as \"the ownership company\" — using tokenization, publicly traded venture funds, prediction markets and agentic trading to put institutional-grade financial capabilities and early-stage ownership into ordinary people's hands — while arguing AI-driven math and science should not be centralized inside a few AI labs. Agentic trading has clear product-market fit: over 150,000 customers opened agentic trading accounts within months of the Robinhood MCP launch, with tool calls growing on a smooth exponential to roughly 30M per day. The newly announced Robinhood Agents puts the harness and UI inside the Robinhood account — \"like Claude Code or Codex, optimized for trading\" — with daily strategy loops, rebalancing, skills and an agent app store (e.g., satellite data to count cars in retailer parking lots). Safeguards include segregated sandboxed accounts and trade app…",
-          "insightZh": "Vlad Tenev 把 Robinhood 定义为“所有权公司”——用代币化、私募基金化、预测市场和 Agent 交易，把机构级金融能力和早期资产所有权下放给普通人；同时认为 AI 做数学/科研不应被少数 AI 实验室中心化垄断。 Agent 交易已明确跑出 PMF：Robinhood 年初上线的 Robinhood MCP（Agentic Trading）几个月内已有超过 15 万客户开户，工具调用量沿平滑指数曲线增长至每天约 3000 万次。近期在 Hood Summit 发布的 Robinhood Agents 把 harness 和 UI 都放进 Robinhood 账户，类似“为交易优化的 Claude Code / Codex”：可设定每日循环执行策略、调仓，支持 skills 和 agent 应用商店（如接入卫星数据数停车场车辆）。安全上采用独立隔离账户、默认需逐笔审批（可关闭）。北极星是把对冲基金/量化机构的能力装进普通人口袋；Vlad 认为交易所和做市商早已适应 HFT，基础设施暂无需大改，目前 Agent 交易占比仍低，会有预警时间。 代币化方面，Robinhood 今年在欧洲重新上线完全 DeFi 化的股票代币，并推出面向真实世界资产的 Robinhood Chain，开发者活跃度增长迅速，用户已经把股票代币与 NFT、meme 币组合成新产品；他认为股票代币会像稳定币之于美元一样，成为新兴市场普通人获取美股敞口的默认方式。在 AI 财富分配上，他指出头部 AI 公司都在私募市场、上市估值已达万亿级，散户难以分享收益，这也是公众对数据中心反感的根源；对策包括在纽交所上市、可交易的 Robinhood Ventures Fund I（含 OpenAI 等后期标的）、与 YC 合作的种子/A 轮 Fund II、私募股权代币化，并推动放宽合格投资者规则。预测市场被他视为“新闻的进化”，并将推出可直接交易公司 EPS/营收的 KPI 合约。他还介绍了作为唯一初始受托方承建的 Trump 账户（新生儿获 1000 美元注资投资标普 500）。 在 Ha…",
+          "sourceName": "Latent Space",
+          "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+          "summaryEn": "The entry bar for AI-native engineers is now near senior level; the core skills shift from writing code to context engineering, agent-ready codebases, verifiability and system-level judgment. In this special celebrating one million subscribers on the AI Engineer YouTube channel, Mihail Eric — instructor of Stanford's CS146S \"The Modern Software Developer\" and Head of AI at Monaco — walks through the course's second edition. Versus last year's broad survey of coding agents across the SDLC, this year focuses on solidifying principles: building a coding agent from scratch in week one, then context engineering at scale and MCP tool design, skills, agent customization (AGENTS.md, CLAUDE.md, hooks, sub-agents), agent-ready codebases, agentic code review, security, background agents (citing Stripe Minions, Ramp Inspect, Spotify), and team-level infra like LLM gateways and MCP portals, plus ope…",
+          "insightZh": "AI 原生工程师的「入门门槛」已接近资深级别，核心能力从写代码转向上下文工程、agent-ready 代码库、可验证性与系统级判断。 这期是 AI Engineer YouTube 频道百万订阅特辑，嘉宾 Mihail Eric 是斯坦福 CS146S「现代软件开发者」课程讲师、Monaco 的 AI 负责人。课程第二次开设，相比去年「各环节都能用 coding agent」的广度巡览，今年聚焦已沉淀下来的原则：第一周从零构建 coding agent（harness 内部原理），之后依次是规模化上下文工程与 MCP 工具设计、skills、agent 配置（AGENTS.md / CLAUDE.md / hooks / 子 agent）、agent-ready 代码库、agentic code review、安全、后台 agent（参考 Stripe Minions、Ramp Inspect、Spotify 等案例），以及团队级基础设施（LLM 网关、MCP 门户）与角色演进。课程还引入开源贡献作为作业。他对学生直言：每个公司都需要你，但门槛高了，应届生要接近资深水平。 实践层面，他观察到 Claude Code 的成功源于「更少工具做更多事」（重用 Bash 等瑞士军刀式工具），而其系统提示词已缩减——Git 用法等知识被内化进模型权重，引发「模型 vs harness」投入的权衡。他认为大多数从业者仍停留在原始 prompting，代码评审已成为新瓶颈，Monaco 把 PR 描述写成带文件级指针的规格说明。在自建与采购上，他的原则是「买来学习，自建保留」：代码评审最终选了 Devin，而后台 agent 与 Slack 机器人 Hal（兼任 SRE、客服与 QA）则自建。关于未来角色，他认为工程师会走向产品+工程的混合型「agent 管理者」，需要系统性思维与判断力。",
           "tags": [
             "Claude",
-            "OpenAI",
             "Agent",
-            "Coding"
+            "Coding",
+            "Product"
           ],
-          "url": "https://www.youtube.com/@NoPriorsPodcast",
-          "publishedAt": "2026-11-05T11:00:00.000Z",
+          "url": "https://www.youtube.com/@LatentSpacePod",
+          "publishedAt": "2026-11-08T21:23:29.000Z",
           "handle": ""
         }
       ]

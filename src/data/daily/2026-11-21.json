@@ -1,0 +1,157 @@
+{
+  "date": "2026-11-21",
+  "title": "AI 日报 · 2026-11-21",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | Anthropic 数学家称借助 Claude 证明黎曼猜想，HN 热度破 2000",
+          "body": "Anthropic 数学家 Levent Alpöge 在个人网站发布文档，称在 Claude 协助下完成了对黎曼猜想（他在 HN 上传的 PDF 标题为“广义黎曼猜想”）的证明。黎曼猜想于 1859 年提出，是七大千禧年难题之一，关乎素数分布规律。Alpöge 表示 Claude 对证明“不可或缺”，并称他在周日深夜已告知 Dario Amodei，但刻意等到公司周四 IPO 之后才公开。Anthropic 官方未置评，证明尚未经过独立验证；TechCrunch 同日报道另有人类数学家几乎同时宣称证出。该话题在 Hacker News 获得 2158 分，为当日全站最高。",
+          "insight": "无论最终能否通过同行验证，“前沿模型 + 顶尖研究者”的协作模式已开始触及人类最难的开放问题，AI for Science 正从辅助检索走向参与核心推理。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+        },
+        {
+          "title": "📜 监管政策 | 特朗普威胁对海外建 AI 数据中心的美国企业征“巨额税”",
+          "body": "美国总统特朗普周五在与中俄领导人峰会后的记者会上表示，将对在美国境外建设数据中心的公司征收“巨额税”，称“不会允许我们的公司在国外建数据中心”，并把芯片外流类比为美国落后的原因，警告“否则中国会把它们全拿走”。他承认这是首次公开提出该想法，“还没跟我的团队说过”。The Verge 指出，该计划与美国多个州和城市正在收紧数据中心审批的趋势相矛盾，且新一届民主党占多数的国会将在数月后就职，落地难度不小。",
+          "insight": "AI 算力的地理布局正在被政治化，跨国企业在规划海外 AI 基础设施与主权云时需把美国本土化政策风险纳入情景分析。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+        },
+        {
+          "title": "🚀 产品发布 | 苹果招聘曝光：正在打造能“像人一样操作 Mac”的主动式 AI 智能体",
+          "body": "据 Bloomberg 首发、TechCrunch 跟进报道，苹果在招聘网站发布“主动式智能体 AI 助手”高级工程经理职位，描述其目标是打造“像能干的人一样使用电脑的 AI 智能体”：可浏览网页、跨应用工作、运行命令行、编写并调试代码、调用服务，并在多步骤任务中为每一步选择合适工具，且强调“私密完成、带有苹果应有的打磨”。这意味着苹果将正面进入与 Meta Muse、Claude、OpenAI 等竞争的电脑使用（computer use）智能体赛道。",
+          "insight": "终端操作系统厂商亲自下场做电脑使用智能体，将改变第三方 Agent 的生存空间，企业终端管理与数据隔离策略需提前规划。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/"
+        },
+        {
+          "title": "🚀 产品发布 | Thinking Machines 开源 Inkling 2 Mini：循环 Transformer，笔记本可跑",
+          "body": "Mira Murati 创立的 Thinking Machines Lab 11 月 20 日发布开放权重模型 Inkling 2 Mini。该模型采用循环（looped）Transformer 架构，每个 token 会把中间层运行三遍，以更少 token 完成更多推理，尤其利于智能体编码等依赖推理质量的任务。官方称其在 100B 总参数以下的开放权重模型中领先，DeepSWE v1.1 得分 48.2%、Vals Index v2.2 得分 46.5%，并通过 NVFP4 低比特量化与剪枝修复使其可在笔记本电脑上运行，已上架 Hugging Face 与 Tinker。",
+          "insight": "“循环层换推理深度”为小模型提效提供了新路径，本地可部署的高质量编码模型将降低企业对云端闭源 API 的依赖。",
+          "source": "Thinking Machines Lab",
+          "url": "https://thinkingmachines.ai/news/inkling-2-mini/"
+        },
+        {
+          "title": "🌍 行业动向 | 美国 AI 音乐巨头 Suno 进军视频生成，底层模型来自中国 MiniMax",
+          "body": "据财联社报道，AI 音乐平台 Suno 当地时间 11 月 17 日推出视觉创作工具 Visuals，可依据歌曲、图片和提示词生成最长 15 秒、口型同步并呼应歌词结构的音乐视频，网页版已上线、移动端数周内上架。官方产品页披露，Visuals 所用模型 H3 Move 基于 MiniMax 开源视频模型 H3，并用 Suno 自有数据针对音乐场景优化。视频积分单独收费，14.99 美元可买 2500 积分，约生成 75 秒视频；同时内置艺人与版权作品过滤及水印。",
+          "insight": "中国开源多模态模型正成为海外头部应用的底座，“开源出海 + 场景微调”可能是国产模型商业化的新通道。",
+          "source": "财联社（新浪转载）",
+          "url": "https://k.sina.com.cn/article_5952915720_162d24908067056c5c.html?from=tech"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🛡️ 安全治理 | Signal 在 iOS 与 Android 屏蔽截图，阻止系统级 AI 智能体读取聊天内容",
+          "body": "Signal 宣布在 iOS 27 与 Android 上默认禁止应用内截图，以阻止 Siri、Gemini 等系统级 AI 助手读取屏幕上的消息内容。Signal 总裁 Meredith Whittaker 在博客中指出，操作系统内置的智能体分析屏幕信息，正在“削弱 Signal 独立保障隐私的能力”，并批评谷歌、苹果、微软没有提供让开发者在不牺牲核心体验的前提下限制 AI 数据访问的工具，这也是目前无法在 macOS 上实施同类保护的原因。用户可手动恢复截图功能。",
+          "insight": "系统级智能体与应用层隐私的冲突已浮出水面，企业在部署 Copilot 类终端智能体时需同步制定敏感应用的屏幕访问与数据边界策略。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+        },
+        {
+          "title": "🔐 安全研究 | Dragos 用 200 万条“金丝雀”提示测出 3 家 AI 服务商数据外泄",
+          "body": "工控安全公司 Dragos 首席研究官 HD Moore 团队在 2026 年 7 月至 11 月间，向主流 AI 服务提交约 200 万条嵌有唯一 URL 与金丝雀凭证的提示词，并追踪推理后这些秘密在何处出现。结果发现三类问题：至少 3 家 AI 服务商存在数据暴露迹象，测试提示被用于尝试访问其受控系统和 AWS 金丝雀账户；某推理市场上的多个转售商可借助标准日志功能查看并留存客户提示；部分服务未遵守“零数据保留”设置。",
+          "insight": "AI 推理供应链已成为企业数据泄露新入口，采购 LLM 服务时需把转售链路审计、ZDR 合规验证和凭证隔离写进合同与红队测试。",
+          "source": "Dragos",
+          "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens"
+        },
+        {
+          "title": "🏢 治理落地 | GitHub Copilot 智能体活动可直接流入 Microsoft Agent 365 统一审计",
+          "body": "GitHub 11 月 17 日宣布，企业可将 GitHub Copilot 智能体活动直接流式写入 Microsoft Agent 365，把来自各 Copilot 客户端的审计数据汇入微软的智能体控制平面，与其他 AI 工作负载并列审查。该功能面向启用 Enterprise Managed Users 的 GitHub Enterprise Cloud 客户，通过企业审计日志流配置即可启用。这是微软在 Ignite 期间推动“智能体统一治理”的一部分，使编码智能体与办公、业务智能体纳入同一套合规视图。",
+          "insight": "当编码智能体规模化进入研发体系，CIO 需要的是跨工具的统一智能体审计面，Agent 365 正在成为微软生态企业的默认治理底座。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365"
+        },
+        {
+          "title": "🏭 中国落地 | 钛媒体：从“聪明的废物”到“数字员工”，智能体落地卡在执行层工程化",
+          "body": "钛媒体 11 月 20 日刊文复盘今年 OpenClaw “养龙虾”热潮后的企业落地现实：大模型作为“大脑”已能做复杂决策，但缺乏可靠、安全、可管理的执行层，导致不少项目停在演示阶段。文章以某头部智驾车企为例，其基于阿里云百炼与 Agent Sandbox 构建企业级 Agent Infra，用兼容 E2B 的 SDK 调用 ACS、百炼与 Qwen 模型，在办公审批、会议纪要、编程辅助和基于 SWE-bench 的强化学习等多场景复用，并在此之上运行 OpenClaw 驱动的员工 AI 助手。",
+          "insight": "企业智能体的胜负手正从模型选型转向沙箱、权限与运行时等 Agent Infra，规划平台时应优先补齐“手脚”的安全与可观测性。",
+          "source": "钛媒体",
+          "url": "https://www.tmtpost.com/7920695.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🧪 工具发布 | GitHub Copilot Evals 公测：为技能、智能体与 MCP 工具建立可重复评测",
+          "body": "GitHub 推出 Copilot Evals 公开预览，让开发者为自己的 Copilot 配置建立评测。Eval 被定义为“对 AI 行为的可重复测试”：给智能体一个真实任务，描述好结果的标准，同时检查结果与其达成过程。由于 AI 输出每次可能不同，单次好结果无法证明某项定制有效；开发者在修改技能（skills）、自定义智能体或 MCP 工具后可重跑同一组评测，用数据判断改动是否真的带来提升，并据此决定下一步优化方向。",
+          "insight": "编码智能体进入“评测驱动配置”阶段，团队应像管理代码测试一样管理 prompt、技能与工具链的回归测试。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview"
+        },
+        {
+          "title": "🛠️ 工具更新 | GitHub Copilot 支持“浏览器使用”：CLI 与桌面 App 可直接操控 Chrome",
+          "body": "GitHub 宣布，配合 GitHub Copilot Chrome 扩展，浏览器使用（browser use）能力已在 GitHub Copilot CLI 和 GitHub Copilot app 中开启公开预览。编码智能体由此可以直接打开页面、交互并读取浏览器中的状态，用于前端调试、端到端验证和查阅在线文档等任务。Copilot CLI 同期版本还新增了管理员策略开关，可通过受管设置 features.browserUse 在企业范围内禁用内置浏览器使用功能，包括正在运行的会话。",
+          "insight": "编码智能体的行动边界从仓库延伸到浏览器，企业需同步配置浏览器访问策略，防止智能体在登录态下越权操作。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser"
+        },
+        {
+          "title": "🚀 产品发布 | Gemini API 推出 Tool Retrieval：智能体按需加载工具定义，挂载数百工具也省 token",
+          "body": "Google 11 月 19 日在 Gemini API 中预览发布 Tool Retrieval 能力。传统做法需要把所有工具的 schema 一次性塞进上下文，工具一多就推高输入 token 与延迟，还会干扰模型选择。Tool Retrieval 让智能体在运行时按需检索并加载相关工具的 schema，从而可接入数百个工具，同时显著减少输入 token。该能力面向构建多工具、多 MCP 服务器的复杂智能体开发者，是 Google 在 Gemini 4 系列发布后补强开发者平台的又一动作。",
+          "insight": "“工具检索”将成为大规模 MCP 生态的标配架构，企业构建内部智能体平台时应优先设计工具目录与按需加载机制。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+        },
+        {
+          "title": "🇨🇳 国产模型 | 范式智能首发自研基模 Phai-A1：主打编码，单张 3090 可跑、昇腾全链路训练",
+          "body": "据量子位报道，范式智能（原第四范式）首次推出自研模型并双线发布：通用语言模型 Phai-A1 与影视向视频生成模型 Phai-M1，两者均在华为昇腾算力上完成全链路训练，权重将近期在 Hugging Face 和 ModelScope 开放。Phai-A1 主打代码开发与智能助手场景，原生支持百万级上下文，官方称在单张 RTX 3090 上使用同一编码智能体完成相同任务时，响应速度比同级模型快约 8-10 倍，并在 SWE-Bench-Verified、Pro、Multilingual 上领先同级。",
+          "insight": "本地化、低成本可部署的国产编码模型增多，为有数据不出域要求的企业提供了私有化 AI 编程的现实选项。",
+          "source": "量子位（凤凰网转载）",
+          "url": "https://feng.ifeng.com/c/8yBOHabQejZ"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📄 论文 | 《语言模型可以重写自己的权重》：27B 开源模型无梯度自我改写，准确率提升 6.6 分",
+          "body": "arXiv 论文 2611.21885（v2 于 11 月 18 日更新）提出“自我重写”：在不做梯度训练的前提下，让模型通过自身推理直接修改自己的权重。作者让一个开源 27B 模型拿到自身权重、已评分答案和自我运行能力，由其诊断失败原因并改写对应权重。结果显示，模型自主编辑后在未见过的题目上准确率提升 6.6 个百分点；它会先在练习题上测试编辑、只提交有效改动，并在连续八轮会话中持续改进，研究者称模型成为了“自己的优化器”。",
+          "insight": "“模型即优化器”若可复现，将改写模型持续学习与运维范式，也对权重级安全审计与变更治理提出全新要求。",
+          "source": "arXiv",
+          "url": "https://arxiv.org/abs/2611.21885"
+        },
+        {
+          "title": "🔬 研究 | Architect Labs 发布 Frostbite：首个由 AI 端到端发现、设计并验证的 CPU 架构",
+          "body": "Architect Labs 11 月 18 日发布研究博文，介绍 Frostbite——一款围绕“交互网（interaction nets）”计算模型构建的通用 CPU，从架构发现、设计到验证全部由其 AI 系统端到端完成。官方称其每瓦性能达到现代超标量（双发射、顺序执行）CPU 核心的 4.59 倍。此前该团队的 Redwood 项目已证明 AI 可在给定架构下快速实现并部署推理加速器，此次则尝试让 AI 自主探索软硬件协同设计空间。该文在 Hacker News 获 583 分。",
+          "insight": "AI 正从芯片设计的辅助工具走向架构创新主体，半导体与算力供应链的研发周期和竞争格局可能被重新定义。",
+          "source": "Architect Labs",
+          "url": "https://architectlabs.com/blog/frostbite"
+        },
+        {
+          "title": "📊 行业报告 | InfoQ 2026 AI/ML 与数据工程趋势报告：编码智能体之后，焦点转向执行层",
+          "body": "InfoQ 发布 2026 年 AI、ML 与数据工程年度趋势报告，延续《跨越鸿沟》框架，用采用曲线标注 RAG、自主 LLM 智能体等技术从创新者到早期大众的阶段变化，并重点关注尚未跨越鸿沟的方向。报告嘉宾指出，AI 正从界面层转向更接近执行层的位置，软件开发最为明显：从代码补全、智能助手到能浏览代码库、改多文件、运行命令并自我迭代的编码智能体，“AI 能否写代码”已不再是问题，真正的问题转向可靠性与工程化。",
+          "insight": "技术决策者可借助采用曲线判断智能体相关技术的成熟度，将资源优先投向已跨越鸿沟、可规模化的能力。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/article/7Pecd1CshYIMvCTeBhrm"
+        },
+        {
+          "title": "🌍 研究观察 | 谷歌首页改版加入 AI 对话侧栏：搜索正在从“一问一答”变成持续会话",
+          "body": "谷歌搜索副总裁 Robby Stein 在 X 上展示，谷歌首页新增可折叠侧栏，用户可查看并继续此前的 AI Mode 对话、新建线程、搜索历史线程或连接 Gemini Notebook，新版首页正在桌面端全球推送。Stein 表示，越来越多用户带着“不是一次就结束”的问题来搜索，测试中侧栏显著帮助用户持续探索网页。这是继去年加入 AI Mode 按钮、今年 5 月扩展搜索框与 AI 自动补全之后，谷歌首页的又一次重大调整。",
+          "insight": "搜索入口的会话化将进一步改变网站获客与品牌曝光逻辑，企业的内容策略需要从 SEO 向面向 AI 答案的 GEO 迁移。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本期最大看点是 AI 参与基础科学与硬件创新的速度：Anthropic 数学家借助 Claude 宣称证明黎曼猜想，Architect Labs 让 AI 端到端设计出每瓦性能 4.59 倍的新 CPU，arXiv 论文更展示了模型无梯度改写自身权重。即使结论仍待验证，“AI 作为研究主体”已从口号变成频繁出现的事件。",
+    "智能体正在从应用层下沉到操作系统层：苹果招聘曝光电脑使用智能体，GitHub Copilot 打通浏览器与 Agent 365 审计，Gemini API 用工具检索支撑数百工具调用。与此同时，Signal 屏蔽系统级 AI 截图、Dragos 测出 AI 服务商数据外泄，提醒企业在扩大智能体权限的同时必须同步建设数据边界与供应链审计。",
+    "算力与模型格局也在重组：特朗普威胁对海外数据中心征税，让 AI 基础设施布局更具地缘色彩；Thinking Machines 与范式先后推出可在单机运行的编码模型，MiniMax 开源视频模型被 Suno 采用。对企业而言，本地化部署、开源底座与多云合规将成为下一阶段 AI 架构规划的关键变量。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-21 执行，Tavily 替代 Brave，因 Brave 402 额度耗尽）：1) Anthropic × Accenture（Faculty）嵌入式评估合作——发布于 2026-09-18，超 7 天时效，不入选；2) OpenAI 为合资企业 The Deployment Company 募资 40 亿美元（Yahoo/Bloomberg 转载）——原文 datePublished 为 2026-05-04，非本周新事件，不入选；3) 搜索 Accenture 近期 AI 公告（HUMAIN、Profitmind、Gemini Enterprise 等）均非过去 7 天新事件；4) 本周大厂动作（Anthropic IPO、Microsoft Ignite/MAI 模型、Gemini 4 Neon、AMD 收购 World Labs 等）已在 11-15 至 11-20 日报覆盖，按跨日去重规则跳过。结论：今日无新的重大收并购 / 战略合作公告；热点头部改由黎曼猜想、特朗普数据中心税、苹果智能体等大厂动向占位。"
+  }
+}

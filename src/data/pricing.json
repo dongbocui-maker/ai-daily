@@ -12,8 +12,8 @@
         6.25,
         0.5
       ],
-      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 4.8: $5 in / $25 out; cache write 1.25x, read 0.1x; re-verified 2026-09-12, prior drift alert was parser false positive)",
-      "verified": "2026-09-12",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 4.8 row: $5 in / $25 out / 5m cache write $6.25 / 1h write $10 / cache hits $0.50 per MTok; re-fetched 2026-11-21, unchanged; cache-write slot = 5-minute write price)",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "aigw-claude-48-main/claude-opus-4-8": {
@@ -34,8 +34,8 @@
         6.25,
         0.5
       ],
-      "source": "https://www.anthropic.com/pricing (Opus 5: $5 in / $25 out, same as Opus 4.8 tier; cache write=1.25x in, read=0.1x in; cross-checked eesel/layer3labs/aipricing 2026-08-07)",
-      "verified": "2026-09-12",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 5 row: $5 in / $25 out / 5m cache write $6.25 / 1h write $10 / cache hits $0.50 per MTok; re-fetched 2026-11-21, unchanged); NOTE: aigw settlement may differ from list price (EA discount possible)",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "aigw-claude-48-main/claude-opus-5-5": {
@@ -45,8 +45,8 @@
         5.0,
         0.2
       ],
-      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 5.5 official table, re-fetched 2026-09-30: $4 in / $20 out / 5m cache write $5 / 1h cache write $8 / cache hits&refreshes $0.20 per MTok; cache-write slot here = 5-minute write price; fast-mode $8/$40 and batch $2/$10 not applied); NOTE: aigw settlement may differ from list price (EA discount possible)",
-      "verified": "2026-09-30",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 5.5 row: $4 in / $20 out / 5m cache write $5 / 1h write $8 / cache hits $0.20 per MTok; re-fetched 2026-11-21, unchanged; cache-write slot = 5-minute write price; fast-mode and batch prices not applied); NOTE: aigw settlement may differ from list price (EA discount possible)",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "aigw-claude-48-main/claude-fable-5": {
@@ -56,8 +56,19 @@
         12.5,
         1.0
       ],
-      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Fable 5: $10 in / $50 out / cache write $12.50 / read $1; official page now lists Fable, matches prior internal value); NOTE: aigw settlement may differ from list price (EA discount possible)",
-      "verified": "2026-09-12",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Fable 5 row: $10 in / $50 out / 5m cache write $12.50 / 1h write $20 / cache hits $1 per MTok; re-fetched 2026-11-21, unchanged); NOTE: aigw settlement may differ from list price (EA discount possible); no longer in any agent chain since 2026-11-11 (kept for history + rollback)",
+      "verified": "2026-11-21",
+      "confidence": "official"
+    },
+    "aigw-claude-48-main/claude-fable-5-2": {
+      "price": [
+        8.0,
+        40.0,
+        10.0,
+        0.2
+      ],
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Fable 5.2 row: $8 in / $40 out / 5m cache write $10 / 1h write $16 / cache hits $0.20 per MTok; fetched 2026-11-21; cross-checked https://www.anthropic.com/claude/fable \"$8 per million input tokens and $40 per million output tokens ... Cache reads cost $0.20\"; cache-write slot = 5-minute write price); NOTE: aigw settlement may differ from list price (EA discount possible)",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "azure-claude/claude-opus-4-7": {
@@ -67,8 +78,8 @@
         6.25,
         0.5
       ],
-      "source": "https://www.anthropic.com/pricing (Opus tier)",
-      "verified": "2026-09-12",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing (Opus 4.7 row: $5 in / $25 out / 5m cache write $6.25 / 1h write $10 / cache hits $0.50 per MTok; re-fetched 2026-11-21, unchanged)",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "azure-openai-responses/gpt-5.5": {
@@ -126,8 +137,8 @@
         2.5,
         0.25
       ],
-      "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.7-max List price $2.5 in / $7.5 out; cache read est 10% of in)",
-      "verified": "2026-09-12",
+      "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.7-max International list price $2.5 in / $7.5 out, re-fetched 2026-11-21, unchanged). Cache slots are NOT on the pricing table: cacheRead 0.25 = 10% explicit-cache hit rate from https://www.alibabacloud.com/help/en/model-studio/context-cache (same doc bills implicit-cache hits at 20% = $0.50); cacheWrite kept at input price",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "azure-openai-responses/gpt-6-astra-2026-09-03": {
@@ -137,8 +148,8 @@
         12.5,
         1.0
       ],
-      "source": "OpenAI GPT-6 Astra official API (2026-09-03 launch): $10 in / $50 out; cached input $1; cache write $12.50 (cloudzero/openrouter cross-verified 2026-09-06)",
-      "verified": "2026-09-06",
+      "source": "https://platform.openai.com/docs/pricing (Standard tier, gpt-6-astra row: $10 in / $50 out / cached input $1 / 30m cache write $12.50 / 12h write $25 per 1M; fetched 2026-11-21, unchanged; cross-checked openrouter.ai/api/v1/models openai/gpt-6-astra same day). Billed through Azure OpenAI, list price assumed equal to OpenAI direct",
+      "verified": "2026-11-21",
       "confidence": "official"
     },
     "qwen/qwen3.8-max": {
@@ -148,8 +159,8 @@
         2.0,
         0.25
       ],
-      "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.8-max International $2 in / $6 out = official; cacheRead not published for this model — estimated at 12.5% of input following qwen-series cache-hit ratio, pending console verification)",
-      "verified": "2026-10-01",
+      "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.8-max International list price $2 in / $6 out = official, re-fetched 2026-11-21, unchanged). cacheRead is NOT published: https://www.alibabacloud.com/help/en/model-studio/context-cache says for qwen3.8-max the cached_token price \"is not 20% of the input_token unit price. For specific pricing, see the Model Studio console\" (login required). 0.25 = 12.5% of input stays an estimate; only third-party corroboration is openrouter.ai listing qwen3.8-max-0902 cache read at $0.25. cacheWrite kept at input price. Entry stays estimated until the console figure is read",
+      "verified": "2026-11-21",
       "confidence": "estimated"
     }
   },

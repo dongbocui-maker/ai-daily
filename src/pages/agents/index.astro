@@ -694,7 +694,7 @@ body.hud-scrub{cursor:grabbing}body.hud-scrub .hudnav,body.hud-scrub .hudnav *,b
 // CHAINS: 优先用 build 时从 openclaw.json 生成的 AGENT_CHAINS（single source of truth）；
 // 若 JSON 缺失/损坏则回退到硬编码 literal（仅兜底，可能过时）。
 const CHAINS = AGENT_CHAINS || {
-  main:['fable-5','opus-5.5','gpt-6-astra','qwen3.8-max'],
+  main:['fable-5.2','opus-5.5','gpt-6-astra','qwen3.8-max'],
   aima:['opus-5.5','gpt-6-astra','qwen3.8-max'],
   mk2:['opus-5.5','gpt-6-astra','qwen3.8-max'],
   mk46:['opus-5.5','gpt-6-astra','qwen3.8-max'],
@@ -707,6 +707,7 @@ const CHAIN_MODEL_KEYS = AGENT_CHAIN_KEYS || {
   'opus-5':'aigw-claude-48-main/claude-opus-5',
   'opus-5.5':'aigw-claude-48-main/claude-opus-5-5',
   'fable-5':'aigw-claude-48-main/claude-fable-5',
+  'fable-5.2':'aigw-claude-48-main/claude-fable-5-2',
   'gpt-5.5':'azure-openai-responses/gpt-5.5',
   'gpt-5.6-sol':'azure-openai-responses/gpt-5.6-sol-2026-07-09',
   'gpt-6-astra':'azure-openai-responses/gpt-6-astra-2026-09-03',
@@ -1025,8 +1026,8 @@ function render(DATA){
             <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">QWEN38</div><div class="em-ep">DASH</div></div>
           </div>
           <div class="ep-node healthy" id="ep-fable">
-            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">FABLE5</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">ONLINE</span></div></div></div>
-            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">FABLE5</div><div class="em-ep">AIGW</div></div>
+            <div class="ep-full"><div class="epn-top"><span class="epn-dot healthy"></span><span class="epn-llm">FABLE5.2</span><span class="epn-tag">CLAUDE</span></div><div class="epn-eps"><div class="epn-ep"><span class="eed on"></span><span class="eec">AIGW</span><span class="ees">ONLINE</span></div></div></div>
+            <div class="ep-mini"><div class="em-dot healthy"></div><div class="em-llm">FABLE5.2</div><div class="em-ep">AIGW</div></div>
           </div>
         </div>
       </div>
@@ -1111,6 +1112,7 @@ const ARCH_MODEL_EP = {
   'aigw-claude-48-main/claude-opus-5':'ep-opus',
   'aigw-claude-48-main/claude-opus-5-5':'ep-opus',
   'aigw-claude-48-main/claude-fable-5':'ep-fable',
+  'aigw-claude-48-main/claude-fable-5-2':'ep-fable',
   'azure-claude-48/claude-opus-4-8':'ep-opus',
   'azure-claude/claude-opus-4-7':'ep-opus',
   'anthropic/claude-sonnet-4-6':'ep-opus',

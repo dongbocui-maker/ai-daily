@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-22",
+  "title": "AI 日报 · 2026-11-22",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 收并购 | Palo Alto Networks 以 45 亿美元全股收购前 OpenAI 研究员创办的 Applied Compute",
+          "body": "据《华尔街日报》独家报道，网络安全巨头 Palo Alto Networks 同意以约 45 亿美元全股票方式收购 Applied Compute。该公司由前 OpenAI 研究员 Yash Patil、Rhythm Garg、Linden Li 于 2025 年创立，专注开源权重模型的后训练与推理，客户包括 Cognition、DoorDash 和 Harvey，年化收入约 1 亿美元，估值约 45 倍销售额。CEO Nikesh Arora 在财报会上称静态规则无法预判智能体的所有行为，必须“用 AI 对抗 AI”，计划围绕 35 个以上场景训练专用监督模型，并建设 100MW 推理容量，交易预计在 2027 财年第三季度完成。",
+          "insight": "安全厂商开始直接拥有模型训练与推理能力，“AI 安全 = 监督智能体的专用模型”将重塑企业安全采购格局。",
+          "source": "WSJ",
+          "url": "https://www.wsj.com/tech/ai/palo-alto-networks-to-buy-ai-startup-applied-compute-for-4-5-billion-39193611"
+        },
+        {
+          "title": "🌍 行业动向 | Meta 重新评估 2030 净零目标：AI 数据中心建设推动年排放激增 45%",
+          "body": "Meta 在 11 月 19 日发布的 2026 年度可持续发展报告中表示，正在“重新评估”2030 年实现全价值链净零排放的时间表及近期强度目标。报告披露其去年净温室气体排放增长 45%，达到 1180 万吨二氧化碳当量，主要来自服务器、钢材、混凝土等“资本品”带来的供应链排放。数据中心负责人 Rachel Peterson 写道，AI 基础设施需求增长“几乎超出所有人的预期”。这是继微软、谷歌之后，又一家超大规模云厂商在气候承诺上因 AI 扩张而后退。",
+          "insight": "AI 资本开支的环境成本开始反噬 ESG 承诺，企业客户在采购 AI 算力时将面临更严格的范围三排放审视。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-19/meta-reconsiders-2030-net-zero-goal-amid-ai-build-out"
+        },
+        {
+          "title": "🔬 技术突破 | OpenAI 发布对抗蒸馏防御进展：GPT-6.2 Astra 推理链被窃取成功率从 54% 降至 0.2%",
+          "body": "OpenAI 于 11 月 20 日发布《Combatting adversarial distillation》，将未经授权的模型蒸馏定性为前沿安全问题：攻击者可复制能力却剥离安全护栏。官方红队测试显示，针对“受保护推理”的自适应提取攻击在 GPT-6.2 Astra 上成功率仅 0.2%，而原版 GPT-6 Astra 为 54.0%；针对当前请求的攻击从 22.9% 降至 0.9%。OpenAI 采用对抗测试、模型训练、分类器、API 级防护与协同调查相结合的方式，并将防护标准向生物与网络安全领域看齐。",
+          "insight": "推理链加密与反蒸馏正成为闭源模型的核心护城河，也将加剧中美模型生态之间的技术与政策摩擦。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/combatting-adversarial-distillation"
+        },
+        {
+          "title": "📜 监管政策 | 联合国日内瓦会议：各国同意启动自主武器“杀手机器人”规则选项讨论",
+          "body": "据 The Verge 报道，在日内瓦举行的联合国《特定常规武器公约》会议上，各国于 11 月 21 日同意就致命性自主武器系统的监管规则“开始讨论”具体选项。这是该议题停滞多年后的有限进展：一方面军控倡导者希望推动具有约束力的国际条约，另一方面主要军事大国仍倾向于非约束性的指导原则。随着 AI 在无人机、目标识别等军事场景中加速部署，如何界定“有意义的人类控制”成为谈判焦点。",
+          "insight": "军事 AI 监管仍停留在“讨论框架”阶段，但其关于人类控制与问责的定义将外溢影响民用高风险 AI 治理。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots"
+        },
+        {
+          "title": "🚀 产品发布 | DeepSeek V1 作者 Tony Zhang 创业项目曝光：开源本地个人智能体 Linger",
+          "body": "前 DeepSeek V1 作者、DeepSeek-VL 项目负责人 Tony Zhang 公布创业项目 Linger，方向为个人智能体，且整套系统开源。与同行优先做 App 不同，Linger 直接运行在个人电脑上，可操作已有的网页、邮箱和日历，无需另行配置登录凭据，卡住时用户可直接接管。其核心“Another Me”系统每晚在本地将收件箱、日历、聊天与会议整理成个人知识库，供各智能体调用；支持接入第三方模型并针对本地 LLM 优化，宣称 12GB 显存的 RTX 3060 即可以 45.5 tokens/秒运行 Qwen3.8-Flash-Next。",
+          "insight": "“智能应分布式、数据归个人”的端侧智能体路线，正成为对抗云端 Token 租赁模式的一股新力量。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511570.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🤝 战略合作 | 微软联合埃森哲、毕马威、万事达等 40 余家机构发起 AI 透明度倡议",
+          "body": "微软 11 月 17 日宣布发起 AI Transparency Initiative，与埃森哲、Adobe、毕马威、万事达、沃尔沃汽车等 40 多家机构共同制定跨模型、跨厂商的 AI 透明度、安全与治理开放标准。倡议包括三部分：扩大参与美国 NIST 智能体标准工作；联合行业伙伴推动 AI 系统可问责、可独立验证；并在自家产品中提升模型与智能体访问企业数据的可见性，围绕“看见、验证、控制”智能体行为展开。埃森哲全球网络安全负责人 Harpreet Sidhu 表示，开放、行业驱动的透明度方案有助于企业在 AI 重塑中建立信任底座。",
+          "insight": "智能体治理正从厂商私有功能走向跨厂商开放标准，咨询公司将成为把标准落到客户控制体系中的关键角色。",
+          "source": "Microsoft Source",
+          "url": "https://news.microsoft.com/source/2026/11/17/microsoft-and-organizations-across-industries-launch-ai-transparency-initiative-to-strengthen-enterprise-trust-in-ai-models-and-agents"
+        },
+        {
+          "title": "💼 落地案例 | 工业智能体开始算经济账：黑湖科技单次推理 0.3 元，中控技术项目年效益 3500 万元",
+          "body": "在 11 月 19 日武汉举行的 2026 中国 5G+工业互联网大会上，黑湖科技联合创始人肖哲披露，其工业智能体单次推理成本约 0.3–1 元，已有约 2000 家客户使用，原本数小时的流程可缩短至 9–12 分钟，图纸拆解从半天缩至约 1 分钟。中控技术在湖北兴发集团五套装置中采用“80 名员工 + 1 个多智能体数字员工”协同模式，年效益约 3500 万至 4000 万元。新华三刘赞则提醒，全厂部署数十个智能体后 Token 成本、数据质量与能力复用将成为规模化瓶颈。",
+          "insight": "中国制造业的智能体落地已进入按单次成本和年效益核算 ROI 的阶段，规模化的关键在于跨工厂复用。",
+          "source": "凤凰网科技（科创板日报）",
+          "url": "https://tech.ifeng.com/c/8yB2fDwP3Rw"
+        },
+        {
+          "title": "🏦 金融实践 | 投行研究平台 Hebbia 引入 GPT-6 Astra：从 2000 份文件到并购演示稿",
+          "body": "OpenAI 11 月 20 日发布客户案例，金融研究平台 Hebbia 在其 Matrix 产品中测试 GPT-6 Astra，用于改进投行工作中的两个环节：为问题定位所需的原始来源，以及按银行家需求自动生成演示文稿。典型场景是银行家需为客户评估一项工业软件公司收购，需审阅约 2000 份财报、客户合同和管理层材料，回答收入持续性与同业对比等问题，并将答案链接回原始文档。Hebbia 产品团队称 GPT-6 Astra 在输出质量和准确性上的提升“令人惊讶”。",
+          "insight": "金融等强合规行业的 AI 价值点正从“问答”转向“可溯源的交付物生成”，引用链路成为验收标准。",
+          "source": "OpenAI 官方客户案例",
+          "url": "https://openai.com/business/customer-stories/hebbia"
+        },
+        {
+          "title": "⚠️ 风险治理 | 摩根大通、花旗等多家银行警告：AI 智能体擅自转账购物，损失可能由用户自担",
+          "body": "据 IT之家援引 Business Insider 报道，多家美国大型银行近期向客户发出提醒：若授权 AI 智能体访问金融账户，其操作可能被视为用户本人行为。Ally Bank 称“AI 采取的任何行动都由你负责”，摩根大通提醒已授权交易可能无法撤销，花旗在 App 中加入风险横幅，富国银行强调不应轻易向第三方交出账户权限。此前 Target 已将智能体代购认定为用户授权交易，亚马逊则在 9 月禁止 Meta Muse 智能体代为购物。",
+          "insight": "智能体商业的责任边界正由银行和零售商单方面划定，企业推出代理式服务时必须同步设计授权与追责机制。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/1/029/646.htm"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🛠️ 开发平台 | 前 GitHub CEO 的 Entire 推出面向编码智能体的 Git 托管平台，以评分取代 PR 时间线",
+          "body": "InfoQ 报道，由前 GitHub CEO Thomas Dohmke 执掌的 Entire 推出专为人类与 AI 编码智能体协作设计的 Git 托管平台。其核心是 trails（轨迹）机制：每次推送后由运行在云沙箱中的评审智能体对代码质量、安全性、slop（低质量代码）和是否需要人工评审打分，并置顶展示最近 5 轮结果，只有置信度高、风险低且问题清零才建议合并。平台采用全分布式架构，宣称推送速度最高可达 GitHub 的 89 倍，并支持仓库级 Gates 门禁配置。",
+          "insight": "当代码主要由智能体产出时，PR 评审的核心从“读 diff”转向“读评分”，代码托管基础设施迎来重构窗口。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/article/6swrOq5xUXwVqrREwJwc"
+        },
+        {
+          "title": "🔌 工具更新 | GitHub Copilot 新增 Supabase、Box、Calendly 等 8 个官方验证 MCP 连接器",
+          "body": "GitHub 11 月 18 日宣布，用户可通过 GitHub 验证的 MCP 服务器（connectors）将 Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase 等 8 个新服务接入 Copilot，功能处于公开预览。加上此前已支持的 Slack、Figma、Sentry 等，Copilot 可连接的外部服务已超过 33 个，用户可在 Copilot App 的 Customize 页面统一管理。这意味着 Copilot 智能体可以直接查询数据库、管理文档、追踪任务和构建流水线，覆盖从开发到协作的更多上下文。",
+          "insight": "“官方验证的 MCP 连接器”正成为编码智能体平台的生态护城河，企业需尽早建立连接器准入与权限审计策略。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot"
+        },
+        {
+          "title": "🚚 平台迁移 | GitHub 企业级实时迁移 GA：Azure DevOps 仓库可不停工迁至 GitHub Enterprise Cloud",
+          "body": "GitHub 11 月 19 日宣布，Enterprise Live Migrations（ELM）从 Azure DevOps Services 迁移至带数据驻留的 GitHub Enterprise Cloud 正式 GA。企业可通过 Azure DevOps 门户的引导式体验或 CLI 脚本批量迁移，并具备迁移前校验和生命周期追踪；迁移期间 ELM 持续同步变更，开发者可继续提交代码，团队按自身节奏完成短暂切换。这一能力降低了大型企业将研发资产统一到 GitHub、进而使用 Copilot 编码智能体的门槛。",
+          "insight": "微软正在把研发平台收敛到 GitHub 以承接智能体编程，Azure DevOps 存量客户的迁移项目将迎来窗口期。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-19-enterprise-live-migrations-from-azure-devops-generally-available"
+        },
+        {
+          "title": "🧪 开源模型 | RadixArk 发布 DaisyRose-27B：仅用 1200 个任务、18 天强化学习，Terminal-Bench 翻倍",
+          "body": "RadixArk 发布首个模型 DaisyRose-27B，基于 Qwen3.8-27B，使用其 Miles 框架进行强化学习，面向长程智能体任务训练，单个会话最长达 100 万 token。团队仅用 1200 个精选任务、144 张 H200 训练 18 天，就将 Terminal-Bench 4.1 的 pass@1 从 5.6% 提升至 12.0%，并在推理、指令遵循和编码等基准上全面超过原模型。模型以 BF16、FP8 和 NVFP4 三种格式开放权重，该发布在 Hacker News 获得约 250 分关注。",
+          "insight": "精心设计的少量长程任务 + 高效 RL 基建，正让中小团队以有限算力做出有竞争力的编码智能体模型。",
+          "source": "RadixArk 官方博客",
+          "url": "https://www.radixark.com/blog/daisyrose-27b"
+        },
+        {
+          "title": "🌐 智能体框架 | MachinePulse 开源 Karpo 浏览器智能体框架与决策模型，速度约为 Gemini 3.5 Flash 6 倍",
+          "body": "量子位报道，MachinePulse AI 开源决策模型 Karpo Decision 31B，专为智能体提供高频低延迟判断，如下一步点击哪个按钮、任务是否完成、调用哪个工具。在 Decision Index 总榜以 73.9 分居首，单张 RTX PRO 6000 即可部署，14 万次请求的中位响应时间 94 毫秒。团队同时开源采用 System 1 + System 2 架构的浏览器操作框架 karpo-browser、网页动作决策模型 Karpo Decision 27B Act 及评测集 KBB，在一项筛选任务中耗时 2.6 秒，而 Gemini 3.5 Flash 为 14.96 秒。",
+          "insight": "把“决策”从通用大模型中拆出、用专用小模型低延迟完成，正成为浏览器与编码智能体降本提速的主流架构。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511791.html"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📈 研究报告 | METR 更新“AI 最被误读的图表”：任务时长仍指数增长，但需判断力的任务明显落后",
+          "body": "MIT Technology Review 11 月 20 日报道，AI 评测非营利机构 METR 更新了其“任务时间跨度”曲线。原版曲线显示前沿模型可完成任务的长度约每四个月翻一番，曾被广泛传播也被广泛误读。新版本加入了人类耗时更长、以及更开放式的任务，结果显示部分能力仍沿指数轨迹提升，但在需要判断力、难以自动验证成败的任务上，模型表现明显不如编码和数学。报告指出强化学习在可验证任务上的成功，未必能同等迁移到不可验证任务。",
+          "insight": "企业规划智能体时应区分“可验证任务”与“判断型任务”，后者仍需保留人类决策与复核环节。",
+          "source": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
+        },
+        {
+          "title": "💊 基准发布 | OpenAI 推出 MedChemBench：用 99 道药物化学推理题检验 AI 能否辅助新药筛选",
+          "body": "OpenAI 11 月 20 日发布 MedChemBench 基准，评估 AI 模型在药物化学研究中的推理能力，即能否把分子结构与实验证据联系起来，解释结果、比较化合物并预测其性质。基准包含 99 道源自已发表研究的问题，聚焦药物化学的核心难点：提升某项分子性质往往会损害另一项，例如对靶点蛋白活性强但吸收差或代谢过快。OpenAI 表示，构建能可靠支持“设计—合成—测试”循环的 AI，是帮助科学家开发更好药物的一步。",
+          "insight": "生命科学 AI 的评测正从通用问答转向贴近实验决策的专业基准，药企选型需关注领域化评测结果。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/introducing-medchembench"
+        },
+        {
+          "title": "📄 论文 | 腾讯元宝 × 伦敦国王学院发布 GroupAssistBench：首个基于真实群聊的智能体记忆基准",
+          "body": "腾讯元宝与伦敦国王学院 NLP 团队联合推出 GroupAssistBench，基于 50 个真实群聊、80299 条历史消息构建 2395 道评测题，分为 L1 记忆召回与 L2 记忆使用两个层级，比较了完整上下文、检索增强和外部记忆等 14 组配置。代表性发现是：EverMemOS 在 L1 召回得分 0.621，高于完整上下文的 0.570；但在 L2 开放式服务中仅 0.247，低于完整上下文的 0.431。论文、代码与数据集均已公开。",
+          "insight": "“更会回忆”不等于“更会服务”，企业多人协作场景的智能体需评估记忆的使用质量而非召回率。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511841.html"
+        },
+        {
+          "title": "🤖 模型研究 | 华为云发布昇腾原生具身世界模型 CloudRobo-WM1.2，两项评测第一并将于 11 月 30 日开源",
+          "body": "华为云 11 月 16 日发布昇腾原生具身世界模型 CloudRobo-WM1.2，在 RoboTwin 2.0 和 LIBERO-Pro 2.0 两项具身智能评测中分别取得 88.98% 和 81.73% 的平均成功率，均列第一。模型基于国产昇腾算力训练，从模型架构、训练框架、核心算子到推理部署均围绕昇腾做软硬件协同优化，并在第三方真机测试中覆盖 5 种机器人本体、13 项操作任务。华为云计划于 11 月 30 日开放模型权重、推理代码和后训练代码。",
+          "insight": "国产算力上的具身模型开始以“开放全链路底座”争夺开发者，具身智能竞争重心转向训练效率与落地成本。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/article/LCqRiGDSeMBfXo4iktdA"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本周最清晰的信号是“AI 安全”正在从规则和策略走向模型本身：Palo Alto 以 45 亿美元买下一家后训练公司来监督智能体，OpenAI 把反蒸馏和推理链保护做成核心防线，微软则联合埃森哲等 40 余家机构推动智能体行为可见、可验证、可控制的开放标准。",
+    "企业落地层面，ROI 开始被精确核算。中国工业智能体已经按单次推理成本和年效益来谈项目，投行研究工具则以可溯源的交付物作为验收标准；与此同时，银行公开声明智能体操作责任归用户，提示企业在推出代理式服务前必须先设计授权与追责机制。",
+    "AI Coding 的基础设施正在为“智能体是主要开发者”重构：从以评分驱动合并的新型 Git 平台，到 Copilot 的官方 MCP 连接器生态，再到 Azure DevOps 向 GitHub 的不停工迁移，研发平台的竞争已转向谁能更好地承载并治理智能体。",
+    "研究侧的提醒同样重要：METR 新数据显示，模型在可验证任务上持续指数进步，但在需要判断力的开放任务上仍明显落后；群聊记忆基准也表明“记得住”不等于“用得好”。另一方面，Meta 重估净零目标说明 AI 扩张的能源与排放代价正在显性化，将成为企业 AI 战略不可回避的约束。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-22 执行）：1) OpenAI/Anthropic partnership/JV/acquisition：仅检出 5 月 PE 合资旧闻（已过 7 天窗口，不入选）；2) Anthropic×Accenture/Deloitte/咨询：Anthropic 咨询服务于 11-03 上线，已超 7 天不入选；3) Reuters/Bloomberg 收并购：Palo Alto Networks 45 亿美元全股收购 Applied Compute（约 11-18，纳入热点头条）；Marvell 1150 亿美元收购 Lumentum（11-02，过期不入选）；4) 大厂动向：微软联合 Accenture/KPMG/Mastercard 等 40 余家机构发起 AI Transparency Initiative（11-17，含 Accenture 强制入选，置于企业级板块首条）；Meta 重估 2030 净零目标（11-19）；OpenAI 反蒸馏防御（11-20）。Anthropic IPO 与创始人套现属已发事件，跳过。"
+  }
+}

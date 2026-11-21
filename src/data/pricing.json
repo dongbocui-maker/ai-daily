@@ -159,9 +159,9 @@
         2.0,
         0.25
       ],
-      "source": "https://www.alibabacloud.com/help/en/model-studio/model-pricing (qwen3.8-max International list price $2 in / $6 out = official, re-fetched 2026-11-21, unchanged). cacheRead is NOT published: https://www.alibabacloud.com/help/en/model-studio/context-cache says for qwen3.8-max the cached_token price \"is not 20% of the input_token unit price. For specific pricing, see the Model Studio console\" (login required). 0.25 = 12.5% of input stays an estimate; only third-party corroboration is openrouter.ai listing qwen3.8-max-0902 cache read at $0.25. cacheWrite kept at input price. Entry stays estimated until the console figure is read",
+      "source": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen3.8-max (public model detail page, readable without login, International/Singapore, read 2026-11-21): Input $2, Output $6, Input(Implicit Cache) $0.25, 5-Minute Explicit Cache Creation $2.5, Explicit Cache Read $0.17 per 1M tokens. List price also on https://www.alibabacloud.com/help/en/model-studio/model-pricing ($2 in / $6 out). cacheRead 0.25 = the Input(Implicit Cache) price; usage logs show cacheWrite=0 on all qwen calls, consistent with implicit caching (explicit cache would be $0.17 read / $2.5 creation). cacheWrite slot kept at input price, unused while cacheWrite=0. China (Beijing) console lists CNY 12 in / 36 out / 1.5 implicit cache hit for reference",
       "verified": "2026-11-21",
-      "confidence": "estimated"
+      "confidence": "official"
     }
   },
   "aliases": {

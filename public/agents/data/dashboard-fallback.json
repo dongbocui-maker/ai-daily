@@ -1,53 +1,18 @@
 {
-  "generated_at": "2026-11-23 21:05:01 +08",
-  "today": "2026-11-23",
+  "generated_at": "2026-11-24 07:05:01 +08",
+  "today": "2026-11-24",
   "grand": {
-    "tok": 3426662977,
-    "cost": 6508.86,
-    "calls": 6323,
-    "save": 15277.96,
-    "today_tok": 34026747,
-    "today_cost": 73.23,
-    "today_save": 188.73,
-    "last7d_tok": 122661889,
-    "last7d_cost": 246.88
+    "tok": 3431889346,
+    "cost": 6527.83,
+    "calls": 6346,
+    "save": 15301.86,
+    "today_tok": 2977576,
+    "today_cost": 12.01,
+    "today_save": 11.08,
+    "last7d_tok": 109007677,
+    "last7d_cost": 234.12
   },
   "trend": [
-    {
-      "date": "2026-11-17",
-      "tok": 18880581,
-      "cost": 31.73,
-      "by_agent": {
-        "main": {
-          "name": "钢铁虾",
-          "mark": "MARK I",
-          "emoji": "🦐",
-          "tok": 16291254,
-          "cost": 28.97
-        },
-        "aima": {
-          "name": "银月",
-          "mark": "P.E.P.P.E.R.",
-          "emoji": "🌶️",
-          "tok": 416783,
-          "cost": 0.7
-        },
-        "mk2": {
-          "name": "MK2",
-          "mark": "MARK II",
-          "emoji": "🦐",
-          "tok": 983077,
-          "cost": 0.81
-        },
-        "mk46": {
-          "name": "Mark 46",
-          "mark": "MARK XLVI",
-          "emoji": "🛡",
-          "tok": 1189467,
-          "cost": 1.24
-        }
-      }
-    },
     {
       "date": "2026-11-18",
       "tok": 11143145,
@@ -211,22 +176,22 @@
     },
     {
       "date": "2026-11-23",
-      "tok": 34026747,
-      "cost": 73.23,
+      "tok": 36275540,
+      "cost": 80.19,
       "by_agent": {
         "main": {
           "name": "钢铁虾",
           "mark": "MARK I",
           "emoji": "🦐",
-          "tok": 26623148,
-          "cost": 67.43
+          "tok": 28849183,
+          "cost": 74.27
         },
         "aima": {
           "name": "银月",
           "mark": "P.E.P.P.E.R.",
           "emoji": "🌶️",
-          "tok": 22747,
-          "cost": 0.11
+          "tok": 45505,
+          "cost": 0.22
         },
         "mk2": {
           "name": "MK2",
@@ -243,6 +208,27 @@
           "cost": 3.22
         }
       }
+    },
+    {
+      "date": "2026-11-24",
+      "tok": 2977576,
+      "cost": 12.01,
+      "by_agent": {
+        "main": {
+          "name": "钢铁虾",
+          "mark": "MARK I",
+          "emoji": "🦐",
+          "tok": 2142462,
+          "cost": 11.26
+        },
+        "mk2": {
+          "name": "MK2",
+          "mark": "MARK II",
+          "emoji": "🦐",
+          "tok": 835114,
+          "cost": 0.75
+        }
+      }
     }
   ],
   "agents": {
@@ -254,19 +240,19 @@
       "ac": "#e8b923",
       "lit": "#7fdfff",
       "status": "ONLINE",
-      "idle_min": 4,
-      "last_ts": "2026-11-23T13:01:43.918Z",
-      "total_tok": 2117421799,
-      "today_tok": 26623148,
-      "today_cost": 67.43,
-      "last7d_tok": 94676857,
-      "last7d_cost": 220.7,
-      "cost": 4824.86,
-      "save": 10276.62,
-      "calls": 4346,
+      "idle_min": 30,
+      "last_ts": "2026-11-23T22:35:19.081Z",
+      "total_tok": 2121790296,
+      "today_tok": 2142462,
+      "today_cost": 11.26,
+      "last7d_tok": 82754100,
+      "last7d_cost": 209.83,
+      "cost": 4842.97,
+      "save": 10297.69,
+      "calls": 4367,
       "active_model": "aigw-claude-48-main/claude-fable-5-2",
       "cache_eff": 80.6,
-      "today_cache_eff": 79.4,
+      "today_cache_eff": 49.5,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-fable-5",
@@ -299,16 +285,16 @@
           "calls": 409
         },
         {
+          "name": "aigw-claude-48-main/claude-fable-5-2",
+          "tok": 111809898,
+          "cost": 301.2,
+          "calls": 263
+        },
+        {
           "name": "azure-claude-48/claude-opus-4-8",
           "tok": 107579610,
           "cost": 196.31,
           "calls": 225
-        },
-        {
-          "name": "aigw-claude-48-main/claude-fable-5-2",
-          "tok": 107441401,
-          "cost": 283.09,
-          "calls": 242
         },
         {
           "name": "deepseek/DeepSeek-V4-Pro",
@@ -356,19 +342,19 @@
       "ac": "#e89bb8",
       "lit": "#ffd0e6",
       "status": "IDLE",
-      "idle_min": 755,
-      "last_ts": "2026-11-23T00:30:15.949Z",
-      "total_tok": 636078822,
-      "today_tok": 22747,
-      "today_cost": 0.11,
-      "last7d_tok": 2582824,
-      "last7d_cost": 4.14,
-      "cost": 1013.13,
-      "save": 2369.36,
-      "calls": 1395,
+      "idle_min": 545,
+      "last_ts": "2026-11-23T14:00:15.897Z",
+      "total_tok": 636101580,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 2188799,
+      "last7d_cost": 3.55,
+      "cost": 1013.24,
+      "save": 2369.37,
+      "calls": 1396,
       "active_model": "aigw-claude-48-main/claude-opus-5-5",
       "cache_eff": 82.6,
-      "today_cache_eff": 12.4,
+      "today_cache_eff": 0,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -390,9 +376,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-opus-5-5",
-          "tok": 73248458,
-          "cost": 107.61,
-          "calls": 285
+          "tok": 73271216,
+          "cost": 107.73,
+          "calls": 286
         },
         {
           "name": "aigw-claude-48-main/claude-fable-5",
@@ -445,20 +431,20 @@
       "emoji": "🦐",
       "ac": "#cfdbe6",
       "lit": "#9fe8ff",
-      "status": "IDLE",
-      "idle_min": 780,
-      "last_ts": "2026-11-23T00:05:22.426Z",
-      "total_tok": 608819805,
-      "today_tok": 2674073,
-      "today_cost": 2.47,
-      "last7d_tok": 18416479,
-      "last7d_cost": 13.83,
-      "cost": 548.35,
-      "save": 2334.0,
-      "calls": 402,
+      "status": "ONLINE",
+      "idle_min": 3,
+      "last_ts": "2026-11-23T23:01:55.616Z",
+      "total_tok": 609654919,
+      "today_tok": 835114,
+      "today_cost": 0.75,
+      "last7d_tok": 18268516,
+      "last7d_cost": 13.77,
+      "cost": 549.1,
+      "save": 2336.82,
+      "calls": 403,
       "active_model": "aigw-claude-48-main/claude-opus-5-5",
       "cache_eff": 93.3,
-      "today_cache_eff": 89.5,
+      "today_cache_eff": 90.0,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-4-8",
@@ -468,9 +454,9 @@
         },
         {
           "name": "aigw-claude-48-main/claude-opus-5-5",
-          "tok": 123307718,
-          "cost": 97.55,
-          "calls": 91
+          "tok": 124142832,
+          "cost": 98.31,
+          "calls": 92
         },
         {
           "name": "aigw-claude-48-main/claude-opus-5",
@@ -530,19 +516,19 @@
       "ac": "#caa6ff",
       "lit": "#e0c4ff",
       "status": "IDLE",
-      "idle_min": 462,
+      "idle_min": 1062,
       "last_ts": "2026-11-23T05:23:36.019Z",
       "total_tok": 17439295,
-      "today_tok": 4706779,
-      "today_cost": 3.22,
-      "last7d_tok": 5896246,
-      "last7d_cost": 4.47,
+      "today_tok": 0,
+      "today_cost": 0.0,
+      "last7d_tok": 4706779,
+      "last7d_cost": 3.22,
       "cost": 17.25,
       "save": 60.83,
       "calls": 15,
       "active_model": "aigw-claude-48-main/claude-opus-5-5",
       "cache_eff": 91.6,
-      "today_cache_eff": 94.3,
+      "today_cache_eff": 0,
       "models": [
         {
           "name": "aigw-claude-48-main/claude-opus-5-5",
@@ -578,7 +564,7 @@
       "ac": "#4fd4ff",
       "lit": "#b8f3ff",
       "status": "OFFLINE",
-      "idle_min": 2221,
+      "idle_min": 2821,
       "last_ts": "2026-11-22T00:04:01.029Z",
       "total_tok": 46903256,
       "today_tok": 0,
@@ -1430,10 +1416,10 @@
         "files": 69
       },
       "t1": {
-        "kb": 1632,
-        "files": 349
+        "kb": 1635,
+        "files": 351
       },
-      "daily_files": 145
+      "daily_files": 146
     },
     "aima": {
       "t3": {
@@ -1462,9 +1448,9 @@
       "human": "每天 06:18",
       "human_en": "Daily 06:18",
       "kind": "cron",
-      "next_run_ms": 1795472280000,
-      "last_run_ms": 1795389016414,
-      "last_status": "error",
+      "next_run_ms": 1795558680000,
+      "last_run_ms": 1795472280009,
+      "last_status": "ok",
       "core": true
     },
     {
@@ -1476,24 +1462,10 @@
       "human": "每天 07:00",
       "human_en": "Daily 07:00",
       "kind": "cron",
-      "next_run_ms": 1795474800000,
-      "last_run_ms": 1795388400009,
+      "next_run_ms": 1795561200000,
+      "last_run_ms": 1795474800012,
       "last_status": "ok",
       "core": true
-    },
-    {
-      "id": "a4823e6a-42e0-447a-83bb-b647273dc8aa",
-      "name": "jason-knowledge-daily",
-      "agent": "main",
-      "enabled": true,
-      "expr": "30 23 * * *",
-      "human": "每天 23:30",
-      "human_en": "Daily 23:30",
-      "kind": "cron",
-      "next_run_ms": 1795447800000,
-      "last_run_ms": 1795361400008,
-      "last_status": "ok",
-      "core": false
     },
     {
       "id": "4450901e-d8fb-4feb-b75f-0bcb1ad548b0",
@@ -1520,6 +1492,20 @@
       "kind": "cron",
       "next_run_ms": 1795525200000,
       "last_run_ms": 1795438800021,
+      "last_status": "ok",
+      "core": false
+    },
+    {
+      "id": "a4823e6a-42e0-447a-83bb-b647273dc8aa",
+      "name": "jason-knowledge-daily",
+      "agent": "main",
+      "enabled": true,
+      "expr": "30 23 * * *",
+      "human": "每天 23:30",
+      "human_en": "Daily 23:30",
+      "kind": "cron",
+      "next_run_ms": 1795534200000,
+      "last_run_ms": 1795447800007,
       "last_status": "ok",
       "core": false
     },
@@ -1615,9 +1601,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-opus-5-5",
-      "tok": 329805090,
-      "cost": 340.65,
-      "calls": 533
+      "tok": 330662962,
+      "cost": 341.51,
+      "calls": 535
     },
     {
       "name": "aigw-claude-48-main/claude-opus-5",
@@ -1639,9 +1625,9 @@
     },
     {
       "name": "aigw-claude-48-main/claude-fable-5-2",
-      "tok": 107441401,
-      "cost": 283.09,
-      "calls": 242
+      "tok": 111809898,
+      "cost": 301.2,
+      "calls": 263
     },
     {
       "name": "azure-openai-responses/gpt-6-astra-2026-09-03",

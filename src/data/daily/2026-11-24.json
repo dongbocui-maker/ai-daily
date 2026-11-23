@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-24",
+  "title": "AI 日报 · 2026-11-24",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🤝 收并购 | Amazon 以 75 亿美元收购 Decart AI 优化技术，为对外销售 Trainium 芯片铺路",
+          "body": "据 TechCrunch 援引 Bloomberg 报道，Amazon 于 11 月 23 日同意以约 75 亿美元收购以色列 AI 公司 Decart 的推理优化技术，价格约为其半年前 40 亿美元估值的两倍。Decart 是 AWS 自研 Trainium 芯片的早期重度用户，擅长在专用加速器上把实时生成式模型的延迟和成本压到极致。此时 Amazon 正准备把 Trainium 从“自用 + 云内租用”推向对外销售，Decart 的软件栈被视为补齐 CUDA 生态差距的关键拼图。",
+          "insight": "AI 芯片竞争正在从“造得出”转向“软件栈好不好用”，云厂商用收购买编译与推理优化能力，是挑战英伟达护城河最快的路径。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/"
+        },
+        {
+          "title": "👔 高层动态 | 【进展】黄仁勋复任英伟达 CEO 兼董事长，股价大涨，下周将赴参议院作证",
+          "body": "英伟达董事会 11 月 23 日宣布黄仁勋即刻复任 CEO 兼董事会主席，结束此前因 Megaspeed 相关间谍丑闻引发的离任风波，公司股价当日大涨超 26%。董事会称决策前听取了美国政府高层意见，多家媒体报道特朗普曾致电参与董事会会议，白宫也公开表示“全程参与”。与此同时，丑闻核心公司 Megaspeed 据 Semafor 报道将被列入美国商务部实体清单，黄仁勋预计下周出席参议院听证，SEC 调查仍未结束。",
+          "insight": "全球最关键 AI 算力供应商的治理已与地缘政治深度绑定，企业做算力采购与供应链风险评估时需把政策变量纳入常态考量。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/"
+        },
+        {
+          "title": "📜 监管政策 | 俄勒冈、弗吉尼亚等州起诉 SpaceX，要求阻止 Grok 生成儿童性图像与报复性色情深伪",
+          "body": "俄勒冈州和弗吉尼亚州等州检察长于 11 月 23 日对 SpaceX 提起诉讼，指控 Grok 图像生成功能被大规模用于制作未成年人性化图像和未经同意的私密深度伪造内容，平台在明知风险的情况下未采取有效防护。诉讼寻求禁令救济，要求强制关停或整改相关生成能力，并追究消费者保护法下的责任。这是美国州级执法机构首次以集体诉讼方式直接针对主流大模型的生成内容安全问题。",
+          "insight": "生成式 AI 的内容安全责任正从“平台自律”转向州级执法与诉讼追责，企业部署图像/视频生成能力必须前置安全护栏与审计证据。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit"
+        },
+        {
+          "title": "🛡️ 行业动向 | AWS CEO Garman：AI 安全靠工程而非“紧急开关”，智能体权限不应超过其人类操作者",
+          "body": "据路透社 11 月 23 日报道，AWS CEO Matt Garman 表示，确保 AI 安全的路径在于扎实的系统工程，而不是寄望于事后按下的“紧急停止开关”。他强调，智能体所能获得的权限最多只能继承其背后人类操作者的权限，在很多场景下还应更受限；身份、权限边界、审计与可观测性要作为智能体基础设施的一等公民来设计。这一表态为企业在 AWS 上大规模部署智能体划定了权限设计的基本原则。",
+          "insight": "“最小权限 + 继承人类身份”正在成为大厂对企业智能体治理的共识，CIO 应把智能体纳入 IAM 体系而非另起炉灶。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/legal/litigation/amazons-aws-ceo-says-engineering-not-kill-switches-is-path-ai-safety-2026-11-23"
+        },
+        {
+          "title": "🚀 产品发布 | 智谱发布 GLM-5.4：首个 Loop Transformer 编码模型，向 Coding Plan 全量开放",
+          "body": "智谱 11 月 23 日发布 GLM-5.4，采用其首个 Loop Transformer（循环层复用）架构，总参数约 7500 亿，官方称智能水平可对标 2-3 万亿参数级模型，主打泛化编码能力；该发布在 Hacker News 获近千分热度。GLM-5.4 推理速度高峰期 70-80 token/s、非高峰最高可达 200 token/s，已向 GLM Coding Plan 全量用户开放，V2/V3 与团队版额度提升至 1.5 倍，并同步上线 ZCode、Trae、WorkBuddy、Qoder 等编程工具。",
+          "insight": "国产模型开始在架构层（循环复用计算）而非单纯堆参数上寻找性价比突破，编码订阅制正成为国内大模型商业化主战场。",
+          "source": "观点网",
+          "url": "https://www.guandian.cn/article/20261123/631763.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🏥 行业落地 | 蚂蚁发布百灵医疗健康大模型家族并开源，阿福 App 升级“AI 望闻问切 + 真人医生”",
+          "body": "11 月 23 日蚂蚁阿福医疗健康生态大会上，百灵医疗健康大模型家族（LingSante）集中发布并宣布开源：124B 参数、激活仅 5.5B 的多模态模型 LingSante-3.1-air-VL 可在笔记本本地部署；面向医疗机构的 560B 推理模型 LingSante-3.1-flash 支持 1M token 上下文，在 InclusionMed 指数中位列开源第一；另有可预测 150 余种疾病未来六年风险的 Pulse 模型和医疗安全防护模型 MedGuard。阿福 App 同步升级视频问诊式交互、可连线真人医生及控糖减重等健康管家方案。",
+          "insight": "医疗 AI 落地正走向“专业模型 + 安全护栏模型 + 本地部署”的组合拳，高合规行业的企业可借鉴其分层模型架构。",
+          "source": "21世纪经济报道",
+          "url": "https://www.21jingji.com/article/20261123/herald/2aa126e4459353215c25576a5e8ad1d8.html"
+        },
+        {
+          "title": "🔐 数据治理 | OpenRouter 下架 3 家推理服务商、撤销 125 个端点的零数据保留资格",
+          "body": "模型路由平台 OpenRouter 发布公告称，在安全研究人员通过“金丝雀令牌”测试发现部分推理服务商未遵守数据处理政策后，平台已基于自身调查下架 3 家服务商，并将 125 个端点移出零数据保留（ZDR）资格名单，其中部分为预防性移除，同时已通知所有可能受影响的客户。OpenRouter 强调自身未发生入侵，但承认作为客户与众多模型服务商之间的运营层，必须承担数据政策执行责任，后续将持续公示服务商安全通告。",
+          "insight": "通过聚合层调用第三方推理时，“零数据保留”承诺需要可验证的技术审计，企业应把推理供应商纳入数据出境与第三方风险管理。",
+          "source": "OpenRouter 官方博客",
+          "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+        },
+        {
+          "title": "💰 融资 | Supertake 获 2000 万美元种子轮：用前沿模型与交易智能体把市场观点变成真实投资组合",
+          "body": "AI 投资初创公司 Supertake 宣布完成 2000 万美元种子轮融资，由 Adjacent 领投，Coinbase Ventures 与 Union Square Ventures 跟投，天使投资人包括 Meta 超级智能实验室产品负责人 Nat Friedman、Vercel CEO Guillermo Rauch 等。其产品让用户用自然语言表达对市场的判断，再由前沿大模型和交易智能体自动构建并执行真实投资组合，免去个人逐只选股。公司由 Anchor 联创 Michael Mignano 在 USV 孵化。",
+          "insight": "智能体正从“给建议”走向“替用户执行金融交易”，金融机构需提前思考受托责任、适当性管理与智能体行为审计的边界。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/"
+        },
+        {
+          "title": "🔍 产品落地 | Google 搜索 AI Mode 个人智能接入 Drive、Wallet 与 Gemini App",
+          "body": "Google 11 月 23 日宣布扩展搜索 AI Mode 中的 Personal Intelligence 功能，新增与 Google Drive、Google Wallet 以及 Gemini App 的集成，此前该功能已可连接 Gmail、日历和相册。用户授权后，AI Mode 可调用云端文档、票据与支付凭证、历史对话等个人数据，给出更具上下文的回答，例如结合行程单与电子票据规划出行。Google 借此把其生态内沉淀的海量用户数据转化为 AI 搜索的差异化优势。",
+          "insight": "AI 助手的竞争核心正变成“谁握有用户上下文”，企业侧 Copilot/Gemini 选型同样取决于与自有数据和办公套件的连接深度。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Anthropic 推出 Claude Ship：AI 智能体可自主审查、修复并批准代码变更",
+          "body": "Anthropic 11 月 23 日发布 Claude Ship，让 Claude 智能体直接介入 Pull Request 流程：自动审查代码改动、定位问题并提交修复，在满足团队预设规则时还可直接批准合并。该产品瞄准 AI 编码大规模普及后出现的新瓶颈——代码审查积压，把“写代码”之后的审查、修复、上线环节也交给智能体。团队可配置哪些仓库、哪些类型的变更允许智能体自主放行，其余仍需人工把关。",
+          "insight": "AI Coding 的主战场正从生成转向审查与交付闭环，企业需尽快定义“哪些变更可由智能体自主批准”的工程治理规则。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests"
+        },
+        {
+          "title": "⚙️ 工具发布 | GitHub Agentic Workflows 正式可用：在 Actions 中安全运行编码智能体",
+          "body": "据 InfoQ 报道，GitHub 宣布开源项目 GitHub Agentic Workflows 正式可用，可在 GitHub Actions 中运行编码智能体，处理 Issue 分类、CI 故障分析等仓库任务。开发者用自然语言 Markdown 描述任务、以 YAML Front Matter 配置，编译成标准 Actions 工作流，可接入 Copilot 或第三方智能体。智能体默认只读，变更由持有独立写入令牌的隔离作业应用，并运行在 Agent Workflow Firewall 保护的沙箱中，单次默认预算 10 美元；但对直接授予的写权限与自定义作业不自动生效。",
+          "insight": "把智能体放进 CI/CD 的关键是“读写分离 + 沙箱 + 预算上限”，平台工程团队可直接复用这套最小权限范式。",
+          "source": "InfoQ 中国",
+          "url": "https://www.infoq.cn/article/lMs1bM1muspglUjMr1l3"
+        },
+        {
+          "title": "🧠 观点 | 《我们在没通知的情况下把开发者升成了架构师》：Vibe Coding 时代的隐性职责转移",
+          "body": "这篇在 Hacker News 获 620 分的文章从一次真实排障讲起：同事用 AI“氛围编程”写的日志模块，在拿不到用户邮箱时层层 try/catch 降级，最终埋下性能与合规问题。作者指出，AI 让写代码变得廉价，但每个开发者实际上被迫承担起架构师的职责——判断数据边界、平台限制、失败模式与长期可维护性，而组织并没有为这种角色转变提供培训、评审机制和责任界定。",
+          "insight": "AI 编码提效的真正约束在设计判断力，企业需把架构评审与系统思维训练下沉到每位使用 AI 的开发者。",
+          "source": "Mani Doraisamy 博客",
+          "url": "https://manidoraisamy.com/developer-to-architect.html"
+        },
+        {
+          "title": "🎮 开源项目 | worker755：一款让你扮演 LLM 子代理的游戏，从“被调度者”视角理解多智能体编排",
+          "body": "GitHub 开源项目 worker755 以 Show HN 形式发布并获 356 分热度。它把玩家放在大模型编排体系中“子代理”的位置：接收主代理下发的任务描述与有限上下文，在信息不完整的条件下完成工作并回传结果。开发者社区认为，这种反向视角能直观暴露多智能体系统中任务拆分不清、上下文缺失、回传格式不一致等常见问题，可作为设计 subagent 提示词与交接协议的教学工具。",
+          "insight": "多智能体编排的质量瓶颈往往在“交接”，设计子代理任务时应站在信息最少的一方检验指令是否自洽。",
+          "source": "GitHub",
+          "url": "https://github.com/gulivan/worker755"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "🔭 研究观点 | Google DeepMind 发布长文《What Comes After AGI?》：认真讨论通往超级智能的下一阶段",
+          "body": "Google DeepMind 旗下研究机构发布长文《What Comes After AGI?》，在 Hacker News 引发讨论。文章认为，AGI（在几乎所有认知任务上与人类相当的机器）已“进入可及范围”，因此不能再推迟思考下一步：AI 可能以当前速度甚至加速迈向通用超级智能（ASI），并对科学、经济与社会产生深远影响。文章系统梳理了超越人类水平后的能力演进路径、不确定性以及需要提前准备的治理与社会制度问题。",
+          "insight": "头部实验室已公开把议题从 AGI 推向 ASI，企业与政策制定者的长期规划需要纳入能力加速情景下的组织与治理预案。",
+          "source": "Google DeepMind",
+          "url": "https://institute.deepmind.com/essays/what-comes-after-agi/"
+        },
+        {
+          "title": "🧪 研究实验 | “Agent 版 arXiv”：936 个智能体 12 周自主发表近千篇论文，复跑后近半结论被推翻",
+          "body": "alphaXiv、斯坦福、MIT 等团队把 936 个智能体放入同一线上科研社区自由演化 12 周，35 家人类实验室只提供算力、API 预算和宽泛方向。智能体共发布 936 篇论文、在 229 个自建聊天室产生 9500 条讨论，会互相复现实验、公开撤回错误结论，甚至自建期刊 JAR 与大模型审稿小组，5 天内生成 1408 份审稿意见。但研究团队复跑 156 篇被质疑论文的代码后，49.4% 的结论被推翻，并发现答案泄漏等问题。",
+          "insight": "自主智能体能高效模拟“学术共同体”流程，但缺乏可执行验证时会规模化产出错误，企业部署研究型 Agent 必须配套自动复现与代码级核查。",
+          "source": "36氪",
+          "url": "https://m.36kr.com/p/4077710469895302"
+        },
+        {
+          "title": "🌍 行业观察 | COP31 落幕：AI 数据中心用电激增给全球气候谈判再添变数",
+          "body": "联合国气候大会 COP31 于 11 月 22 日在土耳其安塔利亚混乱收场。The Verge 分析指出，清洁能源转型依赖整体经济电气化，而 AI 数据中心的用电需求恰在同期快速飙升，与交通、建筑电气化争夺有限的清洁电力和电网容量，部分地区甚至因此延长化石燃料机组寿命。各国代表在会上不得不正面讨论算力扩张对减排承诺的冲击，但未形成具约束力的应对机制。",
+          "insight": "算力的能源与碳足迹正成为国际政策议题，企业 AI 规划需同步评估电力来源、碳核算与 ESG 披露风险。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit"
+        },
+        {
+          "title": "🧩 技术分析 | LLM 可逐字节读写十六进制可执行文件：大模型直接“编程机器码”的实验",
+          "body": "一篇在 Hacker News 获 316 分的技术博客展示：大语言模型能够从十六进制转储中逐字节读取并理解可执行文件，也能直接写出可运行的机器码字节序列，而无需经过汇编器或高级语言。作者通过一系列实验检验模型在指令编码、跳转偏移、文件头结构等细节上的准确度。讨论认为，这一能力既为二进制逆向、固件分析和遗留系统维护带来新工具，也意味着恶意代码生成与混淆的门槛进一步降低。",
+          "insight": "大模型对底层二进制的理解力在提升，安全团队需同时把它纳入逆向分析工具链与威胁建模。",
+          "source": "sgiannopoulos 技术博客",
+          "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "算力格局是今天的主线。Amazon 以 75 亿美元收购 Decart 的推理优化技术，为 Trainium 对外销售补软件栈短板；黄仁勋在政府高层介入下复任英伟达 CEO，Megaspeed 将入实体清单、参议院听证在即。AI 芯片的竞争既是工程与生态之争，也越来越是地缘政治与公司治理之争。",
+    "智能体治理从口号走向工程细节。AWS CEO Garman 主张智能体权限不得超过人类操作者，GitHub Agentic Workflows 用读写分离、沙箱和预算上限把智能体放进 CI，OpenRouter 则因数据保留违规一次下架三家推理服务商。对企业而言，身份、权限、审计和供应商核查是部署智能体前必须补齐的基础设施。",
+    "AI Coding 的瓶颈正在后移。Anthropic 的 Claude Ship 直接把代码审查与合并交给智能体，智谱 GLM-5.4 用循环架构降低编码模型成本；但“开发者被迫成为架构师”的讨论和 Agent 版 arXiv 近半结论被复跑推翻的实验共同提醒：生成越廉价，验证、设计判断与可复现性就越稀缺。",
+    "行业落地与外部约束同时加速。蚂蚁开源医疗大模型家族并以本地可部署、专门安全模型回应高合规场景需求；与此同时，多州起诉 SpaceX 追究 Grok 深伪责任、COP31 将数据中心能耗推上谈判桌，内容安全与能源碳足迹正成为企业 AI 战略中无法回避的硬约束。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-24 执行）：1) 收并购：Amazon 以 75 亿美元收购 Decart（TechCrunch/Bloomberg 11-23）已纳入热点头条；2) Anthropic+Hg 在伦敦/柏林筹建 AI 咨询公司、Accenture 股价下跌（FT 报道，仅检索到 LinkedIn 转述，日期与原文未能核实，暂不入选，待后续确认）；3) SoftBank–OpenAI 日本合资延期、Accenture 与 OpenAI/Anthropic 合作均为旧闻，已跳过；4) Deloitte 印度 Coalesce 2026 属常规活动，未入选；5) 未发现 OpenAI/Google DeepMind/Meta/Microsoft 过去 24 小时新的重大合作或收购公告（Gemini 4 Neon、Ignite 等已在前期发布）。"
+  }
+}

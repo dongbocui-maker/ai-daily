@@ -4,8 +4,14 @@ title: "How Anthropic Teams Use Claude Code"
 subtitle: "Anthropic 官方 PDF · 10 个内部团队的实战案例"
 sourceUrl: "https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf"
 sourceLabel: "anthropic.com · PDF"
-updated: "2026-05-17"
+updated: "2026-11-23"
 ---
+
+<div class="not-prose my-6 flex flex-wrap gap-3">
+<a href="/learn/anthropic-teams-claude-code/how-anthropic-teams-use-claude-code.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 bg-accent-ink text-white text-sm font-semibold rounded hover:bg-accent-purple transition">官方 PDF 原件（站内副本 · 23 页 · 6.2MB）</a>
+<a href="https://claude.com/resources/articles/how-anthropic-teams-use-claude-code" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 border border-accent-gray-300 text-sm font-semibold rounded hover:border-accent-purple hover:text-accent-purple transition">官方网页版（claude.com）</a>
+<a href="https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 border border-accent-gray-300 text-sm font-semibold rounded hover:border-accent-purple hover:text-accent-purple transition">PDF 官方源地址（Anthropic CDN）</a>
+</div>
 
 <aside class="not-prose my-8 px-6 py-6 bg-gradient-to-br from-accent-purple/10 to-accent-purple/5 border-l-4 border-accent-purple rounded-r">
 <h3 class="text-base font-bold text-accent-purple tracking-wide uppercase mb-3">🎯 核心观点汇总（给忙人看的精华）</h3>

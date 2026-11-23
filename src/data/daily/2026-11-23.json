@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-23",
+  "title": "AI 日报 · 2026-11-23",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🔬 技术突破 | OpenAI 首席科学家 Jakub Pachocki 提议以“困惑度”作为行业共享安全指标，并公开内部预训练进展",
+          "body": "OpenAI 首席科学家 Jakub Pachocki 发表博文《Perplexity and Intelligence》，主张把困惑度（即交叉熵损失）确立为各模型开发者之间可比较的指标，用来支撑共享的安全标准和未来的“节奏控制”机制。他认为现代 AI 的核心是在海量语料上训练“压缩器”，跟踪压缩能力的进步是理解 AI 发展轨迹的关键。作为第一步，OpenAI 公开了内部的预训练困惑度测量。他也承认这会让竞争对手看清 OpenAI 的位置，但建立行业共享安全措施更为紧迫。TechCrunch 将其解读为“如何限制 AI 发展”的具体提案。",
+          "insight": "前沿实验室开始提出可量化、可比较的“能力刻度”，未来的 AI 监管和行业自律可能围绕训练损失这类底层指标设定阈值。",
+          "source": "OpenAI 官方博客",
+          "url": "https://openai.com/index/perplexity-and-intelligence/"
+        },
+        {
+          "title": "🌍 行业动向 | Google 联手 Blue Origin：Project Suncatcher 首次重型发射定于 2029 年一季度，把 AI 算力送上太空",
+          "body": "Google 于 11 月 19 日宣布与 Blue Origin 合作，完成 Project Suncatcher 的首次重型发射。Suncatcher 是 Google 的长期“登月”项目，目标是利用轨道上充足的太阳能，在太空中扩展 AI 基础设施。按计划，Blue Origin 的 New Glenn 重型火箭将于 2029 年第一季度把 Google 的卫星送入太阳同步轨道，每颗卫星的算力大致相当于一个数据中心机柜。Google 称，这次专属发射建立在其与其他卫星和发射伙伴的现有合作之上，是其计算路线图上的关键里程碑。",
+          "insight": "在地面数据中心面临电力与选址约束时，超大规模厂商已把“太空算力”从概念推进到发射排期。",
+          "source": "Google 官方博客",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
+        },
+        {
+          "title": "📜 监管政策 | TechCrunch：数据中心成为反科技巨头浪潮的焦点，中期选举后争议料将延续",
+          "body": "TechCrunch 11 月 22 日刊文，借记者 Paris Marx 的新书《Hyperscale》，讨论数据中心为何成为对大型科技公司不满情绪的中心。该书深入数据中心内部，分析这一可追溯数十年的计算基础设施如何在生成式 AI 时代突然变成政治“地雷”。文章指出，对数据中心的反弹被认为是近期美国中期选举中民主党大胜的推动因素之一；随着民主党掌握更多政府权力，围绕数据中心用电、用水与选址的争论可能继续升温。",
+          "insight": "AI 基础设施扩张的政治成本在上升，企业的算力与选址规划需要把社区接受度和监管风险作为前置变量。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/"
+        },
+        {
+          "title": "🎬 行业动向 | 短剧初创公司 Shortical 首页被 AI 内容占据，向演员购买“AI 版面孔”引发好莱坞新争议",
+          "body": "TechCrunch 11 月 21 日报道，成立于今年 1 月的短剧初创公司 Shortical 以两分钟一集的狗血言情剧为主，采用“前 7–10 集免费、之后按月订阅”的模式变现，过去一年推出了多部真人短剧。但最近其首页已大量换成 AI 生成内容，原因很直接：AI 内容的制作成本远低于真人拍摄，利润空间更大。文章探讨了演员把自己面孔的 AI 版本出售给这类平台的做法，并追问这是否会成为好莱坞的未来。",
+          "insight": "低成本内容赛道将率先被生成式视频改写，肖像授权与报酬分配会成为内容产业新的合规焦点。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🚒 公益落地 | Watch Duty 用 Gemini 从嘈杂消防无线电中抓取火警调度，30 秒内向志愿者发出信号",
+          "body": "Google 11 月 20 日介绍，一支 Google 工程师和研究员团队通过 Google.org Fellowship 全职进驻非营利山火预警应用 Watch Duty 六个月。他们用超过 2 万小时的历史无线电录音，开发了一款基于 Gemini 的工具，可以去除严重的静电噪声，并把专业的消防术语转成干净、可检索的文字。过去 Watch Duty 的报道员需要人工监听多达 20 路模拟 VHF 频道。现在，在没有其他自动调度检测的地区，该工具能在 30 秒内向报道员发出信号；7 月华盛顿州的 Railroad Fire 中，Watch Duty 也借此发出了首个夜间“关键警报”。",
+          "insight": "语音转写加领域术语理解，是关键任务场景里见效最快的 AI 落地方式之一，难点在于积累真实的噪声数据。",
+          "source": "Google 官方博客",
+          "url": "https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool/"
+        },
+        {
+          "title": "🏪 中小企业 | Google 发布 Workspace + Gemini 小企业案例：线索成交率超 50%、收入翻倍",
+          "body": "Google Workspace 产品副总裁 Yulie Kwon Kim 11 月 19 日分享了四家美国小企业使用 Workspace 内置 Gemini 的案例。奥克兰儿童游乐设备租赁商 Bay Area Kids Rentals 用 Gmail 中的 Gemini 生成每日待办简报、调取历史报价并快速回复咨询，回复时间从数天缩短到几分钟，成交了超过 50% 的新线索，收入翻倍。南达科他州的 Anderson Foundries 面临老工匠退休，用 Gemini Notebook 把技术手册转成交互式培训材料，并在 Docs 中用 Gemini 起草复杂的质量合规手册。",
+          "insight": "中小企业的 AI 价值主要来自嵌入现有办公套件的“小切口”提效，而不是单独采购新系统。",
+          "source": "Google 官方博客",
+          "url": "https://blog.google/products-and-platforms/products/workspace/google-workspace-gemini-small-business-stories/"
+        },
+        {
+          "title": "🔐 安全合规 | GitHub Enterprise Server 3.23 RC：AI 密钥检测可在完全离线的气隙环境中运行",
+          "body": "GitHub 11 月 20 日发布 GitHub Enterprise Server 3.23 候选版。主要亮点之一是：启用 Secret Protection 的企业可以在自有网络内使用 AI 检测非结构化密钥，包括气隙环境。该功能由一个自包含的微调模型直接在设备 CPU 上运行，不需要 GPU、托管大模型或任何出站连接，目前为公开预览。新版还把恶意包识别扩展到 PyPI、Maven、Go、Rust 等生态；Dependabot 默认等新版本发布满三天后再提更新 PR；OAuth 应用支持 8 小时过期的访问令牌。",
+          "insight": "“小模型本地化 + 无外联”正在成为强监管行业引入 AI 安全能力的标准形态。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🧑‍💻 实践分享 | Grok Bot 工程师 Lauren Tan 一个月合并 3000 个 PR：把约束写进代码库，而不是写进 AGENTS.md",
+          "body": "在 AI Engineer CODE 大会上，SpaceX/xAI Grok Bot 团队工程师、前 Cursor 员工 Lauren Tan 以《All Code Is Slop (Except Mine)》为题演讲。她透露自己上月合并约 3000 个 PR，团队合计 1.1 万个，回滚率约 0.5%。她的方法包括：Agent 犯错时补 Lint 规则和类型约束，而不是往 AGENTS.md 里加自然语言规则；禁用大部分代码注释；让 Agent 借助 CDP 等工具运行应用，用截图、录屏和形式化验证自证正确。团队还在每次发版后自动启动云端 Agent 做模糊测试并提交修复 PR。",
+          "insight": "Agent 编程的产能上限取决于代码库的“确定性护栏”，验证投入比生成投入更能决定规模化质量。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511830.html"
+        },
+        {
+          "title": "🛠️ 工具更新 | VS Code 1.146 弃用 Local harness，2027 年 2 月移除，Copilot 智能体会话统一迁往 Copilot harness",
+          "body": "GitHub 宣布，Visual Studio Code 1.146 已弃用 Local harness，即编辑器中协调 GitHub Copilot 智能体会话的模型、上下文和工具的旧组件，并将于 2027 年 2 月移除。替代方案 Microsoft Copilot harness 自 VS Code 1.143 起已是新会话默认选项，基于 Copilot SDK 构建，与 Copilot CLI、GitHub Copilot 应用共用同一个编码智能体运行时，会话可在编辑器和 Agents 窗口之间延续，并可由 Copilot Fusion 自动选择模型。官方强调，切换后文件不会上传到云端，管理员还可以强制执行运行时权限和沙箱限制。",
+          "insight": "IDE 内的智能体运行时正在统一为可集中管控的“harness”，企业需提前规划迁移与权限策略。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027"
+        },
+        {
+          "title": "⚙️ 开发者工具 | GitHub CLI 支持 Event Streams：gh event listen 让智能体等待 PR 事件而不再轮询",
+          "body": "GitHub CLI v2.105.0 新增 gh event 命令，接入预览中的 GitHub Event Streams。开发者和智能体只需一条 gh event listen 命令，就能等待某个 PR 发生变化，例如收到评审、状态或 head 变更、出现合并冲突、check suite 完成，而不用在循环里反复轮询。该命令默认在收到第一个事件后退出，方便嵌入脚本和智能体循环；也可以用 --count、--follow、--timeout 控制等待方式。官方还提到，gh pr create、gh run watch 等命令现在会主动提示智能体改用 gh event listen。",
+          "insight": "开发平台正在为智能体重写交互原语，事件驱动将替代轮询成为 Agent 工作流的默认模式。",
+          "source": "GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli"
+        },
+        {
+          "title": "📱 趋势观察 | The Verge：Vibe coding 正在蔓延到所有硬件，用户靠提示 Claude Code 就能“魔改”电视和相机",
+          "body": "The Verge 的 Stepback 专栏 11 月 22 日指出，硬件被改装、越狱和定制的历史与硬件本身一样长，但过去只有少数技术玩家能做到。变化在于，现在这件事变得很容易：世界各地的用户发现，只要向 Claude Code 等编码智能体下达提示，就能修改自己的电视、相机等设备的软件，实现厂商没有提供的功能。文章认为，大模型并没有带来全新的能力，而是把原本高门槛的硬件 hacking 普及化，“一切皆可 vibe-hack”的时代正在到来。",
+          "insight": "当编码智能体把固件定制门槛降到零，硬件厂商在开放性、保修与安全边界上都要重新设计策略。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📄 论文 | 米哈游发布通用 VLA 模型 Gamer：《崩铁》50 小时长流程自主运行超 95%，未见小游戏成功率 49.7%",
+          "body": "米哈游崩坏 AI 研发团队在 arXiv 发布论文，推出面向长流程实时交互的通用视觉-语言-动作（VLA）模型 Gamer。模型只读取屏幕像素和任务指令，输出键鼠操作，不访问游戏内部接口；每 200 毫秒读取一次画面，并安排随后 6 个约 33 毫秒的动作块，相当于 30Hz 控制。训练分为三阶段：跨游戏持续预训练、约 1000 小时演示数据微调、强化学习。模型还引入“稀疏思考”和“记忆摘要”机制。在约 50 小时的《崩铁》主线评估中，自主运行时间占比超过 95%；在 40 个未参与训练的小游戏任务上，成功率达到 49.7%，而对照通用模型最高为 17.1%。",
+          "insight": "游戏正成为长时序 Agent 与具身智能的低成本训练场，“记忆压缩 + 稀疏推理”值得企业 Agent 架构借鉴。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511740.html"
+        },
+        {
+          "title": "📊 深度分析 | 芯片能扛住太空环境，融资能吗？轨道数据中心面临抵押品难题",
+          "body": "TechCrunch 11 月 20 日分析指出，太空数据中心除了工程难题和火箭运力不足，还面临一个被忽视的问题：芯片如何融资。当前数据中心生态依赖债务融资，通常以芯片作为抵押物，违约时贷方可以收回并转售。据 Compute Credit Index Research 数据，部分 H100 仍能以 2023 年原始成本约一半的价格出售。但轨道上以每小时 17,500 英里运行的芯片无法被收回。文章援引《金融时报》报道称，SpaceX 400 亿美元芯片融资的贷方要求所购芯片不得用于太空用途。",
+          "insight": "太空算力的瓶颈可能不在技术而在资本结构，GPU 抵押融资模式的边界值得基础设施投资方关注。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/"
+        },
+        {
+          "title": "🎙️ 深度访谈 | 【后续】The Verge 播客：上市后的 Anthropic 还能把安全放在第一位吗？",
+          "body": "The Verge 主编与资深 AI 记者 Hayden Field 在“AI in real life”系列最后一期中，讨论 Anthropic 在纳斯达克上市后的处境。节目认为，上市规模本身并不是重点，真正的问题是：Anthropic 能否在对股东负责、持续提高收入的同时，继续兼顾 AI 安全投入。据报道，Anthropic 未来几年的算力账单合计约 9000 亿美元。节目还剖析了 Anthropic 独特的公司治理结构，以及它与 OpenAI、英伟达等方在市场压力下的博弈。",
+          "insight": "前沿实验室进入公开市场后，安全承诺能否经受季度业绩压力，将成为企业选择模型供应商的长期考量。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/podcast/1038701/anthropic-ipo-ai-safety-openai-nvidia-structure"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本期最值得关注的信号是前沿实验室开始主动提出“可量化的刹车”：OpenAI 首席科学家公开内部预训练困惑度，并主张以此作为行业共享的安全刻度。与此同时，Anthropic 上市后的安全承诺也开始接受资本市场检验，AI 治理正在从原则表态走向指标与制度层面的博弈。",
+    "算力扩张的外部约束越来越明显。在地面，数据中心成为美国政治反弹的焦点；在太空，Google 与 Blue Origin 把轨道算力发射排上了 2029 年的日程，但芯片抵押融资模式也暴露出太空算力的资本难题。企业规划算力时，需要同时评估政策、社区和金融三重风险。",
+    "在落地与开发侧，AI 正以“小切口、强护栏”的方式规模化：Watch Duty 用 Gemini 转写嘈杂的消防无线电，小企业借助办公套件中的 AI 提升效率，GHES 把离线 AI 密钥检测带进气隙环境。研发平台则在为智能体重构底层运行环境，例如统一的 Copilot harness、事件驱动的 CLI，以及 Grok Bot 团队“用 Lint 代替提示词”的工程实践。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-23 执行，补跑）：1) OpenAI/Anthropic partnership/JV/acquisition：检索结果仅为 4–5 月 Anthropic 15 亿美元咨询合资、OpenAI DeployCo 等旧闻，超出 7 天窗口，不入选；2) SpaceX–xAI 合并为 2026-02 旧闻，跳过；Meta 与 Google/OpenAI 合作传闻来源为 cryptorank，日期无法确认，不入选；3) 大厂战略合作：Google × Blue Origin Project Suncatcher 首次重型发射合作（11-19），纳入热点；4) 收并购：近 7 天内 Palo Alto 收购 Applied Compute 已于 11-22 发布，本期无新的重大收并购公告。另有 Reuters/Yahoo 关于亚洲 AI 股抛售的报道，因全文抓取失败（429/fetch failed）无法核实细节，未入选。"
+  }
+}

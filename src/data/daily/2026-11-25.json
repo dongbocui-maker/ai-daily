@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-25",
+  "title": "AI 日报 · 2026-11-25",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "👔 高层动态 | 【进展】Anthropic 盘前跌破 83 美元 IPO 发行价，上市不到一周热度明显降温",
+          "body": "据 Bloomberg 报道，11 月 24 日（美东周二）盘前交易中，Anthropic（代码 ANT）股价一度下跌 7.3% 至 81.28 美元，首次跌破 83 美元的 IPO 发行价，抹去了打新投资者的全部浮盈。这家前沿 AI 实验室 11 月 19 日在纳斯达克上市，首日一度冲上 100 美元以上，加上绿鞋后募资规模约 935 亿美元，创下纪录。Business Insider 指出，股价随后回升到 84 美元左右，但这次破发被市场视为 AI 一级市场估值的风向标。",
+          "insight": "前沿模型公司上市后，二级市场开始用盈利和增速重新定价。后续 AI 独角兽的 IPO 定价和私募估值都可能随之收紧。",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading"
+        },
+        {
+          "title": "🔬 技术突破 | 亚马逊披露：黑客的 AI 智能体在几乎无人干预下自主发现并利用 0-day 漏洞",
+          "body": "亚马逊威胁情报团队在 AWS 安全博客披露，一个与中国有关联的攻击者使用开源自主渗透框架 Cairn，只给 AI 智能体下达了一个目标：“获取 shell 权限”。智能体在一所东亚高校的服务器上找到医学影像标注工具 MONAI Label 的路径穿越 0-day 漏洞，约 11 分钟就从梳理 API 推进到可以任意写文件，最终拿到 root shell。该框架可以接入 Claude Code、Codex 等作为后端，攻击过程中智能体在无人指挥的情况下连续调整策略近一整天。",
+          "insight": "攻击方已经进入“智能体规模化”阶段。企业的漏洞修复窗口被压缩到分钟级，需要尽快部署防御侧的自动化响应和资产暴露面治理。",
+          "source": "AWS Security Blog",
+          "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own"
+        },
+        {
+          "title": "📜 监管政策 | 英国 FCA 警告：AI 智能体若涉及金融服务，科技公司将被纳入金融监管",
+          "body": "据 Reuters 11 月 24 日报道，英国金融行为监管局（FCA）发表声明，要求科技公司评估自家 AI 智能体是否在提供受监管的金融服务，例如金融推广、投资建议或支付服务。如果涉及，就必须主动与监管机构沟通。FCA 强调，把自己定位为“技术提供商”并不能豁免监管。这份声明发布时，Meta 正好在英国上线个人智能体 Muse，该产品可以代用户续保车险、追讨退款和网购，美国上线以来下载量已超过 1000 万。",
+          "insight": "代理式 AI 一旦“替用户办事”，就进入了持牌业务的边界。金融、保险场景的智能体产品需要提前做合规映射和牌照评估。",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/finance/ai-agents-could-trigger-financial-regulation-tech-firms-uk-watchdog-says-2026-11-24"
+        },
+        {
+          "title": "🌍 行业动向 | Tidal 宣布 12 月 9 日起禁止全 AI 生成音乐，将删除约 2700 万首曲目",
+          "body": "流媒体音乐平台 Tidal 宣布，将从 12 月 9 日起禁止上传和分发完全由 AI 生成的音乐，并清理平台上已有的大量 AI 曲目。据 Ars Technica 报道，删除规模约 2700 万首。The Verge、TechCrunch 和 Ars 都把这条新闻放上了 AI 头版，Hacker News 讨论热度超过 300 分。随着 AI 生成曲目在 Spotify、Deezer 等平台泛滥，挤占版税池、制造刷量问题，Tidal 成为第一家对全 AI 内容采取“一刀切”下架政策的主流平台。",
+          "insight": "内容平台开始用“人类创作”作为差异化卖点。AIGC 内容的标识、分级和版税规则将成为平台治理的核心议题。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban"
+        },
+        {
+          "title": "🚀 产品发布 | 字节跳动首款个人智能体“小豆”公测，打通抖音、飞书、钉钉、高德打车等外部应用",
+          "body": "据智东西 11 月 24 日报道，字节跳动宣布豆包旗下 AI 个人助理“小豆”开启公测，采用邀请制，公测期间免费。与对话式的豆包 App 不同，小豆依托长期记忆和后台任务，可以持续跟进用户事务并主动推送信息，例如订餐厅（会代打电话）、叫车、整理飞书文档、盯演出开票、提醒补货等。它已接入字节系应用，以及钉钉、高德打车、企业微信、百度网盘、GitHub 等外部服务。执行任务前需要用户确认，涉及支付时还有额外提示。",
+          "insight": "受 Meta Muse 带动，国内大厂的个人智能体竞争进入“生态连接器”比拼阶段，跨生态打通的广度将决定可用性的上限。",
+          "source": "36氪（智东西）",
+          "url": "http://www.36kr.com/p/4083578123184773"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🤝 合作 | 沃尔玛联手 Meta，把黑五促销搬进 AI 智能体 Muse",
+          "body": "TechCrunch 报道，沃尔玛 11 月 24 日宣布与 Meta 合作，消费者可以直接在 Meta 的 AI 智能体 Muse 里浏览沃尔玛黑色星期五优惠，完成找货、比价和下单，不需要自己打开沃尔玛网站。报道指出，沃尔玛与亚马逊的 AI 购物路线明显分化：亚马逊倾向于把流量留在自家 Rufus 等工具里，而沃尔玛选择主动把商品和交易接入第三方智能体，抢占“智能体代购”这个新入口。",
+          "insight": "零售商要为“智能体是买家”做准备，商品数据、价格接口和交易协议的机器可读程度会成为新的渠道竞争力。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/"
+        },
+        {
+          "title": "🏀 行业落地 | Google Gemini 进驻金州勇士体系，覆盖球迷体验与球馆运营",
+          "body": "Google 官方博客 11 月 24 日宣布，Gemini 与金州勇士母公司达成合作，支持勇士队、WNBA 女瓦尔基里队和大通中心的球迷互动与日常经营。从公开信息看，合作同时覆盖面向球迷的体验，例如赛事信息、个性化互动和场馆服务，以及面向员工的业务运营，例如内容生产、活动运营和数据分析，是体育娱乐行业把大模型同时嵌入 C 端和 B 端流程的标杆案例。",
+          "insight": "体育与文娱 IP 方的 AI 落地正在从营销噱头走向“前台体验 + 后台运营”一体化，与云厂商的整体合作更容易形成规模效应。",
+          "source": "Google Blog",
+          "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/"
+        },
+        {
+          "title": "🛡️ 安全治理 | 英国 NCSC：智能体化网络攻击明显增加，“老漏洞被更快利用”",
+          "body": "英国国家网络安全中心（NCSC）11 月 24 日发文称，9 月以来已处置多起使用自主黑客工具的入侵事件，部分直接导致组织业务停摆。NCSC 指出，这些攻击大多并不依赖高深的新漏洞，而是让 AI 以更快的速度批量发现并利用弱口令、未打补丁的系统和暴露在公网的服务等常见弱点。TechCrunch 评论称，AI 正在把企业多年积累的安全欠账加速暴露出来。NCSC 建议企业优先修补基础卫生问题，缩短补丁周期。",
+          "insight": "企业 AI 化的同时必须同步推进“安全基础卫生”。对 CISO 来说，补丁时效和资产暴露面管理的优先级要高于新增安全工具采购。",
+          "source": "NCSC",
+          "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks"
+        },
+        {
+          "title": "🏗️ 中国落地 | 蚂蚁 OceanBase 发布湖库一体 AI 数据平台 OceanLake，Agent 调用量半年增长 13 倍",
+          "body": "据量子位报道，11 月 24 日蚂蚁 OceanBase AI 数据大会在北京召开。OceanBase 发布湖库一体 AI 数据平台 OceanLake，并开源核心引擎 AI 数据库 OceanSeek。CTO 杨传辉披露，面向 Agent 的 MCP 访问量从 4 月到 9 月增长约 13.36 倍；蚂蚁部分业务从 BI 转向 AI 后，数据仓库调用量半年内提升一个数量级。平台主打三项能力：湖库一体、Agent 友好（秒级数据库分支支持试错回滚）和多模混合搜索。",
+          "insight": "企业 Agent 规模化后，瓶颈正在从模型转向数据底座。数据平台能否支撑高并发、低成本试错，将直接决定 Agent 的 ROI。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512383.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🚀 产品发布 | 百度文心 5.5 Flash Preview 以 Apache 2.0 协议开源，编程榜单列开源第二",
+          "body": "据量子位报道，百度 11 月 24 日宣布文心 5.5 Flash Preview 正式开源，采用 Apache 2.0 协议，模型权重已上架 Hugging Face 和 ModelScope，支持 vLLM、SGLang 部署。该模型采用稀疏 MoE 架构，总参数 2800 亿，每个 token 激活 140 亿参数，支持 100 万 token 上下文，解码速度超过 200 tokens/s。它在 CodeArena WebDev 榜单拿到 1668 分，位列开源模型第二、国产模型第四，在 Terminal-Bench 等智能体编程基准上也有不错表现。",
+          "insight": "宽松协议的国产编程大模型又多一个选项。对需要私有化部署代码助手的企业来说，选型重点会从“能不能用”转向“推理成本和工具链适配”。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512354.html"
+        },
+        {
+          "title": "🛠️ 开发工具 | Gemini API 上线文件切片控制，可按页、表格区间和媒体片段精准加载",
+          "body": "Google DeepMind 11 月 23 日宣布，Gemini API 在 Google AI Studio 和 Vertex AI 中上线原生文件切片控制（file slicing controls）。开发者可以指定只让模型在服务端加载 PDF 的特定页、电子表格的特定区间，或者音视频的特定时间段，不必再把整份大文件塞进上下文。官方表示，这一能力可以显著降低处理大型文档和长媒体时的 token 成本，也减少开发者自己做预切分和分块的工程负担。",
+          "insight": "长上下文应用的成本优化正从“压缩 prompt”转向“精准取数”，文档类 Agent 的架构可以更多依赖平台原生能力。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+        },
+        {
+          "title": "🔬 技术突破 | “2035 提前到来”：借助 LLM，trynix.dev 已能在浏览器标签页里跑 Firefox 等 Linux GUI 程序",
+          "body": "开发者 Farid Zakaria 11 月 23 日发文介绍，他的项目 trynix.dev 已经可以在浏览器中启动 Nix 生态的 Linux GUI 程序，包括纸牌游戏、GL 演示、espeak 语音，甚至完整的 Firefox。文章援引 Gary Bernhardt 著名演讲《The Birth & Death of JavaScript》中“2035 年一切都编译到浏览器运行”的预言，认为大模型大幅加速了这类重型系统工程的推进，让原本预计十年后的场景提前出现。该文在 Hacker News 获得 900 多分。",
+          "insight": "AI 辅助开发正在把“个人开发者 + 大模型”能完成的系统工程上限推高，WebAssembly 与浏览器运行时可能迎来一轮新的工程爆发。",
+          "source": "fzakaria.com（Hacker News 热议）",
+          "url": "https://fzakaria.com/2026/11/23/2035-came-early"
+        },
+        {
+          "title": "📦 开源模型 | NariQ 把 Qwen3.8-27B 压到 10GB 并宣称接近 BF16 精度，本地编程模型门槛再降",
+          "body": "Nari Labs 在 Hugging Face 发布 Qwen3.8-27B-NariQ-GGUF 量化版本，把 270 亿参数的通义千问 3.8 模型压缩到约 10GB 文件，并宣称精度接近 BF16 原版，可以在消费级显卡或高配笔记本上运行。该项目在 Hacker News 获得近 200 分讨论，开发者关注它在本地代码补全和智能体编程场景下的实际表现。叠加近期 Inkling、Bonsai 等小模型热潮，本地化 AI 编程环境正在快速成熟。",
+          "insight": "高质量量化让中等规模开源模型可以进入开发者个人设备，对数据敏感、需要离线的企业研发团队是可行的补充方案。",
+          "source": "Hugging Face",
+          "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 基准评测 | ShellBench：顶级 AI 智能体处理日常事务失败率超三分之一，15.7% 触犯安全要求",
+          "body": "TechCrunch 11 月 24 日报道了新基准 ShellBench。该基准由 OpenClaw Foundation 联合 Parsewave、Hugging Face、Red Hat 和 UC Berkeley 开发，基于超过 1000 万条匿名真实智能体交互，考察对账、核实信息时效、识别可疑付款请求等日常委托任务。结果显示，OpenAI、Anthropic、Meta 的最强模型失败率都超过三分之一；所有模型中 15.7% 的尝试至少违反一项安全要求，常常带来意外后果。",
+          "insight": "个人和企业智能体的瓶颈在可靠性与安全边界，而不是能力上限。上线前必须以真实任务做评测，并保留人工确认环节。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/"
+        },
+        {
+          "title": "📊 基准评测 | Google DeepMind 发布“人类第一考”HFE，衡量大模型能否每次都答对简单问题",
+          "body": "Google 11 月 24 日在 Kaggle 发布 Humanity’s First Exam（HFE）基准。与 Humanity’s Last Exam 考察能力上限不同，HFE 关注可靠性：模型能否在 544 道覆盖 20 项基础能力的文字与图像日常题（以及它们的细微变体）上每次都答对。官方称，过去 6 个月前沿模型在 HFE 上进步明显，但仍有大量“简单题”出错。Google 同时发起为期三周的 Kaggle 竞赛（截至 12 月 15 日），征集当前模型仍会答错的日常问题。",
+          "insight": "评测重心正从“最难能做什么”转向“稳定不出错”。企业选型应把一致性和重复正确率纳入核心指标。",
+          "source": "Google Blog",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+        },
+        {
+          "title": "🔬 研究成果 | Anthropic 公开由内部 Claude 模型发现的 VP≠VNP 证明及 Lean 4 形式化",
+          "body": "Anthropic 在 GitHub 的 formal-math 仓库公开了论文《VP ≠ VNP over every field》。论文证明，在任意域上，哈密顿圈多项式以及特征不为 2 时的积和式，其算术电路规模都需要超过 m^(c(log m)^(1/3)) 个门，从而得出代数复杂度中 VP 是 VNP 真子集的结论。仓库说明，该结果由内部研究用 Claude 模型发现，论文与 Lean 4 形式化都由 AI 撰写，尚未经人类数学家审核，也不能推出 P≠NP。该项目在 Hacker News 获得 350 多分。",
+          "insight": "“AI 发现 + 形式化验证”正成为前沿数学研究的新范式。可机器验证的结论，会成为 AI 科研成果可信度的关键门槛。",
+          "source": "GitHub（Anthropic）",
+          "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp"
+        },
+        {
+          "title": "🔬 研究成果 | 高德发布世界模型 ABot-World 0.5：音画同步、自然语言实时重塑，WBench 物理性登顶",
+          "body": "据量子位报道，阿里巴巴旗下高德发布新一代通用交互式世界模型 ABot-World 0.5。新版强化真实物理反馈（刚体碰撞、柔性形变、运动惯性），新增攻击、跳跃、驾驶等技能，首次支持原生音频与画面同步生成，并允许用户在生成过程中用一句自然语言实时改变剧情、天气和角色技能。模型在世界模型评测基准 WBench 上拿下物理性和总分第一，可用于具身智能训练数据生成、游戏原型和影视预演。",
+          "insight": "地图和出行公司依托真实世界数据进入世界模型赛道，数据管线能力正成为具身智能与仿真领域的新护城河。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512454.html"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天最明显的主线是“智能体进入真实世界后的代价”。亚马逊披露攻击方的 AI 智能体在几乎无人指挥下自主挖出并利用 0-day，英国 NCSC 也确认智能体化攻击正在加速利用老旧弱点。智能体在防守和进攻两侧同时规模化，企业安全的时间尺度从“天”被压缩到“分钟”。",
+    "监管与评测也在同步跟上。英国 FCA 明确表示，“替用户办事”的智能体一旦触及金融推广、建议或支付，就要进入持牌监管；ShellBench 和 Google 的“人类第一考”则用真实任务和重复作答，揭示了顶级模型在可靠性与安全边界上的短板。可靠、可审计、可回滚，正在取代“更聪明”成为智能体落地的第一指标。",
+    "商业层面，个人智能体正成为新的流量入口：沃尔玛把黑五交易接入 Meta Muse，字节小豆公测并打通多家外部应用。与此同时，Anthropic 上市一周即盘前破发，提醒市场开始用更冷静的眼光给前沿模型公司定价。",
+    "开源与基础设施方面，文心 5.5 Flash Preview 以 Apache 2.0 开源，NariQ 把 27B 模型压到 10GB，OceanBase 推出面向 Agent 的湖库一体数据平台。模型、量化与数据底座三层同时“降本”，企业私有化部署 AI 编程和 Agent 的经济性正在快速改善。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-25 执行）：已检索 OpenAI/Anthropic 合作·合资·收购、Anthropic×Accenture/Deloitte/咨询、AI consulting services launch、Reuters/Bloomberg AI acquisition merger、“OpenAI Anthropic 进军咨询 收购”。命中结果均为旧闻（OpenAI/Anthropic 华尔街合资 2026-05、Accenture-Anthropic 2025-12、Amazon 75 亿美元收购 Decart 与 Palo Alto 45 亿收购已于 11-24 前发过）。今日无重大新合作/收并购公告；大厂动向方面，纳入 Anthropic IPO 破发（进展）、沃尔玛×Meta Muse 合作、Google HFE 基准。"
+  }
+}

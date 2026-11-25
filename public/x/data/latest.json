@@ -1,64 +1,81 @@
 {
-  "date": "2026-11-25",
-  "title": "Builder Signals · 2026-11-25",
-  "generatedAt": "2026-11-24T23:00:17.464Z",
-  "feedGeneratedAt": "2026-11-24T06:30:02.996Z",
-  "summary": "Follow Builders 今日捕捉到 41 条 X 动态、0 集播客、0 篇博客；本站精选 13 条高信号内容。",
+  "date": "2026-11-26",
+  "title": "Builder Signals · 2026-11-26",
+  "generatedAt": "2026-11-25T23:00:17.757Z",
+  "feedGeneratedAt": "2026-11-25T06:30:31.369Z",
+  "summary": "Follow Builders 今日捕捉到 34 条 X 动态、1 集播客、0 篇博客；本站精选 13 条高信号内容。",
   "stats": {
-    "xBuilders": 17,
-    "totalTweets": 41,
-    "selectedXTweets": 13,
-    "podcastEpisodes": 0,
+    "xBuilders": 16,
+    "totalTweets": 34,
+    "selectedXTweets": 12,
+    "podcastEpisodes": 1,
     "blogPosts": 0,
     "selectedItems": 13
   },
   "featured": [
     {
-      "id": "digest-x-0-Qm9yaXMgQ2",
+      "id": "digest-x-0-QWFyb24gTG",
       "kind": "x",
       "source": "X",
-      "sourceName": "Boris Cherny",
-      "handle": "bcherny",
-      "title": "Boris Cherny · Anthropic Claude Code 负责人",
-      "summaryEn": "Boris Cherny announced Claude Ship in beta for Team and Enterprise plans. A year after Opus 4.5 became the first model to write 100% of his code, shipping PRs still hadn't caught up. Claude Ship splits that last mile into Code Review (finds bugs), PR Steward (fixes issues and failing checks) and Claude Approvals (approves what team policy allows; the latter two in beta). His rollout advice: admins enable it per GitHub repo, start with one repo and run Approvals in observe mode until you trust it.",
-      "insightZh": "Boris Cherny 宣布 Claude Ship 面向 Team 和 Enterprise 计划开启 beta。他说一年前 Opus 4.5 已经能写他 100% 的代码，但「把 PR 发出去」这一环一直没跟上。Claude Ship 把这一环拆成三块：Code Review 找 bug，PR Steward 修复问题和失败的检查，Claude Approvals 按团队策略自动审批（后两者为 beta）。他的说法是「不用再等 code review、不用盯着 PR，结果还更好」。落地建议：管理员可按 GitHub 仓库开启，先从一个仓库开始，Approvals 先跑 observe 模式，建立信任后再放开。",
+      "sourceName": "Aaron Levie",
+      "handle": "levie",
+      "title": "Aaron Levie · Box CEO",
+      "summaryEn": "Box CEO Aaron Levie observes that with the latest model and harness progress, 10X output gains are now realistic — and the result is wildly different output levels across teams inside the same company. Historically, tech adoption was measured per firm (\"that company went to the cloud\"), with roughly uniform uplift across teams. AI is different: there can be a 10X delta between the lowest and highest adopters within one company. Teams that redesign their processes to deploy agents in their workflows can see an orde…",
+      "insightZh": "Box CEO Aaron Levie 提出一个关键观察：靠最新的模型和 harness 进展，团队已经可以拿到 10 倍的产出提升，结果是同一家公司里不同团队的产出差距变得非常大。以往技术采用是按公司算的（“这家公司上云了”），各团队提升大体一致；AI 不一样，同一家公司内 AI 采用最低和最高的团队之间可能有 10 倍的差距。能重新设计流程、把 agent 嵌进工作流的团队，生产力能跳一个数量级。目前这种效应集中在编码，但越来越多工作会变得“近似编码”，类似结果会扩散到其他职能，企业内部会出现一些很剧烈的动态。",
       "tags": [
-        "Claude",
+        "Agent",
         "Coding",
-        "Product",
         "Research"
       ],
-      "url": "https://x.com/bcherny/status/2124961485801836573",
-      "publishedAt": "2026-11-23T20:21:12.000Z",
+      "url": "https://x.com/levie/status/2125442246543814686",
+      "publishedAt": "2026-11-25T04:11:35.000Z",
       "metrics": {
-        "likes": 5943,
-        "retweets": 178,
-        "replies": 242,
-        "score": 7139
+        "likes": 160,
+        "retweets": 15,
+        "replies": 39,
+        "score": 298
       }
     },
     {
-      "id": "digest-x-1-Q2xhdWRlIM",
+      "id": "digest-x-1-QW1qYWQgTW",
       "kind": "x",
       "source": "X",
-      "sourceName": "Claude",
-      "handle": "claudeai",
-      "title": "Claude · Anthropic 官方账号",
-      "summaryEn": "Claude shipped two enterprise-relevant updates. Connectors and skills are now unified as plugins — one way to connect tools and teach Claude new skills — live on Free, Pro, Max and Ultra, with Team and Enterprise coming soon and 10,000+ plugins to browse. Separately, zero data retention (ZDR) with Enterprise Frontier Safeguards (EFS) is in public beta: EFS detects misuse across many requests while staying ZDR-compatible, built with 100+ customers. It's available on Claude Platform, Claude Platform on AWS, Amazon B…",
-      "insightZh": "Claude 官方今天发了两条企业侧的重要更新。一是 Connectors 和 Skills 合并为统一的「Plugins」，连接工具和教会 Claude 新技能现在走同一个入口，已在 Free / Pro / Max / Ultra 上线，Team 和 Enterprise 即将支持，插件目录已超过 10,000 个。二是「零数据保留（ZDR）+ Enterprise Frontier Safeguards（EFS）」进入公开 beta：EFS 能跨多个请求识别滥用，同时兼容 ZDR，与 100 多家客户共同开发；目前在 Claude Platform、AWS 上的 Claude Platform、Amazon Bedrock、Google Cloud 上可用，Microsoft Foundry 支持即将推出。",
+      "sourceName": "Amjad Masad",
+      "handle": "amasad",
+      "title": "Amjad Masad · Replit CEO",
+      "summaryEn": "Replit CEO Amjad Masad argues America can build the best frontier models and still lose the global AI race — which is why Jensen's return matters far beyond Nvidia. Governments want sovereign AI they can run on their own soil and infrastructure. If American companies won't meet that demand, Chinese companies will, and countries will move from Chinese models to Chinese infrastructure and chips. He cites Huawei's telecom playbook: once networks are built around your equipment, replacing it is costly and disruptive.…",
+      "insightZh": "Replit CEO Amjad Masad 认为，美国可以造出最好的前沿模型，却仍然输掉全球 AI 竞赛——这正是 Jensen 回归的意义远超 Nvidia 本身的原因。各国政府都想要主权 AI：在本国土地、本国基础设施上、由自己掌控运行的模型。如果美国公司不满足这种需求，中国公司会去满足——各国先用中国模型，再采用中国的基础设施和芯片。他拿华为在电信设备上的历史做类比：一旦一个国家的网络建在你的设备上，替换就昂贵且困难。因此他认为 Jensen 支持美国开源模型生态非常重要，开源模型是同时拿下“前沿领先”和“全球采用”的关键。另外他还指出，token 需求不像电力那样平滑增长，而是阶梯式跃升：自动补全 → 聊天 → agent → 长时间自主运行的 agent → agent 集群，每一次 harness 创新都解锁一个数量级的潜在 token 消耗，但用户摸清新工具的用法会有滞后。他还转发了一个 3B 参数的本地 Muse 模型，表示惊叹。",
       "tags": [
-        "Claude",
-        "Product",
+        "Agent",
+        "Startup",
+        "Research",
         "Infrastructure"
       ],
-      "url": "https://x.com/claudeai/status/2124970294523945328",
-      "publishedAt": "2026-11-23T18:15:53.000Z",
+      "url": "https://x.com/amasad/status/2125353849057853876",
+      "publishedAt": "2026-11-24T22:20:19.000Z",
       "metrics": {
-        "likes": 193,
-        "retweets": 5,
-        "replies": 9,
-        "score": 231
+        "likes": 633,
+        "retweets": 73,
+        "replies": 53,
+        "score": 1031
       }
+    },
+    {
+      "id": "digest-podcast-0-VW5zdXBlcn",
+      "kind": "podcast",
+      "source": "Podcast",
+      "sourceName": "Unsupervised Learning",
+      "title": "Ep 98: China Expert on Jensen’s Return",
+      "summaryEn": "Jensen's return is good for Nvidia and the AI ecosystem, but ChinaTalk's Jordan Schneider argues the variables that really matter are chip leakage into China, the remote-access rule, and the coming political backlash against AI. Redpoint investor Jacob Efron hosted ChinaTalk's Jordan Schneider for an emergency episode on Jensen Huang's ouster and reinstatement. Jordan's core charge isn't the personal scandal but Nvidia turning a blind eye to chip smuggling — citing WSJ/NYT reporting that banned chips reached military-linked research — comparing it to banks' lax sanctions compliance before Treasury fines forced change. He speculates the board reinstated Jensen because the Trump side signaled a settlement (~$25M fine) and pardons, with the stock price being the lever Trump responds to, and that the timing was held until after the midterms. On policy, he's watching whether the new 132-page…",
+      "insightZh": "Jensen 回归对 Nvidia 和 AI 生态是利好，但 ChinaTalk 的 Jordan Schneider 认为芯片流入中国、远程访问规则和 AI 的政治反弹才是接下来真正要盯的变量。 Redpoint 投资人 Jacob Efron 邀请 ChinaTalk 主理人 Jordan Schneider 录了一期紧急节目，讨论 Jensen Huang 被罢免又复职的来龙去脉。Jordan 认为核心问题不是私生活，而是 Nvidia 多年来对芯片走私“视而不见”——他援引《华尔街日报》《纽约时报》报道称，被禁运的芯片甚至流入了与军方研究相关的机构；他把这类比为当年银行业对制裁合规的漫不经心，直到财政部重罚后才认真起来。他推测董事会敢于让 Jensen 回归，是因为特朗普方面暗示会以和解（约 2500 万美元罚款）和赦免收场；而特朗普最在意的是股市，Nvidia 股价下跌是他会回应的信号。时机上，他认为 Rubio 等人刻意等到中期选举之后才发难。 政策层面，他重点关注新出台的 132 页规则是否会被撤销或不执行：该规则要求在台积电流片先进芯片须经商务部批准，并要求马来西亚等地服务中国客户的 neocloud 在 90 天后停止服务——据他估计中国约五分之二的算力来自马来西亚数据中心和远程访问。他反驳“卖芯片给中国更好”的论点：在 Mythos 之后，AI 已被证明是可以“黑掉全世界”的技术，不再是普通技术；华为的瓶颈是供给（HBM 和 EUV 等设备），而非需求，只要守住设备和远程访问，西方可在 5-7 年内保持 10-15 倍的算力优势。Jacob 则认为 Jensen 掌舵的 Nvidia 更强，生态更健康。 他也提醒创业者：国家安全关切不会因为一次赦免消失，两党都很愤怒；中国已开始对 AI 模型出口建立许可制度，他给“中国对机器人数据实施出口管制”定价 75%。他对人形机器人很失望（在 CoRL 会议上看到 DeepMind 机器人勉强拿起一个松饼），并指出机器人零部件尤其是稀土磁体高度依赖中国。最大的长期风险是政治反弹：仅 2% 的美国人希望 AI…",
+      "tags": [
+        "Product",
+        "Startup",
+        "Research"
+      ],
+      "url": "https://www.youtube.com/watch?v=gkd5eOQGASU",
+      "publishedAt": "2026-11-24T13:05:03.000Z",
+      "handle": ""
     }
   ],
   "sections": [
@@ -68,130 +85,134 @@
       "description": "来自 builders / founders / researchers 的实时短信号。",
       "items": [
         {
-          "id": "digest-x-0-Qm9yaXMgQ2",
+          "id": "digest-x-0-QWFyb24gTG",
           "kind": "x",
           "source": "X",
-          "sourceName": "Boris Cherny",
-          "handle": "bcherny",
-          "title": "Boris Cherny · Anthropic Claude Code 负责人",
-          "summaryEn": "Boris Cherny announced Claude Ship in beta for Team and Enterprise plans. A year after Opus 4.5 became the first model to write 100% of his code, shipping PRs still hadn't caught up. Claude Ship splits that last mile into Code Review (finds bugs), PR Steward (fixes issues and failing checks) and Claude Approvals (approves what team policy allows; the latter two in beta). His rollout advice: admins enable it per GitHub repo, start with one repo and run Approvals in observe mode until you trust it.",
-          "insightZh": "Boris Cherny 宣布 Claude Ship 面向 Team 和 Enterprise 计划开启 beta。他说一年前 Opus 4.5 已经能写他 100% 的代码，但「把 PR 发出去」这一环一直没跟上。Claude Ship 把这一环拆成三块：Code Review 找 bug，PR Steward 修复问题和失败的检查，Claude Approvals 按团队策略自动审批（后两者为 beta）。他的说法是「不用再等 code review、不用盯着 PR，结果还更好」。落地建议：管理员可按 GitHub 仓库开启，先从一个仓库开始，Approvals 先跑 observe 模式，建立信任后再放开。",
+          "sourceName": "Aaron Levie",
+          "handle": "levie",
+          "title": "Aaron Levie · Box CEO",
+          "summaryEn": "Box CEO Aaron Levie observes that with the latest model and harness progress, 10X output gains are now realistic — and the result is wildly different output levels across teams inside the same company. Historically, tech adoption was measured per firm (\"that company went to the cloud\"), with roughly uniform uplift across teams. AI is different: there can be a 10X delta between the lowest and highest adopters within one company. Teams that redesign their processes to deploy agents in their workflows can see an orde…",
+          "insightZh": "Box CEO Aaron Levie 提出一个关键观察：靠最新的模型和 harness 进展，团队已经可以拿到 10 倍的产出提升，结果是同一家公司里不同团队的产出差距变得非常大。以往技术采用是按公司算的（“这家公司上云了”），各团队提升大体一致；AI 不一样，同一家公司内 AI 采用最低和最高的团队之间可能有 10 倍的差距。能重新设计流程、把 agent 嵌进工作流的团队，生产力能跳一个数量级。目前这种效应集中在编码，但越来越多工作会变得“近似编码”，类似结果会扩散到其他职能，企业内部会出现一些很剧烈的动态。",
           "tags": [
-            "Claude",
+            "Agent",
             "Coding",
-            "Product",
             "Research"
           ],
-          "url": "https://x.com/bcherny/status/2124961485801836573",
-          "publishedAt": "2026-11-23T20:21:12.000Z",
+          "url": "https://x.com/levie/status/2125442246543814686",
+          "publishedAt": "2026-11-25T04:11:35.000Z",
           "metrics": {
-            "likes": 5943,
-            "retweets": 178,
-            "replies": 242,
-            "score": 7139
+            "likes": 160,
+            "retweets": 15,
+            "replies": 39,
+            "score": 298
           }
         },
         {
-          "id": "digest-x-1-Q2xhdWRlIM",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Claude",
-          "handle": "claudeai",
-          "title": "Claude · Anthropic 官方账号",
-          "summaryEn": "Claude shipped two enterprise-relevant updates. Connectors and skills are now unified as plugins — one way to connect tools and teach Claude new skills — live on Free, Pro, Max and Ultra, with Team and Enterprise coming soon and 10,000+ plugins to browse. Separately, zero data retention (ZDR) with Enterprise Frontier Safeguards (EFS) is in public beta: EFS detects misuse across many requests while staying ZDR-compatible, built with 100+ customers. It's available on Claude Platform, Claude Platform on AWS, Amazon B…",
-          "insightZh": "Claude 官方今天发了两条企业侧的重要更新。一是 Connectors 和 Skills 合并为统一的「Plugins」，连接工具和教会 Claude 新技能现在走同一个入口，已在 Free / Pro / Max / Ultra 上线，Team 和 Enterprise 即将支持，插件目录已超过 10,000 个。二是「零数据保留（ZDR）+ Enterprise Frontier Safeguards（EFS）」进入公开 beta：EFS 能跨多个请求识别滥用，同时兼容 ZDR，与 100 多家客户共同开发；目前在 Claude Platform、AWS 上的 Claude Platform、Amazon Bedrock、Google Cloud 上可用，Microsoft Foundry 支持即将推出。",
-          "tags": [
-            "Claude",
-            "Product",
-            "Infrastructure"
-          ],
-          "url": "https://x.com/claudeai/status/2124970294523945328",
-          "publishedAt": "2026-11-23T18:15:53.000Z",
-          "metrics": {
-            "likes": 193,
-            "retweets": 5,
-            "replies": 9,
-            "score": 231
-          }
-        },
-        {
-          "id": "digest-x-2-QW1qYWQgTW",
+          "id": "digest-x-1-QW1qYWQgTW",
           "kind": "x",
           "source": "X",
           "sourceName": "Amjad Masad",
           "handle": "amasad",
           "title": "Amjad Masad · Replit CEO",
-          "summaryEn": "Amjad Masad shared new Replit research on scaling laws for agent swarms. In a fixed two-hour window, Opus 5.5 went from a 3.7x NumPy speedup with one agent to 18.9x with 32 agents, while GPT-6.2 Astra was the strongest solo agent but scaled negatively beyond 8. Decentralized swarms beat centrally coordinated ones, problem parallelizability strongly predicted performance, and individual model intelligence was a poor predictor of collective intelligence. Replit is open-sourcing Optimization-Bench. He also met VP JD…",
-          "insightZh": "Amjad Masad 发布了 Replit 关于「Agent 集群扩展定律」的研究：在固定两小时内，Opus 5.5 在 NumPy 优化任务上从单 agent 3.7 倍加速提升到 32 个 agent 时的 18.9 倍；GPT-6.2 Astra 是最强的单兵 agent，但超过 8 个 agent 后出现负向扩展。模型会自发形成不同的组织结构，去中心化集群比依赖中心协调的扩展得更好；问题本身的可并行度是集群表现的强预测因子，而单个模型的智能水平反而不能很好预测集体智能。Replit 同时开源了 Optimization-Bench。另外他提到上周五与副总统 JD Vance 会面，讨论美国 AI 领导力、网络安全和开放权重模型——「美国可能赢下前沿 AI 竞赛，却输掉全球 AI 生态」，因为盟友想要主权 AI 并越来越多转向中国开源模型；他也对 Jensen 回到 Nvidia 表示欢迎。",
+          "summaryEn": "Replit CEO Amjad Masad argues America can build the best frontier models and still lose the global AI race — which is why Jensen's return matters far beyond Nvidia. Governments want sovereign AI they can run on their own soil and infrastructure. If American companies won't meet that demand, Chinese companies will, and countries will move from Chinese models to Chinese infrastructure and chips. He cites Huawei's telecom playbook: once networks are built around your equipment, replacing it is costly and disruptive.…",
+          "insightZh": "Replit CEO Amjad Masad 认为，美国可以造出最好的前沿模型，却仍然输掉全球 AI 竞赛——这正是 Jensen 回归的意义远超 Nvidia 本身的原因。各国政府都想要主权 AI：在本国土地、本国基础设施上、由自己掌控运行的模型。如果美国公司不满足这种需求，中国公司会去满足——各国先用中国模型，再采用中国的基础设施和芯片。他拿华为在电信设备上的历史做类比：一旦一个国家的网络建在你的设备上，替换就昂贵且困难。因此他认为 Jensen 支持美国开源模型生态非常重要，开源模型是同时拿下“前沿领先”和“全球采用”的关键。另外他还指出，token 需求不像电力那样平滑增长，而是阶梯式跃升：自动补全 → 聊天 → agent → 长时间自主运行的 agent → agent 集群，每一次 harness 创新都解锁一个数量级的潜在 token 消耗，但用户摸清新工具的用法会有滞后。他还转发了一个 3B 参数的本地 Muse 模型，表示惊叹。",
           "tags": [
-            "OpenAI",
             "Agent",
-            "Research"
+            "Startup",
+            "Research",
+            "Infrastructure"
           ],
-          "url": "https://x.com/amasad/status/2124969305674748175",
-          "publishedAt": "2026-11-23T20:52:17.000Z",
+          "url": "https://x.com/amasad/status/2125353849057853876",
+          "publishedAt": "2026-11-24T22:20:19.000Z",
           "metrics": {
-            "likes": 295,
-            "retweets": 19,
-            "replies": 72,
-            "score": 515
+            "likes": 633,
+            "retweets": 73,
+            "replies": 53,
+            "score": 1031
           }
         },
         {
-          "id": "digest-x-3-VGhpYmF1bH",
+          "id": "digest-x-2-R2FycnkgVG",
           "kind": "x",
           "source": "X",
-          "sourceName": "Thibault Sottiaux",
-          "handle": "thsottiaux",
-          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
-          "summaryEn": "Thibault Sottiaux said ChatGPT users should feel a significant jump in answer quality once the rollout reaches them, and combined with simplifying the app, making it faster and merging chat & work, day-to-day experience should improve markedly by year-end. Inside OpenAI, dots are becoming the primary way to get things done — \"we have dots building the dots system.\" He also recommended a conversation on OpenAI's work patching flaws in OSS software and infrastructure.",
-          "insightZh": "Thibault Sottiaux 透露 ChatGPT 即将推送一次回答质量的明显跃升，叠加简化应用、提速、合并 chat 与 work 等投入，到年底日常体验会有很大改善。他还说在 OpenAI 内部，「dots」正迅速成为完成工作的主要方式——「我们用 dots 来构建 dots 系统」。另外推荐了一期关于 OpenAI 团队如何修补开源软件和基础设施漏洞的访谈。",
+          "sourceName": "Garry Tan",
+          "handle": "garrytan",
+          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
+          "summaryEn": "YC President Garry Tan offered two reasons for friction in AI adoption. First, models have reached beyond what some customers even need — though he suspects there's still a step function in agency and taste available even if models can do the tasks today. Second, society has hit a limit in its ability to absorb the tech socially: there are natural brakes on how much knowledge-work and business processes can change, because people don't like their cheese moved. He also quipped that \"YC is the YC for hard tech.\"",
+          "insightZh": "YC 总裁 Garry Tan 在讨论 AI 落地放缓时给出两个原因：第一，模型能力已经超过了部分客户的实际需求——不过他怀疑即便模型今天已能完成任务，在 agency（自主性）和品味上仍有阶跃空间；第二，社会对技术的吸收能力触到了上限，知识工作和业务流程的变化存在天然刹车，“人们不喜欢自己的奶酪被动”。他还表示“YC 就是硬科技领域的 YC”。",
           "tags": [
-            "OpenAI",
-            "Coding",
-            "Product",
-            "Eval"
+            "Startup",
+            "Research"
           ],
-          "url": "https://x.com/thsottiaux/status/2124998553856844186",
-          "publishedAt": "2026-11-23T22:48:30.000Z",
+          "url": "https://x.com/garrytan/status/2125247943540142577",
+          "publishedAt": "2026-11-24T15:19:29.000Z",
           "metrics": {
-            "likes": 4241,
-            "retweets": 133,
-            "replies": 823,
-            "score": 6419
+            "likes": 54,
+            "retweets": 1,
+            "replies": 7,
+            "score": 72
           }
+        },
+        {
+          "id": "digest-x-3-TWFkaHUgR3",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Madhu Guru",
+          "title": "Madhu Guru · Meta AI 高级总监（前 Google Gemini / Veo / Nano Banana 负责人）",
+          "summaryEn": "Meta Sr Director of AI Madhu Guru says the predictions around the Jensen saga were a great demo of how little correlation there is between confidence and being right. Prominent VCs, analysts and experts spoke with complete confidence, and some flip-flopped within days — each time with the same confidence. Our info ecosystem asymmetrically rewards certainty, speed and brashness; \"I don't know, let's see\" doesn't get eyeballs. His advice: people often have far less certainty than their tone suggests, so take everyth…",
+          "insightZh": "Meta AI 高级总监 Madhu Guru 借 Jensen 风波点评“专家预测”：很多知名 VC、分析师和专家都以十足的自信预测事态走向，有人几天内就反转观点、而且每次都同样自信。信息生态不对称地奖励确定性、速度和莽撞，“我不知道，再看看”拿不到流量。他提醒：消费任何“专家”评论时都要记住，人们实际的把握远低于语气所暗示的；这一轮新闻周期也是校准“谁总是声音大又总是错”的好机会。",
+          "tags": [
+            "Eval",
+            "Startup"
+          ],
+          "url": "https://x.com/realmadhuguru/status/2125355549202194801",
+          "publishedAt": null,
+          "handle": ""
         },
         {
           "id": "digest-x-4-UGV0ZXIgWW",
           "kind": "x",
           "source": "X",
           "sourceName": "Peter Yang",
+          "handle": "petergyang",
           "title": "Peter Yang · AI 教程创作者",
-          "summaryEn": "In contrast to the internal enthusiasm, Peter Yang said ChatGPT Dots still feels very buggy — it sent emails without his review and randomly stops responding. He wants to like the product but wonders if he's prompting it wrong.",
-          "insightZh": "与 OpenAI 内部的乐观形成对照，Peter Yang 吐槽 ChatGPT Dots 目前仍然很 buggy：会在他没审核的情况下直接发出邮件，还会无故停止响应。他说很想喜欢这个产品，但怀疑是不是自己 prompt 写错了。",
+          "summaryEn": "AI tutorials creator Peter Yang spent the weekend with Gemini 4 Neon and Antigravity and made a free 17-minute video course. Takeaways: (1) Orchestrator and /swarm are very useful for planning and building with multiple agents — at one point he had 42 agents running at once; (2) the built-in /grill-me skill gets Antigravity to ask clarifying questions to flesh out the plan first; (3) remote control beats Claude Code's because every thread is active by default, and he shows how to add Antigravity to your phone home…",
+          "insightZh": "AI 教程创作者 Peter Yang 整个周末都在用 Gemini 4 Neon + Antigravity，并做了一门 17 分钟的免费视频课。他的几点收获：一、Orchestrator 和 /swarm 非常适合用多 agent 做规划和构建，他一度同时跑了 42 个 agent；二、内置的 /grill-me 技能会让 Antigravity 先问澄清问题，帮你把计划想清楚；三、Antigravity 的远程控制比 Claude Code 好用，因为每个线程默认都处于活跃状态，视频里还演示了如何把它加到手机主屏。他也推荐关注 Antigravity 的设计师 @adhidesign 和 Gemini 的新“reset guy” @_mohansolo。",
           "tags": [
-            "OpenAI",
-            "Product"
+            "Claude",
+            "Agent",
+            "Coding"
           ],
-          "url": "https://x.com/petergyang/status/2125060785667969399",
-          "publishedAt": null,
-          "handle": ""
+          "url": "https://x.com/petergyang/status/2125246815884984398",
+          "publishedAt": "2026-11-24T15:15:00.000Z",
+          "metrics": {
+            "likes": 580,
+            "retweets": 39,
+            "replies": 44,
+            "score": 824
+          }
         },
         {
-          "id": "digest-x-5-QWFyb24gTG",
+          "id": "digest-x-5-Qm9yaXMgQ2",
           "kind": "x",
           "source": "X",
-          "sourceName": "Aaron Levie",
-          "title": "Aaron Levie · Box CEO",
-          "summaryEn": "Aaron Levie argued services businesses have always been capped by headcount and finite talent. Agents change the calculus by decoupling output from time: one engineer can produce what dozens did before. The key is still having experts on the front end to ensure agents deliver the right outcomes. He expects this across cybersecurity, advertising, legal, accounting and IT transformation — a great time to start or transform such a business.",
-          "insightZh": "Aaron Levie 认为服务业一直受限于交付能力，规模只能靠人头扩张，而人才总是有限的。Agent 彻底改变了这个算式：产出与投入时间脱钩，一个工程师能顶过去几十个，一个设计师能搭完整套设计系统和品牌。但关键仍是前端要有专家来确保 agent 交付正确结果。他预计网络安全、广告营销、法律、会计、IT 转型等传统「纯人力」服务行业都会出现这种模式——无论新创还是改造既有业务，现在都是好时机。",
+          "sourceName": "Boris Cherny",
+          "handle": "bcherny",
+          "title": "Boris Cherny · Anthropic Claude Code",
+          "summaryEn": "Anthropic's Boris Cherny announced that MCP servers can now ship with their own skills, so Claude Code knows how to use them out of the box — bundling tool access with tool know-how and lowering the friction of MCP integration.",
+          "insightZh": "Anthropic Claude Code 的 Boris Cherny 宣布：MCP server 现在可以自带 skills 一起发布，Claude Code 开箱即知道如何使用这些 MCP server。这把“工具接入”和“工具使用方法”打包在一起，降低了 MCP 集成的上手成本。",
           "tags": [
-            "Agent",
-            "Product"
+            "Claude",
+            "Coding"
           ],
-          "url": "https://x.com/levie/status/2125089009018040779",
-          "publishedAt": null,
-          "handle": ""
+          "url": "https://x.com/bcherny/status/2125292098165612585",
+          "publishedAt": "2026-11-24T18:14:56.000Z",
+          "metrics": {
+            "likes": 5102,
+            "retweets": 210,
+            "replies": 226,
+            "score": 6394
+          }
         },
         {
           "id": "digest-x-6-R3VpbGxlcm",
@@ -200,123 +221,123 @@
           "sourceName": "Guillermo Rauch",
           "handle": "rauchg",
           "title": "Guillermo Rauch · Vercel CEO",
-          "summaryEn": "Guillermo Rauch had Fable study all his coding sessions to run a \"personal eval\" between Opus and Gemini Neon — it picked Neon. He thinks Google being \"so, so back\" is widely under-discussed. He also announced Vercel is doubling down on Japan.",
-          "insightZh": "Guillermo Rauch 让 Fable 研究他所有的编码会话，做一次「个人评测」，判断 Opus 和 Gemini Neon 谁更适合他——结果选了 Neon。他认为 Google 的强势回归被严重低估。另外宣布 Vercel 加码日本市场。",
+          "summaryEn": "Vercel CEO Guillermo Rauch explained that the main reason their coding agent is a CLI \"in this day and age\" is that it's a thin wrapper around libfx — the goal being the smallest, most intelligent coding-agent kernel, embeddable on any surface: browsers, servers, mobile, desktop, OS, ADEs. He also open-sourced a background effect builder.",
+          "insightZh": "Vercel CEO Guillermo Rauch 解释他们的编码 agent 为什么在今天还以 CLI 形式存在：它只是 libfx 的一层薄封装，目标是做出最小、最智能的编码 agent 内核，可嵌入任何场景——浏览器、服务器、移动端、桌面、操作系统、ADE 等。他还开源了一个背景特效构建器。",
           "tags": [
+            "Agent",
             "Coding",
-            "Product",
-            "Eval"
+            "Product"
           ],
-          "url": "https://x.com/rauchg/status/2124880074168242369",
-          "publishedAt": "2026-11-23T14:57:42.000Z",
+          "url": "https://x.com/rauchg/status/2125320020666565096",
+          "publishedAt": "2026-11-24T20:05:54.000Z",
           "metrics": {
-            "likes": 1792,
-            "retweets": 44,
-            "replies": 200,
-            "score": 2368
+            "likes": 237,
+            "retweets": 3,
+            "replies": 50,
+            "score": 349
           }
         },
         {
-          "id": "digest-x-7-RGFuIFNoaX",
+          "id": "digest-x-7-UGV0ZXIgU3",
           "kind": "x",
           "source": "X",
-          "sourceName": "Dan Shipper",
-          "title": "Dan Shipper · Every CEO",
-          "summaryEn": "Dan Shipper echoed the personal-eval theme: you need to be \"personal benchmark maxxing,\" sharing a how-to from colleague @hammer_mt on building one.",
-          "insightZh": "Dan Shipper 呼应「个人 benchmark」思路：你需要把个人 benchmark 做到极致，并分享了同事 @hammer_mt 写的如何构建个人 benchmark 的方法。",
+          "sourceName": "Peter Steinberger",
+          "handle": "steipete",
+          "title": "Peter Steinberger · OpenClaw 创始人",
+          "summaryEn": "OpenClaw creator Peter Steinberger reflected on the year: OpenClaw has found a niche in prosumer and enterprise adoption, and its multiplayer team feature is best in class. Shipping reliable, free open source is really hard, and waking up to countless user complaints is an emotional challenge — he's glad the team now handles most of the work. Focus has been on the boring parts (speed, reliability, security), with the exceptions of the new memory system and the upcoming OpenClaw ID. A reflective blog post is planne…",
+          "insightZh": "OpenClaw 创始人 Peter Steinberger 回顾这一年：OpenClaw 找到了在 prosumer 和企业采用上的定位，多人团队功能在同类中最好。他坦言做可靠、免费的开源非常难，每天醒来面对大量用户抱怨在情绪上是挑战，现在大部分工作已由团队接手。团队主要在做“无聊但重要”的部分——速度、可靠性和安全，例外是新的记忆系统以及即将推出的 OpenClaw ID。他计划假期写一篇年度回顾博客。",
           "tags": [
-            "Eval"
+            "Product"
           ],
-          "url": "https://x.com/danshipper/status/2124886826909622653",
-          "publishedAt": null,
-          "handle": ""
+          "url": "https://x.com/steipete/status/2125422797304549672",
+          "publishedAt": "2026-11-25T02:54:17.000Z",
+          "metrics": {
+            "likes": 590,
+            "retweets": 31,
+            "replies": 83,
+            "score": 880
+          }
         },
         {
-          "id": "digest-x-8-TWFkaHUgR3",
+          "id": "digest-x-8-VGhpYmF1bH",
           "kind": "x",
           "source": "X",
-          "sourceName": "Madhu Guru",
-          "handle": "realmadhuguru",
-          "title": "Madhu Guru · Meta AI 高级总监（前 Google Gemini/Veo/Nano Banana 负责人）",
-          "summaryEn": "Madhu Guru argued the word \"data\" massively undersells its role in model development. Outsiders see it as an inert commodity shoveled into a model like coal, but great data encodes high-value knowledge, taste and expertise, often structured in ways that didn't exist before — making it a fundamental building block for increasingly capable intelligence.",
-          "insightZh": "Madhu Guru 认为「数据」这个名字严重低估了它在模型开发中的价值。外行把数据当成像煤一样可以买来铲进模型的惰性商品，但优质数据其实编码了高价值的知识、品味和专业判断，且常以前所未有的方式被表述和结构化。它是跨领域构建更强智能的根本基石之一，并将持续处于智能产业的核心。",
+          "sourceName": "Thibault Sottiaux",
+          "handle": "thsottiaux",
+          "title": "Thibault Sottiaux · OpenAI Codex & ChatGPT",
+          "summaryEn": "OpenAI's Thibault Sottiaux (Codex & ChatGPT) announced two small perks for ChatGPT Business teams: a banked reset and fast mode at no extra charge through Dec 31.",
+          "insightZh": "OpenAI Codex 与 ChatGPT 的 Thibault Sottiaux 向 ChatGPT Business 团队送上两个小福利：一次额度重置（banked reset），以及到 12 月 31 日前免费使用 fast mode。",
           "tags": [
-            "Coding",
+            "OpenAI",
+            "Coding"
+          ],
+          "url": "https://x.com/thsottiaux/status/2125299248782778588",
+          "publishedAt": "2026-11-24T18:43:21.000Z",
+          "metrics": {
+            "likes": 5295,
+            "retweets": 154,
+            "replies": 1064,
+            "score": 8039
+          }
+        },
+        {
+          "id": "digest-x-9-TmlrdW5qIE",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Nikunj Kothari",
+          "handle": "nikunj",
+          "title": "Nikunj Kothari · FPV Ventures 合伙人",
+          "summaryEn": "FPV Ventures partner Nikunj Kothari summarized 2026 pitches: apps — whoever owns the workflow controls the universe; harnesses — whoever puts intelligence to work; inference — whoever serves it; models — whoever builds it; data — whoever feeds it; infra — whoever keeps it running; chips — whoever controls the sand; energy — whoever controls the electrons. He also quoted Ratatouille: \"Not everyone can become a great artist, but a great artist can come from anywhere\" — the exceptional, by definition, defy the patter…",
+          "insightZh": "FPV Ventures 合伙人 Nikunj Kothari 总结了“2026 年融资 pitch 一句话版”：应用公司说谁拥有工作流谁就掌控宇宙；harness 公司说谁让智能干活谁掌控宇宙；推理公司说谁提供智能服务；模型公司说谁造出智能；数据公司说谁喂养智能；基础设施公司说谁让智能持续运行；芯片公司说谁掌控沙子；能源公司说谁掌控电子。他还引用《料理鼠王》的台词提醒：“不是每个人都能成为伟大的艺术家，但伟大的艺术家可以来自任何地方”——卓越者本就不按模式出现，对创始人、运营者和投资人都一样。",
+          "tags": [
+            "Product",
             "Startup",
             "Research"
           ],
-          "url": "https://x.com/realmadhuguru/status/2125102190196859156",
-          "publishedAt": "2026-11-24T05:40:19.000Z",
+          "url": "https://x.com/nikunj/status/2125376105024758112",
+          "publishedAt": "2026-11-24T23:48:45.000Z",
           "metrics": {
-            "likes": 16,
-            "retweets": 1,
-            "replies": 1,
-            "score": 22
+            "likes": 121,
+            "retweets": 3,
+            "replies": 12,
+            "score": 157
           }
         },
         {
-          "id": "digest-x-9-VGhhcmlxIM",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Thariq",
-          "handle": "trq212",
-          "title": "Thariq · 前 Anthropic Claude Code",
-          "summaryEn": "Thariq said X payouts are a good model for future software companies: keep a lean core team and pay the users who help it grow, improve through feedback, and sell.",
-          "insightZh": "Thariq 认为 X 的创作者分成是未来软件公司的好模型：保持精简的核心团队，向帮助产品增长、提供反馈改进、帮忙销售的用户付费。",
-          "tags": [
-            "Claude",
-            "Coding",
-            "Research"
-          ],
-          "url": "https://x.com/trq212/status/2124987187406275037",
-          "publishedAt": "2026-11-23T22:03:20.000Z",
-          "metrics": {
-            "likes": 1327,
-            "retweets": 28,
-            "replies": 57,
-            "score": 1553
-          }
-        },
-        {
-          "id": "digest-x-10-QWRpdHlhIE",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Aditya Agarwal",
-          "title": "Aditya Agarwal · South Park Commons GP、前 Dropbox CTO",
-          "summaryEn": "Aditya Agarwal observed that good organizations that survive an existential crisis come back meaner and out for blood — he felt this repeatedly at Meta, and says Nvidia isn't going to hold back now. He also highlighted a proactive agent \"you don't have to prompt,\" and reflected on how much ambitious people abroad aspire to America's entrepreneurial ecosystem.",
-          "insightZh": "Aditya Agarwal 观察到，好的组织在经历未能摧毁它的生存危机后，往往会更狠、更有攻击性地回归——他在 Meta 反复感受到这一点，并判断 Nvidia 现在不会再收着打。他还转发了一款「无需 prompt、主动工作」的 agent 产品发布，并谈到出国后更能体会美国创业生态和资本市场对全球雄心勃勃者的吸引力。",
-          "tags": [
-            "Agent"
-          ],
-          "url": "https://x.com/adityaag/status/2125112140260638905",
-          "publishedAt": null,
-          "handle": ""
-        },
-        {
-          "id": "digest-x-11-R2FycnkgVG",
-          "kind": "x",
-          "source": "X",
-          "sourceName": "Garry Tan",
-          "title": "Garry Tan · Y Combinator 总裁兼 CEO",
-          "summaryEn": "Garry Tan offered a self-prompting loop for startups: keep asking \"are we dying?\" — asking is how you spot the thing killing you and avert it.",
-          "insightZh": "Garry Tan 给创业公司一个「自我 prompt 循环」技巧：经常问自己「我们是不是在走向死亡？」——问了才可能发现正在杀死你的东西并及时规避。",
-          "tags": [
-            "Startup"
-          ],
-          "url": "https://x.com/garrytan/status/2124905972296560973",
-          "publishedAt": null,
-          "handle": ""
-        },
-        {
-          "id": "digest-x-12-WmFyYSBaaG",
+          "id": "digest-x-10-WmFyYSBaaG",
           "kind": "x",
           "source": "X",
           "sourceName": "Zara Zhang",
+          "handle": "zarazhangrui",
           "title": "Zara Zhang · Builder",
-          "summaryEn": "Zara Zhang shared how to prevent AI slop in design without being a designer, and argued posting daily and staying private aren't contradictory: she shares less than 1% of her life — the slice that's both interesting to others and comfortable for her.",
-          "insightZh": "Zara Zhang 分享了「不是设计师也能避免 AI 设计 slop」的方法；另外谈到每天发社交媒体和保持隐私并不矛盾——她只分享生活和想法的不到 1%，关键是找到「别人觉得有趣」与「自己愿意分享」的交集。",
-          "tags": [],
-          "url": "https://x.com/zarazhangrui/status/2125074988210463019",
+          "summaryEn": "Builder Zara Zhang: the clarity of a product's positioning is inversely proportional to the number of words it takes to explain what it is in plain language.",
+          "insightZh": "Builder Zara Zhang 给出一个产品定位的判断标准：一个产品定位的清晰度，与用大白话解释它是什么所需的字数成反比。",
+          "tags": [
+            "Product"
+          ],
+          "url": "https://x.com/zarazhangrui/status/2125256097925865639",
+          "publishedAt": "2026-11-24T15:51:53.000Z",
+          "metrics": {
+            "likes": 92,
+            "retweets": 6,
+            "replies": 13,
+            "score": 142
+          }
+        },
+        {
+          "id": "digest-x-11-U3d5eCDCty",
+          "kind": "x",
+          "source": "X",
+          "sourceName": "Swyx",
+          "title": "Swyx · Latent Space / AI Engineer",
+          "summaryEn": "Swyx shared a useful list from John on agent-platform building blocks: local-cloud environments and sandboxes, session vs conversation store, a user approval inbox, stream listeners, artifacts for everyone, and all configurations of dashboard — a handy checklist for anyone building agent infrastructure.",
+          "insightZh": "Swyx 分享了 John 列出的 agent 产品基础设施清单：本地-云端环境与沙箱、session 与 conversation 存储的区分、用户审批收件箱、流式监听、面向所有人的 artifacts，以及各种 dashboard 配置——可作为构建 agent 平台的需求核对表。",
+          "tags": [
+            "Agent",
+            "Product",
+            "Infrastructure"
+          ],
+          "url": "https://x.com/swyx/status/2125431392226148670",
           "publishedAt": null,
           "handle": ""
         }
@@ -326,7 +347,25 @@
       "key": "podcast",
       "label": "Podcasts",
       "description": "长访谈与播客，适合判断技术路线和战略假设。",
-      "items": []
+      "items": [
+        {
+          "id": "digest-podcast-0-VW5zdXBlcn",
+          "kind": "podcast",
+          "source": "Podcast",
+          "sourceName": "Unsupervised Learning",
+          "title": "Ep 98: China Expert on Jensen’s Return",
+          "summaryEn": "Jensen's return is good for Nvidia and the AI ecosystem, but ChinaTalk's Jordan Schneider argues the variables that really matter are chip leakage into China, the remote-access rule, and the coming political backlash against AI. Redpoint investor Jacob Efron hosted ChinaTalk's Jordan Schneider for an emergency episode on Jensen Huang's ouster and reinstatement. Jordan's core charge isn't the personal scandal but Nvidia turning a blind eye to chip smuggling — citing WSJ/NYT reporting that banned chips reached military-linked research — comparing it to banks' lax sanctions compliance before Treasury fines forced change. He speculates the board reinstated Jensen because the Trump side signaled a settlement (~$25M fine) and pardons, with the stock price being the lever Trump responds to, and that the timing was held until after the midterms. On policy, he's watching whether the new 132-page…",
+          "insightZh": "Jensen 回归对 Nvidia 和 AI 生态是利好，但 ChinaTalk 的 Jordan Schneider 认为芯片流入中国、远程访问规则和 AI 的政治反弹才是接下来真正要盯的变量。 Redpoint 投资人 Jacob Efron 邀请 ChinaTalk 主理人 Jordan Schneider 录了一期紧急节目，讨论 Jensen Huang 被罢免又复职的来龙去脉。Jordan 认为核心问题不是私生活，而是 Nvidia 多年来对芯片走私“视而不见”——他援引《华尔街日报》《纽约时报》报道称，被禁运的芯片甚至流入了与军方研究相关的机构；他把这类比为当年银行业对制裁合规的漫不经心，直到财政部重罚后才认真起来。他推测董事会敢于让 Jensen 回归，是因为特朗普方面暗示会以和解（约 2500 万美元罚款）和赦免收场；而特朗普最在意的是股市，Nvidia 股价下跌是他会回应的信号。时机上，他认为 Rubio 等人刻意等到中期选举之后才发难。 政策层面，他重点关注新出台的 132 页规则是否会被撤销或不执行：该规则要求在台积电流片先进芯片须经商务部批准，并要求马来西亚等地服务中国客户的 neocloud 在 90 天后停止服务——据他估计中国约五分之二的算力来自马来西亚数据中心和远程访问。他反驳“卖芯片给中国更好”的论点：在 Mythos 之后，AI 已被证明是可以“黑掉全世界”的技术，不再是普通技术；华为的瓶颈是供给（HBM 和 EUV 等设备），而非需求，只要守住设备和远程访问，西方可在 5-7 年内保持 10-15 倍的算力优势。Jacob 则认为 Jensen 掌舵的 Nvidia 更强，生态更健康。 他也提醒创业者：国家安全关切不会因为一次赦免消失，两党都很愤怒；中国已开始对 AI 模型出口建立许可制度，他给“中国对机器人数据实施出口管制”定价 75%。他对人形机器人很失望（在 CoRL 会议上看到 DeepMind 机器人勉强拿起一个松饼），并指出机器人零部件尤其是稀土磁体高度依赖中国。最大的长期风险是政治反弹：仅 2% 的美国人希望 AI…",
+          "tags": [
+            "Product",
+            "Startup",
+            "Research"
+          ],
+          "url": "https://www.youtube.com/watch?v=gkd5eOQGASU",
+          "publishedAt": "2026-11-24T13:05:03.000Z",
+          "handle": ""
+        }
+      ]
     },
     {
       "key": "blog",

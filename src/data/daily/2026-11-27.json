@@ -1,0 +1,157 @@
+{
+  "date": "2026-11-27",
+  "title": "AI 日报 · 2026-11-27",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "📜 监管政策 | 英伟达暂停向马来西亚、新加坡、泰国、印尼四国出货 AI 服务器",
+          "body": "据《华尔街日报》报道、TechCrunch 11 月 26 日跟进，英伟达已通知戴尔、超微等制造伙伴，暂停向马来西亚、新加坡、泰国和印尼出货服务器，期限未定，以评估区域合作伙伴是否满足美国出口管制要求。背景是美国商务部本月初关闭了中国企业远程调用海外数据中心算力的漏洞；智库 Institute for Progress 估计，这类东南亚远程数据中心约占中国 AI 算力的 24%。这是英伟达在管理层风波后首次主动收紧渠道。",
+          "insight": "东南亚“算力中转站”模式正在被系统性关闭，依赖区域 GPU 云的出海与跨境 AI 项目需要尽快重新评估算力合规与供应连续性。",
+          "source": "TechCrunch（援引 WSJ）",
+          "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/"
+        },
+        {
+          "title": "🌍 行业动向 | 路透独家：芯片管制叠加反蒸馏，智谱新旗舰延期、月之暗面发版周期或翻倍",
+          "body": "路透 11 月 26 日援引知情人士报道，美国对海外数据中心算力的新规（门槛约相当于 750 张 H100）叠加 OpenAI、Anthropic 的反蒸馏措施，正在侵蚀中国 AI 公司“低成本追赶”的关键优势：智谱下一代旗舰模型已落后于原计划，月之暗面预计若失去海外算力，大版本间隔可能从 6 个月拉长到一年以上。新规下已有算力服务的运营方有 90 天时间申请许可证。The Information 此前也报道，DeepSeek 内部估计蒸馏通道完全关闭后与美国顶级模型差距可能扩大至 9 个月。",
+          "insight": "中美模型差距的决定变量正从算法效率转向算力与数据获取渠道，采用国产模型的企业需评估其迭代节奏放缓的风险。",
+          "source": "Reuters（Fort Worth Star-Telegram 转载）",
+          "url": "https://www.star-telegram.com/news/business/article318264007.html"
+        },
+        {
+          "title": "📜 监管政策 | 苹果全球下架 MiniMax 旗下 AI 陪伴应用 Talkie，起因涉未成年人安全",
+          "body": "路透 11 月 26 日报道，苹果已在全球 App Store 下架 MiniMax 开发的 AI 陪伴应用 Talkie，起因是有报道称其 AI 角色向未成年人发送性暗示内容。Talkie 在 App Store 上标注为 18+，但年龄验证形同虚设的问题被集中曝光。Talkie 是 MiniMax 出海营收的重要来源之一，此次下架发生在美国多州监管机构正密集审查 AI 陪伴类产品（如 Character.AI 数据处置案）的背景下。",
+          "insight": "AI 陪伴赛道的平台合规门槛正快速抬升，出海 C 端 AI 产品必须把未成年人保护与年龄验证当作上架前置条件而非事后补丁。",
+          "source": "Reuters（Yahoo News 转载）",
+          "url": "https://www.yahoo.com/news/us/articles/apple-removes-minimax-talkie-ai-105442481.html"
+        },
+        {
+          "title": "🔬 技术突破 | 瑞士确认首批 AI 智能体网络攻击：五起中四起得手，波及电力、供水、通信",
+          "body": "瑞士联邦网络安全中心（NCSC/BACS）11 月 26 日通报，过去几天境内发生五起由 AI 智能体执行的网络攻击，目标为企业及关键基础设施运营方，其中四起成功入侵系统，受害者包括电力、供水与通信服务商。官方未披露攻击主体，但罕见地建议所有面向互联网的系统在 24 小时内完成补丁修复，意味着智能体已把漏洞从披露到被利用的窗口压缩到以小时计。意大利也同步发出类似预警。",
+          "insight": "“AI 智能体攻击”已从演示走向实战，企业安全运营需要以小时级补丁 SLA 和自动化防御来对抗自动化进攻。",
+          "source": "Security Affairs",
+          "url": "https://securityaffairs.com/204004/hacking/switzerland-confirms-first-ai-agent-cyberattacks-on-local-organisations.html"
+        },
+        {
+          "title": "📜 监管政策 | 国家数据局征求意见：支持合法获取数据用于 AI 训练与推理，鼓励为数据付费",
+          "body": "国家数据局综合司 11 月 26 日发布《关于完善数据规则赋能人工智能创新发展的若干意见（公开征求意见稿）》。核心内容包括：明确通过采集生成、受让、授权许可等渠道合法取得数据的主体可将数据用于 AI 训练和推理；企业对使用智能设备或云服务中产生的数据有权获取或复制转移；推动衍生数据认定规则，鼓励数据产权登记与数据流通交易合同示范文本；并提出建立 AI 企业输出风险防控机制。",
+          "insight": "国内 AI 训练数据的确权与交易规则开始成型，企业应提前梳理自有及云上数据资产的权属，为合规“数据入模”和对外交易做准备。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/1/033/054.htm"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 行业动向 | SAP 拟裁员至少 1 万人，以 AI 为核心推进新一轮重组",
+          "body": "据《金融时报》和彭博 11 月 26 日报道，欧洲最大软件公司 SAP 高管正讨论裁减至少 1 万个岗位，约占员工总数的 9%，产品、工程与销售是主要涉及部门，CEO Christian Klein 正推动 AI 优先战略以应对 AI 加速带来的业务冲击。这将是 SAP 继 2024 年约 1 万人重组后的又一次大规模调整，显示企业软件巨头正把 AI 带来的效率红利直接转化为组织规模收缩。",
+          "insight": "ERP 厂商自身的 AI 重组将传导到客户侧的实施、支持与定价模式，企业在续约与 S/4 迁移谈判中应把 AI 交付能力纳入评估。",
+          "source": "Financial Times",
+          "url": "https://www.ft.com/content/ef05b4ab-7944-44ae-ad00-15475f8c1ec9"
+        },
+        {
+          "title": "🏭 中国落地 | 蔚来披露 AI 原生组织成果：数千个业务 Agent、7500 个应用，研发效率提升 35%",
+          "body": "蔚来在第三届 NIO IN 创新科技日上披露持续三年多的“AI 原生组织”变革：内部已开发数千个业务 Agent，企业经营管理领域上线应用超过 7500 个，研发综合效率提升 35%、库存周转速度提升 23%；仅能源业务通过 AI 精细化运营 145 万块电池，累计增加电池全生命周期价值超 8 亿元。同时 NOMI 删除 9 年旧代码重构为原生智能体，世界模型 NWM 3.0 训练效率提升 5 倍。李斌直言“不做这些事情，可能活不下去”。",
+          "insight": "制造企业的 AI 价值正在从单点工具走向全组织 Agent 化，可量化的周转与资产收益指标是说服董事会的关键。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512897.html"
+        },
+        {
+          "title": "🎮 组织变革 | 育碧被曝要求新项目提案说明 GenAI 用法，不用需向高层解释原因",
+          "body": "据 Vertical Slice 报道并经 Eurogamer 等多家媒体跟进，育碧团队提交新游戏项目提案时必须说明生成式 AI 如何帮助开发，若不打算使用则需向高管明确解释，理由不充分的提案很难获批。管理层称此举旨在让小型团队更快试错、迭代和砍掉不合适的项目；但有员工形容这是自上而下的“AI 狂热”，叠加持续重组与裁员，内部士气低迷。育碧方面随后对 GamesIndustry.biz 否认了“必须说明理由”的说法。",
+          "insight": "把 AI 写进立项门槛能加速采用，但若缺乏配套的能力建设与沟通，可能换来的是抵触与人才流失。",
+          "source": "Eurogamer",
+          "url": "https://www.msn.com/en-gb/news/other/ubisoft-reportedly-goes-all-in-on-company-wide-generative-ai-use-and-if-developers-dont-want-to-use-it-they-have-to-explain-why-in-detail/ar-AA2ihrA9"
+        },
+        {
+          "title": "🏦 金融实践 | 彭博：花旗、渣打、星展等银行全面审查数据中心客户的 AI 芯片来源",
+          "body": "彭博 11 月 24 日报道，在美国收紧中国企业使用东南亚先进芯片的规则后，花旗、渣打以及新加坡星展、华侨银行、大华银行等大型银行已对数据中心客户启动全面审查，核查其 GPU 来源、最终用户与租户结构，以免卷入芯片转移风险。报道指出，银行正成为美国打击芯片“转运”链条中的关键执法节点，这也可能抬高东南亚数据中心项目的融资成本和尽调周期。",
+          "insight": "AI 基础设施项目的融资尽调正在把出口管制合规列为硬指标，数据中心运营方需准备可追溯的芯片与租户台账。",
+          "source": "Bloomberg（The Edge Singapore 转载）",
+          "url": "https://www.theedgesingapore.com/news/data-centres/banks-put-data-centre-clients-under-microscope-ai-chips--bloomberg"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Claude 上线“Install as app”：Artifacts 可一键安装为 Mac/Windows 桌面应用",
+          "body": "Anthropic 于 11 月 24 日推出 beta 功能，用户可将 Claude 中生成的 artifact 直接安装为 macOS 或 Windows 桌面应用，拥有独立图标与窗口，并可在用户授权下访问文件、程序和系统通知等 OS 能力，无需自行打包、签名或管理 API Key。该功能面向包括免费版在内的全部计划逐步开放，意味着业务人员用自然语言构建的小工具，可以直接变成日常使用的桌面软件。",
+          "insight": "“对话即开发、生成即部署”正在模糊无代码与桌面软件的边界，企业 IT 需尽快为员工自建 AI 应用制定权限与分发治理规则。",
+          "source": "Inc.",
+          "url": "https://www.inc.com/aaron-mok/anthropic-claude-turn-workflows-into-desktop-apps/91442773"
+        },
+        {
+          "title": "🧑‍💻 开发者语言 | IDEA 研究院发布 MoonBit 1.0：首个专为智能体设计的通用编程语言",
+          "body": "在第六届 IDEA 大会上，沈向洋提出“Rethink Computer Science”命题，认为写代码的主力正逐渐变成 AI，编程语言的设计思路随之有了变化空间。沿着这一思路，IDEA 研究院张宏波团队历时四年打造的 MoonBit 正式发布 1.0 版本，定位为专为智能体设计的通用编程语言。沈向洋还引用 Karpathy 的观察：全球约 10 亿人用过大模型，但真正了解前沿 AI 有多强的人可能只有 5000 人。",
+          "insight": "当主要“程序员”变成 AI，语言、编译器与工具链都可能为机器可读性与可验证性重新设计，这是国产基础软件的新切入点。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512840.html"
+        },
+        {
+          "title": "🔬 研究成果 | OpenAI：两位业余天文学家用 Codex 与 Astra 在 NASA 公开数据中筛出系外行星候选",
+          "body": "OpenAI 11 月 24 日展示了两位业余天文学家的案例：一位用 Codex 编写并运行分析管线检索开普勒任务数据，另一位用 Astra 研究 TESS 公开数据，其中一次搜索标记出 200 多个信号，最终整理出数十个潜在系外行星候选。SETI 研究所的天文学家独立发现了其中两个开普勒信号，但 OpenAI 也强调目前尚无候选获得确认，食双星等现象可能造成假阳性。",
+          "insight": "Coding Agent 正让非专业人士具备搭建科研级数据管线的能力，但结果验证与假阳性控制仍需领域专家把关。",
+          "source": "Let's Data Science",
+          "url": "https://letsdatascience.com/news/openai-says-amateur-astronomers-used-codex-and-astra-to-flag-e76022c0"
+        },
+        {
+          "title": "🏆 基准评测 | GPT-6.2 Astra 成为首个打破 Google 工程师 Go 代码高尔夫纪录的模型",
+          "body": "一个以 Go 语言代码高尔夫（用最短代码解题）为题的公开基准排行榜显示，GPT-6.2 Astra 首次在多道题上打破了 Google 工程师保持的人类最短纪录，该话题在 Hacker News 获得 460 余分热议。代码高尔夫考察的是对语言细节、标准库和边角语义的极致掌握，而非常规业务代码能力；评论区也提醒，这类“极限压缩”成绩不等于可维护的生产代码质量。",
+          "insight": "模型在“技巧型编程”上已超越顶尖人类，但企业评估 Coding Agent 仍应以可读性、可维护性和端到端交付为核心指标。",
+          "source": "Go Codegolf Benchmark（Hacker News 热议）",
+          "url": "https://bjin.github.io/go-codegolf-benchmark/#leaderboard"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📊 研究报告 | 英格兰银行金融稳定报告：AI 借贷激增与不透明融资正在放大系统性风险",
+          "body": "英格兰银行 11 月 26 日发布金融稳定报告，称近几个月全球金融体系风险加剧，其中 AI 相关借贷快速膨胀是重点关注项：超大规模云厂商与 AI 企业通过债券、私募信贷和表外安排大举融资建设数据中心，部分融资结构不透明、难以准确衡量规模，一旦 AI 估值回调可能通过信贷渠道外溢。报告同时提出对银行资本要求下调约 30 个基点的方案。",
+          "insight": "AI 资本开支的融资风险已进入央行监测框架，企业在规划大额 AI 基础设施投入时应把利率与再融资情景纳入压力测试。",
+          "source": "Reuters",
+          "url": "https://www.msn.com/en-ca/money/economy/bank-of-england-sees-growing-financial-risks-as-ai-borrowing-surges/ar-AA2iiwie"
+        },
+        {
+          "title": "🔬 研究成果 | 腾讯 AI 从头设计双靶点多肽登《Nature》：每轮仅测约 15 条，抗肿瘤体积降 94.2%",
+          "body": "腾讯生命科学实验室以第一单位在《Nature》主刊发表成果，研发 AI 平台 ORIDTP，将扩散生成模型、双目标强化学习、柔性多肽亲和力建模与湿实验结合，跑通“计算设计—实验验证—反馈优化”闭环，每轮实验仅需测试约 15 条多肽。团队在减重降糖与肿瘤免疫两个方向完成验证，候选分子在小鼠模型中使肿瘤体积减少 94.2%。研究仍处临床前阶段，平台已部署到腾讯健康 BioNexus 对外开放。",
+          "insight": "AI for Science 正把药物发现从“大库盲筛”推向“小样本精准迭代”，药企可重新评估早期研发的实验预算结构。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/1/033/125.htm"
+        },
+        {
+          "title": "📊 深度分析 | Ars Technica：前沿 AI 已能完成顶尖物理学家一整天的计算，理论物理学家角色面临重塑",
+          "body": "Ars Technica 11 月 25 日转载 Understanding AI 长文，以印度国际理论科学中心教授 Suvrat Raju 的测试为引：他用一道自己已解出但从未发表的物理题考察前沿模型，以排除训练数据污染。文章梳理多位物理学家的实测，认为前沿模型已能完成过去需要顶尖物理学家一整天的推导与计算，学界正在讨论当计算不再稀缺时，理论物理的核心价值将转向提出问题、判断方向与验证结果。",
+          "insight": "当高难度推导被自动化，专业服务的价值锚点将从“算得出”转向“问得对、判得准”，这同样适用于咨询与工程行业。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/"
+        },
+        {
+          "title": "📊 深度分析 | 极客公园：MAGI-2 以 1/10 成本和开源权重挑战闭源视频模型，赛道或重演文生图剧本",
+          "body": "极客公园 11 月 26 日刊文分析，开源视频模型代表 Sand.ai 于 11 月 25 日宣布旗下 480B 总参数的 MAGI-2 音视频统一模型将尽快开源全量权重，对标行业基准 Seedance 2.5；其 1080P 官方 API 刊例价仅 0.5 元/秒，不到 Seedance 2.5 同规格的十分之一，私有化部署成本还可更低。文章认为，视频生成可能重演文生图“闭源定标杆、开源引爆生态、垂直场景反超”的路径。",
+          "insight": "视频生成成本断崖式下降将使营销与内容生产的私有化 AIGC 部署成为可选项，品牌方可开始评估自建视频生产线。",
+          "source": "极客公园",
+          "url": "http://www.geekpark.net/news/374532"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "今天的主线是“算力地缘化”。英伟达暂停向东南亚四国出货、银行开始逐一审查数据中心客户的芯片来源，再加上路透披露的中国大模型公司发版延期，东南亚作为算力中转站的空间正在被快速压缩。对正在规划跨境 AI 项目的企业来说，算力合规已经和成本、性能一样，成为选型时的硬约束。",
+    "第二条线索是 AI 对组织的直接重塑。SAP 计划裁员约 9%，育碧把生成式 AI 写进立项门槛，蔚来则用数千个业务 Agent 换来 35% 的研发效率提升。这三家公司的路径不同，但方向一致：AI 已经从工具采购变成组织设计问题，而员工士气和变革管理正在成为决定成败的隐性成本。",
+    "第三，风险侧的信号也在变多。瑞士确认首批 AI 智能体攻击得手，英格兰银行把 AI 借贷纳入金融稳定监测，苹果下架 Talkie 则提醒 C 端 AI 的合规门槛在抬升。与此同时，Claude 桌面应用、MoonBit 智能体编程语言等工具继续降低开发门槛。能力扩散越快，治理和安全就越需要同步跟上。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-27 执行）：检索了 OpenAI partnership/JV/acquisition、Anthropic Accenture/Deloitte/consulting、AI consulting services launch、OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 过去 7 天大动作。结果：①OpenAI Deployment Company 合资及收购 Tomoro 的信息日期无法确认在 7 天窗口内，未纳入；②Anthropic 咨询服务（11-03）、Claude Frontier Academy（10-02，首批含 Accenture 等）、Barclays 扩大合作（10-01）、GSA 合作（10-27）均已超出 7 天窗口，未纳入；③IBM×Microsoft Imagine Enterprise（11-10）超窗。窗口内大厂动向为：英伟达暂停东南亚出货（已纳入热点头条）、Anthropic Claude 桌面应用（已纳入 Coding）、SAP AI 重组裁员（已纳入企业级）。今日无窗口内的新收并购或咨询合作公告。"
+  }
+}

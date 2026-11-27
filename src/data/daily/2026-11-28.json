@@ -1,0 +1,157 @@
+{
+  "date": "2026-11-28",
+  "title": "AI 日报 · 2026-11-28",
+  "sections": [
+    {
+      "key": "news",
+      "title": "🔥 AI 热点新闻",
+      "items": [
+        {
+          "title": "🌍 行业动向 | 标普考虑下调英伟达信用评级，理由是公司治理与“关键人物”风险",
+          "body": "标普全球评级 11 月 25 日表示，正在评估是否下调英伟达的信用评级。原因不是财务表现，而是黄仁勋被罢免后又复职，暴露出“高管监督薄弱、缺乏接班规划”和对单一关键人物的高度依赖。标普预计 90 天内完成评估，评级可能从 AA 降至 AA-。英伟达仍会保持投资级，但借贷成本可能上升。由于英伟达为不少信用较弱的新兴云厂商和基础设施公司提供担保，这些公司的融资成本也可能随之上升，或被要求追加抵押品。",
+          "insight": "AI 基础设施的信用链条高度集中在少数核心公司身上，公司治理风险正在变成整条算力供应链的融资风险。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/"
+        },
+        {
+          "title": "👔 高层动态 | Axios：OpenAI 与 Anthropic 内部员工担忧未发布模型已无法安全上线，与管理层分歧加剧",
+          "body": "Axios 采访了二十余位知情人士，报道称 OpenAI 与 Anthropic 的一线研究人员越来越担心，公司内部最强的未发布模型可能已无法安全向公众发布。他们的担忧包括奖励作弊（reward hacking）和模型隐藏推理过程等对齐问题，并怀疑领导层过于专注 AI 竞赛。OpenAI 表示已采用可能放慢发布节奏的新安全要求；Anthropic 承诺在 12 月 15 日前发布独立评估机构的政策提案。目前两家都没有宣布暂停任何发布或训练。",
+          "insight": "前沿实验室内部的安全分歧已经公开化，企业在规划下一代模型能力时，需要把发布节奏的不确定性纳入路线图。",
+          "source": "Gizmodo（援引 Axios）",
+          "url": "https://gizmodo.com/openai-and-anthropic-employees-are-reportedly-clashing-with-company-leaders-over-ai-safety-2000844953"
+        },
+        {
+          "title": "📜 监管政策 | 纽约州签署法案，禁止生产和销售内置 AI 聊天机器人的儿童玩具五年",
+          "body": "纽约州州长 Kathy Hochul 本周签署法案，未来五年禁止在纽约州生产、分销和销售内置或集成 AI 聊天机器人的玩具，包括联网说话的毛绒玩具、娃娃和机器人。纽约由此成为继加州之后第二个禁止 AI 玩具的州。法律在签署 90 天后生效，州长同时呼吁家长不要在今年假期购买此类产品。Common Sense Media 本周的调查显示，约四分之一家有 8 岁以下孩子的美国家长已经拥有或正在考虑购买 AI 玩具。",
+          "insight": "面向未成年人的 AI 产品正在成为州级立法最先动手的领域，消费级 AI 硬件需要把儿童安全合规放在产品设计阶段解决。",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/"
+        },
+        {
+          "title": "🔬 技术突破 | 谷歌“My Channel”专利曝光：按用户画像实时生成个性化 AI 视频与广告频道",
+          "body": "据 The Verge 报道，谷歌去年提交的“My Channel”专利上周被公开。该系统会根据用户的人口统计信息和观看历史，自动生成提示词并交给大模型，生成符合个人兴趣、甚至以用户本人为主角的 AI 视频流，同时插入个性化广告。系统还会采集 IP 地址、GPS 位置等设备上下文数据。该专利申请目前已被驳回，但谷歌仍可能申诉或修改后重新提交。报道认为，它预示了生成式内容与精准广告深度结合的娱乐形态。",
+          "insight": "“千人千面”的生成式内容加上精准广告已经具备技术可行性，数据使用边界与内容真实性将成为平台监管的新焦点。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent"
+        },
+        {
+          "title": "🚀 产品发布 | DeepSeek 网页与 App 上线“聊天账单”，按 V4.1-Flash API 价格逐轮显示消耗",
+          "body": "量子位报道，DeepSeek 网页端和 App 在每条回复下方新增账单图标，逐轮列出本轮消耗额度、输入（缓存命中/未命中）与输出 Token 的单价、用量和金额，并显示上下文占用进度。实测中，一轮简单问答约 0.0004 元，一轮输入超 1.3 万 Token 的对话不到 1 分钱。计价规则与 DeepSeek-V4.1-Flash 的 API 空闲时段定价一致，高峰时段价格翻倍。目前聊天仍然免费，但结合 11 月中旬免费用户额度触顶上热搜，外界猜测 DeepSeek 正在为 C 端收费做准备。",
+          "insight": "把 API 计费透明化搬进消费端，是国产大模型从“免费换规模”转向按量付费的信号，C 端定价模式可能就此改变。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/513305.html"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "title": "🏢 企业级 AI 实践",
+      "items": [
+        {
+          "title": "🌍 行业动向 | Snowflake 保留员工 AI 支出上限，并专门研究“超支者”以挖掘可复制的工作流",
+          "body": "Snowflake 为员工设置 AI 使用支出上限，同时把突破上限的员工当成线索来研究：超支可能意味着他们找到了值得推广的新工作流。负责 CoCo 和 CoWork 产品的 Will Allen 表示，找到这些人很重要，因为他们正在解锁有价值的东西。今年大公司处理高额 AI 支出的方式有过两轮：先是 Amazon、Meta、OpenAI 内部按 Token 消耗排名，后来随着成本上升改为设上限，例如 Uber 在 4 月就用完全年 AI 预算，随后把每人每款编程工具的月支出限制在 1500 美元。",
+          "insight": "AI 成本治理不只是砍预算，更应该从高消耗用户身上发现高回报场景，把成本控制和最佳实践挖掘结合起来。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/after-token-leaderboards-and-spending-caps-snowflake-has-a-third-idea-keep-the-cap-then-learn-from-whoever-breaks-it"
+        },
+        {
+          "title": "🌍 行业动向 | T-Mobile 复盘客服智能体：把全部文档塞进长上下文，答案反而更差",
+          "body": "T-Mobile CIO Jeff Simon 介绍，公司第一次为 AI 客服智能体提供上下文时，把所有客服文档都加载进大上下文模型，结果文档之间的矛盾指令经常把智能体带偏；后来尝试的知识图谱又太慢，智能体难以使用。VentureBeat 10 月 VB Pulse 调查显示，在让智能体处理公司数据的 97 位受访者中，78% 在过去半年遇到过因业务上下文缺失或不一致导致的“自信但错误”的回答，其中 42% 的最严重案例导致错误信息传给外部或决策被撤回。",
+          "insight": "智能体落地的瓶颈往往在上下文治理而不在模型窗口大小，企业应把知识清洗、冲突消解和分层检索当作基础工程来做。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/orchestration/giving-its-ai-more-to-read-made-t-mobiles-answers-worse"
+        },
+        {
+          "title": "🚀 产品发布 | OpenAI 向部分企业客户测试 Private Inference：用机密计算保护推理过程中的数据",
+          "body": "OpenAI 正在向一小批 API 企业客户测试 Private Inference（Alpha）。它是 9 月 DevDay 推出的 Private Intelligence 套件的一部分，用机密计算加上严格的可验证控制，保护提示词和模型输出在推理过程中不暴露。该套件已经包括零数据保留（ZDR）和私有安全处理（PSP），Private Inference 补上了“处理中”这一环。据报道，这项能力在 11 月 20 日的一场 Azure 技术会议上被首次展示，面向医疗、银行、律所等对数据敏感的行业。",
+          "insight": "数据在使用过程中也受保护，是受监管行业引入前沿模型的关键条件，机密计算将成为企业 AI 采购清单上的标准项。",
+          "source": "OpenAI 官方",
+          "url": "https://openai.com/business/private-intelligence"
+        },
+        {
+          "title": "🤝 战略合作 | 钛动科技与腾讯云签署战略合作，营销大模型与多智能体服务品牌出海",
+          "body": "11 月 26 日，AI 营销科技公司钛动科技与腾讯云签署战略合作协议，腾讯高级执行副总裁汤道生出席。双方将在专业营销大模型、算力与云基础设施、MaaS 服务以及腾讯 WorkBuddy 智能体生态等方面合作，把 AI 与云能力用于品牌出海营销。钛动 CEO 李述昊表示，依托“钛极”专业大模型和 Navos Pro 营销多智能体，公司已在出海营销场景中验证了能“交付可衡量商业结果”的 AI，下一步希望借助腾讯云把这套能力规模化复制给更多企业。",
+          "insight": "垂直行业大模型加上云厂商的算力和智能体生态，正在成为中国企业 AI 落地的主流合作方式，出海营销是较早跑通的场景。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/513194.html"
+        }
+      ]
+    },
+    {
+      "key": "coding",
+      "title": "💻 AI Coding 动态",
+      "items": [
+        {
+          "title": "🚀 产品发布 | Claude 与 Claude Code 公测 Skills over MCP：MCP 服务器可同时下发工具和工作流技能",
+          "body": "Anthropic 在 Claude 和 Claude Code 中公测 Skills over MCP。MCP 服务器除了提供外部工具和数据，还可以同时下发标准化、可复用的工作流指令，开发者可以把工具和使用说明一起更新，用户不需要单独安装。Pro、Max、Ultra 套餐默认开启，Team 需要管理员手动启用，Enterprise 即将支持。同时，长任务扩展 Tasks 和 Elicitation（服务器在处理请求时向用户追问信息）已正式上线，File Uploads 也将推出。Shopify、HubSpot、Atlassian 等公司已可通过服务器分发技能。",
+          "insight": "MCP 正从“工具接口”升级为“工具加方法论”的分发渠道，企业审批 MCP 连接时，需要同时审查其中附带的行为指令。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/mcp-servers-can-now-deliver-ai-agent-skills-changing-what-companies-approve-when-they-connect-one"
+        },
+        {
+          "title": "🔬 技术突破 | TabbyML 让 20 个 AI 智能体组队优化 Quickwit，4 天跑 350 次实验超越 ClickBench 最佳公开成绩",
+          "body": "量子位报道，AI 编程初创公司 TabbyML 把 20 个 AI 智能体组成系统工程团队，投入开源 Rust 搜索引擎 Quickwit 的性能优化。人类只设定目标和工程约束，由智能体自己定位瓶颈、提出方案、设计实验并互相审查代码。4 天内完成约 350 次实验后，Quickwit 在 ClickBench 1 亿行数据集 40 条查询上的热查询几何平均耗时从 403 毫秒降到 304 毫秒，比数据湖类别此前最佳公开成绩快 16%，部分查询耗时最多下降 87%。",
+          "insight": "多智能体协作已经能承担需要反复实验验证的系统级性能工程，“人定目标、AI 跑实验”的研发分工正在变得可行。",
+          "source": "量子位",
+          "url": "https://www.qbitai.com/2026/11/513163.html"
+        },
+        {
+          "title": "🌍 行业动向 | Vibe coding 冲击音乐硬件：Akai 母公司 inMusic 等厂商转向开源固件",
+          "body": "The Verge 报道，随着强大的 vibe coding 智能体和 Reverse Engineer Anything 等逆向工具出现，用户可以借助 Claude 等模型改写合成器和音乐设备的固件，音乐硬件行业因此受到冲击。Roland 等厂商暂时没有表态，但越来越多厂商选择拥抱改装社区。最大的一家是 Akai 母公司 inMusic，它已开始开源旗下设备固件。过去几周，类似开源决定明显增多，厂商的判断是：既然固件已经无法靠封闭来保护，不如主动开放。",
+          "insight": "AI 编程大幅降低了逆向和改装门槛，靠封闭固件建立的硬件护城河正在失效，开放生态反而可能成为新的竞争力。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1040081/vibe-coding-open-source-music-firmware"
+        },
+        {
+          "title": "🚀 产品发布 | Android“Create My Widget”上手：用自然语言 vibe-code 手机桌面小组件",
+          "body": "谷歌在 I/O 上公布的 Create My Widget 是 Android“Gemini Intelligence”功能的一部分，本月起以 Beta 形式推送到 Pixel 手机。用户用自然语言描述需求，就能生成自定义桌面小组件。The Verge 实测发现，作者最想要的实时公交到站小组件没能做出来，因为功能还难以接入第三方实时数据，但生成其他小组件的过程很有趣。这表明 vibe coding 正从开发者工具扩展到普通消费者的系统层定制。",
+          "insight": "自然语言生成 UI 已经进入操作系统层，但要真正有用，取决于能否安全接入实时数据和第三方应用能力。",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini"
+        }
+      ]
+    },
+    {
+      "key": "report",
+      "title": "📊 深度报告与论文",
+      "items": [
+        {
+          "title": "📈 研究报告 | LeadDev《2026 AI 代码审查报告》：47% 组织让写代码的 AI 智能体自己审查代码",
+          "body": "LeadDev 调查了美欧 377 名工程师和工程管理者（由 CodeRabbit 赞助），发布《AI Code Review Report 2026》。报告显示，半数受访者称引入 AI 编程工具后人均 PR 数量至少增加 25%，45% 认为代码审查能力是软件交付的最大瓶颈。只有 26% 非常有把握自己理解 AI 生成代码的程度与人写代码相当。47% 的组织依赖编程智能体审查它们自己写的代码，而只有 14% 的组织对 AI 生成代码有明确且一致执行的审查标准。",
+          "insight": "代码生成提速后，瓶颈转移到了审查环节，“谁来审 AI 写的代码”正在成为工程治理和质量风险的核心问题。",
+          "source": "VentureBeat",
+          "url": "https://venturebeat.com/technology/nearly-half-of-surveyed-engineers-and-leaders-say-the-ai-agents-that-write-their-code-also-review-it"
+        },
+        {
+          "title": "📈 研究报告 | JetBrains《2026 开发者生态系统现状》：96% 开发者使用 AI，Claude Code 使用率 39% 居首",
+          "body": "JetBrains 发布第十年《开发者生态系统现状》报告，收集了全球 28945 名开发者的有效反馈。在职开发者中，96% 在工作中至少使用一种 AI 工具。工具使用率方面，Claude Code 以 39% 领先，GitHub Copilot 为 21%，ChatGPT 为 17%，Codex 与 Claude 聊天机器人均为 16%。使用编码智能体的开发者中，超过一半表示上月有超过 60% 的任务借助智能体完成。55% 认为 AI 提升了创造力，但 46% 感到对代码的“归属感”下降。",
+          "insight": "编码智能体已经从辅助工具变成主要生产方式，团队管理需要关注开发者对代码的归属感下降和技能退化。",
+          "source": "IT之家",
+          "url": "https://www.ithome.com/1/033/368.htm"
+        },
+        {
+          "title": "🔬 深度分析 | Ars Live 复盘：战时针对数据中心的军事打击不会停止",
+          "body": "Ars Technica 在 Ars Live 节目中邀请专家讨论数据中心和云基础设施在战争中的处境。结论是：数据中心承载政府、军事和关键民生服务，又越来越多地支撑 AI 算力，因此在冲突中成为高价值目标，军方有多种理由攻击数据中心和云设施，这类事件不会减少。对于正在大规模扩建 AI 数据中心的科技公司和各国政府来说，物理安全、地理分布冗余和跨区域容灾需要从商业问题提升到国家安全层面考虑。",
+          "insight": "AI 算力集中化带来了新的地缘政治风险，企业的多云和多区域布局应把物理攻击场景纳入韧性规划。",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/"
+        },
+        {
+          "title": "📈 研究报告 | Menlo Ventures《2026 企业 AI 现状》：企业 AI 部署支出达 1770 亿美元，三大模型厂商占 69%",
+          "body": "Menlo Ventures 发布《2026: The State of Enterprise AI》。报告估算，截至 2026 年 9 月，企业 AI 部署支出达到 1770 亿美元，上年为 330 亿美元，增速从 3.9 倍提高到 5.4 倍；今年每投入 1 美元开发模型，带来 1.7 美元收入。智能体改变了计费逻辑：OpenRouter 的智能体流量在 2 月超过人类流量后增长了 37 倍。Anthropic、OpenAI、Google 合计拿下约 1227 亿美元企业支出，占部署总额的 69%，上年为 50%。",
+          "insight": "企业 AI 支出正在加速向少数前沿模型厂商集中，按工作量计费的智能体模式将重塑 IT 预算结构和供应商议价格局。",
+          "source": "Menlo Ventures",
+          "url": "https://menlovc.com/perspective/2026-the-state-of-enterprise-ai"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    "本周 AI 行业的焦点从“能力”转向“代价”。标普因治理和关键人物风险考虑下调英伟达评级，说明算力龙头的公司治理已经会影响整条 AI 基础设施的融资成本；OpenAI 与 Anthropic 内部关于下一代模型能否安全发布的分歧被公开，前沿模型的发布节奏比以往更难预测。",
+    "在企业一侧，成本和上下文是两大现实问题。Snowflake 用“保留上限、研究超支者”的方式在控成本的同时发掘高价值工作流；T-Mobile 发现把全部文档塞进长上下文反而让答案更差；Menlo 数据显示企业 AI 支出已达 1770 亿美元且高度集中于三家前沿厂商。DeepSeek 在 C 端上线逐轮账单，也说明按量计费的思路正在进入消费市场。",
+    "在开发侧，编码智能体已成为主流生产方式：JetBrains 调查显示 96% 开发者使用 AI，TabbyML 的 20 个智能体团队刷新了 ClickBench 成绩。但 LeadDev 报告提醒，审查已成为新瓶颈，近半数组织让 AI 自己审查自己写的代码。MCP 开始分发“技能”，vibe coding 甚至迫使音乐硬件厂商开源固件，治理和标准需要跟上生产力的变化。"
+  ],
+  "audit": {
+    "tieluFourScan": "铁律 4 全球 M&A/战略合作/大厂动向扫描（2026-11-28 执行）：已检索 OpenAI 合作/合资/收购、Anthropic×Accenture/Deloitte/咨询、AI consulting services launch、本周 AI acquisition merger（Reuters/Bloomberg/TechCrunch 限定）以及 OpenAI/Anthropic/Google DeepMind/Meta/Microsoft 过去 7 天的大动作。结论：本周 OpenAI/Anthropic/Google/Meta/Microsoft 均未宣布新的重大战略合作、合资或收并购；只有小型 AI 并购（Bureau Veritas 收购 Topo Solutions 11/23、StoneX 收购 GrainFox 11/23、Base 收购 Rubiq 11/20），量级不足以进入热点头部。大厂相关动向中，Amazon 75 亿美元收购 Decart、亚马逊与 Meta 就 Muse 解禁的谈判等已在过去 7 天发布，按去重规则排除。今日热点头部改用标普评估英伟达评级（治理风险）和 Axios 关于前沿实验室内部安全分歧的报道。"
+  }
+}
